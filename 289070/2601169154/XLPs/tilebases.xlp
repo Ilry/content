@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<AssetObjects..XLP>
+	<m_Version>
+		<major>1</major>
+		<minor>0</minor>
+		<build>0</build>
+		<revision>0</revision>
+	</m_Version>
+	<m_ClassName text="TileBase"/>
+	<m_PackageName text="landmarks/tilebases"/>
+	<m_Entries>
+		<Element>
+			<m_EntryID text="DIS_WTR_Classical_Base_02"/>
+			<m_ObjectName text="DIS_WTR_Classical_Base_02"/>
+		</Element>
+		<Element>
+			<m_EntryID text="DIS_WTR_Classical_Base_01"/>
+			<m_ObjectName text="DIS_WTR_Classical_Base_01"/>
+		</Element>
+		<Element>
+			<m_EntryID text="DIS_WTR_Ancient_Filler_01"/>
+			<m_ObjectName text="DIS_WTR_Ancient_Filler_01"/>
+		</Element>
+		<Element>
+			<m_EntryID text="DIS_Ancient_flag_WTR"/>
+			<m_ObjectName text="DIS_Ancient_flag_WTR"/>
+		</Element>
+		<Element>
+			<m_EntryID text="DIS_WTR_Industrial_Base_01"/>
+			<m_ObjectName text="DIS_WTR_Industrial_Base_01"/>
+		</Element>
+		<Element>
+			<m_EntryID text="BUILDING_WTR_BREAKWATER_Classical"/>
+			<m_ObjectName text="BUILDING_WTR_BREAKWATER_Classical"/>
+		</Element>
+		<Element>
+			<m_EntryID text="BUILDING_WTR_BREAKWATER_Industrial"/>
+			<m_ObjectName text="BUILDING_WTR_BREAKWATER_Industrial"/>
+		</Element>
+		<Element>
+			<m_EntryID text="DIS_WTR_Industrial_Base_02"/>
+			<m_ObjectName text="DIS_WTR_Industrial_Base_02"/>
+		</Element>
+		<Element>
+			<m_EntryID text="DIS_WTR_Industrial_Base_03"/>
+			<m_ObjectName text="DIS_WTR_Industrial_Base_03"/>
+		</Element>
+		<Element>
+			<m_EntryID text="BUILDING_WTR_BOARDWALK_Modern"/>
+			<m_ObjectName text="BUILDING_WTR_BOARDWALK_Modern"/>
+		</Element>
+		<Element>
+			<m_EntryID text="DIS_WTR_Modern_Base_01"/>
+			<m_ObjectName text="DIS_WTR_Modern_Base_01"/>
+		</Element>
+		<Element>
+			<m_EntryID text="DIS_WTR_Modern_Base_02"/>
+			<m_ObjectName text="DIS_WTR_Modern_Base_02"/>
+		</Element>
+		<Element>
+			<m_EntryID text="BUILDING_WTR_BREAKWATER_Modern"/>
+			<m_ObjectName text="BUILDING_WTR_BREAKWATER_Modern"/>
+		</Element>
+		<Element>
+			<m_EntryID text="DIS_WTR_Modern_Base_03"/>
+			<m_ObjectName text="DIS_WTR_Modern_Base_03"/>
+		</Element>
+		<Element>
+			<m_EntryID text="WTR_Tree_B_Sm"/>
+			<m_ObjectName text="WTR_Tree_B_Sm"/>
+		</Element>
+		<Element>
+			<m_EntryID text="WTR_Tree_C_Sm"/>
+			<m_ObjectName text="WTR_Tree_C_Sm"/>
+		</Element>
+		<Element>
+			<m_EntryID text="DIS_ARS_Walls_Classical"/>
+			<m_ObjectName text="DIS_ARS_Walls_Classical"/>
+		</Element>
+		<Element>
+			<m_EntryID text="DIS_ARS_Classical_Base_01"/>
+			<m_ObjectName text="DIS_ARS_Classical_Base_01"/>
+		</Element>
+		<Element>
+			<m_EntryID text="DIS_ARS_Walls_Industrial"/>
+			<m_ObjectName text="DIS_ARS_Walls_Industrial"/>
+		</Element>
+		<Element>
+			<m_EntryID text="DIS_ARS_Industrial_Base_01"/>
+			<m_ObjectName text="DIS_ARS_Industrial_Base_01"/>
+		</Element>
+		<Element>
+			<m_EntryID text="DIS_ARS_Walls_End_Classical"/>
+			<m_ObjectName text="DIS_ARS_Walls_End_Classical"/>
+		</Element>
+		<Element>
+			<m_EntryID text="DIS_ARS_Walls_End_Industrial"/>
+			<m_ObjectName text="DIS_ARS_Walls_End_Industrial"/>
+		</Element>
+		<Element>
+			<m_EntryID text="BUILDING_ARS_WAREHOUSE_Classical"/>
+			<m_ObjectName text="BUILDING_ARS_WAREHOUSE_Classical"/>
+		</Element>
+		<Element>
+			<m_EntryID text="DIS_ARS_Classical_Base_02"/>
+			<m_ObjectName text="DIS_ARS_Classical_Base_02"/>
+		</Element>
+		<Element>
+			<m_EntryID text="DIS_ARS_Industrial_Base_02"/>
+			<m_ObjectName text="DIS_ARS_Industrial_Base_02"/>
+		</Element>
+		<Element>
+			<m_EntryID text="DIS_ARS_Walls_End_Modern"/>
+			<m_ObjectName text="DIS_ARS_Walls_End_Modern"/>
+		</Element>
+		<Element>
+			<m_EntryID text="DIS_ARS_Walls_Modern"/>
+			<m_ObjectName text="DIS_ARS_Walls_Modern"/>
+		</Element>
+		<Element>
+			<m_EntryID text="DIS_ARS_Modern_Base_01"/>
+			<m_ObjectName text="DIS_ARS_Modern_Base_01"/>
+		</Element>
+		<Element>
+			<m_EntryID text="DIS_ARS_CannonB_Industrial"/>
+			<m_ObjectName text="DIS_ARS_CannonB_Industrial"/>
+		</Element>
+		<Element>
+			<m_EntryID text="DIS_ARS_Industrial_Base_03"/>
+			<m_ObjectName text="DIS_ARS_Industrial_Base_03"/>
+		</Element>
+		<Element>
+			<m_EntryID text="BUILDING_ARS_DRYDOCK_Classical"/>
+			<m_ObjectName text="BUILDING_ARS_DRYDOCK_Classical"/>
+		</Element>
+		<Element>
+			<m_EntryID text="BUILDING_ARS_DRYDOCK_Modern"/>
+			<m_ObjectName text="BUILDING_ARS_DRYDOCK_Modern"/>
+		</Element>
+		<Element>
+			<m_EntryID text="DIS_ARS_Modern_Base_02"/>
+			<m_ObjectName text="DIS_ARS_Modern_Base_02"/>
+		</Element>
+		<Element>
+			<m_EntryID text="DIS_ARS_Bunker_Modern"/>
+			<m_ObjectName text="DIS_ARS_Bunker_Modern"/>
+		</Element>
+		<Element>
+			<m_EntryID text="DIS_ARS_Mortar_Modern"/>
+			<m_ObjectName text="DIS_ARS_Mortar_Modern"/>
+		</Element>
+		<Element>
+			<m_EntryID text="BUILDING_ARS_ACADEMY_Classical"/>
+			<m_ObjectName text="BUILDING_ARS_ACADEMY_Classical"/>
+		</Element>
+		<Element>
+			<m_EntryID text="DIS_ARS_Industrial_Base_04"/>
+			<m_ObjectName text="DIS_ARS_Industrial_Base_04"/>
+		</Element>
+		<Element>
+			<m_EntryID text="DIS_ARS_Modern_Base_04"/>
+			<m_ObjectName text="DIS_ARS_Modern_Base_04"/>
+		</Element>
+	</m_Entries>
+	<m_AllowedPlatforms>
+		<Element>WINDOWS</Element>
+		<Element>LINUX</Element>
+		<Element>MACOS</Element>
+		<Element>IOS</Element>
+	</m_AllowedPlatforms>
+</AssetObjects..XLP>
+

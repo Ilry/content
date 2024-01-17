@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RF'CIVITAS Darius I'CN_Add_FI -->
+<!-- Author: 春 , Clear8Sky -->
+<!-- DateCreated: 2021/9/2 11:10:13 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “CIVITAS Darius I” 。该文件在 FrontEnd 与 InGame 时载入，需 Criteria ： Active_Expansion_1 -->
+	<LocalizedText>
+		<Replace Language="zh_Hans_CN" Tag="LOC_LEADER_CVS_DARIUS_NAME">
+			<Text>大流士一世</Text>
+		</Replace>
+		<Replace Language="zh_Hans_CN" Tag="LOC_TRAIT_LEADER_CVS_DARIUS_UA_NAME">
+			<Text>皇家公路</Text>
+		</Replace>
+		<Replace Language="zh_Hans_CN" Tag="LOC_TRAIT_LEADER_CVS_DARIUS_UA_DESCRIPTION">
+			<Text>单元格被改良后自动在其周围单元格生成道路。有 [ICON_Governor] 总督就职的城市：其总督每次升级使此城+5% [ICON_Gold] 金币产出、+1 [ICON_Amenities] 宜居度；且每招募一位 [ICON_GreatMerchant] 大商人可奖励1个 [ICON_Governor] 总督头衔。</Text>
+		</Replace>
+
+		<!-- 载入 -->
+
+		<Replace Tag="LOC_LOADING_INFO_LEADER_CVS_DARIUS" Language="zh_Hans_CN">
+			<Text>大流士一世，你的子民期待你再一次为波斯带来力量并将它带回那些荣耀的日子里！祖先建立的帝国必将再次崛起，战胜敌人，给世界带来和平与秩序！万王之王！你会垂听这些恳求吗？你能建立起一个经得住时间考验的文明吗？</Text>
+		</Replace>
+
+		<!-- 百科 -->
+
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_CVS_DARIUS_TITLE" Language="zh_Hans_CN">
+			<Text>大流士一世</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_CVS_DARIUS_SUBTITLE" Language="zh_Hans_CN">
+			<Text>大流士大帝</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_CVS_DARIUS_QUOTE" Language="zh_Hans_CN">
+			<Text>赖阿胡拉马兹达之恩宠，寡人为王；阿胡拉马兹达授王国予寡人。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_CVS_DARIUS_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]The son of a satrap (governor) of Parthia, Darius I forcibly took the throne of Persia upon the death of Cambyses II in 522 BC. An administrative genius, during his reign Darius reorganized the sprawling Persian empire, greatly increasing its wealth and power. He also implemented many great construction works across Persia.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_CVS_DARIUS_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>Much of our knowledge of Darius I comes from the early Greek historian Herodotus, as well as from Persian inscriptions commissioned by Darius himself. According to Herodotus, as a youth Darius was suspected by Persian king Cyrus the Great of plotting against him. Darius survived this suspicion, later becoming a general and bodyguard of Cyrus's son and heir, Cambyses II after Cambyses assumed the throne. Cambyses died in 522 BC while in Egypt. Upon his death Darius returned to Media and killed Cambyses' brother, Bardiya, who Darius claimed was an imposter who had usurped the throne.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_CVS_DARIUS_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>After killing Bardiya (or the imposter, depending upon whose story you believe) Darius claimed the Persian throne. This did not go over well in the provinces, and Darius faced serious revolts in Babylon, Susiana, Media, Sagartia, and Margiana. Babylon revolted twice, in fact, and Susiana three times. The insurrections were uncoordinated, however, and Darius was able to suppress each separately. According to one of his inscriptions, Darius defeated nine rebel leaders in 19 battles. By 518 or so his throne was secure.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_CVS_DARIUS_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>After establishing his position, Darius initiated a series of wars to expand and secure Persia's borders. In 519 he attacked the Scythians east of the Caspian Sea, and shortly after he conquered the Indus Valley. He later attacked northwest from Asia Minor, conquering Thrace and then Macedonia. He tried to expand his European bridgehead north across the Danube, but he was forced to withdraw by stubborn resistance of the Scythian nomads. Finally, he secured the Aegean islands of Lemnos and Imbros.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_CVS_DARIUS_CHAPTER_HISTORY_PARA_5" Language="zh_Hans_CN">
+			<Text>Persia now held the Greek colonies in Asia Minor, the straits of Bosporus (which gave them control over the Black Sea), Macedonia, which bordered Greece to the north, as well as a number of strategic islands in the Aegean. This inevitably led to conflict with the powerful but divided Greek city-states watching Persian expansion with jealousy and alarm.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_CVS_DARIUS_CHAPTER_HISTORY_PARA_6" Language="zh_Hans_CN">
+			<Text>When not battling one of his empire's neighbors, Darius took a series of actions to unify the empire and to improve its administration. He completed the organization of the empire into satrapies (provinces) and set the annual tribute due from each. He improved the Persian road network and standardized coinage, weights and measures, greatly expanding the opportunities for trade throughout the empire. He funded exploration expeditions from India to Egypt, and he completed a canal in Egypt leading from the Nile River to the Red Sea.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_CVS_DARIUS_CHAPTER_HISTORY_PARA_7" Language="zh_Hans_CN">
+			<Text>Darius was the greatest builder in the Achaemenid Persian history. He constructed fortifications, a palace, and administrative buildings at Susa, his administrative capital. In his native Persepolis, Darius began construction of a new palace, as well as a council hall, treasury, and more fortifications (though these would not be completed until after his death).</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_CVS_DARIUS_CHAPTER_HISTORY_PARA_8" Language="zh_Hans_CN">
+			<Text>While firmly putting down any attempts at insurrection within Persia, Darius showed a good deal of tolerance to his subject peoples' religious beliefs. He constructed a number of temples in Egypt honoring the Egyptian gods, and he ordered his Egyptian satrap to codify the Egyptian laws in consultation with the Egyptian priestly class. In 519 he allowed the Jews to begin reconstruction of the Temple at Jerusalem. Darius himself is thought to have been a follower of Zoroastrianism, which was eventually made the state religion of Persia.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_CVS_DARIUS_CHAPTER_HISTORY_PARA_9" Language="zh_Hans_CN">
+			<Text>In 499 BC the Greek city-states of Athens and Eretria supported a revolt of some Greek colonies in Asia Minor against Persia. Darius crushed the rebellion and began plotting a campaign against the meddling Greeks. In 492 BC Darius' son-in-law Mardonius was put in charge of an expedition against the Greeks, but his fleet was destroyed in a storm off of Mount Athos and he was unable to advance. In 490 another Persian force successfully invaded Greece, destroying Eretria and enslaving its inhabitants before being defeated by Athenian warriors at Marathon. Darius was in the middle of planning yet a third expedition when he died in 486 BC.</Text>
+		</Replace>
+
+		<!-- 外交 -->
+
+		<!-- 初次见面 -->
+		<!-- 开场白 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_CVS_DARIUS_ANY" Language="zh_Hans_CN">
+			<Text>祝你平安！我是大流士，众多国王中最伟大和杰出的人，当然，你肯定早有耳闻……</Text>
+		</Replace>
+
+		<!-- 到附近城市的邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_CVS_DARIUS_ANY" Language="zh_Hans_CN">
+			<Text>来吧，并为波斯城市的宏伟而惊叹！我保证你从未见过这样的城市。</Text>
+		</Replace>
+
+		<!-- AI接受玩家邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NEAR_INITIATOR_POSITIVE_LEADER_CVS_DARIUS_ANY" Language="zh_Hans_CN">
+			<Text>好吧。</Text>
+		</Replace>
+
+		<!-- AI邀请玩家交换首都信息 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_CVS_DARIUS_ANY" Language="zh_Hans_CN">
+			<Text>波斯在历史上有过许多首都，所以让我来确保你的地图是最新的，而我也该搞清楚你是从哪来的……</Text>
+		</Replace>
+
+		<!-- 问候 -->
+
+		<Replace Tag="LOC_DIPLO_GREETING_LEADER_CVS_DARIUS_ANY" Language="zh_Hans_CN">
+			<Text>祝好。</Text>
+		</Replace>
+
+		<!-- 代表团 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_HUMAN_LEADER_CVS_DARIUS_ANY" Language="zh_Hans_CN">
+			<Text>我收下你的使者带来的礼物。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_HUMAN_LEADER_CVS_DARIUS_ANY" Language="zh_Hans_CN">
+			<Text>你的东西只会玷污神圣殿堂！我拒绝。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DELEGATION_FROM_AI_LEADER_CVS_DARIUS_ANY" Language="zh_Hans_CN">
+			<Text>我的外交官给你带去了波斯精美的纺织品和地毯样品，和一些我们新铸的硬币，它叫做达利克，猜猜看是以谁的名字命名的？</Text>
+		</Replace>
+
+		<!-- 开放边境 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_HUMAN_LEADER_CVS_DARIUS_ANY" Language="zh_Hans_CN">
+			<Text>我容许你的百姓踏入七境之地，然而他们会受到密切注意。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_HUMAN_LEADER_CVS_DARIUS_ANY" Language="zh_Hans_CN">
+			<Text>你们不配让波斯开放领土。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_OPEN_BORDERS_FROM_AI_LEADER_CVS_DARIUS_ANY" Language="zh_Hans_CN">
+			<Text>波斯伟大之至，允许你们的百姓过来，并且这些伟大可能会影响你们。</Text>
+		</Replace>
+
+		<!-- 宣布友谊 -->
+		<!-- AI接受 -->
+		
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_HUMAN_LEADER_CVS_DARIUS_ANY" Language="zh_Hans_CN">
+			<Text>我，万王之王大流士，接受你的友谊提议。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_HUMAN_LEADER_CVS_DARIUS_ANY" Language="zh_Hans_CN">
+			<Text>告诉我，你能想象狮子和老鼠做朋友吗？哈！</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_CVS_DARIUS_ANY" Language="zh_Hans_CN">
+			<Text>我，万王之王大流士向你伸出友谊之手。接受吧，你将会被称为万友之友。</Text>
+		</Replace>
+
+		<!-- 玩家接受后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_CVS_DARIUS_ANY" Language="zh_Hans_CN">
+			<Text>你不会后悔这个决定的。</Text>
+		</Replace>
+
+		<!-- 玩家拒绝后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_CVS_DARIUS_ANY" Language="zh_Hans_CN">
+			<Text>你会为背叛大流士而后悔的！</Text>
+		</Replace>
+
+		<!-- 结盟 -->
+		<!-- AI请求 -->
+		
+		<Replace Tag="LOC_DIPLO_MAKE_ALLIANCE_FROM_AI_LEADER_CVS_DARIUS_ANY" Language="zh_Hans_CN">
+			<Text>我宣布，你很适合站在我们这边。你认为呢，我们能成为盟友吗？</Text>
+		</Replace>
+
+		<!-- AI警告玩家离开边境 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_LEADER_CVS_DARIUS_ANY" Language="zh_Hans_CN">
+			<Text>我听说有一群跳骚集中在波斯边境？噢，原来是你的军队，马上撤军，否则我会亲自动手。</Text>
+		</Replace>
+
+		<!-- 贸易 -->
+		<!-- AI接受交易 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_CVS_DARIUS_ANY" Language="zh_Hans_CN">
+			<Text>同意。</Text>
+		</Replace>
+
+		<!-- AI拒绝交易 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_MAKE_DEAL_FROM_AI_LEADER_CVS_DARIUS_ANY" Language="zh_Hans_CN">
+			<Text>我的回答是……不！</Text>
+		</Replace>
+
+		<!-- 谴责 -->
+		<!-- 受到谴责回应 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_CVS_DARIUS_ANY" Language="zh_Hans_CN">
+			<Text>噢，抱歉，你说什么？我往往不会理会哭哭啼啼的懦夫的哀鸣……</Text>
+		</Replace>
+
+		<!-- AI谴责玩家 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_CVS_DARIUS_ANY" Language="zh_Hans_CN">
+			<Text>你的无能玷污了世界！如果你的文明像雪花一样消失在沙漠的热浪中，世界会欢欣鼓舞！[NEWLINE]（谴责你）</Text>
+		</Replace>
+
+		<!-- 宣战 -->
+		<!-- 受到宣战后回应 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_CVS_DARIUS_ANY" Language="zh_Hans_CN">
+			<Text>你比我低贱，就跟驴崽子一样卑贱！我要把你碾碎！</Text>
+		</Replace>
+
+		<!-- AI宣战 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_CVS_DARIUS_ANY" Language="zh_Hans_CN">
+			<Text>你的贪婪和无能令我别我选择：开战吧！</Text>
+		</Replace>
+
+		<!-- 求和 -->
+		<!-- AI接受求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_ACCEPT_DEAL_LEADER_CVS_DARIUS_ANY" Language="zh_Hans_CN">
+			<Text>我们将这称为之平手，是吗？</Text>
+		</Replace>
+
+		<!-- AI拒绝求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_REFUSE_DEAL_LEADER_CVS_DARIUS_ANY" Language="zh_Hans_CN">
+			<Text>怯懦只会更加激励我！不久后你的文明就只剩下灰烬！</Text>
+		</Replace>
+
+		<!-- AI求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_FROM_AI_LEADER_CVS_DARIUS_ANY" Language="zh_Hans_CN">
+			<Text>我觉得我们的小争执已经达到目的了，你不觉得吗？也许在我们重蹈覆辙之前应该短暂喘息一下。</Text>
+		</Replace>
+
+		<!-- 击败 -->
+		<!-- AI被击败 -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_CVS_DARIUS_ANY" Language="zh_Hans_CN">
+			<Text>我诅咒你！历史上最伟大的君主的鲜血溅到了你的手上！</Text>
+		</Replace>
+
+		<!-- 玩家被击败（在热座模式中会显示） -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_CVS_DARIUS_ANY" Language="zh_Hans_CN">
+			<Text>我诅咒你！历史上最伟大的君主的鲜血溅到了你的手上！</Text>
+		</Replace>
+
+		<!-- 领袖议程 -->
+
+		<Replace Tag="LOC_AGENDA_CVS_DARIUS_NAME" Language="zh_Hans_CN">
+			<Text>万王之王</Text>
+		</Replace>
+		<Replace Tag="LOC_AGENDA_CVS_DARIUS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>尊敬处于黄金时代的文明，鄙视处于黑暗时代的文明。</Text>
+		</Replace>
+
+		<!-- 赞成与警告 -->
+
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_CVS_DARIUS_REASON_GOLDEN_SHOWERS" Language="zh_Hans_CN">
+			<Text>（您处于黑暗时代）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_CVS_DARIUS_GOLDEN_SHOWERS" Language="zh_Hans_CN">
+			<Text>你的文明处于黑暗时代，大流士感到厌恶。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_CVS_DARIUS_REASON_GOLDEN_AGE" Language="zh_Hans_CN">
+			<Text>（您处于黄金时代）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_CVS_DARIUS_GOLDEN_AGE" Language="zh_Hans_CN">
+			<Text>你的文明处于黄金时代，大流士感到印象深刻。</Text>
+		</Replace>
+
+		<!-- AI赞成 -->
+
+		<Replace Tag="LOC_DIPLO_KUDO_EXIT_LEADER_CVS_DARIUS_ANY" Language="zh_Hans_CN">
+			<Text>你的文明令人震撼！你的统治为人民带来繁荣昌盛。</Text>
+		</Replace>
+
+		<!-- AI警告 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_EXIT_LEADER_CVS_DARIUS_ANY" Language="zh_Hans_CN">
+			<Text>看看你的人民是如何在你的无能污秽中沉沦的！你的文明处于你失败的阴影中！</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

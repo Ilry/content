@@ -1,0 +1,836 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'Steel and Thunder Unique Units'CN_Fix_FI -->
+<!-- Author: Clear8Sky -->
+<!-- DateCreated: 2021/8/16 9:44:39 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Steel and Thunder: Unique Units” 。该文件在 FrontEnd 与 InGame 时载入，无需任何 Criteria -->
+	<LocalizedText>
+		
+		<!-- 补译部分 -->
+		
+		<Replace Tag="LOC_ABILITY_100_PERCENT_FLANKING_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>战斗时+100%夹击加成。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_ADDITIONAL_ATTACK_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>每回合有两次进攻机会。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_AMERICAN_AH64_APACHE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>对抗重骑兵单位时+10 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_ARMATOLOS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>与丘陵地形上战斗时+5 [ICON_Strength] 战斗力。[ICON_Movement] 移动时无视丘陵地形影响。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_BALLISTA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>进攻非区域单元格时+17 [ICON_Strength] 战斗力，而进攻区域时-10 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_BANDEIRANTE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>可修建堡垒。击杀敌方单位可产出等同于其 [ICON_Strength] 战斗力25%的 [ICON_Gold] 金币和 [ICON_Culture] 文化值。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_CAMEL_ARCHER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>在沙漠或平原上战斗时+8 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_CHOSEN_INFANTRY_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>每回合 [ICON_Damaged] 生命值可额外恢复10点。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_CREE_OTEHTAPIW_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>回合开始时位于平坦地形则+2 [ICON_Movement] 移动力；若位于平原或草原时+10 [ICON_Strength] 战斗力，且每回合可恢复15点 [ICON_Damaged] 生命值。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_DRUZHINA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>对抗 [ICON_Damaged] 受损单位时+5 [ICON_Strength] 战斗力，对抗近战单位时+4 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_DUTCH_SCHUTTERIJ_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>防御时+10 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_EQUITE_ADJACENCY_BONUS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>与友方勇士或罗马军团相邻时+5 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_EXTRA_MOVEMENT_ON_SNOW_TUNDRA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>回合开始时位于冻土或雪地（及其丘陵）则+2 [ICON_Movement] 移动力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_FATHERLAND_VOLUNTEER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>位于原始 [ICON_Capital] 首都所在大陆上时+5 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_FRENCH_MARINE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>位于非原始首都所在大陆上作战时+5 [ICON_Strength] 战斗力。无视从海上进攻与跨河进攻时的 [ICON_Strength] 战斗力减益。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_FULL_STRENGTH_WHEN_DAMAGED_ON_HILLS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>在丘陵上时单位 [ICON_Damaged] 受损无 [ICON_Strength] 战斗力减益。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_GARDE_REPUBLICAINE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>在区域内防御或进攻区域时+10 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_GENDARME_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>进攻时+5 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_GEORGIAN_TADZREULI_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>进攻异教单位时+5 [ICON_Strength] 战斗力。击杀敌方单位可产出等同于其 [ICON_Strength] 战斗力50%的 [ICON_Faith] 信仰值。征服城市后，其将自动皈依您文明的主流 [ICON_Religion] 宗教。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_GHAZI_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>进攻异教单位时+5 [ICON_Strength] 战斗力。击杀敌方单位可产出等同于其 [ICON_Strength] 战斗力50%的 [ICON_Faith] 信仰值。征服城市后，其将自动皈依您文明的主流 [ICON_Religion] 宗教。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_GOLD_FROM_CITY_STATES_UNIT_KILLS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>击杀城邦单位可产出等同于其 [ICON_Strength] 战斗力的 [ICON_Gold] 金币。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_HIRDMAN_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>位于首都所在大陆时：[NEWLINE]获得+5 [ICON_Strength] 战斗力；[NEWLINE]击杀敌方单位产出等同于其 [ICON_Strength] 战斗力50%的 [ICON_Gold] 金币。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_JAGUAR_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>进攻时+10 [ICON_Strength] 战斗力，而防御时[COLOR_RED]-5[ENDCOLOR] [ICON_Strength] 战斗力。击杀敌方单位后可将其俘获并转化为建造者。在森林或雨林中 [ICON_Movement] 移动时无视地形影响。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_JINETE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>位于首都所在大陆时，击杀敌方单位可产出等同于其 [ICON_Strength] 战斗力50%的 [ICON_Faith] 信仰值。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_KHMER_WAR_CANOE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>被护送的单位获得与独木舟相同的 [ICON_Movement] 移动力。可掠夺敌方船舰。相邻陆地单位上船或登陆不消耗 [ICON_Movement] 移动力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_KOREAN_TURTLE_SHIP_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>对抗受损单位时+5 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_LESS_MOVEMENT_PILLAGE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>掠夺消耗更少的 [ICON_Movement] 移动力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_LONGBOWMAN_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>反击近战和骑兵单位时+4 [ICON_Strength] 战斗力，与其他长弓手相邻时可再+4 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_MAPUCHE_GUERILLA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>攻击后可移动。无视森林或雨林的额外 [ICON_Movement] 移动力消耗，且视野能穿过森林或雨林。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_MINUTEMAN_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>位于帝国境内或相邻边境时+5 [ICON_Strength] 战斗力。于森林或雨林中战斗时再+5 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_MOVE_AFTER_ATTACKING_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>攻击后可移动。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_MUGHAL_SOWAR_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>相邻梯井时每回合可恢复15点 [ICON_Damaged] 生命值，且 [ICON_Movement] 移动时无视地形影响。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_NUBIAN_AFRICAN_FOREST_ELEPHANT_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>可击退敌方单位。无视跨河的额外 [ICON_Movement] 移动力消耗。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_PANZER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>进攻时+5 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_PELTAST_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>防御时+5 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_PERC_50_POST_COMBAT_GOLD_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>击杀敌方单位可产出等同于其 [ICON_Strength] 战斗力50%的 [ICON_Gold] 金币。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_PERSIAN_WARSHIP_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>进攻时+5 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_PEZHETAIROS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>对抗近战单位时+10 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_PHALANX_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>若8格范围内有金字形神塔，则作战时+5 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_PLUS_10_DEFENDER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>防御时+10 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_PLUS_5_BONUS_VS_DAMAGED_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>对抗受损单位时+5 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_PLUS_5_DEFENDER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>防御时+5 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_PLUS_5_OTHER_RELIGION_COMBAT_BONUS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>进攻异教单位时+5 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_PLUS_5_WHEN_ATTACKING_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>进攻时+5 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_PLUS_X_IN_FORMATION_BONUS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>形成编队时+5 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_PLUS_X_HOLY_SITE_PROXIMITY_BONUS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>4格范围内有圣地时+5 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_PLUS_X_VS_NAVAL_RAIDER_COMBAT_BONUS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>对抗海军袭击者的编队时+10 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_PLUS_X_WHEN_ATTACKING_RANGED_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>进攻远程单位时+10 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_GRANT_HUI_HUI_PAO_BONUS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>与回回炮相邻时，进攻区域+5 [ICON_Strength] 战斗力。（蒙古 - 回回炮）</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_GRANT_KHMER_WAR_CANOE_BONUS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>与独木舟相邻时，上船或登陆不消耗 [ICON_Movement] 移动力。（高棉 - 独木舟）</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_GRANT_MEDICINE_MAN_BONUS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>与部族药师相邻时，击杀敌方单位可产出等同于其 [ICON_Strength] 战斗力50%的 [ICON_Faith] 信仰值。（刚果 - 部族药师）</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_GRANT_NORWEGIAN_ULFHEDNAR_BONUS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>与半人狼祭祀者相邻时：[NEWLINE]对抗未受损单位+5 [ICON_Strength] 战斗力，对抗受损单位则+10 [ICON_Strength] 战斗力；[NEWLINE]击杀敌方单位可产出其50% [ICON_Strength] 战斗力的 [ICON_Faith] 信仰值。（挪威 - 半人狼祭祀者）</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_GRANTE_PERSIAN_WARSHIP_BONUS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>与腓尼基战舰相邻时，回合开始可获得+5 [ICON_Strength] 战斗力、+2 [ICON_Movement] 移动力。（波兰 - 腓尼基战舰）</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_GRANT_SHIGONG_BONUS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>与大师相邻时，获得+5 [ICON_Strength] 战斗力且能获取更多战斗经验值。（中国 - 大师）</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_GRANT_SOFA_BONUS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>与其他奴隶射手相邻时+4 [ICON_Strength] 战斗力。（马里 - 奴隶射手）</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_GRANT_WARRIOR_PRIEST_BONUS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>与战斗祭司相邻时，单位 [ICON_Damaged] 受损无 [ICON_Strength] 战斗力减益，且击杀敌方单位可获得 [ICON_GreatGeneral] 大将军点数。（阿兹特克 - 战斗祭司）</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_SASR_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>在沙漠或平原战斗时+5 [ICON_Strength] 战斗力，且无视区域控制。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_SCOTTISH_GALLOWGLASS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>进攻时+5 [ICON_Strength] 战斗力，且能获取更多战斗经验值。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_SEPOY_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>[ICON_Damaged] 受伤时其 [ICON_Strength] 战斗力不会降低。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_SHIP_OF_THE_LINE_ADJACENCY_BONUS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>与其他皇家风帆战列舰相邻时+7 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_SWEDEN_HAKKAPELIITTA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>进攻时+5 [ICON_Strength] 战斗力。回合开始时若位于冻土或雪地（及其丘陵）则+2 [ICON_Movement] 移动力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_T34_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>位于帝国境内或相邻边境时+5 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_TERCIO_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>获取更多战斗经验值。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_UNIT_BONUS_VERSUS_CITY_STATES_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>进攻城邦单位时+7 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_ZULU_ASSEGAI_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>与其他部落猎手相邻时+4 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_HEAL_ON_VICTORY_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>击杀单位后恢复 [ICON_Damaged] 生命值。</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_COLOMBIAN_BRITISH_LEGION_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【补译者注：正在翻译……】[NEWLINE][NEWLINE]The British Legion (Spanish: Legión Británica) or British Legions were foreign volunteer units that fought under Simón Bolívar against Spain for the independence of Colombia, Venezuela, Ecuador and José de San Martín for the independence of Peru in the Spanish American wars of independence. Venezuelans generally called them the Albion Legion. They were composed of over seven thousand volunteers, mainly Napoleonic War veterans from Great Britain and Ireland, as well as some German veterans and some locals recruited after arriving in South America. Volunteers in the British Legion were motivated by a combination of both genuine political motives and mercenary motives.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_COLOMBIAN_BRITISH_LEGION_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>Their greatest achievements were at the Boyacá (1819), Carabobo (1821), Pichincha (1822) and Battle of Ayacucho (1824) which secured independence for Colombia, Venezuela, Ecuador and Peru from Spanish rule respectively.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_COLOMBIAN_BRITISH_LEGION_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text></Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_COLOMBIAN_BRITISH_LEGION_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text></Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_COLOMBIAN_BRITISH_LEGION_CHAPTER_HISTORY_PARA_5" Language="zh_Hans_CN">
+			<Text></Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_ENGLISH_SHIP_OF_THE_LINE_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【补译者注：正在翻译……】[NEWLINE][NEWLINE]Ships of the line are the largest and most powerful sailing vessels ever built. They formed the backbone of Europe's great navies from the 17th to the mid 19th centuries. Ships of the line were named for the classic formation that these ships fought in. In battle, each side's ships would approach the enemy in a line, and as the opposing ships passed, each would let off a thundering broadside of cannon fire, doing horrific damage to the vessels and to those aboard her. Victory usually went to the side with the most cannon and the best-trained sailors. The English were masters at this form of warfare, and their ships of the line dominated the world's oceans for more than a century.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_ENGLISH_SHIP_OF_THE_LINE_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text></Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_ENGLISH_SHIP_OF_THE_LINE_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text></Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_ENGLISH_SHIP_OF_THE_LINE_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text></Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_ENGLISH_SHIP_OF_THE_LINE_CHAPTER_HISTORY_PARA_5" Language="zh_Hans_CN">
+			<Text></Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_MAYAN_HOLKAN_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【补译者注：正在翻译……】[NEWLINE][NEWLINE]Warfare among the Mayans was a bloody and constant affair, serving both economic and religious purposes. Most leaders demanded tribute from conquered city-states in order to increase their own standing. Yet equally important was the capture of victims for sacrifice. This was the domain of the dreaded Holcan. Elite warriors armed with slingshots, stones and razor-sharp spears, the Holcans were trained specifically to capture enemies alive, to provide fodder for ever-hungry sacrificial altars.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_MAYAN_HOLKAN_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text></Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_MAYAN_HOLKAN_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text></Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_MAYAN_HOLKAN_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text></Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_MAYAN_HOLKAN_CHAPTER_HISTORY_PARA_5" Language="zh_Hans_CN">
+			<Text></Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_SWEDEN_HAKKAPELIITTA_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【补译者注：正在翻译……】[NEWLINE][NEWLINE]The snowy North is their fatherland; there, their heart crackles on the stormy beach. The Hakkapeliitta were a division of Finnish light cavalrymen employed by King Gustavus Adolphus of Sweden during the Thirty Years' War. They were highly trained, and excelled at raiding, spying, lightning-quick attacks, and most especially, charging. Attacking at full gallop, the Hakkapeliitta would fire pistol shots as they approached the enemy lines, drawing their sword once the horse made contact. The small, sturdy, and powerful horses ridden in the Hakkapeliitta were some of the founding members the modern Finnhorse breed, the national horse of Finland.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_SWEDEN_HAKKAPELIITTA_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text></Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_SWEDEN_HAKKAPELIITTA_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text></Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_SWEDEN_HAKKAPELIITTA_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text></Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_SWEDEN_HAKKAPELIITTA_CHAPTER_HISTORY_PARA_5" Language="zh_Hans_CN">
+			<Text></Text>
+		</Replace>
+			
+		<!-- 润色部分 -->
+		
+		<Replace Tag="LOC_UNIT_AMERICAN_AH64_APACHE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代直升飞机的美国原子能时代特色轻骑兵单位。对抗重骑兵单位时+10 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_AMERICAN_MINUTEMAN_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代火枪手的美国工业时代特色近战单位。位于帝国境内或相邻边境时+5 [ICON_Strength] 战斗力，在森林或雨林中战斗时+5 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_ARABIAN_CAMEL_ARCHER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>阿拉伯特色古典时代轻骑兵单位。位于沙漠或泛滥平原时+8 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_ARABIAN_GHAZI_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代剑士的阿拉伯古典时代特色近战单位。击杀敌方单位可产出等同于其 [ICON_Strength] 战斗力50%的 [ICON_Faith] 信仰值，且进攻异教单位时+5 [ICON_Strength] 战斗力。征服城市后，其将自动皈依您文明的主流 [ICON_Religion] 宗教。可用 [ICON_Faith] 信仰值购买。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_AUSTRALIAN_SASR_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代机械化步兵的澳大利亚信息时代特色近战单位。在沙漠或平原上战斗时+5 [ICON_Strength] 战斗力，且无视区域控制。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_AZTEC_JAGUAR_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代剑士的阿兹特克中世纪特色近战单位。进攻时+10 [ICON_Strength] 战斗力，而防御时[COLOR_RED]-5[ENDCOLOR] [ICON_Strength] 战斗力。击杀敌方单位后可将其俘获并转化为建造者。在森林或雨林中 [ICON_Movement] 移动时无视地形影响。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_AZTEC_WARRIOR_PRIEST_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>阿兹特克特色远古时代支援单位，完成市政“神秘主义”解锁。可用 [ICON_Faith] 信仰值购买。使相邻近战、抗骑兵和远程单位 [ICON_Damaged] 受损时无 [ICON_Strength] 战斗力减益，且击杀敌方单位可产出 [ICON_GreatGeneral] 大将军点数。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_BRAZILIAN_BANDEIRANTE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代游骑兵的巴西文艺复兴特色侦察单位，完成科技“火药”解锁。击杀敌方单位可产出等同于其 [ICON_Strength] 战斗力25%的 [ICON_Gold] 金币和 [ICON_Culture] 文化值，且能修建堡垒。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_BRAZILIAN_FATHERLAND_VOLUNTEER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代步兵的巴西工业时代特色近战单位，招募成本和维护费用更低。位于原始 [ICON_Capital] 首都所在大陆上作战时+5 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_CANADA_HMCS_HAIDA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代驱逐舰的加拿大原子能时代特色近战海军单位。形成编队时+5 [ICON_Strength] 战斗力。对抗海军袭击者单位的编队时+10 [ICON_Strength] 战斗力。附近4格范围内水域上的友方商人掠夺免疫。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_CHINESE_CHOKONU_DESCRIPTION" Language="zh_Hans_CN">
+			<!-- 这个不知道为啥没在游戏里出现 -->
+			<Text>取代弩手的中国中世纪特色远程攻击单位，[ICON_Strength] 战斗力略低于弩手但每回合有两次进攻机会。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_CHINESE_SHIGONG_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>中国特色支援单位，完成市政“军事训练”解锁。使相邻近战、骑兵、抗骑兵单位获得+5 [ICON_Strength] 战斗力且能获取更多战斗经验值。需要军营内有兵营。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_CREE_OTEHTAPIW_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代骑兵的克里工业时代特色轻骑兵单位。回合开始时若位于平坦地形则+2 [ICON_Movement] 移动力；若位于平原或草原时+10 [ICON_Strength] 战斗力，且每回合可恢复15点 [ICON_Damaged] 生命值。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_DUTCH_SCHUTTERIJ_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代火枪手的荷兰文艺复兴时期特色近战单位。训练成本与维护费用是火枪手的一半，且防御时+10 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_EGYPTIAN_HYKSOS_BOWMAN_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代弓箭手的埃及古典时代特色远程攻击单位，拥有更强的 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_EGYPTIAN_KHOPESH_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代勇士的埃及远古时代特色近战单位。对抗 [ICON_Damaged] 受损单位时+5 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_EGYPTIAN_WAR_GALLEY_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代四段帆船的埃及特色海军远程攻击单位，拥有更强的 [ICON_Strength] 战斗力且 [ICON_Range] 射程+1。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_ELEANOR_TEMPLAR_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>阿基坦的埃莉诺作为领袖时的古典时代特色近战单位。对抗异教单位时+5 [ICON_Strength] 战斗力，圣地4格范围内的圣殿骑士+5 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_ENGLISH_LONGBOWMAN_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代弩手的英国中世纪特色远程攻击单位。对抗近战和骑兵单位时+4 [ICON_Strength] 战斗力，与其他长弓手相邻时+4 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_ENGLISH_SHIP_OF_THE_LINE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代护卫舰的英国文艺复兴时期远程海军单位。与其他皇家风帆战列舰相邻时+7 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_FRENCH_GENDARME_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代骑士的法国中世纪特色重骑兵单位，进攻时+5 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_FRENCH_MARINE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代火枪手的法国文艺复兴特色近战单位。不在原始首都所在大陆上作战时+5 [ICON_Strength] 战斗力，且水陆两栖——无视从海上进攻与跨河进攻时的 [ICON_Strength] 战斗力减益。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_GEORGIAN_TADZREULI_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代骑士的格鲁吉亚特色中世纪重骑兵单位。进攻异教单位时+5 [ICON_Strength] 战斗力，击杀敌方单位可产出等同于其 [ICON_Strength] 战斗力50%的 [ICON_Faith] 信仰值。征服城市后，其将自动皈依您文明的主流 [ICON_Religion] 宗教。可用 [ICON_Faith] 信仰值购买。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_GERMAN_LANDSKNECHT_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代枪兵的德国中世纪特色抗骑兵单位，仅能用 [ICON_Gold] 金币购买，但其消耗的 [ICON_Gold] 金币是枪兵的一半。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_GERMAN_PANZER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代坦克的德国现代特色重骑兵单位，进攻时+5 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_GREEK_ARMATOLOS_DESCRIPTION" Language="zh_Hans_CN">
+			<!-- 这个不知道为啥没在游戏里出现 -->
+			<Text>取代线列步兵的希腊工业时代特色近战单位，于丘陵作战时+5 [ICON_Strength] 战斗力且 [ICON_Movement] 移动时无视其地形影响。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_GREEK_PELTAST_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代弓箭手的希腊远古时代特色远程攻击单位，防御时+5 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_HUNGARY_KALANDOZO_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代弩手的匈牙利中世纪特色远程单位。掠夺区域或改良设施可获得双倍 [ICON_Gold] 金币，击杀敌方单位可产出等同于其 [ICON_Strength] 战斗力50%的 [ICON_Gold] 金币。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_INCA_CHASQUI_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代侦察兵的印加远古时代特色侦察单位。额外+1 [ICON_Movement] 移动力，能够修建道路。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_INDIAN_MUGHAL_SOWAR_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代骑士的印度文艺复兴特色重骑兵单位。靠近梯井时每回合恢复15点 [ICON_Damaged] 生命值，且 [ICON_Movement] 移动时无视地形影响。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_INDIAN_SEPOY_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代线列步兵的印度工业时代特色近战单位。[ICON_Damaged] 受损时无 [ICON_Strength] 战斗力减益。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_INDONESIAN_KRIS_SWORDSMAN_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代步兵的印度尼西亚特色近战单位。采用武僧的 [ICON_Promotion] 强化路线，且可用 [ICON_Faith] 信仰值购买。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_JANISSARY_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>文艺复兴时代特色近战单位，成为“埃里温”或“普雷斯拉夫”的宗主国时解锁。击杀单位即可恢复 [ICON_Damaged] 生命值。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_JAPANESE_SOHEI_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>日本特色中世纪近战单位。可用 [ICON_Faith] 信仰值购买，防御时+10 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_JAPANESE_YAMATO_DESCRIPTION" Language="zh_Hans_CN">
+			<!-- 这个不知道为啥没在游戏里出现 -->
+			<Text>取代战列舰的日本特色现代海军远程攻击单位，拥有更强的 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_KHMER_WAR_CANOE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代桨帆船的高棉远古时代特色海军近战单位。能掠夺敌方船舰，被其护送的单位能获得与之相同的 [ICON_Movement] 移动力，且相邻陆地单位上船或登陆不消耗 [ICON_Movement] 移动力。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_KONGO_GARDE_REPUBLICAINE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代机械化步兵的刚果信息时代特色近战单位，进攻区域、或在区域内防御时+10 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_KONGO_MEDICINE_MAN_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>刚果特色支援单位，完成市政“神秘主义”解锁。提高相邻近战、骑兵、抗骑兵及远程单位的 [ICON_Damaged] 生命值恢复，且击杀敌方单位可产出等同于其 [ICON_Strength] 战斗力50%的 [ICON_Faith] 信仰值。只能用 [ICON_Faith] 信仰值购买。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_KOREAN_TURTLE_SHIP_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代轻快帆船的朝鲜特色文艺复兴时期海军近战单位，更强大且移动更快。对抗受损单位时+5 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_MACEDONIAN_BALLISTA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代投石机的马其顿古典时代特色攻城单位，进攻非区域单元格时+17 [ICON_Strength] 战斗力，而进攻区域时[COLOR_RED]-10[ENDCOLOR] [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_MACEDONIAN_HETAIROI_NAME" Language="zh_Hans_CN">
+			<!-- 我认为官方的伙友骑兵翻的也不错，而且“简称伙伴”也写到了背景故事里了，就又把“伙伴骑兵”给改回来了 -->
+			<Text>伙友骑兵</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_MACEDONIAN_PEZHETAIROS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代枪兵的马其顿古典时代特色抗骑兵单位，拥有更强的 [ICON_Strength] 战斗力，且对抗近战单位时+10 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_MALI_SOFA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代弩手的马里中世纪特色远程单位。对抗 [ICON_Damaged] 受损单位时+5 [ICON_Strength] 战斗力。相邻的骑兵单位获得+4 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_MAORI_TUPARA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代游骑兵的毛利工业时代特色侦察单位。[ICON_Strength] 战斗力略低于游骑兵，但每回合有两次进攻机会，能够修建改良设施“帕堡”。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_MAPUCHE_GUERILLA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代长矛兵的马普切中世纪特色抗骑兵单位。能进行 [ICON_Ranged] 远程攻击，且攻击后可移动。无视森林或雨林的额外 [ICON_Movement] 移动力消耗，且视野能穿过森林或雨林。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_MONGOLIAN_HUI_HUI_PAO_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代投石机的蒙古中世纪特色攻城单位，拥有更强的 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_NORWEGIAN_HIRDMAN_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代剑士的挪威古典时代特色近战单位。位于原始 [ICON_Capital] 首都所在大陆上作战时+5 [ICON_Strength] 战斗力，且击杀敌方单位可产出等同于其 [ICON_Strength] 战斗力50%的 [ICON_Gold] 金币。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_NORWEGIAN_ULFHEDNAR_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>挪威特色远古时代支援单位，完成市政“神秘主义”解锁。相邻陆地单位对抗未受损单位时+5 [ICON_Strength] 战斗力；对抗 [ICON_Damaged] 受损单位则+10 [ICON_Strength] 战斗力。击杀敌方单位可产出等同于其 [ICON_Strength] 战斗力50%的 [ICON_Faith] 信仰值。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_NUBIAN_AFRICAN_FOREST_ELEPHANT_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代骑士的努比亚特色中世纪重骑兵单位。无视跨河的额外 [ICON_Movement] 移动力消耗，且能击退敌方单位。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_OTTOMAN_SIPAHI_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代骑士的奥斯曼中世纪特色重骑兵单位。+100%夹击 [ICON_Strength] 战斗力加成，掠夺可消耗更少的 [ICON_Movement] 移动力。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_PERSIAN_CATAPHRACT_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>波斯特色古典时代重骑兵单位，拥有更强的 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_PERSIAN_WARSHIP_DESCRIPTION" Language="zh_Hans_CN">
+			<!-- 这个不知道为啥没在游戏里出现 -->
+			<Text>取代浆帆船的波斯古典时代特色近战海军单位。进攻时+5 [ICON_Strength] 战斗力，相邻陆地单位在回合开始时+5 [ICON_Strength] 战斗力、+2 [ICON_Movement] 移动力。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_PHOENICIA_NUMIDIAN_CAVALRY_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代骑手的腓尼基古典时代特色轻骑兵单位。可进行 [ICON_Ranged] 远程攻击，且攻击后可移动。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_POLISH_CHOSEN_INFANTRY_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代火枪手的波兰工业时代特色近战单位。每回合可额外恢复10点 [ICON_Damaged] 生命值。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_POLISH_UHLAN_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代骑兵的波兰中世纪特色轻骑兵单位。+100%夹击 [ICON_Strength] 战斗力加成。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_ROMAN_EQUITE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代骑手的罗马古典时代特色轻骑兵单位。与友方勇士或罗马军团相邻时+5 [ICON_Strength] 战斗力，且击杀敌方单位可产出等同于其 [ICON_Strength] 战斗力50%的 [ICON_Gold] 金币。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_ROMAN_ONAGER_DESCRIPTION" Language="zh_Hans_CN">
+			<!-- 这个不知道为啥没在游戏里出现 -->
+			<Text>取代石弩的罗马古典时代特色攻城单位。拥有更强的 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_RUSSIAN_DRUZHINA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代追猎者的俄罗斯中世纪特色轻骑兵单位。对抗 [ICON_Damaged] 受损单位时+5 [ICON_Strength] 战斗力，对抗近战单位时+4 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_RUSSIAN_T34_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代坦克的俄罗斯现代特色重骑兵单位。训练成本与维护费用更低。位于帝国境内或相邻边境时+5 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_SCOTTISH_GALLOWGLASS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代长剑士的苏格兰中世纪特色近战单位。进攻时+5 [ICON_Strength] 战斗力，且能获取更多战斗经验值。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_SCYTHIAN_AMAZON_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代骑士的斯基泰中世纪特色重骑兵单位。攻击后可移动。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_SCYTHIAN_AMAZON_SCOUT_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代侦察兵的斯基泰远古时代特色侦察单位。比侦察兵更强大。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_SPANISH_CONQUISTADOR_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代火枪手的西班牙文艺复兴时期特色近战单位。与传教士、审判官或使徒同处一个单元格时+9 [ICON_Strength] 战斗力。该单位征服城市后、或征服城市时该单位与其市中心相邻，其将自动皈依您文明的主流 [ICON_Religion] 宗教。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_SPANISH_JINETE_DESCRIPTION" Language="zh_Hans_CN">
+			<!-- 这个不知道为啥没在游戏里出现 -->
+			<Text>取代骑手的西班牙古典时代特色轻骑兵单位。位于原始 [ICON_Capital] 首都所在大陆上时，击杀敌方单位可产出等同于其 [ICON_Strength] 战斗力50%的 [ICON_Faith] 信仰值。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_SPANISH_TERCIO_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>西班牙特色文艺复兴时期抗骑兵单位，能获取更多战斗经验值。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_SUMERIAN_PHALANX_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代枪兵的苏美尔远古时代特色抗骑兵单位，完成科技“采矿”解锁。在金字形神塔8格范围内的铜盾枪阵步兵作战时+5 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_SWEDEN_HAKKAPELIITTA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代骑兵的瑞典工业时代特色轻骑兵单位。进攻时+5 [ICON_Strength] 战斗力。回合开始时若位于冻土或雪地（及其丘陵）则+2 [ICON_Movement] 移动力。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_ZULU_ASSEGAI_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代弓箭手的祖鲁远古时代远程单位。与其他部落猎手相邻时+4 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+
+		<Replace Tag="MINUS_10_WHEN_ATTACKING_DISTRICT_MALUS_DESC" Language="zh_Hans_CN">
+			<Text>[COLOR_RED]-10[ENDCOLOR] [ICON_Strength] 战斗力 来自于进攻区域</Text>
+		</Replace>
+		<Replace Tag="PLUS_10_VERSUS_MELEE_COMBAT_BONUS_DESC" Language="zh_Hans_CN">
+			<Text>+10 [ICON_Strength] 战斗力 来自于对抗近战单位</Text>
+		</Replace>
+		<Replace Tag="PLUS_10_VS_HEAVY_CAVALRY_COMBAT_BONUS_DESC" Language="zh_Hans_CN">
+			<Text>+10 [ICON_Strength] 战斗力 来自于对抗重骑兵单位</Text>
+		</Replace>
+		<Replace Tag="PLUS_10_WHEN_DEFENDING_COMBAT_BONUS_DESC" Language="zh_Hans_CN">
+			<Text>+10 [ICON_Strength] 战斗力 来自于主动防御</Text>
+		</Replace>
+		<Replace Tag="PLUS_10_WHEN_DEFENDING_DISTRICT_BONUS_DESC" Language="zh_Hans_CN">
+			<Text>+10 [ICON_Strength] 战斗力 来自于在区域内防御</Text>
+		</Replace>
+		<Replace Tag="PLUS_15_VS_HEAVY_CAVALRY_COMBAT_BONUS_DESC" Language="zh_Hans_CN">
+			<Text>+15 [ICON_Strength] 战斗力 来自于对抗重骑兵单位</Text>
+		</Replace>
+		<Replace Tag="PLUS_17_WHEN_ATTACKING_NON_DISTRICT_BONUS_DESC" Language="zh_Hans_CN">
+			<Text>+17 [ICON_Strength] 战斗力 来自于进攻非区域单元格</Text>
+		</Replace>
+		<Replace Tag="PLUS_20_VS_LIGHT_CAVALRY_COMBAT_BONUS_DESC" Language="zh_Hans_CN">
+			<Text>+20 [ICON_Strength] 战斗力 来自于对抗轻骑兵单位</Text>
+		</Replace>
+		<Replace Tag="PLUS_4_ASSEGAI_ADJACENCY_COMBAT_BONUS_DESC" Language="zh_Hans_CN">
+			<Text>+4 [ICON_Strength] 战斗力 来自于相邻部落猎手</Text>
+		</Replace>
+		<Replace Tag="PLUS_4_LONGBOWMAN_ADJACENCY_COMBAT_BONUS_DESC" Language="zh_Hans_CN">
+			<Text>+4 [ICON_Strength] 战斗力 来自于相邻长弓手</Text>
+		</Replace>
+		<Replace Tag="PLUS_4_VERSUS_MELEE_CAVALRY_COMBAT_BONUS_DESC" Language="zh_Hans_CN">
+			<Text>+4 [ICON_Strength] 战斗力 来自于对抗近战和骑兵单位</Text>
+		</Replace>
+		<Replace Tag="PLUS_4_VERSUS_MELEE_COMBAT_BONUS_DESC" Language="zh_Hans_CN">
+			<Text>+4 [ICON_Strength] 战斗力 来自于对抗近战单位</Text>
+		</Replace>
+		<Replace Tag="PLUS_5_CAPITAL_CONTINENT_COMBAT_BONUS_DESC" Language="zh_Hans_CN">
+			<Text>+5 [ICON_Strength] 战斗力 来自于位处原始首都所在大陆</Text>
+		</Replace>
+		<Replace Tag="PLUS_5_COMBAT_STRENGTH_NON_DISTRICT_DESC" Language="zh_Hans_CN">
+			<Text>+5 [ICON_Strength] 战斗力 来自于进攻非区域单元格</Text>
+		</Replace>
+		<Replace Tag="PLUS_5_DESERT_PLAINS_COMBAT_BONUS_DESC" Language="zh_Hans_CN">
+			<Text>+5 [ICON_Strength] 战斗力 来自于在沙漠或平原上</Text>
+		</Replace>
+		<Replace Tag="PLUS_5_EQUITE_ADJACENCY_COMBAT_BONUS_DESC" Language="zh_Hans_CN">
+			<Text>+5 [ICON_Strength] 战斗力 来自于相邻勇士或罗马军团</Text>
+		</Replace>
+		<Replace Tag="PLUS_5_FOREIGN_COMBAT_BONUS_DESC" Language="zh_Hans_CN">
+			<Text>+5 [ICON_Strength] 战斗力 来自于位处非原始首都所在大陆</Text>
+		</Replace>
+		<Replace Tag="PLUS_5_FOREST_JUNGLE_COMBAT_BONUS_DESC" Language="zh_Hans_CN">
+			<Text>+5 [ICON_Strength] 战斗力 来自于在森林或雨林中</Text>
+		</Replace>
+		<Replace Tag="PLUS_5_HILLS_COMBAT_BONUS_DESC" Language="zh_Hans_CN">
+			<Text>+5 [ICON_Strength] 战斗力 来自于在丘陵上</Text>
+		</Replace>
+		<Replace Tag="PLUS_5_NOT_OWNER_TERRITORY_COMBAT_BONUS_DESC" Language="zh_Hans_CN">
+			<Text>+5 [ICON_Strength] 战斗力 来自于在帝国境外作战</Text>
+		</Replace>
+		<Replace Tag="PLUS_5_OTHER_RELIGION_COMBAT_BONUS_DESC" Language="zh_Hans_CN">
+			<Text>+5 [ICON_Strength] 战斗力 来自于对抗异教单位</Text>
+		</Replace>
+		<Replace Tag="PLUS_5_PLAINS_GRASS_COMBAT_BONUS_DESC" Language="zh_Hans_CN">
+			<Text>+5 [ICON_Strength] 战斗力 来自于在平原或草原上</Text>
+		</Replace>
+		<Replace Tag="PLUS_5_WHEN_ATTACKING_COMBAT_BONUS_DESC" Language="zh_Hans_CN">
+			<Text>+5 [ICON_Strength] 战斗力 来自于主动进攻</Text>
+		</Replace>
+		<Replace Tag="PLUS_5_WHEN_DEFENDING_COMBAT_BONUS_DESC" Language="zh_Hans_CN">
+			<Text>+5 [ICON_Strength] 战斗力 来自于主动防御</Text>
+		</Replace>
+		<Replace Tag="PLUS_5_ZIGURRAT_PROXIMITY_COMBAT_BONUS_DESC" Language="zh_Hans_CN">
+			<Text>+5 [ICON_Strength] 攻击力 来自于8格范围内的金字形神塔</Text>
+		</Replace>
+		<Replace Tag="PLUS_8_DESERT_PLAINS_COMBAT_BONUS_DESC" Language="zh_Hans_CN">
+			<Text>+8 [ICON_Strength] 战斗力 来自于在沙漠或平原上</Text>
+		</Replace>
+		<Replace Tag="PLUS_X_ADJACENT_FRIENDLY_NAVAL_RANGED_BONUS_DESC" Language="zh_Hans_CN">
+			<Text>[ICON_Strength] 战斗力 来自于相邻于克伦纳级护卫舰</Text>
+		</Replace>
+		<Replace Tag="PLUS_X_HOLY_SITE_PROXIMITY_BONUS_DESC" Language="zh_Hans_CN">
+			<Text>[ICON_Strength] 战斗力 来自于4格范围内圣地的加成</Text>
+		</Replace>
+		<Replace Tag="PLUS_X_IN_FORMATION_BONUS_DESC" Language="zh_Hans_CN">
+			<Text>[ICON_Strength] 战斗力 来自于形成编队</Text>
+		</Replace>
+		<Replace Tag="PLUS_X_VS_MELEE_ANTICAV_LIGHTCAV_COMBAT_BONUS_DESC" Language="zh_Hans_CN">
+			<Text>+8 [ICON_Strength] 战斗力 来自于对抗近战、抗骑兵、轻骑兵单位</Text>
+		</Replace>
+		<Replace Tag="PLUS_X_VS_NAVAL_RAIDER_COMBAT_BONUS_DESC" Language="zh_Hans_CN">
+			<Text>[ICON_Strength] 战斗力 来自于对抗海军袭击者的编队</Text>
+		</Replace>
+		<Replace Tag="RECEIVE_HUI_HUI_PAO_BONUS_DESC" Language="zh_Hans_CN">
+			<Text>+5 [ICON_Strength] 战斗力 来自于同回回炮相邻时进攻区域</Text>
+		</Replace>
+		<Replace Tag="RECEIVE_NORWEGIAN_ULFHEDNAR_COMBAT_BONUS_DESC" Language="zh_Hans_CN">
+			<Text>+5 [ICON_Strength] 战斗力 来自于对抗未受损单位</Text>
+		</Replace>
+		<Replace Tag="RECEIVE_NORWEGIAN_ULFHEDNAR_DAMAGED_UNITS_BONUS_DESC" Language="zh_Hans_CN">
+			<Text>+10 [ICON_Strength] 战斗力 来自于对抗受损单位</Text>
+		</Replace>
+		<Replace Tag="RECEIVE_PERSIAN_WARSHIP_COMBAT_STRENGTH_BONUS_DESC" Language="zh_Hans_CN">
+			<Text>+5 [ICON_Strength] 战斗力 来自于相邻腓尼基战舰</Text>
+		</Replace>
+		<Replace Tag="RECEIVE_SHIGONG_COMBAT_BONUS_DESC" Language="zh_Hans_CN">
+			<Text>+5 [ICON_Strength] 战斗力 来自于相邻大师</Text>
+		</Replace>
+		<Replace Tag="RECEIVE_SOFA_BONUS_DESC" Language="zh_Hans_CN">
+			<Text>[ICON_Strength] 战斗力 来自于相邻奴隶射手</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_KHMER_WAR_CANOE_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【补译者注：正在翻译……】[NEWLINE][NEWLINE]Both the Chams and the Khmers used navies during their 12th-century wars, the former often employing fleets of more than 100 vessels. Some of these ships were war junks, which saw active service in coastal fighting against the Chinese and during the Mongol invasions of Vietnam between 1281 and 1288, but the most common form of warship among both peoples was the war barge or war canoe propelled by oarsmen. These were most often found in river warfare or fighting off the coast in support of land armies: they could not venture far from a friendly shore because of the need to replenish their fresh water supplies.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_KHMER_WAR_CANOE_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>Our main sources of information on the fighting ships of the Khmers and the Chams and the nature of their warfare are the bas-reliefs carved into the walls of Banteay Chmar and the Bayon of Angkor Thom in Cambodia. They are believed to illustrate the battles that took place when the Khmers were liberated from the Cham invasion in 1181, and are therefore biased towards the Cambodian point of view, but their detail is unparalleled as a historical source. River fighting is illustrated, as shown by the absence of marine life in the depictions of the river and the presence of crocodiles.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_KHMER_WAR_CANOE_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>The war barges were very large dugout canoes. In one relief 23 oarsmen may be counted on each side of the barge, which must be about 100 feet long. The barges have striking figureheads carved to resemble monsters, and complementary curved 'tails' at the stem, which makes them look rather like Viking ships.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_KHMER_WAR_CANOE_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text></Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_KHMER_WAR_CANOE_CHAPTER_HISTORY_PARA_5" Language="zh_Hans_CN">
+			<Text></Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_CREE_OTEHTAPIW_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【补译者注：正在翻译……】[NEWLINE][NEWLINE]Horses, once present in North America, became extinct on the continent approximately 10,000 years ago. Before the arrival of the Spanish, the only pack animal the Native Americans on the Plains had at their disposal was dogs. After the Spaniards introduced horses to Plains Native Americans, the lives of the tribes changed. Tribes became less settled and sedentary. The horse allowed them to hunt animals such as bison or buffalo, and, instead of staying in one place, tribes began to be nomadic. Their desire to hunt and their ability to roam over greater stretches of land also put them into greater conflict with other tribes, leading to increased warfare. It became a badge of honor to steal horses from neighboring tribes, and warriors were honored. Some tribes were able to become adept mounted warriors and take over land from other tribes. With the ability to hunt, the population of Plains tribes, including the Kiowa, Cheyenne, Lakota Sioux, Comanche, and others, grew, as did their affluence, to new levels. With greater ability to trade, they had access to new items, such as blankets, larger teepees, and firearms. As some tribes developed a greater ability to use the horse, some tribes had more power than others.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_CREE_OTEHTAPIW_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text></Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_CREE_OTEHTAPIW_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text></Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_CREE_OTEHTAPIW_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text></Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_CREE_OTEHTAPIW_CHAPTER_HISTORY_PARA_5" Language="zh_Hans_CN">
+			<Text></Text>
+		</Replace>
+		
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_GEORGIAN_TADZREULI_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【补译者注：正在翻译……】[NEWLINE][NEWLINE]There is a long history of relations between Georgia and the Holy Land and according to some Georgian historians, the origins of the Tadzrelebi (Georgian for "People of the Temple") may be as far back as the fifth century. Relations between Georgia and the Holy Land became especially close from the fourth century, after the official adoption of Christianity in the Kingdom of Iberia (Eastern Georgia). Georgians were in the Holy Land as early as the fifth century, Peter the Iberian being among the first to settle there.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_GEORGIAN_TADZREULI_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>The position of the Georgians became especially remarkable in the Holy Land after the unification of the Georgian kingdom in the 12th century. They had distinguished places in the most important Christian shrines, like the Church of the Holy Sepulcher. According to the German clergyman and orient pilgrim Ludolf von Sudheim, the keys of the Chapel of the Holy Sepulchre were in hands of the "ancient Georgians". Certain monasteries belonged entirely to the Georgians, like the Monastery of the Cross which was patronized by Tamar. Recent archaeological work in the Church of the Holy Cross has shown that the present building was constructed over the remains of an earlier church of the sixth or seventh century.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_GEORGIAN_TADZREULI_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>The chronicle of Tamar the Great praises her universal protection of Christianity and her support of churches and monasteries from Egypt to Bulgaria and Cyprus. The Georgian court was primarily concerned with the protection of the Georgian monastic centers in the Holy Land. By the 12th century, eight Georgian monasteries were listed in Jerusalem. Saladin's biographer, Baha ad-Din ibn Saddad, reports that after the Ayyubid conquest of Jerusalem in 1187, Tamar sent envoys to the sultan to request that the confiscated possessions of the Georgian monasteries in Jerusalem be returned. Saladin's response is not recorded, but the queen's efforts seem to have been successful.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_GEORGIAN_TADZREULI_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>Other sources tell that the Georgian Tadzrelebi who provided military protection for the churches and monasteries were fierce fighters who were feared by their enemies.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_GEORGIAN_TADZREULI_CHAPTER_HISTORY_PARA_5" Language="zh_Hans_CN">
+			<Text></Text>
+		</Replace>
+
+		<!-- 新纪元季票后的补更 -->
+
+		<Replace Tag="LOC_UNIT_COLOMBIAN_BRITISH_LEGION_NAME" Language="zh_Hans_CN">
+			<Text>不列颠兵团</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_COLOMBIAN_BRITISH_LEGION_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>大哥伦比亚工业时代特色近战单位。单位 [ICON_Damaged] 受损时，若在丘陵上战斗则无 [ICON_Strength] 战斗力减益。攻击远程单位时+5 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_UNIT_MAYAN_HOLKAN_NAME" Language="zh_Hans_CN">
+			<Text>霍尔肯</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_MAYAN_HOLKAN_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>玛雅中世纪特色近战单位。攻击城邦单位时+5 [ICON_Strength] 战斗力，且在击杀城邦单位时产出等同于其 [ICON_Strength] 战斗力的 [ICON_Gold] 金币。</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_UNIT_GAUL_CARRUS_NAME" Language="zh_Hans_CN">
+			<Text>双轮战车</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_GAUL_CARRUS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代重型战车的高卢远古时代特色重骑兵单位。与抗骑兵单位战斗时+7 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_UNIT_ETHIOPIAN_MEHAL_SEFARI_NAME" Language="zh_Hans_CN">
+			<Text>梅哈尔·塞法里</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_ETHIOPIAN_MEHAL_SEFARI_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代线列步兵的埃塞俄比亚文艺复兴时期特色近战单位。对抗 [ICON_Strength] 基础战斗力更高的单位时+6 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_UNIT_BYZANTINE_VARANGIAN_GUARD_NAME" Language="zh_Hans_CN">
+			<Text>瓦兰吉卫队</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_BYZANTINE_VARANGIAN_GUARD_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代长剑士的拜占庭中世纪特色近战单位。在区域内战斗时+5 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_UNIT_BABYLONIAN_BOWMAN_NAME" Language="zh_Hans_CN">
+			<Text>纳斯·卡什蒂</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_BABYLONIAN_BOWMAN_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代弓箭手的巴比伦远古时代特色远程攻击单位。进攻或占领区域时+5 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_UNIT_VIETNAMESE_VIETCONG_NAME" Language="zh_Hans_CN">
+			<Text>越共</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_VIETNAMESE_VIETCONG_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代步兵的越南现代特色近战单位。若位于雨林、沼泽与森林单元格中，则与敌方单位距离超过1格时保持隐形。相较于步兵，训练越共消耗更少资源，且无需 [ICON_RESOURCE_OIL] 油。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_UNIT_PORTUGUESE_KNIGHT_OF_AVIZ_NAME" Language="zh_Hans_CN">
+			<Text>阿维斯骑士</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_PORTUGUESE_KNIGHT_OF_AVIZ_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>取代骑士的葡萄牙中世纪特色重骑兵单位。进攻区域时+6 [ICON_Strength] 战斗力。无视从海上进攻与跨河进攻时的额外 [ICON_Movement] 移动力消耗与 [ICON_Strength] 战斗力减益。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_BYZANTINE_VARANGIAN_GUARD_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【补译者注：正在翻译……】[NEWLINE][NEWLINE]The Varangian Guard was an elite unit of the Byzantine Army from the tenth to the fourteenth century. The members served as personal bodyguards to the Byzantine Emperors. The Varangian Guard was known for being primarily composed of recruits from northern Europe, including Norsemen from Scandinavia and Anglo-Saxons from England. The recruitment of distant foreigners from outside Byzantium to serve as the emperor's personal guard was pursued as a deliberate policy, as they lacked local political loyalties and could be counted upon to suppress revolts by disloyal Byzantine factions.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_BYZANTINE_VARANGIAN_GUARD_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>The Rus' provided the earliest members of the Varangian Guard. They were in Byzantine service from as early as 874. The Guard was first formally constituted under Emperor Basil II in 988, following the Christianization of Kievan Rus' by Vladimir I of Kiev. Vladimir, who had recently usurped power in Kiev with an army of Varangian warriors, sent 6,000 men to Basil as part of a military assistance agreement. Basil's distrust of the native Byzantine guardsmen, whose loyalties often shifted, with fatal consequences, as well as the proven loyalty of the Varangians, many of whom had previously served in Byzantium, led the Emperor to employ them as his personal guardsmen.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_BYZANTINE_VARANGIAN_GUARD_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>Immigrants from Scandinavia (predominantly immigrants from Sweden, but also elements from Denmark and Norway) kept an almost entirely Norse cast to the organization until the late 11th century. According to the late Swedish historian Alf Henrikson in his book Svensk Historia (History of Sweden), the Norse Varangian guardsmen were recognized by long hair, a red ruby set in the left ear and ornamented dragons sewn on their chainmail shirts.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_BYZANTINE_VARANGIAN_GUARD_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>In these years, Swedish men left to enlist in the Byzantine Varangian Guard in such numbers that a medieval Swedish law, Västgötalagen, from Västergötland declared no one could inherit while staying in "Greece" — the then Scandinavian term for the Byzantine Empire — to stop the emigration.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_BYZANTINE_VARANGIAN_GUARD_CHAPTER_HISTORY_PARA_5" Language="zh_Hans_CN">
+			<Text>The Varangian Guard not only provided security for the Byzantine emperors, but also participated in many wars, often playing a decisive role, since they were usually deployed at critical moments of a battle. By the late 13th century, Varangians were mostly ethnically assimilated by the Byzantine Greeks, though the Guard remained in existence until at least mid-14th century. In 1400, there were still some people identifying themselves as "Varangians" in Constantinople.</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_ETHIOPIAN_MEHAL_SEFARI_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【补译者注：正在翻译……】[NEWLINE][NEWLINE]The Mehal Sefari was an elite unit of Imperial guardsmen who protected the emperors of Ethiopia in the 19th and 20th centuries. Originally serving as the personal bodyguards for the emperors of Ethiopia, the Mehal Sefari grew to become a formidable brigade of the Ethiopian military. Consisting of specialized units of infantry, cavalry, artillery and marksmen, the Mehal Sefari's status as the elite force of Ethiopia was ensured by the rigorous training and modern equipment provided to them.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_ETHIOPIAN_MEHAL_SEFARI_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text></Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_ETHIOPIAN_MEHAL_SEFARI_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text></Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_ETHIOPIAN_MEHAL_SEFARI_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text></Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_ETHIOPIAN_MEHAL_SEFARI_CHAPTER_HISTORY_PARA_5" Language="zh_Hans_CN">
+			<Text></Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_GAUL_CARRUS_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【补译者注：正在翻译……】[NEWLINE][NEWLINE]Beginning around the 3rd century BC, Celts of the regions around the Marne and the Moselle Rivers began burying their chieftains in light, two-wheeled chariots with their sword, shield, spears, and drinking vessels. Similar chariot graves from this era are also found in the British coastal regions of Yorkshire. The evidence for the use of these vehicles is clear. A Roman coin from 110 BC dramatically depicts the naked Gallic warrior-king Bituitus of the Averni casting spears from his chariot. And documentary evidence of the chariot in combat on the European continent is left to us by the Roman poet Propertius. In describing the fighting between the forces of Republican Rome and 30,000 howling Celtic warriors in 222 BC, Propertius depicts the chieftain Viridomar “clothed in striped trousers” hurling javelins from his chariot with deadly accuracy. In fact, many of the Latin words for chariot—carpentium, carrus, essendum—have Gaulish roots.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_GAUL_CARRUS_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text></Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_GAUL_CARRUS_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text></Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_GAUL_CARRUS_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text></Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_GAUL_CARRUS_CHAPTER_HISTORY_PARA_5" Language="zh_Hans_CN">
+			<Text></Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_BABYLONIAN_BOWMAN_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【补译者注：正在翻译……】[NEWLINE][NEWLINE]We have a fairly accurate picture of the extraordinary Babylonian archer units, thanks to a beautiful Assyrian mosaic showing them marching off to battle. The Babylon archers are dressed in colorful padded robes and carry four-foot long bows, as well as a quiver of arrows slung on their backs. The archers also carry spears or daggers, doubtless for personal defense if enemy units get close enough for hand-to-hand combat.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_BABYLONIAN_BOWMAN_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>Separate units carrying large, man-height shields would accompany the bowman, providing in effect, a movable fortress. The bowmen were an integral part of the Babylonian infantry, as their numbers were easier to train and replace than the more expensive cavalry. Bowmen also helped man the famed Walls of Babylon, taking up positions in the many turrets dotting its line.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_BABYLONIAN_BOWMAN_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text></Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_BABYLONIAN_BOWMAN_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text></Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_BABYLONIAN_BOWMAN_CHAPTER_HISTORY_PARA_5" Language="zh_Hans_CN">
+			<Text></Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_VIETNAMESE_VIETCONG_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【补译者注：正在翻译……】[NEWLINE][NEWLINE]The Viet Cong, also known as the National Liberation Front of Southern Vietnam or NLF, was an armed communist political revolutionary organization in South Vietnam and Cambodia. Its military force, the Liberation Army of South Vietnam (LASV), fought against the United States and South Vietnamese governments during the Vietnam War, eventually emerging on the winning side. The LASV had both guerrilla and regular army units, as well as a network of cadres who organized peasants in the territory the Viet Cong controlled. During the war, communist insurgents and anti-war activists claimed that the Viet Cong was an insurgency indigenous to the South, while the U.S. and South Vietnamese governments portrayed the group as a tool of North Vietnam.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_VIETNAMESE_VIETCONG_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>North Vietnam established the National Liberation Front on December 20, 1960, to foment insurgency in the South. Many of the Viet Cong's core members were volunteer "regroupees", southern Viet Minh who had resettled in the North after the Geneva Accord (1954). Hanoi gave the regroupees military training and sent them back to the South along the Ho Chi Minh trail in the early 1960s. The NLF called for southern Vietnamese to "overthrow the camouflaged colonial regime of the American imperialists" and to make "efforts toward the peaceful unification". The LASV's best-known action was the Tet Offensive, a gigantic assault on more than 100 South Vietnamese urban centers in 1968, including an attack on the U.S. embassy in Saigon. The offensive riveted the attention of the world's media for weeks, but also overextended the Viet Cong. Later communist offensives were conducted predominantly by the North Vietnamese. The organization was dissolved in 1976 when North and South Vietnam were officially unified under a communist government.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_VIETNAMESE_VIETCONG_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text></Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_VIETNAMESE_VIETCONG_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text></Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_VIETNAMESE_VIETCONG_CHAPTER_HISTORY_PARA_5" Language="zh_Hans_CN">
+			<Text></Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_PORTUGUESE_KNIGHT_OF_AVIZ_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【补译者注：正在翻译……】[NEWLINE][NEWLINE]The order, as a monastic military order, was founded in emulation of such military orders as the Knights Templar, which existed in Portugal as early as 1128, and received a grant from Theresa, Countess of Portugal in the year of the Council of Troyes, which confirmed their early statutes. A native order of this kind sprang up in Portugal about 1146. Afonso, the first king, gave to it the town of Évora, captured from the Moors in 1166, and the Knights were first called "Friars of Santa Maria of Évora". Gonçalo Viegas, was the first grand master.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_PORTUGUESE_KNIGHT_OF_AVIZ_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>After the conquest of Aviz a castle erected there became the motherhouse of the order, and they were then called "Knights of St. Benedict of Aviz", since they adopted the Benedictine rule in 1162, as modified by John Ziritu, one of the earliest Cistercian abbots of Portugal. Like the Knights of Calatrava in Castile, the Knights of Portugal were indebted to the Cistercians for their rule and their habit—a white mantle with a green fleur-de-lysed cross. The Knights of Calatrava also surrendered some of their places in Portugal to them on condition that the Knights of Aviz should be subject to the visitation of their grand master. Hence the Knights of Aviz were sometimes regarded as a branch of the Calatravan Order, although they never ceased to have a Portuguese grand master, dependent for temporalities on the Portuguese King.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_PORTUGUESE_KNIGHT_OF_AVIZ_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>At the death of King Ferdinand (1383) war broke out between Castile and Portugal. When João I, who had been grand master of the Knights of Aviz, ascended the throne of Portugal, he forbade the knights to submit to Castilian authority, and consequently, when Gonsalvo de Guzman came to Aviz as Visitor, the knights, while according him hospitality, refused to recognise him as a superior. Guzman protested, and the point remained a subject of contention until the Council of Basle (1431), when Portugal was declared to be in the wrong. But the right of the Calatravans was never exercised, and the next grand master of the Knights of Aviz, Fernando Rodrigues de Sequeira, continued to assert supreme authority over them.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_PORTUGUESE_KNIGHT_OF_AVIZ_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>The mission of the military orders in Portugal seemed to end after the overthrow of Muslim domination, but the Portuguese expeditions across the sea opened up a new field for them. The conquest of Ceuta by King João I (1415), the attacks upon Tangier under João's son Duarte (1437) were also crusades, inspired by a religious spirit and sanctioned by similar Papal Bulls. The Knights of Aviz and the Knights of Christ from Order of Christ, scions of the Knights Templars, achieved deeds of valour, the former under the Prince Fernando, the latter under Henrique, brother of King Duarte.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_PORTUGUESE_KNIGHT_OF_AVIZ_CHAPTER_HISTORY_PARA_5" Language="zh_Hans_CN">
+			<Text>This enthusiasm did not last, and the Crusade in Africa degenerated into mere mercantile enterprise. After the grand mastership of the order had been vested in the King in perpetuity (1551), he availed himself of its income to reward any kind of service in the army or the fleet. If the wealth of the Knights of Aviz was not as great as that of the Knights of Christ, it was still quite large, drawn as it was from some forty-three commanderies. The religious spirit of the knights vanished, and they withdrew from their clerical brothers who continued alone the conventual life. They were dispensed from their vow of celibacy by Alexander VI (1502), who tolerated their marriage to prevent scandalous concubinage; Julius III (1551) allowed them to dispose freely of their personal properties. Nobility of birth remained the chief requirement of aspirants to the mantle, a requirement confirmed by a decree of 1604.</Text>
+		</Replace>
+
+		<Replace Tag="LOC_ABILITY_PLUS_X_VS_ANTI_CAVALRY_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>与抗骑兵单位战斗时+7 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_PLUS_X_DISTRICT_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>在区域内战斗或驻扎在区域内时+5 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_PLUS_X_VERSUS_STRONGER_UNITS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>对抗基础 [ICON_Strength] 战斗力更高的单位时+6 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_INVISIBLE_ON_RAINFOREST_FOREST_MARSH_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>位于雨林、沼泽与森林单元格时，与敌方单位距离超过1格则保持隐形。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_AMPHIBIOUS_BONUS_IGNORE_RIVERS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>无视跨河进攻时的额外 [ICON_Movement] 移动力消耗与 [ICON_Strength] 战斗力减益。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_AMPHIBIOUS_BONUS_IGNORE_SHORES_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>无视从海上进攻时的额外 [ICON_Movement] 移动力消耗与 [ICON_Strength] 战斗力减益。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_PLUS_X_DISTRICT_ATTACK_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>在区域内战斗时+6 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		
+		<Replace Tag="PLUS_X_WHEN_ATTACKING_RANGED" Language="zh_Hans_CN">
+			<Text>[ICON_Strength] 战斗力 来自于对抗远程攻击单位</Text>
+		</Replace>
+		<Replace Tag="PLUS_X_VS_ANTI_CAVALRY" Language="zh_Hans_CN">
+			<Text>[ICON_Strength] 战斗力 来自于与抗骑兵单位战斗</Text>
+		</Replace>
+		<Replace Tag="PLUS_X_DISTRICT_ATTACK" Language="zh_Hans_CN">
+			<Text>[ICON_Strength] 战斗力 来自于在区域内战斗</Text>
+		</Replace>
+		<Replace Tag="PLUS_X_DISTRICT_DEFEND" Language="zh_Hans_CN">
+			<Text>[ICON_Strength] 战斗力 来自于驻扎在区域内</Text>
+		</Replace>
+		<Replace Tag="PLUS_X_VERSUS_STRONGER_UNITS" Language="zh_Hans_CN">
+			<Text>[ICON_Strength] 战斗力 来自于对抗基础战斗力更高的单位</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'FateEXTELLA LINK - Charlemagne(Saber)'CN_Fix_FI -->
+<!-- Author: Clear8Sky -->
+<!-- DateCreated: 2021/8/3 10:19:29 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Fate/EXTELLA LINK - 查理曼(剑阶)” 。该文件在 FrontEnd 与 InGame 时载入，无需任何 Criteria -->
+	<LocalizedText>
+		
+		<!-- 游戏前文本 -->
+		
+		<Replace Tag="LOC_LEADER_ABILITY_CHARLEMAGNE_SABER_DESCRIPTION"  Language="zh_Hans_CN">
+			<Text>额外增加一个军事和一个经济政策槽位。[NEWLINE]每回合+8 [ICON_InfluencePerTurn] 影响力点数。[NEWLINE][ICON_GreatPerson] 伟人点数获取+100%。[NEWLINE]所有单位+8 [ICON_Strength] 战斗力（对抗蛮族则再额外+4 [ICON_Strength] 战斗力）。[NEWLINE]所有 [ICON_TradeRoute] 贸易路线产出+4 [ICON_Gold] 金币、+4 [ICON_Production] 生产力、+4 [ICON_Faith] 信仰值、+4 [ICON_Food] 食物、+4 [ICON_Culture] 文化值、+4 [ICON_Science] 科技值，且商路无法被掠夺。[NEWLINE]所有城市+20% [ICON_Gold] 金币、[ICON_Production] 生产力、[ICON_Faith] 信仰值、[ICON_Food] 食物、[ICON_Culture] 文化值以及 [ICON_Science] 科技值的产出（若为原始 [ICON_Capital] 首都则改为+80%以上各类产出）。</Text>
+		</Replace>
+		
+		<!-- 游戏内文本 -->
+		
+		<Replace Tag="LOC_CIVILIZATION_CHARLEMAGNE_SABER_FRANCIA_ADJECTIVE" Language="zh_Hans_CN">
+			<Text>“法兰克人”的</Text>
+		</Replace>
+		<Replace Tag="LOC_LOADING_INFO_LEADER_CHARLEMAGNE_SABER" Language="zh_Hans_CN">
+			<Text>一个无忧无虑的年轻人，有点直言不讳地说自己不太适合成为国王。他将审美标准和行为放在“这是酷还是不酷”上，即便会给御主造成麻烦，甚至是对自己的一个缺点……尽管存在这种人格缺陷，但阿斯托尔福仍将查理曼描述为一个尽职尽责的仁慈之王。会与他的人民一起哭泣和欢笑，并帮助那些有需要的人。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_CHARLEMAGNE_SABER_CHAPTER_DETAILED_BODY" Language="zh_Hans_CN">
+			<Text>查理曼的经济和军事能力非常强大，能够快速获得 [ICON_InfluencePerTurn] 影响力点数和 [ICON_GreatPerson] 伟人点数，同时也有一些 [ICON_Strength] 战斗力加成。快速建立贸易关系，建造城市，获得额外资源，能够更合理地使用查理曼的特性。当然，“法兰克王国”的部分能力也不容小看，请让他帅气的成长吧！</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_CHARLEMAGNE_SABER_EXTRA_CHAPTER_DETAILED_BODY" Language="zh_Hans_CN">
+			<Text>{LOC_PEDIA_LEADERS_PAGE_LEADER_CHARLEMAGNE_SABER_CHAPTER_DETAILED_BODY}</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CHARLEMAGNE_SABER_JOYEUSE_ORDRE_COMBAT_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>活跃的查理曼，+8 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CHARLEMAGNE_SABER_JOYEUSE_ORDRE_EXTRA_COMBAT_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>正义的查理曼，+4 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CHARLEMAGNE_SABER_JOYEUSE_ORDRE_ENVOYS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>酷酷的查理曼，每回合+8 [ICON_InfluencePerTurn] 影响力点数。</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CHARLEMAGNE_SABER_JOYEUSE_ORDRE_CITY_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>帅气的查理曼，城市各类产出+20%。</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CHARLEMAGNE_SABER_JOYEUSE_ORDRE_TRADE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>阳光的查理曼，[ICON_TradeRoute] 贸易路线各类产出+4。</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CHARLEMAGNE_SABER_JOYEUSE_ORDRE_GREAT_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>可爱的查理曼，[ICON_GreatPerson] 伟人点数获取+100%。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_CHARLEMAGNE_SABER_ANY" Language="zh_Hans_CN">
+			<Text>我的城市很帅气吧？如果你想的话，我们可以一起去逛街哦～</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

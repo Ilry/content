@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'Better Report Screen UI'CN_Fix_IG -->
+<!-- Author: Clear8Sky -->
+<!-- DateCreated: 3/2/2021 1:03:06 AM -->
+<GameData>
+<!-- 该文件对应补译/润色模组 “Better Report Screen (UI)” 。该文件在 InGame 时载入，无需任何 Criteria -->
+	<LocalizedText>
+		
+		<!-- 原版功能 -->
+		
+		<Replace Tag="LOC_HUD_REPORTS_TAB_CITIES" Language="zh_Hans_CN">
+			<Text>城市</Text>
+		</Replace>
+		
+		<!-- GS功能 -->
+		
+		<Replace Tag="LOC_HUD_REPORTS_TAB_CITIES2" Language="zh_Hans_CN">
+			<Text>[ICON_Power] 专属</Text>
+		</Replace>
+		<Replace Tag="LOC_BRS_CURRENT_DEALS_OUTGOING" Language="zh_Hans_CN">
+			<Text>协议支出</Text>
+		</Replace>
+		<Replace Tag="LOC_BRS_CURRENT_DEALS_INCOMING" Language="zh_Hans_CN">
+			<Text>协议收入</Text>
+		</Replace>
+		
+		<!-- 2021/05/05补更 -->
+		
+		<Replace Tag="LOC_BRS_CO2" Language="zh_Hans_CN">
+			<Text>二氧化碳</Text>
+		</Replace>
+		<Replace Tag="LOC_BRS_BARRIER" Language="zh_Hans_CN">
+			<Text>拦洪坝</Text>
+		</Replace>
+		<Replace Tag="LOC_BRS_BARRIER_MAINTENANCE" Language="zh_Hans_CN">
+			<Text>拦洪坝维护费用</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

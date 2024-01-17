@@ -1,0 +1,2386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'Proverbium'CN_Fix_IG1 -->
+<!-- Author: 邓半仙人 , Clear8Sky -->
+<!-- DateCreated: 2021/11/15 1:12:36 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Proverbium” 。该文件在 InGame 时载入，需高 LoadOrder 以保证其最后载入，需 Criteria ： Active_Mod_ProverbPlus -->
+	<LocalizedText>
+		<Replace Tag="MOD_SC_TECH_POTTERY_QUOTE_1" Language="zh_Hans_CN">
+			<Text>任时间之轮滚动或停止：我们亦如陶工和黏土一样克服一切。[NEWLINE]——罗伯特·勃朗宁[NEWLINE][COLOR:ResCultureLabelCS]（英国诗人、剧作家、维多利亚时期代表诗人之一、维多利亚时代两大诗人之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_POTTERY_QUOTE_2" Language="zh_Hans_CN">
+			<Text>我认为黏土在好陶工的手中一定会感到高兴的。[NEWLINE]——珍妮特·菲奇[NEWLINE][COLOR:ResCultureLabelCS]（美国作家、编剧）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_POTTERY_QUOTE_3" Language="zh_Hans_CN">
+			<Text>黏土岂可对抟弄他的陶工说，你在作什么呢？[NEWLINE]——《旧约圣经》以赛亚书49：9[NEWLINE][COLOR:ResCultureLabelCS]（犹太教与基督教的共同经典）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_POTTERY_QUOTE_4" Language="zh_Hans_CN">
+			<Text>陶匠难道没有权力，从一团黏土里拿一块作成贵重的器皿，又拿一块作成卑贱的器皿吗？[NEWLINE]——《新约圣经》罗马书9：21[NEWLINE][COLOR:ResCultureLabelCS]（基督教经典）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_POTTERY_QUOTE_5" Language="zh_Hans_CN">
+			<Text>所有这些陶器与陶师——我且问你，[NEWLINE]究竟谁是陶师，谁是陶器？[NEWLINE]——莪默·伽亚谟[NEWLINE][COLOR:ResCultureLabelCS]（波斯诗人、数学家、天文学家、医学家、哲学家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_ANIMAL_HUSBANDRY_QUOTE_1" Language="zh_Hans_CN">
+			<Text>差农牧业口号：[NEWLINE]要做就要做最好；[NEWLINE]好农牧业口号：[NEWLINE]别人口袋赚金币。[NEWLINE]——托马斯·图瑟[NEWLINE][COLOR:ResCultureLabelCS]（英国诗人、农民）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_ANIMAL_HUSBANDRY_QUOTE_2" Language="zh_Hans_CN">
+			<Text>完美是一种昂贵的花，只有通过毫不妥协的严格管理才能培养出来。[NEWLINE]——伯顿·拉斯科[NEWLINE][COLOR:ResCultureLabelCS]（美国记者、编辑、文学批评家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_ANIMAL_HUSBANDRY_QUOTE_3" Language="zh_Hans_CN">
+			<Text>如果这个联邦国家的畜牧业得到改善，我们可以希望，在上帝的祝福下，未来会看到更美好的明天……[NEWLINE]——塞缪尔·哈特利布[NEWLINE][COLOR:ResCultureLabelCS]（德裔英国博学家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_ANIMAL_HUSBANDRY_QUOTE_4" Language="zh_Hans_CN">
+			<Text>动物是极容易相处的，它们从不提问，也从不会批评。[NEWLINE]——乔治·艾略特[NEWLINE][COLOR:ResCultureLabelCS]（英国女作家、19世纪英语文学最有影响力的小说家之一、英语文学史上最伟大的小说家之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_MINING_QUOTE_1" Language="zh_Hans_CN">
+			<Text>移大山始于运小石。[NEWLINE]——孔子[NEWLINE][COLOR:ResCultureLabelCS]（中国古代思想家、政治家、教育家、儒家学派创始人、“大成至圣先师”、“天纵之圣”、“天之木铎”、“万世师表”、“世界十大文化名人”之首）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_MINING_QUOTE_2" Language="zh_Hans_CN">
+			<Text>在一切通过善良和诚实的手段获得巨大财富的方式中，没有一种比采矿更有效的了。[NEWLINE]——格奥尔格·阿格里科拉[NEWLINE][COLOR:ResCultureLabelCS]（德国科学家、“矿物学之父”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_SAILING_QUOTE_2" Language="zh_Hans_CN">
+			<Text>我并不是讨厌岸上的生活。但海上生活更好。[NEWLINE]——弗朗西斯·德雷克[NEWLINE][COLOR:ResCultureLabelCS]（英国探险家、私掠船船长、航海家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_SAILING_QUOTE_1" Language="zh_Hans_CN">
+			<Text>大船大可冒险开，小船更应靠岸走。[NEWLINE]——本杰明·富兰克林[NEWLINE][COLOR:ResCultureLabelCS]（美国政治家、物理学家、《美国独立宣言》主要起草人之一、美国开国元勋之一、美利坚开国三杰之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_SAILING_QUOTE_3" Language="zh_Hans_CN">
+			<Text>一艘大船问深水。[NEWLINE]——乔治·赫伯特[NEWLINE][COLOR:ResCultureLabelCS]（英国威尔士诗人、演讲家、牧师、玄学派圣人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_SAILING_QUOTE_4" Language="zh_Hans_CN">
+			<Text>远处的船能满足每个人的愿望。[NEWLINE]——佐拉·尼尔·赫斯顿[NEWLINE][COLOR:ResCultureLabelCS]（美国女小说家、黑人民间传说收集研究家、人类学家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_ASTROLOGY_QUOTE_2" Language="zh_Hans_CN">
+			<Text>不懂占星术的医师无权自称为医师。[NEWLINE]——希波克拉底[NEWLINE][COLOR:ResCultureLabelCS]（古希腊医师、“西方医学之父”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_ASTROLOGY_QUOTE_2" Language="zh_Hans_CN">
+			<Text>月亮最丰富地倾注她的情感在世俗事物上，因为大多数事物，无论是有生命的还是无生命的，都对她充满同情，并随着她的变化而变化。[NEWLINE]——克罗狄斯·托勒密[NEWLINE][COLOR:ResCultureLabelCS]（古罗马数学家、天文学家、地理学家、占星家、“地心说”的集大成者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_ASTROLOGY_QUOTE_3" Language="zh_Hans_CN">
+			<Text>因海中的波浪匉訇，日月星辰要显出异象。地上的民，有痛苦，不知出路。[NEWLINE]——《新约圣经》路加福音21：25[NEWLINE][COLOR:ResCultureLabelCS]（基督教经典）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_ASTROLOGY_QUOTE_4" Language="zh_Hans_CN">
+			<Text>向星星呼喊，为你所做的。[NEWLINE]糟糕办公室，在阻挠他们的求爱。[NEWLINE]——塞缪尔·巴特勒[NEWLINE][COLOR:ResCultureLabelCS]（英国作家、“十九世纪后半期英国最伟大的作家”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_ASTROLOGY_QUOTE_5" Language="zh_Hans_CN">
+			<Text>头顶的星辰主宰着我们的一切。[NEWLINE]——威廉·莎士比亚[NEWLINE][COLOR:ResCultureLabelCS]（英国文艺复兴时期剧作家、诗人、演员、英国大文豪）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_ASTROLOGY_QUOTE_6" Language="zh_Hans_CN">
+			<Text>汝筹算过多，以致疲倦。现在让那些观星的，看星宿的，在月朔说预言的，都站起来，救汝脱离将要降临到汝头上的事吧。[NEWLINE]——《旧约圣经》以赛亚书47：13[NEWLINE][COLOR:ResCultureLabelCS]（犹太教与基督教的共同经典）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_IRRIGATION_QUOTE_1" Language="zh_Hans_CN">
+			<Text>如果一个人有足够的勇气为一个国家造林或灌溉，那么他就比它的征服者更值得尊敬。[NEWLINE]——约翰·汤姆森[NEWLINE][COLOR:ResCultureLabelCS]（苏格兰摄影家、地理学家、探险家、“纪实摄影”的鼻祖之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_IRRIGATION_QUOTE_1" Language="zh_Hans_CN">
+			<Text>成千上万的人可以生活在没有爱的环境中，但是没有一个人生活在没有水的环境中。[NEWLINE]——威斯坦·休·奥登[NEWLINE][COLOR:ResCultureLabelCS]（英裔美国诗人、20世纪重要的文学家之一、公认为艾略特之后最重要的英语诗人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_IRRIGATION_QUOTE_3" Language="zh_Hans_CN">
+			<Text>水乃藤蔓之母。[NEWLINE]——查尔斯·麦凯[NEWLINE][COLOR:ResCultureLabelCS]（苏格兰诗人、记者、作家、文选学家、小说家、作曲人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_IRRIGATION_QUOTE_4" Language="zh_Hans_CN">
+			<Text>如果你口渴时喝了杯子里的水，你就能在杯子里看见真主。[NEWLINE]——莫拉维·贾拉鲁丁·鲁米[NEWLINE][COLOR:ResCultureLabelCS]（波斯苏菲派神秘主义诗人、教法学家、“波斯诗坛四柱”之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_IRRIGATION_QUOTE_5" Language="zh_Hans_CN">
+			<Text>一滴一滴；整个湖就成了。[NEWLINE]——保加利亚谚语</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_WRITING_QUOTE_2" Language="zh_Hans_CN">
+			<Text>写作是很容易的，你要做的就是把错误的单词划掉即可。[NEWLINE]——马克·吐温[NEWLINE][COLOR:ResCultureLabelCS]（美国作家、演说家、美国批判现实主义文学的奠基人、《百万英镑》《哈克贝利·费恩历险记》《汤姆·索亚历险记》《败坏了哈德莱堡的人》作者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_WRITING_QUOTE_2" Language="zh_Hans_CN">
+			<Text>我是笔墨的奴仆。[NEWLINE]——奥诺雷·德·巴尔扎克[NEWLINE][COLOR:ResCultureLabelCS]（法国小说家、剧作家、“现代法国小说之父”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_WRITING_QUOTE_3" Language="zh_Hans_CN">
+			<Text>写得好的人生几乎和过得好的人生一样罕见。[NEWLINE]——托马斯·卡莱尔[NEWLINE][COLOR:ResCultureLabelCS]（苏格兰哲学家，评论家、讽刺作家、历史学家、教师）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_WRITING_QUOTE_4" Language="zh_Hans_CN">
+			<Text>在我看来，语言是我们最取之不尽、用之不竭的魔法源泉了。[NEWLINE]——乔安妮·凯瑟琳·罗琳[NEWLINE][COLOR:ResCultureLabelCS]（英国女作家、《哈利·波特》作者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_WRITING_QUOTE_5" Language="zh_Hans_CN">
+			<Text>用笔写的东西是不能用斧头擦除得了的。[NEWLINE]——俄罗斯谚语</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_WRITING_QUOTE_6" Language="zh_Hans_CN">
+			<Text>当你还没有站起来生活的时候，坐下来写作是多么狂妄自大啊。[NEWLINE]——亨利·戴维·梭罗[NEWLINE][COLOR:ResCultureLabelCS]（美国作家、哲学家、超验主义代表人物、废奴主义及自然主义者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_WRITING_QUOTE_7" Language="zh_Hans_CN">
+			<Text>写作是一件好事，因为它结合了自言自语和与人交谈这两种乐趣。[NEWLINE]——切萨雷·帕韦斯[NEWLINE][COLOR:ResCultureLabelCS]（意大利诗人、小说家、文学评论家、翻译家、意大利20世纪最重要的诗人之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_WRITING_QUOTE_8" Language="zh_Hans_CN">
+			<Text>文人的笔墨胜过烈士的鲜血。[NEWLINE]——穆罕默德[NEWLINE][COLOR:ResCultureLabelCS]（阿拉伯伊斯兰教先知）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_ARCHERY_QUOTE_1" Language="zh_Hans_CN">
+			<Text>这是就是弓箭造成的伤痕！死亡！破坏！毁灭！[NEWLINE]——贾科莫·巴达罗[NEWLINE][COLOR:ResCultureLabelCS]（威尼斯贵族、业余诗人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_ARCHERY_QUOTE_1" Language="zh_Hans_CN">
+			<Text>我朝天空射箭，不知箭落何方。[NEWLINE]——亨利·沃兹沃思·朗费罗[NEWLINE][COLOR:ResCultureLabelCS]（美国诗人、翻译家、“美国最伟大的诗人”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_ARCHERY_QUOTE_3" Language="zh_Hans_CN">
+			<Text>大地早已铁甲覆，[NEWLINE]箭如冰雹云中露。[NEWLINE]马蹄踏裂战场土，[NEWLINE]血流成河百骨枯。[NEWLINE]——菲尔多西[NEWLINE][COLOR:ResCultureLabelCS]（波斯诗人、文学家、“波斯诗坛四柱”之一、“伊朗最伟大的诗人”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_ARCHERY_QUOTE_4" Language="zh_Hans_CN">
+			<Text>天之道，其犹张弓与？[NEWLINE]高者抑下，下者举之，[NEWLINE]有余者损之，不足者补之。[NEWLINE]——老子[NEWLINE][COLOR:ResCultureLabelCS]（中国古代思想家、哲学家、文学家、史学家、道家学派创始人和主要代表人物、与庄子并称“老庄”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_ARCHERY_QUOTE_5" Language="zh_Hans_CN">
+			<Text>弓使仇敌悲苦伤，我用弯弓服四方。[NEWLINE]——《梨俱吠陀》[NEWLINE][COLOR:ResCultureLabelCS]（印度最古老的诗歌集）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_ARCHERY_QUOTE_6" Language="zh_Hans_CN">
+			<Text>明枪易躲，暗箭难防。[NEWLINE]——中国谚语</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_ARCHERY_QUOTE_7" Language="zh_Hans_CN">
+			<Text>你的箭锋快，射中王敌之心。万民都仆倒在你面下吧。[NEWLINE]——《旧约圣经》诗篇45：5[NEWLINE][COLOR:ResCultureLabelCS]（犹太教与基督教的共同经典）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_MASONRY_QUOTE_1" Language="zh_Hans_CN">
+			<Text>我发现了砖砌的罗马；我让她穿着大理石“衣裳”。[NEWLINE]——苏维托尼乌斯[NEWLINE][COLOR:ResCultureLabelCS]（古罗马历史学家、作家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_MASONRY_QUOTE_1" Language="zh_Hans_CN">
+			<Text>我们每个人都在为比我们自身更加巨大的建筑雕刻石头、竖立柱子、或切割彩色玻璃。[NEWLINE]——伍冰枝[NEWLINE][COLOR:ResCultureLabelCS]（华裔加拿大女总督）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_BRONZE_WORKING_QUOTE_1" Language="zh_Hans_CN">
+			<Text>百姓都死了，铁人被掳去，我只带了铜人回来。[NEWLINE]——拿破仑·波拿巴[NEWLINE][COLOR:ResCultureLabelCS]（法国军事家、政治家、法兰西第一帝国的缔造者、法兰西第一帝国皇帝、“法国人的皇帝”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_BRONZE_WORKING_QUOTE_1" Language="zh_Hans_CN">
+			<Text>青铜是形体的明镜，是心灵的美酒。[NEWLINE]——埃斯库罗斯[NEWLINE][COLOR:ResCultureLabelCS]（古希腊悲剧诗人、“悲剧之父”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_THE_WHEEL_QUOTE_1" Language="zh_Hans_CN">
+			<Text>人的命运就像一个轮子，当它转动时，它不会让同一个人永远富裕繁荣的。[NEWLINE]——希罗多德[NEWLINE][COLOR:ResCultureLabelCS]（古希腊作家、历史学家、西方“历史之父”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_THE_WHEEL_QUOTE_2" Language="zh_Hans_CN">
+			<Text>车轮又转了一圈:我仍在这里。[NEWLINE]——威廉·莎士比亚[NEWLINE][COLOR:ResCultureLabelCS]（英国文艺复兴时期剧作家、诗人、演员、英国大文豪）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_THE_WHEEL_QUOTE_3" Language="zh_Hans_CN">
+			<Text>世界像是一个轮子，一切都会变好的。[NEWLINE]——本杰明·迪斯雷利[NEWLINE][COLOR:ResCultureLabelCS]（犹太裔英国首相、政治家、小说家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_CODE_OF_LAWS_QUOTE_1" Language="zh_Hans_CN">
+			<Text>制定法律的不是智慧，而是权威。[NEWLINE]——托马斯·霍布斯[NEWLINE][COLOR:ResCultureLabelCS]（英国哲学家、政治家、社会学家、机械唯物主义的完整体系创建者、“社会契约论”创始人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_CODE_OF_LAWS_QUOTE_2" Language="zh_Hans_CN">
+			<Text>在最好的时候，人是所有动物中最高贵的；一旦脱离了法律和正义，他那便是最坏的。[NEWLINE]——亚里士多德[NEWLINE][COLOR:ResCultureLabelCS]（古希腊哲学家、科学家、教育家、思想家、“古代的黑格尔”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_CODE_OF_LAWS_QUOTE_3" Language="zh_Hans_CN">
+			<Text>有些法律没有成文法，但比任何成文法更具决定意义。[NEWLINE]——老塞内卡[NEWLINE][COLOR:ResCultureLabelCS]（古罗马作家、修辞学家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_CODE_OF_LAWS_QUOTE_4" Language="zh_Hans_CN">
+			<Text>对于那些实行暴政、剥夺他人权利的人，我会苛刻严肃对待他们；而对于那些遵纪守法的人，我会给予他们最大的人文关怀。[NEWLINE]——欧麦尔·伊本·哈塔卜[NEWLINE][COLOR:ResCultureLabelCS]（阿拉伯哈里发、与第一任哈里发阿布·伯克尔并称“先知的两大辅弼”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_CODE_OF_LAWS_QUOTE_5" Language="zh_Hans_CN">
+			<Text>要在国土上施行公义，除灭恶人和罪人，使强者不至于加害弱者。[NEWLINE]——《汉谟拉比法典》[NEWLINE][COLOR:ResCultureLabelCS]（世界上现存的第一部比较完备的成文法典、“石柱法”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_CRAFTSMANSHIP_QUOTE_1" Language="zh_Hans_CN">
+			<Text>没有技艺，灵感不过是在风中摇曳的芦苇。[NEWLINE]——约翰内斯·勃拉姆斯[NEWLINE][COLOR:ResCultureLabelCS]（德国浪漫主义作曲家、与约翰·塞巴斯蒂安·巴赫与路德维希·凡·贝多芬并称为“3B”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_CRAFTSMANSHIP_QUOTE_2" Language="zh_Hans_CN">
+			<Text>每个人都是为某些特定的工作应运而生的，每个人心中都会有对那份工作的渴望。[NEWLINE]——莫拉维·贾拉鲁丁·鲁米[NEWLINE][COLOR:ResCultureLabelCS]（波斯苏菲派神秘主义诗人、教法学家、“波斯诗坛四柱”之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_CRAFTSMANSHIP_QUOTE_3" Language="zh_Hans_CN">
+			<Text>世上没有不适合他自己工作的人出生。对于那些愿意的人，总会有工作或有办法去工作。[NEWLINE]——亨利·沃德·比彻[NEWLINE][COLOR:ResCultureLabelCS]（美国公理会牧师、社会改革家、演讲者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_CRAFTSMANSHIP_QUOTE_4" Language="zh_Hans_CN">
+			<Text>每个人要在自己能力最适合的事上工作过日子。[NEWLINE]——普罗佩提乌斯[NEWLINE][COLOR:ResCultureLabelCS]（古罗马诗人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_CRAFTSMANSHIP_QUOTE_5" Language="zh_Hans_CN">
+			<Text>木匠伸展绳墨，用笔划线，后拿刨子刨平，再用圆规测量，最后做成一个人形，让其具有人的美丽，好供在庙里。[NEWLINE]——《旧约圣经》以赛亚书44：13[NEWLINE][COLOR:ResCultureLabelCS]（犹太教与基督教的共同经典）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_CRAFTSMANSHIP_QUOTE_6" Language="zh_Hans_CN">
+			<Text>一切工作都像播下的种子，生长蔓延，收获然后又重新播种。[NEWLINE]——托马斯·卡莱尔[NEWLINE][COLOR:ResCultureLabelCS]（苏格兰哲学家，评论家、讽刺作家、历史学家、教师）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_FOREIGN_TRADE_QUOTE_1" Language="zh_Hans_CN">
+			<Text>每个人都通过交换生活。[NEWLINE]——亚当·斯密[NEWLINE][COLOR:ResCultureLabelCS]（英国经济学家、哲学家、作家、经济学的主要创立者、“古典经济学之父”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_FOREIGN_TRADE_QUOTE_2" Language="zh_Hans_CN">
+			<Text>与各个国家贸易，与任何国家联盟，都应该是我们的座右铭。[NEWLINE]——托马斯·杰斐逊[NEWLINE][COLOR:ResCultureLabelCS]（美国第3任总统、《美国独立宣言》主要起草人之一、美国开国元勋之一、美利坚开国三杰之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_FOREIGN_TRADE_QUOTE_3" Language="zh_Hans_CN">
+			<Text>诡诈的天平，为耶和华所憎恶。公平的法码，为他所喜悦。[NEWLINE]——《旧约圣经》箴言11：1[NEWLINE][COLOR:ResCultureLabelCS]（犹太教与基督教的共同经典）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_FOREIGN_TRADE_QUOTE_4" Language="zh_Hans_CN">
+			<Text>交易具有赌博的所有魅力，却没有道德上的罪恶感。[NEWLINE]——沃尔特·司各特[NEWLINE][COLOR:ResCultureLabelCS]（英国小说家、诗人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_FOREIGN_TRADE_QUOTE_5" Language="zh_Hans_CN">
+			<Text>自由贸易不是基于功利，而是基于正义。[NEWLINE]——埃德蒙·伯克[NEWLINE][COLOR:ResCultureLabelCS]（爱尔兰政治家、作家、演说家、政治理论家、哲学家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_FOREIGN_TRADE_QUOTE_6" Language="zh_Hans_CN">
+			<Text>商业无国界。[NEWLINE]——托马斯·杰斐逊[NEWLINE][COLOR:ResCultureLabelCS]（美国第3任总统、《美国独立宣言》主要起草人之一、美国开国元勋之一、美利坚开国三杰之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_FOREIGN_TRADE_QUOTE_7" Language="zh_Hans_CN">
+			<Text>没有哪个国家被贸易毁灭过。[NEWLINE]——本杰明·富兰克林[NEWLINE][COLOR:ResCultureLabelCS]（美国政治家、物理学家、《美国独立宣言》主要起草人之一、美国开国元勋之一、美利坚开国三杰之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_MILITARY_TRADITION_QUOTE_2" Language="zh_Hans_CN">
+			<Text>我并不低估军事知识的价值，但如果人们在盲目服从教条的情况下进行战争，他们就会失败。[NEWLINE]——尤利西斯·辛普森·格[NEWLINE][COLOR:ResCultureLabelCS]（美国第18任总统）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_MILITARY_TRADITION_QUOTE_1" Language="zh_Hans_CN">
+			<Text>勇敢是唯一知道你害怕的人。[NEWLINE]——大卫·哈克沃思[NEWLINE][COLOR:ResCultureLabelCS]（美国陆军上校、军事新闻记者、作家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_MILITARY_TRADITION_QUOTE_3" Language="zh_Hans_CN">
+			<Text>战略是战士的手艺。[NEWLINE]——宫本武藏[NEWLINE][COLOR:ResCultureLabelCS]（日本江户时代初期剑术家、兵法家、艺术家、二天一流剑道的始祖、“二刀流”剑术大师）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_MILITARY_TRADITION_QUOTE_4" Language="zh_Hans_CN">
+			<Text>知己知彼，百战不殆。[NEWLINE]——孙子[NEWLINE][COLOR:ResCultureLabelCS]（中国古代军事家、政治家、“兵家至圣”、“百世兵家之师”、“东方兵学的鼻祖”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_STATE_WORKFORCE_QUOTE_1" Language="zh_Hans_CN">
+			<Text>一个强大的经济体始于一个强大的、受过良好教育的劳动力队伍。[NEWLINE]——比尔·欧文斯[NEWLINE][COLOR:ResCultureLabelCS]（美国政客、科罗拉多州州长）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_STATE_WORKFORCE_QUOTE_2" Language="zh_Hans_CN">
+			<Text>神啊，汝以劳动为代价，把一切美好的东西卖给我们吧。[NEWLINE]——列奥纳多·达·芬奇[NEWLINE][COLOR:ResCultureLabelCS]（意大利博学家、文艺复兴后三杰之一、“文艺复兴时期最完美的代表”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_STATE_WORKFORCE_QUOTE_3" Language="zh_Hans_CN">
+			<Text>那些劳动者的报酬多么丰厚啊。[NEWLINE]——《古兰经》3：136[NEWLINE][COLOR:ResCultureLabelCS]（伊斯兰教唯一的根本经典）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_STATE_WORKFORCE_QUOTE_4" Language="zh_Hans_CN">
+			<Text>每个人的劳动都要彰显出来。[NEWLINE]——《新约圣经》格林多前书3：13[NEWLINE][COLOR:ResCultureLabelCS]（基督教经典）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_EARLY_EMPIRE_QUOTE_1" Language="zh_Hans_CN">
+			<Text>贵以身于为天下，则可以托天下。[NEWLINE]爱以身于为天下，则可以寄天下。[NEWLINE]——庄子[NEWLINE][COLOR:ResCultureLabelCS]（中国古代思想家、哲学家、文学家、“庄学”创立者、道家学派代表人物、与老子并称“老庄”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_EARLY_EMPIRE_QUOTE_2" Language="zh_Hans_CN">
+			<Text>皇室紫袍是我最美的裹尸布。[NEWLINE]——狄奥多拉皇后[NEWLINE][COLOR:ResCultureLabelCS]（拜占庭查士丁尼一世的皇后、政治家、东正教圣人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_EARLY_EMPIRE_QUOTE_3" Language="zh_Hans_CN">
+			<Text>王啊，你是诸王之王。天上的神已将国度，权柄，能力，尊荣都赐给你。[NEWLINE]——《旧约圣经》但以理书2：37[NEWLINE][COLOR:ResCultureLabelCS]（犹太教与基督教的共同经典）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_EARLY_EMPIRE_QUOTE_4" Language="zh_Hans_CN">
+			<Text>我来过，我看过，我征服过。[NEWLINE]——盖乌斯·尤利乌斯·恺撒[NEWLINE][COLOR:ResCultureLabelCS]（古罗马军事统帅、政治家、“恺撒大帝”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_MYSTICISM_QUOTE_1" Language="zh_Hans_CN">
+			<Text>爱要求每个人保持神秘的沉默。[NEWLINE]——阿布·哈米德·本·阿布·伯克尔·易卜拉辛[NEWLINE][COLOR:ResCultureLabelCS]（波斯诗人、苏非主义理论学家、内沙布尔的圣徒传作者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_MYSTICISM_QUOTE_2" Language="zh_Hans_CN">
+			<Text>道可道，非常道；[NEWLINE]名可名，非常名。[NEWLINE]——老子[NEWLINE][COLOR:ResCultureLabelCS]（中国古代思想家、哲学家、文学家、史学家、道家学派创始人和主要代表人物、与庄子并称“老庄”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_MYSTICISM_QUOTE_3" Language="zh_Hans_CN">
+			<Text>我说这些话，写这些话，不是出于我的心意，也不是出于别人的心意，而是出于神的启示，是我在天上所听见所领受的。[NEWLINE]——圣希尔德加德·冯·宾根[NEWLINE][COLOR:ResCultureLabelCS]（德国神学家、作曲家、作家、博学家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_MYSTICISM_QUOTE_4" Language="zh_Hans_CN">
+			<Text>如果这你都明白了，那就不是上帝的奥秘了。[NEWLINE]——希波的奥古斯丁[NEWLINE][COLOR:ResCultureLabelCS]（古罗马神学家、教会博士、哲学家、天主教圣人、“神学百科全书”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_MYSTICISM_QUOTE_5" Language="zh_Hans_CN">
+			<Text>你们能分辨一切东西都来自于神。他是看不见的，不可接近的，最崇高的，也是最可爱的。[NEWLINE]——赛义德·阿里·穆罕默德[NEWLINE][COLOR:ResCultureLabelCS]（伊朗伊斯兰教巴布教派创始人、谢赫学派领袖）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_CELESTIAL_NAVIGATION_QUOTE_2" Language="zh_Hans_CN">
+			<Text>用星星而不是每艘过往船只的灯光来设定航向。[NEWLINE]——奥马尔·纳尔逊·布莱德雷[NEWLINE][COLOR:ResCultureLabelCS]（美国陆军五星上将、美国陆军参谋长、第一任参谋长联席会议主席）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_CELESTIAL_NAVIGATION_QUOTE_1" Language="zh_Hans_CN">
+			<Text>我只需要一艘高桅横帆船和一颗星星来指引船只。[NEWLINE]——约翰·梅斯菲尔德[NEWLINE][COLOR:ResCultureLabelCS]（英国诗人、小说家、剧作家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_CELESTIAL_NAVIGATION_QUOTE_3" Language="zh_Hans_CN">
+			<Text>把你的马车拴在星辰上飞驰：胸怀大志[NEWLINE]——拉尔夫·沃尔多·爱默生[NEWLINE][COLOR:ResCultureLabelCS]（美国思想家、文学家、诗人、美国文化精神的代表人物、新英格兰超验主义最杰出的代言人、“美国的孔子”、“美国文明之父”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_CELESTIAL_NAVIGATION_QUOTE_4" Language="zh_Hans_CN">
+			<Text>祂为你们安置了众星，使你们可以被星辰引导，穿过陆地和海洋的黑暗。我们已经跟一个智者详细说明了这些标志。[NEWLINE]——《古兰经》6：97[NEWLINE][COLOR:ResCultureLabelCS]（伊斯兰教唯一的根本经典）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_CURRENCY_QUOTE_1" Language="zh_Hans_CN">
+			<Text>财富不在于多得，而在于寡欲。[NEWLINE]——爱比克泰德[NEWLINE][COLOR:ResCultureLabelCS]（古罗马斯多葛学派哲学家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_CURRENCY_QUOTE_2" Language="zh_Hans_CN">
+			<Text>钱，如果不能给你带来幸福，至少会让你在舒适中痛苦。[NEWLINE]——海伦·格莉·布朗[NEWLINE][COLOR:ResCultureLabelCS]（美国《大都会》杂志女主编、时尚达人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_CURRENCY_QUOTE_3" Language="zh_Hans_CN">
+			<Text>金钱带来荣誉、朋友、征服和王国。[NEWLINE]——约翰·弥尔顿[NEWLINE][COLOR:ResCultureLabelCS]（英国诗人、政论家、民主斗士、英国文学史上伟大的六位诗人之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_CURRENCY_QUOTE_4" Language="zh_Hans_CN">
+			<Text>钱只是一种工具。它可以带你去任何你想去的地方，但它不会取代你作为司机。[NEWLINE]——安·兰德[NEWLINE][COLOR:ResCultureLabelCS]（俄裔美国哲学家、小说家、公共知识分子、“客观主义”流派创立者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_CURRENCY_QUOTE_5" Language="zh_Hans_CN">
+			<Text>闲财好比不存在。[NEWLINE]——伊索[NEWLINE][COLOR:ResCultureLabelCS]（古希腊哲学家、文学家、世界四大寓言家之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_HORSEBACK_RIDING_QUOTE_1" Language="zh_Hans_CN">
+			<Text>在马鞍上度过的每一个小时都不会被浪费。[NEWLINE]——温斯顿·丘吉尔[NEWLINE][COLOR:ResCultureLabelCS]（英国首相、政治家、历史学家、画家、演说家、作家、记者、20世纪最重要的政治领袖之一、“雅尔塔会议三巨头”之一、历史上掌握英语单词数量最多的人之一、世界最有说服力的八大演说家之一、“有史以来最伟大的英国人”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_HORSEBACK_RIDING_QUOTE_2" Language="zh_Hans_CN">
+			<Text>骑马的人在精神和体格方面都比走路的人强。[NEWLINE]——约翰·斯坦贝克[NEWLINE][COLOR:ResCultureLabelCS]（美国作家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_HORSEBACK_RIDING_QUOTE_3" Language="zh_Hans_CN">
+			<Text>意志是人的恩典，犹如马对于骑手那样。[NEWLINE]——希波的奥古斯丁[NEWLINE][COLOR:ResCultureLabelCS]（古罗马神学家、教会博士、哲学家、天主教圣人、“神学百科全书”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_HORSEBACK_RIDING_QUOTE_4" Language="zh_Hans_CN">
+			<Text>一匹马！一匹马！[NEWLINE]用我的王国换一匹马！[NEWLINE]——威廉·莎士比亚[NEWLINE][COLOR:ResCultureLabelCS]（英国文艺复兴时期剧作家、诗人、演员、英国大文豪）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_HORSEBACK_RIDING_QUOTE_5" Language="zh_Hans_CN">
+			<Text>马是上帝给人类的礼物。[NEWLINE]——阿拉伯谚语</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_IRON_WORKING_QUOTE_1" Language="zh_Hans_CN">
+			<Text>我们给予铁于翅膀，教它飞翔。[NEWLINE]——盖乌斯·普林尼·塞孔都斯[NEWLINE][COLOR:ResCultureLabelCS]（古罗马作家、博物学者、军人、政治家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_IRON_WORKING_QUOTE_2" Language="zh_Hans_CN">
+			<Text>趁热打铁。[NEWLINE]——中西方谚语</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_IRON_WORKING_QUOTE_3" Language="zh_Hans_CN">
+			<Text>只有铁才能打铁。[NEWLINE]——阿拉伯谚语</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_IRON_WORKING_QUOTE_4" Language="zh_Hans_CN">
+			<Text>只要努力深，铁块磨成粉。[NEWLINE]——巴斯克谚语</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_SHIPBUILDING_QUOTE_1" Language="zh_Hans_CN">
+			<Text>真正的船是造船工程师本人。[NEWLINE]——拉尔夫·沃尔多·爱默生[NEWLINE][COLOR:ResCultureLabelCS]（美国思想家、文学家、诗人、美国文化精神的代表人物、新英格兰超验主义最杰出的代言人、“美国的孔子”、“美国文明之父”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_SHIPBUILDING_QUOTE_2" Language="zh_Hans_CN">
+			<Text>你了解船，船也会了解你。[NEWLINE]——苏格兰盖尔谚语</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_SHIPBUILDING_QUOTE_3" Language="zh_Hans_CN">
+			<Text>啊，尊敬的主人，把我修直吧！[NEWLINE]把我变成坚固又强大，一艘多么漂亮的大船！[NEWLINE]——亨利·沃兹沃思·朗费罗[NEWLINE][COLOR:ResCultureLabelCS]（美国诗人、翻译家、“美国最伟大的诗人”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_SHIPBUILDING_QUOTE_2" Language="zh_Hans_CN">
+			<Text>在水手和来世之间除了块厚木板，什么也没有。[NEWLINE]——托马斯·吉本斯[NEWLINE][COLOR:ResCultureLabelCS]（美国政治家、种植园主、汽船船主）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_SHIPBUILDING_QUOTE_4" Language="zh_Hans_CN">
+			<Text>人无目标，犹如船无航舵。[NEWLINE]——托马斯·卡莱尔[NEWLINE][COLOR:ResCultureLabelCS]（苏格兰哲学家，评论家、讽刺作家、历史学家、教师）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_MATHEMATICS_QUOTE_2" Language="zh_Hans_CN">
+			<Text>如果我重新开始学业，我会听从柏拉图的建议，从数学开始。[NEWLINE]——伽利略·伽利雷[NEWLINE][COLOR:ResCultureLabelCS]（意大利天文学家、物理学家、工程师、欧洲近代自然科学的创始人、“观测天文学之父”、“现代物理学之父”、“科学方法之父”、“现代科学之父”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_MATHEMATICS_QUOTE_1" Language="zh_Hans_CN">
+			<Text>没有数学，你做什么都无能为力。你周围的一切都是数学。你周围的一切都是数字。[NEWLINE]——夏琨塔拉·戴维[NEWLINE][COLOR:ResCultureLabelCS]（印度女神童、心算家、“人脑计算机”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_MATHEMATICS_QUOTE_3" Language="zh_Hans_CN">
+			<Text>琴弦的低鸣中有几何，球体的间距中有音乐。[NEWLINE]——毕达哥拉斯[NEWLINE][COLOR:ResCultureLabelCS]（古希腊数学家、哲学家、西方“数学之父”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_MATHEMATICS_QUOTE_4" Language="zh_Hans_CN">
+			<Text>数字是形式和思想的主宰，是众神和魔鬼的起源。[NEWLINE]——毕达哥拉斯[NEWLINE][COLOR:ResCultureLabelCS]（古希腊数学家、哲学家、西方“数学之父”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_CONSTRUCTION_QUOTE_1" Language="zh_Hans_CN">
+			<Text>我们塑造我们的建筑，建筑本身也在塑造我们。[NEWLINE]——温斯顿·丘吉尔[NEWLINE][COLOR:ResCultureLabelCS]（英国首相、政治家、历史学家、画家、演说家、作家、记者、20世纪最重要的政治领袖之一、“雅尔塔会议三巨头”之一、历史上掌握英语单词数量最多的人之一、世界最有说服力的八大演说家之一、“有史以来最伟大的英国人”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_CONSTRUCTION_QUOTE_2" Language="zh_Hans_CN">
+			<Text>建筑学是凝固的音乐。[NEWLINE]——约翰·沃尔夫冈·冯·歌德[NEWLINE][COLOR:ResCultureLabelCS]（德国思想家、作家、科学家、古典主义代表、德国最伟大的作家之一、《浮士德》《少年维特的烦恼》作者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_CONSTRUCTION_QUOTE_3" Language="zh_Hans_CN">
+			<Text>啊，建筑，建筑！是所有艺术中最高贵的。[NEWLINE]——亨利·沃兹沃思·朗费罗[NEWLINE][COLOR:ResCultureLabelCS]（美国诗人、翻译家、“美国最伟大的诗人”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_CONSTRUCTION_QUOTE_4" Language="zh_Hans_CN">
+			<Text>建筑的目标是永恒。[NEWLINE]——克里斯多佛·雷恩[NEWLINE][COLOR:ResCultureLabelCS]（英国天文学家、建筑师）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_CONSTRUCTION_QUOTE_5" Language="zh_Hans_CN">
+			<Text>当一个人深思熟虑、规划蓝图时，一堆石头就不再是一堆石头，而是承载着那人心中大教堂的形象。[NEWLINE]——安托万·德·圣·埃克苏佩里[NEWLINE][COLOR:ResCultureLabelCS]（法国作家、飞行员）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_CONSTRUCTION_QUOTE_6" Language="zh_Hans_CN">
+			<Text>当我们建造时，让我们认为我们建造了永恒吧。[NEWLINE]——约翰·拉斯金[NEWLINE][COLOR:ResCultureLabelCS]（英国作家、艺术家、艺术评论家、哲学家、教师、业余地质学家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_ENGINEERING_QUOTE_2" Language="zh_Hans_CN">
+			<Text>工程学是科学对经济生产问题的有意识应用。[NEWLINE]——哈伯特·鲍尔斯·吉列[NEWLINE][COLOR:ResCultureLabelCS]（美国工程师、建筑与工程学领域作者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_ENGINEERING_QUOTE_1" Language="zh_Hans_CN">
+			<Text>一个人的“魔法”可能是另一个人的工程学。[NEWLINE]——罗伯特·安森·海因莱因[NEWLINE][COLOR:ResCultureLabelCS]（美国硬科幻小说作家、“科幻先生”、“美国现代科幻小说之父”、美国科幻空前绝后的优秀作家、美国科幻黄金时代四大才子之一、与艾萨克·阿西莫夫和亚瑟·克拉克并列为科幻小说“三巨头”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_ENGINEERING_QUOTE_3" Language="zh_Hans_CN">
+			<Text>一个人在称自己为“工程师”之前，应该先亲手盖一座房子。[NEWLINE]——亚历山大·索尔仁尼琴[NEWLINE][COLOR:ResCultureLabelCS]（俄罗斯作家、苏联炮兵连长、“俄罗斯的良知”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_GAMES_RECREATION_QUOTE_1" Language="zh_Hans_CN">
+			<Text>如果说面包是生活的第一必需品，那么娱乐则是第二必需品。[NEWLINE]——爱德华·贝拉米[NEWLINE][COLOR:ResCultureLabelCS]（美国小说家、记者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_GAMES_RECREATION_QUOTE_2" Language="zh_Hans_CN">
+			<Text>找不到时间消遣的人迟早会找时间去生病。[NEWLINE]——约翰·沃纳梅克[NEWLINE][COLOR:ResCultureLabelCS]（美国商人、“百货商店之父”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_GAMES_RECREATION_QUOTE_3" Language="zh_Hans_CN">
+			<Text>游戏是身体和心灵的润滑剂。[NEWLINE]——本杰明·富兰克林[NEWLINE][COLOR:ResCultureLabelCS]（美国政治家、物理学家、《美国独立宣言》主要起草人之一、美国开国元勋之一、美利坚开国三杰之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_GAMES_RECREATION_QUOTE_4" Language="zh_Hans_CN">
+			<Text>你必须发明你自己的游戏，然后教我们这些老人游戏怎么玩。[NEWLINE]——妮基·乔瓦尼[NEWLINE][COLOR:ResCultureLabelCS]（美国女诗人、作家、评论员、活动家和教育家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_GAMES_RECREATION_QUOTE_5" Language="zh_Hans_CN">
+			<Text>增加收入和增加闲暇娱乐是人类的两大文明特征。[NEWLINE]——本杰明·迪斯雷利[NEWLINE][COLOR:ResCultureLabelCS]（英国首相、政治家、小说家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_POLITICAL_PHILOSOPHY_QUOTE_1" Language="zh_Hans_CN">
+			<Text>政治是实现最有可能的艺术，也是寻求尽可能好的艺术。[NEWLINE]——奥托·冯·俾斯麦[NEWLINE][COLOR:ResCultureLabelCS]（德国宰相、外交大臣、“铁血宰相”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_POLITICAL_PHILOSOPHY_QUOTE_2" Language="zh_Hans_CN">
+			<Text>分而治之，是至理名言。合而御之，却更显优越。[NEWLINE]——约翰·沃尔夫冈·冯·歌德[NEWLINE][COLOR:ResCultureLabelCS]（德国思想家、作家、科学家、古典主义代表、德国最伟大的作家之一、《浮士德》《少年维特的烦恼》作者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_POLITICAL_PHILOSOPHY_QUOTE_3" Language="zh_Hans_CN">
+			<Text>上之为政，得下之情则治，不得下之情则乱。[NEWLINE]——墨子[NEWLINE][COLOR:ResCultureLabelCS]（中国古代思想家、教育家、科学家、军事家、墨家学派创始人和主要代表人物）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_POLITICAL_PHILOSOPHY_QUOTE_4" Language="zh_Hans_CN">
+			<Text>哪里有暴力，哪里就没有正义。[NEWLINE]——马其顿谚语</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_POLITICAL_PHILOSOPHY_QUOTE_5" Language="zh_Hans_CN">
+			<Text>故君子以人治人，改而止。[NEWLINE]——孔子[NEWLINE][COLOR:ResCultureLabelCS]（中国古代思想家、政治家、教育家、儒家学派创始人、“大成至圣先师”、“天纵之圣”、“天之木铎”、“万世师表”、“世界十大文化名人”之首）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_POLITICAL_PHILOSOPHY_QUOTE_6" Language="zh_Hans_CN">
+			<Text>一个领导在原谅上犯错误，总比在惩罚上犯错误好。[NEWLINE]——穆罕默德[NEWLINE][COLOR:ResCultureLabelCS]（阿拉伯伊斯兰教先知）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_POLITICAL_PHILOSOPHY_QUOTE_7" Language="zh_Hans_CN">
+			<Text>作为统治者，也是人民本身。[NEWLINE]——杜勒西达斯[NEWLINE][COLOR:ResCultureLabelCS]（古印度印地语诗人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_POLITICAL_PHILOSOPHY_QUOTE_8" Language="zh_Hans_CN">
+			<Text>因此，一位贵族没有必要拥有我列举的所有优秀品质，但似乎拥有这些品质是非常必要的……仁慈、忠诚、人道、虔诚和正直。[NEWLINE]——尼可罗·马基亚维利[NEWLINE][COLOR:ResCultureLabelCS]（意大利政治思想家、历史学家、“近代政治学之父”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_DRAMA_POETRY_QUOTE_2" Language="zh_Hans_CN">
+			<Text>全世界就像是一个大舞台，所有的男男女女都只不过是台上演员罢了。[NEWLINE]——威廉·莎士比亚[NEWLINE][COLOR:ResCultureLabelCS]（英国文艺复兴时期剧作家、诗人、演员、英国大文豪）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_DRAMA_POETRY_QUOTE_2" Language="zh_Hans_CN">
+			<Text>诗歌是文学上的王冠。[NEWLINE]——马修·阿诺德[NEWLINE][COLOR:ResCultureLabelCS]（英国诗人、教育家、评论家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_DRAMA_POETRY_QUOTE_3" Language="zh_Hans_CN">
+			<Text>画是看而不见的诗，诗是听而不到的画。[NEWLINE]——列奥纳多·达·芬奇[NEWLINE][COLOR:ResCultureLabelCS]（意大利博学家、文艺复兴后三杰之一、“文艺复兴时期最完美的代表”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_DRAMA_POETRY_QUOTE_4" Language="zh_Hans_CN">
+			<Text>演好你的角色吧，那才是你的荣誉所在。[NEWLINE]——亚历山大·蒲柏[NEWLINE][COLOR:ResCultureLabelCS]（英国诗人、文学批评家、启蒙主义者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_DRAMA_POETRY_QUOTE_5" Language="zh_Hans_CN">
+			<Text>诗歌是一种充满欢乐、痛苦和奇迹的东西，再加上一点点专业词汇。[NEWLINE]——纪伯伦·哈利勒·纪伯伦[NEWLINE][COLOR:ResCultureLabelCS]（黎巴嫩裔美国诗人、作家、画家、“艺术天才”、“黎巴嫩文坛娇子”、阿拉伯现代小说/艺术/散文的奠基人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_DRAMA_POETRY_QUOTE_6" Language="zh_Hans_CN">
+			<Text>如果我读一本书，它使我的整个身体如此寒冷，没有火能温暖我，我知道那就是诗。[NEWLINE]——艾米莉·狄金森[NEWLINE][COLOR:ResCultureLabelCS]（美国传奇女诗人、二十世纪现代主义诗歌的先驱之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_MILITARY_TRAINING_QUOTE_1" Language="zh_Hans_CN">
+			<Text>经验是万物之师。[NEWLINE]——盖乌斯·尤利乌斯·恺撒[NEWLINE][COLOR:ResCultureLabelCS]（古罗马军事统帅、政治家、“恺撒大帝”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_MILITARY_TRAINING_QUOTE_2" Language="zh_Hans_CN">
+			<Text>他是一个适合站在凯撒一旁[NEWLINE]为其指路的士兵。[NEWLINE]——威廉·莎士比亚[NEWLINE][COLOR:ResCultureLabelCS]（英国文艺复兴时期剧作家、诗人、演员、英国大文豪）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_MILITARY_TRAINING_QUOTE_3" Language="zh_Hans_CN">
+			<Text>我想看到你用大喊大叫的方式开枪。[NEWLINE]——西奥多·罗斯福[NEWLINE][COLOR:ResCultureLabelCS]（荷兰裔美国军事家、政治家、外交家、第26任美国总统、美国历史上最年轻的在任总统、美国历史上最伟大的总统之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_MILITARY_TRAINING_QUOTE_4" Language="zh_Hans_CN">
+			<Text>一个将军的好坏和他所指挥的部队所成就的一样。[NEWLINE]——道格拉斯·麦克阿瑟[NEWLINE][COLOR:ResCultureLabelCS]（美国军事家、政治家、陆军五星上将、西南太平洋战区最高统帅）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_DEFENSIVE_TACTICS_QUOTE_1" Language="zh_Hans_CN">
+			<Text>不可胜者，守也；可胜者，攻也。[NEWLINE]——孙子[NEWLINE][COLOR:ResCultureLabelCS]（中国古代军事家、政治家、“兵家至圣”、“百世兵家之师”、“东方兵学的鼻祖”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_DEFENSIVE_TACTICS_QUOTE_2" Language="zh_Hans_CN">
+			<Text>如果我们希望确保和平，军队就是我们保证日益繁荣最有力工具之一，我们就必须知道，时刻做好战争的准备。[NEWLINE]——乔治·华盛顿[NEWLINE][COLOR:ResCultureLabelCS]（美国政治家、军事家、革命家、首任总统、《美国独立宣言》主要起草人之一、美国开国元勋之一、美利坚开国三杰之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_DEFENSIVE_TACTICS_QUOTE_3" Language="zh_Hans_CN">
+			<Text>一个交战方所能发现的最糟糕的情况是完全没有防御能力。[NEWLINE]——卡尔·菲利普·戈特弗里德·冯·克劳塞维茨[NEWLINE][COLOR:ResCultureLabelCS]（普鲁士军事理论家、军事历史学家、普鲁士军队少将、“西方兵圣”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_RECORDED_HISTORY_QUOTE_2" Language="zh_Hans_CN">
+			<Text>历史是人们对往事一致认定的版本。[NEWLINE]——拿破仑·波拿巴[NEWLINE][COLOR:ResCultureLabelCS]（法国军事家、政治家、法兰西第一帝国的缔造者、法兰西第一帝国皇帝、“法国人的皇帝”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_RECORDED_HISTORY_QUOTE_2" Language="zh_Hans_CN">
+			<Text>历史不属于我们，我们却属于历史。[NEWLINE]——汉斯·格奥尔格·伽达默尔[NEWLINE][COLOR:ResCultureLabelCS]（德国哲学家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_RECORDED_HISTORY_QUOTE_3" Language="zh_Hans_CN">
+			<Text>谁控制过去，谁就控制未来；谁控制现在，谁就控制过去。[NEWLINE]——乔治·奥威尔[NEWLINE][COLOR:ResCultureLabelCS]（英国小说家、记者、社会评论家、 “一代人的冷峻良知”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_RECORDED_HISTORY_QUOTE_4" Language="zh_Hans_CN">
+			<Text>那些不记得过去的人注定要重蹈覆辙。[NEWLINE]——乔治·桑塔亚那[NEWLINE][COLOR:ResCultureLabelCS]（西班牙裔美国哲学家、散文家、诗人、小说家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_RECORDED_HISTORY_QUOTE_5" Language="zh_Hans_CN">
+			<Text>以史为鉴，可以知兴替。[NEWLINE]——李世民[NEWLINE][COLOR:ResCultureLabelCS]（中国唐朝第二位皇帝、唐太宗、政治家、战略家、军事家、诗人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_THEOLOGY_QUOTE_1" Language="zh_Hans_CN">
+			<Text>实际上，宗教数量和人一样多。[NEWLINE]——莫罕达斯·卡拉姆昌德·甘地[NEWLINE][COLOR:ResCultureLabelCS]（印度政治家、革命家、思想家、印度国父、甘地主义的创始人、印度民族解放运动的领导人、印度国民大会党领袖、“圣雄甘地”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_THEOLOGY_QUOTE_2" Language="zh_Hans_CN">
+			<Text>人的理性就像世界里的神一样。[NEWLINE]——托马斯·阿奎纳[NEWLINE][COLOR:ResCultureLabelCS]（意大利哲学家、神学家、全能博士、自然神学最早的提倡者之一、托马斯哲学学派的创立者、历史上最伟大的神学家、“神学界之王”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_MILITARY_TACTICS_QUOTE_1" Language="zh_Hans_CN">
+			<Text>战术意味着用你所拥有的做你能做的。[NEWLINE]——索尔·阿林斯基[NEWLINE][COLOR:ResCultureLabelCS]（俄罗斯犹太裔美国社区组织家、作家、现代居民组织的创始人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_MILITARY_TACTICS_QUOTE_2" Language="zh_Hans_CN">
+			<Text>战略需要思考，战术需要观察。[NEWLINE]——马克思·尤伟[NEWLINE][COLOR:ResCultureLabelCS]（荷兰国际象棋手、棋艺理论家、第5位国际象棋世界冠军、国际象棋联合会主席）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_MILITARY_TACTICS_QUOTE_3" Language="zh_Hans_CN">
+			<Text>幸运总是眷顾勇敢之人。[NEWLINE]——普布留斯·维吉留斯·马罗[NEWLINE][COLOR:ResCultureLabelCS]（古罗马诗人、第一个近代意义上的作家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_MILITARY_TACTICS_QUOTE_4" Language="zh_Hans_CN">
+			<Text>一劳永逸地打击敌人。[NEWLINE]——恰卡·祖鲁[NEWLINE][COLOR:ResCultureLabelCS]（班图族族长、祖鲁王国的缔造者、“非洲的拿破仑”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_MILITARY_TACTICS_QUOTE_5" Language="zh_Hans_CN">
+			<Text>人皆知我所以胜之形，而莫知吾所以制胜之形。[NEWLINE]——孙子[NEWLINE][COLOR:ResCultureLabelCS]（中国古代军事家、政治家、“兵家至圣”、“百世兵家之师”、“东方兵学的鼻祖”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_APPRENTICESHIP_QUOTE_1" Language="zh_Hans_CN">
+			<Text>在一个没有人能成为大师的行业里，我们都是学徒。[NEWLINE]——欧内斯特·米勒尔·海明威[NEWLINE][COLOR:ResCultureLabelCS]（美国作家、记者、20世纪最著名的小说家之一、“新闻体”小说的创始人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_APPRENTICESHIP_QUOTE_2" Language="zh_Hans_CN">
+			<Text>经验不是发生在一个人身上的事，而是一个人如何处理发生在他身上的事。[NEWLINE]——阿道司·赫胥黎[NEWLINE][COLOR:ResCultureLabelCS]（英国作家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_STIRRUPS_QUOTE_1" Language="zh_Hans_CN">
+			<Text>像马镫一样的简单发明很少，也很少像马镫那样对历史产生如此催化推动作用的发明。[NEWLINE]——林恩·汤森德·怀特[NEWLINE][COLOR:ResCultureLabelCS]（美国历史学家、教授、校长）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_STIRRUPS_QUOTE_2" Language="zh_Hans_CN">
+			<Text>如果你说的是真话，那就踩一踩马镫试一试吧。[NEWLINE]——土耳其谚语</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_STIRRUPS_QUOTE_3" Language="zh_Hans_CN">
+			<Text>在马镫和地面之间[NEWLINE]我寻求仁慈，我找到仁慈[NEWLINE]——威廉·卡姆登[NEWLINE][COLOR:ResCultureLabelCS]（英国古物学家、历史学家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_MACHINERY_QUOTE_1" Language="zh_Hans_CN">
+			<Text>机械之中看到神。[NEWLINE]——米南德[NEWLINE][COLOR:ResCultureLabelCS]（古希腊剧作家、贵族、希腊新喜剧诗人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_MACHINERY_QUOTE_2" Language="zh_Hans_CN">
+			<Text>整个算法现在都在机械的掌握之中了。[NEWLINE]——查尔斯·巴贝奇[NEWLINE][COLOR:ResCultureLabelCS]（英国发明家、电脑先驱、电脑前身“分析机”发明者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_MACHINERY_QUOTE_3" Language="zh_Hans_CN">
+			<Text>每台机械都是征服未来的手段。[NEWLINE]——何塞·玛丽亚·罗德里格斯·科斯[NEWLINE][COLOR:ResCultureLabelCS]（墨西哥作家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_EDUCATION_QUOTE_1" Language="zh_Hans_CN">
+			<Text>教育是锻炼思维、提高人的精神和智力的一种手段。[NEWLINE]——海尔·塞拉西一世[NEWLINE][COLOR:ResCultureLabelCS]（埃塞俄比亚帝国末代皇帝、摄政王、“所罗门王和示巴女王225代继承者”、“犹太族的雄狮”、“上帝的特使”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_EDUCATION_QUOTE_2" Language="zh_Hans_CN">
+			<Text>心灵不是一个可以填满的容器，而是一把可以点燃的火炬。[NEWLINE]——普鲁塔克[NEWLINE][COLOR:ResCultureLabelCS]（古罗马希腊作家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_EDUCATION_QUOTE_3" Language="zh_Hans_CN">
+			<Text>君子曰：“学不可以已。”[NEWLINE]——荀子[NEWLINE][COLOR:ResCultureLabelCS]（中国古代思想家、哲学家、教育家、儒家学派的代表人物、“辞赋之祖”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_EDUCATION_QUOTE_4" Language="zh_Hans_CN">
+			<Text>如果想保持自己的优势的话，头脑需要书本，就像剑需要磨刀石一样。[NEWLINE]——乔治·雷蒙德·理查德·马丁[NEWLINE][COLOR:ResCultureLabelCS]（美国作家、编辑、电视剧编剧兼制片人、“美国的托尔金”、“新世纪的海明威”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_EDUCATION_QUOTE_5" Language="zh_Hans_CN">
+			<Text>最好的指导是用最少的词来完成任务。[NEWLINE]——玛利亚·蒙台梭利[NEWLINE][COLOR:ResCultureLabelCS]（意大利幼儿教育家、意大利第一位女医生、意大利第一位女医学博士、女权主义者、蒙台梭利教育法的创始人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_EDUCATION_QUOTE_6" Language="zh_Hans_CN">
+			<Text>一年之计，莫如树谷：[NEWLINE]十年之计，莫如树木；[NEWLINE]终身之计，莫如树人。[NEWLINE]——管子[NEWLINE][COLOR:ResCultureLabelCS]（中国古代经济学家、哲学家、政治家、军事家、春秋时期法家代表人物、“仲父”、“法家先驱”、“圣人之师”、“华夏文明保护者”、“华夏第一相“）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_EDUCATION_QUOTE_7" Language="zh_Hans_CN">
+			<Text>现代教育家的任务不是砍伐丛林，而是灌溉沙漠。[NEWLINE]——克莱夫·斯特普尔斯·刘易斯[NEWLINE][COLOR:ResCultureLabelCS]（英国文学家、学者、批评家、二十世纪最重要的基督教作者之一、“英国文学的巨擘”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_MILITARY_ENGINEERING_QUOTE_1" Language="zh_Hans_CN">
+			<Text>爆破-建造-战斗[NEWLINE]——美国第16工兵旅的座右铭</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_MILITARY_ENGINEERING_QUOTE_2" Language="zh_Hans_CN">
+			<Text>科学介入战争越多，野战军对工程师的需求就越大。[NEWLINE]——伯纳德·劳·蒙哥马利[NEWLINE][COLOR:ResCultureLabelCS]（英国陆军元帅、军事家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_MILITARY_ENGINEERING_QUOTE_3" Language="zh_Hans_CN">
+			<Text>在确保了这些未来城市的卫生规范之后……下一步才要做的是为塔楼和城墙打基础。[NEWLINE]——维特鲁威[NEWLINE][COLOR:ResCultureLabelCS]（古罗马作家、建筑师、工程师）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_CASTLES_QUOTE_1" Language="zh_Hans_CN">
+			<Text>我的思绪常常在夜晚充盈[NEWLINE]胡思乱想也是那么地真实；[NEWLINE]因为在过去，我独自建造[NEWLINE]属于我在空中飞翔的城堡。[NEWLINE]——托马斯·洛夫·皮科克[NEWLINE][COLOR:ResCultureLabelCS]（英国诗人、小说家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_CASTLES_QUOTE_2" Language="zh_Hans_CN">
+			<Text>每个人的家对他们自己来说都是他们自己的城堡和堡垒，也是他抵御伤害和暴力的地方，也是他的安息之地。[NEWLINE]——爱德华·柯克[NEWLINE][COLOR:ResCultureLabelCS]（英国大律师、法官、政治家、法学家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_CASTLES_QUOTE_3" Language="zh_Hans_CN">
+			<Text>用花岗岩和坚固的地基建造的房屋，即使是倾盆大雨，洪流和强风的猛烈袭击，也不会倒塌。[NEWLINE]——海尔·塞拉西一世[NEWLINE][COLOR:ResCultureLabelCS]（埃塞俄比亚帝国末代皇帝、摄政王、“所罗门王和示巴女王225代继承者”、“犹太族的雄狮”、“上帝的特使”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_CASTLES_QUOTE_4" Language="zh_Hans_CN">
+			<Text>如果你已经建造了空中楼阁，你的努力也不会白费；那才是他们应该呆的地方。现在把地基放在它们下面。[NEWLINE]——亨利·戴维·梭罗[NEWLINE][COLOR:ResCultureLabelCS]（美国作家、哲学家、超验主义代表人物、废奴主义及自然主义者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_NAVAL_TRADITION_QUOTE_1" Language="zh_Hans_CN">
+			<Text>一支优秀的海军不是对战争的挑衅，是和平最可靠的保证。[NEWLINE]——西奥多·罗斯福[NEWLINE][COLOR:ResCultureLabelCS]（荷兰裔美国军事家、政治家、外交家、第26任美国总统、美国历史上最年轻的在任总统、美国历史上最伟大的总统之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_NAVAL_TRADITION_QUOTE_2" Language="zh_Hans_CN">
+			<Text>海军既有传统，也有未来：我们对这两个方面都充满自豪和信心。[NEWLINE]——小乔治·惠兰·安德森[NEWLINE][COLOR:ResCultureLabelCS]（美国海军作战部长、海军上将，曾任美国驻葡萄牙大使、总统情报咨询委员会主席）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_NAVAL_TRADITION_QUOTE_3" Language="zh_Hans_CN">
+			<Text>谁控制大海，谁就控制一切。[NEWLINE]——特米斯托克利[NEWLINE][COLOR:ResCultureLabelCS]（古希腊政治家、军事家、雅典执政官、民主派代表人物）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_NAVAL_TRADITION_QUOTE_4" Language="zh_Hans_CN">
+			<Text>风浪总是站在最能干的航海家一边。[NEWLINE]——爱德华·吉本[NEWLINE][COLOR:ResCultureLabelCS]（英国历史学家、作家、“欧洲启蒙时代文史学之父”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_NAVAL_TRADITION_QUOTE_5" Language="zh_Hans_CN">
+			<Text>毫无疑问，如果没有一支决定性的海军力量，我们将一事无成，而有了它，一切都将变得光荣荣耀。[NEWLINE]——乔治·华盛顿[NEWLINE][COLOR:ResCultureLabelCS]（美国政治家、军事家、革命家、首任总统、《美国独立宣言》主要起草人之一、美国开国元勋之一、美利坚开国三杰之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_FEUDALISM_QUOTE_1" Language="zh_Hans_CN">
+			<Text>从今以后，为了生命，为了集体，为了世俗的荣誉，我成为你的子民。[NEWLINE]——《敬礼和表达忠贞的方式》[NEWLINE][COLOR:ResCultureLabelCS]（1483年的英格兰议会法案）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_FEUDALISM_QUOTE_2" Language="zh_Hans_CN">
+			<Text>我将真诚待奉我的领主，爱他所爱的，恶他所恶的。[NEWLINE]——盎格鲁-撒克逊效忠誓词</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_FEUDALISM_QUOTE_3" Language="zh_Hans_CN">
+			<Text>爱情和女士，骑士和军队，我歌唱，[NEWLINE]歌唱礼貌和许多勇敢的壮举；[NEWLINE]在我的故事中，在那些古老的日子里[NEWLINE]在当来自非洲的摩尔人乘着敌对舰队经过时候。[NEWLINE]——阿里奥斯托[NEWLINE][COLOR:ResCultureLabelCS]（意大利文艺复兴诗人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_FEUDALISM_QUOTE_4" Language="zh_Hans_CN">
+			<Text>和其他国家一样，英国的习俗也是贵族对作为他们农奴的平民拥有无上的权力。[NEWLINE]——让·弗鲁瓦萨尔[NEWLINE][COLOR:ResCultureLabelCS]（法国作家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_FEUDALISM_QUOTE_5" Language="zh_Hans_CN">
+			<Text>国王活着，他的臣民也会活着。[NEWLINE]——葡萄牙谚语</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_CIVIL_SERVICE_QUOTE_1" Language="zh_Hans_CN">
+			<Text>所有的文件和表格、整个行政官员系统就像一个由文件、表格和繁文缛节组成的堡垒。[NEWLINE]——亚历山大·尼古拉耶维奇·奥斯特洛夫斯基[NEWLINE][COLOR:ResCultureLabelCS]（俄国剧作家、俄国现代剧院的创建者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_CIVIL_SERVICE_QUOTE_2" Language="zh_Hans_CN">
+			<Text>从从长远来看，每一个政府都是人民的象征，体现了人民的智慧和愚昧；我们不得不说，人民像政府，政府像人民。[NEWLINE]——托马斯·卡莱尔[NEWLINE][COLOR:ResCultureLabelCS]（苏格兰哲学家、评论家、讽刺作家、历史学家、教师）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_CIVIL_SERVICE_QUOTE_3" Language="zh_Hans_CN">
+			<Text>政府要凌驾于所有人之上，为所有人服务。[NEWLINE]——约翰·马歇尔[NEWLINE][COLOR:ResCultureLabelCS]（美国政治活动家、法学家、美国第4任首席大法官、美国历史上任期最长的首席大法官、“伟大的最高法院院长”、“所有时代的法官”、公认影响最深远的实际上的宪法创制人之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_CIVIL_SERVICE_QUOTE_4" Language="zh_Hans_CN">
+			<Text>民有、民治、民享的政府不会从地球上消失的。[NEWLINE]——亚伯拉罕·林肯[NEWLINE][COLOR:ResCultureLabelCS]（美国政治家、战略家、美国第16任总统、首位共和党籍总统）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_MERCENARIES_QUOTE_1" Language="zh_Hans_CN">
+			<Text>和平时期被雇佣军掠夺；战争时期被敌人掠夺。[NEWLINE]——尼可罗·马基亚维利[NEWLINE][COLOR:ResCultureLabelCS]（意大利政治思想家、历史学家、“近代政治学之父”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_MERCENARIES_QUOTE_2" Language="zh_Hans_CN">
+			<Text>雇佣军就是不怎么思考工作、唯利是图、见钱眼开的人。[NEWLINE]——约翰·兰开斯特·斯伯丁[NEWLINE][COLOR:ResCultureLabelCS]（美国作家、诗人、大主教、美国天主教大学创始人之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_MEDIEVAL_FAIRES_QUOTE_1" Language="zh_Hans_CN">
+			<Text>您正要去斯卡布罗集市吗？[NEWLINE]欧芹，鼠尾草，迷迭香和百里香；[NEWLINE]代我向那儿的一位姑娘问好，[NEWLINE]她曾经是我的爱人。[NEWLINE]——英国民歌《斯卡布罗集市》</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_MEDIEVAL_FAIRES_QUOTE_2" Language="zh_Hans_CN">
+			<Text>这以“浮华集市”的名字命名，因为没有现存的城镇比浮华集市更浮夸了。[NEWLINE]——约翰·班扬[NEWLINE][COLOR:ResCultureLabelCS]（英国作家、布道家、宗教寓言文学创始人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_MEDIEVAL_FAIRES_QUOTE_3" Language="zh_Hans_CN">
+			<Text>尽管市场和集市是经常被不加区别地就使用的词语，但它们之间还是有区别的……市场主要卖比集市次要的东西。[NEWLINE]——罗马的洪伯特[NEWLINE][COLOR:ResCultureLabelCS]（法国牧师、学者、神学家、传教士骑士团第5任团长）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_GUILDS_QUOTE_1" Language="zh_Hans_CN">
+			<Text>你们要知道，无论是织布的，是漂布的，都不可烘布染布，也不可出城外去卖布。[NEWLINE]他们可以不把衣服卖给外人，只能卖给城里的商人。[NEWLINE]——温彻斯特染布工和织布工的规定</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_GUILDS_QUOTE_2" Language="zh_Hans_CN">
+			<Text>除非是我们的手艺，否则任何人都不得擅自裁布。[NEWLINE]——施滕达尔工会服装裁剪的修订版规定</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_GUILDS_QUOTE_3" Language="zh_Hans_CN">
+			<Text>古代的英国国王，在他们的宪章或专利信件中，曾多次授予过一个城市或市镇的人，并给予其他特许权……而他们应该有一个商人协会。[NEWLINE]——托马斯·马多克斯[NEWLINE][COLOR:ResCultureLabelCS]（英国古物学家、皇家历史学家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_DIVINE_RIGHT_QUOTE_1" Language="zh_Hans_CN">
+			<Text>我用这条神理来总结关于君王的能力的这一点，即争论可能做什么是亵渎上帝……因此，争论国王的所作所为是一种煽动叛乱行为。[NEWLINE]——詹姆斯一世[NEWLINE][COLOR:ResCultureLabelCS]（斯图亚特王朝的第九位苏格兰国王、首位英格兰及爱尔兰国王）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_DIVINE_RIGHT_QUOTE_2" Language="zh_Hans_CN">
+			<Text>听着，奇怪的女人躺在池塘里分发武器长剑可不是政府体制的基础……你不能仅仅因为有人向你扔了一把剑，你就指望拥有至高无上的权力！[NEWLINE]——巨蟒剧团[NEWLINE][COLOR:ResCultureLabelCS]（英国超现实幽默表演剧团）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_DIVINE_RIGHT_QUOTE_3" Language="zh_Hans_CN">
+			<Text>神虽使我地位高举，我却把这功劳算在我冠冕的荣耀里，在你们的爱护下当政称王。[NEWLINE]——伊丽莎白一世[NEWLINE][COLOR:ResCultureLabelCS]（都铎王朝最后一位英格兰及爱尔兰女王、名义上法国女王、“童贞女王”、“荣光女王”、“英明女王”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_DIVINE_RIGHT_QUOTE_4" Language="zh_Hans_CN">
+			<Text>国君虽亡，王位永存。[NEWLINE]——法国传统登基宣言</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_DIVINE_RIGHT_QUOTE_5" Language="zh_Hans_CN">
+			<Text>我来了，我见了，神征服了。[NEWLINE]——查理五世[NEWLINE][COLOR:ResCultureLabelCS]（神罗哈布斯堡王朝皇帝、尼德兰君主、德意志国王、西班牙哈布斯堡王朝首位国王、16世纪欧洲最强大的君王之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_DIVINE_RIGHT_QUOTE_6" Language="zh_Hans_CN">
+			<Text>敬畏上帝。尊敬国王。[NEWLINE]——《新约圣经》彼得前书2:17[NEWLINE][COLOR:ResCultureLabelCS]（基督教经典）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_CARTOGRAPHY_QUOTE_1" Language="zh_Hans_CN">
+			<Text>所以地理学家，在非洲地图上，[NEWLINE]用野蛮的图片去填补他们的空白。[NEWLINE]——乔纳森·斯威夫特[NEWLINE][COLOR:ResCultureLabelCS]（爱尔兰作家、政论家、讽刺文学大师）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_CARTOGRAPHY_QUOTE_2" Language="zh_Hans_CN">
+			<Text>不是所有流浪的人都是迷路的。[NEWLINE]——约翰·罗纳德·瑞尔·托尔金[NEWLINE][COLOR:ResCultureLabelCS]（英国作家、诗人、古英语语言学家、牛津大学教授、现代奇幻文学之父）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_MASS_PRODUCTION_QUOTE_1" Language="zh_Hans_CN">
+			<Text>我的主要目标之一是制作工具，这样工具本身就可以塑造作品，并赋予作品每一部分以适当的比例。[NEWLINE]——伊莱·惠特尼[NEWLINE][COLOR:ResCultureLabelCS]（美国发明家、机械工程师、企业家、可互换零件的概念发明者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_MASS_PRODUCTION_QUOTE_1" Language="zh_Hans_CN">
+			<Text>人们可以将T型车漆成任何他所想要的颜色，只要它是黑色出产的。[NEWLINE]——亨利·福特[NEWLINE][COLOR:ResCultureLabelCS]（美国汽车工程师、企业家、福特汽车公司的建立者、世界上第一位使用流水线大批量生产汽车的人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_BANKING_QUOTE_1" Language="zh_Hans_CN">
+			<Text>银行机构比常备军更危险。[NEWLINE]——托马斯·杰斐逊[NEWLINE][COLOR:ResCultureLabelCS]（美国第3任总统、《美国独立宣言》主要起草人之一、美国开国元勋之一、美利坚开国三杰之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_BANKING_QUOTE_2" Language="zh_Hans_CN">
+			<Text>银行的金库……就像一个池塘，虽然有一条小溪不断地流出，但还有一条小溪不断地流入。[NEWLINE]——亚当·斯密[NEWLINE][COLOR:ResCultureLabelCS]（英国经济学家、哲学家、作家、经济学的主要创立者、“古典经济学之父”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_GUNPOWDER_QUOTE_1" Language="zh_Hans_CN">
+			<Text>火药的真正作用就是所有人变得“高大”、壮胆。[NEWLINE]——托马斯·卡莱尔[NEWLINE][COLOR:ResCultureLabelCS]（苏格兰哲学家、评论家、讽刺作家、历史学家、教师）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_GUNPOWDER_QUOTE_2" Language="zh_Hans_CN">
+			<Text>男人是一种军事动物，以火药为荣，喜欢游行示威。[NEWLINE]——菲利普·詹姆斯·贝利[NEWLINE][COLOR:ResCultureLabelCS]（英国痉挛诗人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_GUNPOWDER_QUOTE_3" Language="zh_Hans_CN">
+			<Text>谁能怀疑对抗异教徒的火药不是上帝的香火？[NEWLINE]——贡萨洛·费尔南德斯·奥维耶多·瓦尔德斯[NEWLINE][COLOR:ResCultureLabelCS]（西班牙殖民主义征服者、历史学家、作家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_GUNPOWDER_QUOTE_4" Language="zh_Hans_CN">
+			<Text>记住，请记住，十一月的五日[NEWLINE]火药叛国和阴谋；[NEWLINE]我不知道有什么原由火药阴谋[NEWLINE]应该永远被忘记。[NEWLINE]——英国韵文</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_PRINTING_QUOTE_2" Language="zh_Hans_CN">
+			<Text>火药为战争所做的一切正如印刷机为思想所做的一切一样。[NEWLINE]——温德尔·菲利普斯[NEWLINE][COLOR:ResCultureLabelCS]（美国演说家、改革家、废奴主义者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_PRINTING_QUOTE_1" Language="zh_Hans_CN">
+			<Text>笔也许不比剑厉害，但印刷机也许比攻城武器更重要。寥寥数语就能改变一切。[NEWLINE]——特里·普拉切特[NEWLINE][COLOR:ResCultureLabelCS]（英国幻想小说家、“幻想小说家超级巨星”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_PRINTING_QUOTE_3" Language="zh_Hans_CN">
+			<Text>印刷机是现代指挥官总部大楼中最厉害的武器。[NEWLINE]——托马斯·爱德华·劳伦斯[NEWLINE][COLOR:ResCultureLabelCS]（英国军官、英国最伟大的战争英雄之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_PRINTING_QUOTE_4" Language="zh_Hans_CN">
+			<Text>铅变成子弹的威力还不如热铅水变成印刷铅字的威力大。[NEWLINE]——乔治·布兰德斯[NEWLINE][COLOR:ResCultureLabelCS]（丹麦评论家、学者、“斯堪的纳维亚文化现代化”的理论家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_SQUARE_RIGGING_QUOTE_1" Language="zh_Hans_CN">
+			<Text>人类很少能做到接近自然界的任何事物，但一艘帆船却能做到。[NEWLINE]——艾伦·维利尔斯[NEWLINE][COLOR:ResCultureLabelCS]（澳洲作家、冒险家、摄影师、水手）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_SQUARE_RIGGING_QUOTE_2" Language="zh_Hans_CN">
+			<Text>不是高耸的帆，而是看不见的风推动着一艘船。[NEWLINE]——英国谚语</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_SQUARE_RIGGING_QUOTE_3" Language="zh_Hans_CN">
+			<Text>当微风吹动你的船帆，水在你的船头下沙沙作响时，这才是美好时光。[NEWLINE]——查尔斯·巴克斯顿[NEWLINE][COLOR:ResCultureLabelCS]（英国酿酒师、慈善家、作家、国会议员）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_SQUARE_RIGGING_QUOTE_4" Language="zh_Hans_CN">
+			<Text>我不想与任何航行不快的船有任何联系，因为我想走危险的航路。[NEWLINE]——约翰·保罗·琼斯[NEWLINE][COLOR:ResCultureLabelCS]（苏格兰裔美国海军军官、军事家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_ASTRONOMY_QUOTE_1" Language="zh_Hans_CN">
+			<Text>宇宙很大。真的很大。你不会相信它有多大。[NEWLINE]——道格拉斯·亚当斯[NEWLINE][COLOR:ResCultureLabelCS]（英国广播剧作家、音乐家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_ASTRONOMY_QUOTE_1" Language="zh_Hans_CN">
+			<Text>天文学吸引人们仰望上苍，引导我们了解其他世界。[NEWLINE]——柏拉图[NEWLINE][COLOR:ResCultureLabelCS]（古希腊哲学家、西方文化中最伟大的哲学家和思想家之一、希腊三贤之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_ASTRONOMY_QUOTE_3" Language="zh_Hans_CN">
+			<Text>因为天文学不仅令人愉快，而且很有助于为人所知：不可否认，这门艺术展现了上天令人钦佩的智慧。[NEWLINE]——约翰·加尔文[NEWLINE][COLOR:ResCultureLabelCS]（欧洲宗教改革家、基督教新教加尔文宗创始人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_ASTRONOMY_QUOTE_4" Language="zh_Hans_CN">
+			<Text>惊奇的是，不是星空如此之大，而是人类已经测量出星辰之间的距离了。[NEWLINE]——阿纳托尔·法朗士[NEWLINE][COLOR:ResCultureLabelCS]（法国作家、文学评论家、社会活动家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_ASTRONOMY_QUOTE_5" Language="zh_Hans_CN">
+			<Text>俯仰终宇宙，[NEWLINE]不乐复何如！[NEWLINE]——陶渊明[NEWLINE][COLOR:ResCultureLabelCS]（中国东晋诗人、辞赋家、散文家、“隐逸诗人之宗”、“田园诗派之鼻祖”、江西首位文学巨匠【笑】）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_METAL_CASTING_QUOTE_2" Language="zh_Hans_CN">
+			<Text>不要随意评判一个人，除非你曾站在他工作过的熔炉前，用他的锤子工作过。[NEWLINE]——雷克·莱尔顿[NEWLINE][COLOR:ResCultureLabelCS]（美国作家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_METAL_CASTING_QUOTE_1" Language="zh_Hans_CN">
+			<Text>起初，赫菲斯托斯做了一个巨大的盾牌……他在盾牌上铸造了两座巨大雄伟的城市。[NEWLINE]——荷马[NEWLINE][COLOR:ResCultureLabelCS]（古希腊盲人诗人、西方文学始祖）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_METAL_CASTING_QUOTE_3" Language="zh_Hans_CN">
+			<Text>在锻铁炉另一边站在一个人[NEWLINE]辛苦劳作，还有两大块黑铁和黄铜[NEWLINE]被熊熊烈焰给熔化。[NEWLINE]——约翰·弥尔顿[NEWLINE][COLOR:ResCultureLabelCS]（英国诗人、政论家、民主斗士、英国文学史上六位伟大诗人之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_METAL_CASTING_QUOTE_4" Language="zh_Hans_CN">
+			<Text>天上所戴的最明亮的冠冕，都经过试炼、熔融、磨光，并且经过患难的磨砺来得荣耀的。[NEWLINE]——埃德温·哈贝尔·查平[NEWLINE][COLOR:ResCultureLabelCS]（美国传教士、《基督教领袖》编辑、诗人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_SIEGE_TACTICS_QUOTE_1" Language="zh_Hans_CN">
+			<Text>必以全争于天下，故兵不顿而利可全，此谋攻之法也。[NEWLINE]——孙子[NEWLINE][COLOR:ResCultureLabelCS]（中国古代军事家、政治家、“兵家至圣”、“百世兵家之师”、“东方兵学的鼻祖”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_SIEGE_TACTICS_QUOTE_2" Language="zh_Hans_CN">
+			<Text>小心围困自己的罪念，并通过远离维持其生命的“食物”和“燃料”来慢慢消除它们。[NEWLINE]——理查德·巴克斯特[NEWLINE][COLOR:ResCultureLabelCS]（英国清教教会领袖、诗人、赞美诗作家、神学家、争论家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_SIEGE_TACTICS_QUOTE_3" Language="zh_Hans_CN">
+			<Text>哦！夏天甜蜜的气息将如何保持，[NEWLINE]以对抗风暴天灾围攻的日子？[NEWLINE]——威廉·莎士比亚[NEWLINE][COLOR:ResCultureLabelCS]（英国文艺复兴时期剧作家、诗人、演员、英国大文豪）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_EXPLORATION_QUOTE_1" Language="zh_Hans_CN">
+			<Text>我们停止探索的那一天，就是我们致力于生活在一个停滞不前，没有好奇心，没有梦想的世界的那一天。[NEWLINE]——奈尔·德葛拉司·泰森[NEWLINE][COLOR:ResCultureLabelCS]（美国天文学家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_EXPLORATION_QUOTE_2" Language="zh_Hans_CN">
+			<Text>我们生活在一个充满美丽、魅力和奇遇冒险的美好世界。只要我们睁大眼睛去寻找，我们所能经历的探索奇遇就永无止境。[NEWLINE]——贾瓦哈拉尔·尼赫鲁[NEWLINE][COLOR:ResCultureLabelCS]（印度开国总理、不结盟运动和万隆会议的倡导者之一、印度独立运动的参与人之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_EXPLORATION_QUOTE_3" Language="zh_Hans_CN">
+			<Text>过去，探险家们都是伟人，我们应该尊敬他们。但我们不要忘记，他们的精神永存。要找到这样一个人，他必须是为了梦想而冒险，是为了寻找的乐趣而探寻，而不是为了他可能找到的东西而探索的探险家。[NEWLINE]——埃德蒙·希拉里[NEWLINE][COLOR:ResCultureLabelCS]（新西兰登山探险家、新西兰5元正面肖像）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_EXPLORATION_QUOTE_2" Language="zh_Hans_CN">
+			<Text>我们将永不停止探索，一切探索的终点将是我们出发的地方，并重新认识我们身处何方。[NEWLINE]——托马斯·斯特尔那斯·艾略特[NEWLINE][COLOR:ResCultureLabelCS]（英国诗人、剧作家、文学批评家、诗歌现代派运动领袖）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_EXPLORATION_QUOTE_5" Language="zh_Hans_CN">
+			<Text>我们有可能也有必要发现[NEWLINE]一个勇敢而惊人的真相。[NEWLINE]——马娅·安杰卢[NEWLINE][COLOR:ResCultureLabelCS]（美国黑人女作家、诗人、黑人民权运动家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_EXPLORATION_QUOTE_6" Language="zh_Hans_CN">
+			<Text>不放过任何一块没翻过的石头——千方百计[NEWLINE]——欧里庇得斯[NEWLINE][COLOR:ResCultureLabelCS]（古希腊悲剧家、与埃斯库罗斯和索福克勒斯并称古希腊三大悲剧作家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_EXPLORATION_QUOTE_7" Language="zh_Hans_CN">
+			<Text>在很长一段时间里，人们不可能在看不到海岸的情况下发现新大陆。[NEWLINE]——安德烈·纪德[NEWLINE][COLOR:ResCultureLabelCS]（法国作家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_EXPLORATION_QUOTE_8" Language="zh_Hans_CN">
+			<Text>我一生都是游牧民，爱着那些遥远而未知的地方。[NEWLINE]——伊莎贝尔·埃伯哈特[NEWLINE][COLOR:ResCultureLabelCS]（瑞士女探险家、作家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_HUMANISM_QUOTE_1" Language="zh_Hans_CN">
+			<Text>我的国家就是世界，我的信仰就是行善。[NEWLINE]——托马斯·潘恩[NEWLINE][COLOR:ResCultureLabelCS]（英裔美国思想家、作家、政治活动家、理论家、革命家、激进民主主义者、“美国体制之父”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_HUMANISM_QUOTE_2" Language="zh_Hans_CN">
+			<Text>与其知根知底，不如行善成仁。[NEWLINE]——弗兰齐斯科·彼特拉克[NEWLINE][COLOR:ResCultureLabelCS]（意大利学者、诗人、，文艺复兴第一个人文主义者、“文艺复兴之父”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_HUMANISM_QUOTE_3" Language="zh_Hans_CN">
+			<Text>用他最大的力量来巩固、保存和保护他的生命，这是每一个新出生的人的都会自然理性的反射。[NEWLINE]——乔万尼·薄伽丘[NEWLINE][COLOR:ResCultureLabelCS]（意大利人文主义作家、诗人、意大利文艺复兴运动代表、佛罗伦萨文学“三杰”之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_HUMANISM_QUOTE_1" Language="zh_Hans_CN">
+			<Text>人文主义的四个特征是好奇心、自由的思想、高雅品位和人情味。[NEWLINE]——爱德华·摩根·福斯特[NEWLINE][COLOR:ResCultureLabelCS]（英国作家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_DIPLOMATIC_SERVICE_QUOTE_2" Language="zh_Hans_CN">
+			<Text>交际高手总是记得女人的生日，却不记得她的年龄。[NEWLINE]——罗伯特·弗罗斯特[NEWLINE][COLOR:ResCultureLabelCS]（美国作家、“美国文学中的桂冠诗人”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_DIPLOMATIC_SERVICE_QUOTE_2" Language="zh_Hans_CN">
+			<Text>一切外交手段都是战争的延续。[NEWLINE]——周恩来[NEWLINE][COLOR:ResCultureLabelCS]（新中国马克思主义者、伟大的无产阶级革命家、政治家、军事家、外交家、党和国家主要领导人之一、中国人民解放军主要创建人之一、中华人民共和国的开国元勋、“人民的好总理”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_REFORMED_CHURCH_QUOTE_2" Language="zh_Hans_CN">
+			<Text>西方现代文明的三大要素：火药、印刷术和新教。[NEWLINE]——托马斯·卡莱尔[NEWLINE][COLOR:ResCultureLabelCS]（苏格兰哲学家、评论家、讽刺作家、历史学家、教师）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_REFORMED_CHURCH_QUOTE_2" Language="zh_Hans_CN">
+			<Text>我宁愿失去我所有的土地和上百条生命也不愿做异教徒的国王。[NEWLINE]——菲利普二世[NEWLINE][COLOR:ResCultureLabelCS]（西班牙哈布斯堡王朝第二位国王、葡萄牙哈布斯堡王朝首位国王）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_REFORMED_CHURCH_QUOTE_3" Language="zh_Hans_CN">
+			<Text>我站在这里；我却不能做其他的事。上帝保佑我。阿门。[NEWLINE]——马丁·路德[NEWLINE][COLOR:ResCultureLabelCS]（德国宗教改革家、宗教改革运动发起人、基督教新教创立者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_REFORMED_CHURCH_QUOTE_4" Language="zh_Hans_CN">
+			<Text>人民将获得自由，只有上帝是他们永恒的主。[NEWLINE]——托马斯·闵采尔[NEWLINE][COLOR:ResCultureLabelCS]（德国宗教改革家、宗教改革时期的激进派领袖、德意志农民战争的代表人物）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_MERCANTILISM_QUOTE_1" Language="zh_Hans_CN">
+			<Text>一个国家的实力和声望在于其过剩的黄金、白银和其他一切生活必需品和便利用品。[NEWLINE]——菲利普·冯·霍尼格[NEWLINE][COLOR:ResCultureLabelCS]（德国官员、重商主义的官房学派创始人之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_MERCANTILISM_QUOTE_2" Language="zh_Hans_CN">
+			<Text>贸易是金钱之母。[NEWLINE]——托马斯·德拉克斯[NEWLINE][COLOR:ResCultureLabelCS]（英国圣公宗神学家、神学和古典作家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_THE_ENLIGHTENMENT_QUOTE_2" Language="zh_Hans_CN">
+			<Text>凡违背自然的就是违背理性的，而违背理性的就是荒谬可笑的。[NEWLINE]——巴鲁赫·斯宾诺莎[NEWLINE][COLOR:ResCultureLabelCS]（犹太裔荷兰哲学家、与笛卡尔和戈特弗里德·威廉·莱布尼茨并称近代西方哲学的三大理性主义者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_THE_ENLIGHTENMENT_QUOTE_2" Language="zh_Hans_CN">
+			<Text>启蒙是人从自我强加的不成熟中脱颖而出。[NEWLINE]——伊曼努尔·康德[NEWLINE][COLOR:ResCultureLabelCS]（拉脱维亚裔德国哲学家、作家、德国古典哲学创始人、西方最具影响力的思想家之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_THE_ENLIGHTENMENT_QUOTE_3" Language="zh_Hans_CN">
+			<Text>我们唯一应该读的福音就是名为“大自然”的经典，它是上帝亲手写的，加盖了他的印记。[NEWLINE]——弗朗索瓦·马利·阿鲁埃[NEWLINE][COLOR:ResCultureLabelCS]（法国启蒙思想家、文学家、哲学家、“法兰西思想之王”、“法兰西最优秀的诗人”、“欧洲的良知”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_THE_ENLIGHTENMENT_QUOTE_4" Language="zh_Hans_CN">
+			<Text>我思故我在。[NEWLINE]——勒内·笛卡尔[NEWLINE][COLOR:ResCultureLabelCS]（法国哲学家，数学家、科学家、“解析几何之父”、西方现代哲学思想的奠基人之一、近代唯物论的开拓者、与巴鲁赫·斯宾诺莎和戈特弗里德·威廉·莱布尼茨并称近代西方哲学的三大理性主义者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_THE_ENLIGHTENMENT_QUOTE_5" Language="zh_Hans_CN">
+			<Text>知识就是力量。[NEWLINE]——弗朗西斯·培根[NEWLINE][COLOR:ResCultureLabelCS]（英国文艺复兴时期散文家、唯物主义哲学家、实验科学的创始人、近代归纳法的创始人、科学研究程序进行逻辑组织化的先驱）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_THE_ENLIGHTENMENT_QUOTE_6" Language="zh_Hans_CN">
+			<Text>我们只能相信事实。[NEWLINE]——安托万·洛朗·拉瓦锡[NEWLINE][COLOR:ResCultureLabelCS]（法国化学家、生物学家、"现代化学之父"）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_INDUSTRIALIZATION_QUOTE_1" Language="zh_Hans_CN">
+			<Text>我们比发达国家落后50年或100年。我们必须在十年之内走完这段路程。要么我们这么做，要么等着他们击垮我们。[NEWLINE]——约瑟夫·维萨里奥诺维奇·斯大林[NEWLINE][COLOR:ResCultureLabelCS]（格鲁吉亚裔苏联政治家，联共（布）中央总书记 、苏联人民委员会主席(自1946年起改称部长会议主席) 、苏联大元帅）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_INDUSTRIALIZATION_QUOTE_2" Language="zh_Hans_CN">
+			<Text>生活中没有勤劳是罪过，勤劳中没有艺术是野蛮。[NEWLINE]——约翰·拉斯金[NEWLINE][COLOR:ResCultureLabelCS]（英国作家、艺术家、艺术评论家、哲学家、教师、业余地质学家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_INDUSTRIALIZATION_QUOTE_3" Language="zh_Hans_CN">
+			<Text>各行各业，不论大小，[NEWLINE]工业都支持我们。[NEWLINE]——约翰·盖伊[NEWLINE][COLOR:ResCultureLabelCS]（英国诗人、剧作家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_SCIENTIFIC_THEORY_QUOTE_1" Language="zh_Hans_CN">
+			<Text>科学是观察事物的可能性。[NEWLINE]——列奥纳多·达·芬奇[NEWLINE][COLOR:ResCultureLabelCS]（意大利博学家、文艺复兴后三杰之一、“文艺复兴时期最完美的代表”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_SCIENTIFIC_THEORY_QUOTE_1" Language="zh_Hans_CN">
+			<Text>无法验证的主张，无法反驳的断言，无论它们在激励我们或刺激我们的好奇心方面可能有什么效果，但一切都毫无意义。[NEWLINE]——卡尔·萨根[NEWLINE][COLOR:ResCultureLabelCS]（美国天文学家、天体物理学家、宇宙学家、科幻作家、行星学会的成立者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_SCIENTIFIC_THEORY_QUOTE_3" Language="zh_Hans_CN">
+			<Text>善行无辙迹，善言无瑕谪；[NEWLINE]善数不用筹策；[NEWLINE]善闭无关楗，而不可开，善结无绳约，而不可解。[NEWLINE]——老子[NEWLINE][COLOR:ResCultureLabelCS]（中国古代思想家、哲学家、文学家、史学家、道家学派创始人和主要代表人物、与庄子并称“老庄”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_BALLISTICS_QUOTE_1" Language="zh_Hans_CN">
+			<Text>不懂几何的人不能进入这里。[NEWLINE]——尼科洛·塔尔塔利亚[NEWLINE][COLOR:ResCultureLabelCS]（意大利数学家、工程师）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_BALLISTICS_QUOTE_2" Language="zh_Hans_CN">
+			<Text>所有的手工艺术都属于实用力学。[NEWLINE]——艾萨克·牛顿[NEWLINE][COLOR:ResCultureLabelCS]（英国物理学家、数学家、英国皇家学会会长、百科全书式的“全才”、“近代物理学之父”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_MILITARY_SCIENCE_QUOTE_1" Language="zh_Hans_CN">
+			<Text>古之所谓善战者，胜于易胜者也。[NEWLINE]——孙子[NEWLINE][COLOR:ResCultureLabelCS]（中国古代军事家、政治家、“兵家至圣”、“百世兵家之师”、“东方兵学的鼻祖”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_MILITARY_SCIENCE_QUOTE_2" Language="zh_Hans_CN">
+			<Text>没有人会发动一场战争，或者更确切地说，任何有理智的人都不应该发动一场战争，除非他头脑中首先清楚他打算通过这场战争达到什么目的，以及他打算怎样进行这场战争。[NEWLINE]——卡尔·菲利普·戈特弗里德·冯·克劳塞维茨[NEWLINE][COLOR:ResCultureLabelCS]（普鲁士军事理论家、军事历史学家、普鲁士军队少将、“西方兵圣”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_STEAM_POWER_QUOTE_1" Language="zh_Hans_CN">
+			<Text>人类是否因发明蒸汽机这项科学进步而成为赢家，这是有争议的。[NEWLINE]——温斯顿·丘吉尔[NEWLINE][COLOR:ResCultureLabelCS]（英国首相、政治家、历史学家、画家、演说家、作家、记者、20世纪最重要的政治领袖之一、“雅尔塔会议三巨头”之一、历史上掌握英语单词数量最多的人之一、世界最有说服力的八大演说家之一、“有史以来最伟大的英国人”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_STEAM_POWER_QUOTE_2" Language="zh_Hans_CN">
+			<Text>科学对蒸汽机的贡献要大于蒸汽机对科学的贡献。[NEWLINE]——劳伦斯·约瑟夫·亨德森[NEWLINE][COLOR:ResCultureLabelCS]（美国生理学家、化学家、生物学家、哲学家、社会学家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_STEAM_POWER_QUOTE_3" Language="zh_Hans_CN">
+			<Text>如果蒸汽机是人类手中最强大的工具……同时，它作为一种强大的道德杠杆，在推动伟大的文明事业中发挥着作用。[NEWLINE]——威廉·赫斯基森[NEWLINE][COLOR:ResCultureLabelCS]（英国政客、金融家、世界上第一位广受报道的铁路事故遇难者【惨】）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_SANITATION_QUOTE_1" Language="zh_Hans_CN">
+			<Text>神爱那些净化自己的人。[NEWLINE]——《古兰经》9:108[NEWLINE][COLOR:ResCultureLabelCS]（伊斯兰教唯一的根本经典）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_SANITATION_QUOTE_2" Language="zh_Hans_CN">
+			<Text>干净是一种美德。[NEWLINE]——约翰·卫斯理[NEWLINE][COLOR:ResCultureLabelCS]（英国圣公会神职人员、基督教神学家、卫理宗创始人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_SANITATION_QUOTE_3" Language="zh_Hans_CN">
+			<Text>山谷溪流的水[NEWLINE]永远不要对这个被污染的世界大喊：“净化自己！”[NEWLINE]但是自然地，它自己[NEWLINE]展示了它是如何做到的。[NEWLINE]——良宽大愚[NEWLINE][COLOR:ResCultureLabelCS]（日本曹洞宗僧、诗人、书法家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_SANITATION_QUOTE_4" Language="zh_Hans_CN">
+			<Text>肥皂、水和常识是最好的消毒剂。[NEWLINE]——威廉·奥斯勒[NEWLINE][COLOR:ResCultureLabelCS]（加拿大医生、藏书家、历史学家、作家、恶作剧家、约翰霍普金斯医院四个创始教授之一、“现代医学之父”、“有史以来使用听诊器的最伟大的诊断学家之一”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_ECONOMICS_QUOTE_1" Language="zh_Hans_CN">
+			<Text>经济学是一门不太尊重个人意愿的学科。[NEWLINE]——尼基塔·谢尔盖耶维奇·赫鲁晓夫[NEWLINE][COLOR:ResCultureLabelCS]（苏联党和国家最高领导人、苏联共产党中央委员会第一书记、苏联部长会议主席）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_ECONOMICS_QUOTE_2" Language="zh_Hans_CN">
+			<Text>有责任感和有组织的商人所拥有的企业，最终将超过富有的君主所拥有的企业。[NEWLINE]——伊本·赫勒敦[NEWLINE][COLOR:ResCultureLabelCS]（阿拉伯穆斯林学者、史学家、经济学家、社会学家、“人口统计学之父”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_ECONOMICS_QUOTE_2" Language="zh_Hans_CN">
+			<Text>我们普通人是通过公路或铁路去各地旅游的，而经济学家是靠基础设施来旅行的。[NEWLINE]——玛格丽特·希尔达·撒切尔[NEWLINE][COLOR:ResCultureLabelCS]（英国右翼女政治家、第49任英国首相、英国第一位女首相、“铁娘子”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_ECONOMICS_QUOTE_4" Language="zh_Hans_CN">
+			<Text>我最希望的莫过于我的诸侯们能够获得手段，使他们获得一笔幸运的生意。[NEWLINE]——阿方索六世[NEWLINE][COLOR:ResCultureLabelCS]（葡萄牙布拉干萨王朝的第二位国王、“胜利王”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_RIFLING_QUOTE_1" Language="zh_Hans_CN">
+			<Text>上帝不会站在兵营大的那一边，而是站在射得最好的那一边。[NEWLINE]——弗朗索瓦·马利·阿鲁埃[NEWLINE][COLOR:ResCultureLabelCS]（法国启蒙思想家、文学家、哲学家、“法兰西思想之王”、“法兰西最优秀的诗人”、“欧洲的良知”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_RIFLING_QUOTE_2" Language="zh_Hans_CN">
+			<Text>步枪是民主的武器。[NEWLINE]——爱德华·保罗·艾比[NEWLINE][COLOR:ResCultureLabelCS]（美国环保主义作家、散文家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_RIFLING_QUOTE_3" Language="zh_Hans_CN">
+			<Text>世界上最致命的武器是一名海军陆战队员和他的步枪。[NEWLINE]——约翰·约瑟夫·潘兴[NEWLINE][COLOR:ResCultureLabelCS]（美国著名军事家、陆军特级上将、“铁锤将军”、“黑桃杰克”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_COLONIALISM_QUOTE_1" Language="zh_Hans_CN">
+			<Text>担负起白人的重担[NEWLINE]送出你们最好的后代[NEWLINE]把你们的儿子绑起来流放[NEWLINE]为你们被掳的人服务[NEWLINE]——约瑟夫·鲁德亚德·吉卜林[NEWLINE][COLOR:ResCultureLabelCS]（英国作家、诗人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_COLONIALISM_QUOTE_2" Language="zh_Hans_CN">
+			<Text>让别的民族去分割大陆和海洋，而我们德国满足于蓝色的天空的时代已经过去了，我们也要求阳光下的地盘。[NEWLINE]——伯恩哈德·冯·比洛[NEWLINE][COLOR:ResCultureLabelCS]（德国政治家、德意志帝国首相、）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_COLONIALISM_QUOTE_3" Language="zh_Hans_CN">
+			<Text>扩张是一切……如果可以，我会吞并所有星球。[NEWLINE]——塞西尔·约翰·罗兹[NEWLINE][COLOR:ResCultureLabelCS]（英国殖民者、戴比尔斯矿业公司创始人、罗德奖学金创始人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_CIVIL_ENGINEERING_QUOTE_1" Language="zh_Hans_CN">
+			<Text>土木工程师才是真正的19世纪建筑师。[NEWLINE]——威廉·伯吉斯[NEWLINE][COLOR:ResCultureLabelCS]（英国建筑师、设计师）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_CIVIL_ENGINEERING_QUOTE_1" Language="zh_Hans_CN">
+			<Text>改善使道路变得笔直；但没有改善的弯弯曲曲的道路是天才之路。[NEWLINE]——威廉·布莱克[NEWLINE][COLOR:ResCultureLabelCS]（英国浪漫主义诗人、版画家、英国第一位重要的浪漫主义诗人、英国文学史上最重要伟大诗人之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_NATIONALISM_QUOTE_1" Language="zh_Hans_CN">
+			<Text>民族主义产生了国家，而不是相反。[NEWLINE]——厄内斯特·盖尔纳[NEWLINE][COLOR:ResCultureLabelCS]（捷克裔英国哲学家、社会人类学家、批判理性主义学派领头人之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_NATIONALISM_QUOTE_2" Language="zh_Hans_CN">
+			<Text>我们的心在那里摇着摇篮[NEWLINE]我们的爱在那里度过我们的辛劳，[NEWLINE]用我们的信仰，希望和荣光，[NEWLINE]我们誓死保卫我们的祖国。[NEWLINE]——约瑟夫·鲁德亚德·吉卜林[NEWLINE][COLOR:ResCultureLabelCS]（英国作家、诗人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_NATIONALISM_QUOTE_3" Language="zh_Hans_CN">
+			<Text>为了拯救我们的国家，我们只能死一次，[NEWLINE]这是多么遗憾啊！[NEWLINE]——约瑟夫·艾迪生[NEWLINE][COLOR:ResCultureLabelCS]（英国散文家、诗人、辉格党政治家、英国散文大师之一） </Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_NATIONALISM_QUOTE_4" Language="zh_Hans_CN">
+			<Text>不要问你的国家能为你做什么，而要问你能为你的国家做什么。[NEWLINE]——约翰·菲茨杰尔德·肯尼迪[NEWLINE][COLOR:ResCultureLabelCS]（爱尔兰裔美国政治家、军人、第35任美国总统）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_NATIONALISM_QUOTE_5" Language="zh_Hans_CN">
+			<Text>我们宁愿饿死也不愿出卖国家荣誉。[NEWLINE]——英迪拉·普里雅达希尼·甘地[NEWLINE][COLOR:ResCultureLabelCS]（印度女政治家、印度第一位女总理、印度第三任总理、“印度铁娘子”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_OPERA_BALLET_QUOTE_1" Language="zh_Hans_CN">
+			<Text>一种充满异国情调和非理性的娱乐方式，一直受到人们的反对，却总是能占上风。[NEWLINE]——塞缪尔·约翰逊[NEWLINE][COLOR:ResCultureLabelCS]（英国作家、文学评论家、诗人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_OPERA_BALLET_QUOTE_2" Language="zh_Hans_CN">
+			<Text>芭蕾风格化的基调是：失重……它投射出一种脆弱的强度和某种不可弯曲的精度……它是表达精神上爱的完美媒介。[NEWLINE]——安·兰德[NEWLINE][COLOR:ResCultureLabelCS]（俄裔美国女哲学家、小说家、公共知识分子、“客观主义”流派创立者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_OPERA_BALLET_QUOTE_3" Language="zh_Hans_CN">
+			<Text>我为艺术而活，我为爱而活。[NEWLINE]——贾科莫·普契尼[NEWLINE][COLOR:ResCultureLabelCS]（意大利歌剧作曲家、《公主彻夜未眠》等作者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_OPERA_BALLET_QUOTE_4" Language="zh_Hans_CN">
+			<Text>每一部芭蕾舞剧，无论在艺术上还是在大众中是否成功，都给了我一些重要的东西。[NEWLINE]——米哈伊尔·巴里什尼科夫[NEWLINE][COLOR:ResCultureLabelCS]（拉脱维亚俄裔美国舞蹈家、编舞家、演员、舞蹈导演）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_NATURAL_HISTORY_QUOTE_2" Language="zh_Hans_CN">
+			<Text>在所有的自然史著作中，我们不断地发现有关动物对其食物、习性以及栖息地惊人适应的细节。[NEWLINE]——阿尔弗雷德·拉塞尔·华莱士[NEWLINE][COLOR:ResCultureLabelCS]（英国博物学家、探险家、地理学家、人类学家、生物学家、“自然选择”理论创始人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_NATURAL_HISTORY_QUOTE_2" Language="zh_Hans_CN">
+			<Text>大自然的观察者带着敬佩的心情看到：“整个世界都充满了上帝的荣耀。”[NEWLINE]——卡尔·冯·林奈[NEWLINE][COLOR:ResCultureLabelCS]（瑞典生物学家、动植物双名命名法创立者、近代植物分类学的奠基人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_NATURAL_HISTORY_QUOTE_3" Language="zh_Hans_CN">
+			<Text>不适应就灭亡，一如既往，这是自然界不可阻挡的法则。[NEWLINE]——赫伯特·乔治·威尔斯[NEWLINE][COLOR:ResCultureLabelCS]（英国小说家，新闻记者、政治家、社会学家、历史学家、现代最多产的作家之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_NATURAL_HISTORY_QUOTE_4" Language="zh_Hans_CN">
+			<Text>在大自然那浩瀚的秘密之书中，[NEWLINE]我能读懂一点点。[NEWLINE]——威廉·莎士比亚[NEWLINE][COLOR:ResCultureLabelCS]（英国文艺复兴时期剧作家、诗人、演员、英国大文豪）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_URBANIZATION_QUOTE_1" Language="zh_Hans_CN">
+			<Text>在大城市里我们会发现什么奇怪的现象，我们所需要做的就是睁开眼睛四处闲逛。生活中充斥着无辜的怪物。[NEWLINE]——夏尔·皮埃尔·波德莱尔[NEWLINE][COLOR:ResCultureLabelCS]（法国现代派诗人、象征派诗歌先驱）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_URBANIZATION_QUOTE_2" Language="zh_Hans_CN">
+			<Text>你会不喜欢一座城市的七十个奇迹，而喜欢它对你所问问题的回答。[NEWLINE]——伊塔洛·卡尔维诺[NEWLINE][COLOR:ResCultureLabelCS]（意大利当代作家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_URBANIZATION_QUOTE_2" Language="zh_Hans_CN">
+			<Text>我喜欢城市的地方在于它的一切都是特大号的，有美有丑。[NEWLINE]——约瑟夫·亚历山德罗维奇·布罗茨基[NEWLINE][COLOR:ResCultureLabelCS]（苏联美籍犹太裔诗人、散文家、“不断更新表现手法的高手”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_SCORCHED_EARTH_QUOTE_1" Language="zh_Hans_CN">
+			<Text>不管他们了……牛被赶走了；青草和成熟的玉米被火烧毁了。[NEWLINE]——爱德华·吉本[NEWLINE][COLOR:ResCultureLabelCS]（英国历史学家、作家、“欧洲启蒙时代文史学之父”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_SCORCHED_EARTH_QUOTE_1" Language="zh_Hans_CN">
+			<Text>战争是地狱。[NEWLINE]——威廉·特库赛·谢尔曼[NEWLINE][COLOR:ResCultureLabelCS]（美国内战时期联邦军著名将领、陆军上将）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_SCORCHED_EARTH_QUOTE_3" Language="zh_Hans_CN">
+			<Text>迦太基移除，意思是：迦太基必须被毁灭。[NEWLINE]——马尔库斯·波尔基乌斯·加图[NEWLINE][COLOR:ResCultureLabelCS]（罗马共和国时期政治家、国务活动家、演说家、罗马历史上第一个重要的拉丁语散文作家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_SCORCHED_EARTH_QUOTE_4" Language="zh_Hans_CN">
+			<Text>只有傻瓜或骗子才会强硬或浪漫地谈论战争。[NEWLINE]——约翰·席德尼·麦凯恩三世[NEWLINE][COLOR:ResCultureLabelCS]（美国军人、政治人物、共和党重量级人物、新保守主义者、亚利桑那州参议员）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_FLIGHT_QUOTE_1" Language="zh_Hans_CN">
+			<Text>我们的时代是一个飞行时代的开端，我很高兴自己出生在一个如此有趣的时代。[NEWLINE]——阿梅莉亚·埃尔哈特[NEWLINE][COLOR:ResCultureLabelCS]（美国女飞行员、女权运动者、第一位获得十字飞行荣誉勋章的女飞行员、第一位独自飞越大西洋的女飞行员）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_FLIGHT_QUOTE_2" Language="zh_Hans_CN">
+			<Text>如果你能从着陆后安全走出来，那就是一个好的着陆。如果你第二天还能再乘坐飞机，那将是一次出色的着陆。[NEWLINE]——查克·叶格[NEWLINE][COLOR:ResCultureLabelCS]（美国空军准将、持有王牌（Ace）称号的二战空战英雄、美国空军与NASA试飞员、20世纪人类航空史上最重要的传奇人物之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_FLIGHT_QUOTE_3" Language="zh_Hans_CN">
+			<Text>你生来就有翅膀。为什么喜欢在生活中匍匐？[NEWLINE]——莫拉维·贾拉鲁丁·鲁米[NEWLINE][COLOR:ResCultureLabelCS]（波斯苏菲派神秘主义诗人、教法学家、“波斯诗坛四柱”之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_FLIGHT_QUOTE_4" Language="zh_Hans_CN">
+			<Text>几年来，我一直被一种信念折磨着，那就是人类有可能飞行。[NEWLINE]——威尔伯·莱特[NEWLINE][COLOR:ResCultureLabelCS]（美国航空先驱、“莱特兄弟”中的哥哥、现代飞机的发明者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_FLIGHT_QUOTE_5" Language="zh_Hans_CN">
+			<Text>我心在蓝天。[NEWLINE]——威廉·莎士比亚[NEWLINE][COLOR:ResCultureLabelCS]（英国文艺复兴时期剧作家、诗人、演员、英国大文豪）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_FLIGHT_QUOTE_6" Language="zh_Hans_CN">
+			<Text>他坐着基路伯小天使飞行；他乘着风的翅膀在翱翔。[NEWLINE]——《旧约圣经》诗篇18:10[NEWLINE][COLOR:ResCultureLabelCS]（犹太教与基督教的共同经典）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_FLIGHT_QUOTE_7" Language="zh_Hans_CN">
+			<Text>航空就是证明，只要有决心，我们就有能力实现不可能的事情。[NEWLINE]——埃迪·里肯巴克[NEWLINE][COLOR:ResCultureLabelCS]（美国王牌飞行员、工业家、战争英雄、东方航空公司董事长）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_FLIGHT_QUOTE_8" Language="zh_Hans_CN">
+			<Text>试图推动一个飞艇气球在空中飞行就像推动一根蜡烛穿过一堵砖墙。[NEWLINE]——阿尔贝托·桑托斯·杜蒙[NEWLINE][COLOR:ResCultureLabelCS]（巴西飞艇飞行员、航空先驱、巴西被称为“航空之父”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_REPLACEABLE_PARTS_QUOTE_1" Language="zh_Hans_CN">
+			<Text>想要无可替代，就必须时刻与众不同。[NEWLINE]——加布里埃·香奈儿[NEWLINE][COLOR:ResCultureLabelCS]（法国时装设计师、香奈尔品牌的创始人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_REPLACEABLE_PARTS_QUOTE_2" Language="zh_Hans_CN">
+			<Text>在现代社会，维护秩序和纪律的唯一保障就是标准化工人，让他们的作用像零件可以互换。[NEWLINE]——让·皮埃尔·吉侯杜[NEWLINE][COLOR:ResCultureLabelCS]（法国小说家、散文家、外交官、剧作家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_STEEL_QUOTE_1" Language="zh_Hans_CN">
+			<Text>人就像钢铁，一发脾气，就失去了价值。[NEWLINE]——匿名谚语</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_STEEL_QUOTE_2" Language="zh_Hans_CN">
+			<Text>有三样东西是非常难弄的：钢铁，钻石，还有认识一个他自己。[NEWLINE]——本杰明·富兰克林[NEWLINE][COLOR:ResCultureLabelCS]（美国政治家、物理学家、《美国独立宣言》主要起草人之一、美国开国元勋之一、美利坚开国三杰之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_ELECTRICITY_QUOTE_1" Language="zh_Hans_CN">
+			<Text>如果没有电，我们就只能在烛光下看电视了。[NEWLINE]——乔治·戈贝尔[NEWLINE][COLOR:ResCultureLabelCS]（美国幽默主义者、演员、喜剧演员）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_ELECTRICITY_QUOTE_2" Language="zh_Hans_CN">
+			<Text>我们将使电力变得非常便宜，只有富人才会燃烧蜡烛。[NEWLINE]——托马斯·阿尔瓦·爱迪生[NEWLINE][COLOR:ResCultureLabelCS]（美国发明家、企业家、通用电气公司创始人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_ELECTRICITY_QUOTE_3" Language="zh_Hans_CN">
+			<Text>电，名词。能引起所有不知道是不是由别的东西引起的自然现象的力量。[NEWLINE]——安布罗斯·比尔斯[NEWLINE][COLOR:ResCultureLabelCS]（美国恐怖死亡短篇小说作家、新闻记者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_RADIO_QUOTE_1" Language="zh_Hans_CN">
+			<Text>收音机是心灵的剧场。[NEWLINE]——史蒂夫·艾伦[NEWLINE][COLOR:ResCultureLabelCS]（美国电视名人、广播人物、音乐家、作曲家、演员、喜剧演员、作家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_RADIO_QUOTE_2" Language="zh_Hans_CN">
+			<Text>若其如此，那就使其如此。[NEWLINE]——伽利尔摩·马可尼[NEWLINE][COLOR:ResCultureLabelCS]（意大利无线电工程师、企业家、实用无线电报通信的创始人、“无线电之父”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_CHEMISTRY_QUOTE_1" Language="zh_Hans_CN">
+			<Text>我希望建立一种制度，它不是由偶然所引导的，而是由某种明晰而准确的原则所引导的。[NEWLINE]——德米特里·伊万诺维奇·门捷列夫[NEWLINE][COLOR:ResCultureLabelCS]（俄国科学家、发现并归纳元素周期律）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_CHEMISTRY_QUOTE_2" Language="zh_Hans_CN">
+			<Text>你是个炼金术士；把它变成金子吧。[NEWLINE]——威廉·莎士比亚[NEWLINE][COLOR:ResCultureLabelCS]（英国文艺复兴时期剧作家、诗人、演员、英国大文豪）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_CHEMISTRY_QUOTE_3" Language="zh_Hans_CN">
+			<Text>在一切艺术和自然的运作中，没有什么是创造出来的。[NEWLINE]——安托万·洛朗·拉瓦锡[NEWLINE][COLOR:ResCultureLabelCS]（法国化学家、生物学家、"现代化学之父"）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_COMBUSTION_QUOTE_1" Language="zh_Hans_CN">
+			<Text>不可否认的是，最先引导人类进行化学研究的基本现象是燃烧现象。[NEWLINE]——威廉·克鲁克斯[NEWLINE][COLOR:ResCultureLabelCS]（英国物理学家、化学家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_COMBUSTION_QUOTE_2" Language="zh_Hans_CN">
+			<Text>看哪，一点火能点着的事，也是何等大呢。[NEWLINE]——公义者·雅各[NEWLINE][COLOR:ResCultureLabelCS]（耶路撒冷教会第一任牧首、早期基督教会历史中重要人物）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_COMBUSTION_QUOTE_3" Language="zh_Hans_CN">
+			<Text>星星之火，可以燎原。[NEWLINE]——但丁·阿利吉耶里[NEWLINE][COLOR:ResCultureLabelCS]（意大利诗人、现代意大利语奠基人、欧洲文艺复兴时代开拓者、史诗《神曲》作者、文艺复兴三巨头之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_CONSERVATION_QUOTE_1" Language="zh_Hans_CN">
+			<Text>如果一个国家把自然资源当作资产来对待，它必须把这些资产以增值而不是减损的方式移交给下一代，那么这个国家就表现得很好。[NEWLINE]——西奥多·罗斯福[NEWLINE][COLOR:ResCultureLabelCS]（荷兰裔美国军事家、政治家、外交家、第26任美国总统、美国历史上最年轻的在任总统、美国历史上最伟大的总统之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_CONSERVATION_QUOTE_2" Language="zh_Hans_CN">
+			<Text>为了经济利益而破坏雨林就像为了做饭而烧掉一幅文艺复兴时期的画一样。[NEWLINE]——爱德华·威尔逊[NEWLINE][COLOR:ResCultureLabelCS]（美国生物学家、美国国家科学院院士、社会生物学奠基人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_CONSERVATION_QUOTE_3" Language="zh_Hans_CN">
+			<Text>快到森林里来吧，这里是休息放松的地方。[NEWLINE]——约翰·缪尔[NEWLINE][COLOR:ResCultureLabelCS]（苏格兰裔美国博物学家、作家、环境哲学家、植物学家、动物学家、冰川学家、早期环保运动的领袖、“苏格兰人与美国人的灵光”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_MASS_MEDIA_QUOTE_1" Language="zh_Hans_CN">
+			<Text>没有一种艺术能像电影那样透入我们的良心，直进我们的情感，深入我们灵魂的黑暗角落。[NEWLINE]——英格玛·伯格曼[NEWLINE][COLOR:ResCultureLabelCS]（瑞典导演、编剧、制作人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_MASS_MEDIA_QUOTE_2" Language="zh_Hans_CN">
+			<Text>我只希望我们不要忘记一件事：这一切都始于一只老鼠。[NEWLINE]——华特·迪士尼[NEWLINE][COLOR:ResCultureLabelCS]（美国动画大师、企业家、导演、制片人、编剧、配音演员、卡通设计者、迪士尼公司创始人、世界上获得奥斯卡奖最多的人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_MASS_MEDIA_QUOTE_3" Language="zh_Hans_CN">
+			<Text>世界上只有一件事比被人议论更糟糕，那就是没有人议论你。[NEWLINE]——奥斯卡·王尔德[NEWLINE][COLOR:ResCultureLabelCS]（爱尔兰裔英国作家、诗人、散文家、唯美主义代表人物、19世纪80年代美学运动的主力和90年代颓废派运动的先驱）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_MASS_MEDIA_QUOTE_4" Language="zh_Hans_CN">
+			<Text>摄影是真理。那电影就是每秒钟24帧的真理。[NEWLINE]——让·吕克·戈达尔[NEWLINE][COLOR:ResCultureLabelCS]（法国导演、编剧、制作人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_MASS_MEDIA_QUOTE_5" Language="zh_Hans_CN">
+			<Text>我是电视。我是万能的眼睛，装有阴极射线的世界。我是电视机。我是全家人聚集在一起崇拜的小神龛。[NEWLINE]——尼尔·盖曼[NEWLINE][COLOR:ResCultureLabelCS]（犹太裔英国作家、文学传记辞典十大后现代作家、《美国众神》《好兆头》等作者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_MOBILIZATION_QUOTE_1" Language="zh_Hans_CN">
+			<Text>任何事情在开始之前，都必须勤奋努力地做好准备。[NEWLINE]——马尔库斯·图利乌斯·西塞罗[NEWLINE][COLOR:ResCultureLabelCS]（古罗马著名政治家、哲人、演说家、法学家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_MOBILIZATION_QUOTE_1" Language="zh_Hans_CN">
+			<Text>当那些用武力统治的人准备战争时，他们总是滔滔不绝地谈论和平，直到他们完成动员过程。[NEWLINE]——斯蒂芬·茨威格[NEWLINE][COLOR:ResCultureLabelCS]（奥地利小说家、诗人、剧作家、传记作家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_MOBILIZATION_QUOTE_3" Language="zh_Hans_CN">
+			<Text>我需要你加入美国军队。（美国征兵海报、经典“山姆大叔”形象）[NEWLINE]——詹姆斯·蒙哥马利·弗拉格[NEWLINE][COLOR:ResCultureLabelCS]（美国艺术家、插画家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_CAPITALISM_QUOTE_1" Language="zh_Hans_CN">
+			<Text>资本主义的内在缺陷是不平等的分享福祉；社会主义的内在美德则是平等地分担痛苦。[NEWLINE]——温斯顿·丘吉尔[NEWLINE][COLOR:ResCultureLabelCS]（英国首相、政治家、历史学家、画家、演说家、作家、记者、20世纪最重要的政治领袖之一、“雅尔塔会议三巨头”之一、历史上掌握英语单词数量最多的人之一、世界最有说服力的八大演说家之一、“有史以来最伟大的英国人”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_CAPITALISM_QUOTE_2" Language="zh_Hans_CN">
+			<Text>如果有百分之二十的利润，资本就会蠢蠢欲动；如果有百分之五十的利润，资本就会冒险；如果有百分之一百的利润，资本就敢于冒绞首的危险；如果有百分之三百的利润，资本就敢于践踏人间一切法律。[NEWLINE]——卡尔·马克思[NEWLINE][COLOR:ResCultureLabelCS]（德国思想家、政治学家、哲学家、经济学家、革命理论家、历史学家、社会学家、马克思主义的创始人之一、第一国际的组织者和领导者、马克思主义政党的缔造者之一、全世界无产阶级和劳动人民的革命导师、无产阶级的精神领袖、国际共产主义运动的开创者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_CAPITALISM_QUOTE_2" Language="zh_Hans_CN">
+			<Text>人总是要想方设法接触金钱，因为如果你接触金钱的时间够长，有些钱可能会粘到你身上。[NEWLINE]——达蒙·鲁尼恩[NEWLINE][COLOR:ResCultureLabelCS]（美国记者、短篇小说家、“鲁尼式”（禁酒令解除后布鲁克林或曼哈顿的独特社交类型）角色的创始人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_CAPITALISM_QUOTE_4" Language="zh_Hans_CN">
+			<Text>智慧、美德、道德，这一切都已经过时了：人人都崇拜名叫“商业”的神龛。[NEWLINE]——夏尔·傅立叶[NEWLINE][COLOR:ResCultureLabelCS]（法国哲学家、思想家、经济学家、空想社会主义者、马克思主要学说的来源之一、与圣西门和欧文并称三大空想社会主义者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_IDEOLOGY_QUOTE_1" Language="zh_Hans_CN">
+			<Text>从来没有一场真正的战争不是在两边都确信自己是正确正义一方的人之间进行的。[NEWLINE]——尼尔·盖曼[NEWLINE][COLOR:ResCultureLabelCS]（犹太裔英国作家、文学传记辞典十大后现代作家、《美国众神》《好兆头》等作者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_IDEOLOGY_QUOTE_1" Language="zh_Hans_CN">
+			<Text>事实证明，任何制度，即使是最不人道的制度，都不能在没有意识形态的情况下继续存在。[NEWLINE]——乔·斯洛沃[NEWLINE][COLOR:ResCultureLabelCS]（南非政治家、南非共产党总书记、南非非洲人国民大会领袖、种族隔离制度反对者、马克思主义者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_NUCLEAR_PROGRAM_QUOTE_1" Language="zh_Hans_CN">
+			<Text>现在我变成了死神，成为大千世界的毁灭者。[NEWLINE]——朱利叶斯·罗伯特·奥本海默，引用印度教主神毗湿奴的话[NEWLINE][COLOR:ResCultureLabelCS]（犹太裔美国理论物理学家、曼哈顿计划的领导者、“原子弹之父”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_NUCLEAR_PROGRAM_QUOTE_2" Language="zh_Hans_CN">
+			<Text>原子弹是基督复临后的神怒。[NEWLINE]——温斯顿·丘吉尔[NEWLINE][COLOR:ResCultureLabelCS]（英国首相、政治家、历史学家、画家、演说家、作家、记者、20世纪最重要的政治领袖之一、“雅尔塔会议三巨头”之一、历史上掌握英语单词数量最多的人之一、世界最有说服力的八大演说家之一、“有史以来最伟大的英国人”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_NUCLEAR_PROGRAM_QUOTE_3" Language="zh_Hans_CN">
+			<Text>今天，原子弹深刻地改变了我们所知道的世界的性质，人类因此发现自己处在一个新的环境中，必须使自己的思想适应这个新环境。[NEWLINE]——阿尔伯特·爱因斯坦[NEWLINE][COLOR:ResCultureLabelCS]（犹太裔瑞士/美国现代物理学家、提出光量子假说、创立了狭义相对论、广义相对论等）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_SUFFRAGE_QUOTE_2" Language="zh_Hans_CN">
+			<Text>男人，他们的权利，仅此而已；女人，他们的权利，仅此而已。[NEWLINE]——苏珊·布朗奈尔·安东尼[NEWLINE][COLOR:ResCultureLabelCS]（美国民权运动与女权运动女领袖、女权杂志《革命》的创立者之一、第一个妇女禁酒运动组织创始人、美国纽约州反奴隶制协会代理人、第一个妇女节制会创始人、美国全国妇女选举权协会创始人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_SUFFRAGE_QUOTE_1" Language="zh_Hans_CN">
+			<Text>为什么对女人要区别对待？尽管有这种可悲的游击队员般的反对，妇女选举权最终还是会成功实现的。[NEWLINE]——维多利亚·克拉弗林·伍德胡尔[NEWLINE][COLOR:ResCultureLabelCS]（美国作家、企业家、美国女权运动家和废奴主义者、美国第一位参选总统的女性、美国华尔街的第一位女老板）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_SUFFRAGE_QUOTE_3" Language="zh_Hans_CN">
+			<Text>选举权一旦给予，就再也不能被剥夺，现在我们要做的，就是保护那些得到选举权的人，好好珍惜这份来之不易的礼物吧。[NEWLINE]——尤利西斯·辛普森·格兰特[NEWLINE][COLOR:ResCultureLabelCS]（美国军事家、陆军上将、第18任美国总统、美国历史上第一位从西点军校毕业的总统、美国南北战争后期联邦军总司令）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_TOTALITARIANISM_QUOTE_1" Language="zh_Hans_CN">
+			<Text>“老大哥在看着你呢。”（代表现代科技被用来束缚个人的世界的代表标语）[NEWLINE]——乔治·奥威尔[NEWLINE][COLOR:ResCultureLabelCS]（英国小说家、记者、社会评论家、 “一代人的冷峻良知”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_TOTALITARIANISM_QUOTE_2" Language="zh_Hans_CN">
+			<Text>我想要战争。对我来说，一切手段都是正确的。[NEWLINE]——阿道夫·希特勒[NEWLINE][COLOR:ResCultureLabelCS]（纳粹德国元首、总理、纳粹党党魁、第二次世界大战的发动者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_TOTALITARIANISM_QUOTE_3" Language="zh_Hans_CN">
+			<Text>相信，服从，战斗。[NEWLINE]——贝尼托·墨索里尼[NEWLINE][COLOR:ResCultureLabelCS]（意大利国家法西斯党党魁、法西斯独裁者、第二次世界大战的元凶之一、法西斯主义的创始人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_TOTALITARIANISM_QUOTE_4" Language="zh_Hans_CN">
+			<Text>我们不相信通过投票站的政府。[NEWLINE]——弗朗西斯科·弗朗哥[NEWLINE][COLOR:ResCultureLabelCS]（西班牙国家元首、大元帅、西班牙首相、西班牙长枪党党魁）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_CLASS_STRUGGLE_QUOTE_1" Language="zh_Hans_CN">
+			<Text>全世界的工人们，联合起来！[NEWLINE]——卡尔·马克思、弗里德里希·恩格斯[NEWLINE][COLOR:ResCultureLabelCS]（德国思想家、政治学家、哲学家、经济学家、革命理论家、历史学家、社会学家、马克思主义的创始人之一、第一国际的组织者和领导者、马克思主义政党的缔造者之一、全世界无产阶级和劳动人民的革命导师、无产阶级的精神领袖、国际共产主义运动的开创者[NEWLINE]德国思想家、哲学家、革命家、教育家，军事理论家、全世界无产阶级和劳动人民的伟大导师、马克思主义创始人之一、卡尔·马克思的挚友、“第二提琴手”、国际工人运动领袖）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_CLASS_STRUGGLE_QUOTE_2" Language="zh_Hans_CN">
+			<Text>革命不是请客吃饭，不是做文章，不是绘画绣花，不能那样雅致，那样从容不迫，文质彬彬，那样温良恭让。革命是暴动，是一个阶级推翻一个阶级的暴烈的行动。[NEWLINE]——毛泽东[NEWLINE][COLOR:ResCultureLabelCS]（中国人民的领袖、伟大的马克思主义者、无产阶级革命家、战略家和理论家，中国共产党、中国人民解放军和中华人民共和国的主要缔造者和领导人、政治家、军事家、诗人、书法家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_CLASS_STRUGGLE_QUOTE_2" Language="zh_Hans_CN">
+			<Text>阶级斗争必然导致无产阶级专政。[NEWLINE]——卡尔·马克思[NEWLINE][COLOR:ResCultureLabelCS]（德国思想家、政治学家、哲学家、经济学家、革命理论家、历史学家、社会学家、马克思主义的创始人之一、第一国际的组织者和领导者、马克思主义政党的缔造者之一、全世界无产阶级和劳动人民的革命导师、无产阶级的精神领袖、国际共产主义运动的开创者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_ADVANCED_FLIGHT_QUOTE_1" Language="zh_Hans_CN">
+			<Text>哦！我已挣脱了尘世乖戾的束缚[NEWLINE]用银色之翼在空中飞舞。[NEWLINE]——约翰·吉莱斯皮·玛吉[NEWLINE][COLOR:ResCultureLabelCS]（加拿大皇家空军战斗机飞行员、诗人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_ADVANCED_FLIGHT_QUOTE_2" Language="zh_Hans_CN">
+			<Text>航空学既不是一门工业，也不是一门科学。而是一门奇迹。[NEWLINE]——伊戈尔·伊万诺维奇·西科尔斯基[NEWLINE][COLOR:ResCultureLabelCS]（俄裔美国飞机、直升机设计师、世界上第一架四引擎飞机和第一种投入生产的直升机的设计者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_ADVANCED_FLIGHT_QUOTE_3" Language="zh_Hans_CN">
+			<Text>没有极限，只有天空。[NEWLINE]——塞万提斯·萨维德拉[NEWLINE][COLOR:ResCultureLabelCS]（西班牙小说家、剧作家、诗人、西班牙文学世界里最伟大的作家、西班牙语被称为“塞万提斯的语言”、《唐·吉坷德》作者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_ADVANCED_FLIGHT_QUOTE_4" Language="zh_Hans_CN">
+			<Text>未来属于天空。[NEWLINE]——穆斯塔法·凯末尔·阿塔图尔克[NEWLINE][COLOR:ResCultureLabelCS]（土耳其革命家、改革家、土耳其共和国缔造者、土耳其共和国第一任总统、总理及国民议会议长、“伊斯坦布尔的救星”、“帕夏”、“土耳其人之父”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_ROCKETRY_QUOTE_2" Language="zh_Hans_CN">
+			<Text>当你发射火箭时，你并不是真的在发射火箭。你只是在坚持它飞翔。[NEWLINE]——迈克尔·菲利普·安德森[NEWLINE][COLOR:ResCultureLabelCS]（非裔美国宇航员、美国空军中校）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_ROCKETRY_QUOTE_1" Language="zh_Hans_CN">
+			<Text>火箭科学被神化了，与它真正的困难不成比例。[NEWLINE]——约翰·卡马克[NEWLINE][COLOR:ResCultureLabelCS]（美国电玩游戏程序员、id Software的创始人之一、开源软件的倡导者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_ROCKETRY_QUOTE_3" Language="zh_Hans_CN">
+			<Text>火箭运行得很好，只是降落在了错误的星球上。[NEWLINE]——沃纳·冯·布劳恩[NEWLINE][COLOR:ResCultureLabelCS]（德国火箭专家、20世纪航天事业的先驱之一、V2火箭总设计师、美国国家航空航天局空间研究开发项目主设计师）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_ROCKETRY_QUOTE_4" Language="zh_Hans_CN">
+			<Text>我所希望的是忠于我的生活之道，在我的国家支持火箭科学发展，并能在退休时问心无愧。[NEWLINE]——阿卜杜勒·卡拉姆[NEWLINE][COLOR:ResCultureLabelCS]（印度共和国前总统、导弹科学家、第一位当选印度总统的职业科学家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_ADVANCED_BALLISTICS_QUOTE_1" Language="zh_Hans_CN">
+			<Text>在面对受过教育的子弹时，未经教育的勇气都是无用的。[NEWLINE]——小乔治·史密斯·巴顿[NEWLINE][COLOR:ResCultureLabelCS]（美国二战时期陆军四星上将、“血胆老将”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_ADVANCED_BALLISTICS_QUOTE_2" Language="zh_Hans_CN">
+			<Text>大炮是战场之神。[NEWLINE]——约瑟夫·维萨里奥诺维奇·斯大林[NEWLINE][COLOR:ResCultureLabelCS]（格鲁吉亚裔苏联政治家，联共（布）中央总书记 、苏联人民委员会主席(自1946年起改称部长会议主席) 、苏联大元帅）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_COMBINED_ARMS_QUOTE_2" Language="zh_Hans_CN">
+			<Text>战争中最不可估量的是人的意志。[NEWLINE]——巴塞尔·亨利·李德·哈特[NEWLINE][COLOR:ResCultureLabelCS]（英国军事记者、军事理论家、战略学家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_COMBINED_ARMS_QUOTE_2" Language="zh_Hans_CN">
+			<Text>如果坦克作战成功了，胜利就会随之而来。[NEWLINE]——海因茨·威廉·古德里安[NEWLINE][COLOR:ResCultureLabelCS]（德国陆军大将、军事家、“闪击战”创始人、装甲战/坦克战倡导者、“德国装甲兵之父”、与曼施坦因和隆美尔并称为二战德国三大名将、德意志第三帝国的“帝国之鹰”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_COMBINED_ARMS_QUOTE_1" Language="zh_Hans_CN">
+			<Text>有目标的奋斗总比没有目标的活着好。[NEWLINE]——小乔治·史密斯·巴顿[NEWLINE][COLOR:ResCultureLabelCS]（美国二战时期陆军四星上将、“血胆老将”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_PLASTICS_QUOTE_1" Language="zh_Hans_CN">
+			<Text>我只想对你说一句话。只有一个词：塑料。[NEWLINE]——巴克·亨利、卡尔德·威林汉姆, 毕业生典礼发言[NEWLINE][COLOR:ResCultureLabelCS]（美国作家、演员、电视导演[NEWLINE]美国小说家、编剧）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_PLASTICS_QUOTE_2" Language="zh_Hans_CN">
+			<Text>我本来想做一些很硬的东西，但后来我发觉我应该做一些很软的东西。[NEWLINE]——列奥·亨德里克·贝克兰[NEWLINE][COLOR:ResCultureLabelCS]（比利时裔美国化学家、发明家、塑料发明者、酚醛树脂（即塑料）专利人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_COMPUTERS_QUOTE_1" Language="zh_Hans_CN">
+			<Text>犯错是人之常情，但要把事情弄糟搞砸，你需要一台电脑。[NEWLINE]——保罗·拉尔夫·埃利希[NEWLINE][COLOR:ResCultureLabelCS]（美国生态学家、昆虫学家、斯坦福大学生物学教授、人口特征研究专家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_COMPUTERS_QUOTE_2" Language="zh_Hans_CN">
+			<Text>电脑的优点是，它们会按你的吩咐去做。缺点是它们只会按你说的做。[NEWLINE]——泰德·尼尔森[NEWLINE][COLOR:ResCultureLabelCS]（美国信息技术先驱、哲学家、社会学家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_COMPUTERS_QUOTE_3" Language="zh_Hans_CN">
+			<Text>分析机并不指望它自己能产生任何东西。它可以做任何我们知道的、如何命令它执行的事。[NEWLINE]——艾达·洛芙莱斯[NEWLINE][COLOR:ResCultureLabelCS]（英国女数学家、计算机程序创始人、循环和子程序概念创始人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_COMPUTERS_QUOTE_4" Language="zh_Hans_CN">
+			<Text>有两次，有人问我：“请问，巴贝奇先生，如果你输入错误数字，正确答案会出来吗？”我无法正确理解能提出这样一个问题的人的那种思想混乱。[NEWLINE]——查尔斯·巴贝奇[NEWLINE][COLOR:ResCultureLabelCS]（英国发明家、电脑先驱、电脑前身“分析机”发明者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_NUCLEAR_FISSION_QUOTE_1" Language="zh_Hans_CN">
+			<Text>核裂变的发现……开创了人类历史的新纪元。[NEWLINE]——莉泽·迈特纳[NEWLINE][COLOR:ResCultureLabelCS]（奥地利-瑞典原子女物理学家、第一个理论解释核裂变）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_NUCLEAR_FISSION_QUOTE_2" Language="zh_Hans_CN">
+			<Text>我知道原子长什么样子了！[NEWLINE]——欧内斯特·卢瑟福[NEWLINE][COLOR:ResCultureLabelCS]（英国物理学家、原子核物理学之父、卢瑟福散射实验的发明者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_SYNTHETIC_MATERIALS_QUOTE_1" Language="zh_Hans_CN">
+			<Text>我所看到的一切都不坚固，全是由薄雾和尼龙制成的，后面什么也没有。[NEWLINE]——安娜·卡文[NEWLINE][COLOR:ResCultureLabelCS]（英国小说家、短篇小说作家、画家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_SYNTHETIC_MATERIALS_QUOTE_2" Language="zh_Hans_CN">
+			<Text>我不认为有什么比拯救他人的生命更能给你带来满足和幸福了。[NEWLINE]——斯蒂芬妮·克沃勒克[NEWLINE][COLOR:ResCultureLabelCS]（波兰裔美国女化学家、凯夫拉防御纤维发明者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_SYNTHETIC_MATERIALS_QUOTE_3" Language="zh_Hans_CN">
+			<Text>你穿的不是亚麻布，[NEWLINE]而是人类创造的“生命”。[NEWLINE]——托马斯·胡德[NEWLINE][COLOR:ResCultureLabelCS]（英国诗人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_CULTURAL_HERITAGE_QUOTE_1" Language="zh_Hans_CN">
+			<Text>大理石雕上，镌刻着的铭文昭然于世，通过它们，生命和灵魂都将在最后得到指引，回归先哲身旁。[NEWLINE]——昆图斯·贺拉斯·弗拉库斯[NEWLINE][COLOR:ResCultureLabelCS]（罗马帝国奥古斯都统治时期诗人、批评家、翻译家、与维吉尔和奥维德并称为古罗马三大诗人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_CULTURAL_HERITAGE_QUOTE_1" Language="zh_Hans_CN">
+			<Text>一个不了解自己过去的历史、起源和文化的民族，就像无根之木一样。[NEWLINE]——马科斯·加维[NEWLINE][COLOR:ResCultureLabelCS]（牙买加政治家、出版者、记者、创业家、演说家、世界黑人进步协会创办者、黑人民族主义开创者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_CULTURAL_HERITAGE_QUOTE_3" Language="zh_Hans_CN">
+			<Text>忽视历史的一代人将没有过去，也没有未来。[NEWLINE]——罗伯特·安森·海因莱因[NEWLINE][COLOR:ResCultureLabelCS]（美国硬科幻小说作家、“科幻先生”、“美国现代科幻小说之父”、美国科幻空前绝后的优秀作家、美国科幻黄金时代四大才子之一、与艾萨克·阿西莫夫和亚瑟·克拉克并列为科幻小说“三巨头”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_CULTURAL_HERITAGE_QUOTE_4" Language="zh_Hans_CN">
+			<Text>一个国家的文化存在于其人民的内心和灵魂之中。[NEWLINE]——莫罕达斯·卡拉姆昌德·甘地[NEWLINE][COLOR:ResCultureLabelCS]（印度政治家、革命家、思想家、印度国父、甘地主义的创始人、印度民族解放运动的领导人、印度国民大会党领袖、“圣雄甘地”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_COLD_WAR_QUOTE_2" Language="zh_Hans_CN">
+			<Text>冷战不仅没有解冻；反而它热得要命。[NEWLINE]——理查德·米尔豪斯·尼克松[NEWLINE][COLOR:ResCultureLabelCS]（美国共和党政治家、律师、美国第34任副总统及第37任总统）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_COLD_WAR_QUOTE_1" Language="zh_Hans_CN">
+			<Text>从波罗的海的斯德丁到亚得里亚海的德里雅斯特，一幅横贯欧洲大陆的铁幕已经落下。[NEWLINE]——温斯顿·丘吉尔[NEWLINE][COLOR:ResCultureLabelCS]（英国首相、政治家、历史学家、画家、演说家、作家、记者、20世纪最重要的政治领袖之一、“雅尔塔会议三巨头”之一、历史上掌握英语单词数量最多的人之一、世界最有说服力的八大演说家之一、“有史以来最伟大的英国人”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_PROFESSIONAL_SPORTS_QUOTE_1" Language="zh_Hans_CN">
+			<Text>如果输赢不代表一切，为什么他们还要记分？[NEWLINE]——文斯·伦巴第[NEWLINE][COLOR:ResCultureLabelCS]（美国橄榄球教练、橄榄球史上最伟大的教练、美国体育史上最伟大的教练和领导者之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_PROFESSIONAL_SPORTS_QUOTE_2" Language="zh_Hans_CN">
+			<Text>羞耻不在于参加了比赛，而在于运动中没有中断鲁莽的行动。[NEWLINE]——昆图斯·贺拉斯·弗拉库斯[NEWLINE][COLOR:ResCultureLabelCS]（罗马帝国奥古斯都统治时期诗人、批评家、翻译家、与维吉尔和奥维德并称为古罗马三大诗人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_PROFESSIONAL_SPORTS_QUOTE_2" Language="zh_Hans_CN">
+			<Text>运动不能塑造性格，而是揭示它。[NEWLINE]——海伍德·布朗[NEWLINE][COLOR:ResCultureLabelCS]（美国新闻记者、美国报纸协会[现美国新闻协会]创始人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_PROFESSIONAL_SPORTS_QUOTE_4" Language="zh_Hans_CN">
+			<Text>天赋可以赢得比赛，但只有团队协作和集体智慧才能夺得冠军。[NEWLINE]——迈克尔·乔丹[NEWLINE][COLOR:ResCultureLabelCS]（非裔美国芝加哥公牛队职业篮球运动员[退役前]、夏洛特黄蜂队老板[退役后]、“飞人”、“篮球之神”、公认史上最伟大的篮球运动员）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_PROFESSIONAL_SPORTS_QUOTE_5" Language="zh_Hans_CN">
+			<Text>昨天的本垒打是赢不了今天的比赛。[NEWLINE]——贝比·鲁斯[NEWLINE][COLOR:ResCultureLabelCS]（美国职业棒球运动员、“棒球之神”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_PROFESSIONAL_SPORTS_QUOTE_6" Language="zh_Hans_CN">
+			<Text>我不知道有什么东西能比竞技体育更能激发夺冠的意志了。[NEWLINE]——理查德·米尔豪斯·尼克松[NEWLINE][COLOR:ResCultureLabelCS]（美国共和党政治家、律师、美国第34任副总统及第37任总统）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_RAPID_DEPLOYMENT_QUOTE_2" Language="zh_Hans_CN">
+			<Text>别管那些花招、障眼法了，给我冲向他们！[NEWLINE]——霍雷肖·纳尔逊[NEWLINE][COLOR:ResCultureLabelCS]（英国风帆战列舰时代海军将领及军事家、“英国皇家海军之魂”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_RAPID_DEPLOYMENT_QUOTE_1" Language="zh_Hans_CN">
+			<Text>现在可以马上执行的好计划远比下周才执行的完美计划要好得多。[NEWLINE]——小乔治·史密斯·巴顿[NEWLINE][COLOR:ResCultureLabelCS]（美国二战时期陆军四星上将、“血胆老将”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_RAPID_DEPLOYMENT_QUOTE_3" Language="zh_Hans_CN">
+			<Text>等得人都绝望了。[NEWLINE]——葡萄牙谚语</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_RAPID_DEPLOYMENT_QUOTE_4" Language="zh_Hans_CN">
+			<Text>不会被你牵着鼻子走的，[NEWLINE]不过，还是快去吧。[NEWLINE]——威廉·莎士比亚[NEWLINE][COLOR:ResCultureLabelCS]（英国文艺复兴时期剧作家、诗人、演员、英国大文豪）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_RAPID_DEPLOYMENT_QUOTE_5" Language="zh_Hans_CN">
+			<Text>我向你保证：三天后我们就到兵营了。三个星期后，在边境。三个月后，在亚松森。[NEWLINE]——巴托洛梅·米特雷[NEWLINE][COLOR:ResCultureLabelCS]（阿根廷军人、史学家、第六任阿根廷总统）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_SPACE_RACE_QUOTE_1" Language="zh_Hans_CN">
+			<Text>我们选择在这个十年内登上月球，同时还做其他的事情，并不是因为它们很容易去做，相反，是因为它们很难。[NEWLINE]——约翰·菲茨杰尔德·肯尼迪[NEWLINE][COLOR:ResCultureLabelCS]（爱尔兰裔美国政治家、军人、第35任美国总统）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_SPACE_RACE_QUOTE_2" Language="zh_Hans_CN">
+			<Text>正如儿童必须离开家庭和安全的家庭生活，以确保成长为成熟的成年人，人类也必须离开安全又熟悉的地球，以成长成熟，为人类获得可能的最高成就。[NEWLINE]——妮雪儿·尼柯斯[NEWLINE][COLOR:ResCultureLabelCS]（非裔美国女演员、歌手、配音员）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_SPACE_RACE_QUOTE_3" Language="zh_Hans_CN">
+			<Text>忘年忘义，振于无竟，故寓诸无竟。[NEWLINE]——庄子[NEWLINE][COLOR:ResCultureLabelCS]（中国古代思想家、哲学家、文学家、“庄学”创立者、道家学派代表人物、与老子并称“老庄”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_SPACE_RACE_QUOTE_4" Language="zh_Hans_CN">
+			<Text>这是我的一小步，却是人类的一大步。[NEWLINE]——尼尔·奥尔登·阿姆斯特朗[NEWLINE][COLOR:ResCultureLabelCS]（美国宇航员、试飞员、海军飞行员、辛辛那提大学教授、第一个踏上月球的宇航员）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_TELECOMMUNICATIONS_QUOTE_1" Language="zh_Hans_CN">
+			<Text>沃森先生……过来一下……我有事找你。[NEWLINE]——亚历山大·格拉汉姆·贝尔[NEWLINE][COLOR:ResCultureLabelCS]（苏格兰裔美国发明家、企业家、“电话之父”[有争议]、贝尔电话公司[美国电话电报公司前身]创始人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_TELECOMMUNICATIONS_QUOTE_2" Language="zh_Hans_CN">
+			<Text>特别是互联网，它为我们相互接触和团结一致提供了巨大的可能性。这是上帝赐予我们的好东西啊。[NEWLINE]——方济各[NEWLINE][COLOR:ResCultureLabelCS]（阿根廷耶稣会士、天主教第266任教皇、第一位拉丁美洲教皇）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_TELECOMMUNICATIONS_QUOTE_3" Language="zh_Hans_CN">
+			<Text>道路之白被兮[NEWLINE]吾之足下而屈[NEWLINE]忽电报线绷紧兮[NEWLINE]空书而咏咒矣。[NEWLINE]——拉霍斯·卡萨克[NEWLINE][COLOR:ResCultureLabelCS]（匈牙利社会主义运动诗人、小说家、画家、散文作家、编辑、前卫理论家、临时翻译、匈牙利文学最早的真正的工人阶级作家之一、匈牙利前卫和现代主义艺术发展的先驱）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_TELECOMMUNICATIONS_QUOTE_4" Language="zh_Hans_CN">
+			<Text>互联网正成为明日地球村的中心广场。[NEWLINE]——比尔·盖茨[NEWLINE][COLOR:ResCultureLabelCS]（美国企业家、软件工程师、慈善家、微软公司创始人、中国工程院院士（外籍））[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_SATELLITES_QUOTE_1" Language="zh_Hans_CN">
+			<Text>卫星可是没有良知的。[NEWLINE]——爱德华·默罗[NEWLINE][COLOR:ResCultureLabelCS]（美国广播电视记者、“现场报道的鼻祖”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_SATELLITES_QUOTE_2" Language="zh_Hans_CN">
+			<Text>我与上天交谈，但天空是空的。[NEWLINE]——西尔维娅·普拉斯[NEWLINE][COLOR:ResCultureLabelCS]（美国女诗人、美国自白派诗人代表）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_SATELLITES_QUOTE_3" Language="zh_Hans_CN">
+			<Text>晴天霹雳。[NEWLINE]——昆图斯·贺拉斯·弗拉库斯[NEWLINE][COLOR:ResCultureLabelCS]（罗马帝国奥古斯都统治时期诗人、批评家、翻译家、与维吉尔和奥维德并称为古罗马三大诗人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_GUIDANCE_SYSTEMS_QUOTE_1" Language="zh_Hans_CN">
+			<Text>如果我们愿意注意、听取内心的声音的话，我们自己就是比任何人都更好的向导。[NEWLINE]——简·奥斯汀[NEWLINE][COLOR:ResCultureLabelCS]（英国女小说家、《傲慢与偏见》作者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_GUIDANCE_SYSTEMS_QUOTE_2" Language="zh_Hans_CN">
+			<Text>让你自己默默地被你真正热爱的事物所吸引，而它不会把你引入歧途的。[NEWLINE]——莫拉维·贾拉鲁丁·鲁米[NEWLINE][COLOR:ResCultureLabelCS]（波斯苏菲派神秘主义诗人、教法学家、“波斯诗坛四柱”之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_LASERS_QUOTE_1" Language="zh_Hans_CN">
+			<Text>当上帝说“要有光”时，他肯定指的是完全连贯的光。[NEWLINE]——查尔斯·哈德·汤斯[NEWLINE][COLOR:ResCultureLabelCS]（美国物理学家、“激光之父”、与亚瑟·伦纳德·肖洛共同发明了激光）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_LASERS_QUOTE_2" Language="zh_Hans_CN">
+			<Text>用过量的光来照射。[NEWLINE]——托马斯·格雷[NEWLINE][COLOR:ResCultureLabelCS]（英国诗人、古典学家、剑桥大学教授）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_COMPOSITES_QUOTE_1" Language="zh_Hans_CN">
+			<Text>一个聪明的头脑和一颗善良的心灵一起总会是碰撞出不可思议火花的组合。[NEWLINE]——纳尔逊·罗利赫拉赫拉·曼德拉[NEWLINE][COLOR:ResCultureLabelCS]（南非总统、首位黑人总统、非国大青年联盟全国书记/主席、“南非国父”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_COMPOSITES_QUOTE_2" Language="zh_Hans_CN">
+			<Text>团结必胜；分裂必亡。[NEWLINE]——伊索[NEWLINE][COLOR:ResCultureLabelCS]（古希腊哲学家、文学家、世界四大寓言家之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_COMPOSITES_QUOTE_3" Language="zh_Hans_CN">
+			<Text>整体是部分之外的那层东西。[NEWLINE]——亚里士多德[NEWLINE][COLOR:ResCultureLabelCS]（古希腊哲学家、科学家、教育家、思想家、“古代的黑格尔”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_COMPOSITES_QUOTE_4" Language="zh_Hans_CN">
+			<Text>看呐，弟兄同志们和睦同居，这是何等的善，何等的美。[NEWLINE]——《旧约圣经》诗篇133:1[NEWLINE][COLOR:ResCultureLabelCS]（犹太教与基督教的共同经典）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_COMPOSITES_QUOTE_5" Language="zh_Hans_CN">
+			<Text>就像把两位单独的君子的品质合二为一。[NEWLINE]——乔治·科尔曼[NEWLINE][COLOR:ResCultureLabelCS]（英国剧作家、杂文作家、“年轻人科尔曼”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_STEALTH_TECHNOLOGY_QUOTE_1" Language="zh_Hans_CN">
+			<Text>兵者，诡道也。[NEWLINE]——孙子[NEWLINE][COLOR:ResCultureLabelCS]（中国古代军事家、政治家、“兵家至圣”、“百世兵家之师”、“东方兵学的鼻祖”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_STEALTH_TECHNOLOGY_QUOTE_2" Language="zh_Hans_CN">
+			<Text>微乎微乎，至于无形；神乎神乎，至于无声，故能为敌之司命。[NEWLINE]——孙子[NEWLINE][COLOR:ResCultureLabelCS]（中国古代军事家、政治家、“兵家至圣”、“百世兵家之师”、“东方兵学的鼻祖”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_STEALTH_TECHNOLOGY_QUOTE_3" Language="zh_Hans_CN">
+			<Text>星星，藏起你的火光；[NEWLINE]不要让光明看见我黑暗和那深沉的欲望。[NEWLINE]——威廉·莎士比亚[NEWLINE][COLOR:ResCultureLabelCS]（英国文艺复兴时期剧作家、诗人、演员、英国大文豪）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_ROBOTICS_QUOTE_1" Language="zh_Hans_CN">
+			<Text>机器人不能维持生命。它们自己不能。因为它们没有什么可以维持的了。[NEWLINE]——卡雷尔·恰佩克[NEWLINE][COLOR:ResCultureLabelCS]（捷克作家、剧作家、科幻文学家、童话寓言家、新闻记者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_ROBOTICS_QUOTE_2" Language="zh_Hans_CN">
+			<Text>第一条，机器人不得伤害人，也不得见人受到伤害而袖手旁观。[NEWLINE]第二条，机器人应服从人的一切命令，但不得违反第一定律。[NEWLINE]第三条，机器人应保护自身的安全，但不得违反第一、第二定律。[NEWLINE]——艾萨克·阿西莫夫[NEWLINE][COLOR:ResCultureLabelCS]（俄罗斯犹太裔美国科幻小说作家、科普作家、文学评论家、美国科幻小说黄金时代的代表人物之一、科幻小说的三巨头之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_NUCLEAR_FUSION_QUOTE_1" Language="zh_Hans_CN">
+			<Text>在他的战车上高高地闪烁着白昼之灯。[NEWLINE]——威廉·福克纳[NEWLINE][COLOR:ResCultureLabelCS]（美国小说家、诗人、剧作家、美国意识流文学代表人物）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_NUCLEAR_FUSION_QUOTE_2" Language="zh_Hans_CN">
+			<Text>我们的后代将在家里享受便宜到无法计量的电能。[NEWLINE]——刘易斯·利希滕斯坦·施特劳斯[NEWLINE][COLOR:ResCultureLabelCS]（美国商人、慈善家、海军军官、美国原子能委员会主席、美国核项目的主要人物）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_NUCLEAR_FUSION_QUOTE_2" Language="zh_Hans_CN">
+			<Text>当我们在夜晚仰望星空时，我们所看到的一切星辰都是那边遥远的核聚变在发光。[NEWLINE]——卡尔·萨根[NEWLINE][COLOR:ResCultureLabelCS]（美国天文学家、天体物理学家、宇宙学家、科幻作家、行星学会的成立者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_NANOTECHNOLOGY_QUOTE_1" Language="zh_Hans_CN">
+			<Text>如果技术是变革的引擎，那么纳米技术就是人类未来变革的动力燃料。[NEWLINE]——娜塔莎·简·莫尔[NEWLINE][COLOR:ResCultureLabelCS]（美国女战略设计师、作家、演讲家、人类改善和延长生命的科学和技术框架的创新者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_NANOTECHNOLOGY_QUOTE_2" Language="zh_Hans_CN">
+			<Text>所有的事物都在一起，无论在数量还是在体积意义上都是无限的；因为从微观层面也是无限的。[NEWLINE]——阿那克萨戈拉[NEWLINE][COLOR:ResCultureLabelCS]（古希腊哲学家、原子唯物论的思想先驱）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_FUTURE_TECH_QUOTE_1" Language="zh_Hans_CN">
+			<Text>没有什么比梦想更能创造未来了。[NEWLINE]——维克多·雨果[NEWLINE][COLOR:ResCultureLabelCS]（法国作家、法国19世纪前期积极浪漫主义文学的代表作家、人道主义的代表人物、法国文学史上资产阶级民主作家代表、“法兰西的莎士比亚”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_FUTURE_TECH_QUOTE_2" Language="zh_Hans_CN">
+			<Text>尽管未来看起来似乎很遥远，但它实际上已经开始了。[NEWLINE]——马提·史提潘尼克[NEWLINE][COLOR:ResCultureLabelCS]（美国神童诗人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_FUTURE_TECH_QUOTE_3" Language="zh_Hans_CN">
+			<Text>进步不在于加强现在的东西，而在于向将来的东西靠近。[NEWLINE]——纪伯伦·哈利勒·纪伯伦[NEWLINE][COLOR:ResCultureLabelCS]（黎巴嫩裔美国诗人、作家、画家、“艺术天才”、“黎巴嫩文坛娇子”、阿拉伯现代小说/艺术/散文的奠基人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_FUTURE_TECH_QUOTE_4" Language="zh_Hans_CN">
+			<Text>实现明天理想的唯一障碍是今天的疑虑。让我们以坚定和积极的信念向前迈进吧。[NEWLINE]——富兰克林·德拉诺·罗斯福[NEWLINE][COLOR:ResCultureLabelCS]（荷兰裔美国民主党政治家、第32任美国总统、美国在任时间最长的总统、“美国最佳总统”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_FUTURE_TECH_QUOTE_5" Language="zh_Hans_CN">
+			<Text>怀着一颗男子汉的心，无畏地去迎接那朦胧的未来吧。[NEWLINE]——亨利·沃兹沃思·朗费罗[NEWLINE][COLOR:ResCultureLabelCS]（美国诗人、翻译家、“美国最伟大的诗人”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_FUTURE_TECH_QUOTE_6" Language="zh_Hans_CN">
+			<Text>未来、明天只属于今天为之做好准备的人。[NEWLINE]——马尔科姆·X[NEWLINE][COLOR:ResCultureLabelCS]（非裔美国伊斯兰教教士、美国黑人民权运动领导人物之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_FUTURE_TECH_QUOTE_7" Language="zh_Hans_CN">
+			<Text>对我们未来最大的危机就是世态炎凉。[NEWLINE]——珍妮·古道尔[NEWLINE][COLOR:ResCultureLabelCS]（英国女动物学家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_FUTURE_TECH_QUOTE_8" Language="zh_Hans_CN">
+			<Text>让未来告诉你真相，以根据每个人的工作和成就来评价他们自己。[NEWLINE]——尼古拉·特斯拉[NEWLINE][COLOR:ResCultureLabelCS]（塞尔维亚裔美籍发明家、物理学家、机械工程师、电气工程师、电学先驱、交流电系统/无线电系统/无线电能传输/放大发射机发明者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_FUTURE_TECH_QUOTE_9" Language="zh_Hans_CN">
+			<Text>你知道什么是进步吗，就叫它明天吧。[NEWLINE]——维克多·雨果[NEWLINE][COLOR:ResCultureLabelCS]（法国作家、法国19世纪前期积极浪漫主义文学的代表作家、人道主义的代表人物、法国文学史上资产阶级民主作家代表、“法兰西的莎士比亚”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_FUTURE_TECH_QUOTE_10" Language="zh_Hans_CN">
+			<Text>你的任务不是预见未来，而是使其成为可能。[NEWLINE]——安托万·德·圣·埃克苏佩里[NEWLINE][COLOR:ResCultureLabelCS]（法国作家、飞行员）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_FUTURE_TECH_QUOTE_11" Language="zh_Hans_CN">
+			<Text>未来的帝国将是思想心灵的帝国。[NEWLINE]——温斯顿·丘吉尔[NEWLINE][COLOR:ResCultureLabelCS]（英国首相、政治家、历史学家、画家、演说家、作家、记者、20世纪最重要的政治领袖之一、“雅尔塔会议三巨头”之一、历史上掌握英语单词数量最多的人之一、世界最有说服力的八大演说家之一、“有史以来最伟大的英国人”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_FUTURE_TECH_QUOTE_12" Language="zh_Hans_CN">
+			<Text>别担心未来，迟早你都得面对，正如现在你拿出勇气面对现实一样。[NEWLINE]——马可·奥勒留·安敦宁·奥古斯都[NEWLINE][COLOR:ResCultureLabelCS]（罗马帝国政治家、军事家、哲学家、罗马帝国五贤帝时代最后一位皇帝）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_FUTURE_CIVIC_QUOTE_1" Language="zh_Hans_CN">
+			<Text>你永远不能根据过去来规划未来。[NEWLINE]——埃德蒙·伯克[NEWLINE][COLOR:ResCultureLabelCS]（爱尔兰政治家、作家、演说家、政治理论家、哲学家、英美保守主义的奠基者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_FUTURE_TECH_QUOTE_13" Language="zh_Hans_CN">
+			<Text>现在最大的谜团来了。[NEWLINE]——亨利·沃德·比奇[NEWLINE][COLOR:ResCultureLabelCS]（美国公理会牧师、社会改革家、演讲家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_FUTURE_CIVIC_QUOTE_2" Language="zh_Hans_CN">
+			<Text>我从不去想未来，因为它来得够快的了。[NEWLINE]——阿尔伯特·爱因斯坦[NEWLINE][COLOR:ResCultureLabelCS]（犹太裔瑞士/美国现代物理学家、提出光量子假说、创立了狭义相对论、广义相对论等）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_FUTURE_TECH_QUOTE_16" Language="zh_Hans_CN">
+			<Text>不管未来会发生什么，有一件事是肯定的……人的思想永远不会倒退。[NEWLINE]——弗雷德里克·道格拉斯[NEWLINE][COLOR:ResCultureLabelCS]（非裔美国革命家、政治家、演说家、作家、废奴运动的代表人物之一、美国第一位黑人外交使节）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_FUTURE_TECH_QUOTE_17" Language="zh_Hans_CN">
+			<Text>未来无法预测，但未来可以被发明创造。[NEWLINE]——丹尼斯·加博尔[NEWLINE][COLOR:ResCultureLabelCS]（匈牙利犹太裔英国物理学家、全息摄影的发明者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_FUTURE_TECH_QUOTE_18" Language="zh_Hans_CN">
+			<Text>我不在乎未来向我们袭来的是什么，而在乎于我们朝着什么方向前进。[NEWLINE]——让·玛丽·古诺[NEWLINE][COLOR:ResCultureLabelCS]（法国哲学家、诗人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_FUTURE_TECH_QUOTE_19" Language="zh_Hans_CN">
+			<Text>我们有一个选择。那就是我们可以亲自塑造自己的未来，也可以让随机事件来塑造我们的未来。[NEWLINE]——贝拉克·侯赛因·奥巴马[NEWLINE][COLOR:ResCultureLabelCS]（非裔美国民主党籍政治家、第44任美国总统、美国历史上第一位黑人总统）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_FUTURE_TECH_QUOTE_20" Language="zh_Hans_CN">
+			<Text>不要再去询问未来将会发生什么，把那一天所带来的一切作为礼物来接受即可。[NEWLINE]——昆图斯·贺拉斯·弗拉库斯[NEWLINE][COLOR:ResCultureLabelCS]（罗马帝国奥古斯都统治时期诗人、批评家、翻译家、与维吉尔和奥维德并称为古罗马三大诗人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_FUTURE_TECH_QUOTE_21" Language="zh_Hans_CN">
+			<Text>就我而言，我不知道什么是百分百确定的，但每当看到夜幕星辰，这总会让我充满幻想。[NEWLINE]——文森特·威廉·梵高[NEWLINE][COLOR:ResCultureLabelCS]（荷兰后印象派画家、后印象主义的先驱）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_GLOBALIZATION_QUOTE_1" Language="zh_Hans_CN">
+			<Text>站在两个半球的人会互相交谈，互相取笑，互相拥抱，互相理解彼此的语言。[NEWLINE]——列奥纳多·达·芬奇[NEWLINE][COLOR:ResCultureLabelCS]（意大利博学家、文艺复兴后三杰之一、“文艺复兴时期最完美的代表”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_GLOBALIZATION_QUOTE_2" Language="zh_Hans_CN">
+			<Text>统一世界或毁灭世界。[NEWLINE]——斯图尔特·切斯[NEWLINE][COLOR:ResCultureLabelCS]（美国经济学家、社会理论家、作家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_GLOBALIZATION_QUOTE_3" Language="zh_Hans_CN">
+			<Text>我是世界公民。[NEWLINE]——第欧根尼[NEWLINE][COLOR:ResCultureLabelCS]（古希腊哲学家、犬儒学派的代表人物）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_GLOBALIZATION_QUOTE_4" Language="zh_Hans_CN">
+			<Text>当然，这些国家就像水桶里的一滴水。[NEWLINE]——《旧约圣经》以赛亚书40:15[NEWLINE][COLOR:ResCultureLabelCS]（犹太教与基督教的共同经典）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_GLOBALIZATION_QUOTE_5" Language="zh_Hans_CN">
+			<Text>世界的裁决是决定性的。[NEWLINE]——圣奥古斯丁[NEWLINE][COLOR:ResCultureLabelCS]（古罗马帝国天主教神学家、教会博士、新柏拉图主义哲学家、天主教会四大圣师之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_GLOBALIZATION_QUOTE_1" Language="zh_Hans_CN">
+			<Text>有人说，反对全球化就像反对万有引力定律。[NEWLINE]——科菲·安南[NEWLINE][COLOR:ResCultureLabelCS]（加纳库马西政治家、思想家、联合国第七任秘书长）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_GLOBALIZATION_QUOTE_7" Language="zh_Hans_CN">
+			<Text>人类就像一个单一完整的身体，每个国家都是这个身体的一部分。[NEWLINE]——穆斯塔法·凯末尔·阿塔图尔克[NEWLINE][COLOR:ResCultureLabelCS]（土耳其革命家、改革家、土耳其共和国缔造者、土耳其共和国第一任总统、总理及国民议会议长、“伊斯坦布尔的救星”、“帕夏”、“土耳其人之父”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_GLOBALIZATION_QUOTE_8" Language="zh_Hans_CN">
+			<Text>我们独自一人能做的很少、杯水车薪；而我们一起合作就可以做很多、众志成城。[NEWLINE]——海伦·凯勒[NEWLINE][COLOR:ResCultureLabelCS]（美国现代女作家、教育家、社会活动家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_SOCIAL_MEDIA_QUOTE_1" Language="zh_Hans_CN">
+			<Text>前进的道路总是把人们聚集在一起，而不是把他们分开。[NEWLINE]——马克·扎克伯格[NEWLINE][COLOR:ResCultureLabelCS]（美国企业家、脸书创始人兼首席执行官）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_SOCIAL_MEDIA_QUOTE_2" Language="zh_Hans_CN">
+			<Text>有福同享，有难同当。[NEWLINE]——斯彼得·罗宾逊[NEWLINE][COLOR:ResCultureLabelCS]（加拿大科幻小说作家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_SOCIAL_MEDIA_QUOTE_3" Language="zh_Hans_CN">
+			<Text>社区就像一条船；每个人都应该做好掌舵的准备。[NEWLINE]——亨利克·易卜生[NEWLINE][COLOR:ResCultureLabelCS]（挪威戏剧家、欧洲近代戏剧的创始人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_SOCIAL_MEDIA_QUOTE_4" Language="zh_Hans_CN">
+			<Text>社交媒体是民众百姓的工具，是普通人的工具，是没有其他资源的人的工具。[NEWLINE]——艾未未[NEWLINE][COLOR:ResCultureLabelCS]（中国当代艺术家、激进主义社会批评家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_SOCIAL_MEDIA_QUOTE_5" Language="zh_Hans_CN">
+			<Text>大鸟唱歌，小鸟吱喳。[NEWLINE]——冰岛谚语</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVIC_SOCIAL_MEDIA_QUOTE_1" Language="zh_Hans_CN">
+			<Text>在我所有重要的、无关紧要的事情里，我应该先告诉你哪一个呢？[NEWLINE]——简·奥斯汀[NEWLINE][COLOR:ResCultureLabelCS]（英国女小说家、《傲慢与偏见》作者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_SOCIAL_MEDIA_QUOTE_7" Language="zh_Hans_CN">
+			<Text>整个地球将被转变成一个巨大的大脑，事实上它就是，所有的事物都是其中一个个真实而又有节奏的整体粒子。[NEWLINE]——尼古拉·特斯拉[NEWLINE][COLOR:ResCultureLabelCS]（塞尔维亚裔美籍发明家、物理学家、机械工程师、电气工程师、电学先驱、交流电系统/无线电系统/无线电能传输/放大发射机发明者）[ENDCOLOR]</Text>
+		</Replace>
+
+		<!-- 世界奇观 -->
+
+		<Replace Tag="LOC_QUOTE_SC_BIG_BEN_FROST" Language="zh_Hans_CN">
+			<Text>在更远处，在远离人间的高处。有一樽发光的钟悬在天边。[NEWLINE]它宣称时间既不错误又不正确，但我早就已经熟悉这种黑夜。[NEWLINE]——罗伯特·弗罗斯特[NEWLINE][COLOR:ResCultureLabelCS]（美国作家、“美国文学中的桂冠诗人”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_BROADWAY_MIRANDA" Language="zh_Hans_CN">
+			<Text>看看周围，再看看我们，现在还活着是多么幸运啊。[NEWLINE]——林·曼努尔·米兰达[NEWLINE][COLOR:ResCultureLabelCS]（美国男作曲家、作词家、歌手、演员、剧作家、制片人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_BROADWAY_SONDHEIM" Language="zh_Hans_CN">
+			<Text>所以你又去了树林，[NEWLINE]而你时不时就得这么做。[NEWLINE]一旦进入树林，不知何时，[NEWLINE]也就做好旅行的准备。[NEWLINE]——斯蒂芬·桑德海姆《走进树林/魔法黑森林》[NEWLINE][COLOR:ResCultureLabelCS]（美国作曲作词家、概念音乐剧鼻祖）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_BROADWAY_LINDSAY" Language="zh_Hans_CN">
+			<Text>街上的标志，天上的标志，[NEWLINE]造就一个新黄道，引导一群明智者，[NEWLINE]百老汇也造，大台阶也有，[NEWLINE]如彩虹般的灵魂，祈祷着问鼎舞台。[NEWLINE]——维切尔·林赛[NEWLINE][COLOR:ResCultureLabelCS]（美国诗人、现代吟唱诗歌之父）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_CHICHEN_ITZA_CIV_5" Language="zh_Hans_CN">
+			<Text>卡盾历法在奇琴伊察被确立下来。伊察的子民也会在那里定居。到时，绿咬鹃会来，青鸟会来，阿坎特纳尔会来……而世界之神：伊察也会来。[NEWLINE]——《奇兰·巴拉姆之书》[NEWLINE][COLOR:ResCultureLabelCS]（玛雅祭司编撰的百科全书）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_COLOSSEUM_SUETONIUS_2" Language="zh_Hans_CN">
+			<Text>皇帝提图斯宣称：“我不会按照我想要的方式安排娱乐活动，而是按照观众想要的方式。”而这正是他所做的。[NEWLINE]——苏维托尼乌斯[NEWLINE][COLOR:ResCultureLabelCS]（古罗马历史学家、作家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_COLOSSEUM_BYRON_1" Language="zh_Hans_CN">
+			<Text>拱门上的拱门，就像在罗马一样，[NEWLINE]收集她家族的冠军奖杯，[NEWLINE]聚焦她所有胜利于穹顶之下[NEWLINE]她矗立在竞技场；一道月光照耀着她。[NEWLINE]——乔治·戈登·拜伦[NEWLINE][COLOR:ResCultureLabelCS]（英国诗人、革命家、浪漫主义文学泰斗、世袭男爵、“拜伦勋爵”[Lord Byron]）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_COLOSSEUM_BYRON_2" Language="zh_Hans_CN">
+			<Text>只要竞技场矗立，罗马就还会矗立；[NEWLINE]竞技场一旦倒下，罗马就会倒下；[NEWLINE]一旦罗马倒下时，整个世界都会分崩离析。[NEWLINE]——乔治·戈登·拜伦[NEWLINE][COLOR:ResCultureLabelCS]（英国诗人、革命家、浪漫主义文学泰斗、世袭男爵、“拜伦勋爵”[Lord Byron]）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_COLOSSUS_ANON" Language="zh_Hans_CN">
+			<Text>为了你，太阳啊，罗得岛的多利安人民树立了这尊通往奥林匹斯山的青铜雕像，当时他们平息了战争的浪潮，用从敌人那里掠夺来的战利品为他们的城市加冕装饰……他们点燃了象征自由和独立，倍受人民喜爱的火炬。[NEWLINE]——一首不知姓名的诗歌</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_COLOSSUS_LAZARUS" Language="zh_Hans_CN">
+			<Text>声名显赫的黄铜色古希腊巨人[NEWLINE]以他征服的四肢横跨在这大地之上。[NEWLINE]——艾玛·拉撒路[NEWLINE][COLOR:ResCultureLabelCS]（犹太裔美国女诗人、翻译家、犹太人社会积极分子）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_CRISTO_BROWNING" Language="zh_Hans_CN">
+			<Text>似乎整个世间变得都庄严肃穆，[NEWLINE]透过上帝那张开的双臂，[NEWLINE]建立起永恒的意义。[NEWLINE]——伊丽莎白·芭蕾特·勃朗宁[NEWLINE][COLOR:ResCultureLabelCS]（英国女诗人、英国维多利亚时代最受人尊敬的诗人之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_CRISTO_ISAIAH" Language="zh_Hans_CN">
+			<Text>他们要把刀剑打造成犁铧，把长枪打造成镰刀。使国民不再举刀攻击同胞，也不再学习打仗。[NEWLINE]——《旧约圣经》以赛亚书2:4[NEWLINE][COLOR:ResCultureLabelCS]（犹太教与基督教的共同经典）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_CRISTO_MATTHEW" Language="zh_Hans_CN">
+			<Text>助人和睦的人有福了。因为他们必定能称为神之儿女。[NEWLINE]——《新约圣经》马太福音5:9[NEWLINE][COLOR:ResCultureLabelCS]（基督教经典）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_FORBIDDEN_CITY_I_CHING" Language="zh_Hans_CN">
+			<Text>明两作，离；大人以继明照于四方。[NEWLINE]——《周易》离卦大象传[NEWLINE][COLOR:ResCultureLabelCS]（与《连山》和《归藏》并称华夏上古三大奇书、诸经之首大道之源、中华传统文化的总纲领）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_FORBIDDEN_CITY_DER_LING" Language="zh_Hans_CN">
+			<Text>当我们走近宫殿时，我可以看到一堵高耸的红墙，它从一座山丘蜿蜒到另一座山丘，把宫殿的庭院围了起来。墙壁和建筑物的顶部覆盖着黄色和绿色的瓷瓦，在明亮的阳光下形成了一幅最耀眼美丽的图画。[NEWLINE]——裕德龄[NEWLINE][COLOR:ResCultureLabelCS]（中国慈禧太后御前女官、汉军正白旗人、紫禁城八女官之一、“德龄公主”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_GREAT_LIBRARY_SHAKESPEARE" Language="zh_Hans_CN">
+			<Text>来吧，挑出我全部藏书来，[NEWLINE]也把你的悲伤也挑出去吧。[NEWLINE]——威廉·莎士比亚[NEWLINE][COLOR:ResCultureLabelCS]（英国文艺复兴时期剧作家、诗人、演员、英国大文豪）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_GREAT_LIBRARY_WOOLF" Language="zh_Hans_CN">
+			<Text>如果你愿意，你可以把你的图书馆锁起来；但是没有“门”，没“锁”，没有“闩”，你是没有办法禁锢我思想的自由的。[NEWLINE]——弗吉尼亚·伍尔芙[NEWLINE][COLOR:ResCultureLabelCS]（英国女作家、文学批评家和文学理论家、意识流文学代表人物、二十世纪现代主义与女性主义的先锋）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_GREAT_LIBRARY_ARISTEAS_1" Language="zh_Hans_CN">
+			<Text>拉兰城的底马特亚斯，皇室图书馆的总管，收到了一大笔钱，目的是尽可能地收集世界上所有的书。通过购买和抄写，他尽其所能，实现了国王的愿望。[NEWLINE]——《阿里斯提亚斯之信》[NEWLINE][COLOR:ResCultureLabelCS]（公元前3世纪或2世纪初的希腊化著作，尽管有人认为其有关希伯来语圣经希腊文译本创作的故事是虚构的，但它是最早提及亚历山大图书馆的文字材料）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_GREAT_LIBRARY_ARISTEAS_2" Language="zh_Hans_CN">
+			<Text>王啊，既然您吩咐我把您藏书所需要的书收集起来，把有缺陷的书修补起来，那我就竭尽全力来满足您的愿望。[NEWLINE]——《阿里斯提亚斯之信》[NEWLINE][COLOR:ResCultureLabelCS]（公元前3世纪或2世纪初的希腊化著作，尽管有人认为其有关希伯来语圣经希腊文译本创作的故事是虚构的，但它是最早提及亚历山大图书馆的文字材料）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_GREAT_LIBRARY_MANGUEL" Language="zh_Hans_CN">
+			<Text>我们可以徜徉在亚历山大图书馆那庞大的书堆中，那里汇集了所有你所能的想象力和知识；而它的毁灭，也是一种警告：我们收集的一切可能都将丧失，但其中大部分还可以重新收集起来；我们可以从这图书馆的雄心壮志中了解到，一个人的经历，也可以通过一个名叫“言语”的炼金术，成为所有人的经历……[NEWLINE]——阿尔维托·曼古埃尔[NEWLINE][COLOR:ResCultureLabelCS]（阿根廷作家、翻译家、编辑）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_GREAT_LIGHTHOUSE_QURAN" Language="zh_Hans_CN">
+			<Text>一盏灯接一盏灯。真主引导祂所意愿的人走向祂的光。神给百姓作榜样，神也知晓着万事。[NEWLINE]——《古兰经》24:35[NEWLINE][COLOR:ResCultureLabelCS]（伊斯兰教唯一的根本经典）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_GREAT_LIGHTHOUSE_ISAIAH" Language="zh_Hans_CN">
+			<Text>万国普照在你的光辉之下，众王回归于你的荣耀之中。[NEWLINE]——《旧约圣经》以赛亚书 60:3[NEWLINE][COLOR:ResCultureLabelCS]（犹太教与基督教的共同经典）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_GREAT_LIGHTHOUSE_GENESIS" Language="zh_Hans_CN">
+			<Text>上帝说：“要有光”，就有了光。[NEWLINE]——《旧约圣经》创世纪1:3[NEWLINE][COLOR:ResCultureLabelCS]（犹太教与基督教的共同经典）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_GREAT_LIGHTHOUSE_CAESAR" Language="zh_Hans_CN">
+			<Text>在岛上有一座叫做法洛斯的灯塔，很高，确实是一项伟大的建筑工程。[NEWLINE]——盖乌斯·尤利乌斯·恺撒[NEWLINE][COLOR:ResCultureLabelCS]（古罗马军事统帅、政治家、“恺撒大帝”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_GREAT_PYRAMIDS_UNAS" Language="zh_Hans_CN">
+			<Text>地平线上打开了一座双扇门；门闩并没有上锁。[NEWLINE]——乌纳斯金字塔铭文[NEWLINE][COLOR:ResCultureLabelCS]（乌纳斯金字塔是埃及第五王朝法老乌纳斯的陵墓，在埃及古王国时期完成的皇家金字塔中是最小的一座、铭文中，还有一些犹太方言的一些线条，用埃及文字写成，包括书面犹太人语言的最早证据）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_GREAT_PYRAMIDS_DEAD" Language="zh_Hans_CN">
+			<Text>万岁，我的主，你匆匆走过无限时光，你的存在是永恒的，万主之主，万王之王，至高无上的统治者，住在自己神殿里的众神之王啊。[NEWLINE]——《死亡之书》[NEWLINE][COLOR:ResCultureLabelCS]（《死亡之书》是古埃及的一种陪葬物品。这是一些用来帮助死者在来世渡过难关、得到永生的咒语。这本书并不完全是对盗墓者的诅咒，同时还有对人们安享后半生的一些忠告建议。）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_GREAT_PYRAMIDS_PROVERB" Language="zh_Hans_CN">
+			<Text>人们害怕时间，时间却害怕金字塔。[NEWLINE]——埃及-阿拉伯谚语</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_GREAT_ZIMBABWE_PEGADO" Language="zh_Hans_CN">
+			<Text>在林波波河和赞比西河之间内陆平原的金矿之中，有一座用石头建造的巨大堡垒。[NEWLINE]——维森特·佩加多[NEWLINE][COLOR:ResCultureLabelCS]（16世纪索法拉葡萄牙殖民驻军的队长）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_HANGING_GARDENS_PHILO" Language="zh_Hans_CN">
+			<Text>一件皇家奢华的艺术品，其最显著的特点是把农民的劳动成果高悬在观众的头上。[NEWLINE]——菲洛·梅卡纽图斯[NEWLINE][COLOR:ResCultureLabelCS]（拜占庭工程师、物理学家、力学作家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_HANGING_GARDENS_RUFUS" Language="zh_Hans_CN">
+			<Text>他的妻子想念这片平原上的森林，所以他出于对妻子的爱建造了这座建筑，并说服妻子相信能用这种结构来模仿大自然的美丽。[NEWLINE]——昆图斯·库尔蒂乌斯·鲁夫斯[NEWLINE][COLOR:ResCultureLabelCS]（古罗马历史学家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_HERMITAGE_PAMUK" Language="zh_Hans_CN">
+			<Text>真正的博物馆是把时间转化为空间的地方。[NEWLINE]——费利特·奥尔罕·帕慕克[NEWLINE][COLOR:ResCultureLabelCS]（土耳其当代小说家、当代欧洲最核心的三位文学家之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_MAHABODHI_TEMPLE_BUDDHA" Language="zh_Hans_CN">
+			<Text>火，水，风，都不能摧毁善行的福报，祝福将照亮整个世界。[NEWLINE]——乔达摩·悉达多[NEWLINE][COLOR:ResCultureLabelCS]（古印度思想家、教育家、宗教改革家、佛教的创始人、“佛祖”、“释迦牟尼”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_ORACLE_PURIFICATION" Language="zh_Hans_CN">
+			<Text>给那些寻求神谕的人建议，[NEWLINE]注意用词，谨慎言语。[NEWLINE]怀着纯粹的求问之心，[NEWLINE]让上天来回答吧。[NEWLINE]——德尔斐神谕的净化仪式</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_OXFORD_UNIVERSITY_LETTS" Language="zh_Hans_CN">
+			<Text>有那有着梦幻般的尖塔的美丽之城，[NEWLINE]再也无需六月夏日来增光添色。[NEWLINE]——马修·阿诺德[NEWLINE][COLOR:ResCultureLabelCS]（英国诗人、教育家、评论家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_PETRA_LIBBEY" Language="zh_Hans_CN">
+			<Text>它像自然一样坚固，不可动摇，似乎在嘲笑其他城市的城墙，而它是地球上最伟大的建造者其中微不足道的防御工事。[NEWLINE]——威廉·利比[NEWLINE][COLOR:ResCultureLabelCS]（美国普林斯顿大学自然地理教授、美国奥运会步枪项目运动员）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_POTALA_PALACE_BUDDHA" Language="zh_Hans_CN">
+			<Text>每个人才是自己真正的守护者；不然，这守护者还能有谁？一个人完全掌控自己，就会获得一种难以获得的通透感、豁达感。[NEWLINE]——乔达摩·悉达多[NEWLINE][COLOR:ResCultureLabelCS]（古印度思想家、教育家、宗教改革家、佛教的创始人、“佛祖”、“释迦牟尼”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_POTALA_PALACE_LANDON" Language="zh_Hans_CN">
+			<Text>一个人除了布达拉宫那庞大而又正直的体量之外，什么都看不到……因为它像磁石一样夺人眼球。[NEWLINE]——珀斯瓦尔·兰登[NEWLINE][COLOR:ResCultureLabelCS]（英国作家、旅行家、新闻记者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_RUHR_KEYNES" Language="zh_Hans_CN">
+			<Text>德意志帝国真正建立在煤炭和钢铁之上，而不是鲜血和兵器上。[NEWLINE]——约翰·梅纳德·凯恩斯[NEWLINE][COLOR:ResCultureLabelCS]（英国经济学家、现代经济学最有影响的经济学家之一、“宏观经济学之父”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_TERRACOTTA_ARMY_LAOZI" Language="zh_Hans_CN">
+			<Text>胜人者有力，自胜者强。[NEWLINE]——老子[NEWLINE][COLOR:ResCultureLabelCS]（中国古代思想家、哲学家、文学家、史学家、道家学派创始人和主要代表人物、与庄子并称“老庄”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_VENETIAN_ARSENAL_DANTE" Language="zh_Hans_CN">
+			<Text>就像威尼斯人的军械库一样[NEWLINE]冬天里沸滚着坚韧的沥青……[NEWLINE]一个敲船头，一个敲船尾[NEWLINE]这个做船桨，那个来绕绳。[NEWLINE]——但丁·阿利吉耶里[NEWLINE][COLOR:ResCultureLabelCS]（意大利诗人、现代意大利语奠基人、欧洲文艺复兴时代开拓者、史诗《神曲》作者、文艺复兴三巨头之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_MAUSOLEUM_GELLIUS" Language="zh_Hans_CN">
+			<Text>为了永久纪念她的丈夫，阿尔特米西亚女王还花费了大量的劳动力，建造了一座著名的坟墓，坟墓被认为是世界七大奇迹之一。[NEWLINE]——奥卢斯·格利乌斯[NEWLINE][COLOR:ResCultureLabelCS]（古罗马作家、法学家，拉丁语语法权威）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_JEBEL_BARKAL_STELE_1" Language="zh_Hans_CN">
+			<Text>听着，塔肯特的人们啊，他们住在圣山里，那座山叫纳苏威-陶威，属于一个不为人所知的民族。愿你在“两界之主”[法老]之前了解阿蒙拉的奇迹。[NEWLINE]——博尔戈尔山纪念石碑铭文</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_JEBEL_BARKAL_STELE_2" Language="zh_Hans_CN">
+			<Text>他为他父亲阿蒙拉在塞马哈苏特要塞的纳苏威-陶威山里建了一座纪念碑。他所造的是一座永恒的胜利殿堂，因为他曾为我的陛下取得无上荣耀，胜过之前任何国王。[NEWLINE]——博尔戈尔山纪念石碑铭文</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_ANGKOR_WAT_MOUHOUT" Language="zh_Hans_CN">
+			<Text>这些庙宇中有一座仿佛是由米开朗基罗建造的，可以与所罗门的庙宇相媲美，与我们最美丽的建筑相比，它的地位可能更崇高。因为它比希腊和罗马留给我们的任何东西都要伟大。[NEWLINE]——亨利·穆奥[NEWLINE][COLOR:ResCultureLabelCS]（法国博物学家）[ENDCOLOR]</Text>
+		</Replace>
+
+		<!-- 自然奇观 -->
+
+		<Replace Tag="LOC_QUOTE_SC_CLIFFS_WILLIAMS" Language="zh_Hans_CN">
+			<Text>在我深邃的目光中，[NEWLINE]啊！亲爱的大地，你那洁白的悬崖啊。[NEWLINE]——海伦·玛丽亚·威廉姆斯[NEWLINE][COLOR:ResCultureLabelCS]（英国女小说家、回忆录作家、诗人、法语书籍翻译者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_CLIFFS_BURTON" Language="zh_Hans_CN">
+			<Text>多佛白色悬崖上会有美丽蓝鸟[NEWLINE]明天，你就等着瞧吧。[NEWLINE]——纳特·伯顿[NEWLINE][COLOR:ResCultureLabelCS]（美国作曲家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_REEF_SAVILLE_KENT" Language="zh_Hans_CN">
+			<Text>澳大利亚的大堡礁，多么奇妙的构造啊……这是由库克船长的探索首次向世界公布的，它应是世界奇观之一。[NEWLINE]——威廉·萨维尔·肯特[NEWLINE][COLOR:ResCultureLabelCS]（英国海洋生物学家、作家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_PANTANAL_GENESIS" Language="zh_Hans_CN">
+			<Text>愿水里多多诞生出有生命的动物；愿雀鸟飞翔在地面之上，天空之中。[NEWLINE]——《旧约圣经》创世纪1:20[NEWLINE][COLOR:ResCultureLabelCS]（犹太教与基督教的共同经典）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_TORRES_FLORENCE" Language="zh_Hans_CN">
+			<Text>我们躺在床上看落日，太阳给山峰染上了千变万化的颜色，让冰川在神奇的点染下闪耀着温暖和金黄的光芒。[NEWLINE]——弗洛伦斯·迪克西夫人[NEWLINE][COLOR:ResCultureLabelCS]（苏格兰女作家、战争通讯员、女权主义者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_TSINGY_GAUTIER" Language="zh_Hans_CN">
+			<Text>巨大的板状石灰岩穿透了黄色的土壤……战时他们是被征服方的避难所，一个天然堡垒。[NEWLINE]——埃米尔·费利克斯·高蒂埃[NEWLINE][COLOR:ResCultureLabelCS]（法国地理学家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_CAUSEWAY_DRUMMOND" Language="zh_Hans_CN">
+			<Text>悬崖和岩洞都预示着狂风怒吼，[NEWLINE]你们披风，你们岩石，你们巨浪，你们冰雹：[NEWLINE]组成惊人景象，多么狂野，多么壮观，[NEWLINE]在广阔的大道上，有支柱的海岸扩张了！[NEWLINE]——威廉·汉密尔顿·德拉蒙德[NEWLINE][COLOR:ResCultureLabelCS]（爱尔兰诗人、动物权利作家、反调辨者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_CAUSEWAY_MCKINLEY" Language="zh_Hans_CN">
+			<Text>岩石迷宫，巨大陡峭，[NEWLINE]四面楚歌的斗篷，黑暗在深处皱起眉头，[NEWLINE]玄武岩城垛，雄伟的拱廊，[NEWLINE]迫近的悬崖和著名的柱廊。[NEWLINE]——约翰·麦金利[NEWLINE][COLOR:ResCultureLabelCS]（美国阿拉巴马州参议员、美国最高法院副大法官）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_HA_LONG_HO_XUAN_HUONG" Language="zh_Hans_CN">
+			<Text>片帆无急渡华封，[NEWLINE]硝壁丹崖出水中。[NEWLINE]水势每随山面转，[NEWLINE]山形斜靠水门通。[NEWLINE]鱼龙杂处秋烟薄，[NEWLINE]鸥鹭齐飞日照红。[NEWLINE]玉洞云房三百六，[NEWLINE]不知谁是水晶宫。[NEWLINE]——胡春香《渡华封》[NEWLINE][COLOR:ResCultureLabelCS]（越南女诗人、越南最伟大的诗人之一、“喃字诗女王”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_HA_LONG_DE_LISLE" Language="zh_Hans_CN">
+			<Text>大海，不论外面是什么时候，在这些岩石之前显得很是平静……根据一天的不同时间，水呈现出不同的、令人惊叹的颜色：时而深绿，时而浅灰。[NEWLINE]——莫里斯·罗莱特·德·艾尔[NEWLINE][COLOR:ResCultureLabelCS]（法国水文工程师、海军总工程师、巴黎中央水文局局长）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_HA_LONG_CORDONNIER" Language="zh_Hans_CN">
+			<Text>那是在一片绿色的水面上，湖水孔雀石绿让我想起了挪威的湖泊。所有这一切都以巨大的块状岩石矗立在一片总是风平浪静的宽阔海湾里……宛如成千上万根银针般挂磨的海水侵蚀已经咬啮了底部，看起来似乎只能靠一种奇迹般的平衡来维持住了。[NEWLINE]——埃米尔·科登尼尔[NEWLINE][COLOR:ResCultureLabelCS]（瑞典推特网红）[ENDCOLOR]</Text>
+		</Replace>
+
+		<!-- 世界奇观新增引言 -->
+
+		<Replace Tag="LOC_QUOTE_SC_BIG_BEN_LANDON" Language="zh_Hans_CN">
+			<Text>傍晚的微风吹来甜美的气息，[NEWLINE]幽静的晚夜呼唤抚慰的钟声，[NEWLINE]温柔地承受，回声中消逝，[NEWLINE]恰似一首安魂曲，为离别的日子而演奏。[NEWLINE]——利蒂希亚·伊丽莎白·兰登[NEWLINE][COLOR:ResCultureLabelCS]（英国女诗人、小说家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_BOLSHOI_TCHAIKOVSKY" Language="zh_Hans_CN">
+			<Text>的确，如果不是因为音乐，人们有太多理由发疯了。[NEWLINE]——彼得·伊里奇·柴可夫斯基[NEWLINE][COLOR:ResCultureLabelCS]（俄罗斯浪漫乐派作曲家、19世纪浪漫主义音乐的代表人物之一、“旋律大师”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_BOLSHOI_PROKOFIEV" Language="zh_Hans_CN">
+			<Text>作曲家，正如诗人、雕塑家、画家一样，都有义务为人民服务。都必须美化人类的生命，保卫它。[NEWLINE]——谢尔盖·普罗科菲耶夫[NEWLINE][COLOR:ResCultureLabelCS]（苏联作曲家、钢琴家、20世纪世界重要的作曲家之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_CHICHEN_ITZA_THOMPSON" Language="zh_Hans_CN">
+			<Text>他们苍老而冷酷，岁月在他们脸上留下了皱纹，面容憔悴，气势磅礴，冷漠无情。他们粗犷的身躯耸立在周围的平地之上，难以言喻那场面。[NEWLINE]——爱德华·赫伯特·汤普森[NEWLINE][COLOR:ResCultureLabelCS]（美国考古学家、美国驻墨西哥尤卡坦领事）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_COLOSSEUM_SUETONIUS_1" Language="zh_Hans_CN">
+			<Text>在圆形剧场的落成典礼上，[皇帝提图斯]组织一场效果极其精致、富丽堂皇的角斗士表演。在同一地点，他一天之内展示了角斗士们和五千只各种野兽。[NEWLINE]——苏维托尼乌斯[NEWLINE][COLOR:ResCultureLabelCS]（古罗马历史学家、作家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_COLOSSUS_SHAKESPEARE" Language="zh_Hans_CN">
+			<Text>嘿！为什么他要像巨人一样跨骑在狭窄的世界上？[NEWLINE]——威廉·莎士比亚[NEWLINE][COLOR:ResCultureLabelCS]（英国文艺复兴时期剧作家、诗人、演员、英国大文豪）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_CRISTO_MILMAN" Language="zh_Hans_CN">
+			<Text>冰冷的大理石终究变成了真神。[NEWLINE]——亨利·哈特·米尔曼[NEWLINE][COLOR:ResCultureLabelCS]（英国历史学家、教士）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_FORBIDDEN_CITY_CONFUCIUS" Language="zh_Hans_CN">
+			<Text>致中和，天地位焉，万物育焉。[NEWLINE]——孔子[NEWLINE][COLOR:ResCultureLabelCS]（中国古代思想家、政治家、教育家、儒家学派创始人、“大成至圣先师”、“天纵之圣”、“天之木铎”、“万世师表”、“世界十大文化名人”之首）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_GREAT_LIBRARY_CICERO" Language="zh_Hans_CN">
+			<Text>如果你有一个花园和一座图书馆，那你就有你需要的一切。[NEWLINE]——马尔库斯·图利乌斯·西塞罗[NEWLINE][COLOR:ResCultureLabelCS]（古罗马著名政治家、哲人、演说家、法学家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_GREAT_LIGHTHOUSE_SOLOMON" Language="zh_Hans_CN">
+			<Text>正义之人的路好像一道亮光，越照越亮，直到那日坚立高空。[NEWLINE]——《旧约圣经》箴言篇·所罗门4:18[NEWLINE][COLOR:ResCultureLabelCS]（犹太教与基督教的共同经典）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_GREAT_ZIMBABWE_DE_BARROS" Language="zh_Hans_CN">
+			<Text>这些建筑物是在何时，何人建造的……没有记录，但他们说这是魔鬼的杰作，因为……在他们看来，这些建筑不可能是人类的杰作。[NEWLINE]——若昂·德·巴罗斯[NEWLINE][COLOR:ResCultureLabelCS]（葡萄牙文艺复兴时期航海家、探险家、历史学家、“葡萄牙的蒂托·李维”、葡萄牙最早的历史学家之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_HAGIA_SOPHIA_PROCOPIUS" Language="zh_Hans_CN">
+			<Text>因此，这座教堂已成为一种极其美丽的奇观，对于看到它的人来说是惊奇的，而对听到它的人来说则是完全不可思议的。[NEWLINE]——普罗柯比[NEWLINE][COLOR:ResCultureLabelCS]（拜占庭历史学家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_HANGING_GARDENS_BEROSSUS" Language="zh_Hans_CN">
+			<Text>他在宫殿里建了很高的走廊，走道由石柱支撑着。他建了所谓的悬挂乐园，又种上了各种各样的树，使这里的景色完全像一个青山之城。[NEWLINE]——贝罗索斯[NEWLINE][COLOR:ResCultureLabelCS]（巴比伦作家、别卢斯大庙祭司、天文学家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_MAHABODHI_DIGHA_NIKAYA" Language="zh_Hans_CN">
+			<Text>让自己成为一座属于自己的岛屿，[NEWLINE]让自己成为属于你的避难所……[NEWLINE]以真理作为你的海岛，[NEWLINE]以真理为你的避难所，[NEWLINE]除此之外再没有岛屿、避难所。[NEWLINE]——上座部佛教佛经《长部》[NEWLINE][COLOR:ResCultureLabelCS]（《巴利三藏》中经藏的组成部分，南传上座部佛教典籍，相当于北传佛教典籍《长阿含经》）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_ORACLE_HERODOTUS" Language="zh_Hans_CN">
+			<Text>我细数沙滩上的沙粒，丈量浩瀚大海；我听懂哑巴说的言语，听见无声之音。[NEWLINE]——希罗多德[NEWLINE][COLOR:ResCultureLabelCS]（古希腊作家、历史学家、西方“历史之父”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_OXFORD_LETTS" Language="zh_Hans_CN">
+			<Text>当我经过牛津大学时，[NEWLINE]看到了大学的尖顶，[NEWLINE]牛津大学灰色的尖顶，[NEWLINE]映衬灰珍珠般的天空。[NEWLINE]——温妮弗雷德·玛丽·莱茨[NEWLINE][COLOR:ResCultureLabelCS]（英国女作家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_PETRA_BURGON" Language="zh_Hans_CN">
+			<Text>这仿佛不是人类那创造性的双手创造出来的，[NEWLINE]也不是有计划的辛勤劳动建造的幻境之梦……[NEWLINE]在这远东恶劣的气候之中[NEWLINE]有的只是拥有半个时光历史的玫红之城。[NEWLINE]——约翰·威廉·柏根[NEWLINE][COLOR:ResCultureLabelCS]（英国圣公会牧师、奇切斯特大教堂院长、诗人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_RUHR_KRUPP" Language="zh_Hans_CN">
+			<Text>劳动的目标应该是为公共利益服务：因为这样劳动才会带来祝福，因为这样劳动才会带来神眷！[NEWLINE]——阿尔佛莱德·克虏伯[NEWLINE][COLOR:ResCultureLabelCS]（德国钢铁制造商、军火商、发明家、“火炮大王”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_STONEHENGE_WORDSWORTH" Language="zh_Hans_CN">
+			<Text>一堆石柱！我很自豪这能保持；[NEWLINE]你的秘密，汝之喜欢站着聆听；[NEWLINE]阵阵回响，来自旋风横扫平原；[NEWLINE]孤独室友，度过岁月年复一年。[NEWLINE]——威廉·华兹华斯[NEWLINE][COLOR:ResCultureLabelCS]（英国浪漫主义诗人、桂冠诗人、湖畔诗人的代表）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_STONEHENGE_BURKE" Language="zh_Hans_CN">
+			<Text>当任何工作似乎都需要巨大的力量和劳动力才能完成时，这个想法本身就很了不起了……这些巨大而粗糙的石块，竖立着，互相堆积着，常使人们想到这样一种工程所需要投入的巨大力量。[NEWLINE]——埃德蒙·伯克[NEWLINE][COLOR:ResCultureLabelCS]（爱尔兰政治家、作家、演说家、政治理论家、哲学家、英美保守主义的奠基者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_TERRACOTTA_ARMY_SIMA_QIAN" Language="zh_Hans_CN">
+			<Text>秦始皇大兴厚葬，营建冢圹于骊戎之山，一名蓝田，其阴多金，其阳多玉。始皇贪其美名，因而葬焉。[NEWLINE]——郦道元[NEWLINE][COLOR:ResCultureLabelCS]（中国北魏时期官员、地理学家、《水经注》作者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_JEBEL_BARKAL_BUDGE" Language="zh_Hans_CN">
+			<Text>阿蒙的每一种形态据说都居住在圣山上……长有公羊头像雕像的阿蒙让法老坐在荷鲁斯的宝座上，而人型雕像阿蒙则让法老统治所有的国家、所有的沙漠和山脉，并把九个部落都屈服于他的脚下。[NEWLINE]——欧内斯特·阿尔弗雷德·汤普森·沃利斯·布奇[NEWLINE][COLOR:ResCultureLabelCS]（英国埃及学家、东方学家、文字学家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_ANGKOR_WAT_DO_COUTO" Language="zh_Hans_CN">
+			<Text>它是如此非凡的建筑，不可能用笔墨来描述它，特别是因为它是世界上独一无二的建筑。它有塔，有精美装饰，有人类天才所能想象到的一切精致之处。[NEWLINE]——蒂欧格·都·科托，引用安东尼奥·达·马格达连那[NEWLINE][COLOR:ResCultureLabelCS]（葡萄牙历史学家[NEWLINE]葡萄牙方济各会修士、旅行家）[ENDCOLOR]</Text>
+		</Replace>
+
+		<!-- 自然奇观新增引言 -->
+
+		<Replace Tag="LOC_QUOTE_SC_GALAPAGOS_DARWIN" Language="zh_Hans_CN">
+			<Text>这些岛屿的自然历史非常奇特，值得关注……群岛本身就是一个小世界。[NEWLINE]——查尔斯·罗伯特·达尔文[NEWLINE][COLOR:ResCultureLabelCS]（英国生物学家、演化论的奠基人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_REEF_ROUGHLEY" Language="zh_Hans_CN">
+			<Text>澳大利亚的大堡礁是世界上最大的自然奇观之一。这也是现存最大的堡礁……在大堡礁，大自然放开自己，自由创造。[NEWLINE]——西奥多·克里夫兰·拉夫利[NEWLINE][COLOR:ResCultureLabelCS]（澳大利亚作家、艺术家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_KILIMANJARO_DUNDAS" Language="zh_Hans_CN">
+			<Text>它在正午烈日中闪耀，或笼罩在薄雾之下，或隐藏在雷云中，这是多么令人启发的景象啊，使旅行者不可能不接受它作为世界一大奇观之一。[NEWLINE]——查尔斯·塞西尔·法夸尔森·邓达斯[NEWLINE][COLOR:ResCultureLabelCS]（英国乌干达殖民地总督）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_PIOPIOTAHI_BAUGHAN" Language="zh_Hans_CN">
+			<Text>在新西兰西南角的深处，远离所有熟悉的旅游景点的地方，就是著名的米尔福德湾，一个入海口，其壮丽的程度甚至超过挪威大部分峡湾。[NEWLINE]——布兰奇·伊迪丝·鲍恩[NEWLINE][COLOR:ResCultureLabelCS]（新西兰诗人、作家、刑法改革者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_TORRES_DEL_PAINE_HOLDICH" Language="zh_Hans_CN">
+			<Text>没有任何地方能比这里能更大、更宏伟地展示大自然的野性力量了。[NEWLINE]——托马斯·亨格福德·霍尔迪奇[NEWLINE][COLOR:ResCultureLabelCS]（英国地理学家、皇家地理学会会长）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_TSINGY_UNESCO" Language="zh_Hans_CN">
+			<Text>它是一个名副其实的石灰石大教堂，所在的大岛甚至成了世界上最壮观的自然景观之一。[NEWLINE]——联合国教科文组织[NEWLINE][COLOR:ResCultureLabelCS]（联合国在国际教育、科学和文化领域成员最多的专门机构、该组织旨在通过教育/科学和文化促进各国合作，对世界和平和安全作出贡献）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_EYJAFJALLAJOKULL_ZIZEK" Language="zh_Hans_CN">
+			<Text>冰岛一次小火山喷发所产生的火山云在提醒我们，尽管我们拥有改变自然的力量，但人类仍然只是地球上的一个物种生物。[NEWLINE]——斯拉沃热·齐泽克[NEWLINE][COLOR:ResCultureLabelCS]（斯洛文尼亚社会学家、哲学家、文化批判家、心理分析理论家、左翼学者、马克思主义理论家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_HA_LONG_TRAI" Language="zh_Hans_CN">
+			<Text>路入云屯山复山，[NEWLINE]天恢地设付奇观。[NEWLINE]一盘碧蓝澄明镜，[NEWLINE]万斛鸦青鬓翠鬟。[NEWLINE]——阮廌[NEWLINE][COLOR:ResCultureLabelCS]（越南政治家、儒学者、文学家、越南后黎太祖黎利的谋臣与挚友、《平吴大诰》作者）[ENDCOLOR]</Text>
+		</Replace>
+
+		<!-- 迭起兴衰 -->
+		
+		<Replace Tag="LOC_QUOTE_SC_DELICATE_ARCH_ABBEY_1" Language="zh_Hans_CN">
+			<Text>我可以看到公园里发现的上百座甚至更多的奇景。这些都是天然的拱门，有岩石上的洞穴，有石头上的窗口，没有两个是一模一样的，形式和尺寸都不同。[NEWLINE]——爱德华·保罗·艾比[NEWLINE][COLOR:ResCultureLabelCS]（美国环保主义作家、散文家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_DELICATE_ARCH_ABBEY_2" Language="zh_Hans_CN">
+			<Text>如此一个奇异、可爱、神妙的东西，如精致拱门，都在提醒我们……那是一个不同的世界，比我们更古老、更广阔、更深层的世界。[NEWLINE]——爱德华·保罗·艾比[NEWLINE][COLOR:ResCultureLabelCS]（美国环保主义作家、散文家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_EYE_OF_THE_SAHARA_AL_MISRI" Language="zh_Hans_CN">
+			<Text>打开内心之眼，你将看到所有生物中闪耀之处。[NEWLINE]——杜尔·嫩·阿·米斯里[NEWLINE][COLOR:ResCultureLabelCS]（埃及穆斯林神秘主义者、禁欲主义者、伊斯兰教苏菲派早期传统最杰出的圣徒之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_EYE_OF_THE_SAHARA_PSALMS" Language="zh_Hans_CN">
+			<Text>我要指导你，指教你所行的路。我要用眼目引导你。[NEWLINE]——《旧约圣经》诗篇32:8[NEWLINE][COLOR:ResCultureLabelCS]（犹太教与基督教的共同经典）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_MATTERHORN_RUSKIN" Language="zh_Hans_CN">
+			<Text>它是某种东西大小的碎片；就像一堆破墙，其中一堵高悬空中；顶部有檐口……这是一堵真正威严的墙，同时也是整个阿尔卑斯山脉中最陡峭、最坚固的部分，也就是马特洪峰。[NEWLINE]——约翰·拉斯金[NEWLINE][COLOR:ResCultureLabelCS]（英国作家、艺术家、艺术评论家、哲学家、教师、业余地质学家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_MATTERHORN_BROOKE_GEORGE" Language="zh_Hans_CN">
+			<Text>即使瑞士所有其他的名胜古迹人气都被耗尽了，但马特洪峰人气仍然不减……它不可征服的，显然也是不可战胜的。[NEWLINE]——赫里福德·布鲁克·乔治[NEWLINE][COLOR:ResCultureLabelCS]（英国辩护律师、学者、历史学家、登山冒险家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_RORAIMA_RALEIGH" Language="zh_Hans_CN">
+			<Text>它看起来像一座超高的白色教堂塔楼。有一条大河从山上流过，连山的两旁都没有……我想世界上再也没有这么奇怪的落差，也没有这么美妙的景色了。[NEWLINE]——沃尔特·雷利[NEWLINE][COLOR:ResCultureLabelCS]（英国伊丽莎白时代冒险家、作家、诗人、军人、政治家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_UBSUNUR_HOLLOW_UNESCO" Language="zh_Hans_CN">
+			<Text>古老的湖盆和周围的环境展示其非凡的景观多样性，从寒冷的沙漠到……森林到不同的湿地和沼泽……沙丘，甚至冻土带。[NEWLINE]——联合国教科文组织[NEWLINE][COLOR:ResCultureLabelCS]（联合国在国际教育、科学和文化领域成员最多的专门机构、该组织旨在通过教育/科学和文化促进各国合作，对世界和平和安全作出贡献）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_ZHANGYE_DANXIA_QIU_JUN" Language="zh_Hans_CN">
+			<Text>夏时大禹在位，上天雨金；《春秋》《孝经》既成，赤虹化玉。[NEWLINE]——丘濬《幼学琼林》，引用沈约的话[NEWLINE][COLOR:ResCultureLabelCS]（中国明代中期著名的思想家、史学家、政治家、经济学家、文学家、明孝宗朝文渊阁大学士、“理学名臣”、“有明一代文臣之宗”[NEWLINE]中国南朝梁政治家、文学家、史学家、南朝梁开国功臣、“永明体”诗人代表、诗歌四声八病之说的创始人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_LAKE_RETBA_FAILLET" Language="zh_Hans_CN">
+			<Text>哦，一只羽翼轻拂着粉红的湖面；[NEWLINE]时候到了，时间来了……[NEWLINE]——乔治·法莱特[NEWLINE][COLOR:ResCultureLabelCS]（法国象征主义诗人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_AMUNDSEN_SCOTT_RESEARCH_STATION_AMUNDSEN_1" Language="zh_Hans_CN">
+			<Text>极地地区的一切都在缩小；我们可奢侈不起。[NEWLINE]——罗尔德·阿蒙森[NEWLINE][COLOR:ResCultureLabelCS]（挪威极地探险家、其探险队是第一个到达南极极点、第一个穿越西北水道的探险家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_AMUNDSEN_SCOTT_RESEARCH_STATION_AMUNDSEN_2" Language="zh_Hans_CN">
+			<Text>我们在这里可以看到许多美丽的日落，它们的色彩是独一无二的。毫无疑问，在这个蓝白相间的仙境里，周围的环境大大增加了它们的美丽。[NEWLINE]——罗尔德·阿蒙森[NEWLINE][COLOR:ResCultureLabelCS]（挪威极地探险家、其探险队是第一个到达南极极点、第一个穿越西北水道的探险家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_AMUNDSEN_SCOTT_RESEARCH_STATION_AMUNDSEN_3" Language="zh_Hans_CN">
+			<Text>于是我们到达了目的地，并将我们的旗帜插到了地理位置上的南极。感谢上苍！[NEWLINE]——罗尔德·阿蒙森[NEWLINE][COLOR:ResCultureLabelCS]（挪威极地探险家、其探险队是第一个到达南极极点、第一个穿越西北水道的探险家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_AMUNDSEN_SCOTT_RESEARCH_STATION_SCOTT" Language="zh_Hans_CN">
+			<Text>我不后悔这次旅行，它表明英国人可以忍受苦难，互相帮助，并像过去一样以极大的毅力面对死亡。[NEWLINE]——罗伯特·法尔肯·斯科特[NEWLINE][COLOR:ResCultureLabelCS]（英国海军军官、极地探险家、发现第一块南极化石）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_CASA_DE_CONTRATACION_CASTILLO" Language="zh_Hans_CN">
+			<Text>为要侍奉神和祂的威严，使黑暗中的人有光明，得众人所求的财宝。[NEWLINE]——贝尔纳尔·迪亚斯·德尔·卡斯蒂略[NEWLINE][COLOR:ResCultureLabelCS]（西班牙征服者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_CASA_DE_CONTRATACION_TORDESILLAS" Language="zh_Hans_CN">
+			<Text>为了和平与和睦相处，【他们】立约并同意在上述海洋上，从北极到南极，划定一条边界或直线。[NEWLINE]——《托尔德西里亚斯条约》[NEWLINE][COLOR:ResCultureLabelCS]（西班牙和葡萄牙两国于1494年6月7日，在西班牙卡斯蒂利亚的托尔德西里亚斯签订的一份旨在瓜分新世界的协议）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_KILWA_KISIWANI_MATVEIEV" Language="zh_Hans_CN">
+			<Text>胡苏尼库布瓦宫（基尔瓦基斯瓦尼的主要宫殿）的宫殿城堡或宫殿贸易中心是那个时代一个显著的纪念碑……胡苏尼库布瓦宫是东非建筑中独一无二的杰作。[NEWLINE]——弗拉基米尔·马特维耶夫[NEWLINE][COLOR:ResCultureLabelCS]（俄罗斯物理学家、圣彼得堡国立大学核物理技术高级研究员）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_KILWA_KISIWANI_BARROS" Language="zh_Hans_CN">
+			<Text>他除了是一个征服者，他还美化了基卢瓦镇，在那里建造了石头堡垒、城墙、塔楼和高贵豪华的建筑，因为直到他来到的时代，这个镇的建筑都还是用木头建造的，而后面所有这些建筑都是他在十八年的统治期间完成的。[NEWLINE]——若昂·德·巴罗斯[NEWLINE][COLOR:ResCultureLabelCS]（葡萄牙文艺复兴时期航海家、探险家、历史学家、“葡萄牙的蒂托·李维”、葡萄牙最早的历史学家之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_KOTOKU_IN_BUDDHA" Language="zh_Hans_CN">
+			<Text>培养平衡的心态。因为你总是会面对赞扬和指责，但不要让它们影响你的心态：跟随冷静，不骄傲，不气馁。[NEWLINE]——乔达摩·悉达多[NEWLINE][COLOR:ResCultureLabelCS]（古印度思想家、教育家、宗教改革家、佛教的创始人、“佛祖”、“释迦牟尼”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_KOTOKU_IN_KIPLING" Language="zh_Hans_CN">
+			<Text>对于他来说，法与理是分开的，[NEWLINE]他是摩耶夫人藏在心底的人，[NEWLINE]阿难陀菩萨的导师，[NEWLINE]镰仓大佛的原型。[NEWLINE]——约瑟夫·鲁德亚德·吉卜林[NEWLINE][COLOR:ResCultureLabelCS]（英国作家、诗人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_KOTOKU_IN_IKKYU" Language="zh_Hans_CN">
+			<Text>从激情的世界重回激情的世界，[NEWLINE]是有那一瞬间的停顿的。[NEWLINE]如果这世界风吹雨打，就让它风吹雨打吧。[NEWLINE]——一休宗纯[NEWLINE][COLOR:ResCultureLabelCS]（日本室町时代禅宗临济宗僧、诗人、书法家、画家、日本后小松天皇皇子、一休和尚的原型）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_ST_BASILS_CATHEDRAL_PISKARYOV" Language="zh_Hans_CN">
+			<Text>在同一年，根据沙皇、元首、大王子伊凡的法令，宣誓教堂建立，正如它在喀山的承诺一样：三位一体、代祷室和七个庇护所。[NEWLINE]——圣瓦西里主教座堂编年史</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_ST_BASILS_CATHEDRAL_REVELATION" Language="zh_Hans_CN">
+			<Text>他坐在那里的，外貌好似碧玉和红宝石一般。像绿祖母宝石般闪耀的彩虹环绕着宝座。[NEWLINE]——《新约圣经》启示录4:3[NEWLINE][COLOR:ResCultureLabelCS]（基督教经典）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_STATUE_LIBERTY_LAZARUS_1" Language="zh_Hans_CN">
+			<Text>高举灯盏喷薄光芒，[NEWLINE]您凝聚流光的名字：[NEWLINE]放逐者之母！[NEWLINE]——艾玛·拉撒路，自由女神基座的铭文诗[NEWLINE][COLOR:ResCultureLabelCS]（犹太裔美国女诗人、翻译家、犹太人社会积极分子）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_STATUE_LIBERTY_LAZARUS_2" Language="zh_Hans_CN">
+			<Text>把你，[NEWLINE]那劳瘁贫贱的流民，[NEWLINE]那向往自由呼吸，又被无情抛弃。[NEWLINE]那拥挤于彼岸悲惨哀吟，[NEWLINE]那骤雨暴风中翻覆的惊魂，[NEWLINE]全都给我！[NEWLINE]我高举灯盏伫立金门![NEWLINE]——艾玛·拉撒路，自由女神基座的铭文诗[NEWLINE][COLOR:ResCultureLabelCS]（犹太裔美国女诗人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_STATUE_LIBERTY_CLEVELAND" Language="zh_Hans_CN">
+			<Text>我们不会忘记自由在这里为她建立了家园，她所选择的祭坛也不会被忽视。愿意效忠的人将不断地保持她的火焰，这些火焰将在我们姐妹共和国的海岸上闪烁，并与回应的光芒结合在一起，和辉溢彩。[NEWLINE]——格罗弗·克利夫兰[NEWLINE][COLOR:ResCultureLabelCS]（美国政治家、律师、第22/24任美国总统）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_STATUE_LIBERTY_VAN_DYKE" Language="zh_Hans_CN">
+			<Text>你守卫着曼哈顿湾的西门，[NEWLINE]你脸上的疑云浓雾已被驱散：[NEWLINE]你的眼睛目光终于看得遥远而清晰，[NEWLINE]你高举你的火炬为每一片土地传播自由的光芒。[NEWLINE]——亨利·杰克逊·范·戴克[NEWLINE][COLOR:ResCultureLabelCS]（美国作家、教育家、外交官、牧师、美国驻卢森堡/荷兰大使）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_TAJ_MAHAL_TAGORE" Language="zh_Hans_CN">
+			<Text>就像空荡荡的地平线上闪烁的彩虹般神奇，[NEWLINE]让它被隐藏起来。[NEWLINE]只让这一滴泪，[NEWLINE]闪闪发光的纯在时间的脸颊，[NEWLINE]这个泰姬陵。[NEWLINE]——拉宾德拉纳特·泰戈尔[NEWLINE][COLOR:ResCultureLabelCS]（印度诗人、文学家、社会活动家、哲学家、印度民族主义者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_TAJ_MAHAL_TAVERNIER" Language="zh_Hans_CN">
+			<Text>自从泰姬陵建成以来，这座建筑一直是超越文化和地理的赞美之源，因此个人和情感上的反应一直超过了学术上对这座纪念碑的评价。[NEWLINE]——让·巴蒂斯特·塔弗尼尔[NEWLINE][COLOR:ResCultureLabelCS]（法国17世纪宝石商人、旅行者、文化人类学家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_TAJ_MAHAL_SHAH_JAHAN" Language="zh_Hans_CN">
+			<Text>看到这座大厦，人们不禁悲叹；[NEWLINE]太阳和月亮从他们的眼中流下眼泪。[NEWLINE]在这个世界上，这座大厦已经建成；[NEWLINE]以此来展示造物主的荣耀。[NEWLINE]——沙·贾汗[NEWLINE][COLOR:ResCultureLabelCS]（印度莫卧儿帝国皇帝）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_TAJ_MAHAL_POKHREL" Language="zh_Hans_CN">
+			<Text>沙·贾汗，他证明了[NEWLINE]一位皇帝不及他的爱人，[NEWLINE]是他把坟墓变成了神庙，[NEWLINE]是他给了他的爱人天堂般的地方，[NEWLINE]是他把爱变成了祈祷。[NEWLINE]——苏曼·波克雷尔[NEWLINE][COLOR:ResCultureLabelCS]（尼泊尔诗人、作词家、剧作家、翻译家、艺术家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_TEMPLE_OF_ARTEMIS_PLINY" Language="zh_Hans_CN">
+			<Text>希腊人所构想的伟大，一个真实而非凡的实例仍然存在。[NEWLINE]——盖乌斯·普林尼·塞孔都斯[NEWLINE][COLOR:ResCultureLabelCS]（古罗马作家、博物学者、军人、政治家）[ENDCOLOR]</Text>
+		</Replace>
+
+		<!-- 模组添加的奇观 -->
+
+		<Replace Tag="LOC_QUOTE_SC_FUJI_MUSASHI" Language="zh_Hans_CN">
+			<Text>立志要像富士山一样，拥有宽广坚实的基础，这样即使是最强的地震也无法撼动你。[NEWLINE]——宫本武藏[NEWLINE][COLOR:ResCultureLabelCS]（日本江户时代初期剑术家、兵法家、艺术家、二天一流剑道的始祖、“二刀流”剑术大师）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_FUJI_UESHIBA" Language="zh_Hans_CN">
+			<Text>通往富士山山顶的道路有很多，但只有一座山峰。[NEWLINE]——植芝盛平[NEWLINE][COLOR:ResCultureLabelCS]（日本武术家、合气道创始人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_FUJI_BASHO" Language="zh_Hans_CN">
+			<Text>在烟雨中，[NEWLINE]富士山整日蒙着面纱：[NEWLINE]如此耐人寻味啊！[NEWLINE]——松尾芭蕉（日本江户时代前期俳句诗人、“俳圣”）[ENDCOLOR]</Text>
+		</Replace>
+
+		<Replace Tag="LOC_QUOTE_SC_BARRINGER_BARRINGER" Language="zh_Hans_CN">
+			<Text>它位于几乎平坦的平原上，大约在阳光驿站正南5英里处……一个非常引人注目的几乎完美的圆形火山口，在许多方面都不同……从地球表面任何一个至少是我所熟悉的陨石坑都不一样。[NEWLINE]——丹尼尔·巴林杰[NEWLINE][COLOR:ResCultureLabelCS]（美国地质学家、确认陨石撞击地球而形成撞击坑的第一人）[ENDCOLOR]</Text>
+		</Replace>
+
+		<Replace Tag="LOC_QUOTE_SC_POTOSI_COAT_OF_ARMS" Language="zh_Hans_CN">
+			<Text>凭借皇帝的力量和国王的精明，这座尊贵的银山可以征服整个世界。[NEWLINE]——波托西卫队盾徽</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_POTOSI_OCANA_1" Language="zh_Hans_CN">
+			<Text>这是世界第八大奇迹，也是最伟大的奇迹；因为整座山都是白银。[NEWLINE]——迭戈·德·奥卡纳[NEWLINE][COLOR:ResCultureLabelCS]（西班牙圣杰罗姆骑士团传道士、探险家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_POTOSI_OCANA_2" Language="zh_Hans_CN">
+			<Text>在整个宇宙中，我想没有什么比卡贝扎·阿古达山更宏伟的了……地上没有一把泥土不是银的。[NEWLINE]——迭戈·德·奥卡纳[NEWLINE][COLOR:ResCultureLabelCS]（西班牙圣杰罗姆骑士团传道士、探险家）[ENDCOLOR]</Text>
+		</Replace>
+
+		<Replace Tag="LOC_QUOTE_SC_GIBRALTAR_BRENTON" Language="zh_Hans_CN">
+			<Text>直布罗陀是一个英国人应该了解和尊敬的地方。它既是她过去事迹的纪念碑，又是她当前权力的证明。[NEWLINE]——爱德华·佩勒姆·布伦顿[NEWLINE][COLOR:ResCultureLabelCS]（英国皇家海军上尉）[ENDCOLOR]</Text>
+		</Replace>
+
+		<Replace Tag="LOC_QUOTE_SC_GRAND_MESA_HASKELL" Language="zh_Hans_CN">
+			<Text>可爱的大平顶山！我们自豪地欣赏你。[NEWLINE]你的许多美德广为流传；[NEWLINE]愿你的进步之星永远闪耀，[NEWLINE]祝福等待着你和你的家人。[NEWLINE]——查尔斯·纳撒尼尔·哈斯克尔[NEWLINE][COLOR:ResCultureLabelCS]（美国民主党政客、俄克拉何马州首任州长）[ENDCOLOR]</Text>
+		</Replace>
+
+		<Replace Tag="LOC_QUOTE_SC_KAILASH_SADHGURU" Language="zh_Hans_CN">
+			<Text>从湿婆本人开始，许多伟大的众生选择将他们的作品存放并保存在冈仁波齐峰。瑞沙哈那塔（耆那教第1代祖师），苯教的圣徒，两位最伟大的佛教导师……他们都选择了冈仁波齐峰。[NEWLINE]——萨德古乎·札吉·瓦苏得沃（萨古鲁）[NEWLINE][COLOR:ResCultureLabelCS]（印度瑜伽大师、神秘学家、诗人、作家、“Isha瑜伽”以及Isha基金会的创始人）[ENDCOLOR]</Text>
+		</Replace>
+
+		<Replace Tag="LOC_QUOTE_SC_KRAKATOA_PARARATON" Language="zh_Hans_CN">
+			<Text>从那……高山之上，一团炽热的火焰，直冲云霄；整个世界为之颤动，雷鸣滚滚之中，暴风骤雨踏至。[NEWLINE]——《巴拉顿》（亦名《肯·安格鲁克的故事》）[NEWLINE][COLOR:ResCultureLabelCS]（早期爪哇历史纪事）[ENDCOLOR]</Text>
+		</Replace>
+
+		<Replace Tag="LOC_QUOTE_SC_MOTLATSE_SCULLY" Language="zh_Hans_CN">
+			<Text>那是一个风平浪静、阳光明媚的下午，我们到达了高原的东部边缘，俯瞰着布莱德河谷。眼前风景一片大好。雄伟的山脉向南北绵延，似乎无穷无尽。[NEWLINE]——威廉·查尔斯·斯库利[NEWLINE][COLOR:ResCultureLabelCS]（爱尔兰裔南非作家）[ENDCOLOR]</Text>
+		</Replace>
+
+		<Replace Tag="LOC_QUOTE_SC_UYUNI_ZAMBRANA" Language="zh_Hans_CN">
+			<Text>阿尔瓦罗·阿隆索·巴尔巴（西班牙天主教神父、冶金学家）离开了他最后的住处，设法到达了巨大的冰冻盐湖的岸边……这是欧洲大陆这一地区令人惊讶且鲜为人知的自然奇观。[NEWLINE]——阿曼多·阿尔芭·赞布拉纳[NEWLINE][COLOR:ResCultureLabelCS]（玻利维亚作家、记者、历史学家、政治家）[ENDCOLOR]</Text>
+		</Replace>
+
+		<Replace Tag="LOC_QUOTE_SC_SINAI_EXODUS" Language="zh_Hans_CN">
+			<Text>西奈山被烟雾笼罩，因为耶和华在火中降在山上。烟气上腾，好像窑炉上的烟，整座山剧烈震动。[NEWLINE]——《旧约圣经》出埃及记19:18[NEWLINE][COLOR:ResCultureLabelCS]（犹太教与基督教的共同经典）[ENDCOLOR]</Text>
+		</Replace>
+
+		<Replace Tag="LOC_QUOTE_SC_SRI_PADA_MAHAVAMSA" Language="zh_Hans_CN">
+			<Text>当这位对全世界充满同情心的老师在那里讲道时，他站了起来，这位大师，把他的足迹清晰地留在了圣足山上。[NEWLINE]——《大史》[NEWLINE][COLOR:ResCultureLabelCS]（斯里兰卡古代巴利文编年体史诗、斯里兰卡古典文学的瑰宝）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_SRI_PADA_MARIGNOLLI" Language="zh_Hans_CN">
+			<Text>那座超高的山有一座超高的山峰，由于云层的缘故，几乎看不见。但是上帝，怜悯我们的眼泪，在一天早晨太阳升起之前把它照亮了，我们看到它发出最明亮的火焰。[NEWLINE]——乔凡尼·德·马里诺里[NEWLINE][COLOR:ResCultureLabelCS]（佛罗伦萨欧洲天主教徒、博洛尼亚大学神学系主任）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_SRI_PADA_DAVY" Language="zh_Hans_CN">
+			<Text>我刚从圣足峰回来。它是一座巍峨的山，群山环抱，超越一切。[NEWLINE]——约翰·戴维[NEWLINE][COLOR:ResCultureLabelCS]（英国康沃尔医生、业余化学家）[ENDCOLOR]</Text>
+		</Replace>
+
+		<Replace Tag="LOC_QUOTE_SC_WULINGYUAN_ZONGYUAN" Language="zh_Hans_CN">
+			<Text>渔翁夜傍西岩宿，[NEWLINE]晓汲清湘燃楚竹。[NEWLINE]烟销日出不见人，[NEWLINE]欸乃一声山水绿。[NEWLINE]回看天际下中流，[NEWLINE]岩上无心云相逐。[NEWLINE]——柳宗元《渔翁》[NEWLINE][COLOR:ResCultureLabelCS]（唐代文学家、哲学家、散文家、思想家、唐宋八大家之一、“柳河东”、 “河东先生”、“柳柳州”、与韩愈并称为“韩柳”、与刘禹锡并称“刘柳”、与王维、孟浩然、韦应物并称“王孟韦柳”）[ENDCOLOR]</Text>
+		</Replace>
+
+		<Replace Tag="LOC_QUOTE_SC_MOSI_LIVINGSTONE" Language="zh_Hans_CN">
+			<Text>整个场面美极了；河岸和岛屿点缀着各种颜色和形式的森林植被……这是欧洲人从未见过的；但是这样可爱的景象一定是天使在飞行旅途中看到过的。[NEWLINE]——大卫·利文斯通[NEWLINE][COLOR:ResCultureLabelCS]（苏格兰裔英国医生、非洲探险家、公理派传教士、伦敦传教士协会的基督教先驱、非洲探险的最伟大人物之一、19世纪末维多利亚时代最受欢迎的英国英雄之一）[ENDCOLOR]</Text>
+		</Replace>
+
+		<Replace Tag="LOC_QUOTE_SC_OUNIANGA_THESIGER" Language="zh_Hans_CN">
+			<Text>晨曦中的沙滩一片金黄，岸边茂密的棕榈树投下了浓荫。海水是地中海式的深蓝色，波光粼粼，悬崖峭壁是玫瑰色的岩石。[NEWLINE]——威尔弗雷德·西西格[NEWLINE][COLOR:ResCultureLabelCS]（英国军官、探险家、作家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_OUNIANGA_TILHO" Language="zh_Hans_CN">
+			<Text>这样形成的风景如画：一大片平静的水面上有蓝色的阴影，边缘是玫瑰色的沙滩，周围是绿色的棕榈树……在炽热的阳光下，温暖的影子边缘闪耀着红色或金色。[NEWLINE]——吉恩·提略[NEWLINE][COLOR:ResCultureLabelCS]（法国士兵、非洲旅行家）[ENDCOLOR]</Text>
+		</Replace>
+
+		<Replace Tag="LOC_QUOTE_SC_VREDEFORT_DIETZ" Language="zh_Hans_CN">
+			<Text>南非无与伦比的弗雷德福特环结构，无法通过构造、火山或岩浆力量进行合理的解释……在弗雷德堡发生的撞击坑甚至相当于在月球上的形成的哥白尼环形山和第谷环形山。[NEWLINE]——罗伯特·辛克莱·迪茨[NEWLINE][COLOR:ResCultureLabelCS]（美国海洋地质学家、地球物理学家、海洋学家、美国国家大地测量局的科学家）[ENDCOLOR]</Text>
+		</Replace>
+
+		<Replace Tag="LOC_QUOTE_SC_BIOLUMINESCENT_ALMODOVAR_BLOMQUIST" Language="zh_Hans_CN">
+			<Text>波多黎各西南海岸的一个小而浅的海湾……它以全年的壮观生物发光而闻名，这也是它被称为巴伊亚莹光的原因。[NEWLINE]——佩德罗·阿尔莫多瓦尔·卡瓦耶罗、雨果·莱安德·布隆奎斯特[NEWLINE][COLOR:ResCultureLabelCS]（西班牙电影导演、编剧、制作人[NEWLINE]瑞典/美国植物学家）[ENDCOLOR]</Text>
+		</Replace>
+
+		<Replace Tag="LOC_QUOTE_SC_DALLOL_NESBITT" Language="zh_Hans_CN">
+			<Text>打破平原三面单调的唯一特色是达洛尔盐山和两三个孤立的盐块……这座低矮又坚固的山丘看上去就像一座中世纪的城市，有塔楼和城墙，这是由于水、风和风化共同作用所形成的最奇妙的景象。[NEWLINE]——卢多维科·马塞洛·马里亚诺·内斯比特[NEWLINE][COLOR:ResCultureLabelCS]（意大利探险家）[ENDCOLOR]</Text>
+		</Replace>
+
+
+		<!-- 风起云涌 -->
+
+		<Replace Tag="LOC_QUOTE_SC_DEVILS_TOWER_MARQUIS" Language="zh_Hans_CN">
+			<Text>我曾多次在这巨大的石柱上看到仿佛是熊的爪子留下的长长的直立的抓痕。它们是如此深深的裂缝或犁沟。那一定是一只怪物般的熊。在我的记忆中，所有的印第安人都称这块石头为……熊灵门房。[NEWLINE]——托马斯·贝利·马奎斯[NEWLINE][COLOR:ResCultureLabelCS]（美国历史学家、民族志学家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_DEVILS_TOWER_CROW" Language="zh_Hans_CN">
+			<Text>女孩们爬上了岩石，但熊还是能抓住她们。伟大的灵魂，看到熊即将抓住女孩们，使岩石生长出地面。熊……划伤了岩石，摔在地上。爪印现在在岩石上。[NEWLINE]——《骑着白马》，讲述一个乌鸦族的传说</Text>
+		</Replace>
+
+		<Replace Tag="LOC_QUOTE_SC_GOBUSTAN_QASIMOV" Language="zh_Hans_CN">
+			<Text>大地的火焰不能像烧死飞蛾一样烧死我，[NEWLINE]因为它是我的阿塞拜疆，火的土地。[NEWLINE]——阿林·卡西莫夫[NEWLINE][COLOR:ResCultureLabelCS]（阿塞拜疆音乐家）[ENDCOLOR]</Text>
+		</Replace>
+
+		<Replace Tag="LOC_QUOTE_SC_IKKIL_CHILAM_BALAM_2" Language="zh_Hans_CN">
+			<Text>然后水降了下来，它从天空的中心来为进行九灌丛之家的洗礼。[NEWLINE]——《奇兰·巴拉姆之书》[NEWLINE][COLOR:ResCultureLabelCS]（玛雅祭司编撰的百科全书）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_IKKIL_CHILAM_BALAM_3" Language="zh_Hans_CN">
+			<Text>串连在一起的是宝石，是红宝石，代表着天上的物质，天上的湿气。[NEWLINE]——《奇兰·巴拉姆之书》[NEWLINE][COLOR:ResCultureLabelCS]（玛雅祭司编撰的百科全书）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_IKKIL_CHILAM_BALAM_4" Language="zh_Hans_CN">
+			<Text>亚克斯哈尔恰克是它的脸。天上的扇子，天上的花束将会落下。阿伯龙约克特的鼓声和拨浪鼓将回响……那些失去庄稼的人，必在磐石中寻得食物。[NEWLINE]——《奇兰·巴拉姆之书》[NEWLINE][COLOR:ResCultureLabelCS]（玛雅祭司编撰的百科全书）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_IKKIL_CHILAM_BALAM_5" Language="zh_Hans_CN">
+			<Text>格查尔会来的；绿鸟会来的。卡克斯树会来的；鸟儿会来的。塔皮尔会来的。贡品要藏在井口。[NEWLINE]——《奇兰·巴拉姆之书》[NEWLINE][COLOR:ResCultureLabelCS]（玛雅祭司编撰的百科全书）[ENDCOLOR]</Text>
+		</Replace>
+
+		<Replace Tag="LOC_QUOTE_SC_VESUVIUS_PLINY" Language="zh_Hans_CN">
+			<Text>维苏威火山上有好几个地方闪耀着熊熊的火焰，夜晚的黑暗使它变得更加明亮和清晰……现在别的地方都是白天了，可是有一种比黑夜更深的黑暗笼罩着大地。[NEWLINE]——盖尤斯·普林尼·采西利尤斯·塞孔都斯[NEWLINE][COLOR:ResCultureLabelCS]（古罗马律师、作家、地方执政官）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_VESUVIUS_SUETONIUS" Language="zh_Hans_CN">
+			<Text>火山爆发伴随着地震，摧毁了坎帕尼亚的几个城市……岩浆从山上倾泻而下，淹没了邻近的平原。[NEWLINE]——苏维托尼乌斯[NEWLINE][COLOR:ResCultureLabelCS]（古罗马历史学家、作家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_VESUVIUS_DIODORUS" Language="zh_Hans_CN">
+			<Text>这片平原被称为"烈焰"，来自一座古老的山，像西西里岛的埃特纳火山那样喷出巨大的火焰；然而，在这个时候，这座山被称为维苏威火山，并且显示出了许多远古时代曾经肆虐过的火焰的迹象。[NEWLINE]——西西里的狄奥多罗斯[NEWLINE][COLOR:ResCultureLabelCS]（古希腊历史学家）[ENDCOLOR]</Text>
+		</Replace>
+
+		<Replace Tag="LOC_QUOTE_SC_WHITE_DESERT_FORBES" Language="zh_Hans_CN">
+			<Text>我记得那是我们在沙漠中度过的最完美的夜晚……悲伤而单调的歌声从我们身边友好的营地传来，广阔的白色沙漠，没有山脊或沙丘，散布在我们周围。[NEWLINE]——罗西塔·福布斯[NEWLINE][COLOR:ResCultureLabelCS]（英国旅行女作家、小说家、探险家）[ENDCOLOR]</Text>
+		</Replace>
+
+		<Replace Tag="LOC_QUOTE_SC_GREAT_BATH_JANSEN" Language="zh_Hans_CN">
+			<Text>想象一个夏天的一天，这个池子里充满了清澈的水，周围有角度50°的树荫……毫无疑问，就在市中心的这个游泳池是一种奢侈的享受。[NEWLINE]——迈克尔·詹森[NEWLINE][COLOR:ResCultureLabelCS]（荷兰足球运动员）[ENDCOLOR]</Text>
+		</Replace>
+
+		<Replace Tag="LOC_QUOTE_SC_PANAMA_CANAL_MERCER" Language="zh_Hans_CN">
+			<Text>一人，一计，一渠，就是巴拿马！（原文：A man, a plan, a canal - Panama! 经典英语回文）[NEWLINE]——利·默瑟[NEWLINE][COLOR:ResCultureLabelCS]（英国文字游戏和娱乐数学专家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_PANAMA_CANAL_ROOSEVELT" Language="zh_Hans_CN">
+			<Text>在这个时刻，世界上没有任何其他地方像巴拿马海峡这里发生了如此重要的工程，因为这里正在上演时代的伟大工程壮举。[NEWLINE]——西奥多·罗斯福[NEWLINE][COLOR:ResCultureLabelCS]（荷兰裔美国军事家、政治家、外交家、第26任美国总统、美国历史上最年轻的在任总统、美国历史上最伟大的总统之一）[ENDCOLOR]</Text>
+		</Replace>
+
+		<Replace Tag="LOC_QUOTE_SC_MACHU_PICCHU_GUEVARA" Language="zh_Hans_CN">
+			<Text>马丘比丘没有令人失望；我不知道我还要欣赏它多少次足够。那些灰色的云和紫色的山峰，映衬着灰色的废墟，是我能想象到的最奇妙的景象之一。[NEWLINE]——切·格瓦拉[NEWLINE][COLOR:ResCultureLabelCS]（阿根廷马克思主义革命家、医师、作家、游击队队长、军事理论家、国际政治家、古巴革命的核心人物、古巴共产党、古巴共和国和古巴革命武装力量的主要缔造者和领导人之一）[ENDCOLOR]</Text>
+		</Replace>
+
+		<Replace Tag="LOC_QUOTE_SC_GOLDEN_GATE_STRAUSS_1" Language="zh_Hans_CN">
+			<Text>伟大的任务终于完成了；[NEWLINE]大桥在西方的太阳下熠熠生辉，[NEWLINE]此桥高耸入云；[NEWLINE]巨大的桥墩抓住海底，[NEWLINE]雄伟的钢臂连接两岸，[NEWLINE]高耸的双塔直插蓝天。[NEWLINE]——约瑟夫·贝尔曼·施特劳斯[NEWLINE][COLOR:ResCultureLabelCS]（美国结构工程师、金门大桥总设计师）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_GOLDEN_GATE_STRAUSS_2" Language="zh_Hans_CN">
+			<Text>这座桥既不需要歌颂，也不需要赞美。它不言自明。我们这些长期辛勤工作的人都对此心存感激。很久以前从大自然分裂了的东西，今天人类把它也加入了进来。[NEWLINE]——约瑟夫·贝尔曼·施特劳斯[NEWLINE][COLOR:ResCultureLabelCS]（美国结构工程师、金门大桥总设计师）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_GOLDEN_GATE_CAEN" Language="zh_Hans_CN">
+			<Text>这个神秘的结构，完美地融合了精致和力量，产生了不可思议的效果……那里有心灵，有灵魂。这是一个值得深思数小时的对象。[NEWLINE]——赫伯特·尤金·凯恩[NEWLINE][COLOR:ResCultureLabelCS]（美国幽默作家、记者）[ENDCOLOR]</Text>
+		</Replace>
+
+		<Replace Tag="LOC_QUOTE_SC_GOBUSTAN_BUNDAHISHN" Language="zh_Hans_CN">
+			<Text>关于火的性质，《启示录》中说，产生的火有五种，即贝雷齐萨旺之火种……贝雷齐萨旺之火种是阿胡拉·马兹达在大地和山脉等事物中创造的，就像在最初的创造中，创造三个呼吸的灵魂一样。[NEWLINE]——《班达希申》[NEWLINE][COLOR:ResCultureLabelCS]（传统上祆教宇宙起源和宇宙学的百科全书集合，原名不详）[ENDCOLOR]</Text>
+		</Replace>
+
+		<Replace Tag="LOC_QUOTE_SC_IKKIL_CHILAM_BALAM_1" Language="zh_Hans_CN">
+			<Text>在玛雅库扎米尔建立了卡盾历法。一半的人会有食物；一半的人里会有水。这是上天的话语。[NEWLINE]——《奇兰·巴拉姆之书》[NEWLINE][COLOR:ResCultureLabelCS]（玛雅祭司编撰的百科全书）[ENDCOLOR]</Text>
+		</Replace>
+
+		<Replace Tag="LOC_QUOTE_SC_CHOCOLATE_HILLS_SMITH" Language="zh_Hans_CN">
+			<Text>保和岛上最显著的特点是在中部的一系列“干草堆”山（有数百座）……它们都是一样的，看起来像一个个由石灰岩小岛组成的小岛群岛，高约700米。[NEWLINE]——沃伦·道格拉斯·史密斯[NEWLINE][COLOR:ResCultureLabelCS]（美国物理学家、数学家、一般理论科学家）[ENDCOLOR]</Text>
+		</Replace>
+
+		<Replace Tag="LOC_QUOTE_SC_MACHU_PICCHU_BINGHAM_1" Language="zh_Hans_CN">
+			<Text>检查表明，它本质上是一个防御工事，是一个由天然堡垒保护的偏远堡垒，人类利用它在安第斯山脉建立了最坚不可摧的堡垒。[NEWLINE]——海勒姆·宾厄姆三世[NEWLINE][COLOR:ResCultureLabelCS]（美国学者、探险家、政治家、美国共和党成员、康涅狄格州州长）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_MACHU_PICCHU_BINGHAM_2" Language="zh_Hans_CN">
+			<Text>在这一点上，我确信：很少有浪漫故事能超越马丘比丘，这顶印加帝国的皇冠，在悬崖峭壁上的花岗岩城堡。[NEWLINE]——海勒姆·宾厄姆三世[NEWLINE][COLOR:ResCultureLabelCS]（美国学者、探险家、政治家、美国共和党成员、康涅狄格州州长）[ENDCOLOR]</Text>
+		</Replace>
+
+		<Replace Tag="LOC_QUOTE_SC_MEENAKSHI_DESIKAR" Language="zh_Hans_CN">
+			<Text>有关水果的古老歌曲，[NEWLINE]组成上天的神圣之歌……[NEWLINE]绘画在想象和思考中产生，[NEWLINE]在超越者的圣洁心灵里，[NEWLINE]这个世界被海洋所包围……[NEWLINE]来吧，伟大生命，马来亚图瓦干之父！[NEWLINE]来吧，来吧。[NEWLINE]——库玛拉古拉帕拉·德西卡[NEWLINE][COLOR:ResCultureLabelCS]（印度诗人、印度教湿婆派苦行僧）[ENDCOLOR]</Text>
+		</Replace>
+
+		<Replace Tag="LOC_QUOTE_SC_ORSZAGHAZ_KOSSUTH" Language="zh_Hans_CN">
+			<Text>仅靠武力支撑的力量往往会引起战栗。[NEWLINE]——科苏特·拉约什[NEWLINE][COLOR:ResCultureLabelCS]（匈牙利革命家、律师，记者、政治家）[ENDCOLOR]</Text>
+		</Replace>
+
+		<Replace Tag="LOC_QUOTE_SC_UNIVERSITY_SANKORE_SUNDIATA_1" Language="zh_Hans_CN">
+			<Text>自远古以来库亚特斯他们一直为马里的凯塔王子服务；我们是语言的容器，我们是藏着许多世纪以来的秘密的宝库。[NEWLINE]——《孙迪亚塔史诗》[NEWLINE][COLOR:ResCultureLabelCS]（一本有关马里帝国建立者孙迪亚塔的史诗）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_UNIVERSITY_SANKORE_SUNDIATA_2" Language="zh_Hans_CN">
+			<Text>但了解一个国家历史的人，就能预知这个国家的未来。[NEWLINE]——《孙迪亚塔史诗》[NEWLINE][COLOR:ResCultureLabelCS]（一本有关马里帝国建立者孙迪亚塔的史诗）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_UNIVERSITY_SANKORE_AL_SADI_1" Language="zh_Hans_CN">
+			<Text>在桑科雷，我和那些正直的人是同时代的，他们的正直只有信使之神的同伴才能与他们相提并论。[NEWLINE]——阿卜杜勒·拉赫曼·萨迪，引用盖迪·努曼的话[NEWLINE][COLOR:ResCultureLabelCS]（沙特阿拉伯伊斯兰学者、教师[NEWLINE]阿拉伯伊斯兰教伊斯玛仪派法学家、法蒂玛王朝官方历史学家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_UNIVERSITY_SANKORE_AL_SADI_2" Language="zh_Hans_CN">
+			<Text>至于桑科雷清真寺，它是由阿格拉尔的一位非常富有的妇女建造的，根据我们所叙述的传统，这是一种虔诚的行为。许多沙伊克人在那里担任伊玛目的职务：愿至高无上的真主祝福他们。[NEWLINE]——阿卜杜勒·拉赫曼·萨迪[NEWLINE][COLOR:ResCultureLabelCS]（沙特阿拉伯伊斯兰学者、教师）[ENDCOLOR]</Text>
+		</Replace>
+
+		<Replace Tag="MOD_SC_TECH_BUTTRESS_QUOTE_1" Language="zh_Hans_CN">
+			<Text>这个框架由墩、拱和扶壁组成，对墙而言没有任何不必要的累赘，它的各个部分都很轻，与强度相协调。[NEWLINE]——查尔斯·赫伯特·摩尔[NEWLINE][COLOR:ResCultureLabelCS]（美国大学教授、画家、建筑历史学家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_REFINING_QUOTE_1" Language="zh_Hans_CN">
+			<Text>一个世纪以前，原油：我们称之为石油，只是一种鲜为人知的商品；今天，它对人类的生存几乎和水一样重要。[NEWLINE]——詹姆斯·布坎南[NEWLINE][COLOR:ResCultureLabelCS]（美国律师、政治家、美国第15任总统）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_REFINING_QUOTE_2" Language="zh_Hans_CN">
+			<Text>我们必须永远记住，我们是在为穷人提炼石油，他一定要物美价廉。[NEWLINE]——约翰·戴维森·洛克菲勒[NEWLINE][COLOR:ResCultureLabelCS]（美国实业家，慈善家、标准石油公司创始人）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_TECH_SEASTEADS_QUOTE_1" Language="zh_Hans_CN">
+			<Text>我要展开清晨的翅膀，住在海的尽头。[NEWLINE]就是在那里，你的手必引导我，你的右手必扶持我。[NEWLINE]——《旧约圣经》诗篇139:9-10[NEWLINE][COLOR:ResCultureLabelCS]（犹太教与基督教的共同经典）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_SEASTEADS_QUOTE_2" Language="zh_Hans_CN">
+			<Text>我在那里发现了大海，[NEWLINE]平静得像摇篮里在无梦睡眠中的孩子。[NEWLINE]——珀西·比希·雪莱[NEWLINE][COLOR:ResCultureLabelCS]（英国浪漫主义诗人、历史上最出色的英语诗人之一、“天才预言家”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_SEASTEADS_QUOTE_3" Language="zh_Hans_CN">
+			<Text>我的灵魂充满了,[NEWLINE]对海洋秘密的渴望,[NEWLINE]浩瀚海洋的心脏,[NEWLINE]让我身心心潮澎湃。[NEWLINE]——亨利·沃兹沃思·朗费罗[NEWLINE][COLOR:ResCultureLabelCS]（美国诗人、翻译家、“美国最伟大的诗人”）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_TECH_ADVANCED_AI_QUOTE_1" Language="zh_Hans_CN">
+			<Text>真正的问题不是机器会不会思考，而是人会不会思考。[NEWLINE]——伯尔赫斯·弗雷德里克·斯金纳[NEWLINE][COLOR:ResCultureLabelCS]（美国心理学家、行为学家、作家、发明家、社会学者、新行为主义的主要代表、20世纪最有影响力的心理学家之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_ADVANCED_AI_QUOTE_2" Language="zh_Hans_CN">
+			<Text>也许我们在这个星球上的角色不是崇拜上帝，而是创造上帝。[NEWLINE]——亚瑟·查理斯·克拉克[NEWLINE][COLOR:ResCultureLabelCS]（英国作家、发明家、科幻小说家、《2001太空漫游》作者、与艾萨克·阿西莫夫和罗伯特·海因莱因并列为科幻小说“三巨头”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_ADVANCED_AI_QUOTE_3" Language="zh_Hans_CN">
+			<Text>如果一台计算机能够骗过人类，让人类相信它是人类，那么它就值得被称为智能。[NEWLINE]——艾伦·图灵[NEWLINE][COLOR:ResCultureLabelCS]（英国计算机科学家、数学家、逻辑学家、密码分析学家、理论生物学家、“计算机科学与人工智能[AI]之父”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_ADVANCED_AI_QUOTE_4" Language="zh_Hans_CN">
+			<Text>我们的基础构成无论是碳还是硅没有根本区别；我们每个人都应该受到适当的尊重。[NEWLINE]——亚瑟·查理斯·克拉克[NEWLINE][COLOR:ResCultureLabelCS]（英国作家、发明家、科幻小说家、《2001太空漫游》作者、与艾萨克·阿西莫夫和罗伯特·海因莱因并列为科幻小说“三巨头”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_ADVANCED_POWER_CELLS_QUOTE_1" Language="zh_Hans_CN">
+			<Text>正确地运用和指导能量，可以完成任何事情。[NEWLINE]——娜丽·布莱[NEWLINE][COLOR:ResCultureLabelCS]（美国女记者、小说家、发明家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_ADVANCED_POWER_CELLS_QUOTE_2" Language="zh_Hans_CN">
+			<Text>能量守恒定律告诉我们，我们不可能不劳而获，但我们可以拒绝相信它。[NEWLINE]——艾萨克·阿西莫夫[NEWLINE][COLOR:ResCultureLabelCS]（犹太裔美国作家、生物化学教授、美国科幻小说黄金时代的代表人物之一、与罗伯特·海因莱因、亚瑟·克拉克并列为科幻小说“三巨头”）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_TECH_CYBERNETICS_QUOTE_1" Language="zh_Hans_CN">
+			<Text>我们今天目睹了对新方法、更新和更全面的概念以及能够处理大量有机体和人格的方法的探索。[NEWLINE]——劳伦斯·凯尔索·弗兰克（美国社会科学家、行政管理员、家教导师）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_CYBERNETICS_QUOTE_2" Language="zh_Hans_CN">
+			<Text>控制论很可能揭示出机器、大脑和社会之间大量有趣且具有启发性的相似之处。它可以提供一种共同的语言，通过这种语言，一个分支中的发现可以很容易地用于其他分支中。[NEWLINE]——罗斯·阿什比[NEWLINE][COLOR:ResCultureLabelCS]（英国精神病学家、控制论的先驱）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_TECH_SMART_MATERIALS_QUOTE_1" Language="zh_Hans_CN">
+			<Text>因为事情就是这样变化的，所以事情不会一成不变。[NEWLINE]——贝托尔特·布莱希特[NEWLINE][COLOR:ResCultureLabelCS]（德国戏剧家、诗人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_SMART_MATERIALS_QUOTE_2" Language="zh_Hans_CN">
+			<Text>所有的事情都会改变,[NEWLINE]一些得到新颖的东西，一些得到奇怪的东西。[NEWLINE]——亨利·沃兹沃思·朗费罗[NEWLINE][COLOR:ResCultureLabelCS]（美国诗人、翻译家、“美国最伟大的诗人”）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_TECH_PREDICTIVE_SYSTEMS_QUOTE_1" Language="zh_Hans_CN">
+			<Text>预言和先见之明；如何在未解的问题面前检验它们真假？[NEWLINE]——弗兰克·赫伯特[NEWLINE][COLOR:ResCultureLabelCS]（美国科幻小说家、作家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_PREDICTIVE_SYSTEMS_QUOTE_2" Language="zh_Hans_CN">
+			<Text>当精疲力尽的太阳开始它的新周期时，[NEWLINE]那么我的预言和威胁将会实现。[NEWLINE]——诺斯德拉达姆斯[NEWLINE][COLOR:ResCultureLabelCS]（犹太裔法国预言家、瘟疫医生、占星师）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_TECH_OFFWORLD_MISSION_QUOTE_1" Language="zh_Hans_CN">
+			<Text>太空：最后的边界。这是企业号星舰的航行。它的持续使命便是：探索陌生的新世界，寻找新的生命和新的文明，勇敢地去无人去过的地方。[NEWLINE]——吉恩·罗登伯里、约翰·唐纳德·弗朗西斯·布莱克、Bob Justman[NEWLINE][COLOR:ResCultureLabelCS]（美国电视编剧、《星际迷航》制片人和创作者[NEWLINE]美国编剧、电视监制、电视导演[NEWLINE]美国电视节目制片人、导演、电视电影生产经理）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_OFFWORLD_MISSION_QUOTE_2" Language="zh_Hans_CN">
+			<Text>送我去月球，[NEWLINE]让我在星星之间玩耍。[NEWLINE]让我知道春天[NEWLINE]在木星和火星的样子。[NEWLINE]——巴特·霍华德，歌曲《飞向月球》[NEWLINE][COLOR:ResCultureLabelCS]（美国作曲家、词曲作者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_OFFWORLD_MISSION_QUOTE_3" Language="zh_Hans_CN">
+			<Text>地球种子的命运，[NEWLINE]就在星空中扎根。[NEWLINE]——奥克塔维娅·埃斯特尔·巴特勒[NEWLINE][COLOR:ResCultureLabelCS]（非洲裔美国科幻小说女作家）[ENDCOLOR]</Text>
+		</Replace>
+
+		<Replace Tag="MOD_SC_CIVIC_ENVIRONMENTALISM_QUOTE_1" Language="zh_Hans_CN">
+			<Text>地球提供的东西足以满足每个人的需要，但满足不了每个人的贪婪。[NEWLINE]——莫罕达斯·卡拉姆昌德·甘地[NEWLINE][COLOR:ResCultureLabelCS]（印度政治家、革命家、思想家、印度国父、甘地主义的创始人、印度民族解放运动的领导人、印度国民大会党领袖、“圣雄甘地”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_ENVIRONMENTALISM_QUOTE_2" Language="zh_Hans_CN">
+			<Text>在我看来，我们似乎都过多地关注大自然，而太少地与她好好相处。[NEWLINE]——奥斯卡·王尔德[NEWLINE][COLOR:ResCultureLabelCS]（爱尔兰裔英国作家、诗人、散文家、唯美主义代表人物、19世纪80年代美学运动的主力和90年代颓废派运动的先驱）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_ENVIRONMENTALISM_QUOTE_3" Language="zh_Hans_CN">
+			<Text>人类从来没有像现在这样有能力控制自己的环境，有能力消除口渴和饥饿，有能力战胜贫穷和疾病……我们有能力使这一代成为人类历史上最优秀的一代，也有能力使这一代成为世界历史上最后一代。[NEWLINE]——约翰·菲茨杰尔德·肯尼迪[NEWLINE][COLOR:ResCultureLabelCS]（爱尔兰裔美国政治家、军人、第35任美国总统）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_ENVIRONMENTALISM_QUOTE_4" Language="zh_Hans_CN">
+			<Text>我们现在站在两条路的岔口……我们一直在走的路看似很容易……但最终却是一场灾难。另一个岔路口……这是我们最后唯一的机会让我们到达一个能够保护地球母亲的终点站。[NEWLINE]——蕾切尔·卡森[NEWLINE][COLOR:ResCultureLabelCS]（美国女海洋生物学家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_ENVIRONMENTALISM_QUOTE_5" Language="zh_Hans_CN">
+			<Text>国家的真正财富在于土地资源，即土壤、水、森林、矿产和野生动物。为了将它们用于当前的需要，同时确保它们未来后代的保护，需要一个微妙的平衡和可持续发展的方案。[NEWLINE]——蕾切尔·卡森[NEWLINE][COLOR:ResCultureLabelCS]（美国女海洋生物学家）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_CIVIC_CORPORATE_LIBERTARIANISM_QUOTE_1" Language="zh_Hans_CN">
+			<Text>从前，能源垄断企业被称为“电力公司”；现在我们打算赋予这个名字一个全新的含义。[NEWLINE]——纳布迪克·摩根[NEWLINE][COLOR:ResCultureLabelCS]（肯尼亚实业家、摩根工业公司首席执行官）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_CORPORATE_LIBERTARIANISM_QUOTE_2" Language="zh_Hans_CN">
+			<Text>我给了你一个没有政府干涉的世界。现在没有广告活动，没有公司间的交易，没有促销，没有你不能采取的行动。[NEWLINE]——马克斯·巴里[NEWLINE][COLOR:ResCultureLabelCS]（澳大利亚作家）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_CIVIC_DIGITAL_DEMOCRACY_QUOTE_1" Language="zh_Hans_CN">
+			<Text>虚拟状态的承诺伴随着相当大的风险挑战……有必要保证所有公民都有平等的机会，也有义务保护个人隐私。[NEWLINE]——简·芳特[NEWLINE][COLOR:ResCultureLabelCS]（美国女政治学家、技术理论家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_DIGITAL_DEMOCRACY_QUOTE_2" Language="zh_Hans_CN">
+			<Text>我相信民主，但是真正的民主，而不是只有那些有权有势的人可以发言的虚假民主。在我看来，在民主国家，人人都应该有发言权。[NEWLINE]——奥古斯托·鲍尔[NEWLINE][COLOR:ResCultureLabelCS]（巴西戏剧演员、戏剧理论家、政治活动家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_DIGITAL_DEMOCRACY_QUOTE_3" Language="zh_Hans_CN">
+			<Text>如果我们要成为一个伟大的民主国家，我们必须在我们的民主中发挥积极的作用。我们必须实行民主，但这远远不止简单的投票。我们都必须积极支持，以确保共同利益的事业的发展。[NEWLINE]——马丁·路德[NEWLINE][COLOR:ResCultureLabelCS]（德国宗教改革家、宗教改革运动发起人、基督教新教创立者） King III</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_CIVIC_SYNTHETIC_TECHNOCRACY_QUOTE_1" Language="zh_Hans_CN">
+			<Text>早起的人并不能取得进步。它是由懒惰的人试图寻找更简单的方法来做某事。[NEWLINE]——罗伯特·安森·海因莱因[NEWLINE][COLOR:ResCultureLabelCS]（美国硬科幻小说作家、“科幻先生”、“美国现代科幻小说之父”、美国科幻空前绝后的优秀作家、与艾萨克·阿西莫夫和亚瑟·克拉克并列为科幻小说“三巨头”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_SYNTHETIC_TECHNOCRACY_QUOTE_2" Language="zh_Hans_CN">
+			<Text>没有良心的效率无法与由良心加速驱动的效率相匹敌。[NEWLINE]——凯利·米勒[NEWLINE][COLOR:ResCultureLabelCS]（非洲裔美国数学家、社会学家、散文家、报纸专栏作家、作家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_SYNTHETIC_TECHNOCRACY_QUOTE_3" Language="zh_Hans_CN">
+			<Text>效率低下是一种诅咒；任何好的意图、目标都无法弥补意志的软弱以及道德、精神和身体的脆弱。[NEWLINE]——西奥多·罗斯福[NEWLINE][COLOR:ResCultureLabelCS]（荷兰裔美国军事家、政治家、外交家、第26任美国总统、美国历史上最年轻的在任总统、美国历史上最伟大的总统之一）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_CIVIC_NEAR_FUTURE_GOVERNANCE_QUOTE_1" Language="zh_Hans_CN">
+			<Text>天上的神必另立一国，永不败坏，也不归别国的人。它必毁灭所有的王国，将他们灭绝，但它自己必永存。[NEWLINE]——《旧约圣经》但以理书2:44[NEWLINE][COLOR:ResCultureLabelCS]（犹太教与基督教的共同经典）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_NEAR_FUTURE_GOVERNANCE_QUOTE_2" Language="zh_Hans_CN">
+			<Text>监管之人，谁人监管？[NEWLINE]——尤维纳利斯[NEWLINE][COLOR:ResCultureLabelCS]（古罗马公元1-2世纪诗人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_NEAR_FUTURE_GOVERNANCE_QUOTE_3" Language="zh_Hans_CN">
+			<Text>人民不应该害怕他们的政府。政府应该害怕他们的人民。[NEWLINE]——阿兰·摩尔[NEWLINE][COLOR:ResCultureLabelCS]（英国漫画作家、小说家、短篇小说作家、电影剧本作家、音乐家、漫画家）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_CIVIC_GLOBAL_WARMING_MITIGATION_QUOTE_1" Language="zh_Hans_CN">
+			<Text>现在我们正面临着全球范围的人祸，即我们几千年来最大的威胁：气候变化。如果我们不采取行动，我们的文明就会崩溃，很多自然世界就会灭绝。[NEWLINE]——大卫·阿滕伯勒[NEWLINE][COLOR:ResCultureLabelCS]（英国广播员、自然历史学家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_GLOBAL_WARMING_MITIGATION_QUOTE_2" Language="zh_Hans_CN">
+			<Text>气候是一个共同的利益，属于所有人，也意味着所有人都要负责……一个非常可靠的科学共识表明，我们目前正在目睹一个令人不安的全球气候系统变暖……人类需要认识到改变生活方式、生产和消费的必要性，以应对全球变暖。[NEWLINE]——方济各[NEWLINE][COLOR:ResCultureLabelCS]（阿根廷耶稣会士、天主教第266任教皇、第一位拉丁美洲教皇）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_GLOBAL_WARMING_MITIGATION_QUOTE_3" Language="zh_Hans_CN">
+			<Text>全世界必须团结起来，共同应对气候变化。毫无疑问，如果我们什么都不做，我们将面临更多的干旱、饥荒和大规模流民流离失所，这些都将在未来几十年加剧更多的冲突。[NEWLINE]——贝拉克·侯赛因·奥巴马[NEWLINE][COLOR:ResCultureLabelCS]（非裔美国民主党籍政治家、第44任美国总统、美国历史上第一位黑人总统）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_GLOBAL_WARMING_MITIGATION_QUOTE_4" Language="zh_Hans_CN">
+			<Text>我们必须尽一切努力，在为时已晚之前减缓全球变暖……科学结论是十分清晰明了的。关于全球变暖的辩论结束了。[NEWLINE]——阿诺·施瓦辛格[NEWLINE][COLOR:ResCultureLabelCS]（奥地利裔美国健身运动员、演员、政治家、美国加利福尼亚州州长）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_CIVIC_SMART_POWER_DOCTRINE_QUOTE_1" Language="zh_Hans_CN">
+			<Text>轻声说话，手持大棒。[NEWLINE]——西奥多·罗斯福[NEWLINE][COLOR:ResCultureLabelCS]（荷兰裔美国军事家、政治家、外交家、第26任美国总统、美国历史上最年轻的在任总统、美国历史上最伟大的总统之一）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_SMART_POWER_DOCTRINE_QUOTE_2" Language="zh_Hans_CN">
+			<Text>我们必须巧用所谓的实力，即我们可以使用的各种手段：外交、经济、军事、政治、法律和文化，针对每种情况选择合适的手段，或者综合运用手段。有了巧妙的实力，外交将成为外交政策的先锋。[NEWLINE]——希拉里·克林顿[NEWLINE][COLOR:ResCultureLabelCS]（美国民主党女政治人物、律师、第67任美国国务卿、第44任美国第一夫人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_SMART_POWER_DOCTRINE_QUOTE_3" Language="zh_Hans_CN">
+			<Text>如果一个国家能够为其他国家设定议程或塑造他们的偏好，它就可以在胡萝卜和大棒政策上节省很多。但它不能完全取代两者。因此，需要结合硬实力和软实力工具才是明智战略。[NEWLINE]——小约瑟夫·塞缪尔·奈尔[NEWLINE][COLOR:ResCultureLabelCS]（美国政治学学者）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_CIVIC_INFORMATION_WARFARE_QUOTE_1" Language="zh_Hans_CN">
+			<Text>如果你不想要一个政治上你觉得不开心的人，就不要在一个问题上让他两面讨好；给他一个，或者最好什么也不给他。[NEWLINE]——雷·道格拉斯·布雷德伯里[NEWLINE][COLOR:ResCultureLabelCS]（美国科幻/奇幻/恐怖小说作家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_INFORMATION_WARFARE_QUOTE_2" Language="zh_Hans_CN">
+			<Text>知识最大的敌人不是无知，而是对知识的幻想。[NEWLINE]——丹尼尔·布尔斯廷[NEWLINE][COLOR:ResCultureLabelCS]（美国历史学家、博物学家、美国国会图书馆馆长）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_INFORMATION_WARFARE_QUOTE_3" Language="zh_Hans_CN">
+			<Text>请注意：[NEWLINE]无知！[NEWLINE]保护自己。[NEWLINE]无知！[NEWLINE]引起怀疑。[NEWLINE]怀疑！[NEWLINE]产生恐惧。[NEWLINE]埋头鸵鸟，[NEWLINE]不合理的盲目，[NEWLINE]或恐惧迫在眉睫，[NEWLINE]都是挑衅和封闭自己。[NEWLINE]——奥克塔维娅·埃斯特尔·巴特勒[NEWLINE][COLOR:ResCultureLabelCS]（非洲裔美国科幻小说女作家）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_CIVIC_EXODUS_IMPERATIVE_QUOTE_1" Language="zh_Hans_CN">
+			<Text>每一个现存的文明都有义务去探索太空——不是出于探索或浪漫的热情，而是出于可以想象到的最实际的原因：生存。[NEWLINE]——卡尔·萨根[NEWLINE][COLOR:ResCultureLabelCS]（美国天文学家、天体物理学家、宇宙学家、科幻作家、行星学会的成立者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_EXODUS_IMPERATIVE_QUOTE_2" Language="zh_Hans_CN">
+			<Text>对于人类来说，地球太小也太脆弱了，就像一个篮子，把所有的鸡蛋都放在里面。[NEWLINE]——罗伯特·安森·海因莱因[NEWLINE][COLOR:ResCultureLabelCS]（美国硬科幻小说作家、“科幻先生”、“美国现代科幻小说之父”、美国科幻空前绝后的优秀作家、与艾萨克·阿西莫夫和亚瑟·克拉克并列为科幻小说“三巨头”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_EXODUS_IMPERATIVE_QUOTE_3" Language="zh_Hans_CN">
+			<Text>对我们的孩子和冒险活动来说，太空意味着更大的幸福，是所有我们认为没有出口的事情的出口，是一个相信边界并没有封闭的信念。[NEWLINE]——玛格丽特·米德[NEWLINE][COLOR:ResCultureLabelCS]（美国女人类学家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_EXODUS_IMPERATIVE_QUOTE_4" Language="zh_Hans_CN">
+			<Text>带我去向那黑暗，[NEWLINE]告诉他们我不回来了。[NEWLINE]烧地煮海，[NEWLINE]你夺不走我的天空。[NEWLINE]——乔斯·韦登、桑尼·罗兹[NEWLINE][COLOR:ResCultureLabelCS]（美国作家、影剧导演、影剧监制[NEWLINE]美国蓝调歌手、单圈钢吉他演奏家）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_CIVIC_CULTURAL_HEGEMONY_QUOTE_1" Language="zh_Hans_CN">
+			<Text>传统的统治阶级有许多受过训练的干部，他们改变了人员和计划，并且以比下级阶级更快的速度重新吸收了正在从其掌握中溜走的控制权。也许它会做出牺牲……但它仍然拥有权力。[NEWLINE]——安东尼奥·葛兰西[NEWLINE][COLOR:ResCultureLabelCS]（意大利共产主义思想家、意大利共产党的创始人和领导人之一、“文化霸权”理论创始人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_CULTURAL_HEGEMONY_QUOTE_2" Language="zh_Hans_CN">
+			<Text>霸权不是万能的，但肯定是有优势的。[NEWLINE]——兹比格涅夫·布热津斯基[NEWLINE][COLOR:ResCultureLabelCS]（波兰裔美国国际关系学者、地缘政治学家、外交活动家）[ENDCOLOR]</Text>
+		</Replace>
+
+		<!-- 新纪元季票 -->
+		
+		<Replace Tag="LOC_QUOTE_SC_BERMUDA_GADDIS" Language="zh_Hans_CN">
+			<Text>百慕大三角强调了一个事实，那就是尽管有飞翼和无线传输的声音，我们仍然在一个足够大的世界，大到可以让人和他们的机器和船只消失得无影无踪。[NEWLINE]——文森特·加迪斯[NEWLINE][COLOR:ResCultureLabelCS]（美国作家、“百慕大三角”一词发明者）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_QUOTE_SC_FOUNTAIN_REMESAL" Language="zh_Hans_CN">
+			<Text>胡安·庞塞·德莱昂（西班牙征服者、探险家、首任波多黎各总督，据传是首位发现青春之泉的西方人），见自己有钱又有机会，于是便召集了两支巡游队，到波因卡岛（青春之泉的所在地）去寻找。他听印第安人说，那儿有一个著名的水泉，可以使人返老还童。[NEWLINE]——安东尼奥·德·雷默萨尔[NEWLINE][COLOR:ResCultureLabelCS]（西班牙牧师、历史学家）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_QUOTE_SC_PAITITI_ACOSTA" Language="zh_Hans_CN">
+			<Text>西班牙人已经航行了好几次，试图发现那些土地，根据他们本地人的说法，这些土地都拥有巨大的财富，特别是他们称为黄金国和帕依提提的地方。[NEWLINE]——何塞·德·阿科斯塔[NEWLINE][COLOR:ResCultureLabelCS]（西班牙文艺复兴时期神学家、传教士）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_QUOTE_SC_BIOSPHERE_FULLER_1" Language="zh_Hans_CN">
+			<Text>我现在生活在地球上，我不知道我到底是什么。但我知道我不是一个类别。我不是一个具体的物体，一个名词。我似乎是一个动词，一个进化过程，一个宇宙的整体功能的象征。[NEWLINE]——巴克敏斯特·福乐[NEWLINE][COLOR:ResCultureLabelCS]（美国哲学家、建筑师、发明家、戴美克森氏地图投影的发明者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_BIOSPHERE_FULLER_2" Language="zh_Hans_CN">
+			<Text>自然的对立面是不可能存在的。[NEWLINE]——巴克敏斯特·福乐[NEWLINE][COLOR:ResCultureLabelCS]（美国哲学家、建筑师、发明家、戴美克森氏地图投影的发明者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_BIOSPHERE_FULLER_3" Language="zh_Hans_CN">
+			<Text>关于地球飞船有一个非常重要的事实，那就是它没有附带说明书。[NEWLINE]——巴克敏斯特·福乐[NEWLINE][COLOR:ResCultureLabelCS]（美国哲学家、建筑师、发明家、戴美克森氏地图投影法的发明者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_BIOSPHERE_EPCOT" Language="zh_Hans_CN">
+			<Text>就像一艘宏伟而神奇的宇宙飞船，我们的星球已经航行在时空宇宙之中了。而在这一瞬间，我们已经成为它的众多乘客中的一员……[NEWLINE]——地球宇宙飞船[NEWLINE][COLOR:ResCultureLabelCS]（奥兰多迪士尼乐园，未来世界主题公园的一个项目介绍）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_BIOSPHERE_EXUPERY" Language="zh_Hans_CN">
+			<Text>做人要负责任：为自己没有造成的痛苦感到羞耻；为同志们的胜利而自豪；要知道，当你放下一块石头时，你也正在建造一个世界。[NEWLINE]——安托万·德·圣·埃克苏佩里[NEWLINE][COLOR:ResCultureLabelCS]（法国作家、飞行员）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_QUOTE_SC_STATUE_OF_ZEUS_PAUSANIAS" Language="zh_Hans_CN">
+			<Text>我知道奥林匹克的宙斯神像的高度和宽度已经被测量和记录；但我会不称赞那些测量的人，因为即使是他们的记录再精确也比不过人亲眼所见所留下的印象。[NEWLINE]——保萨尼亚斯[NEWLINE][COLOR:ResCultureLabelCS]（希腊二世纪地理学家、旅行家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_STATUE_OF_ZEUS_PHILO" Language="zh_Hans_CN">
+			<Text>而我们只会好奇其他六个奇迹，仅仅跪倒在这一个奇观面前，满怀敬意，因为这些建造的技术是如此令人难以置信的，就像宙斯的形象是如此神圣。劳动带来赞美，不朽带来荣耀。[NEWLINE]——拜占庭的费隆[NEWLINE][COLOR:ResCultureLabelCS]（拜占庭科普作家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_STATUE_OF_ZEUS_HOMER" Language="zh_Hans_CN">
+			<Text>克洛诺斯的儿子边说话，边鞠了一躬，他那浓黑的额头表示同意，神王那不朽之首上的香发也在飘扬。他使奥林匹斯山为之震动。[NEWLINE]——荷马[NEWLINE][COLOR:ResCultureLabelCS]（古希腊盲人诗人、西方文学始祖）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_STATUE_OF_ZEUS_ARCHILOCHUS" Language="zh_Hans_CN">
+			<Text>现在，奥林匹亚之父宙斯把正午变成了夜晚，再也没有什么能比这事更令人惊讶、觉得不可能或奇迹了……从此以后，众人什么都可以相信，什么都可以期待。[NEWLINE]——阿尔基罗库斯[NEWLINE][COLOR:ResCultureLabelCS]（古希腊最早抒情诗人、与荷马齐名）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_QUOTE_SC_ETEMENANKI_GENESIS" Language="zh_Hans_CN">
+			<Text>他们说，来吧，我们要建造一座伟城和一座巨塔，塔顶通天。我们要传扬自己的名声，免得分散在全地上稀释了。[NEWLINE]——《旧约圣经》创世纪11:4[NEWLINE][COLOR:ResCultureLabelCS]（犹太教与基督教的共同经典）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_ETEMENANKI_HERODOTUS" Language="zh_Hans_CN">
+			<Text>有一座坚固的石塔，长宽各有一弗隆（长度单位，相当于220码、201米或1/8英里），上面有第二座塔，第三座塔，依此类推，高达八座……最高的塔楼上有一座宽敞的庙宇，庙宇内矗立着一张不同寻常的沙发，装饰华丽，旁边有一张金色的桌子。[NEWLINE]——希罗多德[NEWLINE][COLOR:ResCultureLabelCS]（古希腊作家、历史学家、西方“历史之父”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_ETEMENANKI_NABOPOLASSAR_1" Language="zh_Hans_CN">
+			<Text>当时，我的主马尔杜克（巴比伦守护神）告诉我，应该关注巴比伦塔庙埃特曼安吉，在我的时代之前，它已经非常脆弱并严重弯曲，它的地基已经深深地扎向幽暗的地府，但这使它的顶部能与天堂匹敌。[NEWLINE]——那波帕拉萨尔[NEWLINE][COLOR:ResCultureLabelCS]（新巴比伦王国的开国君主）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_ETEMENANKI_NABOPOLASSAR_2" Language="zh_Hans_CN">
+			<Text>我建造了这座建筑，这座伊萨拉神庙复制品，在兴高采烈地把它的顶端建得像一座山一样高。为了我的主马尔杜克（巴比伦守护神），我把它做成了一件令人惊奇的奇观，就像从前一样。[NEWLINE]——那波帕拉萨尔[NEWLINE][COLOR:ResCultureLabelCS]（新巴比伦王国的开国君主）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_QUOTE_SC_TORRE_DE_BELEM_ABRANTES" Language="zh_Hans_CN">
+			<Text>贝伦下面不远的地方，向里斯本方向走去，有一个方形堡垒，叫做贝伦塔，上面密密地安置着大炮，守卫着这条通道。任何进犯的船只经过这些大炮都会受到严重的打击。[NEWLINE]——劳伦·朱诺[NEWLINE][COLOR:ResCultureLabelCS]（法国女作家、阿兰特雷斯公爵夫人）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_TORRE_DE_BELEM_DE_GOIS" Language="zh_Hans_CN">
+			<Text>在这座建筑的前面，国王下令建设圣维森特岛，这座建筑它被称为贝伦塔，它建在水上，用来守卫修道院和里斯本港口；这座建筑虽然不大，但却很宏伟。它的炮塔日夜守夜，所以没有任何风帆可以不被发现，不服从它的炮火。[NEWLINE]——达米昂·德戈伊斯[NEWLINE][COLOR:ResCultureLabelCS]（葡萄牙文艺复兴时期外交家、人文哲学家、历史学家）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_QUOTE_SC_TORRE_DE_BELEM_RESENDE" Language="zh_Hans_CN">
+			<Text>[国王若昂二世]下令在美丽的贝伦塔在现在所在的地方修建一个巨大的堡垒。曼努埃尔一世，可能他在神圣的荣耀下令下，修建的堡垒与其他的塔楼将阻止部分入海口。[NEWLINE]——加西亚·德·雷森德[NEWLINE][COLOR:ResCultureLabelCS]（葡萄牙诗人、编辑、约翰二世书记兼私人秘书）[ENDCOLOR]</Text>
+		</Replace>
+
+		<Replace Tag="MOD_SC_CIVIC_CRAFTSMANSHIP_QUOTE_7" Language="zh_Hans_CN">
+			<Text>因为没有指导的天赋和没有天赋的指导都不能培养出完美的工匠。[NEWLINE]——维特鲁威[NEWLINE][COLOR:ResCultureLabelCS]（古罗马作家、建筑师、工程师）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_CIVIC_THEOLOGY_QUOTE_3" Language="zh_Hans_CN">
+			<Text>神学必须是人对自己、对自己的基本原则的批判性反思。只有采用这种方法，神学才会成为一种严肃的话语，意识到它自己，并完全拥有它的概念要素。[NEWLINE]——古斯塔沃·古铁雷斯[NEWLINE][COLOR:ResCultureLabelCS]（秘鲁神学家、多明我会教士、解放神学的代表人物）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_THEOLOGY_QUOTE_4" Language="zh_Hans_CN">
+			<Text>当一个人反省这些事情，研究所有这些被创造的生命，从天使和灵体再到人类等等，并认识到在他们身上所体现的神之智慧，那他对上帝的爱会增加，他的灵魂、身心会渴望这些知识和上帝。[NEWLINE]——迈蒙尼德[NEWLINE][COLOR:ResCultureLabelCS]（犹太裔西班牙哲学家、法学家、医生）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_CIVIC_MYSTICISM_QUOTE_6" Language="zh_Hans_CN">
+			<Text>真正的神学大师，认识上帝，不需要通过任何经文，因为他触及了所有经文的源头。[NEWLINE]——安妮·贝赞特[NEWLINE][COLOR:ResCultureLabelCS]（英国女社会主义者、神智学家、妇女权利活动家、作家、演讲家）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_CIVIC_MERCENARIES_QUOTE_3" Language="zh_Hans_CN">
+			<Text>世界上有古老的佣兵，也有勇敢的佣兵，但世上没有古老又勇敢的佣兵。[NEWLINE]——乔治·雷蒙德·理查德·马丁[NEWLINE][COLOR:ResCultureLabelCS]（美国作家、编剧、美国的“托尔金”）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_CIVIC_DIPLOMATIC_SERVICE_QUOTE_3" Language="zh_Hans_CN">
+			<Text>我们决不要因为畏惧对方而谈判。但是，我们也永远不要害怕谈判本身。让双方探讨使我们团结在一起的是什么，而不是纠结那些使我们分裂的问题。[NEWLINE]——约翰·菲茨杰尔德·肯尼迪[NEWLINE][COLOR:ResCultureLabelCS]（爱尔兰裔美国政治家、军人、第35任美国总统）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_CIVIC_POLITICAL_PHILOSOPHY_QUOTE_9" Language="zh_Hans_CN">
+			<Text>如果你是一名领袖，[NEWLINE]承担责任，[NEWLINE]受人委托，[NEWLINE]你将完成一些值得注意的事情……[NEWLINE]——普塔霍特普[NEWLINE][COLOR:ResCultureLabelCS]（古埃及第五王朝法老杰德卡拉时期官员、政治家）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_CIVIC_MERCANTILISM_QUOTE_3" Language="zh_Hans_CN">
+			<Text>征税的艺术如同为鹅拔毛，以尽可能少的嘶叫来获得最大数量的羽毛。[NEWLINE]——让·巴蒂斯特·柯尔贝尔[NEWLINE][COLOR:ResCultureLabelCS]（法国政治家、国务活动家、财政大臣、海军国务大臣、路易十四时代法国最著名的伟大人物之一）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_CIVIC_CIVIL_ENGINEERING_QUOTE_3" Language="zh_Hans_CN">
+			<Text>没有任何工程能比对那些能够承受水力作用的工程需要更大的关心了；由于这个原因，所有的工作都需要完全按照所有工人都知道但很少有人遵守的艺术规则来做。[NEWLINE]——塞克斯图斯·朱利乌斯·弗朗提努斯[NEWLINE][COLOR:ResCultureLabelCS]（古罗马政治家、军事将领）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_CIVIC_IDEOLOGY_QUOTE_3" Language="zh_Hans_CN">
+			<Text>一种意识形态不同于一种简单的观点，它声称拥有揭开历史奥秘的钥匙，或者拥有解开“宇宙之谜”的答案，又或者拥有掌握隐藏的宇宙法则的知识，而这些法则都被认为可以用来统治自然和人类的。[NEWLINE]——汉娜·阿伦特[NEWLINE][COLOR:ResCultureLabelCS]（犹太裔美国女政治学家、二十世纪最重要的哲学家之一）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_CIVIC_COLD_WAR_QUOTE_3" Language="zh_Hans_CN">
+			<Text>我们可以被比作瓶子里的两只蝎子，每只都能杀死对方，但只能冒着自己生命危险完成。[NEWLINE]——朱利叶斯·罗伯特·奥本海默[NEWLINE][COLOR:ResCultureLabelCS]（犹太裔美国理论物理学家、曼哈顿计划的领导者、“原子弹之父”）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_CIVIC_COLD_WAR_QUOTE_4" Language="zh_Hans_CN">
+			<Text>让我们不要上当受骗：我们今天正处于冷战之中……世界和平是我们政治制度的希望和目标；这是那些反对我们的人的绝望和失败。[NEWLINE]——伯纳德·巴鲁克[NEWLINE][COLOR:ResCultureLabelCS]（美国金融家、股票投资商、慈善家、政治家）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_CIVIC_CULTURAL_HEGEMONY_QUOTE_3" Language="zh_Hans_CN">
+			<Text>谁控制了媒体，即图像。谁就控制了文化。[NEWLINE]——艾伦·金斯堡[NEWLINE][COLOR:ResCultureLabelCS]（美国作家、诗人、“垮掉的一代”的灵魂人物）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_CIVIC_CORPORATE_LIBERTARIANISM_QUOTE_3" Language="zh_Hans_CN">
+			<Text>公司不能犯叛国罪，不能被取缔，也不能被逐出教会，因为他们没有灵魂。[NEWLINE]——爱德华·科克[NEWLINE][COLOR:ResCultureLabelCS]（英国大律师、法官、政治家）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_TECH_RADIO_QUOTE_3" Language="zh_Hans_CN">
+			<Text>我总是在收音机里搜寻东西。就像火车和铃声一样，它是我生活配乐的一部分。[NEWLINE]——鲍勃·迪伦[NEWLINE][COLOR:ResCultureLabelCS]（美国创作歌手、艺术家、作家）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_TECH_ELECTRICITY_QUOTE_4" Language="zh_Hans_CN">
+			<Text>电对战争与和平的影响的同时，还提供了更大、更奇妙的可能性。[NEWLINE]——尼古拉·特斯拉[NEWLINE][COLOR:ResCultureLabelCS]（塞尔维亚裔美籍发明家、物理学家、机械工程师、电气工程师、电学先驱、交流电系统/无线电系统/无线电能传输/放大发射机发明者）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="MOD_SC_TECH_ELECTRICITY_QUOTE_5" Language="zh_Hans_CN">
+			<Text>但是无与伦比的富兰克林！好几个高手[NEWLINE]希望能和你这样的对手竞争。[NEWLINE]谁夺走了国王的骄傲，[NEWLINE]把飞矛般的闪电拨到一边。[NEWLINE]——菲利普·莫林·弗雷诺[NEWLINE][COLOR:ResCultureLabelCS]（美国诗人、民族主义者、论战主义者、船长、报纸编辑、“美国革命诗人”）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_TECH_BRONZE_WORKING_QUOTE_3" Language="zh_Hans_CN">
+			<Text>大卫将哈大底谢仆人所带的金盾带到耶路撒冷。大卫从哈大底谢的提巴和城，取走许多铜。所罗门用这些铜，建筑铜块和铜柱，并灌注成铜器。[NEWLINE]——《旧约圣经》历代记18:7-8[NEWLINE][COLOR:ResCultureLabelCS]（犹太教与基督教的共同经典）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_TECH_APPRENTICESHIP_QUOTE_3" Language="zh_Hans_CN">
+			<Text>对我来说，在最短的时间内给你一个机会去理解我这么多年来所学的一切，是再好不过的礼物了。[NEWLINE]——尼可罗·马基亚维利[NEWLINE][COLOR:ResCultureLabelCS]（意大利政治思想家、历史学家、“近代政治学之父”）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_TECH_CARTOGRAPHY_QUOTE_3" Language="zh_Hans_CN">
+			<Text>在球体的表面上展开，使各个地方的位置在真实的方向和距离以及正确的经度和纬度上都能相互对应。[NEWLINE]——杰拉杜斯·麦卡托[NEWLINE][COLOR:ResCultureLabelCS]（佛兰德斯地图学家、麦卡托地图投影法的发明者）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_TECH_MASS_PRODUCTION_QUOTE_3" Language="zh_Hans_CN">
+			<Text>因此，在这种机器的帮助下，十个人就可以整齐、快速、轻松地完成以前需要一百，而十个人做难以确定完成的工作。[NEWLINE]——理查德·约瑟夫·比米什[NEWLINE][COLOR:ResCultureLabelCS]（美国律师、新闻记者、作家）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_TECH_BANKING_QUOTE_3" Language="zh_Hans_CN">
+			<Text>与外交一样，在中央银行，风格、保守的资金剪裁以及与富人的轻松交往都非常重要，最后成果却少得可怜。[NEWLINE]——约翰·肯尼斯·高伯瑞[NEWLINE][COLOR:ResCultureLabelCS]（苏格兰裔美国制度经济学家、凯因斯学派、美国进步主义学者、外交官）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_TECH_BALLISTICS_QUOTE_3" Language="zh_Hans_CN">
+			<Text>炮火在他们的右边，[NEWLINE]炮火在他们的左边，[NEWLINE]炮火在他们的前面，[NEWLINE]万弹齐发炸雷轰天。[NEWLINE]——阿佛烈·丁尼生[NEWLINE][COLOR:ResCultureLabelCS]（英国桂冠诗人、英国著名的诗人之一）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_TECH_MILITARY_SCIENCE_QUOTE_3" Language="zh_Hans_CN">
+			<Text>任何军队都不能明智准确地规定……因为在战斗的瞬间，没有人可以对基本战斗工具、士兵以及其的精神状态、士气有确切了解。[NEWLINE]——阿丹·杜·皮克[NEWLINE][COLOR:ResCultureLabelCS]（法国陆军军官、军事理论家）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_TECH_ENGINEERING_QUOTE_4" Language="zh_Hans_CN">
+			<Text>当我看着工程科学，发现它已经随着古老的遗产消失了，那些精通它的人也消失了，那些有关的知识、记录现在也被遗忘了。对我有所启发，而我用我的智慧和思想，秘密地研究着哲学的形态和符号，利用这些形态和符号可以使人的思想努力地从虚无变为存在，从懒散变为积极。[NEWLINE]——伊本·哈拉夫·阿尔·穆拉迪[NEWLINE][COLOR:ResCultureLabelCS]（安达卢西亚工程师）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_TECH_REPLACEABLE_PARTS_QUOTE_3" Language="zh_Hans_CN">
+			<Text>我的主要目标之一是创造工具，工具本身将能塑造作品，并给予每个部分其适当的比例，一旦完成，将给整个作品带来快速、统一和精确……[NEWLINE]——伊莱·惠特尼[NEWLINE][COLOR:ResCultureLabelCS]（美国发明家、机械工程师、企业家、可互换零件的概念发明者）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_TECH_STEEL_QUOTE_3" Language="zh_Hans_CN">
+			<Text>人的肉体，温暖而柔软，能够被伤害，赤身裸体地对抗钢铁；而钢铁像古老星辰一样冰冷，比死亡更坚硬，却无法承受痛苦。[NEWLINE]——玛丽·哈里丝·琼斯[NEWLINE][COLOR:ResCultureLabelCS]（爱尔兰裔美国女教师、裁缝、工会组织者，社区组织者、社会活动家）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_TECH_ADVANCED_BALLISTICS_QUOTE_3" Language="zh_Hans_CN">
+			<Text>在和平时期，人们要求的是机动性；在战争时期，人们要求的是炮弹的重量。[NEWLINE]——艾伦·弗朗西斯·布鲁克[NEWLINE][COLOR:ResCultureLabelCS]（英国陆军参谋长、元帅）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_TECH_PLASTICS_QUOTE_3" Language="zh_Hans_CN">
+			<Text>我爱洛杉矶，也爱好莱坞。它们很漂亮。每个人都是塑料人，但我喜欢塑料，我也想变成塑料人。（塑料，英文意思也有虚伪的、做作的、矫情的含义）[NEWLINE]——安迪·沃霍尔[NEWLINE][COLOR:ResCultureLabelCS]（美国艺术家、印刷家、电影摄影师、视觉艺术运动波普艺术的开创者之一）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_TECH_NUCLEAR_FISSION_QUOTE_3" Language="zh_Hans_CN">
+			<Text>我们可以同样很好地假设，当中子被用来核衰变时，会发生一些明显的新的核反应，这些反应以前从未被质子或α粒子轰击原子核时的实验所观察到。[NEWLINE]——伊达·诺达克[NEWLINE][COLOR:ResCultureLabelCS]（德国女化学家、物理学家、首先提出了核裂变的概念）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_TECH_GUIDANCE_SYSTEMS_QUOTE_3" Language="zh_Hans_CN">
+			<Text>勇胆猛戾，则辅之以道顺。[NEWLINE]——荀子[NEWLINE][COLOR:ResCultureLabelCS]（中国古代思想家、哲学家、教育家、儒家学派的代表人物、“辞赋之祖”）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_TECH_LASERS_QUOTE_3" Language="zh_Hans_CN">
+			<Text>只要你打得够狠，任何东西都会发射激光。[NEWLINE]——亚瑟·伦纳德·肖洛[NEWLINE][COLOR:ResCultureLabelCS]（美国物理学家、与查尔斯·汤斯共同发明了激光）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_TECH_ROBOTICS_QUOTE_3" Language="zh_Hans_CN">
+			<Text>这种情况下，每台仪器都可以根据命令或智能预期完成自己的工作……好像梭子会自己编织，而拨子会自己演奏竖琴。[NEWLINE]——亚里士多德[NEWLINE][COLOR:ResCultureLabelCS]（古希腊哲学家、科学家、教育家、思想家、“古代的黑格尔”）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_TECH_REFINING_QUOTE_3" Language="zh_Hans_CN">
+			<Text>获得真理就像获得金子一样，不是靠它自己变大，而是靠洗去一切非金子的东西。[NEWLINE]——列夫·托尔斯泰[NEWLINE][COLOR:ResCultureLabelCS]（俄国19世纪中期批判现实主义作家、政治思想家、哲学家、代表作《战争与和平》《安娜·卡列尼娜》《复活》等）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_TECH_ADVANCED_POWER_CELLS_QUOTE_3" Language="zh_Hans_CN">
+			<Text>每一种金属都有一定的力量，不同的金属有不同的力量，可以使电流体运动也不同。[NEWLINE]——亚历山德罗·伏打[NEWLINE][COLOR:ResCultureLabelCS]（意大利物理学家、电池发明者）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_TECH_CYBERNETICS_QUOTE_3" Language="zh_Hans_CN">
+			<Text>信息就是信息，不是物质或能量。[NEWLINE]——诺伯特·维纳[NEWLINE][COLOR:ResCultureLabelCS]（美国应用数学家、随机过程和噪声信号处理的先驱）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_TECH_SMART_MATERIALS_QUOTE_3" Language="zh_Hans_CN">
+			<Text>事物变化越多，它们就越有可能保持不变。[NEWLINE]——让·巴蒂斯特·阿尔方斯·卡尔[NEWLINE][COLOR:ResCultureLabelCS]（法国评论家、记者、小说家）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_TECH_NANOTECHNOLOGY_QUOTE_3" Language="zh_Hans_CN">
+			<Text>纳米技术就是用原子来制造。[NEWLINE]——威廉·鲍威尔[NEWLINE][COLOR:ResCultureLabelCS]（美国演员）[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="MOD_SC_TECH_PREDICTIVE_SYSTEMS_QUOTE_3" Language="zh_Hans_CN">
+			<Text>在所有讨厌、厌恶的问题名单中，[NEWLINE]比猫头鹰的歌声和午夜的吹奏还要悲伤的是：[NEWLINE]是这句预先的俗语：“早就告诉你了。”。[NEWLINE]——乔治·戈登·拜伦[NEWLINE][COLOR:ResCultureLabelCS]（英国诗人、革命家、浪漫主义文学泰斗、世袭男爵、“拜伦勋爵”[Lord Byron]）[ENDCOLOR]</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

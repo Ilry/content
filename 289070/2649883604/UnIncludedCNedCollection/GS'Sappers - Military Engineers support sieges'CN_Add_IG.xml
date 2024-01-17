@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- GS'Sappers - Military Engineers support sieges'CN_Add_IG -->
+<!-- Author: ChiYiuWong , Clear8Sky -->
+<!-- DateCreated: 2021/9/30 0:24:46 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Sappers - Military Engineers support sieges” 。该文件在 InGame 时载入，需 Criteria ：Active_Expansion_2 -->
+	<LocalizedText>
+		<Replace Tag="LOC_UNIT_MILITARY_ENGINEER_DESCRIPTION_JNR_MC" Language="zh_Hans_CN">
+			<Text>{LOC_UNIT_MILITARY_ENGINEER_ALT_DESCRIPTION}相邻的近战和抗骑兵单位可对城墙造成全额伤害。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_JNR_ENABLE_WALL_ATTACK_WHOLE_GAME_SAPPER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>相邻的友方近战和抗骑兵单位可对城墙造成全额伤害。</Text>
+		</Replace>
+		
+		<!-- 单位 -->
+		
+		<Replace Tag="LOC_UNIT_JNR_MILITARY_SAPPER_NAME" Language="zh_Hans_CN">
+			<Text>工兵</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_JNR_MILITARY_SAPPER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>该单位无法训练。一旦工兵被解锁，攻城塔就可晋升为军事工程师。</Text>
+		</Replace>
+
+		<!-- 科技 -->
+		
+		<Replace Tag="LOC_TECH_SIEGE_TACTICS_DESCRIPTION_JNR_MC" Language="zh_Hans_CN">
+			<Text>与军事工程师相邻的近战和抗骑兵单位可对城墙造成全额伤害。</Text>
+		</Replace>
+
+		<!-- 阿卡德城邦 -->
+		
+		<Replace Tag="LOC_LEADER_TRAIT_AKKAD_DESCRIPTION_JNR_MC" Language="zh_Hans_CN">
+			<Text>近战、抗骑兵、轻骑兵和重骑兵单位可对城墙造成全额伤害。</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

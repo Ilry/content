@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'Yossies More Great Person'CN_Add_IG -->
+<!-- Author: Clear8Sky -->
+<!-- DateCreated: 2021/9/19 5:06:54 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Yossie's More Great Person” 。该文件在 InGame 时载入，无需任何 Criteria -->
+	<LocalizedText>
+		
+	<!-- YMGP_BaseGameText_JP.xml文件 -->
+		
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_NIKOLA_SUBIC_ZRINSKI_CHAPTER_HISTORY_PARA_1" Language="ja_JP">
+			<Text>【译者注：五十音在学了……】[NEWLINE][NEWLINE]クロアチアの将軍で、ハプスブルク家に仕えた人物。クロアチア貴族ズリンスキ家の出身で、1542年から1556年までクロアチアのバン（総督に相当）であった。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_NIKOLA_SUBIC_ZRINSKI_CHAPTER_HISTORY_PARA_2" Language="ja_JP">
+			<Text>1529年の第一次ウィーン包囲で頭角を現し、1542年には400人のクロアチア兵と戦いに加わることで敗色濃厚であったペシュトから帝国軍を救った。この働きのために彼はバンに任命された。1542年、彼はソムリョの戦いでオスマン帝国軍と戦った。 </Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_NIKOLA_SUBIC_ZRINSKI_CHAPTER_HISTORY_PARA_3" Language="ja_JP">
+			<Text>1566年8月5日から9月7日まで、彼の小部隊（2,300人）は、スレイマン1世自ら率いる90,000人ものトルコ軍に対して、シゲトヴァールの小さな要塞を英雄的に守り抜いた（シゲトヴァール包囲戦）。戦闘は、絶望的な出撃の中のズリンスキや駐屯していた兵全員の戦死で幕を閉じた。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_NESTORIUS_CHAPTER_HISTORY_PARA_1" Language="ja_JP">
+			<Text>【译者注：五十音在学了……】[NEWLINE][NEWLINE]シリアのアンティオキア学派に属するコンスタンティノープル大主教（在位：428年 - 431年）。キリスト教ネストリウス派の祖とされる。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_NESTORIUS_CHAPTER_HISTORY_PARA_2" Language="ja_JP">
+			<Text>428年にコンスタンチノープルの大主教となったが、イエス・キリストの神性と人性を区別し、イエス・キリストの母マリアは神の母（聖母）ではないとする説を説いた。そのため、431年のエフェソス公会議でネストリウスの説は異端とされ、国外追放となり、エジプトへ移った。なおネストリウスの説は451年のカルケドン公会議において改めて異端とされた。 </Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_NESTORIUS_CHAPTER_HISTORY_PARA_3" Language="ja_JP">
+			<Text>ネストリウスが異端認定された後、彼の弟子たちは帝国の東部で伝道を続けることとなるが、やがて、ネストリウス派を支持する勢力はペルシャ、インド、中国まで拡大し、中国では景教と呼称されるまでになった。 </Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_MAHAVIRA_CHAPTER_HISTORY_PARA_1" Language="ja_JP">
+			<Text>【译者注：五十音在学了……】[NEWLINE][NEWLINE]ジャイナ教の開祖。出家以前の名はヴァルダマーナ（サンスクリット語:Vardhamāna）であった。クシャトリヤ出身。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_MAHAVIRA_CHAPTER_HISTORY_PARA_2" Language="ja_JP">
+			<Text>仏教を開いたガウタマ・シッダールタと同時代の人であり、生存年代には異説も多いが、一説によれば紀元前549年生まれ、紀元前477年死没とされている。 </Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_MAHAVIRA_CHAPTER_HISTORY_PARA_3" Language="ja_JP">
+			<Text>古代インドの自由思想家であり、仏教の立場からは「六師外道」のひとり、という位置づけになる。 </Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_MANI_CHAPTER_HISTORY_PARA_1" Language="ja_JP">
+			<Text>【译者注：五十音在学了……】[NEWLINE][NEWLINE]サーサーン朝ペルシア時代の預言者（216年4月14日- 277年2月26日）。マニ教の開祖。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_MANI_CHAPTER_HISTORY_PARA_2" Language="ja_JP">
+			<Text>日本で「マニ」と表記するのは、ヨーロッパ経由で伝来したために生じた不正確な読み方で、原音に忠実な読みでは「マーニー」。 </Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_MANI_CHAPTER_HISTORY_PARA_3" Language="ja_JP">
+			<Text>マニが12歳のとき、自らの使命を明らかにする神の「啓示」に初めて接したといわれる。マニが24歳の時に再び聖天使パラクレートス（アル・タウム）からの啓示をうけ、開教したとされる。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_MOSES_CHAPTER_HISTORY_PARA_1" Language="ja_JP">
+			<Text>【译者注：五十音在学了……】[NEWLINE][NEWLINE]旧約聖書の『出エジプト記』などに現れる、紀元前16世紀または紀元前13世紀ころに活躍したと推測されている、古代イスラエルの民族指導者である。正教会ではモイセイと呼ばれ聖人とされる。 </Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_MOSES_CHAPTER_HISTORY_PARA_2" Language="ja_JP">
+			<Text>モーセはユダヤ教・キリスト教・イスラム教およびバハーイー教など多くの宗教において、最重要な預言者の一人とされる。伝統的には旧約聖書のモーセ五書（トーラー）の著者であるとされてきた。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_MOSES_CHAPTER_HISTORY_PARA_3" Language="ja_JP">
+			<Text>キリスト教美術においてはモーセは通常老人の姿に描かれることが多い。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_MUHAMMAD_CHAPTER_HISTORY_PARA_1" Language="ja_JP">
+			<Text>【译者注：五十音在学了……】[NEWLINE][NEWLINE]イスラム教の開祖、軍事指導者、政治家。アラビア半島中西部、ヒジャーズ地方の中心都市メッカの支配部族であるクライシュ族出身で、その名門ハーシム家のひとり。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_MUHAMMAD_CHAPTER_HISTORY_PARA_2" Language="ja_JP">
+			<Text>イスラム教では、モーセ（ムーサー）、イエス（イーサー）その他に続く、最後にして最高の預言者（ナビー）でありかつ使徒（ラスール）とみなされている。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_MUHAMMAD_CHAPTER_HISTORY_PARA_3" Language="ja_JP">
+			<Text>また世俗君主・軍人としても有能であり、アラビア半島にイスラム国家を打ち立てた。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_GURU_NANAK_CHAPTER_HISTORY_PARA_1" Language="ja_JP">
+			<Text>【译者注：五十音在学了……】[NEWLINE][NEWLINE]シク教の教祖にして初代グル（尊師）。シク教では、歴代グルの全員がグル・ナーナクの聖性と宗教的権威を継承していると考えられている。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_GURU_NANAK_CHAPTER_HISTORY_PARA_2" Language="ja_JP">
+			<Text>身分差別の激しいカースト制には否定的であり、また礼拝後には男女貴賎を問わず、すべての人が同じ場所に座り同じ食べ物を分けあう事を奨励した。これはヒンドゥー教がカーストが異なると一緒に食事をしないことに対する批判である。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_GURU_NANAK_CHAPTER_HISTORY_PARA_3" Language="ja_JP">
+			<Text>グル・ナーナクは数珠を首にかけ、頭にターバンを巻きヒンドゥー教とイスラーム教の両方の身なりをしていた。 グル・ナーナクの教えをヒンドゥー教とイスラーム教の折衷であるという人がいるが、ナーナクはヒンドゥー教でもなくイスラーム教でもない諸宗教の本質を追求したのである。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_BAHA_ULLAH_CHAPTER_HISTORY_PARA_1" Language="ja_JP">
+			<Text>【译者注：五十音在学了……】[NEWLINE][NEWLINE]バハーイー教の預言者・教祖である。日本のバハーイー（バハイ）共同体では「バハオラ」と表記されている。もともとの名はミールザー・ホセイン・アリー。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_BAHA_ULLAH_CHAPTER_HISTORY_PARA_2" Language="ja_JP">
+			<Text>1844年にセイイェド・アリー・モハンマド（称号はバーブ）によってバーブ教が起こされると、その信徒になった。政府によるバーブ教弾圧が始まると、逮捕されるが、この獄中生活の最中に、最初の啓示を受け取ったとされる。 </Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_BAHA_ULLAH_CHAPTER_HISTORY_PARA_3" Language="ja_JP">
+			<Text>1863年、家族とともにイラクのバグダード（オスマン帝国領）に追放され、さらにイスタンブール、エディルネに移されるが、この間に、レズワンの園で自身がバーブが登場を予言した預言者、「神が現し給う者」であると明かす。アラビア語で「神の栄光」を意味するバハー・ウッラーの称号を名乗り、彼自身が神の預言を受けて著した『最も神聖なる書』を教典とする新宗教バハーイー教を興した。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_STEVE_ELEY_CHAPTER_HISTORY_PARA_1" Language="ja_JP">
+			<Text>【译者注：五十音在学了……】[NEWLINE][NEWLINE]見えざるピンクのユニコーンについて声明を発表した人物。その文章は以下のようなものである。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_STEVE_ELEY_CHAPTER_HISTORY_PARA_2" Language="ja_JP">
+			<Text>”見えざるピンクのユニコーン達は偉大なるスピリチュアルパワーの存在である。我々は彼女らが目に見えないと同時にピンク色で存在することが出来るがゆえにそれを承知している。すべての宗教と同様、見えざるピンクのユニコーンの教義は論理と信仰に基づいている。我々は彼女らがピンクであると信じている。我々は、我々が彼女らを見ることができないから見えないのだと論理的に知っている。”</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_STEVE_ELEY_CHAPTER_HISTORY_PARA_3" Language="ja_JP">
+			<Text>イーリーは、いかなる宗教でも福音を記す者はすべての真実の力を持つ者であり、決して迫害を受ける者ではないという定説に従い、自身を信仰の「擁護者と代弁者の長」と名付け、他の司祭長と祭司を任命した。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_JOHN_WESLEY_CHAPTER_HISTORY_PARA_1" Language="ja_JP">
+			<Text>【译者注：五十音在学了……】[NEWLINE][NEWLINE]18世紀のイングランド国教会の司祭で、その後メソジスト運動と呼ばれる信仰覚醒運動を指導した人物。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_JOHN_WESLEY_CHAPTER_HISTORY_PARA_2" Language="ja_JP">
+			<Text>この運動から生じたのがメソジスト派というプロテスタント教会であり、アメリカ合衆国・ヨーロッパ、アジアで大きな勢力をもつに至った。特にアメリカではプロテスタント系で信徒数第2の教派である。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_JOHN_WESLEY_CHAPTER_HISTORY_PARA_3" Language="ja_JP">
+			<Text>聖化を強調し、『キリスト者の完全』を唱えた。これはウェスレー派のメソジストときよめを強調する「ホーリネス」に継承されている。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_HUYNH_PHU_SO_CHAPTER_HISTORY_PARA_1" Language="ja_JP">
+			<Text>【译者注：五十音在学了……】[NEWLINE][NEWLINE]1939年、メコン・デルタの安江省新州鎮和好（ホアハオ）村で創立されたホアハオ教と呼ばれる宗教の創始者。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_HUYNH_PHU_SO_CHAPTER_HISTORY_PARA_2" Language="ja_JP">
+			<Text>ソーは病人を治すすべがあると信じられメコン・デルタでは50万人の信者をもつといわれるほど急拡大し、仏印進駐では日本軍を歓迎した。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_HUYNH_PHU_SO_CHAPTER_HISTORY_PARA_3" Language="ja_JP">
+			<Text>1947年にベトミン（ベトナム独立同盟会）に殺害された。</Text>
+		</Replace>
+		
+	<!-- YMGP_Text_JP.xml文件 -->
+
+		<Replace Tag="LOC_GREATPERSON_CARTOGRAPHYTECHBOOST" Language="zh_Hans_CN">
+			<Text>触发“制图学”的 [ICON_TechBoosted] 尤里卡。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATPERSON_SQUARE_RIGGINGTECHBOOST" Language="zh_Hans_CN">
+			<Text>触发“横帆装置”的 [ICON_TechBoosted] 尤里卡。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATPERSON_WORKSHOP_PRODUCTION" Language="zh_Hans_CN">
+			<Text>工作坊额外+{Amount} [ICON_Production] 生产力。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATPERSON_NUCLEAR_FISSIONTECHBOOST" Language="zh_Hans_CN">
+			<Text>触发“核裂变”的 [ICON_TechBoosted] 尤里卡。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATPERSON_1INFOMATIONTECHBOOST" Language="zh_Hans_CN">
+			<Text>触发{Amount}个信息时代科技的 [ICON_TechBoosted] 尤里卡。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATPERSON_GRANT_COMPUTERS" Language="zh_Hans_CN">
+			<Text>奖励{Amount}个人造奢侈品资源“个人计算机”，可提供6点 [ICON_Amenities] 宜居度。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATPERSON_CASEY_RYBACK_ACTIVE" Language="zh_Hans_CN">
+			<Text>训练海军远程单位+20% [ICON_Production] 生产力。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATPERSON_GOLD_EX" Language="zh_Hans_CN">
+			<Text>获得{Amount}个 [ICON_Gold] 金币。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATPERSON_YOUSUKE_KADOMATSU_ACTIVE" Language="zh_Hans_CN">
+			<Text>立即获得一艘拥有一次 [ICON_Promotion] 强化的导弹巡洋舰。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATPERSON_STANISLAW_MACZEK_ACTIVE" Language="zh_Hans_CN">
+			<Text>训练重骑兵单位+20% [ICON_Production] 生产力。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATPERSON_SANITATIONTECHBOOST" Language="zh_Hans_CN">
+			<Text>触发“卫生设备”的 [ICON_TechBoosted] 尤里卡。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATPERSON_SCIENTIFIC_THEORYTECHBOOST" Language="zh_Hans_CN">
+			<Text>触发“科学理论”的 [ICON_TechBoosted] 尤里卡。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATPERSON_FLORENCE_NIGHTINGALE_ACTIVE" Language="zh_Hans_CN">
+			<Text>[ICON_Damaged] 受损单位每回合恢复生命值+10。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATPERSON_ELECTRICITYTECHBOOST" Language="zh_Hans_CN">
+			<Text>触发“电力”的 [ICON_TechBoosted] 尤里卡。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATPERSON_FACTORY_PRODUCTION" Language="zh_Hans_CN">
+			<Text>工厂额外+{Amount} [ICON_Production] 生产力。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATPERSON_FACTORY_GOLD" Language="zh_Hans_CN">
+			<Text>工厂额外+{Amount} [ICON_Gold] 金币。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATPERSON_GUAN_YU_ACTIVE" Language="zh_Hans_CN">
+			<Text>使一名陆地战斗单位获得一次 [ICON_Promotion] 强化。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATPERSON_YOSHITUNE_MINAMOTO_ACTIVE" Language="zh_Hans_CN">
+			<Text>将一名陆地战斗单位变为 [ICON_Corps] 军团。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATPERSON_NIKOLA_SUBIC_ZRINSKI_ACTIVE" Language="zh_Hans_CN">
+			<Text>赠予陆地战斗单位一次 [ICON_Promotion] 强化，并+50%战斗经验值获取。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATPERSON_UNIVERSITY_YUKICHI_FUKUZAWA_SCIENCE" Language="zh_Hans_CN">
+			<Text>大学额外+{Amount} [ICON_Science] 生产力。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATPERSON_GRANT_TEA" Language="zh_Hans_CN">
+			<Text>获得{Amount}个 [ICON_RESOURCE_TEA] 茶资源。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_RESOURCE_COMPUTERS_NAME" Language="zh_Hans_CN">
+			<Text>个人计算机</Text>
+		</Replace>
+
+		<Replace Tag="LOC_ABILITY_NIKOLA_SUBIC_ZRINSKI_BONUS_EXPERIENCE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>战斗经验值获取+50%。（尼古拉·舒比奇·兹林斯基）</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

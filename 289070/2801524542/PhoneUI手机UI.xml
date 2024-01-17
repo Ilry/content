@@ -1,0 +1,87 @@
+ <?xml version="1.0" encoding="utf-8"?>
+<!-- WAF_PPK_UI -->
+<!-- Author: 帅气的凯(皮皮凯) -->
+<!-- DateCreated: 26/4/2022 14:56:19 PM -->
+<Context Name="WAFCtx">
+	<Container ID="WAFContentContainer" Size="auto,auto" Anchor="L,B" Offset="450,-5">
+		<AlphaAnim ID="WAFLaunchBarBtnTimer" Begin="0" End="1" Speed="100" Cycle="Once" Stopped="1"/>
+		<!--启动按钮-->
+		<Container ID="WAFLaunchBarButtonCont" Size="parent,auto" Anchor="L,B" Offset="0,0" ConsumeMouse="1">
+        	<Button ID="WAFLaunchBarButton" Anchor="L,B" Size="90,90"  Texture="LaunchBar_Hook_ButtonMinimap" Style="ButtonNormalText" ToolTip="LOC_WAF_PPK_TOOLTIP" CheckTexture="Controls_Bolt" CheckColor="0,0,0,0" StretchMode="Fill" StateOffsetIncrement="0,40" SingleStateTextureHeight="40">
+				<Image Texture="MiniMap_Full" StretchMode="Fill" Size="49,49" Anchor="C,C"/>
+				<Label Offset="16,15" Style="FontNormal28" String="LOC_WAF_PPK_STRING"Anchor="R,B"/>
+         	</Button>
+    	</Container>
+		<!--菜单-->
+		<Container	Size="800,auto" ID="WAFDlgContainer" Anchor="R,B"	AnchorSide="I,I"	Offset="-40,350" ConsumeMouse="1" Hidden="1">
+			<Grid ID="WAFDlgContentGridBg"	Anchor="R,T" Offset="0,0"	Size="parent,auto"	Texture="Controls_PanelBlue" ConsumeMouse="0" Hidden="1" SliceCorner="25,28" SliceSize="33,18" SliceTextureSize="83,75" >
+			</Grid>
+			<Grid ID="WAFDlgContentGrid"	Anchor="R,T" Offset="0,0"	Size="parent,auto" Style="CityPanelSlotGrid" ConsumeMouse="1" Hidden="0" >
+				<Stack	ID="WAFDlgContext" Anchor="R,T"	Size="parent,auto" StackGrowth="Bottom" Padding="3">
+					<Stack	ID="WAFStackMain" Anchor="R,T"	Size="parent,auto" StackGrowth="Bottom" Padding="3">
+						<Grid Anchor="C,C" Offset="0,10"	Size="parent-80,48" Style="CityPanelSlotGrid">
+							<Label ID="WAFHeaderLbl" Anchor="C,C" String="LOC_WAF1_PPK_STRING" Style="FontNormal28" FontStyle="stroke" ColorSet="BodyTextBright"/>
+						</Grid>
+						<Container	ID="WAFStackTerrainBody"		Anchor="R,T" Offset="20,0"	Size="parent,auto" Hidden="0">
+							<Stack	ID="WAFStackTerrainBody1"		Anchor="R,T"				Size="parent,auto" StackGrowth="Bottom" Padding="3">
+									
+								<Container	ID="WAFStackTerType"		Anchor="R,T" Offset="0,0"	Size="parent-80,auto" StackGrowth="Right" Padding="20" Style="CityPanelSlotGrid">
+									<Label ID="WAFLblTerType"			Anchor="L,C" Offset="0,0"	Size="220,auto"	WrapWidth="210" String="LOC_WAF2_PPK_STRING"	Style="FontNormal28" FontStyle="stroke" ColorSet="BodyTextBright" Align="Right"/>
+									<SimplePullDown ID="WAFPDTerType"	Anchor="R,C" Offset="40,0"	Size="460,56"					ToolTip="LOC_WAF2_PPK_TOOLTIP"	Style="PullDownBlue" ScrollThreshold="500" SpaceForScroll="10" EntryInstance="InstanceOne" AutoFlip="1" />
+								</Container>
+								
+								<Container	ID="WAFStackRes"			Anchor="R,T" Offset="0,0"	Size="parent-80,auto" StackGrowth="Right" Padding="20" Style="CityPanelSlotGrid">
+									<Label ID="WAFLblRes"				Anchor="L,C" Offset="0,0"	Size="220,auto"	WrapWidth="400" String="LOC_WAF3_PPK_STRING"	Style="FontNormal28" FontStyle="stroke" ColorSet="BodyTextBright" Align="Right"/>
+									<Grid								Anchor="R,C" Offset="80,0"	Size="240,56"					Texture="Controls_TextArea" SliceTextureSize="22,22" SliceCorner="11,20" >
+										<EditBox ID="WAFEBResValue"			Anchor="C,C"			Size="parent-80,parent"			ToolTip="LOC_WAF3_PPK_TOOLTIP"	Style="FontNormal28" FontStyle="Stroke" ColorSet="BodyTextBright" NumberInput="1" EditMode="1" MaxLength="3" ConsumeMouse="1" HighlightColor="25,120,154,200"/>
+										<Button ID="WAFBtnResValueLeft"		Anchor="L,C"	AnchorSide="O,I"	Style="ArrowButtonLeft" />
+										<Button ID="WAFBtnResValueRight"	Anchor="R,C"	AnchorSide="O,I"	Style="ArrowButtonRight" />
+									</Grid>
+								</Container>
+							</Stack>
+						</Container>						
+					</Stack>
+						
+					<Stack	ID="WAFStackBtnAll"	Anchor="R,B"	Offset="0,10"	Size="parent,auto" StackGrowth="Bottom" Padding="3">
+						<Container	ID="WAFTabsCtr2"		Anchor="C,T" Offset="0,0"	Size="parent,6" >
+							<Line   ID="WAFTabs2"		Start="20,0"	End="380,0"		Color="25,25,25,150"	Width="2" />
+						</Container>
+							
+						<Stack	ID="WAFStackBtn0" Anchor="R,T" Offset="40,0" Size="parent-80,auto" StackGrowth="Left" Padding="10" Style="CityPanelSlotGrid">
+							<Container	ID="WAFStackBtns00"		Anchor="R,C" Offset="0,0"	Size="220,28" StackGrowth="Right" Style="CityPanelSlotGrid">
+								<Label ID="WAFLblBg"			Anchor="L,C" Offset="2,0"	Size="180,auto"	WrapWidth="180" String="LOC_WAF4_PPK_STRING" Style="FontNormal28" FontStyle="stroke" ColorSet="BodyTextBright" Align="Right" ToolTip="LOC_WAF4_PPK_TOOLTIP"/>
+								<CheckBox	ID="WAFCBBg"		Anchor="L,C" Offset="167,0"	WrapWidth="200" TextOffset="1" String="" Style="MainMenuCheck" ColorSet="BodyTextBright" Align="Right" Disabled="false" IsChecked="0" ToolTip="LOC_WAF4_PPK_TOOLTIP"/>
+							</Container>
+							
+							<Container	ID="WAFStackBtns01"		Anchor="R,C" Offset="0,0"	Size="220,56" StackGrowth="Right" Style="CityPanelSlotGrid">
+								<Label ID="WAFLblSave"			Anchor="L,C" Offset="2,0"	Size="180,auto"	WrapWidth="180" String="LOC_WAF5_PPK_STRING" Style="FontNormal28" FontStyle="stroke" ColorSet="BodyTextBright" Align="Right" ToolTip="LOC_WAF5_PPK_TOOLTIP"/>
+								<CheckBox	ID="WAFCBSave"		Anchor="L,C" Offset="130,0"	WrapWidth="300" TextOffset="1" String="" Style="MainMenuCheck" ColorSet="BodyTextBright" Align="Right" Disabled="false" IsChecked="1" ToolTip="LOC_WAF5_PPK_TOOLTIP"/>
+							</Container>					
+						</Stack>
+						
+						<Stack	ID="WAFStackBtn1" Anchor="R,T" Offset="40,0" Size="parent-80,auto" StackGrowth="Left" Padding="10" Style="CityPanelSlotGrid">
+							<GridButton ID="WAFOK"		Anchor="R,C" Offset="0,0" Size="228,52"  Style="ShellButton" String="" ToolTip="LOC_WAF6_PPK_TOOLTIP" >
+								<Label ID="WAFOKLbl" Anchor="C,C" String="LOC_WAF6_PPK_STRING" Style="FontNormal28" FontStyle="stroke" ColorSet="BodyTextBright"/>
+							</GridButton>
+
+							<GridButton ID="WAFFixUI"	Anchor="R,C" Offset="0,0" Size="140,50" Style="ShellButton" String="" ToolTip="LOC_WAF7_PPK_TOOLTIP" >
+								<Label ID="WAFFixUILbl" Anchor="C,C" String="LOC_WAF7_PPK_STRING" Style="FontNormal28" FontStyle="stroke" ColorSet="BodyTextBright"/>
+							</GridButton>
+							
+							<GridButton ID="PPKStop"		Anchor="R,C" Offset="0,0" Size="140,50"  Style="ShellButton" String="" ToolTip="LOC_PPK_TOOLTIP" >
+								<Label ID="PPKStopLbl" Anchor="C,C" String="LOC_PPK_STRING" Style="FontNormal28" FontStyle="stroke" ColorSet="BodyTextBright"/>
+							</GridButton>
+							
+							<GridButton ID="PPKRevealAll"		Anchor="R,C" Offset="0,0" Size="140,50"  Style="ShellButton" String="" ToolTip="LOC_PPK0_TOOLTIP" >
+								<Label ID="PPKRevealAllLbl" Anchor="C,C" String="LOC_PPK0_STRING" Style="FontNormal28" FontStyle="stroke" ColorSet="BodyTextBright"/>
+							</GridButton>
+						</Stack>
+							
+					</Stack>				
+					<Container Size="parent-80,16" Anchor="R,T"	Offset="0,0" ConsumeMouse="0" />
+				</Stack>				
+			</Grid>
+		</Container>
+	</Container>
+</Context>
+

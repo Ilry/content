@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'Monopoly++ Resource Requirement Setup'CN_Add_FE -->
+<!-- Author: Flactine , Clear8Sky -->
+<!-- DateCreated: 2021/10/7 13:39:30 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Monopoly++: Resource Requirement Setup” 。该文件在 FrontEnd 时载入，无需任何 Criteria -->
+	<LocalizedText>
+		<Replace Tag="LOC_LEU_MONOPOLY_SETUP_NAME" Language="zh_Hans_CN">
+			<Text>垄断阈值</Text>
+		</Replace>
+		<Replace Tag="LOC_LEU_MONOPOLY_SETUP_DESC" Language="zh_Hans_CN">
+			<Text>生产 [ICON_GreatWork_Product] 垄断产品所需的奢侈资源占有百分比。</Text>
+		</Replace>
+		<Replace Tag="LOC_LEU_MONOPOLY_SETUP_20_NAME" Language="zh_Hans_CN">
+			<Text>20%</Text>
+		</Replace>
+		<Replace Tag="LOC_LEU_MONOPOLY_SETUP_20_DESC" Language="zh_Hans_CN">
+			<Text>生产 [ICON_GreatWork_Product] 垄断产品所需的特定资源的数量占全地图该资源数量的百分比。[NEWLINE][NEWLINE]控制一种奢侈资源的20%即可获得 [Icon_Gold] 金币和 [Icon_Tourism] 旅游业绩加成。[NEWLINE]控制60%即可获得额外的 [Icon_Gold] 金币加成。</Text>
+		</Replace>
+		<Replace Tag="LOC_LEU_MONOPOLY_SETUP_40_NAME" Language="zh_Hans_CN">
+			<Text>40%</Text>
+		</Replace>
+		<Replace Tag="LOC_LEU_MONOPOLY_SETUP_40_DESC" Language="zh_Hans_CN">
+			<Text>生产 [ICON_GreatWork_Product] 垄断产品所需的特定资源的数量占全地图该资源数量的百分比。[NEWLINE][NEWLINE]控制一种奢侈资源的40%即可获得 [Icon_Gold] 金币和 [Icon_Tourism] 旅游业绩加成。[NEWLINE]控制70%即可获得额外的 [Icon_Gold] 金币加成。</Text>
+		</Replace>
+		<Replace Tag="LOC_LEU_MONOPOLY_SETUP_60_NAME" Language="zh_Hans_CN">
+			<Text>60%</Text>
+		</Replace>
+		<Replace Tag="LOC_LEU_MONOPOLY_SETUP_60_DESC" Language="zh_Hans_CN">
+			<Text>生产 [ICON_GreatWork_Product] 垄断产品所需的特定资源的数量占全地图该资源数量的百分比。[NEWLINE][NEWLINE]控制一种奢侈资源的60%即可获得 [Icon_Gold] 金币和 [Icon_Tourism] 旅游业绩加成。[NEWLINE]控制90%即可获得额外的 [Icon_Gold] 金币加成。</Text>
+		</Replace>
+		<Replace Tag="LOC_LEU_MONOPOLY_SETUP_80_NAME" Language="zh_Hans_CN">
+			<Text>80%</Text>
+		</Replace>
+		<Replace Tag="LOC_LEU_MONOPOLY_SETUP_80_DESC" Language="zh_Hans_CN">
+			<Text>生产 [ICON_GreatWork_Product] 垄断产品所需的特定资源的数量占全地图该资源数量的百分比。[NEWLINE][NEWLINE]控制一种奢侈资源的80%即可获得 [Icon_Gold] 金币和 [Icon_Tourism] 旅游业绩加成。[NEWLINE]控制90%即可获得额外的 [Icon_Gold] 金币加成。</Text>
+		</Replace>
+		<Replace Tag="LOC_LEU_MONOPOLY_SETUP_100_NAME" Language="zh_Hans_CN">
+			<Text>100%</Text>
+		</Replace>
+		<Replace Tag="LOC_LEU_MONOPOLY_SETUP_100_DESC" Language="zh_Hans_CN">
+			<Text>生产 [ICON_GreatWork_Product] 垄断产品所需的特定资源的数量占全地图该资源数量的百分比。[NEWLINE][NEWLINE]控制一种奢侈资源的全部才能获得 [Icon_Gold] 金币和 [Icon_Tourism] 旅游业绩加成。</Text>
+		</Replace>
+		
+		<!-- 2021/05/07补更 -->
+
+		<Replace Tag="LOC_LEU_MONOPOLY_SETUP_101_NAME" Language="zh_Hans_CN">
+			<Text>无垄断</Text>
+		</Replace>
+		<Replace Tag="LOC_LEU_MONOPOLY_SETUP_101_DESC" Language="zh_Hans_CN">
+			<Text>禁用 [ICON_GreatWork_Product] 产品垄断加成。</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Default" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Default</Configuration>
+    <Name>Greatest Cities</Name>
+    <Guid>9ec7d842-9ca3-4c1b-893f-2672dcaca71f</Guid>
+    <ProjectGuid>f59c04b8-2217-41bd-bc7c-91488fa26f98</ProjectGuid>
+    <ModVersion>1</ModVersion>
+    <Teaser>The World's Greatest Cities</Teaser>
+    <Description>The World's Greatest Cities now, and at the end of each era</Description>
+    <Authors>Technoluddite</Authors>
+    <SpecialThanks>Infixo</SpecialThanks>
+    <AffectsSavedGames>false</AffectsSavedGames>
+    <SupportsSinglePlayer>true</SupportsSinglePlayer>
+    <SupportsMultiplayer>true</SupportsMultiplayer>
+    <SupportsHotSeat>true</SupportsHotSeat>
+    <CompatibleVersions>1.2,2.0</CompatibleVersions>
+    <AssociationData><![CDATA[<Associations />]]></AssociationData>
+    <AssemblyName>ak_GreatestCities</AssemblyName>
+    <RootNamespace>ak_GreatestCities</RootNamespace>
+    <InGameActionData><![CDATA[<InGameActions><ImportFiles id="AKGC_Imports"><File>Serialize.lua</File><File>Textures/akgc_notification_icons100.dds</File><File>Textures/akgc_notification_icons40.dds</File><File>Textures/akgc_notification_icons36.dds</File><File>AKGC_DefaultOptions.lua</File></ImportFiles><UpdateIcons id="AKGC_Icons"><File>AKGC_Icons.sql</File></UpdateIcons><UpdateDatabase id="AKGC_UpdateDatabase"><Properties><LoadOrder>1</LoadOrder></Properties><File>AKGC_Database.sql</File></UpdateDatabase><UpdateDatabase id="AKGC_Notifications"><Properties><LoadOrder>1</LoadOrder></Properties><File>AKGC_Notifications.xml</File></UpdateDatabase><AddUserInterfaces id="AKGC_Cities"><Properties><Context>InGame</Context></Properties><File>GreatestCities.xml</File></AddUserInterfaces><UpdateText id="AKGC_UpdateText"><File>Text/AKGC_Text.xml</File><File>Text/AKGC_Text-zh_Hans_CN.xml</File></UpdateText><UpdateDatabase id="RLL_Database"><File>RLL/ReportsListLoader.sql</File></UpdateDatabase><ImportFiles id="RLL_Imports"><File>RLL/ReportsListLoader.lua</File></ImportFiles><ReplaceUIScript id="RLL_ReplaceUI_ReportsList"><Properties><LuaContext>ReportsList</LuaContext><LuaReplace>RLL/ReportsListLoader.lua</LuaReplace><LoadOrder>99999</LoadOrder></Properties></ReplaceUIScript></InGameActions>]]></InGameActionData>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Default' ">
+    <OutputPath>.</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="ak_GreatestCities.Art.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AKGC_Database.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="AKGC_DefaultOptions.lua">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="AKGC_Icons.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="AKGC_Notifications.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="GreatestCities.lua">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="GreatestCities.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="RLL\ReportsListLoader.lua">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="RLL\ReportsListLoader.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Serialize.lua">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\akgc_notification_icons100.dds">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\akgc_notification_icons36.dds">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Textures\akgc_notification_icons40.dds">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Text\AKGC_Text-zh_Hans_CN.xml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Text\AKGC_Text.xml">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Textures" />
+    <Folder Include="Text" />
+    <Folder Include="RLL" />
+  </ItemGroup>
+  <Import Project="$(MSBuildLocalExtensionPath)Civ6.targets" />
+</Project>

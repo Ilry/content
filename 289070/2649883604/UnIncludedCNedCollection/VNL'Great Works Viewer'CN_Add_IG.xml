@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'Great Works Viewer'CN_Add_IG -->
+<!-- Author: 邓半仙人 , Clear8Sky -->
+<!-- DateCreated: 2021/9/26 20:49:47 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Great Works Viewer” 。该文件在 InGame 时载入，无需任何 Criteria -->
+	<LocalizedText>
+		<Replace Tag="LOC_GREATWORKSVIEW_ORDER_BY_TYPE" Language="zh_Hans_CN">
+			<Text>按类型</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORKSVIEW_ORDER_BY_TYPE_TT" Language="zh_Hans_CN">
+			<Text>切换到按建筑类型排序</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORKSVIEW_ORIG_ORDER" Language="zh_Hans_CN">
+			<Text>原始</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORKSVIEW_ORIG_ORDER_TT" Language="zh_Hans_CN">
+			<Text>切换到原始顺序（按城市排序）</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORKSVIEW_ALLOWY" Language="zh_Hans_CN">
+			<Text>允许Y</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORKSVIEW_ALLOWY_TT" Language="zh_Hans_CN">
+			<Text>允许窗口纵向展开</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORKSVIEW_DISALLOWY" Language="zh_Hans_CN">
+			<Text>不允许Y</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORKSVIEW_DISALLOWY_TT" Language="zh_Hans_CN">
+			<Text>窗口不纵向展开</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORKSVIEW_ART" Language="zh_Hans_CN">
+			<Text>艺术</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORKSVIEW_ART_TT" Language="zh_Hans_CN">
+			<Text>显示具有艺术巨作槽位的位置</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORKSVIEW_ARTIFACT" Language="zh_Hans_CN">
+			<Text>文物</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORKSVIEW_ARTIFACT_TT" Language="zh_Hans_CN">
+			<Text>显示具有文物槽位的位置</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORKSVIEW_MUSIC" Language="zh_Hans_CN">
+			<Text>音乐</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORKSVIEW_MUSIC_TT" Language="zh_Hans_CN">
+			<Text>显示具有音乐巨作槽位的位置</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORKSVIEW_RELIC" Language="zh_Hans_CN">
+			<Text>遗物</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORKSVIEW_RELIC_TT" Language="zh_Hans_CN">
+			<Text>显示具有遗物槽位的位置</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORKSVIEW_WRITING" Language="zh_Hans_CN">
+			<Text>著作</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORKSVIEW_WRITING_TT" Language="zh_Hans_CN">
+			<Text>显示具有著作槽位的位置</Text>
+		</Replace>
+		<Replace Tag="LOC_CUI_GWV_THEMING_HELPER" Language="zh_Hans_CN">
+			<Text>主题化</Text>
+		</Replace>
+		<Replace Tag="LOC_CUI_GWV_THEMING_HELPER_TOOLTIP" Language="zh_Hans_CN">
+			<Text>选择三个相同颜色和不同编号的巨作/文物来完成一个主题。</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

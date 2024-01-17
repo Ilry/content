@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context>
+    <Grid ID="AutoGrid" Anchor="L,C" Size="auto,auto" Offset="15,0">
+        <Button	ID="AutoButton" Size="40,40"  Texture="LaunchBar_Hook_ButtonSmall" Style="ButtonDisabledText" ToolTip="LOC_AUTO_CITY">
+            <Image Anchor="C,C" Size="26,26" IconSize="26" Icon="ICON_STAT_GOVERNORS"/>
+        </Button>
+    </Grid>
+</Context>

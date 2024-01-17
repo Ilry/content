@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RF'Chile Pedro de Valdivia'CN_Add_FI -->
+<!-- Author: ChiYiuWong , Clear8Sky -->
+<!-- DateCreated: 2021/9/26 8:59:17 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Chile: Pedro de Valdivia” 。该文件在 FrontEnd 与 InGame 时载入，需 Criteria ： Active_Expansion_1 -->
+	<LocalizedText>
+
+		<!-- 模组 -->
+
+		<Replace Tag="LOC_MOD_JFD_CHILE_VALDIVIA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>------------------------------------[NEWLINE]领袖名称 -- 佩德罗·德·瓦尔迪维亚[NEWLINE][NEWLINE]领袖特性 - 赐封制度[NEWLINE]位于非原始首都所在大陆上建立城市可免费获得一名建造者和大量 [ICON_Gold] 金币奖励。完成市政“探索”后解锁特色单位“亚纳科纳”。[NEWLINE][NEWLINE]特色单位 - 亚纳科纳[NEWLINE]佩德罗·德·瓦尔迪维亚作为领袖时的智利文艺复兴时期特色侦察单位，可在没有开放边境的情况下进入其他文明境内。[NEWLINE][NEWLINE]领袖议程 - 新埃斯特雷马杜拉[NEWLINE]寻求尽可能多的领土，尊重那些追随他的宗教并且尽可能开拓疆土的文明。认为那些追随他的宗教，但只控制一小片土地的文明是对上帝的侮辱。</Text>
+		</Replace>
+
+		<!-- 领袖 -->
+		
+		<Replace Tag="LOC_LEADER_JFD_VALDIVIA_CHILE_NAME" Language="zh_Hans_CN">
+			<Text>佩德罗·德·瓦尔迪维亚</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_EXTREMADURA_CHILE" Language="zh_Hans_CN">
+			<Text>埃斯特雷马杜拉</Text>
+		</Replace>
+
+		<!-- 议程 -->
+
+		<Replace Tag="LOC_AGENDA_JFD_NUEVA_EXTREMADURA_CHILE_NAME" Language="zh_Hans_CN">
+			<Text>新埃斯特雷马杜拉</Text>
+		</Replace>
+		<Replace Tag="LOC_AGENDA_JFD_NUEVA_EXTREMADURA_CHILE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>寻求尽可能多的领土，尊重那些追随他的宗教并且尽可能开拓疆土的文明。认为那些追随他的宗教，但只控制一小片土地的文明是对上帝的侮辱。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_JFD_VALDIVIA_CHILE_REASON_MANY_CITIES_AND_SAME_RELIGION" Language="zh_Hans_CN">
+			<Text>（您信仰相同宗教并且拥有许多城市）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_AGENDA_JFD_NUEVA_EXTREMADURA_CHILE_MANY_CITIES_AND_SAME_RELIGION" Language="zh_Hans_CN">
+			<Text>佩德罗·德·瓦尔迪维亚赞扬你传播对上帝的信仰。</Text>
+		</Replace>
+
+		<!-- 载入 -->
+
+		<Replace Tag="LOC_LOADING_INFO_LEADER_JFD_VALDIVIA_CHILE" Language="zh_Hans_CN">
+			<Text>佩德罗·德·瓦尔迪维亚，新世界在召唤，光荣和财富在等待着您。到遥远的地方建立新的殖民地。让您的开拓者工作起来，并使智利成为西班牙帝国羡慕的对象。</Text>
+		</Replace>
+
+		<!-- 特性 -->
+
+		<Replace Tag="LOC_TRAIT_LEADER_JFD_ENCOMIENDA_CHILE_NAME" Language="zh_Hans_CN">
+			<Text>赐封制度</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_JFD_ENCOMIENDA_CHILE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>位于非原始首都所在大陆上建立城市可免费获得一名建造者和大量 [ICON_Gold] 金币奖励。完成市政“探索”后解锁特色单位“亚纳科纳”。</Text>
+		</Replace>
+
+		<!-- 百科 -->
+
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_VALDIVIA_CHILE_TITLE" Language="zh_Hans_CN">
+			<Text>佩德罗·德·瓦尔迪维亚</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_VALDIVIA_CHILE_TAB_NAME" Language="zh_Hans_CN">
+			<Text>佩德罗·德·瓦尔迪维亚</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_VALDIVIA_CHILE_SUBTITLE" Language="zh_Hans_CN">
+			<Text>智利皇家总督</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_VALDIVIA_CHILE_QUOTE" Language="zh_Hans_CN">
+			<Text>如果死亡来自于西班牙，那我们都会长命百岁。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_VALDIVIA_CHILE_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>佩德罗·德·瓦尔迪维亚出生于埃斯特雷马杜拉的拉塞雷纳区。早年加入西班牙军队，在佛兰德斯战斗，后在1525年参加帕维亚战役。他于1535年到达美洲，在委内瑞拉度过了平静的一年，然后前往秘鲁。在那里，他于1538年与埃尔南多·皮萨罗一起参加了拉斯萨利纳斯之战，阿尔马格罗被击败并被俘虏。瓦尔迪维亚已在西班牙结婚，但在秘鲁，他与寡妇伊内斯·德·苏亚雷斯产生了感情，后者以情妇的身份陪伴他到智利。[NEWLINE][NEWLINE]1540年初，经弗朗西斯科·皮萨罗的许可，瓦尔迪维亚带着小探险队和一位伙伴桑乔·德霍斯启程。在途中，桑乔寻求唯一的领导权，试图谋杀瓦尔迪维亚但失败了。他被赦免，但此后不得不接受从属地位。[NEWLINE][NEWLINE]在智利中部，瓦尔迪维亚于1541年在马波乔河上建立了圣地亚哥，3年后胡安·博洪在科金博河谷建立了拉塞雷纳。紧随其后的是康塞普西翁、比利亚里卡、瓦尔迪维亚和安哥尔。瓦尔帕莱索虽然从一开始就被西班牙人用作港口，但直到很久以后才拥有可观的人口。圣地亚哥在其建立后不久在瓦尔迪维亚离开期间被阿空加瓜美洲原住民摧毁。然而，那里的西班牙人并没有被歼灭，伊内斯·德·苏亚雷斯在很大程度上进行了防守，并使进攻行动重新开始。最终，来自他的政治上司的压力迫使瓦尔迪维亚结束与伊内斯的关系。[NEWLINE][NEWLINE]当贡萨洛·皮萨罗 叛乱在秘鲁开始时，叛乱分子试图将瓦尔迪维亚拉拢到他们那一边，但没有成功。1548年初，瓦尔迪维亚加入了秘鲁佩德罗·德拉加斯卡的皇家军队，他的军事经验在当年4月9日萨吉萨瓜纳的胜利中起到了重要作用。瓦尔迪维亚返回智利后，他的地位和威望大大加强。[NEWLINE][NEWLINE]早些时候，在得知1541年弗朗西斯科·皮萨罗被谋杀后，瓦尔迪维亚已将智利从秘鲁的控制中移除，只承认皇家权威，皇室认为这种安排是可以接受的。现在在自己的领地中他拥有完整的权力，他推动了向南的探索，并通过将土地分配给他最能干的追随者并以恩赐的方式分配给印第安人来帮助该国的发展。智利拥有矿产，但瓦尔迪维亚将采矿业从属于农业和畜牧业。[NEWLINE][NEWLINE]瓦尔迪维亚在1550年与比奥比奥河以外好战的马普切人发生冲突，他击败了他们，但并没有打消他们的抵抗意志，当征服者在他们的领土上建立康塞普西翁定居点时，这种意志变得更加强烈。他于1553年反击他们并在图卡佩尔建造了一座堡垒。他曾在早些时候抓到了莱夫扎茹，据推测，他与马普切青年莱夫扎茹成为了朋友。莱夫扎茹秘密地忠于自己的人民，并重新加入他们，向马普切酋长提供了一种可以抓到瓦尔迪维亚的方法。这位西班牙领导人于1553年圣诞节被捕。尽管对他的处决存在不同说法，但最有可能的是首领皮尔迈肯用棒槌击中了他的头部。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_VALDIVIA_CHILE_CHAPTER_CAPSULE_BODY" Language="zh_Hans_CN">
+			<Text>智利毫不迟疑地寻求着扩大领土，尤其是沿着海岸线。事实上，他们的同胞将用自己的生命捍卫这项权利。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_VALDIVIA_CHILE_CHAPTER_DETAILED_BODY" Language="zh_Hans_CN">
+			<Text>智利努力争取尽可能多的海岸线和战略领土，通过建造沿海岸改良设施更快地扩张。智利凭借其特色改良设施“硝石矿场”，发展出富有生产力的矿业，在佩德罗·德·瓦尔迪维亚的领导下，将矿业变成财富。保护这一行业将是智利的重点之一，因为这将确保其人民保持忠诚。这种忠诚使他们建造一支强大的现代海军，以追求统治胜利。</Text>
+		</Replace>
+
+		<!-- 外交 -->
+
+		<!-- 初次见面 -->
+		<!-- 开场白 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_JFD_VALDIVIA_CHILE_ANY" Language="zh_Hans_CN">
+			<Text>我是智利皇家总督佩德罗·德·瓦尔迪维亚。如果你来这里是为了找寻荣誉，那你得移步他处了，因为我已经把荣誉拿走了。</Text>
+		</Replace>
+
+		<!-- 到附近城市的邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_JFD_VALDIVIA_CHILE_ANY" Language="zh_Hans_CN">
+			<Text>智利一天天地发展壮大。来吧，你愿不愿意到我附近的城市来逛逛，看看她是怎样兴旺发达的？</Text>
+		</Replace>
+
+		<!-- AI接受玩家邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NEAR_INITIATOR_POSITIVE_LEADER_JFD_VALDIVIA_CHILE_ANY" Language="zh_Hans_CN">
+			<Text>我同意。</Text>
+		</Replace>
+
+		<!-- AI邀请玩家交换首都信息 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_JFD_VALDIVIA_CHILE_ANY" Language="zh_Hans_CN">
+			<Text>你的殖民地怎么样了？我祈祷你能交好运。你不跟我说说吗？</Text>
+		</Replace>
+
+		<!-- 问候 -->
+
+		<Replace Tag="LOC_DIPLO_GREETING_LEADER_JFD_VALDIVIA_CHILE_ANY" Language="zh_Hans_CN">
+			<Text>美妙的一天，不是吗？</Text>
+		</Replace>
+
+		<!-- 代表团 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_HUMAN_LEADER_JFD_VALDIVIA_CHILE_ANY" Language="zh_Hans_CN">
+			<Text>我将以我希望的方式会见你的代表团。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_HUMAN_LEADER_JFD_VALDIVIA_CHILE_ANY" Language="zh_Hans_CN">
+			<Text>现在不是讨论这些问题的时候。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DELEGATION_FROM_AI_LEADER_JFD_VALDIVIA_CHILE_ANY" Language="zh_Hans_CN">
+			<Text>愿你和我一样热烈欢迎我的代表团。</Text>
+		</Replace>
+
+		<!-- 开放边境 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_HUMAN_LEADER_JFD_VALDIVIA_CHILE_ANY" Language="zh_Hans_CN">
+			<Text>这是可以接受的。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_HUMAN_LEADER_JFD_VALDIVIA_CHILE_ANY" Language="zh_Hans_CN">
+			<Text>我不允许你们在这些领土上随便走动。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_OPEN_BORDERS_FROM_AI_LEADER_JFD_VALDIVIA_CHILE_ANY" Language="zh_Hans_CN">
+			<Text>我来要求开放边界协议。这些土地是危险的，我们不要让它们变得更危险。</Text>
+		</Replace>
+
+		<!-- 宣布友谊 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_HUMAN_LEADER_JFD_VALDIVIA_CHILE_ANY" Language="zh_Hans_CN">
+			<Text>那就这么定了。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_HUMAN_LEADER_JFD_VALDIVIA_CHILE_ANY" Language="zh_Hans_CN">
+			<Text>你在开玩笑。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_JFD_VALDIVIA_CHILE_ANY" Language="zh_Hans_CN">
+			<Text>你是虔诚且公正的，我很高兴地称你为朋友。</Text>
+		</Replace>
+
+		<!-- 玩家接受后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_VALDIVIA_CHILE_ANY" Language="zh_Hans_CN">
+			<Text>这是个好消息。</Text>
+		</Replace>
+
+		<!-- 玩家拒绝后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_VALDIVIA_CHILE_ANY" Language="zh_Hans_CN">
+			<Text>那就走吧。</Text>
+		</Replace>
+
+		<!-- 结盟 -->
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_ALLIANCE_FROM_AI_LEADER_JFD_VALDIVIA_CHILE_ANY" Language="zh_Hans_CN">
+			<Text>在这些贫瘠的土地上，我们必须集中一切可能的援助。你愿意加入我的联盟吗？</Text>
+		</Replace>
+
+		<!-- 赞成与警告 -->
+		<!-- AI赞成 -->
+
+		<Replace Tag="LOC_DIPLO_KUDO_EXIT_LEADER_JFD_VALDIVIA_CHILE_ANY" Language="zh_Hans_CN">
+			<Text>荣耀属于上帝和国家，我的朋友。</Text>
+		</Replace>
+
+		<!-- AI警告 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_EXIT_LEADER_JFD_VALDIVIA_CHILE_ANY" Language="zh_Hans_CN">
+			<Text>你让上帝蒙羞。</Text>
+		</Replace>
+
+		<!-- AI警告玩家离开边境 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_LEADER_JFD_VALDIVIA_CHILE_ANY" Language="zh_Hans_CN">
+			<Text>I我要誓死保卫这些土地。你不要妄想来争夺。</Text>
+		</Replace>
+
+		<!-- 贸易 -->
+		<!-- AI接受交易 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_JFD_VALDIVIA_CHILE_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_VALDIVIA_CHILE_ANY}</Text>
+		</Replace>
+
+		<!-- AI拒绝交易 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_MAKE_DEAL_FROM_AI_LEADER_JFD_VALDIVIA_CHILE_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_VALDIVIA_CHILE_ANY}</Text>
+		</Replace>
+
+		<!-- 谴责 -->
+		<!-- 受到谴责回应 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_JFD_VALDIVIA_CHILE_ANY" Language="zh_Hans_CN">
+			<Text>我毫不在乎。</Text>
+		</Replace>
+
+		<!-- AI谴责玩家 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_JFD_VALDIVIA_CHILE_ANY" Language="zh_Hans_CN">
+			<Text>你们行事不是奉神的名，乃是奉自己的贪婪。你没有统治这些土地的权力。[NEWLINE]（谴责你）</Text>
+		</Replace>
+
+		<!-- 谴责理由 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_REASON_FROM_AI_LEADER_ANY_REASON_JFD_NUEVA_EXTREMADURA_CHILE" Language="zh_Hans_CN">
+			<Text>（您控制的领土很狭小）</Text>
+		</Replace>
+
+		<!-- 宣战 -->
+		<!-- 受到宣战后回应 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_JFD_VALDIVIA_CHILE_ANY" Language="zh_Hans_CN">
+			<Text>我们将战斗至死。</Text>
+		</Replace>
+
+		<!-- AI宣战 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_JFD_VALDIVIA_CHILE_ANY" Language="zh_Hans_CN">
+			<Text>为了荣耀！向你宣战！</Text>
+		</Replace>
+
+		<!-- 求和 -->
+		<!-- AI接受求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_ACCEPT_DEAL_LEADER_JFD_VALDIVIA_CHILE_ANY" Language="zh_Hans_CN">
+			<Text>必须做些什么了。</Text>
+		</Replace>
+
+		<!-- AI拒绝求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_REFUSE_DEAL_LEADER_JFD_VALDIVIA_CHILE_ANY" Language="zh_Hans_CN">
+			<Text>在和平之前我会先让你屈服。</Text>
+		</Replace>
+
+		<!-- AI求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_FROM_AI_LEADER_JFD_VALDIVIA_CHILE_ANY" Language="zh_Hans_CN">
+			<Text>放下你的武器吧。</Text>
+		</Replace>
+
+		<!-- 击败 -->
+		<!-- AI被击败 -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_JFD_VALDIVIA_CHILE_ANY" Language="zh_Hans_CN">
+			<Text>死亡强于受辱。</Text>
+		</Replace>
+
+		<!-- 玩家被击败（在热座模式中会显示） -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_JFD_VALDIVIA_CHILE_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_JFD_VALDIVIA_CHILE_ANY}</Text>
+		</Replace>
+		<!--YANACONA-->
+		<Replace Tag="LOC_UNIT_JFD_YANACONA_CHILE_NAME" Language="zh_Hans_CN">
+			<Text>亚纳科纳</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_JFD_YANACONA_CHILE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>佩德罗·德·瓦尔迪维亚作为领袖时的智利文艺复兴时期特色侦察单位，可在没有开放边境的情况下进入其他文明境内。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_JFD_YANACONA_CHILE_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>亚纳科纳人最初是印加帝国的雇佣兵，他们离开了艾卢，全职为印加、quya（印加女王）或宗教机构从事各种任务。当西班牙征服者抵达现在的秘鲁时，亚纳科纳人宣称自己是“西班牙人的朋友”。他们帮助西班牙人控制了帝国。在西班牙征服印加帝国期间，西班牙人开始使用这些人的名字来称呼他们在奴役、恩赐或军队中作为“indios auxiliares”（印第安辅助军）的土著人民。</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

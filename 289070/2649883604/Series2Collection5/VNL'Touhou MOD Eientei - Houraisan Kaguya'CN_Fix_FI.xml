@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'Touhou MOD Eientei - Houraisan Kaguya'CN_Fix_FI -->
+<!-- Author: Clear8Sky -->
+<!-- DateCreated: 2021/6/14 8:04:43 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Touhou MOD Eientei - Houraisan Kaguya (support R&F and GS)” 。该文件在 FrontEnd 与 InGame 时载入，无需任何 Criteria -->
+	<LocalizedText>
+		<Replace Tag="LOC_CIVILIZATION_EIENTEI_ADJECTIVE" Language="zh_Hans_CN">
+			<Text>永远亭妖怪兔的</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_HOURAI_ELIXIR_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>城市 [ICON_Citizen] 人口增长速度+10%，纪念碑额外+1 [ICON_Culture] 文化值。雨林可额外产出+1 [ICON_Food] 食物，[ICON_CivicBoosted] 鼓舞额外提升（对应市政解锁所需文化值总量的）10%。</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_DISTRICT_BAMBOO_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>蓬莱山辉夜作为领袖时的特色区域，取代商业中心且建造费用更低。[NEWLINE]拥有商业中心的标准相邻加成，相邻的雨林单元格可产出+2 [ICON_Gold] 金币；学院或剧院广场可从雨林中获得额外相邻加成（+1 [ICON_Science] 科技值或+1 [ICON_Culture] 文化值）。+2 [ICON_Housing] 住房，且城市所有雨林单元格可产出+2 [ICON_Gold] 金币。为国内 [ICON_TradeRoute] 贸易路线提供+1 [ICON_Food] 食物。+1 [ICON_TradeRoute] 贸易路线容量。[NEWLINE]解锁特殊区域项目——五道难题，可获取 [ICON_GreatPerson] 特殊伟人类型“迷途竹林”的点数。</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_BAMBOO_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>蓬莱山辉夜作为领袖时的特色区域，取代商业中心且建造费用更低。[NEWLINE]是一个在人类村落旁边，位于妖怪之山的相反方向之上的巨大竹林。永远亭就坐落在其中，竹林里还生活着许多妖怪兔。[NEWLINE]雨林产出 [ICON_Gold] 金币，且其可提供额外的相邻加成、[ICON_Food] 食物、[ICON_Housing] 住房和 [ICON_TradeRoute] 贸易路线，以及特殊的迷途竹林 [ICON_GreatPerson] 伟人点数和区域项目。</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_EIENTEI_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>通过特色区域可招募属于迷途竹林的 [ICON_GreatPerson] 特殊伟人单位。</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_FIVE_IMPOSSIBLE_REQUESTS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>能建造迷途竹林，通过迷途竹林伟人——「蓬莱山 辉夜」解锁特殊区域项目「难题系列」。完成这些难题将获得所对应的神宝，为文明解锁新能力。</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_UNIT_MOON_FORCE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>永远亭文明的现代特色近战单位，取代步兵。相较于后者+10 [ICON_Strength] 战斗力，且可 [ICON_Range] 远程攻击，但训练费用略高。视野能穿越雨林和森林，无视森林和雨林的额外 [ICON_Movement] 移动力消耗。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_MOON_FORCE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>{LOC_TRAIT_CIVILIZATION_UNIT_MOON_FORCE_DESCRIPTION}</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_UNIT_MOON_RABBIT_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>永远亭文明的远古时期特色侦察单位，取代侦察兵。相较于后者+5 [ICON_Strength] 战斗力，且训练费用更少。视野能穿越雨林和森林，无视森林和雨林的额外 [ICON_Movement] 移动力消耗。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_MOON_RABBIT_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>{LOC_TRAIT_CIVILIZATION_UNIT_MOON_RABBIT_DESCRIPTION}</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATPERSON_EIENTEI_KEINE_KAMISHIRASAWA_CULTURE" Language="zh_Hans_CN">
+			<Text>旧史「旧秘境史 -古代史-」- 3格范围内每座城市+5% [ICON_Culture] 文化值产出。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATPERSON_EIENTEI_TEWI_INABA_AMENITYBONUS" Language="zh_Hans_CN">
+			<Text>兔符「开运大纹」- 4格范围内每座城市+2 [ICON_Amenities] 宜居度。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATPERSON_EIENTEI_FUJIWARA_MOKOU_HEAL" Language="zh_Hans_CN">
+			<Text>「不死鸟附体」- 1格范围内所有单位每回合自动恢复 [ICON_Damaged] 生命值。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATPERSON_INDIVIDUAL_EIRIN_YAGOKORO" Language="zh_Hans_CN">
+			<Text>「天网蛛网捕蝶之法」- 2格范围内所有远程单位+5 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATPERSON_TEWI_INABA_ACTIVE" Language="zh_Hans_CN">
+			<Text>「远古的骗术」- 将一个外交政策槽位转变为通配符槽位。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATPERSON_KEINE_KAMISHIRASAWA_ACTIVE" Language="zh_Hans_CN">
+			<Text>新史「新幻想史 -现代史-」- 从当前可研究市政中随机奖励一项免费市政。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATPERSON_FUJIWARA_MOKOU_ACTIVE" Language="zh_Hans_CN">
+			<Text>「不死鸟重生」- 所有单位的 [ICON_Damaged] 生命值立即完全恢复。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATPERSON_EIRIN_YAGOKORO_ACTIVE" Language="zh_Hans_CN">
+			<Text>神脑「思兼的头脑」- 从当前可研究科技中随机奖励2项免费科技。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATPERSON_HOURAISAN_KAGUYA_ACTIVE" Language="zh_Hans_CN">
+			<Text>「五道难题」- 获得一个特殊奢侈品资源（提供5点 [ICON_Amenities] 宜居度）并解锁特殊项目——五道难题。</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_COLORED_SHOTS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>解锁 神宝「耀眼的龙玉」[NEWLINE]雨林单元格+1 [ICON_Production] 生产力。[NEWLINE]每回合+1 [ICON_GreatGeneral] 大将军点数、+1 [ICON_GreatWriter] 大作家点数、+1 [ICON_GreatMerchant] 大商人点数、+1 [ICON_GreatEngineer] 大工程师点数、+1 [ICON_GreatScientist] 大科学家点数。</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_INDOMITABLE_WILL_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>解锁 神宝「佛体的金刚石」[NEWLINE]雨林单元格+1 [ICON_Faith] 信仰值。[NEWLINE][ICON_GreatWork_Relic] 遗物产出的 [ICON_Faith] 信仰值和 [ICON_Tourism] 旅游业绩+200%。[NEWLINE]每回合+2 [ICON_GreatProphet] 大预言家点数。</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_PATIENT_MIND_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>解锁 神宝「火蜥蜴之盾」[NEWLINE]雨林单元格+1 [ICON_Science] 科技值、+1 [ICON_Culture] 文化值。[NEWLINE]所有单位在防御远程攻击时+7 [ICON_Strength] 战斗力，且单位 [ICON_Damaged] 受损时生命值恢复额外+7。</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_EVERLASTING_LIFE_NAME" Language="zh_Hans_CN">
+			<Text>[COLOR_FLOAT_GOLD]难题「燕的子安贝　-永命线-」[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_EVERLASTING_LIFE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>解锁 神宝「无限的生命之泉」[NEWLINE]建造者+1 [ICON_Charges] 劳动力。[NEWLINE][COLOR_FLOAT_GOLD]完成难题后，建造者能在草原、平原（及其丘陵）上建造雨林。[ENDCOLOR][NEWLINE]雨林单元格+1魅力值，而不是-1魅力值。</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_RAINBOW_DANMAKU_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>解锁 神宝「蓬莱的玉枝　-梦色之乡-」[NEWLINE]原始 [ICON_Capital] 首都的 [ICON_Science] 科技值、[ICON_Culture] 文化值、[ICON_Production] 生产力、[ICON_Gold] 金币、[ICON_Faith] 信仰值及 [ICON_Food] 食物产出+15%，且所有城市+1 [ICON_Amenities] 宜居度。</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_JUNGLE_BB_GOLD" Language="zh_Hans_CN">
+			<Text>+{1_num} [ICON_Gold] 金币 来自相邻 雨林</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_FOREST_BB_GOLD" Language="zh_Hans_CN">
+			<Text>+{1_num} [ICON_Gold] 金币 来自相邻 森林</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_BAMBOO_SCIENCE" Language="zh_Hans_CN">
+			<Text>+{1_num} [ICON_Science] 科技值 来自相邻 迷途竹林</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_BAMBOO_CULTURE" Language="zh_Hans_CN">
+			<Text>+{1_num} [ICON_Culture] 文化值 来自相邻 迷途竹林</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_HOURAISAN_ANY" Language="zh_Hans_CN">
+			<Text>太好了，我的朋友。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_HOURAISAN_ANY" Language="zh_Hans_CN">
+			<Text>我做错了什么吗？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_HOURAISAN_ANY" Language="zh_Hans_CN">
+			<Text>代表月亮谴责你！[NEWLINE]（谴责你）</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

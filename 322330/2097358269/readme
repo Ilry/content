@@ -1,0 +1,158 @@
+中文：
+你已经是个成熟的箱子了，要学会自己捡东西
+基本功能：使附近插有小木牌的箱子可以收集对应的物品。
+\t说明：收集的物品由附近的（小木牌图案）决定
+\t\t（丢弃物品、战利品掉落、周期性掉落）的物品会被收集
+\t\t（打开箱子）会使这个箱子主动收集一次
+特殊木牌：
+\t1.收集所有物品
+\t2.收集箱子内部存在的物品
+\t3.哪个木牌具有特殊功能可以设置
+其他功能：
+\t1.小木牌防火
+\t2.特殊木牌重命名
+解释：
+\tminisign_drawn：在这里表示绘制了物品的小木牌。
+\tminisign_drawn_minisign：在这里表示绘制了minisign_drawn的小木牌。（禁止套娃）
+
+
+English:
+You are a mature chest. Learn to collect itemss up by yourself
+Basic function: Enable the nearby chest with minisign to collect corresponding items.
+\t Explain: The items collected are determined by the nearby (minisign image)
+\t\t(drop items, loot drops, periodic drops) items will be collected
+\t\t(opening the chest) causes the chest to actively collect once
+Special minisign:
+\t1. Collect all the items
+\t2. Collect the items that exist inside the box
+\t3. Which minisign has special function can be set
+Other features:
+\t1. minisign fire protection
+\t2. minisign renamed
+Explanation:
+\tminisign_drawn: the minisign that has drawn a item.
+\tminisign_drawn_minisign: minisign with minisign_drawn drawn.
+
+
+steam创意工坊描述备份：
+
+中文：
+有没有大佬可以教教我如何在这个位置格式化我的文本比如缩进或者添加图片啥的？
+有任何bug或者功能建议请给我留言。我自己的测试总是不够充分的。
+
+2023年5月5日
+添加功能：为收集全部物品的特殊木牌minisign_drawn_minisign添加反选功能。 
+当minisign_drawn_minisign在箱子附近时，其他普通小木牌表示对应的物品不收集。
+
+2023年5月4日
+加了两个新功能。
+1.将minisign_drawn_minisign（下面解释）作为收集所有物品的标识。默认关闭
+2.绘制物品且部署的小木牌防火。默认开启。
+解释：
+minisign_drawn：在这里表示绘制了物品的小木牌。
+minisign_drawn_minisign：在这里表示绘制了minisign_drawn的小木牌。（禁止套娃）
+
+
+2023年4月14日
+我尝试再修复一下试试。按照@CoolM在留言中提供的日志。
+如果这次修复有效果的话，当遇到之前那个崩溃的问题时，不会进行自动收集，应该可以暂时避免触发bug。
+但是我不清楚为什么会导致这个bug发生，我在自己本地尝试复现的时候，会出现一些贴图显示的错误，当箱子打开时，被收集的格罗姆粘液的贴图会和箱子显示在一起，当箱子关闭时又会消失。但没有遇到崩溃的问题。所以我没有办法完全修复这个bug。
+
+2021年6月26日
+你已经是个成熟的箱子了，要学会自己捡东西
+1. 收集的物品由附近的（小木牌图案）决定
+2.（丢弃物品、战利品掉落、周期性掉落）的物品会自动进入附近的箱子（如果有对应小木牌的话）
+3.（打开箱子）会使这个箱子收集一次周围的物品
+4. 箱子包括（木箱、龙蝇箱、冰箱、盐盒）
+5. 可以设置一个箱子收集多种物品
+还没有做到的：
+1. 石果敲击的掉落物和物品燃烧的掉落物（灰等）没办法在掉落时被收集。可以主动打开箱子来收集
+
+终于放假有时间修一下bug了。
+3月12日饥荒更新导致本mod出现的问题已经修复了
+遇到其他问题请给我反馈
+感谢您的使用与建议
+
+
+----------------------------------------------------------------
+2021年6月26日 分割线 这以下的内容都已经过期了 
+
+2020年11月29日
+因为学业原因，很久没玩饥荒了，也就没有时间更新。如果有哪位大佬看上就收留一下这个mod吧。可以直接copy代码，然后开一个新的mod更新。
+这个是我做的第一个mod，所以代码有一些混乱，组件什么的结构都没有用上。打算如果寒假有时间的话重新整理一下。
+---------------------------------------------------------------------------
+
+“你已经是个成熟的箱子了，要学会自己收集物品”
+遇到问题请留言给我，我会尽快修复的。因为可收集物品很多，所以可能会存在一些我没有测试到的物品引发的问题。
+你对这个mod有什么建议也可以留言说明。
+现在兼容智能小木牌mod(server only)了。智能小木牌链接如下
+https://steamcommunity.com/sharedfiles/filedetails/?id=2069206134
+也兼容了另一个可以显示mod物品的智能小木牌了。
+https://steamcommunity.com/sharedfiles/filedetails/?id=1595631294
+
+每次更新的修改见“改动说明”页面
+
+功能：使木箱或龙蝇箱子可以根据附近最近的小木牌上绘制的物品自动收集周围的物品。
+基础项1：木牌被绘制，插入，挖出时设置箱子会收集的物品，并进行一次收集。
+基础项2：玩家丢弃的物品会自动收进箱子里（如果附近有收集这种物品的箱子）
+可选项1：设置箱子检测小木牌范围
+可选项2：设置箱子收集物品范围
+范围解释：距离4为一块地皮，距离1为一个墙
+可选项3：箱子打开关闭时是否收集物品（默认开启）
+可选项4：箱子内物品被整组取出时是否收集物品（默认关闭）
+3，4两项功能有些重复，但是可以同时开启
+可选项5：是否收集周期性掉落物品，例如：格罗姆吐出的粘液（默认开启）
+可选项6：是否收集战利品（默认开启）
+可选项7：是否显示物品收集动画（默认开启）
+
+第一次做mod，很抱歉刚发布的时候有太多的bug。如果有bug反馈的话，我会尽快修复的。
+如果喜欢的话，请给我点一个赞，非常感谢。❤❤❤
+
+英文：
+Have any friends to teach me how to format realistic text here, such as indent and so on. I've tried the markdown syntax, but it doesn't seem to support it.
+Please leave me a comment with any bugs or feature suggestions. My own tests have always been inadequate.
+
+2023.05.05
+Add Function: Added a anti-selection function to the special minisign (minisign_drawn_minisign) for collecting all items.
+When minisign_drawn_minisign is near the chest, other common minisign means that corresponding items are not collected.
+
+2023.05.04
+Two new features have been added.
+1. Make the minisign_drawn_minisign (explained below) the identifier for collecting everything. Default off
+2. Drawn and deployed minisign for fire prevention. IDefault on.
+Explanation:
+minisign_drawn: the minisign that has drawn a item.
+minisign_drawn_minisign: minisign with minisign_drawn drawn.
+
+2023.04.14
+I try to fix it again. Follow the logs provided by @CoolM in the comments.
+If this fix is effective, when encountering the previous crash problem, automatic collection will not be performed, which should temporarily avoid triggering the bug.
+But I don't know why this bug happened. When I tried to reproduce it locally, some texture display errors occurred. When the chest was opened, the texture of the collected Grom slime would be displayed together with the chest . Disappears again when the chest is closed. But no problems with crashing. So there is no way for me to fully fix this bug.
+
+2022.08.20
+I'm sorry. I am located in China, so I forgot the English version when updating the description. For academic reasons, I haven't played DST since last year. So there is no time to get familiar with the code after the game has been updated many times. So I'm sorry for the inconvenience to friends who like this mod.
+If any friend likes this mod, take it in. You can directly copy the code and then open a new mod update.
+This is the first mod I made, so there is some confusion in the code, and the structure of components is not used.
+
+---------------------------------------------------
+2021.06.26
+(Translated with translation software)
+You are a mature box. Learn to pick things up by yourself
+1. The collected items are determined by the nearby (small wooden plate pattern)
+2. (discarded items, loot falling, periodic falling) will automatically enter the nearby box (if there is a corresponding wooden card)
+3. Opening the box will make the box collect the surrounding items once
+4. Boxes include (wooden box, dragon fly box, refrigerator, salt box)
+5. You can set a box to collect multiple items
+Not yet done:
+1. The falling objects knocked by stone fruits and the falling objects (ash, etc.) burned by objects cannot be collected when falling. You can open the box to collect it
+
+-----------------------------------
+1.The chest can collect items automatically
+2.The items collected are determined by the nearby (picture on a small wooden card)
+3.(drop items, spoils drop, periodic drop) items will automatically enter the nearby box (if there is a corresponding small wooden card)
+4.(open the box) will make the box collect the surrounding items once
+5.Boxes include (wooden chest, dragon fly chest, ice box, salt box)
+6.One or more kinds items collections can be set
+
+What has not been done:
+1. Falling objects knocked by stone fruit and burning objects (ash, etc.) cannot be collected when falling. Can take the initiative to open the box to collect

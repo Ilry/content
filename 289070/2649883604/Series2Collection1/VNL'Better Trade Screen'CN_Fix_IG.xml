@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'Better Trade Screen'CN_Fix_IG -->
+<!-- Author: Clear8Sky -->
+<!-- DateCreated: 2022/2/3 20:07:21 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Better Trade Screen” 。该文件在 InGame 时载入，无需任何 Criteria -->
+	<LocalizedText>
+		
+		<!-- 贸易总览 -->
+		
+		<Replace Tag="LOC_TRADE_OVERVIEW_ORIGIN_AZ" Language="zh_Hans_CN">
+			<Text>出发地城市从A～Z</Text>
+		</Replace>
+		<Replace Tag="LOC_TRADE_OVERVIEW_ORIGIN_ZA" Language="zh_Hans_CN">
+			<Text>出发地城市从Z～A</Text>
+		</Replace>
+		<Replace Tag="LOC_TRADE_OVERVIEW_DESTINATION_AZ" Language="zh_Hans_CN">
+			<Text>目的地城市从A～Z</Text>
+		</Replace>
+		<Replace Tag="LOC_TRADE_OVERVIEW_DESTINATION_ZA" Language="zh_Hans_CN">
+			<Text>目的地城市从Z～A</Text>
+		</Replace>
+
+		<Replace Tag="LOC_TRADE_TURNS_REMAINING_ROUTE_LENGTH_TOOLTIP" Language="zh_Hans_CN">
+			<Text>贸易路线 [ICON_Movement]：{1_TripsToDestination}</Text>
+		</Replace>
+		<Replace Tag="LOC_TRADE_TURNS_REMAINING_TRIPS_COUNT_TOOLTIP" Language="zh_Hans_CN">
+			<Text>到达目的地：{1_TripsToDestination}</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_TRADE_TURNS_REMAINING_TURN_COMPLETION_TOOLTIP" Language="zh_Hans_CN">
+			<Text>贸易路线将在{1_TurnWhenCompleted} [ICON_Turn] 回合时完成</Text>
+		</Replace>
+		<Replace Tag="LOC_TRADE_TURNS_REMAINING_TURN_COMPLETION_ALT_TOOLTIP" Language="zh_Hans_CN">
+			<Text>若此时开始贸易，则该贸易路线将持续{1_TurnsToComplete} [ICON_Turn] 回合，并将在{2_TurnWhenCompleted} [ICON_Turn] 回合时完成。</Text>
+		</Replace>
+		<Replace Tag="LOC_TRADE_CANCEL_AUTOMATION_TOOLTIP" Language="zh_Hans_CN">
+			<Text>取消“长期贸易路线”。[ICON_TradeRoute] 贸易路线完成后可操作商人。</Text>
+		</Replace>
+		
+		<!-- 设定面板 -->
+
+		<Replace Tag="LOC_BTS_SETTINGS_PANEL_HEADER" Language="zh_Hans_CN">
+			<Text>商路界面优化 - 设定项</Text>
+		</Replace>
+		<Replace Tag="LOC_BTS_SETTING_APPROXIMATE_TRADER_PATH" Language="zh_Hans_CN">
+			<Text>商路近似表示</Text>
+		</Replace>
+		<Replace Tag="LOC_BTS_SETTING_APPROXIMATE_TRADER_PATH_TOOLTIP" Language="zh_Hans_CN">
+			<Text>采用绝对距离（类似两点直接连线）近似表征始末两地之间的商路，以此替代商人实际沿循的商路。有助于更快打开商路派遣界面（尤其当拥有较多城市时），但 [ICON_TradeRoute] 贸易路线持续 [ICON_Turn] 回合数在某些情况下会极其不准确。</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_BTS_SETTING_SHOW_SORT_PRIORITIES" Language="zh_Hans_CN">
+			<Text>依优先列排序</Text>
+		</Replace>
+		<Replace Tag="LOC_BTS_SETTING_SHOW_SORT_PRIORITIES_TOOLTIP" Language="zh_Hans_CN">
+			<Text>根据所选的加成按钮，以之作为优先列，对商路进行排序。特别地，当选取多种加成共同作为优先列时（如选择 [ICON_Food] 食物 + [ICON_Production] 生产力），推荐勾选此项以实现多权重排序。[NEWLINE][COLOR_FLOAT_MILITARY]【译者注，多权重选择方式：按住Shift键，再按照自己喜好点击各加成按钮，即可出现代表权重优先序列的“1、2、3……”标识。】[ENDCOLOR]</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_BTS_SETTING_SHOW_ALL_ROUTE_PATHS" Language="zh_Hans_CN">
+			<Text>显示所有商路</Text>
+		</Replace>
+		<Replace Tag="LOC_BTS_SETTING_SHOW_ALL_ROUTE_PATHS_TOOLTIP" Language="zh_Hans_CN">
+			<Text>商路选择面板将显示所有商路，而非仅是所选的那一条。禁用该项有助于缩短商路选择面板的打开速度。</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_BTS_SHOW_TRADER_PATH_ON_SELECTION" Language="zh_Hans_CN">
+			<Text>显示选定商路</Text>
+		</Replace>
+		<Replace Tag="LOC_BTS_SHOW_TRADER_PATH_ON_SELECTION_TOOLTIP" Language="zh_Hans_CN">
+			<Text>启用后，当选择一名商人时将显示其正在沿循的商路、出发地与目的地城市。仅对您文明的商人生效。</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

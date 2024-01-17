@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RF'Iceland Snorri Sturluson'CN_Add_FI -->
+<!-- Author: 春 , Clear8Sky -->
+<!-- DateCreated: 2021/9/1 11:01:14 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Iceland: Snorri Sturluson” 。该文件在 FrontEnd 与 InGame 时载入，需 Criteria ： Active_Expansion_1 -->
+	<LocalizedText>
+
+		<!-- 模组 -->
+
+		<Replace Tag="LOC_MOD_JFD_SNORRI_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>------------------------------------[NEWLINE]领袖名称 -- 斯诺里·斯图鲁松[NEWLINE][NEWLINE]领袖特性 - 斯图伦斯萨迦[NEWLINE]文明处于 [ICON_Glory_Golden_Age] 黄金时代时，每次使用 [ICON_GreatWriter] 大作家可获得一次 [ICON_CivicBoosted] 鼓舞；而处于 [ICON_Glory_Dark_Age] 黑暗时代时则改为获得一个 [ICON_TechBoosted] 尤里卡。拥有市政广场的城市建造学院和剧院广场+100% [ICON_Production] 生产力。[NEWLINE][NEWLINE]领袖议程 - 《散文埃达》[NEWLINE]专注于积累大作家点数。认为处于 [ICON_Glory_Golden_Age] 黄金时代或 [ICON_Glory_Dark_Age] 黑暗时代的文明是值得大书特书的，并尊重他们。不喜欢处于 [ICON_Glory_Normal_Age] 普通时代的文明，特别是如果他们拥有高额的 [ICON_Culture] 文化值。</Text>
+		</Replace>
+
+		<!-- 领袖 -->
+
+		<Replace Tag="LOC_LEADER_JFD_SNORRI_NAME" Language="zh_Hans_CN">
+			<Text>斯诺里·斯图鲁松</Text>
+		</Replace>
+
+		<!-- 议程 -->
+
+		<Replace Tag="LOC_AGENDA_JFD_PROSE_EDDA_NAME" Language="zh_Hans_CN">
+			<Text>《散文埃达》</Text>
+		</Replace>
+		<Replace Tag="LOC_AGENDA_JFD_PROSE_EDDA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>专注于积累大作家点数。认为处于 [ICON_Glory_Golden_Age] 黄金时代或 [ICON_Glory_Dark_Age] 黑暗时代的文明是值得大书特书的，并尊重他们。不喜欢处于 [ICON_Glory_Normal_Age] 普通时代的文明，特别是如果他们拥有高额的 [ICON_Culture] 文化值。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_JFD_SNORRI_REASON_IS_IN_DARK_AGE" Language="zh_Hans_CN">
+			<Text>(您处于黑暗时代)</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_AGENDA_JFD_PROSE_EDDA_IS_IN_DARK_AGE" Language="zh_Hans_CN">
+			<Text>斯诺里·斯图鲁松对你的黑暗时代很着迷。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_JFD_SNORRI_REASON_IS_IN_GOLDEN_AGE" Language="zh_Hans_CN">
+			<Text>(您处于黄金时代)</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_AGENDA_JFD_PROSE_EDDA_IS_IN_GOLDEN_AGE" Language="zh_Hans_CN">
+			<Text>斯诺里·斯图鲁松对你的黄金时代充满敬畏。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_JFD_SNORRI_REASON_IS_IN_NORMAL_AGE" Language="zh_Hans_CN">
+			<Text>(您处于普通时代。)</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_AGENDA_JFD_PROSE_EDDA_IS_IN_NORMAL_AGE" Language="zh_Hans_CN">
+			<Text>斯诺里·斯图鲁松觉得你的文明乏善可陈。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_JFD_SNORRI_REASON_IS_IN_NORMAL_AGE_AND_LEADS_CULTURE" Language="zh_Hans_CN">
+			<Text>(您处于普通时代并且文化领先)</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_AGENDA_JFD_PROSE_EDDA_IS_IN_NORMAL_AGE_AND_LEADS_CULTURE" Language="zh_Hans_CN">
+			<Text>斯诺里·斯图鲁松质疑你是否真的有文化素养</Text>
+		</Replace>
+
+		<!-- 载入 -->
+
+		<Replace Tag="LOC_LOADING_INFO_LEADER_JFD_SNORRI" Language="zh_Hans_CN">
+			<Text>英明和受人尊敬的斯诺里·斯图鲁松，冰岛的伟大领袖将人民的法律和故事托付给您。无论是动荡还是繁荣，都要让冰岛保持公正和强大。通过诗歌和散文，让她永远不会忘记自己的伟大传奇。</Text>
+		</Replace>
+
+		<!-- 特性 -->
+
+		<Replace Tag="LOC_TRAIT_LEADER_JFD_STURLUNGA_SAGA_NAME" Language="zh_Hans_CN">
+			<Text>斯图伦斯萨迦</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_JFD_STURLUNGA_SAGA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>文明处于 [ICON_Glory_Golden_Age] 黄金时代时，每次使用 [ICON_GreatWriter] 大作家可获得一次 [ICON_CivicBoosted] 鼓舞；而处于 [ICON_Glory_Dark_Age] 黑暗时代时则改为获得一个 [ICON_TechBoosted] 尤里卡。拥有市政广场的城市建造学院和剧院广场+100% [ICON_Production] 生产力。</Text>
+		</Replace>
+
+		<!-- 百科 -->
+
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_SNORRI_TITLE" Language="zh_Hans_CN">
+			<Text>斯诺里·斯图鲁松</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_SNORRI_SUBTITLE" Language="zh_Hans_CN">
+			<Text>冰岛首领</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_SNORRI_QUOTE" Language="zh_Hans_CN">
+			<Text>现在，如果你还有什么要问，我不知道你该如何得知，因为我从未听闻任何人述说过这个世界的故事。尽你所能吧。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_SNORRI_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]The life of Snorri Sturluson was as eventful as the lives of the Norse heroes about whom he wrote. The son of a chieftain in the western fjords, he was brought up by the powerful chief Jon Lofstsson, who awakened in him an interest in poetry and history. Two successful marriages gave prestige and wealth. Ambitious and a shrewd politician, he twice became president of the Legislative Assembly and as such was the supreme magistrate in Iceland. At times he could be passionate, mean, and untrustworthy if judged by modern standards rather than Viking standards. He was not so bloodthirsty and cruel as his opponents, and his political victories were not marked by maimings and killings.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_SNORRI_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>Snorri traveled twice to Norway: once to avert a Norwegian military expedition to Iceland, and a second time to escape capture and perhaps death at the hands of his brother Sighvatr and his nephew Sturla. With the defeat of his enemies, he returned to Iceland hoping to regain political power but was killed at his estate at Reykholt by his sonin-law Gissur Thorvaldson, who was acting as the agent of the Norwegian king Haakon IV (the Old). He died on Sept. 22, 1241, an Icelandic patriot. By 1262 Iceland had become a tributary to the Norwegian cReplacen.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_SNORRI_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>His writings rather than Viking deeds and intrigue make Snorri one of the most important figures in Scandinavian history. More than any other person, he preserved the knowledge of the skalds and their poetry. He used them extensively in his histories, and the second part of his Prose Edda is a catalog of kennings, whose use in poetry is illustrated by examples. The Heimskringla (Sagas of the Norwegian Kings) shows him as both poet and historian. A highly creative literary genius, he brings the work to a climax in the Saga of St. Olaf. In addition he was probably the author of Egil's Saga, which is the story of a renowned 10th-century Icelandic Viking poet who fought as a mercenary in Norway.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_SNORRI_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>Snorri was a key figure culminating the Icelandic renaissance. The Heimskringla, a work of unique literary achievement, is the single most important source for events that transpired in Norway from the 6th to the late 12th century.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_SNORRI_CHAPTER_CAPSULE_BODY" Language="zh_Hans_CN">
+			<Text>与冰岛一同迎接全新的领土与挑战。在他们最伟大的法律演说家之一斯诺里·斯图鲁松的领导下，您将会在动荡与繁盛中前行。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_SNORRI_CHAPTER_DETAILED_BODY" Language="zh_Hans_CN">
+			<Text>冰岛是探险家与作家的文明。尽早派出侦察兵以获得历史时刻（以及 [ICON_GreatWriter] 大作家点数），并找到下一个可能的定居点。自然奇观尤其具有价值：您文明的许多区域可从自然奇观中获得大量相邻加成！草屋将减轻您对淡水源的依赖，因为除了沙漠地形外，草屋可被建造在任何地方，且其能提供少量 [ICON_Food] 食物与 [ICON_Production] 生产力来帮助您的城市运转起来。尽管法律讲述官训练成本很高，但其提供了进一步的提升，让您能获得额外的忠诚度，并您在所需之处获得收益。在斯诺里·斯图鲁松的领导下，解锁科技与市政树将会变得更加容易。</Text>
+		</Replace>
+
+		<!-- 外交 -->
+
+		<!-- 初次见面 -->
+		<!-- 开场白 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_JFD_SNORRI_ANY" Language="zh_Hans_CN">
+			<Text>你好，领袖。我是年长的斯图鲁之子，伟大联邦的法律讲述官和首领。什么风把你吹到这来了？我祈祷你能讲点有趣的事。</Text>
+		</Replace>
+
+		<!-- 到附近城市的邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_JFD_SNORRI_ANY" Language="zh_Hans_CN">
+			<Text>你远道而来。来吧，我请你到我家来暖和暖和。</Text>
+		</Replace>
+
+		<!-- AI接受玩家邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NEAR_INITIATOR_POSITIVE_LEADER_JFD_SNORRI_ANY" Language="zh_Hans_CN">
+			<Text>我同意和你会面。</Text>
+		</Replace>
+
+		<!-- AI邀请玩家交换首都信息 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_JFD_SNORRI_ANY" Language="zh_Hans_CN">
+			<Text>我承认，我很想更多地了解你和你的人民。你愿意分享你的首都信息吗？我愿意以同样的方式分享给你。</Text>
+		</Replace>
+
+		<!-- 问候 -->
+
+		<Replace Tag="LOC_DIPLO_GREETING_LEADER_JFD_SNORRI_ANY" Language="zh_Hans_CN">
+			<Text>你来了。</Text>
+		</Replace>
+
+		<!-- 代表团 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_HUMAN_LEADER_JFD_SNORRI_ANY" Language="zh_Hans_CN">
+			<Text>我将见一见你的代表团，看看他们有什么要说的。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_HUMAN_LEADER_JFD_SNORRI_ANY" Language="zh_Hans_CN">
+			<Text>我没空在你的代表团身上浪费时间。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DELEGATION_FROM_AI_LEADER_JFD_SNORRI_ANY" Language="zh_Hans_CN">
+			<Text>我派遣了一个代表团到你们那里去，以期更多地了解你们的人民。如果你热情地招待他们，你的好客将会永远被我们的传说所铭记。</Text>
+		</Replace>
+
+		<!-- 开放边境 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_HUMAN_LEADER_JFD_SNORRI_ANY" Language="zh_Hans_CN">
+			<Text>很好。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_HUMAN_LEADER_JFD_SNORRI_ANY" Language="zh_Hans_CN">
+			<Text>不，我没时间听这些废话。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_OPEN_BORDERS_FROM_AI_LEADER_JFD_SNORRI_ANY" Language="zh_Hans_CN">
+			<Text>如果你坚持关闭你的土地，历史怎么能准确地描述它们呢？我们必须通过谈判达成一项开放边界协定。</Text>
+		</Replace>
+
+		<!-- 宣布友谊 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_HUMAN_LEADER_JFD_SNORRI_ANY" Language="zh_Hans_CN">
+			<Text>我期待好运降临。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_HUMAN_LEADER_JFD_SNORRI_ANY" Language="zh_Hans_CN">
+			<Text>荒谬，你是想浪费我的时间吗？</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_JFD_SNORRI_ANY" Language="zh_Hans_CN">
+			<Text>你们待我的人民和议会很好，为此，我愿称你们为朋友。</Text>
+		</Replace>
+
+		<!-- 玩家接受后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_SNORRI_ANY" Language="zh_Hans_CN">
+			<Text>我欠你的。</Text>
+		</Replace>
+
+		<!-- 玩家拒绝后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_SNORRI_ANY" Language="zh_Hans_CN">
+			<Text>那你还站在这里干嘛？</Text>
+		</Replace>
+
+		<!-- 结盟 -->
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_ALLIANCE_FROM_AI_LEADER_JFD_SNORRI_ANY" Language="zh_Hans_CN">
+			<Text>我已得到议会的授权，请求与你结盟，使我们两国共同繁荣。</Text>
+		</Replace>
+
+		<!-- 赞成与警告 -->
+		<!-- AI赞成 -->
+
+		<Replace Tag="LOC_DIPLO_KUDO_EXIT_LEADER_JFD_SNORRI_ANY" Language="zh_Hans_CN">
+			<Text>不可否认的是，你的经历确实鼓舞了我。</Text>
+		</Replace>
+
+		<!-- AI警告 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_EXIT_LEADER_JFD_SNORRI_ANY" Language="zh_Hans_CN">
+			<Text>如果你坚持无动于衷，你就会被历史遗忘。</Text>
+		</Replace>
+
+		<!-- AI警告玩家离开边境 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_LEADER_JFD_SNORRI_ANY" Language="zh_Hans_CN">
+			<Text>我承认我不是军人，我对屠杀没有概念。但历史会把你抛进大海。</Text>
+		</Replace>
+
+		<!-- 贸易 -->
+		<!-- AI接受交易 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_JFD_SNORRI_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_SNORRI_ANY}</Text>
+		</Replace>
+
+		<!-- AI拒绝交易 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_MAKE_DEAL_FROM_AI_LEADER_JFD_SNORRI_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_SNORRI_ANY}</Text>
+		</Replace>
+
+		<!-- 谴责 -->
+		<!-- 受到谴责回应 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_JFD_SNORRI_ANY" Language="zh_Hans_CN">
+			<Text>呸，从我眼前走开。你在用这些废话浪费我的时间。</Text>
+		</Replace>
+
+		<!-- AI谴责玩家 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_JFD_SNORRI_ANY" Language="zh_Hans_CN">
+			<Text>你真让我头痛。[NEWLINE]（谴责你）</Text>
+		</Replace>
+
+		<!-- 谴责理由 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_REASON_FROM_AI_LEADER_ANY_REASON_JFD_PROSE_EDDA_IS_IN_NORMAL_AGE" Language="zh_Hans_CN">
+			<Text>（您处于普通时代）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DENOUNCE_REASON_FROM_AI_LEADER_ANY_REASON_JFD_PROSE_EDDA_IS_IN_NORMAL_AGE_AND_LEADS_CULTURE" Language="zh_Hans_CN">
+			<Text>（您处于普通时代并且文化领先）</Text>
+		</Replace>
+
+		<!-- 宣战 -->
+		<!-- 受到宣战后回应 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_JFD_SNORRI_ANY" Language="zh_Hans_CN">
+			<Text>杀了我吧，但你要面对的不是我，而是历史。</Text>
+		</Replace>
+
+		<!-- AI宣战 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_JFD_SNORRI_ANY" Language="zh_Hans_CN">
+			<Text>我受权以最恶劣的方式谴责你们：战争。</Text>
+		</Replace>
+
+		<!-- 求和 -->
+		<!-- AI接受求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_ACCEPT_DEAL_LEADER_JFD_SNORRI_ANY" Language="zh_Hans_CN">
+			<Text>是的，这些都是合意的条款。</Text>
+		</Replace>
+
+		<!-- AI拒绝求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_REFUSE_DEAL_LEADER_JFD_SNORRI_ANY" Language="zh_Hans_CN">
+			<Text>我不会允许联邦人民接受这种屈辱的条款。</Text>
+		</Replace>
+
+		<!-- AI求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_FROM_AI_LEADER_JFD_SNORRI_ANY" Language="zh_Hans_CN">
+			<Text>这场卑鄙的战争持续得太久了。我们必须结束它，恢复和平。</Text>
+		</Replace>
+
+		<!-- 击败 -->
+		<!-- AI被击败 -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_JFD_SNORRI_ANY" Language="zh_Hans_CN">
+			<Text>你要杀一个老人？我向上帝祈祷你会受到最严厉的惩罚。</Text>
+		</Replace>
+
+		<!-- 玩家被击败（在热座模式中会显示） -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_JFD_SNORRI_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_JFD_SNORRI_ANY}</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RFXGS'CIVLIZATION VI NATIONAL WONDERS PACK 1'CN_Add_IG -->
+<!-- Author: 牛奶大魔王 , Clear8Sky -->
+<!-- DateCreated: 2021/10/7 11:33:26 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “CIVLIZATION VI: NATIONAL WONDERS PACK 1” 。该文件在 InGame 时载入，需 Criteria ： Active_Expansion_1 与 Active_Expansion_2 -->
+	<LocalizedText>
+
+		<!-- 国立冶炼厂 -->
+
+		<Replace Tag="LOC_NAT_WONDER_CL_IRONWORKS_NAME" Language="zh_Hans_CN">
+			<Text>国立冶炼厂</Text>
+		</Replace>
+		<Replace Tag="LOC_NAT_WONDER_CL_IRONWORKS_QUOTE" Language="zh_Hans_CN">
+			<Text>不要等到铁热了才动手，要用敲击使其变热。[NEWLINE]——威廉·巴特勒·叶芝（爱尔兰诗人）</Text>
+		</Replace>
+		<Replace Tag="LOC_NAT_WONDER_CL_IRONWORKS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>国家奇观，帝国境内只能建造一座。解锁需求：帝国境内至少改良6处战略资源。[NEWLINE][NEWLINE]国立冶炼厂4格范围内每处改良过的战略资源可为其所在城市提供+3 [ICON_Production] 生产力、+1 [ICON_Science] 科技值。必须建在工业区附近。</Text>
+		</Replace>
+		<Replace Tag="LOC_NAT_WONDER_CL_IRONWORKS_DESCRIPTION_INTERNAL" Language="zh_Hans_CN">
+			<Text>国家奇观，帝国境内只能建造一座。[COLOR:Red]解锁需求：帝国境内至少改良6处战略资源。[ENDCOLOR][NEWLINE][NEWLINE]国立冶炼厂4格范围内每处改良过的战略资源可为其所在城市提供+3 [ICON_Production] 生产力、+1 [ICON_Science] 科技值。必须建在工业区附近。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_NAT_WONDER_CL_IRONWORKS_1" Language="zh_Hans_CN">
+			<Text>炼铁厂是将铁矿石提纯并制成铁或钢的设施。该过程首先将原材料暴露在极高的热量下，并在可能与其他材料混合后，产生某种形式的纯化铁或钢。铁冶炼至少可以追溯到公元前1200年，也许更早。而一个国家的炼铁产能能决定一个国家的工业发展水平如何。</Text>
+		</Replace>
+
+		<!-- 国际金融中心 -->
+
+		<Replace Tag="LOC_NAT_WON_CL_FINANCE_NAME" Language="zh_Hans_CN">
+			<Text>国际金融中心</Text>
+		</Replace>
+		<Replace Tag="LOC_NAT_WON_CL_FINANCE_QUOTE" Language="zh_Hans_CN">
+			<Text>给我这个职位很危险，因为我反对百万富翁。[NEWLINE]——马克·吐温</Text>
+		</Replace>
+		<Replace Tag="LOC_NAT_WON_CL_FINANCE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>国家奇观，帝国境内只能建造一座。解锁需求：至少拥有8名商人。[NEWLINE][NEWLINE]以所在城市为出发地的国际 [ICON_TradeRoute] 贸易路线可使帝国境内每家银行+1 [ICON_Gold] 金币、每家证券交易所+2 [ICON_Gold] 金币。与国际金融中心相邻的商业中心的相邻加成翻倍。必须建在商业中心附近。</Text>
+		</Replace>
+		<Replace Tag="LOC_NAT_WON_CL_FINANCE_DESCRIPTION_INTERNAL" Language="zh_Hans_CN">
+			<Text>国家奇观，帝国境内只能建造一座。[COLOR:Red]解锁需求：至少拥有8名商人。[ENDCOLOR][NEWLINE][NEWLINE][NEWLINE][NEWLINE]以所在城市为出发地的国际 [ICON_TradeRoute] 贸易路线可使帝国境内每家银行+1 [ICON_Gold] 金币、每家证券交易所+2 [ICON_Gold] 金币。与国际金融中心相邻的商业中心的相邻加成翻倍。必须建在商业中心附近。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_NAT_WON_CL_FINANCE_1" Language="zh_Hans_CN">
+			<Text>金融中心或金融枢纽是银行、资产管理、保险或金融市场参与者集中的场所，为这些活动提供场所和支持服务。参与者可以包括银行和经纪人等金融中介机构；投资经理、保险公司和对冲基金等机构投资者；发行人如公司和政府。交易活动可以在交易场所等场所进行，并涉及清算所，以监督参与者之间的支付、证券和衍生品交易的交换。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_NAT_WON_CL_FINANCE_2" Language="zh_Hans_CN">
+			<Text>国际货币基金组织将主要金融中心细分为国际金融中心，如纽约市或伦敦；区域金融中心，如上海或法兰克福；以及倾向于专门从事税收驱动服务的离岸金融中心，如开曼群岛、都柏林或新加坡。这些离岸金融中心已成为避税天堂的代名词.</Text>
+		</Replace>
+
+		<!-- 国际航站楼 -->
+
+		<Replace Tag="LOC_NAT_WON_CL_AIRPORT_NAME" Language="zh_Hans_CN">
+			<Text>国际航站楼</Text>
+		</Replace>
+		<Replace Tag="LOC_NAT_WON_CL_AIRPORT_QUOTE" Language="zh_Hans_CN">
+			<Text>地球上没有任何语言出现过这样的形容：‘像机场一样漂亮’。[NEWLINE]——道格拉斯·亚当斯</Text>
+		</Replace>
+		<Replace Tag="LOC_NAT_WON_CL_AIRPORT_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>国家奇观，帝国境内只能建造一座。解锁需求：至少建造3座机场。[NEWLINE][NEWLINE]每座机场额外+4 [ICON_Production] 生产力。与国际航站楼相邻的航空港+2空中单位槽位。所在城市每拥有10 [ICON_Citizen] 人口，则来自奇观的 [ICON_Tourism] 旅游业绩产出+100%（至多+400%）。必须建在航空港附近的平坦地形上。</Text>
+		</Replace>
+		<Replace Tag="LOC_NAT_WON_CL_AIRPORT_DESCRIPTION_INTERNAL" Language="zh_Hans_CN">
+			<Text>国家奇观，帝国境内只能建造一座。[COLOR:Red]解锁需求：至少建造3座机场建筑。[ENDCOLOR][NEWLINE][NEWLINE]每座机场额外+4 [ICON_Production] 生产力。与国际航站楼相邻的航空港+2空中单位槽位。所在城市每拥有10 [ICON_Citizen] 人口，则其来自奇观的 [ICON_Tourism] 旅游业绩产出+100%（至多+400%）。必须建在航空港附近的平坦地形上。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_NAT_WON_CL_AIRPORT_1" Language="zh_Hans_CN">
+			<Text>国际航站楼是机场的一部分，设有海关和边境管制设施，使乘客能够在国家之间旅行。设有国际航站楼的机场通常比单纯的国内机场更大，并且通常具有更长的跑道和设施，以容纳通常用于国际和洲际旅行的较重的飞机。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_NAT_WON_CL_AIRPORT_2" Language="zh_Hans_CN">
+			<Text>1919年，坐落于伦敦的豪恩斯洛希斯机场（Hounslow Heath Aerodrome）成为了全世界首座拥有定期国际商业航班的机场。在此后的数十年中，能开展国际航班的机场在诸多大城市中逐渐司空见惯。目前，世界最大的国际航站楼位于北京新大兴国际机场，其面积超过750万平方英里，相当于98个足球场！</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameInfo>
+    <Types>
+        <Row Type="NOTIFICATION_AKGC_ENDOFERARANK" Kind="KIND_NOTIFICATION"/>
+        <Row Type="NOTIFICATION_AKGC_DEFAULTOPTIONS" Kind="KIND_NOTIFICATION"/>
+    </Types>
+    <Notifications>
+        <Row NotificationType="NOTIFICATION_AKGC_ENDOFERARANK" SeverityType="MID" ExpiresEndOfTurn="false" AutoNotify="False" GroupType="USER"/>
+        <Row NotificationType="NOTIFICATION_AKGC_DEFAULTOPTIONS" SeverityType="MID" ExpiresEndOfTurn="false" AutoNotify="False" GroupType="USER"/>
+    </Notifications>
+</GameInfo>

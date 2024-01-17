@@ -1,0 +1,1051 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RF'Sukritacts Ingolfur Arnarson (Iceland)'CN_Add_FI -->
+<!-- Author: 春 , Clear8Sky -->
+<!-- DateCreated: 2021/9/2 20:54:42 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Sukritact's Ingolfur Arnarson (Iceland)” 。该文件在 FrontEnd 与 InGame 时载入，需 Criteria ：Active_Expansion_1 -->
+	<LocalizedText>
+		
+	<!-- Suk_Ingolfur_ConfigText.sql文件 -->
+		<!-- 冰岛 -->
+
+		<Replace Tag="LOC_CIVILIZATION_SUK_ICELAND_NAME" Language="zh_Hans_CN">
+			<Text>冰岛</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVILIZATION_SUK_ICELAND_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>冰岛帝国</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVILIZATION_SUK_ICELAND_ADJECTIVE" Language="zh_Hans_CN">
+			<Text>冰岛的</Text>
+		</Replace>
+		
+		<!-- RwF模组 -->
+		
+		<Replace Tag="LOC_CIVILIZATION_SUK_ICELAND_DESCRIPTION_JFD_CIVILIZATION" Language="zh_Hans_CN">
+			<Text>冰岛文明</Text>
+		</Replace>
+		
+		<!-- 文明特性 -->
+
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_SUK_SAGAS_OF_THE_ICELANDERS_NAME" Language="zh_Hans_CN">
+			<Text>冰岛的传说</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_SUK_SAGAS_OF_THE_ICELANDERS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>历史时刻可提供 [ICON_GreatWriter] 大作家点数。学院、剧院广场和商业中心可从自然奇观中获得大量相邻加成。</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_SUK_SAGAS_OF_THE_ICELANDERS_DESCRIPTION_XP2" Language="zh_Hans_CN">
+			<Text>历史时刻可提供 [ICON_GreatWriter] 大作家点数。自然奇观、火山和地热裂缝可使相邻单元格+1魅力值；此外，城市中每有一种上述地貌或一处自然奇观，则+1 [ICON_Amenities] 宜居度。</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_SUK_SAGAS_OF_THE_ICELANDERS_SCIENCE" Language="zh_Hans_CN">
+			<Text>+{1_num} [ICON_Science] 科技值 来自相邻 {1_Num : plural 1?自然奇观; other?自然奇观;}</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_SUK_SAGAS_OF_THE_ICELANDERS_CULTURE" Language="zh_Hans_CN">
+			<Text>+{1_num} [ICON_Culture] 文化值 来自相邻 {1_Num : plural 1?自然奇观; other?自然奇观;}</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_SUK_SAGAS_OF_THE_ICELANDERS_GOLD" Language="zh_Hans_CN">
+			<Text>+{1_num} [ICON_Gold] 金币 来自相邻 {1_Num : plural 1?自然奇观; other?自然奇观;}</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_SUK_SAGAS_OF_THE_ICELANDERS_NOTIFICATION" Language="zh_Hans_CN">
+			<Text>{1}书写了传奇来纪念历史时刻，奖励您文明{2}点 [ICON_GreatWriter] 大作家点数。</Text>
+		</Replace>
+
+		<!-- 特色单位 -->
+
+		<Replace Tag="LOC_UNIT_SUK_LAWSPEAKER_NAME" Language="zh_Hans_CN">
+			<Text>宣法讲师</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_SUK_LAWSPEAKER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>仅冰岛可招募的一种特殊伟人单位。宣法讲师能扩充您文明的 [ICON_GreatWork_Writing] 著作。可通过建造市政广场及其建筑、首次采用某一级政体来获得宣法讲师。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_SUK_LAWSPEAKER_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]The Lawspeaker (lögsögumadur) was the highest official of Althing. The Lawspeaker's role was to recite the laws of Iceland at Althing, in the days before Iceland had a written language. He recited the laws of parliamentary procedure, chaired court sessions, and settled disputes. The Lawspeaker is believed to have addressed the assembly from the Law Rock, which was where verdicts were announced, important speeches made, and where the assembly was formally opened and dissolved. Much remains unclear about the assembly and the role of the Lawspeaker, as the Old Commonwealth was a time of change in Icelandic society, and disputes over power and religion made their mark on society and on the work of Althing.</Text>
+		</Replace>
+
+		<Replace Tag="LOC_GREATPERSON_LAWSPEAKER_AMPHITHEATER_DUMMY" Language="zh_Hans_CN">
+			<Text>若此城尚未拥有可放置 [ICON_GreatWork_Writing] 著作的古罗马剧场，则立即建成一个古罗马剧场，且额外+2 [ICON_GreatWork_Writing] 著作槽位。若非上述情况，则此城每本 [ICON_GreatWork_Writing] 著作可奖励{Amount}点 [ICON_Culture] 文化值。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATPERSON_LAWSPEAKER_LIBRARY_DUMMY" Language="zh_Hans_CN">
+			<Text>若此城尚未拥有可放置 [ICON_GreatWork_Writing] 著作的图书馆，则立即建成一个图书馆，且额外+2 [ICON_GreatWork_Writing] 著作槽位。若非上述情况，则此城每本 [ICON_GreatWork_Writing] 著作可奖励{Amount}点 [ICON_Science] 科技值。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATPERSON_LAWSPEAKER_SHRINE_DUMMY" Language="zh_Hans_CN">
+			<Text>若此城尚未拥有可放置 [ICON_GreatWork_Writing] 著作的神社，则立即建成一个神社，且额外+2 [ICON_GreatWork_Writing] 著作槽位。若非上述情况，则此城每本 [ICON_GreatWork_Writing] 著作可奖励{Amount}点 [ICON_Faith] 信仰值。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATPERSON_LAWSPEAKER_MARKET_DUMMY" Language="zh_Hans_CN">
+			<Text>若此城尚未拥有可放置 [ICON_GreatWork_Writing] 著作的市场，则立即建成一个市场，且额外+2 [ICON_GreatWork_Writing] 著作槽位。若非上述情况，则此城每本 [ICON_GreatWork_Writing] 著作可奖励{Amount}点 [ICON_Gold] 金币。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_GREATPERSON_LAWSPEAKER_SNORRI_STURLUSON_ACTIVE" Language="zh_Hans_CN">
+			<Text>每次招募一位 [ICON_GreatWriter] 大作家可奖励 [ICON_Culture] 文化值。[ICON_GreatWork_Writing] 著作额外+50% [ICON_Culture] 文化值。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATPERSON_LAWSPEAKER_ULFLJOTR_ACTIVE" Language="zh_Hans_CN">
+			<Text>位于魅力为“惊艳的”单元格上的草屋提供+2 [ICON_Culture] 文化值，+1 [ICON_GreatWriter] 大作家点数。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATPERSON_LAWSPEAKER_HRAFN_HAENGSSON_ACTIVE" Language="zh_Hans_CN">
+			<Text>该剧院广场的 [ICON_Culture] 文化值相邻加成翻倍。所在城市的每本 [ICON_GreatWork_Writing] 著作可奖励{Amount}点 [ICON_Culture] 文化值。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATPERSON_LAWSPEAKER_THORGEIR_LJOSVETNINGAGODI_ACTIVE" Language="zh_Hans_CN">
+			<Text>每次招募一位 [ICON_GreatWriter] 大作家可奖励 [ICON_Faith] 信仰值。所在城市的每本 [ICON_GreatWork_Writing] 著作可奖励{Amount}点 [ICON_Faith] 信仰值。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATPERSON_LAWSPEAKER_SKAFTI_THORODDSSON_ACTIVE" Language="zh_Hans_CN">
+			<Text>宣法讲师与 [ICON_GreatWriter] 大作家位于市中心时，所在城市每回合+4忠诚度。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATPERSON_LAWSPEAKER_OLAFR_THORTHARSON_ACTIVE" Language="zh_Hans_CN">
+			<Text>该剧院广场可提供等同于自身 [ICON_Culture] 文化值相邻加成的 [ICON_Science] 科技值。所在城市的每本 [ICON_GreatWork_Writing] 著作可奖励{Amount}点 [ICON_Science] 科技值。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATPERSON_LAWSPEAKER_MARKUS_SKEGGJASON_ACTIVE" Language="zh_Hans_CN">
+			<Text>每次招募一位 [ICON_GreatWriter] 大作家可奖励 [ICON_Gold] 金币。所在城市的每本 [ICON_GreatWork_Writing] 著作可奖励{Amount}点 [ICON_Gold] 金币。</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_ABILITY_SUK_LAWSPEAKER_LOYALTY_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>位于市中心时，提供+4忠诚度。（斯卡普蒂·索罗罗德松）</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_SUK_LAWSPEAKER_RECRUIT_WRITER_MESSAGE" Language="zh_Hans_CN">
+			<Text>{1_Bonus} 来自于招募大作家“{2_WriterName}”的奖励</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_SUK_LAWSPEAKER_RECRUIT_WRITER_SUBMESSAGE" Language="zh_Hans_CN">
+			<Text>{3_Color}+{1_num}[ENDCOLOR] {2_FontIcon}</Text>
+		</Replace>
+
+		<!-- 特色设施 -->
+
+		<Replace Tag="LOC_DISTRICT_SUK_TORFBAEIR_NAME" Language="zh_Hans_CN">
+			<Text>草屋</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_SUK_TORFBAEIR_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>冰岛特色区域，取代水渠。[NEWLINE][NEWLINE]取消了水渠通常的限制和加成，提供+3 [ICON_Housing] 住房、+1 [ICON_Food] 食物、+1 [ICON_Production] 生产力；建造在魅力为“迷人的”单元格上时，提升至+4 [ICON_Housing]住房、+2 [ICON_Food]食物、+2 [ICON_Production] 生产力；建造在魅力为“惊艳的”单元格上时，提升至+5 [ICON_Housing] 住房、+3 [ICON_Food] 食物、+3 [ICON_Production] 生产力。不能建造在沙漠地形上。</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_SUK_TORFBAEIR_XP2_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>冰岛特色区域，取代水渠。[NEWLINE][NEWLINE]取消了水渠通常的限制和加成，提供+3 [ICON_Housing] 住房、+1 [ICON_Food] 食物、+1 [ICON_Production] 生产力；建造在魅力为“迷人的”单元格上时，提升至+4 [ICON_Housing]住房、+2 [ICON_Food]食物、+2 [ICON_Production] 生产力；建造在魅力为“惊艳的”单元格上时，提升至+5 [ICON_Housing] 住房、+3 [ICON_Food] 食物、+3 [ICON_Production] 生产力。与地热裂缝相邻时+1 [ICON_Amenities] 宜居度。防止干旱时的 [ICON_Food] 食物损失。不能建造在沙漠地形上。</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_SUK_TORFBAEIR_XP2_FRONTEND_DESCRIPTION" Language="zh_Hans_CN">
+			<!-- 2021/09/09补更 -->
+			<Text>冰岛特色区域，取代水渠。[NEWLINE][NEWLINE]取消了通常的限制和加成，提供+3 [ICON_Housing] 住房、+1 [ICON_Food] 食物、+1 [ICON_Production] 生产力；建造在魅力为“迷人的”单元格上时，提升至+4 [ICON_Housing]住房、+2 [ICON_Food]食物、+2 [ICON_Production] 生产力；建造在魅力为“惊艳的”单元格上时，提升至+5 [ICON_Housing] 住房、+3 [ICON_Food] 食物、+3 [ICON_Production] 生产力。不能建造在沙漠上。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_DISTRICTS_PAGE_DISTRICT_SUK_TORFBAEIR_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]When looking at pictures from Iceland, small and cute looking turf houses (Torfbæir) are bound to come up. Due to lack of trees in Iceland, building out of turf was a popular building material and thick turf walls were useful to ward off the cold. This technique of building with turf first appeared with the arrival of Norse and British settlers during the 9th through 11th centuries at the height of the Viking Age in Europe. Historic records suggest that up to 50 percent of Icelandic dwellings were partially comprised of turf until the late 19th century, though this number began declining in the 20th century. By 1960 there were 234 inhabited turf homes in Iceland, most of which were deserted in the next decade.</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_DISTRICT_SUK_TORFBAEIR_BASE_FOOD" Language="zh_Hans_CN">
+			<!-- 2021/09/09补更 -->
+			<Text>+{1_num} [ICON_Food] 食物</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_SUK_TORFBAEIR_BASE_PRODUCTION" Language="zh_Hans_CN">
+			<!-- 2021/09/09补更 -->
+			<Text>+{1_num} [ICON_Production] 生产力</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_SUK_TORFBAEIR_APPEAL_FOOD" Language="zh_Hans_CN">
+			<Text>+{1_num} [ICON_Food] 食物 来自 单元格魅力</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_SUK_TORFBAEIR_APPEAL_CULTURE" Language="zh_Hans_CN">
+			<!-- 2021/09/09补更 -->
+			<Text>+{1_num} [ICON_Culture] 文化值 来自 单元格魅力</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_DISTRICT_SUK_TORFBAEIR_APPEAL_HOUSING_BASE" Language="zh_Hans_CN">
+			<Text>无吸引力及更差的</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_SUK_TORFBAEIR_APPEAL_HOUSING_CHARMING" Language="zh_Hans_CN">
+			<Text>迷人的</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_SUK_TORFBAEIR_APPEAL_HOUSING_BREATHTAKING" Language="zh_Hans_CN">
+			<Text>惊艳的</Text>
+		</Replace>
+
+		<!-- 阿尔纳尔松 -->
+
+		<Replace Tag="LOC_LEADER_SUK_INGOLFUR_NAME" Language="zh_Hans_CN">
+			<Text>英格尔夫·阿尔纳尔松</Text>
+		</Replace>
+
+		<!-- 领袖特性 -->
+
+		<Replace Tag="LOC_TRAIT_LEADER_SUK_BOOK_OF_SETTLEMENTS_NAME" Language="zh_Hans_CN">
+			<Text>定居者之书</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_SUK_BOOK_OF_SETTLEMENTS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>开拓者与侦察单位+1 [ICON_Movement] 移动力，+1视野。城市若建立在魅力为“迷人的”及以上单元格中，则可获得等同于其魅力值的忠诚度加成；解锁科技“飞行”后，可额外产出等同于其两倍魅力值的 [ICON_Tourism] 旅游业绩。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_TRAIT_LEADER_SUK_BOOK_OF_SETTLEMENTS_XP2_DESCRIPTION" Language="zh_Hans_CN">
+			<!-- 2021/09/09补更 -->
+			<Text>开拓者与侦察单位+1 [ICON_Movement] 移动力，+1视野。城市若建立在魅力为“迷人的”及以上单元格中，则可获得等同于其魅力值的忠诚度加成。若将区域放置于魅力为“惊艳的”单元格上，则立即推进该区域的 [ICON_Production] 建造进程。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_TRAIT_LEADER_SUK_BOOK_OF_SETTLEMENTS_MESSAGE" Language="zh_Hans_CN">
+			<!-- 2021/09/09补更 -->
+			<Text>[COLOR_FLOAT_PRODUCTION]+{1_num}[ENDCOLOR] [ICON_Production]</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_SUK_BOOK_OF_SETTLEMENTS_DESCRIPTION" Language="zh_Hans_CN">
+			<!-- 2021/09/09补更 -->
+			<Text>+1 [ICON_Movement] 移动力，+1视野。（{LOC_TRAIT_LEADER_SUK_BOOK_OF_SETTLEMENTS_NAME}）</Text>
+		</Replace>
+
+		<Replace Tag="LOC_SUK_BOOK_OF_SETTLEMENTS_APPEAL_DISTRICT_CAMPUS" Language="zh_Hans_CN">
+			<!-- 2021/09/09补更 -->
+			<Text>+{1_num} [ICON_Science] 科技值 来自 单元格魅力</Text>
+		</Replace>
+		<Replace Tag="LOC_SUK_BOOK_OF_SETTLEMENTS_APPEAL_DISTRICT_THEATER" Language="zh_Hans_CN">
+			<!-- 2021/09/09补更 -->
+			<Text>+{1_num} [ICON_Culture] 文化值 来自 单元格魅力</Text>
+		</Replace>
+
+		<Replace Tag="LOC_SUK_BOOK_OF_SETTLEMENTS_APPEAL_DISTRICT_COMMERCIAL_HUB" Language="zh_Hans_CN">
+			<!-- 2021/09/09补更 -->
+			<Text>+{1_num} [ICON_Gold] 金币 来自 单元格魅力</Text>
+		</Replace>
+		<Replace Tag="LOC_SUK_BOOK_OF_SETTLEMENTS_APPEAL_DISTRICT_HOLY_SITE" Language="zh_Hans_CN">
+			<!-- 2021/09/09补更 -->
+			<Text>+{1_num} [ICON_Faith] 信仰值 来自 单元格魅力</Text>
+		</Replace>
+
+		<!-- 议程 -->
+
+		<Replace Tag="LOC_AGENDA_SUK_BAY_OF_SMOKE_NAME" Language="zh_Hans_CN">
+			<Text>蒸汽湾</Text>
+		</Replace>
+		<Replace Tag="LOC_AGENDA_SUK_BAY_OF_SMOKE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>喜欢探索地图和在自然奇观附近定居的文明。不喜欢对探索没有兴趣的文明。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_SUK_INGOLFUR_REASON_ANY" Language="zh_Hans_CN">
+			<Text>（您拥有自然奇观，并正在探索地图）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_SUK_BAY_OF_SMOKE_KUDO" Language="zh_Hans_CN">
+			<Text>英格尔夫欣赏你的自然奇观和冒险精神。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_LEADER_SUK_INGOLFUR_REASON_ANY" Language="zh_Hans_CN">
+			<Text>（您没有探索地图）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_SUK_BAY_OF_SMOKE_WARNING" Language="zh_Hans_CN">
+			<Text>你缺乏对探索的兴趣，英格尔夫感到失望。</Text>
+		</Replace>
+
+	<!-- Suk_Ingolfur_InGameText.sql文件 -->
+		<!-- 城市 -->
+
+		<Replace Tag="LOC_CITY_NAME_SUK_ICELAND_REYKJAVIK" Language="zh_Hans_CN">
+			<Text>雷克雅未克</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_SUK_ICELAND_THINGVELLIR" Language="zh_Hans_CN">
+			<Text>辛格韦德利</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_SUK_ICELAND_HUSAVIK" Language="zh_Hans_CN">
+			<Text>胡萨维克</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_SUK_ICELAND_SKALHOLT" Language="zh_Hans_CN">
+			<Text>斯考尔霍特</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_SUK_ICELAND_HOLAR" Language="zh_Hans_CN">
+			<Text>希拉</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_SUK_ICELAND_AKUREYRI" Language="zh_Hans_CN">
+			<Text>阿克雷里</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_SUK_ICELAND_SEYTHISFJORTHUR" Language="zh_Hans_CN">
+			<Text>塞济苏菲厄泽</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_SUK_ICELAND_GARTHABAER" Language="zh_Hans_CN">
+			<Text>伽阿伯</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_SUK_ICELAND_ISAFJORTHUR" Language="zh_Hans_CN">
+			<Text>伊萨菲厄泽</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_SUK_ICELAND_SAUTHARKROKUR" Language="zh_Hans_CN">
+			<Text>斯卡加</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_SUK_ICELAND_BORGARNES" Language="zh_Hans_CN">
+			<Text>博尔加内斯</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_SUK_ICELAND_GARTHUR" Language="zh_Hans_CN">
+			<Text>加尔泽</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_SUK_ICELAND_AKRANES" Language="zh_Hans_CN">
+			<Text>阿克拉内斯</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_SUK_ICELAND_GRINDAVIK" Language="zh_Hans_CN">
+			<Text>格林达维克</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_SUK_ICELAND_SELFOSS" Language="zh_Hans_CN">
+			<Text>塞尔福斯</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_SUK_ICELAND_HAFNARFJORTHUR" Language="zh_Hans_CN">
+			<Text>哈夫纳夫约杜尔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_SUK_ICELAND_VESTMANNAEYJAR" Language="zh_Hans_CN">
+			<Text>韦斯特曼纳</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_SUK_ICELAND_KOPAVOGUR" Language="zh_Hans_CN">
+			<Text>科帕沃于尔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_SUK_ICELAND_KEFLAVIK" Language="zh_Hans_CN">
+			<Text>凯夫拉维克</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_SUK_ICELAND_EGILSSTATHIR" Language="zh_Hans_CN">
+			<Text>埃伊尔斯塔济</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_SUK_ICELAND_NESKAUPSTATHUR" Language="zh_Hans_CN">
+			<Text>内斯克伊斯塔泽</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_SUK_ICELAND_STYKKISHOLMUR" Language="zh_Hans_CN">
+			<Text>斯蒂斯基霍尔米</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_SUK_ICELAND_MOSFELLSBAER" Language="zh_Hans_CN">
+			<Text>莫斯费德斯拜尔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_SUK_ICELAND_HVERAGERTHI" Language="zh_Hans_CN">
+			<Text>惠拉盖尔济</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_SUK_ICELAND_THORLAKSHOFN" Language="zh_Hans_CN">
+			<Text>奥拉克什</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_SUK_ICELAND_ALFTANES" Language="zh_Hans_CN">
+			<Text>阿尔法涅斯</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_SUK_ICELAND_HOFN" Language="zh_Hans_CN">
+			<Text>霍芬</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_SUK_ICELAND_SANDGERTHI" Language="zh_Hans_CN">
+			<Text>桑得格斯</Text>
+		</Replace>
+		
+		<!-- 公民 -->
+
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MALE_1" Language="zh_Hans_CN">
+			<Text>斯诺里</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MALE_2" Language="zh_Hans_CN">
+			<Text>英格维</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MALE_3" Language="zh_Hans_CN">
+			<Text>哈拉尔德</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MALE_4" Language="zh_Hans_CN">
+			<Text>西格夫斯</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MALE_5" Language="zh_Hans_CN">
+			<Text>乌伏</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MALE_6" Language="zh_Hans_CN">
+			<Text>提尔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MALE_7" Language="zh_Hans_CN">
+			<Text>巴尔德</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MALE_8" Language="zh_Hans_CN">
+			<Text>古迪富尔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MALE_9" Language="zh_Hans_CN">
+			<Text>梭迩</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MALE_10" Language="zh_Hans_CN">
+			<Text>艾伊瑟</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_FEMALE_1" Language="zh_Hans_CN">
+			<Text>西格加</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_FEMALE_2" Language="zh_Hans_CN">
+			<Text>奥德龙</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_FEMALE_3" Language="zh_Hans_CN">
+			<Text>阿尔弗希尔德</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_FEMALE_4" Language="zh_Hans_CN">
+			<Text>恩娜</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_FEMALE_5" Language="zh_Hans_CN">
+			<Text>拉格海乌尔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_FEMALE_6" Language="zh_Hans_CN">
+			<Text>黑斯露</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_FEMALE_7" Language="zh_Hans_CN">
+			<Text>艾迪斯</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_FEMALE_8" Language="zh_Hans_CN">
+			<Text>伊伦纳</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_FEMALE_9" Language="zh_Hans_CN">
+			<Text>阿尔弗里德</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_FEMALE_10" Language="zh_Hans_CN">
+			<Text>劳菲</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MODERN_MALE_1" Language="zh_Hans_CN">
+			<Text>英戈尔富</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MODERN_MALE_2" Language="zh_Hans_CN">
+			<Text>克里斯蒂安</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MODERN_MALE_3" Language="zh_Hans_CN">
+			<Text>埃米利</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MODERN_MALE_4" Language="zh_Hans_CN">
+			<Text>奥拉夫</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MODERN_MALE_5" Language="zh_Hans_CN">
+			<Text>古蒙杜尔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MODERN_MALE_6" Language="zh_Hans_CN">
+			<Text>阿纳尔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MODERN_MALE_7" Language="zh_Hans_CN">
+			<Text>乔恩</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MODERN_MALE_8" Language="zh_Hans_CN">
+			<Text>乔翰</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MODERN_MALE_9" Language="zh_Hans_CN">
+			<Text>汤玛士</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MODERN_MALE_10" Language="zh_Hans_CN">
+			<Text>比约恩</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MODERN_FEMALE_1" Language="zh_Hans_CN">
+			<Text>凯瑟琳</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MODERN_FEMALE_2" Language="zh_Hans_CN">
+			<Text>弗雷雅</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MODERN_FEMALE_3" Language="zh_Hans_CN">
+			<Text>海尔加</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MODERN_FEMALE_4" Language="zh_Hans_CN">
+			<Text>希尔杜尔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MODERN_FEMALE_5" Language="zh_Hans_CN">
+			<Text>玛格丽特</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MODERN_FEMALE_6" Language="zh_Hans_CN">
+			<Text>霍格纳</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MODERN_FEMALE_7" Language="zh_Hans_CN">
+			<Text>伊尔萨</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MODERN_FEMALE_8" Language="zh_Hans_CN">
+			<Text>比约克</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MODERN_FEMALE_9" Language="zh_Hans_CN">
+			<Text>奥图斯塔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MODERN_FEMALE_10" Language="zh_Hans_CN">
+			<Text>哈尔多拉</Text>
+		</Replace>
+		
+		<!-- 所有格形式（以满足文明特性中的引用） -->
+		
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MALE_1_GENITIVE" Language="zh_Hans_CN">
+			<Text>斯诺拉</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MALE_2_GENITIVE" Language="zh_Hans_CN">
+			<Text>英格瓦</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MALE_3_GENITIVE" Language="zh_Hans_CN">
+			<Text>哈拉尔兹</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MALE_4_GENITIVE" Language="zh_Hans_CN">
+			<Text>西格夫斯</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MALE_5_GENITIVE" Language="zh_Hans_CN">
+			<Text>乌珐</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MALE_6_GENITIVE" Language="zh_Hans_CN">
+			<Text>提斯</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MALE_7_GENITIVE" Language="zh_Hans_CN">
+			<Text>巴尔德斯</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MALE_8_GENITIVE" Language="zh_Hans_CN">
+			<Text>古迪富尔斯</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MALE_9_GENITIVE" Language="zh_Hans_CN">
+			<Text>梭迩拉</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MALE_10_GENITIVE" Language="zh_Hans_CN">
+			<Text>艾伊西斯</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_FEMALE_1_GENITIVE" Language="zh_Hans_CN">
+			<Text>西格鲁纳尔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_FEMALE_2_GENITIVE" Language="zh_Hans_CN">
+			<Text>奥德鲁纳尔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_FEMALE_3_GENITIVE" Language="zh_Hans_CN">
+			<Text>阿尔弗希达尔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_FEMALE_4_GENITIVE" Language="zh_Hans_CN">
+			<Text>恩努</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_FEMALE_5_GENITIVE" Language="zh_Hans_CN">
+			<Text>拉格海萨尔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_FEMALE_6_GENITIVE" Language="zh_Hans_CN">
+			<Text>黑斯鲁纳尔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_FEMALE_7_GENITIVE" Language="zh_Hans_CN">
+			<Text>艾迪萨尔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_FEMALE_8_GENITIVE" Language="zh_Hans_CN">
+			<Text>伊伦纳尔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_FEMALE_9_GENITIVE" Language="zh_Hans_CN">
+			<Text>阿尔弗里萨尔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_FEMALE_10_GENITIVE" Language="zh_Hans_CN">
+			<Text>劳菲加尔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MODERN_MALE_1_GENITIVE" Language="zh_Hans_CN">
+			<Text>英戈尔夫斯</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MODERN_MALE_2_GENITIVE" Language="zh_Hans_CN">
+			<Text>克里斯蒂安斯</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MODERN_MALE_3_GENITIVE" Language="zh_Hans_CN">
+			<Text>埃米利斯</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MODERN_MALE_4_GENITIVE" Language="zh_Hans_CN">
+			<Text>奥拉夫斯</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MODERN_MALE_5_GENITIVE" Language="zh_Hans_CN">
+			<Text>古蒙杜尔斯</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MODERN_MALE_6_GENITIVE" Language="zh_Hans_CN">
+			<Text>阿纳尔斯</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MODERN_MALE_7_GENITIVE" Language="zh_Hans_CN">
+			<Text>乔恩斯</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MODERN_MALE_8_GENITIVE" Language="zh_Hans_CN">
+			<Text>乔翰斯</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MODERN_MALE_9_GENITIVE" Language="zh_Hans_CN">
+			<Text>汤玛士</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MODERN_MALE_10_GENITIVE" Language="zh_Hans_CN">
+			<Text>比约恩斯</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MODERN_FEMALE_1_GENITIVE" Language="zh_Hans_CN">
+			<Text>凯瑟琳纳尔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MODERN_FEMALE_2_GENITIVE" Language="zh_Hans_CN">
+			<Text>弗雷鸠</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MODERN_FEMALE_3_GENITIVE" Language="zh_Hans_CN">
+			<Text>海尔鸪</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MODERN_FEMALE_4_GENITIVE" Language="zh_Hans_CN">
+			<Text>希尔达尔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MODERN_FEMALE_5_GENITIVE" Language="zh_Hans_CN">
+			<Text>玛格丽塔尔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MODERN_FEMALE_6_GENITIVE" Language="zh_Hans_CN">
+			<Text>霍格努</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MODERN_FEMALE_7_GENITIVE" Language="zh_Hans_CN">
+			<Text>伊尔苏</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MODERN_FEMALE_8_GENITIVE" Language="zh_Hans_CN">
+			<Text>比约卡尔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MODERN_FEMALE_9_GENITIVE" Language="zh_Hans_CN">
+			<Text>奥图斯途</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_SUK_ICELAND_MODERN_FEMALE_10_GENITIVE" Language="zh_Hans_CN">
+			<Text>哈尔多鲁</Text>
+		</Replace>
+		
+		<!-- 地名 -->
+
+		<Replace Tag="LOC_NAMED_RIVER_THJORSA_NAME" Language="zh_Hans_CN">
+			<Text>肖尔索河</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_HVITA_NAME" Language="zh_Hans_CN">
+			<Text>惠特河</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_FNJOSKA_NAME" Language="zh_Hans_CN">
+			<Text>弗纽斯特河</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_KUTHAFLJOT_NAME" Language="zh_Hans_CN">
+			<Text>库萨弗廖特河</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_SKJALFANDAFLJOT_NAME" Language="zh_Hans_CN">
+			<Text>斯乔尔万达河</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_JOKULSA_A_FJOLLUM_NAME" Language="zh_Hans_CN">
+			<Text>菲约德勒姆冰河</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_JOKULSA_A_DAL_NAME" Language="zh_Hans_CN">
+			<Text>达尔冰河</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_MOUNTAIN_ESJAN_NAME" Language="zh_Hans_CN">
+			<Text>埃夏山</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_MOUNTAIN_HOFSJOKULL_NAME" Language="zh_Hans_CN">
+			<Text>霍夫斯冰川</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_MOUNTAIN_VATNAJOKULL_NAME" Language="zh_Hans_CN">
+			<Text>瓦特纳冰原</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_MOUNTAIN_LANGJOKULL_NAME" Language="zh_Hans_CN">
+			<Text>朗格冰川</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_MOUNTAIN_MYRDALSJOKULL_NAME" Language="zh_Hans_CN">
+			<Text>米达尔斯冰原</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_MOUNTAIN_LANDMANNALAUGAR_NAME" Language="zh_Hans_CN">
+			<Text>兰德曼纳劳卡山脉</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_VOLCANO_HEKLA_NAME" Language="zh_Hans_CN">
+			<Text>海克拉火山</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_VOLCANO_BARTHARBUNGA_NAME" Language="zh_Hans_CN">
+			<Text>巴达本加山</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_VOLCANO_KATLA_NAME" Language="zh_Hans_CN">
+			<Text>卡特拉火山</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_VOLCANO_KRAFLA_CALDERA_NAME" Language="zh_Hans_CN">
+			<Text>克拉夫拉火山</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_VOLCANO_ASKJA_CALDERA_NAME" Language="zh_Hans_CN">
+			<Text>阿斯恰火山</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_VOLCANO_ELDFELL_NAME" Language="zh_Hans_CN">
+			<Text>埃尔德菲尔火山</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_VOLCANO_THRIHNJUKAGIGUR_NAME" Language="zh_Hans_CN">
+			<Text>斯瑞努卡基古火山</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_LAKE_THINGVALLAVATN_NAME" Language="zh_Hans_CN">
+			<Text>辛格瓦尔德拉湖</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_LAKE_MYVATN_NAME" Language="zh_Hans_CN">
+			<Text>米湖</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_LAKE_KERITH_NAME" Language="zh_Hans_CN">
+			<Text>凯瑞斯火山口湖</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_LAKE_OSKJUVATN_NAME" Language="zh_Hans_CN">
+			<Text>厄斯克湖</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_LAKE_JOKULSARLON_NAME" Language="zh_Hans_CN">
+			<Text>冰河湖</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_LAKE_LAGARFLJOT_NAME" Language="zh_Hans_CN">
+			<Text>拉加尔湖</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_LAKE_HVITARVATN_NAME" Language="zh_Hans_CN">
+			<Text>克维塔湖</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_SEA_BAKKAFLOI_NAME" Language="zh_Hans_CN">
+			<Text>巴卡湾</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_SEA_FAXAFLOI_NAME" Language="zh_Hans_CN">
+			<Text>法赫萨湾</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_SEA_GRUNNAVIK_NAME" Language="zh_Hans_CN">
+			<Text>格伦纳维湾</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_SEA_HERADSFLOI_NAME" Language="zh_Hans_CN">
+			<Text>赫拉德斯湾</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_SEA_HUNAFLOI_NAME" Language="zh_Hans_CN">
+			<Text>胡纳湾</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_SEA_THISTILFJORTHUR_NAME" Language="zh_Hans_CN">
+			<Text>锡斯蒂尔菲厄泽</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_SEA_BREITHAFJORTHUR_NAME" Language="zh_Hans_CN">
+			<Text>布雷扎湾</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_SEA_ISAFJARTHARDJUP_NAME" Language="zh_Hans_CN">
+			<Text>伊萨深峡湾</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_SEA_SKAGAFJORTHUR_NAME" Language="zh_Hans_CN">
+			<Text>斯卡加峡湾</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_SEA_EYJAFJORTHUR_NAME" Language="zh_Hans_CN">
+			<Text>埃亚峡湾</Text>
+		</Replace>
+		
+		<!-- 百科 -->
+		<!-- 文明信息 -->
+
+		<Replace Tag="LOC_CIVINFO_SUK_ICELAND_LOCATION" Language="zh_Hans_CN">
+			<Text>欧洲</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVINFO_SUK_ICELAND_SIZE" Language="zh_Hans_CN">
+			<Text>约39.7万平方英里（10.27万平方公里）</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVINFO_SUK_ICELAND_POPULATION" Language="zh_Hans_CN">
+			<Text>33万8349（2017年）</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVINFO_SUK_ICELAND_CAPITAL" Language="zh_Hans_CN">
+			<Text>雷克雅未克</Text>
+		</Replace>
+		
+		<!-- 文明百科 -->
+
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_SUK_ICELAND_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]The history of Iceland is a long and adventurous saga filled with many transitions and discoveries. When the first Viking settlers arrived in Iceland in the late 9th century A.D., they found an uninhabited island. Today Iceland is a thoroughly modern country – but evidence of past times and their rich cultural heritage is still visible everywhere you look.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_SUK_ICELAND_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>What we know of Iceland’s earliest settlers can be largely traced back to the Landnámabók, or the “Book of Settlements”, a five-part medieval manuscript that tells the story of the Norsemen discovering and settling the country in the 9th and 10th century. Ingólfur Arnarson is credited as Iceland’s first permanent settler, though he also arrived at the island with his brother-in-law, Hjörleifr Hróðmarsson, later killed by his slaves after settling at Mount Hjörleifshöfði, just east of modern-day Vík. Norwegian chieftains followed Ingólfur en masse through the next few decades to escape the heavy-handed King Harald of Norway, and in about 60 years, Iceland was fully settled. By 930 AD, it is thought that all arable land in the country had been settled. Before the long period of growth, Iceland would soon experience, the settlement had grown so large that a new legislative body was in order; the ruling chiefs, therefore, established the Alþingi, which is believed by many to be the world’s oldest nation-wide parliament. The convening of the first Althing in 930 AD marks the beginning of the independent republic. This period of governance is known as the Icelandic Commonwealth (Þjóðveldið) or Free State; “The Golden Age of Iceland”.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_SUK_ICELAND_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>The period 930–1030 is known as The Saga Age, since many of the events recorded later (in the 12th and 13th century) in the Icelandic sagas actually took place during this time. Moreover, many of the key events related in the sagas happened at Thingvellir. It was also at Thingvellir in the year 999 or 1000 that Christianity was adopted in Iceland. 1120s-1230s, the Great Age of Writing, was an epoch of remarkable literary achievements. Most of the Icelandic sagas were written during this time, as well as the great historical works: Íslendingabók and Heimskringla. Íslendingabók, the first national history, was written around 1130 by Ari Þorgilsson (Thorgilsson), called fróði - Ari the Wise (1067-1148). Heimskringla (The History of Norwegian Kings) was written by Snorri Sturluson (1179-1241).</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_SUK_ICELAND_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>The year 1220 marks the beginnings of “The Age of the Sturlungs” - Sturlungaöld. This was a period of internal conflict in Iceland, and the last period in Iceland’s nearly 400 years as an independent free state. The Sturlungs were members of the most powerful family clan; amongst them were the authors of the classic Icelandic sagas. The most famous and greatest of them all was Snorri Sturluson. Through marriages and political alliances, the Sturlungs dominated great part of the country, but other chieftains and influential families opposed them. The prolonged feuds and power struggles between the chieftaincies brought about economic and social ruin. At the time, the Norwegian king Hákon Hákonarson (King Haakon IV) was attempting to extend his influence in Iceland, as part of his campaign to unite all Norwegian Viking Age settlements. Several of the greatest Icelandic chieftains had become the King’s liegemen, while Snorri Sturluson had fallen out of favour, due to his support for Earl Skúli, King Haakon’s rival. In 1241, at King Haakon’s instigation, Snorri Sturluson was killed in Reykholt. Ultimately, 1262-1264, Icelandic chieftains were persuaded to swear allegiance to King Haakon IV of Norway, partly in the hope that he would bring peace to the country. 1262 marks the end of the Icelandic Commonwealth period.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_SUK_ICELAND_CHAPTER_HISTORY_PARA_5" Language="zh_Hans_CN">
+			<Text>Under the Norwegian Crown, Icelanders became dependent on Norwegian ships for supplies, which often failed to come. A period of great hardship and desolation followed. Ice often blocked the fjords and the sea approaches. Violent volcanic eruptions, recurring epidemics and famine ravaged the entire country. In 1349 the Black Death afflicted Norway, cutting off all trade and supplies. In 1380 the Norwegian monarchy entered into a union with Denmark; however, the change did not effect Iceland’s status. When in 1397 the Kalmar Union was formed between Sweden, Norway and Denmark, Iceland came under the dominant Danish crown. The conditions in the country worsened further. Icelandic chieftains were replaced by Danish royal officials. Althing became a court of law; judges were chosen by royal officers. At the beginning of the 15th century, 1402-1404, the Black Death afflicted Iceland, killing more than a third of the population. In the period 1540-1550 Lutheranism was imposed on Iceland by the order of the Danish king, and first Lutheran bishop installed in Skálholt. The opposition to the Reformation in Iceland ended in 1550 when the last Catholic bishop, Jón Arason, was beheaded. In 1602 Denmark established a trade monopoly, forbidding Iceland to trade with any country other than Denmark, precipitating a period of extreme destitution. The monopoly remained in effect until 1787. The Danish Crown tightened its grip on Iceland on the constitutional level as well. In 1662, the Danish King assumed hereditary power, absolute monarchy was imposed in Iceland and the power of Althing significantly declined. The 18th century in Iceland was a tragic period of population decline, increasing poverty and natural calamities. In 1703 when the first census of Iceland was conducted, the population numbered 50,366, and about 20% were destitute. After the smallpox epidemic in 1707, around 18,000 people perished. The series of natural disasters and famines that followed in their wake caused population decline to well below 40,000 twice more during the century. Katla volcano erupted in 1755 and in 1783 the catastrophic Laki eruption (Lakagígar) occurred, causing floods, ash and toxic fumes and the ensuing starvation killed 10,000 people.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_SUK_ICELAND_CHAPTER_HISTORY_PARA_6" Language="zh_Hans_CN">
+			<Text>In 1800 the Althing was dissolved by royal decree and later replaced by the Supreme Court. However, by the middle of the 19th century a new national consciousness was revived in Iceland, and Jón Sigurðsson had become the great leader of the Icelandic independence movement. In 1843 the Althing was re-established as a consultative body, but only a few powerful feudal barons and landowners were elected. When in 1848 King Frederick VII of Denmark renounced his absolute power, it also led to the question of Iceland’s status in the new form of government. Jón Sigurðsson’s stance was that the king could only give his absolute power rule over Iceland back to the Icelanders themselves, since they were the ones who had relinquished it to the Danish Crown in 1662. In addition, Iceland had originally entered the union with the Norwegian monarchy as a free state with certain rights vouchsafed under the agreement from 1262-1264. In 1854 the Danish trade monopoly lifted, finally granting Iceland complete freedom of trade. Freedom of press was established in 1855. In 1874 the millennium celebrations of the Settlement were held and King Christian IX of Denmark visited Iceland. He presented Iceland with a new constitution, granting the Althing legislative power in internal affairs. In 1904 the constitution was amended, and Iceland got home rule under Denmark. The first Icelandic minister was established in Reykjavik.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_SUK_ICELAND_CHAPTER_HISTORY_PARA_7" Language="zh_Hans_CN">
+			<Text>Whilst the years of home rule (1904-1918) were characterized by progress in economic and social spheres, Iceland’s struggle for greater autonomy continued. On 1 December 1918, Iceland became a sovereign state, the Kingdom of Iceland, in a personal union with the Danish king.  1944, Iceland rescinded its union with Denmark, and the Republic of Iceland was founded at Thingvellir. The proclamation of the Republic of Iceland marked the end of seven centuries of foreign rule.  A new epoch in the history of Iceland had begun.</Text>
+		</Replace>
+
+	<!-- Suk_Ingolfur_GreatPersons.sql文件 -->
+		<!-- 1～5 -->
+		
+		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_SUK_LAWSPEAKER_SNORRI_STURLUSON_NAME" Language="zh_Hans_CN">
+			<Text>斯诺里·斯蒂德吕松</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_SUK_LAWSPEAKER_SNORRI_STURLUSON_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]Snorri Sturluson (1178 – September 23, 1241) was an Icelandic historian, poet, and politician, considered to be one of the most important poets in Icelandic literature. He is known today as the author of two lengthy verse works, or eddas, the Prose Edda and the Heimskringla. In the Prose Edda, an instructional poem of great value to scholars, Sturluson recounts a number of stories out of Norse mythology while explicating on the verse-forms and literary techniques utilized in each of the myths he recounts. The Heimskringla is a more traditional sequence of semi-mythological sagas relating the history of the Norse kings. Sturluson is also believed, through stylistic and linguistic evidence, to be the author of Egils Saga, one of the most important and widely-read of all the Icelandic sagas. As an author of poetry, history, and instructional verse, Sturluson is one of the most informative sources for scholars of medieval Scandinavian history and culture. His works are also generally considered to be among the most beautiful and brilliantly-crafted of all Icelandic poetry. A major influence on the Icelandic poets of his own times, Sturluson has also influenced a number of non-Scandinavian authors, including the Argentinian poet and story-writer Jorge Luis Borges and a number of minor poets of German Romanticism.</Text>
+		</Replace>
+		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_SUK_LAWSPEAKER_ULFLJOTR_NAME" Language="zh_Hans_CN">
+			<Text>乌尔修特</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_SUK_LAWSPEAKER_ULFLJOTR_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]Úlfljótr brought law to Iceland and is regarded by some as Iceland’s first lawspeaker. In around 927-930 AD Úlfljótr was sent to Norway by a group of chieftains to study law and culture and bring back to Iceland sufficient understanding to help establish Iceland’s legal framework and form of government. And while he was in Norway, where he stayed for around three years, Grimur Geitskor, Úlfljótr’s half-brother, made a survey of Iceland to find the best place for the establishment of the Althing. Úlfljótr is commemorated with the first law enacted at the Alþing, Úlfljót’s Law, with the lake Úlfljótsvatn and by the Úlfljótur Law Review.</Text>
+		</Replace>
+		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_SUK_LAWSPEAKER_HRAFN_HAENGSSON_NAME" Language="zh_Hans_CN">
+			<Text>哈芬·汉格森</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_SUK_LAWSPEAKER_HRAFN_HAENGSSON_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]Hrafn Hængsson was a tenth-century Icelandic jurist and goði. He was the son of Ketil Hæng, one of the early settlers of Iceland, and his wife Ingunn. Hrafn was one of the main parties responsible for the unification of Iceland under the Althing and was then appointed lawspeaker at the first Althing in 930 CE. He served in that capacity until 949.</Text>
+		</Replace>
+		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_SUK_LAWSPEAKER_THORGEIR_LJOSVETNINGAGODI_NAME" Language="zh_Hans_CN">
+			<Text>索吉尔·约斯韦特宁加戈迪</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_SUK_LAWSPEAKER_THORGEIR_LJOSVETNINGAGODI_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]Þorgeir Ljósvetningagoði Þorkelsson was a lawspeaker in Iceland’s Althing from 985 to 1001. In the year 999 or 1000, Iceland’s legislative assembly was debating which religion they should practice: Norse paganism or Christianity. Þorgeir, himself a pagan priest and chieftain (a goði), decided in favour of Christianity after a day and a night of silent meditation under a fur blanket, thus averting potentially disastrous civil conflict. Under the compromise, pagans could still practice their religion in private and several of the old customs were retained. After his decision, Þorgeir himself converted to Christianity. Þorgeir’s story is preserved in Ari Þorgilsson’s Íslendingabók.</Text>
+		</Replace>
+		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_SUK_LAWSPEAKER_SKAFTI_THORODDSSON_NAME" Language="zh_Hans_CN">
+			<Text>斯卡普蒂·索罗罗德松</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_SUK_LAWSPEAKER_SKAFTI_THORODDSSON_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]Skafti Þóroddsson (died 1030) was an Icelandic lawspeaker and skald. He became lawspeaker in 1004, succeeding his uncle Grímr when the latter’s voice failed him. He held office till his death in 1030, longer than anyone else. According to the Íslendingabók he instituted judicial reform by establishing the “fifth court”, a national court of appeals.</Text>
+		</Replace>
+		
+		<!-- 6～10 -->
+
+		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_SUK_LAWSPEAKER_OLAFR_THORTHARSON_NAME" Language="zh_Hans_CN">
+			<Text>奥拉夫尔·科达臣</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_SUK_LAWSPEAKER_OLAFR_THORTHARSON_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]Óláfr Þórðarson was an Icelandic skald and scholar who was born about 1210 and died in 1259. He is usually called Óláfr hvítaskáld (“Olaf the white skald”) in contrast to a contemporary skald called Óláfr svartaskáld (“Olaf the black skald”). Óláfr was the paternal nephew of Snorri Sturluson and spent his youth in Snorri's home where he had an important part of his scholarly education. Particular important is his Grammatical Treatise. He was Iceland's lawspeaker from 1252 to 1256. He became a famous skald and composed poems about the three Scandinavian kings, which are partially included in the Knýtlinga saga, which he probably made from material he collected in Denmark.</Text>
+		</Replace>
+		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_SUK_LAWSPEAKER_STURLA_THORTHARSON_NAME" Language="zh_Hans_CN">
+			<Text>史图拉·索达松</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_SUK_LAWSPEAKER_STURLA_THORTHARSON_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]The life of Sturla Þórðarson was chronicled in the Sturlunga saga. Sturla was the son of Icelandic chieftain Þórður Sturluson and his mistress Þóra, and grandson of Sturla Þórðarson the elder. He was a nephew and pupil of the famous saga-writer Snorri Sturluson. His brother was Icelandic skald and scholar Ólafur Þórðarson hvítaskáld. Sturla was appointed law speaker over all of Iceland for a brief period after the dissolution of the Icelandic Commonwealth, and wrote the law book Járnsíða. He is best known for writing Íslendinga saga, the longest saga within Sturlunga saga, and Hákonar saga Hákonarsonar, the story of Haakon IV of Norway.</Text>
+		</Replace>
+		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_SUK_LAWSPEAKER_HAUKR_ERLENDSSON_NAME" Language="zh_Hans_CN">
+			<Text>豪克·埃尔伦森</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_SUK_LAWSPEAKER_HAUKR_ERLENDSSON_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]Haukur Erlendsson was Icelandic Lawspeaker, and later lawspeaker and knight of Norway, known for having compiled a number of Icelandic sagas and other materials mostly in his own hand, bound in a book called the Hauksbók after him.</Text>
+		</Replace>
+		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_SUK_LAWSPEAKER_GUNNAR_THORGRIMSSON_NAME" Language="zh_Hans_CN">
+			<Text>冈纳尔·索格里姆松</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_SUK_LAWSPEAKER_GUNNAR_THORGRIMSSON_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]Gunnar “the Wise” Þorgrímsson, was an Icelandic Lawspeaker of the 11th century, first between 1063-1065 and again in 1075.</Text>
+		</Replace>
+		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_SUK_LAWSPEAKER_MARKUS_SKEGGJASON_NAME" Language="zh_Hans_CN">
+			<Text>马库斯·斯凯格贾森</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_SUK_LAWSPEAKER_MARKUS_SKEGGJASON_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]Markús Skeggjason was the son of Skeggi Bjarnason and possibly a brother of the poet Þórarinn Skeggjason. He was lawspeaker in Iceland from 1084 until his death on 15 October 1107. In Íslendingabók he is named as an important informant for Ari Þorgilsson about the lives of the earlier lawspeakers in Iceland. He had gained this information from his brother, father and grandfather. Markús appears to have had close ties to the Church: during his time as lawspeaker, and with his guidance, Gizurr Ísleifsson, bishop of Skálholt (1081-1118), established the Icel—tithe laws. Markús was among the most respected poets in the canon of the 13th century.</Text>
+		</Replace>
+		
+		<!-- 11～15 -->
+
+		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_SUK_LAWSPEAKER_JON_EINARSSON_NAME" Language="zh_Hans_CN">
+			<Text>约恩·艾纳尔松</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_SUK_LAWSPEAKER_JON_EINARSSON_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]Jón Einarsson was an Icelandic Lawspeaker in the 13th century. The law book Jónsbók is named after him. When Sturla Þórðarson was no longer able to adequately perform all the responsibilities of a Lawspeaker's office, Jón Einarsson was placed with him. In a letter written by Bishop Árni to the King of Norway in the autumn of 1277, he says that Jón the Lawspeaker did a good and wise job, but that Sturla did not do as good a job as was needed.</Text>
+		</Replace>
+		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_SUK_LAWSPEAKER_KETILL_THORLAKSSON_NAME" Language="zh_Hans_CN">
+			<Text>凯蒂尔·索拉克森</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_SUK_LAWSPEAKER_KETILL_THORLAKSSON_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]Ketill Þorláksson was an Icelandic Lawspeaker and priest in the 13th century. Ketill was a Lawspeaker from 1259 to 1262 and held that position when the “Old Covenant”—an agreement which effected the union of Iceland and Norway—was made.</Text>
+		</Replace>
+		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_SUK_LAWSPEAKER_STYRMIR_KARASON_NAME" Language="zh_Hans_CN">
+			<Text>斯蒂米尔·卡拉松</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_SUK_LAWSPEAKER_STYRMIR_KARASON_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]Styrmir Kárason was a Lawspeaker, writer, and prior in Viðeyjarklaustur. He was a priest for Snorri Sturluson in Reykholt from 1228 to 1235. He was Lawspeaker between 1210- 1214 and again between 1232- 1235. He then became the prior of the monastery on Viðey between 1235– 1245. In light of the fact that Styrmir was a home priest in Reykholt, it is likely that he was Snorri Sturluson's assistant in writing and bookmaking. Styrmir was a well-known writer in his time, and is mentiond in several contemporary books.</Text>
+		</Replace>
+		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_SUK_LAWSPEAKER_GISSUR_HALLSSON_NAME" Language="zh_Hans_CN">
+			<Text>吉苏尔·海尔森</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_SUK_LAWSPEAKER_GISSUR_HALLSSON_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]Gissur Hallsson was an Icelandic priest, stableman, and Lawspeaker in the 12th century. He was a Lawspeaker from 1181 to 1201. He was highly respected and considered a great scholar. He wrote Hungurväka, the story of the first bishops of Skálholt.</Text>
+		</Replace>
+		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_SUK_LAWSPEAKER_KOLBEINN_FLOSASON_NAME" Language="zh_Hans_CN">
+			<Text>科尔贝恩·弗洛萨森</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_SUK_LAWSPEAKER_KOLBEINN_FLOSASON_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]Kolbeinn Flosason an Icelandic Lawspeaker between 1066-1071. It has long been disputed who this Kolbeinn was and two people have been named: Kolbeinn Flosason from the Svínfelling family; and Kolbeinn the Lawspeaker, son of Flosi from Vellir in Landsveit.</Text>
+		</Replace>
+		
+		<!-- 16～18 -->
+
+		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_SUK_LAWSPEAKER_BERGTHOR_HRAFNSSON_NAME" Language="zh_Hans_CN">
+			<Text>贝尔热尔·赫拉夫松</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_SUK_LAWSPEAKER_BERGTHOR_HRAFNSSON_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]Bergþór Hrafnsson was an Icelandic Lawspeaker in the 12th century. During his time as a Lawspeaker, Icelandic law was written down for the first time. He took over the office of Lawspeaker from Úlfhéðin in 1117 and served until 1122.</Text>
+		</Replace>
+		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_SUK_LAWSPEAKER_ULFHETHINN_GUNNARSSON_NAME" Language="zh_Hans_CN">
+			<Text>奥夫海因·冈纳松</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_SUK_LAWSPEAKER_ULFHETHINN_GUNNARSSON_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]Úlfhéðinn Gunnarsson was an Icelandic Lawspeaker from the 12th century. He was one of the sources of Ari Þorgilsson when he wrote Íslendingabók.</Text>
+		</Replace>
+		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_SUK_LAWSPEAKER_TEITUR_THORVALDSSON_NAME" Language="zh_Hans_CN">
+			<Text>泰图尔·索瓦尔德松</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_SUK_LAWSPEAKER_TEITUR_THORVALDSSON_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]Teitur Þorvaldsson was an Icelandic Lawspeaker in the 13th century. He was from the family of Haukdælar, son of Þorvaldur Gissurarson in Hruni and half-brother of Gissur Þorvaldsson. Teitur was ordained a priest and lived in Bræðratunga. He was a Lawspeaker from 1219 to 1221 and again from 1236 to 1247. He was said to be a wise and humble man who promoted reconciliation.</Text>
+		</Replace>
+
+	<!-- Suk_Ingolfur_LeaderText.sql文件 -->
+		<!-- 领袖 -->
+
+		<Replace Tag="LOC_LOADING_INFO_LEADER_SUK_INGOLFUR" Language="zh_Hans_CN">
+			<Text>去冒险吧，因为世界是广阔的，充满了奇迹！遥远的土地蕴藏着巨大的机遇，也面临着巨大的困难，但请放心，你们人民的韧性和创造力将使冰岛永远向前。殖民时代已经来临，你们今天书写的故事将永远载入史册。</Text>
+		</Replace>
+
+		<!-- 外交 -->
+		<!-- 初次见面 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_SUK_INGOLFUR_ANY" Language="zh_Hans_CN">
+			<Text>我是英格尔夫·阿尔纳尔松，我代表冰岛议会欢迎你们来到我的家园。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_SUK_INGOLFUR_ANY" Language="zh_Hans_CN">
+			<Text>我们附近有个小定居点。你应该去看看！我们不能让人们说我们冰岛人不好客！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NEAR_INITIATOR_POSITIVE_LEADER_SUK_INGOLFUR_ANY" Language="zh_Hans_CN">
+			<Text>是的！去看看新的地方一定很棒！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_SUK_INGOLFUR_ANY" Language="zh_Hans_CN">
+			<Text>我们主要的定居点现在还没有很多。但是这里的温泉太棒了！这就是为什么我们叫它雷克雅未克。</Text>
+		</Replace>
+
+		<!-- 议程外交 -->
+
+		<Replace Tag="LOC_DIPLO_KUDO_EXIT_LEADER_SUK_INGOLFUR_ANY" Language="zh_Hans_CN">
+			<Text>生活在如此宏伟的奇观下面，会让人有强烈的探索欲望，不是吗？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_EXIT_LEADER_SUK_INGOLFUR_ANY" Language="zh_Hans_CN">
+			<Text>你没有冒险精神吗？你不知道世界上有多少奇迹。</Text>
+		</Replace>
+
+		<!-- 战争与和平 -->
+		<!-- 受到宣战后回应 -->
+		
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_SUK_INGOLFUR_ANY" Language="zh_Hans_CN">
+			<Text>我们的人民很强悍，否则他们不会在这里定居。你真的认为你的战士能与他们匹敌吗？</Text>
+		</Replace>
+
+		<!-- AI宣战 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_SUK_INGOLFUR_ANY" Language="zh_Hans_CN">
+			<Text>我们为荣誉而战！斯卡德尔家族将为我们即将到来的战斗而歌唱和写诗！</Text>
+		</Replace>
+
+		<!-- 求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_ACCEPT_DEAL_LEADER_SUK_INGOLFUR_ANY" Language="zh_Hans_CN">
+			<Text>我们都赢得了和平。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_REFUSE_DEAL_LEADER_SUK_INGOLFUR_ANY" Language="zh_Hans_CN">
+			<Text>这个提议几乎是无礼的。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_FROM_AI_LEADER_SUK_INGOLFUR_ANY" Language="zh_Hans_CN">
+			<Text>我们都证明了自己的勇敢。现在是结束流血冲突的时候了。</Text>
+		</Replace>
+
+		<!-- 战败 -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_SUK_INGOLFUR_ANY" Language="zh_Hans_CN">
+			<Text>我的旅程就此结束。至少我的事迹将流传于传奇故事中。</Text>
+		</Replace>
+
+		<!-- 宣布友谊 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_SUK_INGOLFUR_ANY" Language="zh_Hans_CN">
+			<Text>世界是残酷的。让我们像朋友一样一起面对吧。</Text>
+		</Replace>
+
+		<!-- 玩家决定后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_SUK_INGOLFUR_ANY" Language="zh_Hans_CN">
+			<Text>好，好的。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_SUK_INGOLFUR_ANY" Language="zh_Hans_CN">
+			<Text>也许下次吧。</Text>
+		</Replace>
+
+		<!-- AI回应玩家请求 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_HUMAN_LEADER_SUK_INGOLFUR_ANY" Language="zh_Hans_CN">
+			<Text>我衷心地接受！让我带点啤酒来庆祝一下！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_HUMAN_LEADER_SUK_INGOLFUR_ANY" Language="zh_Hans_CN">
+			<Text>虽然我很想答应，但最好还是再等一会儿。</Text>
+		</Replace>
+
+		<!-- 代表团 -->
+
+		<Replace Tag="LOC_DIPLO_DELEGATION_FROM_AI_LEADER_SUK_INGOLFUR_ANY" Language="zh_Hans_CN">
+			<Text>我给你送去了各种各样的冰岛臭食，有羊头、鱼干、发酵鲨鱼肉，好好享受吧！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_HUMAN_LEADER_SUK_INGOLFUR_ANY" Language="zh_Hans_CN">
+			<Text>我亲自欢迎他们来到我的家园。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_HUMAN_LEADER_SUK_INGOLFUR_ANY" Language="zh_Hans_CN">
+			<Text>我很遗憾地说，一切都已定局。</Text>
+		</Replace>
+
+		<!-- 谴责 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_SUK_INGOLFUR_ANY" Language="zh_Hans_CN">
+			<Text>你要侮辱我？我保证你会为这些话后悔的。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_SUK_INGOLFUR_ANY" Language="zh_Hans_CN">
+			<Text>就连我都无法忍受你了。[NEWLINE]（谴责你）</Text>
+		</Replace>
+
+		<!-- 结盟 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_ALLIANCE_FROM_AI_LEADER_SUK_INGOLFUR_ANY" Language="zh_Hans_CN">
+			<Text>你愿意结成同盟吗？</Text>
+		</Replace>
+
+		<!-- 其他日常对话 -->
+
+		<Replace Tag="LOC_DIPLO_GREETING_LEADER_SUK_INGOLFUR_ANY" Language="zh_Hans_CN">
+			<Text>你好！！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_MAKE_DEAL_FROM_AI_LEADER_SUK_INGOLFUR_ANY" Language="zh_Hans_CN">
+			<Text>真可惜。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_SUK_INGOLFUR_ANY" Language="zh_Hans_CN">
+			<Text>太好了。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_OPEN_BORDERS_FROM_AI_LEADER_SUK_INGOLFUR_ANY" Language="zh_Hans_CN">
+			<Text>你能允许我们通过你的土地吗？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_HUMAN_LEADER_SUK_INGOLFUR_ANY" Language="zh_Hans_CN">
+			<Text>为什么不呢？这片土地的奇观值得分享。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_HUMAN_LEADER_SUK_INGOLFUR_ANY" Language="zh_Hans_CN">
+			<Text>我很抱歉，但我不能同意。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_LEADER_SUK_INGOLFUR_ANY" Language="zh_Hans_CN">
+			<Text>你知道唯一会被军队吓倒的是羊，对吧？</Text>
+		</Replace>
+
+		<!--	于2021/09/09补更时根据原文件将其注释掉
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_SUK_INGOLFUR_ANY" Language="zh_Hans_CN">
+			<Text>我的旅程就此结束。至少我的事迹将流传于传奇故事中。</Text>
+		</Replace>
+		-->
+	
+		<!-- 百科与引言 -->
+
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_SUK_INGOLFUR_QUOTE" Language="zh_Hans_CN">
+			<!-- 原文： Hver er sinnar gæfu smiður. -->
+			<Text>每个人都是自己未来的主宰。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_SUK_INGOLFUR_TITLE" Language="zh_Hans_CN">
+			<Text>英格尔夫·阿尔纳尔松</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_SUK_INGOLFUR_SUBTITLE" Language="zh_Hans_CN">
+			<Text>冰岛的首位挪威定居者</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_SUK_INGOLFUR_CHAPTER_CAPSULE_BODY" Language="zh_Hans_CN">
+			<Text>冰岛一同迎接全新的领土与挑战。在他们的首位挪威定居者英格尔夫的领导下，您将能安全地在更远的海岸定居。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_SUK_INGOLFUR_CHAPTER_DETAILED_BODY" Language="zh_Hans_CN">
+			<Text>冰岛是探险家与作家的文明。尽早派出侦察兵以获得历史时刻（以及 [ICON_GreatWriter] 大作家点数），并找到下一个可能的定居点。自然奇观尤其具有价值：您文明的许多区域可从自然奇观获得大量相邻加成！草屋将减轻您对淡水源的依赖，因为除了沙漠地形外，草屋可被建造在任何地方，且其能提供少量 [ICON_Food] 食物与 [ICON_Production] 生产力来帮助您的城市运转起来。尽管宣法讲师训练成本很高，但其提供了进一步的提升，让您能获得额外的忠诚度，并您在所需之处获得收益。在英格尔夫的领导下，通过忠诚度与 [ICON_GreatWriter] 大作家点数的加成，在远方的土地上立足将会更加容易。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_SUK_INGOLFUR_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]According to Landnámabók (a medieval manuscript detailing the Norse settlement of Iceland), Ingólfur Arnarson is widely ascribed to have been one of the first permanent settlers of Iceland, alongside his wife, Hallveig Fróðadóttir, and his foster brother Hjörleifur Hróðmarsson. A nobleman of Norwegian descent, Ingólfur (his name literally meaning ‘noble wolf’) was forced to leave early medieval Norway during the late part of the 9th century in the wake of a skirmish in which he and his foster brother took part against the sons of a powerful Norse jarl (earl). So it is that after he had murdered two of the Norse jarl’s sons he was forced to give up all of his land possessions to him. Having virtually speaking nothing to stand for in his native land, Ingólfur decided to set sail westward, in a quest for a better life.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_SUK_INGOLFUR_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>At some point throughout the early 870s, he embarked along with his wife, Hjörleifur’s family, some slaves in their service, and anything else valuable that they could pack up. Among these things were a pair of stone pillars he had thrown off board while in the proximity of Iceland. Because he wanted to live in a place directed by divine intervention, these pillars represented the will of the Norse gods. Thereupon, when the pillars reached the shores of Iceland Ingólfur knew he had to settle there. Shortly thereafter, he and his crew spent their first winter on Icelandic soil at the Ingólfshöfði headland which is situated in the southern coast of Iceland. Subsequently, he sent two of his slaves to scout the surroundings in the search for the drifted pillars. They have done so all the way on the south-western coast of Iceland until they saw them in a bay with some hot springs. Thus, in 874, Ingólfur Arnarson is credited for being the founder of Iceland’s capital city, which was originally named, Reykjarvík (or the 'Smoky Bay' as it literally translates to in English) by building his new farmstead there. He named the place this way because of the 'smoke' (actually steam) which came up from the hot springs in the vicinity of present day Reykjavík.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_SUK_INGOLFUR_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>It must be equally mentioned that Ingólfur was, even for a relatively brief period of time, the legal owner of the south-western part of the island, but since he could not inhabit all of it he had either donated or sold much of his land property to the upcoming waves of Scandinavian colonists who took part in the Norse settlement phase of Iceland. Nowadays, on a small hill called Arnarhóll in the middle of Reykjavík stands a statue erected in the honour of Ingólfur.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_SUK_INGOLFUR_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>Nonetheless, not much is known regarding Ingólfur’s fate after the foundation of Reykjavik. What is for certain though, is that his son Þorsteinn (Torstein) grew up to become a noteworthy chieftain in Viking Age Iceland and is also remembered for his efforts of establishing one of the country’s first assemblies at Kjalarnes, currently a district of the capital city.</Text>
+		</Replace>
+
+		<!-- RwF模组支持，于2021/09/09补更时根据原文件将其注释掉
+		<Replace Tag="LOC_GOVERNMENT_JFD_CHIEFDOM_LEADER_TITLE_SUK_ICELAND" Language="zh_Hans_CN">
+			<Text>戈蒂</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_HORDE_LEADER_TITLE_SUK_ICELAND" Language="zh_Hans_CN">
+			<Text>酋长</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_POLIS_LEADER_TITLE_SUK_ICELAND" Language="zh_Hans_CN">
+			<Text>市长</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_CLASSICAL_DEMOCRACY_LEADER_TITLE_SUK_ICELAND" Language="zh_Hans_CN">
+			<Text>代言人</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_AUTOCRACY_LEADER_TITLE_NORWAY" Language="zh_Hans_CN">
+			<Text>伯爵</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_OLIGARCHY_LEADER_TITLE_SUK_ICELAND" Language="zh_Hans_CN">
+			<Text>贵族</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_MERCHANT_REPUBLIC_LEADER_TITLE_SUK_ICELAND" Language="zh_Hans_CN">
+			<Text>议员</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_FEUDAL_MONARCHY_LEADER_TITLE_SUK_ICELAND" Language="zh_Hans_CN">
+			<Text>国王</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_MONARCHY_LEADER_TITLE_SUK_ICELAND" Language="zh_Hans_CN">
+			<Text>至高王</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_NOBLE_REPUBLIC_LEADER_TITLE_SUK_ICELAND" Language="zh_Hans_CN">
+			<Text>高级议员</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_LIBERAL_DEMOCRACY_LEADER_TITLE_SUK_ICELAND" Language="zh_Hans_CN">
+			<Text>会长</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_MILITARY_GUARDIANSHIP_LEADER_TITLE_SUK_ICELAND" Language="zh_Hans_CN">
+			<Text>督察长</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_PEOPLES_REPUBLIC_LEADER_TITLE_SUK_ICELAND" Language="zh_Hans_CN">
+			<Text>总书记</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_EMPIRE_LEADER_TITLE_SUK_ICELAND" Language="zh_Hans_CN">
+			<Text>皇帝</Text>
+		</Replace>
+		-->
+	</LocalizedText>
+</GameData>

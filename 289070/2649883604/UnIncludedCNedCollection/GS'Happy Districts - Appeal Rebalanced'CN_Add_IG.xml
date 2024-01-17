@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- GS'Happy Districts - Appeal Rebalanced'CN_Add_IG -->
+<!-- Author: ChiYiuWong , Clear8Sky -->
+<!-- DateCreated: 2021/9/27 2:04:48 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Happy Districts - Appeal Rebalanced” 。该文件在 InGame 时载入，需 Criteria ：Active_Expansion_2 -->
+	<LocalizedText>
+		
+		<!-- 文本更新 -->
+		
+		<Replace Tag="LOC_BUILDING_EIFFEL_TOWER_DESCRIPTION_JNR_APPEAL_AMENITIES" Language="zh_Hans_CN">
+			<Text>帝国境内所有单元格+1魅力值。必须建在靠近市中心的平坦地形上。</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_IMPROVEMENT_GEOTHERMAL_PLANT_DESCRIPTION_JNR_DHA" Language="zh_Hans_CN">
+			<Text>{LOC_IMPROVEMENT_GEOTHERMAL_PLANT_DESCRIPTION}[NEWLINE]修建有地热发电厂的地热裂缝不再为相邻单元格提供+1魅力值。</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_IMPROVEMENT_GEOTHERMAL_PLANT_DESCRIPTION_JNR_TERRAIN_COMPLEXITY_DHA" Language="zh_Hans_CN">
+			<Text>解锁建造者修建地热发电厂的能力。[NEWLINE][NEWLINE]每回合从可再生地热能中提供+2 [ICON_Power] 电力。[NEWLINE][ICON_Bullet]若建在地热裂缝上则每回合额外+1 [ICON_Power] 电力。[NEWLINE][ICON_Bullet]解锁科技“外星任务”后每回合可再额外+1 [ICON_Power] 电力。[NEWLINE][NEWLINE]若建在地热裂缝上则-1魅力值。[NEWLINE]必须修建在地热裂缝或火山土之上。</Text>
+		</Replace>
+		
+		<!-- 通用百科介绍文本，
+		已在 MTE（本汉化模组）的 Series2Collection3\VNL'District-Themed Recruiting'CN_Add_IG1.xml 文件中被汉化过，
+		此处可注释掉
+		<Replace Tag="LOC_PEDIA_CONCEPTS_PAGEGROUP_JNR_URBANCOMPLEXITY_NAME" Language="zh_Hans_CN">
+			<Text>城市复杂性</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_JNR_UC_INTRODUCTION_CHAPTER_CONTENT_TITLE" Language="zh_Hans_CN">
+			<Text>介绍</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_JNR_UC_INTRODUCTION_CHAPTER_CONTENT_PARA_1" Language="zh_Hans_CN">
+			<Text>“城市复杂性”是一个模组系列，旨在更深入地建设与发展您的城市，同时在真实性与游戏性之间取得平衡。在启用这一系列模组后，选择要建造的区域和建筑不再是一件简单的小事，不再像从既定的建造顺序中依次打勾那样容易。相反，适当考虑当地环境及其他部分因素，如周围相邻的加成、可利用的地形、城市中其他已有的区域，等等，这会为您带来很大的回报。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_JNR_UC_INTRODUCTION_CHAPTER_CONTENT_PARA_2" Language="zh_Hans_CN">
+			<Text>亲爱的玩家，</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_JNR_UC_INTRODUCTION_CHAPTER_CONTENT_PARA_3" Language="zh_Hans_CN">
+			<Text>文明百科中的以下页面将作为引导，带您了解“城市复杂性”系列模组的大致内容。请认真阅读这些文字，并留意哪些特性是可利用的以及如何利用的。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_JNR_UC_INTRODUCTION_CHAPTER_CONTENT_PARA_4" Language="zh_Hans_CN">
+			<Text>随时欢迎反馈。请不要犹豫来和我交流您的思考、想法与建议。[NEWLINE]我希望我的模组能为您游玩文明VI平添几分乐趣，并能让您用新的方式去建设您的帝国。祝您玩得开心，也愿您能经受住时间的考验，最终获得胜利！</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_JNR_UC_INTRODUCTION_CHAPTER_CONTENT_PARA_5" Language="zh_Hans_CN">
+			<Text>模组作者：JNR，[NEWLINE]文本翻译：Clear8Sky。</Text>
+		</Replace>
+		-->
+		
+		<!-- 宜居区域文本 -->
+		
+		<Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_JNR_UC_DISTRICT_HAPPINESS_CHAPTER_JNRDHABASE_TITLE" Language="zh_Hans_CN">
+			<Text>宜居区域（魅力值模组）</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_JNR_UC_DISTRICT_HAPPINESS_CHAPTER_JNRDHABASE_PARA_1" Language="zh_Hans_CN">
+			<Text>“宜居区域”可根据区域单元格的魅力值为城市提供宜居度。一名健康的劳动者一定过得很愉快，如果能让他们在美丽干净的环境中生活和工作，您的公民会很感激。魅力值来源已重新设计。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_JNR_UC_DISTRICT_HAPPINESS_CHAPTER_JNRDHABASE_PARA_2" Language="zh_Hans_CN">
+			<Text>一个区域根据其单元格的魅力值提供 [ICON_Amenities] 宜居度：[NEWLINE][NEWLINE][ICON_Bullet]惊艳的（4）：+1 [ICON_Amenities] 宜居度。[NEWLINE][ICON_Bullet]无吸引力的（-2）：-1 [ICON_Amenities] 宜居度。[NEWLINE ][ICON_Bullet]令人厌恶的（-4）：-2 [ICON_Amenities] 宜居度。[NEWLINE][ICON_Bullet]泛滥平原单元格的魅力值比实际低1点（即阈值分别为5、-1、-3）。</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_JNR_UC_DISTRICT_HAPPINESS_CHAPTER_JNRDHASOURCES_TITLE" Language="zh_Hans_CN">
+			<Text>魅力值来源的变化</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_JNR_UC_DISTRICT_HAPPINESS_CHAPTER_JNRDHASOURCES_PARA_1" Language="zh_Hans_CN">
+			<Text>对魅力值来源进行了以下更改：[NEWLINE][NEWLINE][ICON_Bullet]泛滥平原（草原、平原、沙漠）：不再对相邻单元格提供-1魅力值。[NEWLINE][ICON_Bullet]礁石：为相邻单元格提供+1魅力值。[NEWLINE][ICON_Bullet]地热裂缝：为相邻单元格提供+1魅力值。[NEWLINE][ICON_Bullet]火山：有火山的山脉不再为相邻单元格提供+1魅力值。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_JNR_UC_DISTRICT_HAPPINESS_CHAPTER_JNRDHASOURCES_PARA_2" Language="zh_Hans_CN">
+			<Text>完成市政“保护地球”后出现以下变化：[NEWLINE][NEWLINE][ICON_Bullet]沼泽：为相邻单元格提供+1魅力值而非-1魅力值。[NEWLINE][ICON_Bullet]森林：若未被改良（！），则额外对相邻单元格提供+1魅力值。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_JNR_UC_DISTRICT_HAPPINESS_CHAPTER_JNRDHASOURCES_PARA_3" Language="zh_Hans_CN">
+			<Text>对改良设施进行了以下更改：[NEWLINE][ICON_Bullet]地热发电厂：修建有地热发电厂的地热裂缝不再为相邻单元格提供+1魅力值。</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_JNR_UC_DISTRICT_HAPPINESS_CHAPTER_JNRDHABALANCE_TITLE" Language="zh_Hans_CN">
+			<Text>平衡性调整</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_JNR_UC_DISTRICT_HAPPINESS_CHAPTER_JNRDHABALANCE_PARA_1" Language="zh_Hans_CN">
+			<Text>为了维持游戏平衡，进行了以下更改：[NEWLINE][ICON_Bullet]埃菲尔铁塔：帝国境内所有单元格+1魅力值。</Text>
+		</Replace>
+		
+		<!--	根据原模组将其注释掉
+		<Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_JNR_UC_DISTRICT_HAPPINESS_CHAPTER_JNRDHAAUSSIE_TITLE" Language="zh_Hans_CN">
+			<Text>DLC - 澳大利亚</Text>
+		</Replace>
+		-->
+		
+		<Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_JNR_UC_DISTRICT_HAPPINESS_CHAPTER_JNRDHAAUSSIE_PARA_1" Language="zh_Hans_CN">
+			<Text>从拥有“惊艳的”魅力的区域中获得更多加成，对于澳大利亚来说是一次相当可观的加强，由于其特色能力，澳大利亚在魅力值来源被修改后会变得过于强大。因此，为了维持游戏平衡，进行了以下更改。[COLOR_RED]请记住，澳大利亚的一切生物都充满敌意，而湿地更是危险生物的天堂。[ENDCOLOR]【译者注：假装给个设定使削弱合理化hhh】[NEWLINE][ICON_Bullet]澳大利亚境内的泛滥平原为相邻单元格提供-1魅力值。[NEWLINE][ICON_Bullet]澳大利亚境内的沼泽为相邻单元格提供-2魅力值（而非-1）。</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

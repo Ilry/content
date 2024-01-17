@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RF'Wales Llywelyn'CN_Add_FI -->
+<!-- Author: Clear8Sky -->
+<!-- DateCreated: 2021/9/25 0:49:52 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Wales: Llywelyn” 。该文件在 FrontEnd 与 InGame 时载入，需 Criteria ： Active_Expansion_1 -->
+	<LocalizedText>
+
+		<!-- 模组 -->
+
+		<Replace Tag="LOC_MOD_JFD_WALES_LLYWELYN_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>------------------------------------[NEWLINE]领袖名称 -- 卢埃林[NEWLINE][NEWLINE]领袖特性 - 阿伯多维议会[NEWLINE]在友好领土内建成威尔士城堡后可触发文化炸弹。拥有驻军的威尔士城堡每回合可+2 [ICON_InfluencePerTurn] 影响力点数。[NEWLINE][NEWLINE]领袖议程 - 全北威尔士亲王[NEWLINE]喜欢在他的领土及城市内建造防御设施，并欣赏这样做的文明。不喜欢与他争夺同一城邦的文明。</Text>
+		</Replace>
+
+		<!-- 领袖 -->
+
+		<Replace Tag="LOC_LEADER_JFD_LLYWELYN_NAME" Language="zh_Hans_CN">
+			<Text>卢埃林</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_ABERGWYNGREGYN" Language="zh_Hans_CN">
+			<Text>阿贝格温格雷金</Text>
+		</Replace>
+
+		<!-- 议程 -->
+
+		<Replace Tag="LOC_AGENDA_JFD_PRINCE_WALES_NAME" Language="zh_Hans_CN">
+			<Text>全北威尔士亲王</Text>
+		</Replace>
+		<Replace Tag="LOC_AGENDA_JFD_PRINCE_WALES_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>喜欢在他的领土及城市内建造防御设施，并欣赏这样做的文明。不喜欢与他争夺同一城邦的文明。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_LEADER_JFD_PRINCE_WALES_REASON_COMPETING_MINORS" Language="zh_Hans_CN">
+			<Text>（您在同他争夺同一城邦）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_AGENDA_JFD_PRINCE_WALES_COMPETING_MINORS" Language="zh_Hans_CN">
+			<Text>卢埃林对于您干涉他的政治野心而感到愤怒。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_JFD_PRINCE_WALES_REASON_HAS_CASTLES" Language="zh_Hans_CN">
+			<Text>（您完成了科技“城堡”的研究）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_AGENDA_JFD_PRINCE_WALES_HAS_CASTLES" Language="zh_Hans_CN">
+			<Text>卢埃林对您关于城堡的专业见解印象深刻。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_JFD_PRINCE_WALES_REASON_HAS_MASONRY" Language="zh_Hans_CN">
+			<Text>（您完成了科技“砌砖”的研究）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_AGENDA_JFD_PRINCE_WALES_HAS_MASONRY" Language="zh_Hans_CN">
+			<Text>卢埃林对您关于城墙的专业见解印象深刻。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_JFD_PRINCE_WALES_REASON_HAS_SIEGE_TACTICS" Language="zh_Hans_CN">
+			<Text>（您完成了科技“攻城术”的研究）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_AGENDA_JFD_PRINCE_WALES_HAS_SIEGE_TACTICS" Language="zh_Hans_CN">
+			<Text>卢埃林对您关于堡垒攻防的专业见解印象深刻。</Text>
+		</Replace>
+
+		<!-- 载入 -->
+
+		<Replace Tag="LOC_LOADING_INFO_LEADER_JFD_LLYWELYN" Language="zh_Hans_CN">
+			<Text>卢埃林·阿颇·约沃斯，世界支离破碎，但仍有希望蕴存。协营联盟、编筹政治，您深知决不能让这次机会白白浪费。凝聚人民向前推进，确立您的统治地位。前进吧，圭内斯亲王，威尔士亲王！</Text>
+		</Replace>
+
+		<!-- 特性 -->
+
+		<Replace Tag="LOC_TRAIT_LEADER_JFD_COUNCIL_ABERDYFI_NAME" Language="zh_Hans_CN">
+			<Text>阿伯多维议会</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_JFD_COUNCIL_ABERDYFI_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>在友好领土内建成威尔士城堡后可触发文化炸弹。拥有驻军的威尔士城堡每回合可+2 [ICON_InfluencePerTurn] 影响力点数。</Text>
+		</Replace>
+
+		<!-- 百科 -->
+
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_LLYWELYN_TITLE" Language="zh_Hans_CN">
+			<Text>卢埃林</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_LLYWELYN_SUBTITLE" Language="zh_Hans_CN">
+			<Text>圭内斯亲王</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_LLYWELYN_QUOTE" Language="zh_Hans_CN">
+			<Text>土地真正的领主。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_LLYWELYN_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]Llywelyn Ap Iorwerth, byname Llywelyn The Great, (died April 11, 1240, Aberconway, Gwynedd, Wales), was a Welsh prince; the most outstanding native ruler to appear in Wales before the region came under English rule in 1283.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_LLYWELYN_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>Llywelyn was the grandson of Owain Gwynedd (d. 1170), a powerful ruler of Gwynedd in northern Wales. While still a child, Llywelyn was exiled by his uncle, David. He deposed David in 1194 and by 1202 had brought most of northern Wales under his control. In 1205 he married Joan, the illegitimate daughter of England’s King John (reigned 1199–1216). Nevertheless, when Llywelyn’s attempts to extend his authority into southern Wales threatened English possessions, John invaded Wales (1211) and overran most of Gwynedd. The prince soon won back his lands. He secured his position by allying with John’s powerful baronial opponents, and his actions helped the barons influence the king’s signing of Magna Carta (1215).</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_LLYWELYN_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>Two years after the accession of King Henry III (reigned 1216–72), the English acknowledged that Llywelyn controlled almost all of Wales, but by 1223 they had forced him to withdraw to the north behind a boundary between Cardigan, Dyfed, and Builth, Powys. Many Welsh princes in the south, however, still accepted his overlordship. In his last years the aged Llywelyn turned his government over to his son David (prince of Gwynedd). When Llywelyn died, a chronicler described him as prince of Wales, which he was in fact, if not in law.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_LLYWELYN_CHAPTER_CAPSULE_BODY" Language="zh_Hans_CN">
+			<Text>卢埃林以优秀的文化影响著称，在他的堡垒之后发挥着强大的同化力与影响度。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_LLYWELYN_CHAPTER_DETAILED_BODY" Language="zh_Hans_CN">
+			<Text>威尔士以其文明特性“马比诺吉昂”和特色区域“威尔士城堡”，通过文化影响与雄伟的城堡捍卫着领土。在这坚不可摧的文明之中，卢埃林的“阿伯多维议会”将使其能扩大威尔士对邻国的影响力，而这尤使卢埃林易于追求统治或文化胜利。</Text>
+		</Replace>
+
+		<!-- 外交 -->
+
+		<!-- 初次见面 -->
+		<!-- 开场白 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_JFD_LLYWELYN_ANY" Language="zh_Hans_CN">
+			<Text>欢迎。我是卢埃林·阿颇·约沃斯，或者可以简单称呼我为卢埃林大帝。我用强大的军队与天生的魅力征服了威尔士。你是谁？</Text>
+		</Replace>
+
+		<!-- 到附近城市的邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_JFD_LLYWELYN_ANY" Language="zh_Hans_CN">
+			<Text>想参观我们附近的城市吗？我一定会好好招待您的。</Text>
+		</Replace>
+
+		<!-- AI接受玩家邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NEAR_INITIATOR_POSITIVE_LEADER_JFD_LLYWELYN_ANY" Language="zh_Hans_CN">
+			<Text>好，我同意您的提议。</Text>
+		</Replace>
+
+		<!-- AI邀请玩家交换首都信息 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_JFD_LLYWELYN_ANY" Language="zh_Hans_CN">
+			<Text>了解彼此首都的位置对于发展我们之间的良好关系至关重要。如果您不介意的话，请和我分享一下……</Text>
+		</Replace>
+
+		<!-- 问候 -->
+
+		<Replace Tag="LOC_DIPLO_GREETING_LEADER_JFD_LLYWELYN_ANY" Language="zh_Hans_CN">
+			<Text>需要我做什么？</Text>
+		</Replace>
+
+		<!-- 代表团 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_HUMAN_LEADER_JFD_LLYWELYN_ANY" Language="zh_Hans_CN">
+			<Text>好，我欣然接受。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_HUMAN_LEADER_JFD_LLYWELYN_ANY" Language="zh_Hans_CN">
+			<Text>现在你需明白，我完全赞同我们之间发展良好关系。然而，我还不太信任你，我不能让你的人民留在我的国家。所以我拒绝你的代表团。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DELEGATION_FROM_AI_LEADER_JFD_LLYWELYN_ANY" Language="zh_Hans_CN">
+			<Text>我已经派了一支代表团前往您的国家。其中有我们国家最好的厨师，他们会做出新鲜的威尔士美食，请您品尝。紧随其后的我们国家最优秀的诗人与小说家。恳请您善待他们，他们并无冒犯之意；如果您对此感到愤怒，请不要向他们身上发泄，因为他们是我子民的捍卫者。</Text>
+		</Replace>
+
+		<!-- 开放边境 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_HUMAN_LEADER_JFD_LLYWELYN_ANY" Language="zh_Hans_CN">
+			<Text>完全可以。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_HUMAN_LEADER_JFD_LLYWELYN_ANY" Language="zh_Hans_CN">
+			<Text>很抱歉，但我必须拒绝。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_OPEN_BORDERS_FROM_AI_LEADER_JFD_LLYWELYN_ANY" Language="zh_Hans_CN">
+			<Text>我非常希望您能向我的人民开放边境。如果能亲眼得见您的王国，他们会非常高兴；而令他们欣喜之事，也会令我心悦。所以……您会接受我的提议吗？</Text>
+		</Replace>
+
+		<!-- 宣布友谊 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_HUMAN_LEADER_JFD_LLYWELYN_ANY" Language="zh_Hans_CN">
+			<Text>当然可以！</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_HUMAN_LEADER_JFD_LLYWELYN_ANY" Language="zh_Hans_CN">
+			<Text>很抱歉，但我不能接受这项提议。并非针对你，请别担心！</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_JFD_LLYWELYN_ANY" Language="zh_Hans_CN">
+			<Text>我坚信，成为友人不过是领袖之间的一件益事。我们的人民会更加心安，贸易也会更加容易；当然，旅行也会简单很多。这是我们之间走向和平繁荣的第一部，您会接受吗？</Text>
+		</Replace>
+
+		<!-- 玩家接受后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_LLYWELYN_ANY" Language="zh_Hans_CN">
+			<Text>太感谢了！您真是太令我高兴了。</Text>
+		</Replace>
+
+		<!-- 玩家拒绝后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_LLYWELYN_ANY" Language="zh_Hans_CN">
+			<Text>……为什么？为何你会拒绝？噢……好吧，过去了的就让它过去吧……</Text>
+		</Replace>
+
+		<!-- 结盟 -->
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_ALLIANCE_FROM_AI_LEADER_JFD_LLYWELYN_ANY" Language="zh_Hans_CN">
+			<Text>我想向您请求结盟。这只会让我们彼此受益！有了盟约，我们就在和平之中一同征服世界！我诚挚希望您接受这个提议。何乐而不为呢？</Text>
+		</Replace>
+
+		<!-- 赞成与警告 -->
+		<!-- AI赞成 -->
+
+		<Replace Tag="LOC_DIPLO_KUDO_EXIT_LEADER_JFD_LLYWELYN_ANY" Language="zh_Hans_CN">
+			<Text>您坚不可摧的城墙让我确信，您的文明还会存续很长时间。</Text>
+		</Replace>
+
+		<!-- AI警告 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_EXIT_LEADER_JFD_LLYWELYN_ANY" Language="zh_Hans_CN">
+			<Text>如果你继续多管闲事，那么离树敌之日就不会远了。</Text>
+		</Replace>
+
+		<!-- AI警告玩家离开边境 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_LEADER_JFD_LLYWELYN_ANY" Language="zh_Hans_CN">
+			<Text>让你的士兵向我的领土行进，与我而言将是一次绝佳的打靶练习……我们不会错过这次机会。我建议你去别处安排行军。</Text>
+		</Replace>
+
+		<!-- 贸易 -->
+		<!-- AI接受交易 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_JFD_LLYWELYN_ANY" Language="zh_Hans_CN">
+			<Text>这项提议似乎不错，我接受了。</Text>
+		</Replace>
+
+		<!-- AI拒绝交易 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_MAKE_DEAL_FROM_AI_LEADER_JFD_LLYWELYN_ANY" Language="zh_Hans_CN">
+			<Text>很抱歉，但我不会接受只对你有利的提议。换位思考一下，这种提议你大概也不会接受。</Text>
+		</Replace>
+
+		<!-- 谴责 -->
+		<!-- 受到谴责回应 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_JFD_LLYWELYN_ANY" Language="zh_Hans_CN">
+			<Text>我明白了，这是我们二人之间的“游戏”。</Text>
+		</Replace>
+
+		<!-- AI谴责玩家 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_JFD_LLYWELYN_ANY" Language="zh_Hans_CN">
+			<Text>我是一个不愿丢弃礼仪之人。但，在这种情势下，礼仪已不太必要。你辜负我信任的次数我已无法数清，我谨以威尔士之国的名义谴责你们！[NEWLINE]（谴责你）</Text>
+		</Replace>
+
+		<!-- 谴责理由 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_REASON_FROM_AI_LEADER_ANY_REASON_JFD_PRINCE_WALES_COMPETING_MINORS" Language="zh_Hans_CN">
+			<Text>（您在同他争夺同一城邦）</Text>
+		</Replace>
+
+		<!-- 宣战 -->
+		<!-- 受到宣战后回应 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_JFD_LLYWELYN_ANY" Language="zh_Hans_CN">
+			<Text>冒险是种伟大的生活方式。不过，有时会有些你不愿承担的风险，比如现在这样。</Text>
+		</Replace>
+
+		<!-- AI宣战 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_JFD_LLYWELYN_ANY" Language="zh_Hans_CN">
+			<Text>通常我会为这种事宜提供长篇论述，但，现在我会直截了当地说——你是一个糟透了的领袖，我向你宣战！</Text>
+		</Replace>
+
+		<!-- 求和 -->
+		<!-- AI接受求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_ACCEPT_DEAL_LEADER_JFD_LLYWELYN_ANY" Language="zh_Hans_CN">
+			<Text>好，不错的交易。</Text>
+		</Replace>
+
+		<!-- AI拒绝求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_REFUSE_DEAL_LEADER_JFD_LLYWELYN_ANY" Language="zh_Hans_CN">
+			<Text>很快，我们会拥有和平……那便是在你死去，帝国收归于我之时！</Text>
+		</Replace>
+
+		<!-- AI求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_FROM_AI_LEADER_JFD_LLYWELYN_ANY" Language="zh_Hans_CN">
+			<Text>我们为何还要战争？我们之间需要和平！</Text>
+		</Replace>
+
+		<!-- 击败 -->
+		<!-- AI被击败 -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_JFD_LLYWELYN_ANY" Language="zh_Hans_CN">
+			<Text>将我打败，是相当了不起的壮举。你打的很不错。</Text>
+		</Replace>
+
+		<!-- 玩家被击败（在热座模式中会显示） -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_JFD_LLYWELYN_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_JFD_LLYWELYN_ANY}</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

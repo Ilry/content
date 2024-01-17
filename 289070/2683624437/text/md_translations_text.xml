@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+    <LocalizedText>
+        <!-- zh_Hans_CN -->
+        <Replace Tag="LOC_MD_MOVE_HINT" Language="zh_Hans_CN">
+            <Text>花费 {1_Amount: number #,###}[ICON_Gold] 金币迁移。</Text>
+        </Replace>
+        <Replace Tag="LOC_MD_DONT_ASK_AGAIN" Language="zh_Hans_CN">
+            <Text>不再询问</Text>
+        </Replace>
+        <Replace Tag="LOC_MD_CONFIRM_MOVE" Language="zh_Hans_CN">
+            <Text>您确定要花费 {1_Amount: number #,###}[ICON_Gold] 金币迁移 {2_DistrictType} 以及其所有建筑吗？</Text>
+        </Replace>
+        <Replace Tag="LOC_MD_CANNOT_MOVE_DISTRICT" Language="zh_Hans_CN">
+            <Text>无法迁移区域</Text>
+        </Replace>
+        <Replace Tag="LOC_MD_UNSUPPORTED_BUILDINGS" Language="zh_Hans_CN">
+            <Text>这些建筑无法迁移，因为其中至少有一个建筑需要特殊建造条件。</Text>
+        </Replace>
+        <Replace Tag="LOC_MD_TOGGLE_BUTTON" Language="zh_Hans_CN">
+            <Text>区域迁移按钮</Text>
+        </Replace>
+        <Replace Tag="LOC_MD_TOGGLE_BUTTON_TOOLTIP" Language="zh_Hans_CN">
+            <Text>显示/隐藏区域迁移按钮</Text>
+        </Replace>
+
+        <!-- zh_Hant_HK -->
+        <Replace Tag="LOC_MD_MOVE_HINT" Language="zh_Hant_HK">
+            <Text>花費 {1_Amount: number #,###}[ICON_Gold] 金幣遷移。</Text>
+        </Replace>
+        <Replace Tag="LOC_MD_DONT_ASK_AGAIN" Language="zh_Hant_HK">
+            <Text>不再詢問</Text>
+        </Replace>
+        <Replace Tag="LOC_MD_CONFIRM_MOVE" Language="zh_Hant_HK">
+            <Text>您確定要花費 {1_Amount: number #,###}[ICON_Gold] 金幣遷移 {2_DistrictType} 以及其所有建築嗎？</Text>
+        </Replace>
+        <Replace Tag="LOC_MD_CANNOT_MOVE_DISTRICT" Language="zh_Hant_HK">
+            <Text>無法遷移區域</Text>
+        </Replace>
+        <Replace Tag="LOC_MD_UNSUPPORTED_BUILDINGS" Language="zh_Hant_HK">
+            <Text>這些建築無法遷移，因為其中至少有一個建築需要特殊建造條件。</Text>
+        </Replace>
+        <Replace Tag="LOC_MD_TOGGLE_BUTTON" Language="zh_Hant_HK">
+            <Text>區域遷移按鈕</Text>
+        </Replace>
+        <Replace Tag="LOC_MD_TOGGLE_BUTTON_TOOLTIP" Language="zh_Hant_HK">
+            <Text>顯示/隱藏區域遷移按鈕</Text>
+        </Replace>
+    </LocalizedText>
+</GameData>

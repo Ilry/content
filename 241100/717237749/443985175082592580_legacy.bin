@@ -1,0 +1,198 @@
+"controller_mappings"
+{
+	"version"		"2"
+	"title"		"#Library_ControllerSaveDefaultTitle"
+	"description"		"#Library_ControllerSaveDefaultDescription"
+	"creator"		"76561198032751746"
+	"actions"
+	{
+		"InGameControls"
+		{
+			"title"		"#Set_Ingame"
+			"legacy_set"		"0"
+			"StickPadGyro"
+			{
+				"Move"
+				{
+					"title"		"#Action_Move"
+					"input_mode"		"joystick_move"
+				}
+			}
+			"Button"
+			{
+				"grab"		"#Action_Grab"
+				"jump"		"#Action_Jump"
+				"Menu"		"#Menu"
+			}
+		}
+	}
+	"Localization"
+	{
+		"english"
+		{
+			"Set_Ingame"		"Controls"
+			"Action_Move"		"Movement"
+			"Action_Grab"		"Grab"
+			"Action_Jump"		"Jump"
+			"Menu"		"Menu"
+		}
+	}
+	"group"
+	{
+		"id"		"0"
+		"mode"		"four_buttons"
+		"bindings"
+		{
+			"button_a"		"game_action InGameControls jump, Jump"
+			"button_B"		"game_action InGameControls grab, Grab"
+			"button_X"		"game_action InGameControls grab, Grab"
+		}
+	}
+	"group"
+	{
+		"id"		"1"
+		"mode"		"dpad"
+		"bindings"
+		{
+			"dpad_north"		"xinput_button dpad_up"
+			"dpad_south"		"xinput_button dpad_down"
+			"dpad_east"		"xinput_button dpad_right"
+			"dpad_west"		"xinput_button dpad_left"
+		}
+	}
+	"group"
+	{
+		"id"		"2"
+		"mode"		"joystick_move"
+	}
+	"group"
+	{
+		"id"		"3"
+		"mode"		"joystick_move"
+		"bindings"
+		{
+			"click"		"xinput_button JOYSTICK_LEFT"
+		}
+	}
+	"group"
+	{
+		"id"		"4"
+		"mode"		"trigger"
+		"bindings"
+		{
+			"click"		"xinput_button TRIGGER_LEFT"
+		}
+		"settings"
+		{
+			"output_trigger"		"1"
+		}
+	}
+	"group"
+	{
+		"id"		"5"
+		"mode"		"trigger"
+		"bindings"
+		{
+			"click"		"xinput_button TRIGGER_RIGHT"
+		}
+		"settings"
+		{
+			"output_trigger"		"2"
+		}
+	}
+	"group"
+	{
+		"id"		"6"
+		"mode"		"joystick_move"
+		"bindings"
+		{
+			"click"		"xinput_button JOYSTICK_RIGHT"
+		}
+		"settings"
+		{
+			"output_joystick"		"1"
+		}
+	}
+	"group"
+	{
+		"id"		"7"
+		"mode"		"joystick_move"
+	}
+	"group"
+	{
+		"id"		"8"
+		"mode"		"joystick_move"
+	}
+	"group"
+	{
+		"id"		"9"
+		"mode"		"joystick_move"
+		"settings"
+		{
+			"virtual_mode"		"1"
+		}
+		"gameactions"
+		{
+			"InGameControls"		"Move"
+		}
+	}
+	"group"
+	{
+		"id"		"10"
+		"mode"		"joystick_move"
+		"settings"
+		{
+			"virtual_mode"		"1"
+		}
+	}
+	"group"
+	{
+		"id"		"11"
+		"mode"		"trigger"
+	}
+	"preset"
+	{
+		"id"		"0"
+		"name"		"InGameControls"
+		"group_source_bindings"
+		{
+			"0"		"button_diamond active"
+			"1"		"left_trigger active"
+			"11"		"left_trigger inactive"
+			"2"		"right_trigger active"
+			"7"		"joystick inactive"
+			"9"		"joystick active"
+		}
+		"switch_bindings"
+		{
+			"bindings"
+			{
+				"button_escape"		"game_action InGameControls Menu, Menu"
+			}
+		}
+	}
+	"preset"
+	{
+		"id"		"1"
+		"name"		"Menu"
+		"group_source_bindings"
+		{
+			"0"		"button_diamond active"
+			"1"		"left_trigger active"
+			"2"		"right_trigger active"
+			"8"		"joystick inactive"
+			"10"		"joystick active"
+		}
+		"switch_bindings"
+		{
+			"bindings"
+			{
+			}
+		}
+	}
+	"settings"
+	{
+		"left_trackpad_mode"		"0"
+		"right_trackpad_mode"		"0"
+	}
+}

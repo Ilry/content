@@ -1,0 +1,838 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'Hyperdimension Neptunia Leanbox Civilization'CN_Add_FI -->
+<!-- Author: WatcherNinth , Clear8Sky -->
+<!-- DateCreated: 2021/8/5 21:46:23 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Hyperdimension Neptunia: Leanbox Civilization” 。该文件在 FrontEnd 与 InGame 时载入，无需任何 Criteria -->
+	<LocalizedText>
+		
+		<!-- ***************************** 文明部分 ***************************** -->
+		<!-- ***************************** 文明 ***************************** -->
+		
+		<Replace Tag="LOC_CIVILIZATION_BWH_LEANBOX_NAME" Language="zh_Hans_CN">
+			<Text>绿荫箱庭</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVILIZATION_BWH_LEANBOX_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>绿荫箱庭帝国</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVILIZATION_BWH_LEANBOX_ADJECTIVE" Language="zh_Hans_CN">
+			<Text>绿荫箱庭的</Text>
+		</Replace>
+		
+		<!-- ***************************** 文明特色能力 ***************************** -->
+		
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_BWH_LAND_OF_GREEN_PASTURES_NAME" Language="zh_Hans_CN">
+			<Text>翠绿放牧之地</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_BWH_LAND_OF_GREEN_PASTURES_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>抗骑兵单位获得+15 [ICON_Strength] 战斗力，且可在攻击后移动。每座娱乐中心、剧院广场和商业中心提供+1 [ICON_Gold] 金币。</Text>
+		</Replace>
+		<Replace Tag="LOC_BWH_LAND_OF_GREEN_PASTURES_ANTI_CAVALRY_BONUS" Language="zh_Hans_CN">
+			<Text>+15 [ICON_Strength] 战斗力 来自翠绿放牧之地</Text>
+		</Replace>
+		
+		<!-- ***************************** 文明信息 ***************************** -->
+		
+		<Replace Tag="LOC_CIVINFO_BWH_LEANBOX_LOCATION" Language="zh_Hans_CN">
+			<Text>游汐叶界</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVINFO_BWH_LEANBOX_SIZE" Language="zh_Hans_CN">
+			<Text>50073平方英里（数据来自海王星系列游戏维基）</Text>
+		</Replace>
+		<!-- 根据超次元游戏海王星：东方银河计划，游汐叶界总人口约超过40万 -->
+		<Replace Tag="LOC_CIVINFO_BWH_LEANBOX_POPULATION" Language="zh_Hans_CN">
+			<Text>大约12万2514（数据来自海王星系列游戏维基）</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVINFO_BWH_LEANBOX_CAPITAL" Language="zh_Hans_CN">
+			<Text>绿荫箱庭</Text>
+		</Replace>
+		
+		<!-- ***************************** 文明百科文本与引言 ***************************** -->
+		
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_BWH_LEANBOX_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]Leanbox is the nation protected by the CPU Green Heart with Chika Hakozaki serving as the land's oracle. It is a large military nation situated in the southern region of Gamindustri. Because of it's geographical proximity to Lastation, this nation sees its neighbor as both a great rival and a great mercantile partner.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_BWH_LEANBOX_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>Leanbox is militant nation on small landmass. Due to proximity with Lastation, is biggest both importer and exporter and also the rival nation by Leanbox patriots. Just like Lastation being first found based similar as military might. Since Vert rule over Leanbox, the nation have fell from military might for the moe-based culture and isolated from the rest of the Gamindustri.</Text>
+		</Replace>
+		
+		<!-- ***************************** 领袖部分 ***************************** -->
+		<!-- ***************************** 贝露 ***************************** -->
+		<!-- ***************************** 领袖贝露 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_BWH_VERT_NAME" Language="zh_Hans_CN">
+			<Text>贝露</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_BWH_VERT_C4T_NAME" Language="zh_Hans_CN">
+			<Text>{LOC_LEADER_BWH_VERT_NAME} [ICON_Culture][ICON_Fortified]</Text>
+		</Replace>
+
+		<Replace Tag="LOC_LEADER_BWH_ULTRAVERT_NAME" Language="zh_Hans_CN">
+			<Text>贝露Ultra</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_BWH_ULTRAVERT_C4T_NAME" Language="zh_Hans_CN">
+			<Text>{LOC_LEADER_BWH_ULTRAVERT_NAME} [ICON_Culture][ICON_Fortified]</Text>
+		</Replace>
+		
+		<!-- ***************************** 领袖特色能力 ***************************** -->
+		
+		<Replace Tag="LOC_TRAIT_LEADER_BWH_GREENHEARTGRACE_NAME" Language="zh_Hans_CN">
+			<Text>翠绿之心的优雅</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_BWH_GREENHEARTGRACE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>您文明的所有城市降低25点厌战情绪。抗骑兵单位在原始 [ICON_Capital] 首都所在大陆击杀敌方单位可产出其 [ICON_Strength] 战斗力50%的 [ICON_culture] 文化值。每训练完成一个抗骑兵单位，将再获得一个相同单位。</Text>
+		</Replace>
+		
+		<!-- ***************************** 领袖议程 ***************************** -->
+		<!-- 该议程与柊笠见（布兰）的相似 -->
+		
+		<Replace Tag="LOC_AGENDA_BWH_LARGE_IS_JUSTICE_NAME" Language="zh_Hans_CN">
+			<Text>大（胸）就是正义！</Text>
+		</Replace>
+		<Replace Tag="LOC_AGENDA_BWH_LARGE_IS_JUSTICE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>喜欢在她所在大陆保持和平的文明，厌恶对她或她所在大陆的其他文明宣布突袭战争的、来自其他大陆的文明。</Text>
+		</Replace>
+		
+		<!-- ***************************** 领袖百科与引言 ***************************** -->
+		
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_BWH_VERT_QUOTE" Language="zh_Hans_CN">
+			<Text>我们之间的数值差距就跟一周目角色和二周目角色一样，你连个Boss都不算。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_BWH_VERT_TITLE" Language="zh_Hans_CN">
+			<Text>贝露，翠绿之心</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_BWH_VERT_SUBTITLE" Language="zh_Hans_CN">
+			<Text>绿荫箱庭的守护女神，死神女士（由一个四女神OL的GM授予，因为她曾在PVP天梯上登顶长达一整个赛季）</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_BWH_VERT_CHAPTER_CAPSULE_BODY" Language="zh_Hans_CN">
+			<Text>贝露非常适合应付那些用骑兵突袭她的文明，而且她的抗骑兵单位在首都所在大陆上消灭单位也会获得文化值。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_BWH_VERT_CHAPTER_DETAILED_BODY" Language="zh_Hans_CN">
+			<Text>贝露作为领袖时，她将专注于建立一支抗骑兵部队来对付敌人，当然她喜欢那些在自己所在大路上保持和平的其他文明，这点和柊笠见（布兰）很相似；不过与柊笠见（布兰）不同的是，贝露并不会因您谴责她而厌恶您，尽管她确实不喜欢被谴责。与此同时您也要注意自己的单位，如果您的单位在她所在大陆上被她消灭，她将会获得其50%战斗力数额的文化值，而这很可能促使她取得文化胜利。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_BWH_VERT_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]Vert, better known to the general populace as Lady Green Heart, is the CPU of Leanbox. Displaying a bit of a disinterest in the Console War when compared with her three counterparts, her primary concerns in life are the prosperity of Leanbox itself and collecting event CGs from yaoi games (not necessarily in that order). </Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_BWH_ULTRAVERT_QUOTE" Language="zh_Hans_CN">
+			<Text>太粗鲁了，你是要把我踢出公会吗？</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_BWH_ULTRAVERT_TITLE" Language="zh_Hans_CN">
+			<Text>贝露Ultra，翠绿之心</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_BWH_ULTRAVERT_SUBTITLE" Language="zh_Hans_CN">
+			<Text>绿荫箱庭的守护女神，死神女士（由一个四女神OL的GM授予，因为她曾在PVP天梯上登顶长达一整个赛季）</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_BWH_ULTRAVERT_CHAPTER_CAPSULE_BODY" Language="zh_Hans_CN">
+			<Text>贝露Ultra非常适合应付那些用骑兵突袭她的文明，而且她的抗骑兵单位在首都所在大陆上消灭单位也会获得文化值。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_BWH_ULTRAVERT_CHAPTER_DETAILED_BODY" Language="zh_Hans_CN">
+			<Text>贝露Ultra作为领袖时，她将专注于建立一支抗骑兵部队来对付敌人，当然她喜欢那些在自己所在大路上保持和平的其他文明，这点和柊笠见（布兰）很相似；不过与柊笠见（布兰）不同的是，贝露并不会因您谴责她而厌恶您，尽管她确实不喜欢被谴责。与此同时您也要注意自己的单位，如果您的单位在她所在大陆上被她消灭，她将会获得其50%战斗力数额的文化值，而这很可能促使她取得文化胜利。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_BWH_ULTRAVERT_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]UltraVert, better known to the general populace as Lady Green Heart, is the CPU of Leanbox. Displaying a bit of a disinterest in the Console War when compared with her three counterparts, her primary concerns in life are the prosperity of Leanbox itself and collecting event CGs from yaoi games (not necessarily in that order). </Text>
+		</Replace>
+		
+		<!-- ***************************** 宗教部分 ***************************** -->
+		<!-- ***************************** 宗教 ***************************** -->
+		
+		<Replace Tag="LOC_RELIGION_BWH_LEANBOX_VERT" Language="zh_Hans_CN">
+			<Text>翠绿之心教会</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_RELIGIONS_PAGE_RELIGION_BWH_LEANBOX_VERT_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>一个代表着翠绿女神信仰的宗教，同时也是她信仰占有度（Shares）的主要来源。</Text>
+		</Replace>
+		
+		<!-- ***************************** 单位部分 ***************************** -->
+		<!-- ***************************** 单位 懒懒 ***************************** -->
+		
+		<Replace Tag="LOC_UNIT_BWH_LEANBOX_RANRAN_NAME" Language="zh_Hans_CN">
+			<Text>懒懒</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_BWH_LEANBOX_RANRAN_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>绿荫箱庭文明特色单位，取代建造者。任何与懒懒处于同一单元格的单位都在防御攻击时获得+10 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_BWH_LEANBOX_RANRAN_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>(´'w'`) 懒懒军团前来觐见！</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_BWH_LEANBOX_RANRAN_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>(´'w'`) 懒懒军团向贝露陛下效忠！</Text>
+		</Replace>
+		<Replace Tag="LOC_BWH_LEANBOX_RANRAN_PROMOTION" Language="zh_Hans_CN">
+			<Text>+10 [ICON_Strength] 战斗力 来自于懒懒来帮忙啦！</Text>
+		</Replace>
+		
+		<!-- ***************************** 区域部分 ***************************** -->
+		<!-- ***************************** 区域 在线街机厅 ***************************** -->
+		
+		<Replace Tag="LOC_DISTRICT_BWH_LIVE_ARCADE_NAME" Language="zh_Hans_CN">
+			<Text>在线街机厅</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_BWH_LIVE_ARCADE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>绿荫箱庭文明的特色区域，取代娱乐中心。额外提供+5 [ICON_Faith] 信仰值、+5 [ICON_Gold] 金币。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_DISTRICTS_PAGE_DISTRICT_BWH_LIVE_ARCADE_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]The Leanbox Live Arcade is one of the primary cultural institutions of Leanbox. Known for pioneering the "online gaming" feature in Gamindustri, Leanbox Live has since found itself copied in the form of Lastation Network and Lowee Network, but neither of them can hope to compete.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_DISTRICTS_PAGE_DISTRICT_BWH_LIVE_ARCADE_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>Planeptune, at one point, had a precursor to Leanbox Live known as "PlaneptuneNet." Despite predating Leanbox Live, the mere mention of PlaneptuneNet can elicit uproarious laughter from Green Heart, Black Heart, and even White Heart due to its failure.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_DISTRICTS_PAGE_DISTRICT_BWH_LIVE_ARCADE_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>Incidentally, Green Heart herself is prone to sneaking off to Planeptune to play at their arcades, due to their greater variety of games. It is rumored that she is capable of completely cleaning out a crane machine.</Text>
+		</Replace>
+		
+		<!-- ***************************** 引言部分 ***************************** -->
+		<!-- ***************************** 载入 ***************************** -->
+		
+		<Replace Tag="LOC_LOADING_INFO_LEADER_BWH_VERT" Language="zh_Hans_CN">
+			<Text>您优雅的存在、最为宁静的翠绿之心女神，值得我们尊敬。噢，最漂亮又丰满的守护女神，您的指引……呃，翠绿之心女神，我并非故意无礼，但请在我演讲时把您的笔记本电脑放好……谢谢，陛下。咳嗯，就如我所言。您的指引使绿荫箱庭成为游汐叶界最美丽、最强大的国家。尽管有酷热高温以及如同“三红”等天灾的倾向，绿荫箱庭依然无疑是世界文化、工业以及整体繁荣的驱动之地。[NEWLINE][NEWLINE]（没收掉偷偷打开的笔记本）……贝露女神，我相信您的“公会好友”不会在意您这次“突袭战”稍稍延后的……</Text>
+		</Replace>
+		<Replace Tag="LOC_LOADING_INFO_LEADER_BWH_ULTRAVERT" Language="zh_Hans_CN">
+			<Text>{LOC_LOADING_INFO_LEADER_BWH_VERT}</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 首次见面 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_BWH_VERT_ANY" Language="zh_Hans_CN">
+			<Text>哦呀哦呀，这位是谁呀？你好可爱！嘛，允许我自我介绍一下。我是翠绿之心，绿荫箱庭的守护女神。但你可以叫我“贝露”！昵称叫我“贝贝”或者“贝酱”也可以哟！喏，来交换下电子邮件地址吧，以便保持联系！还有Steam用户名！还有Xbox玩家代号，还有……</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_BWH_VERT_ANY" Language="zh_Hans_CN">
+			<Text>……[NEWLINE]……啊，呃……一位访客？啊啦，来得不是时候呀……我坐在这儿等了一个小时了，突袭战队伍终！于！满员了！唔……我们可以晚些再做正式的国家会晤吗？我真的，真的需要那个稀有道具掉落！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NEAR_INITIATOR_POSITIVE_LEADER_BWH_VERT_ANY" Language="zh_Hans_CN">
+			<Text>太好了！来喝杯茶庆祝一下吧。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_BWH_VERT_ANY" Language="zh_Hans_CN">
+			<Text>唔嗯唔嗯，稍等。让我给队友说下我AFK（暂时离开电脑）一分钟……好啦。所以现在，你来交换首都信息是想要做什么？</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_BWH_ULTRAVERT_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_FIRST_MEET_LEADER_BWH_VERT_ANY}</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_BWH_ULTRAVERT_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_BWH_VERT_ANY}</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NEAR_INITIATOR_POSITIVE_LEADER_BWH_ULTRAVERT_ANY" Language="zh_Hans_CN">
+			<Text>太好了！来喝杯茶庆祝一下吧。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_BWH_ULTRAVERT_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_BWH_VERT_ANY}</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 问候 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_GREETING_LEADER_BWH_VERT_ANY" Language="zh_Hans_CN">
+			<Text>欢迎回到绿荫箱庭。想来点茶吗？</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_GREETING_LEADER_BWH_ULTRAVERT_ANY" Language="zh_Hans_CN">
+			<Text>欢迎回到绿荫箱庭。想来点茶吗？</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 宣布友谊 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_BWH_VERT_ANY" Language="zh_Hans_CN">
+			<Text>你是在太可爱了，我只想紧紧抱着你，把你锁在我房间里面，然后一起玩很长时间的游戏，一起看存了很多的动画！难道不开心吗？请，说，开心哦……</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_BWH_ULTRAVERT_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_BWH_VERT_ANY}</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 宣战 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_BWH_VERT_ANY" Language="zh_Hans_CN">
+			<Text>你真是厚颜无耻，难道不是吗？很好很好。虽然我更喜欢在网络游戏上战斗，但我也不会回避真正的战争！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_BWH_VERT_ANY" Language="zh_Hans_CN">
+			<Text>虽然很抱歉，但我还有一局游戏得取胜。你是阻碍我胜利的人之一，所以请靠边站！</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_BWH_ULTRAVERT_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_BWH_VERT_ANY}</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_BWH_ULTRAVERT_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_BWH_VERT_ANY}</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 贸易 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_MAKE_DEAL_AI_ACCEPT_DEAL_LEADER_BWH_VERT_ANY" Language="zh_Hans_CN">
+			<Text>嗯，我必然会通过这次交易的。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MAKE_DEAL_AI_REFUSE_DEAL_LEADER_BWH_VERT_ANY" Language="zh_Hans_CN">
+			<Text>除非你愿意接受以限量版定价作为付款条件，而这价格仅针对那些于我不利之人……否则我是不会同意这次交易的。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MAKE_DEAL_AI_ADJUST_DEAL_LEADER_BWH_VERT_ANY" Language="zh_Hans_CN">
+			<Text>我觉得这看着还不错，不是吗？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_BWH_VERT_ANY" Language="zh_Hans_CN">
+			<Text>太好了！来喝杯茶庆祝一下吧。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_MAKE_DEAL_AI_ACCEPT_DEAL_LEADER_BWH_ULTRAVERT_ANY" Language="zh_Hans_CN">
+			<Text>嗯，我必然会通过这次交易的。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MAKE_DEAL_AI_REFUSE_DEAL_LEADER_BWH_ULTRAVERT_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_MAKE_DEAL_AI_REFUSE_DEAL_LEADER_BWH_VERT_ANY}</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MAKE_DEAL_AI_ADJUST_DEAL_LEADER_BWH_ULTRAVERT_ANY" Language="zh_Hans_CN">
+			<Text>我觉得这看着还不错，不是吗？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_BWH_ULTRAVERT_ANY" Language="zh_Hans_CN">
+			<Text>太好了！来喝杯茶庆祝一下吧。</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 击败 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_VERT_ANY" Language="zh_Hans_CN">
+			<Text>你……你赢了？不可能！你肯定作弊了！你把游戏修改了，对吧？或者启用了某些使AI无法免费获得科技的模组，是吧？这太恶劣了！我要求重开！我明白我会在公平竞争中打败你的……！而我所谓的“公平”，就是说“给我一些优势，因为我是AI文明，没办法像你一样制定战略！”</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_BWH_VERT_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_VERT_ANY}</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_ULTRAVERT_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_VERT_ANY}</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_BWH_ULTRAVERT_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_VERT_ANY}</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 代表团 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_DELEGATION_FROM_AI_LEADER_BWH_VERT_ANY" Language="zh_Hans_CN">
+			<Text>我能派遣代表团过去吗？啊，不用担心绿荫箱庭代表团的EULA（最终用户许可协议），里面没有NSA（国家安全局）后门或其他什么的。[NEWLINE]……[NEWLINE]……什么？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_AI_LEADER_BWH_VERT_ANY" Language="zh_Hans_CN">
+			<Text>啊啦～我开心地都想死死地抱紧你了！欸嘿嘿～！</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_DELEGATION_FROM_AI_LEADER_BWH_ULTRAVERT_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DELEGATION_FROM_AI_LEADER_BWH_VERT_ANY}</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_AI_LEADER_BWH_ULTRAVERT_ANY" Language="zh_Hans_CN">
+			<Text>啊啦～我开心地都想死死地抱紧你了！欸嘿嘿～！</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 谴责 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_BWH_VERT_ANY" Language="zh_Hans_CN">
+			<Text>我……啊这……就因为“我没有独占”，你就要诉诸于如此方式的诽谤？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_BWH_VERT_ANY" Language="zh_Hans_CN">
+			<Text>我受够你了！你难道没注意到765直播间里满是黑你的言论吗？没错，那就是我干的。你活该！[NEWLINE]（谴责你）</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_BWH_ULTRAVERT_ANY" Language="zh_Hans_CN">
+			<Text>我……啊这……就因为“我没有独占”，你就要诉诸于如此方式的诽谤？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_BWH_ULTRAVERT_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_BWH_VERT_ANY}</Text>
+		</Replace>
+		
+		<!-- 这大概是为什么她无论如何也要谴责你 -->
+		
+		<Replace Tag="LOC_DIPLO_DENOUNCE_REASON_FROM_AI_LEADER_ANY_REASON_AGENDA_BWH_LARGE_IS_JUSTICE_BAD_ACTION" Language="zh_Hans_CN">
+			<Text>（您在她所在大路上以卑鄙的手段陷害他人）</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 大使馆 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_EMBASSY_FROM_AI_LEADER_BWH_VERT_ANY" Language="zh_Hans_CN">
+			<Text>我能在你首都建大使馆吗？啊，不用担心绿荫箱庭大使馆的EULA（最终用户许可协议），里面没有NSA（国家安全局）后门或其他什么的。[NEWLINE]……[NEWLINE]……什么？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_ACCEPT_EMBASSY_FROM_AI_LEADER_BWH_VERT_ANY" Language="zh_Hans_CN">
+			<Text>好极了！</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_EMBASSY_FROM_AI_LEADER_BWH_ULTRAVERT_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_EMBASSY_FROM_AI_LEADER_BWH_VERT_ANY}</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_ACCEPT_EMBASSY_FROM_AI_LEADER_BWH_ULTRAVERT_ANY" Language="zh_Hans_CN">
+			<Text>好极了！</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 结盟 ***************************** -->
+		
+		<!-- ***************************** 外交 赞成与警告 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_WARNING_EXIT_LEADER_BWH_VERT_ANY" Language="zh_Hans_CN">
+			<Text>白痴，我看到你跟别人一样遭到报应了，我不会忘记你所作所为的，我永！远！不！会！忘记你今天所做的一切，你会明白的，呸呸呸！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_LEADER_BWH_VERT_REASON_ANY" Language="zh_Hans_CN">
+			<Text>（您在她所在大陆上宣战了）</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_KUDO_EXIT_LEADER_BWH_VERT_ANY" Language="zh_Hans_CN">
+			<Text>你是我最爱的领袖……嗯，我真的很爱这里的人们，还有，嘛……如果你能不攻击我的空岛之国，之后我会用一个……特别的游戏来回报你，下次你来我房间里做客时，我们可以玩哦。欸嘿嘿～啊，我是说，一直在我房间里玩游戏都快腻了……</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_BWH_VERT_REASON_ANY" Language="zh_Hans_CN">
+			<Text>（您在她所在大陆上保持和平）</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_KUDO_EXIT_LEADER_BWH_ULTRAVERT_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_KUDO_EXIT_LEADER_BWH_VERT_ANY}</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_BWH_ULTRAVERT_REASON_ANY" Language="zh_Hans_CN">
+			<Text>（您在她所在大陆上保持和平）</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_MODIFIER_BWH_LARGE_IS_JUSTICE_DOF" Language="zh_Hans_CN">
+			<Text>贝露喜欢你在她所在大陆上保持和平。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_BWH_LARGE_IS_JUSTICE_DOW" Language="zh_Hans_CN">
+			<Text>贝露讨厌你在她所在大陆上发动战争。</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 索取 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_AI_REFUSE_DEMAND_LEADER_BWH_VERT_ANY" Language="zh_Hans_CN">
+			<Text>什……？！我！不！胖！你竟敢这样说？！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_HUMAN_ACCEPT_DEMAND_FROM_AI_LEADER_BWH_VERT_ANY" Language="zh_Hans_CN">
+			<Text>很好，你是个聪明人！</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_AI_REFUSE_DEMAND_LEADER_BWH_ULTRAVERT_ANY" Language="zh_Hans_CN">
+			<Text>什……？！我！不！胖！你竟敢这样说？！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_HUMAN_ACCEPT_DEMAND_FROM_AI_LEADER_BWH_ULTRAVERT_ANY" Language="zh_Hans_CN">
+			<Text>很好，你是个聪明人！</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 和平 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_FROM_AI_LEADER_BWH_VERT_ANY" Language="zh_Hans_CN">
+			<Text>我有些过热了，我想你或许也是如此。让我们言归于好吧，行吗？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_ACCEPT_MAKE_PEACE_FROM_AI_LEADER_BWH_VERT_ANY" Language="zh_Hans_CN">
+			<Text>谢谢你了！</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_FROM_AI_LEADER_BWH_ULTRAVERT_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_MAKE_PEACE_FROM_AI_LEADER_BWH_VERT_ANY}</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_ACCEPT_MAKE_PEACE_FROM_AI_LEADER_BWH_ULTRAVERT_ANY" Language="zh_Hans_CN">
+			<Text>谢谢你了！</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 开放边境 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_OPEN_BORDERS_FROM_AI_LEADER_BWH_VERT_ANY" Language="zh_Hans_CN">
+			<Text>你愿意签署边界开档协议吗？[NEWLINE]……不不不，不是开放源代码。那是绝！对！不可能的。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_AI_LEADER_BWH_VERT_ANY" Language="zh_Hans_CN">
+			<Text>啊啦～我开心地都想死死地抱紧你了！欸嘿嘿～！</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_OPEN_BORDERS_FROM_AI_LEADER_BWH_ULTRAVERT_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_OPEN_BORDERS_FROM_AI_LEADER_BWH_VERT_ANY}</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_AI_LEADER_BWH_ULTRAVERT_ANY" Language="zh_Hans_CN">
+			<Text>啊啦～我开心地都想死死地抱紧你了！欸嘿嘿～！</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 别在附近定居 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_AI_LEADER_BWH_VERT_ANY" Language="zh_Hans_CN">
+			<Text>如果你继续蚕食这里，就会让这片翠绿放牧之地渐染棕褐，兴许还能开出一朵花。请另选他处！</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_AI_LEADER_BWH_ULTRAVERT_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_AI_LEADER_BWH_VERT_ANY}</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 很多军队在边境附近 ***************************** -->
+		
+		<!-- ***************************** 外交 别在我这里用间谍 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_LEADER_BWH_VERT_ANY" Language="zh_Hans_CN">
+			<Text>我知道你想让你的间谍对我可爱的国家尽可能地搞破坏，但你不觉得你应该教他们更机智一点，而不是在市中心大喊“绿荫箱庭，关闭电源”吗？我是说……这招奏效了，但还是不行啊！</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_LEADER_BWH_ULTRAVERT_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_LEADER_BWH_VERT_ANY}</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 别在这里挖掘文物 ***************************** -->
+		
+		<!-- ***************************** 外交 别转换我的信仰 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_BWH_VERT_VS_NEPTUNE" Language="zh_Hans_CN">
+			<Text>哦呀哦呀！你好啊，涅普迪努！看来，还是和以前一样有活力呀。希望你一切都好。更重要的是，希望我亲爱的小涅普姬雅也过得好。欸嘿嘿……嘛，抱歉，有点失态了。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_BWH_VERT_VS_NEPTUNE" Language="zh_Hans_CN">
+			<Text>你已经在“平台之战”中被淘汰一次了，涅普迪努。我保证这次还是同样的结果！做好觉悟吧！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_BWH_VERT_VS_NEPTUNE" Language="zh_Hans_CN">
+			<Text>涅普迪努，你根本吓不到我。虽然我很不希望同艾芙酱和可爱的涅普姬雅对抗，但绿荫箱庭的安定与繁荣是第一位的。如果必要的话，我会毁灭你的！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_VERT_VS_NEPTUNE" Language="zh_Hans_CN">
+			<Text>啧……在所有守护女神里，竟然被你打败了……等等，你要干什么来提高你的信仰占有度（Shares）？让……让我在布丁泳池里裸……裸体和箱崎千香摔跤？！你，你太残忍了！！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_BWH_VERT_VS_NEPTUNE" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_VERT_VS_NEPTUNE}</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_BWH_VERT_VS_NEPGEAR" Language="zh_Hans_CN">
+			<Text>啊啦嘛～！这不是我可爱的、美丽的、天真的涅普姬雅吗～！哎呀，忘掉外交介绍的无聊事吧！来让我给你个大大的拥抱！听着，如果你需要绿荫箱庭的任何东西，尽管告诉我，好吗～？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_BWH_VERT_VS_NEPGEAR" Language="zh_Hans_CN">
+			<Text>欸？……为什么？涅普姬雅，你不是认真的，对吧！我不想和你战斗！但……你要是不退缩的话，为了维护绿荫箱庭长久的安定，我甚至会将你彻底击垮。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_VERT_VS_NEPGEAR" Language="zh_Hans_CN">
+			<Text>再没有比这更糟的事了……我可爱的涅普姬雅不仅背叛了我，还把绿荫箱庭给彻底毁掉了……等等，那把剑是？为什么你会拿——[NEWLINE][COLOR_Red]（你用游机板剑刺穿了她，她的生命渐渐从身体中消逝了。当你把剑从她身体里抽出时，你能感觉到她温暖的力量在刀锋上涌动。[NEWLINE]你离你的目标又近了一步……）[ENDCOLOR][NEWLINE]</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_BWH_VERT_VS_NEPGEAR" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_VERT_VS_NEPGEAR}</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_BWH_VERT_VS_NEPGEAR" Language="zh_Hans_CN">
+			<Text>我知道我一定缠着你很久了，但你能不能接受我的提议，做我的养妹呢？如果你愿意的话，我会非常开心的，比得知四女神Online和我最喜爱的同人画师联动还要开心的多！请你能再考虑一下……</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_BWH_VERT_VS_NOIRE" Language="zh_Hans_CN">
+			<Text>啊，你好，诺瓦露。我觉得我最大的竞争对手也在这个次元里是理所当然的事。嘛，那就共同展望绿荫箱庭和黑土边域的关系吧！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_BWH_VERT_VS_NOIRE" Language="zh_Hans_CN">
+			<Text>嘛，就和我上次玩的视觉小说结局一样，显而易见。毕竟，我们是游汐叶界中永远的竞争对手！那就别耽搁时间了！我们会在战场上结束这长久的竞争！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_VERT_VS_NOIRE" Language="zh_Hans_CN">
+			<Text>所以说，似乎黑土边域最终脱颖而出，成为“平台之战”最后的胜利者了……我想我应该更认真一点地对待我的工作吧，嗯？你投入了如此精力来维持黑土边域的技术前沿地位，这也定是必然的结果。好吧……我接受我的失败。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_BWH_VERT_VS_NOIRE" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_VERT_VS_NOIRE}</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_BWH_VERT_VS_UNI" Language="zh_Hans_CN">
+			<Text>啊啦，真是个惊喜。你最近好吗，优尼？你还在努力工作来给你姐姐留下好印象，嗯？嘛，我知道她不是世界上最宠妹妹的人，所以如果你有需要的话，尽管来找我帮忙哦！欸嘿嘿……</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_BWH_VERT_VS_UNI" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_BWH_VERT_VS_NOIRE}</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_VERT_VS_UNI" Language="zh_Hans_CN">
+			<Text>我想了所有在战斗中能打赢我的人，却从未想过会是黑土边域的女神候补生。我想当你只有一杆长矛时，也是很难与枪械对抗的。啊啦嘛，也就是说这个游戏并没有适当地平衡近战与远程单位，所以为之生气也是浪费感情。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_BWH_VERT_VS_UNI" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_VERT_VS_UNI}</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_BWH_VERT_VS_UNI" Language="zh_Hans_CN">
+			<Text>你知道吗，我一直都想让涅普姬雅做我的妹妹，但现在我已经被你更加活泼的性格和那可爱的蓬松发型深深迷住了！或许，你愿意代之成为我的妹妹？我会比诺瓦露更加照顾你的！</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_BWH_VERT_VS_BLANC" Language="zh_Hans_CN">
+			<Text>是布兰，真是惊喜。我刚刚还在想，没有了你冷热无常的脾气给周围活跃气氛，什么事都变得很无聊呢！来为绿荫箱庭和白露之滨和平共处干杯！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_BWH_VERT_VS_BLANC" Language="zh_Hans_CN">
+			<Text>我当然已经准备好了。你就是忍不住羡慕我完美的身材曲线了，对吧？让你如此渴望，以至于你想把我毁掉来让自己好受些！但是，那是不可能发生的。准备好从“平台大战”中被淘汰吧！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_VERT_VS_BLANC" Language="zh_Hans_CN">
+			<Text>难以置信。竟然被一个胸部比一般后宫游戏女主角还平的守护女神打败了。真是糟——[NEWLINE][NEWLINE][COLOR_Red]（*一记重拳*）[ENDCOLOR][NEWLINE][COLOR_Grey]（这就是你能从她身上感受到的关于胸部大小被冒犯的所有怒气。）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_BWH_VERT_VS_BLANC" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_VERT_VS_BLANC}</Text>
+		</Replace>
+		
+		<!-- ***************************** 城市部分 ***************************** -->
+		<!-- ***************************** 城市 ***************************** -->
+		
+		<!-- 抱歉，我现在还不会加动态城市(Dynamic City) -->
+		
+		<Replace Tag="LOC_CITY_NAME_BWH_HDNCAPITAL_LEANBOX_VERT_CAPITAL" Language="zh_Hans_CN">
+			<Text>绿荫箱庭</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_HDNCAPITAL_LEANBOX_ULTRAVERT_CAPITAL" Language="zh_Hans_CN">
+			<Text>神次元绿荫箱庭</Text>
+		</Replace>
+
+		<Replace Tag="LOC_CITY_NAME_BWH_LEANBOX_MSMOUNTAIN" Language="zh_Hans_CN">
+			<Text>软微山</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LEANBOX_MARUBACOFOREST" Language="zh_Hans_CN">
+			<Text>丸箱森林</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LEANBOX_HALOMOUNTAIN" Language="zh_Hans_CN">
+			<Text>星环山</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LEANBOX_GHEYTZFOREST" Language="zh_Hans_CN">
+			<Text>茨盖森林</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LEANBOX_GUNBREAKUNDERGROUNDCAVERN" Language="zh_Hans_CN">
+			<Text>像素模糊地下防空洞</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LEANBOX_DUTYSPACE" Language="zh_Hans_CN">
+			<Text>决胜空间</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LEANBOX_KINESTRANGE" Language="zh_Hans_CN">
+			<Text>肯奈特山道</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LEANBOX_ADJITENFORESTPASS" Language="zh_Hans_CN">
+			<Text>真鲹林道</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LEANBOX_GRAPHICPASS" Language="zh_Hans_CN">
+			<Text>古拉菲斯山</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LEANBOX_GAPAINFIELD" Language="zh_Hans_CN">
+			<Text>伽佩因草原</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LEANBOX_UNDERVERSE" Language="zh_Hans_CN">
+			<Text>倒转空间</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LEANBOX_TRINITYMARSH" Language="zh_Hans_CN">
+			<Text>三位一体湿地</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LEANBOX_HALOFOREST" Language="zh_Hans_CN">
+			<Text>星环森林</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LEANBOX_ZEGAFOREST" Language="zh_Hans_CN">
+			<Text>泽伽森林</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LEANBOX_KOBABARUINS" Language="zh_Hans_CN">
+			<Text>克巴茲巴遗迹</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LEANBOX_NEKUTOKIFOREST" Language="zh_Hans_CN">
+			<Text>体感森林</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LEANBOX_EMESMAGMACAVE" Language="zh_Hans_CN">
+			<Text>软微熔岩洞</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LEANBOX_GAMESVISIONAREA" Language="zh_Hans_CN">
+			<Text>游戏幻视</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LEANBOX_GOLDENSUMMITLEAREA" Language="zh_Hans_CN">
+			<Text>黄金之顶LE</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LEANBOX_HAIRANOREPLATEAU" Language="zh_Hans_CN">
+			<Text>海拉鄂高原</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LEANBOX_MARCOSOFT" Language="zh_Hans_CN">
+			<Text>巨软总部</Text>
+		</Replace>
+		
+		<!-- ***************************** 公民部分 ***************************** -->
+		<!-- ***************************** 公民 ***************************** -->
+		
+		<Replace Tag="LOC_CITIZEN_BWH_LEANBOX_MALE_1" Language="zh_Hans_CN">
+			<Text>路易君</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_BWH_LEANBOX_MALE_2" Language="zh_Hans_CN">
+			<Text>Billy桑</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_BWH_LEANBOX_MALE_3" Language="zh_Hans_CN">
+			<Text>冒险家大佬</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_BWH_LEANBOX_MALE_4" Language="zh_Hans_CN">
+			<Text>现场解说</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_BWH_LEANBOX_MALE_5" Language="zh_Hans_CN">
+			<Text>热血的初级冒险者</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_BWH_LEANBOX_MALE_6" Language="zh_Hans_CN">
+			<Text>343君</Text>
+		</Replace>
+
+		<Replace Tag="LOC_CITIZEN_BWH_LEANBOX_FEMALE_1" Language="zh_Hans_CN">
+			<Text>5pb.酱</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_BWH_LEANBOX_FEMALE_2" Language="zh_Hans_CN">
+			<Text>Cave酱</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_BWH_LEANBOX_FEMALE_3" Language="zh_Hans_CN">
+			<Text>MAGES.酱</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_BWH_LEANBOX_FEMALE_4" Language="zh_Hans_CN">
+			<Text>灵之源氏</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_BWH_LEANBOX_FEMALE_5" Language="zh_Hans_CN">
+			<Text>nao酱</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_BWH_LEANBOX_FEMALE_6" Language="zh_Hans_CN">
+			<Text>箱崎千香</Text>
+		</Replace>
+		
+		<!-- ***************************** 地名 ***************************** -->
+		
+		<Replace Tag="LOC_NAMED_RIVER_LTD_LEANBOX_1_NAME" Language="zh_Hans_CN">
+			<Text>光环瀑布</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_LTD_LEANBOX_2_NAME" Language="zh_Hans_CN">
+			<Text>极限竞速小溪</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_LTD_LEANBOX_3_NAME" Language="zh_Hans_CN">
+			<Text>索普之河</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_LTD_LEANBOX_4_NAME" Language="zh_Hans_CN">
+			<Text>Kinect体感湍流</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_LTD_LEANBOX_5_NAME" Language="zh_Hans_CN">
+			<Text>Gifwulle奔流</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_LTD_LEANBOX_6_NAME" Language="zh_Hans_CN">
+			<Text>成就党瀑布</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_LTD_LEANBOX_7_NAME" Language="zh_Hans_CN">
+			<Text>苦力怕小溪</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_LTD_LEANBOX_8_NAME" Language="zh_Hans_CN">
+			<Text>神鬼寓言之河</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_LTD_LEANBOX_9_NAME" Language="zh_Hans_CN">
+			<Text>微软小娜湍流</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_LTD_LEANBOX_10_NAME" Language="zh_Hans_CN">
+			<Text>哥谭市奔流</Text>
+		</Replace>
+
+		<Replace Tag="LOC_NAMED_MOUNTAIN_LTD_LEANBOX_1_NAME" Language="zh_Hans_CN">
+			<Text>失落的奥德赛·哥萨峰</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_MOUNTAIN_LTD_LEANBOX_2_NAME" Language="zh_Hans_CN">
+			<Text>心灵杀手山脉</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_MOUNTAIN_LTD_LEANBOX_3_NAME" Language="zh_Hans_CN">
+			<Text>迷雾行者山隘</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_MOUNTAIN_LTD_LEANBOX_4_NAME" Language="zh_Hans_CN">
+			<Text>死亡微笑·风之使者山脉</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_MOUNTAIN_LTD_LEANBOX_5_NAME" Language="zh_Hans_CN">
+			<Text>神鬼寓言2·阿尔比恩之顶</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_MOUNTAIN_LTD_LEANBOX_6_NAME" Language="zh_Hans_CN">
+			<Text>战争机器4·菲利之峰</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_MOUNTAIN_LTD_LEANBOX_7_NAME" Language="zh_Hans_CN">
+			<Text>准镜山脉</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_MOUNTAIN_LTD_LEANBOX_8_NAME" Language="zh_Hans_CN">
+			<Text>卡美奥山隘</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_MOUNTAIN_LTD_LEANBOX_9_NAME" Language="zh_Hans_CN">
+			<Text>弗朗西斯山脉</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_MOUNTAIN_LTD_LEANBOX_10_NAME" Language="zh_Hans_CN">
+			<Text>魔窟冒险峰顶</Text>
+		</Replace>
+
+		<Replace Tag="LOC_NAMED_VOLCANO_LTD_LEANBOX_1_NAME" Language="zh_Hans_CN">
+			<Text>星球大战·N-3PO火山</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_VOLCANO_LTD_LEANBOX_2_NAME" Language="zh_Hans_CN">
+			<Text>自然终极数码体验熔岩山</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_VOLCANO_LTD_LEANBOX_3_NAME" Language="zh_Hans_CN">
+			<Text>无间战神·阿萨神族熔气山</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_VOLCANO_LTD_LEANBOX_4_NAME" Language="zh_Hans_CN">
+			<Text>宝贝万岁·皮纳塔岩浆山</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_VOLCANO_LTD_LEANBOX_5_NAME" Language="zh_Hans_CN">
+			<Text>维和战士熔灰山</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_VOLCANO_LTD_LEANBOX_6_NAME" Language="zh_Hans_CN">
+			<Text>杀手学堂·福尔戈火山</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_VOLCANO_LTD_LEANBOX_7_NAME" Language="zh_Hans_CN">
+			<Text>落日超驰·沸泡饮料熔岩山</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_VOLCANO_LTD_LEANBOX_8_NAME" Language="zh_Hans_CN">
+			<Text>魔幻战士熔气山</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_VOLCANO_LTD_LEANBOX_9_NAME" Language="zh_Hans_CN">
+			<Text>佩拉西亚岩浆山</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_VOLCANO_LTD_LEANBOX_10_NAME" Language="zh_Hans_CN">
+			<Text>暴力破解·布鲁图斯火山</Text>
+		</Replace>
+
+		<Replace Tag="LOC_NAMED_DESERT_LTD_LEANBOX_1_NAME" Language="zh_Hans_CN">
+			<Text>霹雳酷炫猫荒漠</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_DESERT_LTD_LEANBOX_2_NAME" Language="zh_Hans_CN">
+			<Text>鬼屋大冒险沙漠</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_DESERT_LTD_LEANBOX_3_NAME" Language="zh_Hans_CN">
+			<Text>疯狂大乱斗沙丘</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_DESERT_LTD_LEANBOX_4_NAME" Language="zh_Hans_CN">
+			<Text>心灵杀手沙漠</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_DESERT_LTD_LEANBOX_5_NAME" Language="zh_Hans_CN">
+			<Text>丸箱荒地</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_DESERT_LTD_LEANBOX_6_NAME" Language="zh_Hans_CN">
+			<Text>肯耐特荒漠</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_DESERT_LTD_LEANBOX_7_NAME" Language="zh_Hans_CN">
+			<Text>泽伽沙漠</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_DESERT_LTD_LEANBOX_8_NAME" Language="zh_Hans_CN">
+			<Text>克巴茲巴沙丘</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_DESERT_LTD_LEANBOX_9_NAME" Language="zh_Hans_CN">
+			<Text>体感沙漠</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_DESERT_LTD_LEANBOX_10_NAME" Language="zh_Hans_CN">
+			<Text>巨软荒地</Text>
+		</Replace>
+		
+		<!-- ***************************** RwF模组(Rule with Faith)部分 ***************************** -->
+		
+		<Replace Tag="LOC_CIVILIZATION_BWH_LEANBOX_DESCRIPTION_JFD_CIVILIZATION" Language="zh_Hans_CN">
+			<Text>绿荫箱庭文明</Text>
+		</Replace>
+		
+		<!-- ***************************** 头衔 ***************************** -->
+		
+		<Replace Tag="LOC_GOVERNMENT_JFD_CHIEFDOM_LEADER_TITLE_BWH_LEANBOX" Language="zh_Hans_CN">
+			<Text>领袖</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_CHIEFDOM_LEADER_TITLE_BWH_LEANBOX_FEMININE" Language="zh_Hans_CN">
+			<Text>领袖</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_ALL_GOVERNMENT_LEADER_TITLE_BWH_LEANBOX" Language="zh_Hans_CN">
+			<Text>君主</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_ALL_GOVERNMENT_LEADER_TITLE_BWH_LEANBOX_FEMININE" Language="zh_Hans_CN">
+			<Text>女王</Text>
+		</Replace>
+
+		<Replace Tag="LOC_GOVERNMENT_JFD_AUTOCRACY_LEADER_TITLE_BWH_LEANBOX" Language="zh_Hans_CN">
+			<Text>女王</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_OLIGARCHY_LEADER_TITLE_BWH_LEANBOX" Language="zh_Hans_CN">
+			<Text>女王</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_CLASSICAL_DEMOCRACY_LEADER_TITLE_BWH_LEANBOX" Language="zh_Hans_CN">
+			<Text>女王</Text>
+		</Replace>
+
+		<Replace Tag="LOC_GOVERNMENT_JFD_MERCHANT_REPUBLIC_LEADER_TITLE_BWH_LEANBOX" Language="zh_Hans_CN">
+			<Text>女王</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_MONARCHY_LEADER_TITLE_BWH_LEANBOX" Language="zh_Hans_CN">
+			<Text>女王</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_NOBLE_REPUBLIC_LEADER_TITLE_BWH_LEANBOX" Language="zh_Hans_CN">
+			<Text>女王</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_LIBERAL_DEMOCRACY_LEADER_TITLE_BWH_LEANBOX" Language="zh_Hans_CN">
+			<Text>女王</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_PEOPLES_REPUBLIC_LEADER_TITLE_BWH_LEANBOX" Language="zh_Hans_CN">
+			<Text>女王</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_MILITARY_GUARDIANSHIP_LEADER_TITLE_BWH_LEANBOX" Language="zh_Hans_CN">
+			<Text>女王</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_EMPIRE_LEADER_TITLE_BWH_LEANBOX" Language="zh_Hans_CN">
+			<Text>女王</Text>
+		</Replace>
+
+		<Replace Tag="LOC_GOVERNMENT_JFD_THEOCRACY_LEADER_TITLE_BWH_LEANBOX" Language="zh_Hans_CN">
+			<Text>圣王</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_THEOCRACY_LEADER_TITLE_BWH_LEANBOX_FEMININE" Language="zh_Hans_CN">
+			<Text>女神</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

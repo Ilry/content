@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by matthew beach (Firaxis Games) -->
+<GameData>
+	<TraitModifiers>
+		<Row>
+			<TraitType>TRAIT_CIVILIZATION_DYNASTIC_CYCLE</TraitType>
+			<ModifierId>TRAIT_REPLACE_MILITARY_SLOT_WITH_WILDCARD</ModifierId>
+		</Row>
+	</TraitModifiers>
+	<!--<Modifiers>
+		<Row>
+			<ModifierId>TRAIT_REPLACE_MILITARY_SLOT_WITH_WILDCARD</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_CULTURE_REPLACE_GOVERNMENT_SLOTS</ModifierType>
+		</Row>
+	</Modifiers>-->
+</GameData>

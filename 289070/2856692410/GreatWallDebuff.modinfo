@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mod id="5a5a565d-5412-4a81-8a8b-d47d9ce57c93" version="1">
+  <Properties>
+    <Name>Great Wall Debuff</Name>
+    <Description>Great Wall Debuff</Description>
+    <Created>1661700257</Created>
+    <Teaser>Great Wall Debuff</Teaser>
+    <Authors>Phantagonist</Authors>
+    <CompatibleVersions>1.2,2.0</CompatibleVersions>
+  </Properties>
+  <Dependencies>
+    <Mod id="4873eb62-8ccc-4574-b784-dda455e74e68" title="Expansion: Gathering Storm" />
+  </Dependencies>
+  <InGameActions>
+    <UpdateDatabase id="NewAction">
+      <File>GreatWallDebuff.xml</File>
+    </UpdateDatabase>
+    <UpdateText id="NewAction">
+      <File>Translations.xml</File>
+    </UpdateText>
+  </InGameActions>
+  <Files>
+    <File>GreatWallDebuff.xml</File>
+    <File>Translations.xml</File>
+  </Files>
+</Mod>

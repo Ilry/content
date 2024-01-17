@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- GS'Renewable Energy Complexity'CN_Add_IG -->
+<!-- Author: Clear8Sky -->
+<!-- DateCreated: 2021/6/10 21:45:28 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Renewable Energy Complexity” 。该文件在 InGame 时载入，需 Criteria ： Active_Expansion_2 -->
+	<LocalizedText>
+		
+		<!-- 2021/07/23 根据更新重写文件结构 -->
+		
+		<Replace Tag="LOC_TECH_JNR_REC_UPGRADE_GEOTHERMAL" Language="zh_Hans_CN">
+			<Text>每回合从每座地热发电厂中额外获得+1 [ICON_Power] 电力。</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_JNR_REC_UPGRADE_SOLAR" Language="zh_Hans_CN">
+			<Text>每回合从每座太阳能发电厂中额外获得+1 [ICON_Power] 电力。</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_JNR_REC_UPGRADE_OFFSHORE_WIND" Language="zh_Hans_CN">
+			<Text>每回合从每座离岸风力发电厂中额外获得+1 [ICON_Power] 电力。</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_JNR_REC_UPGRADE_WIND" Language="zh_Hans_CN">
+			<Text>每回合从每座陆地上的风力发电厂中额外获得+1 [ICON_Power] 电力。</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_JNR_REC_UPGRADE_HYDROELECTRIC" Language="zh_Hans_CN">
+			<Text>每回合从每座水电站坝中额外获得+3 [ICON_Power] 电力。</Text>
+		</Replace>
+
+		<!-- 解锁科技时改良设施及建筑加成的更改 -->
+
+		<Replace Tag="LOC_TECH_OFFWORLD_MISSION_DESCRIPTION_JNR_REC" Language="zh_Hans_CN">
+			<Text>{LOC_TECH_JNR_REC_UPGRADE_GEOTHERMAL}</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_PREDICTIVE_SYSTEMS_DESCRIPTION_JNR_REC" Language="zh_Hans_CN">
+			<Text>{LOC_TECH_JNR_REC_UPGRADE_SOLAR}[NEWLINE]{LOC_TECH_JNR_REC_UPGRADE_OFFSHORE_WIND}</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_COMPOSITES_DESCRIPTION_JNR_REC" Language="zh_Hans_CN">
+			<Text>{LOC_TECH_JNR_REC_UPGRADE_WIND}</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_COMPUTERS_DESCRIPTION_JNR_REC" Language="zh_Hans_CN">
+			<Text>可额外招募一名间谍。帝国境内的旅游业绩+25%。[NEWLINE][NEWLINE]{LOC_TECH_JNR_REC_UPGRADE_HYDROELECTRIC}</Text>
+		</Replace>
+		
+		<!-- 资源-->
+		
+		<Replace Tag="LOC_RESOURCE_JNR_BATTERY_CHARGE_NAME" Language="zh_Hans_CN">
+			<Text>可再生能源</Text>
+		</Replace>
+		
+		<!-- 建筑与改良设施 -->
+		
+		<Replace Tag="LOC_BUILDING_JNR_RENEWABLE_DISTRIBUTION_NAME" Language="zh_Hans_CN">
+			<Text>电力储能发电厂</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_BUILDING_JNR_RENEWABLE_DISTRIBUTION_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>每回合可自动转换任意数量的 [ICON_RESOURCE_JNR_BATTERY_CHARGE] 可再生能源，为6格范围内需要 [ICON_PowerInsufficient] 电力补充的城市供电，转化比率为：[NEWLINE][ICON_Bullet]1点 [ICON_RESOURCE_JNR_BATTERY_CHARGE] 可再生能源 [ICON_PowerRight] 1点 [ICON_Power] 电力。[NEWLINE][ICON_Bullet]不会向大气层排放二氧化碳。[NEWLINE]该建筑的 [ICON_Production] 生产力、[ICON_Science] 科技值及 [ICON_Culture] 文化值加成将延伸至6格范围内的所有城市（前提是它们没有获得来自其他任何发电厂的加成）。</Text>
+		</Replace>
+		<Replace Tag="LOC_IMPROVEMENT_JNR_RENEWABLE_COLLECTION_NAME" Language="zh_Hans_CN">
+			<Text>电力储能变电所</Text>
+		</Replace>
+		<Replace Tag="LOC_IMPROVEMENT_JNR_RENEWABLE_COLLECTION_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>+2生产力。[NEWLINE]每相邻一座地热发电厂、风力发电厂、离岸风力发电厂或太阳能发电厂，则+1金币。[NEWLINE]每相邻一座堤坝，则+2金币。[NEWLINE]以1:1的比例，将6格范围内的本土可再生资源所提供 [ICON_Power] 电力的一部分转换为 [ICON_RESOURCE_JNR_BATTERY_CHARGE] 可再生能源，储存在{LOC_BUILDING_JNR_RENEWABLE_DISTRIBUTION_NAME}中以供备用。[NEWLINE][ICON_Bullet]由改良设施及建筑提供的 [ICON_Power] 电力可通过解锁某些科技来提高。[NEWLINE][ICON_Bullet]由地形地貌提供的 [ICON_Power] 电力将获得提升。</Text>
+		</Replace>
+		
+		<!-- 转化反应堆项目 -->
+		
+		<Replace Tag="LOC_PROJECT_JNR_CONVERT_REACTOR_TO_BATTERY" Language="zh_Hans_CN">
+			<Text>转换为可再生能源</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_JNR_CONVERT_REACTOR_TO_BATTERY_SHORT_NAME" Language="zh_Hans_CN">
+			<Text>转换为可再生能源</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_JNR_CONVERT_REACTOR_TO_BATTERY_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>将城市中的发电站更换为{LOC_BUILDING_JNR_RENEWABLE_DISTRIBUTION_NAME}。[NEWLINE][NEWLINE]{LOC_BUILDING_JNR_RENEWABLE_DISTRIBUTION_NAME}：[NEWLINE]{LOC_BUILDING_JNR_RENEWABLE_DISTRIBUTION_DESCRIPTION}</Text>
+		</Replace>
+		
+		<!-- 总督技能更新 -->
+		
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_MERCHANT_RENEWABLE_ENERGY_DESCRIPTION_JNR_REC" Language="zh_Hans_CN">
+			<Text>城市内所有太阳能发电厂、风力发电厂、离岸风力发电厂、地热发电厂及水电站坝均获得+1 [ICON_POWER] 电力、+2 [ICON_Gold] 金币，产出+1 [ICON_RESOURCE_JNR_BATTERY_CHARGE] 可再生能源。</Text>
+		</Replace>
+		
+		<!-- 可再生资源改良设施的新描述 -->
+		
+		<Replace Tag="LOC_IMPROVEMENT_GEOTHERMAL_PLANT_DESCRIPTION_JNR_REC" Language="zh_Hans_CN">
+			<Text>解锁建造者修建地热发电厂的能力。[NEWLINE][NEWLINE]每回合从可再生地热能中提供+2 [ICON_Power] 电力。[NEWLINE][ICON_Bullet]若建在地热裂缝上则每回合可额外+1 [ICON_Power] 电力、+1 [ICON_Production] 生产力、+2 [ICON_Gold] 金币。[NEWLINE][ICON_Bullet]解锁“外星任务”科技后每回合可再额外+1 [ICON_Power] 电力。[NEWLINE]若所在城市建有电池储能变电所，则由特殊地形或特定科技解锁而额外产出的 [ICON_Power] 电力将不会被消耗，而直接被转换为 [ICON_RESOURCE_JNR_BATTERY_CHARGE] 可再生能源储存。[NEWLINE][NEWLINE]必须建在地热裂缝或火山土之上。</Text>
+		</Replace>
+		<Replace Tag="LOC_IMPROVEMENT_WIND_FARM_DESCRIPTION_JNR_REC" Language="zh_Hans_CN">
+			<Text>解锁建造者修建风力发电厂的能力。[NEWLINE][NEWLINE]每回合从可再生风能中提供+1 [ICON_Power] 电力。[NEWLINE][ICON_Bullet]若建在靠近海岸的单元格上则每回合可额外+1 [ICON_Power] 电力、+2 [ICON_Gold] 金币。[NEWLINE][ICON_Bullet]解锁“复合材料”科技后每回合可再额外+1 [ICON_Power] 电力。[NEWLINE]若所在城市建有电池储能变电所，则由特殊地形或特定科技解锁而额外产出的 [ICON_Power] 电力将不会被消耗，而会直接被转换为 [ICON_RESOURCE_JNR_BATTERY_CHARGE] 可再生能源储存。[NEWLINE][NEWLINE]必须建在丘陵上。</Text>
+		</Replace>
+		<Replace Tag="LOC_IMPROVEMENT_OFFSHORE_WIND_FARM_DESCRIPTION_JNR_REC" Language="zh_Hans_CN">
+			<Text>解锁建造者修建离岸风力发电厂的能力。[NEWLINE][NEWLINE]每回合从可再生风能中提供+2 [ICON_Power] 电力。[NEWLINE][ICON_Bullet]若建在海洋单元格上则每回合可额外+1 [ICON_Power] 电力、+2 [ICON_Gold] 金币。[NEWLINE][ICON_Bullet]解锁“预报系统”科技后每回合可再额外+1 [ICON_Power] 电力。[NEWLINE]若所在城市建有电池储能变电所，则由特殊地形或特定科技解锁而额外产出的 [ICON_Power] 电力将不会被消耗，而会直接被转换为 [ICON_RESOURCE_JNR_BATTERY_CHARGE] 可再生能源储存。[NEWLINE][NEWLINE]必须建在海岸、湖泊或海洋地形上。[NEWLINE]需要解锁“海洋家园”科技后才能在海洋上修建。</Text>
+		</Replace>
+		<Replace Tag="LOC_IMPROVEMENT_SOLAR_FARM_DESCRIPTION_JNR_REC" Language="zh_Hans_CN">
+			<Text>解锁建造者修建太阳能发电厂的能力。[NEWLINE][NEWLINE]每回合从可再生太阳能中提供+1 [ICON_Power] 电力。[NEWLINE][ICON_Bullet]若建在草原与平原上则每回合可额外+1 [ICON_Power] 电力、+1 [ICON_Gold] 金币。[NEWLINE][ICON_Bullet]若建在沙漠单元格上则每回合可额外+2 [ICON_Power] 电力、+2 [ICON_Gold] 金币。[NEWLINE][ICON_Bullet]解锁“预报系统”科技后每回合可再额外+1 [ICON_Power] 电力。[NEWLINE]若所在城市建有电池储能变电所，则由沙漠地形与特定科技解锁而额外产出的 [ICON_Power] 电力将不会被消耗，而会直接被转换为 [ICON_RESOURCE_JNR_BATTERY_CHARGE] 可再生能源储存。[NEWLINE][NEWLINE]必须建在平坦地形上。[NEWLINE]需要解锁“高级能量电池”科技后才能建在冻土和雪地上。</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_HYDROELECTRIC_DAM_DESCRIPTION_JNR_REC" Language="zh_Hans_CN">
+			<Text>每回合从可再生水能中提供+4 [ICON_Power] 电力。[NEWLINE][ICON_Bullet]解锁“电脑”科技后每回合可再额外+3 [ICON_Power] 电力。[NEWLINE]若所在城市建有电池储能变电所，则额外产出的 [ICON_Power] 电力将不会被消耗，而会直接被转换为 [ICON_RESOURCE_JNR_BATTERY_CHARGE] 可再生能源储存。</Text>
+		</Replace>
+		
+		<!-- 其他改良设施 -->
+
+		<Replace Tag="LOC_IMPROVEMENT_SEASTEAD_DESCRIPTION_JNR_REC" Language="zh_Hans_CN">
+			<Text>解锁建造者修建海洋家园的能力。[NEWLINE][NEWLINE]+2 [ICON_Food] 食物。每相邻一座离岸风力发电厂则+2 [ICON_Gold] 金币；每相邻一只渔船则+1 [ICON_Production] 生产力。渔船每相邻一座海洋家园则也+1 [ICON_Production] 生产力。每相邻一处礁石则+1 [ICON_Culture] 文化值、+1 [ICON_Tourism] 旅游业绩。+2 [ICON_Housing] 住房。必须建在海岸、湖泊或海洋上。无法建在其他海洋家园旁。</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'Support GS Yamakaze - Kancollect Leader Pack'CN_Fix_FI -->
+<!-- Author: Clear8Sky -->
+<!-- DateCreated: 2021/8/6 22:34:49 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “[Support G&S] 山风 - Kancollect Leader Yamakaze Pack” 。该文件在 FrontEnd 与 InGame 时载入，无需任何 Criteria -->
+	<LocalizedText>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_YAMAKAZE_QUOTE" Language="zh_Hans_CN">
+			<Text>我是白露型驱逐舰其8号舰——山风，请你别放弃我……[NEWLINE]我会回来的！！！</Text>
+		</Replace>
+		<Replace Tag="LOC_LOADING_INFO_LEADER_YAMAKAZE" Language="zh_Hans_CN">
+			<Text>白露型驱逐舰8号舰，改白露型，山风。[NEWLINE]与时雨姐和凉风同样于浦贺出生。[NEWLINE]和江风她们组成了第二十四驱逐队。[NEWLINE]有时候会当加贺的护卫，即使是在大型战役，一开始我可是很拼命的。[NEWLINE]然后，当我正想从大凑出发到柱岛的时候。之后我就不清楚了，[NEWLINE]不记得了……</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_DWTBA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>[ICON_GreatPerson] 伟人点数获取+200%。[NEWLINE]每获得（或曾获得）一位伟人，则本文明+5% [ICON_Science] 科技值、[ICON_Culture] 文化值、[ICON_Faith] 信仰值及 [ICON_Gold] 金币产出。所有城市+75% [ICON_Production] 生产力产出。</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_UNIT_SHIRATSUYU_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>山风作为领袖时的工业时代特色海军近战单位，取代装甲舰。能为附近单位提供防空掩护，显示视线范围内的海军袭击者单位。单位 [ICON_Damaged] 受损时无 [ICON_Strength] 战斗力减益。攻击后可移动，位于帝国境内或相邻边境时+5 [ICON_Strength] 战斗力。[COLOR_RED]无法升级为驱逐舰。[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_SHIRATSUYU_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>{LOC_TRAIT_LEADER_UNIT_SHIRATSUYU_DESCRIPTION}</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_SHIRATSUYU_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>[ICON_Damaged] 受损时无 [ICON_Strength] 战斗力减益。攻击后可移动，位于帝国境内或相邻边境时+5 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_YAMAKAZE_REASON_ANY" Language="zh_Hans_CN">
+			<Text>（您不是一个好战者）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_LEADER_YAMAKAZE_REASON_ANY" Language="zh_Hans_CN">
+			<Text>（您是一个好战者）</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

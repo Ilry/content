@@ -1,0 +1,145 @@
+{
+  "y": 0,
+  "x": -52,
+  "name": "【预设】五锅三冰箱",
+  "z": -24,
+  "data": [
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": -90,
+      "y": 0,
+      "x": -53.604652404785,
+      "name": "烹饪锅",
+      "z": -26.208616256714,
+      "anim": "idle_empty",
+      "bank": "cook_pot",
+      "prefab": "cookpot",
+      "build": "cookpot_survival"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": -90,
+      "y": 0,
+      "x": -52.753440856934,
+      "name": "冰箱",
+      "z": -24.434999465942,
+      "anim": "closed",
+      "bank": "icebox",
+      "prefab": "icebox",
+      "build": "icebox_crystal"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": -90,
+      "y": 0,
+      "x": -50.395347595215,
+      "name": "烹饪锅",
+      "z": -26.208616256714,
+      "anim": "idle_empty",
+      "bank": "cook_pot",
+      "prefab": "cookpot",
+      "build": "cookpot_survival"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": -90,
+      "y": 0,
+      "x": -52,
+      "name": "烹饪锅",
+      "z": -21.270000457764,
+      "anim": "idle_empty",
+      "bank": "cook_pot",
+      "prefab": "cookpot",
+      "build": "cookpot_survival"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": -90,
+      "y": 0,
+      "x": -49.403614044189,
+      "name": "烹饪锅",
+      "z": -23.156383514404,
+      "anim": "idle_empty",
+      "bank": "cook_pot",
+      "prefab": "cookpot",
+      "build": "cookpot_survival"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": -90,
+      "y": 0,
+      "x": -54.596385955811,
+      "name": "烹饪锅",
+      "z": -23.156383514404,
+      "anim": "idle_empty",
+      "bank": "cook_pot",
+      "prefab": "cookpot",
+      "build": "cookpot_survival"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": -90,
+      "y": 0,
+      "x": -51.246559143066,
+      "name": "冰箱",
+      "z": -24.434999465942,
+      "anim": "closed",
+      "bank": "icebox",
+      "prefab": "icebox",
+      "build": "icebox_crystal"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": -90,
+      "y": 0,
+      "x": -52,
+      "name": "冰箱",
+      "z": -23.129999160767,
+      "anim": "closed",
+      "bank": "icebox",
+      "prefab": "icebox",
+      "build": "icebox_crystal"
+    }
+  ],
+  "idx": 1
+}

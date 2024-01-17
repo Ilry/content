@@ -1,0 +1,1378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RF'EnigmaConundrums Ireland GS'CN_Add_FI1 -->
+<!-- Author: ChiYiuWong , Clear8Sky -->
+<!-- DateCreated: 2021/9/23 2:18:37 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “EnigmaConundrum's Ireland [GS]” 。该文件在 FrontEnd 与 InGame 时载入，需 Criteria ： Active_Expansion_1 -->
+	<LocalizedText>
+
+		<!-- 文明 -->
+
+		<Replace Tag="LOC_CIVILIZATION_ENIGMA_IRELAND_NAME" Language="zh_Hans_CN">
+			<Text>爱尔兰</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVILIZATION_ENIGMA_IRELAND_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>爱尔兰帝国</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVILIZATION_ENIGMA_IRELAND_ADJECTIVE" Language="zh_Hans_CN">
+			<Text>爱尔兰的</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVILIZATION_ENIGMA_IRELAND_DESCRIPTION_JFD_CIVILIZATION" Language="zh_Hans_CN">
+			<Text>爱尔兰文明</Text>
+		</Replace>
+
+		<!-- 文明百科 -->
+
+		<Replace Tag="LOC_CIVINFO_ENIGMA_IRELAND_LOCATION" Language="zh_Hans_CN">
+			<Text>不列颠诸岛</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVINFO_ENIGMA_IRELAND_POPULATION" Language="zh_Hans_CN">
+			<Text>637.8万</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVINFO_ENIGMA_IRELAND_SIZE" Language="zh_Hans_CN">
+			<Text>84421平方公里 (32595平方英里)</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVINFO_ENIGMA_IRELAND_CAPITAL" Language="zh_Hans_CN">
+			<Text>都柏林</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_ENIGMA_IRELAND_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>爱尔兰是北大西洋的一个岛屿。它与大不列颠东部隔着北海峡、爱尔兰海和圣乔治海峡。爱尔兰是欧洲第三大岛。在政治上，爱尔兰分为爱尔兰共和国（正式名称为爱尔兰）和北爱尔兰，爱尔兰共和国（正式名称为爱尔兰）覆盖了该岛的六分之五，北爱尔兰是该岛东北部的英国的一部分。2011年，爱尔兰的人口约为640万，是仅次于英格兰的欧洲人口第二多的岛屿。约460万人居住在爱尔兰共和国，超过180万人居住在北爱尔兰。该岛的地理环境包括环绕中央平原的相对低洼的山脉，以及向内陆延伸的几条通航河流。岛上植被茂密，气候温和但多变，没有极端温度差。中世纪时，茂密的林地覆盖了该岛。截至2013年，爱尔兰的林地面积约占总面积的11%，而欧洲的平均水平为35%。爱尔兰有26种现存的哺乳动物。爱尔兰气候非常温和，属于海洋性气候。因此，对于这样一个偏北地区，冬天比预期的要温和。然而，夏天比欧洲大陆凉爽。雨量和云量充足。人类在爱尔兰生存的最早证据可以追溯到公元前10500年。盖尔爱尔兰在公元1世纪出现。该岛从公元5世纪开始基督教化。在12世纪诺曼底人入侵之后，英格兰声称对爱尔兰拥有主权。然而，直到16至17世纪都铎王朝的征服，英格兰的统治才扩展到整个岛屿，这导致了来自英格兰的定居者的殖民化。在1690年代，英国新教统治体系对天主教占多数和新教持不同政见者造成了实质性不利影响，并在18世纪扩大了影响。随着1801年的联合法案，爱尔兰成为联合王国的一部分。在20世纪初期的独立战争之后，该岛被分割，变成了在接下来的几十年中越来越具有主权的爱尔兰自由邦和仍然是英国一部分的北爱尔兰。从1960年代后期到1990年代，北爱尔兰发生了很多内乱。这种情况在1998年达成政治协议后平息。1973年，爱尔兰共和国加入了欧洲经济共同体，而英国和作为其中的一部分的北爱尔兰也加入了欧洲经济共同体。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_ENIGMA_IRELAND_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>爱尔兰的史前历史是根据考古和遗传证据拼凑起来的。它始于大约12500年前爱尔兰人类的第一个证据，结束于公元400年左右的正式历史记录。史前时期包括爱尔兰的旧石器时代、中石器时代、新石器时代、青铜器时代和铁器时代社会。这些人可能在穿越连接爱尔兰东南部和康沃尔的南部大陆桥之后，也殖民了爱尔兰。公元前10900年至公元前9700年在爱尔兰发生的新仙女木期间气温降低可能使爱尔兰人口减少。对第一批进入爱尔兰的人类进行的DNA研究得出的结论是，大约9000年前，爱尔兰最早是由从西班牙北部和法国南部沿海岸经陆路和海上旅行的人定居的。爱尔兰铁器时代开始于公元前500年左右，一直持续到爱尔兰的基督教时代，从这时开始有一些书面记录，从而结束了史前爱尔兰时代。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_ENIGMA_IRELAND_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>爱尔兰的中世纪早期历史，通常被称为早期基督教爱尔兰时期，跨越5世纪到8世纪，从原始史时期的逐渐出现到维京时代的开始。这一时期特别包括基督教化的爱尔兰对异教英国地区的冬眠-苏格兰使命以及爱尔兰文化影响向欧洲大陆的传播。在这一时期开始时，爱尔兰已经从神秘的衰退中走出来，考古证据表明，从公元前10年开始就已经影响到爱尔兰的人口水平和生活水平。公元100-300年，托马斯·查尔斯-爱德华兹时期被称为爱尔兰黑暗时代。爱尔兰历史上第一个可靠的历史事件，记录在阿基坦的繁荣编年史中，是帕拉迪乌斯的教皇塞莱斯廷一世在431年被任命为爱尔兰基督徒的第一位主教——这表明已经有基督徒生活在爱尔兰。传说，圣帕特里克大约在同一时间到达这里——在爱尔兰史册中，他抵达爱尔兰的最早日期是43 年——尽管帕特里克自己的著作中没有任何可以确定日期的内容。由僧侣领导的修道院运动在6世纪中叶盛行，到700年，爱尔兰至少在名义上已是一个基督教国家，教会完全是爱尔兰社会的一部分。早期的爱尔兰编年史也显示了中部地区的奥尼尔和莱金之间的定期战争，奥尼尔征服了最南端的基尔代尔/奥法利，并声称拥有塔拉的王权，后来开始被概念化为爱尔兰的至高王权.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_ENIGMA_IRELAND_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>在试图解释早期爱尔兰的历史时，历史学家最常问的问题之一是何时可以称为一个爱尔兰民族，一个涵盖整个爱尔兰岛的民族。像弗兰·梅尼斯特雷克这样的早期诗人历史学家构建了一个全爱尔兰君主制的历史，可以追溯到圣帕特里克时期。现存的爱尔兰编年史最终源自现已失传的《爱尔兰编年史》，该编年史很可能在800年左右在爱尔兰中部编纂。997年，梅尔·塞克奈尔被迫承认布赖恩对爱尔兰南部的权威，并根据其方案正式分裂爱尔兰。即使面对北部和伦斯特的多次叛乱，到1011年，他已经获得了爱尔兰各大地区国王的臣服，从而得到了历史学家的认可，认为他是爱尔兰第一位真正的国王。在1169年和1171年诺曼人入侵之后，爱尔兰处于诺曼领主和英格兰国王的交替控制之下。到了12世纪，爱尔兰在政治上被划分为少数几个主权国家，他们的统治者争夺爱尔兰国王的头衔和整个岛屿的控制权。第一位登陆爱尔兰的诺曼骑士是1167年的理查德·菲茨·戈德伯特·德罗什，但直到1169年，诺曼人的主力部队以及他们的威尔士和弗莱明雇佣兵才登陆韦克斯福德。爱尔兰的领主是约翰国王，他在1185年和1210年的访问中从军事和行政的角度帮助保护了诺曼地区，同时确保许多爱尔兰国王对他忠诚，将他们的王位归功于他和他的军队。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_ENIGMA_IRELAND_CHAPTER_HISTORY_PARA_5" Language="zh_Hans_CN">
+			<Text>在亨利八世的统治下，爱尔兰从一个领地变成了一个完整的王国。从12世纪的原始领地时期开始，爱尔兰一直保留着自己的爱尔兰两院制议会，由下议院和上议院组成。在此期间，爱尔兰的真正权力不在于议会，而在于由英格兰国王提名管理爱尔兰的爱尔兰总督。大多数爱尔兰上层阶级在意识形态上并不反对英格兰国王对爱尔兰的主权，而是希望成为斯图亚特三重君主制的完全臣民，并保持他们在爱尔兰社会中的卓越地位。17世纪中叶，爱尔兰在1641年的叛乱战争开始了11年的动荡不安时期，当时爱尔兰天主教徒受到反天主教英国议会和苏格兰盟约势力扩大的威胁，以牺牲国王为代价，反抗英语和新教统治。在随后的不列颠和爱尔兰三国战争期间，天主教多数派作为爱尔兰联盟短暂地统治了这个国家。詹姆斯废除了大部分反天主教立法，允许天主教徒进入爱尔兰议会和军队，并任命天主教徒、蒂尔康奈尔第一伯爵理查德·塔尔博特为爱尔兰代理勋爵。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_ENIGMA_IRELAND_CHAPTER_HISTORY_PARA_6" Language="zh_Hans_CN">
+			<Text>1800年，爱尔兰议会和大不列颠议会通过了联合法案，该法案从1801年1月1日起废除了爱尔兰立法机关，并将爱尔兰王国和大不列颠王国合并为大不列颠及爱尔兰联合王国。格莱斯顿的传记作者说，“完全拒绝英格兰人普遍认为的爱尔兰人不喜欢正义、常识和我们国家繁荣的节制，只会导致永久的冲突和纷争。”格莱斯顿的问题是他在英格兰的农村支持者不支持爱尔兰的自治。1889年，围绕帕内尔离婚诉讼的丑闻分裂了爱尔兰党派，当时被公认为广受赞誉的“爱尔兰无冕之王”帕内尔多年来一直与凯瑟琳·奥谢夫人保持暧昧关系，一位议员的长期分居的妻子。当丑闻曝光时，作为支持地方自治的自由党中坚力量的英国宗教不墨守成规者迫使其领导人W.E.格莱斯顿放弃对爱尔兰事业的支持，如果帕内尔仍然是IPP领导人的话。在爱尔兰，天主教会反对他。地方自治的推迟和爱尔兰与英国卷入战争的结合，激起了爱尔兰民族主义激进边缘的一些人诉诸武力。直到1918年，通过议会宪政原则为整个爱尔兰寻求独立自治的爱尔兰议会党仍然是占主导地位的爱尔兰政党。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_ENIGMA_IRELAND_CHAPTER_HISTORY_PARA_7" Language="zh_Hans_CN">
+			<Text>由罗里·奥康纳领导的爱尔兰共和军大多反对该条约，理由是该条约瓦解了爱尔兰共和国，他们发誓要捍卫爱尔兰共和国，并且该条约强加了爱尔兰议员对英国君主效忠的声明。在幕后，爱尔兰政府与盟国合作；1940年，政府暂时与英国达成协议，如果德国人入侵爱尔兰，它将接受英国军队的进入，并将自己的武装部队置于英国的指挥之下——参见W计划。德国有一项入侵爱尔兰的临时计划，称为绿色行动，但从未执行过。1937年宪法规定的爱尔兰州的官方立场是，该州的领土包括整个爱尔兰岛，但其法律仅适用于自由州的领土，如1922年条约所述。爱尔兰政府还拒绝允许英国和北爱尔兰安全部队越过边境追捕进入共和国的共和党准军事人员，并逮捕了那些以武力进入其领土的士兵或警察。1998年，爱尔兰当局再次成为和解协议的一方，即《耶稣受难日协议》，该协议在北爱尔兰内设立了权力机构、南北指示以及联合王国和爱尔兰共和国各个组成部分之间的联系。爱尔兰政府还修改了宪法第2条和第3条，以承认北爱尔兰的存在以及爱尔兰民族主义者对统一爱尔兰的渴望。</Text>
+		</Replace>
+
+		<!-- 特性 -->
+
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_ENIGMA_SAINTS_SCHOLARS_NAME" Language="zh_Hans_CN">
+			<Text>圣人与学者</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_ENIGMA_SAINTS_SCHOLARS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>赞助 [ICON_GreatPerson] 伟人可获得额外的 [ICON_GreatWriter] 大作家和 [ICON_GreatMusician] 大音乐家点数。与剧院广场相邻的区域提供+1 [ICON_GreatPerson] 伟人点数；若所在城市已皈依某一宗教，则改为+2。</Text>
+		</Replace>
+
+		<!-- 城市 -->
+
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_1" Language="zh_Hans_CN">
+			<Text>都柏林</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_2" Language="zh_Hans_CN">
+			<Text>科克</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_3" Language="zh_Hans_CN">
+			<Text>利默里克</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_4" Language="zh_Hans_CN">
+			<Text>德里</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_5" Language="zh_Hans_CN">
+			<Text>沃特福德</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_6" Language="zh_Hans_CN">
+			<Text>基尔肯尼</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_7" Language="zh_Hans_CN">
+			<Text>邓多克</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_8" Language="zh_Hans_CN">
+			<Text>阿尔马</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_9" Language="zh_Hans_CN">
+			<Text>贝尔法斯特</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_10" Language="zh_Hans_CN">
+			<Text>戈尔韦</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_11" Language="zh_Hans_CN">
+			<Text>图阿姆</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_12" Language="zh_Hans_CN">
+			<Text>里斯本</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_13" Language="zh_Hans_CN">
+			<Text>卡舍尔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_14" Language="zh_Hans_CN">
+			<Text>班戈</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_15" Language="zh_Hans_CN">
+			<Text>恩尼斯</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_16" Language="zh_Hans_CN">
+			<Text>韦克斯福德</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_17" Language="zh_Hans_CN">
+			<Text>敦劳盖尔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_18" Language="zh_Hans_CN">
+			<Text>阿斯隆</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_19" Language="zh_Hans_CN">
+			<Text>德罗赫达</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_20" Language="zh_Hans_CN">
+			<Text>卡罗</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_21" Language="zh_Hans_CN">
+			<Text>特拉利</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_22" Language="zh_Hans_CN">
+			<Text>唐帕特里克</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_23" Language="zh_Hans_CN">
+			<Text>基尔代尔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_24" Language="zh_Hans_CN">
+			<Text>基拉尼</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_25" Language="zh_Hans_CN">
+			<Text>塔拉</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_26" Language="zh_Hans_CN">
+			<Text>斯莱戈</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_27" Language="zh_Hans_CN">
+			<Text>蒂珀雷里</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_28" Language="zh_Hans_CN">
+			<Text>纳斯</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_29" Language="zh_Hans_CN">
+			<Text>穆林加尔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_30" Language="zh_Hans_CN">
+			<Text>邓加文</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_31" Language="zh_Hans_CN">
+			<Text>塔拉莫尔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_32" Language="zh_Hans_CN">
+			<Text>克隆梅尔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_33" Language="zh_Hans_CN">
+			<Text>威克洛</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_34" Language="zh_Hans_CN">
+			<Text>格拉纳德</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_35" Language="zh_Hans_CN">
+			<Text>约哈尔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_36" Language="zh_Hans_CN">
+			<Text>布雷</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_37" Language="zh_Hans_CN">
+			<Text>费尔莫伊</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_38" Language="zh_Hans_CN">
+			<Text>比尔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_39" Language="zh_Hans_CN">
+			<Text>巴利纳</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_40" Language="zh_Hans_CN">
+			<Text>图勒斯</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_41" Language="zh_Hans_CN">
+			<Text>马洛</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_42" Language="zh_Hans_CN">
+			<Text>新罗斯</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_43" Language="zh_Hans_CN">
+			<Text>恩尼斯科西</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_44" Language="zh_Hans_CN">
+			<Text>杜罗</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_45" Language="zh_Hans_CN">
+			<Text>纽瑞</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_46" Language="zh_Hans_CN">
+			<Text>舒尔河畔卡里克</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_47" Language="zh_Hans_CN">
+			<Text>:尼纳</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_48" Language="zh_Hans_CN">
+			<Text>卡里克弗格斯</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_49" Language="zh_Hans_CN">
+			<Text>卡斯尔雷</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_50" Language="zh_Hans_CN">
+			<Text>克莱尔湾</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ENIGMA_IRELAND_51" Language="zh_Hans_CN">
+			<Text>克雷吉岛</Text>
+		</Replace>
+
+		<!-- 公民 -->
+
+		<Replace Tag="LOC_CITIZEN_ENIGMA_IRELAND_MALE_1" Language="zh_Hans_CN">
+			<Text>迪尔迈特</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_ENIGMA_IRELAND_MALE_2" Language="zh_Hans_CN">
+			<Text>尼尔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_ENIGMA_IRELAND_MALE_3" Language="zh_Hans_CN">
+			<Text>菲尔博格</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_ENIGMA_IRELAND_MALE_4" Language="zh_Hans_CN">
+			<Text>多姆纳尔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_ENIGMA_IRELAND_MALE_5" Language="zh_Hans_CN">
+			<Text>唐查德</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_ENIGMA_IRELAND_MALE_6" Language="zh_Hans_CN">
+			<Text>梅尔·塞克奈尔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_ENIGMA_IRELAND_MALE_7" Language="zh_Hans_CN">
+			<Text>弗兰</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_ENIGMA_IRELAND_MALE_8" Language="zh_Hans_CN">
+			<Text>欧柴德</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_ENIGMA_IRELAND_MALE_9" Language="zh_Hans_CN">
+			<Text>康奈尔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_ENIGMA_IRELAND_MODERN_MALE_1" Language="zh_Hans_CN">
+			<Text>肖恩</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_ENIGMA_IRELAND_MODERN_MALE_2" Language="zh_Hans_CN">
+			<Text>利亚姆</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_ENIGMA_IRELAND_MODERN_MALE_3" Language="zh_Hans_CN">
+			<Text>帕特里克</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_ENIGMA_IRELAND_MODERN_MALE_4" Language="zh_Hans_CN">
+			<Text>芬恩</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_ENIGMA_IRELAND_MODERN_MALE_5" Language="zh_Hans_CN">
+			<Text>埃蒙</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_ENIGMA_IRELAND_MODERN_MALE_6" Language="zh_Hans_CN">
+			<Text>托马斯</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_ENIGMA_IRELAND_MODERN_MALE_7" Language="zh_Hans_CN">
+			<Text>詹姆士</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_ENIGMA_IRELAND_MODERN_MALE_8" Language="zh_Hans_CN">
+			<Text>约瑟夫</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_ENIGMA_IRELAND_MODERN_MALE_9" Language="zh_Hans_CN">
+			<Text>迈克尔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_ENIGMA_IRELAND_MODERN_MALE_10" Language="zh_Hans_CN">
+			<Text>希恩</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_ENIGMA_IRELAND_FEMALE_1" Language="zh_Hans_CN">
+			<Text>奥菲</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_ENIGMA_IRELAND_FEMALE_2" Language="zh_Hans_CN">
+			<Text>葛姆弗莱思</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_ENIGMA_IRELAND_FEMALE_3" Language="zh_Hans_CN">
+			<Text>康迪尔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_ENIGMA_IRELAND_FEMALE_4" Language="zh_Hans_CN">
+			<Text>利亚丹</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_ENIGMA_IRELAND_FEMALE_5" Language="zh_Hans_CN">
+			<Text>康塞萨</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_ENIGMA_IRELAND_FEMALE_6" Language="zh_Hans_CN">
+			<Text>萨姆坦</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_ENIGMA_IRELAND_FEMALE_7" Language="zh_Hans_CN">
+			<Text>摩尔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_ENIGMA_IRELAND_FEMALE_8" Language="zh_Hans_CN">
+			<Text>乌拉赫</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_ENIGMA_IRELAND_FEMALE_9" Language="zh_Hans_CN">
+			<Text>奥纳特</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_ENIGMA_IRELAND_FEMALE_10" Language="zh_Hans_CN">
+			<Text>伊契瑞</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_ENIGMA_IRELAND_MODERN_FEMALE_1" Language="zh_Hans_CN">
+			<Text>西邦</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_ENIGMA_IRELAND_MODERN_FEMALE_2" Language="zh_Hans_CN">
+			<Text>玛丽</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_ENIGMA_IRELAND_MODERN_FEMALE_3" Language="zh_Hans_CN">
+			<Text>莫莉</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_ENIGMA_IRELAND_MODERN_FEMALE_4" Language="zh_Hans_CN">
+			<Text>伊丽莎白</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_ENIGMA_IRELAND_MODERN_FEMALE_5" Language="zh_Hans_CN">
+			<Text>罗斯</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_ENIGMA_IRELAND_MODERN_FEMALE_6" Language="zh_Hans_CN">
+			<Text>奥利维亚</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_ENIGMA_IRELAND_MODERN_FEMALE_7" Language="zh_Hans_CN">
+			<Text>海伦娜</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_ENIGMA_IRELAND_MODERN_FEMALE_8" Language="zh_Hans_CN">
+			<Text>劳伦</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_ENIGMA_IRELAND_MODERN_FEMALE_9" Language="zh_Hans_CN">
+			<Text>格瑞斯</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_ENIGMA_IRELAND_MODERN_FEMALE_10" Language="zh_Hans_CN">
+			<Text>苏菲</Text>
+		</Replace>
+		
+		<!-- 领袖（丹尼尔·奥康奈尔） -->
+		
+		<Replace Tag="LOC_LEADER_ENIGMA_DANNY_NAME" Language="zh_Hans_CN">
+			<Text>丹尼尔·奥康奈尔</Text>
+		</Replace>
+
+		<!-- 议程 -->
+
+		<Replace Tag="LOC_AGENDA_ENIGMA_ALTAR_LIBERTY_NAME" Language="zh_Hans_CN">
+			<Text>自由祭坛</Text>
+		</Replace>
+		<Replace Tag="LOC_AGENDA_ENIGMA_ALTAR_LIBERTY_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>喜欢那些 [ICON_Culture] 文化值高的文明。不喜欢那些拥有庞大军队并在他的大陆定居的文明。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_LEADER_ENIGMA_ALTAR_LIBERTY_REASON_LEADS_CULTURE" Language="zh_Hans_CN">
+			<Text>（您在文化方面很强）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_AGENDA_ENIGMA_ALTAR_LIBERTY_LEADS_CULTURE" Language="zh_Hans_CN">
+			<Text>丹尼尔·奥康奈尔对你的文化实力感到高兴。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_LEADER_ENIGMA_ALTAR_LIBERTY_REASON_STRONG_MILITARY" Language="zh_Hans_CN">
+			<Text>（您很激进）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_AGENDA_ENIGMA_ALTAR_LIBERTY_STRONG_MILITARY" Language="zh_Hans_CN">
+			<Text>丹尼尔·奥康奈尔对你对激进事务的关注感到不满。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_LEADER_ENIGMA_ALTAR_LIBERTY_REASON_CONTINENT" Language="zh_Hans_CN">
+			<Text>（您在他的大陆上定居）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_LEADER_ENIGMA_ALTAR_LIBERTY_CONTINENT" Language="zh_Hans_CN">
+			<Text>丹尼尔·奥康奈尔对你在爱尔兰土地附近定居感到愤怒。</Text>
+		</Replace>
+
+		<!-- 载入 -->
+
+		<Replace Tag="LOC_LOADING_INFO_LEADER_ENIGMA_DANNY" Language="zh_Hans_CN">
+			<Text>丹尼尔·奥康奈尔，爱尔兰需要你来解放。外国势力再次占据主导地位，他们试图压迫爱尔兰的天主教徒。来吧，再次解放爱尔兰，拯救盖尔文化。</Text>
+		</Replace>
+
+		<!-- 特性 -->
+
+		<Replace Tag="LOC_TRAIT_LEADER_ENIGMA_TWILIGHT_GAELS_NAME" Language="zh_Hans_CN">
+			<Text>盖尔的暮光之城</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_ENIGMA_TWILIGHT_GAELS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>完成剧院广场项目可获得额外的 [ICON_Faith] 信仰值奖励；若所在城市拥有修道院，则该奖励翻倍。皈依您文明 [ICON_Religion] 宗教的城市，其每位 [ICON_Citizen] 公民可提供额外的忠诚度。</Text>
+		</Replace>
+
+		<!-- 领袖百科 -->
+
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_ENIGMA_DANNY_TITLE" Language="zh_Hans_CN">
+			<Text>丹尼尔·奥康奈尔</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_ENIGMA_DANNY_SUBTITLE" Language="zh_Hans_CN">
+			<Text>爱尔兰解放者</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_ENIGMA_DANNY_QUOTE" Language="zh_Hans_CN">
+			<Text>先生们，可能很快你们就可以选择要作为奴隶生活或作为自由的人死去。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_ENIGMA_DANNY_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>丹尼尔·奥康奈尔，通常被称为解放者，是19世纪上半叶的爱尔兰政治领袖。他发动了天主教解放运动——包括天主教徒进入威斯敏斯特议会的权利，这一权利被剥夺了100多年——并废除了联合大不列颠和爱尔兰的联合法案。在他的爱尔兰政治生涯中，奥康奈尔在爱尔兰群众中赢得了一大批支持他和他天主教协会的追随者。奥康奈尔的主要战略是政治改革主义之一，在爱尔兰的英国议会结构内运作，并与辉格党结盟。更激进的追随者与奥康奈尔决裂，创立了青年爱尔兰运动党。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_ENIGMA_DANNY_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>奥康奈尔出生在凯里郡卡赫西文附近的卡汉，德里南的奥康奈尔家族，这曾经是一个富裕的罗马天主教家庭，该家族的土地被夺走了。他的叔叔丹尼尔查尔斯，奥康奈尔伯爵，法国陆军爱尔兰旅的一名军官。Eibhlín Dubh Ní Chonaill是他的阿姨，而第一代男爵詹姆斯·奥康奈尔爵士是他的弟弟。 在他富有的单身汉叔叔莫里斯“猎帽”奥康奈尔的赞助下，他在法国杜艾学习，并于1794年被林肯律师所录取为大律师，两年后转入都柏林国王律师所。早年，他结识了当时的民主激进分子，并致力于为自己的国家带来平等的权利和宗教宽容。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_ENIGMA_DANNY_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>1798年5月19日，奥康奈尔被召入爱尔兰律师协会并成为一名大律师。四天后，联合爱尔兰人发动叛乱，被英国人血腥镇压。奥康奈尔不支持叛乱；他认为爱尔兰人必须在政治上而不是通过武力来表明自己的立场。他参加了芒斯特巡回赛，十多年来，他在爱尔兰南部进入了一段相当平静的私法实践时期。他被认为是爱尔兰大律师中收入最高的，但由于天生的奢侈和不断壮大的家庭，他经常负债累累——他的兄弟刻薄地说，丹尼尔从17岁起就一直负债。尽管他最终要从他的叔叔莫里斯那里继承德里南，但这位老人活了将近100岁，导致丹尼尔获得的遗产不足以偿还他的债务。他还谴责了1803年罗伯特·埃米特的叛乱。对于新教徒埃米特，他写道：“一个可以冷静地准备这么多流血事件、这么多谋杀案——以及各种如此恐怖的人，已经不再是值得同情的对象。”尽管他反对使用暴力，但他愿意为那些被控犯有政治罪的人辩护，特别是如果他怀疑他们被诬告的话，就像在1829年的多奈莱阴谋审判中一样，这是他最后一次引人注目的出庭。他以在法庭上的无所畏惧而著称：如果他对法官的看法很差（这种情况经常发生），他会毫不犹豫地明确指出这一点。最著名的也许是他对麦克莱兰男爵的反驳，他曾说，作为一名大律师，他永远不会走奥康奈尔采取的路线：奥康奈尔说，麦克莱兰从来没有成为他作为大律师的榜样，他也不会接受指示让他作为法官。他并不缺乏自己成为一名法官的野心：尤其是他被爱尔兰劳斯莱斯大师的职位所吸引，尽管他不止一次被邀请，但最终还是拒绝了。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_ENIGMA_DANNY_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>1811年，他成立了天主教委员会，发动天主教解放运动，即为爱尔兰天主教徒提供成为议会议员的机会。1823年，他成立了天主教协会，该协会包含其他旨在改善爱尔兰天主教徒的目标，例如：选举改革、爱尔兰教会改革、租户权利和经济发展。该协会的资金来自每月一便士的会费，这是旨在吸引天主教农民的最低数额。这么做非常成功，协会在第一年就筹集了大量资金。这笔钱用于争取天主教解放运动，特别是资助支持英国下议院的议员。根据18世纪的法令，该协会的成员可能会受到起诉，而官方发起了一系列起诉来打压该协会，但结果喜忧参半。奥康奈尔经常听取辩护简报，并在恳求天主教徒争取解放的权利方面表现出非凡的活力。在1815年的一次演讲中，都柏林公司被奥康奈尔认为是新教崛起的据点，称其为“乞丐公司”。它的成员和领导人被激怒了，因为奥康奈尔不会道歉，他们中的一员，著名的决斗者约翰·德斯特雷向他提出挑战。这场决斗让都柏林城堡充满了对奥康奈尔将被杀死的可能的紧张气氛。他们认为奥康奈尔“比公害更糟糕”，并且希望在此时看到他被撤职的可能。奥康奈尔在基尔代尔郡奥特拉德的决斗中遇到了德斯特雷，并给他造成了致命伤。奥康奈尔提出与德斯特尔的遗孀“分享他的收入”，但她拒绝了；然而，她同意为她的女儿接受一笔津贴，奥康奈尔定期支付了三十多年，直到他去世。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_ENIGMA_DANNY_CHAPTER_HISTORY_PARA_5" Language="zh_Hans_CN">
+			<Text>作为天主教解放运动的一部分，奥康奈尔于1823年创建了天主教协会；该组织充当了反对英国政府以实现解放的压力团体。1824年由奥康奈尔和天主教会建立的天主教租金会筹集资金，奥康奈尔能够从中资助天主教协会推动解放。官方意见逐渐转向解放，正如司法部长和顽固的宗教宽容反对者威廉·索林被立即解雇所表明的那样，奥康奈尔称其为“我们的死敌”。奥康奈尔在1828年的英国下议院补选为克莱尔郡的另一位天主教协会支持者威廉·维西·菲茨杰拉德腾出的席位。 奥康奈尔当选后，因国会议员必须对至高无上的誓言宣誓而无法入座，这与天主教不相容。首相、威灵顿公爵和内政大臣罗伯特·皮尔爵士虽然反对天主教参加议会，但认为拒绝奥康奈尔的席位会引起公愤，并可能导致爱尔兰再次发生叛乱或起义，毕竟那里大约85%人口是天主教徒。皮尔和惠灵顿设法说服乔治四世，需要确立天主教解放以及天主教徒和长老会以及除已建立的爱尔兰教会以外的所有基督教信仰的成员在议会中的席位；在辉格党的帮助下，它于1829年成为法律。《解放法案》没有追溯力，这意味着奥康奈尔要么寻求连任，要么试图宣誓就职。当奥康奈尔在5月15日试图在没有宣誓就职的情况下就任时，副检察长尼古拉斯·康宁厄姆·廷达尔动议宣布他的席位空缺，并下令进行另一次选举；奥康奈尔于1829年7月30日在没有对手竞争的情况下重新当选议员。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_ENIGMA_DANNY_CHAPTER_HISTORY_PARA_6" Language="zh_Hans_CN">
+			<Text>等到实现了天主教解放，奥康奈尔就发起了废除联合法案的运动，该法案于1801年将大不列颠王国和爱尔兰王国合并为大不列颠及爱尔兰联合王国。为了争取废除法案，奥康奈尔成立了废除协会。他主张重建一个独立的爱尔兰王国来自治，维多利亚女王为爱尔兰女王。为了推动这一点，他在爱尔兰新教和工会主导的阿尔斯特省以外的大部分地区举行了一系列群众集会。每次都有大约100000人参加。1843年，英国政府和首相罗伯特·皮尔爵士在都柏林城外的都柏林郡克朗塔夫禁止了一系列群众集会。此举是在最大的群众集会在塔拉举行后做出的。塔拉对爱尔兰人民具有重要意义，因为它是爱尔兰至高国王的历史所在地。克隆塔夫具有象征意义，因为它与1014年的克隆塔夫战役有关，当时爱尔兰国王布赖恩·博鲁击败了他的对手大麦达，尽管布赖恩本人在战斗中丧生。虽然他的支持者发出呼吁，但奥康奈尔拒绝违抗当局，取消了集会，因为他不愿意冒流血的风险。他被逮捕，被控煽动叛乱罪并判处一年监禁和2000英镑的罚款，但他在三个月后被上议院释放，上议院撤销了定罪并严厉批评审判的不公平。自己最强大的武器群众集会被禁止，健康状况不佳的奥康奈尔没有了计划，废除协会内部会产生了分歧。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_ENIGMA_DANNY_CHAPTER_HISTORY_PARA_7" Language="zh_Hans_CN">
+			<Text>1847年，奥康奈尔在意大利热那亚因脑软化而去世，当时他正前往罗马朝圣，享年71岁。牢狱之灾让他的身体虚弱不堪，而他在旅途中所忍受的骇人听闻的寒冷天气，恐怕是对他离世的最后一击。根据他临终遗愿，他的心脏被安葬在罗马，而他的遗体则安葬在都柏林的格拉斯内文公墓，一座圆塔下。1875年8月6日，查尔斯·赫伯特·麦金托什在安大略省渥太华的梅杰希尔公园的奥康奈尔百年庆典期间凭借一首题为《爱尔兰解放者》的诗歌获得了圣帕特里克协会颁发的金银奖章。奥康奈尔的哲学和事业启发了世界各地的领导人，包括圣雄甘地和马丁路德金。威廉·梅克皮斯·萨克雷告诉他，“自华盛顿以来，你为国家所做的比任何人都多。”威廉·格莱斯顿称他为“世界上最伟大的受欢迎的领导人”。奥诺雷·德·巴尔扎克写道：“拿破仑和奥康奈尔是19世纪所见过的唯一伟人。”让-亨利·梅尔·德奥比涅(1794–1872)写道：“唯一像路德一样拥有权力的人是奥康奈尔。”威廉·格伦维尔（1759-1834）写道：“历史将称他为有史以来最杰出的人物之一。”奥康奈尔结识了美国的奴隶弗雷德里克·道格拉斯，成为了他的朋友，并成为了他的巨大灵感来源，让后者成为废奴运动、社会改革家、演说家、作家和政治家的极具影响力的领导者。奥康奈尔对奴隶制的攻击以他惯有的活力进行，并且经常冒犯他人，尤其是在美国：他称乔治华盛顿是伪君子，并受到美国部长安德鲁史蒂文森的挑战，据报道他与他进行的决斗被称为奴隶对抗饲养员。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_ENIGMA_DANNY_CHAPTER_CAPSULE_BODY" Language="zh_Hans_CN">
+			<Text>奥康奈尔以信仰引领着爱尔兰前进，在他的领导下，公民会变得更加忠诚。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_ENIGMA_DANNY_CHAPTER_DETAILED_BODY" Language="zh_Hans_CN">
+			<Text>奥康维尔领导下的爱尔兰，宗教是必不可少的。建设大量的修道院并积极完成剧院广场项目将有助于爱尔兰走向宗教或文化胜利。</Text>
+		</Replace>
+
+		<!-- 外交 -->
+
+		<!-- 初次见面 -->
+		<!-- 开场白 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_ENIGMA_DANNY_ANY" Language="zh_Hans_CN">
+			<Text>啊，你刚到这里是吗？欢迎来到爱尔兰，我是丹尼尔·奥康奈尔。如果你对我的人民没有恶意，那么我们会相处得很好。</Text>
+		</Replace>
+
+		<!-- 到附近城市的邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_ENIGMA_DANNY_ANY" Language="zh_Hans_CN">
+			<Text>附近有一座爱尔兰的城市，你想去参观吗？</Text>
+		</Replace>
+
+		<!-- AI接受玩家邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NEAR_INITIATOR_POSITIVE_LEADER_ENIGMA_DANNY_ANY" Language="zh_Hans_CN">
+			<Text>太好了！</Text>
+		</Replace>
+
+		<!-- AI邀请玩家交换首都信息 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_ENIGMA_DANNY_ANY" Language="zh_Hans_CN">
+			<Text>我想让你来看看都柏林。它有着丰富的历史。</Text>
+		</Replace>
+
+		<!-- 问候 -->
+
+		<Replace Tag="LOC_DIPLO_GREETING_LEADER_ENIGMA_DANNY_ANY" Language="zh_Hans_CN">
+			<Text>是什么让你今天来到这里？</Text>
+		</Replace>
+
+		<!-- 代表团 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_HUMAN_LEADER_ENIGMA_DANNY_ANY" Language="zh_Hans_CN">
+			<Text>当然！我会以最好的方式款待他们。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_HUMAN_LEADER_ENIGMA_DANNY_ANY" Language="zh_Hans_CN">
+			<Text>对不起，但我不允许你的人进入我的土地。或许以后可以。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DELEGATION_FROM_AI_LEADER_ENIGMA_DANNY_ANY" Language="zh_Hans_CN">
+			<Text>我派了一个代表团带着些好酒来了。相信我，这是您见过的最好的威士忌。</Text>
+		</Replace>
+
+		<!-- 开放边境 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_HUMAN_LEADER_ENIGMA_DANNY_ANY" Language="zh_Hans_CN">
+			<Text>太好了！</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_HUMAN_LEADER_ENIGMA_DANNY_ANY" Language="zh_Hans_CN">
+			<Text>凭着良心，我不能这么做。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_OPEN_BORDERS_FROM_AI_LEADER_ENIGMA_DANNY_ANY" Language="zh_Hans_CN">
+			<Text>我想向彼此开放我们的边界。你觉得呢？</Text>
+		</Replace>
+
+		<!-- 宣布友谊 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_HUMAN_LEADER_ENIGMA_DANNY_ANY" Language="zh_Hans_CN">
+			<Text>让世界知道我们站在一起。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_HUMAN_LEADER_ENIGMA_DANNY_ANY" Language="zh_Hans_CN">
+			<Text>我很抱歉，但我现在必须拒绝。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_ENIGMA_DANNY_ANY" Language="zh_Hans_CN">
+			<Text>您已经证明自己是爱尔兰、她的人民和她的信仰的真正朋友。我会请你以朋友的身份与我站在一起，向世界展示我们的综合实力。</Text>
+		</Replace>
+
+		<!-- 玩家接受后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_ENIGMA_DANNY_ANY" Language="zh_Hans_CN">
+			<Text>真令人兴奋！</Text>
+		</Replace>
+
+		<!-- 玩家拒绝后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_ENIGMA_DANNY_ANY" Language="zh_Hans_CN">
+			<Text>真可惜。</Text>
+		</Replace>
+
+		<!-- 结盟 -->
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_ALLIANCE_FROM_AI_LEADER_ENIGMA_DANNY_ANY" Language="zh_Hans_CN">
+			<Text>我想巩固我们的关系，并向世界展示我们团结一致。你怎么看？</Text>
+		</Replace>
+
+		<!-- 赞成与警告 -->
+		<!-- AI赞成 -->
+
+		<Replace Tag="LOC_DIPLO_KUDO_EXIT_LEADER_ENIGMA_DANNY_ANY" Language="zh_Hans_CN">
+			<Text>你为你的人民和他们的文化利益服务。我向你们致敬。</Text>
+		</Replace>
+
+		<!-- AI警告 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_EXIT_LEADER_ENIGMA_DANNY_ANY" Language="zh_Hans_CN">
+			<Text>如果你继续走暴力和破坏这条道路，最终只会导致毁灭。</Text>
+		</Replace>
+
+		<!-- AI警告玩家离开边境 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_LEADER_ENIGMA_DANNY_ANY" Language="zh_Hans_CN">
+			<Text>你的部队离我的边界太近了。我不想对他们采取行动，但这让整个国家都感到不安。</Text>
+		</Replace>
+
+		<!-- 贸易 -->
+		<!-- AI接受交易 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_ENIGMA_DANNY_ANY" Language="zh_Hans_CN">
+			<Text>我很高兴我们能达成一致。</Text>
+		</Replace>
+
+		<!-- AI拒绝交易 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_MAKE_DEAL_FROM_AI_LEADER_ENIGMA_DANNY_ANY" Language="zh_Hans_CN">
+			<Text>你不能当真，这只会伤害我们。</Text>
+		</Replace>
+
+		<!-- 谴责 -->
+		<!-- 受到谴责回应 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_ENIGMA_DANNY_ANY" Language="zh_Hans_CN">
+			<Text>有意思。</Text>
+		</Replace>
+
+		<!-- AI谴责玩家 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_ENIGMA_DANNY_ANY" Language="zh_Hans_CN">
+			<Text>你的做法对这个世界来说太残忍了，我不能再坐视不管了。[NEWLINE]（谴责你）</Text>
+		</Replace>
+
+		<!-- 谴责理由 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_REASON_FROM_AI_LEADER_ANY_REASON_ENIGMA_ALTAR_LIBERTY_STRONG_MILITARY" Language="zh_Hans_CN">
+			<Text>（您具有很强的攻击性）</Text>
+		</Replace>
+
+		<!-- 宣战 -->
+		<!-- 受到宣战后回应 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_ENIGMA_DANNY_ANY" Language="zh_Hans_CN">
+			<Text>……随它吧。</Text>
+		</Replace>
+
+		<!-- AI宣战 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_ENIGMA_DANNY_ANY" Language="zh_Hans_CN">
+			<Text>这给我带来了很大的痛苦，但我不能坐视你对世界人民犯的暴行。</Text>
+		</Replace>
+
+		<!-- 求和 -->
+		<!-- AI接受求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_ACCEPT_DEAL_LEADER_ENIGMA_DANNY_ANY" Language="zh_Hans_CN">
+			<Text>我很高兴你终于明白原因了。</Text>
+		</Replace>
+
+		<!-- AI拒绝求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_REFUSE_DEAL_LEADER_ENIGMA_DANNY_ANY" Language="zh_Hans_CN">
+			<Text>什么，所以你可以在别处继续你的征服行动？</Text>
+		</Replace>
+
+		<!-- AI求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_FROM_AI_LEADER_ENIGMA_DANNY_ANY" Language="zh_Hans_CN">
+			<Text>这场决斗已经持续太久了。</Text>
+		</Replace>
+
+		<!-- 击败 -->
+		<!-- AI被击败 -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_ENIGMA_DANNY_ANY" Language="zh_Hans_CN">
+			<Text>我知道你在血腥统治期间压迫了无数人民，但请允许我提出一个要求——在你的领导下，不要让我的人民遭受同样不公正的待遇。</Text>
+		</Replace>
+
+		<!-- 玩家被击败（在热座模式中会显示） -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_ENIGMA_DANNY_ANY" Language="zh_Hans_CN">
+			<Text>我从不希望赢得另一场决斗，尤其是不希望有无数生命处于平衡状态的决斗。但这是你造成的。</Text>
+		</Replace>
+		
+		<!-- 领袖（尼尔·诺伊贾拉赫） -->
+		
+		<Replace Tag="LOC_LEADER_ENIGMA_NIALL_NAME" Language="zh_Hans_CN">
+			<Text>尼尔·诺伊贾拉赫</Text>
+		</Replace>
+
+		<!-- 议程 -->
+
+		<Replace Tag="LOC_AGENDA_ENIGMA_NINE_HOSTAGES_NAME" Language="zh_Hans_CN">
+			<Text>九名人质</Text>
+		</Replace>
+		<Replace Tag="LOC_AGENDA_ENIGMA_NINE_HOSTAGES_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>喜欢那些拥有强大的军队和进行的军营项目的文明。不喜欢那些进行剧院广场项目的文明。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_ENIGMA_NINE_HOSTAGES_REASON_THEATER" Language="zh_Hans_CN">
+			<Text>（您在进行剧院广场项目）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_AGENDA_ENIGMA_NINE_HOSTAGES_THEATER" Language="zh_Hans_CN">
+			<Text>尼尔对你尝试获得更多文化值感到不满。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_ENIGMA_NINE_HOSTAGES_STRONG_ARMY" Language="zh_Hans_CN">
+			<Text>（您拥有强大的军队）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_LEADER_ENIGMA_NINE_HOSTAGES_REASON_STRONG_ARMY" Language="zh_Hans_CN">
+			<Text>尼尔对你的实力印象深刻。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_LEADER_ENIGMA_NINE_HOSTAGES_REASON_ENCAMPMENT" Language="zh_Hans_CN">
+			<Text>（您在进行军营项目）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_LEADER_ENIGMA_NINE_HOSTAGES_ENCAMPMENT" Language="zh_Hans_CN">
+			<Text>尼尔为你的力量感到高兴。</Text>
+		</Replace>
+
+		<!-- 载入 -->
+
+		<Replace Tag="LOC_LOADING_INFO_LEADER_ENIGMA_NIALL" Language="zh_Hans_CN">
+			<Text>崛起吧，尼尔·诺贾拉赫，为自己夺得爱尔兰。图阿萨斯需要一个强大的领袖，而你就是这个至高之王。用你的凶猛控制住爱尔兰，并将你的后代置于未来几十年的王位上。</Text>
+		</Replace>
+
+		<!-- 特性 -->
+
+		<Replace Tag="LOC_TRAIT_LEADER_ENIGMA_LEBOR_GABALA_NAME" Language="zh_Hans_CN">
+			<Text>征服典籍</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_ENIGMA_LEBOR_GABALA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>与 [ICON_GreatWriter] 大作家相邻的单位可额外获得 [ICON_Strength] 战斗力，且击杀敌方单位可获得 [ICON_Culture] 文化值奖励。每占领一座原始 [ICON_Capital] 首都或城邦，则立即获得一位 [ICON_GreatWriter] 大作家。</Text>
+		</Replace>
+
+		<!-- 领袖百科 -->
+
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_ENIGMA_NIALL_TITLE" Language="zh_Hans_CN">
+			<Text>尼尔</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_ENIGMA_NIALL_SUBTITLE" Language="zh_Hans_CN">
+			<Text>爱尔兰最高国王</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_ENIGMA_NIALL_QUOTE" Language="zh_Hans_CN">
+			<Text>九名人质即我所为。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_ENIGMA_NIALL_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>尼尔·诺贾拉赫，或英语中的“Niall of the Nine Hostages”，是史前时期的爱尔兰国王，是从6世纪到10世纪统治爱尔兰北半部的奥尼尔王朝的祖先。尼尔被列入爱尔兰最高国王的名单。尼尔的传记可以从诸如11世纪莱博尔·加巴拉·埃伦的“列王名录”部分、17世纪编纂的四位大师编年史、杰弗里·基廷的《Foras Feasa ar Éirinn》等编年史，以及11世纪的“奥查德·穆格顿之子的冒险”和“九名人质的尼尔之死”等传奇故事中找到。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_ENIGMA_NIALL_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>尼尔继承了至高王位，而布里翁成为他的副手。虽然尼尔是至高无上的国王，但他的兄弟们将自己确立为当地的国王。布里翁击败了菲亚克雷并将他作为囚犯交给尼尔，但菲亚克雷的儿子内斯继续战斗并最终杀死了布里翁。尼尔释放了菲亚克雷，菲亚克雷成为了康诺特的国王和尼尔的得力助手。莱博尔·加巴拉·埃伦说尼尔和伦斯特国王埃内·森萨拉赫之间发生了战争，原因是图塔尔·泰玛要求伦斯特提供博拉马或牛作为贡品。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_ENIGMA_NIALL_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>在传奇故事“九名人质的尼尔之死”中，埃奥柴德与尼尔的敌意始于尼尔的诗人莱德森·麦克·拜尔奇德拒绝招待他。然后尼尔与伦斯特开战，以交出伊奥柴德为缔结和平的条件。尼尔将埃奥柴德锁在一块立石上，派九名战士去处决他，但埃奥柴德打破了他的锁链，用它杀死了九个人，然后他扔了一块石头砸在莱德森的额头上，杀死了他。尼尔将他放逐到苏格兰。基廷认为尼尔有两个妻子：英尼，卢盖德的女儿，为他生了一个儿子菲亚丘；里尼亚赫，为他生了七个儿子，罗盖尔、恩代、缅因、欧根、康纳尔·古尔班、康尔·克雷塔恩和科尔普雷。尼尔将他放逐到苏格兰。然后故事到这里就变得混乱了。尼尔在欧洲远至阿尔卑斯山发动战争，罗马人派大使与他谈判。突然，故事让尼尔出现在苏格兰的一群皮克特吟游诗人面前，在那里他被埃奥柴德从山谷另一边射出的箭射死。基廷在欧洲竞选期间让埃奥柴德从卢瓦尔河对岸射杀尼尔。他的手下将他的尸体抬回家，在途中还打了七场战斗，他的养父托尔纳悲痛欲绝。据说他的尸体被埋葬在奥坎，现在被称为乔丹镇的福恩山，位于米斯郡纳文以西几英里处。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_ENIGMA_NIALL_CHAPTER_CAPSULE_BODY" Language="zh_Hans_CN">
+			<Text>尼尔将爱尔兰变成了一个以征服为基础的文明，在他的领导下，军事单位将因文化影响而茁壮成长。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_ENIGMA_NIALL_CHAPTER_DETAILED_BODY" Language="zh_Hans_CN">
+			<Text>大作家是尼尔最伟大的盟友。获得它们可以增强军事实力，从而征服并获得更多的大作家，这像滚雪球一样变成一种特别的文化能力。剧院广场和学校将让你获得更多的文化值和大作家，这反过来又有助于你的军队。</Text>
+		</Replace>
+
+		<!-- 外交 -->
+
+		<!-- 初次见面 -->
+		<!-- 开场白 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_ENIGMA_NIALL_ANY" Language="zh_Hans_CN">
+			<Text>谁在那尔？我是九名人质中的尼尔，爱尔兰至高无上的国王。好好照顾自己，我没有理由把你的土地并入我的王国。</Text>
+		</Replace>
+
+		<!-- 到附近城市的邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_ENIGMA_NIALL_ANY" Language="zh_Hans_CN">
+			<Text>来吧，我们要举办盛大的宴席，听听菲力斯的歌声。</Text>
+		</Replace>
+
+		<!-- AI接受玩家邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NEAR_INITIATOR_POSITIVE_LEADER_ENIGMA_NIALL_ANY" Language="zh_Hans_CN">
+			<Text>非常好。</Text>
+		</Replace>
+
+		<!-- AI邀请玩家交换首都信息 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_ENIGMA_NIALL_ANY" Language="zh_Hans_CN">
+			<Text>让我们交换有关首都的信息，以便您知道该向何处致敬。</Text>
+		</Replace>
+
+		<!-- 问候 -->
+
+		<Replace Tag="LOC_DIPLO_GREETING_LEADER_ENIGMA_NIALL_ANY" Language="zh_Hans_CN">
+			<Text>这次访问有什么必要吗？</Text>
+		</Replace>
+
+		<!-- 代表团 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_HUMAN_LEADER_ENIGMA_NIALL_ANY" Language="zh_Hans_CN">
+			<Text>我已邀请贵方代表团赴宴，我希望你愿意接受我这么做。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_HUMAN_LEADER_ENIGMA_NIALL_ANY" Language="zh_Hans_CN">
+			<Text>你们的代表团连碰我的手都不配。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DELEGATION_FROM_AI_LEADER_ENIGMA_NIALL_ANY" Language="zh_Hans_CN">
+			<Text>我派了一个代表去你们那参观和传播我先辈的伟大故事。</Text>
+		</Replace>
+
+		<!-- 开放边境 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_HUMAN_LEADER_ENIGMA_NIALL_ANY" Language="zh_Hans_CN">
+			<Text>你的人可以进入我的土地，前提是他们不攻击我的军队。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_HUMAN_LEADER_ENIGMA_NIALL_ANY" Language="zh_Hans_CN">
+			<Text>我不会让你的人在爱尔兰流浪。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_OPEN_BORDERS_FROM_AI_LEADER_ENIGMA_NIALL_ANY" Language="zh_Hans_CN">
+			<Text>向我们敞开你们的边界，这样我们就可以为你们的人民写下伟大的诗歌。</Text>
+		</Replace>
+
+		<!-- 宣布友谊 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_HUMAN_LEADER_ENIGMA_NIALL_ANY" Language="zh_Hans_CN">
+			<Text>让这项协议为我们两国人民带来丰硕成果。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_HUMAN_LEADER_ENIGMA_NIALL_ANY" Language="zh_Hans_CN">
+			<Text>我会平等地称呼你，但我不想对世界撒谎。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_ENIGMA_NIALL_ANY" Language="zh_Hans_CN">
+			<Text>我相信你们的人民可以与我并肩作战，创造伟大的故事，你怎么看？</Text>
+		</Replace>
+
+		<!-- 玩家接受后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_ENIGMA_NIALL_ANY" Language="zh_Hans_CN">
+			<Text>你是一个明智的领导者。</Text>
+		</Replace>
+
+		<!-- 玩家拒绝后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_ENIGMA_NIALL_ANY" Language="zh_Hans_CN">
+			<Text>你个傻瓜。</Text>
+		</Replace>
+
+		<!-- 结盟 -->
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_ALLIANCE_FROM_AI_LEADER_ENIGMA_NIALL_ANY" Language="zh_Hans_CN">
+			<Text>我来寻找盟友。让我们将一起将弱者和恶人赶出这片土地。</Text>
+		</Replace>
+
+		<!-- 赞成与警告 -->
+		<!-- AI赞成 -->
+
+		<Replace Tag="LOC_DIPLO_KUDO_EXIT_LEADER_ENIGMA_NIALL_ANY" Language="zh_Hans_CN">
+			<Text>你的王国不容轻视。它很伟大。</Text>
+		</Replace>
+
+		<!-- AI警告 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_EXIT_LEADER_ENIGMA_NIALL_ANY" Language="zh_Hans_CN">
+			<Text>你弱小的军队告诉我，你不适合这个世界。</Text>
+		</Replace>
+
+		<!-- AI警告玩家离开边境 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_LEADER_ENIGMA_NIALL_ANY" Language="zh_Hans_CN">
+			<Text>如果你不移走他们，你在我边境聚集的士兵将成为我的人质。</Text>
+		</Replace>
+
+		<!-- 贸易 -->
+		<!-- AI接受交易 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_ENIGMA_NIALL_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_ENIGMA_NIALL_ANY}</Text>
+		</Replace>
+
+		<!-- AI拒绝交易 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_MAKE_DEAL_FROM_AI_LEADER_ENIGMA_NIALL_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_ENIGMA_NIALL_ANY}</Text>
+		</Replace>
+
+		<!-- 谴责 -->
+		<!-- 受到谴责回应 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_ENIGMA_NIALL_ANY" Language="zh_Hans_CN">
+			<Text>你把自己当傻子了。但文字不过是文字。</Text>
+		</Replace>
+
+		<!-- AI谴责玩家 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_ENIGMA_NIALL_ANY" Language="zh_Hans_CN">
+			<Text>你的存在是对爱尔兰人的威胁，我不能容忍这种情况。[NEWLINE]（谴责你）</Text>
+		</Replace>
+
+		<!-- 谴责理由 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_REASON_FROM_AI_LEADER_ANY_REASON_ENIGMA_NINE_HOSTAGES_LAGS_STANDING_ARMY" Language="zh_Hans_CN">
+			<Text>（您的军队很弱）</Text>
+		</Replace>
+
+		<!-- 宣战 -->
+		<!-- 受到宣战后回应 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_ENIGMA_NIALL_ANY" Language="zh_Hans_CN">
+			<Text>那就来吧。我欢迎你的人来到战场。</Text>
+		</Replace>
+
+		<!-- AI宣战 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_ENIGMA_NIALL_ANY" Language="zh_Hans_CN">
+			<Text>高兴点！你的死将成为一首令人难以置信的诗，在未来的几十年里都会被讲述。</Text>
+		</Replace>
+
+		<!-- 求和 -->
+		<!-- AI接受求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_ACCEPT_DEAL_LEADER_ENIGMA_NIALL_ANY" Language="zh_Hans_CN">
+			<Text>我厌倦了这场战争。确实该这么做了。</Text>
+		</Replace>
+
+		<!-- AI拒绝求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_REFUSE_DEAL_LEADER_ENIGMA_NIALL_ANY" Language="zh_Hans_CN">
+			<Text>我不会被羞辱。</Text>
+		</Replace>
+
+		<!-- AI求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_FROM_AI_LEADER_ENIGMA_NIALL_ANY" Language="zh_Hans_CN">
+			<Text>你会同意和平吗？</Text>
+		</Replace>
+
+		<!-- 击败 -->
+		<!-- AI被击败 -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_ENIGMA_NIALL_ANY" Language="zh_Hans_CN">
+			<Text>你篡夺了我的位置。在我的儿子们登上我的王位之前，你有权称自己为国王。</Text>
+		</Replace>
+
+		<!-- 玩家被击败（在热座模式中会显示） -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_ENIGMA_NIALL_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_ENIGMA_NIALL_ANY}</Text>
+		</Replace>
+		
+		<!-- 领袖（格蕾丝·奥马利） -->
+		
+		<Replace Tag="LOC_LEADER_ENIGMA_GRACE_NAME" Language="zh_Hans_CN">
+			<Text>格蕾丝·奥马利</Text>
+		</Replace>
+
+		<!-- 议程 -->
+
+		<Replace Tag="LOC_AGENDA_ENIGMA_NURSE_REBELLION_NAME" Language="zh_Hans_CN">
+			<Text>护卫所有的叛乱</Text>
+		</Replace>
+		<Replace Tag="LOC_AGENDA_ENIGMA_NURSE_REBELLION_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>喜欢那些军事实力比她弱的文明，以及那些向她派遣贸易路线的文明。对那些拥有更强大的军队的文明感到不满。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_ENIGMA_NURSE_REBELLION_REASON_NAVY_SMALL" Language="zh_Hans_CN">
+			<Text>你们的人民不希望受到任何伤害，我很高兴看到这一点。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_AGENDA_ENIGMA_NURSE_REBELLION_NAVY_SMALL" Language="zh_Hans_CN">
+			<Text>（您的军队实力薄弱）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_ENIGMA_NURSE_REBELLION_TRADE" Language="zh_Hans_CN">
+			<Text>我很高兴您在这个世界上找到了合适的合作伙伴。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_LEADER_ENIGMA_NURSE_REBELLION_REASON_TRADE" Language="zh_Hans_CN">
+			<Text>（您向她派遣了贸易路线）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_LEADER_ENIGMA_NURSE_REBELLION_REASON_NAVY_LARGE" Language="zh_Hans_CN">
+			<Text>你不应使用这种强大的力量。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_LEADER_ENIGMA_NURSE_REBELLION_NAVY_LARGE" Language="zh_Hans_CN">
+			<Text>（您的军事实力很强）</Text>
+		</Replace>
+
+		<!-- 载入 -->
+
+		<Replace Tag="LOC_LOADING_INFO_LEADER_ENIGMA_GRACE" Language="zh_Hans_CN">
+			<Text>格蕾丝·奥马利，世界的压迫者已经开始向爱尔兰海岸推进。召集您的长船，伟大的领主，带领他们夺回属于您的东西并夺取不属于您的东西。前进，向世界展示为什么你的人民称你为海上女王。</Text>
+		</Replace>
+
+		<!-- 特性 -->
+
+		<Replace Tag="LOC_TRAIT_LEADER_ENIGMA_SEA_QUEEN_CONNACHT_NAME" Language="zh_Hans_CN">
+			<Text>康诺特的海上女王</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_ENIGMA_SEA_QUEEN_CONNACHT_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>升级海军单位会根据其累积的经验值获得[ICON_GREATADMIRAL]海军统帅点数。港口内的建筑提供+5城墙防御力和一个著作槽位。在完成市政“重商主义”后解锁特色单位长船。</Text>
+		</Replace>
+
+		<!-- 领袖百科 -->
+
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_ENIGMA_GRACE_TITLE" Language="zh_Hans_CN">
+			<Text>格蕾丝·奥马利</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_ENIGMA_GRACE_SUBTITLE" Language="zh_Hans_CN">
+			<Text>奥马利之主</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_ENIGMA_GRACE_QUOTE" Language="zh_Hans_CN">
+			<Text>相比一艘载满黄金的船，我宁愿要一艘满是康罗伊家族和麦卡纳利家族的船。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_ENIGMA_GRACE_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>格蕾丝·奥马利是爱尔兰西部奥马利王朝的领主，继承她父亲奥恩·杜夫达拉·奥瓦莱的地位。在爱尔兰民间传说中俗称秃头格兰，她是爱尔兰16世纪著名的历史人物。在她父亲去世后，尽管她有一个兄弟管子多纳尔，但她仍接管了陆地与海上的领主权。与第一任丈夫多纳尔·奥弗莱厄蒂（即好战者多纳尔）的婚姻给她带来了更大的财富和影响力，据记载她拥有多达1000头牛和马。1593年，当她的儿子蒂博特·伯克和默罗·奥弗莱厄蒂以及她的同父异母兄弟管子多纳尔被英国康诺特总督理查德·宾厄姆爵士俘虏时，奥马利航行到英国请求释放他们。她在格林尼治宫的法庭上正式向伊丽莎白一世女王提出了她的请求。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_ENIGMA_GRACE_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>格蕾丝·奥马利于1530年左右出生于爱尔兰，当时英格兰国王是亨利八世，并拥有爱尔兰领主的称号。在当时英格兰政府的政策下，爱尔兰的贵族被安置在其封地上充当半自治的统治者。然而，随着都铎王朝对爱尔兰的征服步伐加快，这也影响了奥马利的一生。小时候，她很可能住在贝尔克莱尔和克莱尔岛的家族住所，但由于当时爱尔兰贵族的传统寄养方式，她可能被寄养到另一个家庭。她可能受过正规教育，因为据说她在1593年见伊丽莎白一世女王时是用拉丁语交流的。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_ENIGMA_GRACE_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>格蕾丝·奥马利在1546年嫁给奥弗莱厄蒂家族的继承人好战者多纳尔。这也是一桩在政治层面上绝佳的婚姻。作为奥弗莱厄蒂家族的继承人，多纳尔·奥弗莱厄希望有一天能统治整个西康诺特，该地区大致相当于今天的康内马拉。 1565年，多纳尔在科里布湖周围的山上打猎时被伏击身亡；毫无疑问，这是因为多纳尔与乔伊斯家族争夺洛赫湖畔城堡控制权。格蕾丝回到了她自己的土地上，并在克莱尔岛建立了她的主要住所。据称，她爱上了一名遇难的水手。但很快他被巴利沃伊的麦克马洪杀害。为了复仇，格蕾丝袭击了布莱克索德湾的麦克马洪城堡多纳，并在卡希尔岛上杀死了杀害她情人的凶手。她对多纳城堡的袭击为她赢得了“多纳黑夫人”的绰号。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_ENIGMA_GRACE_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>到了1566年，格蕾丝第二次结婚，这次是嫁给了理查德·伯克（“铁理查德”），他的绰号来源于他在布里舒尔的炼铁厂，他的城堡和住所所在地。蒂博特·伯克是这段婚姻中诞生的孩子。格蕾丝没有停止她的报复，航行到巴利克罗伊并袭击了多纳城堡的驻军，打败了防御者并为自己占领了城堡。她对麦克马洪家族的攻击并不是她第一次报复别人。传说另一位领主偷了她的财产，逃到教堂避难。她决心等待小偷出来，坚持他会饿死或投降。然而，小偷挖了一条隧道逃走了，教堂的隐士斥责她试图伤害寻求庇护的人。但她的回复没有被记录下来。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_ENIGMA_GRACE_CHAPTER_HISTORY_PARA_5" Language="zh_Hans_CN">
+			<Text>16世纪后期，英格兰在爱尔兰的势力不断增强，格蕾丝的势力不断受到蚕食。最后，在1593年，当她的儿子蒂博特·伯克和默罗·奥弗莱厄蒂以及她的同父异母兄弟管子多纳尔被英国康诺特总督理查德·宾厄姆爵士俘虏时，格蕾丝乘船前往英国向伊丽莎白一世请求释放他们。伊丽莎白一世给了格蕾丝一份著名的问题清单，她回答并交还给了伊丽莎白。格蕾丝在格林尼治宫会见了伊丽莎白，她身着精美的长袍，两人被卫兵和伊丽莎白宫廷成员包围。经过一番交谈，两个女人达成了共识。包括在每一方的规定中，伊丽莎白将免除宾厄姆在爱尔兰的职务，格蕾丝将停止支持爱尔兰的叛乱。这次会议似乎对理查德·宾厄姆被撤职有所帮助。但格蕾丝的其他几项要求（包括归还宾厄姆从她那里偷走的牛和土地）仍未得到满足，伊丽莎白在很快将宾厄姆送回爱尔兰。宾厄姆回来后，格蕾丝意识到与伊丽莎白的会面毫无用处，并在九年战争期间重新支持爱尔兰叛乱分子。她可能于1603年左右在洛克弗利特城堡去世，与伊丽莎白同年，尽管她的死亡年份和地点仍存在争议。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_ENIGMA_GRACE_CHAPTER_CAPSULE_BODY" Language="zh_Hans_CN">
+			<Text>格蕾丝领导的爱尔兰以海军实力著称，积极升级单位能获得更多的海军统帅。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_ENIGMA_GRACE_CHAPTER_DETAILED_BODY" Language="zh_Hans_CN">
+			<Text>海军统帅是格蕾丝最需要获得的伟人。积极升级单位获得更多的海军统帅点数以便招募他们，配合爱尔兰的特色能力和专属于格蕾丝的长船将帮助你在征服世界的同时获得更多的奖励。</Text>
+		</Replace>
+
+		<!-- 外交 -->
+
+		<!-- 初次见面 -->
+		<!-- 开场白 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_ENIGMA_GRACE_ANY" Language="zh_Hans_CN">
+			<Text>谁在那儿？我是西海之主格蕾丝·奥马利，欢迎您详细说明下您在我的土地上所做的事情。</Text>
+		</Replace>
+
+		<!-- 到附近城市的邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_ENIGMA_GRACE_ANY" Language="zh_Hans_CN">
+			<Text>我希望你能来参观我附近的城市。</Text>
+		</Replace>
+
+		<!-- AI接受玩家邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NEAR_INITIATOR_POSITIVE_LEADER_ENIGMA_GRACE_ANY" Language="zh_Hans_CN">
+			<Text>同意。</Text>
+		</Replace>
+
+		<!-- AI邀请玩家交换首都信息 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_ENIGMA_GRACE_ANY" Language="zh_Hans_CN">
+			<Text>我希望你能来参观下我的首都。</Text>
+		</Replace>
+
+		<!-- 问候 -->
+
+		<Replace Tag="LOC_DIPLO_GREETING_LEADER_ENIGMA_GRACE_ANY" Language="zh_Hans_CN">
+			<Text>继续。</Text>
+		</Replace>
+
+		<!-- 代表团 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_HUMAN_LEADER_ENIGMA_GRACE_ANY" Language="zh_Hans_CN">
+			<Text>我会允许的。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_HUMAN_LEADER_ENIGMA_GRACE_ANY" Language="zh_Hans_CN">
+			<Text>不可能！</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DELEGATION_FROM_AI_LEADER_ENIGMA_GRACE_ANY" Language="zh_Hans_CN">
+			<Text>我已让我的船长给你送去一些了寻回的宝藏。</Text>
+		</Replace>
+
+		<!-- 开放边境 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_HUMAN_LEADER_ENIGMA_GRACE_ANY" Language="zh_Hans_CN">
+			<Text>这可以接受。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_HUMAN_LEADER_ENIGMA_GRACE_ANY" Language="zh_Hans_CN">
+			<Text>我不会允许你的船入境。小心踩踏。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_OPEN_BORDERS_FROM_AI_LEADER_ENIGMA_GRACE_ANY" Language="zh_Hans_CN">
+			<Text>如果你愿意，我会进一步加强我们的贸易关系。</Text>
+		</Replace>
+
+		<!-- 宣布友谊 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_HUMAN_LEADER_ENIGMA_GRACE_ANY" Language="zh_Hans_CN">
+			<Text>你已经在我眼中证明了自己。这很好。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_HUMAN_LEADER_ENIGMA_GRACE_ANY" Language="zh_Hans_CN">
+			<Text>不可能!</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_ENIGMA_GRACE_ANY" Language="zh_Hans_CN">
+			<Text>我希望向世界表明，我们以各国人民自由的名义团结在一起。</Text>
+		</Replace>
+
+		<!-- 玩家接受后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_ENIGMA_GRACE_ANY" Language="zh_Hans_CN">
+			<Text>非常好。</Text>
+		</Replace>
+
+		<!-- 玩家拒绝后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_ENIGMA_GRACE_ANY" Language="zh_Hans_CN">
+			<Text>该死。</Text>
+		</Replace>
+
+		<!-- 结盟 -->
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_ALLIANCE_FROM_AI_LEADER_ENIGMA_GRACE_ANY" Language="zh_Hans_CN">
+			<Text>我会为了我们的安全与我们的人民结盟，你怎么看？</Text>
+		</Replace>
+
+		<!-- 赞成与警告 -->
+		<!-- AI赞成 -->
+
+		<Replace Tag="LOC_DIPLO_KUDO_EXIT_LEADER_ENIGMA_GRACE_ANY" Language="zh_Hans_CN">
+			<Text>你真是一位高尚的领袖。</Text>
+		</Replace>
+
+		<!-- AI警告 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_EXIT_LEADER_ENIGMA_GRACE_ANY" Language="zh_Hans_CN">
+			<Text>你个可怜虫。</Text>
+		</Replace>
+
+		<!-- AI警告玩家离开边境 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_LEADER_ENIGMA_GRACE_ANY" Language="zh_Hans_CN">
+			<Text>如果你不让你的军队离开，我就得收费了。他们会很值钱的。</Text>
+		</Replace>
+
+		<!-- 贸易 -->
+		<!-- AI接受交易 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_ENIGMA_GRACE_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_ENIGMA_GRACE_ANY}</Text>
+		</Replace>
+
+		<!-- AI拒绝交易 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_MAKE_DEAL_FROM_AI_LEADER_ENIGMA_GRACE_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_ENIGMA_GRACE_ANY}</Text>
+		</Replace>
+
+		<!-- 谴责 -->
+		<!-- 受到谴责回应 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_ENIGMA_GRACE_ANY" Language="zh_Hans_CN">
+			<Text>非常好！很快你就会陨落，你的人民将获得自由。</Text>
+		</Replace>
+
+		<!-- AI谴责玩家 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_ENIGMA_GRACE_ANY" Language="zh_Hans_CN">
+			<Text>你反对统治者应该做的一切。我祈祷你的受压迫者有一天也会起来反对你。[NEWLINE]（谴责你）</Text>
+		</Replace>
+
+		<!-- 谴责理由 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_REASON_FROM_AI_LEADER_ANY_REASON_ENIGMA_NURSE_REBELLION_LAGS_STANDING_ARMY" Language="zh_Hans_CN">
+			<Text>（您的军事实力很强）</Text>
+		</Replace>
+
+		<!-- 宣战 -->
+		<!-- 受到宣战后回应 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_ENIGMA_GRACE_ANY" Language="zh_Hans_CN">
+			<Text>你的船只将被摧毁，你的领主将被粉碎。</Text>
+		</Replace>
+
+		<!-- AI宣战 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_ENIGMA_GRACE_ANY" Language="zh_Hans_CN">
+			<Text>够了！你毁了我的人民，我可不能袖手旁观！</Text>
+		</Replace>
+
+		<!-- 求和 -->
+		<!-- AI接受求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_ACCEPT_DEAL_LEADER_ENIGMA_GRACE_ANY" Language="zh_Hans_CN">
+			<Text>终于可以结束了。</Text>
+		</Replace>
+
+		<!-- AI拒绝求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_REFUSE_DEAL_LEADER_ENIGMA_GRACE_ANY" Language="zh_Hans_CN">
+			<Text>我不能遵守这些条款，我相信即使我接受你也不会遵守。</Text>
+		</Replace>
+
+		<!-- AI求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_FROM_AI_LEADER_ENIGMA_GRACE_ANY" Language="zh_Hans_CN">
+			<Text>在这场战争中，不仅我们的人民失败了，人类也失败了。</Text>
+		</Replace>
+
+		<!-- 击败 -->
+		<!-- AI被击败 -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_ENIGMA_GRACE_ANY" Language="zh_Hans_CN">
+			<Text>因此，您击败了这片土地的另一位领主。看着数百万人在你的统治下受苦，你会感到高兴吗？</Text>
+		</Replace>
+
+		<!-- 玩家被击败（在热座模式中会显示） -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_ENIGMA_GRACE_ANY" Language="zh_Hans_CN">
+			<Text>另一支舰队将沉没在我的海底。真可怜。</Text>
+		</Replace>
+		
+		<!-- 长船 -->
+		
+		<Replace Tag="LOC_UNIT_ENIGMA_LONGA_FADA_NAME" Language="zh_Hans_CN">
+			<Text>长船</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_ENIGMA_LONGA_FADA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>格蕾丝·奥马利作为领袖时的爱尔兰文艺复兴时期特色海军袭击者单位，取代私掠船。击杀敌方单位获得的 [ICON_Gold] 金币随其每次强化而增加。若长船附近有 [ICON_GreatAdmiral] 海军统帅，则其 [ICON_Damaged] 受损时无 [ICON_Strength] 战斗力减益。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_ENIGMA_LONGA_FADA_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>爱尔兰长船是十七世纪在爱尔兰西部使用的船只，由桨和帆推动。它类似于苏格兰长船或比尔林，都是由维京长船演变而来的。爱尔兰和苏格兰的版本都被通俗地称为“longa fada”（长船）。 爱尔兰长船通常是一艘八桨或十二桨的船只，用于海战和贸易。它以航行时的速度著称。</Text>
+		</Replace>
+		
+		<!-- 修道院 -->
+		
+		<Replace Tag="LOC_DISTRICT_ENIGMA_ABBEY_NAME" Language="zh_Hans_CN">
+			<Text>大修道院</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_ENIGMA_ABBEY_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>爱尔兰特色区域，取代圣地。[NEWLINE]音乐巨作可提供额外的 [ICON_Culture] 文化值，著作可提供额外的 [ICON_Faith] 信仰值。所在城市的纪念碑+1巨作槽位。可进行 [ICON_Ranged] 远程攻击与防御。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_DISTRICTS_PAGE_DISTRICT_ENIGMA_ABBEY_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>大修道院是由修道院院长或女修道院院长管理的宗教团体成员使用的建筑。大修道院的教堂和相关建筑的布局通常遵循由创始宗教秩序确定的既定计划。最终，本笃会修道院的建筑以统一的布局建造，并在必要时进行修改，以适应当地情况。大修道院教堂占据了一个四边形区域的中心，大约430平方英尺。在教堂的北面和大修道院正门的右侧，是贵宾的住所。大修道院的修士住在靠着教堂北墙建造的房子里。在大修道院的东部，有一组建筑在布局上代表着两个完整的微型修道院。</Text>
+		</Replace>
+		
+		<!-- 爱尔兰民兵 -->
+		
+		<Replace Tag="LOC_UNIT_ENIGMA_RAPPAREE_NAME" Language="zh_Hans_CN">
+			<Text>爱尔兰民兵</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_ENIGMA_RAPPAREE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>爱尔兰文艺复兴时期特色抗骑兵单位，取代枪刺与射击方阵。[ICON_Movement] 移动力+1。在友方领土内作战时，每回合结束可恢复 [ICON_Damaged] 生命值。击杀敌方单位可获得 [ICON_GreatWriter] 大作家与 [ICON_GreatMusician] 大音乐家点数。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_ENIGMA_RAPPAREE_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>“Rapparees”或“raparees”是指爱尔兰游击队战士或民兵，他们在1690年代的爱尔兰威廉姆派战争期间在雅各布派一方作战。随后，这个名字也成为了爱尔兰的土匪和强盗的代号——许多前游击队员在战争结束后转向犯罪。16世纪的爱尔兰非正规军被称为塞西尔奈乔耶，“Wood-kerne”，指的是被称为塞塔尔奈或“Kerne”的爱尔兰本土步兵。在1640年代和1650年代的爱尔兰邦联战争中，爱尔兰邦联一方的非正规战士被称为“托利党”，来自爱尔兰语“tóraidhe”，意为“追求者”。从1650年到1653年，在克伦威尔征服爱尔兰期间，托利党给占领英国议会的部队带来了很大的麻烦，他们袭击了脆弱的驻军、收税员和补给队，然后在面对英国军队的分遣队时逐渐消失。其他反游击战术包括出售被俘虏的契约劳工，并最终公布投降条款，允许托利党离开该国在法国和西班牙服兵役。最后一批有组织托利党于1653年投降，当时他们中的许多人离开该国为外国军队服务。“rapparees”的名字来源于一种武器——一条长约6英尺的长矛，从长达16英尺的标准军用长矛上剪下来——在爱尔兰被称为“rapaire”。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_ENIGMA_FADA_NAME" Language="zh_Hans_CN">
+			<Text>伍德-克恩</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_ENIGMA_FADA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>在友方领土内作战时，每回合结束可恢复 [ICON_Damaged] 生命值。击杀敌方单位可获得 [ICON_GreatWriter] 大作家与 [ICON_GreatMusician] 大音乐家点数。</Text>
+		</Replace>
+		
+		<!-- 城邦改动 -->
+		
+		<Replace Tag="LOC_TRAIT_CIV_ENIG_SAINTS_SCHOLARS_NOTIFICATION" Language="zh_Hans_CN">
+			<Text>一位修士撰得故事“{1_Desc}”，则+{2_Num} [ICON_GreatWriter] 大作家与 [ICON_GreatMusician] 大音乐家点数！</Text>
+		</Replace>
+		
+		<!-- 模组支持 -->
+		<!-- JFD 的 RwF模组 -->
+		
+		<Replace Tag="LOC_GOVERNMENT_JFD_CHIEFDOM_LEADER_TITLE_ENIGMA_IRELAND" Language="zh_Hans_CN">
+			<Text>部落之主</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_CHIEFDOM_LEADER_TITLE_ENIGMA_IRELAND_FEMININE" Language="zh_Hans_CN">
+			<Text>部落之主</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_HORDE_LEADER_TITLE_ENIGMA_IRELAND" Language="zh_Hans_CN">
+			<Text>山颠之王</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_HORDE_LEADER_TITLE_ENIGMA_IRELAND_FEMININE" Language="zh_Hans_CN">
+			<Text>山颠之王</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_POLIS_LEADER_TITLE_ENIGMA_IRELAND" Language="zh_Hans_CN">
+			<Text>首相</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_POLIS_LEADER_TITLE_ENIGMA_IRELAND_FEMININE" Language="zh_Hans_CN">
+			<Text>首相</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_AUTOCRACY_LEADER_TITLE_ENIGMA_IRELAND" Language="zh_Hans_CN">
+			<Text>国王</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_AUTOCRACY_LEADER_TITLE_ENIGMA_IRELAND_FEMININE" Language="zh_Hans_CN">
+			<Text>女王</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_CLASSICAL_DEMOCRACY_LEADER_TITLE_ENIGMA_IRELAND" Language="zh_Hans_CN">
+			<Text>首相</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_CLASSICAL_DEMOCRACY_LEADER_TITLE_ENIGMA_IRELAND_FEMININE" Language="zh_Hans_CN">
+			<Text>首相</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_OLIGARCHY_LEADER_TITLE_ENIGMA_IRELAND" Language="zh_Hans_CN">
+			<Text>领主</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_OLIGARCHY_LEADER_TITLE_ENIGMA_IRELAND_FEMININE" Language="zh_Hans_CN">
+			<Text>领主</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_MERCHANT_REPUBLIC_LEADER_TITLE_ENIGMA_IRELAND" Language="zh_Hans_CN">
+			<Text>首相</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_MERCHANT_REPUBLIC_LEADER_TITLE_ENIGMA_IRELAND_FEMININE" Language="zh_Hans_CN">
+			<Text>首相</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_MONARCHY_LEADER_TITLE_ENIGMA_IRELAND" Language="zh_Hans_CN">
+			<Text>至高之王</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_MONARCHY_LEADER_TITLE_ENIGMA_IRELAND_FEMININE" Language="zh_Hans_CN">
+			<Text>至高之王</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_NOBLE_REPUBLIC_LEADER_TITLE_ENIGMA_IRELAND" Language="zh_Hans_CN">
+			<Text>至高领主</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_NOBLE_REPUBLIC_LEADER_TITLE_ENIGMA_IRELAND_FEMININE" Language="zh_Hans_CN">
+			<Text>至高领主</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_PEOPLES_REPUBLIC_LEADER_TITLE_ENIGMA_IRELAND" Language="zh_Hans_CN">
+			<Text>主席</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_PEOPLES_REPUBLIC_LEADER_TITLE_ENIGMA_IRELAND_FEMININE" Language="zh_Hans_CN">
+			<Text>主席</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_LIBERAL_DEMOCRACY_LEADER_TITLE_ENIGMA_IRELAND" Language="zh_Hans_CN">
+			<Text>道士</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_LIBERAL_DEMOCRACY_LEADER_TITLE_ENIGMA_IRELAND_FEMININE" Language="zh_Hans_CN">
+			<Text>道士</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_MILITARY_GUARDIANSHIP_LEADER_TITLE_ENIGMA_IRELAND" Language="zh_Hans_CN">
+			<Text>总统</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_MILITARY_GUARDIANSHIP_LEADER_TITLE_ENIGMA_IRELAND_FEMININE" Language="zh_Hans_CN">
+			<Text>总统</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_EMPIRE_LEADER_TITLE_ENIGMA_IRELAND" Language="zh_Hans_CN">
+			<Text>高天之王</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_EMPIRE_LEADER_TITLE_ENIGMA_IRELAND_FEMININE" Language="zh_Hans_CN">
+			<Text>高天之王</Text>
+		</Replace>
+		<Replace Tag="LOC_POLITICIAN_ENIGMA_IRELAND_MALE_1" Language="zh_Hans_CN">
+			<Text>沃尔夫</Text>
+		</Replace>
+		<Replace Tag="LOC_POLITICIAN_ENIGMA_IRELAND_MALE_2" Language="zh_Hans_CN">
+			<Text>埃蒙</Text>
+		</Replace>
+		<Replace Tag="LOC_POLITICIAN_ENIGMA_IRELAND_MALE_3" Language="zh_Hans_CN">
+			<Text>马拉奇</Text>
+		</Replace>
+		<Replace Tag="LOC_POLITICIAN_ENIGMA_IRELAND_MALE_4" Language="zh_Hans_CN">
+			<Text>梅尔</Text>
+		</Replace>
+		<Replace Tag="LOC_POLITICIAN_ENIGMA_IRELAND_MALE_5" Language="zh_Hans_CN">
+			<Text>肖恩</Text>
+		</Replace>
+		<Replace Tag="LOC_POLITICIAN_ENIGMA_IRELAND_MALE_6" Language="zh_Hans_CN">
+			<Text>格里</Text>
+		</Replace>
+		<Replace Tag="LOC_POLITICIAN_ENIGMA_IRELAND_MALE_7" Language="zh_Hans_CN">
+			<Text>艾里什</Text>
+		</Replace>
+		<Replace Tag="LOC_POLITICIAN_ENIGMA_IRELAND_MALE_8" Language="zh_Hans_CN">
+			<Text>菲恩</Text>
+		</Replace>
+		<Replace Tag="LOC_POLITICIAN_ENIGMA_IRELAND_MALE_9" Language="zh_Hans_CN">
+			<Text>唐查德</Text>
+		</Replace>
+		<Replace Tag="LOC_POLITICIAN_ENIGMA_IRELAND_MALE_10" Language="zh_Hans_CN">
+			<Text>康恩</Text>
+		</Replace>
+		<Replace Tag="LOC_POLITICIAN_ENIGMA_IRELAND_MALE_11" Language="zh_Hans_CN">
+			<Text>欧因</Text>
+		</Replace>
+		<Replace Tag="LOC_POLITICIAN_ENIGMA_IRELAND_MALE_12" Language="zh_Hans_CN">
+			<Text>卡亥尔</Text>
+		</Replace>
+		<Replace Tag="LOC_POLITICIAN_ENIGMA_IRELAND_MALE_13" Language="zh_Hans_CN">
+			<Text>尼尔</Text>
+		</Replace>
+		<Replace Tag="LOC_POLITICIAN_ENIGMA_IRELAND_FEMALE_1" Language="zh_Hans_CN">
+			<Text>玛丽</Text>
+		</Replace>
+		<Replace Tag="LOC_POLITICIAN_ENIGMA_IRELAND_FEMALE_2" Language="zh_Hans_CN">
+			<Text>格雷丝</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

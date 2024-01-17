@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'Larger Map Sizes'CN_Add_FI -->
+<!-- Author: LouisOdin , Clear8Sky -->
+<!-- DateCreated: 2021/8/15 15:35:47 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Larger Map Sizes” 。该文件在 FrontEnd 与 InGame 时载入，无需任何 Criteria -->
+	<LocalizedText>
+		<Replace Tag="LOC_MAPSIZE_MASSIVE_NAME" Language="zh_Hans_CN">
+			<Text>宏大</Text>
+		</Replace>
+		<Replace Tag="LOC_MAPSIZE_MASSIVE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>比巨大地图还要大一些的地图。</Text>
+		</Replace>
+		<Replace Tag="LOC_MAPSIZE_GIGANTIC_NAME" Language="zh_Hans_CN">
+			<Text>极巨</Text>
+		</Replace>
+		<Replace Tag="LOC_MAPSIZE_GIGANTIC_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>供更多的玩家使用的极巨大地图。</Text>
+		</Replace>
+		<Replace Tag="LOC_MAPSIZE_COLOSSAL_NAME" Language="zh_Hans_CN">
+			<Text>究极</Text>
+		</Replace>
+		<Replace Tag="LOC_MAPSIZE_COLOSSAL_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>需要强大配置的电脑才能带动的究极大地图。</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

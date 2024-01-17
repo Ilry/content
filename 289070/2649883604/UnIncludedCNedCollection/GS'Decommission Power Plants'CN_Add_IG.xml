@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- GS'Decommission Power Plants'CN_Add_IG -->
+<!-- Author: Clear8Sky -->
+<!-- DateCreated: 2021/9/26 21:06:09 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Decommission Power Plants” 。该文件在 InGame 时载入，需 Criteria ：Active_Expansion_2 -->
+	<LocalizedText>
+		<Replace Tag="LOC_PROJECT_CONVERT_REACTOR_TO_DISMANTLED" Language="zh_Hans_CN">
+			<Text>关闭发电站</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CONVERT_REACTOR_TO_DISMANTLED_SHORT_NAME" Language="zh_Hans_CN">
+			<Text>关闭发电站</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CONVERT_REACTOR_TO_DISMANTLED_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>关闭与拆除所在城市当前的发电站，减少资源损耗。除非拥有备用的替代能源，否则将致使此城失去供电。</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CONVERT_REACTOR_TO_DISMANTLED_NUKE" Language="zh_Hans_CN">
+			<Text>关闭核电站</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CONVERT_REACTOR_TO_DISMANTLED_NUKE_SHORT_NAME" Language="zh_Hans_CN">
+			<Text>关闭核电站</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CONVERT_REACTOR_TO_DISMANTLED_NUKE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>关闭与拆除所在城市的核电站，减少资源损耗。除非拥有备用的替代能源，否则将致使此城失去供电。[NEWLINE][NEWLINE]进行该项目要比关闭其他非放射性发电站更耗费时间，因为安全关闭设施与适当处理核放射性物质要比直接推倒大楼复杂得多。</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

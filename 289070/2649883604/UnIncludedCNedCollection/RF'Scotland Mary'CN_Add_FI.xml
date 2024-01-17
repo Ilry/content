@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RF'Scotland Mary'CN_Add_FI -->
+<!-- Author: ChiYiuWong , Clear8Sky -->
+<!-- DateCreated: 2021/9/24 21:16:58 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Scotland: Mary” 。该文件在 FrontEnd 与 InGame 时载入，需 Criteria ： Active_Expansion_1 -->
+	<LocalizedText>
+
+		<!-- 模组 -->
+
+		<Replace Tag="LOC_MOD_JFD_SCOTLAND_MARY_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>------------------------------------[NEWLINE]领袖名称 -- 玛丽[NEWLINE][NEWLINE]领袖特性 - 白皇后[NEWLINE]幸福度为“高兴”状态的城市额外+5% [ICON_Faith] 信仰值产出；幸福度为“欣喜若狂”状态时则改为+10%。在首个和最后一个宗教建立时免费获得一名间谍，且在完成市政“归正会”后可使用 [ICON_Faith] 信仰值购买间谍。[NEWLINE][NEWLINE]领袖议程 - 苏格兰人的女王[NEWLINE]努力保持公民的幸福度且尽可能地获得 [ICON_Faith] 信仰值，并尊重这样做的文明。相信幸福度高但 [ICON_Faith] 信仰值不高的文明是被误导的。</Text>
+		</Replace>
+
+		<!-- 领袖 -->
+
+		<Replace Tag="LOC_LEADER_JFD_MARY_NAME" Language="zh_Hans_CN">
+			<Text>玛丽</Text>
+		</Replace>
+
+		<!-- 议程 -->
+
+		<Replace Tag="LOC_AGENDA_JFD_QUEEN_SCOTS_NAME" Language="zh_Hans_CN">
+			<Text>苏格兰人的女王</Text>
+		</Replace>
+		<Replace Tag="LOC_AGENDA_JFD_QUEEN_SCOTS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>努力保持公民的幸福度且尽可能地获得 [ICON_Faith] 信仰值，并尊重这样做的文明。相信幸福度高但 [ICON_Faith] 信仰值不高的文明是被误导的。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_JFD_MARY_REASON_LEADS_FAITH_AND_LEADS_HAPPINESS" Language="zh_Hans_CN">
+			<Text>（您的信仰值很高且你的公民很幸福）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_AGENDA_JFD_QUEEN_SCOTS_LEADS_FAITH_AND_LEADS_HAPPINESS" Language="zh_Hans_CN">
+			<Text>玛丽对你关心人民的福祉的行为表示尊重。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_LEADER_JFD_MARY_REASON_LEADS_HAPPINESS_AND_LAGS_FAITH" Language="zh_Hans_CN">
+			<Text>（您的公民很幸福，但你的信仰值很低）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_AGENDA_JFD_QUEEN_SCOTS_LEADS_HAPPINESS_AND_LAGS_FAITH" Language="zh_Hans_CN">
+			<Text>玛丽认为您的人民缺乏精神福祉。</Text>
+		</Replace>
+
+		<!-- 载入 -->
+
+		<Replace Tag="LOC_LOADING_INFO_LEADER_JFD_MARY" Language="zh_Hans_CN">
+			<Text>通过试炼与背叛、阴谋与叛国，你对自己的信仰坚定不移，苏格兰人的玛丽女王。你忠诚的臣民正焦躁不安地等待。通过耳语或笔传递你的话语，他们将在信仰和沉默中执行你的意愿。现在就使用它们吧，让自己获得自由和应有的宝座。</Text>
+		</Replace>
+
+		<!-- 特性 -->
+
+		<Replace Tag="LOC_TRAIT_LEADER_JFD_WHITE_QUEEN_NAME" Language="zh_Hans_CN">
+			<Text>白皇后</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_JFD_WHITE_QUEEN_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>幸福度为“高兴”状态的城市额外+5% [ICON_Faith] 信仰值产出；幸福度为“欣喜若狂”状态时则改为+10%。在首个和最后一个宗教建立时免费获得一名间谍，且在完成市政“归正会”后可使用 [ICON_Faith] 信仰值购买间谍。</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_JFD_WHITE_QUEEN_SPY_NOTIFICATION" Language="zh_Hans_CN">
+			<Text>敢于试探我们的信仰，却逃不过我们的目光。[COLOR_GREEN]获得一名间谍。[ENDCOLOR]</Text>
+		</Replace>
+
+		<!-- 百科 -->
+
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_MARY_TITLE" Language="zh_Hans_CN">
+			<Text>玛丽</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_MARY_SUBTITLE" Language="zh_Hans_CN">
+			<Text>苏格兰女王</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_MARY_QUOTE" Language="zh_Hans_CN">
+			<Text>看着你的良心，记住整个世界的剧院比英格兰王国还要广阔。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_MARY_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>玛丽于1542年12月出生在林利斯戈宫，是苏格兰的詹姆斯五世和他的法国妻子玛丽·德·吉斯的独生女。在她六天大的时候，她的父亲去世了，她成为了女王。她的母亲则代替她担任摄政王。[NEWLINE][NEWLINE]玛丽在年仅五岁时就与亨利八世的儿子爱德华六世订婚。但她的天主教监护人母亲反对这场婚姻，将年轻的玛丽带到斯特灵城堡，违反了协议。亨利下令对苏格兰进行一系列野蛮但未成功的突袭，被称为“粗暴求婚”。[NEWLINE][NEWLINE]苏格兰人意识到与法国结盟的好处，将年轻的女王许配给弗朗西斯——法国王位的继承人，并将玛丽送到亨利二世的宫廷抚养。1558年4月，这对年轻夫妇正式结婚，弗朗西斯于1559年成为国王，短暂地统一了法国和苏格兰。然而，弗朗西斯在第二年死于耳部感染。[NEWLINE][NEWLINE]作为寡妇，年仅18岁的玛丽回到了苏格兰，在那里她面临着许多挑战。作为一个在主流宗教为新教国家的天主教徒，她的一些臣民对她持怀疑态度。玛丽接受了新教领导的政府，最初以温和的方式统治。[NEWLINE][NEWLINE]1565年，玛丽嫁给了她的表弟达恩利勋爵。他们的关系很快破裂，随着被宠坏和脾气暴躁的达恩利与玛丽相处的时间越来越少，她与她的顾问博思韦尔伯爵越来越亲近。[NEWLINE][NEWLINE]1566年3月，达恩利和一群新教贵族谋杀了玛丽的意大利秘书大卫·里齐奥。他们声称里齐奥与玛丽有染，并以此作为在法庭上获得优势的筹码。达恩利和贵族们在与里齐奥和包括博思韦尔在内的五个亲密朋友共进晚餐时突然袭击了已经怀孕的玛丽。这伙人将里齐奥从桌子上拖到隔壁房间，刺了他56刀。[NEWLINE][NEWLINE]在他们的儿子詹姆士一世于1566年6月出生后，达恩利和玛丽的关系继续恶化。1567年2月，达恩利住在爱丁堡郊外的房子发生了爆炸。但他的尸体是在外面被发现的，这引发了人们的猜测，或许他逃离了爆炸但后来被谋杀了。[NEWLINE][NEWLINE]仅仅等了三个月就嫁给了博思韦尔伯爵——达恩利谋杀案的主要嫌疑人——玛丽遭到了苏格兰贵族的反对。博思韦尔被流放，玛丽于1567年7月被迫退位。她被关押在金罗斯郡的洛赫利文城堡，她年幼的儿子詹姆士一世被封为国王。[NEWLINE][NEWLINE]玛丽于1568年逃离洛赫利文，因为她的军队在格拉斯哥附近的兰赛德战役中被击败。玛丽逃往英格兰寻求她表妹伊丽莎白一世的庇护。[NEWLINE][NEWLINE]玛丽曾希望伊丽莎白女王会支持她的事业，但她的到来使她的表妹陷入困境，天主教的玛丽很可能会威胁到伊丽莎白的英格兰王位，因此伊丽莎白将她囚禁并监视。[NEWLINE][NEWLINE]在接下来的19年里，玛丽无数次成为协助天主教暗杀伊丽莎白的阴谋的焦点。由于玛丽没有直接参与这些阴谋，伊丽莎白不愿对她采取行动。[NEWLINE][NEWLINE]然而在1586年，玛丽与正在密谋推翻伊丽莎白的安东尼·巴宾顿通信。这注定是要出事的。这些信件被伊丽莎白的间谍大师弗朗西斯·沃尔辛厄姆截获。他说服伊丽莎白，在她活着的时候，玛丽永远是一个危险。玛丽因叛国罪受审并于1586年10月被判处死刑。[NEWLINE][NEWLINE]伊丽莎白在签署死刑令上犹豫不决，但最终还是这样做了，玛丽于1587年2月8日在佛斯里亨城堡被处决，享年44岁。[NEWLINE][NEWLINE]玛丽的儿子詹姆士一世于1603年继任伊丽莎白1612年，他从彼得镇大教堂中挖掘出母亲的遗体，迁葬到西敏寺。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_MARY_CHAPTER_CAPSULE_BODY" Language="zh_Hans_CN">
+			<Text>间谍会不停地从玛丽的苏格兰涌出，尤其是当他们的邻居让他们保持自由时。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_MARY_CHAPTER_DETAILED_BODY" Language="zh_Hans_CN">
+			<Text>苏格兰在科学和工程领域是一个强大的文明，希望让他们的人民尽可能快乐以推动他们的进步，但玛丽也将推动他们的信仰和间谍活动。仔细规划苏格兰的城市，这样玛丽就可以尝试在每个市中心附近（如果可能的话也靠近娱乐中心）建立一个高尔夫球场。玛丽是一位伟大的领袖，因为她会经常参加战争来恢复邻近文明失去的领土——为了提升 [ICON_Movement] 移动力和 [ICON_Production] 生产力，参加这些战斗是值得的。正如她进入20世纪并开始推动苏格兰走向胜利一样，高地军团可以让苏格兰获得更多收益，甚至可能是在太空竞赛中。</Text>
+		</Replace>
+
+		<!-- 外交 -->
+
+		<!-- 初次见面 -->
+		<!-- 开场白 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_JFD_MARY_ANY" Language="zh_Hans_CN">
+			<Text>我现在以玛丽的身份向你致意，也就是苏格兰的合法女王。来试试把我从我的宝座上带走，我会向你展示我的凶猛。</Text>
+		</Replace>
+
+		<!-- 到附近城市的邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_JFD_MARY_ANY" Language="zh_Hans_CN">
+			<Text>来吧，我想知道你是不是我可以信任的人。我在附近有一个城市，我们可以在那里进行秘密交谈。</Text>
+		</Replace>
+
+		<!-- AI接受玩家邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NEAR_INITIATOR_POSITIVE_LEADER_JFD_MARY_ANY" Language="zh_Hans_CN">
+			<Text>我会和你说话，但这并不意味着我信任你。</Text>
+		</Replace>
+
+		<!-- AI邀请玩家交换首都信息 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_JFD_MARY_ANY" Language="zh_Hans_CN">
+			<Text>你有什么秘密瞒着我吗？如果没有，那么我们可以毫无畏惧地分享有关我们首都的信息。</Text>
+		</Replace>
+
+		<!-- 问候 -->
+
+		<Replace Tag="LOC_DIPLO_GREETING_LEADER_JFD_MARY_ANY" Language="zh_Hans_CN">
+			<Text>我想知道你为什么来。</Text>
+		</Replace>
+
+		<!-- 代表团 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_HUMAN_LEADER_JFD_MARY_ANY" Language="zh_Hans_CN">
+			<Text>我接受。我会密切关注贵国的代表团。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_HUMAN_LEADER_JFD_MARY_ANY" Language="zh_Hans_CN">
+			<Text>我不会让蛇进入我的王室。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DELEGATION_FROM_AI_LEADER_JFD_MARY_ANY" Language="zh_Hans_CN">
+			<Text>你没有什么可瞒我的吗？那你就不用害怕我派代表团给你了。</Text>
+		</Replace>
+
+		<!-- 开放边境 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_HUMAN_LEADER_JFD_MARY_ANY" Language="zh_Hans_CN">
+			<Text>你得到了我的感谢。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_HUMAN_LEADER_JFD_MARY_ANY" Language="zh_Hans_CN">
+			<Text>你又想给我的领土带来什么阴谋？不，这根本不可接受。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_OPEN_BORDERS_FROM_AI_LEADER_JFD_MARY_ANY" Language="zh_Hans_CN">
+			<Text>如此严密地保护边界对我们有什么好处吗？或许我们应该互相打开它们。</Text>
+		</Replace>
+
+		<!-- 宣布友谊 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_HUMAN_LEADER_JFD_MARY_ANY" Language="zh_Hans_CN">
+			<Text>朋友来之不易。我希望我不会后悔。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_HUMAN_LEADER_JFD_MARY_ANY" Language="zh_Hans_CN">
+			<Text>我看穿了你的谎言。答案是不。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_JFD_MARY_ANY" Language="zh_Hans_CN">
+			<Text>我觉得我可以信任你。我希望你也有同样的感觉。公开宣布友谊将使我们双方受益。</Text>
+		</Replace>
+
+		<!-- 玩家接受后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_MARY_ANY" Language="zh_Hans_CN">
+			<Text>我为这个世界上能信任的人寥寥无几而感到高兴。</Text>
+		</Replace>
+
+		<!-- 玩家拒绝后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_MARY_ANY" Language="zh_Hans_CN">
+			<Text>也许你不那么值得信任。</Text>
+		</Replace>
+
+		<!-- 结盟 -->
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_ALLIANCE_FROM_AI_LEADER_JFD_MARY_ANY" Language="zh_Hans_CN">
+			<Text>我应得的位置受到潜伏在阴影中的敌人的威胁。我希望好朋友在我需要的时候成为更伟大的盟友。</Text>
+		</Replace>
+
+		<!-- 赞成与警告 -->
+		<!-- AI赞成 -->
+
+		<Replace Tag="LOC_DIPLO_KUDO_EXIT_LEADER_JFD_MARY_ANY" Language="zh_Hans_CN">
+			<Text>我总是很高兴看到一张张充满生机的脸。</Text>
+		</Replace>
+
+		<!-- AI警告 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_EXIT_LEADER_JFD_MARY_ANY" Language="zh_Hans_CN">
+			<Text>你的精神匮乏，让你脸色苍白，显得病怏怏的。</Text>
+		</Replace>
+
+		<!-- AI警告玩家离开边境 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_LEADER_JFD_MARY_ANY" Language="zh_Hans_CN">
+			<Text>我不信任你是对的，因为现在你在我家门口驻军。</Text>
+		</Replace>
+
+		<!-- 贸易 -->
+		<!-- AI接受交易 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_JFD_MARY_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_MARY_ANY}</Text>
+		</Replace>
+
+		<!-- AI拒绝交易 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_MAKE_DEAL_FROM_AI_LEADER_JFD_MARY_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_MARY_ANY}</Text>
+		</Replace>
+
+		<!-- 谴责 -->
+		<!-- 受到谴责回应 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_JFD_MARY_ANY" Language="zh_Hans_CN">
+			<Text>我居然傻到认为你可以信任。</Text>
+		</Replace>
+
+		<!-- AI谴责玩家 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_JFD_MARY_ANY" Language="zh_Hans_CN">
+			<Text>我已经看穿了你的谎言。你不值得信任。[NEWLINE]（谴责你）</Text>
+		</Replace>
+
+		<!-- 谴责理由 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_REASON_FROM_AI_LEADER_ANY_REASON_JFD_QUEEN_SCOTS_LEADS_HAPPINESS_AND_LAGS_FAITH" Language="zh_Hans_CN">
+			<Text>（您的公民很幸福，但你的信仰值很低）</Text>
+		</Replace>
+
+		<!-- 宣战 -->
+		<!-- 受到宣战后回应 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_JFD_MARY_ANY" Language="zh_Hans_CN">
+			<Text>你错了。你很快就会看到我到处都有线人。</Text>
+		</Replace>
+
+		<!-- AI宣战 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_JFD_MARY_ANY" Language="zh_Hans_CN">
+			<Text>我不能再忍受这种情况了。是时候发动战争了。</Text>
+		</Replace>
+
+		<!-- 求和 -->
+		<!-- AI接受求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_ACCEPT_DEAL_LEADER_JFD_MARY_ANY" Language="zh_Hans_CN">
+			<Text>我会接受任何和平的机会。</Text>
+		</Replace>
+
+		<!-- AI拒绝求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_REFUSE_DEAL_LEADER_JFD_MARY_ANY" Language="zh_Hans_CN">
+			<Text>和平，然后等到你背刺我的那一天？我觉得不行。</Text>
+		</Replace>
+
+		<!-- AI求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_FROM_AI_LEADER_JFD_MARY_ANY" Language="zh_Hans_CN">
+			<Text>这场战争被误导了。我请你考虑下和平。</Text>
+		</Replace>
+
+		<!-- 击败 -->
+		<!-- AI被击败 -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_JFD_MARY_ANY" Language="zh_Hans_CN">
+			<Text>你邪恶的谎言将最终导致你的毁灭。我的间谍会从内部让你崩溃。</Text>
+		</Replace>
+
+		<!-- 玩家被击败（在热座模式中会显示） -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_JFD_MARY_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_JFD_MARY_ANY}</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

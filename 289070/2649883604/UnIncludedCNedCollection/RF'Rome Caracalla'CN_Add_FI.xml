@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RF'Rome Caracalla'CN_Add_FI -->
+<!-- Author: ChiYiuWong , Clear8Sky -->
+<!-- DateCreated: 2021/9/25 10:16:42 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Rome: Caracalla” 。该文件在 FrontEnd 与 InGame 时载入，需 Criteria ： Active_Expansion_1 -->
+	<LocalizedText>
+
+		<!-- 模组 -->
+
+		<Replace Tag="LOC_MOD_JFD_ROME_CARACALLA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>------------------------------------[NEWLINE]领袖名称 -- 卡拉卡拉[NEWLINE][NEWLINE]领袖特性 - 玛蒂亚·维克特里克斯[NEWLINE]购买近战单位可获得忠诚度，且在拥有浴场的城市中购买所消耗的 [ICON_Gold] 金币或 [ICON_Faith] 信仰值减少20%。拥有驻军的城市+1 [ICON_Amenities] 宜居度。[NEWLINE][NEWLINE]领袖议程 - 兵皇[NEWLINE]试图保持人民的满意度和维持一支强大的常备军队，并尊重这样做的文明。他认为做不到这两点的文明都注定失败。</Text>
+		</Replace>
+		
+		<!-- 领袖 -->
+		
+		<Replace Tag="LOC_LEADER_JFD_CARACALLA_NAME" Language="zh_Hans_CN">
+			<Text>卡拉卡拉</Text>
+		</Replace>
+
+		<!-- 议程 -->
+
+		<Replace Tag="LOC_AGENDA_JFD_SOLDIER_EMPEROR_NAME" Language="zh_Hans_CN">
+			<Text>兵皇</Text>
+		</Replace>
+		<Replace Tag="LOC_AGENDA_JFD_SOLDIER_EMPEROR_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>试图保持人民的满意度和维持一支强大的常备军队，并尊重这样做的文明。他认为做不到这两点的文明都注定失败。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_JFD_CARACALLA_REASON_LAGS_HAPPINESS_AND_LEADS_STANDING_ARMY" Language="zh_Hans_CN">
+			<Text>（您的公民很满足，且您拥有一支强大的常备军）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_AGENDA_JFD_SOLDIER_EMPEROR_LAGS_HAPPINESS_AND_LEADS_STANDING_ARMY" Language="zh_Hans_CN">
+			<Text>卡拉卡拉尊重你。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_LEADER_JFD_CARACALLA_REASON_LAGS_HAPPINESS" Language="zh_Hans_CN">
+			<Text>（您的公民感到不满）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_AGENDA_JFD_SOLDIER_EMPEROR_LAGS_HAPPINESS" Language="zh_Hans_CN">
+			<Text>卡拉卡拉视你为暴君。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_LEADER_JFD_CARACALLA_REASON_LAGS_STANDING_ARMY" Language="zh_Hans_CN">
+			<Text>（您的常备军很弱）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_AGENDA_JFD_SOLDIER_EMPEROR_LAGS_STANDING_ARMY" Language="zh_Hans_CN">
+			<Text>卡拉卡拉嘲笑你们军队的弱小。</Text>
+		</Replace>
+
+		<!-- 载入 -->
+
+		<Replace Tag="LOC_LOADING_INFO_LEADER_JFD_CARACALLA" Language="zh_Hans_CN">
+			<Text>一个由士兵和公民建立的帝国由您指挥，强大的卡拉卡拉皇帝——而不是由元老建立的帝国。听从他们的需求——让您的士兵富有，让您的公民快乐，罗马帝国将永远存在。这是您纠正将您的名字定义为暴政的错误的好机会。</Text>
+		</Replace>
+
+		<!-- 特性 -->
+
+		<Replace Tag="LOC_TRAIT_LEADER_JFD_MARTIA_VICTRIX_NAME" Language="zh_Hans_CN">
+			<Text>玛蒂亚·维克特里克斯</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_JFD_MARTIA_VICTRIX_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>购买近战单位可获得忠诚度，且在拥有浴场的城市中购买所消耗的 [ICON_Gold] 金币或 [ICON_Faith] 信仰值减少20%。拥有驻军的城市+1 [ICON_Amenities] 宜居度。</Text>
+		</Replace>
+
+		<!-- 百科 -->
+
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_CARACALLA_TITLE" Language="zh_Hans_CN">
+			<Text>卡拉卡拉</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_CARACALLA_SUBTITLE" Language="zh_Hans_CN">
+			<Text>罗马皇帝</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_CARACALLA_QUOTE" Language="zh_Hans_CN">
+			<Text>元老院只能在他的话面前颤抖。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_CARACALLA_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>卡拉卡拉，也拼写为卡拉卡鲁斯，全名马尔库斯·奥列里乌斯·安托尼努斯，原名（直到公元196年）塞普蒂米乌斯·巴西亚努斯，也被称为马可·奥勒留·安东尼·凯撒（196-198年）。公元188年4月4日出生于鲁格杜努姆[高卢]——217年4月8日在美索不达米亚的卡雷附近去世，是罗马皇帝，从198年到211年与他的父亲塞普蒂米乌斯·塞弗勒斯共同统治，211年父亲去世后暗杀了弟弟盖塔（原本他们俩被宣布为共治皇帝）后进行独裁统治。他的主要成就是他在罗马颁布的212年敕令，赋予帝国所有自由居民罗马公民身份。卡拉卡拉的统治导致了帝国的衰败，经常被认为是罗马历史上最嗜血的暴君之一。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_CARACALLA_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>卡拉卡拉是皇帝卢修斯·塞普蒂米乌斯·西弗勒斯和叙利亚人朱莉娅·多姆纳的长子。他最初被命名为巴西亚努斯，以他的外祖父的名字命名，他曾是叙利亚太阳神埃拉加巴卢斯的大祭司。他取名为马库斯·奥勒留·安东尼并加上凯撒的头衔，因为他的父亲想将他的家庭与著名的安东尼王朝联系起来。198年，他被授予奥古斯都的称号，这在名义上意味着他与父亲的地位相同。卡拉卡拉这个绰号是基于他据称设计了一件同名的新斗篷。他的另一个绰号塔劳塔斯是一个丑陋、傲慢和嗜血的角斗士，人们认为他与他相似。[NEWLINE][NEWLINE]关于他的生平和性格的古老资料记载并不可靠。例如，其中一位回忆说，他小时候和蔼可亲、慷慨大方、敏感，后来变得难以忍受；但同一时代的史学家在另一种情况下报告说，他生性凶猛。现代记载强调卡拉卡拉的叙利亚遗产是他性格中最重要的元素之一，尽管在这里也必须谨慎行事，因为东方血统与高度的罗马化并不矛盾。朱莉娅本人非常熟悉希腊罗马文化，并聘请了优秀的教师为她的儿子提供最好的教育。据说，他研究了希腊演说家和悲剧家，能够引用希腊剧作家欧里庇得斯的长篇文章，但也强烈鄙视教育和受过教育的人。这可能是他对军事生活的热爱的结果，可能是在他陪同父亲参加多次军事远征时发展起来的。[NEWLINE][NEWLINE]14岁时，他与有影响力的人——雄心勃勃的帝国卫队指挥官富尔维乌斯·普劳蒂亚努斯的女儿富尔维亚·普拉蒂拉结婚。据说他憎恨普劳蒂亚努斯，并以阴谋反对帝国王朝的罪名处决了他。他还将自己的妻子流放到一个岛上，后来杀了她。[NEWLINE][NEWLINE]一个重要的问题是卡拉卡拉和他的弟弟盖塔之间日益激烈的竞争，当父亲在英国的一次旅行中去世（211年）时，这种竞争加剧了，而卡拉卡拉在他23岁生日时，从第二位到了第一位。据说，他们母亲为促成和解所做的所有尝试都徒劳无功，卡拉卡拉最终在朱莉娅本人的怀抱中杀死了盖塔。毫无疑问，卡拉卡拉的行为是野蛮残暴，但看不到一个既合乎道德又切实可行的解决方案。[NEWLINE][NEWLINE]接下来卡拉卡拉下令处死盖塔的许多朋友和同事。可能是为了重新获得好感，他对流亡者实行大赦，这一举动在古代资料中被谴责为虚伪，这也体现在了卡拉卡拉最著名的成就，即所谓的《安东尼努斯·西维塔特宪法》，因为它是一种专门为征收更多税收而设计的手段。[NEWLINE][NEWLINE]他在212/213年对德意志部落远征，当时他无情地屠杀了一支德国盟军部队，并在216-217年对帕提亚人进行了远征，古代资料将其归因于他对军事荣耀的热爱。就在帕提亚战役之前，据说他在亚历山大港进行了一场“大屠杀”，可能是为了应对那里的骚乱。[NEWLINE][NEWLINE]据说卡拉卡拉不可预测的行为促使马克里努斯，亚历山大港的指挥官皇家卫队和他的王位继承人密谋反对他：卡拉卡拉在第二次反对帕提亚人的战役开始时被暗杀。[NEWLINE][NEWLINE]形成他性格和行为的重要因素是他对亚历山大大帝的认同。罗马皇帝对伟大的马其顿人的钦佩并不罕见，但就卡拉卡拉而言，他对亚历山大的痴迷，被证明是可笑和怪诞的。他采用的服装、武器、行为、旅行路线、肖像画，甚至可能是据称的征服帕提亚帝国的计划，所有这些都是模仿亚历山大。他改姓马格努斯大帝，组织了马其顿方阵和大象师，并在硬币上将自己描绘成神一样的人。[NEWLINE][NEWLINE]另一个重要特征是卡拉卡拉根深蒂固的迷信；他遵循魔法实践并仔细遵守所有仪式义务。他对犹太教和基督教信仰持宽容态度，但他最喜欢的神是埃及神塞拉皮斯，他假装是他的儿子或兄弟。他采用了埃及将统治者视为上帝的做法，是唯一一位在雕像中被描绘成法老的罗马皇帝。[NEWLINE][NEWLINE]在他的众多肖像中，愤怒和残忍的表情显而易见，并且一些记载说，他故意强化这种印象，也许是因为散布恐惧或恐怖可以满足他的虚荣心。也有人说，他体型虽小，但身体素质却很出色，他分担了官兵的辛劳，但也因放荡的生活而削弱了他的阳刚之气，甚至无法承受胸甲的重量。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_CARACALLA_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>对他的精神状态的判断也存在类似的不一致。据说他很疯狂，但也头脑敏锐，机智。他对健康之神的偏爱，正如无数奉献铭文所记录的那样，可能支持其患有精神疾病的理论。[NEWLINE][NEWLINE]如果卡拉卡拉是一个疯子或暴君，这一事实对他的帝国管理没有重大影响，这可能会或可能不会受到朱莉娅·多姆纳和他周围的伟大法学家的影响。他受到他士兵的崇敬，他们在他死后强迫元老院将他神化，而且没有迹象表明他在一般民众中不受欢迎。无论如何，当时的罗马帝国依然强大到可以承受一个绝对不具备杰出皇帝素质的统治者。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_CARACALLA_CHAPTER_CAPSULE_BODY" Language="zh_Hans_CN">
+			<Text>罗马是值得您信任的文明，它可以一直发展，最终成为游戏里最强大的帝国。为了维持下去，卡拉卡拉将确保他的公民和士兵的满意度。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_CARACALLA_CHAPTER_DETAILED_BODY" Language="zh_Hans_CN">
+			<Text>罗马想要快速占领城市，然后迅速沿着道路进行工程建设。在适当地方进行工程建设后，可在他们的城市添加浴场，城市会快速增长（并通过卡拉卡拉在城市驻军上的特色能力维持公民的满意度）。“条条大路通罗马”的能力让他们从城市网络中获得了稳定收益（国际路线也适用，并非所有 [ICON_TradeRoute] 贸易路线都得是国内贸易）。考虑到这些扩张会导致冲突，所以军团出现了。罗马军团建造堡垒的能力会比其他文明提前两个时代出现。对其进行有效使用是维持他广阔和强大帝国的关键。</Text>
+		</Replace>
+
+		<!-- 外交 -->
+
+		<!-- 初次见面 -->
+		<!-- 开场白 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_JFD_CARACALLA_ANY" Language="zh_Hans_CN">
+			<Text>你好。我是强大的卡拉卡拉，罗马及其人民的皇帝。有事就说吧，我不喜欢浪费时间。</Text>
+		</Replace>
+
+		<!-- 到附近城市的邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_JFD_CARACALLA_ANY" Language="zh_Hans_CN">
+			<Text>我附近有座城市。跟我一起去吧，否则我会不高兴。</Text>
+		</Replace>
+
+		<!-- AI接受玩家邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NEAR_INITIATOR_POSITIVE_LEADER_JFD_CARACALLA_ANY" Language="zh_Hans_CN">
+			<Text>我做必须做的事。</Text>
+		</Replace>
+
+		<!-- AI邀请玩家交换首都信息 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_JFD_CARACALLA_ANY" Language="zh_Hans_CN">
+			<Text>我建议我们交换关于首都的信息。让我们看看你的首都如何与罗马相抗衡。</Text>
+		</Replace>
+
+		<!-- 问候 -->
+
+		<Replace Tag="LOC_DIPLO_GREETING_LEADER_JFD_CARACALLA_ANY" Language="zh_Hans_CN">
+			<Text>你好。</Text>
+		</Replace>
+
+		<!-- 代表团 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_HUMAN_LEADER_JFD_CARACALLA_ANY" Language="zh_Hans_CN">
+			<Text>那好吧。但是让他们不要浪费我的时间，否则他们可能回不去。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_HUMAN_LEADER_JFD_CARACALLA_ANY" Language="zh_Hans_CN">
+			<Text>我对你的代表不感兴趣。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DELEGATION_FROM_AI_LEADER_JFD_CARACALLA_ANY" Language="zh_Hans_CN">
+			<Text>强大的罗马派出了一个代表团，带着她最优秀的军团随行人员前往你的首都。愿它提醒你，如果我们之间的外交失败，你将会流血。</Text>
+		</Replace>
+
+		<!-- 开放边境 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_HUMAN_LEADER_JFD_CARACALLA_ANY" Language="zh_Hans_CN">
+			<Text>同意。愿这样的安排能让我更容易地调动我的部队。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_HUMAN_LEADER_JFD_CARACALLA_ANY" Language="zh_Hans_CN">
+			<Text>如果你想享受罗马的劳动成果，那么你必须先屈膝跪下。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_OPEN_BORDERS_FROM_AI_LEADER_JFD_CARACALLA_ANY" Language="zh_Hans_CN">
+			<Text>我们彼此关闭的边界阻碍了我部队的训练。我来这里是为了讨论有关开放它的事宜。</Text>
+		</Replace>
+
+		<!-- 宣布友谊 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_HUMAN_LEADER_JFD_CARACALLA_ANY" Language="zh_Hans_CN">
+			<Text>明智之举。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_HUMAN_LEADER_JFD_CARACALLA_ANY" Language="zh_Hans_CN">
+			<Text>你的愚蠢不会让你逍遥法外。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_JFD_CARACALLA_ANY" Language="zh_Hans_CN">
+			<Text>我必须与你达成公开的友谊协定。同意，或被赶出我的视线之外。</Text>
+		</Replace>
+
+		<!-- 玩家接受后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_CARACALLA_ANY" Language="zh_Hans_CN">
+			<Text>好的。</Text>
+		</Replace>
+
+		<!-- 玩家拒绝后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_CARACALLA_ANY" Language="zh_Hans_CN">
+			<Text>这只会对你不利。</Text>
+		</Replace>
+
+		<!-- 结盟 -->
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_ALLIANCE_FROM_AI_LEADER_JFD_CARACALLA_ANY" Language="zh_Hans_CN">
+			<Text>罗马期待着下一次伟大的征服。如果你不想成为被征服者，我建议你加入她的同盟。</Text>
+		</Replace>
+
+		<!-- 赞成与警告 -->
+		<!-- AI赞成 -->
+
+		<Replace Tag="LOC_DIPLO_KUDO_EXIT_LEADER_JFD_CARACALLA_ANY" Language="zh_Hans_CN">
+			<Text>你对待你士兵的方法是明智的。</Text>
+		</Replace>
+
+		<!-- AI警告 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_EXIT_LEADER_JFD_CARACALLA_ANY" Language="zh_Hans_CN">
+			<Text>你的头伸到了云层之上，以至于你没有注意到你自己的士兵在你的脚后跟猛砍。</Text>
+		</Replace>
+
+		<!-- AI警告玩家离开边境 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_LEADER_JFD_CARACALLA_ANY" Language="zh_Hans_CN">
+			<Text>如果你不想被羞辱，我建议你把你的部队转到别处。</Text>
+		</Replace>
+
+		<!-- 贸易 -->
+		<!-- AI接受交易 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_JFD_CARACALLA_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_CARACALLA_ANY}</Text>
+		</Replace>
+
+		<!-- AI拒绝交易 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_MAKE_DEAL_FROM_AI_LEADER_JFD_CARACALLA_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_CARACALLA_ANY}</Text>
+		</Replace>
+
+		<!-- 谴责 -->
+		<!-- 受到谴责回应 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_JFD_CARACALLA_ANY" Language="zh_Hans_CN">
+			<Text>我不会接受你的背叛。</Text>
+		</Replace>
+
+		<!-- AI谴责玩家 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_JFD_CARACALLA_ANY" Language="zh_Hans_CN">
+			<Text>你对我的阴谋已经持续很长时间了。[NEWLINE]（谴责你）</Text>
+		</Replace>
+
+		<!-- 谴责理由 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_REASON_FROM_AI_LEADER_ANY_REASON_JFD_SOLDIER_EMPEROR_LAGS_STANDING_ARMY" Language="zh_Hans_CN">
+			<Text>(您的公民感到不满）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DENOUNCE_REASON_FROM_AI_LEADER_ANY_REASON_JFD_SOLDIER_EMPEROR_LAGS_HAPPINESS" Language="zh_Hans_CN">
+			<Text>（您的常备军很弱）</Text>
+		</Replace>
+
+		<!-- 宣战 -->
+		<!-- 受到宣战后回应 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_JFD_CARACALLA_ANY" Language="zh_Hans_CN">
+			<Text>那就来吧。我会告诉你真正的士兵是什么样子的。</Text>
+		</Replace>
+
+		<!-- AI宣战 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_JFD_CARACALLA_ANY" Language="zh_Hans_CN">
+			<Text>我厌倦了谈话。是时候看看谁拥有更好的士兵了。</Text>
+		</Replace>
+
+		<!-- 求和 -->
+		<!-- AI接受求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_ACCEPT_DEAL_LEADER_JFD_CARACALLA_ANY" Language="zh_Hans_CN">
+			<Text>可怜。但这次我会同意的。</Text>
+		</Replace>
+
+		<!-- AI拒绝求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_REFUSE_DEAL_LEADER_JFD_CARACALLA_ANY" Language="zh_Hans_CN">
+			<Text>可怜。我会亲眼目睹你的死亡。</Text>
+		</Replace>
+
+		<!-- AI求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_FROM_AI_LEADER_JFD_CARACALLA_ANY" Language="zh_Hans_CN">
+			<Text>这场战争无处可去。是时候结束它了。</Text>
+		</Replace>
+
+		<!-- 击败 -->
+		<!-- AI被击败 -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_JFD_CARACALLA_ANY" Language="zh_Hans_CN">
+			<Text>那就拿起我的剑吧。还是你太懦弱而不敢亲自动手？</Text>
+		</Replace>
+
+		<!-- 玩家被击败（在热座模式中会显示） -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_JFD_CARACALLA_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_JFD_CARACALLA_ANY}</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

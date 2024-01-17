@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RFXGS'Extended Civtree'CN_Add_IG -->
+<!-- Author: 牛奶大魔王 , Clear8Sky -->
+<!-- DateCreated: 2021/10/3 19:26:41 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Extended Civtree” 。该文件在 InGame 时载入，需 Criteria ： Active_Expansion_1 与 Active_Expansion_2 -->
+	<LocalizedText>
+		
+	<!-- Boosts.xml文件 -->	
+		
+		<Replace Tag="LOC_BOOST_TRIGGER_MILITARY_ORGANISATION" Language="zh_Hans_CN">
+			<Text>拥有两名勇士。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_MILITARY_ORGANISATION" Language="zh_Hans_CN">
+			<Text>我们的战士鲁莽地冲向敌方，你需要新的结构来组织它们。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_NOBILITY" Language="zh_Hans_CN">
+			<Text>训练一名骑手。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_NOBILITY" Language="zh_Hans_CN">
+			<Text>坐在马背上，人们可能会认为他更优秀。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_CENTRALISM" Language="zh_Hans_CN">
+			<Text>建造市政广场。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_CENTRALISM" Language="zh_Hans_CN">
+			<Text>以前的权利太过于分散导致行政混乱，是时候将权力集中了。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_KNIGHTHOOD" Language="zh_Hans_CN">
+			<Text>训练一名骑士。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_KNIGHTHOOD" Language="zh_Hans_CN">
+			<Text>你的骑士是一种强大的武器。但是他们需要一套行为准则来加以控制。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_CONSTITUTION" Language="zh_Hans_CN">
+			<Text>修建5个种植园。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_CONSTITUTION" Language="zh_Hans_CN">
+			<Text>随着帝国的种植园扩大，自由的渴望与日俱增。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_IMPERIALISM" Language="zh_Hans_CN">
+			<Text>用护卫舰击杀一个单位。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_IMPERIALISM" Language="zh_Hans_CN">
+			<Text>你们的海军已经证明了它的强大足以保卫一个全球帝国。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_BOOST_TRIGGER_PARADES" Language="zh_Hans_CN">
+			<Text>拥有15个陆地战斗单位。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_PARADES" Language="zh_Hans_CN">
+			<Text>你的军队如此庞大。是时候举办一个向世界展示你力量的活动了。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_BOOST_TRIGGER_SOCIALISM" Language="zh_Hans_CN">
+			<Text>解锁科技“经济”。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_SOCIALISM" Language="zh_Hans_CN">
+			<Text>一些经济学家提议帮助穷人，这样他们就能消费更多。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_BOOST_TRIGGER_EQUAL_RIGHTS" Language="zh_Hans_CN">
+			<Text>解锁科技“火箭研究”。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_EQUAL_RIGHTS" Language="zh_Hans_CN">
+			<Text>为了到达月球，我们必须开发我国所有人的潜力。</Text>
+		</Replace>
+		
+	<!-- CivicsText.xml文件 -->
+		<!-- 远古 -->
+		
+		<Replace Tag="LOC_CIVIC_MILITARY_ORGANISATION" Language="zh_Hans_CN">
+			<Text>军事等级制度</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_CIVICS_PAGE_CIVIC_MILITARY_ORGANISATION_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>军事等级制是用来更好的组织一个国家的武装力量，也提供上升渠道解决了一定阶级矛盾。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVICS_PAGE_CIVIC_MILITARY_ORGANISATION_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>不属于军事或准军事组织一部分的武装部队，如叛乱部队，往往会模仿军事组织或使用临时结构，而正规军事组织往往采用等级形式来确保纪律性。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVICS_PAGE_CIVIC_MILITARY_ORGANISATION_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>王政初期，罗马按氏族部落召集武装力量。到王政后期，相传塞尔维乌斯·图利乌斯（约公元前578～前534在位）实行改革，根据财产原则划分公民为 5个等级，规定各等级中17～60岁的公民皆有服军役的义务，从而创建了公民兵制（见塞尔维乌斯·图利乌斯改革）。王负责征集和统率军队。公民兵出征须自备武装和给养，战后即解散，返回家园重操旧业。当时作战队形是排成密集方阵，重装步兵在战斗中起决定作用。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVICS_PAGE_CIVIC_MILITARY_ORGANISATION_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>在大多数国家，武装部队分为三个军事分支：陆军，海军和空军。[NEWLINE][NEWLINE]许多国家对三个基本军事分支的标准模式存在差异。一些国家还组织其海军陆战队、特种部队或战略导弹部队作为独立的武装部队。一个国家的海岸警卫队也可以是其军队的一个独立的军事分支，尽管在许多国家，海岸警卫队是一个执法机构或民事机构。由于地理原因，一些国家没有海军。[NEWLINE][NEWLINE]在较大的武装部队中，武装部队不同部门之间的文化可能大不相同。[NEWLINE][NEWLINE]大多数较小的国家只有一个组织，包括有关国家雇用的所有武装部队。发展中国家的军队往往主要由步兵组成，而发达国家的军队往往拥有更大的部队，装备昂贵，步兵部队只有一小部分人员。[NEWLINE][NEWLINE]值得一提的是“联合”一词。在西方军队中，联合部队被定义为由两个或两个以上军事分支的战斗力代表组成的单位或编队。</Text>
+		</Replace>
+		
+		<!-- 古典时代 -->
+		
+		<Replace Tag="LOC_CIVIC_CENTRALISM" Language="zh_Hans_CN">
+			<Text>中央集权</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_CIVICS_PAGE_CIVIC_CENTRALISM_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>中央集权制度是一种国家政权的制度，以国家职权统一于中央政府，削弱地方政府力量为标志的政治制度。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVICS_PAGE_CIVIC_CENTRALISM_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>封建专制主义是一种决策方式，是与民主政体相对立的概念，指一个人或少数几个人独裁的政权组织形式，是体现在帝位终身制和皇位世袭制上，其主要特征是皇帝个人的专断独裁，汇集国家最高权力于一身，从决策到行使军政财政大权都具有独断性和随意性。[NEWLINE][NEWLINE]而中央集权是相对于地方分权而言，其特点是地方政府在政治、经济、军事等方面没有独立性，必须严格服从中央政府的命令，一切受控于中央。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVICS_PAGE_CIVIC_CENTRALISM_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>秦始皇统一中国后，继承了商鞅变法的成果并实践了韩非子的理论，创立专制主义中央集权的政治制度。它既包括皇帝对中央百官的控制，又包括对地方及各级官吏及百姓的控制，从而把专制主义的决策方式和中央集权的政治制度有机地结合在了一起，正式确立了专制主义中央集权的政治制度。这对战国前的分封制来说是一大进步；对于巩固国家统一、维护封建统治基础有十分重要的作用。在其他国家，印度莫卧儿帝国则在17世纪中叶建立一套极为完善的集权整体，标志着君主专制和中央集权的发展达到了顶峰。[NEWLINE][NEWLINE]15世纪后期到16世纪初，欧洲许多国家在宗教改革运动后，开始建立了中央集权的君主专制，以腓力二世、彼得大帝、路易十四等最具代表性。随着自由资本主义向垄断资本主义发展，资本的集中要求政治权力的集中，更趋向于中央集权。19世纪日本明治维新也通过废藩置县，达致中央集权。[NEWLINE][NEWLINE]采用单一制的资本主义国家，多实行中央集权；采用联邦制的资本主义国家，地方政府虽有相当的权力，但国家大权仍集中在中央政府手中。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVICS_PAGE_CIVIC_CENTRALISM_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>专制主义中央集权制度是建立于封建经济基础之上的。封建经济的分散性要求有一个强有力的中央集权来维护国家统一和社会稳定，以保障封建经济的发展。封建地主阶级为维持统治，需要一个强有力的政权来镇压农民的反抗，巩固自己的统治地位。分散的个体小农，也需要依赖于政治上强大的力量，以稳定社会，抵御外敌和抗击大的灾害。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_CIVIC_NOBILITY" Language="zh_Hans_CN">
+			<Text>贵族制</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVICS_PAGE_CIVIC_NOBILITY_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>贵族，最初指的封建社会中，因权力、财产高于其他阶级而形成的上层阶级，包括军事贵族、世俗贵族、宗教贵族。经过演变，贵族制度在一些国家延续下来，形成了稳定的贵族阶级。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVICS_PAGE_CIVIC_NOBILITY_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>以中国为代表的东方由于地理环境差异，因此各地都有不同的阶级制度。如中国的封爵制度、日本皇室、朝鲜的两班、印度的种姓制度。西方的早期贵族诞生于古罗马时期，贵族是享有特权的公民。他们和平民阶级相对立、形成特权阶级的公民家庭集团。在公元前400年之前，贵族曾垄断一切官职和圣职。罗马皇帝必须是贵族出身。贵族免服兵役。4世纪以后，贵族逐渐演变成非世袭的荣誉头衔。贵族同其他阶级的最明显区别是拥有爵位但是爵位可能是世袭的，也可能是非世袭的。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVICS_PAGE_CIVIC_NOBILITY_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>贵族等级[NEWLINE][NEWLINE]公爵（Duke）：在贵族中，公爵是第一等级，地位最高。这个爵名的由来有三：一是欧洲氏族社会解体时期，日耳曼部落的军事首长；二是古代罗马部落的军事首长；三是古罗马时代的边省将领，后指地方军政长官，其拉丁文原意为“统帅”。随着封建关系的发展，王权的日益强化，公爵成了统治阶级中的上层人物。在英国，公爵最初是由十四世纪的英王爱德华三世分封的，被封这公爵的全是王室成员。十五世纪后才打破这惯例，少数非王室人员也被封为公爵，他们有政治、经济、法律和权利，这些人行为往往决定很多人的命运，他们仅为名义上的归附。[NEWLINE][NEWLINE]侯爵（Marquess）：侯爵是贵族的第二等级。查理大帝在位时它是指具有特别全权的边区长官，相当于藩侯，由国王任命，时间长久后也成为半独立状态。查理曼帝国分裂后，变成了独立的大封建领主。封建王权加强后，侯爵成为公爵与伯爵之间的爵衔，其地位与其他伯爵相等，十到十四世纪后，才确认侯爵的地位在伯爵之上。这些人大都出身于当地的大家族，为半独立力量，可任命当地官员。[NEWLINE][NEWLINE]伯爵（Earl or Count）：在罗马帝国时，伯爵是皇帝的侍从，掌管军、民、财政大权，有时也出任地方官吏，封建制度强化后，伯爵可割据一方，成为世袭的大封建领主。后来，其地位渐次低落，介于侯爵与子爵之间，为贵族的第三等级。在英国，伯爵之衔历史最久，在一二三七年黑王子爱德华被封为公爵之前，它是英国最高的爵位。这一爵名，来源于斯堪的纳维亚半岛的丹麦。公爵的委任者也称伯爵，其权利甚大，尤其代表公爵时，常常由社会秩序的维护者成为统治者，如在英国建立安茹王朝的安茹伯爵，以及法国的香槟伯爵等。[NEWLINE][NEWLINE]以上三种贵族为高等贵族，均拥有大量的领土，能实行独立或者半独立的统治。[NEWLINE][NEWLINE]子爵（Viscount）：子爵原系法兰克王国的国家官吏名，最早是由国王查理曼于八世纪时封的，后来传到欧洲其他大陆国家。起初，子爵是伯爵的副手，后来独立存在，也可世袭。子爵爵位到十五世纪才传入英国，博蒙德·约翰于一四四零年第一个被封为英国子爵，其地位在男爵之上。 他们可以代其处理事物和司法案件。高级贵族不在场时可独立行使其权利，到后来开始建造城堡，形成小统治中心。[NEWLINE][NEWLINE]男爵（Baron or Lord）：是贵族爵位中最低的一级。在十一至十二世纪时，它是欧洲君主国国王或大封建主的直接附庸。在英语中，男爵（Baron）一词，是诺曼人在征服欧洲大陆时引进来的，本义为“只不过是普通的人”，后来演变为“强有力的人”。当时，英国的那些直接从国王那儿得到土地的大佃主，概可称为男爵，但这并非由国王分封。到了一三八七年理查二世封约翰·比彻姆为男爵后，男爵才成为英国贵族的正式爵位。他们大都与军队相连，以服军役为条件从国王那里领取土地奉养土地的骑士首领，一位男爵最少拥有40～50个骑士领（一个骑士领是指供养一个骑士所需的土地面积）。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVICS_PAGE_CIVIC_NOBILITY_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>学者们有不同的看法，学者布洛克认为罗马的原贵族随着帝国消亡而消失，而蛮方贵族没有形成；十二世纪之后才开始出现贵族，其典型特征为骑士阶层开始正式出现，即骑士等于贵族。但后来的学者通过考察，对以上说法不认同，日尔曼大举入侵后，罗马贵族没有真正消亡，与后来蛮邦上层结合为一体，中世纪前期就已经有贵族，到了后期贵族和骑士有所融合，但两者之间也有区别，直到和平时期，骑士的军事功能削弱和，两者才合为一体。[NEWLINE][NEWLINE]十二、十三世纪后，随着贵族和骑士融合，开始形成明确的贵族之间等级，要成为贵族必须成为骑士，等级性和集团性明显。骑士必须是骑士的后裔，这种差距和其他阶层的集团拉大，使得贵族具有了明显的封闭性，且分出了不同的等级，表现出不同的权势。</Text>
+		</Replace>
+
+		<!-- 中世纪 -->
+		
+		<Replace Tag="LOC_CIVIC_KNIGHTHOOD" Language="zh_Hans_CN">
+			<Text>骑士爵位</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_CIVICS_PAGE_CIVIC_KNIGHTHOOD_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>国家元首授予骑士荣誉称号的人成为骑士。在欧洲中世纪早期，骑士身份被授予骑兵。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVICS_PAGE_CIVIC_KNIGHTHOOD_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>在中世纪的鼎盛时期，骑士身份被认为是一个下层贵族阶层。到了中世纪晚期，军衔已经与骑士精神的理想联系在一起，骑士精神是一种行为准则，是完美的宫廷基督教战士的行为准则。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVICS_PAGE_CIVIC_KNIGHTHOOD_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>通常情况下，骑士是一个精英战士，保镖或一个主雇佣军服务，以土地持有的形式支付。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVICS_PAGE_CIVIC_KNIGHTHOOD_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>在现代骑士精神早已衰落时，但是现代早期的骑兵坚持旧理想。即使是第一次世界大战的第一批战斗机飞行员，即使是在20世纪，在天空中的决斗中，他们仍然诉诸于骑士式的想法，旨在公平和诚实。至少这种骑士精神在媒体上传播开来。但是这个想法后来在烈度更高的战争中完全丧失了[NEWLINE][NEWLINE]但是骑士在现代还是存在，例如，英国女王伊丽莎白二世定期任命大英帝国勋章的新成员，其中还包括21世纪的史蒂芬·斯皮尔伯格、纳尔逊·曼德拉和比尔·盖茨等成员。例如，在中欧，圣乔治骑士团在被纳粹德国解体后被哈布斯堡宫重新激活，其根源可追溯到所谓的“最后骑士”马克西米利安一世皇帝。在法国，当之无愧的人物会被授予荣誉骑士奖（荣誉勋章 - 荣誉军团）记者亚历山大·冯·舍恩堡谈到了自然和骑士精神的可能必要性。鉴于他所诊断的人完全处于社会迷失方向，他呼吁回归谦虚、智慧，尤其是忠诚等美德。因为，根据他的说法，今天的共同信条是粗暴、无知和自我中心主义。圣乔治哈布斯堡骑士团检察官文曾兹·斯坦普夫尔-阿贝尔回到伯恩哈德·冯·克莱尔沃，考虑骑士在21世纪的重要性。因此，骑士必须积极参与打击社会苦难的斗争，特别是在今天马耳他骑士团和圣约翰骑士团目前的活动也朝着这个方向发展，自20世纪初以来，圣约翰骑士团在战争和平时期越来越多地提供广泛的医疗和慈善服务。</Text>
+		</Replace>
+
+		<!-- 文艺复兴时期 -->
+		
+		<Replace Tag="LOC_CIVIC_CONSTITUTION" Language="zh_Hans_CN">
+			<Text>宪法</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVICS_PAGE_CIVIC_CONSTITUTION_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>宪法是国家的根本法，是治国安邦的总章程，适用于国家全体公民，是特定社会政治经济和思想文化条件综合作用的产物，集中反映各种政治力量的实际对比关系，确认革命胜利成果和现实的民主政治，规定国家的根本任务和根本制度，即社会制度、国家制度的原则和国家政权的组织以及公民的基本权利义务等内容。国家内部政治力量的对比关系的变化对宪法的发展变化起着直接作用，国际关系也对宪法发展趋势有所影响。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVICS_PAGE_CIVIC_CONSTITUTION_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>1634年，瑞典王国通过了1634年的政府文书，该文书是在古斯塔夫斯·阿道夫国王去世后由瑞典大法官阿克塞尔·奥克森蒂尔纳起草的，可以看作是现代国家通过的第一部成文宪法。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVICS_PAGE_CIVIC_CONSTITUTION_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>1776年和1777年，在美国大革命期间，北美的英国殖民地通过了最著名的现代宪法之一，奠定了美利坚合众国的基础。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVICS_PAGE_CIVIC_CONSTITUTION_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>宪法是民主制度的法律化。资产阶级宪法体现资产阶级民主，社会主义宪法体现社会主义民主。[NEWLINE][NEWLINE]资产阶级宪法同资产阶级民主政治不可分割。“立宪政体”“立宪政治”“宪政”，都是以代议制度为基础的资产阶级民主政治的别名。资产阶级宪法正是在反对封建专制制度和建立资产阶级民主制度的过程中产生的。资产阶级为了发展资本主义，需要冲破封建制度的束缚，实现买卖自由、契约自由、等价交换。这种生产关系反映在政治上，就是要建立标榜自由、平等、人权的资产阶级民主制。在其宪法上规定的，则是人民主权、权力划分（见三权分立制度）、尊重基本人权、法律面前人人平等等原则。资产阶级宪法上规定的民主制度，都是为巩固资本主义生产关系服务的。它宣布“私有财产不可侵犯”，把保护资产阶级私有制和对无产阶级的剥削，作为它的首要任务。这样，资本主义国家必然要实行资产阶级专政。但为了欺骗无产阶级，他们讳言专政，在宪法里不作明文规定。[NEWLINE][NEWLINE]无产阶级革命胜利后，同样需要把社会主义民主制度法律化，制定宪法来巩固政权，维护社会主义民主。社会化的大生产和生产资料公有制是社会主义民主制的经济基础，社会主义宪法是作为法律手段来巩固和发展这一经济基础的。社会主义宪法公开承认社会主义国家是无产阶级专政的国家。无产阶级专政包括对剥削者的专政和在劳动人民内部的民主，即社会主义民主。社会主义民主制是最高类型的民主制。但社会主义民主制有一个发展的过程，社会主义宪法也就必然会有一个不断发展和完善的过程。1982年《中华人民共和国宪法》发展了社会主义民主，把适合中国国情和适应社会主义现代化建设需要的社会主义民主制度法律化，其根本任务就是为建设高度文明、高度民主的社会主义现代化强国创造有利条件。[NEWLINE][NEWLINE]宪法是国家的根本法，也是治国安邦的总章程，在本质上同普通法律一致。但因为它是根本法，又与普通法律有所不同，具有其特殊属性，表现在下列4个方面。[NEWLINE][NEWLINE]宪法规定国家的根本制度、国家生活的基本原则有的国家因此就把宪法称为根本法或基本法。宪法除规定社会制度和国家制度的基本原则外，还规定国家政权机关组织和确认公民基本权利和义务，宪法是一切组织和个人的根本活动准则。[NEWLINE][NEWLINE]由于宪法所规定的是国家生活中最根本、最重要的原则和制度，宪法就成为立法机关进行日常立法活动的法律基础。因而宪法又被称为“母法”、“最高法”，普通法律则被称为“子法”。但是宪法也只能规定立法原则，而不能代替普通立法。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_CIVIC_IMPERIALISM" Language="zh_Hans_CN">
+			<Text>帝国主义</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVICS_PAGE_CIVIC_IMPERIALISM_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>帝国主义，亦称“垄断资本主义”或“现代资本主义”，资本主义发展的最高最后阶段，依靠资本输出，使其他国家劳动，以便本国赚取利润。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVICS_PAGE_CIVIC_IMPERIALISM_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>虽然帝国主义与殖民主义和帝国主义的概念有关，但它是一个独特的概念，可以适用于其他形式的扩张和多种形式的政府。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVICS_PAGE_CIVIC_IMPERIALISM_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>帝国主义时代是从1760年开始的一个时期，欧洲的工业化国家正在进行殖民、影响和吞并世界其他地区的进程。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVICS_PAGE_CIVIC_IMPERIALISM_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>帝国主义的垄断渗透于社会经济生活的各个方面，结合当时的经济、政治条件，表现出帝国主义一定发展阶段所具有的基本经济特征。随着垄断本身的发展和客观条件的变化，作为现象形态的基本经济特征也必然有所发展和变化。列宁在《帝国主义是资本主义的最高阶段》一书中，对帝国主义的基本经济特征概括为：[NEWLINE][NEWLINE]第一，资本集中与生产集中高度发展，在主要产业部门乃至整个经济生活中产生了居支配地位的垄断组织。自由竞争资本主义阶段的单一单位企业和在此基础上的分散竞争已经成为历史。主要产业部门大都已形成寡头垄断格局。[NEWLINE][NEWLINE]第二，工业垄断资本与银行垄断资本日趋融合为金融资本，金融资本的进一步集中又形成金融寡头。在工业垄断资本形成的同时，银行业的竞争造成银行业日趋集中和银行垄断组织形成。银行垄断组织的形成，使银行的地位与作用发生了根本性的变化，即由过去的借贷中介人，变成了万能的垄断者，并与工业资本日益融合在一起。这表现为：[NEWLINE][NEWLINE]①生产集中和垄断。在20世纪初期，各主要资本主义国家生产集中已达到很高的程度，生产部门中的垄断组织已经广泛存在。这个时期，按照大公司联合的范围和程度，垄断组织可分成多种形式。最简单的是短期价格协定，进一步是普遍发展的、主要是在生产部门内瓜分市场、规定产量和价格等的卡特尔，联合采购原材料和销售产品的辛迪加，高一级的形式则有统一掌管参加企业的业务和财务活动、以独立的企业进行经营活动的托拉斯，还有以实力雄厚的大公司为核心的不同部门企业结成联合集团的康采恩。这些垄断组织已成为经济生活的主体。但是，从自由竞争中生长起来的垄断并不消除自由竞争，而是凌驾于这种竞争之上，与之并存，因而产生出许多特别尖锐特别剧烈的矛盾、摩擦和冲突。</Text>
+		</Replace>
+
+		<!-- 工业时代 -->
+		
+		<Replace Tag="LOC_CIVIC_PARADES" Language="zh_Hans_CN">
+			<Text>阅兵式</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVICS_PAGE_CIVIC_PARADES_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>阅兵式是士兵的一种编队，他们的行动受到严密的命令控制。阅兵式现在几乎完全是仪式性的，尽管从古至今直到19世纪末，士兵们都是列队作战。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVICS_PAGE_CIVIC_PARADES_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>群众游行也可能起到宣传的作用，用来展示一个国家的明显军事实力。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVICS_PAGE_CIVIC_PARADES_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>18世纪，阅兵盛行于普鲁士等西欧一些国家的军队中。18世纪末，开始在俄国军队中广泛举行，彼得堡（今圣彼得堡）每年举行一次大型阅兵，冬季在宫殿广场举行，春季在马尔斯广场举行，军事演习结束和军队节日及纪念日也举行阅兵。1918年5月1日，苏联红军在莫斯科霍登广场首次举行阅兵。国内战争结束后，苏军定期举行阅兵。现代大多数国家的军队都在国庆节等重大节日举行阅兵。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVICS_PAGE_CIVIC_PARADES_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>由于文化差异的影响，不同国家其阅兵形式也有所不同。大体从形式上可分为苏式阅兵、德式阅兵、英式阅兵、法式阅兵和美式阅兵五种，以下为采用不同的阅兵形式的部分国家和地区：[NEWLINE][NEWLINE]德式阅兵——前德意志国、法西斯意大利、西班牙国等受法西斯主义、纳粹主义影响的国家、智利、阿根廷、土耳其、印尼、大部分非洲国家、拉丁美洲国家等。最原始的阅兵方式，其特点是场面及气势隆重宏大，徒步方阵受阅时采用普鲁士正步（也称“普鲁士鹅步”，为类似于爱尔兰踢踏舞舞步的一种步法）；侧重于展示本国最先进的武器装备，最能体现军容，震慑敌对国家或敌对势力，重视阅军的本来意义，故此亦往往能够吸引国际舆论的关注。[NEWLINE][NEWLINE]苏式阅兵——俄罗斯联邦、乌克兰、白俄罗斯等前苏联及前华沙条约组织国家，中华人民共和国、朝鲜、古巴、越南等社会主义国家，以及利比亚、伊拉克、蒙古等。改良自德式阅兵，同样是场面及气势隆重宏大，其中中华人民共和国、朝鲜等大规模阅兵时对士兵步幅大小、时间甚至眼神的要求被外界认为达到极端苛刻的程度；侧重于展示本国最先进的武器装备，如前苏联和俄罗斯联邦在每次的胜利日和十月革命节阅兵及中华人民共和国每次逢十大阅兵，会展示大量现代化尖端武器，用于公开宣传己方威慑力。[NEWLINE][NEWLINE]英式阅兵——英国、马来西亚、印度、巴基斯坦、新加坡、埃及等英联邦成员国及大部分阿拉伯国家、日本。其特点是受阅部队的方阵及队列行进基本上继承了维多利亚时代的传统，侧重于缅怀本国军队过往的光荣历史（日本除外），阅兵式上会出现很多早已淘汰的兵种及武器装备，部分方阵官兵会穿着老式军服受阅。[NEWLINE][NEWLINE]法式阅兵——法国、西班牙、意大利、瑞典等欧洲大陆国家。其特点是士兵走正步时的步幅比英式阅兵小，对车辆方阵的编排带有较强的艺术气息。[NEWLINE][NEWLINE]美式阅兵——美国、韩国、 菲律宾、前南越等。其主要特点是娱乐性、表演性和商业性在几种模式中最强，犹如一场精彩热闹的武装大游行或狂欢节仪式；且士兵受阅时只走行军步伐，不走正步。</Text>
+		</Replace>
+
+		<!-- 现代 -->
+		
+		<Replace Tag="LOC_CIVIC_SOCIALISM" Language="zh_Hans_CN">
+			<Text>社会主义</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVICS_PAGE_CIVIC_SOCIALISM_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>社会主义是一种社会学思想，诞生于16世纪初，主张整个社会应作为整体，由社会拥有和控制产品、资本、土地、资产等，其管理和分配基于公众利益。19世纪30至40年代，“社会主义”的概念在西欧广为流传，发展出不同分支。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVICS_PAGE_CIVIC_SOCIALISM_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>社会主义按是否有市场可分为两种。不带市场的社会主义将要素市场和金钱替换为工程和技术上的要求，基于实物进行计算，于是废止了资本主义下的价值规律。这类社会主义追求避免资本积累、追求利润造成的浪费和金融危机。相反，所谓市场社会主义强调在社会拥有的企业和资本分配中保留金钱、要素市场甚至利润动机的作用。这些企业的利润可以选择直接由雇员控制，或者选择以社会红利的形式发给全社会。社会主义计算争论讨论了社会主义内的资源分配方法和可行性——例如有社会主义者认为，市场的账目核算不应基于金融层面，而应该基于一个通用的体力劳动指标或者是直接基于劳动时间。作为一项政治运动，社会主义的政治哲学主张从改良主义到革命社会主义均有分布。如国家社会主义主张推动生产、分配和交换全方位的国有化来实现社会主义；自由意志社会主义倡导工人传统地控制生产方式，反对国家权力来进行管理；民主社会主义则通过民主化进程来寻求建立社会主义。现代社会主义理论始于19世纪知识分子与工人阶级发起的批评工业化与私有财产对社会影响的政治运动。早期的空想社会主义者，诸如罗伯特·欧文曾试图建立一个自给自足并脱离资本主义社会的公社；而圣西门则创造了名词Socialisme，提倡技术官僚与计划工业的应用。马克思和恩格斯共同设计创造了一个理想的社会制度，通过除去导致不合格与周期性生产过剩的无政府主义和资本主义生产，来允许广泛应用现代科技从而合理化经济活动。一个地区，谁拥有所有货币的百分之几，就相当于能拥有所有物质的百分之几。这也是通货膨胀与紧缩的原因。谁恶意抬高物价多赚百分之几，这就是资本主义剥削原理。马克思等人的初衷就是要消灭这种不公平的剥削制度。以上所述的资本主义剥削方式让资本家不劳而获地积累大量不应得的财富，也导致资本主义国家富者越富，穷者越穷。这种资本主义剥削制度只对少数资本家有益，而对大部分民众无益，但资本主义国家当局支持这种制度，这就形成了资产阶级专政。其执政的政党也就成为了资产阶级政党，这是其阶级性。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVICS_PAGE_CIVIC_SOCIALISM_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>社会主义也大多与政治左派联系在一起，最著名的极右翼政党（德国工人社会主义国家党）主要侧重于社会主义政策</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVICS_PAGE_CIVIC_SOCIALISM_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>对社会主义的批评有多种观点，由于社会主义有多种模式，许多批评仅仅集中于社会主义的特定类型。[NEWLINE][NEWLINE]经济自由和右翼自由主义者把生产资料的私有制和自然实体或者道德权利那样的市场交易看作是他们的自由和解放理念的核心，而且把资本主义的经济动态看作是不变和绝对的，所以，他们觉得生产资料中的公有制、合作社和计划经济是对自由的侵犯。[NEWLINE][NEWLINE]据奥地利经济学派人士路德维希·冯·米塞斯，一个经济体系不利用金钱、经济核算和市场定价将不能有效定价资本货物和协调生产，因而社会主义是不可能实现的。因为缺少必要的信息以率先实行经济核算。其他对社会主义体系的集中批评基于计划经济是建立在分散的知识的利用上。社会主义在这一观点中不可能实现是因为信息不能被中央机构集中到一起并有效用于对整体经济制定一个计划，因为这么做会导致扭曲或缺乏价格信号。[46][NEWLINE][NEWLINE]许多对社会主义的经济学上的批评集中于苏维埃式的计划经济的实践。他们指出计划经济下的企业运作缺少预算线降低了对企业的激励有效的行动的信息，进而降低社会的整体福利。[NEWLINE][NEWLINE]其他人基于新古典经济学的对社会主义模式的经济学上的批评在于他们依赖于对经济均衡和柏拉图效率有问题且不切实际的设想。[NEWLINE][NEWLINE]《从资本家手中拯救资本主义》一书在第二章开头提到社会主义的问题：“以马克思和恩格斯为代表的社会主义者认为，要限制资本所有者的权力，办法就是由国家掌握权力，并且剥夺作为生产资料的一切私有财产。但这个方法的结果更糟糕。在社会主义国家。财产所有者原有的权力转移到国家手里。在理论上，国家是公道的，是为工人的利益服务的，然而在实际生活中，国家却是为当权者们的利益服务的。而且社会主义国家的政府官员对于普通工人的支配权力，即使同资本主义国家里最贪婪的资本家比起来，都不知还要大多少倍，这是因为社会主义国家政府能够直接控制竞争的程度，而资本家却不容易做到。”</Text>
+		</Replace>
+
+		<!-- 原子能 -->
+		
+		<Replace Tag="LOC_CIVIC_EQUAL_RIGHTS" Language="zh_Hans_CN">
+			<Text>平等权利</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVICS_PAGE_CIVIC_EQUAL_RIGHTS_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>如果所有人都享有平等的权利、自由和地位，可能包括公民权利、言论自由、财产权以及平等获得某些社会商品和社会服务的机会，那么平等的权利或平等就存在于一个特定的社会中。平等要求不存在法律强制执行的社会阶级或种姓界限，不存在因个人身份不可分割的一部分而引起的歧视。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVICS_PAGE_CIVIC_EQUAL_RIGHTS_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>人权（基本人权或自然权利）是指“人，因其为人而应享有的权利”。平等是人权的本质属性。由于在同属人类这一点上人与人之间无别，换言之，在信息量上完全一致，故人人享有的权利也是平等的、一样的。“人权是平等的权利，否则它们就不存在”。人权意味着严格的平等权利。人权运动的历史，不仅是人权内容的扩张史，而且也是追求权利平等的历史。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVICS_PAGE_CIVIC_EQUAL_RIGHTS_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>人权平等意味着政治自由权利与经济社会权利的绝对平等。公正（正义）是人类社会永恒的核心理念与行为准则。古往今来，公正理念在人们的诠释与解读中呈现出各种各样的形态与面貌——从报复公正到平等分配，从遵循法律到恪守契约。而社会公正则是人们在社会财富再分配中坚守的一项基本原则，其核心的价值诉求是每一个人都应得到他（她）所应得的那个份额。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVICS_PAGE_CIVIC_EQUAL_RIGHTS_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>国家应保障人人享有的平等人权，同时也应保障每个人基于其社会贡献所要求得到的权利、利益与尊重。正如德沃金所言：“所有的人都应作为平等者来对待，而不是讲所有的人都应同等地对待。”</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

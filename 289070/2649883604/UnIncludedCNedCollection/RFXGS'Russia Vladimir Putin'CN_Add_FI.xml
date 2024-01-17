@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RFXGS'Russia Vladimir Putin'CN_Add_FI -->
+<!-- Author: ChiYiuWong , Clear8Sky -->
+<!-- DateCreated: 2021/9/23 1:57:17 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Russia: Vladimir Putin” 。该文件在 FrontEnd 与 InGame 时载入，需 Criteria ： Active_Expansion_1 与 Active_Expansion_2 -->
+	<LocalizedText>
+		
+		<!-- 模组 -->
+		
+		<Replace Tag="LOC_MOD_JFD_RUSSIA_PUTIN_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>------------------------------------[NEWLINE]领袖名称 -- 弗拉基米尔·普京[NEWLINE][NEWLINE]领袖特性 - 联邦条约[NEWLINE]有 [ICON_Governor] 总督就职的城市，额外+1 [ICON_InfluencePerTurn] 影响力点数，且建造区域+15% [ICON_Production] 生产力；成为紧急状况的目标时，这些城市可额外+1忠诚度，且训练战斗单位+15% [ICON_Production] 生产力。完成科技“激光”后解锁特色单位“苏-30战斗机”。[NEWLINE][NEWLINE]特色单位 - 苏-30战斗机[NEWLINE]弗拉基米尔·普京作为领袖时的俄罗斯特色信息时代单位，取代喷气式战斗机。在其他文明境内时，+2 [ICON_Range] 射程，+7 [ICON_Strength] 战斗力。[NEWLINE][NEWLINE]领袖议程 - 正统、专制、民族[NEWLINE]追求高水平的 [ICON_Faith] 信仰值、[ICON_Culture] 文化值和军事实力。尊重与他信仰的宗教相同且在这些方面强大的文明。不信任 [ICON_Culture] 文化高但 [ICON_Faith] 信仰低的文明。</Text>
+		</Replace>
+
+		<!-- 领袖 -->
+
+		<Replace Tag="LOC_LEADER_JFD_PUTIN_NAME" Language="zh_Hans_CN">
+			<Text>弗拉基米尔·普京</Text>
+		</Replace>
+
+		<!-- 议程 -->
+
+		<Replace Tag="LOC_AGENDA_JFD_O_A_N_NAME" Language="zh_Hans_CN">
+			<Text>正统、专制、民族</Text>
+		</Replace>
+		<Replace Tag="LOC_AGENDA_JFD_O_A_N_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>追求高水平的 [ICON_Faith] 信仰值、[ICON_Culture] 文化值和军事实力。尊重与他信仰的宗教相同且在这些方面强大的文明。不信任 [ICON_Culture] 文化高但 [ICON_Faith] 信仰低的文明。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_JFD_PUTIN_REASON_LEADS_CULTURE_AND_SAME_RELIGION" Language="zh_Hans_CN">
+			<Text>（您在文化方面很强大且与他信仰相同的宗教）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_AGENDA_JFD_O_A_N_LEADS_CULTURE_AND_SAME_RELIGION" Language="zh_Hans_CN">
+			<Text>普京很高兴看到你很爱国。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_JFD_PUTIN_REASON_LEADS_FAITH_AND_SAME_RELIGION" Language="zh_Hans_CN">
+			<Text>（您在信仰方面很强大且与他信仰相同的宗教）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_AGENDA_JFD_O_A_N_LEADS_FAITH_AND_SAME_RELIGION" Language="zh_Hans_CN">
+			<Text>普京很高兴看到你有灵性。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_JFD_PUTIN_REASON_LEADS_STANDING_ARMY_AND_SAME_RELIGION" Language="zh_Hans_CN">
+			<Text>（您在军事方面很强大且与他信仰相同的宗教）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_AGENDA_JFD_O_A_N_LEADS_STANDING_ARMY_AND_SAME_RELIGION" Language="zh_Hans_CN">
+			<Text>普京很高兴看到你很坚强。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_LEADER_JFD_PUTIN_REASON_LEADS_CULTURE_AND_LAGS_FAITH" Language="zh_Hans_CN">
+			<Text>（您在文化方面很强大，但在信仰方面很薄弱）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_AGENDA_JFD_O_A_N_LEADS_CULTURE_AND_LAGS_FAITH" Language="zh_Hans_CN">
+			<Text>普京不信任你对世俗理想的信仰。</Text>
+		</Replace>
+
+		<!-- 载入 -->
+
+		<Replace Tag="LOC_LOADING_INFO_LEADER_JFD_PUTIN" Language="zh_Hans_CN">
+			<Text>俄罗斯面临许多考验，弗拉基米尔·普京总统，你必须确保一个统一的联邦。前盟友必须再次受到责令，政治家必须为国家利益而努力。但是，如果单独面对这些考验，俄罗斯人民就会团结起来，他们对祖国的忠诚会永远坚持下去。</Text>
+		</Replace>
+
+		<!-- 特性 -->
+
+		<Replace Tag="LOC_TRAIT_LEADER_JFD_FEDERATION_TREATY_NAME" Language="zh_Hans_CN">
+			<Text>联邦条约</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_JFD_FEDERATION_TREATY_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>有 [ICON_Governor] 总督就职的城市，额外+1 [ICON_InfluencePerTurn] 影响力点数，且建造区域+15% [ICON_Production] 生产力；成为紧急状况的目标时，这些城市可额外+1忠诚度，且训练战斗单位+15% [ICON_Production] 生产力。完成科技“激光”后解锁特色单位“苏-30战斗机”。</Text>
+		</Replace>
+
+		<!-- 百科 -->
+
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PUTIN_TITLE" Language="zh_Hans_CN">
+			<Text>弗拉基米尔·普京</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PUTIN_SUBTITLE" Language="zh_Hans_CN">
+			<Text>俄罗斯联邦总统</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PUTIN_QUOTE" Language="zh_Hans_CN">
+			<Text>我们不会让过去拖累我们，阻止我们前进。我们明白应该向哪移动。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PUTIN_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>普京于1952年10月1日出生在俄罗斯列宁格勒（现圣彼得堡）。他是独生子。他的父亲是一位获得勋章的退伍军人，是一家金属厂的工头，于1999年8月去世，那一周他的儿子被任命为俄罗斯总理。普京的母亲没有在外工作，在此之前一年半就去世了。他在列宁格勒长大，普京和他的父母住在另外两个家庭的公共公寓里。尽管苏联不允许有宗教信仰，但他的母亲秘密让他受洗成为东正教基督徒。他现在仍然是教会的成员，并于1999年在莫斯科发表了平安夜演讲。[NEWLINE][NEWLINE]普京虽然幼年时身材矮小，但多亏了武术课，他才能在战斗中保持自己的实力。到16岁时，他已成为三宝的顶级专家，三宝是俄罗斯柔道和摔跤的结合体。他就读于名牌高中281学校，该校只接受成绩接近完美的学生。该校是当时俄罗斯地区唯一一家强调化学的教育机构，而这也正是普京的兴趣所在。然而，他很快就被文科和生物学所吸引。普京在学校广播电台工作，在那里他演奏披头士乐队和其他西方摇滚乐队的音乐。据《纽约时报》迈克尔·温恩斯援引他的一位同学的说法，尽管他时常参加派对，但据说他比同龄人更成熟。青少年时期对间谍电影着迷，让他立志成为克格勃特工。[NEWLINE][NEWLINE]在列宁格勒州立大学，普京是1974年该校柔道冠军。他于1975年毕业于法律系。《纽约时报》的瓦恩指出，普京以优异成绩毕业，但《新闻周刊》的一篇文章报道称，他的论文导师瓦莱里·穆辛表示，尽管他是一个“一丝不苟”的学生，但他获得了“好但不是很好的成绩”。《新闻周刊》的文章指出，他的学业记录已从大学档案中删除。后来，他也获得了经济学博士学位。[NEWLINE][NEWLINE]普京没有在从学校毕业后就进入法律领域，而是在克格勃找到了一份工作，这是他班上100人中唯一一个被选中的人。尽管一些报道称他加入了精英外国情报部门，称为第一总署，但《新闻周刊》的文章声称他的第一个职位实际上是在该机构列宁格勒办事处的一个名为第一服务的部门。该分支机构负责在该国招募外国人为克格勃情报目的服务。瓦恩在《纽约时报》上的另一篇报道称，他“是一名执行相当常规职责的中级克格勃特工。”[NEWLINE][NEWLINE]1980年代初，普京遇到并娶了他的妻子柳德米拉，后者曾任法语和英语教师。1984年，他被选中进入著名的红旗情报学院，在那里他掌握了德语，还学习了英语，为他梦寐以求的国际任务做准备。1985年，克格勃将他派往东德德累斯顿，在那里他以阿达莫夫先生的身份卧底生活，他是莱比锡一家社会和文化俱乐部苏德友谊之家的负责人。根据瓦恩的说法，他德语说得非常流利，以至于他可以很容易地模仿当地的方言。与许多其他克格勃特工不同，普京似乎真的很喜欢与德国人交往，并且尊重德国人的纪律性。[NEWLINE][NEWLINE]普京在东德的所作所为只是一些猜测。瓦恩写道：“正式地——也许实际上——他的任务是追踪东德人的政治倾向以及他们与西方的接触。”约翰·劳埃德在《纽约时报》杂志上表示，“他的真正任务是招募特工来提供技术和经济信息：他可能参与建立了克格勃网络，为东德的崩溃做准备。”与此同时，《新闻洞察》记者J·迈克尔·沃勒声称，普京在1980年代参加了臭名昭著的斯塔西秘密警察部队。[NEWLINE][NEWLINE]在普京前往东德期间，苏联领导人米哈伊尔·戈尔巴乔夫开始引入经济和社会改革。普京显然相信这些变革。1989年，分隔东德和西德的柏林墙被推倒，两国重新统一。虽然普京应该知道这是不可避免的，但他对这起事件发生在混乱中以及苏联领导层没有更好地管理感到失望。[NEWLINE][NEWLINE]1990年，普京回到列宁格勒，在母校国际事务部找到一份工作，负责筛选外国学生。然而，这是他作为继续从事情报工作的掩护。不久，他的一位前大学教授、圣彼得堡（前列宁格勒）第一任市长阿纳托利·索布恰克邀请他加入他的政府。1991年，就在苏联开始解体之际，普京辞去克格勃职务，进入政治领域。据称，他辞职是因为他想加入处理俄罗斯正在发生的重要变化，或者可能是因为他在克格勃的许多同事在柏林墙倒塌后受到迫害。无论如何，他成为了市长的外事顾问，并于1994年成为了副市长。然而，《新闻周刊》的一篇报道表明，他也可能是那里的一名渗透者。[NEWLINE][NEWLINE]在市政府就职期间，普京“擅长解开俄罗斯官僚机构的戈里丹结，并建设基础设施——高速公路、通信行业、酒店——来支持外国投资，” 瓦恩表示。尽管圣彼得堡从未成长为许多人所希望的金融城市，但随着可口可乐和日本电子公司NEC等许多外国投资者的进驻，圣彼得堡的命运有所改善。普京因其幕后影响力和低调而获得了“灰色红衣主教”的绰号。1990年代初，他因涉嫌在颁发进出口许可证方面存在偏袒而受到调查，但此案因证据不足而被驳回。[NEWLINE][NEWLINE]1996年，当索布恰克在市长竞选中落败时，普京获得了胜者的一份工作，但他出于忠诚而拒绝了。次年，他被要求加入鲍里斯·叶利钦总统的“核心圈子”，担任克里姆林宫的副行政长官。他于1998年离开克里姆林宫，成为联邦安全局(FSB)的负责人，该局是国内情报机构，也是已解散的克格勃的继任者。1999年3月，他被任命为安全理事会秘书，该机构就外交政策、国家安全、军事和执法等问题向总统提供建议。[NEWLINE][NEWLINE]1999年8月，叶利钦上任后在17个月内更换了五任总理之后，他任命普京出任总理，而普京最初被许多观察家认为不是这位生病总统的明显可行的继承人。一方面，他几乎没有政治经验；另一方面，他的外表和性格似乎平淡无奇。然而，普京在强烈要求车臣战争中的作用增加了他在公民中的吸引力。除了将莫斯科和其他地方的各种爆炸事件归咎于车臣恐怖分子之外，他还使用严厉的言辞谴责他的敌人。正如瓦恩报道的那样，这“在俄罗斯人正在寻找这样一个人的时候，确立了他作为一个强硬而严肃的领导者的形象。”很快，普京的支持率就飙升至50%，在这个国家，即使是20%的支持率也被认为是一个不错的表现。[NEWLINE][NEWLINE]1999年12月，俄罗斯举行了拥有450个席位的俄罗斯议会下院杜马选举。三个月前成立的普京团结党以惊人的表现仅次于共产党。对于盟友，他们预计将拥有同样多的权力。尽管普京不是这次选举的候选人，但在定于2000年6月举行的即将到来的总统竞选中，候选人显然是领跑者。[NEWLINE][NEWLINE]1999年新年前夜，叶利钦突然宣布辞去总统职务，任命普京为代理总统。根据俄罗斯宪法，选举被提前到3月26日。许多观察家推测，叶利钦的举动是为了确保普京的成功，以防万一公众对车臣战争的支持发生转变并导致他的支持率下降。有传言说，叶利钦也想通过普京来避免任何可能的起诉，因为普京一直是他忠实的追随者，而叶利钦长期以来被指控腐败和利用裙带关系。事实上，普京作为代理总统的首要行动之一就是授予叶利钦免于任何未来刑事或行政调查的豁免权。该法令还为叶利钦及其家人提供持续的住房、工资、人员配备和福利。[NEWLINE][NEWLINE]随即，西方新闻媒体和美国政府争相关注俄罗斯新领导人的形象。由于普京作为克格勃特工的秘密背景，信息很少。许多文章都关注这样一个问题：尽管他很受欢迎，但即使在他自己的国家，也很少有人知道他的背景细节或他在问题上的立场。他作为间谍的历史让许多西方人和一些俄罗斯人质疑他是否应该被视为民主的敌人。此外，克里斯蒂安·卡里尔在《美国新闻与世界报道》中写道，“普京在FSB任职（从1998年7月至1999年8月）时期恰逢对被指控‘泄露国家机密’的环保活动人士进行一系列高调起诉。（实际上是在宣传俄罗斯军方对危险核废料的处理不力）。”[NEWLINE][NEWLINE]据《新闻周刊》报道，普京在担任代理总统的第一次演讲中承诺，“言论自由、信仰自由、新闻自由、权利对于私有财产，这些文明社会的基本原则将受到保护。”此外，普京还解除了叶利钦的几位亲信和亲戚的内阁职务，其中包括担任首席顾问的叶利钦的女儿。然而，《经济学人》的一篇文章将这些变化斥为“装饰性的”，称“其他克里姆林宫内部人士仍然坚守岗位”。此外，几周后，普京与杜马中的共产党人达成了一项权力共享协议，结果将大多数自由派的民主人士拒之门外，这让普京大为震惊。尽管如此，在选举前的几周内，他在俄罗斯人中的受欢迎程度仍徘徊在50%或更高。[NEWLINE][NEWLINE]2000年3月26日，俄罗斯人从11名候选人中选出普京，这其中包括共产党领导人根纳季·久加诺夫，他在1996年与叶利钦的激烈竞争中赢得了42%的选票。普京以52.6%的选票获胜，亚军久加诺夫获得29.3%的选票。选举结束后，普京的第一个立法倡议于2000年4月，赢得了从杜马的开始II次武器减少条约的批准。该协议是七年前谈判达成的，涉及将俄罗斯和美国的核建设减少一半。普京在这个问题上的举动既被视为他愿意与美国发展积极关系的积极步骤，也表明他将抵制美国在反导防御方面的努力。除了与美国进行谈判外，普京最早的举措之一是与一组经济学家合作，试图制定一项改善该国经济的计划。2000年5月7日，普京正式宣誓就任俄罗斯第二任总统，也是俄罗斯1100年历史上第一位自由转移权力的总统。[NEWLINE][NEWLINE]普京，一个说话温和、面无表情的人，他的个人生活非常私密。他和他的妻子有两个女儿，叶卡捷琳娜和玛丽亚，当他成为总统时，她们都才十几岁。普京有柔道黑带，喜欢跑步。他不抽烟，不喝酒，或者至少很少喝酒，以至于看起来是这样。2000年初，一家美国出版公司宣布将于5月出版他的回忆录《第一人称》的英文译本，该书在3月26日总统大选之前被禁止在俄罗斯出版。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PUTIN_CHAPTER_CAPSULE_BODY" Language="zh_Hans_CN">
+			<Text>普京统治下的俄罗斯是四处扩散的变形虫，您绝对不想当他的邻居。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PUTIN_CHAPTER_DETAILED_BODY" Language="zh_Hans_CN">
+			<Text>俄罗斯的特色能力适合用来掌管陆地上的大片领土。首先因为每座城市的初始规模都很庞大，其次因为当消耗一位伟人时，拉夫拉斯能为他们的城市获得额外单元格。俄罗斯城市将很快获得大量的单元格。再加上普京的特色单位保护您的领空，您能建造一个强大的，能取得任何胜利类型的帝国。</Text>
+		</Replace>
+
+		<!-- 外交 -->
+
+		<!-- 初次见面 -->
+		<!-- 开场白 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_JFD_PUTIN_ANY" Language="zh_Hans_CN">
+			<Text>你好。欢迎来到俄罗斯。</Text>
+		</Replace>
+
+		<!-- 到附近城市的邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_JFD_PUTIN_ANY" Language="zh_Hans_CN">
+			<Text>我们必须谈谈。来我附近的城市吧。</Text>
+		</Replace>
+
+		<!-- AI接受玩家邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NEAR_INITIATOR_POSITIVE_LEADER_JFD_PUTIN_ANY" Language="zh_Hans_CN">
+			<Text>就这样吧。</Text>
+		</Replace>
+
+		<!-- AI邀请玩家交换首都信息 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_JFD_PUTIN_ANY" Language="zh_Hans_CN">
+			<Text>我想与您交换有关我们首都的信息。</Text>
+		</Replace>
+
+		<!-- 问候 -->
+
+		<Replace Tag="LOC_DIPLO_GREETING_LEADER_JFD_PUTIN_ANY" Language="zh_Hans_CN">
+			<Text>……</Text>
+		</Replace>
+
+		<!-- 代表团 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_HUMAN_LEADER_JFD_PUTIN_ANY" Language="zh_Hans_CN">
+			<Text>我接受你的代表团。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_HUMAN_LEADER_JFD_PUTIN_ANY" Language="zh_Hans_CN">
+			<Text>我不会和你的代表团做生意的。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DELEGATION_FROM_AI_LEADER_JFD_PUTIN_ANY" Language="zh_Hans_CN">
+			<Text>我已派代表团前往贵国首都。我相信你有能力在没有小饰品的情况下接收它们。</Text>
+		</Replace>
+
+		<!-- 开放边境 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_HUMAN_LEADER_JFD_PUTIN_ANY" Language="zh_Hans_CN">
+			<Text>很好。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_HUMAN_LEADER_JFD_PUTIN_ANY" Language="zh_Hans_CN">
+			<Text>这不符合俄罗斯的利益。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_OPEN_BORDERS_FROM_AI_LEADER_JFD_PUTIN_ANY" Language="zh_Hans_CN">
+			<Text>我寻求与签署你们开放边界协议。</Text>
+		</Replace>
+
+		<!-- 宣布友谊 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_HUMAN_LEADER_JFD_PUTIN_ANY" Language="zh_Hans_CN">
+			<Text>确实。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_HUMAN_LEADER_JFD_PUTIN_ANY" Language="zh_Hans_CN">
+			<Text>这是不可能的。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_JFD_PUTIN_ANY" Language="zh_Hans_CN">
+			<Text>我提议公开宣布我们两国之间的友谊。</Text>
+		</Replace>
+
+		<!-- 玩家接受后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_PUTIN_ANY" Language="zh_Hans_CN">
+			<Text>很好。</Text>
+		</Replace>
+
+		<!-- 玩家拒绝后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_PUTIN_ANY" Language="zh_Hans_CN">
+			<Text>也许将来可以。</Text>
+		</Replace>
+
+		<!-- 结盟 -->
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_ALLIANCE_FROM_AI_LEADER_JFD_PUTIN_ANY" Language="zh_Hans_CN">
+			<Text>我提议与你结盟。</Text>
+		</Replace>
+
+		<!-- 赞成与警告 -->
+		<!-- AI赞成 -->
+
+		<Replace Tag="LOC_DIPLO_KUDO_EXIT_LEADER_JFD_PUTIN_ANY" Language="zh_Hans_CN">
+			<Text>你是一个有原则的领导者。</Text>
+		</Replace>
+
+		<!-- AI警告 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_EXIT_LEADER_JFD_PUTIN_ANY" Language="zh_Hans_CN">
+			<Text>我希望你有比你向我展示的更多的原则。</Text>
+		</Replace>
+
+		<!-- AI警告玩家离开边境 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_LEADER_JFD_PUTIN_ANY" Language="zh_Hans_CN">
+			<Text>你的士兵离俄罗斯边境太近了。它们必须被移走。</Text>
+		</Replace>
+
+		<!-- 贸易 -->
+		<!-- AI接受交易 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_JFD_PUTIN_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_PUTIN_ANY}</Text>
+		</Replace>
+
+		<!-- AI拒绝交易 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_MAKE_DEAL_FROM_AI_LEADER_JFD_PUTIN_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_PUTIN_ANY}</Text>
+		</Replace>
+
+		<!-- 谴责 -->
+		<!-- 受到谴责回应 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_JFD_PUTIN_ANY" Language="zh_Hans_CN">
+			<Text>随它吧。</Text>
+		</Replace>
+
+		<!-- AI谴责玩家 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_JFD_PUTIN_ANY" Language="zh_Hans_CN">
+			<Text>……[NEWLINE]（谴责你）</Text>
+		</Replace>
+
+		<!-- 谴责理由 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_REASON_FROM_AI_LEADER_ANY_REASON_JFD_O_A_N_LEADS_CULTURE_AND_LAGS_FAITH" Language="zh_Hans_CN">
+			<Text>（您在文化方面很强大，但在信仰方面很薄弱）</Text>
+		</Replace>
+
+		<!-- 宣战 -->
+		<!-- 受到宣战后回应 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_JFD_PUTIN_ANY" Language="zh_Hans_CN">
+			<Text>我们会接受考验，但不会被打败。</Text>
+		</Replace>
+
+		<!-- AI宣战 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_JFD_PUTIN_ANY" Language="zh_Hans_CN">
+			<Text>为了解放俄罗斯人民，我们必须向战争进军。</Text>
+		</Replace>
+
+		<!-- 求和 -->
+		<!-- AI接受求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_ACCEPT_DEAL_LEADER_JFD_PUTIN_ANY" Language="zh_Hans_CN">
+			<Text>很好。</Text>
+		</Replace>
+
+		<!-- AI拒绝求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_REFUSE_DEAL_LEADER_JFD_PUTIN_ANY" Language="zh_Hans_CN">
+			<Text>这是不可能的。</Text>
+		</Replace>
+
+		<!-- AI求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_FROM_AI_LEADER_JFD_PUTIN_ANY" Language="zh_Hans_CN">
+			<Text>和平的时候到了。</Text>
+		</Replace>
+
+		<!-- 击败 -->
+		<!-- AI被击败 -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_JFD_PUTIN_ANY" Language="zh_Hans_CN">
+			<Text>……</Text>
+		</Replace>
+
+		<!-- 玩家被击败（在热座模式中会显示） -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_JFD_PUTIN_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_JFD_PUTIN_ANY}</Text>
+		</Replace>
+		
+		<!-- 苏-30战斗机 -->
+		
+		<Replace Tag="LOC_UNIT_JFD_SUKHOI_NAME" Language="zh_Hans_CN">
+			<Text>苏-30战斗机</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_JFD_SUKHOI_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>弗拉基米尔·普京作为领袖时的俄罗斯特色信息时代单位，取代喷气式战斗机。在其他文明境内时，+2 [ICON_Range] 射程，+7 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_JFD_SUKHOI_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>苏-30是俄罗斯苏霍伊航空公司研制的双引擎、双座超机动战斗机。它是一种用于全天候、空对空和空对地深度拦截任务的多用途战斗机。在俄罗斯对叙利亚的军事干预中，几架苏-30战斗机被派往叙利亚，为对伊斯兰国恐怖组织发动空袭的轰炸机护航和提供照明。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_JFD_SUKHOI_NAME" Language="zh_Hans_CN">
+			<Text>对外空袭</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_JFD_SUKHOI_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>在其他文明境内时，+7 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_JFD_SUKHOI_FOREIGN_COMBAT_STRENGTH_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>+{1_value} [ICON_Strength] 战斗力 来自于在其他文明境内</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

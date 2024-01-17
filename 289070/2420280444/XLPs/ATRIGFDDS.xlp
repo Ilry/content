@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<AssetObjects..XLP>
+	<m_Version>
+		<major>1</major>
+		<minor>0</minor>
+		<build>0</build>
+		<revision>0</revision>
+	</m_Version>
+	<m_ClassName text="UITexture"/>
+	<m_PackageName text="ATRIGFDDS"/>
+	<m_Entries>
+		<Element>
+			<m_EntryID text="EDEN_GF_128"/>
+			<m_ObjectName text="EDEN_GF_128"/>
+		</Element>
+		<Element>
+			<m_EntryID text="EDEN_GF_200"/>
+			<m_ObjectName text="EDEN_GF_200"/>
+		</Element>
+		<Element>
+			<m_EntryID text="EDEN_GF_22"/>
+			<m_ObjectName text="EDEN_GF_22"/>
+		</Element>
+		<Element>
+			<m_EntryID text="EDEN_GF_256"/>
+			<m_ObjectName text="EDEN_GF_256"/>
+		</Element>
+		<Element>
+			<m_EntryID text="EDEN_GF_30"/>
+			<m_ObjectName text="EDEN_GF_30"/>
+		</Element>
+		<Element>
+			<m_EntryID text="EDEN_GF_32"/>
+			<m_ObjectName text="EDEN_GF_32"/>
+		</Element>
+		<Element>
+			<m_EntryID text="EDEN_GF_36"/>
+			<m_ObjectName text="EDEN_GF_36"/>
+		</Element>
+		<Element>
+			<m_EntryID text="EDEN_GF_44"/>
+			<m_ObjectName text="EDEN_GF_44"/>
+		</Element>
+		<Element>
+			<m_EntryID text="EDEN_GF_45"/>
+			<m_ObjectName text="EDEN_GF_45"/>
+		</Element>
+		<Element>
+			<m_EntryID text="EDEN_GF_48"/>
+			<m_ObjectName text="EDEN_GF_48"/>
+		</Element>
+		<Element>
+			<m_EntryID text="EDEN_GF_50"/>
+			<m_ObjectName text="EDEN_GF_50"/>
+		</Element>
+		<Element>
+			<m_EntryID text="EDEN_GF_64"/>
+			<m_ObjectName text="EDEN_GF_64"/>
+		</Element>
+		<Element>
+			<m_EntryID text="EDEN_GF_80"/>
+			<m_ObjectName text="EDEN_GF_80"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ATRI_GF_256"/>
+			<m_ObjectName text="ATRI_GF_256"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ATRI_GF_32"/>
+			<m_ObjectName text="ATRI_GF_32"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ATRI_GF_45"/>
+			<m_ObjectName text="ATRI_GF_45"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ATRI_GF_48"/>
+			<m_ObjectName text="ATRI_GF_48"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ATRI_GF_50"/>
+			<m_ObjectName text="ATRI_GF_50"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ATRI_GF_55"/>
+			<m_ObjectName text="ATRI_GF_55"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ATRI_GF_64"/>
+			<m_ObjectName text="ATRI_GF_64"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ATRI_GF_80"/>
+			<m_ObjectName text="ATRI_GF_80"/>
+		</Element>
+		<Element>
+			<m_EntryID text="XIASHENG_FG"/>
+			<m_ObjectName text="XIASHENG_FG"/>
+		</Element>
+		<Element>
+			<m_EntryID text="XIASHENG_256"/>
+			<m_ObjectName text="XIASHENG_256"/>
+		</Element>
+		<Element>
+			<m_EntryID text="XIASHENG_32"/>
+			<m_ObjectName text="XIASHENG_32"/>
+		</Element>
+		<Element>
+			<m_EntryID text="XIASHENG_45"/>
+			<m_ObjectName text="XIASHENG_45"/>
+		</Element>
+		<Element>
+			<m_EntryID text="XIASHENG_48"/>
+			<m_ObjectName text="XIASHENG_48"/>
+		</Element>
+		<Element>
+			<m_EntryID text="XIASHENG_50"/>
+			<m_ObjectName text="XIASHENG_50"/>
+		</Element>
+		<Element>
+			<m_EntryID text="XIASHENG_55"/>
+			<m_ObjectName text="XIASHENG_55"/>
+		</Element>
+		<Element>
+			<m_EntryID text="XIASHENG_64"/>
+			<m_ObjectName text="XIASHENG_64"/>
+		</Element>
+		<Element>
+			<m_EntryID text="XIASHENG_80"/>
+			<m_ObjectName text="XIASHENG_80"/>
+		</Element>
+		<Element>
+			<m_EntryID text="GAMEMODE_BCOS_NEUTRAL"/>
+			<m_ObjectName text="GAMEMODE_BCOS_NEUTRAL"/>
+		</Element>
+		<Element>
+			<m_EntryID text="GAMEMODE_BCOS_BACKGROUND"/>
+			<m_ObjectName text="GAMEMODE_BCOS_BACKGROUND"/>
+		</Element>
+		<Element>
+			<m_EntryID text="UNIT_ESUBMARINE_22"/>
+			<m_ObjectName text="UNIT_ESUBMARINE_22"/>
+		</Element>
+		<Element>
+			<m_EntryID text="UNIT_ESUBMARINE_256"/>
+			<m_ObjectName text="UNIT_ESUBMARINE_256"/>
+		</Element>
+		<Element>
+			<m_EntryID text="UNIT_ESUBMARINE_32"/>
+			<m_ObjectName text="UNIT_ESUBMARINE_32"/>
+		</Element>
+		<Element>
+			<m_EntryID text="UNIT_ESUBMARINE_38"/>
+			<m_ObjectName text="UNIT_ESUBMARINE_38"/>
+		</Element>
+		<Element>
+			<m_EntryID text="UNIT_ESUBMARINE_50"/>
+			<m_ObjectName text="UNIT_ESUBMARINE_50"/>
+		</Element>
+		<Element>
+			<m_EntryID text="UNIT_ESUBMARINE_80"/>
+			<m_ObjectName text="UNIT_ESUBMARINE_80"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ATRI_GF_FJ"/>
+			<m_ObjectName text="ATRI_GF_FJ"/>
+		</Element>
+		<Element>
+			<m_EntryID text="XIASHENG_FJ"/>
+			<m_ObjectName text="XIASHENG_FJ"/>
+		</Element>
+		<Element>
+			<m_EntryID text="EDEN_BJ"/>
+			<m_ObjectName text="EDEN_BJ"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ATRI_GF_FG"/>
+			<m_ObjectName text="ATRI_GF_FG"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ATRI_GF_FG1"/>
+			<m_ObjectName text="ATRI_GF_FG"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ATRI_GF_FJ1"/>
+			<m_ObjectName text="ATRI_GF_FJ"/>
+		</Element>
+		<Element>
+			<m_EntryID text="XIASHENG_FG1"/>
+			<m_ObjectName text="XIASHENG_FG"/>
+		</Element>
+		<Element>
+			<m_EntryID text="XIASHENG_FJ1"/>
+			<m_ObjectName text="XIASHENG_FJ"/>
+		</Element>
+	</m_Entries>
+	<m_AllowedPlatforms>
+		<Element>WINDOWS</Element>
+		<Element>MACOS</Element>
+		<Element>IOS</Element>
+		<Element>LINUX</Element>
+		<Element>XBONE</Element>
+		<Element>PS4</Element>
+		<Element>SWITCH</Element>
+		<Element>STADIA</Element>
+	</m_AllowedPlatforms>
+</AssetObjects..XLP>
+

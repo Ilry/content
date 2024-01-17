@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'Unearthed Artifacts and Relics Expansion'CN_Fix_IG -->
+<!-- Author: Clear8Sky -->
+<!-- DateCreated: 2022/2/9 21:27:36 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Unearthed: Artifacts and Relics Expansion” 。该文件在 InGame 时载入，无需任何 Criteria -->
+	<LocalizedText>
+		
+		<!-- UNE_Text_GreatWorks_Artifacts_CN.xml文件 -->
+
+		<Replace Tag="LOC_GREATWORK_UNE_ARTIFACT_46_NAME" Language="zh_Hans_CN">
+			<Text>独木舟</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_UNE_ARTIFACT_47_NAME" Language="zh_Hans_CN">
+			<Text>骨笛</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_UNE_ARTIFACT_48_NAME" Language="zh_Hans_CN">
+			<Text>金耳环</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_UNE_ARTIFACT_49_NAME" Language="zh_Hans_CN">
+			<Text>漆制碗</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_UNE_ARTIFACT_50_NAME" Language="zh_Hans_CN">
+			<Text>石雕柱</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_UNE_ARTIFACT_51_NAME" Language="zh_Hans_CN">
+			<Text>砍砸器</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_UNE_ARTIFACT_52_NAME" Language="zh_Hans_CN">
+			<Text>石器</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_UNE_ARTIFACT_53_NAME" Language="zh_Hans_CN">
+			<Text>留声机</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_UNE_ARTIFACT_54_NAME" Language="zh_Hans_CN">
+			<Text>中世纪水罐</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_UNE_ARTIFACT_55_NAME" Language="zh_Hans_CN">
+			<Text>莫里恩头盔</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_UNE_ARTIFACT_56_NAME" Language="zh_Hans_CN">
+			<Text>陶片</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_UNE_ARTIFACT_57_NAME" Language="zh_Hans_CN">
+			<Text>陶俑雕塑</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_UNE_ARTIFACT_58_NAME" Language="zh_Hans_CN">
+			<Text>小提琴</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_UNE_ARTIFACT_59_NAME" Language="zh_Hans_CN">
+			<Text>陶瓶</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_UNE_ARTIFACT_60_NAME" Language="zh_Hans_CN">
+			<Text>打字机</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_UNE_ARTIFACT_61_NAME" Language="zh_Hans_CN">
+			<Text>纹饰盾牌</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_UNE_ARTIFACT_62_NAME" Language="zh_Hans_CN">
+			<Text>铁护手</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_UNE_ARTIFACT_63_NAME" Language="zh_Hans_CN">
+			<Text>装饰灯具</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_UNE_ARTIFACT_64_NAME" Language="zh_Hans_CN">
+			<Text>石版画</Text>
+		</Replace>
+		
+		<!-- UNE_Text_GreatWorks_Relics_CN.xml文件 -->
+
+		<Replace Tag="LOC_GREATWORK_UNE_RELIC_28_NAME" Language="zh_Hans_CN">
+			<Text>流刃剑</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_UNE_RELIC_29_NAME" Language="zh_Hans_CN">
+			<Text>兽主支柱</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_UNE_RELIC_30_NAME" Language="zh_Hans_CN">
+			<Text>陨铁短匕</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_UNE_RELIC_31_NAME" Language="zh_Hans_CN">
+			<Text>象牙号</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_UNE_RELIC_32_NAME" Language="zh_Hans_CN">
+			<Text>藏骨堂</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_UNE_RELIC_33_NAME" Language="zh_Hans_CN">
+			<Text>育子小雕像</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

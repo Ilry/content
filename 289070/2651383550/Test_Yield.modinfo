@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mod id="d1ea1e89-d537-4def-8255-bc2dabf233c9" version="1">
+  <Properties>
+    <Name>YieldChanges</Name>
+    <Description>------------------</Description>
+    <Created>1636558022</Created>
+    <Teaser>------------------</Teaser>
+    <Authors>polaris_cheung</Authors>
+    <CompatibleVersions>1.2,2.0</CompatibleVersions>
+  </Properties>
+  <InGameActions>
+    <UpdateDatabase id="NewAction">
+      <File>GameData.xml</File>
+      <File>GameInfo.xml</File>
+    </UpdateDatabase>
+  </InGameActions>
+  <Files>
+    <File>GameData.xml</File>
+    <File>GameInfo.xml</File>
+  </Files>
+</Mod>

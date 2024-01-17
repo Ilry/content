@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mod id="68d5274e-e82b-4d9e-9c52-2b1dfc7429e3" version="1">
+  <Properties>
+    <Name>[COLOR:DiplomaticLabelCS]Zegangani's: Real Allies[ENDCOLOR]</Name>
+    <Description>Alliance Partners no longer attack each others' suzerained City-States.</Description>
+    <Teaser>Alliance Partners don't attack Alliance suzerained CSs</Teaser>
+    <Authors>Zegangani</Authors>
+    <CompatibleVersions>2.0</CompatibleVersions>
+  </Properties>
+  <Dependencies>
+    <Mod id="4873eb62-8ccc-4574-b784-dda455e74e68" title="Expansion: Gathering Storm" />
+  </Dependencies>
+  <InGameActions>
+    <AddGameplayScripts id="Real_Allies_Script">
+      <Properties>
+        <LoadOrder>2222</LoadOrder>
+      </Properties>
+	  <File>Real_Allies.lua</File>
+    </AddGameplayScripts>
+	<UpdateDatabase id="Real_Allies">
+      <Properties>
+        <LoadOrder>222222</LoadOrder>
+      </Properties>
+	<File>Real_Allies.sql</File>
+    </UpdateDatabase>
+  </InGameActions>
+  <Files>
+	<File>Real_Allies.sql</File>
+	<File>Real_Allies.lua</File>
+  </Files>
+</Mod>

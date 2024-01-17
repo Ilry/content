@@ -1,0 +1,1014 @@
+#本文档仅为作者本人（Clear8Sky）所用。
+创建日期：2021/2/20 17：42
+
+前言：
+老了（呸，24叫老？你应该说24岁，是学生……），脑子不太好使了。
+有时候翻译着后面的就忘了前面的规则，还得反复查找。
+为了方便吧，把我认为一些合理的翻译约定以及用词规则，写在这个文本文档里，以备后续查阅。
+
+会不断地往下填内容的，所以，とめるんじゃねぇぞ……（不要停下来呀……）
+
+————————————————————————————————————————————————————————————————————————————————————————————————————
+
+【译者注：正在翻译……】[NEWLINE][NEWLINE]
+【译者注：五十音在学了……】[NEWLINE][NEWLINE]
+
+
+用得到的图标类与名词类：（图标代码前后都需加空格）
+食物						[ICON_Food]
+食物增长					[ICON_FoodSurplus]
+生产力					[ICON_Production]
+金币						[ICON_Gold]
+信仰值					[ICON_Faith]
+科技值					[ICON_Science]
+文化值					[ICON_Culture]
+能力（交叉的两把剑）		[ICON_Ability]
+战斗力					[ICON_Strength]
+射程						[ICON_Range]
+远程攻击					[ICON_Ranged]
+轰炸攻击力				[ICON_Bombard]
+放空攻击力				[ICON_AntiAir_Large]
+防御时（半盾牌）			[ICON_Fortifying]
+防御状态（全盾牌）			[ICON_Fortified]
+生命值/受损				[ICON_Damaged]
+移动力					[ICON_Movement]
+编队						[ICON_Formation]
+强化						[ICON_Promotion]
+单位（一个小人）			[ICON_Unit]
+位置（两个小人）			[ICON_Position]
+军团/舰队					[ICON_Corps]
+军队/无敌舰队				[ICON_Army]
+住房						[ICON_Housing]
+宜居度					[ICON_Amenities]
+伟人/伟人点数				[ICON_GreatPerson]
+大将军					[ICON_GreatGeneral]
+海军统帅					[ICON_GreatAdmiral]
+大预言家					[ICON_GreatProphet]
+大作家					[ICON_GreatWriter]
+大音乐家					[ICON_GreatMusician]
+大艺术家					[ICON_GreatArtist]
+大商人					[ICON_GreatMerchant]
+大工程师					[ICON_GreatEngineer]
+大科学家					[ICON_GreatScientist]
+著作						[ICON_GreatWork_Writing]
+音乐巨作					[ICON_GreatWork_Music]
+任意类型巨作/肖像艺术巨作	[ICON_GreatWork_Portrait]
+艺术类巨作				[ICON_GreatWork_Landscape]
+宗教艺术巨作				[ICON_GreatWork_Religious]
+雕塑艺术巨作				[ICON_GreatWork_Sculpture]
+风景艺术巨作				[ICON_GreatWork_Landscape]
+遗物						[ICON_GreatWork_Relic]
+文物						[ICON_GreatWork_Artifact]
+
+历史古迹					[ICON_RESOURCE_ANTIQUITY_SITE]
+海难遗址					[ICON_RESOURCE_SHIPWRECK]
+煤						[ICON_RESOURCE_COAL]
+铁						[ICON_RESOURCE_IRON]
+马						[ICON_RESOURCE_HORSES]
+硝石						[ICON_RESOURCE_NITER]
+石油						[ICON_RESOURCE_OIL]
+铝						[ICON_RESOURCE_ALUMINUM]
+铀						[ICON_RESOURCE_URANIUM]
+香蕉						[ICON_RESOURCE_BANANAS]
+牛						[ICON_RESOURCE_CATTLE]
+柑橘						[ICON_RESOURCE_CITRUS]
+可可豆					[ICON_RESOURCE_COCOA]
+咖啡						[ICON_RESOURCE_COFFEE]
+铜						[ICON_RESOURCE_COPPER]
+棉花						[ICON_RESOURCE_COTTON]
+螃蟹						[ICON_RESOURCE_CRABS]
+鹿						[ICON_RESOURCE_DEER]
+钻石						[ICON_RESOURCE_DIAMONDS]
+染料						[ICON_RESOURCE_DYES]
+鱼						[ICON_RESOURCE_FISH]
+皮草						[ICON_RESOURCE_FURS]
+石膏						[ICON_RESOURCE_GYPSUM]
+熏香						[ICON_RESOURCE_INCENSE]
+象牙						[ICON_RESOURCE_IVORY]
+玉						[ICON_RESOURCE_JADE]
+大理石					[ICON_RESOURCE_MARBLE]
+水银						[ICON_RESOURCE_MERCURY]
+珍珠						[ICON_RESOURCE_PEARLS]
+大米						[ICON_RESOURCE_RICE]
+盐						[ICON_RESOURCE_SALT]
+羊						[ICON_RESOURCE_SHEEP]
+丝绸						[ICON_RESOURCE_SILK]
+银						[ICON_RESOURCE_SILVER]
+香料						[ICON_RESOURCE_SPICES]
+石头						[ICON_RESOURCE_STONE]
+糖						[ICON_RESOURCE_SUGAR]
+茶叶						[ICON_RESOURCE_TEA]
+烟草						[ICON_RESOURCE_TOBACCO]
+松露						[ICON_RESOURCE_TRUFFLES]
+鲸鱼						[ICON_RESOURCE_WHALES]
+小麦						[ICON_RESOURCE_WHEAT]
+葡萄酒					[ICON_RESOURCE_WINE]
+蜂蜜						[ICON_RESOURCE_HONEY]
+玉米						[ICON_RESOURCE_MAIZE]
+橄榄						[ICON_RESOURCE_OLIVES]
+
+宗教传播压力				[ICON_Religion]
+劳动力					[ICON_Charges]
+宗教/宗教战斗力/传教次数	[ICON_Religion]
+公民/人口					[ICON_Citizen]
+鼓舞						[ICON_CivicBoosted]
+尤里卡					[ICON_TechBoosted]
+原始						[ICON_Capital]		首都
+建筑						[ICON_Buildings]
+区域						[ICON_District]
+政体						[ICON_Government]
+政策						[ICON_Policy]
+旅游业绩					[ICON_Tourism]
+主题化加成				[ICON_ThemeBonus]
+使者、城邦				[ICON_Envoy]
+外交能见度				[ICON_VisLimited]
+外交支持					[ICON_Favor]
+蛮族哨站					[ICON_Barbarian]
+贸易站					[ICON_TradingPost]
+贸易路线/贸易路线容量		[ICON_TradeRoute]
+忠诚度压力上升				[ICON_PressureUp]
+忠诚度压力大幅上升			[ICON_PressureUpLarge]
+忠诚度压力下降				[ICON_PressureDown]
+忠诚度压力大幅下降			[ICON_PressureDownLarge]
+影响力点数				[ICON_InfluencePerTurn]
+总督/总督头衔				[ICON_Governor]
+英雄时代					[ICON_Glory_Super_Golden_Age]
+黄金时代					[ICON_Glory_Golden_Age]
+普通时代					[ICON_Glory_Normal_Age]
+黑暗时代					[ICON_Glory_Dark_Age]
+电力						[ICON_Power]
+电力不足					[ICON_PowerInsufficient]
+
+英雄寿命					[ICON_Lifespan]
+英雄遗物					[ICON_GreatWork_HeroRelic]
+英雄使用次数				[ICON_Action_charges]
+产品						[ICON_GreatWork_Product]
+
+回合						[ICON_Turn]
+
+世界奇观（Wonders）
+【LOC_BUILDING_CASTLE_NAME】→Medieval Walls（中世纪城墙）	【LOC_BUILDING_WALLS_NAME】→Ancient Walls（远古城墙）
+使徒信仰（Follower Belief）
+上船（embarking）	登陆（disembarking）		跨河（crossing Rivers）	位于帝国境内或相邻边境时（in or adjacent to your territory）
+发动海岸扫荡（perform coastal raids）
+英雄传说（Hero Devotions）
+水域单元格（water tiles）		=	海岸与湖泊单元格（shallow water/Coast tiles）	+	海洋单元格（sea tiles）	海岸/沿海陆地单元格（coastal tiles）
+战略资源储备上限（Strategic Resource Stockpiles）
+领事馆（Consulate）		外交办（Chancery）
+专业化区域（specialty districts）	指可放置市民的区域
+迷人的（Charming）		惊艳的（Breathtaking）
+领土扩张速度（类似borders expand的）
+进驻单位（Occupying unit）		俘获/征服、占领(Capture/Conquer、Occupy)
+基础战斗力更高的单位（units with a higher base Combat Strength）
+陆地/海上/空中 战斗单位 (Land/Naval/Air military(battle) units)	
+海军运输船/海军袭击者/战斗机/空中轰炸单位 (Aircraft Carrier/Naval Raider/Air Fighter/Air Bomber units)	
+军事单位（Military units）
+不能建造在市中心旁边（Cannot be built adjacent to a City Center）
+侦察兵（Scout）		侦察单位（Recon unit）		投石机（Trebuchet）
+为双方（to both players）			政策ICON_GREATWORK_WRITING（policy slots）
+渔场（Fishery）		渔船（Fishing Boats）
+发电站（Power Plant）
+随着科技和市政的发展（While advancing through the Civics and Technology trees）
+在本国领土上发起的战争不会产生厌战情绪（No war weariness from combat in your territory）
+淡水流经的单元格（Tiles with fresh water access）
+维护费用（maintenance）
+从建造完成或上一次修复开始（since constructed or last repaired）
+区域提供+2对应类型的 [ICON_GreatPerson] 伟人点数（Districts provide an additional +2 [ICON_GreatPerson] Great Person points of their type）
+位于原始 [ICON_Capital] 首都所在大陆上（on same continent as capital city）
+位于非原始首都所在大陆上（on foreign continents）
+每张放置于政体中的军事政策卡（each active Military policy）
+专家(Specialist)	用于区域内公民布置上	专家槽位而非公民槽位	以及“在区域工作的 [ICON_Citizen] 专家”
+工业区内地域加成建筑的延伸范围向外扩展3格（Industrial Zone regional buildings reach 3 tiles farther）
+每个等级的城墙（Each level of Walls）
+人口增长速度（City growth）
+——————————————————————————————————————————————————————————————————————————————
+
+用得到的描述类文本：
+区域（特指）、建筑（泛指）、城邦、奇观（泛指与特指）、城市，用量词“座”
+
+区域（泛指）、贸易站、单位（泛指）、项目、信徒、政策槽位、通配符槽位、专家槽位、政体、巨作（泛指）、宗教，用量词“个”
+
+公民、使者、伟人（泛指与特指）、总督，用量词“位”
+
+蛮族哨站、自然奇观、改良设施（泛指），用量词“处”（有时也有“每处资源”的用法）（有时也有“境内有一处丘陵/雨林（或其他地貌）”的用法）
+
+另，
+对于其他杂项名词文本，可参考以下量词
+如	“5 个/处 奢侈品资源”	“3种战略资源”
+如	“每处海岸地形”	“每处绿洲”	“每两处泛滥平原”	“一处山脉”
+如	“一个尤里卡”	“一次鼓舞”
+如	“两张政策卡”
+如	“此城”	一般用“此”	抑或“该城市”
+如	“建立两条道路”	“完成一条贸易路线”
+如	“（每）击杀一名敌方单位”	“一名XXX（一般特指某个单位）”	“派遣一名间谍”
+如	“三阶市政广场建筑”	“建筑的阶数”		“四阶建筑”（Tier，量词仍用中文而非阿拉伯数字）
+如	“没有淡水资源的城市最多获得6个 [ICON_Housing] 住房”	里的住房一般用“个”
+如	“解锁一项科技/市政”
+（另外，可联系对照下边的尤里卡文本进行补充）
+
+如“Upon capturing a Barbarian Outpost, receive a Tribal Village reward in addition to the usual [ICON_Gold] Gold.”
+译为“清除一处 [ICON_Barbarian] 蛮族哨站，可额外获得造访部落村庄给予的奖励。”		
+中，量词用“处”	“清除”	后半句基本为定式
+
+如	“获得20点外交支持”	“奖励50点科技值”	“奖励250点伟人点数”	“消耗5点电力”	“获得50个金币”
+用量词“点”或“个”
+而普遍情况下，为	“+5 [ICON_Favor] 外交支持”	“+3 [ICON_Science] 文化值”	“+4 [ICON_Tourism] 旅游业绩”
+
+泛称的区域，不与具体某个区域名称同时使用
+如	“这些区域及其建筑”、“军营及其建筑”、“学院及其建筑”；		×“学院区域及其建筑”×
+另，最好译为“及其建筑”；	“及其内建筑”的“内”可删去
+另另，“某些区域内建筑”	泛指的区域有“内”，而特制的没有		“学院建筑”“剧院广场建筑”
+
+“等同于”类的文本：
+如	“可获得等同于学院 [ICON_Science] 科技值相邻加成的 [ICON_Faith] 信仰值加成。”
+如	“可提供等同于其 [ICON_Culture] 文化值相邻加成的 [ICON_Production] 生产力”
+如	“击杀敌方单位可	产出等同于其 [ICON_Strength] 战斗力50%的科技值”	“可	获得…… [ICON_GreatGeneral] 大将军点数”
+如	“建造完成/训练完成……可获得等同于其生产力消耗25%的科技值”
+另	“击杀敌方单位可产出伟人点数/……”	也用“产出”
+这类文本的格式依上
+
+
+↓游戏内特指名词配套的量词荐用↓
+一只渔船		一口油井		每片农场/种植园/牧场/渔场/大陆/圩田/梯田农场		一道城墙		一份科研协议（Research Agreement）		两所大学		两口油井
+一件文物/遗物/英雄遗物/艺术类巨作/宗教艺术巨作/雕塑艺术巨作		一本著作		两首音乐巨作		一幅风景艺术巨作/肖像艺术巨作		一条运河		一台末日机甲
+每个图书馆/研究实验室/水磨/古罗马剧场/广播中心/市场/灯塔/造船厂/神社/祭祀建筑/竞技场/兵工厂/兵营/马厩/工作坊/下水道/食品市场/购物市场/摩天轮/营地/海滨度假区/冰球场/机库/观测气球/（Mod加入的各种建筑与改良设施，暂时统一用“个”）
+一家银行/艺术博物馆/考古博物馆/证券交易所/动物园/工厂/水族馆/生态博物馆/纪念碑/公司
+一座机场/码头/寺庙/粮仓/体育场/军事学院/发电站/水上运动中心/伐木场/采石场/矿山/滑雪场/海上石油钻机/离岸风力发电厂/海洋家园/水渠/攻城塔/水电站坝/狮身人面像/跨海大桥(Mod)/拦洪坝/国家公园/社区/导弹发射井/攻城塔/领事馆/堤坝/市立公园/堡垒
+两艘桨帆船/装甲舰/驱逐舰		两门野战加农炮/射石炮	一名弓箭手/弩手/商人/（一般特指的单位）		两架双翼机/战斗机	两辆坦克	一支摇滚乐队/两支军团/一支潮流组合（Mod）	一队枪刺与射击方阵
+
+同理，特指的建筑，不与具体某个建筑名称同时使用
+如	“建造市场+50%生产力”；		×“建造市场建筑+100%生产力”×
+
+
+购买单元格：
+特例“购买单元格和建筑消耗的 [ICON_Gold] 金币增加20%。”/“购买单元格消耗的 [ICON_Gold] 金币减少50%。”
+其中，“购买单元格”		“消耗”		“增加”/“减少”
+
+类比，购买其他的，重点是“消耗的……增加/减少……”
+
+
+城邦与宗主国：
+特例“成为宗主国时，下辖的每座城邦可为您提供/可使您获得……//可从派遣至下辖城邦的每位 [ICON_Envoy] 使者……”	
+其中，前半句固定		“下辖”		“派遣至”
+特例二“City-States provide an extra +1 of their Type bonuses to the Palace, Consulate, and Chancery.”
+译为“成为宗主国时，下辖各类城邦对宫殿、领事馆、外交办提供的各类加成额外+1。”
+另，“Spies may choose from any promotion.”可译为
+“间谍可选择任意 [ICON_Promotion] 强化路线，而非接受随机 [ICON_Promotion] 强化。”
+官译→	“您的间谍可选择任何晋升路线，而不是接受随机晋升。”	后续可以改一下
+
+计数的选择上：一，两，3，4，5……
+前两个数字用中文组词更合适，如“一个，两种，一次，两回合……”；两次强化；提供一/两个专家槽位
+另，2格范围内；1格范围内（然而，占一/两个单元格）；提供1点宜居度；至少拥有一格该奇观……；一位使者//（不过在城邦加成界面应写成1/3/6/10位使者）
+奖励1个总督头衔；产出1点资源；提供1个/2个住房；掠夺消耗1/2点移动力；每1点信仰值；1级/2级/3级同盟
+表演效果提升1个等级
+
+
+如“+{1_num} [ICON_Production] 生产力 来自相邻 皇家海军船坞”
+里面的	“ 来自相邻 ”，前后各有空格
+如“+5 [ICON_Strength] 战斗力 来自于在沙漠或平原上/在树林或雨林中”
+里面的	“ 来自于”三个字固定，且前有空格		且，来自于地形时一般为“在……上”；来自于地貌时一般为“在……中”；来自于大陆时“位处原始首都所在大陆”/“位处非原始首都所在大陆”
+另，规定固定搭配“相邻每个/座/处……”，而非“每个/座/处……相邻的”
+另另，少量（minor）/标准（standard）/大量（major）相邻加成
+另另另：{Amount : plural 1?civic; other?civics;}意思是，被测数字Amount格式为plural，其值若为1，则{}显示为civic；若为非1的数，则{}显示为civics
+另另另另：可从……中获得……相邻加成		抑或		可从相邻的每个……中获得……相邻加成
+
+自然奇观起始句句式：
+如		“在山脉地形上占一个单元格的自然奇观。（无法逾越，且）……”
+再如		“占一个单元格无法逾越的自然奇观。（以火山形式出现，）……”
+
+
+巨作相关：
+特例“The Palace receives 4 extra slots for any type of [ICON_GreatWork_Portrait] Great Work.”
+译为“宫殿+4巨作槽位，可放置任意类型的 [ICON_GreatWork_Portrait] 巨作。”
+重点是	“巨作槽位”	“放置”	“[ICON_GreatWork_Portrait]”——指代任意类型
+另，句式“高棉庙堂额外+1 [ICON_GreatWork_Relic] 遗物槽位”	直接写+什么类型的巨作槽位
+另另，句式“提供两个 [ICON_GreatWork_Relic] 遗物巨作槽位”		某建筑有槽位，可用“提供”
+
+
+宗教相关：
+例一“传教士获得+2 [ICON_Religion] 传教次数。”	//对标	“建造者获得+2 [ICON_Charges] 劳动力。”
+
+例二“Culture Bombs automatically convert the adjacent city to Poland''s [ICON_Religion] Religion.”
+译为“文化炸弹将使相邻城市自动皈依您文明的主流 [ICON_Religion] 宗教。”
+
+例三“Converts captured cities to player's religion.”
+译为“占领城市后，其将自动皈依您文明的主流 [ICON_Religion] 宗教。”
+
+资源相关：
+改良后的 [ICON_RESOURCE_IRON] 铁、[ICON_RESOURCE_HORSES] 马和 [ICON_RESOURCE_URANIUM] 铀每回合产量+2。
+……每拥有一处已改良的重复资源，……
+
+特色能力相关：
+特例“解锁建造者修建苏美尔特色改良设施“金字塔”的能力”
+
+特色单位相关：
+例一“苏美尔远古时代特色重骑兵单位，取代重型战车。”“哈拉尔德·哈德拉达作为领袖时的（挪威）远古时代特色海军近战单位，取代桨帆船。”		（）里可去掉
+其中，特色文明/特色领袖+某个时代+“特色”+单位类型+“单位”，后面的“取代”看具体情况。
+另例“取代火枪手的美国工业时代特色近战单位。”	反过来的句式亦可。
+
+例二“高卢远古时代特色近战单位，取代勇士。相较于后者，高卢枪佣兵的训练成本更高。”
+其中，“相较于后者”	“训练成本”（取代“造价”这一通俗的词）；同理，对于其他类型的特色，相应地，“建造成本”（取代“造价”）
+
+
+贸易路线相关：
+特例“通往	其他/您	文明的 [ICON_TradeRoute] 贸易路线，其		目的地/出发地		城市……”
+基本固定句式，依上
+特例二“通往	其他/您	文明的 [ICON_TradeRoute] （国际）贸易路线	产出+……”
+主要表意为：通往其他文明的（国际）贸易路线，是为您产出增加；而通往您文明的（国际）贸易路线，一般是为其他文明产出增加。	国际与否，可能首先遵照原文
+
+特例“while traveling within 3 tiles of any Campus”
+译为“在经过任意一座学院3格范围内时”
+
+特例“+1 [ICON_Gold] Gold per turn from each foreign [ICON_TradeRoute] Trade Route passing through the city. 
++1 [ICON_Gold] Gold per turn from and to each foreign [ICON_TradeRoute] Trade Route to this city.”
+译为“从每条途经或到达此城的国际 [ICON_TradeRoute] 贸易路线中获得+1 [ICON_Gold] 金币。”
+其中，通过“途经”与“到达”将两句话整合为一句
+
+特例“Trade Routes sent to and from this city”
+译为“以此城为目的地或出发地的贸易路线”
+
+
+阿拉伯原特色能力：
+当倒数第二位大预言家被招募后（如果您尚未获得大预言家），自动获得最后一位 [ICON_GreatProphet] 大预言家。
+
+巴西（？）原特色能力：
+招募或赞助一位 [ICON_GreatPerson] 伟人后，将返还所消耗 [ICON_GreatPerson] 伟人点数的20%。
+
+日本原特色能力：
+“All units are immune to Hurricane damage. Units of enemy civilizations receive +100% damage from Hurricanes in Japanese territory.”
+译为“单位不受飓风伤害。与您交战文明的单位若处于您帝国境内，则其遭遇飓风时受到的伤害+100%。”
+“…extending to each City Center within 6 tiles. Multiple copies of this building within 6 tiles of a City Center do not provide additional bonuses.”
+译为“其加成延伸至6格范围内的所有城市（前提是它们没有获得来自其他市中心的加成）。”
+另句式“燃煤发电厂的 [ICON_Production] 生产力加成可延伸至6格范围内的所有城市（前提是它们没有获得来自其他燃煤发电厂的加成）。”
+
+斯基泰原特色能力：
+每次训练一个轻骑兵单位或萨卡弓骑手，可免费再获得一个相同单位。
+
+瑞典特色能力相关描述：
+“Tiles with Dūnons cannot be swapped.”
+译为“高卢堡垒所在单元格无法在城市间切换。”
+
+高卢特色能力相关描述：
+“The {LOC_DISTRICT_OPPIDUM_NAME} is defensible with a ranged attack.”
+译为“{LOC_DISTRICT_OPPIDUM_NAME}拥有区域防御，可进行 [ICON_Ranged] 远程攻击。”
+
+德国特色能力相关描述：
+“The Diplomatic Quarter provides an additional district slot”
+译为“拥有外交区的城市，可无视 [ICON_Citizen] 人口限制额外建造一个区域。”
+原能力表述改动“每座城市皆可基于 [ICON_Citizen] 人口限制额外建造一个区域。”	感觉后者更好，基于比无视要好。
+
+中国特色能力相关描述：
+“[ICON_TechBoosted] 尤里卡和 [ICON_CivicBoosted] 鼓舞额外提升（对应科技或市政解锁所需科技值或文化值总量的）10%。”
+“[ICON_CivicBoosted] 鼓舞额外提升（对应市政解锁所需文化值总量的）10%；[ICON_TechBoosted] 尤里卡额外提升（对应科技解锁所需科技值总量的）10%。”
+属于固定描述了。
+“消耗 [ICON_Charges] 劳动力推进……原始修建（建造）进度的……%。”
+固定描述。
+
+匈牙利特色能力相关
+“+50% [ICON_Production] Production towards districts and buildings constructed across a River from a City Center.”
+“在沿河市中心的对岸建造区域与建筑时+50% [ICON_Production] 建造速度。”
+
+瑞典特色能力相关
+“Buildings with at least 3 [ICON_GreatWork_Portrait] Great Work slots and Wonders with at least 2 [ICON_GreatWork_Portrait] Great Work slots are automatically themed when all their slots filled.”
+“全部槽位填满时，拥有至少3个 [ICON_GreatWork_Portrait] 巨作槽位的建筑和至少两个 [ICON_GreatWork_Portrait] 巨作槽位的世界奇观可自动获得主题。”
+
+苏格兰特色能力相关
+“Happy cities receive an additional +5% [ICON_Faith] Faith; ecstatic cities double this amount to +10%. ”
+“幸福度为“高兴”状态的城市额外+5% [ICON_Faith] 信仰值产出；幸福度为“欣喜若狂”状态时则改为+10%。”
+
+梵蒂冈城宗主国加成
+“Activating a [ICON_GreatPerson] Great Person spreads 400 [ICON_Religion] Religious pressure to cities within 10 tiles.”
+“激活一位 [ICON_GreatPerson] 伟人时，其会将您所创立 [ICON_Religion] 宗教（或您文明主流 [ICON_Religion] 宗教）向10格范围内的其他城市传播400点 [ICON_Religion] 宗教压力。”
+其中“您所创立宗教（或您文明主流宗教）”比较完整，类似的都推荐如此说明	；	传播+宗教压力		而非		“施加+宗教传播压力”
+“宗教压力”可用“增加/减少” 百分之多少
+
+
+忠诚度相关：
+特例“exert -2 Loyalty per turn to foreign cities within 9 tiles”
+译为“每座世界奇观可使9格范围内其他文明的城市每回合-2忠诚度。”	固定翻译了
+另“Citizen pressure affects cities within 9 tiles, but is 10% less effective per tile distant.”
+基于官译改动“公民输出的忠诚度压力将影响9格范围内其他文明的城市，但每远离1个单元格，效果减弱10%。”
+
+
+总督相关：
+特例“[ICON_Governor] Governors provide +3% [ICON_Science] Science and +3% [ICON_Culture] Culture to their cities for each Title.”
+译为“有 [ICON_Governor] 总督就职的城市，其总督每次升级可使此城+3% [ICON_Science] 科技值、+3% [ICON_Culture] 文化值产出。”
+“+1 [ICON_Science] Science per [ICON_Governor] Promotion of a Governor established in this city.”
+“此城有 [ICON_Governor] 总督就职时，其每次升级（该建筑）则提供+1 [ICON_Science] 科技值。”
+“+1 [ICON_Science] Science to your other cities within 6 tiles for each Campus district building in this city.”
+“该 [ICON_Governor] 总督就职所在城市的每个学院建筑可为6格范围内的城市提供+1 [ICON_Science] 科技值。”
+句式基本固定，依上
+
+
+动词类比较固定的使用：
+“奖励（一般是grants）			2位使者/1个总督头衔”
+“城市/公民/资源/贸易路线/单元格			产出（一般是yields）”
+“区域/建筑/文物			提供（一般是provides）”
+“从……中获得（一般后面有from）”
+“触发（一般是trigger）			文化炸弹”	
+“可对相邻单元格释放			文化炸弹”
+“建造			建筑/奇观/区域”
+“训练/生产		单位（人，如训练翼骑兵）/单位（载具，如生产航空母舰）”	（另注，炮算作载具）
+“进行			项目”	“项目进行时”/“若项目正在进行时”（active）	“项目完成时”（completed）
+“建立			道路/城市/贸易站/贸易路线/同盟”
+“击杀/击毁		单位（人，如击杀枪刺与射击方阵）/单位（载具，如击毁射石炮或击毁战舰）”
+“占领			（敌方）城市”
+“使用			一次伟人”
+“创建			万神殿”
+“创立			宗教”
+“修建			改良设施/城墙/国家公园/铁路/穿山隧道/……”
+“改良/开采/改良	一处农业资源(Farm a resource)/矿产资源(Mine a resource)/海洋资源(sea resources)”
+“出土			一件文物”（考古学家触发的）
+“无视（ignore）			额外 [ICON_Movement] 移动力消耗”	“上船或登陆不消耗 [ICON_Movement] 移动力”	“无视从海上进攻与跨河进攻时的 [ICON_Strength] 战斗力减益”
+“单位	移动		时无视地形影响”
+“单位 [ICON_Damaged] 受损时无 [ICON_Strength] 战斗力减益	/	战斗力减益降低50%（用降低一词）”
+“随机免费获得”	“随机获得”	“免费获得”
+“单位 [ICON_Damaged] 生命值		恢复至满（一般是heal completely）”
+“不与其他文明交战时”			“与其他文明交战时”
+“被支援车队护送的单位能获得与之相同的 [ICON_Movement] 移动力”	“护送开拓者的单位，能使其获得与自己相同的 [ICON_Movement] 移动力”
+“完成科技/市政“XX”解锁……”	“解锁科技/市政“XX”可建造/修建/招募/训练……”
+“可进行		区域控制”
+“向其他文明施加的		 [ICON_Tourism] 旅游业绩压力+25%”
+“有一座建筑		达成		主题化条件”
+“城市不会		产生		厌战情绪。”
+“成为			被宣战的目标”
+“产生			宗教压力”
+“针对/向			无主单元格/无主疆域		的文化炸弹/扩张”
+
+伟人能力相关
+“reveals [ICON_RESOURCE_COAL] Coal without the normal technology requirement.”
+“忽略普通科技要求，显示 [ICON_RESOURCE_COAL] 煤资源”
+基本固定句式。
+
+“Triggers the [ICON_CivicBoosted] Eureka / [ICON_CivicBoosted] Inspiration moment for 1 random technology/civic from the Renaissance or Industrial era.”
+“为随机的1个文艺复兴时期或工业时代科技/市政启动 [ICON_CivicBoosted] 尤里卡/ [ICON_CivicBoosted] 鼓舞时刻。”
+
+“Grants 125 [ICON_Production] Production towards wonder construction”
+“为奇观建设赠予125点 [ICON_Production] 生产力”
+基本固定句式。
+
+
+政策能力相关
+“Extra [ICON_Production] Production from buildings in Industrial Zones: +1 if city [ICON_CITIZEN] population is 15 or higher, +1 if district has at least +5 adjacency bonus.”
+“工业区中的建筑将产出额外的 [ICON_Production] 生产力：若城市 [ICON_Citizen] 人口不少于15，则+1 [ICON_Production] 生产力；若区域相邻加成不低于+5，则+1 [ICON_Production] 生产力。”
+基本固定句式。
+
+特殊符号暂存
+下标：₀₁₂₃₄₅₆₇₈₉₊₋₌₍₎
+
+
+
+超次元的一些翻译约定
+
+R2 Droid——R-2无人机	千幸的建造者		Chiyukitalian——千幸(的)		Yoshimizu Aiko——吉水爱子		Hatsumi Kotori——初美琴里		Serenity nation——静谧之地
+Gamindustri——游汐叶界		紫耀之都(Planeptune)		涅普姬雅(Nepgear)		涅普迪努·白(Neptune)/普露露特(Plutia)/涅普迪努·黑(Neptune)/涡芽(Uzume)
+绀紫进步之地(Land of Purple Progress)	布丁工厂(Pudding Factory)		紫心之妹的热情(Purple Sister's Passion)	诺瓦露(Noire)		优妮(Uni)	Hatsumi Tsukara(初美津夏良)
+涅普敢达(Nepgeardam)		幻影之舞(Mirage Dance)		绀紫之心的权能(Purple Heart's Power)		圣黑之心(Black Heart)		次世代黑之心(Next Black)
+嘟咕骑士(Dogoo Knight)		背刺偷袭！(Symbol Attack!)		虹色之心的“奖励”(Iris Heart's Indecency)		拟人玩偶(Animated Doll)		黑心之妹(Black Sister)
+虹色女王(Sadie)		涅普迪努的历险(Neptune’s Adventure)		侦测系统(Scout Service)		涅普日记(Nep-Note)		次世代白之心(Next White)	Yoshimizu Rinne(吉水凛祢)
+橙色之心的娇软姿态(Orange Heart's Adorable Soft)		海男建造者(Umio Builder)		「净罪」愿想(Mousou Katharsis)		纯白之心(White Heart)	Katsumi Harusu(胜美春须)
+绿荫箱庭(Leanbox)		贝露(Vert)		翠绿放牧之地(Land of Green Pastures)		贝露的直播间(Live Arcade)		懒懒(Ran-Ran)		次世代绿之心(Next Green)
+翠绿之心的优雅(Green Heart's Grace)		大（胸）就是正义！(Large is Justice)			次世代紫之心(Next Purple)		翠绿之心(Green Heart)		伊汀(Eden)
+布兰(Blanc)		无暇净土(Snow Wasteland)		白露之滨(Lowee)		萝姆(Rom)		拉姆(Ram)		白心之妹(White Sister)		黄金参氅(Gold Third)
+黑土边域(Lastation)		天王星涡芽(Uzume Tennouboshi)		暗黑星黑芽(Kurome Ankokuboshi)		橙色之心(Orange Heart)		克萝瓦尔(Croire)		Niwa Midori(丹羽碧)
+玛杰空努(Arfoire, Magiquone)		匹希大陆(PC Contintent)		碧瑟(B-SHA)		西瑟(C-SHA)		艾丝瑟(S-SHA)		依瑟(e-sha)		凯瑟(K-SHA)
+伊斯特瓦尔(Histoire)			艾芙(IF)		康帕(Compa)		皮榭(Peashy)澄黄之心	亚菲摩贾斯(Affimojas)		亚菲魔X(AffimaX)		史铁魔克斯(Steamax)		次郎吉(Jiro)
+瓦雷鼠(Warecyu)		丘可(chuko)		阿兹那·尔布(azna=leb)		小鸡虫(Baby Bug)		炸虾(Fried Shrimp)		小鸡仔(Boogie)		小小鸡(Biggie)		小鸡露特(The Chaz)
+地狱鸡冠(Hell's Crest)		努拉琳(Goobs)		史莱宝(Goober)		钢史莱犬(Metal Dogoo)		史莱美(Gooby)		史莱伦(Goonie)		机械怪物(Mechanical Monster)
+黝黯女神(dark cpu)		黝黯紫灵(Dark Purple)		黝黯白灵(Dark White)		黝黯黑灵(Dark Black)		黝黯绿灵(Dark Green)		史莱犬男(Dogoo Man)
+史莱犬娘(Dogoo Lady)		懒噗(Ran-Buu)		洋洋(Yan-Yan)		沃合(Re-Run)		魔王怪物(Demon King Monster)		小猫(Kitten)		组织的女子(Order Woman)
+亡相怪物(Delusion Monster)		亚菲(Affi)		少女贝露(Young Girl Vert)		小女孩贝露(Toddler Vert)		乌拉努丝(Uranus)		姬雅亲(Gearsy)		涅普亲(nepsy)
+贝姐(Vertsy)		优妮亲(Unisy)		克萝(Crostie)		百万亚瑟酱(million Arthur)		噬神者(god eater)	N+会社(Nitroplus)	啾(chu)		伊丝(histy)		放流鼠(Horyuchu)
+干部老鼠A(Leader Rat A)		亚巴噸(Abaddon)		复制型XXX(Duplicate XXX)		VR森林(Virtua Forest)		魔窟(Monster Cave)		刮西风溪谷(West Wind Valley/Westwind Ravine)
+伙伴神殿(Thelad Sanctuary)		阿布尼尔第三重机仓库(Avenir Storage No.3)		软微山(MS Mountain)		丸箱森林(Marubaco Forest)		星环山(Halo Mountain)		星环山·山顶(Halo Mountain Peak)
+白露之滨雪原(Lowee Snowfield)		海拉鄂雪原(Hyrarule/Hairanore Snowfield)		斯缇拉草原(Stella Plains)	灵魂献祭洞窟(Soulsac Cave)	幻想空间(Fantasy Zone)		Neo-Geo空间(Neo-Geofront)
+Neo-Geo空间深处(Neo-Geofront Depths)		第459号重机工厂(Factory No.459)	第459号重机工厂深处(Factory No.459 Depths)		M边境洞窟(M-Frontier Cave)		茨盖森林(Gheytz Forest)
+通往天界的路(Road to Celestia)		软微山·山顶(MS Mountain Peak)		ZECA一号遗迹(Zeca Ruins No.1)		机电工厂(Mechtro Factory)		战机领域(Ortan Fields)		讨·鬼洞窟(Toh-Kiden Cave)
+重力异想遗迹(Gravidaze Ruins)		像素模糊地下防空洞(Gunbreak Underground Cavern)		决胜空间(Duty Space)		金刚遗迹(Donkong Ruins)	纳斯奈火山(Naasne Volcano)		千禧迷宫(Millenium Labryinth)
+肯耐特山道(Kinest Range)	川汤遗迹(Yukawa Ruins)		真鯵林道(Adjiten Forest Pass)	*优威遗迹(Uwii Ruins)*		狄丝雪森(Dees Snow Forest)		古拉菲斯山(Graphic Pass)
+纳斯奈火山·深处(Naasne Volcano Depths)		斗技场(Colosseum)		史莱犬(Dogoo)		郁金香(Tulip)		拳击手X(Boxer-X)		鹿型侵略者(Pixelvader)		幽灵男孩( Clyde)		幽灵女孩(Ms. Clyde)
+现实前辈(Super Otaku)		契约天使(Contracted Angel)		彦鸟(Cardbird)		向日葵(Sunflowery)		铁甲贝(Pal Shell)		阿罗妮(Alraune)		污染阿罗妮(Viral Alraune)		鲸头鹳(Shoebill)
+古代龙(Ancient Dragon)		超巨型史莱犬(Huge Dogoo)		俄斯罗方块(Terits)		通水管(Plum-met, Plom-met, Plam-met)	唇爱小妹(Tokimeki Sister)	蜥蜴头目(Boss Lizard)		银河提升器(Galakryzer)
+圆圈侵略者(Poxvader)		定制浮游炮(Bit Custom)		治疗史莱犬(Healing Dogoo)		玛坦戈(Matango)		摇光星(Alkaid)		回旋镖(Boomerang)		阿贝尔多(Apeldoom)
+灯泡天使(Lightbulb Angel)		暴走龙人兵(Directionless Soldier)		北河三(Pollux)		妖花花(Aluna)		箱鸟(Boxbird)		陆鲸(Land Whale)
+巨大破解鼠(Big Pirachu/Warechu)		萝卜怪(Radisher)		高级疗愈史莱犬(High Heal Dogoo)		马鸟(Horsebird)		艾耶路(Kupokitty)		凤蝶(Swallowtail)
+魔狼芬里尔(Fenrir Wolf)		肥胖史莱犬(Obese Dogoo)		审判使徒(Judge's Disciple)	黄金蜥蜴(Gold Lizard, Cold Lizard)	冻结骷髅(Frozen Skull)	斯奈格优克(Violent Good Girl)
+幻想海豚(Plaid Dolphin)		美奇多莱格(Mekidrygar)		超绝定制浮游炮(High Bit Custom)		可疑者(Strange Person)		流氓猫(Ruffian Cat)		重型坦克(Heavy Tank)
+茄子骑士(Eggplant Rider)		冰霜魔像(Ice Golem)		寒冰男孩(Call Boy)		白露之滨卫兵(Lowee Defense Guard)		帝王蟹(King Crab)		特大史莱犬(Special Dogoo)
+鹤一(Alnair)		蓝色太阳花(Blue Sun)		冰霜蜥蜴(Ice Lizard)		水母史莱犬(Jellyfish Dogoo)		秘银魔像(Missile Golem)		加鲁达(Garuda)
+规格外史莱犬(Unplanned Dogoo)		绝对神的仆人(Undisputed God's Peon)		特斯托里(Testri)		恶毒侵略者(Malvader)		电子蝴蝶(Cyberfly)		刻耳柏洛斯(Cerberus)
+电子鲸鱼(Cyber Whale)		被污染之物(Viral Mareshimono)		岩浆男孩(Magma Boy)		箱鸟王(King Boxbird)		火山寄居蟹(Volcano Crab)		火焰骷髅(Flame Skeleton)
+大王花(Rafflesia)		小怪鸟(Bincho)		迪亚马特(Tiamat)		游戏鼠(Gebachu)		卡斯特拉普(Cass Trap)	猫老大(Ganglord Panther/Gang Leader Cat)		定制R-4(R-4 Custom)
+次世代型浮游炮(Next Dimension Bit)	战机大叔(Bundodo Old Man)	试制型广域压制兵器(Surpression/Militant Prototype)	机械之神(Deus Ex Machina)		好景气(Zeta Herobo)
+侵略者(Invader)		遗迹守护者(Ruin Guardian)		巨大蜘蛛(Mega Spider)		日立树(Something Tree)		千年龟(1000-Year Turtle)		神圣鲸鱼(Saint Whale)
+毕宿五(Aldebaran)		球(Max)		胡萝卜怪(Carroteer)		曼达拉蝶(Speckle)		马鸟克斯(Horsebird CAW)		史莱贝斯(Red Dogoo)		长颈龙(Dolichorhynchops)
+喵骑士(Cat Squirrel Rider)		雷格尔斯(Regulus)		蜥蜴骑士(Lizard Knight)		鬼蜘蛛(Demon Spider, Ogre Widow)		骷髅头(Skull)		箱鸟王子(Prince Boxbird)
+失落巨龙(Lost Dragon)		超次元史莱犬(Hyperdimension Dogoo)		次世代机(Next-Gen Ricky)		普通香波兔(Normal Shampuru)		看起来很强的香波兔(Buff Shampuru)
+擅长魔法的香波(Magical Shampuru)	特别危险的香波兔(Scary Buff Shampuru)		极其危险的香波兔(Crazy Buff Shampuru)		红肉 头顶(Lean Tuna Airhead)
+重龙骑兵(Heavy Dragoon)	幼狼(Child Wolf)		尼德霍格(Nidhogg)		主角机(Herobo, Hero Craft)		浮游炮(Bit)		男性迪文斯(Deus Man)		不良猫(Delinquent Cat)
+护士圆茄子(Nurse Binder)	冰霜男孩(Ice Boy)		大地魔像(Earth Golem)		魔术石(Magic Stone)		红磨坊(Moulin Rouge)		元素龙(Elemental Dragon)	大地巨龙(Grand Dragon)
+复制人(Replicant)	大叔迪文斯(Old Man Deus)		水晶魔像(Crystal Golem)		卡拉克特雷(Crack Tail)		龙战士(Dragon Warrior)		森林蟹(Forest Crab)
+龙王(Master Dragon)	阿喀琉斯(Achilles)		格子侵略者(Nanovader)		麻刺史莱犬(Numb Dogoo)		人面树(Expressive Tree, Sentientree)	大兰多毒蛛(Tarantula)
+冰霜魔狼(Ice/Breeze Fenrir)	格伦戴尔(Grendel)	泽尔加利恩(Belgarion)	丘比利艾尔(Cuberial)	死亡跟踪者(Death Stalker)	马鸟骑士(Horsebird Rider)
+莱巴鲁奇(Roborival, Rival Craft)	超绝浮游炮(High Bit)		鬣狗(Hyena)	赤紫花(Floristan)		岩石鸟(Roc)	老人星(Canopus)	格拉夫乔克洛(Grafchocolo)	山狗(Wild Dog)
+木骷髅(Wood Skeleton)	龙骑士(Dragon Knight)	八兵卫(Hachibei)		大陆龟(Tortoise)	心宿二(Antares)	火鸟王子(Prince Cardbird)		可爱郁金香(Aimable)		妖蝶(Fairyfly)
+九十九式坦克(Tank Type 99)	加尔格优(Gargoyle)	冰海精灵(Clione)	隐形男孩(Pinky)	极乐鸟(Paradise Avian)	雷电岛(Thunderbird)	蜥蜴王(Lizard King)		涅墨西斯(Nemesis)
+美男子(Blushing Hot Guy)	约定戒指(Promise Ring)	高等蜥蜴(High Lizard)	遗迹栖龙(Ruin Dragon, Ruins Dragon)	极限史莱犬(Maximus Dogoous)	魔导史莱犬(Magical Dogoo)
+食神树(Insatiable Tree)		阿鲁伦(Alune)		天津四(Deneb)		失落男孩(Lost Boy)	司掌约定者(Promise Keeper)		新月龙(Crescent Dragon)	诡计王冠(Trick Crown)
+森林圣灵(Forest Spirit)		草原狼(Coyote)		鵺(Nue)		俄耳托斯(Orthros)		天狼星(Sirius)		雪白魔像(Snow Golem)		巨龟(Mega Turtle)		杀戮机器(Killachine)
+伊普西龙(Epsilon)		俄罗斯方块(Tetrisi)		阿尔弗雷德(Alfred)		长者迪乌斯(Old Death)		怪鸟(Gyps)		破坏之仗(Vanargandr)	弩级史莱犬(Dreadnaught Dogoo)
+看门虫(Guard Vermin)		赫拉斯瓦尔格尔(Hraesvelgr)		利刃犬(Slash Dog)		蜥蜴头目(Boss Lizard)		森鲸(Forest Whale)		改良型杀戮机器(Killachine 1.01)
+自动防御系统(Self-Defense System)		道具阻碍器(Item Jammer Pod)		技能阻碍器(Skill Jammer Pod)		装甲车(Panzer)		女神破坏者(CPU Breaker)
+魔王优妮米缇斯(Overlord Momus)		真·玛杰空努(True Arfoire)		地狱之冠(Hell's Comb)		红眼(Red Eye)		捣乱史莱犬(In-the-way Dogoo)		金币人(Coin Man)
+重生之手(Rebirth Hand)		闪光樱桃(Shiny Cherry)		胡须飙网者(Bearded Surfer)		冰霜加鲁达(Ice Garuda)	冻结地狱魔王(Frozen Hell Lord)	冻结寄居蟹(Frozen Hermit Crab)
+火焰鸟(Flame Bird)		灼热寄居蟹(Incandescent Crab)		风神使者(Servant of Fuujin)			戴菲茄子(Delphi Eggplant)		茄子钉(Eggplanter)
+改良型道具阻碍器(Item Jammer Pod +)		阿德莱格(Adleig)		兰德维特尔(Landvaettir)		法布尼尔(Fafnir)		北落师门(Fomalhaut)		改良型主角机(Ricky RELEASE)
+南十字二(Acrux)		破坏神的残渣(Vestiges of Momus)		戴菲努斯(Delphinus)		遗产软件(Legacy)		超弩级史莱犬(Hypernaught Dogoo)	茄子圣骑士(Eggplant Paladin)
+自走型移动炮台(Walking Auto Cannon)		崭新之翼(Neo Wing)		黏猫(Purr4)		箱狗(XDog)		平板龟(tPad)		冒牌翡绿之心(Fake Green Heart)	黑暗60(Darkness 60)
+利比特休养地(Rebeat Resort)		星域毁灭地带(Endless Zone)		行动联网装置公司(Midcompany)		海难休养地(Septent Resort)
+世界的迷宫·第一层(World Labyrinth - 1st Fl.)		白露之滨国际展览中心·东馆(Lowee Global Expo - East)		伽佩因草原(Gapain Field)		倒转空间(Underverse)
+阻断次元(Severed Dimension)		深紫草原(Iris Field)		雅达利湿地(Atari Marsh)		业界墓地(Gamindustri Graveyard)		烧烙卡制造工厂(Arfoire's Factory)
+魔法风云城堡(LAN Castle)		魔法风云城堡·地下(LAN Castle - Underground)		冰柱大厅(Icicle Pathway)		无限回廊(Infinite Corridor)		淳久书箱(Junk Box)
+业界墓地·终焉(Graveyard - Oblivion)		冲锋岛(Powerlevel Island)		帕南丛林(Panan Jungle)		忘却遗迹(Lost Ruins)		地狱火洞窟(Hellfire Hollow)		侍之路(Sublie Road)
+三位一体湿地(Trinity Marsh)		真正的游戏迷(Real Gamer)		马鸟首领(Horsebird Leader)		荷依宁(Hoinin)		大嘴花(Piranha Flower)		八亿过津日神(Nihil)
+鹿型侵略者改(Babyvader)		纸箱蛙(Frog-in-the-box)	骸骨鱼(Fish Zombie)		炸弹球(Bomb-omburai)		象形侵略者(Elephantvader)		强化R4i-SDHC(Tough R4i-SDHC)
+西点(West Point)		海洋男孩(Bashful)	兔形侵略者(Bunnyvader)	斑点侵略者(Minivader)		踩球者(Bear Balancer)		托特斯里(Tetsri)		被封印的灾厄(Sealed Calamity)	
+大通水管(Dogone, Plumindigo)		百世型装甲战车(Hyakushiki Weapon)		八兆过津日神(Magatsu Hinokami)		狮型侵略者(Lionvader)		斯罗俄方块(Terist)
+教授(Super FX Professor)		南瓜怪(Pumpkimon)		阿尔法侵略者(Red Babyvader)		火焰男孩(Blinky)		魂鸟(Rukh)		公主球(Ms. Bomb-omburai)
+砰砰～(Weirdo Shadow)		叮叮～(Sicko Shadow)		噗噗～(Greedy Shadow)		代码音乐队(ASCII Orchestra)		博士(Super FX Doctor)		寒冰芬里尔(Demonic Fenrir)
+自动监视系统(Auto Surveillance)		踩球兔(Rabbit Balancer)		猫型侵略者(Meowvader)		安全帽蛙(Met Froggy)		绝对神的仆从(Undisputed Peon)
+野兔侵略者(Harevader)		猪型侵略者(Swinevader)		剧毒男孩(Inky)		光碟君(Disc)		猫咪侵略者(Calicovader)		公主向日葵(Lady Sun)		豚型侵略者(Baconvader)
+暗影男孩(Speedy)		雄狮侵略者(Leovader)		奥克瑞队长(Okuricap)		恐龙人(Dinosauroid)		麻痹蜘蛛(Numbing Spider)		志摩美的哥哥(Shimamo's Brother)
+黑暗光碟君(Dark Disc)		方格水管(Spotted Plum-met)	白球怪(Shrotamon)		贝塔侵略者(Betavader)		迪特龙(Guardragon)		病娇妹妹(Stalking Sister)	鱼人(Dagon)
+八千过津日神(God of Catastrophe)		灰象侵略者(Rigvader)		军曹蛙(Sergeant Froggy)		西瓜怪(Watermemon)		空棘鱼(Coelacanth)		装甲贝(Armor Shell)
+拳击猫(Boxer Cat)		武士球(Bushidama)		后继机(Opportune)		史莱犬佛(Dogoo France)		变异蜘蛛(Nemesis Spider)		八万过津日神(Yayozu Hinokami)
+区域压制机器(Dominance Machine)		托提(Tote)		提姆波(Tempo)		姆波(Empole)		波尔(Pole)		托提姆波尔(Totempole)		皇家巨龙(Royal Dragon)
+审判初体(CFW Judge)		巨型史莱犬(Grandogoo)		喽啰(Underling)		海洋猎人(Sea Hunter)		跆拳猫(Tae Kwon Cat)		冰霜猫(Icy Hedgehog)
+金属甲壳兽(Metal Shell)		川岛教授(Dr. Kawashina)		龙王(Ryu-o)		勇气初体(CFW Brave)		魔法初体(CFW Magic)		恶毒破解鼠(Venomous Warechu)
+犯罪神玛杰空努(Deity Of Sin Arfoire)		代谢史莱犬(Metabolic Dragoo)		邪道史莱犬(Heretical Dogoo)		小鹿娘(Deer Girl)		M-3零式(M-3 Zero Model)		獠牙(Fang)
+阿里霍克(Arie Hoek)		安东瓦奈特(Antoinette)		头奖角子(Jackpot)		红色向日葵(Scarlet Obara)		火焰琳达(Linda of Fire)		天鹅绒女王(Velvet Queen)
+吞噬花(Shark Plant)		优雅淑女(Elegant Lady)		红宝石女孩(Ruby Lass)		青梅竹马年代记(Old Pal's Chronicle)		美男子(Tera Hunk)		G蜘蛛(Giant Spider)
+鬼蛛(Ogre Widow)		寡妇蜘蛛(Demon Widow)		阿剌克涅(Arakhne)		叛逆猫(Rebel Lynx)		汤玛(Tom)		小鸡仔(Chickie)		小蛋仔(Eggie)		幻形怪(Bogey)
+骨鱼(Skeleton Fish)		兽人(Orc)		白鲸(Beluga)		矛尾鱼(Latimeria)		名誉教授(Honorary Professor)		特里托米诺(Teritomino)		珀伽索斯(Pegasus)
+深层动力(Deep Impulse)		仲夏噩梦(Midsummer Nightmare)		浮游炮改(Bit Neo)		游戏鼠(Gehachu)		银河叛乱者(Galactic Riser)		泽尔加利恩(Zelgallion)
+八十过津日神(Shiva)		八京过津日神(Hakkei Hinokami)		山岛教授(Dr. Yamashima)		川缟教授(Dr. Kamashima)		亚泽尔(Azel)		班普雷奧斯(Banpreios)
+灾厄(Disaster)		闪光之心(Flash Heart)		灼热马鸟(Blazing Horsebird)		VR森林保护地区(Virtua Forest Safe Zone)		站前广场(Station Area)
+ZECA俱乐部·1区(Club ZECA - Area 1)		喷射山道(Jet Set Range)		风来洞(Wanderer's Cave)		袋狼进击之地(Bandicrash)		克亚传承工厂·第一区域(Kuzarat Facility 1)
+荒野历险地下道·南口(Rud Arms Sewer N.)		城堡外围(Castle Exterior)		城堡内部(Castle Interior)		地下洞窟(Underground Cave)		城堡深处(Castle Chambers)
+GIGO街道·入口(Gigo Main Entrance)		星环森林(Halo Forest)		国营工厂(National Factory)		采掘场(Mines)		泽伽森林(Zega Forest)
+羽田山道(Haneda Mountain Range)		银河战士避难所(Metroid Shelter)		亚利欧高原(Ario Plateau)	大鸟居洞窟(Otori Cave)		阿诺尼迪斯的研究所(Anonydeath's Lab)
+地下熔岩洞(Magma Cave)		异质多次元空间(Extradimensional Space)		都市中心区域(City Center)		索妮湿地(Soni Wetlands)		皮艾斯次元(PS Dimension)
+薇塔次元(Vida Dimension)		回归之草原(Reload Grasslands)		路吉易高原(Luji Plateau)		城堡北之间(Castle Northern Space)		克巴茲巴遗迹(Kobaba Ruins)
+体感树林(Nekutoki Forest)		软微熔岩洞(EM ES/MS Magma Cave)		超级图显山路(Graphic Pass)		Duo-R遗迹(Duo R Ruins)		核心图显高原(Koagura Plateau)
+倒转空间(Under Inverse)		里·紫耀之都(Planeptune Alley)		智型机山道(Suaho Mountain Range)		翻盖新次元(Keraga Dimension)		社群网游森林(So Shal Forest)
+成人游戏森林(Adaldik Forest)		PC游戏工厂遗址(Pii Shii Game Factory)	同人寺院(Do Temple)		游戏次元(Game Dimension)		决定未来的电子之地(Digital Future Land)
+暴走M-3(Rampaging M-3)		特工士兵(Created Soldier)		冰冻男孩(Cold Boy)		疲软果冻(Exhausted Jelly)		加里敦;家里蹲(Hikky)
+这家伙是涅普迪努？(Is This Neptune?)		负山者(Mountain Seoi)		DSTT改(Modded DSTT)		南河三(Procyon)		森林之主(Forest Lord)		森林之神(Forest God)
+灼热鲸鱼(Blaze Whale)		巨龙(Dragonia)		犯罪组织残党(ASIC Remnants)		史涅妹妹(Fetigal)		漏洞青蛙(Bug Met)		无赖香波兔(Shampuru Loner)
+心跳妹妹(Dokidoki Sister)		克里比艾斯(Copypaste)		恶大臣(Mister Badd)		幻想种(Creature)		无赖史莱犬(Renegade Dogoo)		无赖小鸡虫(Renegade)
+琪瑟乔·蕾伊(Rei Ryghts)		巴哈姆特(Bahamut)		拟态蜥蜴人(Fake Lizardman)		马赛克之花(Mosaic Flower)		斑点狼(Spotted Wolf)		劳亚古大陆(Laurasia)
+道具阻碍浮游炮修复型(Item Jammer Pod Repair)		宝梦(Bamo)		莉格(Regu)		微醉男孩(Thirsty Boy)		微醉石头(Thirty Stone)		放浪小鸡虫(Light Baby Bug)
+书本妖精？(Book Fairy?)		天使之书(Angel Book)		魔法之球(Magic Ball)		魔法之花(Magical Flower)		劣质托里斯(No Good Tris)		劣质游戏(No Good Game)
+劣质侵略者(No Good Vader)		蘑菇仔(Mushroom Bro)		滚滚球(Rolly Ball)		小碎步鸟龟(Stumbly Turtle)		企企鹅(Penpenguin)		风见蟹(Weathervane Crab)
+雷神兵(Raijin Soldier)		号·克比利艾斯(New Model Copypaste)		真·克比利艾斯(True Copypaste)		狂乱之女神(Insane CPU)		道具阻碍器一号(Item Jammer One)
+澄黄之心(Yellow Heart)		高塔兵(Tower Soldier)		高塔卫兵(Tower Sentry)		高塔魔导兵(Tower Mage)		高塔亲卫队(Tower Imperial)		高塔高阶兵(Tower Elite)
+烈焰花(Flame Flower)		高塔守备兵(Tower Guards)		横扫(Slash)		强力斩(Power Slash)		MEGA··多·岱斧(Mega D-Drive)		连击(Rush)		高速连击(Rapid Rush)
+超速连击(High Rush)		涅普连斩(Nep Slash)		重击(Power Edge/Hit)	破防击(Break Hit)		破防连击(Break Crush)		破防重击(High Break)		涅普破防(Nep Break)
+火焰斩(Hot Edge)		寒冰斩(Ice Edge)		烈风斩(Blast Edge)		雷霆斩(Thunder Edge)		破防斩(Break Edge)		跳跃技艺(Jumping Arts/A.)		炙炎破防(Blaze Break)
+二重技艺(Dual Arts)		决斗斩(Dual Edge)		变化斩(Variable Edge/E.)		雷霆崩碎击(Thunder Crush)		三连射(Third Shot)		粒子射击(Particle/P Shot)
+十字组合剑(Cross Combo)		暴击之刃(Critical Edge)		32式X之剑(32-bit Mega Blade)		胜利斩(Victory Slash)		加油上啊上啊(Do Your Best!)
+主角外挂(Stat Multiplier)		涅普迪努爆裂斩(Neptune Break)		战机·涅普迪努(HDD Neptune)		连段连携(Combo Link)		疗愈术(Heal)		高级疗愈术(Hyper Heal)
+智力强化(Megadaptor)		头脑强化(Megamodelta)		和布娃娃一起(With Dolls)		突刺(Fencer)		脉动连斩(Pulse Rush)	连环斩(Slash Edge)		趴下吧(Bow Down)
+惩罚(Punishment)		虹色破防(Iris Break)		烈焰斩(Blaze Edge)		暴风斩(Wind Edge)		驱动獠牙(Drive Fang)		爆破闪光(Burst Spark)		电浆獠牙(Plasma Fang)
+震荡波(Shockwave)		巨型鱼叉(Harpoon)		超级雷电剑(Super Thunder/S.T. Blade)		无情剑(Drive Blade)		支援之星(Assist Star)		支援雷电(Support Jolt)
+战斗蝰蛇(Fighting Viper)		封技斩(Drive Stab)		语言攻击(Verbal Abuse)		雷电脚刀(Thunder Blade Kick)		弦乐踢(Crescent Kick)		尼亚·卡诺帕斯(Near Canopus)
+崩碎斩(Crush Edge)		连锁行动(Chain Move)		火焰突刺(Flame Fencer)		雷霆突刺(Thunder Fencer)		致命直击(Strike Hit)		毒液突刺(Venom Fencer)
+麻痹突刺(Paralyze Fencer)		三色连击(Tricolor Order)		脉动刃(Impulse Edge)		冲击法则(Impact Law)		强炙炎(Gunblaze)		灭炎爆裂(Vanish Buster)
+亡命回旋(Desperado)		猎户座流星雨(Scatter Orion)		飓风剑(Tornado Sword)		莱西之舞(Lace Ribbons)		断头破碎击(Drop Crush)		火山急跃斩(Volcano Dive)
+飓风连锁(Tornado Chain)		医护中心·S(Muscle Memory)		医护中心·T(Tech Training)		无限斩(Infinite Slash)		闪击(Rapid Hit)		冰结(Congelatio)
+强力攻击(Mighty Attack)		高速攻击(Rapid Attack)		超重破坏打(Hard Break)		强力重击(Power Strike)		崩碎击(Crush Hit)		破防强袭(Break Strike)
+烈转冰风(Hail Storm)		卫星环连打(Satellabute)		冰柱直击(Icicle Hit)		雷霆直击(Thunder Hit)		烈风直击(Blast Hit)		全力拳(Fleissig Faust)	全力一击(Ein Schlag)
+锤击连打(Verschlag)		双锤连打(Todlichschlag)		护盾破坏(Schild Break)		暴雪龙卷(Schneesturm)		坚冰连打(Schwer Schlag)		冰龙卷风(Sturm Wind)
+猎人枪弹(Jaeger Kugel)		冰针(Ice Needle)		欺诈舞姬(Tanzerin Trombe)		破坏粉碎击(Zerstorung)		危险火星(Gefahrlichtern)		钙特大雪崩(Getter Ravine)
+防守辅助(Defense Support)		精神辅助(Mental Support)		指引辅助(Andis Support)		直刺(Strike)		六连刺(Six Part Thrust)		狂风扫荡(Air Slicer)
+狂风突刺(Air Lancer)		阿萨姆轰炸(Assam Assault)		锡尔赫特飓风(Sylhet Sickle)		大吉岭组合技(Darjeeling Red)		毒液风暴(Venom Storm)	曼特宁耳光(Mandarin Slap)
+光子下午茶(Tea Photon)		尼尔吉利爆击(Nilgiri Burst)		杜阿滋强袭(Dooard's Strike)		卢哈纳切割(Ruhuna Slicer)		粉尘强袭(Dust Strike)
+顶普拉红茶龙卷(Dimbula Storm)		锡兰红茶狂飑(Nuwara Squall)	锡尔赫特魔枪(Sylhet Spear)		拉特纳普纳骤雨(Rainy Ratnapura)		帕帕罗森斯炸裂(Purpurascens Burst)
+基涅斯特拉之舞(Kinestra Slash)		出关效果(Brain Steep)		阿萨姆圆环(Assam Link)		卖弄分界线(Terai Division)		螺旋碎破(Spiral Break)		音速蓝影(Blue Sonic)
+白银追魂(Silver Tear)		急袭剑斩(Blitz Saber)		破防灭击(Break Zapper)		秘诀斩(Formula Edge)		激进军刀(Radical Saber)		林德伯格(Lindworm)
+闪耀之星(Starshine)		幻想之星(Fantastic Star)		吉雅·铁拳(Gear Knuckle)		空中突击(Aerial Assault)		强力炸弹(Power Bomb)	烈波斩(Slash Wave)	断甲之剑(Panzer Blade)
+为君喝彩(Defensive Cheer)		加强阵势(Offensive Cheer)		行星女神变(Celestial Severance)		自然射手(Neutral Launch)		光束·爆尘(Beam Spread)	右拳(Right punch)
+拳击速攻(Punch Rush)	强力攻击(Power Attack)		强力一击(Power Hit)		超级攻击(Super Attack)		打啊打啊(Punch Punch)		破防攻击(Break Kick)		冲击拳(Crush Punch)	
+头锤(Headbutt)		猫猫连拳(Cat Punch Combo)		超强的/火焰/超热的/寒冰猫猫拳(Super Strong/Fire/Super Hot/Ice Cat Punch)		超强之拳(Something Punch)
+全力一拳(Full Power Hit)		下落脚(Dropkick)		暴躁小孩转转拳(Bad Girl Spin)		旋转拳(Spinny Punch)		提升力量/防御(Power/Guard Up)	皮榭的必杀技(Secret Move)	
+双獠牙(Double Fang)		獠牙冲击(Fang Rush)		獠牙斩击(Fang Slash)		破防獠牙(Break Fang)		瓦尔基里獠牙(Valkyrie Fang)		格拉菲斯连段(Graphic Combo)
+獠牙强袭(Strike Fang)		爆炎獠牙(Blaze Fang)		飞天獠牙(Flying Fang)		寒冷獠牙(Cold Fang)		狂战士獠牙(Berserker Fang)		格拉菲斯漩涡(Turbo Graphic)
+活泼镭射(Active Razor)		破防强袭(Guard Strike)		强力破防踢(Hard Break Kick)		瓦尔基里之爪(Valkyrie Claw)	瓦尔基里强袭(Valkyrie Strike)	力量控制(Power Control)
+虚拟护垫(Virtual Cushion)		屠杀獠牙(Carnage Fang)		射击(Shot)		狙击(Snipe Shot)		霰弹(Shotgun)		快速射击(Rapid Fire)		乱射(Wild Shot)
+一轮平射(Full Clip)		榴弹(High Explosive)		穿甲榴弹(APHE)		榴弹炮(Explosive Mortar)		聚能手榴弹(High Grenade)		光束枪(Beam Gun)
+光束破坏炮(Beam Launcher)		全功率破坏炮(Full Buster)		火焰弹(Flame Bullet)		寒冰弹(Ice Bullet)		烈风弹(Blast Bullet)		光辉弹(Radiant Bullet)
+暴风破坏(Blast Break)		灼热射击(Searing Bullet)		盲射(Blind Firing)		熔岩弹(Volcano Bullet)		冰柱弹(Icicle Bullet)		贯穿弹(Pierce Bullet)		眩晕弹(Stun Grenade)
+狙击发射(Sniping Shot)		剧毒射击(Venom Shot)		麻痹射击(Paralysis Shot)		X字多重光炮(EX Multi Buster)		X.M.B:女帝(XMB: Empress)		破坏加农(Brave Cannon)
+技术支援(Tech Support)		闪避辅助(Avoid Support)		在看哪里呀(Charley Horse)		(Rapid Fire)		破防弹(Break Bullet)		光击术(Shine)		冲击术(Impulse)
+粉碎术(Breaker)		骤风术(Blast)		火炎术(Flame)		冰结术(Ice)		雷电术(Thunder)		骤风连击(Blast Rush)		狂乱飓风(Wind Storm)		燃爆术(Extension)
+圣雨(Rain)		破防魔法(Break Magic)		落雷(Thunder Bolt)		光弹连袭(Shining Rain)		爆裂术(Detonation)		冰寒龙卷(Icicle Tornado)		天龙卷(Giant Tornado)
+萝姆式歼灭魔法(Rom Annihilator)		冰封(Ice Hold)		寒冰圣堂(Cold Sanctuary)		寒冰龙卷(Air Blast)		大爆破(Explosion)		冰棺术(Ice Coffin)
+永恒原力冰风暴(E-Force Blizzard)		跳出来咯(Boost)		加油哦(Go For It)		治疗哦(You're Okay)		复活哦(Come Back)		恢复哦(Refreshments)	帮忙抵挡(I'll Protect You)
+恢复活力(Energy)		北天十字星(Northern Cross)		冰雕(Ice Statue)		绝对零点(Absolute Zero)		超速斩击(Hyper Slash)		强力痛击(Power Bash)
+魔法·H·斩击(H. Magic Slash)		崩碎击(Crush)		超级斩击(Mega Slash)		封印攻击(Seal Attack)		病毒攻击(Viral Attack)	EX狂风(EX Gust)		H·EX狂风(EX Gust Plus)
+EX震荡冲击(EX Impulse)		高等烈炎(Giga Flame)		烈炎龙卷(Fire Tornado)		高等寒冰(Hyper Ice)		雷柱(Thunder Statue)		星雨(Star Rain)	流星雨(Meteor Rain)
+毒雾(Venomist)		麻痹之雾(Paralysis Mist)		毒气(Venom Gas)		病毒气体(Seal Gas)		烈炎崩坏(Flame Crush)		炎吸术(Blame Breath)		风吸术(Slicing Breath)
+力量支援+(Power Support +)		超级疗愈术(Mega Heal)		治疗(Healing)		复原(Restoration)		环形斩击/痛击(Circle Slash/Bash)		龙之怒(Dragon Raid)
+反物质破解炮(Piraticker)		全力挥击(Full Swing)		勇气之剑(Brave Brand)		舔舔舔～(Lick, Lick)		审判之刻(Judgment Time)		天启新星(Apocalypse Nova)
+破界之引导(Destroy Guide)		终焉之引导(Finale Guide)		再热情一点吧(Heat it up)		动力装甲：全力运作(Powered Suit: Activate)		霸光之光芒(Light of Domination)
+疗愈玻璃杯(Healing Grass)		疗愈壶/饮料/瓶/之环/之雨/领域/之光(Healing Pod/Drink/Bottle/Circle/Rain/Field/Light)		涅普能量水(Nep Bull)	特制涅普能量水(Nep Bull SP)
+布兰甜馒头(Blanc Manju)		史莱犬肉包(Plump Dogoos)		马鸟生肉片(Horsebird Sashimi)		解毒剂(Detoxin)		解麻痹剂(Paralaxin)		解封剂(Reflex)	抗病毒药(Tuffmil)
+病毒克星(Anti-Venom)		万能药(Panacea)		超级万能药(Super Panacea)		智慧增幅器(INT Booster)		敏捷增幅器(AGI Booster)		体能增幅器(STR Booster)
+生命碎片(Life Fragment)		元气碎片(Exuberant Fragment)		元气之块(Exuberant Lump)		天使之翼(Angel Wings)		退出按钮(Eject Button)		禁忌树枝(Forbidden Twig)
+紫青双灵破坏刀(Violet Buster)		完全战争(Stark Vita)		M.P.B.L.最大火力(M.P.B.L. Maximum Power)		悲叹冰河(Cocytus)		双重强袭加农炮(Twin Buster Cannon)
+光与暗(Licht Schwarz)		第三炸碎击(Third Break)		魔女冰碎崩(Hex Ravine)		粉屑碎型击(Broken Fannings)		涅普也要被吓到(Even Nep's Shocked)
+突袭组合攻击(Assault Combo)		朋友组合攻击(Friend Combo)		剑与枪(Blade and Spear)		碎裂破坏击(Zerschlangen)		凹凸不平组合(Beat Up Combo)
+危险的游·戏(Dangerous Play)		干雪冰裂崩(Dry Ravine)		守护之力(Guardian Force)		上级天使(Superior Angels)		联合之力(Sharing Force)		麻麻攻击(Jolty Hit)
+咚(Bonk)		超级～雷电攻击(Super Thunder)		狠狠揍你(Beat you up)		梦幻之星/雨(Fancy Star/Rain)		援护～雷电(Support Jolt)		纾解压力(Stress Release)
+恶棍嘴脸攻击(Meanie Face)		性感体臭攻击(Old Stinker)		费南雪(Financier)		幻影刃舞-风暴(Tanzerlin Trampe)		直击弹(Einschlag)	众神之怒·雪崩雷震(Gōtter Lawine)
+圣黑王权之地(Land of Black Regality)		纯白宁静之地(Land of White Serenity)		X.M.B重炮(XMB Artillery)		游机板剑(Gehaburn/Cursed Sword)	信奉之剑(Hellish sword)
+电击子(Dengekiko)		莉法衣(Lee-Fi)		世嘉金星(Nomad)		恒美(Tsunemi)		信奉水晶(CPU Memory)		柊笠见(Hiiragi Kasami)		柊祢姬(Hiiragi Miki)		初美真由(Hatsumi Mayu)
+泉此方(Izumi Konata)		智也(的)(Tomoyatalian)		孤独之心(Lonely Heart)		老游戏(Retro)		BL游戏(yaoi)		增岛爱(Masushima Ai)	诗织(Shiori)		Fami通(Famitsu)		平台之战(Console War)
+四女神Online(4GO)		巨软总部(Macrosoft)		不知名废墟(Nameless Ruins)	珊瑚车站·1区(Coral Station - Area 1)		真宫樱公园·入口(Jingu Sakura Park - Entrance)
+真宫樱公园·深处(Jingu Sakura Park - Inner)		初代女神的圣域(First-Gen CPU's Sanctuary)		帝通娜洞窟(Datoyna Cave)		威网竞技场·比赛区/仓库(Smash Box Stadium – Arena/Storage)
+樱花道(Sakura Tree Row)		羽田市车站前(Haneda City Station)		紫耀之都体育场(Planepark)		异想站(Daze Station)		黄金之顶LA(Golden Summit Lastation)		路易公园(Player 2 Park)
+六角格草原(Hex Grasslands)		黄金之顶LO(Golden Summit Lowee)		游戏幻视(Games Vision)		黄金之顶LE(Golden Summit Leanbox)		亚菲基地·第一机库/舰桥(AffimaX Base - Hangar 1/Bridge)
+突破境界回廊(Division Passageway)		虚无领域(Deprived Domain)		频道太空(Channel Space)		神剧之回廊(Ontario Corridor)		七巧板之路(Tangram Road)		萝证领域(DreamPass Area)
+A-B-X-Y-LT-RT·草原(ABXYLR Grasslands)		玛溜乐园(Maryo Land)	心之最深处(Depths of the Heart)		隐形方舟·楼层/第肆仓库/船底(Stealth Ark – Floor/4th Storage/Bilge)
+亡相紫耀之都(Delusion Planeptune)		EX|涅普探险零(EX|Neplunker Zero)		秘境峡谷(Uncharted Canyon)	坦卡街道(Tacan Road)		歪曲多元空间(Reality Distortion Field)
+古拉尔点(Gralange Point)		莎沐迷宫(Senmuu Labyrinth)		巨大站专用(Giant Battle Use)		阿古迪文斯(Argo Deus)
+战斗-零式平台/樱花道(崩坏)/路易乐园/宇宙空间橙色/线框/紫耀之都市区/电脑迷宫(Battle - Platform Zero/Sakura Trees (Decay)/Player 2 Land/Space Orange/Wire Frame/Planeptune City/Cyber Dungeon)
+Hi-合金/黄金卫兵(Hi-Metal/Gold Guarder)		巨蛇座(Serpentis)		超级/究极斯雷蒙(Mega/Giga Slaymon)		云格多茲(Uniceldos)
+黝暗/资料/合金巨兽(Darkness/Data/Metal Beast)		卡加姆多(Gagamut)		奇尼欧斯(Ka'Hoole)		雷?烈火(La Ignis)		地狱魔龟(Hellish Turtle)		黑暗独角兽(Dark Unicorn)
+恶魔法则(Demonic Law)		可鲁贝力亚(Golvellia)	合金装甲(M-Gear)		亡相激兔/爆龟(Delusion Rabbit/Turtle)		瑞维尔龙(Revile Wyrm)		白/火魔狼(Bright/Lit Fenrir)
+钢伊克西翁(Gun Ixion)		潘底阿列斯(Pandea Leos)		沙维利亚(Sarveria)	魔法枭(Magic Owl)	大/甜点/暗杀瑞维姆(Arc/Desert/Stab Wyrm)
+蓝色/梅林/魔法/邪恶路行鸡(Blue/Marine/Magical/Evil Chocopi)	恶作剧妖精(Trick Star)	飞机头(Pompadour Smash)	三颗星(Tri Star)	英雄路行鸡(Chocopi Hero)
+黑暗/梦幻/自由/梦魇+喇比+花(Dream/Dark/Dia/Nightmare+Rabii+Bloom)		喇比利姆+露德(Rabiilim+Rude)	蓝月(Blue Moon)
+胡须/外星+触脚怪(Moustache/Stallion+Squeed)		嘻笑花枝(First Greenie Squeed)		侵略花枝(Squeed Invasion)	大+海王花枝(Sea King Squeed+EX)	沸腾花枝(Boiled Squeed)
+高等乌龟(Grand Turtle)		战斗陆龟(Attack Tortoise)	巨/超巨壳(Big/Hyper Shell)		雷奧克斯(Leox)	加邦(Calburn)		针王(Needle Rex)		突变种甲壳(Mutant Carapace)
+流水仆从(Hydro Tail)		生存战略机器(Survival Machine)	鸭爪怪(Camo Claw)	梦想/死亡破坏者(Dream/Death Crusher)		黑暗/死亡尖爪(Dark/Death Claw)
+资料/血腥猎犬(Data/Blood Hound)	金属/终极蛇龙(Metal/Omega Naga)	丛林消除者(Jungle Cuts)	眼镜蛇英雄(Cobra Hero)	毒蝎(Stinger)		三叉怪(Trident)
+古兰基洛斯(Grand Kiros)	卡梅尔瑟斯(Karmelseus)		苍白席法(Belcifer)	大地追踪者(Tera Homing)	大恶魔(Earth Demon)	刑罚者(Punishment)		符文兰帝斯(Spellandis)
+濑贺初美(Sega Hatsumi/ Segami) 	铁拳酱(Tekken)		箱崎千香(Hakozaki Chika)		神宫寺凯(Jinguji Kei)		西泽美奈(Nishizawa Mina)		高等撒旦(Grand Satan)
+暴鲤海龙(Sea Garados)		剧毒/水蓝猎手(Venom Aqua Hunter)		海龙(Sea Dragon)		龙宫王(Dragon King)		水杀手(Aqua Assassin)		巨龙(Arc Dragon)
+沙拉曼达(Salamander)	长角怪(Long Horn)		紫灵/混沌/大暴龙(Purple/Chaos/Arc Tyrano)	双回旋战斧怪(Twin Tomahawk)	高等雷龙(Great Saurus)
+究极+加尔迪欧斯(Zeta+Gardeus)	十字箱(Cross Box)	机械/机关枪/最终战士/斗士(Machine/Gatling/Final Soldier/Warrior)	罡弹(Gendam/Gandum)	加德活体铠甲(Guard Armor)
+置换先生/小子(Pervert-kun/chan)	原住史兰(Former Jelly)		世土雅星(Sesa Gaturn)		传播之梦(Dream of Cast)		MEGA多莱合体(Mecha Dive)	游米方块(Gamic Cube)
+D-2-S轻便型(Dee 2 Ess Light)	基涅(Cinoct)	守卫学长(Keeper Senpai)巨大鬼怪(Giant Ghost)	巨型钢史莱犬(Big Metal Dogoo)	原住/原初史兰忍(Chubby/Chubbier Jelly)
+猫栗鼠(Squirrel Cat/Cutekitty/Kupocat)	致命猫(Fatal Cat)	超级帅哥(Super Pretty Boy)	这家伙/谁是○(Koitsu/Doitsu ○)	路行鸡角头(Blue Chocopidos)	路行鸡王(Chocopingo)
+多拉拉拉风(Dorarara Wing)		射击飞行怪(Shooting Fly)	蓝光(Blue Light)		脚脚怪(Squeeber)		自由嬉笑花枝(Squeed Green Dia)		侵略！花枝(Squeed Invasion!)
+大王花枝(Emperor Squeed)		剃胡迪斯(Handlebar Squeed)	异形克露丝(Extraterrestrial Squeed)		波波(Fried Squeed)		锤子乌龟(Hammer Tortise)
+拉?雷奧克斯(La Leox)		卡利伯(Caliburn)	史古留雷卡士(Drill Rex)	突变刃(Mutant Age)	凝血水电末梢(Hydro Tail Gore)		机械卫兵(Guarder Mecha)	金牌守门员(Gold Keeper)
+深渊帝王(Deep Cuts)	反抗雁(Antigius)	刺针毒蝎耶斧(Stinger F)		刚尼尔(Gungnier)		终结皇后(Omega Queen)		阿古迪姆(Ignis Diem)	格兰道拉司(Grand Malum)
+加尔尼消除者(Karmeciza)	杯面加面(Bay Maximum)		泰拉荷马(Tera Homer)		大星云(Earth Nebula)		审判执法者(Judgment Lore)		语言支配者(Arc Lang)
+暗影执法者(Shadow Lore)	比尔基司(Valkys)		回旋飞行者(Flying Nihil)		核心瑞维姆(Goali Wyrm)		剧毒半兽人(Venom Ogre)		水之破坏者(Aqua Buster)
+次世代海龙(Sea Dragon Next)	海死马(Death Sea Horse)		海之尽头(End of Sea)		巨龙群(Arc Dragon Dearth)		伊弗利迪亚(Ifrita)		暗黑之角(Darkness Horn)
+紫青打击者(Violet Land)		布拉奇奧(Black Owl)		双战斧怪(Double Mahawk)		高等亢奋雷龙(High Grandsaurus)		机械斗士(Machine Warrior)
+加德红门兰(Guard Orchis)	梦想传播中(Dream On Cast)		杰涅西斯合体(Genisys)		游戏砖块(Game Block)		基涅先生(Kinight)		松垮垮果冻(Sloppy Jelly)
+索具?艾耶路(Angry Kupokitty)		混混/聪明/主机/命运猫(Hoodlum/Raging/Hard/Destiny Cat)		本业猫(Cat Pro)		征服马鸟(Trojan Horsebird)
+修炼小鸡虫(Baby-Bug-In-Training)		炼狱鸡冠(Purgatory Crest)		八百过津日神(God of Woe)		白金/金/银殿堂王者(Hall of Fame King P./G./S.)
+彩色鉴别者(Colorful Choicer)		金属加油岛(Metallic Gabacho)		新马鸟(Neo Horsebird)		独角尼亚(Unicornia)		芬西亚(Vancia)		梦想传破(Dream Custard)
+MEGA合体机塔(Mega Divide)		游戏大方块(Game Cubic)		8等身绅士/淑女(8 Proportion Man/Lady)		欧格斯尼奇(Oukasneak)		延迟者(Dia Rare)		卡·灵体(Jah Soul)
+毒蛇王(King Serpent)		幸存机器人(Survival Mecha)		双重十字箱(Double Cross Box)		活体重甲(Heavy Armor)		魔·嘻笑花枝(Evil Greenie Squeed)
+超胡须触脚怪(Super ‘Stache Squeed)		波波波(Broiled Squeed)		外星触脚怪α(Alien Squeed α)		微级侵略者(Pico Vader)		黑暗武士(Dark Vader)
+史莱犬大君(Dogoo Lord)		暗黑星黑芽(Kurome Ankokuboshi)		大图书馆+开架阅览区(Grand Library+Atrium)	金斧峡谷(Gold Axe Ravine)		飞龙钟乳石窟(Panique Cave)
+后燃器地下熔岩洞(Afburner Lava Tube)		M/J之盒 (M/J Box)		玛卡拉斯科托罗遗迹(Macarasco Troll Ruin)		最终方块(Last Blocks)		玩具城邦(Toypolis)
+代号钽·第三仓库(TanTal 3rd Warehouse)		齿轮魔方(Cube Gear)		神梦记町(God Dream Town)		食人草(Cannibal Nectar)		森林之神(Forest God)	蘑菇怪(Fungus)
+雷电龙(Thunderbolt Dragon)		天使蛙(Frog-in-the-box)		银灰金刚(Silverback)		不死鸟(Phoenix)		工作士兵(Created Soldier)		紫晶龙(Amethyst Dragon)
+雾铁金刚(Mist Iron Kong)		可疑人物(Strange Person)		暗热金刚(Dark Heat Kong)		亲卫队(Elite Guard)		深红金属金刚(Crimson Metal Kong)		大胃苔(Killer Vine)
+猪笼草(Neppentice)		自律型警卫机器人(Security Robo)		历史吞噬者之种/芽(Time Eater Seed/Sprout)		诺玛洞窟(Noma Cave)		暗夜空间(Nights' Dimension)
+羽田森林(Haneda Forest)		暗黑60(Darkness 60)		大鸟居洞窟(Otori Cave)		乐高岛(Leggo Island)		樱花道(Sakuranamiki)		稻船先生(Inafune)
+世嘉三四郎(Saturn Shiro)		丈夫角色(Chara Husband)		虹生(Nijio)		伽玛拉迪卡帝国(Empire of Gamalatica)
+
+Falcom酱		MAGES.酱		CyberConnect2酱		Broccoli酱		MarvelousAQL酱		Red酱		Cave酱		5pb.酱		Mega Drive酱		世嘉土星酱(Sega Saturn)
+世嘉GG掌机酱(Game Gear)		Dreamcast(世嘉妖刀)		库洛瓦尔		珍妮莉亚·G		莉特尔·蕾茵		普娜		莉德		艾斯特露		莫露		三国		艾因·亚尔
+蕾斯特雅		布诺莎·爱染		比奥		龙华
+
+
+
+代码及其他笔记：
+
+→领袖选择页面增添项
+<GameData>
+	<PlayerItems>
+		<Row CivilizationType="CIVILIZATION_AMERICA" LeaderType="LEADER_T_ROOSEVELT" Type="GOLDEN_CIVILIZATION_AMERICA_CUSTOM_FEATURES" Icon="ICON_CIVILIZATION_AMERICA" Name="LOC_GOLDEN_CIVILIZATION_AMERICA_CUSTOM_FEATURES_NAME" Description="LOC_GOLDEN_CIVILIZATION_AMERICA_CUSTOM_FEATURES_DESCRIPTION" SortIndex="-10"/>
+		<Row CivilizationType="CIVILIZATION_AMERICA" LeaderType="LEADER_T_ROOSEVELT" Type="GOLDEN_TRAIT_CIVILIZATION_ARABIA" Icon="ICON_CIVILIZATION_AMERICA" Name="LOC_GOLDEN_TRAIT_NAME" Description="LOC_GOLDEN_TRAIT_CIVILIZATION_AMERICA_DESCRIPTION" SortIndex="0"/>
+		
+		<Row Domain="Players:Expansion1_Players" CivilizationType="CIVILIZATION_AMERICA" LeaderType="LEADER_T_ROOSEVELT" Type="GOLDEN_CIVILIZATION_AMERICA_CUSTOM_FEATURES" Icon="ICON_CIVILIZATION_AMERICA" Name="LOC_GOLDEN_CIVILIZATION_AMERICA_CUSTOM_FEATURES_NAME" Description="LOC_GOLDEN_CIVILIZATION_AMERICA_CUSTOM_FEATURES_DESCRIPTION" SortIndex="-10"/>
+		<Row Domain="Players:Expansion1_Players" CivilizationType="CIVILIZATION_AMERICA" LeaderType="LEADER_T_ROOSEVELT" Type="GOLDEN_TRAIT_CIVILIZATION_ARABIA" Icon="ICON_CIVILIZATION_AMERICA" Name="LOC_GOLDEN_TRAIT_NAME" Description="LOC_GOLDEN_TRAIT_CIVILIZATION_AMERICA_DESCRIPTION" SortIndex="0"/>
+		
+		<Row Domain="Players:Expansion2_Players" CivilizationType="CIVILIZATION_AMERICA" LeaderType="LEADER_T_ROOSEVELT" Type="GOLDEN_CIVILIZATION_AMERICA_CUSTOM_FEATURES" Icon="ICON_CIVILIZATION_AMERICA" Name="LOC_GOLDEN_CIVILIZATION_AMERICA_CUSTOM_FEATURES_NAME" Description="LOC_GOLDEN_CIVILIZATION_AMERICA_CUSTOM_FEATURES_DESCRIPTION" SortIndex="-10"/>
+		<Row Domain="Players:Expansion2_Players" CivilizationType="CIVILIZATION_AMERICA" LeaderType="LEADER_T_ROOSEVELT" Type="GOLDEN_TRAIT_CIVILIZATION_ARABIA" Icon="ICON_CIVILIZATION_AMERICA" Name="LOC_GOLDEN_TRAIT_NAME" Description="LOC_GOLDEN_TRAIT_CIVILIZATION_AMERICA_DESCRIPTION" SortIndex="0"/>
+	</PlayerItems>
+</GameData>
+
+
+→文明VI跳过启动器启动选项："C:\SteamLibrary\steamapps\common\Sid Meier's Civilization VI\Base\Binaries\Win64Steam\CivilizationVI.exe" %command%
+
+
+初次翻译大蓝洞：
+About 100 km (62 miles) off the coast of Belize lies the Lighthouse Reef, a small atoll glowing in vibrant hues of turquoise, teal, peacock blue, and aquamarine. Within this small sea of light colors, however, lies a giant circle of deep blue. Roughly 300 meters (1,000 feet) across and 125 meters (400 feet) deep, the feature is known as the Great Blue Hole. This site was made famous by Jacques Cousteau, who declared it one of the top five scuba diving sites in the world. In 1971 he brought his ship, the Calypso, to the hole to chart its depths. Investigations by this expedition confirmed the hole's origin as typical karst limestone formations, formed before rises in sea level in at least four stages. Even though the Great Blue Hole is considered a bucket-list dive, one should be aware that it is not for divers of all skill levels – a prerequisite is logging more than 24 dives. It is also not a 'colourful dive', instead, divers witness a dark cave with impressive stalactites.
+
+离伯利兹海岸大约100公里（62英里）的地方坐落着灯塔礁，这是一个小环礁，闪烁着绿松石、青色、孔雀蓝和海蓝色的鲜艳色彩。然而，在这个浅色的小海洋里，却有一个深蓝色的巨大圆圈。大约300米（1000英尺）宽，125米（400英尺）深，这个特征被称为大蓝洞。雅克·库斯托（Jacques Cousteau）使这个地方出名，他宣布它是世界五大潜水地点之一。1971年，他把他的船卡利普索号带到洞里，绘制它的深度图。这次探险队的调查证实，这个洞的起源是典型的喀斯特石灰岩地层，形成于海平面上升之前，至少有四个阶段。尽管大蓝洞被认为是一个吊桶单潜水，但人们应该意识到，它不是为所有技能水平的潜水员-一个先决条件是记录超过24个潜水。这也不是一个“五颜六色的潜水”，相反，潜水员看到了一个黑暗的洞穴，里面有令人印象深刻的钟乳石。
+
+
+Criteria的编写（这里举的例子即为分原版，RF版以及RF+GS版）
+<ActionCriteriaData><![CDATA[<ActionCriteria><Criteria id="XP1"><GameCoreInUse>Expansion1,Expansion2</GameCoreInUse></Criteria><Criteria id="XP2"><GameCoreInUse>Expansion2</GameCoreInUse></Criteria></ActionCriteria>]]></ActionCriteriaData>
+
+
+简中修缮模组（MTE）介绍文本备份（仅能写在modinfo里的格式）（此种写法，手机端亦可正常显示）
+
+<LocalizedText>
+	<Text id="LOC_C8S_MTEPLUS_NAME">
+		<en_US>[COLOR_FLOAT_CULTURE]Mod[COLOR:Red] CN [ICON_Reports] [COLOR:DiplomaticLabelCS]Translation/Embellishment [COLOR_Civ6Yellow]Plus</en_US>
+		<zh_Hans_CN>[COLOR_FLOAT_CULTURE]模组简中[ICON_Reports][COLOR:DiplomaticLabelCS]修缮与补全[COLOR_Civ6Yellow]·伊启重构</zh_Hans_CN>
+	</Text>
+	<Text id="LOC_C8S_MTEPLUS_TEASER">
+		<en_US>Translate [COLOR_FLOAT_CULTURE]other mods[ENDCOLOR]' text into [COLOR:Red]Simplified Chinese[ENDCOLOR].</en_US>
+		<zh_Hans_CN>继承[COLOR_FLOAT_CULTURE]模组简中[ENDCOLOR][ICON_Reports][COLOR:DiplomaticLabelCS]修缮与补全[ENDCOLOR]的“遗志”，该模组将作为新的[COLOR:Red]简中化平台[ENDCOLOR]，对创意工坊内其他模组的文本持续跟进[COLOR:DiplomaticLabelCS]汉化与润色[ENDCOLOR]。</zh_Hans_CN>
+	</Text>
+	<Text id="LOC_C8S_MTEPLUS_DESCRIPTION">
+		<en_US>Beyond MTE, this mod can translate [COLOR_FLOAT_CULTURE]other mods[ENDCOLOR]' text into [COLOR:Red]Simplified Chinese[ENDCOLOR], and it will [COLOR:DiplomaticLabelCS]restore or polish[ENDCOLOR] some translated text that is not suitable for Chinese wording as well.</en_US>
+		<zh_Hans_CN>[ICON_Ready]该模组可将[COLOR_FLOAT_CULTURE]其他模组[ENDCOLOR]的文本翻译为[COLOR:Red]简体中文[ENDCOLOR]，也完善优化一些[COLOR:ButtonCS]汉化质量较差、部分文本汉化缺失模组[ENDCOLOR]的简中文本。[NEWLINE][ICON_New][COLOR_FLOAT_SCIENCE]无需任何前置模组。[ENDCOLOR][NEWLINE][ICON_New][COLOR_FLOAT_GOLD]订阅几个，本模组就会汉化几个。[ENDCOLOR]</zh_Hans_CN>
+	</Text>
+	<Text id="LOC_C8S_MTEPLUS_SPT">
+		<en_US>[COLOR:ResGoldLabelCS]WatcherNinth[ENDCOLOR], [COLOR:ResGoldLabelCS]Gold[ENDCOLOR];[NEWLINE][COLOR:ResGoldLabelCS]Chun[ENDCOLOR], [COLOR:ResGoldLabelCS]ChiYiuWong[ENDCOLOR], [COLOR:ResFoodLabelCS]Flactine[ENDCOLOR], [COLOR:ResFoodLabelCS]Zhai[ENDCOLOR], [COLOR:ResFaithLabelCS]JW.Sun[ENDCOLOR], [COLOR:ResFaithLabelCS]Antusky[ENDCOLOR], [COLOR:ResFaithLabelCS]LouisOdin[ENDCOLOR];[NEWLINE][COLOR:DiplomaticLabelCS]Entarogan[ENDCOLOR];[NEWLINE][COLOR:ResScienceLabelCS]Randerion(HaoJun0823)[ENDCOLOR];[NEWLINE][COLOR:ResScienceLabelCS]KCucumber[ENDCOLOR], [COLOR:ResScienceLabelCS]Sakemy[ENDCOLOR];[NEWLINE][COLOR:ResCultureLabelCS]Liulang Pugongying[ENDCOLOR];[NEWLINE]And [COLOR_LIGHTBLUE]Everyone[ENDCOLOR]!!!</en_US>
+		<zh_Hans_CN>万分感谢[COLOR:ResGoldLabelCS]WatcherNinth[ENDCOLOR]和[COLOR:ResGoldLabelCS]Gold[ENDCOLOR]不厌其烦的指导和解惑；[NEWLINE]万分感谢[COLOR:ResGoldLabelCS]春[ENDCOLOR]、[COLOR:ResGoldLabelCS]ChiYiuWong[ENDCOLOR]、[COLOR:ResFoodLabelCS]Flactine[ENDCOLOR]、[COLOR:ResFoodLabelCS]钟离彦[ENDCOLOR]、[COLOR:ResFaithLabelCS]JW.Sun[ENDCOLOR]、[COLOR:ResFaithLabelCS]Antusky[ENDCOLOR]以及[COLOR:ResFaithLabelCS]LouisOdin[ENDCOLOR]无私的汉化协力；[NEWLINE]十分感谢[COLOR:DiplomaticLabelCS]Entarogan[ENDCOLOR]将我带到模组制作群，得以认识众大佬；[NEWLINE]感谢[COLOR:ResScienceLabelCS]Randerion(HaoJun0823)[ENDCOLOR]模组教程；[NEWLINE]感谢[COLOR:ResScienceLabelCS]KCucumber[ENDCOLOR]与[COLOR:ResScienceLabelCS]孤寡老Sa[ENDCOLOR]的宝贵指点；[NEWLINE]感谢[COLOR:ResCultureLabelCS]流浪de蒲公英[ENDCOLOR]“简中修正”的启发；[NEWLINE]感谢众多前辈和支持我模组的[COLOR_LIGHTBLUE]大家[ENDCOLOR]！！！</zh_Hans_CN>
+	</Text>
+  </LocalizedText>
+
+另，MTE模组介绍的独立文件版本，从鲨佬那里学来的（其实H佬早在专栏里就写过了）（此种写法，只能用于PC与Mac端）
+在modinfo里这样写：
+	<LocalizedText>
+		<File>MTEPLUS_Display_Text_BASE.xml</File>
+		<File>MTEPLUS_Display_Text_CHN.xml</File>
+	</LocalizedText>
+然后在上述路径里分别创建各语言的xml文件，里面内容即为如下内容。
+其一：Text_For_Mod_Display_ENG.xml
+	<EnglishText>
+		<Row Tag="LOC_C8S_MTEPLUS_NAME">
+			<Text>[COLOR_FLOAT_CULTURE]Mod[COLOR:Red] CN [ICON_Reports] [COLOR:DiplomaticLabelCS]Translation/Embellishment [COLOR_Civ6Yellow]Plus</Text>
+		</Row>
+		<Row Tag="LOC_C8S_MTEPLUS_TEASER">
+			<Text>Translate [COLOR_FLOAT_CULTURE]other mods[ENDCOLOR]' text into [COLOR:Red]Simplified Chinese[ENDCOLOR].</Text>
+		</Row>
+		<Row Tag="LOC_C8S_MTEPLUS_DESCRIPTION">
+			<Text>Beyond MTE, this mod can translate [COLOR_FLOAT_CULTURE]other mods[ENDCOLOR]' text into [COLOR:Red]Simplified Chinese[ENDCOLOR], and it will [COLOR:DiplomaticLabelCS]restore or polish[ENDCOLOR] some translated text that is not suitable for Chinese wording as well.</Text>
+		</Row>
+		<Row Tag="LOC_C8S_MTEPLUS_SPT">
+			<Text>[COLOR:ResGoldLabelCS]WatcherNinth[ENDCOLOR], [COLOR:ResGoldLabelCS]Gold[ENDCOLOR];[NEWLINE][COLOR:ResGoldLabelCS]Chun[ENDCOLOR], [COLOR:ResGoldLabelCS]ChiYiuWong[ENDCOLOR], [COLOR:ResFoodLabelCS]Flactine[ENDCOLOR], [COLOR:ResFoodLabelCS]Zhai[ENDCOLOR], [COLOR:ResFaithLabelCS]JW.Sun[ENDCOLOR], [COLOR:ResFaithLabelCS]Antusky[ENDCOLOR], [COLOR:ResFaithLabelCS]LouisOdin[ENDCOLOR];[NEWLINE][COLOR:DiplomaticLabelCS]Entarogan[ENDCOLOR];[NEWLINE][COLOR:ResScienceLabelCS]Randerion(HaoJun0823)[ENDCOLOR];[NEWLINE][COLOR:ResScienceLabelCS]KCucumber[ENDCOLOR], [COLOR:ResScienceLabelCS]Sakemy[ENDCOLOR];[NEWLINE][COLOR:ResCultureLabelCS]Liulang Pugongying[ENDCOLOR];[NEWLINE]And [COLOR_LIGHTBLUE]Everyone[ENDCOLOR]!!!</Text>
+		</Row>
+	</EnglishText>
+其二：Text_For_Mod_Display_CHN.xml
+	<LocalizedText>
+		<Replace Tag="LOC_C8S_MTEPLUS_NAME" Language="zh_Hans_CN">
+			<Text>[COLOR_FLOAT_CULTURE]模组简中[ICON_Reports][COLOR:DiplomaticLabelCS]修缮与补全[COLOR_Civ6Yellow]·伊启重构</Text>
+		</Replace>
+		<Replace Tag="LOC_C8S_MTEPLUS_TEASER" Language="zh_Hans_CN">
+			<Text>继承[COLOR_FLOAT_CULTURE]模组简中[ENDCOLOR][ICON_Reports][COLOR:DiplomaticLabelCS]修缮与补全[ENDCOLOR]的“遗志”，该模组将作为新的[COLOR:Red]简中化平台[ENDCOLOR]，对创意工坊内其他模组的文本持续跟进[COLOR:DiplomaticLabelCS]汉化与润色[ENDCOLOR]。</Text>
+		</Replace>
+		<Replace Tag="LOC_C8S_MTEPLUS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>[ICON_Ready]该模组可将[COLOR_FLOAT_CULTURE]其他模组[ENDCOLOR]的文本翻译为[COLOR:Red]简体中文[ENDCOLOR]，也完善优化一些[COLOR:ButtonCS]汉化质量较差、部分文本汉化缺失模组[ENDCOLOR]的简中文本。[NEWLINE][ICON_New][COLOR_FLOAT_SCIENCE]无需任何前置模组。[ENDCOLOR][NEWLINE][ICON_New][COLOR_FLOAT_GOLD]订阅几个，本模组就会汉化几个。[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_C8S_MTEPLUS_SPT" Language="zh_Hans_CN">
+			<Text>万分感谢[COLOR:ResGoldLabelCS]WatcherNinth[ENDCOLOR]和[COLOR:ResGoldLabelCS]Gold[ENDCOLOR]不厌其烦的指导和解惑；[NEWLINE]万分感谢[COLOR:ResGoldLabelCS]春[ENDCOLOR]、[COLOR:ResGoldLabelCS]ChiYiuWong[ENDCOLOR]、[COLOR:ResFoodLabelCS]Flactine[ENDCOLOR]、[COLOR:ResFoodLabelCS]钟离彦[ENDCOLOR]、[COLOR:ResFaithLabelCS]JW.Sun[ENDCOLOR]、[COLOR:ResFaithLabelCS]Antusky[ENDCOLOR]以及[COLOR:ResFaithLabelCS]LouisOdin[ENDCOLOR]无私的汉化协力；[NEWLINE]十分感谢[COLOR:DiplomaticLabelCS]Entarogan[ENDCOLOR]将我带到模组制作群，得以认识众大佬；[NEWLINE]感谢[COLOR:ResScienceLabelCS]Randerion(HaoJun0823)[ENDCOLOR]模组教程；[NEWLINE]感谢[COLOR:ResScienceLabelCS]KCucumber[ENDCOLOR]与[COLOR:ResScienceLabelCS]孤寡老Sa[ENDCOLOR]的宝贵指点；[NEWLINE]感谢[COLOR:ResCultureLabelCS]流浪de蒲公英[ENDCOLOR]“简中修正”的启发；[NEWLINE]感谢众多前辈和支持我模组的[COLOR_LIGHTBLUE]大家[ENDCOLOR]！！！</Text>
+		</Replace>
+	</LocalizedText>
+
+另另，MTE模组介绍的内嵌文件版本，从IthildinX的约战系列模组那里试验得来。直接把介绍文本写进会在FrontEnd中无条件载入的文件中。这样载入的模组介绍，既可以PC、手机正常显示，又可以通过外部改动去Replace文本，属于是最佳写法了
+注：这种写法下，Modinfo里是没有<LocalizedText>...</LocalizedText>的。
+
+
+一种文本替代代码
+
+UPDATE LocalizedText
+SET Text = REPLACE(Text, "Observatory", "Ek’ Nah")
+WHERE Tag IN ('LOC_TRAIT_LEADER_LEU_PACAL_DESCRIPTION')
+AND EXISTS (SELECT Tag FROM BaseGameText WHERE Tag = 'SUK_LADY_SIX_SKY_TO_WAK_CHANIL');
+
+这里Replace的含义是：将Text里面所有的Observatory替换成Ek’ Nah；第三行的"WHERE Tag IN"是确定在哪些Tag对应的文本里查找。而且这里没有事先声明哪种语言，所以Replace是替换所有语言里的Observatory。当然，这里可以加限定中文文本里，即在括号后面加 AND Language = 'zh_Hans_CN'
+此外，后两行
+WHERE Language = XXX AND Tag = XXX 
+AND EXISTS (……) 
+这样也行，指定语言种类，EXISTS里面同上。
+
+
+一种文本替代代码（不推荐）
+
+WITH CTE(LeaderTag) AS
+	(SELECT CASE
+		WHEN EXISTS (SELECT Tag FROM LocalizedText WHERE Tag = 'LOC_CIVILIZATION_ETHIOPIA_NAME')
+		THEN 'SUK_ZARAYAQOB_DLC'
+		ELSE 'SUK_ZARAYAQOB'
+		END LeaderTag
+	)
+
+INSERT OR REPLACE INTO BaseGameText
+		(Tag,					Text)
+SELECT Tag FROM (VALUES
+
+("LOC_LEADER_"||(SELECT LeaderTag FROM CTE)||"_NAME",		"Zara Yaqob")
+
+);
+
+在Suk的札拉·雅各布模组内学到的语句。CTE我还不太明白，但感觉这个语句大概意思是若存在LOC_CIVILIZATION_ETHIOPIA_NAME这个Tag在LocalizedText里（也就是官方的埃塞俄比亚DLC启用），那么就把下面的LaderTag里填上SUK_ZARAYAQOB_DLC，这样就变成了LOC_LEADER_SUK_ZARAYAQOB_DLC_NAME；如果没启用，就填上SUK_ZARAYAQOB，这样就变成了LOC_LEADER_SUK_ZARAYAQOB_NAME。大概就是这个意思了。
+下边的SELECT Tag FROM (VALUES)还不清楚该怎么活用……
+另笔记：*指代选取该表的所有列（为优化速度，可以尽量不使用 * 而改用需要查的某几列）
+SELECT …… FROM 语句后可以不加WHERE ，不如说WHERE本就是非必要的
+
+上一种文本替代代码的另版（推荐用这一版）
+
+CREATE TEMPORARY TABLE IF NOT EXISTS _Variables (Name TEXT PRIMARY KEY, Value TEXT);
+INSERT OR REPLACE INTO _Variables
+	(
+		Name,
+		Value
+	)
+VALUES
+	(
+		'SUK_VERCINGETORIX',
+		(SELECT CASE
+			WHEN EXISTS (SELECT Tag FROM LocalizedText WHERE Tag = 'LOC_CIVILIZATION_GAUL_NAME')
+			THEN 'SUK_VERCINGETORIX_DLC'
+			ELSE 'SUK_VERCINGETORIX'
+			END Description
+		)
+	);
+
+INSERT OR REPLACE INTO BaseGameText
+		(Tag,					Text)
+VALUES
+
+	("LOC_LEADER_"||(SELECT Value FROM _Variables WHERE Name = "SUK_VERCINGETORIX")||"_NAME",		"Vercingetorix"	);
+
+DROP TABLE _Variables;
+
+在Suk的高卢维钦托利模组内学到的语句。创建（TEMP TABLE）临时表格“_Variables”，该表格的格式为(Name TEXT PRIMARY KEY, Value TEXT)
+（表格里面定义了两个变量名：一个是Name/类型为PRIMARY KEY（*主关键字*）；一个是Value/类型为TEXT（应该是文本类））
+【**注释：主关键字（主键，primary key）是被挑选出来，作表的行的唯一标识的候选关键字。一个表只有一个主关键字。主关键字又可以称为主键。 主键可以由一个字段，也可以由多个字段组成，分别称为单字段主键或多字段主键。又称主码。并且它可以唯一确定表中的一行数据，或者可以唯一确定一个实体。——摘自百度百科】
+然后在“_Variables”表格内INSERT OR REPLACE，算是一般写法了
+
+其次，在Value的赋值上，赋了个选择函数（SELECT CASE）：
+WHEN在LocalizedText中存在LOC_CIVILIZATION_GAUL_NAME时，也就是WHEN官方高卢包启用时，THEN赋值SUK_VERCINGETORIX_DLC；
+ELSE赋值SUK_VERCINGETORIX；
+然后以END Description作为结束。
+
+然后在下面文本应用以上的这个小程序段，即，以上所赋的值将会填在下面的双竖线“||……||”之中
+（顺便一提，双竖线||为无缝连接符）
+
+最后，删除这个临时表（DROP TABLE）
+
+
+一种条件替代语句，用于Database
+UPDATE Buildings SET Description = 'LOC_C8S_CSE_BUILDING_ORSZAGHAZ_DESCRIPTION'
+WHERE BuildingType = 'BUILDING_ORSZAGHAZ' AND EXISTS (SELECT TraitType FROM TraitModifiers WHERE TraitType = 'MINOR_CIV_CSE_AGRICULTURAL_TRAIT') AND EXISTS (SELECT Tag FROM Types WHERE Type = 'BUILDING_ORSZAGHAZ') AND NOT EXISTS (SELECT BuildingType FROM Buildings WHERE BuildingType = 'BUILDING_SCIENTIFIC_STATION');
+
+
+一种将一系列同类型文本合为一整个单文本的语句，从p0k或suk的资源模组-公司与垄断部分学到的。
+假设有A_1至A_5五条同类型文本在表Testable中
+(SELECT GROUP_CONCAT("{A_"||Number||"}","略") FROM Testable)
+其中，GROUP_CONCAT("{A_"||Number||"}","略")可以大致理解为：将同系列的A_1至A_5文本用分隔符“略”连接；	而SELECT…FROM则无需多解释
+该句效果为：
+A_1略A_2略A_3略A_4略A_5
+
+
+小笔记：
+LoadOrder 越大越后加载；
+
+而每个Action里文件的Priority，越大越靠前加载
+如，
+<File Priority="2">XP1/RBU_XP1.sql</File>
+<File Priority="1">XP2/RBU_XP2.sql</File>
+即，先加载RBU_XP1.sql，后加载RBU_XP2.sql
+如果不写的话，默认是Priority=0，似乎能大到1000多，最小可能不止-100
+
+
+Criteria中的并列相关
+any="1"写上的话，就是以下条件为“或”并列；
+如↓
+<Criteria id="略略略" any="1">
+<GameCoreInUse>Expansion1</GameCoreInUse>
+<RuleSetInUse>RULESET_EXPANSION_1</RuleSetInUse>
+<LeaderPlayable>Players:Expansion1_Players::LEADER_XXXXXX</LeaderPlayable>
+</Criteria>
+即为：以上三行条件（迭起兴衰资料片启用；迭起兴衰规则集选中；迭起兴衰专属领袖XXXXXX处于可选择状态）满足任意一个该条件即可生效
+
+any="1"不写的话，就是一下条件为“和”并列
+如↓
+<Criteria id="略略略">
+<LeaderPlayable>Players:Expansion1_Players::LEADER_XXXXXX</LeaderPlayable>
+<LeaderPlayable>Players:Expansion1_Players::LEADER_YYYYYY</LeaderPlayable>
+<LeaderPlayable>Players:Expansion1_Players::LEADER_ZZZZZZ</LeaderPlayable>
+</Criteria>
+即为：以上三行条件（迭起兴衰专属领袖XXXXXX处于可选择状态；迭起兴衰专属领袖YYYYYY处于可选择状态；迭起兴衰专属领袖ZZZZZZ处于可选择状态）全部满足时该条件才生效
+
+其次，多行并列写的默认也是“和”并列；
+如↓
+<Criteria id="略略略">
+<ModInUse>9DE86512-DE1A-400D-8C0A-AB46EBBF76B9</ModInUse>
+<ModInUse>1B394FE9-23DC-4868-8F0A-5220CB8FB427</ModInUse>
+</Criteria>
+即为：以上两个UUID对应的两个模组同时启用时该条件才生效
+
+而同一行内用逗号隔开的默认是“或”并列
+如↓
+<Criteria id="略略略">
+<RuleSetInUse>RULESET_EXPANSION_1,RULESET_EXPANSION_2</RuleSetInUse>
+</Criteria>
+即为：RULESET_EXPANSION_1或RULESET_EXPANSION_2其一规则集选中该条件即可生效
+
+关于InGameAction中的References
+已知例子：
+①Leugi's Aztec Rework的Modinfo内
+<UpdateText id="UpdateTextMODE">
+    <Properties>
+    <LoadOrder>600</LoadOrder>
+    </Properties>
+    <Criteria>Monopolies_Mode</Criteria>
+    <File>text/ImprovementText_AztecRework_MODE.sql</File>
+</UpdateText>
+<UpdateDatabase id="UpdateDatabaseMode">
+    <Properties>
+    <LoadOrder>600</LoadOrder>
+    </Properties>
+    <Criteria>Monopolies_Mode</Criteria>
+    <File>database/Improvements_AztecRework_MODE.sql</File>
+</UpdateDatabase>
+<UpdateDatabase id="ActionExcluder">
+    <Properties>
+    <LoadOrder>550</LoadOrder>
+    </Properties>
+    <Required mod_id="b248a322-3e2a-4a6a-830a-6b0d1f3435fc" action_id="DB" />	该UUID对应的是Leugi's Monopoly++: Tycoons and Investors
+    <Exclude mod_id="9090e2c0-43bf-4b24-84b6-428c21805998" action_id="UpdateDatabaseMode" />	该UUID对应的是Leugi's Aztec Rework（例子自身模组）
+    <Exclude mod_id="9090e2c0-43bf-4b24-84b6-428c21805998" action_id="UpdateTextMODE" />
+</UpdateDatabase>
+其中，Required作用是：若模组“Tycoons and Investors”中的Action“DB”已经执行过了，那么该Action开始执行
+Exclude作用是：自己模组里的Action“UpdateDatabaseMode”与“UpdateTextMODE”都不执行
+合起来效果应该是：若特定模组的特定Action已执行，那么自己模组里的某个（些）Action不执行。
+这需要这个判断用的Action比那两个会被禁的Action的LoadOrder要低，确保先判断，后执行/与否。
+推测：Required的作用范围应该是所有模组（包含自己），而Exclude的作用范围仅限自己模组
+②Leugi's Monopoly++: Tycoons and Investors的Modinfo内
+<UpdateText id="Text">
+    <Criteria>Monopolies_Mode</Criteria>
+    <Exclude mod_id="b248a322-3e2a-4a6a-830a-6b0d1f3435fc" action_id="NoMonopoliesText" />
+    <File>Text/MonopolyPlust_UnitTexts.sql</File>
+    <File>Text/MonopolyPlus_ImprovementTexts.sql</File>
+    <File>Text/MonopolyPlus_GreatPeopleTexts.sql</File>
+</UpdateText>
+……
+<UpdateText id="NoMonopoliesText">
+    <Properties>
+    <LoadOrder>50</LoadOrder>
+    </Properties>
+    <File>Text/MonopolyPlus_TycoonsText.sql</File>
+</UpdateText>
+该例子作为验证，另外需要补充的点：InGameAction里可以在载入文件同时执行Exclude，表示执行该Action同时顺便把后续的NoMonopoliesText给禁掉
+至于Include与ConflictsWith，目前还未有人用过。
+
+模组内文件名的命名禁忌：
+可以包含	空格		但不推荐（本模组是例外？）
+不能包含	/	?	&	\	*	"	<	>	|	#	%	:
+不能包含	Unicode控制字符
+不能包含	包含代理项字符
+不能包含	包括“CON”“AUX”“PRN”“COM1”“LPT2”在内的系统保留名称
+不能包含	.	以及		..
+
+修复失败的记录：
+Kashima_Text.xml 文件内 BaseGameText 表中的 LOC_DISTRICT_SASEBO_NAVY_HARBOR_GOLD 这个 Tag 也存在于 佐世保镇守府 - Kancollect Civilization Sasebo Pack 模组中的 Sasebo_Text.xml 文件内同样的表中。而在游戏加载文件时，由于两文件各自所属的 Action 都未定义 LoadOrder ，故均默认为0，即同时加载；而后，由于 Kashima_Text.xml 以K开头，而 Sasebo_Text.xml 以S开头，则按字母顺序前者先加载，故而导致报错中显示后者文件中存在 Tag 与前者重复，致使 Sasebo_Text.xml 文件内 LOC_DISTRICT_SASEBO_NAVY_HARBOR_GOLD 往后所有 Tag 的文本赋值均失效。
+为解决此问题，拟定本文件为O开头，并且特别为其开设一个 Action ，同样不定义 LoadOrder ，令其与上述两文件一起参与 LoadOrder = 0 的加载过程。而因本文件首字母为O，则将排在 Kashima_Text.xml 之后， Sasebo_Text.xml 之前，故可在 Kashima_Text.xml 加载完之后用本文件将其中的 LOC_DISTRICT_SASEBO_NAVY_HARBOR_GOLD 给 DELETE 掉，再重新定义不引起重复的新 Tag 并赋值。之后再加载 Sasebo_Text.xml 也不会导致重复冲突了。
+注：游戏文件载入的排序是把文件夹路径也给加上的，之前放在 Series2Collection7 文件夹里，虽然还是以O开头，但实际游戏排序时认定该文件为 “Series2Collection7/O_VNL'Support GS Kashima - Kancollect Leader Pack'Bug_Fix_FI1.sql”，还是比 “Sasebo_Text.xml”靠后（原模组为根目录下）。故决定将此文件移出 Series2Collection7 ，也放在根目录下。
+或许会有疑问：删掉该 Tag 后，在游戏中如果 鹿岛 模组用到了该 Tag ，会不会无法显示？其实不会，因为后面加载的 Sasebo_Text.xml 又补上了这里的空缺，本文件只是将前面会引起重复的部分给“挪了出去”，后面进来的自然会补全。
+但是又发现问题：如果对于只订阅 鹿岛 而未订阅 佐世保镇守府 的玩家，不就无法补空缺了吗？确实是个问题，也能解决，只是麻烦些，需要把所有引用到 LOC_DISTRICT_SASEBO_NAVY_HARBOR_GOLD 的文件里的该 Tag 给 Update 掉。但这里暂不解决此问题，因为 鹿岛 启用的前提是 佐世保 启用，故不存在上述假设。
+
+修复失败的结论：最终发现，即使我改了文件名，使其理论上能在同等LoadOrder的情况下，将修复用的 O_VNL'Support GS Kashima - Kancollect Leader Pack'Bug_Fix_FI1.sql 能在 Kashima_Text.xml 与 Sasebo_Text.xml 文件中间加载，也不行。它还是会在后两者之后加载。
+根本原因：
+舰C领袖Kashima Pack的UUID：1d819b64-5786-4fc9-9011-e1370dfb3656
+舰C文明底包Sasebo Pack的UUID：4339c99d-0ea7-4c61-b88a-5c56a55c50e3
+本模组的UUID：45daa007-1cba-4b11-815d-313fe45c1ba6
+就是因为我的模组的UUID排在他们之后，所以无论如何也不会在他们之前加载文件
+
+（现在UUID已经改为：17bd9dd4-01f7-4c42-acb0-b703c9ad85c9，旧项目被抛弃）
+
+
+牛奶酱的测试模组——建筑
+  <LocalizedText>
+	<Text id="LOC_NAI_TITLE">
+		<en_US>NiunAI First Test Mod</en_US>
+		<zh_Hans_CN>牛奶酱模组初号机</zh_Hans_CN>
+	</Text>
+	<Text id="LOC_NAI_TEASER">
+		<en_US>Add several new buildings and projects made by NiunAI</en_US>
+		<zh_Hans_CN>由牛奶酱制作的测试模组，添加几种新建筑和新项目</zh_Hans_CN>
+	</Text>
+	<Text id="LOC_NAI_DESCRIPTION">
+		<en_US>A test mod made by NiunAI, various new buildings were added into the game.</en_US>
+		<zh_Hans_CN>牛奶酱制作的首个模组，向游戏中增添几种新建筑，每种建筑对应一个新项目。</zh_Hans_CN>
+	</Text>
+  </LocalizedText>
+
+

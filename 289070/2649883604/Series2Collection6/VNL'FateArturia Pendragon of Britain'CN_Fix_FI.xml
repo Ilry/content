@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'FateArturia Pendragon of Britain'CN_Fix_FI -->
+<!-- Author: Clear8Sky -->
+<!-- DateCreated: 2021/8/3 4:47:16 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “[命运]阿尔托利亚领导的不列颠” 。该文件在 FrontEnd 与 InGame 时载入，无需任何 Criteria -->
+	<LocalizedText>
+		<Replace Tag="LOC_CIVILIZATION_ENTBRITAIN_ADJECTIVE"  Language="zh_Hans_CN" >
+			<Text>不列颠的</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_CHIVALRY_COMMUNITY_DESCRIPTION"  Language="zh_Hans_CN" >
+			<Text>所有单位回合结束时强制恢复 [ICON_Damaged] 生命值。[NEWLINE]所有单位对抗蛮族时+10 [ICON_Strength] 战斗力。[NEWLINE]在“标准的规则”与“迭起兴衰”规则集下开始对局时，所有城市仅需1点相应战略资源即可训练对应单位；而在“风起云涌”规则集下时，每座城市的 [ICON_RESOURCE_HORSES] 马和 [ICON_RESOURCE_IRON] 铁的每回合产量额外+2。</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_UNIT_ROUND_TABLE_DESCRIPTION"  Language="zh_Hans_CN" >
+			<Text>不列颠文明的中世纪特色重骑兵单位，取代骑士。训练需要消耗更多 [ICON_Production] 生产力（220）。可以用 [ICON_Faith] 信仰值购买。[NEWLINE]拥有更高的 [ICON_Strength] 战斗力。击杀单位后可恢复40点 [ICON_Damaged] 生命值。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_ROUND_TABLE_DESCRIPTION"  Language="zh_Hans_CN" >
+			<Text>不列颠文明的中世纪特色重骑兵单位，取代骑士。训练需要消耗更多 [ICON_Production] 生产力（220）。可以用 [ICON_Faith] 信仰值购买。[NEWLINE]拥有更高的 [ICON_Strength] 战斗力。击杀单位后可恢复40点 [ICON_Damaged] 生命值。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_ROUND_TABLE_DESCRIPTION"  Language="zh_Hans_CN" >
+			<Text>击杀敌方单位可恢复40点 [ICON_Damaged] 生命值。</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_ARTHURIAN_CASTLE_DESCRIPTION"  Language="zh_Hans_CN" >
+			<Text>不列颠文明的特色建筑，取代中世纪城墙，完成市政“王权神授”解锁。相较于中世纪城墙只消耗约一半的 [ICON_Production] 生产力。维护费用为2 [ICON_Gold] 金币。[NEWLINE]有更好的防御性能。[NEWLINE]产出+4 [ICON_Culture] 文化值，且效果可辐射到6格范围内的所有城市。[NEWLINE]产出1点 [ICON_GreatGeneral] 大将军点数。[NEWLINE]提供一个 [ICON_GreatWork_Relic] 遗物巨作槽位，+1 [ICON_Housing] 住房。[NEWLINE]每座亚瑟王城使得 [ICON_CivicBoosted] 鼓舞额外提升（对应市政解锁所需文化值总量的）2%。</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_ARTHURIAN_CASTLE_DESCRIPTION"  Language="zh_Hans_CN" >
+			<Text>{LOC_TRAIT_CIVILIZATION_ARTHURIAN_CASTLE_DESCRIPTION}</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_ARTURIAENT_ANY"  Language="zh_Hans_CN" >
+			<Text>你是个卑劣的统治者！[NEWLINE]（谴责你）</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_EXCALIBUR_DESCRIPTION"  Language="zh_Hans_CN" >
+			<Text>近战单位、重骑兵单位对城墙防御造成全额伤害。</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

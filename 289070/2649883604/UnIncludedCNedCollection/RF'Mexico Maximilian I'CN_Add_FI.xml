@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RF'Mexico Maximilian I'CN_Add_FI -->
+<!-- Author: 春 , Clear8Sky -->
+<!-- DateCreated: 2021/9/1 18:00:47 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Mexico: Maximilian I” 。该文件在 FrontEnd 与 InGame 时载入，需 Criteria ： Active_Expansion_1 -->
+	<LocalizedText>
+
+		<!-- 模组 -->
+
+		<Replace Tag="LOC_MOD_JFD_MAXIMILIAN_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>------------------------------------[NEWLINE]领袖名称 -- 马克西米利安一世[NEWLINE][NEWLINE]领袖特性 - 站在克雷塔罗前[NEWLINE]扭转文明处于 [ICON_Glory_Dark_Age] 黑暗时代时的公民忠诚度减益，而处于 [ICON_Glory_Golden_Age] 黄金时代时的公民忠诚度加成则翻倍。忠诚度为满的城市境内，每个大庄园提供+1 [ICON_GreatGeneral] 大将军点数。完成科技“膛线”解锁特色单位志愿军团。[NEWLINE][NEWLINE]特色单位 - 志愿军团[NEWLINE]马克西米利安一世作为领袖时的墨西哥工业时代特色单位。该单位不可训练；每次招募 [ICON_GreatGeneral] 大将军时，可获得一个志愿军团。击杀敌方单位可产出等同于其 [ICON_Strength] 战斗力50%的 [ICON_Culture] 文化值。[NEWLINE][NEWLINE]领袖议程 - 公投皇帝[NEWLINE]试图维持 [ICON_Citizen] 公民的忠诚，并尊重与他政体相同的文明。认为在这些方面失败的文明会破坏他所选择的政府体系，因此厌恶这些文明。</Text>
+		</Replace>
+
+		<!-- 领袖 -->
+
+		<Replace Tag="LOC_LEADER_JFD_MAXIMILIAN_NAME" Language="zh_Hans_CN">
+			<Text>马克西米利安一世</Text>
+		</Replace>
+
+		<!-- 议程 -->
+
+		<Replace Tag="LOC_AGENDA_JFD_PLEBISCITE_EMPEROR_NAME" Language="zh_Hans_CN">
+			<Text>公投皇帝</Text>
+		</Replace>
+		<Replace Tag="LOC_AGENDA_JFD_PLEBISCITE_EMPEROR_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>试图维持 [ICON_Citizen] 公民的忠诚，并尊重与他政体相同的文明。认为在这些方面失败的文明会破坏他所选择的政府体系，因此厌恶这些文明。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_JFD_MAXIMILIAN_REASON_LEADS_LOYALTY_AND_SAME_GOVERNMENT" Language="zh_Hans_CN">
+			<Text>（您拥有相同政体，并且保持了城市忠诚）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_AGENDA_JFD_PLEBISCITE_EMPEROR_LEADS_LOYALTY_AND_SAME_GOVERNMENT" Language="zh_Hans_CN">
+			<Text>马克西米利安一世尊重你树立的优秀典范。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_LEADER_JFD_MAXIMILIAN_REASON_LAGS_LOYALTY_AND_SAME_GOVERNMENT" Language="zh_Hans_CN">
+			<Text>（您拥有相同政体，正因不忠而失去城市）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_AGENDA_JFD_PLEBISCITE_EMPEROR_LAGS_LOYALTY_AND_SAME_GOVERNMENT" Language="zh_Hans_CN">
+			<Text>马克西米利安一世对你的糟糕榜样感到失望。</Text>
+		</Replace>
+
+		<!-- 载入 -->
+
+		<Replace Tag="LOC_LOADING_INFO_LEADER_JFD_MAXIMILIAN" Language="zh_Hans_CN">
+			<Text>共和主义者的胜利已经证明是压倒性的，君主们的最后一战就在您身上，马克西米利安一世，无论黑暗还是光明，都要利用您的人民的忠诚去赢得胜利。不管代价几何，他们都会战斗不息。</Text>
+		</Replace>
+
+		<!-- 特性 -->
+
+		<Replace Tag="LOC_TRAIT_LEADER_JFD_QUERTAROS_STAND_NAME" Language="zh_Hans_CN">
+			<Text>站在克雷塔罗前</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_JFD_QUERTAROS_STAND_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>扭转文明处于 [ICON_Glory_Dark_Age] 黑暗时代时的公民忠诚度减益，而处于 [ICON_Glory_Golden_Age] 黄金时代时的公民忠诚度加成则翻倍。忠诚度为满的城市境内，每个大庄园提供+1 [ICON_GreatGeneral] 大将军点数。完成科技“膛线”解锁特色单位志愿军团。</Text>
+		</Replace>
+
+		<!-- 百科 -->
+
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_MAXIMILIAN_TITLE" Language="zh_Hans_CN">
+			<Text>马克西米利安一世</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_MAXIMILIAN_SUBTITLE" Language="zh_Hans_CN">
+			<Text>墨西哥皇帝</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_MAXIMILIAN_QUOTE" Language="zh_Hans_CN">
+			<Text>愿我洒下的热血有益于国家。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_MAXIMILIAN_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]In 1860 the Mexican Liberal party emerged victorious over the Conservative party after a bloody 3-year war. Benito Juárez, the Liberal leader whose aim was the end of chaos and the beginning of constructive reforms, faced an empty treasury and a stagnant economy. He placed a 2-year moratorium on the national external debt, which his government could not hope to pay.[NEWLINE][NEWLINE]Simultaneously, the remnants of the defeated forces of the large landowners and great merchants, as well as clerical and professional military interests toured Europe trying to gain converts and support for a restoration of the old order. They claimed that Mexico, a potentially wealthy nation, was being desiccated by corrupt Liberal politicians. They painted a picture of a restive Indian proletariat waiting for the opportunity to strike a blow at the hated anticlerical Liberals.[NEWLINE][NEWLINE]The Mexican debt cancellation of 1862 played into their hands; Louis Napoleon seized upon the opportunity to found a Latin empire based upon Mexico's proverbial wealth and a religiously fanatic indigenous army. The results showed that Mexico was neither prodigiously wealthy nor fanatically Catholic.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_MAXIMILIAN_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>Maximilian of Hapsburg was born at the castle of Schoenbrun outside Vienna on July 6, 1832. He was the second son of Archduke Francis Charles, the brother of the Austrian emperor, Franz Joseph. Maximilian was reared in splendor and wealth, but he received a liberal cosmopolitan education. By an early age he traveled widely and spoke German, English, Hungarian, Slavic, and Spanish fluently. The young archduke capably served his uncle, the Emperor, as commander of the imperial fleet and as the imperial envoy in Paris. While in the latter post he visited Belgium, where he met and married the attractive Princess Carlotta, the daughter of King Leopold I, in 1857.[NEWLINE][NEWLINE]That same year the Austrian court sent Maximilian as viceroy to the Italian province of Lombardy-Venetia. In Italy he attempted to promulgate liberal reforms and soften the harsh policy followed by Austria after the Italian 1848 Revolution. Displeased by his liberality, the court assigned him back to the Adriatic fleet. In 1854 he retired to private life. He then visited Brazil and returned home to build the idyllic castle of Miramar on his Austrian estates.[NEWLINE][NEWLINE]Maximilian was described at the time as being 6 feet 2 inches in height, handsome, diplomatic, and gracious, or the ideal monarch for the age of enlightened despotism. Unaware of approaching storms, Maximilian and Carlotta lived happily in their beautiful home, seemingly content to escape the difficulties of public life. Their respite was to be short.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_MAXIMILIAN_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>The French court of Louis Napoleon had become the mecca of conservative Mexican exiles. A faction composed of Empress Eugénie, the Emperor's brother, the Duc de Morny, and unscrupulous bankers hoping to milk Mexico's wealth pressed the cause of intervention on the far from unwilling French emperor. French agents in Mexico reinforced the exiles' pleas by describing widespread dissatisfaction and hope for a strong government. The Mexican debt cancellation gave Napoleon the excuse to intervene in 1862. He sent a large French contingent to Mexico to cooperate with the English and Spanish to force Juárez to retract.[NEWLINE][NEWLINE]Both England and Spain, realizing Napoleon's intent to remain in Mexico, soon withdrew, leaving the French alone. Having first secured Veracruz, the French sent a 6,000-man army toward Mexico City. On May 5, 1862, the Mexicans defeated this French force at Puebla with the loss of over a thousand French troops. Too far extended to withdraw, Napoleon next sent a larger force of 40,000 under Gen. Forey. The new French commander reorganized his forces and took Puebla in May 1863. On June 10 he entered Mexico City, applauded by the clergy and Conservative survivors.[NEWLINE][NEWLINE]After a thorough search through Europe the clerical Conservatives and their French allies focused upon Maximilian as the perfect foil to institutionalize their victory. A Conservative junta in Mexico City adopted a monarchy and offered him the cReplacen. Maximilian's natural prudence made him hesitate, but the politically ambitious Carlotta urged him to accept. The Mexicans assured them that their nation impatiently awaited their arrival; the French occupation forces held a plebiscite and announced that the people had voted in his favor. On April 10, 1864, Maximilian accepted the cReplacen and declared the Conservative general Juan Almonte his regent until he arrived.[NEWLINE][NEWLINE]Before leaving for Mexico, Maximilian renounced all claims on the Austrian cReplacen and made a fatal deal with the French by the Treaty of Miramar. In this treaty Napoleon promised to keep French troops in Mexico until the end of 1867. Maximilian, in turn, promised to pay the entire cost of intervention, the costs of French supporting troops, and all prior debts due England, France, and Spain, including the exorbitant Jecker loan (bonds extorted by a greedy Swiss banker from the Mexican Conservatives in the 1850s).[NEWLINE][NEWLINE]A proponent of intervention, Jecker had a partnership with the Duc de Morny. French bankers then floated Mexican government bonds, most of whose proceeds were discounted in advance. By this very first act Maximilian had tripled Mexico's already exorbitant external debt. He then visited the Pope but did not promise to return expropriated Church lands. In May 1864 the royal couple set sail for their tropical kingdom expecting to be greeted joyously by the Mexican people. On the voyage Maximilian passed his time by composing a 600-page book on court etiquette.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_MAXIMILIAN_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>Maximilian reached Veracruz on May 28. The city, a Liberal stronghold, greeted the royal couple with coldness. They had to dine on board ship as there was no reception committee. Juárez and Juan Álvarez, the old Liberal general, immediately declared their intention to do battle. The journey to Mexico City was also largely a disappointment, until they arrived at the capital, where Conservatives and clergy displayed a convincing show of enthusiasm. Most foreign governments immediately recognized Maximilian's government with the notable exception of the United States. Maximilian and Carlotta, enamored of their adopted country, had great hopes of success. In reality they had no chance.[NEWLINE][NEWLINE]From June 1864 to February 1866 the French army dominated the new Mexican Empire. Napoleon's proconsul, Gen. Bazaine, took orders directly from Paris and recklessly spent imperial funds. French officials took over the treasury and customs revenues. Mexican dignitaries were treated with contempt, and to make matters worse, Maximilian immediately angered his clerical allies by refusing to restore Church lands and the clerical courts. The Emperor tried to win over Liberals and even talked of establishing religious freedom. Clerical support fell away, and the new Mexican archbishop, Labastida (formerly exiled by Juárez and later made archbishop by Maximilian), openly denounced the imperial government.[NEWLINE][NEWLINE]Despite their obstacles, the royal couple did their best. They set up a lavish court and gave banquets and large receptions. Enormous sums went into refurbishing the ancient castle of Chapultepec, all of which increased the monarchy's indebtedness. Many excellent new laws were legislated, but unfortunately few were ever enacted. Maximilian often worked from early morning to late night, trying to make his policies work. He and Carlotta praised everything Mexican, ate local food, and affected Mexican dress. He decreed freedom of the press and showed great courage in going freely and unarmed among the Mexican people. He even attempted unsuccessfully to win over leading Liberals. A rumored 100,000 Mexicans applied for jobs under his empire but Juárez, Profirio Diaz, Mariano Escobedo, and other leading Liberals resisted his conciliatory overtures.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_MAXIMILIAN_CHAPTER_HISTORY_PARA_5" Language="zh_Hans_CN">
+			<Text>French guns and loans kept the empire working. In 1865 French aid began to wane. The American Civil War ended, and the U.S government began to mobilize troops on the Rio Grande. French opposition to the war's cost in men and materials mounted in France. These protests coupled with Prussia's victory over Austria caused Louis Napoleon to reconsider. The French government assured the United States that it would leave Mexico. Still hoping for a speedy victory, Bazaine convinced Maximilian to decree that as of October 1865 all Liberal officers would be executed. Aided by United States funds, the Liberal armies began to gReplace larger and bolder. By March 1866 Bazaine was in full retreat with the Mexican armies taking over areas abandoned by the French.[NEWLINE][NEWLINE]At last convinced that the French would pull out in 1867, Maximilian tried to keep his government in power with the aid of Mexican Conservative forces and some European volunteers. In July 1866 the worried Carlotta set sail for Europe to request help from the Pope and the French. Rebuffed everywhere, she lost her sanity. Preparing to withdraw from Mexico, the French urged Maximilian to depart with them and fully expected that he would heed their advice. Once again Maximilian hesitated but yielded finally to the advice of his ambitious clerical adviser, Father Fischer, who urged him to remain. On Feb. 5, 1867, Bazaine led the French troops out of Mexico despite his royal protégé's decision to remain. Maximilian had hoped that the French withdrawal would lessen the opposition to him as a foreign puppet.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_MAXIMILIAN_CHAPTER_HISTORY_PARA_6" Language="zh_Hans_CN">
+			<Text>Maximilian and his Conservative followers held out only until May 1867. He tried bravely to rally his followers under capable generals like Mejía, Miramón, and Márquez, but the Liberal tide was overwhelming. The Emperor led his imperial army of 9,000 men to Querétaro, hoping for a decisive victory. He was soon confronted by 40,000 Liberals under Escobedo; the Emperor behaved courageously, taking the role of a common soldier, but the situation was hopeless. Querétaro fell on May 15, 1867, and Maximilian was taken prisoner. In June a military court-martial condemned him to death by a vote of 4 to 3. Juárez refused clemency. Maximilian retained his dignity to the end. On July 19 a firing squad executed him with his generals Mejia and Miramón. He died as bravely as he had lived.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_MAXIMILIAN_CHAPTER_CAPSULE_BODY" Language="zh_Hans_CN">
+			<Text>马克西米利安一世领导的墨西哥是一个工业时代强国，以其人民与其军事经验为国之根基。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_MAXIMILIAN_CHAPTER_DETAILED_BODY" Language="zh_Hans_CN">
+			<Text>作为马克西米利安一世，您的侧重点应在维持您城市的忠诚度。努力建造专业化区域，因为您可依靠它们提前获得大将军。而当这些区域建成后，大庄园的修建便将成为您生产力的关键来源。您获得的尤里卡对于守卫领土上将尤为有效，特别是在防止区域与大庄园被掠夺的方面；而您的志愿军团则将成为一股不容忽视的补充力量——更多大将军点数的获得可确保其稳定点数来源的地位。总之，忠诚度为满的城市与大庄园对单元格产出的提升都将孕育出一个强大而又全面发展的文明，无论何种胜利方式都能胜任。</Text>
+		</Replace>
+
+		<!-- 外交 -->
+
+		<!-- 初次见面 -->
+		<!-- 开场白 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_JFD_MAXIMILIAN_ANY" Language="zh_Hans_CN">
+			<Text>你好，尊贵的客人。我是墨西哥皇帝马克西米利安一世，欢迎，欢迎。</Text>
+		</Replace>
+
+		<!-- 到附近城市的邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_JFD_MAXIMILIAN_ANY" Language="zh_Hans_CN">
+			<Text>欢迎你到我们最近的城市来，我们可以在那里讨论此次会见的事宜。</Text>
+		</Replace>
+
+		<!-- AI接受玩家邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NEAR_INITIATOR_POSITIVE_LEADER_JFD_MAXIMILIAN_ANY" Language="zh_Hans_CN">
+			<Text>你的款待使我受宠若惊。我欣然接受。</Text>
+		</Replace>
+
+		<!-- AI邀请玩家交换首都信息 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_JFD_MAXIMILIAN_ANY" Language="zh_Hans_CN">
+			<Text>你介意交换我们各自首都的信息吗？</Text>
+		</Replace>
+
+		<!-- 问候 -->
+
+		<Replace Tag="LOC_DIPLO_GREETING_LEADER_JFD_MAXIMILIAN_ANY" Language="zh_Hans_CN">
+			<Text>很荣幸见到你。我能为你做些什么？</Text>
+		</Replace>
+
+		<!-- 代表团 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_HUMAN_LEADER_JFD_MAXIMILIAN_ANY" Language="zh_Hans_CN">
+			<Text>我接受你的代表团，并以他们的主人应有的尊严和荣誉对待他们。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_HUMAN_LEADER_JFD_MAXIMILIAN_ANY" Language="zh_Hans_CN">
+			<Text>我不能接见你的代表团，我很抱歉。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DELEGATION_FROM_AI_LEADER_JFD_MAXIMILIAN_ANY" Language="zh_Hans_CN">
+			<Text>我已经派了一个代表团去你的首都，并带了一瓶上等的白兰地。我希望你能接受他们。</Text>
+		</Replace>
+
+		<!-- 开放边境 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_HUMAN_LEADER_JFD_MAXIMILIAN_ANY" Language="zh_Hans_CN">
+			<Text>同意。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_HUMAN_LEADER_JFD_MAXIMILIAN_ANY" Language="zh_Hans_CN">
+			<Text>我不同意。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_OPEN_BORDERS_FROM_AI_LEADER_JFD_MAXIMILIAN_ANY" Language="zh_Hans_CN">
+			<Text>我来与你谈判开放边界的条约。希望你能充分考虑下。</Text>
+		</Replace>
+
+		<!-- 宣布友谊 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_HUMAN_LEADER_JFD_MAXIMILIAN_ANY" Language="zh_Hans_CN">
+			<Text>这是我的荣幸。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_HUMAN_LEADER_JFD_MAXIMILIAN_ANY" Language="zh_Hans_CN">
+			<Text>同意的话，对我们双方都是耻辱。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_JFD_MAXIMILIAN_ANY" Language="zh_Hans_CN">
+			<Text>如果你能与我公布宣布友谊，那将是我的莫大荣幸。你认为呢？</Text>
+		</Replace>
+
+		<!-- 玩家接受后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_MAXIMILIAN_ANY" Language="zh_Hans_CN">
+			<Text>我永远听你差遣，我的朋友。</Text>
+		</Replace>
+
+		<!-- 玩家拒绝后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_MAXIMILIAN_ANY" Language="zh_Hans_CN">
+			<Text>的确，这让我很难过，但或许将来我们可以再重提这个问题。</Text>
+		</Replace>
+
+		<!-- 结盟 -->
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_ALLIANCE_FROM_AI_LEADER_JFD_MAXIMILIAN_ANY" Language="zh_Hans_CN">
+			<Text>墨西哥的人民和理想为敌人所困。我们需要不仅为自由而战，而且为尊严和荣誉而战的盟友。</Text>
+		</Replace>
+
+		<!-- 赞成与警告 -->
+		<!-- AI赞成 -->
+
+		<Replace Tag="LOC_DIPLO_KUDO_EXIT_LEADER_JFD_MAXIMILIAN_ANY" Language="zh_Hans_CN">
+			<Text>你是个模范统治者。以为你榜样的人会做得更好。</Text>
+		</Replace>
+
+		<!-- AI警告 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_EXIT_LEADER_JFD_MAXIMILIAN_ANY" Language="zh_Hans_CN">
+			<Text>你在嘲笑我的政府体制。怪不得流浪汉们开始扎根了。</Text>
+		</Replace>
+
+		<!-- AI警告玩家离开边境 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_LEADER_JFD_MAXIMILIAN_ANY" Language="zh_Hans_CN">
+			<Text>你准备与我开战吗？如果不是，我建议你把部队调往别处。</Text>
+		</Replace>
+
+		<!-- 贸易 -->
+		<!-- AI接受交易 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_JFD_MAXIMILIAN_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_MAXIMILIAN_ANY}</Text>
+		</Replace>
+
+		<!-- AI拒绝交易 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_MAKE_DEAL_FROM_AI_LEADER_JFD_MAXIMILIAN_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_MAXIMILIAN_ANY}</Text>
+		</Replace>
+
+		<!-- 谴责 -->
+		<!-- 受到谴责回应 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_JFD_MAXIMILIAN_ANY" Language="zh_Hans_CN">
+			<Text>野蛮的举止。</Text>
+		</Replace>
+
+		<!-- AI谴责玩家 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_JFD_MAXIMILIAN_ANY" Language="zh_Hans_CN">
+			<Text>哎，我简直无法忍受你这种无耻之徒。[NEWLINE]（谴责你）</Text>
+		</Replace>
+
+		<!-- 谴责理由 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_REASON_FROM_AI_LEADER_ANY_REASON_JFD_PLEBISCITE_EMPEROR_LAGS_LOYALTY_AND_SAME_GOVERNMENTE" Language="zh_Hans_CN">
+			<Text>（您拥有相同政体，但正因不忠而失去城市）</Text>
+		</Replace>
+
+		<!-- 宣战 -->
+		<!-- 受到宣战后回应 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_JFD_MAXIMILIAN_ANY" Language="zh_Hans_CN">
+			<Text>我的人民对这片土地的热爱，面对任何军队都坚不可摧。</Text>
+		</Replace>
+
+		<!-- AI宣战 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_JFD_MAXIMILIAN_ANY" Language="zh_Hans_CN">
+			<Text>为了我的人民的利益，你必须被除掉。</Text>
+		</Replace>
+
+		<!-- 求和 -->
+		<!-- AI接受求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_ACCEPT_DEAL_LEADER_JFD_MAXIMILIAN_ANY" Language="zh_Hans_CN">
+			<Text>可接受的条款。</Text>
+		</Replace>
+
+		<!-- AI拒绝求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_REFUSE_DEAL_LEADER_JFD_MAXIMILIAN_ANY" Language="zh_Hans_CN">
+			<Text>你要求的太多了。</Text>
+		</Replace>
+
+		<!-- AI求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_FROM_AI_LEADER_JFD_MAXIMILIAN_ANY" Language="zh_Hans_CN">
+			<Text>你不认为是时候放下武器了吗？</Text>
+		</Replace>
+
+		<!-- 击败 -->
+		<!-- AI被击败 -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_JFD_MAXIMILIAN_ANY" Language="zh_Hans_CN">
+			<Text>荣誉和尊严的精神从这个大陆消失了。我现在只能祈祷这不是永久的。</Text>
+		</Replace>
+
+		<!-- 玩家被击败（在热座模式中会显示） -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_JFD_MAXIMILIAN_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_JFD_MAXIMILIAN_ANY}</Text>
+		</Replace>
+		
+		<!-- 志愿军团 -->
+		
+		<Replace Tag="LOC_UNIT_JFD_VOLUNTEER_CORPS_NAME" Language="zh_Hans_CN">
+			<Text>志愿军团</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_JFD_VOLUNTEER_CORPS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>马克西米利安一世作为领袖时的墨西哥工业时代特色单位。该单位不可训练；每次招募 [ICON_GreatGeneral] 大将军时，可获得一个志愿军团。击杀敌方单位可产出等同于其 [ICON_Strength] 战斗力50%的 [ICON_Culture] 文化值。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_JFD_VOLUNTEER_CORPS_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]When Archduke Maximilian of Austria accepted the offer of the Mexican traditionalists to become Emperor of Mexico his older brother, Kaiser Franz Josef, was very much against the move. Nonetheless, as far as international protocol would allow he was not willing to abandon his brother defenseless in the notoriously chaotic and violence-ridden political landscape of Mexico. To help defend the new Mexican Emperor he authorized the formation of the Austrian Volunteer Corps. </Text>
+		</Replace>
+		
+		<!-- 墨西哥帝国 -->
+		
+		<Replace Tag="LOC_ABILITY_JFD_VOLUNTEER_CORPS_NAME" Language="zh_Hans_CN">
+			<Text>墨西哥帝国</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_JFD_VOLUNTEER_CORPS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>击杀敌方单位可产出等同于其 [ICON_Strength] 战斗力50%的 [ICON_Culture] 文化值。</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

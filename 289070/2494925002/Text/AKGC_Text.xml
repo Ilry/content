@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<GameData>
+
+<LocalizedText>
+	<Row Tag="LOC_AKGC_AWARD_HIGHEST_CulturePT" Text="Most cultured city ({1} [ICON_CULTURE] per turn)"   Language="en_US" />
+	<Row Tag="LOC_AKGC_AWARD_HIGHEST_Defense" Text="Best defended city ({1} [ICON_STRENGTH])"   Language="en_US" />
+	<Row Tag="LOC_AKGC_AWARD_HIGHEST_FaithPT" Text="Most pious City ({1} [ICON_FAITH] per turn)"   Language="en_US" />
+	<Row Tag="LOC_AKGC_AWARD_HIGHEST_GoldPT" Text="Richest City ({1} [ICON_GOLD] per turn)"   Language="en_US" />
+	<Row Tag="LOC_AKGC_AWARD_HIGHEST_Happiness" Text="Happiest city (+{1} [ICON_AMENITIES])"   Language="en_US" />
+	<Row Tag="LOC_AKGC_AWARD_HIGHEST_Population" Text="Largest city ({1} [ICON_CITIZEN])"   Language="en_US" />
+	<Row Tag="LOC_AKGC_AWARD_HIGHEST_ProductionPT" Text="Most industrious city ({1} [ICON_PRODUCTION] per turn)"   Language="en_US" />
+	<Row Tag="LOC_AKGC_AWARD_HIGHEST_SciencePT" Text="Best educated city ({1} [ICON_SCIENCE] per turn)"   Language="en_US" />
+	<Row Tag="LOC_AKGC_BUTTON_OPTIONS_TT" Text="Options"   Language="en_US" />
+	<Row Tag="LOC_AKGC_BUTTON_SETTINGSCANCEL" Text="Cancel"   Language="en_US" />
+	<Row Tag="LOC_AKGC_BUTTON_SETTINGSRESET" Text="Reset"   Language="en_US" />
+	<Row Tag="LOC_AKGC_BUTTON_SETTINGSSAVE" Text="Save"   Language="en_US" />
+	<Row Tag="LOC_AKGC_CAPITALCITY_TT" Text="Capital City of {1_civ}"   Language="en_US" />
+	<Row Tag="LOC_AKGC_CITIES_BUTTON" Text="Greatest Cities"   Language="en_US" />
+	<Row Tag="LOC_AKGC_CITIES_TAB_EMPIRE" Text="Empire"   Language="en_US" />
+	<Row Tag="LOC_AKGC_CITIES_TAB_WONDERS" Text="Wonders"   Language="en_US" />
+	<Row Tag="LOC_AKGC_CITIES_TAB_WORLD" Text="World"   Language="en_US" />
+	<Row Tag="LOC_AKGC_CITIES_TITLE" Text="The World's Greatest Cities"   Language="en_US" />
+	<Row Tag="LOC_AKGC_CITIES_TITLE_HISTORIC" Text="{1_author}'s Greatest Cities of the {2_era}"   Language="en_US" />
+	<Row Tag="LOC_AKGC_CITYFOUNDED" Text="{1_civ}{2_occupied}, founded {3_year}"   Language="en_US" />
+	<Row Tag="LOC_AKGC_CITYFOUNDEDBYSOMEONEELSE" Text="{1_civ}{2_occupied}, founded {3_year} by {4_origciv}"   Language="en_US" />
+	<Row Tag="LOC_AKGC_CITYFOUNDEDUNKNOWN" Text="{1_civ}{2_occupied}"   Language="en_US" />
+	<Row Tag="LOC_AKGC_CITYOCCUPIED" Text=" (Occupied)"   Language="en_US" />
+	<Row Tag="LOC_AKGC_CITYRAZED" Text=" DESTRYOYED"   Language="en_US" />
+	<Row Tag="LOC_AKGC_CITY_HISTORY_CAPTURED" Text="{1_year}: Captured by {2_civ}"   Language="en_US" />
+	<Row Tag="LOC_AKGC_CITY_HISTORY_DEFECTED" Text="{1_year}: Defected to {2_civ}"   Language="en_US" />
+	<Row Tag="LOC_AKGC_CITY_HISTORY_FOUNDED" Text="{1_year}: {2_city} founded by {3_civ}"   Language="en_US" />
+	<Row Tag="LOC_AKGC_CITY_HISTORY_FOUNDEDONRUINS" Text="{1_year}: {2_city} founded by {3_civ} on the ruins of {4_oldcity}"   Language="en_US" />
+	<Row Tag="LOC_AKGC_CITY_HISTORY_LIBERATEDBY" Text="{1_year}: Liberated by {2_civ}"   Language="en_US" />
+	<Row Tag="LOC_AKGC_CITY_HISTORY_OCCUPIED" Text="{1_year}: Occupied by {2_civ}"   Language="en_US" />
+	<Row Tag="LOC_AKGC_CITY_HISTORY_RAZED" Text="{1_year}: Razed by {2_civ}"   Language="en_US" />
+	<Row Tag="LOC_AKGC_CITY_HISTORY_RENAMED" Text="{1_year}: Renamed to {2_name}"   Language="en_US" />
+	<Row Tag="LOC_AKGC_CITY_HISTORY_RETURNEDTO" Text="{1_year}: Returned to {2_civ}"   Language="en_US" />
+	<Row Tag="LOC_AKGC_CITY_HISTORY_TRADED" Text="{1_year}: Traded to {2_civ}"   Language="en_US" />
+	<Row Tag="LOC_AKGC_CITY_HISTORY_UNKNOWN" Text="{1_year}: Unknown event {2_name}"   Language="en_US" />
+	<Row Tag="LOC_AKGC_COL_CITY" Text="City"   Language="en_US" />
+	<Row Tag="LOC_AKGC_COL_DATEBUILT" Text="Date Built"   Language="en_US" />
+	<Row Tag="LOC_AKGC_COL_LOCATION" Text="Location"   Language="en_US" />
+	<Row Tag="LOC_AKGC_COL_OWNER" Text="Owner"   Language="en_US" />
+	<Row Tag="LOC_AKGC_COL_POPULATION" Text="Population"   Language="en_US" />
+	<Row Tag="LOC_AKGC_COL_RANK" Text="Rank"   Language="en_US" />
+	<Row Tag="LOC_AKGC_COL_SPECIAL" Text="Special"   Language="en_US" />
+	<Row Tag="LOC_AKGC_COL_WONDER" Text="Name"   Language="en_US" />
+	<Row Tag="LOC_AKGC_COL_WONDERS" Text="Wonders"   Language="en_US" />
+	<Row Tag="LOC_AKGC_DEFAULTOPTIONS_NOTIFICATION_HEADER" Text="Greatest Cities Options Reminder"   Language="en_US" />
+	<Row Tag="LOC_AKGC_DEFAULTOPTIONS_NOTIFICATION_TEXT_OFF" Text="[NEWLINE]You can access the options screen by clicking here, or by clicking the cog icon in the top left of the Greatest Cities window.[NEWLINE][NEWLINE]Great Cities Rewards not detected: End of Era Rewards are [COLOR_RED]disabled[ENDCOLOR].[NEWLINE]"   Language="en_US" />
+	<Row Tag="LOC_AKGC_DEFAULTOPTIONS_NOTIFICATION_TEXT_ON" Text="[NEWLINE]You can access the options screen by clicking here, or by clicking the cog icon in the top left of the Greatest Cities window.[NEWLINE][NEWLINE]Great Cities Rewards detected: End of Era Rewards are [COLOR_GREEN]enabled[ENDCOLOR].[NEWLINE]"   Language="en_US" />
+	<Row Tag="LOC_AKGC_ENDOFERARANK_NOTIFICATION_HEADER" Text="Greatest Cities of the {1_era}"   Language="en_US" />
+	<Row Tag="LOC_AKGC_ENDOFERARANK_NOTIFICATION_TEXT" Text="{1_person} has completed a survey of the world's cities, and has declared that the {2_civ} city of {3_city} is the greatest city of the {4_era}. "   Language="en_US" />
+	<Row Tag="LOC_AKGC_ENDOFERARANK_UNKNOWNWINNER_NOTIFICATION_TEXT" Text="{1_person} has completed a survey of the world's cities, and has declared that our city of {2_city} is the {3_rank} greatest city of the {4_era}. "   Language="en_US" />
+	<Row Tag="LOC_AKGC_ERADROPDOWN_CURRENTERA" Text="Today {1_year}"   Language="en_US" />
+	<Row Tag="LOC_AKGC_HOLYCITY_TT" Text="Holy City of {1_religion}"   Language="en_US" />
+	<Row Tag="LOC_AKGC_MINORCAPITALCITY_TT" Text="City State Capital"   Language="en_US" />
+	<Row Tag="LOC_AKGC_OPT_DebugMode" Text="Enable Debug Mode"   Language="en_US" />
+	<Row Tag="LOC_AKGC_OPT_ForDiscoveredCities" Text="Discovered Cities"   Language="en_US" />
+	<Row Tag="LOC_AKGC_OPT_ForUndiscoverCities" Text="Undiscovered Cities"   Language="en_US" />
+	<Row Tag="LOC_AKGC_OPT_GENERAL" Text="General"   Language="en_US" />					
+	<Row Tag="LOC_AKGC_OPT_GrantEndofEraAwards" Text="Reward Top Cities at the end of each Era"   Language="en_US" />
+	<Row Tag="LOC_AKGC_OPT_IncludeMinors" Text="Include City States"   Language="en_US" />	
+	<Row Tag="LOC_AKGC_OPT_NumOwnCitiesToShow" Text="Owned Cities to Show"   Language="en_US" />
+	<Row Tag="LOC_AKGC_OPT_NumWorldCitiesToShow" Text="World Cities to Show"   Language="en_US" />					
+	<Row Tag="LOC_AKGC_OPT_ShowBestOfBonusesForDiscoveredCities" Text="Show 'Best Of' Bonuses"   Language="en_US" />
+	<Row Tag="LOC_AKGC_OPT_ShowBestOfBonusesForUndiscoveredCities" Text="Show 'Best Of' Bonuses"   Language="en_US" />
+	<Row Tag="LOC_AKGC_OPT_ShowCapitalForUndiscoveredCities" Text="Show Capital"   Language="en_US" />
+	<Row Tag="LOC_AKGC_OPT_ShowCityDetailsForDiscoveredCities" Text="Show City Details"   Language="en_US" />
+	<Row Tag="LOC_AKGC_OPT_ShowCityDetailsForUndiscoveredCities" Text="Show City Details"   Language="en_US" />
+	<Row Tag="LOC_AKGC_OPT_ShowCityNamesForUndiscoveredCities" Text="Show Name"   Language="en_US" />
+	<Row Tag="LOC_AKGC_OPT_ShowHolyCityForUndiscoveredCities" Text="Show Holy City"   Language="en_US" />
+	<Row Tag="LOC_AKGC_OPT_ShowLineNumbersOnCityLists" Text="Show Line Numbers on City Lists"   Language="en_US" />	
+	<Row Tag="LOC_AKGC_OPT_ShowOwnerForUnmetCivs" Text="Show Owner"   Language="en_US" />
+	<Row Tag="LOC_AKGC_OPT_ShowRevealedUnderConstructionWonders" Text="Show visible under construction wonders"   Language="en_US" />
+	<Row Tag="LOC_AKGC_OPT_ShowScoreBreakdownForDiscoveredCities" Text="Show Score Breakdown"   Language="en_US" />
+	<Row Tag="LOC_AKGC_OPT_ShowScoreBreakdownForUndiscoveredCities" Text="Show Score Breakdown"   Language="en_US" />
+	<Row Tag="LOC_AKGC_OPT_ShowUnRevealedUnderConstructionWonders" Text="Show non-visible under construction wonders"   Language="en_US" />
+	<Row Tag="LOC_AKGC_OPT_ShowWonderProgress" Text="Show wonder completion progress"   Language="en_US" />
+	<Row Tag="LOC_AKGC_OPT_ShowWondersForDiscoveredCities" Text="Show Wonders"   Language="en_US" />
+	<Row Tag="LOC_AKGC_OPT_ShowWondersForUndiscoveredCities" Text="Show Wonders"   Language="en_US" />
+	<Row Tag="LOC_AKGC_OPT_WonderList" Text="World Wonders List"   Language="en_US" />
+	<Row Tag="LOC_AKGC_SCORE_FROMAMENITIES" Text="{1_score} from amenities"   Language="en_US" />
+	<Row Tag="LOC_AKGC_SCORE_FROMDAMAGE" Text="{1_score} from damaged infrastructure"   Language="en_US" />
+	<Row Tag="LOC_AKGC_SCORE_FROMDISTRICTSANDBUILDINGS" Text="{1_score} from development"   Language="en_US" />
+	<Row Tag="LOC_AKGC_SCORE_FROMHOLYCITY" Text="{1_relscore} for being the Holy City of {2_rel}"   Language="en_US" />
+	<Row Tag="LOC_AKGC_SCORE_FROMLAND" Text="{1_score} from land"   Language="en_US" />
+	<Row Tag="LOC_AKGC_SCORE_FROMPOPULATION" Text="{1_score} from population"   Language="en_US" />
+	<Row Tag="LOC_AKGC_SCORE_FROMTOPCPT" Text="{1_score} for having the highest [ICON_CULTURE] per turn"   Language="en_US" />
+	<Row Tag="LOC_AKGC_SCORE_FROMTOPFPT" Text="{1_score} for having the highest [ICON_FAITH] per turn"   Language="en_US" />
+	<Row Tag="LOC_AKGC_SCORE_FROMTOPGPT" Text="{1_score} for having the highest [ICON_GOLD] per turn"   Language="en_US" />
+	<Row Tag="LOC_AKGC_SCORE_FROMTOPPPT" Text="{1_score} for having the highest [ICON_PRODUCTION] per turn"   Language="en_US" />
+	<Row Tag="LOC_AKGC_SCORE_FROMTOPSPT" Text="{1_score} for having the highest [ICON_SCIENCE] per turn"   Language="en_US" />
+	<Row Tag="LOC_AKGC_SCORE_FROMWONDERS" Text="{1_score} from wonders"   Language="en_US" />
+	<Row Tag="LOC_AKGC_SCORE_TOTAL" Text="{1_score} Total"   Language="en_US" />
+	<Row Tag="LOC_AKGC_UNDISCOVERED_CITY" Text="Undiscovered City"   Language="en_US" />
+	<Row Tag="LOC_AKGC_UNKNOWN_AUTHOR" Text="An obscure scholar"   Language="en_US" />
+	<Row Tag="LOC_AKGC_WONDER_BUILTBY" Text="Built by {1_civ}"   Language="en_US" />
+	<Row Tag="LOC_AKGC_WONDER_DESTROYED" Text="DESTROYED[NEWLINE]by {1_civ}[NEWLINE]{2_date}"   Language="en_US" />
+	<Row Tag="LOC_AKGC_WONDER_UNDERCONSTRUCTION" Text="Under[NEWLINE]Construction"   Language="en_US" />
+
+</LocalizedText>
+
+</GameData>

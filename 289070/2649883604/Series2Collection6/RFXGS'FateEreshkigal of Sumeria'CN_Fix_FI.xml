@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RFXGS'FateEreshkigal of Sumeria'CN_Fix_FI -->
+<!-- Author: Clear8Sky -->
+<!-- DateCreated: 2021/8/4 2:59:44 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “[命运]埃列什基伽勒领导的苏美尔 （多人游戏兼容性未知）” 。该文件在 FrontEnd 与 InGame 时载入，需 Criteria ：Active_Expansion_1 与 Active_Expansion_2 -->
+	<LocalizedText>
+		<Replace Tag="LOC_TRAIT_LEADER_IRKALLA_DESCRIPTION" Language="zh_Hans_CN" >
+			<Text>与您交战的文明，其所有单位每回合损失等同于您帝国境内圣地总数的 [ICON_Damaged] 生命值（上限为10点），以此方法击杀单位可获得30点 [ICON_Faith] 信仰值。[NEWLINE]地图上有单位被击杀时，所有城市可获得 [ICON_Production] 生产力奖励 (正比于您已解锁的科技数量，而反比于场上文明数量)。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_HUMAN_LEADER_ENT_ERESHKIGAL_ANY" Language="zh_Hans_CN" >
+			<Text>嗯…我准了。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_ENT_ERESHKIGAL_ANY" Language="zh_Hans_CN" >
+			<Text>愚蠢……！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_ENT_ERESHKIGAL_ANY" Language="zh_Hans_CN" >
+			<Text>鬼魂们都在嚎啕大哭，控诉着你的暴政！[NEWLINE]（谴责你）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_EXIT_LEADER_ENT_ERESHKIGAL_ANY" Language="zh_Hans_CN" >
+			<Text>我觉得你的国度正在逐渐死去…似乎你的王国正在稳步发展对吗？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_ENT_ERESHKIGAL_ANY" Language="zh_Hans_CN" >
+			<Text>这不可能…我是冥界的主人…我怎么可能…就在这里…被你打败……</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_UNIT_GALLU_DESCRIPTION" Language="zh_Hans_CN" >
+			<Text>埃列什基伽勒作为领袖时的远古时代特色近战单位，由市政“神秘主义”解锁。[ICON_Strength] 战斗力很高，但是一旦离开帝国境内就会失去 [ICON_Movement] 移动力。可用 [ICON_Faith] 信仰值购买。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_GALLU_DESCRIPTION" Language="zh_Hans_CN" >
+			<Text>只在帝国境内拥有 [ICON_Movement] 移动力。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_GALLU_DESCRIPTION" Language="zh_Hans_CN" >
+			<Text>{LOC_TRAIT_LEADER_UNIT_GALLU_DESCRIPTION}</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_LEADER_ENT_ERESHKIGAL_REASON_ANY" Language="zh_Hans_CN" >
+			<Text>您的人口与文化值较低。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_ENT_ERESHKIGAL_REASON_ANY" Language="zh_Hans_CN" >
+			<Text>您的人口与文化值较高。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_DESCRIPTION_NICE_IRKALLA" Language="zh_Hans_CN" >
+			<Text>（您的人口与文化值较高）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_DESCRIPTION_BAD_IRKALLA" Language="zh_Hans_CN" >
+			<Text>（您的人口与文化值较低）</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

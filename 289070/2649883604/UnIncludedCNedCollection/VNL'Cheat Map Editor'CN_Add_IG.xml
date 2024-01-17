@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'Cheat Map Editor'CN_Add_IG -->
+<!-- Author: Clear8Sky -->
+<!-- DateCreated: 2021/8/11 22:53:39 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Cheat Map Editor” 。该文件在 InGame 时载入，无需任何 Criteria -->
+	<LocalizedText>
+
+	<!-- CTE_UI.lua文件 -->
+
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_RESOURCE_BUGGED" Language="zh_Hans_CN">
+			<Text>若用本模组强行放置该资源，则其将无法被收获！</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_RESOURCE_MINOR_CIV" Language="zh_Hans_CN">
+			<Text>该资源通常经由与城邦相关的奖励获得，无法放置在地图上！</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_IMPROVEMENT_BUGGED" Language="zh_Hans_CN">
+			<Text>若用本模组强行放置该改良设施，则其将无法生效！</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_FEATURE_FLOODPLAINS_BUGGED" Language="zh_Hans_CN">
+			<Text>增加或移除泛滥平原地形将不会影响此处洪水灾害发生与否！</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_TERRAINS_UNCH" Language="zh_Hans_CN">
+			<Text>不更改</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_FEATURES_UNCH" Language="zh_Hans_CN">
+			<Text>不更改</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_RESOURCES_UNCH" Language="zh_Hans_CN">
+			<Text>不更改</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_IMPROVEMENT_UNCH" Language="zh_Hans_CN">
+			<Text>不更改</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_ROUTE_UNCH" Language="zh_Hans_CN">
+			<Text>不更改</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_ROUTE_NONE" Language="zh_Hans_CN">
+			<Text>无</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_OWNER_UNCH" Language="zh_Hans_CN">
+			<Text>不更改</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_OWNER_NONE" Language="zh_Hans_CN">
+			<Text>无</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_ELEVATION_UNCH" Language="zh_Hans_CN">
+			<Text>不更改</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_ELEVATION_NONE" Language="zh_Hans_CN">
+			<Text>无</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_CONTINENTS_UNCH" Language="zh_Hans_CN">
+			<Text>不更改（如果允许）</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_RES_TT_YIELDS" Language="zh_Hans_CN">
+			<Text>改动产出：</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_RES_TT_VALID_TERRAINS" Language="zh_Hans_CN">
+			<Text>合理的地形种类：</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_RES_TT_VALID_FEATURES" Language="zh_Hans_CN">
+			<Text>合理的地貌种类：</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_RIVER_NEW" Language="zh_Hans_CN">
+			<Text>新的江河ID：</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_POPUP_SHOW_CONFIRM_DELETE_DIALOG" Language="zh_Hans_CN">
+			<Text>您确定要确定要移除单元格上的所有单位？</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_POPUP_CME_FIX" Language="zh_Hans_CN">
+			<Text>地域/湖泊已被重新计算。[NEWLINE]您要启用“防崩溃安全模式”功能来为开拓者修复新地形吗？它可能会因为后续回合中会出现的崩溃，而迫使您游戏关闭，无法继续进行游戏。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_POPUP_CME_CB_SAFE_ADV_MODE" Language="zh_Hans_CN">
+			<Text>允许这些将会在后续AI回合行动后导致游戏崩溃的更改吗？</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_TER_REASON" Language="zh_Hans_CN">
+			<Text>地形：</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_FEA_REASON" Language="zh_Hans_CN">
+			<Text>地貌：</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_RES_REASON" Language="zh_Hans_CN">
+			<Text>资源：</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_IMP_REASON" Language="zh_Hans_CN">
+			<Text>改良设施：</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_RIV_REASON_ADD" Language="zh_Hans_CN">
+			<Text>添加江河：</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_RIV_REASON_REM" Language="zh_Hans_CN">
+			<Text>移除江河：</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_RIV_REASON1" Language="zh_Hans_CN">
+			<Text>单元格东边缘江河改动：</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_RIV_REASON2" Language="zh_Hans_CN">
+			<Text>单元格东南边缘江河改动：</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_RIV_REASON3" Language="zh_Hans_CN">
+			<Text>单元格西南边缘江河改动：</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_CLIF_REASON1" Language="zh_Hans_CN">
+			<Text>单元格东边缘悬崖改动：</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_CLIF_REASON2" Language="zh_Hans_CN">
+			<Text>单元格东南边缘悬崖改动：</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_CLIF_REASON3" Language="zh_Hans_CN">
+			<Text>单元格西南边缘悬崖改动：</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_NC" Language="zh_Hans_CN">
+			<Text>不变动。</Text>
+		</Replace>
+
+	<!-- CTE_UI.xml文件 -->
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_LAUNCH_BAR_BTN_TIP" Language="zh_Hans_CN">
+			<Text>地图作弊编辑器[NEWLINE][NEWLINE]热键：按 Alt+M 组合键打开/关闭编辑器面板。[NEWLINE]注意热键的冲突。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_BTN_TAB_RIV_TIP" Language="zh_Hans_CN">
+			<Text>编辑江河</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_BTN_TAB_RIV_LBL_STR" Language="zh_Hans_CN">
+			<Text>江河</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_BTN_TAB_CLI_TIP" Language="zh_Hans_CN">
+			<Text>编辑悬崖</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_BTN_TAB_CLI_LBL_STR" Language="zh_Hans_CN">
+			<Text>悬崖</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_BTN_TAB_TER_TIP" Language="zh_Hans_CN">
+			<Text>编辑地形</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_BTN_TAB_TER_LBL_STR" Language="zh_Hans_CN">
+			<Text>地形</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_LBL_TER_TYPE_STR" Language="zh_Hans_CN">
+			<Text>地形种类</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_PD_TER_TYPE_TIP" Language="zh_Hans_CN">
+			<Text>地形种类</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_BTN_REF_TERTYPE_TIP" Language="zh_Hans_CN">
+			<Text>设为与被选中单元格相同的地形。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_BTN_UN_TER_TIP" Language="zh_Hans_CN">
+			<Text>不更改地形。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_LBL_FEATURE_STR" Language="zh_Hans_CN">
+			<Text>地貌</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_PD_FEATURE_TIP" Language="zh_Hans_CN">
+			<Text>地貌</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_BTN_REF_FEA_TIP" Language="zh_Hans_CN">
+			<Text>设为与被选中单元格相同的地貌。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_BTN_NON_FEA_TIP" Language="zh_Hans_CN">
+			<Text>设为无地貌。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_BTN_UN_FEA_TIP" Language="zh_Hans_CN">
+			<Text>不更改地貌。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_LBL_RES_STR" Language="zh_Hans_CN">
+			<Text>资源</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_PD_RES_TIP" Language="zh_Hans_CN">
+			<Text>资源</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_EB_RES_VALUE_TIP" Language="zh_Hans_CN">
+			<Text>资源数量</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_BTN_RES_VALUE_LEFT_TIP" Language="zh_Hans_CN">
+			<Text>资源数量-1</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_BTN_RES_VALUE_RIGHT_TIP" Language="zh_Hans_CN">
+			<Text>资源数量+1</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_BTN_REF_RES_TIP" Language="zh_Hans_CN">
+			<Text>设为与被选中单元格相同的资源。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_BTN_NON_RES_TIP" Language="zh_Hans_CN">
+			<Text>设为无资源。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_BTN_UN_RES_TIP" Language="zh_Hans_CN">
+			<Text>不更改资源。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_LBL_IMPR_STR" Language="zh_Hans_CN">
+			<Text>改良设施</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_PD_IMPR_TIP" Language="zh_Hans_CN">
+			<Text>改良设施</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_BTN_REF_IMP_TIP" Language="zh_Hans_CN">
+			<Text>设为与被选中单元格相同的改良设施。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_BTN_NON_IMP_TIP" Language="zh_Hans_CN">
+			<Text>设为无改良设施。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_BTN_UN_IMP_TIP" Language="zh_Hans_CN">
+			<Text>不变动改良设施。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_LBL_ROUTE_STR" Language="zh_Hans_CN">
+			<Text>道路</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_PD_ROUTE_TIP" Language="zh_Hans_CN">
+			<Text>道路</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_BTN_REF_ROUTE_TIP" Language="zh_Hans_CN">
+			<Text>设为与被选中单元格相同的道路。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_BTN_NON_ROUTE_TIP" Language="zh_Hans_CN">
+			<Text>设为无道路。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_BTN_UN_ROUTE_TIP" Language="zh_Hans_CN">
+			<Text>不更改道路。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_LBL_OWNER_STR" Language="zh_Hans_CN">
+			<Text>单元格拥有者</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_PD_OWNER_TIP" Language="zh_Hans_CN">
+			<Text>单元格拥有者</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_LBL_ELEV_STR" Language="zh_Hans_CN">
+			<Text>海岸低地</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_PD_ELEV_TIP" Language="zh_Hans_CN">
+			<Text>海岸低地等级</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_BTN_REF_ELEV_TIP" Language="zh_Hans_CN">
+			<Text>设为与被选中单元格相同的海岸低地等级。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_BTN_NON_ELEV_TIP" Language="zh_Hans_CN">
+			<Text>设为无海岸洪水影响。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_BTN_UN_ELEV_TIP" Language="zh_Hans_CN">
+			<Text>不更改海岸低地等级。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_LBL_CONT_TYPE_STR" Language="zh_Hans_CN">
+			<Text>大陆</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_PD_CONT_TYPE_TIP" Language="zh_Hans_CN">
+			<Text>湖泊应从属于大陆，而海洋与海岸则不需要。地形也应从属于大陆。有时您需要保存并重新载入游戏，来查看您做的相关改动。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_BTN_REF_CONT_TIP" Language="zh_Hans_CN">
+			<Text>设为从属于与被选中单元格相同的大陆。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_BTN_NON_CONT_TIP" Language="zh_Hans_CN">
+			<Text>设为不从属于任何大陆。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_BTN_UN_CONT_TIP" Language="zh_Hans_CN">
+			<Text>不改动从属的大陆。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_LBL_RIVER_STR" Language="zh_Hans_CN">
+			<Text>江河（实验性）</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_LBL_RIVER_TIP" Language="zh_Hans_CN">
+			<Text>更改单元格包含的江河（实验性功能）</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_CB_RIVER_UNCH_STR" Language="zh_Hans_CN">
+			<Text>忽略</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_PD_RIVER_UNCH_TIP" Language="zh_Hans_CN">
+			<Text>尝试不更改江河。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_LBL_NEW_RIVER_ID_STR" Language="zh_Hans_CN">
+			<Text>江河ID（仅针对新的江河）</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_PD_NEW_RIVER_ID_TIP" Language="zh_Hans_CN">
+			<Text>江河ID决定其名称。[NEWLINE]无法查询现有江河的ID，或通过江河ID查找到江河名称。[NEWLINE]您可以从地图已发现江河中选择相应ID，或自己创建一条新的江河。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_BTN_RIVER_SW_TIP" Language="zh_Hans_CN">
+			<Text>单元格西南边缘江河状态</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_BTN_RIVER_SE_TIP" Language="zh_Hans_CN">
+			<Text>单元格东南边缘江河状态</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_BTN_RIVER_E_TIP" Language="zh_Hans_CN">
+			<Text>单元格东边缘江河状态</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_LBL_CLIFF_STR" Language="zh_Hans_CN">
+			<Text>悬崖（实验性）</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_LBL_CLIFF_TIP" Language="zh_Hans_CN">
+			<Text>更改悬崖（实验性功能）</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_CB_CLIFF_UNCH_STR" Language="zh_Hans_CN">
+			<Text>忽略</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_CB_CLIFF_UNCH_TIP" Language="zh_Hans_CN">
+			<Text>尝试不更改悬崖。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_BTN_CLIFF_SW_TIP" Language="zh_Hans_CN">
+			<Text>单元格西南边缘悬崖状态</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_BTN_CLIFF_SE_TIP" Language="zh_Hans_CN">
+			<Text>单元格东南边缘悬崖状态</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_BTN_CLIFF_E_TIP" Language="zh_Hans_CN">
+			<Text>单元格东边缘悬崖状态</Text>
+		</Replace>
+		<!--
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_LBL_IMPR_STR" Language="zh_Hans_CN">
+			<Text>您可能需要保存并重载游戏来更新相关改动。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_LBL_BG_STR" Language="zh_Hans_CN">
+			<Text>背景</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_LBL_BG_TIP" Language="zh_Hans_CN">
+			<Text>设定不透明背景</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_CB_BG_TIP" Language="zh_Hans_CN">
+			<Text>设定不透明背景</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_CB_BG_STR" Language="zh_Hans_CN">
+			<Text>背景</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_CB_BG_TIP" Language="zh_Hans_CN">
+			<Text>设定不透明背景</Text>
+		</Replace>
+		-->
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_LBL_SAFE_MODE_STR" Language="zh_Hans_CN">
+			<Text>安全模式</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_LBL_SAFE_MODE_TIP" Language="zh_Hans_CN">
+			<Text>尝试驳回不合理的更改。[NEWLINE]尽量保留“不更改”的设定（但可能会更改自然奇观单元格）。[NEWLINE][NEWLINE][COLOR_RED]此模式无法避免崩溃。[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_CB_SAFE_MODE_TIP" Language="zh_Hans_CN">
+			<Text>尝试驳回不合理的更改。[NEWLINE]尽量保留“不更改”的设定（但可能会更改自然奇观单元格）。[NEWLINE][NEWLINE][COLOR_RED]此模式无法避免崩溃。[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_LBL_SAFE_ADV_MODE_STR" Language="zh_Hans_CN">
+			<Text>防崩溃安全模式</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_LBL_SAFE_ADV_MODE_TIP" Language="zh_Hans_CN">
+			<Text>尝试驳回会引起崩溃的更改。[NEWLINE][NEWLINE][COLOR_RED]仅根据现今已知的崩溃原因作检查，因此无法保证绝对不会发生崩溃。[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_CB_SAFE_ADV_MODE_TIP" Language="zh_Hans_CN">
+			<Text>尝试驳回会引起崩溃的更改。[NEWLINE][NEWLINE][COLOR_RED]仅根据现今已知的崩溃原因作检查，因此无法保证绝对不会发生崩溃。[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_LBL_PAINT_MODE_STR" Language="zh_Hans_CN">
+			<Text>绘图刷模式</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_LBL_PAINT_MODE_TIP" Language="zh_Hans_CN">
+			<Text>在绘图刷模式中，当您选中地图上某个单元格时，设定好的改动将自动赋予在该单元格上。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_CB_PAINT_MODE_TIP" Language="zh_Hans_CN">
+			<Text>在绘图刷模式中，当您选中地图上某个单元格时，设定好的改动将自动赋予在该单元格上。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_FIX_TIP" Language="zh_Hans_CN">
+			<Text>修复地图数据结构，以防止可能的崩溃；但之后的游戏进程中，若在取消勾选“防崩溃安全模式”的情况下启用此功能，则仍可能导致崩溃。[NEWLINE]可能需耗时数分来完成。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_FIX_LBL_STR" Language="zh_Hans_CN">
+			<Text>修复游戏数据</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_FIX_LBL2_STR" Language="zh_Hans_CN">
+			<Text>修复游戏数据</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_REMOVE_UNITS_TIP" Language="zh_Hans_CN">
+			<Text>移除选定单元格上的所有单位</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_REMOVE_UNITS_LBL_STR" Language="zh_Hans_CN">
+			<Text>移除单位</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_SHOW_STATUS_TIP" Language="zh_Hans_CN">
+			<Text>显示安全模式生效状态</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_SHOW_STATUS_LBL_STR" Language="zh_Hans_CN">
+			<Text>状态</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_SHOW_SAVELOAD_TIP" Language="zh_Hans_CN">
+			<Text>保存游戏并自动载入以更新所做的改动</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_SHOW_SAVELOAD_LBL_STR" Language="zh_Hans_CN">
+			<Text>保存并载入</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_LBL_BG_STR" Language="zh_Hans_CN">
+			<Text>背景</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_LBL_BG_TIP" Language="zh_Hans_CN">
+			<Text>设定不透明背景</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_CB_BG_TIP" Language="zh_Hans_CN">
+			<Text>设定不透明背景</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_UNCH_STR" Language="zh_Hans_CN">
+			<Text>不更改</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_UNCH_TIP" Language="zh_Hans_CN">
+			<Text>所有组合框选择“不更改”</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_NONE_STR" Language="zh_Hans_CN">
+			<Text>无</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_NONE_TIP" Language="zh_Hans_CN">
+			<Text>所有组合框选择“无”</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_CANCEL_STR" Language="zh_Hans_CN">
+			<Text>刷新</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_CANCEL_TIP" Language="zh_Hans_CN">
+			<Text>根据选定单元格所有地形数据进行设定</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_OK_TIP" Language="zh_Hans_CN">
+			<Text>在选定单元格上应用改动</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_OK_LBL_STR" Language="zh_Hans_CN">
+			<Text>应用</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_VALID_LBL1_STR" Language="zh_Hans_CN">
+			<Text>地形：</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_VALID_LBL2_STR" Language="zh_Hans_CN">
+			<Text>地貌：</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_VALID_LBL3_STR" Language="zh_Hans_CN">
+			<Text>资源：</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_VALID_LBL4_STR" Language="zh_Hans_CN">
+			<Text>改良设施：</Text>
+		</Replace>
+
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_VALID_OK" Language="zh_Hans_CN">
+			<Text>确认</Text>
+		</Replace>
+		
+	<!-- CTE_UI.xml文件 -->
+		
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_VALID_DENY_CITYCENTR" Language="zh_Hans_CN">
+			<Text>驳回。不允许对市中心单元格做更改。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_VALID_DENY_WONDER" Language="zh_Hans_CN">
+			<Text>驳回。不允许对世界奇观单元格做更改。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_VALID_DENY_DISTR" Language="zh_Hans_CN">
+			<Text>驳回。不允许对区域单元格做更改。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_VALID_DENY_OWNED_TILE" Language="zh_Hans_CN">
+			<Text>驳回。选定的改良设施只能放置在您所拥有的单元格上。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_VALID_IMPR_NWTILES" Language="zh_Hans_CN">
+			<Text>驳回。无法在自然奇观单元格上放置改良设施。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_VALID_IMPR_INV_TERR" Language="zh_Hans_CN">
+			<Text>驳回。对于该改良设施，此处为无效地形。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_VALID_IMPR_INV_FEA" Language="zh_Hans_CN">
+			<Text>驳回。对于该改良设施，此处为无效地貌。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_VALID_IMPR_INV_RES" Language="zh_Hans_CN">
+			<Text>驳回。对于该改良设施，此处为无效资源。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_VALID_RES_DENY_NWTILE" Language="zh_Hans_CN">
+			<Text>驳回。无法在自然奇观单元格上放置资源。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_VALID_RES_DENY_WATER" Language="zh_Hans_CN">
+			<Text>驳回。无法在水域单元格放置该资源。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_VALID_RES_DENY_NOWATER" Language="zh_Hans_CN">
+			<Text>驳回。无法在非水域单元格放置该资源。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_VALID_RES_DENY_TERR" Language="zh_Hans_CN">
+			<Text>驳回。对于该资源，此处为无效地形。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_VALID_RES_DENY_FEA" Language="zh_Hans_CN">
+			<Text>驳回。对于该资源，此处为无效地貌。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_VALID_RES_DENY_IMPR" Language="zh_Hans_CN">
+			<Text>驳回。无法更改此改良设施下的资源，除非该改良设施改动被撤销。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_VALID_FEA_DENY_CITYCENTR" Language="zh_Hans_CN">
+			<Text>驳回。不允许对市中心单元格做更改（占多个单元格的自然奇观）。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_VALID_FEA_DENY_WONDER" Language="zh_Hans_CN">
+			<Text>驳回。不允许对世界奇观单元格做更改（占多个单元格的自然奇观）。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_VALID_FEA_DENY_DISTR" Language="zh_Hans_CN">
+			<Text>驳回。不允许对区域单元格做更改（占多个单元格的自然奇观）。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_VALID_FEA_DENY_VOLC" Language="zh_Hans_CN">
+			<Text>驳回。本模组不允许更改火山。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_VALID_FEA_DENY_IMPR" Language="zh_Hans_CN">
+			<Text>驳回。无法更改此改良设施下的地貌，除非该改良设施改动被撤销。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_VALID_FEA_DENY_RES" Language="zh_Hans_CN">
+			<Text>驳回。无法更改地貌，因为设定当前的资源不作改动，而此时新地貌的改动便会被驳回。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_VALID_FEA_DENY_TERR" Language="zh_Hans_CN">
+			<Text>驳回。对于该地貌，此处为无效地形。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_VALID_FEA_DENY_VOLC_REM" Language="zh_Hans_CN">
+			<Text>驳回。本模组不允许移除火山。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_VALID_TERR_DENY_MOUNT" Language="zh_Hans_CN">
+			<Text>驳回。移除或创建山脉将会在AI回合行动之后导致游戏崩溃。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_VALID_TERR_DENY_ADD_LAND" Language="zh_Hans_CN">
+			<Text>驳回。创建新大陆将会在AI回合行动之后导致游戏崩溃。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_VALID_TERR_DENY_WATER_RIVER" Language="zh_Hans_CN">
+			<Text>驳回。不允许在江河旁创建新的水域。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_VALID_TERR_DENY_IMPR" Language="zh_Hans_CN">
+			<Text>驳回。无法更改此改良设施下的地形，除非该改良设施改动被驳回。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_VALID_TERR_DENY_RES" Language="zh_Hans_CN">
+			<Text>驳回。无法更改地形，因为设定当前的资源不作改动，而此时新地形的改动便会被驳回。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_VALID_TERR_DENY_FEA" Language="zh_Hans_CN">
+			<Text>驳回。无法更改地形，因为设定当前的地貌不作改动，而此时新地形的改动便会被驳回。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_VALID_RIV_DENY_WATER" Language="zh_Hans_CN">
+			<Text>驳回。不允许在水域单元格旁放置江河。</Text>
+		</Replace>
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_VALID_RIV_DENY_REM" Language="zh_Hans_CN">
+			<Text>驳回。移除江河将会导致游戏崩溃。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_CHEAT_MAP_EDITOR_VALID_CLI_DENY_LAND_WATER" Language="zh_Hans_CN">
+			<Text>驳回。悬崖应放置于陆地与水域单元格之间。</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

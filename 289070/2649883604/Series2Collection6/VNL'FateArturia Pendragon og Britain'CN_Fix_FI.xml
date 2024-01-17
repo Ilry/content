@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'FateArturia Pendragon og Britain'CN_Fix_FI -->
+<!-- Author: Clear8Sky -->
+<!-- DateCreated: 2021/8/3 4:42:43 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “[命运]阿尔托利亚（Alter）领导的不列颠” 。该文件在 FrontEnd 与 InGame 时载入，无需任何 Criteria -->
+	<LocalizedText>
+		
+		<!-- 游戏前文本 -->
+		
+		<Replace Tag="LOC_TRAIT_LEADER_EXCALIBUR_ALTER_DESCRIPTION"   Language="zh_Hans_CN" >
+			<Text>近战、轻骑兵和重骑兵单位攻击敌方单位时，会对他们身后扇形范围内造成溅射伤害。</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_ARTURIAENT_ALTER_NAME"   Language="zh_Hans_CN" >
+			<Text>阿尔托莉雅·潘德拉贡（Alter）</Text>
+		</Replace>
+		
+		<!-- 游戏内文本 -->
+		
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_ARTURIAENT_ALTER_ANY"   Language="zh_Hans_CN" >
+			<Text>你除了是个碍眼的家伙以外，什么都不是。[NEWLINE]（谴责你）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_ARTURIAENT_ALTER_ANY"   Language="zh_Hans_CN" >
+			<Text>别忘了…你的命运正在等待着你……</Text>
+		</Replace>
+		<Replace Tag="LOC_LOADING_INFO_LEADER_ARTURIAENT_ALTER"   Language="zh_Hans_CN" >
+			<Text>被圣杯的诅咒侵蚀，骑士王冷酷无情的另一面。[NEWLINE]亦或亚瑟王所追求的“理想之王”，[NEWLINE]正是这样的一种存在吧。[NEWLINE]阿尔托莉雅平时会克制自己的力量，[NEWLINE]但处于这种状态下的她，[NEWLINE]不会对使用强大魔力有丝毫的踌躇。</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

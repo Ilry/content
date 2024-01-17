@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'Greatest Cities'CN_Fix_IG -->
+<!-- Author: 牛奶大魔王 , Clear8Sky -->
+<!-- DateCreated: 2021/9/19 14:37:05 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Greatest Cities” 。该文件在 InGame 时载入，无需任何 Criteria -->
+	<LocalizedText>
+		<Replace Tag="LOC_AKGC_AWARD_HIGHEST_CulturePT" Language="zh_Hans_CN">
+			<Text>文学殿堂（每回合产出{1} [ICON_Culture] 文化值）</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_AWARD_HIGHEST_Defense" Language="zh_Hans_CN">
+			<Text>岿立堡垒（拥有{1} [ICON_Strength] 城市防御力）</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_AWARD_HIGHEST_FaithPT" Language="zh_Hans_CN">
+			<Text>圣虔之城（每回合产出{1} [ICON_Faith] 信仰值）</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_AWARD_HIGHEST_GoldPT" Language="zh_Hans_CN">
+			<Text>富豪之都（每回合产出{1} [ICON_Gold] 金币）</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_AWARD_HIGHEST_Happiness" Language="zh_Hans_CN">
+			<Text>现世桃源（拥有{1} [ICON_Amenities] 宜居度）</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_AWARD_HIGHEST_Population" Language="zh_Hans_CN">
+			<Text>特大城市（拥有{1} [ICON_Citizen] 人口）</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_AWARD_HIGHEST_ProductionPT" Language="zh_Hans_CN">
+			<Text>世界工厂（每回合产出{1} [ICON_Production] 生产力）</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_AWARD_HIGHEST_SciencePT" Language="zh_Hans_CN">
+			<Text>科技都市（每回合产出{1} [ICON_Science] 科技值）</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_BUTTON_OPTIONS_TT" Language="zh_Hans_CN">
+			<Text>选项</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_BUTTON_SETTINGSCANCEL" Language="zh_Hans_CN">
+			<Text>取消</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_BUTTON_SETTINGSRESET" Language="zh_Hans_CN">
+			<Text>重置</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_BUTTON_SETTINGSSAVE" Language="zh_Hans_CN">
+			<Text>保存</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_CAPITALCITY_TT" Language="zh_Hans_CN">
+			<!-- 2021/08/20补更 -->
+			<Text>{1_civ}的原始 [ICON_Capital] 首都</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_CITIES_BUTTON" Language="zh_Hans_CN">
+			<Text>城市之最</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_CITIES_TAB_EMPIRE" Language="zh_Hans_CN">
+			<Text>帝国</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_CITIES_TAB_WONDERS" Language="zh_Hans_CN">
+			<!-- 2021/08/20补更 -->
+			<Text>奇观</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_CITIES_TAB_WORLD" Language="zh_Hans_CN">
+			<Text>世界</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_CITIES_TITLE" Language="zh_Hans_CN">
+			<Text>世界城市之最</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_CITIES_TITLE_HISTORIC" Language="zh_Hans_CN">
+			<Text>{2_era}背景下的城市之最（由{1_author}统计）</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_CITYFOUNDED" Language="zh_Hans_CN">
+			<Text>{1_civ}{2_occupied}，建立于{3_year}</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_CITYFOUNDEDBYSOMEONEELSE" Language="zh_Hans_CN">
+			<Text>{1_civ}{2_occupied}，由{4_origciv}于{3_year}建立</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_CITYFOUNDEDUNKNOWN" Language="zh_Hans_CN">
+			<Text>{1_civ}{2_occupied}</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_CITYOCCUPIED" Language="zh_Hans_CN">
+			<Text>（被占领）</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_CITYRAZED" Language="zh_Hans_CN">
+			<Text>已被夷平</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_CITY_HISTORY_CAPTURED" Language="zh_Hans_CN">
+			<Text>{1_year}：被{2_civ}征服</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_CITY_HISTORY_DEFECTED" Language="zh_Hans_CN">
+			<Text>{1_year}：叛向{2_civ}</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_CITY_HISTORY_FOUNDED" Language="zh_Hans_CN">
+			<Text>{1_year}：{3_civ}建立{2_city}</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_CITY_HISTORY_FOUNDEDONRUINS" Language="zh_Hans_CN">
+			<Text>{1_year}：{3_civ}在{4_oldcity}的废墟上建立{2_city}</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_CITY_HISTORY_LIBERATEDBY" Language="zh_Hans_CN">
+			<Text>{1_year}：被{2_civ}解放</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_CITY_HISTORY_OCCUPIED" Language="zh_Hans_CN">
+			<Text>{1_year}：被{2_civ}占领</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_CITY_HISTORY_RAZED" Language="zh_Hans_CN">
+			<Text>{1_year}：被{2_civ}夷为平地</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_CITY_HISTORY_RENAMED" Language="zh_Hans_CN">
+			<Text>{1_year}：改称{2_name}</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_CITY_HISTORY_RETURNEDTO" Language="zh_Hans_CN">
+			<!-- 2021/08/20补更 -->
+			<Text>{1_year}：重归{2_civ}所有</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_CITY_HISTORY_TRADED" Language="zh_Hans_CN">
+			<Text>{1_year}：割让给{2_civ}</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_CITY_HISTORY_UNKNOWN" Language="zh_Hans_CN">
+			<Text>{1_year}：未知事件{2_name}</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_COL_CITY" Language="zh_Hans_CN">
+			<Text>城市</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_COL_DATEBUILT" Language="zh_Hans_CN">
+			<!-- 2021/08/20补更 -->
+			<Text>落成时间</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_COL_LOCATION" Language="zh_Hans_CN">
+			<!-- 2021/08/20补更 -->
+			<Text>落成地点</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_COL_OWNER" Language="zh_Hans_CN">
+			<!-- 2021/08/20补更 -->
+			<Text>所属文明</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_COL_POPULATION" Language="zh_Hans_CN">
+			<Text>人口</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_COL_RANK" Language="zh_Hans_CN">
+			<Text>排名</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_COL_SPECIAL" Language="zh_Hans_CN">
+			<Text>特殊</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_COL_WONDER" Language="zh_Hans_CN">
+			<!-- 2021/08/20补更 -->
+			<Text>名称</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_COL_WONDERS" Language="zh_Hans_CN">
+			<Text>奇观</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_DEFAULTOPTIONS_NOTIFICATION_HEADER" Language="zh_Hans_CN">
+			<Text>城市之最：提示选项</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_DEFAULTOPTIONS_NOTIFICATION_TEXT_OFF" Language="zh_Hans_CN">
+			<Text>[NEWLINE]您可以点击此处进入选项，或点击“城市之最”窗口左上方的齿轮图标进入。[NEWLINE][NEWLINE]未检测到“城市之最”奖励：时代结束奖励[COLOR_GREEN]未启用[ENDCOLOR]。[NEWLINE]</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_DEFAULTOPTIONS_NOTIFICATION_TEXT_ON" Language="zh_Hans_CN">
+			<Text>[NEWLINE]您可以点击此处进入选项，或点击“城市之最”窗口左上方的齿轮图标进入。[NEWLINE][NEWLINE]已检测到“城市之最”奖励：时代结束奖励[COLOR_GREEN]已启用[ENDCOLOR]。[NEWLINE]</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_ENDOFERARANK_NOTIFICATION_HEADER" Language="zh_Hans_CN">
+			<Text>{1_era}背景下的城市之最</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_ENDOFERARANK_NOTIFICATION_TEXT" Language="zh_Hans_CN">
+			<Text>{1_person}完成了对全世界所有城市的调查，宣布{2_civ}的{3_city}为“{4_era}背景下的城市之最”。</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_ENDOFERARANK_UNKNOWNWINNER_NOTIFICATION_TEXT" Language="zh_Hans_CN">
+			<Text>{1_person}完成了对全世界所有城市的调查，宣布您文明的{2_city}在“{4_era}背景下的城市之最”评选中排名第{3_rank}。</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_ERADROPDOWN_CURRENTERA" Language="zh_Hans_CN">
+			<Text>如今 {1_year}</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_HOLYCITY_TT" Language="zh_Hans_CN">
+			<!-- 2021/08/20补更 -->
+			<Text>宗教“{1_religion}”的圣城</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_MINORCAPITALCITY_TT" Language="zh_Hans_CN">
+			<!-- 2021/08/20补更 -->
+			<Text>城邦 [ICON_Capital] 首都</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_OPT_DebugMode" Language="zh_Hans_CN">
+			<Text>启用调试模式</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_OPT_ForDiscoveredCities" Language="zh_Hans_CN">
+			<Text>已发现的城市</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_OPT_ForUndiscoverCities" Language="zh_Hans_CN">
+			<Text>尚未发现的城市</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_OPT_GENERAL" Language="zh_Hans_CN">
+			<Text>通用设置</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_OPT_GrantEndofEraAwards" Language="zh_Hans_CN">
+			<Text>每个时代结束奖励各类杰出城市</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_OPT_IncludeMinors" Language="zh_Hans_CN">
+			<Text>包含城邦</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_OPT_NumOwnCitiesToShow" Language="zh_Hans_CN">
+			<Text>显示帝国境内城市数量</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_OPT_NumWorldCitiesToShow" Language="zh_Hans_CN">
+			<Text>显示全世界城市数量</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_OPT_ShowBestOfBonusesForDiscoveredCities" Language="zh_Hans_CN">
+			<Text>显示加成</Text>
+			<!-- 译者注：Show 'Best Of' Bonuses，还需进游戏确认这里到底译成什么 -->
+		</Replace>
+		<Replace Tag="LOC_AKGC_OPT_ShowBestOfBonusesForUndiscoveredCities" Language="zh_Hans_CN">
+			<Text>显示加成</Text>
+			<!-- 译者注：Show 'Best Of' Bonuses，还需进游戏确认这里到底译成什么 -->
+		</Replace>
+		<Replace Tag="LOC_AKGC_OPT_ShowCapitalForUndiscoveredCities" Language="zh_Hans_CN">
+			<Text>显示原始首都</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_OPT_ShowCityDetailsForDiscoveredCities" Language="zh_Hans_CN">
+			<Text>显示城市详情</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_OPT_ShowCityDetailsForUndiscoveredCities" Language="zh_Hans_CN">
+			<Text>显示城市详情</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_OPT_ShowCityNamesForUndiscoveredCities" Language="zh_Hans_CN">
+			<Text>显示名称</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_OPT_ShowHolyCityForUndiscoveredCities" Language="zh_Hans_CN">
+			<Text>显示圣城</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_OPT_ShowLineNumbersOnCityLists" Language="zh_Hans_CN">
+			<!-- 2021/08/20补更 -->
+			<Text>显示城市列表每行编号</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_OPT_ShowOwnerForUnmetCivs" Language="zh_Hans_CN">
+			<Text>显示所属文明</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_OPT_ShowRevealedUnderConstructionWonders" Language="zh_Hans_CN">
+			<!-- 2021/08/20补更 -->
+			<Text>显示可见地图内已解锁的世界奇观</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_OPT_ShowScoreBreakdownForDiscoveredCities" Language="zh_Hans_CN">
+			<Text>显示得分明细</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_OPT_ShowScoreBreakdownForUndiscoveredCities" Language="zh_Hans_CN">
+			<Text>显示得分明细</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_OPT_ShowUnRevealedUnderConstructionWonders" Language="zh_Hans_CN">
+			<!-- 2021/08/20补更 -->
+			<Text>显示可见地图内尚未解锁的世界奇观</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_OPT_ShowWonderProgress" Language="zh_Hans_CN">
+			<!-- 2021/09/22补更 -->
+			<Text>世界奇观完成进度</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_OPT_ShowWondersForDiscoveredCities" Language="zh_Hans_CN">
+			<Text>显示奇观</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_OPT_ShowWondersForUndiscoveredCities" Language="zh_Hans_CN">
+			<Text>显示奇观</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_OPT_WonderList" Language="zh_Hans_CN">
+			<!-- 2021/08/20补更 -->
+			<Text>世界奇观列表</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_SCORE_FROMAMENITIES" Language="zh_Hans_CN">
+			<Text>{1_score} 来自宜居度得分</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_SCORE_FROMDAMAGE" Language="zh_Hans_CN">
+			<Text>{1_score} 来自受损设施得分</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_SCORE_FROMDISTRICTSANDBUILDINGS" Language="zh_Hans_CN">
+			<Text>{1_score} 来自城区建设得分</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_SCORE_FROMHOLYCITY" Language="zh_Hans_CN">
+			<Text>{1_relscore} 成为宗教“{2_rel}”圣城的得分奖励</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_SCORE_FROMLAND" Language="zh_Hans_CN">
+			<Text>{1_score} 来自陆地得分</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_SCORE_FROMPOPULATION" Language="zh_Hans_CN">
+			<Text>{1_score} 来自人口得分</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_SCORE_FROMTOPCPT" Language="zh_Hans_CN">
+			<Text>{1_score} 每回合产出 [ICON_Culture] 文化值最多的得分奖励</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_SCORE_FROMTOPFPT" Language="zh_Hans_CN">
+			<Text>{1_score} 每回合产出 [ICON_Faith] 信仰值最多的得分奖励</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_SCORE_FROMTOPGPT" Language="zh_Hans_CN">
+			<Text>{1_score} 每回合产出 [ICON_Gold] 金币最多的得分奖励</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_SCORE_FROMTOPPPT" Language="zh_Hans_CN">
+			<Text>{1_score} 每回合产出 [ICON_Production] 生产力最多的得分奖励</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_SCORE_FROMTOPSPT" Language="zh_Hans_CN">
+			<Text>{1_score} 每回合产出 [ICON_Science] 科技值最多的得分奖励</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_SCORE_FROMWONDERS" Language="zh_Hans_CN">
+			<Text>{1_score} 来自奇观得分</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_SCORE_TOTAL" Language="zh_Hans_CN">
+			<Text>总得分：{1_score}</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_UNDISCOVERED_CITY" Language="zh_Hans_CN">
+			<Text>尚未发现的城市</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_UNKNOWN_AUTHOR" Language="zh_Hans_CN">
+			<Text>一位隐姓埋名的学者</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_WONDER_BUILTBY" Language="zh_Hans_CN">
+			<!-- 2021/09/22补更 -->
+			<Text>由{1_civ}所建造</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_WONDER_DESTROYED" Language="zh_Hans_CN">
+			<!-- 2021/08/20补更 -->
+			<Text>{2_date}[NEWLINE]被{1_civ}[NEWLINE]毁于一旦</Text>
+		</Replace>
+		<Replace Tag="LOC_AKGC_WONDER_UNDERCONSTRUCTION" Language="zh_Hans_CN">
+			<!-- 2021/08/20补更 -->
+			<Text>正在[NEWLINE]建造中</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

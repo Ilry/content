@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- GameInfo -->
+<!-- Author: polaris_cheung -->
+<!-- DateCreated: 11/10/2021 7:32:38 PM -->
+<GameInfo>
+	<Terrain_YieldChanges>
+		<Update>
+			<Where TerrainType="TERRAIN_PLAINS" YieldType="YIELD_FOOD"/>
+			<Set YieldChange="2"/>
+		</Update>
+		<Row TerrainType="TERRAIN_GRASS" YieldType="YIELD_PRODUCTION" YieldChange="1"/>
+		<Update>
+			<Where TerrainType="TERRAIN_COAST" YieldType="YIELD_GOLD"/>
+			<Set YieldChange="2"/>
+		</Update>
+		<Row TerrainType="TERRAIN_OCEAN" YieldType="YIELD_SCIENCE" YieldChange="1"/>
+		<Row TerrainType="TERRAIN_DESERT" YieldType="YIELD_FAITH" YieldChange="1"/>
+		<Row TerrainType="TERRAIN_DESERT_HILLS" YieldType="YIELD_FAITH" YieldChange="1"/>
+	</Terrain_YieldChanges>
+</GameInfo>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- GS'Palace of Earth Spirits'CN_Add_FI -->
+<!-- Author: Clear8Sky -->
+<!-- DateCreated: 2021/7/29 17:54:07 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “[GS]TOUHOU MOD Palace of Earth Spirits” 。该文件在 FrontEnd 与 InGame 时载入，无需任何 Criteria -->
+	<LocalizedText>
+		<Replace Tag="LOC_TRAIT_LEADER_SATORI_KOMEIJI_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>拥有动物资源（包括 [ICON_RESOURCE_HORSES] 马、[ICON_RESOURCE_DEER] 鹿、[ICON_RESOURCE_CATTLE] 牛、[ICON_RESOURCE_SHEEP] 羊、[ICON_RESOURCE_CRABS] 螃蟹、[ICON_RESOURCE_FISH] 鱼、[ICON_RESOURCE_TURTLES] 海龟、[ICON_RESOURCE_WHALES] 鲸鱼、[ICON_RESOURCE_FURS] 皮草、[ICON_RESOURCE_IVORY] 象牙、[ICON_RESOURCE_PEARLS] 珍珠）的单元格额外+1 [ICON_Production] 生产力。对所有文明获得最高的 [ICON_VisLimited] 外交能见度。[NEWLINE]拥有特色支援单位：观察者。其他文明无法对古明地觉宣布突袭战争，但与古明地觉交战不会产生厌战情绪。其他文明不会对古明地觉宣布友谊，并且对古明地觉的 [ICON_Grievance] 不满不会下降。</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_UTSUHO_REIUJI_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>建造工业区及其建筑+60% [ICON_Production] 建造速度。单位不会受到核爆炸及核辐射的伤害。建造核装置与热核装置的速度+100%。拥有特色单位“地狱波动炮”。</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_KOMEIJI_SATORI_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>初始即可解锁科技“畜牧业”和“采矿业”，并可观察到 [ICON_RESOURCE_IRON] 铁、[ICON_RESOURCE_NITER] 硝石、[ICON_RESOURCE_COAL] 煤、[ICON_RESOURCE_OIL] 石油、[ICON_RESOURCE_ALUMINUM] 铝和 [ICON_RESOURCE_URANIUM] 铀资源。拥有特色总督“火焰猫燐”。</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_KOMEIJI_KOISHI_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>初始即可解锁科技“畜牧业”和“采矿业”，并可观察到 [ICON_RESOURCE_IRON] 铁、[ICON_RESOURCE_NITER] 硝石、[ICON_RESOURCE_COAL] 煤、[ICON_RESOURCE_OIL] 石油、[ICON_RESOURCE_ALUMINUM] 铝和 [ICON_RESOURCE_URANIUM] 铀资源。拥有特色总督“火焰猫燐”。</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_REIUJI_UTSUHO_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>初始即可解锁科技“畜牧业”和“采矿业”，并可观察到 [ICON_RESOURCE_IRON] 铁、[ICON_RESOURCE_NITER] 硝石、[ICON_RESOURCE_COAL] 煤、[ICON_RESOURCE_OIL] 石油、[ICON_RESOURCE_ALUMINUM] 铝和 [ICON_RESOURCE_URANIUM] 铀资源。拥有特色总督“火焰猫燐”。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_SATORI_OBSERVER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>古明地觉作为领袖时的特色支援单位，可用 [ICON_Faith] 信仰值购买，无法直接训练或使用 [ICON_Gold] 金币购买。[ICON_Movement] 移动力低下，但拥有不受地形阻碍的超远视野。相邻的攻城单位+1 [ICON_Range] 射程，+5 [ICON_Bombard] 轰炸攻击力。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_OKUU_ROD_MASTER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>灵乌路空作为领袖时的的工业时代特色攻城单位，训练成本很高，只能在拥有“核聚变堆芯”的城市训练或购买。拥有超远 [ICON_Range] 射程，并可以发射核装置与热核装置。[NEWLINE]（解锁科技“高级弹道学”和“纳米技术”后各获得+25 [ICON_Strength] 战斗力、+1 [ICON_Movement] 移动力）</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_UNIT_ABILITY_OKUU_ROD_MASTER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>拥有超远 [ICON_Range] 射程，并可以发射核装置与热核装置。</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_HELL_OF_BLAZING_FIRES_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>地灵殿文明的特色区域，取代工业区。相邻单元格-6魅力值，不能建造在与市中心相邻的单元格上。在灼热地狱分址工作的每个 [ICON_Citizen] 专家产出+6 [ICON_Production] 生产力。可解锁特色建筑。</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_KOMEIJI_RESOURSE_CENTER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>地灵殿文明的特色建筑，仅能建造一个。建造成本很高，增加一个 [ICON_Citizen] 专家槽位。+2 [ICON_Production] 生产力，且其 [ICON_Production] 生产力加成可延伸至己方所有城市。获得5个特殊奢侈品资源：[ICON_RESOURCE_MINERAL_SAKURA] 石樱。所有已改良的 [ICON_RESOURCE_IRON] 铁、[ICON_RESOURCE_NITER] 硝石、[ICON_RESOURCE_COAL] 煤、[ICON_RESOURCE_OIL] 石油、[ICON_RESOURCE_ALUMINUM] 铝和 [ICON_RESOURCE_URANIUM] 铀每回合可额外产出1点资源。</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_KOMEIJI_NUCLEAR_FURNACE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>地灵殿文明的特色建筑，仅能建造一个，且仅能在拥有“地下资源调度中心”的灼热地狱分址建造。建造成本很高，增加一个 [ICON_Citizen] 专家槽位。+3 [ICON_Production] 生产力、+3 [ICON_Science] 科技值，且其 [ICON_Production] 生产力和 [ICON_Science] 科技值加成可延伸至己方所有城市。建造完成后，所在城市可以通过特色项目获得核装置与热核装置。通过特色项目获得的核装置与热核装置无需消耗 [ICON_RESOURCE_URANIUM] 铀。</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_KOMEIJI_POWER_CENTER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>地灵殿文明的特色建筑，仅能建造一个，且仅能在拥有“核聚变堆芯”的灼热地狱分址建造。建造成本很高，增加一个 [ICON_Citizen] 专家槽位。+4 [ICON_Production] 生产力、+3 [ICON_Science] 科技值，且其 [ICON_Production] 生产力和 [ICON_Science] 科技值加成可延伸至己方所有城市。不消耗任何战略资源，即可为所有城市提供充足的 [ICON_Power] 电力。</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_KOMEIJI_BUILD_NUCLEAR_DEVICE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>为您的国家财产增加一项核装置。该项目无需消耗 [ICON_Resource_Uranium] 铀。</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_KOMEIJI_BUILD_THERMONUCLEAR_DEVICE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>为您的国家财产增加一项热核装置。该项目无需消耗 [ICON_Resource_Uranium] 铀。</Text>
+		</Replace>
+		<Replace Tag="LOC_IMPROVEMENT_GEYSER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>地灵殿文明的特色改良设施，只能由军事工程师修建。[NEWLINE][NEWLINE]+1 [ICON_Amenities] 宜居度、+1 [ICON_Science] 科技值、+6 [ICON_Gold] 金币，可以作为核装置与热核装置的发射地。为相邻单元格+2魅力值，为相邻的学院提供和地热裂缝相同的相邻加成，完成科技“飞行”后，可提供等同于其 [ICON_Gold] 金币产出的 [ICON_Tourism] 旅游业绩。每座城市最多只能修建一个间歇泉，并且无法修建在其他间歇泉旁。间歇泉所在单元格无法在城市间切换。</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_IMPROVEMENT_GEYSER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>地灵殿文明的特色改良设施，只能由军事工程师修建。[NEWLINE][NEWLINE]+1 [ICON_Amenities] 宜居度、+1 [ICON_Science] 科技值、+6 [ICON_Gold] 金币，可以作为核装置与热核装置的发射地。为相邻单元格+2魅力值，为相邻的学院提供和地热裂缝相同的相邻加成，完成科技“飞行”后，可提供等同于其 [ICON_Gold] 金币产出的 [ICON_Tourism] 旅游业绩。每座城市最多只能修建一个间歇泉，并且无法修建在其他间歇泉旁。间歇泉所在单元格无法在城市间切换。</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_GEYSER_SCIENCE" Language="zh_Hans_CN">
+			<Text>+{1_num} [ICON_Science] 科技值 来自相邻 间歇泉</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_SATORI_KOMEIJI_ANY" Language="zh_Hans_CN">
+			<Text>愚蠢的人类啊。如此胡思乱想只会让你被自己的心象所困扰。[NEWLINE]（谴责你）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_UTSUHO_REIUJI_ANY" Language="zh_Hans_CN">
+			<Text>肤浅的技巧是敌不过压倒性的力量的！[NEWLINE]（谴责你）</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_SHA_ORIN_1_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>若派往的城市在原始 [ICON_Capital] 首都的贸易范围内，则就职后自动在此城与首都之间创建一条道路。</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_SHA_ORIN_2_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>市中心3格范围内所有敌方单位-1 [ICON_Movement] 移动力，每回合扣除30点 [ICON_Damaged] 生命值。</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_SHA_ORIN_3_1_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>此城训练或购买的重骑兵单位攻击未受损单位时-5 [ICON_Strength] 战斗力，攻击 [ICON_Damaged] 受损单位时+10 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_SHA_ORIN_COMBAT_ABILITY_3_1_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>攻击未受损单位时[COLOR_RED]-5[ENDCOLOR] [ICON_Strength] 战斗力，攻击 [ICON_Damaged] 受损单位时+10 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_SHA_ORIN_GRANT_DEBUFF_ATTACK_HEALTHY_UNIT_MODIFIER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>[COLOR_RED]-5[ENDCOLOR] [ICON_Strength] 战斗力 来自于攻击未受损单位</Text>
+		</Replace>
+		<Replace Tag="LOC_SHA_ORIN_GRANT_COMBAT_ATTACK_WOUNDED_UNIT_MODIFIER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>+10 [ICON_Strength] 战斗力 来自于攻击受损单位</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_SHA_ORIN_4_1_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>此城训练或购买的重骑兵单位主动攻击时，每点未使用的 [ICON_Movement] 移动力可提供+2 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		
+		<!-- 与2021/08/16原模组更新时将其注释掉，该Tag已无需润色
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_SHA_ORIN_3_2_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>此城训练或购买的支援单位+2 [ICON_Movement] 移动力，其中军事工程师额外+2 [ICON_Charges] 劳动力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_SHA_ORIN_ENGINEER_ABILITY_3_2_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>+2 [ICON_Movement] 移动力。</Text>
+		</Replace>
+		-->
+		
+		<Replace Tag="LOC_GOVERNOR_PROMOTION_SHA_ORIN_4_2_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>此城无法通过 [ICON_Food] 食物积累而获得或失去 [ICON_Citizen] 人口，建造专业化区域时无视 [ICON_Citizen] 人口限制。</Text>
+		</Replace>
+		
+		<!-- 相邻加成 -->
+		
+		<Replace Tag="LOC_DISTRICT_KOMEIJI_MINES_HALF_PRODUCTION" Language="zh_Hans_CN">
+			<Text>+{1_num} [ICON_Production] 生产力 来自相邻 矿山</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_KOMEIJI_LUMBER_MILL_PRODUCTION" Language="zh_Hans_CN">
+			<Text>+{1_num} [ICON_Production] 生产力 来自相邻 伐木场</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_KOMEIJI_AQUEDUCT_PRODUCTION" Language="zh_Hans_CN">
+			<Text>+{1_num} [ICON_Production] 生产力 来自相邻 水渠</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_KOMEIJI_BATH_PRODUCTION" Language="zh_Hans_CN">
+			<Text>+{1_num} [ICON_Production] 生产力 来自相邻 浴场 {1_Num : plural 2?区域; other?区域;}</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_KOMEIJI_CANAL_PRODUCTION" Language="zh_Hans_CN">
+			<Text>+{1_num} [ICON_Production] 生产力 来自相邻 运河</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_KOMEIJI_DAM_PRODUCTION" Language="zh_Hans_CN">
+			<Text>+{1_num} [ICON_Production] 生产力 来自相邻 堤坝</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_KOMEIJI_STRATEGIC_PRODUCTION" Language="zh_Hans_CN">
+			<Text>+{1_num} [ICON_Production] 生产力 来自相邻 战略资源</Text>
+		</Replace>
+		
+		<!-- 2020/7/24补更 -->
+		
+		<Replace Tag="LOC_ABILITY_OKUU_ROD_MASTER_ENHANCE_1_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>通过解锁科技“高级弹道学”而获得+25 [ICON_Strength] 战斗力、+1 [ICON_Movement] 移动力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_OKUU_ROD_MASTER_ENHANCE_2_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>通过解锁科技“纳米技术”而获得+25 [ICON_Strength] 战斗力、+1 [ICON_Movement] 移动力。</Text>
+		</Replace>
+		<Replace Tag="LOC_SHA_OKUU_UNIT_GRANT_COMBAT" Language="zh_Hans_CN">
+			<Text>+25 [ICON_Strength] 战斗力 来自于科技“高级弹道学”的解锁</Text>
+		</Replace>
+		<Replace Tag="LOC_SHA_OKUU_UNIT_GRANT_COMBAT_2" Language="zh_Hans_CN">
+			<Text>+25 [ICON_Strength] 战斗力 来自于科技“纳米技术”的解锁</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_KOISHI_MARY_PHONE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>古明地恋作为领袖时的特色建筑，完成科技“电力”后解锁。+5 [ICON_Gold] 金币，+1间谍容量，+4 [ICON_Culture] 文化值。此城训练的近战单位获得空降能力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_KOISHI_MELEE_UNIT_PARADROP_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>可对7格范围内的友方单元格进行空投（处于航空港或飞机跑道时空投范围提升为12格）。</Text>
+		</Replace>
+		
+		<!-- 2021/08/18追更 -->
+		
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_KOISHI_KOMEIJI_ANY" Language="zh_Hans_CN">
+			<Text>你一定没有朋友吧？好可怜哦！[NEWLINE]（谴责你）</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

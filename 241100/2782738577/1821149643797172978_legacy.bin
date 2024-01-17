@@ -1,0 +1,706 @@
+"controller_mappings"
+{
+	"version"		"3"
+	"revision"		"59"
+	"title"		"Official Configuration for TMNT: Shredder's Revenge"
+	"description"		"Configuration created by Tribute Games Inc. for use with the PlayStation 4 Controller."
+	"creator"		"76561198002626662"
+	"progenitor"		""
+	"export_type"		"unknown"
+	"controller_type"		"controller_ps4"
+	"major_revision"		"0"
+	"minor_revision"		"0"
+	"Timestamp"		"1644614164"
+	"actions"
+	{
+		"Player"
+		{
+			"title"		"#inputPlayerControls"
+			"legacy_set"		"0"
+			"StickPadGyro"
+			{
+				"PlayerMoveAnalog"
+				{
+					"title"		"#inputPlayerMove"
+					"input_mode"		"joystick_move"
+				}
+			}
+			"Button"
+			{
+				"PlayerAttack"		"#inputPlayerAttack"
+				"PlayerJump"		"#inputPlayerJump"
+				"PlayerBackflip"		"#inputPlayerBackflip"
+				"PlayerSpecialAttack"		"#inputPlayerSpecialAttack"
+				"PlayerTaunt"		"#inputPlayerTaunt"
+				"PlayerCheerUpRevive"		"#inputPlayerCheerUpRevive"
+				"PlayerPause"		"#inputMenuPause"
+				"ShowPlayerID"		"#inputPlayerShowPlayerID"
+			}
+		}
+		"Menu"
+		{
+			"title"		"#inputMenuControls"
+			"legacy_set"		"0"
+			"StickPadGyro"
+			{
+				"MenuMove"
+				{
+					"title"		"#inputMenuMove"
+					"input_mode"		"joystick_move"
+				}
+			}
+			"Button"
+			{
+				"MenuPause"		"#inputMenuPause"
+				"MenuAccept"		"#inputMenuConfirm"
+				"MenuCancel"		"#inputMenuBack"
+				"MenuActionX"		"#inputMenuFunction1"
+				"MenuActionY"		"#inputMenuFunction2"
+				"MenuActionLB"		"#inputMenuFunction3"
+				"MenuActionRB"		"#inputMenuFunction4"
+			}
+		}
+	}
+	"action_layers"
+	{
+	}
+	"localization"
+	{
+		"english"
+		{
+			"inputPlayerControls"		"Player Controls"
+			"inputPlayerMove"		"Movement"
+			"inputPlayerAttack"		"Attack"
+			"inputPlayerJump"		"Jump"
+			"inputPlayerBackflip"		"Backflip"
+			"inputPlayerSpecialAttack"		"Special attack"
+			"inputPlayerTaunt"		"Taunt"
+			"inputPlayerCheerUpRevive"		"Cheer up/Revive"
+			"inputMenuPause"		"Pause"
+			"inputPlayerShowPlayerID"		"Show Player ID"
+			"inputMenuControls"		"Menu Controls"
+			"inputMenuMove"		"Menu Movement"
+			"inputMenuConfirm"		"Confirm"
+			"inputMenuBack"		"Back"
+			"inputMenuFunction1"		"Menu Function 1"
+			"inputMenuFunction2"		"Menu Function 2"
+			"inputMenuFunction3"		"Menu Function 3"
+			"inputMenuFunction4"		"Menu Function 4"
+		}
+		"french"
+		{
+			"inputPlayerControls"		"inputPlayerControls invalid French"
+			"inputPlayerMove"		"inputPlayerMove invalid French"
+			"inputPlayerAttack"		"Attaquer"
+			"inputPlayerJump"		"Sauter"
+			"inputPlayerBackflip"		"inputPlayerBackflip invalid French"
+			"inputPlayerSpecialAttack"		"inputPlayerSpecialAttack invalid French"
+			"inputPlayerTaunt"		"inputPlayerTaunt invalid French"
+			"inputPlayerCheerUpRevive"		"inputPlayerCheerUpRevive invalid French"
+			"inputMenuPause"		"inputMenuPause invalid French"
+			"inputPlayerShowPlayerID"		"inputPlayerShowPlayerID invalid French"
+			"inputMenuControls"		"inputMenuControls invalid French"
+			"inputMenuMove"		"inputMenuMove invalid French"
+			"inputMenuConfirm"		"inputMenuConfirm invalid French"
+			"inputMenuBack"		"inputMenuBack invalid French"
+			"inputMenuFunction1"		"inputMenuFunction1 invalid French"
+			"inputMenuFunction2"		"inputMenuFunction2 invalid French"
+			"inputMenuFunction3"		"inputMenuFunction3 invalid French"
+			"inputMenuFunction4"		"inputMenuFunction4 invalid French"
+		}
+		"japanese"
+		{
+			"inputPlayerControls"		"inputPlayerControls invalid Japanese"
+			"inputPlayerMove"		"inputPlayerMove invalid Japanese"
+			"inputPlayerAttack"		"攻撃"
+			"inputPlayerJump"		"ジャンプ"
+			"inputPlayerBackflip"		"inputPlayerBackflip invalid Japanese"
+			"inputPlayerSpecialAttack"		"inputPlayerSpecialAttack invalid Japanese"
+			"inputPlayerTaunt"		"inputPlayerTaunt invalid Japanese"
+			"inputPlayerCheerUpRevive"		"inputPlayerCheerUpRevive invalid Japanese"
+			"inputMenuPause"		"inputMenuPause invalid Japanese"
+			"inputPlayerShowPlayerID"		"inputPlayerShowPlayerID invalid Japanese"
+			"inputMenuControls"		"inputMenuControls invalid Japanese"
+			"inputMenuMove"		"inputMenuMove invalid Japanese"
+			"inputMenuConfirm"		"inputMenuConfirm invalid Japanese"
+			"inputMenuBack"		"inputMenuBack invalid Japanese"
+			"inputMenuFunction1"		"inputMenuFunction1 invalid Japanese"
+			"inputMenuFunction2"		"inputMenuFunction2 invalid Japanese"
+			"inputMenuFunction3"		"inputMenuFunction3 invalid Japanese"
+			"inputMenuFunction4"		"inputMenuFunction4 invalid Japanese"
+		}
+		"german"
+		{
+			"inputPlayerControls"		"inputPlayerControls invalid German"
+			"inputPlayerMove"		"inputPlayerMove invalid German"
+			"inputPlayerAttack"		"Angreifen"
+			"inputPlayerJump"		"Springen"
+			"inputPlayerBackflip"		"inputPlayerBackflip invalid German"
+			"inputPlayerSpecialAttack"		"inputPlayerSpecialAttack invalid German"
+			"inputPlayerTaunt"		"inputPlayerTaunt invalid German"
+			"inputPlayerCheerUpRevive"		"inputPlayerCheerUpRevive invalid German"
+			"inputMenuPause"		"inputMenuPause invalid German"
+			"inputPlayerShowPlayerID"		"inputPlayerShowPlayerID invalid German"
+			"inputMenuControls"		"inputMenuControls invalid German"
+			"inputMenuMove"		"inputMenuMove invalid German"
+			"inputMenuConfirm"		"inputMenuConfirm invalid German"
+			"inputMenuBack"		"inputMenuBack invalid German"
+			"inputMenuFunction1"		"inputMenuFunction1 invalid German"
+			"inputMenuFunction2"		"inputMenuFunction2 invalid German"
+			"inputMenuFunction3"		"inputMenuFunction3 invalid German"
+			"inputMenuFunction4"		"inputMenuFunction4 invalid German"
+		}
+		"schinese"
+		{
+			"inputPlayerControls"		"inputPlayerControls invalid Spanish"
+			"inputPlayerMove"		"inputPlayerMove invalid Spanish"
+			"inputPlayerAttack"		"攻击"
+			"inputPlayerJump"		"跳跃"
+			"inputPlayerBackflip"		"inputPlayerBackflip invalid Spanish"
+			"inputPlayerSpecialAttack"		"inputPlayerSpecialAttack invalid Spanish"
+			"inputPlayerTaunt"		"inputPlayerTaunt invalid Spanish"
+			"inputPlayerCheerUpRevive"		"inputPlayerCheerUpRevive invalid Spanish"
+			"inputMenuPause"		"inputMenuPause invalid Spanish"
+			"inputPlayerShowPlayerID"		"inputPlayerShowPlayerID invalid Spanish"
+			"inputMenuControls"		"inputMenuControls invalid Spanish"
+			"inputMenuMove"		"inputMenuMove invalid Spanish"
+			"inputMenuConfirm"		"inputMenuConfirm invalid Spanish"
+			"inputMenuBack"		"inputMenuBack invalid Spanish"
+			"inputMenuFunction1"		"inputMenuFunction1 invalid Spanish"
+			"inputMenuFunction2"		"inputMenuFunction2 invalid Spanish"
+			"inputMenuFunction3"		"inputMenuFunction3 invalid Spanish"
+			"inputMenuFunction4"		"inputMenuFunction4 invalid Spanish"
+		}
+		"spanish"
+		{
+			"inputPlayerControls"		"inputPlayerControls invalid Italian"
+			"inputPlayerMove"		"inputPlayerMove invalid Italian"
+			"inputPlayerAttack"		"Atacar"
+			"inputPlayerJump"		"Saltar"
+			"inputPlayerBackflip"		"inputPlayerBackflip invalid Italian"
+			"inputPlayerSpecialAttack"		"inputPlayerSpecialAttack invalid Italian"
+			"inputPlayerTaunt"		"inputPlayerTaunt invalid Italian"
+			"inputPlayerCheerUpRevive"		"inputPlayerCheerUpRevive invalid Italian"
+			"inputMenuPause"		"inputMenuPause invalid Italian"
+			"inputPlayerShowPlayerID"		"inputPlayerShowPlayerID invalid Italian"
+			"inputMenuControls"		"inputMenuControls invalid Italian"
+			"inputMenuMove"		"inputMenuMove invalid Italian"
+			"inputMenuConfirm"		"inputMenuConfirm invalid Italian"
+			"inputMenuBack"		"inputMenuBack invalid Italian"
+			"inputMenuFunction1"		"inputMenuFunction1 invalid Italian"
+			"inputMenuFunction2"		"inputMenuFunction2 invalid Italian"
+			"inputMenuFunction3"		"inputMenuFunction3 invalid Italian"
+			"inputMenuFunction4"		"inputMenuFunction4 invalid Italian"
+		}
+	}
+	"group"
+	{
+		"id"		"1"
+		"mode"		"four_buttons"
+		"description"		""
+		"inputs"
+		{
+			"button_a"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"game_action Player PlayerJump"
+						}
+					}
+				}
+				"disabled_activators"
+				{
+				}
+			}
+			"button_b"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"game_action Player PlayerBackflip"
+						}
+					}
+				}
+				"disabled_activators"
+				{
+				}
+			}
+			"button_x"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"game_action Player PlayerAttack"
+						}
+					}
+				}
+				"disabled_activators"
+				{
+				}
+			}
+			"button_y"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"game_action Player PlayerSpecialAttack"
+						}
+					}
+				}
+				"disabled_activators"
+				{
+				}
+			}
+		}
+	}
+	"group"
+	{
+		"id"		"2"
+		"mode"		"trigger"
+		"description"		""
+		"inputs"
+		{
+			"click"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"game_action Player ShowPlayerID"
+						}
+						"settings"
+						{
+							"haptic_intensity"		"2"
+						}
+					}
+				}
+				"disabled_activators"
+				{
+				}
+			}
+		}
+	}
+	"group"
+	{
+		"id"		"3"
+		"mode"		"trigger"
+		"description"		""
+		"inputs"
+		{
+		}
+	}
+	"group"
+	{
+		"id"		"5"
+		"mode"		"four_buttons"
+		"description"		""
+		"inputs"
+		{
+			"button_a"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"game_action Menu MenuAccept"
+						}
+					}
+				}
+				"disabled_activators"
+				{
+				}
+			}
+			"button_b"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"game_action Menu MenuCancel"
+						}
+					}
+				}
+				"disabled_activators"
+				{
+				}
+			}
+			"button_x"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"game_action Menu MenuActionX"
+						}
+					}
+				}
+				"disabled_activators"
+				{
+				}
+			}
+			"button_y"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"game_action Menu MenuActionY"
+						}
+					}
+				}
+				"disabled_activators"
+				{
+				}
+			}
+		}
+	}
+	"group"
+	{
+		"id"		"6"
+		"mode"		"trigger"
+		"description"		""
+		"inputs"
+		{
+		}
+	}
+	"group"
+	{
+		"id"		"7"
+		"mode"		"trigger"
+		"description"		""
+		"inputs"
+		{
+		}
+	}
+	"group"
+	{
+		"id"		"8"
+		"mode"		"joystick_move"
+		"description"		""
+		"inputs"
+		{
+		}
+		"settings"
+		{
+			"virtual_mode"		"1"
+		}
+	}
+	"group"
+	{
+		"id"		"9"
+		"mode"		"joystick_move"
+		"description"		""
+		"inputs"
+		{
+		}
+		"settings"
+		{
+			"virtual_mode"		"1"
+		}
+	}
+	"group"
+	{
+		"id"		"10"
+		"mode"		"dpad"
+		"description"		""
+		"inputs"
+		{
+		}
+		"settings"
+		{
+			"requires_click"		"0"
+			"layout"		"0"
+		}
+	}
+	"group"
+	{
+		"id"		"11"
+		"mode"		"dpad"
+		"description"		""
+		"inputs"
+		{
+		}
+		"settings"
+		{
+			"requires_click"		"0"
+			"haptic_intensity_override"		"0"
+		}
+	}
+	"group"
+	{
+		"id"		"12"
+		"mode"		"joystick_move"
+		"description"		""
+		"inputs"
+		{
+		}
+		"settings"
+		{
+			"virtual_mode"		"1"
+		}
+		"gameactions"
+		{
+			"Menu"		"MenuMove"
+		}
+	}
+	"group"
+	{
+		"id"		"13"
+		"mode"		"joystick_move"
+		"description"		""
+		"inputs"
+		{
+		}
+		"settings"
+		{
+			"virtual_mode"		"1"
+			"deadzone_inner_radius"		"16390"
+			"deadzone_shape"		"0"
+		}
+		"gameactions"
+		{
+			"Menu"		"MenuMove"
+		}
+	}
+	"group"
+	{
+		"id"		"14"
+		"mode"		"joystick_move"
+		"description"		""
+		"inputs"
+		{
+		}
+		"settings"
+		{
+			"virtual_mode"		"1"
+		}
+		"gameactions"
+		{
+			"Player"		"PlayerMoveAnalog"
+		}
+	}
+	"group"
+	{
+		"id"		"15"
+		"mode"		"joystick_move"
+		"description"		""
+		"inputs"
+		{
+		}
+		"settings"
+		{
+			"virtual_mode"		"1"
+		}
+		"gameactions"
+		{
+			"Player"		"PlayerMoveAnalog"
+		}
+	}
+	"group"
+	{
+		"id"		"16"
+		"mode"		"disabled"
+		"description"		""
+	}
+	"group"
+	{
+		"id"		"17"
+		"mode"		"disabled"
+		"description"		""
+	}
+	"group"
+	{
+		"id"		"18"
+		"mode"		"disabled"
+		"description"		""
+	}
+	"group"
+	{
+		"id"		"19"
+		"mode"		"disabled"
+		"description"		""
+	}
+	"group"
+	{
+		"id"		"20"
+		"mode"		"disabled"
+		"description"		""
+	}
+	"group"
+	{
+		"id"		"0"
+		"mode"		"switches"
+		"description"		""
+		"inputs"
+		{
+			"button_escape"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"game_action Player PlayerPause"
+						}
+					}
+				}
+				"disabled_activators"
+				{
+				}
+			}
+			"left_bumper"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"game_action Player PlayerCheerUpRevive"
+						}
+					}
+				}
+				"disabled_activators"
+				{
+				}
+			}
+			"right_bumper"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"game_action Player PlayerTaunt"
+						}
+					}
+				}
+				"disabled_activators"
+				{
+				}
+			}
+		}
+	}
+	"group"
+	{
+		"id"		"4"
+		"mode"		"switches"
+		"description"		""
+		"inputs"
+		{
+			"button_escape"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"game_action Menu MenuPause"
+						}
+					}
+				}
+				"disabled_activators"
+				{
+				}
+			}
+			"left_bumper"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"game_action Menu MenuActionLB"
+						}
+					}
+				}
+				"disabled_activators"
+				{
+				}
+			}
+			"right_bumper"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"game_action Menu MenuActionRB"
+						}
+					}
+				}
+				"disabled_activators"
+				{
+				}
+			}
+		}
+	}
+	"preset"
+	{
+		"id"		"0"
+		"name"		"Player"
+		"group_source_bindings"
+		{
+			"0"		"switch active"
+			"1"		"button_diamond active"
+			"2"		"left_trigger active"
+			"3"		"right_trigger active"
+			"8"		"joystick inactive"
+			"15"		"joystick active"
+			"9"		"dpad inactive"
+			"14"		"dpad active"
+			"16"		"left_trackpad inactive"
+			"17"		"right_trackpad inactive"
+			"18"		"gyro inactive"
+			"19"		"center_trackpad inactive"
+			"20"		"right_joystick inactive"
+		}
+	}
+	"preset"
+	{
+		"id"		"1"
+		"name"		"Menu"
+		"group_source_bindings"
+		{
+			"4"		"switch active"
+			"5"		"button_diamond active"
+			"6"		"left_trigger active"
+			"7"		"right_trigger active"
+			"10"		"joystick inactive"
+			"13"		"joystick active"
+			"11"		"dpad inactive"
+			"12"		"dpad active"
+		}
+	}
+	"settings"
+	{
+	}
+}

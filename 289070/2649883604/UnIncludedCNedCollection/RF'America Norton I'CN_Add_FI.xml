@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RF'America Norton I'CN_Add_FI -->
+<!-- Author: ChiYiuWong , Clear8Sky -->
+<!-- DateCreated: 2021/9/25 20:05:23 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “America: Norton I” 。该文件在 FrontEnd 与 InGame 时载入，需 Criteria ： Active_Expansion_1 -->
+	<LocalizedText>
+
+		<!-- 模组 -->
+
+		<Replace Tag="LOC_MOD_JFD_AMERICA_NORTON_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>------------------------------------[NEWLINE]领袖名称 -- 诺顿一世[NEWLINE][NEWLINE]领袖特性 - 帝王宣言[NEWLINE]解锁新政体后可随机获得一次 [ICON_CivicBoosted] 鼓舞。更换政体后，您文明所有城市的忠诚度恢复至满。[NEWLINE][NEWLINE]领袖议程 - 人民皇帝[NEWLINE]喜欢相同政体且保持城市宜居度高的文明，不喜欢不同政体且城市宜居度不足的文明。</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_JFD_NORTON_NAME" Language="zh_Hans_CN">
+			<Text>诺顿一世</Text>
+		</Replace>
+
+		<!-- 议程 -->
+
+		<Replace Tag="LOC_AGENDA_JFD_PEOPLES_EMPEROR_NAME" Language="zh_Hans_CN">
+			<Text>人民皇帝</Text>
+		</Replace>
+		<Replace Tag="LOC_AGENDA_JFD_PEOPLES_EMPEROR_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>喜欢相同政体且保持城市宜居度高的文明，不喜欢不同政体且城市宜居度不足的文明。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_JFD_NORTON_REASON_SAME_GOVERNMENT_AND_LEADS_HAPPINESS" Language="zh_Hans_CN">
+			<Text>（您拥有相同的政体且城市宜居度高）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_AGENDA_JFD_PEOPLES_EMPEROR_SAME_GOVERNMENT_AND_LEADS_HAPPINESS" Language="zh_Hans_CN">
+			<Text>诺顿一世称赞您的政治是您人民幸福的原因。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_LEADER_JFD_NORTON_REASON_DIFF_GOVERNMENT_AND_LAGS_HAPPINESS" Language="zh_Hans_CN">
+			<Text>（您拥有不同政体且城市宜居度不足）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_AGENDA_JFD_PEOPLES_EMPEROR_DIFF_GOVERNMENT_AND_LAGS_HAPPINESS" Language="zh_Hans_CN">
+			<Text>诺顿一世谴责您的政治是您人民不满的原因。</Text>
+		</Replace>
+
+		<!-- 载入 -->
+
+		<Replace Tag="LOC_LOADING_INFO_LEADER_JFD_NORTON" Language="zh_Hans_CN">
+			<Text>应美国绝大多数公民的迫切要求和希望，您，约书亚·诺顿曾是好望角的阿尔戈亚湾的前任统治者——而最近九年零十个月居住在旧金山。凭借由此获得的权威，您被宣布成为美国的皇帝，愿您正确表达公众的声音，并减轻这个在上帝统治下一直在苦苦挣扎的民族的罪恶。</Text>
+		</Replace>
+
+		<!-- 特性 -->
+
+		<Replace Tag="LOC_TRAIT_LEADER_JFD_NORTON_PROCLAMATIONS_NAME" Language="zh_Hans_CN">
+			<Text>帝王宣言</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_JFD_NORTON_PROCLAMATIONS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>解锁新政体后可随机获得一次 [ICON_CivicBoosted] 鼓舞。更换政体后，您文明所有城市的忠诚度恢复至满。</Text>
+		</Replace>
+
+		<!-- 百科 -->
+
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_NORTON_TITLE" Language="zh_Hans_CN">
+			<Text>诺顿一世</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_NORTON_SUBTITLE" Language="zh_Hans_CN">
+			<Text>美利坚合众国皇帝</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_NORTON_QUOTE" Language="zh_Hans_CN">
+			<Text>任何人在本警告之后，依然说出这个没有任何语言学或其他根据的恶心词语“弗里斯科”，将被视为有罪和以下犯上，并须支付二十五美元入皇家财库作为惩罚。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_NORTON_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>约书亚·亚伯拉罕·诺顿，被称为诺顿皇帝，是加利福尼亚州旧金山的公民，他于1859年自封为“诺顿一世，美国皇帝”，随后又自称为“墨西哥摄政王”。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_NORTON_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>诺顿出生于英国，早年大部分时间都在南非度过。在他的母亲和他的父亲分别于1846年和1848去世后，他向西航行，大概在1849年11月抵达旧金山。诺顿最初是一个商人，但他因投资秘鲁大米失败而宣布破产。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_NORTON_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>在他试图取消他的大米合同的诉讼败诉后，诺顿消失在公众视野中。他于1859年9月重返城市，宣称自己是美国皇帝。尽管他没有政治权力，而且他的影响力也只会随着周围人的幽默而扩大，但他在旧金山受到了优待，以他的名义发行的货币在他经常光顾的店铺中被接受。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_NORTON_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>尽管有些人认为他精神不正常或疯了，但旧金山市民仍然承认他的帝王风范和他的宣言，例如他下令以武力解散美国国会，以及他要求建立连接旧金山和奥克兰的桥梁与在旧金山湾下建造隧道的众多法令。在他死后很久，横跨旧金山湾的旧金山-奥克兰海湾大桥和连接旧金山和奥克兰的湾下隧道真的建成了，并且有动议要求将这座桥重新命名为“皇帝诺顿大桥”（且2004年旧金山议会批准了）。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_NORTON_CHAPTER_HISTORY_PARA_5" Language="zh_Hans_CN">
+			<Text>1880年1月8日，诺顿在加利福尼亚街和杜邦街（现格兰特大道）的拐角处晕倒，并在他送医前“驾崩”。两天后，在他的葬礼上，近30000人挤满了旧金山的街道以表达敬意。诺顿的形象将因作为作家马克·吐温、罗伯特·路易斯·史蒂文森、克里斯托弗·摩尔、莫里斯和戈辛尼、塞尔玛·拉格洛夫和尼尔·盖曼等人创造的文学人物的原型而永垂不朽。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_NORTON_CHAPTER_CAPSULE_BODY" Language="zh_Hans_CN">
+			<Text>诺顿试图通过公民的支持来掌权，而不是卷入国际冲突。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_NORTON_CHAPTER_DETAILED_BODY" Language="zh_Hans_CN">
+			<Text>在游戏早期，美国的优势在于他们能够快速地完成市政树项目。他们将通过尽可能解锁更多的政体来放大这一优势。他们对政体的选择很重要，尽管古典共和和民主政体是最适于美国获得文化胜利的。凭借他们的电影制片厂、国家公园奖励和后工业时代的特色单位，美国将从20世纪开始大放异彩。</Text>
+		</Replace>
+
+		<!-- 外交 -->
+
+		<!-- 初次见面 -->
+		<!-- 开场白 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_JFD_NORTON_ANY" Language="zh_Hans_CN">
+			<Text>结识您是我的荣幸，我是美国的皇帝诺顿一世。</Text>
+		</Replace>
+
+		<!-- 到附近城市的邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_JFD_NORTON_ANY" Language="zh_Hans_CN">
+			<Text>出于善意和对和平的渴望，我特此邀请您与我，诺顿一世皇帝，在我们最近且可以说是最好的餐厅共进晚餐。</Text>
+		</Replace>
+
+		<!-- AI接受玩家邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NEAR_INITIATOR_POSITIVE_LEADER_JFD_NORTON_ANY" Language="zh_Hans_CN">
+			<Text>经过深思熟虑，我很荣幸地接受您的邀请。</Text>
+		</Replace>
+
+		<!-- AI邀请玩家交换首都信息 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_JFD_NORTON_ANY" Language="zh_Hans_CN">
+			<Text>我对您宫殿的壮丽景色感到好奇，在此，我谨要求交换与我们首都有关的信息。</Text>
+		</Replace>
+
+		<!-- 问候 -->
+
+		<Replace Tag="LOC_DIPLO_GREETING_LEADER_JFD_NORTON_ANY" Language="zh_Hans_CN">
+			<Text>我能为你做些什么？</Text>
+		</Replace>
+
+		<!-- 代表团 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_HUMAN_LEADER_JFD_NORTON_ANY" Language="zh_Hans_CN">
+			<Text>凭借赋予我的权力，我特此以应有的礼节和高贵的方式接受您的代表团。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_HUMAN_LEADER_JFD_NORTON_ANY" Language="zh_Hans_CN">
+			<Text>应我所委托人的强烈要求，我在此拒绝您的代表团，并要求您尽快离开。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DELEGATION_FROM_AI_LEADER_JFD_NORTON_ANY" Language="zh_Hans_CN">
+			<Text>我特此向您派遣一个带有帝国签名的代表团，这应被视为对我们两国之间建立友好关系的光荣请求。</Text>
+		</Replace>
+
+		<!-- 开放边境 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_HUMAN_LEADER_JFD_NORTON_ANY" Language="zh_Hans_CN">
+			<Text>我接受您的提议。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_HUMAN_LEADER_JFD_NORTON_ANY" Language="zh_Hans_CN">
+			<Text>我在此拒绝您的提议。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_OPEN_BORDERS_FROM_AI_LEADER_JFD_NORTON_ANY" Language="zh_Hans_CN">
+			<Text>为了缓和困扰我的人民的纷争，我希望公开两国之间的友谊。</Text>
+		</Replace>
+
+		<!-- 宣布友谊 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_HUMAN_LEADER_JFD_NORTON_ANY" Language="zh_Hans_CN">
+			<Text>我只能接受。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_HUMAN_LEADER_JFD_NORTON_ANY" Language="zh_Hans_CN">
+			<Text>凭着良心，我不能接受。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_JFD_NORTON_ANY" Language="zh_Hans_CN">
+			<Text>我希望缓解这个国家所遭受的祸害，因此在此向你保证我的友谊，希望你也照做。</Text>
+		</Replace>
+
+		<!-- 玩家接受后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_NORTON_ANY" Language="zh_Hans_CN">
+			<Text>我感到非常荣幸。</Text>
+		</Replace>
+
+		<!-- 玩家拒绝后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_NORTON_ANY" Language="zh_Hans_CN">
+			<Text>我觉得很丢脸。</Text>
+		</Replace>
+
+		<!-- 结盟 -->
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_ALLIANCE_FROM_AI_LEADER_JFD_NORTON_ANY" Language="zh_Hans_CN">
+			<Text>我谨在此宣布，我们两国结成联盟，从而使人们对两国人民之间的合作充满信心。</Text>
+		</Replace>
+
+		<!-- 赞成与警告 -->
+		<!-- AI赞成 -->
+
+		<Replace Tag="LOC_DIPLO_KUDO_EXIT_LEADER_JFD_NORTON_ANY" Language="zh_Hans_CN">
+			<Text>我很高兴与您这样的开明国家保持良好的合作关系。</Text>
+		</Replace>
+
+		<!-- AI警告 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_EXIT_LEADER_JFD_NORTON_ANY" Language="zh_Hans_CN">
+			<Text>我对你这种缺乏美德的人没有耐心。</Text>
+		</Replace>
+
+		<!-- AI警告玩家离开边境 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_LEADER_JFD_NORTON_ANY" Language="zh_Hans_CN">
+			<Text>以下是命令内容，并责令您在方便时尽快执行：如果您渴望和平与友谊，就请将您的士兵从美国的边界旁迁出。</Text>
+		</Replace>
+
+		<!-- 贸易 -->
+		<!-- AI接受交易 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_JFD_NORTON_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_NORTON_ANY}</Text>
+		</Replace>
+
+		<!-- AI拒绝交易 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_MAKE_DEAL_FROM_AI_LEADER_JFD_NORTON_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_NORTON_ANY}</Text>
+		</Replace>
+
+		<!-- 谴责 -->
+		<!-- 受到谴责回应 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_JFD_NORTON_ANY" Language="zh_Hans_CN">
+			<Text>我感到遗憾，特此宣布剥夺你们代表团的公民权和人身自由，直到你们撤销这一最肮脏的声明。</Text>
+		</Replace>
+
+		<!-- AI谴责玩家 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_JFD_NORTON_ANY" Language="zh_Hans_CN">
+			<Text>我反对纷争和苦难，特此谴责并认定您犯下了卑鄙的罪行。[NEWLINE]（谴责你）</Text>
+		</Replace>
+
+		<!-- 谴责理由 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_REASON_FROM_AI_LEADER_ANY_REASON_JFD_PEOPLES_EMPEROR_DIFF_GOVERNMENT_AND_LAGS_HAPPINESS" Language="zh_Hans_CN">
+			<Text>（您拥有不同政体且城市宜居度不足）</Text>
+		</Replace>
+
+		<!-- 宣战 -->
+		<!-- 受到宣战后回应 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_JFD_NORTON_ANY" Language="zh_Hans_CN">
+			<Text>我希望避免这一行为给国家带来的苦难，我将集结力量，以最快的方式击败你。</Text>
+		</Replace>
+
+		<!-- AI宣战 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_JFD_NORTON_ANY" Language="zh_Hans_CN">
+			<Text>凭借这个国家绝大多数公民赋予我的权力，我特此下令，我们被迫对您和您所代表的邪恶发动战争。</Text>
+		</Replace>
+
+		<!-- 求和 -->
+		<!-- AI接受求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_ACCEPT_DEAL_LEADER_JFD_NORTON_ANY" Language="zh_Hans_CN">
+			<Text>我希望减轻这个国家负担的苦难，因此，我同意你的和平条件。</Text>
+		</Replace>
+
+		<!-- AI拒绝求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_REFUSE_DEAL_LEADER_JFD_NORTON_ANY" Language="zh_Hans_CN">
+			<Text>凭借我被赋予的权威，我特此拒绝这些侮辱性和不光彩的用语。</Text>
+		</Replace>
+
+		<!-- AI求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_FROM_AI_LEADER_JFD_NORTON_ANY" Language="zh_Hans_CN">
+			<Text>我谨在此呼吁你接受这些和平条件。</Text>
+		</Replace>
+
+		<!-- 击败 -->
+		<!-- AI被击败 -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_JFD_NORTON_ANY" Language="zh_Hans_CN">
+			<Text>在我的最后一刻，我特此下令，从这以后产生的所有行为均是无效的，因此，您的国家将被视为非法而贫瘠的文明。</Text>
+		</Replace>
+
+		<!-- 玩家被击败（在热座模式中会显示） -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_JFD_NORTON_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_JFD_NORTON_ANY}</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

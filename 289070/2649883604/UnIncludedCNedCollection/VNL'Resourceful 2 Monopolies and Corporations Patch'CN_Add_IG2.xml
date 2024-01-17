@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'Resourceful 2 Monopolies and Corporations Patch'CN_Add_IG2 -->
+<!-- Author: 邓半仙人 , Clear8Sky -->
+<!-- DateCreated: 2022/1/4 15:02:33 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Resourceful 2 Monopolies and Corporations Patch”的 Resourceful_2_Monopolies_Text.xml 文件。该文件在 InGame 时载入，需 Criteria ： Active_Mod_Res2 与 Mode_Monopolies_ON -->
+	<LocalizedText>
+		
+		<!-- 产品开发项目 -->
+		
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_LAPIS_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_LAPIS] 青金石公司：开发新产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_LAPIS_SHORT_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_LAPIS] 开发新的青金石产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_LAPIS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>利用 [ICON_RESOURCE_LAPIS] 青金石资源为世界开发新产品。{LOC_INDUSTRY_FAITH_YIELD_BONUS_DESCRIPTION}</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_PLATINUM_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_PLATINUM] 铂公司：开发新产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_PLATINUM_SHORT_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_PLATINUM] 开发新的铂产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_PLATINUM_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>利用 [ICON_RESOURCE_PLATINUM] 铂资源为世界开发新产品。{LOC_INDUSTRY_GOLD_YIELD_BONUS_DESCRIPTION}</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_RUBY_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_RUBY] 红宝石公司：开发新产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_RUBY_SHORT_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_RUBY] 开发新的红宝石产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_RUBY_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>利用 [ICON_RESOURCE_RUBY] 红宝石资源为世界开发新产品。{LOC_INDUSTRY_GOLD_YIELD_BONUS_DESCRIPTION}</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_SANDALWOOD_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_SANDALWOOD] 檀香木公司：开发新产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_SANDALWOOD_SHORT_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_SANDALWOOD] 开发新的檀香木产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_SANDALWOOD_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>利用 [ICON_RESOURCE_SANDALWOOD] 檀香木资源为世界开发新产品。{LOC_INDUSTRY_FAITH_YIELD_BONUS_DESCRIPTION}</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_MAPLE_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_MAPLE] 糖槭公司：开发新产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_MAPLE_SHORT_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_MAPLE] 开发新的糖枫产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_MAPLE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>利用 [ICON_RESOURCE_MAPLE] 糖槭资源为世界开发新产品。{LOC_INDUSTRY_CITY_GReplaceTH_DISCOUNT_DESCRIPTION}</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_POPPIES_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_POPPIES] 罂粟公司：开发新产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_POPPIES_SHORT_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_POPPIES] 开发新的罂粟产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_POPPIES_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>利用 [ICON_RESOURCE_POPPIES] 罂粟资源为世界开发新产品。{LOC_INDUSTRY_CIVILIAN_UNIT_DISCOUNT_DESCRIPTION}</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_CAVIAR_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_CAVIAR] 鲟鱼公司：开发新产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_CAVIAR_SHORT_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_CAVIAR] 开发新的鲟鱼产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_CAVIAR_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>利用 [ICON_RESOURCE_CAVIAR] 鲟鱼资源为世界开发新产品。{LOC_INDUSTRY_GOLD_YIELD_BONUS_DESCRIPTION}</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_CORAL_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_CORAL] 珊瑚公司：开发新产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_CORAL_SHORT_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_CORAL] 开发新的珊瑚产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_CORAL_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>利用 [ICON_RESOURCE_CORAL] 珊瑚资源为世界开发新产品。{LOC_INDUSTRY_CULTURE_YIELD_BONUS_DESCRIPTION}</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_BAMBOO_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_BAMBOO] 竹公司：开发新产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_BAMBOO_SHORT_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_BAMBOO] 开发新的竹产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_BAMBOO_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>利用 [ICON_RESOURCE_BAMBOO] 竹资源为世界开发新产品。{LOC_INDUSTRY_BUILDING_DISCOUNT_DESCRIPTION}</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_EBONY_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_EBONY] 乌木公司：开发新产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_EBONY_SHORT_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_EBONY] 开发新的乌木产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_EBONY_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>利用 [ICON_RESOURCE_EBONY] 乌木资源为世界开发新产品。{LOC_INDUSTRY_CIVILIAN_UNIT_DISCOUNT_DESCRIPTION}</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_SAKURA_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_SAKURA] 樱花公司：开发新产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_SAKURA_SHORT_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_SAKURA] 开发新的樱花产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_SAKURA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>利用 [ICON_RESOURCE_SAKURA] 樱花资源为世界开发新产品。{LOC_INDUSTRY_CULTURE_YIELD_BONUS_DESCRIPTION}</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_CASHMERE_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_CASHMERE] 山羊绒公司：开发新产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_CASHMERE_SHORT_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_CASHMERE] 开发新的山羊绒产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_CASHMERE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>利用 [ICON_RESOURCE_CASHMERE] 山羊绒资源为世界开发新产品。{LOC_INDUSTRY_CIVILIAN_UNIT_DISCOUNT_DESCRIPTION}</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_TRAVERTINE_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_TRAVERTINE] 石灰石公司：开发新产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_TRAVERTINE_SHORT_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_TRAVERTINE] 开发新的石灰石产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_TRAVERTINE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>利用 [ICON_RESOURCE_TRAVERTINE] 石灰石资源为世界开发新产品。{LOC_INDUSTRY_BUILDING_DISCOUNT_DESCRIPTION}</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_ALABASTER_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_ALABASTER] 汉白玉公司：开发新产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_ALABASTER_SHORT_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_ALABASTER] 开发新的汉白玉产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_ALABASTER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>利用 [ICON_RESOURCE_ALABASTER] 汉白玉资源为世界开发新产品。{LOC_INDUSTRY_BUILDING_DISCOUNT_DESCRIPTION}</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_GOLD2_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_GOLD2] 砂金公司：开发新产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_GOLD2_SHORT_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_GOLD2] 开发新的砂金产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_GOLD2_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>利用 [ICON_RESOURCE_GOLD2] 砂金资源为世界开发新产品。{LOC_INDUSTRY_GOLD_YIELD_BONUS_DESCRIPTION}</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_SPONGE_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_SPONGE] 海绵公司：开发新产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_SPONGE_SHORT_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_SPONGE] 开发新的海绵产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_SPONGE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>利用 [ICON_RESOURCE_SPONGE] 海绵资源为世界开发新产品。{LOC_INDUSTRY_SCIENCE_YIELD_BONUS_DESCRIPTION}</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_SEA_URCHIN_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_SEA_URCHIN] 海胆公司：开发新产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_SEA_URCHIN_SHORT_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_SEA_URCHIN] 开发新的海胆产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_SEA_URCHIN_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>利用 [ICON_RESOURCE_SEA_URCHIN] 海胆资源为世界开发新产品。{LOC_INDUSTRY_SCIENCE_YIELD_BONUS_DESCRIPTION}</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_ORCA_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_ORCA] 虎鲸公司：开发新产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_ORCA_SHORT_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_ORCA] 开发新的虎鲸产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_ORCA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>利用 [ICON_RESOURCE_ORCA] 虎鲸资源为世界开发新产品。{LOC_INDUSTRY_FAITH_YIELD_BONUS_DESCRIPTION}</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_WOLF_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_WOLF] 野狼公司：开发新产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_WOLF_SHORT_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_WOLF] 开发新的狼产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_WOLF_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>利用 [ICON_RESOURCE_WOLF] 狼资源为世界开发新产品。{LOC_INDUSTRY_MILITARY_UNIT_DISCOUNT_DESCRIPTION}</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_TIGER_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_TIGER] 老虎公司：开发新产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_TIGER_SHORT_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_TIGER] 开发新的老虎产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_TIGER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>利用 [ICON_RESOURCE_TIGER] 老虎资源为世界开发新产品。{LOC_INDUSTRY_MILITARY_UNIT_DISCOUNT_DESCRIPTION}</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_LION_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_LION] 狮子公司：开发新产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_LION_SHORT_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_LION] 开发新的狮子产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_LION_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>利用 [ICON_RESOURCE_LION] 狮子资源为世界开发新产品。{LOC_INDUSTRY_MILITARY_UNIT_DISCOUNT_DESCRIPTION}</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_TOXINS_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_TOXINS] 生物毒素公司：开发新产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_TOXINS_SHORT_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_TOXINS] 开发新的生物毒素产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_TOXINS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>利用 [ICON_RESOURCE_TOXINS] 生物毒素资源为世界开发新产品。{LOC_INDUSTRY_SCIENCE_YIELD_BONUS_DESCRIPTION}</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_SAFFRON_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_SAFFRON] 番红花公司：开发新产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_SAFFRON_SHORT_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_SAFFRON] 开发新的番红花产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_SAFFRON_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>利用 [ICON_RESOURCE_SAFFRON] 番红花资源为世界开发新产品。{LOC_INDUSTRY_CIVILIAN_UNIT_DISCOUNT_DESCRIPTION}</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_STRAWBERRY_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_STRAWBERRY] 草莓公司：开发新产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_STRAWBERRY_SHORT_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_RESOURCE_STRAWBERRY] 开发新的草莓产品</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CREATE_CORPORATION_PRODUCT_STRAWBERRY_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>利用 [ICON_RESOURCE_STRAWBERRY] 草莓资源为世界开发新产品。{LOC_INDUSTRY_CITY_GReplaceTH_DISCOUNT_DESCRIPTION}</Text>
+		</Replace>
+
+		<!-- 产品名称 -->
+		
+		<Replace Tag="LOC_GREATWORK_PRODUCT_LAPIS_1_NAME" Language="zh_Hans_CN">
+			<Text>克莱因蓝艺术品</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_LAPIS_2_NAME" Language="zh_Hans_CN">
+			<Text>帝王群青璧</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_LAPIS_3_NAME" Language="zh_Hans_CN">
+			<Text>天青记忆颜料</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_LAPIS_4_NAME" Language="zh_Hans_CN">
+			<Text>扎哈公主之珠</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_LAPIS_5_NAME" Language="zh_Hans_CN">
+			<Text>德拉科青玉雕</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_PLATINUM_1_NAME" Language="zh_Hans_CN">
+			<Text>天鹅之歌首饰</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_PLATINUM_2_NAME" Language="zh_Hans_CN">
+			<Text>第一元素铂合金</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_PLATINUM_3_NAME" Language="zh_Hans_CN">
+			<Text>加里莱化学实验设备</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_PLATINUM_4_NAME" Language="zh_Hans_CN">
+			<Text>亚当斯催化剂</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_PLATINUM_5_NAME" Language="zh_Hans_CN">
+			<Text>万钧抗癌药</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_RUBY_1_NAME" Language="zh_Hans_CN">
+			<Text>黑王子红宝石</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_RUBY_2_NAME" Language="zh_Hans_CN">
+			<Text>自由钟表</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_RUBY_3_NAME" Language="zh_Hans_CN">
+			<Text>卡门·露西亚之星</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_RUBY_4_NAME" Language="zh_Hans_CN">
+			<Text>鸽血红皇冠</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_RUBY_5_NAME" Language="zh_Hans_CN">
+			<Text>布洛格氏激光设备</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_SANDALWOOD_1_NAME" Language="zh_Hans_CN">
+			<Text>库苏马普拉木工艺术</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_SANDALWOOD_2_NAME" Language="zh_Hans_CN">
+			<Text>木之回忆熏香</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_SANDALWOOD_3_NAME" Language="zh_Hans_CN">
+			<Text>莫丽华化妆品</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_SANDALWOOD_4_NAME" Language="zh_Hans_CN">
+			<Text>万福阁弥勒像</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_SANDALWOOD_5_NAME" Language="zh_Hans_CN">
+			<Text>蜂花檀香皂</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_MAPLE_1_NAME" Language="zh_Hans_CN">
+			<Text>文兰枫糖浆</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_MAPLE_2_NAME" Language="zh_Hans_CN">
+			<Text>秋意冰淇淋</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_MAPLE_3_NAME" Language="zh_Hans_CN">
+			<Text>班达里乐器</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_MAPLE_4_NAME" Language="zh_Hans_CN">
+			<Text>自由漫游者体育器材</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_MAPLE_5_NAME" Language="zh_Hans_CN">
+			<Text>田纳西威士忌</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_POPPIES_1_NAME" Language="zh_Hans_CN">
+			<Text>大清镇静剂</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_POPPIES_2_NAME" Language="zh_Hans_CN">
+			<Text>满洲牌杜冷丁</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_POPPIES_3_NAME" Language="zh_Hans_CN">
+			<Text>天然之子色拉油</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_POPPIES_4_NAME" Language="zh_Hans_CN">
+			<Text>常春虞美人</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_POPPIES_5_NAME" Language="zh_Hans_CN">
+			<Text>四季花开园艺用品</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_CAVIAR_1_NAME" Language="zh_Hans_CN">
+			<Text>大西洋厨师鱼罐头</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_CAVIAR_2_NAME" Language="zh_Hans_CN">
+			<Text>沙皇精选鱼籽酱</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_CAVIAR_3_NAME" Language="zh_Hans_CN">
+			<Text>西伯利亚鲟鱼龙筋</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_CAVIAR_4_NAME" Language="zh_Hans_CN">
+			<Text>海军上将鲟鱼肉</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_CAVIAR_5_NAME" Language="zh_Hans_CN">
+			<Text>白鲟皇后高汤粉</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_CORAL_1_NAME" Language="zh_Hans_CN">
+			<Text>藤壶湾水下盆景</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_CORAL_2_NAME" Language="zh_Hans_CN">
+			<Text>超蓝水族馆用品</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_CORAL_3_NAME" Language="zh_Hans_CN">
+			<Text>小美人鱼珊瑚</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_CORAL_4_NAME" Language="zh_Hans_CN">
+			<Text>利莫里亚航海文物</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_CORAL_5_NAME" Language="zh_Hans_CN">
+			<Text>普拉瓦尔·巴斯马装饰</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_BAMBOO_1_NAME" Language="zh_Hans_CN">
+			<Text>华竹园林造景</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_BAMBOO_2_NAME" Language="zh_Hans_CN">
+			<Text>熊猫大厨餐具</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_BAMBOO_3_NAME" Language="zh_Hans_CN">
+			<Text>调皮小竹酸笋</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_BAMBOO_4_NAME" Language="zh_Hans_CN">
+			<Text>大明竹宣纸</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_BAMBOO_5_NAME" Language="zh_Hans_CN">
+			<Text>冼家竹制家具</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_EBONY_1_NAME" Language="zh_Hans_CN">
+			<Text>吴氏乌木工艺品</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_EBONY_2_NAME" Language="zh_Hans_CN">
+			<Text>伊曼纽尔摩尔钢琴</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_EBONY_3_NAME" Language="zh_Hans_CN">
+			<Text>斯汤顿象棋</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_EBONY_4_NAME" Language="zh_Hans_CN">
+			<Text>月江楼家具</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_EBONY_5_NAME" Language="zh_Hans_CN">
+			<Text>新星辟邪挂件</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_SAKURA_1_NAME" Language="zh_Hans_CN">
+			<Text>染井吉野盆景</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_SAKURA_2_NAME" Language="zh_Hans_CN">
+			<Text>河津桜樱花糖</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_SAKURA_3_NAME" Language="zh_Hans_CN">
+			<Text>极美樱花护肤品</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_SAKURA_4_NAME" Language="zh_Hans_CN">
+			<Text>百变小樱樱桃酱</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_SAKURA_5_NAME" Language="zh_Hans_CN">
+			<Text>萌王樱花苏打</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_CASHMERE_1_NAME" Language="zh_Hans_CN">
+			<Text>时尚女王披肩</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_CASHMERE_2_NAME" Language="zh_Hans_CN">
+			<Text>大红帽围巾</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_CASHMERE_3_NAME" Language="zh_Hans_CN">
+			<Text>安塔尔蒂卡诺保暖内衣</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_CASHMERE_4_NAME" Language="zh_Hans_CN">
+			<Text>年华针绣</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_CASHMERE_5_NAME" Language="zh_Hans_CN">
+			<Text>小猫咪毛衣</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_TRAVERTINE_1_NAME" Language="zh_Hans_CN">
+			<Text>大金字塔建材</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_TRAVERTINE_2_NAME" Language="zh_Hans_CN">
+			<Text>盖娅建筑雕塑</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_TRAVERTINE_3_NAME" Language="zh_Hans_CN">
+			<Text>格里安兄弟化工制品</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_TRAVERTINE_4_NAME" Language="zh_Hans_CN">
+			<Text>劳雷尔花园化肥</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_TRAVERTINE_5_NAME" Language="zh_Hans_CN">
+			<Text>巴威·施惠华农药</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_ALABASTER_1_NAME" Language="zh_Hans_CN">
+			<Text>朱利叶斯雕塑</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_ALABASTER_2_NAME" Language="zh_Hans_CN">
+			<Text>汉唐浮雕</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_ALABASTER_3_NAME" Language="zh_Hans_CN">
+			<Text>白雪花公社家居装饰</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_ALABASTER_4_NAME" Language="zh_Hans_CN">
+			<Text>大汉涂料</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_ALABASTER_5_NAME" Language="zh_Hans_CN">
+			<Text>七个小矮人添加剂</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_GOLD2_1_NAME" Language="zh_Hans_CN">
+			<Text>福鼎楼十二金花</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_GOLD2_2_NAME" Language="zh_Hans_CN">
+			<Text>黄金国珠宝</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_GOLD2_3_NAME" Language="zh_Hans_CN">
+			<Text>太白星电子元件</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_GOLD2_4_NAME" Language="zh_Hans_CN">
+			<Text>维纳斯金器</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_GOLD2_5_NAME" Language="zh_Hans_CN">
+			<Text>文思院镶金秘色瓷</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_SPONGE_1_NAME" Language="zh_Hans_CN">
+			<Text>洁净天然海绵</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_SPONGE_2_NAME" Language="zh_Hans_CN">
+			<Text>干净先生厨具</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_SPONGE_3_NAME" Language="zh_Hans_CN">
+			<Text>Q弹魔芋坐垫</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_SPONGE_4_NAME" Language="zh_Hans_CN">
+			<Text>牡鹿门床垫</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_SPONGE_5_NAME" Language="zh_Hans_CN">
+			<Text>海绵宝宝清洁用品</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_SEA_URCHIN_1_NAME" Language="zh_Hans_CN">
+			<Text>如意坊海胆酱</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_SEA_URCHIN_2_NAME" Language="zh_Hans_CN">
+			<Text>奥布拉海胆刺身</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_SEA_URCHIN_3_NAME" Language="zh_Hans_CN">
+			<Text>飞龙亭海胆粥</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_SEA_URCHIN_4_NAME" Language="zh_Hans_CN">
+			<Text>克拉肯消肿片</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_SEA_URCHIN_5_NAME" Language="zh_Hans_CN">
+			<Text>安布罗斯海胆芙蓉蛋</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_ORCA_1_NAME" Language="zh_Hans_CN">
+			<Text>大海洋水族馆养殖</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_ORCA_2_NAME" Language="zh_Hans_CN">
+			<Text>彼岸海洋科学研究</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_ORCA_3_NAME" Language="zh_Hans_CN">
+			<Text>沧龙海洋王国表演</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_ORCA_4_NAME" Language="zh_Hans_CN">
+			<Text>水生海洋生物标本</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_ORCA_5_NAME" Language="zh_Hans_CN">
+			<Text>钱伯斯猎人肉干</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_WOLF_1_NAME" Language="zh_Hans_CN">
+			<Text>饿狼传说皮制品</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_WOLF_2_NAME" Language="zh_Hans_CN">
+			<Text>中华田园doge图标</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_WOLF_3_NAME" Language="zh_Hans_CN">
+			<Text>哈士奇雪橇一日游</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_WOLF_4_NAME" Language="zh_Hans_CN">
+			<Text>101斑点狗皮毛大衣</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_WOLF_5_NAME" Language="zh_Hans_CN">
+			<Text>喜马拉雅藏獒</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_TIGER_1_NAME" Language="zh_Hans_CN">
+			<Text>洛罗·皮亚那皮毛制品</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_TIGER_2_NAME" Language="zh_Hans_CN">
+			<Text>特迈肯虎牙装饰</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_TIGER_3_NAME" Language="zh_Hans_CN">
+			<Text>孟加拉虎骨药</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_TIGER_4_NAME" Language="zh_Hans_CN">
+			<Text>上野动物园</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_TIGER_5_NAME" Language="zh_Hans_CN">
+			<Text>西伯利亚虎鞭酒</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_LION_1_NAME" Language="zh_Hans_CN">
+			<Text>沃姆威尔动物园</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_LION_2_NAME" Language="zh_Hans_CN">
+			<Text>巴纳姆及贝利马戏团表演</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_LION_3_NAME" Language="zh_Hans_CN">
+			<Text>梅德拉诺动物标本</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_LION_4_NAME" Language="zh_Hans_CN">
+			<Text>巴恩斯动物装饰</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_LION_5_NAME" Language="zh_Hans_CN">
+			<Text>大中壮阳酒</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_TOXINS_1_NAME" Language="zh_Hans_CN">
+			<Text>肉毒杆菌素瘦脸针</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_TOXINS_2_NAME" Language="zh_Hans_CN">
+			<Text>中华牌盘尼西林</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_TOXINS_3_NAME" Language="zh_Hans_CN">
+			<Text>华山牌紫衫醇</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_TOXINS_4_NAME" Language="zh_Hans_CN">
+			<Text>特效抗毒血清</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_TOXINS_5_NAME" Language="zh_Hans_CN">
+			<Text>奇妙牌万古霉素</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_SAFFRON_1_NAME" Language="zh_Hans_CN">
+			<Text>哈萨克斯坦红花粉</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_SAFFRON_2_NAME" Language="zh_Hans_CN">
+			<Text>福源堂红花油</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_SAFFRON_3_NAME" Language="zh_Hans_CN">
+			<Text>藏传秘制熏香</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_SAFFRON_4_NAME" Language="zh_Hans_CN">
+			<Text>阿尔塔默里炖菜</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_SAFFRON_5_NAME" Language="zh_Hans_CN">
+			<Text>基伍美食香料粉</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_STRAWBERRY_1_NAME" Language="zh_Hans_CN">
+			<Text>鲜草莓九重果塔</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_STRAWBERRY_2_NAME" Language="zh_Hans_CN">
+			<Text>三只仓鼠草莓干</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_STRAWBERRY_3_NAME" Language="zh_Hans_CN">
+			<Text>丘比特草莓酱</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_STRAWBERRY_4_NAME" Language="zh_Hans_CN">
+			<Text>波斯拜火草莓汁</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_PRODUCT_STRAWBERRY_5_NAME" Language="zh_Hans_CN">
+			<Text>梅尔蒂布利斯草莓巧克力</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--Built by Take your Time Generator at 23:19 23/08/2020-->
+<GameData>
+    <Parameters>
+        <Row ConfigurationGroup="Game" ConfigurationId="COST_BASE_TECH" DefaultValue="100" Description="LOC_COST_BASE_TECH_DESCRIPTION" Domain="TechnologyCostBaseDom" GroupId="AdvancedOptions" Hash="0" Name="LOC_COST_BASE_TECH_NAME" ParameterId="TechnologyCostBase" SortIndex="622"/>
+        <Row ConfigurationGroup="Game" ConfigurationId="COST_BASE_CIVIC" DefaultValue="100" Description="LOC_COST_BASE_CIVIC_DESCRIPTION" Domain="CivicCostBaseDom" GroupId="AdvancedOptions" Hash="0" Name="LOC_COST_BASE_CIVIC_NAME" ParameterId="CivicCostBase" SortIndex="623"/>
+        <Row ConfigurationGroup="Game" ConfigurationId="COST_SCALING_TECH" DefaultValue="0" Description="LOC_COST_SCALING_TECH_DESCRIPTION" Domain="TechnologyCostScalingDom" GroupId="AdvancedOptions" Hash="0" Name="LOC_COST_SCALING_TECH_NAME" ParameterId="TechnologyCostScaling" SortIndex="624"/>
+        <Row ConfigurationGroup="Game" ConfigurationId="COST_SCALING_CIVIC" DefaultValue="0" Description="LOC_COST_SCALING_CIVIC_DESCRIPTION" Domain="CivicCostScalingDom" GroupId="AdvancedOptions" Hash="0" Name="LOC_COST_SCALING_CIVIC_NAME" ParameterId="CivicCostScaling" SortIndex="625"/>
+        <Row ConfigurationGroup="Game" ConfigurationId="BOOST_TECH" DefaultValue="40" Description="LOC_BOOST_TECH_DESCRIPTION" Domain="TechnologyBoostAmountDom" GroupId="AdvancedOptions" Hash="0" Name="LOC_BOOST_TECH_NAME" ParameterId="TechnologyBoostAmount" SortIndex="626"/>
+        <Row ConfigurationGroup="Game" ConfigurationId="BOOST_CIVIC" DefaultValue="40" Description="LOC_BOOST_CIVIC_DESCRIPTION" Domain="CivicBoostAmountDom" GroupId="AdvancedOptions" Hash="0" Name="LOC_BOOST_CIVIC_NAME" ParameterId="CivicBoostAmount" SortIndex="627"/>
+        <Row ConfigurationGroup="Game" ConfigurationId="WORLD_ERA" DefaultValue="CALCULATED" Description="LOC_WORLD_ERA_DESCRIPTION" Domain="WorldEraLengthDom" GroupId="AdvancedOptions" Hash="0" Name="LOC_WORLD_ERA_NAME" ParameterId="WorldEraLength" SortIndex="629"/>
+        <Row ConfigurationGroup="Game" ConfigurationId="ERA_SCORE_SCALING" DefaultValue="CALCULATED" Description="LOC_ERA_SCORE_SCALING_DESCRIPTION" Domain="EraScoreScalingDom" GroupId="AdvancedOptions" Hash="0" Name="LOC_ERA_SCORE_SCALING_NAME" ParameterId="EraScoreScaling" SortIndex="630"/>
+        <Row ConfigurationGroup="Game" ConfigurationId="CLIMATE_CHANGE_SCALING" DefaultValue="CALCULATED" Description="LOC_CLIMATE_CHANGE_SCALING_DESCRIPTION" Domain="ClimateChangeScalingDom" GroupId="AdvancedOptions" Hash="0" Name="LOC_CLIMATE_CHANGE_SCALING_NAME" ParameterId="ClimateChangeScaling" SortIndex="631"/>
+        <Row ConfigurationGroup="Game" ConfigurationId="GREAT_PERSON_COST" DefaultValue="CALCULATED" Description="LOC_GREAT_PERSON_COST_DESCRIPTION" Domain="GreatPersonCostDom" GroupId="AdvancedOptions" Hash="0" Name="LOC_GREAT_PERSON_COST_NAME" ParameterId="GreatPersonCost" SortIndex="628"/>
+        <Row ConfigurationGroup="Game" ConfigurationId="TYT_HEADER" DefaultValue="1" Description="LOC_TYT_HEADER_DESCRIPTION" Domain="bool" GroupId="AdvancedOptions" Hash="0" Name="LOC_TYT_HEADER_NAME" ParameterId="TYTHeader" ReadOnly="1" SortIndex="621"/>
+        <Row ConfigurationGroup="Game" ConfigurationId="TYT_FOOTER_1" DefaultValue="1" Description="LOC_TYT_FOOTER_1_DESCRIPTION" Domain="bool" GroupId="AdvancedOptions" Hash="0" Name="LOC_TYT_FOOTER_1_NAME" ParameterId="TYTFooter1" ReadOnly="1" SortIndex="632"/>
+    </Parameters>
+    <DomainValues>
+        <!--Localised Name-->
+        <Row Description="LOC_COST_BASE_TECH_25_DESCRIPTION" Domain="TechnologyCostBaseDom" Name="LOC_COST_BASE_25_NAME" SortIndex="25" Value="25"/>
+        <Row Description="LOC_COST_BASE_TECH_50_DESCRIPTION" Domain="TechnologyCostBaseDom" Name="LOC_COST_BASE_50_NAME" SortIndex="50" Value="50"/>
+        <Row Description="LOC_COST_BASE_TECH_75_DESCRIPTION" Domain="TechnologyCostBaseDom" Name="LOC_COST_BASE_75_NAME" SortIndex="75" Value="75"/>
+        <Row Description="LOC_COST_BASE_TECH_100_DESCRIPTION" Domain="TechnologyCostBaseDom" Name="LOC_COST_BASE_100_NAME" SortIndex="100" Value="100"/>
+        <Row Description="LOC_COST_BASE_TECH_125_DESCRIPTION" Domain="TechnologyCostBaseDom" Name="LOC_COST_BASE_125_NAME" SortIndex="125" Value="125"/>
+        <Row Description="LOC_COST_BASE_TECH_150_DESCRIPTION" Domain="TechnologyCostBaseDom" Name="LOC_COST_BASE_150_NAME" SortIndex="150" Value="150"/>
+        <Row Description="LOC_COST_BASE_TECH_175_DESCRIPTION" Domain="TechnologyCostBaseDom" Name="LOC_COST_BASE_175_NAME" SortIndex="175" Value="175"/>
+        <Row Description="LOC_COST_BASE_TECH_200_DESCRIPTION" Domain="TechnologyCostBaseDom" Name="LOC_COST_BASE_200_NAME" SortIndex="200" Value="200"/>
+        <Row Description="LOC_COST_BASE_TECH_225_DESCRIPTION" Domain="TechnologyCostBaseDom" Name="LOC_COST_BASE_225_NAME" SortIndex="225" Value="225"/>
+        <Row Description="LOC_COST_BASE_TECH_250_DESCRIPTION" Domain="TechnologyCostBaseDom" Name="LOC_COST_BASE_250_NAME" SortIndex="250" Value="250"/>
+        <Row Description="LOC_COST_BASE_TECH_275_DESCRIPTION" Domain="TechnologyCostBaseDom" Name="LOC_COST_BASE_275_NAME" SortIndex="275" Value="275"/>
+        <Row Description="LOC_COST_BASE_TECH_300_DESCRIPTION" Domain="TechnologyCostBaseDom" Name="LOC_COST_BASE_300_NAME" SortIndex="300" Value="300"/>
+        <Row Description="LOC_COST_BASE_TECH_350_DESCRIPTION" Domain="TechnologyCostBaseDom" Name="LOC_COST_BASE_350_NAME" SortIndex="350" Value="350"/>
+        <Row Description="LOC_COST_BASE_TECH_400_DESCRIPTION" Domain="TechnologyCostBaseDom" Name="LOC_COST_BASE_400_NAME" SortIndex="400" Value="400"/>
+        <Row Description="LOC_COST_BASE_TECH_450_DESCRIPTION" Domain="TechnologyCostBaseDom" Name="LOC_COST_BASE_450_NAME" SortIndex="450" Value="450"/>
+        <Row Description="LOC_COST_BASE_TECH_500_DESCRIPTION" Domain="TechnologyCostBaseDom" Name="LOC_COST_BASE_500_NAME" SortIndex="500" Value="500"/>
+        <Row Description="LOC_COST_BASE_TECH_600_DESCRIPTION" Domain="TechnologyCostBaseDom" Name="LOC_COST_BASE_600_NAME" SortIndex="600" Value="600"/>
+        <Row Description="LOC_COST_BASE_TECH_700_DESCRIPTION" Domain="TechnologyCostBaseDom" Name="LOC_COST_BASE_700_NAME" SortIndex="700" Value="700"/>
+        <Row Description="LOC_COST_BASE_TECH_800_DESCRIPTION" Domain="TechnologyCostBaseDom" Name="LOC_COST_BASE_800_NAME" SortIndex="800" Value="800"/>
+        <Row Description="LOC_COST_BASE_TECH_900_DESCRIPTION" Domain="TechnologyCostBaseDom" Name="LOC_COST_BASE_900_NAME" SortIndex="900" Value="900"/>
+        <Row Description="LOC_COST_BASE_TECH_1000_DESCRIPTION" Domain="TechnologyCostBaseDom" Name="LOC_COST_BASE_1000_NAME" SortIndex="1000" Value="1000"/>
+        <Row Description="LOC_COST_BASE_TECH_1250_DESCRIPTION" Domain="TechnologyCostBaseDom" Name="LOC_COST_BASE_1250_NAME" SortIndex="1250" Value="1250"/>
+        <Row Description="LOC_COST_BASE_TECH_1500_DESCRIPTION" Domain="TechnologyCostBaseDom" Name="LOC_COST_BASE_1500_NAME" SortIndex="1500" Value="1500"/>
+        <Row Description="LOC_COST_BASE_TECH_1750_DESCRIPTION" Domain="TechnologyCostBaseDom" Name="LOC_COST_BASE_1750_NAME" SortIndex="1750" Value="1750"/>
+        <Row Description="LOC_COST_BASE_TECH_2000_DESCRIPTION" Domain="TechnologyCostBaseDom" Name="LOC_COST_BASE_2000_NAME" SortIndex="2000" Value="2000"/>
+        <Row Description="LOC_COST_BASE_TECH_2500_DESCRIPTION" Domain="TechnologyCostBaseDom" Name="LOC_COST_BASE_2500_NAME" SortIndex="2500" Value="2500"/>
+        <Row Description="LOC_COST_BASE_TECH_3000_DESCRIPTION" Domain="TechnologyCostBaseDom" Name="LOC_COST_BASE_3000_NAME" SortIndex="3000" Value="3000"/>
+        <Row Description="LOC_COST_BASE_TECH_4000_DESCRIPTION" Domain="TechnologyCostBaseDom" Name="LOC_COST_BASE_4000_NAME" SortIndex="4000" Value="4000"/>
+        <Row Description="LOC_COST_BASE_TECH_5000_DESCRIPTION" Domain="TechnologyCostBaseDom" Name="LOC_COST_BASE_5000_NAME" SortIndex="5000" Value="5000"/>
+        <!--Localised Name-->
+        <Row Description="LOC_COST_BASE_CIVIC_25_DESCRIPTION" Domain="CivicCostBaseDom" Name="LOC_COST_BASE_25_NAME" SortIndex="25" Value="25"/>
+        <Row Description="LOC_COST_BASE_CIVIC_50_DESCRIPTION" Domain="CivicCostBaseDom" Name="LOC_COST_BASE_50_NAME" SortIndex="50" Value="50"/>
+        <Row Description="LOC_COST_BASE_CIVIC_75_DESCRIPTION" Domain="CivicCostBaseDom" Name="LOC_COST_BASE_75_NAME" SortIndex="75" Value="75"/>
+        <Row Description="LOC_COST_BASE_CIVIC_100_DESCRIPTION" Domain="CivicCostBaseDom" Name="LOC_COST_BASE_100_NAME" SortIndex="100" Value="100"/>
+        <Row Description="LOC_COST_BASE_CIVIC_125_DESCRIPTION" Domain="CivicCostBaseDom" Name="LOC_COST_BASE_125_NAME" SortIndex="125" Value="125"/>
+        <Row Description="LOC_COST_BASE_CIVIC_150_DESCRIPTION" Domain="CivicCostBaseDom" Name="LOC_COST_BASE_150_NAME" SortIndex="150" Value="150"/>
+        <Row Description="LOC_COST_BASE_CIVIC_175_DESCRIPTION" Domain="CivicCostBaseDom" Name="LOC_COST_BASE_175_NAME" SortIndex="175" Value="175"/>
+        <Row Description="LOC_COST_BASE_CIVIC_200_DESCRIPTION" Domain="CivicCostBaseDom" Name="LOC_COST_BASE_200_NAME" SortIndex="200" Value="200"/>
+        <Row Description="LOC_COST_BASE_CIVIC_225_DESCRIPTION" Domain="CivicCostBaseDom" Name="LOC_COST_BASE_225_NAME" SortIndex="225" Value="225"/>
+        <Row Description="LOC_COST_BASE_CIVIC_250_DESCRIPTION" Domain="CivicCostBaseDom" Name="LOC_COST_BASE_250_NAME" SortIndex="250" Value="250"/>
+        <Row Description="LOC_COST_BASE_CIVIC_275_DESCRIPTION" Domain="CivicCostBaseDom" Name="LOC_COST_BASE_275_NAME" SortIndex="275" Value="275"/>
+        <Row Description="LOC_COST_BASE_CIVIC_300_DESCRIPTION" Domain="CivicCostBaseDom" Name="LOC_COST_BASE_300_NAME" SortIndex="300" Value="300"/>
+        <Row Description="LOC_COST_BASE_CIVIC_350_DESCRIPTION" Domain="CivicCostBaseDom" Name="LOC_COST_BASE_350_NAME" SortIndex="350" Value="350"/>
+        <Row Description="LOC_COST_BASE_CIVIC_400_DESCRIPTION" Domain="CivicCostBaseDom" Name="LOC_COST_BASE_400_NAME" SortIndex="400" Value="400"/>
+        <Row Description="LOC_COST_BASE_CIVIC_450_DESCRIPTION" Domain="CivicCostBaseDom" Name="LOC_COST_BASE_450_NAME" SortIndex="450" Value="450"/>
+        <Row Description="LOC_COST_BASE_CIVIC_500_DESCRIPTION" Domain="CivicCostBaseDom" Name="LOC_COST_BASE_500_NAME" SortIndex="500" Value="500"/>
+        <Row Description="LOC_COST_BASE_CIVIC_600_DESCRIPTION" Domain="CivicCostBaseDom" Name="LOC_COST_BASE_600_NAME" SortIndex="600" Value="600"/>
+        <Row Description="LOC_COST_BASE_CIVIC_700_DESCRIPTION" Domain="CivicCostBaseDom" Name="LOC_COST_BASE_700_NAME" SortIndex="700" Value="700"/>
+        <Row Description="LOC_COST_BASE_CIVIC_800_DESCRIPTION" Domain="CivicCostBaseDom" Name="LOC_COST_BASE_800_NAME" SortIndex="800" Value="800"/>
+        <Row Description="LOC_COST_BASE_CIVIC_900_DESCRIPTION" Domain="CivicCostBaseDom" Name="LOC_COST_BASE_900_NAME" SortIndex="900" Value="900"/>
+        <Row Description="LOC_COST_BASE_CIVIC_1000_DESCRIPTION" Domain="CivicCostBaseDom" Name="LOC_COST_BASE_1000_NAME" SortIndex="1000" Value="1000"/>
+        <Row Description="LOC_COST_BASE_CIVIC_1250_DESCRIPTION" Domain="CivicCostBaseDom" Name="LOC_COST_BASE_1250_NAME" SortIndex="1250" Value="1250"/>
+        <Row Description="LOC_COST_BASE_CIVIC_1500_DESCRIPTION" Domain="CivicCostBaseDom" Name="LOC_COST_BASE_1500_NAME" SortIndex="1500" Value="1500"/>
+        <Row Description="LOC_COST_BASE_CIVIC_1750_DESCRIPTION" Domain="CivicCostBaseDom" Name="LOC_COST_BASE_1750_NAME" SortIndex="1750" Value="1750"/>
+        <Row Description="LOC_COST_BASE_CIVIC_2000_DESCRIPTION" Domain="CivicCostBaseDom" Name="LOC_COST_BASE_2000_NAME" SortIndex="2000" Value="2000"/>
+        <Row Description="LOC_COST_BASE_CIVIC_2500_DESCRIPTION" Domain="CivicCostBaseDom" Name="LOC_COST_BASE_2500_NAME" SortIndex="2500" Value="2500"/>
+        <Row Description="LOC_COST_BASE_CIVIC_3000_DESCRIPTION" Domain="CivicCostBaseDom" Name="LOC_COST_BASE_3000_NAME" SortIndex="3000" Value="3000"/>
+        <Row Description="LOC_COST_BASE_CIVIC_4000_DESCRIPTION" Domain="CivicCostBaseDom" Name="LOC_COST_BASE_4000_NAME" SortIndex="4000" Value="4000"/>
+        <Row Description="LOC_COST_BASE_CIVIC_5000_DESCRIPTION" Domain="CivicCostBaseDom" Name="LOC_COST_BASE_5000_NAME" SortIndex="5000" Value="5000"/>
+        <!--Localised Name-->
+        <Row Description="LOC_COST_SCALING_TECH_NONE_DESCRIPTION" Domain="TechnologyCostScalingDom" Name="LOC_COST_SCALING_NONE_NAME" SortIndex="0" Value="0"/>
+        <Row Description="LOC_COST_SCALING_TECH_ERA_LOW_DESCRIPTION" Domain="TechnologyCostScalingDom" Name="LOC_COST_SCALING_ERA_LOW_NAME" SortIndex="101" Value="101"/>
+        <Row Description="LOC_COST_SCALING_TECH_ERA_MODERATE_DESCRIPTION" Domain="TechnologyCostScalingDom" Name="LOC_COST_SCALING_ERA_MODERATE_NAME" SortIndex="102" Value="102"/>
+        <Row Description="LOC_COST_SCALING_TECH_ERA_HIGH_DESCRIPTION" Domain="TechnologyCostScalingDom" Name="LOC_COST_SCALING_ERA_HIGH_NAME" SortIndex="103" Value="103"/>
+        <Row Description="LOC_COST_SCALING_TECH_ERA_EXTREME_DESCRIPTION" Domain="TechnologyCostScalingDom" Name="LOC_COST_SCALING_ERA_EXTREME_NAME" SortIndex="104" Value="104"/>
+        <!--Localised Name-->
+        <Row Description="LOC_COST_SCALING_CIVIC_NONE_DESCRIPTION" Domain="CivicCostScalingDom" Name="LOC_COST_SCALING_NONE_NAME" SortIndex="0" Value="0"/>
+        <Row Description="LOC_COST_SCALING_CIVIC_ERA_LOW_DESCRIPTION" Domain="CivicCostScalingDom" Name="LOC_COST_SCALING_ERA_LOW_NAME" SortIndex="101" Value="101"/>
+        <Row Description="LOC_COST_SCALING_CIVIC_ERA_MODERATE_DESCRIPTION" Domain="CivicCostScalingDom" Name="LOC_COST_SCALING_ERA_MODERATE_NAME" SortIndex="102" Value="102"/>
+        <Row Description="LOC_COST_SCALING_CIVIC_ERA_HIGH_DESCRIPTION" Domain="CivicCostScalingDom" Name="LOC_COST_SCALING_ERA_HIGH_NAME" SortIndex="103" Value="103"/>
+        <Row Description="LOC_COST_SCALING_CIVIC_ERA_EXTREME_DESCRIPTION" Domain="CivicCostScalingDom" Name="LOC_COST_SCALING_ERA_EXTREME_NAME" SortIndex="104" Value="104"/>
+        <!--Localised Name-->
+        <Row Description="LOC_BOOST_TECH_5_DESCRIPTION" Domain="TechnologyBoostAmountDom" Name="LOC_BOOST_5_NAME" SortIndex="5" Value="5"/>
+        <Row Description="LOC_BOOST_TECH_10_DESCRIPTION" Domain="TechnologyBoostAmountDom" Name="LOC_BOOST_10_NAME" SortIndex="10" Value="10"/>
+        <Row Description="LOC_BOOST_TECH_15_DESCRIPTION" Domain="TechnologyBoostAmountDom" Name="LOC_BOOST_15_NAME" SortIndex="15" Value="15"/>
+        <Row Description="LOC_BOOST_TECH_20_DESCRIPTION" Domain="TechnologyBoostAmountDom" Name="LOC_BOOST_20_NAME" SortIndex="20" Value="20"/>
+        <Row Description="LOC_BOOST_TECH_25_DESCRIPTION" Domain="TechnologyBoostAmountDom" Name="LOC_BOOST_25_NAME" SortIndex="25" Value="25"/>
+        <Row Description="LOC_BOOST_TECH_33_DESCRIPTION" Domain="TechnologyBoostAmountDom" Name="LOC_BOOST_33_NAME" SortIndex="33" Value="33"/>
+        <Row Description="LOC_BOOST_TECH_40_DESCRIPTION" Domain="TechnologyBoostAmountDom" Name="LOC_BOOST_40_NAME" SortIndex="40" Value="40"/>
+        <Row Description="LOC_BOOST_TECH_50_DESCRIPTION" Domain="TechnologyBoostAmountDom" Name="LOC_BOOST_50_NAME" SortIndex="50" Value="50"/>
+        <Row Description="LOC_BOOST_TECH_67_DESCRIPTION" Domain="TechnologyBoostAmountDom" Name="LOC_BOOST_67_NAME" SortIndex="67" Value="67"/>
+        <Row Description="LOC_BOOST_TECH_75_DESCRIPTION" Domain="TechnologyBoostAmountDom" Name="LOC_BOOST_75_NAME" SortIndex="75" Value="75"/>
+        <Row Description="LOC_BOOST_TECH_85_DESCRIPTION" Domain="TechnologyBoostAmountDom" Name="LOC_BOOST_85_NAME" SortIndex="85" Value="85"/>
+        <Row Description="LOC_BOOST_TECH_100_DESCRIPTION" Domain="TechnologyBoostAmountDom" Name="LOC_BOOST_100_NAME" SortIndex="100" Value="100"/>
+        <Row Description="LOC_BOOST_TECH_ORIGINAL_50_DESCRIPTION" Domain="TechnologyBoostAmountDom" Name="LOC_BOOST_ORIGINAL_50_NAME" SortIndex="150" Value="ORIGINAL_50"/>
+        <Row Description="LOC_BOOST_TECH_ORIGINAL_100_DESCRIPTION" Domain="TechnologyBoostAmountDom" Name="LOC_BOOST_ORIGINAL_100_NAME" SortIndex="200" Value="ORIGINAL_100"/>
+        <!--Localised Name-->
+        <Row Description="LOC_BOOST_CIVIC_5_DESCRIPTION" Domain="CivicBoostAmountDom" Name="LOC_BOOST_5_NAME" SortIndex="5" Value="5"/>
+        <Row Description="LOC_BOOST_CIVIC_10_DESCRIPTION" Domain="CivicBoostAmountDom" Name="LOC_BOOST_10_NAME" SortIndex="10" Value="10"/>
+        <Row Description="LOC_BOOST_CIVIC_15_DESCRIPTION" Domain="CivicBoostAmountDom" Name="LOC_BOOST_15_NAME" SortIndex="15" Value="15"/>
+        <Row Description="LOC_BOOST_CIVIC_20_DESCRIPTION" Domain="CivicBoostAmountDom" Name="LOC_BOOST_20_NAME" SortIndex="20" Value="20"/>
+        <Row Description="LOC_BOOST_CIVIC_25_DESCRIPTION" Domain="CivicBoostAmountDom" Name="LOC_BOOST_25_NAME" SortIndex="25" Value="25"/>
+        <Row Description="LOC_BOOST_CIVIC_33_DESCRIPTION" Domain="CivicBoostAmountDom" Name="LOC_BOOST_33_NAME" SortIndex="33" Value="33"/>
+        <Row Description="LOC_BOOST_CIVIC_40_DESCRIPTION" Domain="CivicBoostAmountDom" Name="LOC_BOOST_40_NAME" SortIndex="40" Value="40"/>
+        <Row Description="LOC_BOOST_CIVIC_50_DESCRIPTION" Domain="CivicBoostAmountDom" Name="LOC_BOOST_50_NAME" SortIndex="50" Value="50"/>
+        <Row Description="LOC_BOOST_CIVIC_67_DESCRIPTION" Domain="CivicBoostAmountDom" Name="LOC_BOOST_67_NAME" SortIndex="67" Value="67"/>
+        <Row Description="LOC_BOOST_CIVIC_75_DESCRIPTION" Domain="CivicBoostAmountDom" Name="LOC_BOOST_75_NAME" SortIndex="75" Value="75"/>
+        <Row Description="LOC_BOOST_CIVIC_85_DESCRIPTION" Domain="CivicBoostAmountDom" Name="LOC_BOOST_85_NAME" SortIndex="85" Value="85"/>
+        <Row Description="LOC_BOOST_CIVIC_100_DESCRIPTION" Domain="CivicBoostAmountDom" Name="LOC_BOOST_100_NAME" SortIndex="100" Value="100"/>
+        <Row Description="LOC_BOOST_CIVIC_ORIGINAL_50_DESCRIPTION" Domain="CivicBoostAmountDom" Name="LOC_BOOST_ORIGINAL_50_NAME" SortIndex="150" Value="ORIGINAL_50"/>
+        <Row Description="LOC_BOOST_CIVIC_ORIGINAL_100_DESCRIPTION" Domain="CivicBoostAmountDom" Name="LOC_BOOST_ORIGINAL_100_NAME" SortIndex="200" Value="ORIGINAL_100"/>
+        <!--Localised Name-->
+        <Row Description="LOC_WORLD_ERA_CALCULATED_DESCRIPTION" Domain="WorldEraLengthDom" Name="LOC_WORLD_ERA_CALCULATED_NAME" SortIndex="0" Value="CALCULATED"/>
+        <Row Description="LOC_WORLD_ERA_25_DESCRIPTION" Domain="WorldEraLengthDom" Name="LOC_WORLD_ERA_25_NAME" SortIndex="25" Value="25"/>
+        <Row Description="LOC_WORLD_ERA_50_DESCRIPTION" Domain="WorldEraLengthDom" Name="LOC_WORLD_ERA_50_NAME" SortIndex="50" Value="50"/>
+        <Row Description="LOC_WORLD_ERA_100_DESCRIPTION" Domain="WorldEraLengthDom" Name="LOC_WORLD_ERA_100_NAME" SortIndex="100" Value="100"/>
+        <Row Description="LOC_WORLD_ERA_150_DESCRIPTION" Domain="WorldEraLengthDom" Name="LOC_WORLD_ERA_150_NAME" SortIndex="150" Value="150"/>
+        <Row Description="LOC_WORLD_ERA_200_DESCRIPTION" Domain="WorldEraLengthDom" Name="LOC_WORLD_ERA_200_NAME" SortIndex="200" Value="200"/>
+        <Row Description="LOC_WORLD_ERA_250_DESCRIPTION" Domain="WorldEraLengthDom" Name="LOC_WORLD_ERA_250_NAME" SortIndex="250" Value="250"/>
+        <Row Description="LOC_WORLD_ERA_300_DESCRIPTION" Domain="WorldEraLengthDom" Name="LOC_WORLD_ERA_300_NAME" SortIndex="300" Value="300"/>
+        <Row Description="LOC_WORLD_ERA_350_DESCRIPTION" Domain="WorldEraLengthDom" Name="LOC_WORLD_ERA_350_NAME" SortIndex="350" Value="350"/>
+        <Row Description="LOC_WORLD_ERA_400_DESCRIPTION" Domain="WorldEraLengthDom" Name="LOC_WORLD_ERA_400_NAME" SortIndex="400" Value="400"/>
+        <Row Description="LOC_WORLD_ERA_500_DESCRIPTION" Domain="WorldEraLengthDom" Name="LOC_WORLD_ERA_500_NAME" SortIndex="500" Value="500"/>
+        <Row Description="LOC_WORLD_ERA_600_DESCRIPTION" Domain="WorldEraLengthDom" Name="LOC_WORLD_ERA_600_NAME" SortIndex="600" Value="600"/>
+        <Row Description="LOC_WORLD_ERA_700_DESCRIPTION" Domain="WorldEraLengthDom" Name="LOC_WORLD_ERA_700_NAME" SortIndex="700" Value="700"/>
+        <Row Description="LOC_WORLD_ERA_800_DESCRIPTION" Domain="WorldEraLengthDom" Name="LOC_WORLD_ERA_800_NAME" SortIndex="800" Value="800"/>
+        <Row Description="LOC_WORLD_ERA_900_DESCRIPTION" Domain="WorldEraLengthDom" Name="LOC_WORLD_ERA_900_NAME" SortIndex="900" Value="900"/>
+        <Row Description="LOC_WORLD_ERA_1000_DESCRIPTION" Domain="WorldEraLengthDom" Name="LOC_WORLD_ERA_1000_NAME" SortIndex="1000" Value="1000"/>
+        <!--Localised Name-->
+        <Row Description="LOC_ERA_SCORE_SCALING_CALCULATED_DESCRIPTION" Domain="EraScoreScalingDom" Name="LOC_ERA_SCORE_SCALING_CALCULATED_NAME" SortIndex="0" Value="CALCULATED"/>
+        <Row Description="LOC_ERA_SCORE_SCALING_25_DESCRIPTION" Domain="EraScoreScalingDom" Name="LOC_ERA_SCORE_SCALING_25_NAME" SortIndex="25" Value="25"/>
+        <Row Description="LOC_ERA_SCORE_SCALING_50_DESCRIPTION" Domain="EraScoreScalingDom" Name="LOC_ERA_SCORE_SCALING_50_NAME" SortIndex="50" Value="50"/>
+        <Row Description="LOC_ERA_SCORE_SCALING_100_DESCRIPTION" Domain="EraScoreScalingDom" Name="LOC_ERA_SCORE_SCALING_100_NAME" SortIndex="100" Value="100"/>
+        <Row Description="LOC_ERA_SCORE_SCALING_120_DESCRIPTION" Domain="EraScoreScalingDom" Name="LOC_ERA_SCORE_SCALING_120_NAME" SortIndex="120" Value="120"/>
+        <Row Description="LOC_ERA_SCORE_SCALING_140_DESCRIPTION" Domain="EraScoreScalingDom" Name="LOC_ERA_SCORE_SCALING_140_NAME" SortIndex="140" Value="140"/>
+        <Row Description="LOC_ERA_SCORE_SCALING_150_DESCRIPTION" Domain="EraScoreScalingDom" Name="LOC_ERA_SCORE_SCALING_150_NAME" SortIndex="150" Value="150"/>
+        <Row Description="LOC_ERA_SCORE_SCALING_175_DESCRIPTION" Domain="EraScoreScalingDom" Name="LOC_ERA_SCORE_SCALING_175_NAME" SortIndex="175" Value="175"/>
+        <Row Description="LOC_ERA_SCORE_SCALING_200_DESCRIPTION" Domain="EraScoreScalingDom" Name="LOC_ERA_SCORE_SCALING_200_NAME" SortIndex="200" Value="200"/>
+        <Row Description="LOC_ERA_SCORE_SCALING_300_DESCRIPTION" Domain="EraScoreScalingDom" Name="LOC_ERA_SCORE_SCALING_300_NAME" SortIndex="300" Value="300"/>
+        <Row Description="LOC_ERA_SCORE_SCALING_400_DESCRIPTION" Domain="EraScoreScalingDom" Name="LOC_ERA_SCORE_SCALING_400_NAME" SortIndex="400" Value="400"/>
+        <Row Description="LOC_ERA_SCORE_SCALING_500_DESCRIPTION" Domain="EraScoreScalingDom" Name="LOC_ERA_SCORE_SCALING_500_NAME" SortIndex="500" Value="500"/>
+        <Row Description="LOC_ERA_SCORE_SCALING_600_DESCRIPTION" Domain="EraScoreScalingDom" Name="LOC_ERA_SCORE_SCALING_600_NAME" SortIndex="600" Value="600"/>
+        <Row Description="LOC_ERA_SCORE_SCALING_700_DESCRIPTION" Domain="EraScoreScalingDom" Name="LOC_ERA_SCORE_SCALING_700_NAME" SortIndex="700" Value="700"/>
+        <!--Localised Name-->
+        <Row Description="LOC_CLIMATE_CHANGE_SCALING_CALCULATED_DESCRIPTION" Domain="ClimateChangeScalingDom" Name="LOC_CLIMATE_CHANGE_SCALING_CALCULATED_NAME" SortIndex="0" Value="CALCULATED"/>
+        <Row Description="LOC_CLIMATE_CHANGE_SCALING_25_DESCRIPTION" Domain="ClimateChangeScalingDom" Name="LOC_CLIMATE_CHANGE_SCALING_25_NAME" SortIndex="25" Value="25"/>
+        <Row Description="LOC_CLIMATE_CHANGE_SCALING_50_DESCRIPTION" Domain="ClimateChangeScalingDom" Name="LOC_CLIMATE_CHANGE_SCALING_50_NAME" SortIndex="50" Value="50"/>
+        <Row Description="LOC_CLIMATE_CHANGE_SCALING_100_DESCRIPTION" Domain="ClimateChangeScalingDom" Name="LOC_CLIMATE_CHANGE_SCALING_100_NAME" SortIndex="100" Value="100"/>
+        <Row Description="LOC_CLIMATE_CHANGE_SCALING_120_DESCRIPTION" Domain="ClimateChangeScalingDom" Name="LOC_CLIMATE_CHANGE_SCALING_120_NAME" SortIndex="120" Value="120"/>
+        <Row Description="LOC_CLIMATE_CHANGE_SCALING_140_DESCRIPTION" Domain="ClimateChangeScalingDom" Name="LOC_CLIMATE_CHANGE_SCALING_140_NAME" SortIndex="140" Value="140"/>
+        <Row Description="LOC_CLIMATE_CHANGE_SCALING_150_DESCRIPTION" Domain="ClimateChangeScalingDom" Name="LOC_CLIMATE_CHANGE_SCALING_150_NAME" SortIndex="150" Value="150"/>
+        <Row Description="LOC_CLIMATE_CHANGE_SCALING_175_DESCRIPTION" Domain="ClimateChangeScalingDom" Name="LOC_CLIMATE_CHANGE_SCALING_175_NAME" SortIndex="175" Value="175"/>
+        <Row Description="LOC_CLIMATE_CHANGE_SCALING_200_DESCRIPTION" Domain="ClimateChangeScalingDom" Name="LOC_CLIMATE_CHANGE_SCALING_200_NAME" SortIndex="200" Value="200"/>
+        <Row Description="LOC_CLIMATE_CHANGE_SCALING_300_DESCRIPTION" Domain="ClimateChangeScalingDom" Name="LOC_CLIMATE_CHANGE_SCALING_300_NAME" SortIndex="300" Value="300"/>
+        <Row Description="LOC_CLIMATE_CHANGE_SCALING_400_DESCRIPTION" Domain="ClimateChangeScalingDom" Name="LOC_CLIMATE_CHANGE_SCALING_400_NAME" SortIndex="400" Value="400"/>
+        <Row Description="LOC_CLIMATE_CHANGE_SCALING_500_DESCRIPTION" Domain="ClimateChangeScalingDom" Name="LOC_CLIMATE_CHANGE_SCALING_500_NAME" SortIndex="500" Value="500"/>
+        <Row Description="LOC_CLIMATE_CHANGE_SCALING_600_DESCRIPTION" Domain="ClimateChangeScalingDom" Name="LOC_CLIMATE_CHANGE_SCALING_600_NAME" SortIndex="600" Value="600"/>
+        <Row Description="LOC_CLIMATE_CHANGE_SCALING_700_DESCRIPTION" Domain="ClimateChangeScalingDom" Name="LOC_CLIMATE_CHANGE_SCALING_700_NAME" SortIndex="700" Value="700"/>
+        <!--Localised Name-->
+        <Row Description="LOC_GREAT_PERSON_COST_CALCULATED_DESCRIPTION" Domain="GreatPersonCostDom" Name="LOC_GREAT_PERSON_COST_CALCULATED_NAME" SortIndex="0" Value="CALCULATED"/>
+        <Row Description="LOC_GREAT_PERSON_COST_25_DESCRIPTION" Domain="GreatPersonCostDom" Name="LOC_GREAT_PERSON_COST_25_NAME" SortIndex="25" Value="25"/>
+        <Row Description="LOC_GREAT_PERSON_COST_50_DESCRIPTION" Domain="GreatPersonCostDom" Name="LOC_GREAT_PERSON_COST_50_NAME" SortIndex="50" Value="50"/>
+        <Row Description="LOC_GREAT_PERSON_COST_100_DESCRIPTION" Domain="GreatPersonCostDom" Name="LOC_GREAT_PERSON_COST_100_NAME" SortIndex="100" Value="100"/>
+        <Row Description="LOC_GREAT_PERSON_COST_150_DESCRIPTION" Domain="GreatPersonCostDom" Name="LOC_GREAT_PERSON_COST_150_NAME" SortIndex="150" Value="150"/>
+        <Row Description="LOC_GREAT_PERSON_COST_200_DESCRIPTION" Domain="GreatPersonCostDom" Name="LOC_GREAT_PERSON_COST_200_NAME" SortIndex="200" Value="200"/>
+        <Row Description="LOC_GREAT_PERSON_COST_250_DESCRIPTION" Domain="GreatPersonCostDom" Name="LOC_GREAT_PERSON_COST_250_NAME" SortIndex="250" Value="250"/>
+        <Row Description="LOC_GREAT_PERSON_COST_300_DESCRIPTION" Domain="GreatPersonCostDom" Name="LOC_GREAT_PERSON_COST_300_NAME" SortIndex="300" Value="300"/>
+        <Row Description="LOC_GREAT_PERSON_COST_350_DESCRIPTION" Domain="GreatPersonCostDom" Name="LOC_GREAT_PERSON_COST_350_NAME" SortIndex="350" Value="350"/>
+        <Row Description="LOC_GREAT_PERSON_COST_400_DESCRIPTION" Domain="GreatPersonCostDom" Name="LOC_GREAT_PERSON_COST_400_NAME" SortIndex="400" Value="400"/>
+        <Row Description="LOC_GREAT_PERSON_COST_500_DESCRIPTION" Domain="GreatPersonCostDom" Name="LOC_GREAT_PERSON_COST_500_NAME" SortIndex="500" Value="500"/>
+        <Row Description="LOC_GREAT_PERSON_COST_600_DESCRIPTION" Domain="GreatPersonCostDom" Name="LOC_GREAT_PERSON_COST_600_NAME" SortIndex="600" Value="600"/>
+        <Row Description="LOC_GREAT_PERSON_COST_700_DESCRIPTION" Domain="GreatPersonCostDom" Name="LOC_GREAT_PERSON_COST_700_NAME" SortIndex="700" Value="700"/>
+        <Row Description="LOC_GREAT_PERSON_COST_800_DESCRIPTION" Domain="GreatPersonCostDom" Name="LOC_GREAT_PERSON_COST_800_NAME" SortIndex="800" Value="800"/>
+        <Row Description="LOC_GREAT_PERSON_COST_900_DESCRIPTION" Domain="GreatPersonCostDom" Name="LOC_GREAT_PERSON_COST_900_NAME" SortIndex="900" Value="900"/>
+        <Row Description="LOC_GREAT_PERSON_COST_1000_DESCRIPTION" Domain="GreatPersonCostDom" Name="LOC_GREAT_PERSON_COST_1000_NAME" SortIndex="1000" Value="1000"/>
+    </DomainValues>
+    <ParameterDependencies>
+        <Row ConfigurationGroup="Game" ConfigurationId="RULESET" ConfigurationValue="RULESET_EXPANSION_1,RULESET_EXPANSION_2" Operator="Exists" ParameterId="WorldEraLength"/>
+        <Row ConfigurationGroup="Game" ConfigurationId="RULESET" ConfigurationValue="RULESET_EXPANSION_1,RULESET_EXPANSION_2" Operator="Exists" ParameterId="EraScoreScaling"/>
+        <Row ConfigurationGroup="Game" ConfigurationId="RULESET" ConfigurationValue="RULESET_EXPANSION_2" Operator="Exists" ParameterId="ClimateChangeScaling"/>
+    </ParameterDependencies>
+</GameData>

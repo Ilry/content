@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RF'Spain Philip II'CN_Add_FI -->
+<!-- Author: ChiYiuWong , Clear8Sky -->
+<!-- DateCreated: 2021/9/23 0:03:04 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Spain: Philip II” 。该文件在 FrontEnd 与 InGame 时载入，需 Criteria ：Active_Expansion_1 -->
+	<LocalizedText>
+
+		<!-- 该文件的内容与模组 “Spain: Torquemada”中的 SpainPhilipII_GameText.xml文件 完全一致，重写一遍也不影响 -->
+		<!-- 领袖议程 -->
+
+		<Replace Tag="LOC_AGENDA_JFD_NOT_UNEQUAL_TO_MANY_NAME" Language="zh_Hans_CN">
+			<Text>不逊于人</Text>
+		</Replace>
+		<Replace Tag="LOC_AGENDA_JFD_NOT_UNEQUAL_TO_MANY_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>尝试尽可能多地探索和控制世界，并且喜欢将探索机会留给他的文明。不喜欢争夺探索世界的文明。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_LEADER_PHILIP_II_REASON_HIGH_EXPLORATION" Language="zh_Hans_CN">
+			<Text>（您正在争夺探索世界的机会）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_AGENDA_JFD_NOT_UNEQUAL_TO_MANY_HIGH_EXPLORATION" Language="zh_Hans_CN">
+			<Text>你争夺世界控制权的行为激怒了菲利普二世。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_PHILIP_II_REASON_LOW_EXPLORATION" Language="zh_Hans_CN">
+			<Text>（您并未竞争探索世界的机会）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_AGENDA_JFD_NOT_UNEQUAL_TO_MANY_LOW_EXPLORATION" Language="zh_Hans_CN">
+			<Text>菲利普二世很高兴您没有尝试探索世界。</Text>
+		</Replace>
+
+		<!-- 外交 -->
+		<!-- 谴责理由 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_REASON_FROM_AI_LEADER_ANY_REASON_JFD_NOT_UNEQUAL_TO_MANY_HIGH_EXPLORATION" Language="zh_Hans_CN">
+			<Text>（您正在争夺探索世界的机会）</Text>
+		</Replace>
+
+		<!-- 领袖特性 -->
+
+		<Replace Tag="LOC_TRAIT_LEADER_JFD_PLUS_ULTRA_NAME" Language="zh_Hans_CN">
+			<Text>通往彼方</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_JFD_PLUS_ULTRA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>建立新城市可获得 [ICON_Gold] 金币与 [ICON_Faith] 信仰值奖励，且该奖励随城市与原始 [ICON_Capital] 首都的距离增加而增加。完成市政“探索”后解锁特色单位“阿德兰塔多”。</Text>
+		</Replace>
+
+		<!-- 阿德兰塔多 -->
+
+		<Replace Tag="LOC_UNIT_JFD_ADELANTADO_NAME" Language="zh_Hans_CN">
+			<Text>阿德兰塔多</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_JFD_ADELANTADO_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>菲利普二世作为领袖时的西班牙特色侦察单位。被“阿德兰塔多”护送的单位能获得与之相同的 [ICON_Movement] 移动力。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_JFD_ADELANTADO_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>阿德兰塔多是西班牙贵族在中世纪为各自国王服务时所持有的头衔。后来被15、16和17世纪的一些西班牙征服者用作军事头衔。 君主直接授予阿德兰塔多成为特定地区的州长和法官的权利，他们负责征服该地区，以换取资金并代表卡斯蒂利亚王室组织目标地区的初步探索、开拓和定居。这些地区通常不在现有总督的管辖范围内，使得阿德兰塔多俨然成为独霸一方的封建领主。</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

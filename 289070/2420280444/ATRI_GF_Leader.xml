@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ATRI_GF_Leader -->
+<!-- Author: UFO300 -->
+<!-- DateCreated: 3/7/2021 8:44:19 PM -->
+<GameData>
+	<Types>
+		<Row Type="LEADER_ATRI_GF" Kind="KIND_LEADER"/>
+		<Row Type="LEADER_XIASHENG" Kind="KIND_LEADER"/>
+		<Row Type="TRAIT_LEADER_ATRI_GF_HPR" Kind="KIND_TRAIT"/>
+		<Row Type="TRAIT_LEADER_XIASHENG_ST" Kind="KIND_TRAIT"/>
+		<Row Type="DISTRICT_DT_GF" Kind="KIND_DISTRICT"/>
+		<Row Type="DISTRICT_GL" Kind="KIND_DISTRICT"/>
+		<Row Type="TRAIT_LEADER_DISTRICT_DT_GF" Kind="KIND_DISTRICT"/>
+		<Row Type="TRAIT_LEADER_DISTRICT_GL" Kind="KIND_DISTRICT"/>
+	</Types>
+
+	<Leaders>
+		<Row LeaderType="LEADER_ATRI_GF" Name="LOC_LEADER_ATRI_GF_NAME" InheritFrom="LEADER_DEFAULT" Sex="Fema" SceneLayers="4"/>
+		<Row LeaderType="LEADER_XIASHENG" Name="LOC_LEADER_XIASHENG_NAME" InheritFrom="LEADER_DEFAULT" Sex="Male" SceneLayers="4"/>
+	</Leaders>
+
+	<LeaderTraits>
+		<Row LeaderType="LEADER_ATRI_GF" TraitType="TRAIT_LEADER_ATRI_GF_HPR"/>
+		<Row LeaderType="LEADER_XIASHENG" TraitType="TRAIT_LEADER_XIASHENG_ST"/>
+		<Row LeaderType="LEADER_ATRI_GF" TraitType="TRAIT_LEADER_DISTRICT_DT_GF"/>
+		<Row LeaderType="LEADER_XIASHENG" TraitType="TRAIT_LEADER_DISTRICT_GL"/>
+	</LeaderTraits>
+
+	<LeaderQuotes>
+		<Row LeaderType="LEADER_ATRI_GF" Quote="LOC_PEDIA_LEADERS_PAGE_LEADER_ATRI_GF_QUOTE" QuoteAudio="Play_LEADER_ATRI_GF_QUOTES"/>
+		<Row LeaderType="LEADER_XIASHENG" Quote="LOC_PEDIA_LEADERS_PAGE_LEADER_XIASHENG_QUOTE" QuoteAudio="Play_LEADER_XIASHENG_QUOTES"/>
+	</LeaderQuotes>
+
+	<HistoricalAgendas>
+		<Row LeaderType="LEADER_ATRI_GF" AgendaType="AGENDA_SICILIAN_WARS"/>
+		<Row LeaderType="LEADER_XIASHENG" AgendaType="AGENDA_SICILIAN_WARS"/>
+	</HistoricalAgendas>
+
+	<LoadingInfo>
+		<Row LeaderType="LEADER_ATRI_GF" ForegroundImage="ATRI_GF_FJ" BackgroundImage="EDEN_BJ" PlayDawnOfManAudio="1"/>
+		<Row LeaderType="LEADER_XIASHENG" ForegroundImage="XIASHENG_FJ" BackgroundImage="EDEN_BJ" PlayDawnOfManAudio="1"/>
+	</LoadingInfo>
+	<DiplomacyInfo>
+		<Row Type="LEADER_ATRI_GF" BackgroundImage="EDEN_BJ"/>
+		<Row Type="LEADER_XIASHENG" BackgroundImage="EDEN_BJ"/>
+	</DiplomacyInfo>
+</GameData>

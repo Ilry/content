@@ -1,0 +1,72 @@
+return {
+	"monkeyhut",--猴子小屋
+--类人生物小屋
+	"pigtorch",
+	"pighouse",
+	"rabbithouse",
+	"mermhouse_crafted",
+	"mermwatchtower",
+	"mermthrone_construction",
+	"mermthrone",
+	"mermhouse",
+	"walrus_camp",
+	"hermithouse_construction1",
+	"hermithouse_construction2",
+	"hermithouse_construction3",
+	"hermithouse",
+	
+--蜘蛛巢
+	"oceanvine_cocoon",
+	"spiderden",
+	"spiderden_2",
+	"spiderden_3",
+	"spiderhole",
+	"moonspiderden",
+	"dropperweb",
+--兔子洞
+	"rabbithole",
+--鼹鼠洞
+	"molehill",
+--浣猫窝
+	"catcoonden",
+--猎犬丘
+	"houndmound",
+--猴子窝
+	"monkeybarrel",
+--蜗牛巢
+	"slurtlehole",
+--蝙蝠洞
+	"batcave",
+--尘蛾洞
+	"dustmothden",
+--猪鼻蝙蝠窝
+	"molebathill",
+--高鸟巢
+	"tallbirdnest",
+--蜂巢
+	"beehive",
+	"wasphive",
+--龙虾窝
+	"wobster_den",
+	"moonglass_wobster_den",
+--触手洞
+	"tentacle_pillar_hole",
+--BOSS巢穴
+	"mooseegg",
+	"beequeenhive",
+	"beequeenhivegrown",
+	"klaus_sack",
+	"toadstool_cap",
+--姜饼猪物
+	"gingerbreadhouse",
+--刷新点（不可见）
+	--"slurper_spawner",
+	--"worm_spawner",
+	--"monkeybarrel_spawner",
+	--"bishop_nightmare_spawner",
+	--"knight_nightmare_spawner",
+	--"rook_nightmare_spawner",
+	--"dragonfly_spawner",
+	--"antlion_spawner",
+	--"minotaur_spawner",
+}

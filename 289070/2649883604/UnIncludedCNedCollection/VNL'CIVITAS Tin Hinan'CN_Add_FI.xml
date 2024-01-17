@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'CIVITAS Tin Hinan'CN_Add_FI -->
+<!-- Author: 牛奶大魔王 , Clear8Sky -->
+<!-- DateCreated: 2021/10/3 16:29:06 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “CIVITAS Tin Hinan” 。该文件在 FrontEnd 与 InGame 时载入，无需任何 Criteria -->
+	<LocalizedText>
+		<Replace Tag="LOC_LEADER_CVS_TINHINAN_NAME" Language ="zh_Hans_CN">
+			<Text>錫·希南</Text>
+			<!-- 用于载入界面、百科列表以及百科页面 -->
+		</Replace>
+
+		<!-- 领袖特性 -->
+		
+		<Replace Tag="LOC_TRAIT_LEADER_CVS_TINHINAN_UA_NAME" Language ="zh_Hans_CN">
+			<Text>哈加尔女王</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_CVS_TINHINAN_UA_DESCRIPTION" Language ="zh_Hans_CN">
+			<Text>每建立一座拥有四个沙漠单元格的城市，则可+1 [ICON_TradeRoute] 贸易路线容量并获得一名商人。开拓者+1 [ICON_Movement] 移动力，侦察单位会显示10格范围内的绿洲。</Text>
+		</Replace>
+
+		<!-- 载入 -->
+
+		<Replace Tag="LOC_LOADING_INFO_LEADER_CVS_TINHINAN" Language ="zh_Hans_CN">
+			<Text>錫·希南，哈加尔女王。您的人民希望不断繁荣昌盛，尽管沙漠如此荒凉，但您依然在沙漠中寻找希望之土。您在荒漠中养育了沙漠之民，即使是最残酷的土地也阻止不了您人民前进的步伐。</Text>
+		</Replace>
+
+		<!-- 百科 -->
+
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_CVS_TINHINAN_TITLE" Language ="zh_Hans_CN">
+			<Text>錫·希南</Text>
+			<!-- 用于领袖百科页面 -->
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_CVS_TINHINAN_SUBTITLE" Language ="zh_Hans_CN">
+			<Text>錫·希南</Text>
+			<!-- 用于，用于哪儿来着？ -->
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_CVS_TINHINAN_QUOTE" Language ="zh_Hans_CN">
+			<Text>无头苍蝇总好过坐以待毙。[NEWLINE]——图阿雷格谚语</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_CVS_TINHINAN_CHAPTER_HISTORY_PARA_1" Language ="zh_Hans_CN">
+			<Text>錫·希南是公元前四世纪的人物。她和图阿雷格人的历史、文化以及起源有关。据一个古老的传说，希南是一位逃亡公主。她和她的追随者从来到撒哈拉沙漠地区，并定居在阿哈加尔山脉地区（撒哈拉沙漠中心地带），尽管錫·希南的故事广为人知但是很多人认为这只是个神话故事，直到1925年，被探险家发现并证实了是一位历史人物。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_CVS_TINHINAN_CHAPTER_HISTORY_PARA_2" Language ="zh_Hans_CN">
+			<Text>长期以来，图阿雷格人因为居住在撒哈拉沙漠地区需要其他资源，所以他们热衷于对外贸易。他们精明的商业头脑和对沙漠水源的了解使他们的商队能在恶劣的沙漠中繁荣发展。</Text>
+		</Replace>
+
+		<!-- 外交 -->
+
+		<!-- 初次见面 -->
+		<!-- 开场白 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_CVS_TINHINAN_ANY" Language ="zh_Hans_CN">
+			<Text>瞧，一个旅行者穿越了恶劣的环境，很荣幸见到你，我是錫·希南，很多人称我为哈加尔女王，我想我们能保持愉快的关系。</Text>
+		</Replace>
+
+		<!-- 到附近城市的邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_CVS_TINHINAN_ANY" Language ="zh_Hans_CN">
+			<Text>在这荒野并不轻松吧，来吧，让你疲惫的身体在这阴凉舒适的地方休息一下会好一点。</Text>
+		</Replace>
+
+		<!-- AI接受玩家邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NEAR_INITIATOR_POSITIVE_LEADER_CVS_TINHINAN_ANY" Language ="zh_Hans_CN">
+			<Text>很高兴看到你们的土地。</Text>
+		</Replace>
+
+		<!-- AI邀请玩家交换首都信息 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_CVS_TINHINAN_ANY" Language ="zh_Hans_CN">
+			<Text>为了我们更好的关系，我想我们应该知道彼此的首都在哪里，不是吗？</Text>
+		</Replace>
+
+
+		<!-- 问候 -->
+
+		<Replace Tag="LOC_DIPLO_GREETING_LEADER_CVS_TINHINAN_ANY" Language ="zh_Hans_CN">
+			<Text>欢迎回来，流浪者，请享用绿洲的淡水。</Text>
+		</Replace>
+
+
+		<!-- 代表团 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_HUMAN_LEADER_CVS_TINHINAN_ANY" Language ="zh_Hans_CN">
+			<Text>我会将您的代表团视为我的孩子一样对待。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_HUMAN_LEADER_CVS_TINHINAN_ANY" Language ="zh_Hans_CN">
+			<Text>现在我想我不应该接受你们的代表团，也许将来我会考虑接受。</Text>
+		</Replace>
+		
+		<!-- AI请求 -->
+		<Replace Tag="LOC_DIPLO_DELEGATION_FROM_AI_LEADER_CVS_TINHINAN_ANY" Language ="zh_Hans_CN">
+			<Text>我的子民带领我们精挑细选的礼物过来，我想您会允许他们进入吧？</Text>
+		</Replace>
+
+
+		<!-- 开放边境 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_HUMAN_LEADER_CVS_TINHINAN_ANY" Language ="zh_Hans_CN">
+			<Text>您是一个受人尊敬的领袖，这是一份很好的协议。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_HUMAN_LEADER_CVS_TINHINAN_ANY" Language ="zh_Hans_CN">
+			<Text>我很抱歉，我不能让我的子民承担这种风险。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_OPEN_BORDERS_FROM_AI_LEADER_CVS_TINHINAN_ANY" Language ="zh_Hans_CN">
+			<Text>我希望我可以畅通无阻的进入您的土地，这份小小的请求希望您可以答应。</Text>
+		</Replace>
+
+		<!-- 宣布友谊 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_HUMAN_LEADER_CVS_TINHINAN_ANY" Language ="zh_Hans_CN">
+			<Text>您是如此的让人信赖，我当然会接受</Text>
+		</Replace>
+		
+		<!-- AI拒绝 -->
+		
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_HUMAN_LEADER_CVS_TINHINAN_ANY" Language ="zh_Hans_CN">
+			<Text>恕我直言，我们之间的友谊并没有您想象中的好。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_CVS_TINHINAN_ANY" Language ="zh_Hans_CN">
+			<Text>我想我们人民之间应该有更进一步的发展，我想您会同意这份友谊宣言吧？</Text>
+		</Replace>
+
+		<!-- 玩家接受后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_CVS_TINHINAN_ANY" Language ="zh_Hans_CN">
+			<Text>合作是生存的关键，我很高兴我们能达成一致。</Text>
+		</Replace>
+
+		<!-- 玩家拒绝后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_CVS_TINHINAN_ANY" Language ="zh_Hans_CN">
+			<Text>不行？好吧，虽然我很失望但是并不是很难受。</Text>
+		</Replace>
+
+
+		<!-- 结盟 -->
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_ALLIANCE_FROM_AI_LEADER_CVS_TINHINAN_ANY" Language ="zh_Hans_CN">
+			<Text>只要我们合作我想我们的人民可以共同繁荣，您愿意加入联盟吗？</Text>
+		</Replace>
+
+		<!-- AI警告玩家离开边境 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_LEADER_CVS_TINHINAN_ANY" Language ="zh_Hans_CN">
+			<Text>我注意到我国边界不断壮大的军队，他们让我的子民不安您可以将他们移走吗？</Text>
+		</Replace>
+
+		<!-- 贸易 -->
+		<!-- AI接受交易 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_CVS_TINHINAN_ANY" Language ="zh_Hans_CN">
+			<Text>非常感谢。</Text>
+		</Replace>
+		
+		<!-- AI拒绝交易 -->
+		
+		<Replace Tag="LOC_DIPLO_REJECT_MAKE_DEAL_FROM_AI_LEADER_CVS_TINHINAN_ANY" Language ="zh_Hans_CN">
+			<Text>这份交易我是不会接受的，我想您可以把条件开的更好。</Text>
+		</Replace>
+
+
+		<!-- 谴责 -->
+		<!-- 受到谴责回应 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_CVS_TINHINAN_ANY" Language ="zh_Hans_CN">
+			<Text>谴责我只会证明你对发生了什么事情一无所知。</Text>
+		</Replace>
+
+		<!-- AI谴责玩家 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_CVS_TINHINAN_ANY" Language ="zh_Hans_CN">
+			<Text>我在一生中忍受了许多，但是你？你比任何人都可恶、该死。[NEWLINE]（谴责你）</Text>
+		</Replace>
+
+		<!-- 宣战 -->
+		<!-- 受到宣战后回应 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_CVS_TINHINAN_ANY" Language ="zh_Hans_CN">
+			<Text>我能想象你是多么粗鲁愚昧，你以为你可以征服我的人民？我们会誓死抵抗。</Text>
+		</Replace>
+
+		<!-- AI宣战 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_CVS_TINHINAN_ANY" Language ="zh_Hans_CN">
+			<Text>我无法袖手旁观的看着你的子民在你治下痛苦的生活。</Text>
+		</Replace>
+
+		<!-- 求和 -->
+		<!-- AI接受求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_ACCEPT_DEAL_LEADER_CVS_TINHINAN_ANY" Language ="zh_Hans_CN">
+			<Text>我们可以把重点放在更重要的事情上。</Text>
+		</Replace>
+
+		<!-- AI拒绝求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_REFUSE_DEAL_LEADER_CVS_TINHINAN_ANY" Language ="zh_Hans_CN">
+			<Text>不，现在还不是议和的时候。</Text>
+		</Replace>
+
+		<!-- AI求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_FROM_AI_LEADER_CVS_TINHINAN_ANY" Language ="zh_Hans_CN">
+			<Text>双方的士兵已经对战争感到厌倦，想想那些士兵的家庭，和平是最好的选择了。</Text>
+		</Replace>
+
+		<!-- 击败 -->
+		<!-- AI被击败 -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_CVS_TINHINAN_ANY" Language ="zh_Hans_CN">
+			<Text>失败了？也许吧，但我们是比你更聪慧坚韧的民族。</Text>
+		</Replace>
+
+		<!-- 玩家被击败（在热座模式中会显示） -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_CVS_TINHINAN_ANY" Language ="zh_Hans_CN">
+			<Text>别担心，我会比你更好的照顾你的子民。</Text>
+		</Replace>
+
+		<!-- 领袖议程 -->
+		
+		<Replace Tag="LOC_AGENDA_CVS_TINHINAN_NAME" Language ="zh_Hans_CN">
+			<Text>我们所有人的母亲</Text>
+		</Replace>
+		<Replace Tag="LOC_AGENDA_CVS_TINHINAN_DESCRIPTION" Language ="zh_Hans_CN">
+			<Text>錫·希南是保持较高 [ICON_Citizen] 人口增长速度的领袖，她会重点放在建立贸易上。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_KUDA_LEADER_CVS_TINHINAN_REASON_HIGH" Language ="zh_Hans_CN">
+			<Text>（您的公民吃的饱饱的）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_CVS_TINHINAN_HIGH" Language ="zh_Hans_CN">
+			<Text>錫·希南喜欢那些食物富裕的人。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_KUDA_LEADER_CVS_TINHINAN_REASON_LOW" Language ="zh_Hans_CN">
+			<Text>（您的公民在挨饿）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_CVS_TINHINAN_LOW" Language ="zh_Hans_CN">
+			<Text>錫·希南不喜欢你对食物的忽视。</Text>
+		</Replace>
+
+		<!-- AI 赞成-->
+		<Replace Tag="LOC_DIPLO_KUDO_EXIT_LEADER_CVS_TINHINAN_ANY" Language ="zh_Hans_CN">
+			<Text>无论我看哪里，我都能看到您子民饱腹的笑容。您的人民有很大的发展空间！很明显，您知道如何治理国家。</Text>
+		</Replace>
+
+		<!-- AI警告 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_EXIT_LEADER_CVS_TINHINAN_ANY" Language ="zh_Hans_CN">
+			<Text>你们的文明发展得太快了！但是你是不是让人民吃的太少了？给他们充足的食物让他们成长！</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

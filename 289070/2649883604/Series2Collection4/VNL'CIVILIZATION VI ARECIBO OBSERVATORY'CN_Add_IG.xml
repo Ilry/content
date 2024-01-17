@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'CIVILIZATION VI ARECIBO OBSERVATORY'CN_Add_IG -->
+<!-- Author: 牛奶大魔王 , Clear8Sky -->
+<!-- DateCreated: 2021/9/18 20:15:22 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “CIVILIZATION VI: ARECIBO OBSERVATORY” 。该文件在 InGame 时载入，无需任何 Criteria -->
+	<LocalizedText>
+		<Replace Tag="LOC_WON_CL_BUILDING_ARECIBO_NAME" Language="zh_Hans_CN">
+			<Text>阿雷西博天文台</Text>
+		</Replace>
+		<Replace Tag="LOC_WON_CL_BUILDING_ARECIBO_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>可为帝国境内所有学院可从山脉单元格中获得额外的标准相邻加成。随机解锁一项科技。每完成一个太空竞赛项目，则可随机获得一个 [ICON_TechBoosted] 尤里卡。必须建造在雨林中。</Text>
+		</Replace>
+		<Replace Tag="LOC_WON_CL_BUILDING_ARECIBO_QUOTE" Language="zh_Hans_CN">
+			<Text>阿雷西博望远镜只为聆听造物之声而生！[NEWLINE]——泰德·蒋</Text>
+		</Replace>
+		<Replace Tag="LOC_ARECIBO_MOUNTAINS_SCIENCE" Language="zh_Hans_CN">
+			<Text>+{1_num} [ICON_Science] 科技值 来自相邻 山脉单元格（阿雷西博天文台）</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

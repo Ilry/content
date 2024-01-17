@@ -1,0 +1,841 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<GameData>
+	<LocalizedText>
+        <Row Tag="LOC_COST_BASE_TECH_NAME" Language="zh_Hans_CN">
+            <Text>基础科技花费</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_25_NAME" Language="zh_Hans_CN">
+            <Text>x0.25 基础花费</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_TECH_25_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_SCIENCE] 科技的花费减少到 25%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_50_NAME" Language="zh_Hans_CN">
+            <Text>x0.5 基础花费</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_TECH_50_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_SCIENCE] 科技的花费减少到 50%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_75_NAME" Language="zh_Hans_CN">
+            <Text>x0.75 基础花费</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_TECH_75_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_SCIENCE] 科技的花费减少到 75%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_100_NAME" Language="zh_Hans_CN">
+            <Text>x1 基础花费</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_TECH_100_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_SCIENCE] 科技的花费保持不变。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_125_NAME" Language="zh_Hans_CN">
+            <Text>x1.25 基础花费</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_TECH_125_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_SCIENCE] 科技的花费增加到 125%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_150_NAME" Language="zh_Hans_CN">
+            <Text>x1.5 基础花费</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_TECH_150_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_SCIENCE] 科技的花费增加到 150%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_175_NAME" Language="zh_Hans_CN">
+            <Text>x1.75 基础花费</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_TECH_175_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_SCIENCE] 科技的花费增加到 175%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_200_NAME" Language="zh_Hans_CN">
+            <Text>x2 基础花费</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_TECH_200_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_SCIENCE] 科技的花费增加到 200%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_225_NAME" Language="zh_Hans_CN">
+            <Text>x2.25 基础花费</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_TECH_225_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_SCIENCE] 科技的花费增加到 225%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_250_NAME" Language="zh_Hans_CN">
+            <Text>x2.5 基础花费</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_TECH_250_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_SCIENCE] 科技的花费增加到 250%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_275_NAME" Language="zh_Hans_CN">
+            <Text>x2.75 基础花费</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_TECH_275_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_SCIENCE] 科技的花费增加到 275%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_300_NAME" Language="zh_Hans_CN">
+            <Text>x3 基础花费</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_TECH_300_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_SCIENCE] 科技的花费增加到 300%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_350_NAME" Language="zh_Hans_CN">
+            <Text>x3.5 基础花费</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_TECH_350_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_SCIENCE] 科技的花费增加到 350%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_400_NAME" Language="zh_Hans_CN">
+            <Text>x4 基础花费</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_TECH_400_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_SCIENCE] 科技的花费增加到 400%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_450_NAME" Language="zh_Hans_CN">
+            <Text>x4.5 基础花费</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_TECH_450_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_SCIENCE] 科技的花费增加到 450%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_500_NAME" Language="zh_Hans_CN">
+            <Text>x5 基础花费</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_TECH_500_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_SCIENCE] 科技的花费增加到 500%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_600_NAME" Language="zh_Hans_CN">
+            <Text>x6 基础花费</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_TECH_600_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_SCIENCE] 科技的花费增加到 600%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_700_NAME" Language="zh_Hans_CN">
+            <Text>x7 基础花费</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_TECH_700_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_SCIENCE] 科技的花费增加到 700%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_800_NAME" Language="zh_Hans_CN">
+            <Text>x8 基础花费</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_TECH_800_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_SCIENCE] 科技的花费增加到 800%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_900_NAME" Language="zh_Hans_CN">
+            <Text>x9 基础花费</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_TECH_900_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_SCIENCE] 科技的花费增加到 900%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_1000_NAME" Language="zh_Hans_CN">
+            <Text>x10 基础花费</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_TECH_1000_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_SCIENCE] 科技的花费增加到 1000%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_1250_NAME" Language="zh_Hans_CN">
+            <Text>x12.5 基础花费</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_TECH_1250_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_SCIENCE] 科技的花费增加到 1250%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_1500_NAME" Language="zh_Hans_CN">
+            <Text>x15 基础花费</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_TECH_1500_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_SCIENCE] 科技的花费增加到 1500%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_1750_NAME" Language="zh_Hans_CN">
+            <Text>x17.5 基础花费</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_TECH_1750_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_SCIENCE] 科技的花费增加到 1750%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_2000_NAME" Language="zh_Hans_CN">
+            <Text>x20 基础花费</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_TECH_2000_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_SCIENCE] 科技的花费增加到 2000%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_2500_NAME" Language="zh_Hans_CN">
+            <Text>x25 基础花费</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_TECH_2500_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_SCIENCE] 科技的花费增加到 2500%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_3000_NAME" Language="zh_Hans_CN">
+            <Text>x30 基础花费</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_TECH_3000_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_SCIENCE] 科技的花费增加到 3000%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_4000_NAME" Language="zh_Hans_CN">
+            <Text>x40 基础花费</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_TECH_4000_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_SCIENCE] 科技的花费增加到 4000%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_5000_NAME" Language="zh_Hans_CN">
+            <Text>x50 基础花费</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_TECH_5000_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_SCIENCE] 科技的花费增加到 5000%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_CIVIC_NAME" Language="zh_Hans_CN">
+            <Text>基础市政花费</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_CIVIC_25_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_CULTURE] 市政的花费减少到 25%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_CIVIC_50_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_CULTURE] 市政的花费减少到 50%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_CIVIC_75_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_CULTURE] 市政的花费减少到 75%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_CIVIC_100_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_CULTURE] 市政的花费保持不变。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_CIVIC_125_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_CULTURE] 市政的花费增加到 125%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_CIVIC_150_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_CULTURE] 市政的花费增加到 150%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_CIVIC_175_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_CULTURE] 市政的花费增加到 175%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_CIVIC_200_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_CULTURE] 市政的花费增加到 200%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_CIVIC_225_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_CULTURE] 市政的花费增加到 225%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_CIVIC_250_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_CULTURE] 市政的花费增加到 250%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_CIVIC_275_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_CULTURE] 市政的花费增加到 275%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_CIVIC_300_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_CULTURE] 市政的花费增加到 300%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_CIVIC_350_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_CULTURE] 市政的花费增加到 350%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_CIVIC_400_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_CULTURE] 市政的花费增加到 400%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_CIVIC_450_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_CULTURE] 市政的花费增加到 450%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_CIVIC_500_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_CULTURE] 市政的花费增加到 500%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_CIVIC_600_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_CULTURE] 市政的花费增加到 600%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_CIVIC_700_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_CULTURE] 市政的花费增加到 700%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_CIVIC_800_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_CULTURE] 市政的花费增加到 800%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_CIVIC_900_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_CULTURE] 市政的花费增加到 900%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_CIVIC_1000_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_CULTURE] 市政的花费增加到 1000%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_CIVIC_1250_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_CULTURE] 市政的花费增加到 1250%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_CIVIC_1500_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_CULTURE] 市政的花费增加到 1500%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_CIVIC_1750_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_CULTURE] 市政的花费增加到 1750%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_CIVIC_2000_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_CULTURE] 市政的花费增加到 2000%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_CIVIC_2500_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_CULTURE] 市政的花费增加到 2500%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_CIVIC_3000_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_CULTURE] 市政的花费增加到 3000%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_CIVIC_4000_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_CULTURE] 市政的花费增加到 4000%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_BASE_CIVIC_5000_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>所有 [ICON_CULTURE] 市政的花费增加到 5000%。</Text>
+        </Row>
+        <Row Tag="LOC_COST_SCALING_TECH_NAME" Language="zh_Hans_CN">
+            <Text>动态科技花费</Text>
+        </Row>
+        <Row Tag="LOC_COST_SCALING_NONE_NAME" Language="zh_Hans_CN">
+            <Text>关闭</Text>
+        </Row>
+        <Row Tag="LOC_COST_SCALING_TECH_NONE_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>[ICON_SCIENCE] 科技的成本不会有动态变化，只会受到基础科技花费选项的影响。</Text>
+        </Row>
+        <Row Tag="LOC_COST_SCALING_ERA_LOW_NAME" Language="zh_Hans_CN">
+            <Text>低时间成本</Text>
+        </Row>
+        <Row Tag="LOC_COST_SCALING_TECH_ERA_LOW_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>[ICON_SCIENCE] 科技的成本受到基础花费的影响，并随着时代的进步动态变化。[NEWLINE]远古时代: 100%[NEWLINE]古典时代: 110%[NEWLINE]中世纪: 115%[NEWLINE]文艺复兴时期: 120%[NEWLINE]工业时代: 125%[NEWLINE]现代: 130%[NEWLINE]原子能时代: 138%[NEWLINE]信息时代: 145%[NEWLINE]未来时代: 150%</Text>
+        </Row>
+        <Row Tag="LOC_COST_SCALING_ERA_MODERATE_NAME" Language="zh_Hans_CN">
+            <Text>中时间成本</Text>
+        </Row>
+        <Row Tag="LOC_COST_SCALING_TECH_ERA_MODERATE_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>[ICON_SCIENCE] 科技的成本受到基础花费的影响，并随着时代的进步动态变化。[NEWLINE]远古时代: 100%[NEWLINE]古典时代: 110%[NEWLINE]中世纪: 120%[NEWLINE]文艺复兴时期: 135%[NEWLINE]工业时代: 145%[NEWLINE]现代: 158%[NEWLINE]原子能时代: 170%[NEWLINE]信息时代: 180%[NEWLINE]未来时代: 190%</Text>
+        </Row>
+        <Row Tag="LOC_COST_SCALING_ERA_HIGH_NAME" Language="zh_Hans_CN">
+            <Text>高时间成本</Text>
+        </Row>
+        <Row Tag="LOC_COST_SCALING_TECH_ERA_HIGH_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>[ICON_SCIENCE] 科技的成本受到基础花费的影响，并随着时代的进步动态变化。[NEWLINE]远古时代: 100%[NEWLINE]古典时代: 120%[NEWLINE]中世纪: 140%[NEWLINE]文艺复兴时期: 160%[NEWLINE]工业时代: 180%[NEWLINE]现代: 200%[NEWLINE]原子能时代: 230%[NEWLINE]信息时代: 260%[NEWLINE]未来时代: 290%</Text>
+        </Row>
+        <Row Tag="LOC_COST_SCALING_ERA_EXTREME_NAME" Language="zh_Hans_CN">
+            <Text>极高时间成本</Text>
+        </Row>
+        <Row Tag="LOC_COST_SCALING_TECH_ERA_EXTREME_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>[ICON_SCIENCE] 科技的成本受到基础花费的影响，并随着时代的进步动态变化。[NEWLINE]远古时代: 100%[NEWLINE]古典时代: 130%[NEWLINE]中世纪: 170%[NEWLINE]文艺复兴时期: 220%[NEWLINE]工业时代: 260%[NEWLINE]现代: 320%[NEWLINE]原子能时代: 400%[NEWLINE]信息时代: 460%[NEWLINE]未来时代: 550%</Text>
+        </Row>
+        <Row Tag="LOC_COST_SCALING_CIVIC_NAME" Language="zh_Hans_CN">
+            <Text>动态市政花费</Text>
+        </Row>
+        <Row Tag="LOC_COST_SCALING_CIVIC_NONE_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>[ICON_CULTURE] 市政的成本不会有动态变化，只会受到基础市政花费选项的影响。</Text>
+        </Row>
+        <Row Tag="LOC_COST_SCALING_CIVIC_ERA_LOW_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>[ICON_CULTURE] 市政的成本受到基础花费的影响，并随着时代的进步动态变化。[NEWLINE]远古时代: 100%[NEWLINE]古典时代: 110%[NEWLINE]中世纪: 115%[NEWLINE]文艺复兴时期: 120%[NEWLINE]工业时代: 125%[NEWLINE]现代: 130%[NEWLINE]原子能时代: 138%[NEWLINE]信息时代: 145%[NEWLINE]未来时代: 150%</Text>
+        </Row>
+        <Row Tag="LOC_COST_SCALING_CIVIC_ERA_MODERATE_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>[ICON_CULTURE] 市政的成本受到基础花费的影响，并随着时代的进步动态变化。[NEWLINE]远古时代: 100%[NEWLINE]古典时代: 110%[NEWLINE]中世纪: 120%[NEWLINE]文艺复兴时期: 135%[NEWLINE]工业时代: 145%[NEWLINE]现代: 158%[NEWLINE]原子能时代: 170%[NEWLINE]信息时代: 180%[NEWLINE]未来时代: 190%</Text>
+        </Row>
+        <Row Tag="LOC_COST_SCALING_CIVIC_ERA_HIGH_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>[ICON_CULTURE] 市政的成本受到基础花费的影响，并随着时代的进步动态变化。[NEWLINE]远古时代: 100%[NEWLINE]古典时代: 120%[NEWLINE]中世纪: 140%[NEWLINE]文艺复兴时期: 160%[NEWLINE]工业时代: 180%[NEWLINE]现代: 200%[NEWLINE]原子能时代: 230%[NEWLINE]信息时代: 260%[NEWLINE]未来时代: 290%</Text>
+        </Row>
+        <Row Tag="LOC_COST_SCALING_CIVIC_ERA_EXTREME_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>[ICON_CULTURE] 市政的成本受到基础花费的影响，并随着时代的进步动态变化。[NEWLINE]远古时代: 100%[NEWLINE]古典时代: 130%[NEWLINE]中世纪: 170%[NEWLINE]文艺复兴时期: 220%[NEWLINE]工业时代: 260%[NEWLINE]现代: 320%[NEWLINE]原子能时代: 400%[NEWLINE]信息时代: 460%[NEWLINE]未来时代: 550%</Text>
+        </Row>
+        <Row Tag="LOC_BOOST_TECH_NAME" Language="zh_Hans_CN">
+            <Text>尤里卡奖励</Text>
+        </Row>
+        <Row Tag="LOC_BOOST_5_NAME" Language="zh_Hans_CN">
+            <Text>5%</Text>
+        </Row>
+        <Row Tag="LOC_BOOST_TECH_5_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>[ICON_TECHBOOSTED] 尤里卡将减少 5% 的科技花费，在基础花费和动态花费修正后。[NEWLINE][ICON_RESOURCE_JADE] [COLOR_FLOAT_SCIENCE]中国将获得 15%。 [ENDCOLOR]</Text>
+        </Row>
+        <Row Tag="LOC_BOOST_10_NAME" Language="zh_Hans_CN">
+            <Text>10%</Text>
+        </Row>
+        <Row Tag="LOC_BOOST_TECH_10_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>[ICON_TECHBOOSTED] 尤里卡将减少 10% 的科技花费，在基础花费和动态花费修正后。[NEWLINE][ICON_RESOURCE_JADE] [COLOR_FLOAT_SCIENCE]中国将获得 20%。 [ENDCOLOR]</Text>
+        </Row>
+        <Row Tag="LOC_BOOST_15_NAME" Language="zh_Hans_CN">
+            <Text>15%</Text>
+        </Row>
+        <Row Tag="LOC_BOOST_TECH_15_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>[ICON_TECHBOOSTED] 尤里卡将减少 15% 的科技花费，在基础花费和动态花费修正后。[NEWLINE][ICON_RESOURCE_JADE] [COLOR_FLOAT_SCIENCE]中国将获得 25%。 [ENDCOLOR]</Text>
+        </Row>
+        <Row Tag="LOC_BOOST_20_NAME" Language="zh_Hans_CN">
+            <Text>20%</Text>
+        </Row>
+        <Row Tag="LOC_BOOST_TECH_20_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>[ICON_TECHBOOSTED] 尤里卡将减少 20% 的科技花费，在基础花费和动态花费修正后。[NEWLINE][ICON_RESOURCE_JADE] [COLOR_FLOAT_SCIENCE]中国将获得 30%。 [ENDCOLOR]</Text>
+        </Row>
+        <Row Tag="LOC_BOOST_25_NAME" Language="zh_Hans_CN">
+            <Text>25%</Text>
+        </Row>
+        <Row Tag="LOC_BOOST_TECH_25_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>[ICON_TECHBOOSTED] 尤里卡将减少 25% 的科技花费，在基础花费和动态花费修正后。[NEWLINE][ICON_RESOURCE_JADE] [COLOR_FLOAT_SCIENCE]中国将获得 35%。 [ENDCOLOR]</Text>
+        </Row>
+        <Row Tag="LOC_BOOST_33_NAME" Language="zh_Hans_CN">
+            <Text>33%</Text>
+        </Row>
+        <Row Tag="LOC_BOOST_TECH_33_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>[ICON_TECHBOOSTED] 尤里卡将减少 33% 的科技花费，在基础花费和动态花费修正后。[NEWLINE][ICON_RESOURCE_JADE] [COLOR_FLOAT_SCIENCE]中国将获得 43%。 [ENDCOLOR]</Text>
+        </Row>
+        <Row Tag="LOC_BOOST_40_NAME" Language="zh_Hans_CN">
+            <Text>40%</Text>
+        </Row>
+        <Row Tag="LOC_BOOST_TECH_40_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>[ICON_TECHBOOSTED] 尤里卡将减少 40% 的科技花费，在基础花费和动态花费修正后。[NEWLINE][ICON_RESOURCE_JADE] [COLOR_FLOAT_SCIENCE]中国将获得 50%。 [ENDCOLOR]</Text>
+        </Row>
+        <Row Tag="LOC_BOOST_50_NAME" Language="zh_Hans_CN">
+            <Text>50%</Text>
+        </Row>
+        <Row Tag="LOC_BOOST_TECH_50_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>[ICON_TECHBOOSTED] 尤里卡将减少 50% 的科技花费，在基础花费和动态花费修正后。[NEWLINE][ICON_RESOURCE_JADE] [COLOR_FLOAT_SCIENCE]中国将获得 60%。 [ENDCOLOR]</Text>
+        </Row>
+        <Row Tag="LOC_BOOST_67_NAME" Language="zh_Hans_CN">
+            <Text>67%</Text>
+        </Row>
+        <Row Tag="LOC_BOOST_TECH_67_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>[ICON_TECHBOOSTED] 尤里卡将减少 67% 的科技花费，在基础花费和动态花费修正后。[NEWLINE][ICON_RESOURCE_JADE] [COLOR_FLOAT_SCIENCE]中国将获得 77%。 [ENDCOLOR]</Text>
+        </Row>
+        <Row Tag="LOC_BOOST_75_NAME" Language="zh_Hans_CN">
+            <Text>75%</Text>
+        </Row>
+        <Row Tag="LOC_BOOST_TECH_75_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>[ICON_TECHBOOSTED] 尤里卡将减少 75% 的科技花费，在基础花费和动态花费修正后。[NEWLINE][ICON_RESOURCE_JADE] [COLOR_FLOAT_SCIENCE]中国将获得 85%。 [ENDCOLOR]</Text>
+        </Row>
+        <Row Tag="LOC_BOOST_85_NAME" Language="zh_Hans_CN">
+            <Text>85%</Text>
+        </Row>
+        <Row Tag="LOC_BOOST_TECH_85_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>[ICON_TECHBOOSTED] 尤里卡将减少 85% 的科技花费，在基础花费和动态花费修正后。[NEWLINE][ICON_RESOURCE_JADE] [COLOR_FLOAT_SCIENCE]中国将获得 95%。 [ENDCOLOR]</Text>
+        </Row>
+        <Row Tag="LOC_BOOST_100_NAME" Language="zh_Hans_CN">
+            <Text>100%</Text>
+        </Row>
+        <Row Tag="LOC_BOOST_TECH_100_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>[ICON_TECHBOOSTED] 尤里卡将减少 100% 的科技花费，在基础花费和动态花费修正后。[NEWLINE][ICON_RESOURCE_JADE] [COLOR_FLOAT_SCIENCE]中国也将获得 100%。 [ENDCOLOR]</Text>
+        </Row>
+        <Row Tag="LOC_BOOST_ORIGINAL_50_NAME" Language="zh_Hans_CN">
+            <Text>50％ 原始成本</Text>
+        </Row>
+        <Row Tag="LOC_BOOST_TECH_ORIGINAL_50_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>[ICON_TECHBOOSTED] 尤里卡将减少 50% 的科技花费，在基础花费和动态花费修正前。[NEWLINE][ICON_RESOURCE_JADE] [COLOR_FLOAT_SCIENCE]中国的尤里卡奖励将根据基础科技花费的选项进行调整。 [ENDCOLOR]</Text>
+        </Row>
+        <Row Tag="LOC_BOOST_ORIGINAL_100_NAME" Language="zh_Hans_CN">
+            <Text>100% 原始成本</Text>
+        </Row>
+        <Row Tag="LOC_BOOST_TECH_ORIGINAL_100_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>[ICON_TECHBOOSTED] 尤里卡将减少 100% 的科技花费，在基础花费和动态花费修正前。[NEWLINE][ICON_RESOURCE_JADE] [COLOR_FLOAT_SCIENCE]中国的尤里卡奖励将根据基础科技花费的选项进行调整。 [ENDCOLOR]</Text>
+        </Row>
+        <Row Tag="LOC_BOOST_CIVIC_NAME" Language="zh_Hans_CN">
+            <Text>鼓舞奖励</Text>
+        </Row>
+        <Row Tag="LOC_BOOST_CIVIC_5_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>[ICON_CIVICBOOSTED] 鼓舞将减少 5% 的市政花费，在基础花费和动态花费修正后。[NEWLINE][ICON_RESOURCE_JADE] [COLOR_FLOAT_CULTURE]中国将获得 15%。 [ENDCOLOR]</Text>
+        </Row>
+        <Row Tag="LOC_BOOST_CIVIC_10_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>[ICON_CIVICBOOSTED] 鼓舞将减少 10% 的市政花费，在基础花费和动态花费修正后。[NEWLINE][ICON_RESOURCE_JADE] [COLOR_FLOAT_CULTURE]中国将获得 20%。 [ENDCOLOR]</Text>
+        </Row>
+        <Row Tag="LOC_BOOST_CIVIC_15_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>[ICON_CIVICBOOSTED] 鼓舞将减少 15% 的市政花费，在基础花费和动态花费修正后。[NEWLINE][ICON_RESOURCE_JADE] [COLOR_FLOAT_CULTURE]中国将获得 25%。 [ENDCOLOR]</Text>
+        </Row>
+        <Row Tag="LOC_BOOST_CIVIC_20_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>[ICON_CIVICBOOSTED] 鼓舞将减少 20% 的市政花费，在基础花费和动态花费修正后。[NEWLINE][ICON_RESOURCE_JADE] [COLOR_FLOAT_CULTURE]中国将获得 30%。 [ENDCOLOR]</Text>
+        </Row>
+        <Row Tag="LOC_BOOST_CIVIC_25_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>[ICON_CIVICBOOSTED] 鼓舞将减少 25% 的市政花费，在基础花费和动态花费修正后。[NEWLINE][ICON_RESOURCE_JADE] [COLOR_FLOAT_CULTURE]中国将获得 35%。 [ENDCOLOR]</Text>
+        </Row>
+        <Row Tag="LOC_BOOST_CIVIC_33_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>[ICON_CIVICBOOSTED] 鼓舞将减少 33% 的市政花费，在基础花费和动态花费修正后。[NEWLINE][ICON_RESOURCE_JADE] [COLOR_FLOAT_CULTURE]中国将获得 43%。 [ENDCOLOR]</Text>
+        </Row>
+        <Row Tag="LOC_BOOST_CIVIC_40_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>[ICON_CIVICBOOSTED] 鼓舞将减少 40% 的市政花费，在基础花费和动态花费修正后。[NEWLINE][ICON_RESOURCE_JADE] [COLOR_FLOAT_CULTURE]中国将获得 50%。 [ENDCOLOR]</Text>
+        </Row>
+        <Row Tag="LOC_BOOST_CIVIC_50_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>[ICON_CIVICBOOSTED] 鼓舞将减少 50% 的市政花费，在基础花费和动态花费修正后。[NEWLINE][ICON_RESOURCE_JADE] [COLOR_FLOAT_CULTURE]中国将获得 60%。 [ENDCOLOR]</Text>
+        </Row>
+        <Row Tag="LOC_BOOST_CIVIC_67_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>[ICON_CIVICBOOSTED] 鼓舞将减少 67% 的市政花费，在基础花费和动态花费修正后。[NEWLINE][ICON_RESOURCE_JADE] [COLOR_FLOAT_CULTURE]中国将获得 77%。 [ENDCOLOR]</Text>
+        </Row>
+        <Row Tag="LOC_BOOST_CIVIC_75_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>[ICON_CIVICBOOSTED] 鼓舞将减少 75% 的市政花费，在基础花费和动态花费修正后。[NEWLINE][ICON_RESOURCE_JADE] [COLOR_FLOAT_CULTURE]中国将获得 85%。 [ENDCOLOR]</Text>
+        </Row>
+        <Row Tag="LOC_BOOST_CIVIC_85_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>[ICON_CIVICBOOSTED] 鼓舞将减少 85% 的市政花费，在基础花费和动态花费修正后。[NEWLINE][ICON_RESOURCE_JADE] [COLOR_FLOAT_CULTURE]中国将获得 95%。 [ENDCOLOR]</Text>
+        </Row>
+        <Row Tag="LOC_BOOST_CIVIC_100_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>[ICON_CIVICBOOSTED] 鼓舞将减少 100% 的市政花费，在基础花费和动态花费修正后。[NEWLINE][ICON_RESOURCE_JADE] [COLOR_FLOAT_CULTURE]中国也将获得 100%。 [ENDCOLOR]</Text>
+        </Row>
+        <Row Tag="LOC_BOOST_CIVIC_ORIGINAL_50_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>[ICON_CIVICBOOSTED] 鼓舞将减少 50% 的市政花费，在基础花费和动态花费修正前。[NEWLINE][ICON_RESOURCE_JADE] [COLOR_FLOAT_CULTURE]中国的鼓舞奖励将根据基础市政花费的选项进行调整。[ENDCOLOR]</Text>
+        </Row>
+        <Row Tag="LOC_BOOST_CIVIC_ORIGINAL_100_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>[ICON_CIVICBOOSTED] 鼓舞将减少 100% 的市政花费，在基础花费和动态花费修正前。[NEWLINE][ICON_RESOURCE_JADE] [COLOR_FLOAT_CULTURE]中国的鼓舞奖励将根据基础市政花费的选项进行调整。[ENDCOLOR]</Text>
+        </Row>
+        <Row Tag="LOC_WORLD_ERA_NAME" Language="zh_Hans_CN">
+            <Text>时代进步</Text>
+        </Row>
+        <Row Tag="LOC_WORLD_ERA_CALCULATED_NAME" Language="zh_Hans_CN">
+            <Text>自动</Text>
+        </Row>
+        <Row Tag="LOC_WORLD_ERA_CALCULATED_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>[ICON_GLORY_GOLDEN_AGE] 时代的进步将根据科技和市政花费自动调整。</Text>
+        </Row>
+        <Row Tag="LOC_WORLD_ERA_25_NAME" Language="zh_Hans_CN">
+            <Text>x0.25 回合数</Text>
+        </Row>
+        <Row Tag="LOC_WORLD_ERA_25_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>时代进步的回合数将减少到 25%。</Text>
+        </Row>
+        <Row Tag="LOC_WORLD_ERA_50_NAME" Language="zh_Hans_CN">
+            <Text>x0.5 回合数</Text>
+        </Row>
+        <Row Tag="LOC_WORLD_ERA_50_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>时代进步的回合数将减少到 50%。</Text>
+        </Row>
+        <Row Tag="LOC_WORLD_ERA_100_NAME" Language="zh_Hans_CN">
+            <Text>x1 回合数</Text>
+        </Row>
+        <Row Tag="LOC_WORLD_ERA_100_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>时代进步的回合数保持不变。</Text>
+        </Row>
+        <Row Tag="LOC_WORLD_ERA_150_NAME" Language="zh_Hans_CN">
+            <Text>x1.5 回合数</Text>
+        </Row>
+        <Row Tag="LOC_WORLD_ERA_150_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>时代进步的回合数将增加到 150%。</Text>
+        </Row>
+        <Row Tag="LOC_WORLD_ERA_200_NAME" Language="zh_Hans_CN">
+            <Text>x2 回合数</Text>
+        </Row>
+        <Row Tag="LOC_WORLD_ERA_200_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>时代进步的回合数将增加到 200%。</Text>
+        </Row>
+        <Row Tag="LOC_WORLD_ERA_250_NAME" Language="zh_Hans_CN">
+            <Text>x2.5 回合数</Text>
+        </Row>
+        <Row Tag="LOC_WORLD_ERA_250_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>时代进步的回合数将增加到 250%。</Text>
+        </Row>
+        <Row Tag="LOC_WORLD_ERA_300_NAME" Language="zh_Hans_CN">
+            <Text>x3 回合数</Text>
+        </Row>
+        <Row Tag="LOC_WORLD_ERA_300_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>时代进步的回合数将增加到 300%。</Text>
+        </Row>
+        <Row Tag="LOC_WORLD_ERA_350_NAME" Language="zh_Hans_CN">
+            <Text>x3.5 回合数</Text>
+        </Row>
+        <Row Tag="LOC_WORLD_ERA_350_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>时代进步的回合数将增加到 350%。</Text>
+        </Row>
+        <Row Tag="LOC_WORLD_ERA_400_NAME" Language="zh_Hans_CN">
+            <Text>x4 回合数</Text>
+        </Row>
+        <Row Tag="LOC_WORLD_ERA_400_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>时代进步的回合数将增加到 400%。</Text>
+        </Row>
+        <Row Tag="LOC_WORLD_ERA_500_NAME" Language="zh_Hans_CN">
+            <Text>x5 回合数</Text>
+        </Row>
+        <Row Tag="LOC_WORLD_ERA_500_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>时代进步的回合数将增加到 500%。</Text>
+        </Row>
+        <Row Tag="LOC_WORLD_ERA_600_NAME" Language="zh_Hans_CN">
+            <Text>x6 回合数</Text>
+        </Row>
+        <Row Tag="LOC_WORLD_ERA_600_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>时代进步的回合数将增加到 600%。</Text>
+        </Row>
+        <Row Tag="LOC_WORLD_ERA_700_NAME" Language="zh_Hans_CN">
+            <Text>x7 回合数</Text>
+        </Row>
+        <Row Tag="LOC_WORLD_ERA_700_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>时代进步的回合数将增加到 700%。</Text>
+        </Row>
+        <Row Tag="LOC_WORLD_ERA_800_NAME" Language="zh_Hans_CN">
+            <Text>x8 回合数</Text>
+        </Row>
+        <Row Tag="LOC_WORLD_ERA_800_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>时代进步的回合数将增加到 800%。</Text>
+        </Row>
+        <Row Tag="LOC_WORLD_ERA_900_NAME" Language="zh_Hans_CN">
+            <Text>x9 回合数</Text>
+        </Row>
+        <Row Tag="LOC_WORLD_ERA_900_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>时代进步的回合数将增加到 900%。</Text>
+        </Row>
+        <Row Tag="LOC_WORLD_ERA_1000_NAME" Language="zh_Hans_CN">
+            <Text>x10 回合数</Text>
+        </Row>
+        <Row Tag="LOC_WORLD_ERA_1000_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>时代进步的回合数将增加到 1000%。</Text>
+        </Row>
+        <Row Tag="LOC_ERA_SCORE_SCALING_NAME" Language="zh_Hans_CN">
+            <Text>时代得分</Text>
+        </Row>
+        <Row Tag="LOC_ERA_SCORE_SCALING_CALCULATED_NAME" Language="zh_Hans_CN">
+            <Text>自动</Text>
+        </Row>
+        <Row Tag="LOC_ERA_SCORE_SCALING_CALCULATED_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>进入普通或黄金时代所需的 [ICON_GLORY_NORMAL_AGE] 时代得分将根据科技和市政花费自动调整。</Text>
+        </Row>
+        <Row Tag="LOC_ERA_SCORE_SCALING_25_NAME" Language="zh_Hans_CN">
+            <Text>x0.25 分数需求</Text>
+        </Row>
+        <Row Tag="LOC_ERA_SCORE_SCALING_25_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>进入普通或黄金时代所需的 [ICON_GLORY_NORMAL_AGE] 时代得分将减少到 25%。</Text>
+        </Row>
+        <Row Tag="LOC_ERA_SCORE_SCALING_50_NAME" Language="zh_Hans_CN">
+            <Text>x0.5 分数需求</Text>
+        </Row>
+        <Row Tag="LOC_ERA_SCORE_SCALING_50_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>进入普通或黄金时代所需的 [ICON_GLORY_NORMAL_AGE] 时代得分将减少到 50%。</Text>
+        </Row>
+        <Row Tag="LOC_ERA_SCORE_SCALING_100_NAME" Language="zh_Hans_CN">
+            <Text>x1 分数需求</Text>
+        </Row>
+        <Row Tag="LOC_ERA_SCORE_SCALING_100_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>进入普通或黄金时代所需的 [ICON_GLORY_NORMAL_AGE] 时代得分保持不变。</Text>
+        </Row>
+        <Row Tag="LOC_ERA_SCORE_SCALING_120_NAME" Language="zh_Hans_CN">
+            <Text>x1.2 分数需求</Text>
+        </Row>
+        <Row Tag="LOC_ERA_SCORE_SCALING_120_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>进入普通或黄金时代所需的 [ICON_GLORY_NORMAL_AGE] 时代得分将增加到 120%。</Text>
+        </Row>
+        <Row Tag="LOC_ERA_SCORE_SCALING_140_NAME" Language="zh_Hans_CN">
+            <Text>x1.4 分数需求</Text>
+        </Row>
+        <Row Tag="LOC_ERA_SCORE_SCALING_140_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>进入普通或黄金时代所需的 [ICON_GLORY_NORMAL_AGE] 时代得分将增加到 140%。</Text>
+        </Row>
+        <Row Tag="LOC_ERA_SCORE_SCALING_150_NAME" Language="zh_Hans_CN">
+            <Text>x1.5 分数需求</Text>
+        </Row>
+        <Row Tag="LOC_ERA_SCORE_SCALING_150_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>进入普通或黄金时代所需的 [ICON_GLORY_NORMAL_AGE] 时代得分将增加到 150%。</Text>
+        </Row>
+        <Row Tag="LOC_ERA_SCORE_SCALING_175_NAME" Language="zh_Hans_CN">
+            <Text>x1.75 分数需求</Text>
+        </Row>
+        <Row Tag="LOC_ERA_SCORE_SCALING_175_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>进入普通或黄金时代所需的 [ICON_GLORY_NORMAL_AGE] 时代得分将增加到 175%。</Text>
+        </Row>
+        <Row Tag="LOC_ERA_SCORE_SCALING_200_NAME" Language="zh_Hans_CN">
+            <Text>x2 分数需求</Text>
+        </Row>
+        <Row Tag="LOC_ERA_SCORE_SCALING_200_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>进入普通或黄金时代所需的 [ICON_GLORY_NORMAL_AGE] 时代得分将增加到 200%。</Text>
+        </Row>
+        <Row Tag="LOC_ERA_SCORE_SCALING_300_NAME" Language="zh_Hans_CN">
+            <Text>x3 分数需求</Text>
+        </Row>
+        <Row Tag="LOC_ERA_SCORE_SCALING_300_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>进入普通或黄金时代所需的 [ICON_GLORY_NORMAL_AGE] 时代得分将增加到 300%。</Text>
+        </Row>
+        <Row Tag="LOC_ERA_SCORE_SCALING_400_NAME" Language="zh_Hans_CN">
+            <Text>x4 分数需求</Text>
+        </Row>
+        <Row Tag="LOC_ERA_SCORE_SCALING_400_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>进入普通或黄金时代所需的 [ICON_GLORY_NORMAL_AGE] 时代得分将增加到 400%。</Text>
+        </Row>
+        <Row Tag="LOC_ERA_SCORE_SCALING_500_NAME" Language="zh_Hans_CN">
+            <Text>x5 分数需求</Text>
+        </Row>
+        <Row Tag="LOC_ERA_SCORE_SCALING_500_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>进入普通或黄金时代所需的 [ICON_GLORY_NORMAL_AGE] 时代得分将增加到 500%。</Text>
+        </Row>
+        <Row Tag="LOC_ERA_SCORE_SCALING_600_NAME" Language="zh_Hans_CN">
+            <Text>x6 分数需求</Text>
+        </Row>
+        <Row Tag="LOC_ERA_SCORE_SCALING_600_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>进入普通或黄金时代所需的 [ICON_GLORY_NORMAL_AGE] 时代得分将增加到 600%。</Text>
+        </Row>
+        <Row Tag="LOC_ERA_SCORE_SCALING_700_NAME" Language="zh_Hans_CN">
+            <Text>x7 分数需求</Text>
+        </Row>
+        <Row Tag="LOC_ERA_SCORE_SCALING_700_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>进入普通或黄金时代所需的 [ICON_GLORY_NORMAL_AGE] 时代得分将增加到 700%。</Text>
+        </Row>
+        <Row Tag="LOC_CLIMATE_CHANGE_SCALING_NAME" Language="zh_Hans_CN">
+            <Text>CO2 阈值</Text>
+        </Row>
+        <Row Tag="LOC_CLIMATE_CHANGE_SCALING_CALCULATED_NAME" Language="zh_Hans_CN">
+            <Text>自动</Text>
+        </Row>
+        <Row Tag="LOC_CLIMATE_CHANGE_SCALING_CALCULATED_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>引起气候变化所需的CO2排放量将根据科技和市政花费自动调整。</Text>
+        </Row>
+        <Row Tag="LOC_CLIMATE_CHANGE_SCALING_25_NAME" Language="zh_Hans_CN">
+            <Text>x0.25 CO2排放阈值</Text>
+        </Row>
+        <Row Tag="LOC_CLIMATE_CHANGE_SCALING_25_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>引起气候变化所需的CO2排放量将减少到 25%。</Text>
+        </Row>
+        <Row Tag="LOC_CLIMATE_CHANGE_SCALING_50_NAME" Language="zh_Hans_CN">
+            <Text>x0.5 CO2排放阈值</Text>
+        </Row>
+        <Row Tag="LOC_CLIMATE_CHANGE_SCALING_50_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>引起气候变化所需的CO2排放量将减少到 50%。</Text>
+        </Row>
+        <Row Tag="LOC_CLIMATE_CHANGE_SCALING_100_NAME" Language="zh_Hans_CN">
+            <Text>x1 CO2排放阈值</Text>
+        </Row>
+        <Row Tag="LOC_CLIMATE_CHANGE_SCALING_100_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>引起气候变化所需的CO2排放量保持不变。</Text>
+        </Row>
+        <Row Tag="LOC_CLIMATE_CHANGE_SCALING_120_NAME" Language="zh_Hans_CN">
+            <Text>x1.2 CO2排放阈值</Text>
+        </Row>
+        <Row Tag="LOC_CLIMATE_CHANGE_SCALING_120_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>引起气候变化所需的CO2排放量将增加到 120%。</Text>
+        </Row>
+        <Row Tag="LOC_CLIMATE_CHANGE_SCALING_140_NAME" Language="zh_Hans_CN">
+            <Text>x1.4 CO2排放阈值</Text>
+        </Row>
+        <Row Tag="LOC_CLIMATE_CHANGE_SCALING_140_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>引起气候变化所需的CO2排放量将增加到 140%。</Text>
+        </Row>
+        <Row Tag="LOC_CLIMATE_CHANGE_SCALING_150_NAME" Language="zh_Hans_CN">
+            <Text>x1.5 CO2排放阈值</Text>
+        </Row>
+        <Row Tag="LOC_CLIMATE_CHANGE_SCALING_150_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>引起气候变化所需的CO2排放量将增加到 150%。</Text>
+        </Row>
+        <Row Tag="LOC_CLIMATE_CHANGE_SCALING_175_NAME" Language="zh_Hans_CN">
+            <Text>x1.75 CO2排放阈值</Text>
+        </Row>
+        <Row Tag="LOC_CLIMATE_CHANGE_SCALING_175_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>引起气候变化所需的CO2排放量将增加到 175%。</Text>
+        </Row>
+        <Row Tag="LOC_CLIMATE_CHANGE_SCALING_200_NAME" Language="zh_Hans_CN">
+            <Text>x2 CO2排放阈值</Text>
+        </Row>
+        <Row Tag="LOC_CLIMATE_CHANGE_SCALING_200_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>引起气候变化所需的CO2排放量将增加到 200%。</Text>
+        </Row>
+        <Row Tag="LOC_CLIMATE_CHANGE_SCALING_300_NAME" Language="zh_Hans_CN">
+            <Text>x3 CO2排放阈值</Text>
+        </Row>
+        <Row Tag="LOC_CLIMATE_CHANGE_SCALING_300_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>引起气候变化所需的CO2排放量将增加到 300%。</Text>
+        </Row>
+        <Row Tag="LOC_CLIMATE_CHANGE_SCALING_400_NAME" Language="zh_Hans_CN">
+            <Text>x4 CO2排放阈值</Text>
+        </Row>
+        <Row Tag="LOC_CLIMATE_CHANGE_SCALING_400_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>引起气候变化所需的CO2排放量将增加到 400%。</Text>
+        </Row>
+        <Row Tag="LOC_CLIMATE_CHANGE_SCALING_500_NAME" Language="zh_Hans_CN">
+            <Text>x5 CO2排放阈值</Text>
+        </Row>
+        <Row Tag="LOC_CLIMATE_CHANGE_SCALING_500_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>引起气候变化所需的CO2排放量将增加到 500%。</Text>
+        </Row>
+        <Row Tag="LOC_CLIMATE_CHANGE_SCALING_600_NAME" Language="zh_Hans_CN">
+            <Text>x6 CO2排放阈值</Text>
+        </Row>
+        <Row Tag="LOC_CLIMATE_CHANGE_SCALING_600_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>引起气候变化所需的CO2排放量将增加到 600%。</Text>
+        </Row>
+        <Row Tag="LOC_CLIMATE_CHANGE_SCALING_700_NAME" Language="zh_Hans_CN">
+            <Text>x7 CO2排放阈值</Text>
+        </Row>
+        <Row Tag="LOC_CLIMATE_CHANGE_SCALING_700_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>引起气候变化所需的CO2排放量将增加到 700%。</Text>
+        </Row>
+        <Row Tag="LOC_GREAT_PERSON_COST_NAME" Language="zh_Hans_CN">
+            <Text>伟人点数花费</Text>
+        </Row>
+        <Row Tag="LOC_GREAT_PERSON_COST_CALCULATED_NAME" Language="zh_Hans_CN">
+            <Text>自动</Text>
+        </Row>
+        <Row Tag="LOC_GREAT_PERSON_COST_CALCULATED_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>招募 [ICON_GREATPERSON] 伟人的点数花费将根据科技和市政花费自动调整。</Text>
+        </Row>
+        <Row Tag="LOC_GREAT_PERSON_COST_25_NAME" Language="zh_Hans_CN">
+            <Text>x0.25 基础花费</Text>
+        </Row>
+        <Row Tag="LOC_GREAT_PERSON_COST_25_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>招募 [ICON_GREATPERSON] 伟人的基础花费将减少到 25%。</Text>
+        </Row>
+        <Row Tag="LOC_GREAT_PERSON_COST_50_NAME" Language="zh_Hans_CN">
+            <Text>x0.5 基础花费</Text>
+        </Row>
+        <Row Tag="LOC_GREAT_PERSON_COST_50_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>招募 [ICON_GREATPERSON] 伟人的基础花费将减少到 50%。</Text>
+        </Row>
+        <Row Tag="LOC_GREAT_PERSON_COST_100_NAME" Language="zh_Hans_CN">
+            <Text>x1 基础花费</Text>
+        </Row>
+        <Row Tag="LOC_GREAT_PERSON_COST_100_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>招募 [ICON_GREATPERSON] 伟人的基础花费保持不变。</Text>
+        </Row>
+        <Row Tag="LOC_GREAT_PERSON_COST_150_NAME" Language="zh_Hans_CN">
+            <Text>x1.5 基础花费</Text>
+        </Row>
+        <Row Tag="LOC_GREAT_PERSON_COST_150_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>招募 [ICON_GREATPERSON] 伟人的基础花费将增加到 150%。</Text>
+        </Row>
+        <Row Tag="LOC_GREAT_PERSON_COST_200_NAME" Language="zh_Hans_CN">
+            <Text>x2 基础花费</Text>
+        </Row>
+        <Row Tag="LOC_GREAT_PERSON_COST_200_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>招募 [ICON_GREATPERSON] 伟人的基础花费将增加到 200%。</Text>
+        </Row>
+        <Row Tag="LOC_GREAT_PERSON_COST_250_NAME" Language="zh_Hans_CN">
+            <Text>x2.5 基础花费</Text>
+        </Row>
+        <Row Tag="LOC_GREAT_PERSON_COST_250_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>招募 [ICON_GREATPERSON] 伟人的基础花费将增加到 250%。</Text>
+        </Row>
+        <Row Tag="LOC_GREAT_PERSON_COST_300_NAME" Language="zh_Hans_CN">
+            <Text>x3 基础花费</Text>
+        </Row>
+        <Row Tag="LOC_GREAT_PERSON_COST_300_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>招募 [ICON_GREATPERSON] 伟人的基础花费将增加到 300%。</Text>
+        </Row>
+        <Row Tag="LOC_GREAT_PERSON_COST_350_NAME" Language="zh_Hans_CN">
+            <Text>x3.5 基础花费</Text>
+        </Row>
+        <Row Tag="LOC_GREAT_PERSON_COST_350_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>招募 [ICON_GREATPERSON] 伟人的基础花费将增加到 350%。</Text>
+        </Row>
+        <Row Tag="LOC_GREAT_PERSON_COST_400_NAME" Language="zh_Hans_CN">
+            <Text>x4 基础花费</Text>
+        </Row>
+        <Row Tag="LOC_GREAT_PERSON_COST_400_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>招募 [ICON_GREATPERSON] 伟人的基础花费将增加到 400%。</Text>
+        </Row>
+        <Row Tag="LOC_GREAT_PERSON_COST_500_NAME" Language="zh_Hans_CN">
+            <Text>x5 基础花费</Text>
+        </Row>
+        <Row Tag="LOC_GREAT_PERSON_COST_500_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>招募 [ICON_GREATPERSON] 伟人的基础花费将增加到 500%。</Text>
+        </Row>
+        <Row Tag="LOC_GREAT_PERSON_COST_600_NAME" Language="zh_Hans_CN">
+            <Text>x6 基础花费</Text>
+        </Row>
+        <Row Tag="LOC_GREAT_PERSON_COST_600_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>招募 [ICON_GREATPERSON] 伟人的基础花费将增加到 600%。</Text>
+        </Row>
+        <Row Tag="LOC_GREAT_PERSON_COST_700_NAME" Language="zh_Hans_CN">
+            <Text>x7 基础花费</Text>
+        </Row>
+        <Row Tag="LOC_GREAT_PERSON_COST_700_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>招募 [ICON_GREATPERSON] 伟人的基础花费将增加到 700%。</Text>
+        </Row>
+        <Row Tag="LOC_GREAT_PERSON_COST_800_NAME" Language="zh_Hans_CN">
+            <Text>x8 基础花费</Text>
+        </Row>
+        <Row Tag="LOC_GREAT_PERSON_COST_800_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>招募 [ICON_GREATPERSON] 伟人的基础花费将增加到 800%。</Text>
+        </Row>
+        <Row Tag="LOC_GREAT_PERSON_COST_900_NAME" Language="zh_Hans_CN">
+            <Text>x9 基础花费</Text>
+        </Row>
+        <Row Tag="LOC_GREAT_PERSON_COST_900_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>招募 [ICON_GREATPERSON] 伟人的基础花费将增加到 900%。</Text>
+        </Row>
+        <Row Tag="LOC_GREAT_PERSON_COST_1000_NAME" Language="zh_Hans_CN">
+            <Text>x10 基础花费</Text>
+        </Row>
+        <Row Tag="LOC_GREAT_PERSON_COST_1000_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>招募 [ICON_GREATPERSON] 伟人的基础花费将增加到 1000%。</Text>
+        </Row>
+        <Row Tag="LOC_TYT_HEADER_NAME" Language="zh_Hans_CN">
+            <Text>[COLOR_Culture]时间调整设置[ENDCOLOR]</Text>
+        </Row>
+        <Row Tag="LOC_TYT_HEADER_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>时间调整设置的各类选项。</Text>
+        </Row>
+        <Row Tag="LOC_TYT_FOOTER_1_NAME" Language="zh_Hans_CN">
+            <Text>[COLOR_Culture]时间调整设置[ENDCOLOR]</Text>
+        </Row>
+        <Row Tag="LOC_TYT_FOOTER_1_DESCRIPTION" Language="zh_Hans_CN">
+            <Text>此选项用于显示时间调整设置的选项。这些选项和数值只有时间调整设置才能提供。</Text>
+        </Row>
+        
+	</LocalizedText>
+</GameData>

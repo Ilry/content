@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'Loyal Capitals'CN_Add_FE -->
+<!-- Author: ChiYiuWong , Clear8Sky -->
+<!-- DateCreated: 2021/9/21 19:41:21 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Loyal Capitals” 。该文件在 FrontEnd 时载入，无需任何 Criteria -->
+	<LocalizedText>
+		<Replace Tag="LOC_GAME_LOYAL_CAPITALS_NAME" Language="zh_Hans_CN">
+			<Text>忠诚首都</Text>
+		</Replace>
+		<Replace Tag="LOC_GAME_LOYAL_CAPITALS_DESC" Language="zh_Hans_CN">
+			<Text>原始 [ICON_Capital] 首都不受忠诚度变化的影响，其忠诚度始终为满</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

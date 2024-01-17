@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mod id="9ec7d842-9ca3-4c1b-893f-2672dcaca71f" version="1.4">
+  <Properties>
+    <Name>Greatest Cities</Name>
+    <Description>The World's Greatest Cities now, and at the end of each era</Description>
+    <Created>1627463033</Created>
+    <Teaser>The World's Greatest Cities</Teaser>
+    <Authors>Technoluddite</Authors>
+    <SpecialThanks>Infixo</SpecialThanks>
+    <AffectsSavedGames>0</AffectsSavedGames>
+    <CompatibleVersions>1.2,2.0</CompatibleVersions>
+  </Properties>
+  <InGameActions>
+    <ImportFiles id="AKGC_Imports">
+      <File>Serialize.lua</File>
+      <File>Textures/akgc_notification_icons100.dds</File>
+      <File>Textures/akgc_notification_icons40.dds</File>
+      <File>Textures/akgc_notification_icons36.dds</File>
+      <File>Textures/akgc_casa_128.dds</File>
+      <File>Textures/akgc_WonderProgressMask.dds</File>
+      <File>AKGC_DefaultOptions.lua</File>
+    </ImportFiles>
+    <UpdateIcons id="AKGC_Icons">
+      <File>AKGC_Icons.sql</File>
+    </UpdateIcons>
+    <UpdateDatabase id="AKGC_UpdateDatabase">
+      <Properties>
+        <LoadOrder>1</LoadOrder>
+      </Properties>
+      <File>AKGC_Database.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="AKGC_Notifications">
+      <Properties>
+        <LoadOrder>1</LoadOrder>
+      </Properties>
+      <File>AKGC_Notifications.xml</File>
+    </UpdateDatabase>
+    <LocalizedText id="AKGC_UpdateText">
+     <Items>
+      <File>Text/AKGC_Text.xml</File>
+      <File>Text/AKGC_Text_zh_Hans_CN.xml</File>
+      <File>Text/AKGC_Text_pt_BR.xml</File>
+     </Items>
+    </LocalizedText>
+    <AddUserInterfaces id="AKGC_Cities">
+      <Properties>
+        <Context>InGame</Context>
+      </Properties>
+      <File>GreatestCities.xml</File>
+    </AddUserInterfaces>
+    <UpdateDatabase id="RLL_Database">
+      <File>RLL/ReportsListLoader.sql</File>
+    </UpdateDatabase>
+    <ImportFiles id="RLL_Imports">
+      <File>RLL/ReportsListLoader.lua</File>
+    </ImportFiles>
+    <ReplaceUIScript id="RLL_ReplaceUI_ReportsList">
+      <Properties>
+        <LuaContext>ReportsList</LuaContext>
+        <LuaReplace>RLL/ReportsListLoader.lua</LuaReplace>
+        <LoadOrder>99999</LoadOrder>
+      </Properties>
+    </ReplaceUIScript>
+  </InGameActions>
+  <Files>
+    <File>AKGC_Database.sql</File>
+    <File>AKGC_DefaultOptions.lua</File>
+    <File>AKGC_Icons.sql</File>
+    <File>AKGC_Notifications.xml</File>
+    <File>GreatestCities.lua</File>
+    <File>GreatestCities.xml</File>
+    <File>RLL/ReportsListLoader.lua</File>
+    <File>RLL/ReportsListLoader.sql</File>
+    <File>Serialize.lua</File>
+    <File>Textures/akgc_notification_icons100.dds</File>
+    <File>Textures/akgc_notification_icons36.dds</File>
+    <File>Textures/akgc_notification_icons40.dds</File>
+    <File>Textures/akgc_WonderProgressMask.dds</File>
+    <File>Textures/akgc_casa_128.dds</File>
+    <File>Text/AKGC_Text.xml</File>
+    <File>Text/AKGC_Text_zh_Hans_CN.xml</File>
+    <File>Text/AKGC_Text_pt_BR.xml</File>
+  </Files>
+</Mod>

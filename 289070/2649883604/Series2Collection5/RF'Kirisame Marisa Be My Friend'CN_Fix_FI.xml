@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RF'Kirisame Marisa Be My Friend'CN_Fix_FI -->
+<!-- Author: Clear8Sky -->
+<!-- DateCreated: 2021/7/29 11:02:02 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “【Touhou Mod】 魔法森林的魔理沙，让我们交个朋友~” 。该文件在 FrontEnd 与 InGame 时载入，需 Criteria ：Active_Expansion_1 -->
+	<LocalizedText>
+		<Replace Tag="LOC_UNIT_MARISA_BY_MUYYI_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>雾雨魔理沙作为领袖时的特殊单位。每次 [ICON_Promotion] 强化后+10 [ICON_Strength] 战斗力，并奖励一位 [ICON_Envoy] 使者。可以在不开放边境的情况下，进入其它文明和城邦领土。</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_WANRENMI_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>建立原始 [ICON_Capital] 首都时，获得一个特殊单位「雾雨魔理沙」。[NEWLINE][NEWLINE]初始额外获得5点好感度，每个与您宣布友好的文明将赠送您一条临时 [ICON_TradeRoute] 贸易路线。同盟状态下共享视野，获得更多同盟点数和贸易加成。[NEWLINE][NEWLINE]成为宗主国时，下辖每座城邦可使您文明额外+5% [ICON_Gold] 金币、+3% [ICON_Culture] 文化值、+3% [ICON_Science] 科技值产出。[NEWLINE][NEWLINE]不与其他文明交战时，额外获得两条临时 [ICON_TradeRoute] 贸易路线容量。且通往本文明的国际 [ICON_TradeRoute] 贸易路线为双方产出+2 [ICON_Science] 科技值、+2 [ICON_Culture] 文化值。</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_MARISA_SHOP_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>雾雨魔理沙作为领袖时的特色区域，取代商业中心。完成科技“对外贸易”即可解锁，可无视 [ICON_Citizen] 人口限制建造，且可从不同类型的资源中获得各种相邻加成。[NEWLINE][NEWLINE]以所在城市为出发地的国际 [ICON_TradeRoute] 贸易路线产出+2 [ICON_Culture] 文化值、+5 [ICON_Gold] 金币；而其国内 [ICON_TradeRoute] 贸易路线产出+2 [ICON_Production] 生产力、+2 [ICON_Food] 食物。</Text>
+			<!-- 感觉描述跟代码有点不太对的上，先标记一下 -->
+		</Replace>
+		<Replace Tag="LOC_MarisaShop_BonusAdjacency_Food" Language="zh_Hans_CN">
+			<Text>+1 [ICON_Food] 食物 来自相邻 加成资源</Text>
+		</Replace>
+		<Replace Tag="LOC_FROLICKING_ANIMALS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>+2 [ICON_Gold] 金币 来自相邻 奢侈品资源</Text>
+		</Replace>
+		<Replace Tag="LOC_FROLICKING_ANIMALS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>+1 [ICON_Science] 科技值 来自相邻 战略资源</Text>
+		</Replace>
+		<Replace Tag="LOC_MARISA_TRAIT_FRIENDS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>和雾雨魔理沙宣布友好后，双方获得额外的临时 [ICON_TradeRoute] 贸易路线。</Text>
+		</Replace>
+		<Replace Tag="LOC_MARISA_TRAIT_FRIENDS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>和雾雨魔理沙结盟后，双方获得额外的临时 [ICON_TradeRoute] 贸易路线。</Text>
+		</Replace>
+		<Replace Tag="LOC_PROMOTION_MARISA_BY_MUYYI_FRIEND_1_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>清除 [ICON_Barbarian] 蛮族哨站时，可额外获得造访部落村庄给予的奖励。</Text>
+		</Replace>
+		<Replace Tag="LOC_PROMOTION_MARISA_BY_MUYYI_FRIEND_2_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>雾雨魔理沙击杀一名非蛮族单位后，有概率将其俘获。</Text>
+		</Replace>
+		<Replace Tag="LOC_PROMOTION_MARISA_BY_MUYYI_BATTER_1_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>+100%战斗经验值获取。</Text>
+		</Replace>
+		<Replace Tag="LOC_PROMOTION_MARISA_BY_MUYYI_BATTER_2_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>双倍掠夺收益，掠夺只消耗1点 [ICON_Movement] 移动力。</Text>
+		</Replace>
+		<Replace Tag="LOC_PROMOTION_MARISA_BY_MUYYI_FLY_1_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>+1 [ICON_Movement] 移动力，且 [ICON_Movement] 移动时无视地形影响和区域控制。</Text>
+		</Replace>
+		<Replace Tag="LOC_PROMOTION_MARISA_BY_MUYYI_FLY_2_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>在友方领土内+2 [ICON_Movement] 移动力，被护送的单位能获得与雾雨魔理沙相同的 [ICON_Movement] 移动力。</Text>
+		</Replace>
+		<Replace Tag="LOC_PROMOTION_MARISA_BY_MUYYI_COMMANDER_1_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>所有远程单位进攻时+5 [ICON_Strength] 战斗力，防御时[COLOR_RED]-5[ENDCOLOR] [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_PROMOTION_MARISA_BY_MUYYI_COMMANDER_2_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>所有远程单位学会区域控制，且进攻区域时无视其 [ICON_Strength] 战斗力减益。</Text>
+		</Replace>
+		<Replace Tag="LOC_PROMOTION_MARISA_BY_MUYYI_SHOOTMOON_1_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>[ICON_Range] 射程+1。</Text>
+		</Replace>
+		<Replace Tag="LOC_PROMOTION_MARISA_BY_MUYYI_SHOOTMOON_2_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>在第一次攻击后不移动的情况下，可进行第二次攻击。</Text>
+		</Replace>
+		<Replace Tag="LOC_RANGED_ATTACKING_BONUS" Language="zh_Hans_CN">
+			<Text>+{1_Amount} [ICON_Strength] 战斗力 来自于进攻（指挥官）</Text>
+		</Replace>
+		<Replace Tag="LOC_RANGED_DEFENDING_BONUS" Language="zh_Hans_CN">
+			<Text>[COLOR_RED]{1_Amount}[ENDCOLOR] [ICON_Strength] 战斗力 来自于防御（指挥官）</Text>
+		</Replace>
+		<Replace Tag="LOC_MARISA_COMMANDER_VS_DISTRICT_BONUS" Language="zh_Hans_CN">
+			<Text>+{1_Amount} [ICON_Strength] 战斗力 来自于无视区域防御（指挥官）</Text>
+		</Replace>
+		<Replace Tag="LOC_MARISA_PROMOTION_BONUS" Language="zh_Hans_CN">
+			<Text>+{1_Amount} [ICON_Strength] 战斗力 来自于等级提升</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

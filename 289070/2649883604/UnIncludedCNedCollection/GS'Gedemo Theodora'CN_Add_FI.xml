@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- GS'Gedemo Theodora'CN_Add_FI -->
+<!-- Author: Clear8Sky -->
+<!-- DateCreated: 2021/10/2 3:13:17 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Gedemo Theodora” 。该文件在 FrontEnd 与 InGame 时载入，需 Criteria ： Active_Expansion_2 -->
+	<LocalizedText>
+		<Replace Tag="LOC_TRAIT_LEADER_GEDEMO_THEODORA_NAME" Language="zh_Hans_CN">
+			<Text>狄奥多拉</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_GEDEMO_THEODORA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>每座已皈依宗教的城市+1 [ICON_Amenities] 宜居度，且+4 [ICON_Food] 食物产出。初始可训练蛮族弓骑手。拥有特色改良改良设施“忏悔院”。</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_GEDEMO_THEODORA" Language="zh_Hans_CN">
+			<Text>狄奥多拉</Text>
+		</Replace>
+		<Replace Tag="LOC_LOADING_INFO_LEADER_GEDEMO_THEODORA" Language="zh_Hans_CN">
+			<Text>所有人都向拜占庭和罗马的至爱、最伟大、最宽宏大量的狄奥多拉皇后致敬！从地位低下的女演员和妓女，您成为罗马帝国最有权势的女人，查士丁尼一世的配偶。从公元520年后期开始，您与丈夫一起进行了一系列重要的宗教和法律改革，制定了许多法律，提高了罗马帝国妇女的地位，促进了妇女平等。你们还修复和建造了许多横跨君士坦丁堡的渡槽、桥梁和教堂，最终建成了世界上最辉煌的建筑奇迹之一的索菲亚修道院。美丽的皇后，拜占庭需要您的智慧和力量-她的人民失去了您的光来领导他们。拜占庭帝国也许曾经衰落过，但它的精神仍然完好无损地等待着重生。您能让拜占庭重回它曾经享有的辉煌吗？您能创造一个经得起时间考验的文明吗？</Text>
+		</Replace>
+
+		<!-- 百科 -->
+
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_GEDEMO_THEODORA_TITLE" Language="zh_Hans_CN">
+			<Text>狄奥多拉</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_GEDEMO_THEODORA_SUBTITLE" Language="zh_Hans_CN">
+			<Text>皇后</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_GEDEMO_THEODORA_QUOTE" Language="zh_Hans_CN">
+			<Text>王位是一座荣耀的坟墓。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_GEDEMO_THEODORA_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>狄奥多拉，拜占庭帝国皇帝查士丁尼一世的妻子和皇后，曾统治过这个在公元第一个千年里最传大的帝国之一。在今天，狄奥多拉作以拜占庭帝国最有影响力的女人而闻名，因为查士丁尼大帝曾立狄奥多拉为帝国的共治者，并将她视为能指导他的统治的最智慧的顾问。出身卑微的狄奥多拉，最终作为一位她丈夫机智而值得信任的顾问而闻名于整个帝国，以及历史。她在帝国的发展中是如此重要以至于有人认为她，狄奥多拉，才是拜占庭人民的真正领导者，而非查士丁尼大帝。[NEWLINE][NEWLINE]关于狄奥多拉，我们所知的大部分信息来源于拜占庭历史学家，凯撒利亚人普罗科匹厄斯的笔记，其中记录了大量拜占庭帝国在狄奥多拉统治时期的六世纪的时代风貌。从我们所知道的信息来看，狄奥多拉的早年经历是相当丰富多彩的；她的父亲是竞技场的驯熊师，母亲是一位女演员。据说狄奥多拉十分聪颖，而正是靠着这份聪颖她才能保住作为一个女演员的独立性，直到她被查士丁尼看中。在这之后，查士丁尼从他叔父查斯丁一世手中继承了王位。[NEWLINE][NEWLINE]作为查士丁尼的夫人，狄奥多拉的美丽与智慧让查士丁尼无法自拔以致于提升她为贵族；在这之后，她就成了帝国贵族中的一员了。虽然拜占庭的法律不允许当权者迎娶像她这样的演艺人员，但查士丁尼对她的爱，显然已经足以让他废除这条法律。在公元525年，查士丁尼和狄奥多拉结婚；接着很快在527年，查士丁尼登上皇位，而狄奥多拉则成为“奥古斯塔”，即拜占庭帝国的皇后。[NEWLINE][NEWLINE]在政治影响上，狄奥多拉并不只是一个普通的皇帝配偶而已；查士丁尼立她为帝国的共治者，这是一个重要的区别，让她在政治事条中可以扮演更为重要的角色。在她的统治期内，狄奥多拉推动了大量进步（甚至以现代标准而言的）政策的产生。一般认为是狄奥多拉鼓动了查士丁尼去提高帝国内妇女的权力和地位，其中包括了扩展妇女对私有财产的所有权，以及对之前有利于男性的离婚法的修改。[NEWLINE][NEWLINE]狄奥多拉是一位“基督教卡尔西顿派”的信徒，即她相信耶稣基督是完全的神，这与当时更为普遍的东正教，即相信耶稣具有神人二性（是真上帝又是真人），完全不同。卡尔西顿派的思想在当时引发了激烈的争论，并被大多数东正教会的人认为是分裂和异端。尽管查士丁尼是东正信徒，但狄奥多拉依然保持了自己作为卡尔西顿派信徒的独立性，甚至庇护过一些常被东正教主体所压迫的卡尔西顿派的领袖。还有一件比较著名的事就是狄奥多拉在君士坦丁堡附近的塞科城建立了卡尔西顿派的修道院。[NEWLINE][NEWLINE]狄奥多拉和查士丁尼的坚毅经受了尼卡暴动的考验；这次暴动由两个敌对政治团体（绿党和蓝党）所领导，他们想拥立一个够地位的人来当皇帝，以篡夺查士丁尼的权力。在事件发生的时候，查士丁尼本能地想要逃跑，但是狄奥多拉给了他坚守的勇气。为了说服查士丁尼留下来，狄奥多拉向他说道，头戴皇冠的人不应该在失败时苟且偷生。查士丁尼被狄奥多拉智慧的话语所打动，而留在了君士坦丁堡，并命令他最忠诚的将军，贝利撒留，去攻击叛乱者。贝利撒留和他的军队对聚集在竞技场内的反对者们发动了血腥屠杀，残忍的杀死了数以千计的人，成功镇压了这次暴动。[NEWLINE][NEWLINE]作为她那个时代最有权力的女人之一，狄奥多拉皇后在历史上留下了一个不可磨灭的印记。她的丈夫的许多决定很明显都受到了她的影响；很多历史学家都同意，如果没有狄奥多拉在尼卡暴动时的忠告，查士丁尼的统治很可能就要终结了，甚至帝国的完整性也会处于危险之中。</Text>
+		</Replace>
+
+		<!-- 外交 -->
+
+		<!-- 初次见面 -->
+		<!-- 开场白 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_GEDEMO_THEODORA_ANY" Language="zh_Hans_CN">
+			<Text>天哪，这不是一个惊喜吗？我可以叫你什么？哦，神秘的陌生人？我是狄奥多拉，拜占庭的挚爱。</Text>
+		</Replace>
+
+		<!-- 到附近城市的邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_GEDEMO_THEODORA_ANY" Language="zh_Hans_CN">
+			<Text>天气突然很热，你不觉得吗？</Text>
+		</Replace>
+
+		<!-- AI接受玩家邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NEAR_INITIATOR_POSITIVE_LEADER_GEDEMO_THEODORA_ANY" Language="zh_Hans_CN">
+			<Text>非常感谢，你真是太好了！</Text>
+		</Replace>
+
+		<!-- AI邀请玩家交换首都信息 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_GEDEMO_THEODORA_ANY" Language="zh_Hans_CN">
+			<Text>你在地图上的哪一个地方呢？</Text>
+		</Replace>
+
+		<!-- 问候 -->
+
+		<Replace Tag="LOC_DIPLO_GREETING_LEADER_GEDEMO_THEODORA_ANY" Language="zh_Hans_CN">
+			<Text>你好！</Text>
+		</Replace>
+
+		<!-- 代表团 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_HUMAN_LEADER_GEDEMO_THEODORA_ANY" Language="zh_Hans_CN">
+			<Text>我很高兴接受你的使者团。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_HUMAN_LEADER_GEDEMO_THEODORA_ANY" Language="zh_Hans_CN">
+			<Text>不幸的是，我拒绝。</Text>
+		</Replace>
+		
+		<!-- AI请求 -->
+		
+		<Replace Tag="LOC_DIPLO_DELEGATION_FROM_AI_LEADER_GEDEMO_THEODORA_ANY" Language="zh_Hans_CN">
+			<Text>享受吧！我差遣了一队使者。</Text>
+		</Replace>
+
+		<!-- 开放边境 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_HUMAN_LEADER_GEDEMO_THEODORA_ANY" Language="zh_Hans_CN">
+			<Text>就这样吧。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_HUMAN_LEADER_GEDEMO_THEODORA_ANY" Language="zh_Hans_CN">
+			<Text>很不幸。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_OPEN_BORDERS_FROM_AI_LEADER_GEDEMO_THEODORA_ANY" Language="zh_Hans_CN">
+			<Text>我相信允许我们两个伟大帝国之间的自由往来更符合我们的共同利益。</Text>
+		</Replace>
+
+		<!-- 宣布友谊 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_HUMAN_LEADER_GEDEMO_THEODORA_ANY" Language="zh_Hans_CN">
+			<Text>当然，我接受你的友谊！</Text>
+		</Replace>
+		
+		<!-- AI拒绝 -->
+		
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_HUMAN_LEADER_GEDEMO_THEODORA_ANY" Language="zh_Hans_CN">
+			<Text>我想我们之间有些误解，我不想加深我们的关系。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_GEDEMO_THEODORA_ANY" Language="zh_Hans_CN">
+			<Text>你想成为我的朋友吗？</Text>
+		</Replace>
+
+		<!-- 玩家接受后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_GEDEMO_THEODORA_ANY" Language="zh_Hans_CN">
+			<Text>完美！</Text>
+		</Replace>
+
+		<!-- 玩家拒绝后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_GEDEMO_THEODORA_ANY" Language="zh_Hans_CN">
+			<Text>当然不行。</Text>
+		</Replace>
+
+		<!-- 结盟 -->
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_ALLIANCE_FROM_AI_LEADER_GEDEMO_THEODORA_ANY" Language="zh_Hans_CN">
+			<Text>你想和我共同结成联盟吗？</Text>
+		</Replace>
+
+		<!-- 赞成与警告 -->
+		<!-- AI赞成 -->
+
+		<Replace Tag="LOC_DIPLO_KUDO_EXIT_LEADER_GEDEMO_THEODORA_ANY" Language="zh_Hans_CN">
+			<Text>见到你总是很高兴。</Text>
+		</Replace>
+
+		<!-- AI警告 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_EXIT_LEADER_GEDEMO_THEODORA_ANY" Language="zh_Hans_CN">
+			<Text>你说什么？！</Text>
+		</Replace>
+
+		<!-- AI警告玩家离开边境 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_LEADER_GEDEMO_THEODORA_ANY" Language="zh_Hans_CN">
+			<Text>在我不能保证你们士兵的安全之前，立即把这些部队撤出我们的边界。</Text>
+		</Replace>
+
+		<!-- 贸易 -->
+		<!-- AI接受交易 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_GEDEMO_THEODORA_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_GEDEMO_THEODORA_ANY}</Text>
+		</Replace>
+		
+		<!-- AI拒绝交易 -->
+		
+		<Replace Tag="LOC_DIPLO_REJECT_MAKE_DEAL_FROM_AI_LEADER_GEDEMO_THEODORA_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_GEDEMO_THEODORA_ANY}</Text>
+		</Replace>
+
+		<!-- 谴责 -->
+		<!-- 受到谴责回应 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_GEDEMO_THEODORA_ANY" Language="zh_Hans_CN">
+			<Text>噢，你可真卑鄙！</Text>
+		</Replace>
+
+		<!-- AI谴责玩家 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_GEDEMO_THEODORA_ANY" Language="zh_Hans_CN">
+			<Text>我想其他人都很清楚你的粗鲁卑鄙行为。[NEWLINE]（谴责你）</Text>
+		</Replace>
+
+		<!-- 宣战 -->
+		<!-- 受到宣战后回应 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_GEDEMO_THEODORA_ANY" Language="zh_Hans_CN">
+			<Text>亲爱的，你需要暴乱啊？我们会给你上一课的。</Text>
+		</Replace>
+
+		<!-- AI宣战 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_GEDEMO_THEODORA_ANY" Language="zh_Hans_CN">
+			<Text>破坏一件美丽的东西是令人惋惜的事。幸运的是，你不是一个美丽的东西。</Text>
+		</Replace>
+
+		<!-- 求和 -->
+		<!-- AI接受求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_ACCEPT_DEAL_LEADER_GEDEMO_THEODORA_ANY" Language="zh_Hans_CN">
+			<Text>我同意，让我们和好！</Text>
+		</Replace>
+
+		<!-- AI拒绝求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_REFUSE_DEAL_LEADER_GEDEMO_THEODORA_ANY" Language="zh_Hans_CN">
+			<Text>现在不可能有和平。</Text>
+		</Replace>
+
+		<!-- AI求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_FROM_AI_LEADER_GEDEMO_THEODORA_ANY" Language="zh_Hans_CN">
+			<Text>我希冀你能和好。</Text>
+		</Replace>
+
+		<!-- 击败 -->
+		<!-- AI被击败 -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_GEDEMO_THEODORA_ANY" Language="zh_Hans_CN">
+			<Text>我希望你能明白，世界上没有人会帮助背叛者。</Text>
+		</Replace>
+
+		<!-- 玩家被击败（在热座模式中会显示） -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_GEDEMO_THEODORA_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_GEDEMO_THEODORA_ANY}</Text>
+		</Replace>
+
+		<Replace Tag="LOC_AGENDA_GEDEMO_THEODORA_NAME" Language="zh_Hans_CN">
+			<Text>基督守护者</Text>
+		</Replace>
+		<Replace Tag="LOC_AGENDA_GEDEMO_THEODORA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>喜欢产出尽可能多的 [ICON_Faith] 信仰值，喜欢已经接受了她宗教的文明。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_IMPROVEMENT_GEDEMO_METANOIA_NAME" Language="zh_Hans_CN">
+			<Text>忏悔院</Text>
+		</Replace>
+		<Replace Tag="LOC_IMPROVEMENT_GEDEMO_METANOIA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>狄奥多拉作为领袖时，解锁建造者修建特色改良设施“忏悔院”的能力。完成市政“政治哲学”后即可修建。[NEWLINE]必须建在海岸上，且不能和其他忏悔院相邻。[NEWLINE]+1 [ICON_Housing] 住房。[NEWLINE]+2 [ICON_Faith] 信仰值；若与 [ICON_DISTRICT_HOLYSITE] 圣地相邻，则额外+1 [ICON_Faith] 信仰值。[NEWLINE]+2 [ICON_Gold] 金币，且所在城市每回合+5忠诚度。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_IMPROVEMENTS_PAGE_IMPROVEMENT_GEDEMO_METANOIA_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>狄奥多拉皇后进行了大量干预，让查士丁尼采取保护娼妓、官妓和女演员的措施。她自己收养了大量妓女，并以“悔改罪人”的名义建起了一所房子，影响了《查士丁尼法典》中有关妇女的措施，例如减少通奸案件中的处罚。</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

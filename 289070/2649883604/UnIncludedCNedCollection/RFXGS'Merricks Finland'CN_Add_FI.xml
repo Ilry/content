@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RFXGS'Merricks Finland'CN_Add_FI -->
+<!-- Author: 春 , Clear8Sky -->
+<!-- DateCreated: 2021/9/1 10:37:18 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Merrick's Finland” 。该文件在 FrontEnd 与 InGame 时载入，需 Criteria ： Active_Expansion_1 与 Active_Expansion_2 -->
+	<LocalizedText>
+		
+	<!-- Finland_GameText.xml文件 -->
+		
+		<Replace Tag="LOC_LEADER_MER_MANNERHEIM_NAME" Language="zh_Hans_CN">
+			<Text>曼纳海姆</Text>
+		</Replace>
+		
+		<!-- 特性 -->
+		
+		<Replace Tag="LOC_TRAIT_LEADER_MER_OUR_HOMES_OUR_FAITH_OUR_COUNTRY_NAME" Language="zh_Hans_CN">
+			<Text>我们的家乡，信仰，和国家</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_MER_OUR_HOMES_OUR_FAITH_OUR_COUNTRY_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>单位在友好领土内可获得基于所在单元格魅力的 [ICON_Strength] 战斗力加成：魅力为“普通的”时+3 [ICON_Strength] 战斗力，“迷人的”时+4，“惊艳的”时+5。忠诚度为满的城市，其境内所有单元格+1魅力值。</Text>
+		</Replace>
+		<Replace Tag="LOC_MODIFIER_MER_OUR_HOMES_OUR_FAITH_OUR_COUNTRY_AVERAGE_STRENGTH_DESC" Language="zh_Hans_CN">
+			<Text>+3 [ICON_Strength] 战斗力 来自于所在单元格魅力为“普通的”</Text>
+		</Replace>
+		<Replace Tag="LOC_MODIFIER_MER_OUR_HOMES_OUR_FAITH_OUR_COUNTRY_CHARMING_STRENGTH_DESC" Language="zh_Hans_CN">
+			<Text>+4 [ICON_Strength] 战斗力 来自于所在单元格魅力为“迷人的”</Text>
+		</Replace>
+		<Replace Tag="LOC_MODIFIER_MER_OUR_HOMES_OUR_FAITH_OUR_COUNTRY_BREATHTAKING_STRENGTH_DESC" Language="zh_Hans_CN">
+			<Text>+5 [ICON_Strength] 战斗力 来自于所在单元格魅力为“惊艳的”</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_MER_KALEVALA_NAME" Language="zh_Hans_CN">
+			<Text>卡勒瓦拉</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_MER_KALEVALA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>位于原始 [ICON_Capital] 首都所在大陆的城市每回合+3忠诚度，忠诚度为满的城市可额外+10% [ICON_Culture] 文化值、+10% [ICON_Production] 生产力产出。未改良的森林和湖泊单元格产出+1 [ICON_Culture] 文化值、+1 [ICON_Production] 生产力。 </Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_UNIT_MER_SISSI_NAME" Language="zh_Hans_CN">
+			<Text>突击队</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_UNIT_MER_SISSI_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>一种特色陆地单位</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_MER_SISSI_NAME" Language="zh_Hans_CN">
+			<Text>突击队</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_MER_SISSI_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>芬兰现代特色近战单位，取代步兵。增加夹击加成。能够执行 [ICON_Ranged] 远程攻击。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_MER_SISSI_NAME" Language="zh_Hans_CN">
+			<Text>“柴堆”战术</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_MER_SISSI_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>增加夹击加成。</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_IMPROVEMENT_MER_SAUNA_NAME" Language="zh_Hans_CN">
+			<Text>桑拿</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_IMPROVEMENT_MER_SAUNA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>一种特色改良设施</Text>
+		</Replace>
+		<Replace Tag="LOC_IMPROVEMENT_MER_SAUNA_NAME" Language="zh_Hans_CN">
+			<Text>桑拿</Text>
+		</Replace>
+		<Replace Tag="LOC_IMPROVEMENT_MER_SAUNA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>芬兰特色改良设施。+1 [ICON_Culture] 文化值，+1魅力值。每相邻两处森林则+1 [ICON_Culture] 文化值。若城市境内至少拥有一个相邻河流或湖泊的桑拿，则+1 [ICON_Amenities] 宜居度。可修建在森林或沼泽上，但不能与其他桑拿相邻。</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVILIZATION_MER_FINLAND_NAME" Language="zh_Hans_CN">
+			<Text>芬兰</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVILIZATION_MER_FINLAND_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>芬兰</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVILIZATION_MER_FINLAND_DESCRIPTION_JFD_CIVILIZATION" Language="zh_Hans_CN">
+			<Text>芬兰文明</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVILIZATION_MER_FINLAND_ADJECTIVE" Language="zh_Hans_CN">
+			<Text>芬兰的</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_MER_FINLAND_1" Language="zh_Hans_CN">
+			<Text>赫尔辛基</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_MER_FINLAND_2" Language="zh_Hans_CN">
+			<Text>艾斯堡</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_MER_FINLAND_3" Language="zh_Hans_CN">
+			<Text>坦佩雷</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_MER_FINLAND_4" Language="zh_Hans_CN">
+			<Text>万塔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_MER_FINLAND_5" Language="zh_Hans_CN">
+			<Text>奥卢</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_MER_FINLAND_6" Language="zh_Hans_CN">
+			<Text>图尔库</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_MER_FINLAND_7" Language="zh_Hans_CN">
+			<Text>于韦斯屈莱</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_MER_FINLAND_8" Language="zh_Hans_CN">
+			<Text>拉赫蒂</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_MER_FINLAND_9" Language="zh_Hans_CN">
+			<Text>库奥皮奥</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_MER_FINLAND_10" Language="zh_Hans_CN">
+			<Text>波里</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_MER_FINLAND_11" Language="zh_Hans_CN">
+			<Text>科沃拉</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_MER_FINLAND_12" Language="zh_Hans_CN">
+			<Text>约恩苏</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_MER_FINLAND_13" Language="zh_Hans_CN">
+			<Text>拉彭兰塔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_MER_FINLAND_14" Language="zh_Hans_CN">
+			<Text>海门林纳</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_MER_FINLAND_15" Language="zh_Hans_CN">
+			<Text>瓦萨</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_MER_FINLAND_16" Language="zh_Hans_CN">
+			<Text>塞伊奈约基</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_MER_FINLAND_17" Language="zh_Hans_CN">
+			<Text>罗瓦涅米</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_MER_FINLAND_18" Language="en_US">
+			<Text>米克尔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_MER_FINLAND_19" Language="zh_Hans_CN">
+			<Text>萨罗</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_MER_FINLAND_20" Language="zh_Hans_CN">
+			<Text>波尔沃</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_MER_FINLAND_21" Language="zh_Hans_CN">
+			<Text>科科拉</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_MER_FINLAND_22" Language="zh_Hans_CN">
+			<Text>洛赫亚</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_MER_FINLAND_23" Language="zh_Hans_CN">
+			<Text>许温凯</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_MER_FINLAND_24" Language="zh_Hans_CN">
+			<Text>耶尔文佩</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_MER_FINLAND_25" Language="zh_Hans_CN">
+			<Text>劳马</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_MER_FINLAND_26" Language="zh_Hans_CN">
+			<Text>卡亚尼</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_MER_FINLAND_27" Language="zh_Hans_CN">
+			<Text>凯拉瓦</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_MER_FINLAND_28" Language="zh_Hans_CN">
+			<Text>萨翁林纳</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_MER_FINLAND_29" Language="zh_Hans_CN">
+			<Text>诺基亚</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_MER_FINLAND_30" Language="zh_Hans_CN">
+			<Text>卡里纳</Text>
+		</Replace>
+		
+		<!-- 公民 -->
+		
+		<Replace Tag="LOC_CITIZEN_MER_FINLAND_MALE_1" Language="zh_Hans_CN">
+			<Text>阿库</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_MER_FINLAND_MALE_2" Language="zh_Hans_CN">
+			<Text>阿摩</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_MER_FINLAND_MALE_3" Language="zh_Hans_CN">
+			<Text>杰尔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_MER_FINLAND_MALE_4" Language="zh_Hans_CN">
+			<Text>塔皮奥</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_MER_FINLAND_MALE_5" Language="zh_Hans_CN">
+			<Text>高戈</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_MER_FINLAND_MALE_6" Language="zh_Hans_CN">
+			<Text>亚波</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_MER_FINLAND_MALE_7" Language="zh_Hans_CN">
+			<Text>阿塔米</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_MER_FINLAND_MALE_8" Language="zh_Hans_CN">
+			<Text>埃利亚斯</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_MER_FINLAND_MALE_9" Language="zh_Hans_CN">
+			<Text>艾莫</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_MER_FINLAND_MALE_10" Language="zh_Hans_CN">
+			<Text>吐温</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_MER_FINLAND_MODERN_MALE_1" Language="zh_Hans_CN">
+			<Text>乔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_MER_FINLAND_MODERN_MALE_2" Language="zh_Hans_CN">
+			<Text>杰尔卡</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_MER_FINLAND_MODERN_MALE_3" Language="zh_Hans_CN">
+			<Text>艾诺</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_MER_FINLAND_MODERN_MALE_4" Language="zh_Hans_CN">
+			<Text>乔伊</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_MER_FINLAND_MODERN_MALE_5" Language="zh_Hans_CN">
+			<Text>伊米利</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_MER_FINLAND_MODERN_MALE_6" Language="zh_Hans_CN">
+			<Text>爱德华</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_MER_FINLAND_MODERN_MALE_7" Language="zh_Hans_CN">
+			<Text>基米</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_MER_FINLAND_MODERN_MALE_8" Language="zh_Hans_CN">
+			<Text>克里斯蒂安</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_MER_FINLAND_MODERN_MALE_9" Language="zh_Hans_CN">
+			<Text>拉西</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_MER_FINLAND_MODERN_MALE_10" Language="zh_Hans_CN">
+			<Text>卢卡斯</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_MER_FINLAND_FEMALE_1" Language="zh_Hans_CN">
+			<Text>莉娜</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_MER_FINLAND_FEMALE_2" Language="zh_Hans_CN">
+			<Text>安莎</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_MER_FINLAND_FEMALE_3" Language="zh_Hans_CN">
+			<Text>伊纳里</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_MER_FINLAND_FEMALE_4" Language="zh_Hans_CN">
+			<Text>安妮莉</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_MER_FINLAND_FEMALE_5" Language="zh_Hans_CN">
+			<Text>蜜拉</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_MER_FINLAND_FEMALE_6" Language="zh_Hans_CN">
+			<Text>茵卡</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_MER_FINLAND_FEMALE_7" Language="zh_Hans_CN">
+			<Text>卡蒂娅</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_MER_FINLAND_FEMALE_8" Language="zh_Hans_CN">
+			<Text>珊娜</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_MER_FINLAND_FEMALE_9" Language="zh_Hans_CN">
+			<Text>玛丽亚</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_MER_FINLAND_FEMALE_10" Language="zh_Hans_CN">
+			<Text>雅达</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_MER_FINLAND_MODERN_FEMALE_1" Language="zh_Hans_CN">
+			<Text>阿洛塔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_MER_FINLAND_MODERN_FEMALE_2" Language="zh_Hans_CN">
+			<Text>艾娜</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_MER_FINLAND_MODERN_FEMALE_3" Language="zh_Hans_CN">
+			<Text>爱诺</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_MER_FINLAND_MODERN_FEMALE_4" Language="zh_Hans_CN">
+			<Text>亚力山娜</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_MER_FINLAND_MODERN_FEMALE_5" Language="zh_Hans_CN">
+			<Text>安妮基</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_MER_FINLAND_MODERN_FEMALE_6" Language="zh_Hans_CN">
+			<Text>埃娃</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_MER_FINLAND_MODERN_FEMALE_7" Language="zh_Hans_CN">
+			<Text>艾薇</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_MER_FINLAND_MODERN_FEMALE_8" Language="zh_Hans_CN">
+			<Text>汉娜</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_MER_FINLAND_MODERN_FEMALE_9" Language="zh_Hans_CN">
+			<Text>詹娜</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_MER_FINLAND_MODERN_FEMALE_10" Language="zh_Hans_CN">
+			<Text>凯苏</Text>
+		</Replace>
+		
+		<!-- 地名 -->
+		
+		<Replace Tag="LOC_NAMED_MOUNTAIN_HALTI_NAME"	Language="zh_Hans_CN">
+			<Text>哈尔蒂山</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_MOUNTAIN_RIDNITSOHKKA_NAME"	Language="zh_Hans_CN">
+			<Text>里德尼茨哈卡山</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_MOUNTAIN_KOVDDSOSKAISI_NAME"	Language="zh_Hans_CN">
+			<Text>科夫多西亚斯山</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_MOUNTAIN_KIEDDITSOHKKA_NAME"	Language="zh_Hans_CN">
+			<Text>基迪茨奥卡山</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_MOUNTAIN_RUVDNAOAIVI_NAME"	Language="zh_Hans_CN">
+			<Text>鲁夫德纳奥维山</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_TORNIONJOKI_NAME"	Language="zh_Hans_CN">
+			<Text>托尔尼奥河</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_KEMIJOKI_NAME"	Language="zh_Hans_CN">
+			<Text>凯米河</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_IIJOKI_NAME"	Language="zh_Hans_CN">
+			<Text>伊河</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_OULUJOKI_NAME"	Language="zh_Hans_CN">
+			<Text>奥卢河</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_SIMOJOKI_NAME"	Language="zh_Hans_CN">
+			<Text>西蒙河</Text>
+		</Replace>
+		
+	<!-- DiploText.xml文件 -->
+		<!-- 文明百科 -->
+		
+		<Replace Tag="LOC_CIVINFO_MER_FINLAND_LOCATION" Language="zh_Hans_CN">
+			<Text>芬兰</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_MER_FINLAND_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]Finland is a sovereign state in Northern Europe. The country has land borders with Sweden to the northwest, Norway to the north, and Russia to the east. To the south is the Gulf of Finland with Estonia on the opposite side. Finland is a Nordic country and, together with Scandinavia, is situated in the geographical region of Fennoscandia.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_MER_FINLAND_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>Finland was inhabited when the last ice age ended, approximately 9000 BCE. The first settlers left behind artifacts that present characteristics shared with those found in Estonia, Russia, and Norway. The earliest people were hunter-gatherers, using stone tools. The first pottery appeared in 5200 BCE, when the Comb Ceramic culture was introduced. The arrival of the Corded Ware culture in southern coastal Finland between 3000 and 2500 BCE may have coincided with the start of agriculture. The Bronze Age and Iron Age were characterised by extensive contacts with other cultures in the Fennoscandian and Baltic regions and the sedentary farming inhabitation increased towards the end of Iron Age. At the time Finland had three main cultural areas, Southwest Finland, Tavastia and Karelia, as reflected in contemporary jewellery.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_MER_FINLAND_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>From the late 13th century, Finland gradually became an integral part of Sweden through the crusades and the Swedish part-colonisation of coastal Finland, a legacy reflected in the prevalence of the Swedish language and its official status. In 1809, Finland was incorporated into the Russian Empire as the autonomous Grand Duchy of Finland. Following the 1917 Russian Revolution, Finland declared itself independent. In 1918, the fledgling state was divided by civil war, with the Bolshevik-leaning Red Guard supported by the equally new Soviet Russia, fighting the White Guard, supported by the German Empire. After a brief attempt to establish a kingdom, the country became a republic. During World War II, the Soviet Union sought repeatedly to occupy Finland, with Finland losing parts of Karelia, Salla, Kuusamo, Petsamo and some islands, but retaining independence.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_MER_FINLAND_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>Finland was a relative latecomer to industrialisation, remaining a largely agrarian country until the 1950s. After World War II, the Soviet Union demanded war reparations from Finland not only in money but also in material, such as ships and machinery. This forced Finland to industrialise. It rapidly developed an advanced economy while building an extensive welfare state based on the Nordic model, resulting in widespread prosperity and one of the highest per capita incomes in the world.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_MER_FINLAND_CHAPTER_HISTORY_PARA_5" Language="zh_Hans_CN">
+			<Text>The culture of Finland combines indigenous heritage, as represented for example by the country's Uralic national language Finnish and the sauna, with common Nordic, Russian and European culture. Because of its history and geographic location Finland has been influenced by the adjacent areas, various Finnic and Baltic peoples as well as the former dominant powers of Sweden and Russia.</Text>
+		</Replace>
+		
+		<!-- 载入 -->
+		
+		<Replace Tag="LOC_LOADING_INFO_LEADER_MER_MANNERHEIM" Language="zh_Hans_CN">
+			<Text>我们再次盼望着您，卡尔·曼纳海姆，带领芬兰人民勇敢地保卫家园。强化公民的忠诚，用卓越的军事情报智破敌人的阴谋。您的坚韧会提醒你的敌人和朋友：我们对芬兰的美好与轶趣的热爱是多么伟大，我们也会将她护在怀中，直至腐朽！</Text>
+		</Replace>
+		
+		<!-- 议程 -->
+		
+		<Replace Tag="LOC_AGENDA_MER_MARSHAL_OF_FINLAND_NAME" Language="zh_Hans_CN">
+			<Text>芬兰元帅</Text>
+		</Replace>
+		<Replace Tag="LOC_AGENDA_MER_MARSHAL_OF_FINLAND_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>喜欢拥有同类政体和强大常备军的文明，不喜欢拥有庞大常备军而政体不同的文明。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDOS_LEADER_MER_MANNERHEIM_REASON_SAME_GOVERNMENT" Language="zh_Hans_CN">
+			<Text>（您拥有同类政体，并且维持了一支庞大的常备军）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_MER_MANNERHEIM_MARSHAL_OF_FINLAND_SAME_GOVERNMENT" Language="zh_Hans_CN">
+			<Text>曼纳海姆很高兴你拥有与他一样类型的政体，并且维持了强大军队。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_LEADER_MER_MANNERHEIM_REASON_DIFF_GOVERNMENT" Language="zh_Hans_CN">
+			<Text>（您的政体不同，并且维持了一支庞大的常备军）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_MER_MANNERHEIM_MARSHAL_OF_FINLAND_DIFF_GOVERNMENT" Language="zh_Hans_CN">
+			<Text>曼纳海姆对你的政体和军队感到担忧。</Text>
+		</Replace>
+		
+		<!-- 领袖百科 -->
+		
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_MER_MANNERHEIM_TITLE" Language="zh_Hans_CN">
+			<Text>曼纳海姆</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_MER_MANNERHEIM_SUBTITLE" Language="zh_Hans_CN">
+			<Text>芬兰元帅</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_MER_MANNERHEIM_QUOTE" Language="zh_Hans_CN">
+			<Text>除非连普通的士兵都清楚，他，正在保卫国家，否则工事、火炮、外援都毫无意义。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_MER_MANNERHEIM_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]Baron Carl Gustaf Emil Mannerheim was a Finnish military leader and statesman. Mannerheim served as the military leader of the Whites in the Finnish Civil War, Regent of Finland (1918–1919), commander-in-chief of Finland's defence forces during World War II, Marshal of Finland, and the sixth president of Finland (1944–1946).</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_MER_MANNERHEIM_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>Mannerheim made a career in the Imperial Russian Army, rising to the rank of lieutenant general. He also had a prominent place in the ceremonies for Tsar Nicholas II's coronation and later had several private meetings with the Russian Tsar. After the Bolshevik revolution, Finland declared its independence but was soon embroiled in civil war between the pro-Bolshevik "Reds" and the "Whites", who were the troops of the Senate of Finland, supported by troops of the German Empire. Mannerheim was appointed the military chief of the Whites. Twenty years later, when Finland was twice at war with the Soviet Union from November 1939 until September 1944, Mannerheim successfully led the defence of Finland as commander-in-chief of the country's armed forces. In 1944, when the prospect of Germany's defeat in World War II became clear, Mannerheim was elected President of Finland and oversaw peace negotiations with the Soviet Union and the United Kingdom. He resigned the presidency in 1946 and died in 1951.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_MER_MANNERHEIM_CHAPTER_CAPSULE_BODY" Language="zh_Hans_CN">
+			<Text>曼纳海姆领导的芬兰拥有强大的防御力。通过维护您文明境内的自然魅力，您将能够获得忠诚度与战斗力的不菲加成。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_MER_MANNERHEIM_CHAPTER_DETAILED_BODY" Language="zh_Hans_CN">
+			<Text>芬兰依赖其境内土地的自然魅力，以及人民不会减弱的忠诚给自己带来的文化值与信仰值加成。</Text>
+		</Replace>
+
+		<!-- 外交 -->
+
+		<!-- 初次见面 -->
+		<!-- 开场白 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_MER_MANNERHEIM_ANY" Language="zh_Hans_CN">
+			<Text>芬兰人民向你问候！我们视忠诚高于一切，我们不惧怕军事力量，因为有谁能比爱国的人更强大呢？</Text>
+		</Replace>
+
+		<!-- 到附近城市的邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_MER_MANNERHEIM_ANY" Language="zh_Hans_CN">
+			<Text>你应该来看看我们美丽的土地，一块每个芬兰人都自豪地称之为“家”的地方。</Text>
+		</Replace>
+
+		<!-- AI接受玩家邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NEAR_INITIATOR_POSITIVE_LEADER_MER_MANNERHEIM_ANY" Language="zh_Hans_CN">
+			<Text>我很乐意接受你的邀请。</Text>
+		</Replace>
+
+		<!-- AI邀请玩家交换首都信息 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_MER_MANNERHEIM_ANY" Language="zh_Hans_CN">
+			<Text>我们应该交换信息。</Text>
+		</Replace>
+
+		<!-- 问候 -->
+
+		<Replace Tag="LOC_DIPLO_GREETING_LEADER_MER_MANNERHEIM_ANY" Language="zh_Hans_CN">
+			<Text>欢迎。</Text>
+		</Replace>
+
+		<!-- 代表团 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_HUMAN_LEADER_MER_MANNERHEIM_ANY" Language="zh_Hans_CN">
+			<Text>非常欢迎你的代表团，我们会让他们宾至如归。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_HUMAN_LEADER_MER_MANNERHEIM_ANY" Language="zh_Hans_CN">
+			<Text>我不能接受。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DELEGATION_FROM_AI_LEADER_MER_MANNERHEIM_ANY" Language="zh_Hans_CN">
+			<Text>我派遣了一个代表团，带上了卡累利阿馅饼和一些我们最好的文学作品，好好享受吧。</Text>
+		</Replace>
+
+		<!-- 开放边境 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_HUMAN_LEADER_MER_MANNERHEIM_ANY" Language="zh_Hans_CN">
+			<Text>我同意这些条款。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_HUMAN_LEADER_MER_MANNERHEIM_ANY" Language="zh_Hans_CN">
+			<Text>我不能接受这些条款，这主意不好。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_OPEN_BORDERS_FROM_AI_LEADER_MER_MANNERHEIM_ANY" Language="zh_Hans_CN">
+			<Text>我希望你能接受这些条款。</Text>
+		</Replace>
+
+		<!-- 宣布友谊 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_HUMAN_LEADER_MER_MANNERHEIM_ANY" Language="zh_Hans_CN">
+			<Text>我期待我们作为朋友，共进未来。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_HUMAN_LEADER_MER_MANNERHEIM_ANY" Language="zh_Hans_CN">
+			<Text>我们的关系应保持纯粹形式。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_MER_MANNERHEIM_ANY" Language="zh_Hans_CN">
+			<Text>我们两国人民之间有一种共同关系，这种关系应该正式化，以促进发展。</Text>
+		</Replace>
+
+		<!-- 玩家接受后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_MER_MANNERHEIM_ANY" Language="zh_Hans_CN">
+			<Text>我期待我们两国人民作为朋友的共同的未来。</Text>
+		</Replace>
+
+		<!-- 玩家拒绝后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_MER_MANNERHEIM_ANY" Language="zh_Hans_CN">
+			<Text>你的选择，会让自己变得更弱小。</Text>
+		</Replace>
+
+		<!-- 结盟 -->
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_ALLIANCE_FROM_AI_LEADER_MER_MANNERHEIM_ANY" Language="zh_Hans_CN">
+			<Text>你的领导表现出了巨大的勇气和智慧，我要求我们将友谊正式化，让我们的国家更加强大。</Text>
+		</Replace>
+
+		<!-- 赞成与警告 -->
+		<!-- AI赞成 -->
+
+		<Replace Tag="LOC_DIPLO_KUDO_EXIT_LEADER_MER_MANNERHEIM_ANY" Language="zh_Hans_CN">
+			<Text>当每个人都保卫自己的家园和信仰直至死亡，这个国家就是真正强大的。</Text>
+		</Replace>
+
+		<!-- AI警告 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_EXIT_LEADER_MER_MANNERHEIM_ANY" Language="zh_Hans_CN">
+			<Text>工事，火炮，外援——如果普通士兵都不知道自己是在保卫自己的国家，这些东西怎么会有价值呢？</Text>
+		</Replace>
+
+		<!-- AI警告玩家离开边境 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_LEADER_MER_MANNERHEIM_ANY" Language="zh_Hans_CN">
+			<Text>勇敢的芬兰人随时准备击退任何进攻，你最好记住这一点。</Text>
+		</Replace>
+
+		<!-- 贸易 -->
+		<!-- AI接受交易 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_MER_MANNERHEIM_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_MER_MANNERHEIM_ANY}</Text>
+		</Replace>
+
+		<!-- AI拒绝交易 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_MAKE_DEAL_FROM_AI_LEADER_MER_MANNERHEIM_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_MER_MANNERHEIM_ANY}</Text>
+		</Replace>
+
+		<!-- 谴责 -->
+		<!-- 受到谴责回应 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_MER_MANNERHEIM_ANY" Language="zh_Hans_CN">
+			<Text>我会让你为此付出代价。我对上帝发誓，你会付出代价的！</Text>
+		</Replace>
+
+		<!-- AI谴责玩家 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_MER_MANNERHEIM_ANY" Language="zh_Hans_CN">
+			<Text>怎么会有人追随像你这样的领导者呢？你的人民的忠诚是被误导的，如果他们对你有任何忠诚的话。[NEWLINE]（谴责你）</Text>
+		</Replace>
+
+		<!-- 谴责理由 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_REASON_FROM_AI_LEADER_ANY_REASON_MER_MANNERHEIM_MARSHAL_OF_FINLAND_SAME_CONTINENT" Language="zh_Hans_CN">
+			<Text>（您的忠诚度低）</Text>
+		</Replace>
+
+		<!-- 宣战 -->
+		<!-- 受到宣战后回应 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_MER_MANNERHEIM_ANY" Language="zh_Hans_CN">
+			<Text>你们会发现我的士兵们对我的领导能力充满信心，不会放弃为他们的家园、信仰和国家而战的责任。</Text>
+		</Replace>
+
+		<!-- AI宣战 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_MER_MANNERHEIM_ANY" Language="zh_Hans_CN">
+			<Text>我本不想在战争中承担领导者的责任，但你却逼着我这样做。</Text>
+		</Replace>
+
+		<!-- 求和 -->
+		<!-- AI接受求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_ACCEPT_DEAL_LEADER_MER_MANNERHEIM_ANY" Language="zh_Hans_CN">
+			<Text>我厌倦这场战争，我接受。</Text>
+		</Replace>
+
+		<!-- AI拒绝求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_REFUSE_DEAL_LEADER_MER_MANNERHEIM_ANY" Language="zh_Hans_CN">
+			<Text>我不会袖手旁观。</Text>
+		</Replace>
+
+		<!-- AI求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_FROM_AI_LEADER_MER_MANNERHEIM_ANY" Language="zh_Hans_CN">
+			<Text>我厌倦这场战争，你非得打下去吗？</Text>
+		</Replace>
+
+		<!-- 击败 -->
+		<!-- AI被击败 -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_MER_MANNERHEIM_ANY" Language="zh_Hans_CN">
+			<Text>我的一生参加过许多战争，责任沉重地压在我和芬兰身上。勇敢的芬兰人，你们已经尽了最大的努力，现在结束了。</Text>
+		</Replace>
+
+		<!-- 玩家被击败（在热座模式中会显示） -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_MER_MANNERHEIM_ANY" Language="zh_Hans_CN">
+			<Text>我明白，作为指挥官，我必须承担责任，保护芬兰人免受你们这样的暴政。</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

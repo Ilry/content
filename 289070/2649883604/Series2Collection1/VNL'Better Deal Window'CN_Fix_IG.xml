@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'Better Deal Window'CN_Fix_IG -->
+<!-- Author: Clear8Sky -->
+<!-- DateCreated: 2021/5/26 0:56:51 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Better Deal Window” 。该文件在 InGame 时载入，无需任何 Criteria -->
+	<LocalizedText>
+		<Replace Tag="LOC_BDW_TURNS_AGO" language="zh_Hans_CN">
+			<Text>回合前</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

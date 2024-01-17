@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- District -->
+<!-- Author: aall1 -->
+<!-- DateCreated: 2/25/2019 4:34:51 PM -->
+<GameData>
+	<Adjacency_YieldChanges>
+	    <Row ID="GreatWall_Production" Description="LOC_DISTRICT_MINE_PRODUCTION" YieldType="YIELD_PRODUCTION" YieldChange="1" TilesRequired="1" AdjacentImprovement="IMPROVEMENT_GREAT_WALL"/>
+		<!--<Row ID="GreatWall_Gold" Description="LOC_DISTRICT_MINE_PRODUCTION" YieldType="YIELD_Gold" YieldChange="1" TilesRequired="1" AdjacentImprovement="IMPROVEMENT_GREAT_WALL"/>-->
+	</Adjacency_YieldChanges>
+	<District_Adjacencies>
+		<Row DistrictType="DISTRICT_ENCAMPMENT" YieldChangeId="GreatWall_Production"/>
+        <!--<Row DistrictType="DISTRICT_ENCAMPMENT" YieldChangeId="GreatWall_Gold"/>-->
+	</District_Adjacencies>
+</GameData>

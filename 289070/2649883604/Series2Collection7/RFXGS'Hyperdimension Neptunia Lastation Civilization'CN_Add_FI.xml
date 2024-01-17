@@ -1,0 +1,1857 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RFXGS'Hyperdimension Neptunia Lastation Civilization'CN_Add_FI -->
+<!-- Author: Clear8Sky -->
+<!-- DateCreated: 2021/8/9 11:39:38 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Hyperdimension Neptunia: Lastation Civilization” 。该文件在 FrontEnd 与 InGame 时载入，需 Criteria ：Active_Expansion_1 与 Active_Expansion_2 -->
+	<LocalizedText>
+	
+	<!-- LastationGameText.xml 文件 -->	
+	
+		<!-- ***************************** 文明部分 ***************************** -->
+		<!-- ***************************** 文明 ***************************** -->
+		
+		<Replace Tag="LOC_CIVILIZATION_BWH_LASTATION_NAME" Language="zh_Hans_CN">
+			<Text>黑土边域</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVILIZATION_BWH_LASTATION_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>黑土边域帝国</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVILIZATION_BWH_LASTATION_ADJECTIVE" Language="zh_Hans_CN">
+			<Text>黑土边域的</Text>
+		</Replace>
+		
+		<!-- ***************************** 文明特色能力 ***************************** -->
+		
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_BWH_LAND_OF_BLACK_REGALITY_NAME" Language="zh_Hans_CN">
+			<Text>圣黑王权之地</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_BWH_LAND_OF_BLACK_REGALITY_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>国内 [ICON_TradeRoute] 贸易路线产出+2 [ICON_Production] 生产力。所有城市建造区域+100% [ICON_Production] 建造速度，且在建成后+1时代得分。允许建造初始即可解锁的特色工业区。</Text>
+		</Replace>
+		
+		<!-- ***************************** 文明信息 ***************************** -->
+		
+		<Replace Tag="LOC_CIVINFO_BWH_LASTATION_LOCATION" Language="zh_Hans_CN">
+			<Text>游汐叶界</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVINFO_BWH_LASTATION_SIZE" Language="zh_Hans_CN">
+			<Text>11万5200平方公里（包括东方的小岛，数据来自超次元系列游戏维基）</Text>
+		</Replace>
+		<!-- 根据超次元游戏海王星：东方银河计划，游汐叶界总人口约超过40万 -->
+		<Replace Tag="LOC_CIVINFO_BWH_LASTATION_POPULATION" Language="zh_Hans_CN">
+			<Text>大约17万1592（数据来自超次元系列游戏维基）</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVINFO_BWH_LASTATION_CAPITAL" Language="zh_Hans_CN">
+			<Text>黑土边域</Text>
+		</Replace>
+		
+		<!-- ***************************** 文明百科文本与引言 ***************************** -->
+		
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_BWH_LASTATION_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]Lastation is one of the four primary countries which comprise Gamindustri. It appears dirty and dreary at first glance, but beneath its somewhat rough exterior lies a nation at the forefront of technology and high standards of living. Billed as the country that "does everything," it is home to more independent manufacturing companies than any other nation; a fact that nearly cost Black Heart all of her Shares when Avenir Manufacturing attempted a hostile takeover under the guidance of Arfoire. Its proximity to Planeptune has led to large amounts of trade and cultural exchange between the two nations, and perhaps a bit of a closer relationship between the two nations' CPUs and Candidates than most others. Despite this, however, it is functionally most similar to, and competes most directly with, Leanbox.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_BWH_LASTATION_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>Lastation was trading nation that rule over east side of the Gamindustri. Lastation is known as "Heart of Gamindustri" because this nation have surrounded with other 3 nation and the nation take minimal damage during ASIC crisis due to quite well defended and advanced in military technology and army such as eX Multi Blaster (although they lack of aircraft and warship unlike Chiyukitalian). Lastation is biggest importer and exporter for Leanbox which zealous patriots of Leanbox think Lastation is their biggest rival nation as both are military might.</Text>
+		</Replace>
+		
+		<!-- ***************************** 领袖部分 ***************************** -->
+		<!-- ***************************** 诺瓦露 ***************************** -->
+		<!-- ***************************** 领袖诺瓦露 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_BWH_NOIRE_NAME" Language="zh_Hans_CN">
+			<Text>诺瓦露</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_BWH_NOIRE_NAME_C4T" Language="zh_Hans_CN">
+			<Text>{LOC_LEADER_BWH_NOIRE_NAME} [ICON_Production][ICON_Science]</Text>
+		</Replace>
+		
+		<!-- ***************************** 领袖特色能力 ***************************** -->
+		
+		<Replace Tag="LOC_TRAIT_LEADER_BWH_BLACKHEARTBEAUTY_NAME" Language="zh_Hans_CN">
+			<Text>圣黑之心的美貌</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_BWH_BLACKHEARTBEAUTY_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>建造奇观+15% [ICON_Production] 生产力。每与一个其他文明宣布友谊，则+1 [ICON_Science] 科技值；且与您宣布友谊的其他文明+1 [ICON_Production] 生产力。</Text>
+		</Replace>
+		
+		<!-- ***************************** 领袖议程 ***************************** -->
+		
+		<Replace Tag="LOC_AGENDA_BWH_PAPER_HARD_WORK_NAME" Language="zh_Hans_CN">
+			<Text>工作狂</Text>
+		</Replace>
+		<Replace Tag="LOC_AGENDA_BWH_PAPER_HARD_WORK_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>喜欢拥有高生产力的先进文明，厌恶生产力低下的落后文明。</Text>
+		</Replace>
+		
+		<!-- ***************************** 领袖百科与引言 ***************************** -->
+		
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_BWH_NOIRE_QUOTE" Language="zh_Hans_CN">
+			<Text>让他们说去吧，我明显是最受欢迎的游汐叶界女神！</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_BWH_NOIRE_TITLE" Language="zh_Hans_CN">
+			<Text>诺瓦露，圣黑之心</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_LEADER_BWH_NOIRE_TITLE" Language="zh_Hans_CN">
+			<Text>诺瓦露，圣黑之心</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_BWH_NOIRE_SUBTITLE" Language="zh_Hans_CN">
+			<Text>黑土边域的守护女神，孤独之心（又名破碎之心），没朋友酱</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_BWH_NOIRE_CHAPTER_CAPSULE_BODY" Language="zh_Hans_CN">
+			<Text>诺瓦露适合那些希望快速建造军队，城市和奇观的玩家。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_BWH_NOIRE_CHAPTER_DETAILED_BODY" Language="zh_Hans_CN">
+			<Text>诺瓦露作为领袖时，她会竭力去建造奇观，因为她真的很爱将重心放在奇观上。她喜欢生产力很高的文明，因为这与她辛勤劳动的形象很相似，她也很讨厌那些生产力很低的懒人。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_BWH_NOIRE_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]Noire, better known to the general populace as Lady Black Heart, is the CPU of Lastation. A tsundere through and through. However, amongst the 4 CPUs, she is the one with the strongest work ethic and, arguably, the only one of them who actually takes her duties as seriously as she should. She has a low tolerance for failure and laziness, making it that much more amazing that Neptune has gotten so close to her. Unbeknownst to the public, she is also heavily into cosplay.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_BWH_NOIRE_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>Noire is very tsundere compare to Uni and Kasami Hiiragi, unlike these two CPU, Noire don't have much friend compare to Uni and Kasami Hiiragi. Noire is often to called Kasami Hiiragi as 'Tsundere Beginner' how tsundere Kasami is. Noire is among most hard work CPU in Gamindustri and really hard work more than Kasami Hiiragi.</Text>
+		</Replace>
+
+		
+		<!-- ***************************** 优尼 ***************************** -->
+		<!-- ***************************** 领袖优尼 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_BWH_UNI_NAME" Language="zh_Hans_CN">
+			<Text>优尼</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_BWH_UNI_NAME_C4T" Language="zh_Hans_CN">
+			<Text>{LOC_LEADER_BWH_UNI_NAME} [ICON_Science][ICON_Fortified]</Text>
+		</Replace>
+		
+		<!-- ***************************** 领袖特色能力 ***************************** -->
+		
+		<Replace Tag="LOC_TRAIT_LEADER_BWH_BLACKSISTERSBOLDNESS_NAME" Language="zh_Hans_CN">
+			<Text>黑心之妹的无畏</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_BWH_BLACKSISTERSBOLDNESS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>训练远程和攻城单位+100% [ICON_Production] 训练速度，所有远程和攻城单位+10 [ICON_Strength] 战斗力、+1 [ICON_Range] 射程。攻城单位可在同一回合内移动和攻击。</Text>
+		</Replace>
+		<Replace Tag="LOC_BWH_BLACKSISTERSBOLDNESS_SIEGE_BONUS" Language="zh_Hans_CN">
+			<Text>+10 [ICON_Strength] 战斗力 来自于黑心之妹的无畏</Text>
+		</Replace>
+		
+		<!-- ***************************** 领袖议程 ***************************** -->
+		
+		<Replace Tag="LOC_AGENDA_BWH_XMB_LOCK_ON_NAME" Language="zh_Hans_CN">
+			<Text>X.M.B.神教</Text>
+		</Replace>
+		<!--
+		<Replace Tag="LOC_AGENDA_BWH_XMB_LOCK_ON_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>喜欢拥有大量陆地单位的文明，厌恶拥有很少陆地单位的文明。</Text>
+		</Replace>
+		-->
+		
+		<!-- R&F -->
+		
+		<Replace Tag="LOC_AGENDA_BWH_XMB_LOCK_ON_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>希望培养一支拥有大量远程和攻城单位的部队，不喜欢拥有更多更强此类单位的文明，喜欢缺乏此类单位的文明。</Text>
+		</Replace>
+		
+		<!-- R&F -->
+		
+		<!-- ***************************** 领袖百科与引言 ***************************** -->
+		
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_BWH_UNI_QUOTE" Language="zh_Hans_CN">
+			<Text>我与她们不同，我实力强劲。尽管如此，我还需要变得更强，用最快的速度赶上姐姐。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_BWH_UNI_TITLE" Language="zh_Hans_CN">
+			<Text>优尼，黑心之妹</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_LEADER_BWH_UNI_TITLE" Language="zh_Hans_CN">
+			<Text>优尼，黑心之妹</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_BWH_UNI_SUBTITLE" Language="zh_Hans_CN">
+			<Text>黑土边域女神候补生，反盗版大师，傲娇未满</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_BWH_UNI_CHAPTER_CAPSULE_BODY" Language="zh_Hans_CN">
+			<Text>优尼是远程单位狂热爱好者，她会训练一些远程单位去打击其他那些在远程攻击能力上不如她的文明。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_BWH_UNI_CHAPTER_DETAILED_BODY" Language="zh_Hans_CN">
+			<Text>优尼作为领袖时，她将尽其所能去训练更多的攻城单位，因而她将更快地征服其他文明。她喜欢拥有大量攻城单位的文明，不太喜欢远程单位稀少的文明；然而，如果游戏中存在诺瓦露时，优尼同样不喜欢她，因为优尼想要击败她的姐姐。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_BWH_UNI_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]Uni, better known to the general populace as Lady Black Sister, is the CPU of Lastation. Though she is technically a CPU Candidate, she has assumed the position of CPU in Black Heart's absence. Much like Noire, she is quite the tsundere. Though with how well her relationship with Nepgear has progressed, it obviously isn't quite to the same nigh-impenetrable extent as her big sis. She harbors more than just a few insecurities about her worth which manifest in an unending desire to better herself. If she doesn't see herself as equal in capability to her friends (Nepgear) and family (Noire), she is not going to rest until that is corrected.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_BWH_UNI_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>Uni also harbors quite a staunch and shockingly detailed stance against piracy...perhaps due to how easily she seems to fall victim to it. This was exemplified in her conversations with CFW Brave: while the two held a deep respect for each other forged by their mutual desire to make the world a better place for children across Gamindustri, his strongly pro-piracy approach to this goal led to irreconcilable differences between them.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_BWH_UNI_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>In CPU form, her personality does not undergo a drastic change like Purple Heart or Iris Heart. Still, her voice is noticeably deepened and she seems to harbor a ruthless streak once her true form is unleashed. Though unlike the sadism of Iris Heart, hers is a completely pragmatic change, designed for efficiency in dispatching any and all enemies. But there are significantly more important aspects to her transformation...namely, that she is the only character whose cup size actually shrinks when transformed. If your name isn't Nepgear, you should probably avoid asking why if you value not having a railgun penetrate your skull.</Text>
+		</Replace>
+		
+		<!-- ***************************** 宗教部分 ***************************** -->
+		<!-- ***************************** 宗教 ***************************** -->
+		
+		<Replace Tag="LOC_RELIGION_BWH_LASTATION_NOIRE" Language="zh_Hans_CN">
+			<Text>圣黑之心教会</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_RELIGIONS_PAGE_RELIGION_BWH_LASTATION_NOIRE_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>一个代表着圣黑女神信仰的宗教，同时也是她信仰占有度（Shares）的主要来源。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_RELIGION_BWH_LASTATION_UNI" Language="zh_Hans_CN">
+			<Text>黑心之妹教会</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_RELIGIONS_PAGE_RELIGION_BWH_LASTATION_UNI_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>一个代表着黑心之妹信仰的宗教，同时也是她信仰占有度（Shares）的主要来源。</Text>
+		</Replace>
+		
+		<!-- ***************************** 单位部分 ***************************** -->
+		<!-- ***************************** 单位 X.M.B.重炮 ***************************** -->
+		
+		<Replace Tag="LOC_UNIT_BWH_LASTATION_XMB_ARTILLERY_NAME" Language="zh_Hans_CN">
+			<Text>X.M.B.重炮</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_BWH_LASTATION_XMB_ARTILLERY_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>黑土边域文明特色原子能时代攻城单位，取代火箭炮。相较于后者+1 [ICON_Range] 射程，且拥有防空能力。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_BWH_LASTATION_XMB_ARTILLERY_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]The huge railgun wielded by Black Sister is known as the XMB -- eX Multi Blaster. While Black Sister can carry it effortlessly with a single arm, its monstrous size forces regular ground troops to carry it in groups of at least 3. So once Lastation's technology progressed to the point where they could make an effective replica of her weapon to be mass-produced, it was decided to modify it slightly so it could be deployed as a mobile siege weapon rather than as an infantry armament. It is capable of rapid withdrawal of enemy attack in situations where an artillery weapon which requires lengthy setup time could not. Lastation's top military commanders have been trained by Uni personally, allowing them to much more efficiently leverage the weapon's rapid-fire capability.</Text>
+		</Replace>
+		
+		<!-- ***************************** 区域部分 ***************************** -->
+		<!-- ***************************** 区域 阿布尼尔公司 ***************************** -->
+		
+		<Replace Tag="LOC_DISTRICT_BWH_AVENIR_NAME" Language="zh_Hans_CN">
+			<Text>阿布尼尔公司</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_BWH_AVENIR_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>黑土边域文明特色区域，取代工业区，初始即可建造。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_DISTRICTS_PAGE_DISTRICT_BWH_AVENIR_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]Avenir is the largest manufacturing company in Lastation from Hyperdimension Neptunia and Hyperdimension Neptunia Re;Birth1 that serves as the center of the events surrounding the Lastation arc of both games. It was founded by Ganache and is headed by Singe. Avenir was founded by Ganache after he heard of the Console War three years ago. He chose a small company on the verge of bankruptcy and created a bond between them and the parliament. He created Avenir as a means to get defeat Neptune, Black Heart's warring rival from the ancient Console war, by using weaponry that gathers all the advanced technology in Lastation.</Text>
+		</Replace>
+		
+		<!-- ***************************** 引言部分 ***************************** -->
+		<!-- ***************************** 载入 ***************************** -->
+		
+		<Replace Tag="LOC_LOADING_INFO_LEADER_BWH_NOIRE" Language="zh_Hans_CN">
+			<Text>最高雅谦和的圣黑之心女神，我们感谢您对我们命运的指引与守护！拥有最强统治权的您是名副其实的守护女神，似乎从未停歇的您将黑土边域发展成整个游汐叶界都为之艳羡的国度。在您的领导下，黑土边域已然成为科技巨人——事实上也是游汐叶界位居首位的国家。然而，您仍坚持实行改革，组织公共工程项目，并亲自保护人民免受怪物袭击。其实，您太专注于您的工作，以至于似乎完全缺乏她人的陪伴……我诚挚向您道歉，是我说的太过分了！</Text>
+		</Replace>
+		<Replace Tag="LOC_LOADING_INFO_LEADER_BWH_UNI" Language="zh_Hans_CN">
+			<Text>向您致敬，优尼，黑土边域的女神候补生！不过现在，您的姐姐诺瓦露不在了，您可以放心地称自己为黑土边域唯一的守护女神！再无人能阻挡您统治的脚步，因您已达到由她所设下的、难以置信的高标准。当她被囚禁在业界墓地之时，您日以夜继地训练，心怀将她救出的希望，不断变得更强。尽管您在涅普姬雅、萝姆和拉姆的帮助下才最终成功搞定，但您的救援任务向诺瓦露，向黑土边域，以及最重要的，向您自己证明了，凭自己的实力能够担当一名女神的合格继承者。</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 首次见面 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_BWH_NOIRE_ANY" Language="zh_Hans_CN">
+			<Text>我很忙，所以对话请干脆些。我是诺瓦露，这里是黑土边域，是一片即将繁荣的大地。那这里是游汐叶界最伟大的国度。我倾尽所有血泪与汗水，做好每件事，只为让这个国度变得强大。当我完成我的工作时，你若能乖乖呆在你的角落里，那对我是再好不过了。所以请原谅，我还有不少文书工作要做。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_BWH_NOIRE_ANY" Language="zh_Hans_CN">
+			<Text>附近有我们黑土边域的城市，想请你去参观一下，可以吗？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NEAR_INITIATOR_POSITIVE_LEADER_BWH_NOIRE_ANY" Language="zh_Hans_CN">
+			<Text>哦，太棒了，谢谢你。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_BWH_NOIRE_ANY" Language="zh_Hans_CN">
+			<Text>哦～！Hi！你是来这里寻求管理国家的建议，对吗？嘛，我意思是，我还是很忙的，但我想交换下咱们两国的首都信息好吗？那就请稍快一些吧。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_BWH_UNI_ANY" Language="zh_Hans_CN">
+			<Text>唔，你会是谁呢？穿着那么贵的衣服，我不由得认为你是另一个国家的领袖。哈～，我就知道！嘛，我的名字是优尼，在我姐姐不在时是我在领导着黑土边域。不过毫无疑问：或许我还要走很长的路才能赶上她已完成的进度，但若敢威胁我们，那我会用一颗子弹让你的脑袋开花。我是认真的！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_BWH_UNI_ANY" Language="zh_Hans_CN">
+			<Text>啊，很好，来得正好。我在城市附近得到了一把很棒的新型步枪，要来试试吗？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NEAR_INITIATOR_POSITIVE_LEADER_BWH_UNI_ANY" Language="zh_Hans_CN">
+			<Text>唔，嘛……我觉得我应该谢谢你，不过就这一次。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_BWH_UNI_ANY" Language="zh_Hans_CN">
+			<Text>唔，嘛……我想多多少少交换下你首都的一些信息，你同意给我吗？</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 问候 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_GREETING_LEADER_BWH_NOIRE_ANY" Language="zh_Hans_CN">
+			<Text>我是个很忙的女神，所以说话请干脆些。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_GREETING_LEADER_BWH_UNI_ANY" Language="zh_Hans_CN">
+			<Text>啊，是你啊。你想要什么？</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 宣布友谊 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_HUMAN_LEADER_BWH_NOIRE_ANY" Language="zh_Hans_CN">
+			<Text>我……当然，和别人一起努力应该……很不错。这是职业需要，对，是职业需要！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_HUMAN_LEADER_BWH_NOIRE_ANY" Language="zh_Hans_CN">
+			<Text>稍后再谈吧，我很忙。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_BWH_NOIRE_ANY" Language="zh_Hans_CN">
+			<Text>虽然我不知道你是怎么做到的，但神宮寺慧和优尼一直向我施压，让我和你宣布友谊。通常我是不会考虑这件事的，黑土边域也不需要朋友，但如果能让她们两个开心，那就不妨尝试一下？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_BWH_NOIRE_ANY" Language="zh_Hans_CN">
+			<Text>耶～，太好了。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_HUMAN_LEADER_BWH_UNI_ANY" Language="zh_Hans_CN">
+			<Text>那好吧。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_HUMAN_LEADER_BWH_UNI_ANY" Language="zh_Hans_CN">
+			<Text>你是笨蛋吗？我说了“不”！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_BWH_UNI_ANY" Language="zh_Hans_CN">
+			<Text>啊……那个，那个……！你听着，现现在是特殊场合，所以你最好听清楚，我没有重复也没有结巴！你，你，你愿……唔……愿意，愿意宣，宣，宣布和我的友，友，友谊吗？我是说，和黑土边域的友谊！啊啊啊，真是的！你最好别有什么奇怪的想法，笨蛋！这只不过是一个精明的政治举动，我当然才不会觉得你是一个很棒的人，也不会想和你成为朋友！从来不会！哼！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_BWH_UNI_ANY" Language="zh_Hans_CN">
+			<Text>嗯，我猜就算是笨蛋偶尔也会做出好的决定。</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 宣战 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_BWH_NOIRE_ANY" Language="zh_Hans_CN">
+			<Text>很好。如果你脑子缺了根筋，认为你可以打败我，那么请便……让你的士兵们走向他们的末日，这样我就可以获得更多信仰占有度（Shares），让我的国家更强大！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_BWH_NOIRE_ANY" Language="zh_Hans_CN">
+			<Text>黑土边域是世界上最强大的国家，你很快就会完全明白原因的！</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_BWH_UNI_ANY" Language="zh_Hans_CN">
+			<Text>你最好不要因为我年纪小就低估我！我不再只是一名女神候补生，而是一名真正的女神，我会完全向你展示这意味着什么！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_BWH_UNI_ANY" Language="zh_Hans_CN">
+			<Text>让我看看你会怎样对抗一名黑土边域的女神！我们将会在战场上相见……你最好别临阵退缩！</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 贸易 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_MAKE_DEAL_AI_ACCEPT_DEAL_LEADER_BWH_NOIRE_ANY" Language="zh_Hans_CN">
+			<Text>好的，那就可以了。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MAKE_DEAL_AI_REFUSE_DEAL_LEADER_BWH_NOIRE_ANY" Language="zh_Hans_CN">
+			<Text>你不是在嘲弄我吧，对吧？这交易不配与我相提并论。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MAKE_DEAL_AI_ADJUST_DEAL_LEADER_BWH_NOIRE_ANY" Language="zh_Hans_CN">
+			<Text>呐，来做个交易吧。这样看着如何？</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_MAKE_DEAL_AI_ACCEPT_DEAL_LEADER_BWH_UNI_ANY" Language="zh_Hans_CN">
+			<Text>那好吧。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MAKE_DEAL_AI_REFUSE_DEAL_LEADER_BWH_UNI_ANY" Language="zh_Hans_CN">
+			<Text>呜哇……如果我同意这次交易，神宫寺惠会把我头都给打没的。不了谢谢。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MAKE_DEAL_AI_ADJUST_DEAL_LEADER_BWH_UNI_ANY" Language="zh_Hans_CN">
+			<Text>这此交易比你本应得到的还要好了。不过，别误会！你所提供的东西对黑土边域也有很大好处，就是这样！</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 击败 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_NOIRE_ANY" Language="zh_Hans_CN">
+			<Text>这……这不是真的，这不可能。我一定在做梦！我，所有女神中唯一知道“努力工作”意味着什么的人……竟被“你”这样的人打败了？我不相信……这太荒谬了！我不相信这是真的！啊……我全部的信仰占有度（Shares）都在流失！我要死了吗？！不要，我还想再看看她那傻乎乎的面庞……</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_BWH_NOIRE_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_NOIRE_ANY}</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_UNI_ANY" Language="zh_Hans_CN">
+			<Text>……我真不敢相信。黑土边域完全被毁掉了……这都是我的错。要是诺瓦露在这里的话就好了，我可能会……那我为什么要出生在这世上？我甚至还不及她的一半实力，她不见之后，看看这里都发生了什么。我就是个失败者，彻彻底底的失败者。哼，你还在等什么？！来呀，把我从这痛苦中解救出来啊，你这个混蛋！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_BWH_UNI_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_UNI_ANY}</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 代表团 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_DELEGATION_FROM_AI_LEADER_BWH_NOIRE_ANY" Language="zh_Hans_CN">
+			<Text>看起来你还没搞清楚整个“外交关系”的所有事情，那我们何不派一支代表团前去你的首都，让你看看我们是怎么做的？</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 谴责 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_BWH_NOIRE_ANY" Language="zh_Hans_CN">
+			<Text>仅仅因为“你”不明白我们的生产架构是怎样工作的，并不意味着可以这样嘲笑它！如果只是来这里学习架构的使用，那你会明白它比其他任何生产体系的架构都要强大！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_BWH_NOIRE_ANY" Language="zh_Hans_CN">
+			<Text>你这个白痴！难以置信的白痴！愚钝的白痴！该死的笨蛋！没脑子的傻瓜！你就是个令人讨厌的笨蛋，笨蛋，笨蛋！[NEWLINE]（谴责你）</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_BWH_UNI_ANY" Language="zh_Hans_CN">
+			<Text>……我，没！有！垫胸垫！哦哦哦！！你要为这句话付出代价……</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_BWH_UNI_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_BWH_NOIRE_ANY}</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_REASON_FROM_AI_LEADER_ANY_REASON_AGENDA_BWH_PAPER_HARD_WORK_LOW_PRODUCTION" Language="zh_Hans_CN">
+			<Text>（您的发展落后）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DENOUNCE_REASON_FROM_AI_LEADER_ANY_REASON_AGENDA_BWH_XMB_LOCK_ON_RANGED_HATER" Language="zh_Hans_CN">
+			<Text>（您拥有比他更强大的远程部队）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DENOUNCE_REASON_FROM_AI_LEADER_ANY_REASON_AGENDA_BWH_XMB_LOCK_ON_NOIRES" Language="zh_Hans_CN">
+			<Text>（她想击败您）</Text>
+		</Replace>
+		<!--
+		<Replace Tag="LOC_DIPLO_DENOUNCE_REASON_FROM_AI_LEADER_ANY_REASON_AGENDA_BWH_XMB_LOCK_ON_LOW_SIEGE_UNIT" Language="zh_Hans_CN">
+			<Text>（她不喜欢您陆地军事力量薄弱）</Text>
+		</Replace>
+		-->
+		
+		<!-- ***************************** 外交 大使馆 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_EMBASSY_FROM_AI_LEADER_BWH_NOIRE_ANY" Language="zh_Hans_CN">
+			<Text>看起来你还没搞清楚整个“外交关系”的所有事情，那我们何不在你的首都建立一座大使馆，让你看看我们是怎么做的？</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 赞成与警告 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_WARNING_EXIT_LEADER_BWH_NOIRE_ANY" Language="zh_Hans_CN">
+			<Text>在我的经历中，我曾见过一些无能的人，但我觉得你刷新了一个新的纪录。你有良好的硬件吗？如果你和善请求，或许我会借给你一件我们生产的成品，这样你就能亲自看看我们黑土边域有多优秀。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_LEADER_BWH_NOIRE_REASON_ANY" Language="zh_Hans_CN">
+			<Text>（您的生产力低下）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_EXIT_LEADER_BWH_NOIRE_ANY" Language="zh_Hans_CN">
+			<Text>所以你就是神宫寺惠一直在说的那个人吧。嘛，我不得不承认，能让凯如此兴奋的你，让我有点敬佩。我的硬件决策相关之事被告诫，可并不是件常事啊……</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_EXIT_LEADER_BWH_NOIRE_ANY_WONDER" Language="zh_Hans_CN">
+			<Text>很好，我看到了你奇观的巨大价值，我猜你的人民平日里也在十分努力地工作。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_BWH_NOIRE_REASON_ANY" Language="zh_Hans_CN">
+			<Text>（您拥有很高的生产力）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_BWH_NOIRE_II_REASON_ANY" Language="zh_Hans_CN">
+			<Text>（您拥有更多奇观）</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_MODIFIER_BWH_PAPER_HARD_WORK_LOW_PRODUCTION" Language="zh_Hans_CN">
+			<Text>诺瓦露讨厌您发展落后。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_BWH_PAPER_HARD_WORK_HIGH_PRODUCTION" Language="zh_Hans_CN">
+			<Text>诺瓦露喜欢您努力做日常文书工作。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_BWH_PAPER_HARD_WORK_HIGH_PRODUCTION_WONDER" Language="zh_Hans_CN">
+			<Text>诺瓦露喜欢您拥有高产能的同时拥有大量奇观。</Text>
+		</Replace>
+		
+		<!-- R&F -->
+		
+		<!--
+		<Replace Tag="LOC_DIPLO_WARNING_EXIT_LEADER_BWH_UNI_ANY" Language="zh_Hans_CN">
+			<Text>哼……我要的是真正的军事实力，你的在哪呢？</Text>
+		</Replace>
+		-->
+		<Replace Tag="LOC_DIPLO_WARNING_EXIT_LEADER_BWH_UNI_ANY" Language="zh_Hans_CN">
+			<Text>呐，你是我远程攻击的目标哦～没有人比我更擅长远程战斗，如果你敢来挑战的话，我会射杀掉你所有的部队。</Text>
+		</Replace>
+		
+		<!-- R&F -->
+		
+		<Replace Tag="LOC_DIPLO_WARNING_LEADER_BWH_UNI_REASON_ANY" Language="zh_Hans_CN">
+			<Text>姐姐……我想要打败你，我真的……真的想和你战斗！</Text>
+		</Replace>
+		
+		<!-- R&F -->
+		
+		<!--
+		<Replace Tag="LOC_DIPLO_KUDO_EXIT_LEADER_BWH_UNI_ANY" Language="zh_Hans_CN">
+			<Text>太棒了，我喜欢你的军事成果, 我想说这些是你麾下最好的部队。</Text>
+		</Replace>
+		-->
+
+		<Replace Tag="LOC_DIPLO_KUDO_EXIT_LEADER_BWH_UNI_ANY" Language="zh_Hans_CN">
+			<Text>好极了，你带来的剑在我的枪战中将永远输给我的步枪，但很感谢你软弱的战斗与枪械训练。</Text>
+		</Replace>
+		
+		<!-- R&F -->
+		
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_BWH_UNI_REASON_ANY" Language="zh_Hans_CN">
+			<Text>姐姐……我想要打败你，我真的……真的想和你战斗！</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_MODIFIER_BWH_XMB_LOCK_ON_HIGH_SIEGE_UNIT" Language="zh_Hans_CN">
+			<Text>优尼喜欢远程部队并不强大的文明。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_BWH_XMB_LOCK_ON_LOW_SIEGE_UNIT" Language="zh_Hans_CN">
+			<Text>优尼讨厌诺瓦露。</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 索取 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_HUMAN_ACCEPT_DEMAND_FROM_AI_LEADER_BWH_NOIRE_ANY" Language="zh_Hans_CN">
+			<Text>我觉得这次你帮了我不少忙……但别误会了！</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_HUMAN_ACCEPT_DEMAND_FROM_AI_LEADER_BWH_UNI_ANY" Language="zh_Hans_CN">
+			<Text>你，你不会是想用这些交易来讨好我吧？我，我才不会因为这些就喜欢你的！白痴！</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 和平 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_FROM_AI_LEADER_BWH_NOIRE_ANY" Language="zh_Hans_CN">
+			<Text>嘛，是一场精彩的战斗，但现在我们已经打完了。就让我们签个和平条约，然后结束吧。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_FROM_AI_LEADER_BWH_UNI_ANY" Language="zh_Hans_CN">
+			<Text>我在拿枪指着你的脸呢，笨蛋！我！这！样！看着像是想要和平吗？</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 开放边境 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_OPEN_BORDERS_FROM_AI_LEADER_BWH_NOIRE_ANY" Language="zh_Hans_CN">
+			<Text>呐，我想和你的国家一起开放边境。你知道，是为了贸易，还有军队活动……文化交流。呀！别这么看着我啊，我才不寂寞呢！</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 别在附近定居 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_AI_RESPONSE_POSITIVE_LEADER_BWH_NOIRE_ANY" Language="zh_Hans_CN">
+			<Text>咿呀！好吧好吧！本着合作的精神，我会放弃在这些土地上定居。希望你能开心。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_AI_RESPONSE_NEGATIVE_LEADER_BWH_NOIRE_ANY" Language="zh_Hans_CN">
+			<Text>啊哈哈哈！说真的，你认为我会听你的吗？我们想去哪里，黑土边域就在哪里定居，十分感谢～</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 很多军队在边境附近 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_LEADER_BWH_NOIRE_ANY" Language="zh_Hans_CN">
+			<Text>你是真打算这样和黑土边域对抗，抑或只是为了炫耀一下？不管怎样，这都是可悲的。和我战斗还是走开，我没空跟你耗……</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 别在我这里用间谍 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_LEADER_LEADER_BWH_NOIRE_ANY" Language="zh_Hans_CN">
+			<Text>听着，我知道以前有个聪明的小流氓，为了偷看我的Cosplay照片——内！部！机！密！…对，就是内部机密……而试图修改黑土边域那不可渗透的安全系统，还成功了……我说的那个小流氓不是别人，就是你。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_LEADER_LEADER_BWH_UNI_ANY" Language="zh_Hans_CN">
+			<Text>你的间谍试图在我的黑土边域内盗取很多游戏。你真的不清楚这对游汐叶界影响有多坏吗？这次对你的严正警告和些许教诲，请你认真思考一下。</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 别在这里挖掘文物 ***************************** -->
+		
+		<!-- ***************************** 外交 别转换我的信仰 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_BWH_NOIRE_VS_NEPTUNE" Language="zh_Hans_CN">
+			<Text>涅普迪努！呃，呃……你突然来这里干什么？我真没想到你能游刃有余地在这里！见到你我当……当然不会“激动”哦！哼，现在意味着我连一份文书工作都完不成了！我敢打赌，你来这里是伊斯特瓦尔又一次因为你懒惰而责怪你了。然后现在你们打算去做个任务，或者别的事情，来增加紫耀之都的信仰占有度（Shares）吧，这跟我黑土边域的利益有很鲜明的冲突。好吧，说这些也没用。我跟你一起去——[COLOR_Grey]（你们两人完全同步地完成了对话）[ENDCOLOR]——“但只是为了帮助伊斯特瓦尔！可不是为了你什么的！”[NEWLINE]啊啊啊！你真的只是和我开个玩笑？！那接下来，你是不是要掏出一对噼啪响的球？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_BWH_NOIRE_VS_NEPTUNE" Language="zh_Hans_CN">
+			<Text>什么？“你”要对“我”宣战？哈哈哈哈，真的是，太搞笑了。那好，让我看看你都有哪些本事，涅普迪努！我是不会退缩的！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_BWH_NOIRE_VS_NEPTUNE" Language="zh_Hans_CN">
+			<Text>黑土边域与紫耀之都的区别已经十分显现了。听着，涅普迪努，你或许能在一对一的战斗中打败我，但若是在全面战争中呢？在这里，我和你是指挥者而非决斗者，显然我已经占了上风。不要过多抵抗了，我会对你宽容的，尽管我真会用一个飞踢让你赶紧洗好脖子！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_NOIRE_VS_NEPTUNE" Language="zh_Hans_CN">
+			<Text>我这辈子都没见过比这更荒唐的事！在所有可能的人里面，你，一个仅因不愿付出相应努力去写下签名而非得被贿赂去签署一份保证世界和平的文件的人，竟然征服了黑土边域？！不，我不相信！你并没有赢！是我让你赢的，没错！这，这就是闹着玩的，就是为了帮你学会怎样更好地管理你的国家！对！这根本不是真的！这都是我幻想出来的！我是说，是“你的”幻觉！不，都是假的！绝不可能！不可能……</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_BWH_NOIRE_VS_NEPTUNE" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_NOIRE_VS_NEPTUNE}</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_BWH_NOIRE_VS_NEPGEAR" Language="zh_Hans_CN">
+			<Text>啊，你好，涅普姬雅。我知道涅普迪努在处理国家事务上是个很令人无语的家伙，但至少我觉得她会来参加这次会议，如果只是来嘲笑我的话。[NEWLINE]什么？你说你现在是紫耀之都的守护女神？！这……惊到我了。太突然了，我现在不得不将紫耀之都作为一个重要的竞争对手，而就在五分钟前我几乎还没意识到这一点。嘛，让我们确保彼此的国家关系，就跟你那位白手起家的姐姐“掌权”时一样。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_NOIRE_VS_NEPGEAR" Language="zh_Hans_CN">
+			<Text>就这样吧，哈？你在等什么？动手啊！别抱怨说你不想杀人——如果你不想，你甚至不会把剑带到这儿来！[NEWLINE]……看来你需要一些理由啊。那好，那么……你这么做是为了游汐叶界的利益呐。[NEWLINE][COLOR_RED]（在你的哭喊中，她撞向了游机板剑——那把诅咒之剑。你惊恐地看着她的身体渐渐消失，直到最后她溶化成一缕信仰占有度（Shares）能量，积聚在刀柄上的宝石中。）[ENDCOLOR][NEWLINE]</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_BWH_NOIRE_VS_NEPGEAR" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_NOIRE_VS_NEPGEAR}</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_BWH_HDNOIRE_VS_PLUTIA" Language="zh_Hans_CN">
+			<Text>哈？你是谁？来自另一次元紫耀之都的守护女神？我觉得很可疑……但不管怎样，我想如果你是涅普迪努的朋友的话就好了。我是诺瓦露，这里是黑土边域，游汐叶界最发达的国家。不要妨碍我，我们会相处的很好。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_BWH_HDNOIRE_VS_PLUTIA" Language="zh_Hans_CN">
+			<Text>哼，这是干嘛？涅普迪努的慵懒小朋友想和我一起玩吗？好呀。很明显你根本不是我的对手，不会花很长时间的。你很快就会明白为什么黑土边域如它传言的那样强！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_BWH_HDNOIRE_VS_PLUTIA" Language="zh_Hans_CN">
+			<Text>你知道，我觉得你可能还行，涅普迪努可能是个十足的笨蛋，但她平常都是个品行端正的裁判角色。而你……我真不知道你从哪里来，为何而来，不过是时候被毁灭了。你问……为什么？优尼拜访过紫耀之都后就回去了，我从没见过她的状态会如此糟糕，她抽泣着能说出的只有“你的”名字。没！有！人！会对我的妹妹那样做。我要杀了你，你听见了吗？！？！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_HDNOIRE_VS_PLUTIA" Language="zh_Hans_CN">
+			<Text>什……你到底是什么人？你看起来比涅普迪努更笨，更懒……但那并不全是真的，对吗？你的面具下在隐藏着什么。只有强大无缺的怪物才有能力将我打倒……我觉得那就是这样了。快了结我……你在干什么？不要！离我远点！不要啊……！[NEWLINE]啊啊啊啊啊咕！！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_BWH_HDNOIRE_VS_PLUTIA" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_HDNOIRE_VS_PLUTIA}</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_BWH_UDNOIRE_VS_PLUTIA" Language="zh_Hans_CN">
+			<Text>哟，普露露特！很高兴在这里见到你！我还以为我的朋友不会在这儿出现了……不过无所谓啦！你最近怎样？紫耀之都现在还好吗？如果你需要的话，我可以从繁忙的日程中抽出些时间来帮忙……当然，严格来说是公事！……大概。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_BWH_UDNOIRE_VS_PLUTIA" Language="zh_Hans_CN">
+			<Text>普露露特，你在干什么？你为什么要进攻黑土边域？你的眼神里……不！现在我不能退缩！黑土边域是游汐叶界最强大的国家，紫耀之都只是一潭死水。你不可能赢我的！哈哈哈哈！我……我才不怕你，普露露特！我要击败你！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_BWH_UDNOIRE_VS_PLUTIA" Language="zh_Hans_CN">
+			<Text>抱歉，普露露特，但我不能再放任事情这样下去了。我认为紫耀之都真的需要一位更有能力的守护女神的帮助。会好起来的，真的！我可以管理好一切，你每天打盹就行，对我们都好！不是吗？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_UDNOIRE_VS_PLUTIA" Language="zh_Hans_CN">
+			<Text>你在干什么，普露露特？你为什么要毁掉我的黑土边域？是我做错什么了吗？我是你的朋友，对吧？……呐，是吧？……你那种表情……，不，求你了！对不起，不要！除了那个其他怎么都……！[NEWLINE][COLOR_Grey]（她蜷缩着抱住膝盖，想要离你远一些）[ENDCOLOR][NEWLINE]我会没事的我会没事的我会没事的……</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_BWH_UDNOIRE_VS_PLUTIA" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_UDNOIRE_VS_PLUTIA}</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_BWH_UDNOIRE_VS_PLUTIA" Language="zh_Hans_CN">
+			<Text>啊……呃，普露露特？我们似乎往前更近了一步，但我们何不签一份紫耀之都和黑土边域的友好宣言？我们之间的外交会容易得多，正式交易也会顺利很多。再者说，我们是朋友，对吧？这样才有意义啊！</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_BWH_HDNOIRE_VS_UDNOIRE" Language="zh_Hans_CN">
+			<Text>所以说，传言果然是真的……来自另一维度的我找到了来这里的方法。嘛，首先我要说的是，你身上那套衣服很可爱，但和我穿的这件相比就显得很平庸了。你说衣服是你自己做的？那我可以肯定我们当中手更巧的是我，嗯哼。我想我们会知道这个次元里能否容下两个黑土边域，不是吗？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_BWH_HDNOIRE_VS_UDNOIRE" Language="zh_Hans_CN">
+			<Text>我想唯一能够挑战黑土边域地位的，只有黑土边域本身了！那好，你这个卑鄙的冒牌货！来让我看看你会怎么做吧！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_BWH_HDNOIRE_VS_UDNOIRE" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_BWH_HDNOIRE_VS_UDNOIRE}</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_HDNOIRE_VS_UDNOIRE" Language="zh_Hans_CN">
+			<Text>啊，真是可笑……从没想过自己竟会被来自其他次元的我的邪恶分身打败。你最好像守护你那片黑土边域一样来照顾我这一隅！我，呃，我想你现在还没办法让你的黑土边域平台向下兼容我的，对吧？[NEWLINE]“平台架构区别太大，增加了很多兼容成本？”嘛，这不是个挺方便的借口吗……</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_BWH_HDNOIRE_VS_UDNOIRE" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_HDNOIRE_VS_UDNOIRE}</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_BWH_UDNOIRE_VS_HDNOIRE" Language="zh_Hans_CN">
+			<Text>我听说有人在谈论你，但我只是把它当做道听途说。不过看来这里真的有来自另一次元的老对手。什么？讨厌被说“老”吗？别紧张，并不是说我们年纪大什么的。[NEWLINE]……天啊，你太固执了！对别人来说我就是这样的人吗？该稍微重新审视下我的行事风格了……不过这些先放一边。我们可能会竞争至死，抑或共同努力，让整个黑土边域成为游汐叶界的最强。我希望你能选择后者。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_BWH_UDNOIRE_VS_HDNOIRE" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_BWH_HDNOIRE_VS_UDNOIRE}</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_BWH_UDNOIRE_VS_HDNOIRE" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_BWH_HDNOIRE_VS_UDNOIRE}</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_UDNOIRE_VS_HDNOIRE" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_HDNOIRE_VS_UDNOIRE}</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_BWH_UDNOIRE_VS_HDNOIRE" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_HDNOIRE_VS_UDNOIRE}</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_BWH_HDNOIRE_VS_UNI" Language="zh_Hans_CN">
+			<Text>你去哪了，优尼？！我，我是说，我并不是在担心……好吧，是是，我担心你生病了！我想说，我知道我总是对你表现得很冷漠、很严格，但那是因为我希望你有一天能成为一名强大的守护女神，而不是像涅普迪努他们那些人一样……[NEWLINE]哈？你，你已经是守护女神了？哪里的？你建立了你自己的黑土边域？！你以为我去了一个永远都会不来的地方了吗？！唔……嘛，也不是件坏事。比起任何其他方式，这应该是你在现实工作环境中证明自己最好的一次机会了。我得告诉你：我会像对待其他国家领袖一样对待你，相信你也知道我会这么做了。但，嘛……答应我别放松警惕，好吗？要是你激怒了那个嗜血的暴君，我没办法保证你的安全。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_BWH_HDNOIRE_VS_UNI" Language="zh_Hans_CN">
+			<Text>好，你知道吗？我已经赢了，你已经输了，我即将把这第二片黑土边域纳入我的直接统治之下。一旦实现，我们之间将会进行一次长久的讨论，关于守护女神应该如何管理自己的国家。你让我失望了，优尼。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_BWH_HDNOIRE_VS_UNI" Language="zh_Hans_CN">
+			<Text>所以，时机终于到了。你决定来向我挑战，来一场堂堂正正的战斗。你没有心不在焉，对吧？你确定明白这并非是练习模式，而我会不择手段地夺取胜利，是吧？只是确认一下。很好。我或许会成为一位失格的姐姐，抑或成为一名失败的领袖。让我们来决定是哪一个吧。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_HDNOIRE_VS_UNI" Language="zh_Hans_CN">
+			<Text>哈……哈……所以，你终于打败我了，优尼？老实说我很佩服，有一些我的确没预料到。想着你只是我的妹妹，永远不及于我。但那只是我想法的一部分……在内心深处，我明白你是有能力做到的。你已经超出我的预期了……所以我会把黑土边域交给你。我不会再相信其他任何人……所以现在不要犹豫，结束我的生命吧，带领黑土边域走向比我更辉煌的未来！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_BWH_HDNOIRE_VS_UNI" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_HDNOIRE_VS_UNI}</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_BWH_HDNOIRE_VS_UNI" Language="zh_Hans_CN">
+			<Text>这基本上就是个形式，但领导着黑土边域的你的确做得不错，那我们就签署一份友谊宣言怎样？这会让彼此之间的外交更容易，而且我们的确应该把重心放在让黑土边域成为世界上最强的国家上。毕竟，我们还有遗产需要维护。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_BWH_UDNOIRE_VS_UNI" Language="zh_Hans_CN">
+			<Text>呜呜哇～……你怎么了？你似乎和刚认识的我太友好了，不是吗？姐姐？我没有妹妹啊，你在说什么？！没错，我想说我们可能看起来确实比较相近，但……听着，我或许看上去很像你姐姐，但我并不是她，明白吗？[NEWLINE]什么？！你不领导黑土边域了，那我来！难不成你是某个冒充我王位又自大的萌新？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_BWH_UDNOIRE_VS_UNI" Language="zh_Hans_CN">
+			<Text>那好吧。反正，我也觉得这儿黑土边域的数量有点多了。我不关心你和你姐姐交手过多少次，也不在意她教过你多少策法。我不是她，我与其他的我的区别，无论多么微小，都将成为你失败的关键！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_BWH_UDNOIRE_VS_UNI" Language="zh_Hans_CN">
+			<Text>我想也许另一个我还没足够锻炼你。你想知道我和她有多大的不同吗？我比她更容易把你看做陌生人。我不是来管教你的，我是来毁灭你的。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_UDNOIRE_VS_UNI" Language="zh_Hans_CN">
+			<Text>这不是真的。我为建设我的国家比想象中付出了更多的努力，然而，在这个世界里，我的妹妹却能把它完全糟蹋掉？你来自的次元究竟是怎样的存在？！至少我还能安慰自己，因为你不会在我的家乡出生！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_BWH_UDNOIRE_VS_UNI" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_UDNOIRE_VS_UNI}</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_BWH_NOIRE_VS_VERT" Language="zh_Hans_CN">
+			<Text>贝露，很高兴再次见到你。欸欸，你快处理下你的黑眼圈！嘛，这个先放一边……我希望绿荫箱庭和黑土边域能一起为更大的利益努力。啊， 当然，答案是“不行”。嗯，我知道你打算问那件你一直在玩的MMO游戏里的COS服。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_NOIRE_VS_VERT" Language="zh_Hans_CN">
+			<Text>可恶的女人。你的平台在技术上已经落后于我，居然还想设法战胜黑土边域？！怎么战胜？仅仅靠吸引在每年发布会上玩荣誉勋章最新作的那些男同和笨蛋们？真是可笑……</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_NOIRE_VS_VERT" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_NOIRE_VS_VERT}</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_BWH_NOIRE_VS_BLANC" Language="zh_Hans_CN">
+			<Text>啊，贵安，布兰。白露之滨怎么样？希望我们能和平合作。一定要控制好你的脾气，好吗？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_NOIRE_VS_BLANC" Language="zh_Hans_CN">
+			<Text>唔咕！谁会想到这个小家伙会是我们四个当中唯一赢得“平台之战”的人？！啧！等等，你要干什么？你不能把那个拿着巨剑的家伙放进“巨型麦芽姐妹”里！它可从来没在白露之滨游戏平台上发布过！！你在对我的游戏版权做什么？不要啊啊啊！！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_BWH_NOIRE_VS_BLANC" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_NOIRE_VS_BLANC}</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_BWH_UNI_VS_NEPTUNE" Language="zh_Hans_CN">
+			<Text>哟，太好了，是涅普姬雅的笨姐姐。啧，为什么不是涅普姬雅代替你？她更善于与人交谈。啊，呃……别告诉她我说过这句话。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_UNI_VS_NEPTUNE" Language="zh_Hans_CN">
+			<Text>这到底怎么回事？！像你这样的人怎么会打败我？！可恶，诺瓦露真的会让我去听那个的……你！这个穿粉衣服的笨蛋！我是不会忘记的！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_BWH_UNI_VS_NEPTUNE" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_UNI_VS_NEPTUNE}</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_BWH_UNI_VS_NEPGEAR" Language="zh_Hans_CN">
+			<Text>涅，涅，涅普姬雅？！哇，没想到会在这里遇见你。很，呃，很高兴再次见到你……[NEWLINE]一切都好吗？就算涅普迪努把脸埋进布丁里，紫耀之都还在奇迹般地正常运转？呜哇，现在是你在管理国家吗？啊这，看来我会面对一个很强力的竞争对手！我现在在管理黑土边域，那看来我们之间的竞争要再升一级了。别指望我对你那么好！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_BWH_UNI_VS_NEPGEAR" Language="zh_Hans_CN">
+			<Text>什……我没想到会从你嘴里听到这些话！唉，作为紫耀之都的守护女神，你真的开始变坏了。天啊。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_BWH_UNI_VS_NEPGEAR" Language="zh_Hans_CN">
+			<Text>我仍然不明白你为何要建立另一座黑土边域，然而，嘛，事实是这都是假的！这不过是你曾建立的黑土边域的残影，在你不见的时候是我一直在管理着！如果你没有重聚的意愿，那……就把彼此当做敌人吧！[NEWLINE]（谴责你）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_BWH_UNI_VS_NEPGEAR" Language="zh_Hans_CN">
+			<Text>你打算用我给游机板剑充能吗？如果是的话，你就得为之战斗。为之进行长久而艰难的战斗。若这意味着我们之间友谊的结束，那就这样吧。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_BWH_UNI_VS_NEPGEAR" Language="zh_Hans_CN">
+			<Text>涅普姬雅，到此为止了。或许我们是很好的朋友，但你也是我的竞争对手，威胁着黑土边域的安全与繁荣。这并不是件能令我开心的事，但……就把这当作宣战吧！做好准备吧！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_UNI_VS_NEPGEAR" Language="zh_Hans_CN">
+			<Text>是的，我明白。你需要我的力量来拯救世界，对吗？[NEWLINE]*抽泣*[NEWLINE]好了，我准备好了。我知道我的灵魂会被妥善照顾的，如果交给你的话。来吧，动手吧！不要害怕！[NEWLINE][COLOR_RED]（你用游机板剑刺穿了她，她的生命渐渐从身体中消逝了。当你把剑从她身体里抽出时，你能感觉到她温暖的力量在刀锋上涌动。[NEWLINE]你为了变得更强大，夺走了你最好的朋友的生命。你的信念还能坚持多久呢？）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_BWH_UNI_VS_NEPGEAR" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_UNI_VS_NEPGEAR}</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_BWH_UNI_VS_NEPGEAR" Language="zh_Hans_CN">
+			<Text>所以说，唔……涅普姬雅，我是想说我之前想了很久你的事……我意思是，在想你的国家和它实力的事！对，就是这样。我就是想在我们国家之间建立一个联盟，因为你对我来说很特别！[NEWLINE]……咕啊啊啊啊，我说出来了！要害羞死了！听好，忘掉我刚才说的话，你这个笨蛋！</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_BWH_UNI_VS_TOMOYADINOGI" Language="zh_Hans_CN">
+			<Text>……哟。我以前从没见过你，但……我感觉我们之间有某种特殊的联系，就像我们灵魂里的某种存在跨越宇宙将彼此相连。我想你会在未来领导世界……？</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_BWH_UNI_VS_NOIRE" Language="zh_Hans_CN">
+			<Text>？！[NEWLINE]姐，姐姐！你去哪里了？！我一直担心的要命！在这儿，神宫寺惠和我一直在管理着黑土边域，为的是你随时可能回来。[NEWLINE]什么？！你也在运作自己的黑土边域？！这到底算什么……这对我来说又是一次考验吗？这是最后一次考验，确保我是真正合格的黑土边域守护女神的候补生。一定是这样的！那好吧，姐姐，我是不会退缩的——我会同你竞争，并且，运气好的话还会超过你！准备好让你的学生出师吧！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_BWH_UNI_VS_NOIRE" Language="zh_Hans_CN">
+			<Text>啊，你已经无可救药了……我从没想过会从你的嘴里听到这样的话。说出这样严厉，甚至有些刻薄的话，姐姐啊……*抽泣*</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_BWH_UNI_VS_NOIRE" Language="zh_Hans_CN">
+			<Text>我仍然不明白你为何要建立另一座黑土边域，然而，嘛，事实是这都是假的！这不过是你曾建立的黑土边域的残影，在你不见的时候是我一直在管理着！如果你没有重聚的意愿，那……就把彼此当做敌人吧！[NEWLINE]（谴责你）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_BWH_UNI_VS_NOIRE" Language="zh_Hans_CN">
+			<Text>……所以这就是最后的考验吗？我们两个黑土边域间真切的、堂堂正正的较量？如果是这样的话，我希望你不要因为我是你的妹妹而退缩。事实上，我在这场战争中的投入比以往参加过的任何一场都要多！我要彻底向你我自己！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_BWH_UNI_VS_NOIRE" Language="zh_Hans_CN">
+			<Text>我想现在就是绝佳时机了。姐姐……诺瓦露，我在你的阴影下生活太久了。我准备好从此刻开始成为一名真正的黑土边域守护女神！所以没错，这就意味着战争！你不要仅因为我是你妹妹就退缩！把你的所有都给我，否则我会非常非常生气的！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_UNI_VS_NOIRE" Language="zh_Hans_CN">
+			<Text>[COLOR_Grey]（你能看出她拼命抑制住眼泪。）[ENDCOLOR][NEWLINE][NEWLINE]嘛呐……这就解决了。你已经证明了你在……嗯，几乎所有事情上做得都比我强。我甚至不知自己在想什么，只希望能在战斗中打败你。你……你不会杀掉我，对吗……？[NEWLINE]你会？！嘛，还是谢谢你了。不过，好吧，我知道你会把成堆的工作压在我肩上，让我的生活如同地狱一般。没关系，我会接受的。我想，服从近乎完美的姐姐就是我的人生了。那……我们回家吧，姐姐。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_BWH_UNI_VS_NOIRE" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_UNI_VS_NOIRE}</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_BWH_UNI_VS_NOIRE" Language="zh_Hans_CN">
+			<Text>诺瓦露，我知道我们姐妹的关系并非最为亲近，但没有理由让我们黑土边域之间进行严肃的对抗。当然，总会有这种较量出现，但是……就让我们抛开彼此之间的严重分歧，向全世界宣告我们将共同努力，怎么样？拜托了好吗……？</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_BWH_UNI_VS_VERT" Language="zh_Hans_CN">
+			<Text>哟，你好，贝露。我懂，你还是很喜欢那些网络游戏。你有没有得到一个小妹妹？没有？嘛，好吧，我想我应该继续留意不被诱拐。当然，我可不想被你诱骗！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_UNI_VS_VERT" Language="zh_Hans_CN">
+			<Text>太好了……太棒了。你准备对我做什么？让我猜猜看——让我穿上你玩的那些游戏里的小尺码“枪手”COS服，然后把照片发到网上，对吧？贝露，你真的，真的需要一个真正的妹妹，哪怕是你的某位珍视之人！[NEWLINE]*叹气*……现在我在这件事上别无选择。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_BWH_UNI_VS_VERT" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_UNI_VS_NOIRE}</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_BWH_UNI_VS_BLANC" Language="zh_Hans_CN">
+			<Text>唔……所以你也找到了进入这个次元的方法了，布兰，嗯？我觉得还挺好，但要确保你没有越过黑土边域的领土。我现在还尚未达到诺瓦露的实力，但这并不意味着你能在我这里捣乱！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_UNI_VS_BLANC" Language="zh_Hans_CN">
+			<Text>可恶，输给你这样的人，你这样没法控制自己脾气、还总是对自己的胸部自作多情的人！[NEWLINE]喂～喂！你听我说啊，我也是平胸啊！咚——[NEWLINE][NEWLINE][COLOR_RED]（*一记重拳*）[ENDCOLOR][NEWLINE][COLOR_Grey]（只是因为她身体没什么料并不意味着她会因此甘受嘲讽）[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_BWH_UNI_VS_BLANC" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_UNI_VS_BLANC}</Text>
+		</Replace>
+
+		<!-- ***************************** 城市部分 ***************************** -->
+		<!-- ***************************** 城市 ***************************** -->
+		
+		<!-- 抱歉，我现在还不会加动态城市(Dynamic City) -->
+		
+		<Replace Tag="LOC_CITY_NAME_BWH_HDNCAPITAL_LASTATION_NOIRE_CAPITAL" Language="zh_Hans_CN">
+			<Text>黑土边域</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_HDNCAPITAL_LASTATION_UNI_CAPITAL" Language="zh_Hans_CN">
+			<Text>黑土边域Mk2</Text>
+		</Replace>
+
+		<Replace Tag="LOC_CITY_NAME_BWH_LASTATION_WESTWINDVALLEY" Language="zh_Hans_CN">
+			<Text>西风溪谷</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LASTATION_THELADSANCTUARY" Language="zh_Hans_CN">
+			<Text>伙伴神殿</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LASTATION_AVENIRSTORAGE" Language="zh_Hans_CN">
+			<Text>阿布尼尔重机仓库</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LASTATION_SOULSACCAVE" Language="zh_Hans_CN">
+			<Text>灵魂献祭洞窟</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LASTATION_FACTORYNOIVVIX" Language="zh_Hans_CN">
+			<Text>第459号重机工厂</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LASTATION_TOHKIDENCAVE" Language="zh_Hans_CN">
+			<Text>讨·鬼洞窟</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LASTATION_GRAVIDAZERUINS" Language="zh_Hans_CN">
+			<Text>重力异想遗迹</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LASTATION_NAASNEVOLCANO" Language="zh_Hans_CN">
+			<Text>纳斯奈火山</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LASTATION_REBEATRESORT" Language="zh_Hans_CN">
+			<Text>利比特休养地</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LASTATION_ENDLESSZONE" Language="zh_Hans_CN">
+			<Text>星域毁灭地带</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LASTATION_MIDCOMPANY" Language="zh_Hans_CN">
+			<Text>行动联网装置公司</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LASTATION_SEPTENTRESORT" Language="zh_Hans_CN">
+			<Text>海难休养地</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LASTATION_INFINTECORRIDOR" Language="zh_Hans_CN">
+			<Text>无限回廊</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LASTATION_SUBLIEROAD" Language="zh_Hans_CN">
+			<Text>侍之路</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LASTATION_JETSETRANGESUMMIT" Language="zh_Hans_CN">
+			<Text>喷射山道顶峰</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LASTATION_WANDERERSCAVE" Language="zh_Hans_CN">
+			<Text>风来洞</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LASTATION_RELOADGRASSLANDS" Language="zh_Hans_CN">
+			<Text>回归之草原</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LASTATION_BANDICRASH" Language="zh_Hans_CN">
+			<Text>袋狼进击之地</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LASTATION_KUZARATFACILITY" Language="zh_Hans_CN">
+			<Text>克亚传承工厂</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LASTATION_GIGO" Language="zh_Hans_CN">
+			<Text>GIGO街道</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LASTATION_NATIONALFACTORY" Language="zh_Hans_CN">
+			<Text>国营工厂</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LASTATION_SONIWETLANDS" Language="zh_Hans_CN">
+			<Text>索妮湿地</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LASTATION_PSDIMENSION" Language="zh_Hans_CN">
+			<Text>皮艾斯次元</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LASTATION_VIDADIMENSION" Language="zh_Hans_CN">
+			<Text>薇塔次元</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LASTATION_ABXYLRPASTURE" Language="zh_Hans_CN">
+			<Text>A-B-X-Y-LT-RT·草原</Text>
+		</Replace>
+		
+		<!-- ***************************** 公民部分 ***************************** -->
+		<!-- ***************************** 公民 ***************************** -->
+		
+		<Replace Tag="LOC_CITIZEN_BWH_LASTATION_MALE_1" Language="zh_Hans_CN">
+			<Text>路西尔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_BWH_LASTATION_MALE_2" Language="zh_Hans_CN">
+			<Text>井野君</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_BWH_LASTATION_MALE_3" Language="zh_Hans_CN">
+			<Text>大卫·斯内克</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_BWH_LASTATION_MALE_4" Language="zh_Hans_CN">
+			<Text>工口守卫</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_BWH_LASTATION_MALE_5" Language="zh_Hans_CN">
+			<Text>老猎人</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_BWH_LASTATION_MALE_6" Language="zh_Hans_CN">
+			<Text>维奥</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_BWH_LASTATION_MALE_7" Language="zh_Hans_CN">
+			<Text>莫鲁</Text>
+		</Replace>
+
+		<Replace Tag="LOC_CITIZEN_BWH_LASTATION_FEMALE_1" Language="zh_Hans_CN">
+			<Text>电击子</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_BWH_LASTATION_FEMALE_2" Language="zh_Hans_CN">
+			<Text>日本一</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_BWH_LASTATION_FEMALE_3" Language="zh_Hans_CN">
+			<Text>猫猫</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_BWH_LASTATION_FEMALE_4" Language="zh_Hans_CN">
+			<Text>八间纪子</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_BWH_LASTATION_FEMALE_5" Language="zh_Hans_CN">
+			<Text>新手猎人</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_BWH_LASTATION_FEMALE_6" Language="zh_Hans_CN">
+			<Text>妮萨</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_BWH_LASTATION_FEMALE_7" Language="zh_Hans_CN">
+			<Text>铁拳</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_BWH_LASTATION_FEMALE_8" Language="zh_Hans_CN">
+			<Text>恒美</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_BWH_LASTATION_FEMALE_9" Language="zh_Hans_CN">
+			<Text>莉法衣</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_BWH_LASTATION_FEMALE_10" Language="zh_Hans_CN">
+			<Text>慧</Text>
+		</Replace>
+		
+		<!-- ***************************** 地名 ***************************** -->
+		
+		<Replace Tag="LOC_NAMED_RIVER_LTD_LASTATION_1_NAME" Language="zh_Hans_CN">
+			<Text>海难瀑布</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_LTD_LASTATION_2_NAME" Language="zh_Hans_CN">
+			<Text>伙伴小溪</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_LTD_LASTATION_3_NAME" Language="zh_Hans_CN">
+			<Text>重力异想之河</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_LTD_LASTATION_4_NAME" Language="zh_Hans_CN">
+			<Text>讨·鬼湍流</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_LTD_LASTATION_5_NAME" Language="zh_Hans_CN">
+			<Text>纳斯奈奔流</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_LTD_LASTATION_6_NAME" Language="zh_Hans_CN">
+			<Text>复音瀑布</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_LTD_LASTATION_7_NAME" Language="zh_Hans_CN">
+			<Text>麦迪莫小溪</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_LTD_LASTATION_8_NAME" Language="zh_Hans_CN">
+			<Text>喧闹之河</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_LTD_LASTATION_9_NAME" Language="zh_Hans_CN">
+			<Text>卡利普索湍流</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_LTD_LASTATION_10_NAME" Language="zh_Hans_CN">
+			<Text>索尔急流</Text>
+		</Replace>
+
+		<Replace Tag="LOC_NAMED_MOUNTAIN_LTD_LASTATION_1_NAME" Language="zh_Hans_CN">
+			<Text>火龙峰</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_MOUNTAIN_LTD_LASTATION_2_NAME" Language="zh_Hans_CN">
+			<Text>帕兹伯山脉</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_MOUNTAIN_LTD_LASTATION_3_NAME" Language="zh_Hans_CN">
+			<Text>奈里之山隘</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_MOUNTAIN_LTD_LASTATION_4_NAME" Language="zh_Hans_CN">
+			<Text>杰克斯特山脉</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_MOUNTAIN_LTD_LASTATION_5_NAME" Language="zh_Hans_CN">
+			<Text>克莱珂峰顶</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_MOUNTAIN_LTD_LASTATION_6_NAME" Language="zh_Hans_CN">
+			<Text>吞噬者之峰</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_MOUNTAIN_LTD_LASTATION_7_NAME" Language="zh_Hans_CN">
+			<Text>福特斯克山脉</Text>
+		</Replace>
+		<!-- ***************************** 寄生前夜 ***************************** -->
+		<Replace Tag="LOC_NAMED_MOUNTAIN_LTD_LASTATION_8_NAME" Language="zh_Hans_CN">
+			<Text>布雷娅小路</Text>
+		</Replace>
+		<!-- 原名mt.ridge，同名游戏ridge由YakovlevVladislav研发 -->
+		<Replace Tag="LOC_NAMED_MOUNTAIN_LTD_LASTATION_9_NAME" Language="zh_Hans_CN">
+			<Text>雅科列夫山脉</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_MOUNTAIN_LTD_LASTATION_10_NAME" Language="zh_Hans_CN">
+			<Text>黑尔峰顶</Text>
+		</Replace>
+		<!-- Threedot为手机上一个益智类游戏，空间躲避 -->
+		<Replace Tag="LOC_NAMED_VOLCANO_LTD_LASTATION_1_NAME" Language="zh_Hans_CN">
+			<Text>空间躲避火山</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_VOLCANO_LTD_LASTATION_2_NAME" Language="zh_Hans_CN">
+			<Text>宾沙利圆丘</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_VOLCANO_LTD_LASTATION_3_NAME" Language="zh_Hans_CN">
+			<Text>奎托斯山谷</Text>
+		</Replace>
+		<!-- ***************************** sucker punch production，最近新作对马岛 ***************************** -->
+		<Replace Tag="LOC_NAMED_VOLCANO_LTD_LASTATION_4_NAME" Language="zh_Hans_CN">
+			<Text>对马岛火山</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_VOLCANO_LTD_LASTATION_5_NAME" Language="zh_Hans_CN">
+			<Text>龙骑兵之山</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_VOLCANO_LTD_LASTATION_6_NAME" Language="zh_Hans_CN">
+			<Text>托格拉恐龙山脉</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_VOLCANO_LTD_LASTATION_7_NAME" Language="zh_Hans_CN">
+			<Text>黎明圆丘</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_VOLCANO_LTD_LASTATION_8_NAME" Language="zh_Hans_CN">
+			<Text>战鹰山谷</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_VOLCANO_LTD_LASTATION_9_NAME" Language="zh_Hans_CN">
+			<Text>阿尔法核心火山</Text>
+		</Replace>
+		<!-- ********************* The Mark of Kri，索尼互动娱乐出品《克里的印记》 ********************* -->
+		<Replace Tag="LOC_NAMED_VOLCANO_LTD_LASTATION_10_NAME" Language="zh_Hans_CN">
+			<Text>克里印记之山</Text>
+		</Replace>
+		<!-- ***************************** 所有的沙漠都跟游戏有关 **************************** -->
+		<Replace Tag="LOC_NAMED_DESERT_LTD_LASTATION_1_NAME" Language="zh_Hans_CN">
+			<Text>徘徊荒漠</Text>
+		</Replace>
+		<!-- ***************************** trico，指最后守护者的大鹫 ***************************** -->
+		<Replace Tag="LOC_NAMED_DESERT_LTD_LASTATION_2_NAME" Language="zh_Hans_CN">
+			<Text>大鹫沙漠</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_DESERT_LTD_LASTATION_3_NAME" Language="zh_Hans_CN">
+			<Text>库珀沙丘</Text>
+		</Replace>
+		<!-- ***************************** Quantic Dream，开发了暴雨的那家 ***************************** -->
+		<Replace Tag="LOC_NAMED_DESERT_LTD_LASTATION_4_NAME" Language="zh_Hans_CN">
+			<Text>超凡双生沙漠</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_DESERT_LTD_LASTATION_5_NAME" Language="zh_Hans_CN">
+			<Text>龙穴荒地</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_DESERT_LTD_LASTATION_6_NAME" Language="zh_Hans_CN">
+			<Text>MAG荒漠</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_DESERT_LTD_LASTATION_7_NAME" Language="zh_Hans_CN">
+			<Text>薄雾沙漠</Text>
+		</Replace>
+		<!-- ***************************** xillia，无尽传说（tale of xillia）***************************** -->
+		<Replace Tag="LOC_NAMED_DESERT_LTD_LASTATION_8_NAME" Language="zh_Hans_CN">
+			<Text>断界壳沙丘</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_DESERT_LTD_LASTATION_9_NAME" Language="zh_Hans_CN">
+			<Text>三位一体沙漠</Text>
+		</Replace>
+		<!-- *********************** 神秘海域：德雷克船长的宝藏（Uncharted: Drake's Fortune） *********************** -->
+		<Replace Tag="LOC_NAMED_DESERT_LTD_LASTATION_10_NAME" Language="zh_Hans_CN">
+			<Text>德雷克荒地</Text>
+		</Replace>
+		<!-- ************************ 超次元海王星地名 利比特休养地（Rebeat Resort） ************************ -->
+		<Replace Tag="LOC_NAMED_LAKE_LTD_LASTATION_1_NAME" Language="zh_Hans_CN">
+			<Text>利比特湖</Text>
+		</Replace>
+		<!-- ************** 超次元海王星地名 星域毁灭地带（Endless Zone） ********** -->
+		<Replace Tag="LOC_NAMED_LAKE_LTD_LASTATION_2_NAME" Language="zh_Hans_CN">
+			<Text>星域毁灭咸水湖</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_LAKE_LTD_LASTATION_3_NAME" Language="zh_Hans_CN">
+			<Text>限界凸骑红树湖</Text>
+		</Replace>
+		<!-- ************************ project 575，psv上的游戏 ************************ -->
+		<Replace Tag="LOC_NAMED_LAKE_LTD_LASTATION_4_NAME" Language="zh_Hans_CN">
+			<Text>第575号浅池</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_LAKE_LTD_LASTATION_5_NAME" Language="zh_Hans_CN">
+			<Text>骷髅猴水域</Text>
+		</Replace>
+		<!-- ***************************** vita，PSV ***************************** -->
+		<Replace Tag="LOC_NAMED_LAKE_LTD_LASTATION_6_NAME" Language="zh_Hans_CN">
+			<Text>PSV之湖</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_LAKE_LTD_LASTATION_7_NAME" Language="zh_Hans_CN">
+			<Text>世嘉金星咸水湖</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_LAKE_LTD_LASTATION_8_NAME" Language="zh_Hans_CN">
+			<Text>PS转接头红树湖</Text>
+		</Replace>
+		<!-- ********* 原文是Sixaxis，Firaxis的梗，其实不是，是一个索尼手柄SixAxis，六轴 ***********-->
+		<Replace Tag="LOC_NAMED_LAKE_LTD_LASTATION_9_NAME" Language="zh_Hans_CN">
+			<Text>SixAxis手柄浅池</Text>
+		</Replace>
+		<!-- ************* 是一个索尼手柄DualShock *************** -->
+		<Replace Tag="LOC_NAMED_LAKE_LTD_LASTATION_10_NAME" Language="zh_Hans_CN">
+			<Text>DualShock手柄水域</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_SEA_LTD_LASTATION_1_NAME" Language="zh_Hans_CN">
+			<Text>奇幻之书海岸</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_SEA_LTD_LASTATION_2_NAME" Language="zh_Hans_CN">
+			<Text>蔚蓝海湾</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_SEA_LTD_LASTATION_3_NAME" Language="zh_Hans_CN">
+			<Text>锦葵紫海岸</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_SEA_LTD_LASTATION_4_NAME" Language="zh_Hans_CN">
+			<Text>酒红海角</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_SEA_LTD_LASTATION_5_NAME" Language="zh_Hans_CN">
+			<Text>赭石港口</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_SEA_LTD_LASTATION_6_NAME" Language="zh_Hans_CN">
+			<Text>朱砂海岸</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_SEA_LTD_LASTATION_7_NAME" Language="zh_Hans_CN">
+			<Text>红玛瑙湾</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_SEA_LTD_LASTATION_8_NAME" Language="zh_Hans_CN">
+			<Text>品红海岸</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_SEA_LTD_LASTATION_9_NAME" Language="zh_Hans_CN">
+			<Text>薄荷海角</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_SEA_LTD_LASTATION_10_NAME" Language="zh_Hans_CN">
+			<Text>查特酒绿港口</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_OCEAN_LTD_LASTATION_1_NAME" Language="zh_Hans_CN">
+			<Text>诺瓦露之海</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_OCEAN_LTD_LASTATION_2_NAME" Language="zh_Hans_CN">
+			<Text>圣黑之海</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_OCEAN_LTD_LASTATION_3_NAME" Language="zh_Hans_CN">
+			<Text>优尼之海</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_OCEAN_LTD_LASTATION_4_NAME" Language="zh_Hans_CN">
+			<Text>神宫寺之海</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_OCEAN_LTD_LASTATION_5_NAME" Language="zh_Hans_CN">
+			<Text>傲娇之海</Text>
+		</Replace>
+		
+		<!-- 政策 -->
+		<!-- 这是反Cosplay政策的黑土边域版本，很遗憾，没有白露之滨的版本 -->
+		
+		<Replace Tag="LOC_POLICY_BWH_LASTATION_SUPERCOMPUTER_NAME" Language="zh_Hans_CN">
+			<Text>黑土边域高防服务器</Text>
+		</Replace>
+		<Replace Tag="LOC_POLICY_BWH_LASTATION_SUPERCOMPUTER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>敌方间谍在您的城市中的行动等级降低2级，但所有城市-1 [ICON_Gold] 金币产出。（如果你是诺瓦露的话，想必你也不会让某些人把那些Cosplay照片散布出去）</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GOVERNMENTS_PAGE_POLICY_BWH_LASTATION_SUPERCOMPUTER_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]Noire have spend many gold to build the security to prevent someone to watch her cosplay and other secret. The infamous case was Anonydeath have hack the collect information of CPU Black Heart, these information were Noire cosplaying, this almost leak into the public which leading her drive into a crazy and later she have want to build a supercomputer and security server to prevent someone watch her cosplaying. Although another Noire like Kasami Hiiragi have The Belgium Inc.'s VSI-x64 Supercomputer as security system to prevent someone see her cosplaying and various important information although her cosplaying was became publicly for long but she using for copyright image.</Text>
+		</Replace>
+
+		<!-- Sukritact的政策管理器模组 -->
+		
+		<Replace Tag="LOC_POLICY_BWH_LASTATION_SUPERCOMPUTER_FLAVOR" Language="zh_Hans_CN">
+			<Text>当你如往常一样穿Cosplay服外出时，一般都很善于保密自己的身份。谁会知道你只戴一副墨镜作遮挡？但这次，有人看穿了你的伪装，认定你就是黑土边域的守护女神！若此事败露出去，你最难以启齿的嗜好将会像野火一般传开！</Text>
+		</Replace>
+
+		<!-- ***************************** RwF模组(Rule with Faith)部分 ***************************** -->
+		
+		<Replace Tag="LOC_CIVILIZATION_BWH_LASTATION_DESCRIPTION_JFD_CIVILIZATION" Language="zh_Hans_CN">
+			<Text>黑土边域文明</Text>
+		</Replace>
+		
+		<!-- ***************************** 头衔 ***************************** -->
+		
+		<Replace Tag="LOC_GOVERNMENT_JFD_CHIEFDOM_LEADER_TITLE_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>领袖</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_CHIEFDOM_LEADER_TITLE_BWH_LASTATION_FEMININE" Language="zh_Hans_CN">
+			<Text>领袖</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_ALL_GOVERNMENT_LEADER_TITLE_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>君主</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_ALL_GOVERNMENT_LEADER_TITLE_BWH_LASTATION_FEMININE" Language="zh_Hans_CN">
+			<Text>女王</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_AUTOCRACY_LEADER_TITLE_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>女王</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_OLIGARCHY_LEADER_TITLE_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>女王</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_CLASSICAL_DEMOCRACY_LEADER_TITLE_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>女王</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_MERCHANT_REPUBLIC_LEADER_TITLE_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>女王</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_MONARCHY_LEADER_TITLE_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>女王</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_NOBLE_REPUBLIC_LEADER_TITLE_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>女王</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_LIBERAL_DEMOCRACY_LEADER_TITLE_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>女王</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_PEOPLES_REPUBLIC_LEADER_TITLE_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>女王</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_MILITARY_GUARDIANSHIP_LEADER_TITLE_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>女王</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_EMPIRE_LEADER_TITLE_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>女王</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_THEOCRACY_LEADER_TITLE_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>圣王</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_THEOCRACY_LEADER_TITLE_BWH_LASTATION_FEMININE" Language="zh_Hans_CN">
+			<Text>女神</Text>
+		</Replace>
+
+	<!-- LastationUltraNoireText.xml 文件 -->
+		<!-- ***************************** 领袖部分 ***************************** -->
+		<!-- ***************************** 诺瓦露Ultra ***************************** -->
+		<!-- ***************************** 领袖诺瓦露Ultra ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_BWH_ULTRANOIRE_NAME" Language="zh_Hans_CN">
+			<Text>诺瓦露Ultra</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_BWH_ULTRANOIRE_NAME_C4T" Language="zh_Hans_CN">
+			<Text>{LOC_LEADER_BWH_ULTRANOIRE_NAME} [ICON_Amenities][ICON_Science]</Text>
+		</Replace>
+		
+		<!-- ***************************** 领袖特色能力 ***************************** -->
+		
+		<Replace Tag="LOC_TRAIT_LEADER_BWH_BLACKHEARTBEAUTYULTRA_NAME" Language="zh_Hans_CN">
+			<Text>神次元圣黑之心的美貌</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_BWH_BLACKHEARTBEAUTYULTRA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>训练建造者和商人+15% [ICON_Production] 训练速度。每与一个其他文明宣布友谊，则+1 [ICON_Amenities] 宜居度；且与您宣布友谊的其他文明+1 [ICON_Science] 科技值。</Text>
+		</Replace>
+		
+		<!-- ***************************** 领袖议程 ***************************** -->
+		<!-- 该议程与柊笠见（布兰）的相似 -->
+		
+		<Replace Tag="LOC_AGENDA_BWH_LONELY_HEART_NAME" Language="zh_Hans_CN">
+			<Text>孤独之心</Text>
+		</Replace>
+		<Replace Tag="LOC_AGENDA_BWH_LONELY_HEART_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>喜欢那些不让她抱怨的文明，厌恶那些使她抱怨的临近文明，比如对她宣战或是谴责她。</Text>
+		</Replace>
+		
+		<!-- ***************************** 领袖百科与引言 ***************************** -->
+		
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_BWH_ULTRANOIRE_QUOTE" Language="zh_Hans_CN">
+			<Text>让我教教你一个优雅的女神是怎么治国的！</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_BWH_ULTRANOIRE_TITLE" Language="zh_Hans_CN">
+			<Text>诺瓦露Ultra，圣黑之心</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_LEADER_BWH_ULTRANOIRE_TITLE" Language="zh_Hans_CN">
+			<Text>诺瓦露Ultra，圣黑之心</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_BWH_ULTRANOIRE_SUBTITLE" Language="zh_Hans_CN">
+			<Text>黑土边域的守护女神，孤独之心（又名破碎之心），没朋友酱</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_BWH_ULTRANOIRE_CHAPTER_CAPSULE_BODY" Language="zh_Hans_CN">
+			<Text>诺瓦露Ultra适合那些希望快速建造军队，城市和奇观的玩家。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_BWH_ULTRANOIRE_CHAPTER_DETAILED_BODY" Language="zh_Hans_CN">
+			<Text>诺瓦露Ultra作为领袖时，她就如同不会让自己抱怨的文明本身一般，她也喜欢建造奇观，并同朋友建立联盟。她不会是任何人的幕后黑手。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_BWH_ULTRANOIRE_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]Noire, better known to the general populace as Lady Black Heart, is the CPU of Lastation. A tsundere through and through. However, amongst the 4 CPUs, she is the one with the strongest work ethic and, arguably, the only one of them who actually takes her duties as seriously as she should. She has a low tolerance for failure and laziness, making it that much more amazing that Neptune has gotten so close to her. Unbeknownst to the public, she is also heavily into cosplay.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_BWH_ULTRANOIRE_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>Noire is very tsundere compare to Uni and Kotori Hatsumi (Kasami Hiiragi), unlike these two CPU, Noire don't have much friend compare to Uni and Kasami Hiiragi. Noire is often to called Kasami Hiiragi as 'Tsundere Beginner' how tsundere Kasami is. Noire is among most hard work CPU in Gamindustri and really hard work more than Kasami Hiiragi.</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_HDNCAPITAL_LASTATION_ULTRANOIRE_CAPITAL" Language="zh_Hans_CN">
+			<Text>神次元圣黑之心</Text>
+		</Replace>
+		
+		<!-- ******************* 引言部分 **************** -->
+		<!-- 大部分引言摘自柊笠见（布兰）的部分 -->
+		<!-- ***************************** 载入 ***************************** -->
+		
+		<Replace Tag="LOC_LOADING_INFO_LEADER_BWH_ULTRANOIRE" Language="zh_Hans_CN">
+			<Text>最高雅谦和的圣黑之心女神，我们感谢您对我们命运的指引与守护！拥有最强统治权的您是名副其实的守护女神，似乎从未停歇的您将黑土边域发展成整个游汐叶界都为之艳羡的国度。在您的领导下，黑土边域已然成为科技巨人——事实上也是游汐叶界位居首位的国家。然而，您仍坚持实行改革，组织公共工程项目，并亲自保护人民免受怪物袭击。其实，您太专注于您的工作，以至于似乎完全缺乏她人的陪伴……我诚挚向您道歉，是我说的太过分了！</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 首次见面 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>哈？你意思是说我这回正常地遇见了新朋友，而没被他们一头撞到我娇软的身体上？别开玩笑了。你都不知道这个问题对我有多棘手……但不管怎样，我们还是谈正事吧。我可能还是个年轻的守护女神，但我对这个国家的奉献是无人可出其右的。我期待我们彼此之间关系愉快，但倘若你有任何不齿之念，我会毫不犹豫地守护黑土边域的。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>唔……我愿意让你参观我附近的一座城市，我想把向别人推荐我的城市放入你的日程清单里，如果你愿意的话欢迎来参观，也请……不要伤害我的人民。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NEAR_INITIATOR_POSITIVE_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>好哦，这可是你说的，我希望我们能和平合作。但如果你犯蠢了，我会直接前去你的国家，指责你……听明白了吧？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>稍等……我从恒美那儿得到消息，说你的首都离我很远，我还尚未有远途旅行方式去你那里探险，你能和我交换一下首都信息吗？请给我一份吧，拜托了……</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 问候 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_GREETING_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>啊，是你啊。你想要什么？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_GREETING_LEADER_BWH_ULTRANOIRE_HAPPY" Language="zh_Hans_CN">
+			<Text>咕呶呶呶～！笨……笨蛋！进来之前先敲门！我正坐这儿织手套，为了我的Cos……啊，那个，Cos……Cosmopolitan regalia，体现世界文化的特色装饰！对，因为我打算在下一届世界议会上用它来促进国家之间的团结！天啊，我整个人都紧张了！你来这儿最好有足够充分的理由！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_GREETING_LEADER_BWH_ULTRANOIRE_UNHAPPY" Language="zh_Hans_CN">
+			<Text>是来这儿让我用你来练习剑术的，对吗？</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 宣布友谊 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_HUMAN_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>我……当然，和别人一起努力应该……很不错。这是职业需要，对，是职业需要！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_HUMAN_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>稍后再谈吧，我很忙。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>我最近明白了一些事情。黑土边域是个强大的国家，但它可以通过联盟变得更加强大。往常我都已习惯自己独自领导，不过让我们试试这种友谊又何妨？并且，与我们结盟也会让你的国家受益匪浅。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>哇，太好了！谢谢你。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>什么？！你拒绝了？好好好，但愿是你还没准备好和我交朋友，或者我做了什么让你害怕了？没有，我什么都没做，你就已经拒绝我了。啊呜呜呜……</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 宣战 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>哦豁，我很乐意战斗。听起来不像是涅普迪努和她那种“只是做做任务，我的国家生存所需的就是这些”的态度，而这种每隔一回合走出办公室投身战场的形式真的相当令人耳目一新！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>黑土边域是世界上最强大的国家，你很快就会完全明白原因的！</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 贸易 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_MAKE_DEAL_AI_ACCEPT_DEAL_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>哟，我们做个交易吧。你看这样如何？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MAKE_DEAL_AI_REFUSE_DEAL_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>我不同意这样交易，再考虑考虑别的吧。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_MAKE_DEAL_FROM_AI_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>嘛，你不愿意这样啊，好吧，这是你的决定。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MAKE_DEAL_AI_ADJUST_DEAL_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>我虽然这方面还有点生疏，但被占便宜的时候自己还是知道的。你可以做得更好。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>好的，这样就行。</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 击败 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>*抽泣*这些年来我一直在寻找信奉水晶，这么多年来我一直在建造这座帝国，却一次也没打听到普露露特的音讯……这些都为了什么？为了让我亲眼看着自己的帝国被这样的火焰吞噬？！你……你这个混蛋！我绝！对！不！会！原谅你的！我发誓总有一天我会向你报仇……*抽泣*……咕……呜哇啊啊啊！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>*抽泣*这些年来我一直在寻找信奉水晶，这么多年来我一直在建造这座帝国，却一次也没打听到普露露特的音讯……这些都为了什么？为了让我亲眼看着自己的帝国被这样的火焰吞噬？！你……你这个混蛋！我绝！对！不！会！原谅你的！我发誓总有一天我会向你报仇……*抽泣*……咕……呜哇啊啊啊！</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 代表团 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_HUMAN_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>好吧，我允许让你的人民评论我的所为，我倒不会去解释，不过，嘛。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_HUMAN_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>不行，我说不行不行不行不行不行！我是不会允许像你这样的人来我首都的，我这边有传言说你的人民现在可能携带瘟疫，会摧毁我的帝国，我不喜欢这种陈词滥调，你知道的！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DELEGATION_FROM_AI_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>看起来你还没搞清楚整个“外交关系”的所有事情，那我们何不派一支代表团前去你的首都，让你看看我们是怎么做的？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_AI_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>真的吗？谢谢你，我希望你的人民已经被我代表团传染上瘟疫了，哈哈，开个玩笑。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_AI_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>害怕瘟疫？我的代表团里没有那种东西，你却拒绝了。但愿下次我会出席另一支代表团。</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 谴责 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>你你你刚才说什么？！“你已经需要发布自己的轻薄版（Slim Version）了？！”[NEWLINE]你。死。定。了。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>我来抱怨了！！我直接到你这里来了！在你国家里！我要指着你的鼻子指责你！[NEWLINE]（谴责你）</Text>
+		</Replace>
+		
+		<!-- 这大概是为什么她无论如何也要谴责你 -->
+		
+		<Replace Tag="LOC_DIPLO_DENOUNCE_REASON_FROM_AI_LEADER_ANY_REASON_AGENDA_BWH_LONELY_HEART_DENOUNCED" Language="zh_Hans_CN">
+			<Text>（您谴责了她）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DENOUNCE_REASON_FROM_AI_LEADER_ANY_REASON_AGENDA_BWH_LONELY_HEART_ATTACKING_HER" Language="zh_Hans_CN">
+			<Text>（您向她宣战了）</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 大使馆 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_ACCEPT_EMBASSY_FROM_HUMAN_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>你的大使馆现在已经在我首都落成了，我很开心看到你会说黑土边域语，我相信你不会拉上我们一起做什么蠢事。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_EMBASSY_FROM_HUMAN_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>不，我不会允许的，你明白，大使馆是敌人的武器，敌人靠它策动暗算我们，我知道你的人民从不会讲黑土边域语。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_EMBASSY_FROM_AI_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>看起来你还没搞清楚整个“外交关系”的所有事情，那我们何不在你的首都建立一座大使馆，让你看看我们是怎么做的？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_ACCEPT_EMBASSY_FROM_AI_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>谢谢你，我希望你讲我的语言能比我更流利，但很遗憾，我知道你不会说外来语。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_EMBASSY_FROM_AI_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>嘛，我想你不喜欢说黑土边域语。那就这样吧。</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 结盟 ***************************** -->
+		
+		<!-- ***************************** 外交 赞成与警告 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_WARNING_EXIT_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>你是个十足的失败者。只是站在你面前就让人难以忍受，就像我能感觉到你骨子里的无能。有你在身边，黑土边域会变得更糟，所以赶紧做完生意滚开。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_LEADER_BWH_ULTRANOIRE_REASON_ANY" Language="zh_Hans_CN">
+			<Text>（您向她或者她所在大陆上的其他文明宣战了）</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_KUDO_EXIT_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>说实话，我喜欢那些愿意与我的国家保持和平而不让我抱怨的人，一个好的笨蛋就是如此，做个善良的笨蛋能带来欢乐，而邪恶的笨蛋则会带来痛苦，我明白你已经做出正确的选择了。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_BWH_ULTRANOIRE_REASON_ANY" Language="zh_Hans_CN">
+			<Text>（您没有自食恶果）</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_MODIFIER_BWH_LONELY_HEART_LIKE_FRIEND" Language="zh_Hans_CN">
+			<Text>诺瓦露认为您赢得这个友谊。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_BWH_LONELY_HEART_NOT_COMPLAIN" Language="zh_Hans_CN">
+			<Text>诺瓦露喜欢您没让她抱怨。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_BWH_LONELY_HEART_HIGH_HAPPY_WONDER" Language="zh_Hans_CN">
+			<Text>诺瓦露喜欢您拥有高宜居度和很多奇观。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_MODIFIER_BWH_LONELY_HEART_DENOUNCED" Language="zh_Hans_CN">
+			<Text>诺瓦露讨厌您谴责了她。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_BWH_LONELY_HEART_ATTACKING_HER" Language="zh_Hans_CN">
+			<Text>诺瓦露厌恶您向她宣战。</Text>
+		</Replace>
+		<!-- ***************************** 外交 索取 ***************************** -->
+		<Replace Tag="LOC_DIPLO_AI_REFUSE_DEMAND_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>不要！呸！呸！呸！你是不会得逞的，从我这里你什么也得不到，你只会从你死去的人民那里得到！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_AI_ACCEPT_DEMAND_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>呵呵呵呵！把这些拿走吧，我不会忘记的，我是不会忘记……永！远！不会忘记这次耻！辱！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_HUMAN_ACCEPT_DEMAND_FROM_AI_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>你可算做了个明智的选择，成为一个无法抵抗“柊之协约”的弱者，我现在太累了……</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_HUMAN_REFUSE_DEMAND_FROM_AI_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>你认为你能逃得过“柊之和平协约”？那你很快就会死了。</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 和平 ***************************** -->
+		
+		<!-- ***************************** 外交 开放边境 ***************************** -->
+		
+		<!-- ***************************** 外交 别在附近定居 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_AI_RESPONSE_POSITIVE_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>咿呀！好吧好吧！本着合作的精神，我会放弃在这些土地上定居。希望你能开心。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_AI_RESPONSE_NEGATIVE_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>啊哈哈哈！说真的，你认为我会听你的吗？我们想去哪里，黑土边域就在哪里定居，十分感谢～</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_AI_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>你知道你挡着我的路了，对吧？惹怒我这样的人可不划算，所以打住吧。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_HUMAN_RESPONSE_POSITIVE_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>很好，交给我吧，我会按我的意愿好好使用这些土地的。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_HUMAN_RESPONSE_NEGATIVE_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>白痴！我真不敢相信你竟然妨碍了我的任务？我真的永远都不会原谅你的。</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 很多军队在边境附近 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_AI_RESPONSE_POSITIVE_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>你明白，如果“你让军队在我边境待命”是个误会的话，那在之后你要是做一些类似中立的扯淡事我就会相信你。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_AI_RESPONSE_NEGATIVE_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>如果你说调动军队是个误会的话，那向我宣战的呢？肯定也会是你！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>你是真打算这样和黑土边域对抗，抑或只是为了炫耀一下？不管怎样，这都是可悲的。和我战斗还是走开，我没空跟你耗……</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 别在我这里用间谍 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_AI_RESPONSE_POSITIVE_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>好的好的，我不会再这样了，我们的间谍都是没脑子的笨蛋，等等，是我下令行动的，难道我也是笨蛋？抱歉，我不会再这么做了。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_AI_RESPONSE_NEGATIVE_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>啊哈哈哈！说实话，我的间谍会尽全力朝目标致命一击的，我不会接受你的请求。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>听着，我知道以前有个聪明的小流氓，为了偷看我的Cosplay照片——内！部！机！密！…对，就是内部机密……而试图修改黑土边域那不可渗透的安全系统，还成功了……我说的那个小流氓不是别人，就是你。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_HUMAN_RESPONSE_POSITIVE_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>哦……谢天谢地，我不会忘记你的所为的。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_HUMAN_RESPONSE_NEGATIVE_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>我的超算终端会阻止你黑入我最喜爱的电影来嘲笑你！啊哈哈哈！我没多少时间能一直穿着泉此方的Cosplay，你真的想看我的Cos吗？这是你的挑战哟。</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 别在这里挖掘文物 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_DIGGING_UP_ARTIFACTS_AI_RESPONSE_POSITIVE_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>我不再这么做了。我的确不是小孩子了，我……但我以后会努力争得如同今天掘出文物一样的稀世珍品。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_DIGGING_UP_ARTIFACTS_AI_RESPONSE_NEGATIVE_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>不管你怎么想，这件稀世珍品一定是我的，而非你。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_DIGGING_UP_ARTIFACTS_LEADER_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>你知道，我不能让这件智也的特殊物品被其他任何人先挖走，因为这是件“稀有”级物品，在网上到处都找不到的存在。而且其中一件稀有物品还在我的领域里，请不要再盗掘了。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_DIGGING_UP_ARTIFACTS_HUMAN_RESPONSE_POSITIVE_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>感谢，我打算如我所愿地把那件稀有物品藏起来。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_DIGGING_UP_ARTIFACTS_HUMAN_RESPONSE_NEGATIVE_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>你看出来了，那是艘宇宙飞船，你的人民无论如何都不可能轻松学会操纵它的，你是不是不动脑子？</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 别转换我的信仰 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_CONVERTING_MY_CITIES_AI_RESPONSE_POSITIVE_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>好吧，我的先知会离开，你的人民将会信仰您的宗教。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_CONVERTING_MY_CITIES_AI_RESPONSE_NEGATIVE_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>虽是我的宗教，但您的人民将会听从我的语言所能描述之事！这样很好。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_CONVERTING_MY_CITIES_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>请停止你先知入侵的行为，我想说我的人民已经追随我的宗教了。我不会允许你的宗教如此作为，请停手。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_CONVERTING_MY_CITIES_HUMAN_RESPONSE_POSITIVE_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>很好，那现在就让这些先知们离开我这里吧。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_CONVERTING_MY_CITIES_HUMAN_RESPONSE_NEGATIVE_LEADER_BWH_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>你确定？那我会为我的先知做后盾。我决不会忘记的！很快你就会迎来流血牺牲和分崩离析的结局！</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 迭起兴衰 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_ACCEPT_RENEW_ALLIANCE_FROM_HUMAN_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>谢谢呐，我喜欢成为你的朋友，胜过成为孤独之心。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_RENEW_ALLIANCE_FROM_HUMAN_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>现在是时候终止联盟、独自行动了。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_RENEW_ALLIANCE_FROM_AI_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>现在是时候重新建立一个强大的联盟了，那你为何非要延长该联盟期限呢？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_ACCEPT_RENEW_ALLIANCE_FROM_AI_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>谢谢呐，我喜欢成为你的朋友，胜过成为孤独之心。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_RENEW_ALLIANCE_FROM_AI_ULTRANOIRE_ANY" Language="zh_Hans_CN">
+			<Text>嘛，你不再愿意的话，那现在就为你而结束吧……</Text>
+		</Replace>
+
+		<!-- ***************************** Nomina模组 ***************************** -->
+
+		<!-- ***************************** 文明头衔 ***************************** -->
+		<!-- ***************************** 游牧 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_JFD_NOMADS_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}领袖</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_JFD_NOMADS_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}领袖</Text>
+		</Replace>
+		<!-- ***************************** 酋邦 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_CHIEFDOM_LARGE_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}领袖</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_CHIEFDOM_LARGE_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}领袖</Text>
+		</Replace>
+
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_CHIEFDOM_SMALL_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}领袖</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_CHIEFDOM_SMALL_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}领袖</Text>
+		</Replace>
+		
+		<!-- ***************************** 部落 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_JFD_HORDE_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}领袖</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_JFD_HORDE_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}领袖</Text>
+		</Replace>
+		
+		<!-- ***************************** 城邦 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_JFD_POLIS_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}领袖</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_JFD_POLIS_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}领袖</Text>
+		</Replace>
+		
+		<!-- ***************************** 独裁 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_AUTOCRACY_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_AUTOCRACY_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+		
+		<!-- ***************************** 古典共和 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_CLASSICAL_REPUBLIC_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_CLASSICAL_REPUBLIC_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+		
+		<!-- ***************************** 寡头政治 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_OLIGARCHY_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_OLIGARCHY_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+		
+		<!-- ***************************** 商业共和国 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_MERCHANT_REPUBLIC_TINY_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_MERCHANT_REPUBLIC_TINY_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+
+		<!-- 海洋文明 -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_MERCHANT_REPUBLIC_SMALL_SEA_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_MERCHANT_REPUBLIC_SMALL_SEA_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_MERCHANT_REPUBLIC_MEDIUM_SEA_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_MERCHANT_REPUBLIC_MEDIUM_SEA_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_MERCHANT_REPUBLIC_LARGE_SEA_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_MERCHANT_REPUBLIC_LARGE_SEA_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+
+		<!-- 陆地文明 -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_MERCHANT_REPUBLIC_SMALL_LAND_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_MERCHANT_REPUBLIC_SMALL_LAND_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_MERCHANT_REPUBLIC_MEDIUM_LAND_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_MERCHANT_REPUBLIC_MEDIUM_LAND_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_MERCHANT_REPUBLIC_LARGE_LAND_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_MERCHANT_REPUBLIC_LARGE_LAND_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+		
+		<!-- ***************************** 君主制 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_MONARCHY_TINY_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_MONARCHY_TINY_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_MONARCHY_SMALL_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_MONARCHY_SMALL_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_MONARCHY_MEDIUM_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_MONARCHY_MEDIUM_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_MONARCHY_LARGE_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_MONARCHY_LARGE_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+		
+		<!-- ***************************** 君主专制 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_JFD_ABSOLUTE_MONARCHY_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_JFD_ABSOLUTE_MONARCHY_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+		
+		<!-- ***************************** 神圣共和国 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_JFD_NOBLE_REPUBLIC_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_JFD_NOBLE_REPUBLIC_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+		
+		<!-- ***************************** 议会民主制 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_JFD_PARLIAMENTARY_DEMOCRACY_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_JFD_PARLIAMENTARY_DEMOCRACY_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+		
+		<!-- ***************************** 共产主义 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_COMMUNISM_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_COMMUNISM_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+		
+		<!-- ***************************** 民主制 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_DEMOCRACY_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_DEMOCRACY_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+		
+		<!-- ***************************** 法西斯 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_FASCISM_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_FASCISM_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+		
+		<!-- ***************************** 企业自由意志主义 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_CORPORATE_LIBERTARIANISM_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_CORPORATE_LIBERTARIANISM_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+		
+		<!-- ***************************** 数字民主主义 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_DIGITAL_DEMOCRACY_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_DIGITAL_DEMOCRACY_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+		
+		<!-- ***************************** 合成专家统治 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_SYNTHETIC_TECHNOCRACY_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_SYNTHETIC_TECHNOCRACY_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+		
+		<!-- ***************************** 帝国 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_EMPIRE_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_EMPIRE_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+		
+		<!-- ***************************** 无政府 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_ANARCHY_EARLY_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>NPC {1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_ANARCHY_EARLY_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>NPC {1_Name}</Text>
+		</Replace>
+
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_ANARCHY_RENAISSANCE_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>NPC {1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_ANARCHY_RENAISSANCE_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>NPC {1_Name}</Text>
+		</Replace>
+
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_ANARCHY_MODERN_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>NPC {1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_ANARCHY_MODERN_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>NPC {1_Name}</Text>
+		</Replace>
+		
+		<!-- ***************************** 神权政治 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_THEOCRACY_NO_RELIGION_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_THEOCRACY_NO_RELIGION_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_THEOCRACY_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_THEOCRACY_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+		
+		<!-- ***************************** 杂项 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOD_KING_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOD_KING_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+
+		<Replace Tag="LOC_LEADER_MALE_DIPLOMATIC_LEAGUE_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_DIPLOMATIC_LEAGUE_CIVILIZATION_BWH_LASTATION" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

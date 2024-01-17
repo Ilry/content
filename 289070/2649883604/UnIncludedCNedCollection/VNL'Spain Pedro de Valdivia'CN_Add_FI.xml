@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'Spain Pedro de Valdivia'CN_Add_FI -->
+<!-- Author: 春 , Clear8Sky -->
+<!-- DateCreated: 2021/8/25 13:33:12 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Spain: Pedro de Valdivia” 。该文件在 FrontEnd 与 InGame 时载入，无需任何 Criteria -->
+	<LocalizedText>
+		
+		<!-- 模组页面 -->
+		
+		<Replace Tag="LOC_MOD_JFD_SPAIN_VALDIVIA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>------------------------------------[NEWLINE]领袖名称 -- 佩德罗·德·瓦尔迪维亚[NEWLINE][NEWLINE]领袖特性 - 赐封制度[NEWLINE]所有建立在非原始首都所在大陆上的城市将获得一名建造者和大量 [ICON_Gold] 金币奖励。完成市政“探索”解锁特色单位“亚纳科纳”。[NEWLINE][NEWLINE]特色单位 - 亚纳科纳[NEWLINE]佩德罗·德·瓦尔迪维亚作为领袖时的西班牙文艺复兴时期特色侦察单位，可在没有开放边境的情况下进入其他文明境内。[NEWLINE][NEWLINE]领袖议程 - 新埃斯特雷马杜拉[NEWLINE]寻求尽可能多的领土，尊重那些追随他的宗教并且尽可能开拓疆土的文明。认为那些追随他的宗教，但只控制一小片土地的文明是对上帝的侮辱。</Text>
+		</Replace>
+		
+		<!-- 领袖 -->
+		
+		<Replace Tag="LOC_LEADER_JFD_VALDIVIA_SPAIN_NAME" Language="zh_Hans_CN">
+			<Text>佩德罗·德·瓦尔迪维亚</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_EXTREMADURA_SPAIN" Language="zh_Hans_CN">
+			<Text>埃斯特雷马杜拉</Text>
+		</Replace>
+
+		<!-- 议程 -->
+
+		<Replace Tag="LOC_AGENDA_JFD_NUEVA_EXTREMADURA_SPAIN_NAME" Language="zh_Hans_CN">
+			<Text>新埃斯特雷马杜拉</Text>
+		</Replace>
+		<Replace Tag="LOC_AGENDA_JFD_NUEVA_EXTREMADURA_SPAIN_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>寻求尽可能多的领土，尊重那些追随他的宗教并且尽可能开拓疆土的文明。认为那些追随他的宗教，但只控制一小片土地的文明是对上帝的侮辱。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_JFD_VALDIVIA_SPAIN_REASON_MANY_CITIES_AND_SAME_RELIGION" Language="zh_Hans_CN">
+			<Text>（您信仰相同宗教并且拥有许多城市）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_AGENDA_JFD_NUEVA_EXTREMADURA_SPAIN_MANY_CITIES_AND_SAME_RELIGION" Language="zh_Hans_CN">
+			<Text>佩德罗·德·瓦尔迪维亚赞扬你传播对上帝的信仰。</Text>
+		</Replace>
+
+		<!-- 载入 -->
+
+		<Replace Tag="LOC_LOADING_INFO_LEADER_JFD_VALDIVIA_SPAIN" Language="zh_Hans_CN">
+			<Text>佩德罗·德·瓦尔迪维亚，新世界在召唤，光荣和财富在等待着您。到遥远的地方建立新的殖民地。让您的开拓者工作起来，让您的遗产为西班牙所羡慕。</Text>
+		</Replace>
+
+		<!-- 特性 -->
+
+		<Replace Tag="LOC_TRAIT_LEADER_JFD_ENCOMIENDA_SPAIN_NAME" Language="zh_Hans_CN">
+			<Text>赐封制度</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_JFD_ENCOMIENDA_SPAIN_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>所有建立在非原始首都所在大陆上的城市将获得一名建造者和大量 [ICON_Gold] 金币奖励。完成市政“探索”解锁特色单位亚纳科纳。</Text>
+		</Replace>
+
+		<!-- 百科 -->
+
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_VALDIVIA_SPAIN_TITLE" Language="zh_Hans_CN">
+			<Text>佩德罗·德·瓦尔迪维亚</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_VALDIVIA_SPAIN_TAB_NAME" Language="zh_Hans_CN">
+			<Text>佩德罗·德·瓦尔迪维亚（西班牙）</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_VALDIVIA_SPAIN_SUBTITLE" Language="zh_Hans_CN">
+			<Text>智利皇家总督</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_VALDIVIA_SPAIN_QUOTE" Language="zh_Hans_CN">
+			<Text>如果死亡来自于西班牙，那我们都会长命百岁。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_VALDIVIA_SPAIN_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】Pedro de Valdivia was born in the district of La Serena in Estremadura. Joining the Spanish army early, he fought in Flanders and then at the battle of Pavia in 1525. He reached America in 1535, spent an uneventful year in Venezuela, and moved on to Peru. There he took part on the side of Hernando Pizarro in the battle of Las Salinas in 1538, which saw Almagro defeated and captured. Valdivia had married in Spain, but in Peru he became attached to the widow Inés de Suárez, who accompanied him to Chile as his mistress.[NEWLINE][NEWLINE]Early in 1540, with Francisco Pizarro's permission, Valdivia left Cuzco for Chile with a small expedition and one Sancho de Hoz as partner. On the way, Sancho, seeking sole leadership, tried to murder Valdivia but failed. He was pardoned but from then on had to accept subordinate status.[NEWLINE][NEWLINE]In central Chile, Valdivia founded Santiago on the Mapocho River in 1541, and 3 years later Juan Bohón established La Serena in the Coquimbo Valley. These were followed by Concepción, Villarrica, Imperial, Valdivia, and Angol. Valparaíso, though used as a port by the Spaniards from the start, had no considerable population until much later. Santiago was largely destroyed, soon after its foundation, by Aconcagua Native Americans during Valdivia's absence. The Spaniards there were not annihilated, however, and Inés de Suárez largely conducted the defense and caused the attackers to reire. Ultimately, pressure from his political superiors compelled Valdivia to end his relations with Inés.[NEWLINE][NEWLINE]When the Gonzalo Pizarro rebellion began in Peru, the insurgents attempted unsuccessfully to win Valdivia to their side. Early in 1548 Valdivia joined the royal army of Pedro de la Gasca in Peru, and his military experience counted heavily in the victory of Xaguixaguana on April 9 of that year. Valdivia returned to Chile with his position and prestige considerably strengthened.[NEWLINE][NEWLINE]Earlier, on learning of Francisco Pizarro's murder in 1541, Valdivia had removed Chile from Peruvian control and acknowledged only the royal authority, an arrangement the CReplacen found acceptable. Secure now in his own domain, he pushed exploration southward and aided the development of the country by dividing the land among his ablest followers and parceling out the Indians in encomiendas. Chile possessed minerals, but Valdivia definitely subordinated mining to agriculture and stock raising.[NEWLINE][NEWLINE]Valdivia had a clash with the warlike Araucanians beyond the Bio-Bio River in 1550 in which he defeated them but by no means broke their will to resist, a will that grew stronger when the conquistador established the Concepción settlement in their territory. He moved against them in 1553 and built a fort at Tucapel. He had earlier captured and presumably made friends with Lautaro, an Araucanian youth who became his groom. Lautaro secretly remained true to his own people and rejoined them to show Chief Caupolicán a means by which Valdivia could be taken. The Spanish leader was captured on Christmas Day, 1553. Though different accounts exist of his execution, the likeliest is that a chief, Pilmaiquén, hit him in the head with a war club.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_VALDIVIA_SPAIN_CHAPTER_CAPSULE_BODY" Language="zh_Hans_CN">
+			<Text>瓦尔迪维亚领导着世界上另一个海军帝国，但与英国不同的是，他所领导的帝国最有可能获得统治胜利。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_VALDIVIA_SPAIN_CHAPTER_DETAILED_BODY" Language="zh_Hans_CN">
+			<Text>瓦尔迪维亚希望他的殖民地立即运转起来。如果他无法以和平方式在其他大陆找到居住地，他会动用他的征服者来抢夺领地。一旦占领一个地区，传教团和宝藏舰队这样的文明能力，能确保这一领地让瓦尔迪维亚有利可图。他希望铲除所有异教徒，直到让全世界的人都皈依他的宗教。</Text>
+		</Replace>
+
+		<!-- 外交 -->
+
+		<!-- 初次见面 -->
+		<!-- 开场白 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_JFD_VALDIVIA_SPAIN_ANY" Language="zh_Hans_CN">
+			<Text>我是智利皇家总督佩德罗·德·瓦尔迪维亚。如果你来这里是为了找寻荣誉，那你得移步他处了，因为我已经把荣誉拿走了。</Text>
+		</Replace>
+
+		<!-- 到附近城市的邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_JFD_VALDIVIA_SPAIN_ANY" Language="zh_Hans_CN">
+			<Text>智利一天天地发展壮大。来吧，你愿不愿意到我附近的城市来逛逛，看看她是怎样兴旺发达的？</Text>
+		</Replace>
+
+		<!-- AI接受玩家邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NEAR_INITIATOR_POSITIVE_LEADER_JFD_VALDIVIA_SPAIN_ANY" Language="zh_Hans_CN">
+			<Text>我同意。</Text>
+		</Replace>
+
+		<!-- AI邀请玩家交换首都信息 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_JFD_VALDIVIA_SPAIN_ANY" Language="zh_Hans_CN">
+			<Text>你的殖民地怎么样了？我祈祷你能交好运。你不跟我说说吗？</Text>
+		</Replace>
+		
+		<!-- 问候 -->
+		
+		<Replace Tag="LOC_DIPLO_GREETING_LEADER_JFD_VALDIVIA_SPAIN_ANY" Language="zh_Hans_CN">
+			<Text>美妙的一天，不是吗？</Text>
+		</Replace>
+
+		<!-- 代表团 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_HUMAN_LEADER_JFD_VALDIVIA_SPAIN_ANY" Language="zh_Hans_CN">
+			<Text>我将以我希望的方式会见你的代表团。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_HUMAN_LEADER_JFD_VALDIVIA_SPAIN_ANY" Language="zh_Hans_CN">
+			<Text>现在不是讨论这些问题的时候。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DELEGATION_FROM_AI_LEADER_JFD_VALDIVIA_SPAIN_ANY" Language="zh_Hans_CN">
+			<Text>愿你和我一样热烈欢迎我的代表团。</Text>
+		</Replace>
+
+		<!-- 开放边境 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_HUMAN_LEADER_JFD_VALDIVIA_SPAIN_ANY" Language="zh_Hans_CN">
+			<Text>这是可以接受的。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_HUMAN_LEADER_JFD_VALDIVIA_SPAIN_ANY" Language="zh_Hans_CN">
+			<Text>我不允许你们在这些领土上随便走动。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_OPEN_BORDERS_FROM_AI_LEADER_JFD_VALDIVIA_SPAIN_ANY" Language="zh_Hans_CN">
+			<Text>我来要求开放边界协议。这些土地是危险的，我们不要让它们变得更危险。</Text>
+		</Replace>
+
+		<!-- 宣布友谊 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_HUMAN_LEADER_JFD_VALDIVIA_SPAIN_ANY" Language="zh_Hans_CN">
+			<Text>那就这么定了。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_HUMAN_LEADER_JFD_VALDIVIA_SPAIN_ANY" Language="zh_Hans_CN">
+			<Text>你在开玩笑。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_JFD_VALDIVIA_SPAIN_ANY" Language="zh_Hans_CN">
+			<Text>你是虔诚且公正的，我很高兴地称你为朋友。</Text>
+		</Replace>
+
+		<!-- 玩家接受后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_VALDIVIA_SPAIN_ANY" Language="zh_Hans_CN">
+			<Text>这是个好消息。</Text>
+		</Replace>
+
+		<!-- 玩家拒绝后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_VALDIVIA_SPAIN_ANY" Language="zh_Hans_CN">
+			<Text>那就走吧。</Text>
+		</Replace>
+
+		<!-- 结盟 -->
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_ALLIANCE_FROM_AI_LEADER_JFD_VALDIVIA_SPAIN_ANY" Language="zh_Hans_CN">
+			<Text>在这些贫瘠的土地上，我们必须集中一切可能的援助。你愿意加入我的联盟吗？</Text>
+		</Replace>
+		
+		<!-- 赞成与警告 -->
+		<!-- AI赞成 -->
+		
+		<Replace Tag="LOC_DIPLO_KUDO_EXIT_LEADER_JFD_VALDIVIA_SPAIN_ANY" Language="zh_Hans_CN">
+			<Text>荣耀属于上帝和国家，我的朋友。</Text>
+		</Replace>
+
+		<!-- AI警告 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_EXIT_LEADER_JFD_VALDIVIA_SPAIN_ANY" Language="zh_Hans_CN">
+			<Text>你让上帝蒙羞。</Text>
+		</Replace>
+
+		<!-- AI警告玩家离开边境 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_LEADER_JFD_VALDIVIA_SPAIN_ANY" Language="zh_Hans_CN">
+			<Text>我要誓死保卫这些土地。你不要妄想来争夺。</Text>
+		</Replace>
+
+		<!-- 贸易 -->
+		<!-- AI接受交易 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_JFD_VALDIVIA_SPAIN_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_VALDIVIA_SPAIN_ANY}</Text>
+		</Replace>
+
+		<!-- AI拒绝交易 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_MAKE_DEAL_FROM_AI_LEADER_JFD_VALDIVIA_SPAIN_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_VALDIVIA_SPAIN_ANY}</Text>
+		</Replace>
+
+		<!-- 谴责 -->
+		<!-- 受到谴责回应 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_JFD_VALDIVIA_SPAIN_ANY" Language="zh_Hans_CN">
+			<Text>我毫不在乎。</Text>
+		</Replace>
+
+		<!-- AI谴责玩家 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_JFD_VALDIVIA_SPAIN_ANY" Language="zh_Hans_CN">
+			<Text>你们行事不是奉神的名，乃是奉自己的贪婪。你没有统治这些土地的权力。[NEWLINE]（谴责你）</Text>
+		</Replace>
+
+		<!-- 谴责理由 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_REASON_FROM_AI_LEADER_ANY_REASON_JFD_NUEVA_EXTREMADURA_SPAIN" Language="zh_Hans_CN">
+			<Text>（您控制的领土很狭小）</Text>
+		</Replace>
+
+		<!-- 宣战 -->
+		<!-- 受到宣战后回应 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_JFD_VALDIVIA_SPAIN_ANY" Language="zh_Hans_CN">
+			<Text>我们将战斗至死。</Text>
+		</Replace>
+
+		<!-- AI宣战 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_JFD_VALDIVIA_SPAIN_ANY" Language="zh_Hans_CN">
+			<Text>为了荣耀！向你宣战！</Text>
+		</Replace>
+
+		<!-- 求和 -->
+		<!-- AI接受求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_ACCEPT_DEAL_LEADER_JFD_VALDIVIA_SPAIN_ANY" Language="zh_Hans_CN">
+			<Text>必须做些什么了。</Text>
+		</Replace>
+
+		<!-- AI拒绝求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_REFUSE_DEAL_LEADER_JFD_VALDIVIA_SPAIN_ANY" Language="zh_Hans_CN">
+			<Text>在和平之前我会先让你屈服。</Text>
+		</Replace>
+
+		<!-- AI求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_FROM_AI_LEADER_JFD_VALDIVIA_SPAIN_ANY" Language="zh_Hans_CN">
+			<Text>放下你的武器吧。</Text>
+		</Replace>
+
+		<!-- 击败 -->
+		<!-- AI被击败 -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_JFD_VALDIVIA_SPAIN_ANY" Language="zh_Hans_CN">
+			<Text>死亡强于受辱。</Text>
+		</Replace>
+
+		<!-- 玩家被击败（在热座模式中会显示） -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_JFD_VALDIVIA_SPAIN_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_JFD_VALDIVIA_SPAIN_ANY}</Text>
+		</Replace>
+		
+		<!-- 亚纳科纳 -->
+
+		<Replace Tag="LOC_UNIT_JFD_YANACONA_SPAIN_NAME" Language="zh_Hans_CN">
+			<Text>亚纳科纳</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_JFD_YANACONA_SPAIN_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>佩德罗·德·瓦尔迪维亚作为领袖时的西班牙文艺复兴时期特色侦察单位，可在没有开放边境的情况下进入其他文明境内。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_JFD_YANACONA_SPAIN_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】Yanakuna were originally individuals in the Inca Empire who left the ayllu system and worked full-time at a variety of tasks for the Inca, the quya (Inca queen) or the religious establishment. When the Spanish conquistadors arrived in modern-day Peru, the yanakuna declared themselves "friends of the Spaniards." They assisted the Spaniards to take control of the empire. These people, who the Spaniards, during the Spanish conquest of the Inca Empire, began to use the name for the indigenous people they had in servitude, in encomiendas, or in military forces as indios auxiliares (Indian auxiliaries). </Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

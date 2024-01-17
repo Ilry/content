@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RF'Chile Jorge Montt'CN_Add_FI -->
+<!-- Author: ChiYiuWong , Clear8Sky -->
+<!-- DateCreated: 2021/9/25 0:25:08 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Chile: Jorge Montt” 。该文件在 FrontEnd 与 InGame 时载入，需 Criteria ： Active_Expansion_1 -->
+	<LocalizedText>
+
+		<!-- 模组 -->
+
+		<Replace Tag="LOC_MOD_JFD_CHILE_FREIRE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>------------------------------------[NEWLINE]领袖名称 -- 拉蒙·弗莱雷[NEWLINE][NEWLINE]领袖特性 -- 太平洋宝石[NEWLINE]拥有港口的城市训练建造者与商人+33% [ICON_Production] 训练速度。每个硝石矿场提供+1 [ICON_TradeRoute] 贸易路线容量。[NEWLINE][NEWLINE]领袖议程 - 皮皮奥罗运动[NEWLINE]寻求通过专注于获得高幸福度和大量 [ICON_Gold] 金币来实现其政府的自由化，并相信这样做的文明。认为 [ICON_Gold] 金币很多但幸福度低的文明是对他的自由主义原则的侮辱。</Text>
+		</Replace>
+
+		<!-- 领袖 -->
+
+		<Replace Tag="LOC_LEADER_JFD_FREIRE_NAME" Language="zh_Hans_CN">
+			<Text>拉蒙·弗莱雷</Text>
+		</Replace>
+
+		<!-- 议程 -->
+
+		<Replace Tag="LOC_AGENDA_JFD_PIPIOLOS_MOVEMENT_NAME" Language="zh_Hans_CN">
+			<Text>皮皮奥罗运动</Text>
+		</Replace>
+		<Replace Tag="LOC_AGENDA_JFD_PIPIOLOS_MOVEMENT_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>寻求通过专注于获得高幸福度和大量 [ICON_Gold] 金币来实现其政府的自由化，并相信这样做的文明。认为 [ICON_Gold] 金币很多但幸福度低的文明是对他的自由主义原则的侮辱。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_JFD_PIPIOLOS_MOVEMENT_REASON_LEADS_HAPPINESS_AND_GOLD" Language="zh_Hans_CN">
+			<Text>（您的公民很满足，且你拥有大量财富）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_AGENDA_JFD_PIPIOLOS_MOVEMENT_LEADS_HAPPINESS_AND_GOLD" Language="zh_Hans_CN">
+			<Text>拉蒙·弗莱雷赞赏您的自由经济政策。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_LEADER_JFD_PIPIOLOS_MOVEMENT_REASON_LAGS_HAPPINESS_AND_LEADS_GOLD" Language="zh_Hans_CN">
+			<Text>（您拥有大量的财富，但您的公民并不幸福）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_AGENDA_JFD_PIPIOLOS_MOVEMENT_LAGS_HAPPINESS_AND_LEADS_GOLD" Language="zh_Hans_CN">
+			<Text>拉蒙·弗莱雷认为你的经济政策是不自由的。</Text>
+		</Replace>
+
+		<!-- 载入 -->
+
+		<Replace Tag="LOC_LOADING_INFO_LEADER_JFD_FREIRE" Language="zh_Hans_CN">
+			<Text>智利向世界开放，并寻求的机遇。您，拉蒙·弗莱雷，是向世界开放智利港口的人。为智利的工业带来新的自由政策，它们会给您带来丰厚的财富，构建繁荣的国家。</Text>
+		</Replace>
+
+		<!-- 特性 -->
+
+		<Replace Tag="LOC_TRAIT_LEADER_JFD_PORT_VALPARAISO_NAME" Language="zh_Hans_CN">
+			<Text>太平洋宝石</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_JFD_PORT_VALPARAISO_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>拥有港口的城市训练建造者与商人+33% [ICON_Production] 训练速度。每个硝石矿场提供+1 [ICON_TradeRoute] 贸易路线容量。</Text>
+		</Replace>
+
+		<!-- 百科 -->
+
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_FREIRE_TITLE" Language="zh_Hans_CN">
+			<Text>拉蒙·弗莱雷</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_FREIRE_SUBTITLE" Language="zh_Hans_CN">
+			<Text>智利最高执政官</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_FREIRE_QUOTE" Language="zh_Hans_CN">
+			<Text>成大事的人必须经历过幻灭和重生。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_FREIRE_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>拉蒙·弗莱雷·塞拉诺是智利政治人物。他曾多次担任国家元首，并在联邦战争之前拥有众多追随者。拉蒙·弗莱雷是自由派皮皮奥罗运动的主要领导人之一。他曾被历史学家加布里埃尔·萨拉查誉为智利共和国早期最民主的领导人。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_FREIRE_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>他于1787年11月29日出生在圣地亚哥，是弗朗西斯科·安东尼奥·弗莱雷·帕兹和格特鲁迪斯·塞拉诺·阿雷奇的儿子。13岁时丧父，他在叔叔在科利纳镇附近的一个庄园里长大。16岁时成为孤儿，搬到康塞普西翁市，在那里他在一家商店担任店员，后来在商船上当学徒。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_FREIRE_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>在1810年独立战争开始时，他积极参与了伴随第一届军政府成立的公开集会。1811年，他成为了德拉弗·龙·特拉龙的一名学员，并在智利独立战争期间参加了惠尔奎勒姆、塔尔卡瓦诺、埃尔罗布尔和埃尔基洛战役。[NEWLINE][NEWLINE]到兰卡瓜灾难和帕特里亚别哈战役结束时，他已经是一名队长了。他和许多其他人一起越过安第斯山脉，流亡到布宜诺斯艾利斯。1816年，他加入了安第斯军团，并通过普朗琼山口（智利南部）作为营长返回智利，于1817年2月11日占领了塔尔卡市。[NEWLINE][NEWLINE]他参加了迈普战役，因其对独立的贡献而被晋升为上校，并在奥希金斯政府的领导下被任命为康塞普西翁行政长官。他与奥希金斯的友谊开始逐渐破裂，直到1822年他因分歧而辞去职务。他的名字成为了对奥希金斯不满的一个代号，但他们两人从未发生过武装冲突。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_FREIRE_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>奥希金斯辞职后，他成为新的最高执政官，从1823年4月4日（当时他被取代奥希金斯的代表军政府任命）到1826年7月9日，之后他的职位被移交。1827年1月25日，阿古斯丁·埃伊萨吉雷·阿雷查瓦拉总统被军事政变推翻，为稳定国内局势，弗莱雷在粉碎军事政变后随即出任临时总统，2月13日他召集议会进行选举，当选为总统，两天后正式就职，1827年5月5日，他再次辞职。[NEWLINE][NEWLINE]在执政期间，他推动了一些影响巨大的举措，例如废除奴隶制、重组瓦尔帕莱索港的防御系统和开放智利市场以对世界贸易。他还强调新闻自由，并下令所有修道院开设免费学校。[NEWLINE][NEWLINE]1823年12月29日，他根据胡安·埃加尼亚提出的项目颁布了新宪法。它被认为是一份高度道德化的文件，反映了人民的本质可以通过其法律改变的想法。它试图规范公民的公共和私人行为。这种方法很快被证明是行不通的，仅仅6个月后宪法就被废弃了。[NEWLINE][NEWLINE]由于智利国库被独立战争耗尽，并且被与英国银行签订的一笔外国贷款缠身，弗莱雷创建了政府对烟草、酒精、卡片和税票的垄断，分配给了一家私人公司，但最终破产。这件事标志着未来的财政部长迭戈·波塔莱斯首次参与公共政府事务。[NEWLINE][NEWLINE]他在攻下仍然在西班牙人手中的奇洛埃岛时也完成了整个智利领土的独立。在1824年以莫科普利战役失败而告终的军事行动以及1826年的普德托和贝拉维斯塔战役失败后，双方签署了《坦塔科条约》，西班牙在该条约中明确放弃了该地区。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_FREIRE_CHAPTER_HISTORY_PARA_5" Language="zh_Hans_CN">
+			<Text>退休后他最初回到卡查瓜的庄园，但不久之后又卷入了1829年内战的政治斗争中。他最后的失败是在利尔凯战役中。他被监禁，后来被流放到秘鲁。在秘鲁，在安德烈斯·德·圣克鲁斯元帅的帮助下，他组建了一支小型探险队，试图占领奇洛埃岛。 在他的目的失败后，他被关押在瓦尔帕莱索港，接受军事法庭审判，首先被流放到胡安费尔南德斯岛，然后被流放到塔希提岛，并于1837年在澳大利亚临时定居。[NEWLINE][NEWLINE]他被允许在1842年返回智利，并在圣地亚哥过着平静的生活，直到1851年12月9日去世。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_FREIRE_CHAPTER_CAPSULE_BODY" Language="zh_Hans_CN">
+			<Text>智利毫不迟疑地寻求着扩大领土，尤其是沿着海岸线。事实上，他们的同胞将用自己的生命捍卫这项权利。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_FREIRE_CHAPTER_DETAILED_BODY" Language="zh_Hans_CN">
+			<Text>智利努力争取尽可能多的海岸线和战略领土，通过建造沿海岸改良设施更快地扩张。智利将凭借其独特的智利硝石矿，发展出富有生产力的矿业，在拉蒙·弗莱雷的领导下，将矿业变成财富。保护这一行业将是智利的重点之一，因为这将确保其人民保持忠诚。这种忠诚使他们建造一支强大的现代海军，以追求统治胜利。</Text>
+		</Replace>
+
+		<!-- 外交 -->
+
+		<!-- 初次见面 -->
+		<!-- 开场白 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_JFD_FREIRE_ANY" Language="zh_Hans_CN">
+			<Text>欢迎欢迎。我是拉蒙·弗莱雷，智利最高执政官。我的国家能为你做些什么？</Text>
+		</Replace>
+
+		<!-- 到附近城市的邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_JFD_FREIRE_ANY" Language="zh_Hans_CN">
+			<Text>请吧，我的宫殿也是你的。我邀请你到我附近的城市看看，如果适合的话。</Text>
+		</Replace>
+
+		<!-- AI接受玩家邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NEAR_INITIATOR_POSITIVE_LEADER_JFD_FREIRE_ANY" Language="zh_Hans_CN">
+			<Text>非常好。我会尽快加入你。</Text>
+		</Replace>
+
+		<!-- AI邀请玩家交换首都信息 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_JFD_FREIRE_ANY" Language="zh_Hans_CN">
+			<Text>我相信诚实在外交中很重要。这就是为什么我邀请您与我交换有关首都的信息。我当然会以实物回报。</Text>
+		</Replace>
+
+		<!-- 问候 -->
+
+		<Replace Tag="LOC_DIPLO_GREETING_LEADER_JFD_FREIRE_ANY" Language="zh_Hans_CN">
+			<Text>欢迎回来。</Text>
+		</Replace>
+
+		<!-- 代表团 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_HUMAN_LEADER_JFD_FREIRE_ANY" Language="zh_Hans_CN">
+			<Text>在智利比在我们的邻国更好。我很荣幸，当然！</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_HUMAN_LEADER_JFD_FREIRE_ANY" Language="zh_Hans_CN">
+			<Text>不，不。我知道你与之交往的那种人。我一个都不要。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DELEGATION_FROM_AI_LEADER_JFD_FREIRE_ANY" Language="zh_Hans_CN">
+			<Text>我代表智利国家派出了我谦逊的代表团，和他们一起，您可能品尝到最好的皮斯科酒。</Text>
+		</Replace>
+
+		<!-- 开放边境 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_HUMAN_LEADER_JFD_FREIRE_ANY" Language="zh_Hans_CN">
+			<Text>这些条款很难让人不接受。我欢迎他们的到来。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_HUMAN_LEADER_JFD_FREIRE_ANY" Language="zh_Hans_CN">
+			<Text>我认为没有理由改变我们目前的安排。我必须拒绝。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_OPEN_BORDERS_FROM_AI_LEADER_JFD_FREIRE_ANY" Language="zh_Hans_CN">
+			<Text>智利在未来会拥有更多的领土。我们为什么不提前达成一个自由流动的协议？</Text>
+		</Replace>
+
+		<!-- 宣布友谊 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_HUMAN_LEADER_JFD_FREIRE_ANY" Language="zh_Hans_CN">
+			<Text>为什么，这是我的荣幸。我当然接受。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_HUMAN_LEADER_JFD_FREIRE_ANY" Language="zh_Hans_CN">
+			<Text>即使我喝醉了也做不到。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_JFD_FREIRE_ANY" Language="zh_Hans_CN">
+			<Text>我的国家会很自豪地称你为朋友。你怎么看？</Text>
+		</Replace>
+
+		<!-- 玩家接受后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_FREIRE_ANY" Language="zh_Hans_CN">
+			<Text>你得到了我最诚挚的谢意。</Text>
+		</Replace>
+
+		<!-- 玩家拒绝后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_FREIRE_ANY" Language="zh_Hans_CN">
+			<Text>也许你会在某个时候重新考虑。</Text>
+		</Replace>
+
+		<!-- 结盟 -->
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_ALLIANCE_FROM_AI_LEADER_JFD_FREIRE_ANY" Language="zh_Hans_CN">
+			<Text>智利有高尚的意图和庞大的野心。你愿意加入我们的联盟吗？</Text>
+		</Replace>
+
+		<!-- 赞成与警告 -->
+		<!-- AI赞成 -->
+
+		<Replace Tag="LOC_DIPLO_KUDO_EXIT_LEADER_JFD_FREIRE_ANY" Language="zh_Hans_CN">
+			<Text>你给予人民自由的行为是鼓舞人心的。我应该希望其他领导人向你学习。</Text>
+		</Replace>
+
+		<!-- AI警告 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_EXIT_LEADER_JFD_FREIRE_ANY" Language="zh_Hans_CN">
+			<Text>你的非自由政策将使你的国家毁灭。</Text>
+		</Replace>
+
+		<!-- AI警告玩家离开边境 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_LEADER_JFD_FREIRE_ANY" Language="zh_Hans_CN">
+			<Text>你变得大胆了，但也许你只是把我的同胞误认为是我的邻居。我们会看到一切的。</Text>
+		</Replace>
+
+		<!-- 贸易 -->
+		<!-- AI接受交易 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_JFD_FREIRE_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_FREIRE_ANY}</Text>
+		</Replace>
+
+		<!-- AI拒绝交易 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_MAKE_DEAL_FROM_AI_LEADER_JFD_FREIRE_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_FREIRE_ANY}</Text>
+		</Replace>
+
+		<!-- 谴责 -->
+		<!-- 受到谴责回应 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_JFD_FREIRE_ANY" Language="zh_Hans_CN">
+			<Text>你听了太多来自我们邻居的谎言。</Text>
+		</Replace>
+
+		<!-- AI谴责玩家 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_JFD_FREIRE_ANY" Language="zh_Hans_CN">
+			<Text>毫无疑问，您在智利的边界上有阴谋。嗯，我不会让它持续下去的。[NEWLINE]（谴责你）</Text>
+		</Replace>
+
+		<!-- 谴责理由 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_REASON_FROM_AI_LEADER_ANY_REASON_JFD_PIPIOLOS_MOVEMENT_LAGS_HAPPINESS_AND_LEADS_GOLD" Language="zh_Hans_CN">
+			<Text>（您拥有大量的财富，但您的公民并不幸福）</Text>
+		</Replace>
+
+		<!-- 宣战 -->
+		<!-- 受到宣战后回应 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_JFD_FREIRE_ANY" Language="zh_Hans_CN">
+			<Text>那就这样吧。我相信你会发现我们有实力与你抗衡。</Text>
+		</Replace>
+
+		<!-- AI宣战 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_JFD_FREIRE_ANY" Language="zh_Hans_CN">
+			<Text>我不会再袖手旁观，让我的同胞被你羞辱。是时候测试下你的武器了。</Text>
+		</Replace>
+
+		<!-- 求和 -->
+		<!-- AI接受求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_ACCEPT_DEAL_LEADER_JFD_FREIRE_ANY" Language="zh_Hans_CN">
+			<Text>我永远欢迎和平。</Text>
+		</Replace>
+
+		<!-- AI拒绝求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_REFUSE_DEAL_LEADER_JFD_FREIRE_ANY" Language="zh_Hans_CN">
+			<Text>我宁愿继续这场战斗。</Text>
+		</Replace>
+
+		<!-- AI求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_FROM_AI_LEADER_JFD_FREIRE_ANY" Language="zh_Hans_CN">
+			<Text>我们对战争太熟悉了。我认为是时候放下武器了。</Text>
+		</Replace>
+
+		<!-- 击败 -->
+		<!-- AI被击败 -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_JFD_FREIRE_ANY" Language="zh_Hans_CN">
+			<Text>祝你在承受的负担下好运。智利并不容易。</Text>
+		</Replace>
+
+		<!-- 玩家被击败（在热座模式中会显示） -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_JFD_FREIRE_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_JFD_FREIRE_ANY}</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

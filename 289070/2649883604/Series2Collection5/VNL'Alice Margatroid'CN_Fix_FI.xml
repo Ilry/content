@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'Alice Margatroid'CN_Fix_FI -->
+<!-- Author: Clear8Sky -->
+<!-- DateCreated: 2021/6/13 22:56:47 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “东方PROJECT 爱丽丝 （威震天 ver）支持G&S” 。该文件在 FrontEnd 与 InGame 时载入，无需任何 Criteria -->
+	<LocalizedText>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_SYOUJO_BUNRAKU_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>据某不愿透露姓名的魔法师爆料，昭和初期在大阪的人形剧场出现的仅由一位少女操控人偶的“乙女文楽”，和爱丽丝·玛格特罗伊德有着不可分割的联系。[NEWLINE]三倍速度获得 [ICON_GreatWriter] 大作家与 [ICON_GreatMusician] 大音乐家点数。来自任何政体的加成给所有奇观建造+50% [ICON_Production] 建造速度。</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_DISTRICT_NINGYOUKUUBO_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>爱丽丝之家文明的特色区域，取代工业区，完成科技“采矿业”后解锁。人形工坊可从相邻的每处森林或每个区域中获得标准相邻加成，且不会降低周围单元格魅力值。每回合额外产出+1 [ICON_Production] 生产力，额外+1 [ICON_GreatEngineer] 大工程师点数。</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_NINGYOUKUUBO_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>爱丽丝之家文明的特色区域，取代工业区，研究科技“采矿业”后解锁。人形工坊可从相邻的每处森林或每个区域中获得标准相邻加成，且不会降低周围单元格魅力值。每回合额外产出+1 [ICON_Production] 生产力，额外+1 [ICON_GreatEngineer] 大工程师点数。[NEWLINE][NEWLINE]爱丽丝·玛格特罗伊德自称她的人形都是操纵型的，但大家都知道这是骗人的。“虽然见过的人会明白，不过各个人偶能够做不同的事，有时能前后接续辅助，完全地非同期行动。”（雾雨魔理沙）作为一个合格的宅女，爱丽丝的日常就是在家中的人形工坊制作人形。[NEWLINE]爱丽丝的人形工坊可以提供大量的 [ICON_Production] 生产力。爱丽丝本体也是十分的心灵手巧，使得人形工坊也可以提供额外的 [ICON_GreatEngineer] 大工程师伟人点数。</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_FOREST_PRODUCTION" Language="zh_Hans_CN">
+			<Text>标准加成 来自相邻 森林</Text>
+		</Replace>
+		<Replace Tag="LOC_ALICE_DISTRICT_DISTRICT_PRODUCTION" Language="zh_Hans_CN">
+			<Text>标准加成 来自相邻 区域</Text>
+		</Replace>
+		<Replace Tag="LOC_ALICE_ABILITY_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>魔导书「Grimoire of Alice」：帝国境内的森林单元格产出+5 [ICON_Gold] 金币、+3 [ICON_Science] 科技值、+3 [ICON_Faith] 信仰值。[NEWLINE]操符「广范围人偶操纵」：伐木场+3 [ICON_Production] 生产力；建造者的 [ICON_Charges] 劳动力+2，且可消耗 [ICON_Charges] 劳动力加速区域原始建造进程的50%，加速奇观原始建造进程（无时代限制）的75%。</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_GRIMOIRE_OF_ALICE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>帝国境内的森林单元格产出+5 [ICON_Gold] 金币、+3 [ICON_Science] 科技值、+3 [ICON_Faith] 信仰值。</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_HANDLING_DOLLS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>伐木场+3 [ICON_Production] 生产力；建造者的 [ICON_Charges] 劳动力+2，且可消耗 [ICON_Charges] 劳动力加速区域建造进程的50%，加速奇观建造（无时代限制）进程的75%。</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_UNIT_BATTLING_DOLL_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>爱丽丝之家文明的远古时代特色抗骑兵单位，取代枪兵。[ICON_Strength] 战斗力较高且训练费用较低。可以和相邻的战斗人形构成魔术回路，+50% [ICON_Strength] 战斗力。在森林单元格内可再+50% [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_BATTLING_DOLL_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>爱丽丝之家文明的远古时代特色抗骑兵单位，取代枪兵。[ICON_Strength] 战斗力较高且训练费用较低。可以和相邻的战斗人形构成魔术回路，+50% [ICON_Strength] 战斗力。在森林单元格内可再+50% [ICON_Strength] 战斗力。[NEWLINE][NEWLINE]爱丽丝·玛格特罗伊德的人形所持有的致命兵器，并不是卖萌用的。和爱丽丝决斗，意味着将要和人形军势作战。“由于率领着人偶们，决斗的话将会不得不面对一对多的情况。对自己的能力有相当的自信，苦战必不可免。另外，就算打倒了数个人偶，也像往烧热了的石头上面倒水一样几乎没有意义。而且，也有会自爆的人偶。不应该以人偶为对手。”</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_UNIT_ABILITY_BATTLING_DOLL_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>相邻的战斗人形+50% [ICON_Strength] 战斗力。在森林单元格内再+50% [ICON_Strength] 战斗力。</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

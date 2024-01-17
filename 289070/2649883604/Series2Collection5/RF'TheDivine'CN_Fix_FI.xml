@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RF'TheDivine'CN_Fix_FI -->
+<!-- Author: Clear8Sky -->
+<!-- DateCreated: 2021/7/29 12:17:54 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “[TouHou mod]TheDivine-神族-プロトス” 。该文件在 FrontEnd 与 InGame 时载入，需 Criteria ：Active_Expansion_1 -->
+	<LocalizedText>
+		
+		<!-- 功能类文本 -->
+		
+		<Replace Tag="LOC_CIVILIZATION_THEDIVINE_ADJECTIVE" Language="zh_Hans_CN">
+			<Text>神族的</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_THEDIVINE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>每位 [ICON_Citizen] 公民产出+1 [ICON_Faith] 信仰值。军事单位获得神族修正（同时拥有“信仰护卫者”和“十字军”的强化信仰）。[NEWLINE]当倒数第二位大预言家被招募后（如果您尚未获得大预言家），自动获得最后一位 [ICON_GreatProphet] 大预言家。[NEWLINE]可从每个其他文明的信徒中获得+1 [ICON_Faith] 信仰值。</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_THEDIVINE_RACE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>神谕支配：+1通配符槽位。[NEWLINE]三界女神：可用 [ICON_Faith] 信仰值购买军事单位。</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_THEDIVINE_PANTHEON_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>神族文明特有奇观，初始即可解锁。产出+10 [ICON_Faith] 信仰值，并提供所有万神殿信仰。</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_UNIT_MISSIONARY_THEDIVINE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>赫卡提亚·拉碧斯拉祖利作为领袖时的特色单位，取代传教士。相较于后者+10 [ICON_Religion] 宗教战斗力、+1传教次数。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_MISSIONARY_THEDIVINE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>{LOC_TRAIT_CIVILIZATION_UNIT_MISSIONARY_THEDIVINE_DESCRIPTION}</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_UNIT_ABILITY_MISSIONARY_THEDIVINE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>{LOC_TRAIT_CIVILIZATION_UNIT_MISSIONARY_THEDIVINE_DESCRIPTION}</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_UNIT_DISCIPLE_THEDIVINE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>赫卡提亚·拉碧斯拉祖利作为领袖时的特色单位，取代使徒。相较于后者+10 [ICON_Religion] 宗教战斗力、+1传教次数。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_DISCIPLE_THEDIVINE_NAME" Language="zh_Hans_CN">
+			<Text>{LOC_TRAIT_CIVILIZATION_UNIT_DISCIPLE_THEDIVINE_DESCRIPTION}</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_DISCIPLE_THEDIVINE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>{LOC_TRAIT_CIVILIZATION_UNIT_DISCIPLE_THEDIVINE_DESCRIPTION}</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_THEDIVINE_ANY" Language="zh_Hans_CN">
+			<Text>若你继续阻碍我们，请小心点。[NEWLINE]（谴责你）</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_UNIT_MISSIONARY_THEDIVINE_NAME" Language="zh_Hans_CN">
+			<Text>宣读神族神意</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_MISSIONARY_THEDIVINE_NAME" Language="zh_Hans_CN">
+			<Text>{LOC_TRAIT_CIVILIZATION_UNIT_MISSIONARY_THEDIVINE_NAME}</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_UNIT_ABILITY_MISSIONARY_THEDIVINE_NAME" Language="zh_Hans_CN">
+			<Text>{LOC_TRAIT_CIVILIZATION_UNIT_MISSIONARY_THEDIVINE_NAME}</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_UNIT_DISCIPLE_THEDIVINE_NAME" Language="zh_Hans_CN">
+			<Text>宣告神族神威</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_DISCIPLE_THEDIVINE_NAME" Language="zh_Hans_CN">
+			<Text>{LOC_TRAIT_CIVILIZATION_UNIT_DISCIPLE_THEDIVINE_NAME}</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_UNIT_ABILITY_DISCIPLE_THEDIVINE_NAME" Language="zh_Hans_CN">
+			<Text>{LOC_TRAIT_CIVILIZATION_UNIT_DISCIPLE_THEDIVINE_NAME}</Text>
+		</Replace>
+		
+		<!-- 百科类文本 -->
+		
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_THEDIVINE_CHAPTER_HISTORY_PARA_13" Language="zh_Hans_CN">
+			<Text>种族修正（每个 [ICON_Citizen] 公民产出+1 [ICON_Faith] 信仰值）：信仰不但是一些神明赖以生存的根本，还可以增强几乎所有神明的力量。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_THEDIVINE_CHAPTER_HISTORY_PARA_14" Language="zh_Hans_CN">
+			<Text>军事修正（同时拥有“信仰护卫者”和“十字军”的强化信仰）：在异界这样一个几乎完全是科技测的世界里，神明的神力难以产生直接的影响。但是那些发誓将此生奉献给众神的战士们能够完美的弥补这点。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_THEDIVINE_CHAPTER_HISTORY_PARA_15" Language="zh_Hans_CN">
+			<Text>种族特质（当倒数第二位大预言家被招募后（如果您尚未获得大预言家），自动获得最后一位 [ICON_GreatProphet] 大预言家。可从每个其他文明的信徒中获得+1 [ICON_Faith] 信仰值）：若是信徒们过于愚昧，无法发现神明的意愿的话，就只能由神明亲自给予启示了。信仰会给与神明们以力量。</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

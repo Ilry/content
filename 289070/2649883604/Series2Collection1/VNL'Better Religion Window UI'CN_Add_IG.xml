@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'Better Religion Window UI'CN_Add_IG -->
+<!-- Author: Clear8Sky , 邓半仙人 -->
+<!-- DateCreated: 2021/5/26 1:01:50 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Better Religion Window (UI)” 。该文件在 InGame 时载入，无需任何 Criteria -->
+	<LocalizedText>
+		<Replace Tag="LOC_BRW_CITY_SORT_NOT_FOLLOWING" Language="zh_Hans_CN">
+			<Text>[COLOR_Red]尚未[ENDCOLOR]皈依您文明所创立宗教的城市</Text>
+		</Replace>
+		<Replace Tag="LOC_BRW_CITY_SORT_ALL" Language="zh_Hans_CN">
+			<Text>所有城市</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

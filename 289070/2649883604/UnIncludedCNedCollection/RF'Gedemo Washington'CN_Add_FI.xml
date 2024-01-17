@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RF'Gedemo Washington'CN_Add_FI -->
+<!-- Author: 春 , Clear8Sky -->
+<!-- DateCreated: 2021/9/3 3:58:57 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Gedemo Washington” 。该文件在 FrontEnd 与 InGame 时载入，需 Criteria ：Active_Expansion_1 -->
+	<LocalizedText>
+		<Replace Tag="LOC_TRAIT_LEADER_GEDEMO_WASHINGTON_NAME" Language="zh_Hans_CN">
+			<Text>昭昭天命</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_GEDEMO_WASHINGTON_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>单位视野+1。购买单元格消耗的 [ICON_Gold] 金币减少45%。</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_GEDEMO_WASHINGTON" Language="zh_Hans_CN">
+			<Text>乔治·华盛顿</Text>
+		</Replace>
+		<Replace Tag="LOC_LOADING_INFO_LEADER_GEDEMO_WASHINGTON" Language="zh_Hans_CN">
+			<Text>欢迎您！华盛顿总统！在您的领导下美国的文明迈向了工业化。这个在十八世纪的革命浪潮下成立的年轻国家，在不到一百年的时间，经历了恐怖的内战，几乎将这个国家一分为二。但就在这短短数年后的二十世纪，美国国力达到巅峰，从摧毁了许多其他强大国家的两次可怕战争中凯旋而兴起强盛。美国是移民国家，充满乐观与决心。他们只缺少一位领袖帮助他们完成对自己的期许。华盛顿总统啊！您可以领导美国人，使他们更为强大吗？您能建起一个经得住时间考验的文明吗？</Text>
+		</Replace>
+		
+		<!-- 百科 -->
+		
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_GEDEMO_WASHINGTON_TITLE" Language="zh_Hans_CN">
+			<Text>乔治·华盛顿</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_GEDEMO_WASHINGTON_SUBTITLE" Language="zh_Hans_CN">
+			<Text>美利坚合众国总统</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_GEDEMO_WASHINGTON_QUOTE" Language="zh_Hans_CN">
+			<Text>对所有人都要有礼貌，但只对少数人表示亲近。在未经考验以前，切不可对他们推心置腹。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_GEDEMO_WASHINGTON_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>乔治·华盛顿是美国首任总统，也是美国开国元勋之一。作为美国独立战争期间大陆军的总司令，他是促使英军在约克镇投降而取得胜利的主导力量。1787年，他主持了制宪会议，成立了新的联邦政府。自18世纪80年代末以来，华盛顿一直被同胞们称为“国父”。学术研究和民意调查认为他是历史上最伟大的三位总统之一。华盛顿出生在一个小康的种植园主家庭，在弗吉尼亚殖民地蓄有奴隶。他早年就得到了受教育的机会，学习了数学并很快地从事成为一名测量员的成功事业，这反过来使他能够进行大量的土地投资。后来他加入了弗吉尼亚民兵，参加了法国印第安人战争。在和英国的战争期间，他还同时和其盟友之一的易洛魁民族作战。他对美国共和主义的忠诚促使他在胜利后削弱权力，并于1783年辞去了总司令的职务。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_GEDEMO_WASHINGTON_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>华盛顿是美国最重要的政治家之一，他在前两次的国民选举中被选举人团一致推选为总统。他促使并监督了一个强大、富裕的国家的诞生。尽管他采纳了汉密尔顿的经济计划，但他仍然在托马斯·杰斐逊和亚历山大·汉密尔顿这两位内阁部长的激烈较量中保持中立。在法国大革命使欧洲骤然陷入战争之际，华盛顿采取了中立政策来保护美国的船只——尽管1795年签署了与英国结盟的备受争议的《杰伊条约》。 他开创了一些沿用至今的先例，比如内阁顾问制度、就职演讲、“Mr.President"头衔以及两届任期的限制。他在《告别辞》中对公民美德、党派之争、地方主义和卷入外国战争等进行了忠告。华盛顿11岁时继承了家族的奴隶，他的一生靠奴隶制发家致富，直到1793年公开地支持其他奴隶主。最后，他为奴隶制所困扰，在1799年的遗嘱中，他释放了所有的奴隶。他以宗教容忍著称，他的个人信仰和对共济会的忠诚一直备受争议。华盛顿去世后被誉为“独立战争，太平盛世，国人心间，皆冠绝世人”。他被铭记于纪念碑、公共工程、地方、邮票和货币。美国的首都华盛顿特区和华盛顿州都以他的名字命名；自1932年以来，25美分硬币上一直印着他的肖像。</Text>
+		</Replace>
+
+		<!-- 外交 -->
+
+		<!-- 初次见面 -->
+		<!-- 开场白 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_GEDEMO_WASHINGTON_ANY" Language="zh_Hans_CN">
+			<Text>我们欢迎与贵国的和平共处。我祈祷我们两国人民之间今后不会发生误解。</Text>
+		</Replace>
+
+		<!-- 到附近城市的邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_GEDEMO_WASHINGTON_ANY" Language="zh_Hans_CN">
+			<Text>美利坚合众国人民欢迎你们！</Text>
+		</Replace>
+
+		<!-- AI接受玩家邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NEAR_INITIATOR_POSITIVE_LEADER_GEDEMO_WASHINGTON_ANY" Language="zh_Hans_CN">
+			<Text>谢谢你。</Text>
+		</Replace>
+
+		<!-- AI邀请玩家交换首都信息 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_GEDEMO_WASHINGTON_ANY" Language="zh_Hans_CN">
+			<Text>我相信你是自由的朋友。你愿意交换一些信息吗？</Text>
+		</Replace>
+
+		<!-- 问候 -->
+
+		<Replace Tag="LOC_DIPLO_GREETING_LEADER_GEDEMO_WASHINGTON_ANY" Language="zh_Hans_CN">
+			<Text>你好。</Text>
+		</Replace>
+
+		<!-- 代表团 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_HUMAN_LEADER_GEDEMO_WASHINGTON_ANY" Language="zh_Hans_CN">
+			<Text>我愉快地接受你的代表团。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_HUMAN_LEADER_GEDEMO_WASHINGTON_ANY" Language="zh_Hans_CN">
+			<Text>很遗憾，不行。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DELEGATION_FROM_AI_LEADER_GEDEMO_WASHINGTON_ANY" Language="zh_Hans_CN">
+			<Text>我派遣了一个贸易代表团，带了一些礼物：填充火鸡、烟草和靛蓝。这些是我们能够卖给你们的商品样品。</Text>
+		</Replace>
+
+		<!-- 开放边境 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_HUMAN_LEADER_GEDEMO_WASHINGTON_ANY" Language="zh_Hans_CN">
+			<Text>就这样干！</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_HUMAN_LEADER_GEDEMO_WASHINGTON_ANY" Language="zh_Hans_CN">
+			<Text>当然不行！</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_OPEN_BORDERS_FROM_AI_LEADER_GEDEMO_WASHINGTON_ANY" Language="zh_Hans_CN">
+			<Text>我相信，允许我们两个伟大国家之间的自由通行符合我们的共同利益。</Text>
+		</Replace>
+
+		<!-- 宣布友谊 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_HUMAN_LEADER_GEDEMO_WASHINGTON_ANY" Language="zh_Hans_CN">
+			<Text>非常好！</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_HUMAN_LEADER_GEDEMO_WASHINGTON_ANY" Language="zh_Hans_CN">
+			<Text>你不是认真的吧。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_GEDEMO_WASHINGTON_ANY" Language="zh_Hans_CN">
+			<Text>我相信你是自由的朋友。你愿意和我发表友谊宣言吗？</Text>
+		</Replace>
+
+		<!-- 玩家接受后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_GEDEMO_WASHINGTON_ANY" Language="zh_Hans_CN">
+			<Text>谢谢你，朋友。</Text>
+		</Replace>
+
+		<!-- 玩家拒绝后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_GEDEMO_WASHINGTON_ANY" Language="zh_Hans_CN">
+			<Text>真遗憾。</Text>
+		</Replace>
+
+		<!-- 结盟 -->
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_ALLIANCE_FROM_AI_LEADER_GEDEMO_WASHINGTON_ANY" Language="zh_Hans_CN">
+			<Text>你愿意结成联盟吗？</Text>
+		</Replace>
+
+		<!-- 赞成与警告 -->
+		<!-- AI赞成 -->
+
+		<Replace Tag="LOC_DIPLO_KUDO_EXIT_LEADER_GEDEMO_WASHINGTON_ANY" Language="zh_Hans_CN">
+			<Text>远亲不如近邻。你们是美国最好的邻居。</Text>
+		</Replace>
+
+		<!-- AI警告 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_EXIT_LEADER_GEDEMO_WASHINGTON_ANY" Language="zh_Hans_CN">
+			<Text>我们的领土相距太近，我的人民被迫忍受你们自己的恶臭。</Text>
+		</Replace>
+
+		<!-- AI警告玩家离开边境 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_LEADER_GEDEMO_WASHINGTON_ANY" Language="zh_Hans_CN">
+			<Text>你的部队已逼近我们的门口，这一点没有逃过我们的注意。趁早把他们撤走！</Text>
+		</Replace>
+
+		<!-- 贸易 -->
+		<!-- AI接受交易 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_GEDEMO_WASHINGTON_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_GEDEMO_WASHINGTON_ANY}</Text>
+		</Replace>
+
+		<!-- AI拒绝交易 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_MAKE_DEAL_FROM_AI_LEADER_GEDEMO_WASHINGTON_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_GEDEMO_WASHINGTON_ANY}</Text>
+		</Replace>
+
+		<!-- 谴责 -->
+		<!-- 受到谴责回应 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_GEDEMO_WASHINGTON_ANY" Language="zh_Hans_CN">
+			<Text>好吧。</Text>
+		</Replace>
+
+		<!-- AI谴责玩家 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_GEDEMO_WASHINGTON_ANY" Language="zh_Hans_CN">
+			<Text>现在所有的领袖都知道你不值得信任。[NEWLINE]（谴责你）</Text>
+		</Replace>
+
+		<!-- 宣战 -->
+		<!-- 受到宣战后回应 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_GEDEMO_WASHINGTON_ANY" Language="zh_Hans_CN">
+			<Text>你把我们对和平的热爱错当成软弱了。你会后悔的！ </Text>
+		</Replace>
+
+		<!-- AI宣战 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_GEDEMO_WASHINGTON_ANY" Language="zh_Hans_CN">
+			<Text>你肆意的侵略让我们别无选择，准备迎战吧！</Text>
+		</Replace>
+
+		<!-- 求和 -->
+		<!-- AI接受求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_ACCEPT_DEAL_LEADER_GEDEMO_WASHINGTON_ANY" Language="zh_Hans_CN">
+			<Text>我同意：让我们再创和平。</Text>
+		</Replace>
+
+		<!-- AI拒绝求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_REFUSE_DEAL_LEADER_GEDEMO_WASHINGTON_ANY" Language="zh_Hans_CN">
+			<Text>不可能有和平，也许下一次吧。</Text>
+		</Replace>
+
+		<!-- AI求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_FROM_AI_LEADER_GEDEMO_WASHINGTON_ANY" Language="zh_Hans_CN">
+			<Text>我提议讲和。</Text>
+		</Replace>
+
+		<!-- 击败 -->
+		<!-- AI被击败 -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_GEDEMO_WASHINGTON_ANY" Language="zh_Hans_CN">
+			<Text>时间属于你了，愿你在胜利下依然能保有仁慈。</Text>
+		</Replace>
+
+		<!-- 玩家被击败（在热座模式中会显示） -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_GEDEMO_WASHINGTON_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_GEDEMO_WASHINGTON_ANY}</Text>
+		</Replace>
+
+		<Replace Tag="LOC_AGENDA_GEDEMO_WASHINGTON_NAME" Language="zh_Hans_CN">
+			<Text>城市破坏者</Text>
+		</Replace>
+		<Replace Tag="LOC_AGENDA_GEDEMO_WASHINGTON_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>试图征服周边的文明，喜欢那些还不是自己邻居的文明。不喜欢他的邻居。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_MODIFIER_CONOTOCAURIUS_NEIGHBOR" Language="zh_Hans_CN">
+			<Text>（华盛顿因为您的帝国与他相近而感到不快）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_CONOTOCAURIUS_NOT_NEIGHBOR" Language="zh_Hans_CN">
+			<Text>（您的帝国与他相距甚远，这让华盛顿很高兴）</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

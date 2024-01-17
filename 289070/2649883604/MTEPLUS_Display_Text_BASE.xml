@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- MTEPLUS_Display_Text_ENG -->
+<!-- Author: Clear8Sky -->
+<!-- Copied from: LaoSha -->
+<!-- DateCreated: 2021/5/25 10:43:12 -->
+<GameData>
+	<EnglishText>
+		<Row Tag="LOC_C8S_MTEPLUS_NAME">
+			<Text>[COLOR_FLOAT_CULTURE]Mod[COLOR:Red] CN [ICON_Reports] [COLOR:DiplomaticLabelCS]Translation/Embellishment·[COLOR_Civ6Yellow]Plus</Text>
+		</Row>
+		<Row Tag="LOC_C8S_MTEPLUS_TEASER">
+			<Text>Translate [COLOR_FLOAT_CULTURE]other mods[ENDCOLOR]' text into [COLOR:Red]Simplified Chinese[ENDCOLOR].</Text>
+		</Row>
+		<Row Tag="LOC_C8S_MTEPLUS_DESCRIPTION">
+			<Text>Beyond MTE, this mod can translate [COLOR_FLOAT_CULTURE]other mods[ENDCOLOR]' text into [COLOR:Red]Simplified Chinese[ENDCOLOR], and it will [COLOR:DiplomaticLabelCS]restore or polish[ENDCOLOR] some translated text that is not suitable for Chinese wording as well.</Text>
+		</Row>
+		<Row Tag="LOC_C8S_MTEPLUS_SPT">
+			<Text>[COLOR:ResGoldLabelCS]WatcherNinth[ENDCOLOR], [COLOR:ResGoldLabelCS]Gold[ENDCOLOR];[NEWLINE][COLOR:ResGoldLabelCS]Chun[ENDCOLOR], [COLOR:ResGoldLabelCS]ChiYiuWong[ENDCOLOR], [COLOR:ResFoodLabelCS]Flactine[ENDCOLOR], [COLOR:ResFoodLabelCS]Zhai[ENDCOLOR], [COLOR:ResFaithLabelCS]JW.Sun[ENDCOLOR], [COLOR:ResFaithLabelCS]Antusky[ENDCOLOR], [COLOR:ResFaithLabelCS]LouisOdin[ENDCOLOR];[NEWLINE][COLOR:DiplomaticLabelCS]Entarogan[ENDCOLOR];[NEWLINE][COLOR:ResScienceLabelCS]Randerion(HaoJun0823)[ENDCOLOR];[NEWLINE][COLOR:ResScienceLabelCS]KCucumber[ENDCOLOR], [COLOR:ResScienceLabelCS]Sakemy[ENDCOLOR];[NEWLINE][COLOR:ResCultureLabelCS]Liulang Pugongying[ENDCOLOR];[NEWLINE]And [COLOR_LIGHTBLUE]Everyone[ENDCOLOR]!!!</Text>
+		</Row>
+	</EnglishText>
+</GameData>

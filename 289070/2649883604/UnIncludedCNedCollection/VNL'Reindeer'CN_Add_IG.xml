@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'Reindeer'CN_Add_IG -->
+<!-- Author: 邓半仙人 , Clear8Sky -->
+<!-- DateCreated: 2021/11/21 20:59:50 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Reindeer” 。该文件在 InGame 时载入，无需任何 Criteria -->
+	<LocalizedText>
+		<Replace Tag="LOC_RESOURCE_AOM_REINDEER_NAME" Language="zh_Hans_CN">
+			<Text>驯鹿</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_RESOURCES_PAGE_RESOURCE_AOM_REINDEER_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>驯鹿是一种环极地分布的鹿，原产于北极、亚北极、冻土带、北欧、西伯利亚和北美的北部和山区。北极地区的人们依靠驯鹿提供食物、衣服和住所。狩猎野生或半野生的驯鹿对许多北极和亚北极地区住民来说十分重要，他们借此获取肉类、兽皮、鹿角、鹿奶以及坐骑，驯鹿对所有极地民族而言都具有重要的经济作用。普遍认为驯鹿于青铜时代和铁器时代之间开始被驯化。驯鹿是全世界唯一被驯化的鹿，也是最后一种被驯化的动物。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_HERDSMAN_AOM_REINDEER_NAME" Language="zh_Hans_CN">
+			<Text>驯鹿牧民</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_HERDSMAN_AOM_REINDEER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>正在赶着驯鹿的牧民。</Text>
+		</Replace>
+		<Replace Tag="LOC_IMPROVEMENT_UNRUSTLE_AOM_REINDEER_NAME" Language="zh_Hans_CN">
+			<Text>原生驯鹿</Text>
+		</Replace>
+		<Replace Tag="LOC_IMPROVEMENT_UNRUSTLE_AOM_REINDEER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>尚未被赶牧过的驯鹿。</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

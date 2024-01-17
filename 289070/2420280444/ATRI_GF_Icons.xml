@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ATRI_GF_Icons -->
+<!-- Author: UFO300 -->
+<!-- DateCreated: 3/7/2021 8:43:57 PM -->
+<GameData>
+	<IconTextureAtlases>
+		<Row Name="ATLAS_EDEN_GF" IconSize="22" Filename="EDEN_GF_22"/>
+		<Row Name="ATLAS_EDEN_GF" IconSize="30" Filename="EDEN_GF_30"/>
+		<Row Name="ATLAS_EDEN_GF" IconSize="32" Filename="EDEN_GF_32"/>
+		<Row Name="ATLAS_EDEN_GF" IconSize="36" Filename="EDEN_GF_36"/>
+		<Row Name="ATLAS_EDEN_GF" IconSize="44" Filename="EDEN_GF_44"/>
+		<Row Name="ATLAS_EDEN_GF" IconSize="45" Filename="EDEN_GF_45"/>
+		<Row Name="ATLAS_EDEN_GF" IconSize="48" Filename="EDEN_GF_48"/>
+		<Row Name="ATLAS_EDEN_GF" IconSize="50" Filename="EDEN_GF_50"/>
+		<Row Name="ATLAS_EDEN_GF" IconSize="64" Filename="EDEN_GF_64"/>
+		<Row Name="ATLAS_EDEN_GF" IconSize="80" Filename="EDEN_GF_80"/>
+		<Row Name="ATLAS_EDEN_GF" IconSize="128" Filename="EDEN_GF_128"/>
+		<Row Name="ATLAS_EDEN_GF" IconSize="200" Filename="EDEN_GF_200"/>
+		<Row Name="ATLAS_EDEN_GF" IconSize="256" Filename="EDEN_GF_256"/>
+
+		<Row Name="ATLAS_ATRI_GF" IconSize="32" Filename="ATRI_GF_32"/>
+		<Row Name="ATLAS_ATRI_GF" IconSize="45" Filename="ATRI_GF_45"/>
+		<Row Name="ATLAS_ATRI_GF" IconSize="48" Filename="ATRI_GF_48"/>
+		<Row Name="ATLAS_ATRI_GF" IconSize="50" Filename="ATRI_GF_50"/>
+		<Row Name="ATLAS_ATRI_GF" IconSize="55" Filename="ATRI_GF_55"/>
+		<Row Name="ATLAS_ATRI_GF" IconSize="64" Filename="ATRI_GF_64"/>
+		<Row Name="ATLAS_ATRI_GF" IconSize="80" Filename="ATRI_GF_80"/>
+		<Row Name="ATLAS_ATRI_GF" IconSize="256" Filename="ATRI_GF_256"/>
+
+		<Row Name="ATLAS_XIASHENG" IconSize="32" Filename="XIASHENG_32"/>
+		<Row Name="ATLAS_XIASHENG" IconSize="45" Filename="XIASHENG_45"/>
+		<Row Name="ATLAS_XIASHENG" IconSize="48" Filename="XIASHENG_48"/>
+		<Row Name="ATLAS_XIASHENG" IconSize="50" Filename="XIASHENG_50"/>
+		<Row Name="ATLAS_XIASHENG" IconSize="55" Filename="XIASHENG_55"/>
+		<Row Name="ATLAS_XIASHENG" IconSize="64" Filename="XIASHENG_64"/>
+		<Row Name="ATLAS_XIASHENG" IconSize="80" Filename="XIASHENG_80"/>
+		<Row Name="ATLAS_XIASHENG" IconSize="256" Filename="XIASHENG_256"/>
+
+		<Row Name="ATLAS_UNIT_ESUBMARINE" IconSize="22" Filename="UNIT_ESUBMARINE_22"/>
+		<Row Name="ATLAS_UNIT_ESUBMARINE" IconSize="32" Filename="UNIT_ESUBMARINE_32"/>
+		<Row Name="ATLAS_UNIT_ESUBMARINE" IconSize="38" Filename="UNIT_ESUBMARINE_38"/>
+		<Row Name="ATLAS_UNIT_ESUBMARINE" IconSize="50" Filename="UNIT_ESUBMARINE_50"/>
+		<Row Name="ATLAS_UNIT_ESUBMARINE" IconSize="80" Filename="UNIT_ESUBMARINE_80"/>
+		<Row Name="ATLAS_UNIT_ESUBMARINE" IconSize="256" Filename="UNIT_ESUBMARINE_256"/>
+	</IconTextureAtlases>
+	<IconDefinitions>
+		<Row Name="ICON_CIVILIZATION_EDEN_GF" Atlas="ATLAS_EDEN_GF" Index="0"/>
+		<Row Name="ICON_LEADER_ATRI_GF" Atlas="ATLAS_ATRI_GF" Index="0"/>
+		<Row Name="ICON_LEADER_XIASHENG" Atlas="ATLAS_XIASHENG" Index="0"/>
+		<Row Name="ICON_DISTRICT_DT_GF" Atlas="ICON_ATLAS_DISTRICTS" Index="9"/>
+		<Row Name="ICON_DISTRICT_DT_GF_FOW" Atlas="ICON_ATLAS_DISTRICTS_FOW" Index="9"/>
+		<Row Name="ICON_BUILDING_INSTITUTE"           Atlas="ICON_ATLAS_BUILDINGS" Index="18"/>
+		<Row Name="ICON_BUILDING_INSTITUTE_FOW"          Atlas="ICON_ATLAS_BUILDINGS_FOW" Index="18"/>
+		<Row Name="ICON_DISTRICT_GL"         Atlas="ICON_ATLAS_DISTRICTS" Index="2"/>
+		<Row Name="ICON_DISTRICT_GL_FOW"     Atlas="ICON_ATLAS_DISTRICTS" Index="2"/>
+		<Row Name="ICON_GAMEMODE_BCOS"	 Atlas="ATLAS_EDEN_GF"	Index="0"/>
+		<Row Name="ICON_UNIT_ESUBMARINE" Atlas="ATLAS_UNIT_ESUBMARINE" Index="0"/>
+		<Row Name="ICON_UNIT_ESUBMARINE_PORTRAIT" Atlas="ATLAS_UNIT_ESUBMARINE" Index="0"/>
+	</IconDefinitions>
+</GameData>

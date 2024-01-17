@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RFXGS'Chile'CN_Add_FI -->
+<!-- Author: Clear8Sky -->
+<!-- DateCreated: 2021/9/24 21:32:38 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Chile” 。该文件在 FrontEnd 与 InGame 时载入，需 Criteria ： Active_Expansion_1 与 Active_Expansion_2 -->
+	<LocalizedText>
+
+		<!-- 模组 -->
+
+		<Replace Tag="LOC_MOD_JFD_CHILE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>------------------------------------[NEWLINE]文明 - 智利[NEWLINE][NEWLINE]文明特性 - 如你所拥[NEWLINE]在海岸相邻的单元格上、或在加成资源与战略资源上修建改良设施，可对相邻单元格释放文化炸弹。若在帝国境内击杀敌方单位，则您文明所有城市可获得大量忠诚度奖励。[NEWLINE][NEWLINE]特色改良设施 - 硝石矿场[NEWLINE]解锁建造者修建智利特色改良设施“硝石矿场”的能力。[NEWLINE][NEWLINE]+1 [ICON_Housing] 住房、+1 [ICON_Production] 生产力。每相邻一个沙漠单元格则+1 [ICON_Production] 生产力。若所在城市忠诚度为满，则可从相邻每处矿山或采石场中获得+1 [ICON_Production] 生产力。每座城市仅能修建一个。-1魅力值。[NEWLINE][NEWLINE]特色单位 - 阿尔米兰特·拉托雷号战舰[NEWLINE]智利现代特色海军远程攻击单位，取代战舰。在中立领土或帝国境内作战时+7 [ICON_Strength] 战斗力。击杀敌方单位后，与阿尔米兰特·拉托雷号战舰相邻的敌方水域单元格将恢复中立。</Text>
+		</Replace>
+
+		<!-- 文明 -->
+
+		<Replace Tag="LOC_CIVILIZATION_JFD_CHILE_NAME" Language="zh_Hans_CN">
+			<Text>智利</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVILIZATION_JFD_CHILE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>智利帝国</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVILIZATION_JFD_CHILE_ADJECTIVE" Language="zh_Hans_CN">
+			<Text>智利的</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVILIZATION_JFD_CHILE_DESCRIPTION_JFD_CIVILIZATION" Language="zh_Hans_CN">
+			<Text>智利文明</Text>
+		</Replace>
+
+		<!-- 文明百科 -->
+
+		<Replace Tag="LOC_CIVINFO_JFD_CHILE_LOCATION" Language="zh_Hans_CN">
+			<Text>南美洲</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVINFO_JFD_CHILE_POPULATION" Language="zh_Hans_CN">
+			<Text>约1700万</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVINFO_JFD_CHILE_SIZE" Language="zh_Hans_CN">
+			<Text>约75.6万平方英里（29.1万平方公里）</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVINFO_JFD_CHILE_CAPITAL" Language="zh_Hans_CN">
+			<Text>圣地亚哥</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_JFD_CHILE_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]The first human beings arrived in Chile about 12,000 BC. At first people lived by hunting and farming but in North Chile they were farming by 2,500 BC. However agriculture began much later in Southern Chile.[NEWLINE][NEWLINE]The Incas conquered northern Chile in the 15th century but they were themselves conquered by the Spanish in 1533. However, in the South were a people called the Araucanians. In 1540 a Spaniard called Pedro de Valdivia invaded southern Chile and he founded Santiago in 1540. However, in 1553 the Mapuche, known to the Spaniards as Araucanians rebelled led by men called Lautro and Caupolican. They sacked the Spanish settlements except for Concepcion and la Serena.[NEWLINE][NEWLINE]The Spaniards managed to regain control but the Araucanians continued to resist Spanish rule until the 19th century and there was frequent strife between them and the Spaniards.[NEWLINE][NEWLINE]Despite that by the end of the 17th century the population of Chile was about 100,000 and by the end of the 18th century it was nearly 500,000 most of whom were mestizos or people of mixed race.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_JFD_CHILE_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>In 1808 Napoleon occupied Spain and deposed the king Ferdinand VII. He made his own brother, Joseph, king of Spain. So in Chile, the leading citizens elected a junta in September 1810. They claimed they were ruling on behalf of the deposed King Ferdinand but they introduced a number of reforms and moved towards independence. However, Peru remained loyal to Spain and went to war with Chile to bring her to heel. In October 1814 a royalist army defeated the Chileans and occupied Santiago.[NEWLINE][NEWLINE]Meanwhile Napoleon had abdicated and the Spanish king had been restored. The king then clamped down on Chile and introduced a repressive regime, which simply alienated the people.[NEWLINE][NEWLINE]A man named Jose de San Martin led an army which defeated the royalists at Chabuco on 12 February 1817. Chile became formally independent from Spain on 12 February 1818.[NEWLINE][NEWLINE]However the early years of independent Chile were troubled by political instability. However, in 1829 the Conservatives took power and introduced an authoritarian regime. They were led by Diego Portales who never became president himself but who nevertheless was very influential.[NEWLINE][NEWLINE]In 1833 a new constitution for Chile was drawn up. There followed a long period of relative stability in Chile. There was also economic gReplaceth and the first railways were built.[NEWLINE][NEWLINE]However after 1873 Chile was plunged into recession and exports of wheat, silver and copper dropped dramatically.[NEWLINE][NEWLINE]Finally in 1879 war began between Chile on one side and Peru and Bolivia on the other. For years Chile and Bolivia had a border dispute. Chile finally agreed to recognize the disputed territory as Bolivian as long as Bolivia did not increase the export tax on Chilean nitrate companies operating there. When Bolivia did raise the tax it led to war. Peru joined the war on Bolivia's side.[NEWLINE][NEWLINE]In 1879 the Chileans captured the Hudascar Peru's greatest warship. The Chileans then invaded southern Peru. In 1881 they captured the capital, Lima. The war with Peru ended in 1883 and the war with Bolivia ended in 1884. Chile gained territory at the expense of Peru and Bolivia.[NEWLINE][NEWLINE]Afterwards in the last years of the 19th century exports of nitrate from Chile boomed and the country was prosperous again.[NEWLINE][NEWLINE]However the Chilean congress then argued with the president. In 1890 congress refused to accept the president's budget for 1891. The president announced he would use the 1890 budget again in 1891. Congress claimed that was illegal and fled. A short civil war followed and the president's army was defeated. He committed suicide.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_JFD_CHILE_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>Congress then became much stronger and the president's power was sharply reduced. Meanwhile, the Chilean economy prospered and industry grew.[NEWLINE][NEWLINE]Unfortunately when the First World War began in 1914 exports of nitrates collapsed leading to much unrest in Chile.[NEWLINE][NEWLINE]The military decided that only a strong presidency would be able to deal with the crisis in Chile and from 1924 they intervened in Chilean politics. In 1925 a new constitution was drawn up. However, the depression of the 1930s meant an economic collapse in Chile. It also led to political instability with many strikes and changes of government. Stability was restored in 1932 when Arturo Alessandri became president of Chile again. (Alessandri had been president before).[NEWLINE][NEWLINE]Afterwards Chile became a multi-party system with right-wing, left-wing and liberal parties. However in 1958 the Socialist Salvador Allende only narReplacely failed to win the presidency, greatly alarming the right-wing.[NEWLINE][NEWLINE]In 1964 a Christian Democrat called Eduardo Frei was elected president. He introduced a number of reforms such as a minimum wage. However, his reforms were not enough for some people while for others they were too much. Chile became increasingly divided between the left and the right.[NEWLINE][NEWLINE]Then in September 1970 the Socialist Salvador Allende was elected president of Chile. Allende nationalized industries but that depleted foreign currency reserves. He also began radical agrarian reform. However, government expenditure far outstripped its income causing a huge deficit. The world copper price also fell, which cut the government's revenues even more. Inflation also rose very rapidly and food shortages became common. Furthermore in October 1972 a truckers strike brought Chile to a halt. Finally, on 11 September 1973, the army staged a coup led by Augusto Pinochet.[NEWLINE][NEWLINE]Pinochet introduced a brutal military dictatorship in Chile. The worst instrument of repression was his secret police the DINA. Nevertheless, Pinochet did, at first, have economic success. Inflation in Chile was curbed and unemployment fell. However, in the early 1980s, Chile entered a recession. It did not recover until the end of the decade.[NEWLINE][NEWLINE]Meanwhile in 1980 Pinochet drew up a new constitution. Under it, he would continue in power till 1988. Then the people would decide if they wanted the military rule to continue or if they wanted an election.[NEWLINE][NEWLINE]It was no surprise when the majority of Chileans voted against continuing military rule. In the election that followed in 1989, a Christian Democrat named Patricio Aylwin became president.[NEWLINE][NEWLINE]During the 1990s Chile enjoyed rapid economic gReplaceth, which continued in the early years of the 21st century. Today poverty in Chile is declining rapidly. Chile is also a stable democracy. In 2010 Sebastian Pinera was elected president. Also in 2010, Chile joined the OECD. Today the economy of Chile is gReplaceing steadily. Chile has a bright future. Today the population of Chile is 18 million.</Text>
+		</Replace>
+
+		<!-- 特性 -->
+
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_JFD_AS_YOU_POSSESS_NAME" Language="zh_Hans_CN">
+			<Text>如你所拥</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_JFD_AS_YOU_POSSESS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>在海岸相邻的单元格上、或在加成资源与战略资源上修建改良设施，可对相邻单元格释放文化炸弹。若在帝国境内击杀敌方单位，则您文明所有城市可获得大量忠诚度奖励。</Text>
+		</Replace>
+
+		<!-- 城市 -->
+
+		<Replace Tag="LOC_CITY_NAME_JFD_CHILE_1" Language="zh_Hans_CN">
+			<Text>圣地亚哥</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_CHILE_2" Language="zh_Hans_CN">
+			<Text>瓦尔帕莱索</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_CHILE_3" Language="zh_Hans_CN">
+			<Text>康塞普西翁</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_CHILE_4" Language="zh_Hans_CN">
+			<Text>安托法加斯塔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_CHILE_5" Language="zh_Hans_CN">
+			<Text>特木科</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_CHILE_6" Language="zh_Hans_CN">
+			<Text>伊基克</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_CHILE_7" Language="zh_Hans_CN">
+			<Text>蒙特港</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_CHILE_8" Language="zh_Hans_CN">
+			<Text>兰卡瓜</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_CHILE_9" Language="zh_Hans_CN">
+			<Text>塞雷那</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_CHILE_10" Language="zh_Hans_CN">
+			<Text>奇廉</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_CHILE_11" Language="zh_Hans_CN">
+			<Text>塔尔卡</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_CHILE_12" Language="zh_Hans_CN">
+			<Text>阿里卡</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_CHILE_13" Language="zh_Hans_CN">
+			<Text>蓬塔阿雷纳斯</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_CHILE_14" Language="zh_Hans_CN">
+			<Text>科皮亚波</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_CHILE_15" Language="zh_Hans_CN">
+			<Text>奥索尔诺</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_CHILE_16" Language="zh_Hans_CN">
+			<Text>卡拉马</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_CHILE_17" Language="zh_Hans_CN">
+			<Text>洛桑赫莱斯</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_CHILE_18" Language="zh_Hans_CN">
+			<Text>瓦尔迪维亚</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_CHILE_19" Language="zh_Hans_CN">
+			<Text>库里科</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_CHILE_20" Language="zh_Hans_CN">
+			<Text>科金博</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_CHILE_21" Language="zh_Hans_CN">
+			<Text>库里科</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_CHILE_22" Language="zh_Hans_CN">
+			<Text>利纳雷斯</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_CHILE_23" Language="zh_Hans_CN">
+			<Text>延基韦</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_CHILE_24" Language="zh_Hans_CN">
+			<Text>布因</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_CHILE_25" Language="zh_Hans_CN">
+			<Text>圣费尔南多</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_CHILE_26" Language="zh_Hans_CN">
+			<Text>奥索尔诺</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_CHILE_27" Language="zh_Hans_CN">
+			<Text>圣安东尼奥</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_CHILE_28" Language="zh_Hans_CN">
+			<Text>洛斯安第斯</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_CHILE_29" Language="zh_Hans_CN">
+			<Text>梅利皮亚</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_CHILE_30" Language="zh_Hans_CN">
+			<Text>卡尔德拉</Text>
+		</Replace>
+
+		<!-- 公民 -->
+
+		<Replace Tag="LOC_CITIZEN_JFD_CHILE_MALE_1" Language="zh_Hans_CN">
+			<Text>马特奥</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_CHILE_MALE_2" Language="zh_Hans_CN">
+			<Text>约翰</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_CHILE_MALE_3" Language="zh_Hans_CN">
+			<Text>费尔南多</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_CHILE_MALE_4" Language="zh_Hans_CN">
+			<Text>约瑟</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_CHILE_MALE_5" Language="zh_Hans_CN">
+			<Text>马丁</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_CHILE_MALE_6" Language="zh_Hans_CN">
+			<Text>佩德罗</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_CHILE_MALE_7" Language="zh_Hans_CN">
+			<Text>弗朗西斯科</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_CHILE_MALE_8" Language="zh_Hans_CN">
+			<Text>阿古斯丁</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_CHILE_MALE_9" Language="zh_Hans_CN">
+			<Text>安东尼奥</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_CHILE_MALE_10" Language="zh_Hans_CN">
+			<Text>卡西米罗</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_CHILE_MODERN_MALE_1" Language="zh_Hans_CN">
+			<Text>霍普</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_CHILE_MODERN_MALE_2" Language="zh_Hans_CN">
+			<Text>塞巴斯蒂安</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_CHILE_MODERN_MALE_3" Language="zh_Hans_CN">
+			<Text>克里斯托瓦尔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_CHILE_MODERN_MALE_4" Language="zh_Hans_CN">
+			<Text>马克西米利亚诺</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_CHILE_MODERN_MALE_5" Language="zh_Hans_CN">
+			<Text>奥古斯丁</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_CHILE_MODERN_MALE_6" Language="zh_Hans_CN">
+			<Text>华金</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_CHILE_MODERN_MALE_7" Language="zh_Hans_CN">
+			<Text>马蒂亚斯</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_CHILE_MODERN_MALE_8" Language="zh_Hans_CN">
+			<Text>马汀</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_CHILE_MODERN_MALE_9" Language="zh_Hans_CN">
+			<Text>维桑特</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_CHILE_MODERN_MALE_10" Language="zh_Hans_CN">
+			<Text>本哈明</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_CHILE_FEMALE_1" Language="zh_Hans_CN">
+			<Text>梅塞德丝</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_CHILE_FEMALE_2" Language="zh_Hans_CN">
+			<Text>特雷莎</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_CHILE_FEMALE_3" Language="zh_Hans_CN">
+			<Text>玛丽亚</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_CHILE_FEMALE_4" Language="zh_Hans_CN">
+			<Text>哈维埃拉</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_CHILE_FEMALE_5" Language="zh_Hans_CN">
+			<Text>曼努埃拉</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_CHILE_FEMALE_6" Language="zh_Hans_CN">
+			<Text>路易莎</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_CHILE_FEMALE_7" Language="zh_Hans_CN">
+			<Text>卡梅尔拉</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_CHILE_FEMALE_8" Language="zh_Hans_CN">
+			<Text>玛丽安娜</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_CHILE_FEMALE_9" Language="zh_Hans_CN">
+			<Text>罗萨里娅</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_CHILE_FEMALE_10" Language="zh_Hans_CN">
+			<Text>拉斐拉</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_CHILE_MODERN_FEMALE_1" Language="zh_Hans_CN">
+			<Text>霍皮娜</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_CHILE_MODERN_FEMALE_2" Language="zh_Hans_CN">
+			<Text>卡塔利娜</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_CHILE_MODERN_FEMALE_3" Language="zh_Hans_CN">
+			<Text>埃米莉亚</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_CHILE_MODERN_FEMALE_4" Language="zh_Hans_CN">
+			<Text>瓦伦丁娜</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_CHILE_MODERN_FEMALE_5" Language="zh_Hans_CN">
+			<Text>索菲娅</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_CHILE_MODERN_FEMALE_6" Language="zh_Hans_CN">
+			<Text>弗洛伦西娅</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_CHILE_MODERN_FEMALE_7" Language="zh_Hans_CN">
+			<Text>马丁娜</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_CHILE_MODERN_FEMALE_8" Language="zh_Hans_CN">
+			<Text>卡拉</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_CHILE_MODERN_FEMALE_9" Language="zh_Hans_CN">
+			<Text>芭芭拉</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_CHILE_MODERN_FEMALE_10" Language="zh_Hans_CN">
+			<Text>桑德拉</Text>
+		</Replace>
+
+		<!-- 江河名称 -->
+
+		<Replace Tag="LOC_NAMED_RIVER_JFD_CHILE_LOA_NAME" Language="zh_Hans_CN">
+			<Text>洛阿河</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_JFD_CHILE_BAKER_NAME" Language="zh_Hans_CN">
+			<Text>贝克河</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_JFD_CHILE_BIO_BIO_NAME" Language="zh_Hans_CN">
+			<Text>比奥比奥河</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_JFD_CHILE_MAULE_NAME" Language="zh_Hans_CN">
+			<Text>马乌莱河</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_JFD_CHILE_BUENO_NAME" Language="zh_Hans_CN">
+			<Text>布埃诺河</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_JFD_CHILE_PASCUA_NAME" Language="zh_Hans_CN">
+			<Text>帕斯夸河</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_JFD_CHILE_MAIPO_NAME" Language="zh_Hans_CN">
+			<Text>迈波河</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_JFD_CHILE_LIMARI_NAME" Language="zh_Hans_CN">
+			<Text>利马里河</Text>
+		</Replace>
+
+		<!-- 山脉名称 -->
+
+		<Replace Tag="LOC_NAMED_MOUNTAIN_JFD_CHILE_NEVADO_NAME" Language="zh_Hans_CN">
+			<Text>特雷斯克鲁塞斯山</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_MOUNTAIN_JFD_CHILE_TUPUNGATO_NAME" Language="zh_Hans_CN">
+			<Text>图蓬加托山脉</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_MOUNTAIN_JFD_CHILE_EL_MUERTO_NAME" Language="zh_Hans_CN">
+			<Text>穆埃尔托山</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_MOUNTAIN_JFD_CHILE_PARINACOTA_NAME" Language="zh_Hans_CN">
+			<Text>帕里那哥塔山脉</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_MOUNTAIN_JFD_CHILE_POMERAPE_NAME" Language="zh_Hans_CN">
+			<Text>珀木拉普山</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_MOUNTAIN_JFD_CHILE_TRES_NAME" Language="zh_Hans_CN">
+			<Text>洛斯帕托斯山</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_MOUNTAIN_JFD_CHILE_OLIVARES_NAME" Language="zh_Hans_CN">
+			<Text>奥利瓦雷斯山</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_MOUNTAIN_JFD_CHILE_ALTO_NAME" Language="zh_Hans_CN">
+			<Text>阿尔托山</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_MOUNTAIN_JFD_CHILE_MARMOLEJO_NAME" Language="zh_Hans_CN">
+			<Text>马尔莫莱霍山</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_MOUNTAIN_JFD_CHILE_SAN_PABLO_NAME" Language="zh_Hans_CN">
+			<Text>圣巴勃罗山</Text>
+		</Replace>
+
+		<!-- 火山名称 -->
+
+		<Replace Tag="LOC_NAMED_VOLCANO_JFD_CHILE_OJOS_NAME" Language="zh_Hans_CN">
+			<Text>奥霍斯-德尔萨拉多山</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_VOLCANO_JFD_CHILE_LLULLAILLACO_NAME" Language="zh_Hans_CN">
+			<Text>尤耶亚科山</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_VOLCANO_JFD_CHILE_INCAHUASI_NAME" Language="zh_Hans_CN">
+			<Text>印加瓦西峰</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_VOLCANO_JFD_CHILE_TUPUNGATO_NAME" Language="zh_Hans_CN">
+			<Text>图蓬加托火山</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_VOLCANO_JFD_CHILE_PARINACOTA_NAME" Language="zh_Hans_CN">
+			<Text>帕里那哥塔火山</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_VOLCANO_JFD_CHILE_PULAR_NAME" Language="zh_Hans_CN">
+			<Text>普拉尔峰</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_VOLCANO_JFD_CHILE_EL_SOLO_NAME" Language="zh_Hans_CN">
+			<Text>索洛山</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_VOLCANO_JFD_CHILE_AUCANQUILCHA_NAME" Language="zh_Hans_CN">
+			<Text>奥坎基尔查峰</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_VOLCANO_JFD_CHILE_SAN_PEDRO_NAME" Language="zh_Hans_CN">
+			<Text>圣佩德罗火山</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_VOLCANO_JFD_CHILE_SIERRA_NEVADA_NAME" Language="zh_Hans_CN">
+			<Text>内瓦达山脉</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_VOLCANO_JFD_CHILE_WALLATIRI_NAME" Language="zh_Hans_CN">
+			<Text>瓦利亚蒂雷山</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_VOLCANO_JFD_CHILE_ACOTANGO_NAME" Language="zh_Hans_CN">
+			<Text>阿科坦戈火山</Text>
+		</Replace>
+
+		<!-- 沙漠名称 -->
+
+		<Replace Tag="LOC_NAMED_DESERT_JFD_CHILE_ATACAMA_DESERT_NAME" Language="zh_Hans_CN">
+			<Text>阿塔卡马沙漠</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_DESERT_JFD_CHILE_MONTE_DESERT_NAME" Language="zh_Hans_CN">
+			<Text>蒙特沙漠</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_DESERT_JFD_CHILE_PATAGONIAN_DESERT_NAME" Language="zh_Hans_CN">
+			<Text>巴塔哥尼亚荒漠</Text>
+		</Replace>
+
+		<!-- 湖泊名称 -->
+
+		<Replace Tag="LOC_NAMED_LAKE_JFD_CHILE_GENERAL_CARRERA_NAME" Language="zh_Hans_CN">
+			<Text>布宜诺斯艾利斯湖</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_LAKE_JFD_CHILE_LAKE_LLANQUIHUE_NAME" Language="zh_Hans_CN">
+			<Text>延基韦湖</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_LAKE_JFD_CHILE_OHIGGINS_NAME" Language="zh_Hans_CN">
+			<Text>奥希金斯湖</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_LAKE_JFD_CHILE_RANCO_LAKE_NAME" Language="zh_Hans_CN">
+			<Text>兰科湖</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_LAKE_JFD_CHILE_PRESIDENTE_RIOS_LAKE_NAME" Language="zh_Hans_CN">
+			<Text>里奥斯总统湖</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_LAKE_JFD_CHILE_GREVE_LAKE_NAME" Language="zh_Hans_CN">
+			<Text>格雷韦湖</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_LAKE_JFD_CHILE_RUPANCO_LAKE_NAME" Language="zh_Hans_CN">
+			<Text>鲁潘科湖</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_LAKE_JFD_CHILE_DEL_TORO_LAKE_NAME" Language="zh_Hans_CN">
+			<Text>托罗湖</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_LAKE_JFD_CHILE_LAKE_VILLARRICA_NAME" Language="zh_Hans_CN">
+			<Text>比亚里卡湖</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_LAKE_JFD_CHILE_LAKE_TODOS_NAME" Language="zh_Hans_CN">
+			<Text>托多斯洛斯桑托斯湖</Text>
+		</Replace>
+
+		<!-- 海洋名称 -->
+
+		<Replace Tag="LOC_NAMED_SEA_JFD_CHILE_CHILEAN_SEA_NAME" Language="zh_Hans_CN">
+			<Text>智利海</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_SEA_JFD_CHILE_OCEANO_ATLANTICO_NAME" Language="zh_Hans_CN">
+			<Text>大西洋</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_SEA_JFD_CHILE_OCEANO_PACIFICO_NAME" Language="zh_Hans_CN">
+			<Text>太平洋</Text>
+		</Replace>
+
+		<!-- 硝石矿场 -->
+
+		<Replace Tag="LOC_IMPROVEMENT_JFD_SALITRERA_NAME" Language="zh_Hans_CN">
+			<Text>硝石矿场</Text>
+		</Replace>
+		<Replace Tag="LOC_IMPROVEMENT_JFD_SALITRERA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>解锁建造者修建智利特色改良设施“硝石矿场”的能力。[NEWLINE][NEWLINE]+1 [ICON_Housing] 住房、+1 [ICON_Production] 生产力。每相邻一个沙漠单元格则+1 [ICON_Production] 生产力。若所在城市忠诚度为满，则可从相邻每处矿山或采石场中获得+1 [ICON_Production] 生产力。每座城市仅能修建一个。-1魅力值。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_IMPROVEMENTS_PAGE_IMPROVEMENT_JFD_SALITRERA_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]Salitrera is the name given to each one of the different nitrate exploitation centers located in the current Chilean regions of Tarapacá and Antofagasta, which proliferated between 1842 - when the usefulness of nitrate was discovered - and the 1930s - after inventing the synthetic saltpeter.[NEWLINE][NEWLINE]Given the isolated and arid mining area in the Atacama desert, the most arid on the planet, industrial facilities were created for the extraction and processing of saltpeter, almost self-sufficient enclaves in which the administration of the center met mining, workers' homes, sales centers - known as " pulperías " -, churches, schools and leisure and entertainment centers. The saltpeter offices were home to thousands of workers from Chile, Bolivia, Peru and Argentina.</Text>
+		</Replace>
+		
+		<!-- 阿尔米兰特·拉托雷号战舰 -->
+		
+		<Replace Tag="LOC_UNIT_JFD_ALMIRANTE_NAME" Language="zh_Hans_CN">
+			<Text>阿尔米兰特·拉托雷号战舰</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_JFD_ALMIRANTE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>智利现代特色海军远程攻击单位，取代战舰。在中立领土或帝国境内作战时+7 [ICON_Strength] 战斗力。击杀敌方单位后，与阿尔米兰特·拉托雷号战舰相邻的敌方水域单元格将恢复中立。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_JFD_ALMIRANTE_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]Almirante Latorre, named after Juan José Latorre, was a super-dreadnought battleship built for the Chilean Navy. It was the first of a planned two-ship class that would respond to earlier warship purchases by other South American countries. Construction began at Elswick, Newcastle upon Tyne soon after the ship was ordered in November 1911, and was approaching completion when it was bought by the United Kingdom's Royal Navy for use in the First World War. Commissioned in September 1915, it served in the Grand Fleet as HMS Canada for the duration of the war and saw action during the Battle of Jutland.[NEWLINE][NEWLINE]Chile repurchased Canada in 1920 and re-named it Almirante Latorre. The ship was designated as Chile's flagship, and frequently served as a presidential transport. It underwent a thorough modernization in the United Kingdom in 1929–1931. In September 1931, crewmen aboard Almirante Latorre instigated a mutiny, which the majority of the Chilean fleet quickly joined. After divisions developed between the mutineers, the rebellion fell apart and the ships returned to government control. Almirante Latorre was placed in reserve for a time in the 1930s because of the Great Depression, but it was in good enough condition to receive interest from the United States after the attack on Pearl Harbor. The Chilean government declined the overture and the ship spent most of the Second World War on patrol for Chile. Almirante Latorre was scrapped in Japan beginning in 1959.</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_JFD_ALMIRANTE_NAME" Language="zh_Hans_CN">
+			<Text>太平洋遗产</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_JFD_ALMIRANTE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>在帝国境内作战时+7 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_JFD_ALMIRANTE_COMBAT_BONUS_OWN_BORDERS" Language="zh_Hans_CN">
+			<Text>+7 [ICON_Strength] 战斗力 来自于在帝国境内作战</Text>
+		</Replace>
+		
+		<!-- 模组支持-->
+		<!-- JFD的RwF模组 -->
+		
+		<Replace Tag="LOC_GOVERNMENT_JFD_CHIEFDOM_LEADER_TITLE_JFD_CHILE" Language="zh_Hans_CN">
+			<Text>拓荒者</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_CHIEFDOM_LEADER_TITLE_JFD_CHILE_FEMININE" Language="zh_Hans_CN">
+			<Text>拓荒者</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_HORDE_LEADER_TITLE_JFD_CHILE" Language="zh_Hans_CN">
+			<Text>指挥官</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_HORDE_LEADER_TITLE_JFD_CHILE_FEMININE" Language="zh_Hans_CN">
+			<Text>指挥官</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_POLIS_LEADER_TITLE_JFD_CHILE" Language="zh_Hans_CN">
+			<Text>陆上霸主</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_POLIS_LEADER_TITLE_JFD_CHILE_FEMININE" Language="zh_Hans_CN">
+			<Text>陆上霸主</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_AUTOCRACY_LEADER_TITLE_JFD_CHILE" Language="zh_Hans_CN">
+			<Text>舰长</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_AUTOCRACY_LEADER_TITLE_JFD_CHILE_FEMININE" Language="zh_Hans_CN">
+			<Text>舰长</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_CLASSICAL_DEMOCRACY_LEADER_TITLE_JFD_CHILE" Language="zh_Hans_CN">
+			<Text>发言人</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_CLASSICAL_DEMOCRACY_LEADER_TITLE_JFD_CHILE_FEMININE" Language="zh_Hans_CN">
+			<Text>发言人</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_OLIGARCHY_LEADER_TITLE_JFD_CHILE" Language="zh_Hans_CN">
+			<Text>总长</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_OLIGARCHY_LEADER_TITLE_JFD_CHILE_FEMININE" Language="zh_Hans_CN">
+			<Text>总长</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_MERCHANT_REPUBLIC_LEADER_TITLE_JFD_CHILE" Language="zh_Hans_CN">
+			<Text>理事</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_MERCHANT_REPUBLIC_LEADER_TITLE_JFD_CHILE_FEMININE" Language="zh_Hans_CN">
+			<Text>理事</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_FEUDAL_MONARCHY_LEADER_TITLE_JFD_CHILE" Language="zh_Hans_CN">
+			<Text>护国公</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_FEUDAL_MONARCHY_LEADER_TITLE_JFD_CHILE_FEMININE" Language="zh_Hans_CN">
+			<Text>护国主</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_MONARCHY_LEADER_TITLE_JFD_CHILE" Language="zh_Hans_CN">
+			<Text>护国公</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_MONARCHY_LEADER_TITLE_JFD_CHILE_FEMININE" Language="zh_Hans_CN">
+			<Text>护国主</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_NOBLE_REPUBLIC_LEADER_TITLE_JFD_CHILE" Language="zh_Hans_CN">
+			<Text>最高理事</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_NOBLE_REPUBLIC_LEADER_TITLE_JFD_CHILE_FEMININE" Language="zh_Hans_CN">
+			<Text>最高理事</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_LIBERAL_DEMOCRACY_LEADER_TITLE_JFD_CHILE" Language="zh_Hans_CN">
+			<Text>总统</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_LIBERAL_DEMOCRACY_LEADER_TITLE_JFD_CHILE_FEMININE" Language="zh_Hans_CN">
+			<Text>总统</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_MILITARY_GUARDIANSHIP_LEADER_TITLE_JFD_CHILE" Language="zh_Hans_CN">
+			<Text>总司令</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_MILITARY_GUARDIANSHIP_LEADER_TITLE_JFD_CHILE_FEMININE" Language="zh_Hans_CN">
+			<Text>总司令</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_PEOPLES_REPUBLIC_LEADER_TITLE_JFD_CHILE" Language="zh_Hans_CN">
+			<Text>总书记</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_PEOPLES_REPUBLIC_LEADER_TITLE_JFD_CHILE_FEMININE" Language="zh_Hans_CN">
+			<Text>总书记</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_EMPIRE_LEADER_TITLE_JFD_CHILE" Language="zh_Hans_CN">
+			<Text>帝国理事</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_EMPIRE_LEADER_TITLE_JFD_CHILE_FEMININE" Language="zh_Hans_CN">
+			<Text>帝国理事</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

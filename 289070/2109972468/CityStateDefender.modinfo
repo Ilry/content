@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mod id="a6bdc3ac-d9a1-4e9d-82de-07be539bb904" version="1">
+  <Properties>
+    <Name>City State Defender</Name>
+    <Description>City State Defender</Description>
+    <Created>1590445264</Created>
+    <Teaser>City State Defender</Teaser>
+    <Authors>SeelingCat</Authors>
+    <CompatibleVersions>1.2,2.0</CompatibleVersions>
+  </Properties>
+  <InGameActions>
+    <AddUserInterfaces id="Scripts">
+      <Properties>
+        <Context>InGame</Context>
+      </Properties>
+      <File>Scripts/CityStateDefender.xml</File>
+    </AddUserInterfaces>
+    <AddGameplayScripts id="ScriptPassThru">
+      <File>Scripts/CityStateDefenderPassThru.lua</File>
+    </AddGameplayScripts>
+    <UpdateText id="Text">
+      <File>Localization/Text.sql</File>
+    </UpdateText>
+  </InGameActions>
+  <Files>
+    <File>Localization/Text.sql</File>
+    <File>Scripts/CityStateDefender.xml</File>
+    <File>Scripts/CityStateDefenderPassThru.lua</File>
+  </Files>
+</Mod>

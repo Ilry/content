@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- GS'Mount Erebus'CN_Add_FI -->
+<!-- Author: 牛奶大魔王 , Clear8Sky -->
+<!-- DateCreated: 2021/9/16 16:46:09 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Mount Erebus” 。该文件在 FrontEnd 与 InGame 时载入，需 Criteria ： Active_Expansion_2 -->
+	<LocalizedText>
+		<Replace Tag="LOC_FEATURE_MOUNT_EREBUS_NAME" Language="zh_Hans_CN">
+			<Text>埃里伯斯火山</Text>
+		</Replace>
+		<Replace Tag="LOC_FEATURE_MOUNT_EREBUS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>占一个单元格无法逾越的自然奇观，以火山形式出现。+7 [ICON_Science] 科技值，相邻单元格产出+2 [ICON_Science] 科技值，相邻学院+6 [ICON_Science] 科技值。</Text>
+		</Replace>
+		<Replace Tag="LOC_FEATURE_MOUNT_EREBUS_QUOTE" Language="zh_Hans_CN">
+			<Text>“整个海岸都是一片耀眼美丽的雪峰，当太阳接近地平线时，这些雪峰反射出耀眼的金黄色和猩红色；然后看到黑色的烟云，带着火焰，从火山上升起，形成一个完整的柱状，一边是黑色，另一边是太阳的颜色……这是一个超越一切可以想象的景象……[NEWLINE]——约瑟夫·道尔顿·胡克博士</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_FEATURES_PAGE_FEATURE_MOUNT_EREBUS_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>埃里伯斯火山位于南极洲罗斯岛，是南极洲上第二高的火山（仅次于西德利火山），海拔高度3795米，终年和冰雪相伴。它也是地球上己知区域最南端的一座活火山。埃里伯斯火山自130万年前活跃至今。目前埃里伯斯火山是全南极洲最活跃的火山。该山山体内有永久对流的响岩岩浆熔岩湖，是世上仅有的五个永久熔岩湖之一，它相对较低的水平和持续的喷发活动使科学家能够对非常靠近并进行长期的火山学研究。 此外，它是地球上目前唯一喷发的响岩火山，对于研究在火山里生活的生物特别有意义。它的洞穴对天体生物学的研究很重要，因为它们位于高海拔，便于研究，而且极不可能含有基于光合作用的有机物或动物。那里的大多数微生物都是化学自养的（微生物通过与岩石的化学反应获得所有能量）。1979年，埃雷布斯山是新西兰航空公司901航班不幸坠毁的地点，这是一次观光冒险，导致机上257人全部死亡。</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_MOUNT_EREBUS_SCIENCE" Language="zh_Hans_CN">
+			<Text>+{1_num} [ICON_Science] 科技值 来自相邻 埃里伯斯火山</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

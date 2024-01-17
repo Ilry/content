@@ -1,0 +1,3728 @@
+{
+  "y": 0,
+  "x": 16,
+  "name": "【预设】单灭火器建家",
+  "z": -20,
+  "data": [
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 17.024560928345,
+      "name": "浆果丛",
+      "z": -23.561975479126,
+      "anim": "idle",
+      "bank": "berrybush",
+      "prefab": "berrybush",
+      "build": "berrybush"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": -90,
+      "y": 0,
+      "x": 15.5,
+      "name": "木门",
+      "z": -28.5,
+      "prefab": "fence_gate",
+      "build": ""
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 7.7469944953918,
+      "name": "浆果丛",
+      "z": -29.965816497803,
+      "anim": "idle",
+      "bank": "berrybush",
+      "prefab": "berrybush",
+      "build": "berrybush"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 24,
+      "name": "箱子",
+      "z": -8.5,
+      "anim": "closed",
+      "bank": "chest",
+      "prefab": "treasurechest",
+      "build": "treasurechest_poshprint"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 0,
+      "y": 0,
+      "x": 14.5,
+      "name": "石墙",
+      "z": -28.5,
+      "anim": "half",
+      "bank": "wall",
+      "prefab": "wall_stone",
+      "build": "wall_stone_ancient"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 24,
+      "name": "蘑菇灯",
+      "z": -14,
+      "anim": "idle_on",
+      "bank": "mushroom_light",
+      "prefab": "mushroom_light",
+      "build": "mushroom_light_festive"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 0,
+      "y": 0,
+      "x": 20.5,
+      "name": "石墙",
+      "z": -33.5,
+      "anim": "half",
+      "bank": "wall",
+      "prefab": "wall_stone",
+      "build": "wall_stone_ancient"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 8.651650428772,
+      "name": "树苗",
+      "z": -22.651649475098,
+      "anim": "sway",
+      "bank": "sapling",
+      "prefab": "sapling",
+      "build": "sapling"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 3.25,
+      "name": "树苗",
+      "z": -20,
+      "anim": "sway",
+      "bank": "sapling",
+      "prefab": "sapling",
+      "build": "sapling"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 16,
+      "name": "冰箱",
+      "z": -9.1030864715576,
+      "anim": "closed",
+      "bank": "icebox",
+      "prefab": "icebox",
+      "build": "icebox_crystal"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 0,
+      "y": 0,
+      "x": 11.5,
+      "name": "石墙",
+      "z": -29.5,
+      "anim": "half",
+      "bank": "wall",
+      "prefab": "wall_stone",
+      "build": "wall_stone_ancient"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 17,
+      "name": "草",
+      "z": -33.5,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "grass",
+      "build": "grass1"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 20,
+      "name": "香蕉丛",
+      "z": -22,
+      "anim": "idle_big",
+      "bank": "bananabush",
+      "prefab": "bananabush",
+      "build": "bananabush"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 14.975438117981,
+      "name": "浆果丛",
+      "z": -23.561975479126,
+      "anim": "idle",
+      "bank": "berrybush",
+      "prefab": "berrybush",
+      "build": "berrybush"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 16,
+      "name": "草",
+      "z": -30.5,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "grass",
+      "build": "grass1"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 14.200000762939,
+      "name": "烹饪锅",
+      "z": -6.1999998092651,
+      "anim": "idle_empty",
+      "bank": "cook_pot",
+      "prefab": "cookpot",
+      "build": "cookpot_survival"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 3.348349571228,
+      "name": "树苗",
+      "z": -22.651651382446,
+      "anim": "sway",
+      "bank": "sapling",
+      "prefab": "sapling",
+      "build": "sapling"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 22.5,
+      "name": "晾肉架",
+      "z": -33,
+      "anim": "idle_empty",
+      "bank": "meat_rack",
+      "prefab": "meatrack",
+      "build": "meatrack_butcher"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 0,
+      "y": 0,
+      "x": 17.5,
+      "name": "石墙",
+      "z": -28.5,
+      "anim": "half",
+      "bank": "wall",
+      "prefab": "wall_stone",
+      "build": "wall_stone_ancient"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 0,
+      "y": 0,
+      "x": 17.5,
+      "name": "石墙",
+      "z": -35.5,
+      "anim": "half",
+      "bank": "wall",
+      "prefab": "wall_stone",
+      "build": "wall_stone_ancient"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 17,
+      "name": "草",
+      "z": -34.5,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "grass",
+      "build": "grass1"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 4.25,
+      "name": "树苗",
+      "z": -20,
+      "anim": "sway",
+      "bank": "sapling",
+      "prefab": "sapling",
+      "build": "sapling"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 20,
+      "name": "香蕉丛",
+      "z": -20,
+      "anim": "idle_big",
+      "bank": "bananabush",
+      "prefab": "bananabush",
+      "build": "bananabush"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 22,
+      "name": "龙鳞火炉",
+      "z": 0,
+      "anim": "hi",
+      "bank": "dragonfly_furnace",
+      "prefab": "dragonflyfurnace",
+      "build": "dragonflyfurnace_crystal"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 0,
+      "y": 0,
+      "x": 19.5,
+      "name": "石墙",
+      "z": -35.5,
+      "anim": "half",
+      "bank": "wall",
+      "prefab": "wall_stone",
+      "build": "wall_stone_ancient"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 25.414213180542,
+      "name": "箱子",
+      "z": -10.585786819458,
+      "anim": "closed",
+      "bank": "chest",
+      "prefab": "treasurechest",
+      "build": "treasurechest_poshprint"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 19.014141082764,
+      "name": "浆果丛",
+      "z": -24.052362442017,
+      "anim": "idle",
+      "bank": "berrybush",
+      "prefab": "berrybush",
+      "build": "berrybush"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 29.5,
+      "name": "石果灌木丛",
+      "z": -20,
+      "anim": "idle3",
+      "bank": "rock_avocado",
+      "prefab": "rock_avocado_bush",
+      "build": "rock_avocado_build"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 15,
+      "name": "草",
+      "z": -32.5,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "grass",
+      "build": "grass1"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 4.9689111709595,
+      "name": "箱子",
+      "z": -10.25,
+      "anim": "closed",
+      "bank": "chest",
+      "prefab": "treasurechest",
+      "build": "treasurechest_poshprint"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 24.660608291626,
+      "name": "猴尾草",
+      "z": -16.766422271729,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "monkeytail",
+      "build": "reeds_monkeytails"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 24.660608291626,
+      "name": "猴尾草",
+      "z": -23.233577728271,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "monkeytail",
+      "build": "reeds_monkeytails"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 26,
+      "name": "石果灌木丛",
+      "z": -21.5,
+      "anim": "idle3",
+      "bank": "rock_avocado",
+      "prefab": "rock_avocado_bush",
+      "build": "rock_avocado_build"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 26,
+      "name": "箱子",
+      "z": -12,
+      "anim": "closed",
+      "bank": "chest",
+      "prefab": "treasurechest",
+      "build": "treasurechest_poshprint"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 8,
+      "name": "暗影操控器",
+      "z": -12,
+      "anim": "idle",
+      "bank": "researchlab3",
+      "prefab": "researchlab3",
+      "build": "researchlab3_crystal"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 22.362340927124,
+      "name": "浆果丛",
+      "z": -26.363456726074,
+      "anim": "idle",
+      "bank": "berrybush",
+      "prefab": "berrybush",
+      "build": "berrybush"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 7.4350628852844,
+      "name": "树苗",
+      "z": -23.464548110962,
+      "anim": "sway",
+      "bank": "sapling",
+      "prefab": "sapling",
+      "build": "sapling"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 0,
+      "y": 0,
+      "x": 13.5,
+      "name": "石墙",
+      "z": -28.5,
+      "anim": "half",
+      "bank": "wall",
+      "prefab": "wall_stone",
+      "build": "wall_stone_ancient"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 13.5,
+      "name": "遮阳篷",
+      "z": -15,
+      "anim": "idle",
+      "bank": "siesta_canopy",
+      "prefab": "siestahut",
+      "build": "siestahut_cawnival"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 7.75,
+      "name": "树苗",
+      "z": -20,
+      "anim": "sway",
+      "bank": "sapling",
+      "prefab": "sapling",
+      "build": "sapling"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 6,
+      "name": "蘑菇灯",
+      "z": -26,
+      "anim": "idle_on",
+      "bank": "mushroom_light",
+      "prefab": "mushroom_light",
+      "build": "mushroom_light_festive"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 17,
+      "name": "草",
+      "z": -29.5,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "grass",
+      "build": "grass1"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 16,
+      "name": "草",
+      "z": -29.5,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "grass",
+      "build": "grass1"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 16,
+      "name": "草",
+      "z": -34.5,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "grass",
+      "build": "grass1"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 24.939340591431,
+      "name": "猴尾草",
+      "z": -18.939340591431,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "monkeytail",
+      "build": "reeds_monkeytails"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 20.968910217285,
+      "name": "箱子",
+      "z": -10.25,
+      "anim": "closed",
+      "bank": "chest",
+      "prefab": "treasurechest",
+      "build": "treasurechest_poshprint"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 0,
+      "y": 0,
+      "x": 14.5,
+      "name": "石墙",
+      "z": -35.5,
+      "anim": "half",
+      "bank": "wall",
+      "prefab": "wall_stone",
+      "build": "wall_stone_ancient"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 14.879817008972,
+      "name": "浆果丛",
+      "z": -25.647127151489,
+      "anim": "idle",
+      "bank": "berrybush",
+      "prefab": "berrybush",
+      "build": "berrybush"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 24.939340591431,
+      "name": "猴尾草",
+      "z": -21.060659408569,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "monkeytail",
+      "build": "reeds_monkeytails"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 28.47487449646,
+      "name": "石果灌木丛",
+      "z": -17.52512550354,
+      "anim": "idle3",
+      "bank": "rock_avocado",
+      "prefab": "rock_avocado_bush",
+      "build": "rock_avocado_build"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 6,
+      "name": "箱子",
+      "z": -12,
+      "anim": "closed",
+      "bank": "chest",
+      "prefab": "treasurechest",
+      "build": "treasurechest_poshprint"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 23.52512550354,
+      "name": "石果灌木丛",
+      "z": -22.47487449646,
+      "anim": "idle3",
+      "bank": "rock_avocado",
+      "prefab": "rock_avocado_bush",
+      "build": "rock_avocado_build"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 9.414213180542,
+      "name": "箱子",
+      "z": -10.585786819458,
+      "anim": "closed",
+      "bank": "chest",
+      "prefab": "treasurechest",
+      "build": "treasurechest_poshprint"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 14,
+      "name": "草",
+      "z": -32.5,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "grass",
+      "build": "grass1"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 18,
+      "name": "草",
+      "z": -30.5,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "grass",
+      "build": "grass1"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 4.625,
+      "name": "树苗",
+      "z": -22.381568908691,
+      "anim": "sway",
+      "bank": "sapling",
+      "prefab": "sapling",
+      "build": "sapling"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 17,
+      "name": "草",
+      "z": -31.5,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "grass",
+      "build": "grass1"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 4,
+      "name": "晾肉架",
+      "z": -28,
+      "anim": "idle_empty",
+      "bank": "meat_rack",
+      "prefab": "meatrack",
+      "build": "meatrack_butcher"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 15,
+      "name": "草",
+      "z": -33.5,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "grass",
+      "build": "grass1"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 2.5354516506195,
+      "name": "树苗",
+      "z": -18.564937591553,
+      "anim": "sway",
+      "bank": "sapling",
+      "prefab": "sapling",
+      "build": "sapling"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 3.6184301376343,
+      "name": "树苗",
+      "z": -21.375,
+      "anim": "sway",
+      "bank": "sapling",
+      "prefab": "sapling",
+      "build": "sapling"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 29.233577728271,
+      "name": "猴尾草",
+      "z": -21.339391708374,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "monkeytail",
+      "build": "reeds_monkeytails"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 3.348349571228,
+      "name": "树苗",
+      "z": -17.348350524902,
+      "anim": "sway",
+      "bank": "sapling",
+      "prefab": "sapling",
+      "build": "sapling"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 8,
+      "name": "箱子",
+      "z": -8.5,
+      "anim": "closed",
+      "bank": "chest",
+      "prefab": "treasurechest",
+      "build": "treasurechest_poshprint"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 4.5,
+      "name": "箱子",
+      "z": -12,
+      "anim": "closed",
+      "bank": "chest",
+      "prefab": "treasurechest",
+      "build": "treasurechest_poshprint"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 14,
+      "name": "草",
+      "z": -33.5,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "grass",
+      "build": "grass1"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 18.5,
+      "name": "帐篷",
+      "z": -15,
+      "anim": "idle",
+      "bank": "tent",
+      "prefab": "tent",
+      "build": "tent_leaf"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 4.5649371147156,
+      "name": "树苗",
+      "z": -16.535451889038,
+      "anim": "sway",
+      "bank": "sapling",
+      "prefab": "sapling",
+      "build": "sapling"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 13,
+      "name": "草",
+      "z": -29.5,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "grass",
+      "build": "grass1"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 2.5354516506195,
+      "name": "树苗",
+      "z": -21.435062408447,
+      "anim": "sway",
+      "bank": "sapling",
+      "prefab": "sapling",
+      "build": "sapling"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 4.5649371147156,
+      "name": "树苗",
+      "z": -23.464548110962,
+      "anim": "sway",
+      "bank": "sapling",
+      "prefab": "sapling",
+      "build": "sapling"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 2.25,
+      "name": "树苗",
+      "z": -20,
+      "anim": "sway",
+      "bank": "sapling",
+      "prefab": "sapling",
+      "build": "sapling"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 4.7625632286072,
+      "name": "树苗",
+      "z": -21.237436294556,
+      "anim": "sway",
+      "bank": "sapling",
+      "prefab": "sapling",
+      "build": "sapling"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 4.7625632286072,
+      "name": "树苗",
+      "z": -18.762563705444,
+      "anim": "sway",
+      "bank": "sapling",
+      "prefab": "sapling",
+      "build": "sapling"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 24,
+      "name": "炼金引擎",
+      "z": -12,
+      "anim": "idle",
+      "bank": "researchlab2",
+      "prefab": "researchlab2",
+      "build": "researchlab2_pod"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 18,
+      "name": "草",
+      "z": -34.5,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "grass",
+      "build": "grass1"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 5.25,
+      "name": "树苗",
+      "z": -20,
+      "anim": "sway",
+      "bank": "sapling",
+      "prefab": "sapling",
+      "build": "sapling"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 6.25,
+      "name": "箱子",
+      "z": -8.9689111709595,
+      "anim": "closed",
+      "bank": "chest",
+      "prefab": "treasurechest",
+      "build": "treasurechest_poshprint"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 15,
+      "name": "草",
+      "z": -29.5,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "grass",
+      "build": "grass1"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 18,
+      "name": "香蕉丛",
+      "z": -20,
+      "anim": "idle_big",
+      "bank": "bananabush",
+      "prefab": "bananabush",
+      "build": "bananabush"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 6,
+      "name": "树苗",
+      "z": -23.75,
+      "anim": "sway",
+      "bank": "sapling",
+      "prefab": "sapling",
+      "build": "sapling"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 0,
+      "y": 0,
+      "x": 13.5,
+      "name": "石墙",
+      "z": -35.5,
+      "anim": "half",
+      "bank": "wall",
+      "prefab": "wall_stone",
+      "build": "wall_stone_ancient"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 26,
+      "name": "石果灌木丛",
+      "z": -23.5,
+      "anim": "idle3",
+      "bank": "rock_avocado",
+      "prefab": "rock_avocado_bush",
+      "build": "rock_avocado_build"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 6,
+      "name": "树苗",
+      "z": -22.75,
+      "anim": "sway",
+      "bank": "sapling",
+      "prefab": "sapling",
+      "build": "sapling"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 16,
+      "name": "鸟笼",
+      "z": -12.5,
+      "anim": "idle_bird",
+      "bank": "birdcage",
+      "prefab": "birdcage",
+      "build": "birdcage_romantic"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 6,
+      "name": "树苗",
+      "z": -21.75,
+      "anim": "sway",
+      "bank": "sapling",
+      "prefab": "sapling",
+      "build": "sapling"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 27.031089782715,
+      "name": "箱子",
+      "z": -10.25,
+      "anim": "closed",
+      "bank": "chest",
+      "prefab": "treasurechest",
+      "build": "treasurechest_poshprint"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 6,
+      "name": "树苗",
+      "z": -20.75,
+      "anim": "sway",
+      "bank": "sapling",
+      "prefab": "sapling",
+      "build": "sapling"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 19,
+      "name": "草",
+      "z": -34.5,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "grass",
+      "build": "grass1"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 14.200000762939,
+      "name": "烹饪锅",
+      "z": -9.8000001907349,
+      "anim": "idle_empty",
+      "bank": "cook_pot",
+      "prefab": "cookpot",
+      "build": "cookpot_survival"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 9.637659072876,
+      "name": "浆果丛",
+      "z": -26.363456726074,
+      "anim": "idle",
+      "bank": "berrybush",
+      "prefab": "berrybush",
+      "build": "berrybush"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 19,
+      "name": "草",
+      "z": -32.5,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "grass",
+      "build": "grass1"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 6,
+      "name": "树苗",
+      "z": -19.25,
+      "anim": "sway",
+      "bank": "sapling",
+      "prefab": "sapling",
+      "build": "sapling"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 12.774561882019,
+      "name": "浆果丛",
+      "z": -26.413377761841,
+      "anim": "idle",
+      "bank": "berrybush",
+      "prefab": "berrybush",
+      "build": "berrybush"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 0,
+      "y": 0,
+      "x": 12.5,
+      "name": "石墙",
+      "z": -35.5,
+      "anim": "half",
+      "bank": "wall",
+      "prefab": "wall_stone",
+      "build": "wall_stone_ancient"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 16,
+      "name": "避雷针",
+      "z": -38,
+      "anim": "idle",
+      "bank": "lightning_rod",
+      "prefab": "lightning_rod",
+      "build": "lightning_rod_retro"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 0,
+      "y": 0,
+      "x": 20.5,
+      "name": "石墙",
+      "z": -31.5,
+      "anim": "half",
+      "bank": "wall",
+      "prefab": "wall_stone",
+      "build": "wall_stone_ancient"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 16,
+      "name": "冰箱",
+      "z": -6.8969135284424,
+      "anim": "closed",
+      "bank": "icebox",
+      "prefab": "icebox",
+      "build": "icebox_crystal"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 6,
+      "name": "树苗",
+      "z": -18.25,
+      "anim": "sway",
+      "bank": "sapling",
+      "prefab": "sapling",
+      "build": "sapling"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 0,
+      "y": 0,
+      "x": 11.5,
+      "name": "石墙",
+      "z": -32.5,
+      "anim": "half",
+      "bank": "wall",
+      "prefab": "wall_stone",
+      "build": "wall_stone_ancient"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 6,
+      "name": "树苗",
+      "z": -17.25,
+      "anim": "sway",
+      "bank": "sapling",
+      "prefab": "sapling",
+      "build": "sapling"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 3.6184301376343,
+      "name": "树苗",
+      "z": -18.625,
+      "anim": "sway",
+      "bank": "sapling",
+      "prefab": "sapling",
+      "build": "sapling"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 6,
+      "name": "树苗",
+      "z": -16.25,
+      "anim": "sway",
+      "bank": "sapling",
+      "prefab": "sapling",
+      "build": "sapling"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 6.5857863426208,
+      "name": "箱子",
+      "z": -10.585786819458,
+      "anim": "closed",
+      "bank": "chest",
+      "prefab": "treasurechest",
+      "build": "treasurechest_poshprint"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 0,
+      "y": 0,
+      "x": 11.5,
+      "name": "石墙",
+      "z": -33.5,
+      "anim": "half",
+      "bank": "wall",
+      "prefab": "wall_stone",
+      "build": "wall_stone_ancient"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 7.2374367713928,
+      "name": "树苗",
+      "z": -21.237436294556,
+      "anim": "sway",
+      "bank": "sapling",
+      "prefab": "sapling",
+      "build": "sapling"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 8,
+      "name": "箱子",
+      "z": -10,
+      "anim": "closed",
+      "bank": "chest",
+      "prefab": "treasurechest",
+      "build": "treasurechest_poshprint"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 7.2374367713928,
+      "name": "树苗",
+      "z": -18.762563705444,
+      "anim": "sway",
+      "bank": "sapling",
+      "prefab": "sapling",
+      "build": "sapling"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 7.375,
+      "name": "树苗",
+      "z": -17.618431091309,
+      "anim": "sway",
+      "bank": "sapling",
+      "prefab": "sapling",
+      "build": "sapling"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 10,
+      "name": "箱子",
+      "z": -12,
+      "anim": "closed",
+      "bank": "chest",
+      "prefab": "treasurechest",
+      "build": "treasurechest_poshprint"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 20.5,
+      "name": "箱子",
+      "z": -12,
+      "anim": "closed",
+      "bank": "chest",
+      "prefab": "treasurechest",
+      "build": "treasurechest_poshprint"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 24.5,
+      "name": "石果灌木丛",
+      "z": -20,
+      "anim": "idle3",
+      "bank": "rock_avocado",
+      "prefab": "rock_avocado_bush",
+      "build": "rock_avocado_build"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 8,
+      "name": "蘑菇灯",
+      "z": -14,
+      "anim": "idle_on",
+      "bank": "mushroom_light",
+      "prefab": "mushroom_light",
+      "build": "mushroom_light_festive"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 7.4350628852844,
+      "name": "树苗",
+      "z": -16.535451889038,
+      "anim": "sway",
+      "bank": "sapling",
+      "prefab": "sapling",
+      "build": "sapling"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 12.985858917236,
+      "name": "浆果丛",
+      "z": -24.052362442017,
+      "anim": "idle",
+      "bank": "berrybush",
+      "prefab": "berrybush",
+      "build": "berrybush"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 22,
+      "name": "箱子",
+      "z": 1,
+      "anim": "closed",
+      "bank": "chest",
+      "prefab": "treasurechest",
+      "build": "treasurechest_poshprint"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 25.75,
+      "name": "箱子",
+      "z": -8.9689111709595,
+      "anim": "closed",
+      "bank": "chest",
+      "prefab": "treasurechest",
+      "build": "treasurechest_poshprint"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 22,
+      "name": "箱子",
+      "z": -12,
+      "anim": "closed",
+      "bank": "chest",
+      "prefab": "treasurechest",
+      "build": "treasurechest_poshprint"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 9.4645481109619,
+      "name": "树苗",
+      "z": -21.435062408447,
+      "anim": "sway",
+      "bank": "sapling",
+      "prefab": "sapling",
+      "build": "sapling"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 16,
+      "name": "蘑菇灯",
+      "z": -27,
+      "anim": "idle_on",
+      "bank": "mushroom_light",
+      "prefab": "mushroom_light",
+      "build": "mushroom_light_festive"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 9.9381589889526,
+      "name": "浆果丛",
+      "z": -29.793670654297,
+      "anim": "idle",
+      "bank": "berrybush",
+      "prefab": "berrybush",
+      "build": "berrybush"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 8.3815698623657,
+      "name": "树苗",
+      "z": -18.625,
+      "anim": "sway",
+      "bank": "sapling",
+      "prefab": "sapling",
+      "build": "sapling"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 24.253005981445,
+      "name": "浆果丛",
+      "z": -29.965816497803,
+      "anim": "idle",
+      "bank": "berrybush",
+      "prefab": "berrybush",
+      "build": "berrybush"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 10,
+      "name": "冰箱",
+      "z": 0,
+      "anim": "closed",
+      "bank": "icebox",
+      "prefab": "icebox",
+      "build": "icebox_crystal"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 9.75,
+      "name": "箱子",
+      "z": -8.9689111709595,
+      "anim": "closed",
+      "bank": "chest",
+      "prefab": "treasurechest",
+      "build": "treasurechest_poshprint"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 14,
+      "name": "吸热火坑",
+      "z": 0,
+      "anim": "idle",
+      "bank": "coldfirepit",
+      "prefab": "coldfirepit",
+      "build": "coldfirepit_teeth"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 15,
+      "name": "草",
+      "z": -34.5,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "grass",
+      "build": "grass1"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 9.75,
+      "name": "树苗",
+      "z": -20,
+      "anim": "sway",
+      "bank": "sapling",
+      "prefab": "sapling",
+      "build": "sapling"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 8.4736242294312,
+      "name": "浆果丛",
+      "z": -28.049852371216,
+      "anim": "idle",
+      "bank": "berrybush",
+      "prefab": "berrybush",
+      "build": "berrybush"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 18,
+      "name": "草",
+      "z": -29.5,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "grass",
+      "build": "grass1"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 21.5,
+      "name": "智囊团",
+      "z": -6.5,
+      "anim": "idle",
+      "bank": "lighthouse",
+      "prefab": "seafaring_prototyper",
+      "build": "seafaring_prototyper_lighthouse"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 18,
+      "name": "草",
+      "z": -31.5,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "grass",
+      "build": "grass1"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 17,
+      "name": "草",
+      "z": -30.5,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "grass",
+      "build": "grass1"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 7.375,
+      "name": "树苗",
+      "z": -22.381568908691,
+      "anim": "sway",
+      "bank": "sapling",
+      "prefab": "sapling",
+      "build": "sapling"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 27.060659408569,
+      "name": "猴尾草",
+      "z": -18.939340591431,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "monkeytail",
+      "build": "reeds_monkeytails"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 20.94165802002,
+      "name": "浆果丛",
+      "z": -27.853456497192,
+      "anim": "idle",
+      "bank": "berrybush",
+      "prefab": "berrybush",
+      "build": "berrybush"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 19,
+      "name": "草",
+      "z": -29.5,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "grass",
+      "build": "grass1"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 14,
+      "name": "草",
+      "z": -29.5,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "grass",
+      "build": "grass1"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 9.4645481109619,
+      "name": "树苗",
+      "z": -18.564937591553,
+      "anim": "sway",
+      "bank": "sapling",
+      "prefab": "sapling",
+      "build": "sapling"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 23.52512550354,
+      "name": "石果灌木丛",
+      "z": -17.52512550354,
+      "anim": "idle3",
+      "bank": "rock_avocado",
+      "prefab": "rock_avocado_bush",
+      "build": "rock_avocado_build"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 11.171449661255,
+      "name": "浆果丛",
+      "z": -25.004636764526,
+      "anim": "idle",
+      "bank": "berrybush",
+      "prefab": "berrybush",
+      "build": "berrybush"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 28.47487449646,
+      "name": "石果灌木丛",
+      "z": -22.47487449646,
+      "anim": "idle3",
+      "bank": "rock_avocado",
+      "prefab": "rock_avocado_bush",
+      "build": "rock_avocado_build"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 19.225439071655,
+      "name": "浆果丛",
+      "z": -26.413377761841,
+      "anim": "idle",
+      "bank": "berrybush",
+      "prefab": "berrybush",
+      "build": "berrybush"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 9.5,
+      "name": "晾肉架",
+      "z": -33,
+      "anim": "idle_empty",
+      "bank": "meat_rack",
+      "prefab": "meatrack",
+      "build": "meatrack_butcher"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 27.339391708374,
+      "name": "猴尾草",
+      "z": -23.233577728271,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "monkeytail",
+      "build": "reeds_monkeytails"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 10.5,
+      "name": "钓具容器",
+      "z": -6.5,
+      "anim": "idle",
+      "bank": "tackle_station",
+      "prefab": "tacklestation",
+      "build": "tackle_station"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 8.3815698623657,
+      "name": "树苗",
+      "z": -21.375,
+      "anim": "sway",
+      "bank": "sapling",
+      "prefab": "sapling",
+      "build": "sapling"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 0,
+      "y": 0,
+      "x": 20.5,
+      "name": "石墙",
+      "z": -34.5,
+      "anim": "half",
+      "bank": "wall",
+      "prefab": "wall_stone",
+      "build": "wall_stone_ancient"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 6.75,
+      "name": "树苗",
+      "z": -20,
+      "anim": "sway",
+      "bank": "sapling",
+      "prefab": "sapling",
+      "build": "sapling"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 17.799999237061,
+      "name": "烹饪锅",
+      "z": -6.1999998092651,
+      "anim": "idle_empty",
+      "bank": "cook_pot",
+      "prefab": "cookpot",
+      "build": "cookpot_survival"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 26,
+      "name": "石果灌木丛",
+      "z": -18.5,
+      "anim": "idle3",
+      "bank": "rock_avocado",
+      "prefab": "rock_avocado_bush",
+      "build": "rock_avocado_build"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 14,
+      "name": "香蕉丛",
+      "z": -20,
+      "anim": "idle_big",
+      "bank": "bananabush",
+      "prefab": "bananabush",
+      "build": "bananabush"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 11.05834197998,
+      "name": "浆果丛",
+      "z": -27.853456497192,
+      "anim": "idle",
+      "bank": "berrybush",
+      "prefab": "berrybush",
+      "build": "berrybush"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 19,
+      "name": "草",
+      "z": -31.5,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "grass",
+      "build": "grass1"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 18,
+      "name": "火坑",
+      "z": 0,
+      "anim": "idle",
+      "bank": "firepit",
+      "prefab": "firepit",
+      "build": "firepit_hole"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 16,
+      "name": "懒人传送塔",
+      "z": -3,
+      "anim": "idle_off",
+      "bank": "townportal",
+      "prefab": "townportal",
+      "build": "townportal"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 0,
+      "y": 0,
+      "x": 11.5,
+      "name": "石墙",
+      "z": -30.5,
+      "anim": "half",
+      "bank": "wall",
+      "prefab": "wall_stone",
+      "build": "wall_stone_ancient"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 11.031088829041,
+      "name": "箱子",
+      "z": -10.25,
+      "anim": "closed",
+      "bank": "chest",
+      "prefab": "treasurechest",
+      "build": "treasurechest_poshprint"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 13,
+      "name": "草",
+      "z": -32.5,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "grass",
+      "build": "grass1"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 14,
+      "name": "草",
+      "z": -30.5,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "grass",
+      "build": "grass1"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 26,
+      "name": "蘑菇灯",
+      "z": -26,
+      "anim": "idle_on",
+      "bank": "mushroom_light",
+      "prefab": "mushroom_light",
+      "build": "mushroom_light_festive"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 18,
+      "name": "草",
+      "z": -33.5,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "grass",
+      "build": "grass1"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 0,
+      "y": 0,
+      "x": 11.5,
+      "name": "石墙",
+      "z": -34.5,
+      "anim": "half",
+      "bank": "wall",
+      "prefab": "wall_stone",
+      "build": "wall_stone_ancient"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 19,
+      "name": "蘑菇灯",
+      "z": -11,
+      "anim": "idle_on",
+      "bank": "mushroom_light",
+      "prefab": "mushroom_light",
+      "build": "mushroom_light_festive"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 13,
+      "name": "草",
+      "z": -34.5,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "grass",
+      "build": "grass1"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 17,
+      "name": "草",
+      "z": -32.5,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "grass",
+      "build": "grass1"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 22.585786819458,
+      "name": "箱子",
+      "z": -10.585786819458,
+      "anim": "closed",
+      "bank": "chest",
+      "prefab": "treasurechest",
+      "build": "treasurechest_poshprint"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 22.061840057373,
+      "name": "浆果丛",
+      "z": -29.793670654297,
+      "anim": "idle",
+      "bank": "berrybush",
+      "prefab": "berrybush",
+      "build": "berrybush"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 0,
+      "y": 0,
+      "x": 16.5,
+      "name": "石墙",
+      "z": -35.5,
+      "anim": "half",
+      "bank": "wall",
+      "prefab": "wall_stone",
+      "build": "wall_stone_ancient"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 16,
+      "name": "草",
+      "z": -33.5,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "grass",
+      "build": "grass1"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 11.5,
+      "name": "箱子",
+      "z": -12,
+      "anim": "closed",
+      "bank": "chest",
+      "prefab": "treasurechest",
+      "build": "treasurechest_poshprint"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 15,
+      "name": "草",
+      "z": -30.5,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "grass",
+      "build": "grass1"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 13,
+      "name": "草",
+      "z": -31.5,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "grass",
+      "build": "grass1"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 18,
+      "name": "草",
+      "z": -32.5,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "grass",
+      "build": "grass1"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 22.25,
+      "name": "箱子",
+      "z": -8.9689111709595,
+      "anim": "closed",
+      "bank": "chest",
+      "prefab": "treasurechest",
+      "build": "treasurechest_poshprint"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 8.75,
+      "name": "树苗",
+      "z": -20,
+      "anim": "sway",
+      "bank": "sapling",
+      "prefab": "sapling",
+      "build": "sapling"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 13,
+      "name": "草",
+      "z": -30.5,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "grass",
+      "build": "grass1"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 0,
+      "y": 0,
+      "x": 19.5,
+      "name": "石墙",
+      "z": -28.5,
+      "anim": "half",
+      "bank": "wall",
+      "prefab": "wall_stone",
+      "build": "wall_stone_ancient"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 0,
+      "y": 0,
+      "x": 12.5,
+      "name": "石墙",
+      "z": -28.5,
+      "anim": "half",
+      "bank": "wall",
+      "prefab": "wall_stone",
+      "build": "wall_stone_ancient"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 28,
+      "name": "晾肉架",
+      "z": -28,
+      "anim": "idle_empty",
+      "bank": "meat_rack",
+      "prefab": "meatrack",
+      "build": "meatrack_butcher"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 12,
+      "name": "香蕉丛",
+      "z": -18,
+      "anim": "idle_big",
+      "bank": "bananabush",
+      "prefab": "bananabush",
+      "build": "bananabush"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 14,
+      "name": "草",
+      "z": -31.5,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "grass",
+      "build": "grass1"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 14,
+      "name": "草",
+      "z": -34.5,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "grass",
+      "build": "grass1"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 0,
+      "y": 0,
+      "x": 20.5,
+      "name": "石墙",
+      "z": -29.5,
+      "anim": "half",
+      "bank": "wall",
+      "prefab": "wall_stone",
+      "build": "wall_stone_ancient"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 0,
+      "y": 0,
+      "x": 18.5,
+      "name": "石墙",
+      "z": -35.5,
+      "anim": "half",
+      "bank": "wall",
+      "prefab": "wall_stone",
+      "build": "wall_stone_ancient"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 0,
+      "y": 0,
+      "x": 18.5,
+      "name": "石墙",
+      "z": -28.5,
+      "anim": "half",
+      "bank": "wall",
+      "prefab": "wall_stone",
+      "build": "wall_stone_ancient"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 19,
+      "name": "草",
+      "z": -33.5,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "grass",
+      "build": "grass1"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 27.339391708374,
+      "name": "猴尾草",
+      "z": -16.766422271729,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "monkeytail",
+      "build": "reeds_monkeytails"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 12,
+      "name": "香蕉丛",
+      "z": -20,
+      "anim": "idle_big",
+      "bank": "bananabush",
+      "prefab": "bananabush",
+      "build": "bananabush"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 20.828550338745,
+      "name": "浆果丛",
+      "z": -25.004636764526,
+      "anim": "idle",
+      "bank": "berrybush",
+      "prefab": "berrybush",
+      "build": "berrybush"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 12,
+      "name": "香蕉丛",
+      "z": -22,
+      "anim": "idle_big",
+      "bank": "bananabush",
+      "prefab": "bananabush",
+      "build": "bananabush"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 17.103086471558,
+      "name": "盐盒",
+      "z": -8,
+      "anim": "closed",
+      "bank": "saltbox",
+      "prefab": "saltbox",
+      "build": "saltbox_shaker"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 0,
+      "y": 0,
+      "x": 20.5,
+      "name": "石墙",
+      "z": -32.5,
+      "anim": "half",
+      "bank": "wall",
+      "prefab": "wall_stone",
+      "build": "wall_stone_ancient"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 22.766422271729,
+      "name": "猴尾草",
+      "z": -21.339391708374,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "monkeytail",
+      "build": "reeds_monkeytails"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 13,
+      "name": "蘑菇灯",
+      "z": -11,
+      "anim": "idle_on",
+      "bank": "mushroom_light",
+      "prefab": "mushroom_light",
+      "build": "mushroom_light_festive"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 0,
+      "y": 0,
+      "x": 11.5,
+      "name": "石墙",
+      "z": -31.5,
+      "anim": "half",
+      "bank": "wall",
+      "prefab": "wall_stone",
+      "build": "wall_stone_ancient"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 27.5,
+      "name": "石果灌木丛",
+      "z": -20,
+      "anim": "idle3",
+      "bank": "rock_avocado",
+      "prefab": "rock_avocado_bush",
+      "build": "rock_avocado_build"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 26,
+      "name": "石果灌木丛",
+      "z": -16.5,
+      "anim": "idle3",
+      "bank": "rock_avocado",
+      "prefab": "rock_avocado_bush",
+      "build": "rock_avocado_build"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 22.5,
+      "name": "石果灌木丛",
+      "z": -20,
+      "anim": "idle3",
+      "bank": "rock_avocado",
+      "prefab": "rock_avocado_bush",
+      "build": "rock_avocado_build"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 22.766422271729,
+      "name": "猴尾草",
+      "z": -18.660608291626,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "monkeytail",
+      "build": "reeds_monkeytails"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 27.5,
+      "name": "箱子",
+      "z": -12,
+      "anim": "closed",
+      "bank": "chest",
+      "prefab": "treasurechest",
+      "build": "treasurechest_poshprint"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 24,
+      "name": "箱子",
+      "z": -10,
+      "anim": "closed",
+      "bank": "chest",
+      "prefab": "treasurechest",
+      "build": "treasurechest_poshprint"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 16,
+      "name": "浆果丛",
+      "z": -32,
+      "anim": "idle",
+      "bank": "berrybush",
+      "prefab": "berrybush",
+      "build": "berrybush"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 29.233577728271,
+      "name": "猴尾草",
+      "z": -18.660608291626,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "monkeytail",
+      "build": "reeds_monkeytails"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 17.120182037354,
+      "name": "浆果丛",
+      "z": -25.647127151489,
+      "anim": "idle",
+      "bank": "berrybush",
+      "prefab": "berrybush",
+      "build": "berrybush"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 17.799999237061,
+      "name": "烹饪锅",
+      "z": -9.8000001907349,
+      "anim": "idle_empty",
+      "bank": "cook_pot",
+      "prefab": "cookpot",
+      "build": "cookpot_survival"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 0,
+      "y": 0,
+      "x": 20.5,
+      "name": "石墙",
+      "z": -30.5,
+      "anim": "half",
+      "bank": "wall",
+      "prefab": "wall_stone",
+      "build": "wall_stone_ancient"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 4.625,
+      "name": "树苗",
+      "z": -17.618431091309,
+      "anim": "sway",
+      "bank": "sapling",
+      "prefab": "sapling",
+      "build": "sapling"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 15,
+      "name": "草",
+      "z": -31.5,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "grass",
+      "build": "grass1"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 14.896913528442,
+      "name": "盐盒",
+      "z": -8,
+      "anim": "closed",
+      "bank": "saltbox",
+      "prefab": "saltbox",
+      "build": "saltbox_shaker"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 20,
+      "name": "香蕉丛",
+      "z": -18,
+      "anim": "idle_big",
+      "bank": "bananabush",
+      "prefab": "bananabush",
+      "build": "bananabush"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 19,
+      "name": "草",
+      "z": -30.5,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "grass",
+      "build": "grass1"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 8.651650428772,
+      "name": "树苗",
+      "z": -17.348348617554,
+      "anim": "sway",
+      "bank": "sapling",
+      "prefab": "sapling",
+      "build": "sapling"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 0,
+      "y": 0,
+      "x": 15.5,
+      "name": "石墙",
+      "z": -35.5,
+      "anim": "half",
+      "bank": "wall",
+      "prefab": "wall_stone",
+      "build": "wall_stone_ancient"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 23.526376724243,
+      "name": "浆果丛",
+      "z": -28.049852371216,
+      "anim": "idle",
+      "bank": "berrybush",
+      "prefab": "berrybush",
+      "build": "berrybush"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 27.060659408569,
+      "name": "猴尾草",
+      "z": -21.060659408569,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "monkeytail",
+      "build": "reeds_monkeytails"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 13,
+      "name": "草",
+      "z": -33.5,
+      "anim": "idle",
+      "bank": "grass",
+      "prefab": "grass",
+      "build": "grass1"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": 180,
+      "y": 0,
+      "x": 16,
+      "name": "雪球发射器",
+      "z": -20,
+      "anim": "idle_off",
+      "bank": "firefighter",
+      "prefab": "firesuppressor",
+      "build": "firesuppressor_circus"
+    },
+    {
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "layer": 6,
+      "rotation": -90,
+      "y": 0,
+      "x": 16.5,
+      "name": "木门",
+      "z": -28.5,
+      "prefab": "fence_gate",
+      "build": ""
+    }
+  ],
+  "idx": 1
+}

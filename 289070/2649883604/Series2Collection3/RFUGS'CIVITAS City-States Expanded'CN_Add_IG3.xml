@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RFUGS'CIVITAS City-States Expanded'CN_Add_IG3 -->
+<!-- Author: Clear8Sky -->
+<!-- DateCreated: 2021/6/9 8:39:20 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “CIVITAS City-States Expanded” 中的 CSE_Localisation_XP1_Ethiopia.sql 文件。该文件在 InGame 时载入，需 Criteria ： Active_Expansion_1OrGS_Core 与 Mode_CSE_Ethiopia_ON -->
+	<LocalizedText>
+
+		<!-- 开启CSE中的“使者加成新机制”模式后产生的改动 -->
+		<!-- 农业城邦 -->
+		
+		<Replace Tag="LOC_CSE_AGRICULTURAL_TRAIT_LARGE_INFLUENCE_BONUS" Language="zh_Hans_CN">
+			<Text>每个食品市场、购物商场和外交办+3 [ICON_Food] 食物。</Text>
+		</Replace>
+		<Replace Tag="LOC_CSE_AGRICULTURAL_TRAIT_LARGEST_INFLUENCE_BONUS" Language="zh_Hans_CN">
+			<Text>每个粮仓、下水道、食品市场、购物商场和每座外交区建筑+1 [ICON_Food] 食物。</Text>
+		</Replace>
+		
+		<!-- 领事城邦 -->
+		
+		<Replace Tag="LOC_CSE_CONSULAR_TRAIT_SMALL_INFLUENCE_BONUS" Language="zh_Hans_CN">
+			<Text>原始 [ICON_Capital] 首都+2 [ICON_PressureUp] 忠诚度压力。</Text>
+		</Replace>
+		<Replace Tag="LOC_CSE_CONSULAR_TRAIT_MEDIUM_INFLUENCE_BONUS" Language="zh_Hans_CN">
+			<Text>领事馆以及每座城市+2忠诚度。</Text>
+		</Replace>
+		<Replace Tag="LOC_CSE_CONSULAR_TRAIT_LARGE_INFLUENCE_BONUS" Language="zh_Hans_CN">
+			<Text>外交办以及每座城市+2 [ICON_PressureUp] 忠诚度压力。</Text>
+		</Replace>
+		<Replace Tag="LOC_CSE_CONSULAR_TRAIT_LARGEST_INFLUENCE_BONUS" Language="zh_Hans_CN">
+			<Text>领事馆、外交办以及每座有 [ICON_GOVERNOR] 总督就职的城市+2 [ICON_PressureUp] 忠诚度压力。</Text>
+		</Replace>
+		
+		<!-- 娱乐城邦 -->
+		
+		<Replace Tag="LOC_CSE_ENTERTAINMENT_TRAIT_SMALL_INFLUENCE_BONUS" Language="zh_Hans_CN">
+			<Text>[ICON_Capital] 首都以及每个竞技场和摩天轮+1 [ICON_Amenities] 宜居度。</Text>
+		</Replace>
+		<Replace Tag="LOC_CSE_ENTERTAINMENT_TRAIT_MEDIUM_INFLUENCE_BONUS" Language="zh_Hans_CN">
+			<Text>每个动物园、水族馆和领事馆+1 [ICON_Amenities] 宜居度。</Text>
+		</Replace>
+		<Replace Tag="LOC_CSE_ENTERTAINMENT_TRAIT_LARGE_INFLUENCE_BONUS" Language="zh_Hans_CN">
+			<Text>每个体育场、水上运动中心和外交办+1 [ICON_Amenities] 宜居度。</Text>
+		</Replace>
+		<Replace Tag="LOC_CSE_ENTERTAINMENT_TRAIT_LARGEST_INFLUENCE_BONUS" Language="zh_Hans_CN">
+			<Text>每座娱乐中心、水上乐园和外交区建筑+1 [ICON_Amenities] 宜居度。</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

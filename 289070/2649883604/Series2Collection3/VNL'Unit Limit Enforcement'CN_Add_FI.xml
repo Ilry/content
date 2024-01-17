@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'Unit Limit Enforcement'CN_Add_FI -->
+<!-- Author: Clear8Sky -->
+<!-- DateCreated: 2022/2/10 0:10:51 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Unit Limit Enforcement” 。该文件在 FrontEnd 与 InGame 时载入，无需任何 Criteria -->
+	<LocalizedText>
+		<Replace Tag="LOC_TC_TOP_PANEL_LAND" Language="zh_Hans_CN">
+			<Text>您麾下的常备军中有{1_Current}名陆地战斗单位：[NEWLINE]{12_Units}[COLOR:GoldMetal]【译注①：后缀为Unit(s)代表普通单位；[NEWLINE]　　　　　后缀为Corps代表 [ICON_Corps] 军团单位；[NEWLINE]　　　　　后缀为Fleet(s)代表 [ICON_Corps] 舰队单位；[NEWLINE]　　　　　后缀为Army/Armies代表 [ICON_Army] 军队单位；[NEWLINE]　　　　　后缀为Armada(s)代表 [ICON_Army] 无敌舰队单位。】[ENDCOLOR][NEWLINE][NEWLINE]当前您陆地战斗单位上限为 {2_Limit}：[NEWLINE][ICON_Bullet]{3_Base} 来自于 基础值[NEWLINE][ICON_Bullet]{4_Cities} 来自于 城市[NEWLINE]　　　（每座城市+{5_CitiesModifier}）[NEWLINE][ICON_Bullet]{6_Districts} 来自于 军营[NEWLINE]　　　（每座军营+{7_DistrictModifier}，若其位于原始 [ICON_Capital] 首都，则×{8_DistrictModifierCap}）[NEWLINE][ICON_Bullet]{9_Buildings} 来自于 军营建筑[NEWLINE]　　　（每座建筑+{10_BuildingsModifier}，若其位于原始 [ICON_Capital] 首都，则×{11_BuildingsModifierCap}）{13_LandHardCap}[NEWLINE][COLOR:GoldMetal]【译注②：上一句意为陆地战斗单位数量的最大阈值。】[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TC_TOP_PANEL_SUPPORT" Language="zh_Hans_CN">
+			<Text>您麾下的常备军中有{1_Current}名支援单位：[NEWLINE]{12_Units}[COLOR:GoldMetal]【译注①：后缀的Unit(s)代表普通单位。】[ENDCOLOR][NEWLINE][NEWLINE]当前您支援单位上限为 {2_Limit}：[NEWLINE][ICON_Bullet]{3_Base} 来自于 基础值[NEWLINE][ICON_Bullet]{4_Cities} 来自于 城市[NEWLINE]　　　（每座城市+{5_CitiesModifier}）[NEWLINE][ICON_Bullet]{6_Districts} 来自于 军营[NEWLINE]　　　（每座军营+{7_DistrictModifier}，若其位于原始 [ICON_Capital] 首都，则×{8_DistrictModifierCap}）[NEWLINE][ICON_Bullet]{9_Buildings} 来自于 军营建筑[NEWLINE]　　　（每座建筑+{10_BuildingsModifier}，若其位于原始 [ICON_Capital] 首都，则×{11_BuildingsModifierCap}）{13_SupportHardCap}[NEWLINE][COLOR:GoldMetal]【译注②：上一句意为支援单位数量的最大阈值。】[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TC_TOP_PANEL_NAVAL" Language="zh_Hans_CN">
+			<Text>您麾下的常备军中有{1_Current}名海上战斗单位：[NEWLINE]{12_Units}[COLOR:GoldMetal]【译注①：后缀为Unit(s)代表普通单位；[NEWLINE]　　　　　后缀为Corps代表 [ICON_Corps] 军团单位；[NEWLINE]　　　　　后缀为Fleet(s)代表 [ICON_Corps] 舰队单位；[NEWLINE]　　　　　后缀为Army/Armies代表 [ICON_Army] 军队单位；[NEWLINE]　　　　　后缀为Armada(s)代表 [ICON_Army] 无敌舰队单位。】[ENDCOLOR][NEWLINE][NEWLINE]当前您海上战斗单位上限为 {2_Limit}：[NEWLINE][ICON_Bullet]{3_Base} 来自于 基础值[NEWLINE][ICON_Bullet]{4_Cities} 来自于 城市[NEWLINE]　　　（每座城市+{5_CitiesModifier}）[NEWLINE][ICON_Bullet]{6_Districts} 来自于 港口[NEWLINE]　　　（每座港口+{7_DistrictModifier}，若其位于原始 [ICON_Capital] 首都，则×{8_DistrictModifierCap}）[NEWLINE][ICON_Bullet]{9_Buildings} 来自于 港口建筑[NEWLINE]　　　（每座建筑+{10_BuildingsModifier}，若其位于原始 [ICON_Capital] 首都，则×{11_BuildingsModifierCap}）{13_NavalHardCap}[NEWLINE][COLOR:GoldMetal]【译注②：上一句意为海上战斗单位数量的最大阈值。】[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TC_TOP_PANEL_RELIGIOUS" Language="zh_Hans_CN">
+			<Text>您麾下的常备军中有{1_Current}名宗教单位：[NEWLINE]{12_Units}[COLOR:GoldMetal]【译注①：后缀的Unit(s)代表普通单位。】[ENDCOLOR][NEWLINE][NEWLINE]当前您宗教单位上限为 {2_Limit}：[NEWLINE][ICON_Bullet]{3_Base} 来自于 基础值[NEWLINE][ICON_Bullet]{4_Cities} 来自于 城市[NEWLINE]　　　（每座城市+{5_CitiesModifier}）[NEWLINE][ICON_Bullet]{6_Districts} 来自于 圣地[NEWLINE]　　　（每座圣地+{7_DistrictModifier}，若其位于原始 [ICON_Capital] 首都，则×{8_DistrictModifierCap}）[NEWLINE][ICON_Bullet]{9_Buildings} 来自于 圣地建筑[NEWLINE]　　　（每座建筑+{10_BuildingsModifier}，若其位于原始 [ICON_Capital] 首都，则×{11_BuildingsModifierCap}）{13_HolyHardCapString}[NEWLINE][COLOR:GoldMetal]【译注②：上一句意为宗教单位数量的最大阈值。】[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TC_TOP_PANEL_AIR" Language="zh_Hans_CN">
+			<Text>您麾下的常备军中有{1_Current}名空中战斗单位：[NEWLINE]{12_Units}[COLOR:GoldMetal]【译注①：后缀的Unit(s)代表普通单位。】[ENDCOLOR][NEWLINE][NEWLINE]当前您宗教单位上限为 {2_Limit}：[NEWLINE][ICON_Bullet]{3_Base} 来自于 基础值[NEWLINE][ICON_Bullet]{4_Cities} 来自于 城市[NEWLINE]　　　（每座城市+{5_CitiesModifier}）[NEWLINE][ICON_Bullet]{6_Districts} 来自于 圣地[NEWLINE]　　　（每座圣地+{7_DistrictModifier}，若其位于原始 [ICON_Capital] 首都，则×{8_DistrictModifierCap}）[NEWLINE][ICON_Bullet]{9_Buildings} 来自于 圣地建筑[NEWLINE]　　　（每座建筑+{10_BuildingsModifier}，若其位于原始 [ICON_Capital] 首都，则×{11_BuildingsModifierCap}）{13_AirHardCap}[NEWLINE][COLOR:GoldMetal]【译注②：上一句意为空中战斗单位数量的最大阈值。】[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TC_TOP_PANEL_AMENITY" Language="zh_Hans_CN">
+			<Text>您拥有 {1_Sign}{2_Net} 点净 [ICON_Amenities] 宜居度。[NEWLINE][NEWLINE]{3_Cities}[NEWLINE]奢侈品资源：[NEWLINE]{4_lux}</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

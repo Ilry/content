@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'CIVILIZATION VI CN Tower'CN_Add_IG2 -->
+<!-- Author: Clear8Sky -->
+<!-- DateCreated: 2021/9/18 23:54:55 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “CIVILIZATION VI: CN Tower”的 COREX_Text_Won_CL.xml 文件。该文件在 InGame 时载入，需 Criteria ： Active_Mod_CL -->
+	<LocalizedText>
+		<Replace Tag="LOC_CL_BUILDING_CN_TOWER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>6格范围内所有城市的现代市镇+100% [ICON_Production] 生产力、+3 [ICON_Amenities] 宜居度。每座拥有任一市镇区的城市+3 [ICON_Citizen] 人口。[NEWLINE][NEWLINE]必须与现代市镇相邻。</Text>
+			<!-- 标记：正在翻译，这里的“现代市镇”暂时参考 Phantagonist 的“CIVILIZATION VI: CITY LIGHTS - 汉化MOD”模组，之后着手汉化CL时决定将其改为“现代城化区” -->
+		</Replace>
+	</LocalizedText>
+</GameData>

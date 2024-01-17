@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<GameData>
+
+	<IconTextureAtlases>
+		<Row Name="iconsWTR_DistrictsFONT" Baseline="6" IconSize="22" IconsPerRow="2" IconsPerColumn="1" Filename="WTR_DISTRICTS_22.dds"/>
+		<Row Name="iconsWTR_Districts" IconSize="32" IconsPerRow="2" IconsPerColumn="1" Filename="WTR_DISTRICTS_32.dds"/>
+		<Row Name="iconsWTR_Districts" IconSize="38" IconsPerRow="2" IconsPerColumn="1" Filename="WTR_DISTRICTS_38.dds"/>
+		<Row Name="iconsWTR_Districts" IconSize="50" IconsPerRow="2" IconsPerColumn="1" Filename="WTR_DISTRICTS_50.dds"/>
+		<Row Name="iconsWTR_Districts" IconSize="70" IconsPerRow="2" IconsPerColumn="1" Filename="WTR_DISTRICTS_70.dds"/>
+		<Row Name="iconsWTR_Districts" IconSize="80" IconsPerRow="2" IconsPerColumn="1" Filename="WTR_DISTRICTS_80.dds"/>
+		<Row Name="iconsWTR_Districts" IconSize="128" IconsPerRow="2" IconsPerColumn="1" Filename="WTR_DISTRICTS_128.dds"/>
+		<Row Name="iconsWTR_Districts" IconSize="256" IconsPerRow="2" IconsPerColumn="1" Filename="WTR_DISTRICTS_256.dds"/>
+
+		<Row Name="iconsWTR_Buildings" IconSize="32" IconsPerRow="5" IconsPerColumn="1" Filename="WTR_BUILDINGS_32.dds"/>
+		<Row Name="iconsWTR_Buildings" IconSize="38" IconsPerRow="5" IconsPerColumn="1" Filename="WTR_BUILDINGS_38.dds"/>
+		<Row Name="iconsWTR_Buildings" IconSize="50" IconsPerRow="5" IconsPerColumn="1" Filename="WTR_BUILDINGS_50.dds"/>
+		<Row Name="iconsWTR_Buildings" IconSize="80" IconsPerRow="5" IconsPerColumn="1" Filename="WTR_BUILDINGS_80.dds"/>
+		<Row Name="iconsWTR_Buildings" IconSize="128" IconsPerRow="5" IconsPerColumn="1" Filename="WTR_BUILDINGS_128.dds"/>
+		<Row Name="iconsWTR_Buildings" IconSize="256" IconsPerRow="5" IconsPerColumn="1" Filename="WTR_BUILDINGS_256.dds"/>
+
+	</IconTextureAtlases>	
+
+	<IconDefinitions>
+		<Row Name="DISTRICT_ARSENAL" Atlas="iconsWTR_DistrictsFONT" Index="0"/>
+		<Row Name="ICON_DISTRICT_ARSENAL" Atlas="iconsWTR_Districts" Index="0"/>
+		<Row Name="ICON_DISTRICT_ARSENAL_FOW" Atlas="iconsWTR_Districts" Index="0"/>
+
+			<Row Name="ICON_BUILDING_ARS_WAREHOUSE" Atlas="iconsWTR_Buildings" Index="0"/>
+			<Row Name="ICON_BUILDING_ARS_WAREHOUSE_FOW" Atlas="iconsWTR_Buildings" Index="0"/>
+			<Row Name="ICON_BUILDING_ARS_DRYDOCK" Atlas="iconsWTR_Buildings" Index="1"/>
+			<Row Name="ICON_BUILDING_ARS_DRYDOCK_FOW" Atlas="iconsWTR_Buildings" Index="1"/>
+			<Row Name="ICON_BUILDING_ARS_NAVALACADEMY" Atlas="iconsWTR_Buildings" Index="2"/>
+			<Row Name="ICON_BUILDING_ARS_NAVALACADEMY_FOW" Atlas="iconsWTR_Buildings" Index="2"/>
+
+		<Row Name="DISTRICT_WATERFRONT" Atlas="iconsWTR_DistrictsFONT" Index="1"/>
+		<Row Name="ICON_DISTRICT_WATERFRONT" Atlas="iconsWTR_Districts" Index="1"/>
+		<Row Name="ICON_DISTRICT_WATERFRONT_FOW" Atlas="iconsWTR_Districts" Index="1"/>
+
+			<Row Name="ICON_BUILDING_WTR_BREAKWATER" Atlas="iconsWTR_Buildings" Index="3"/>
+			<Row Name="ICON_BUILDING_WTR_BREAKWATER_FOW" Atlas="iconsWTR_Buildings" Index="3"/>
+			<Row Name="ICON_BUILDING_WTR_BOARDWALK" Atlas="iconsWTR_Buildings" Index="4"/>
+			<Row Name="ICON_BUILDING_WTR_BOARDWALK_FOW" Atlas="iconsWTR_Buildings" Index="4"/>
+
+	</IconDefinitions>
+</GameData>

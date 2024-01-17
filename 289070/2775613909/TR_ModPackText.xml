@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- TR_ModPackText -->
+<!-- Author: Flactine -->
+<!-- DateCreated: 3/8/2022 2:36:13 PM -->
+<GameData>
+	<EnglishText>
+		<Row Tag="LOC_MOD_FLAC_TR_NAME">
+			<Text>[ICON_TURN][COLOR_GREEN]Rest Reminder[ENDCOLOR][ICON_TURN]</Text>
+		</Row>
+		<Row Tag="LOC_MOD_FLAC_TR_AUTHOR">
+			<Text>Flactine</Text>
+		</Row>
+		<Row Tag="LOC_MOD_FLAC_TR_TEASER">
+			<Text>When the player has played for more than a certain amount of time, the player will be reminded to rest.</Text>
+		</Row>
+		<Row Tag="LOC_MOD_FLAC_TR_DESCRIPTION">
+			<Text>When the player has played for more than a certain amount of time, the player will be reminded to rest.[NEWLINE]You can set the Reminder Time in Advanced Setup - Advance Options.</Text>
+		</Row>
+	</EnglishText>
+
+	<LocalizedText>
+		<Replace Tag="LOC_MOD_FLAC_TR_NAME" Language="zh_Hans_CN">
+			<Text>[ICON_TURN][COLOR_GREEN]提醒休息小助手[ENDCOLOR][ICON_TURN]</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_FLAC_TR_AUTHOR" Language="zh_Hans_CN">
+			<Text>焰色光芒</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_FLAC_TR_TEASER" Language="zh_Hans_CN">
+			<Text>当玩家连续游玩超过一定时间后，会提醒玩家休息。</Text>
+		</Replace>
+		<Replace Tag="LOC_MOD_FLAC_TR_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>当玩家连续游玩超过一定时间后，会提醒玩家休息。[NEWLINE]该时间可在开始游戏前的“高级选项”中设置。</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

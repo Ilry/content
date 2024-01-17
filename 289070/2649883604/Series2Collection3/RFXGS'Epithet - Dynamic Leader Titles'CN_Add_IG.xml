@@ -1,0 +1,663 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RFXGS'Epithet - Dynamic Leader Titles'CN_Add_IG -->
+<!-- Author: Flactine , Clear8Sky -->
+<!-- DateCreated: 2021/9/7 21:59:54 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Epithet - Dynamic Leader Titles” 。该文件在 InGame 时载入，需 Criteria ：Active_Expansion_1 与 Active_Expansion_2 -->
+	<LocalizedText>
+		<Replace Tag="LOC_SC_EPITHET_BOLD_MALE" Language="zh_Hans_CN">
+			<Text>英勇的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_BOLD_FEMALE" Language="zh_Hans_CN">
+			<Text>英勇的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_CONQUEROR_MALE" Language="zh_Hans_CN">
+			<Text>征服者{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_CONQUEROR_FEMALE" Language="zh_Hans_CN">
+			<Text>征服者{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_BLOODY_MALE" Language="zh_Hans_CN">
+			<Text>血腥的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_BLOODY_FEMALE" Language="zh_Hans_CN">
+			<Text>血腥的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_LIBERATOR_MALE" Language="zh_Hans_CN">
+			<Text>解放者{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_LIBERATOR_FEMALE" Language="zh_Hans_CN">
+			<Text>解放者{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_BUILDER_MALE" Language="zh_Hans_CN">
+			<Text>建设者{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_BUILDER_FEMALE" Language="zh_Hans_CN">
+			<Text>建设者{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_ARTIST_MALE" Language="zh_Hans_CN">
+			<Text>艺术之王{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_ARTIST_FEMALE" Language="zh_Hans_CN">
+			<Text>艺术王后{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_POET_MALE" Language="zh_Hans_CN">
+			<Text>诗人{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_POET_FEMALE" Language="zh_Hans_CN">
+			<Text>诗人{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_BOOK_LOVER_MALE" Language="zh_Hans_CN">
+			<Text>爱书的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_BOOK_LOVER_FEMALE" Language="zh_Hans_CN">
+			<Text>爱书的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_TROUBADOUR_MALE" Language="zh_Hans_CN">
+			<Text>民谣歌手{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_TROUBADOUR_FEMALE" Language="zh_Hans_CN">
+			<Text>民谣歌手{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_PHILOSOPHER_MALE" Language="zh_Hans_CN">
+			<Text>哲学家{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_PHILOSOPHER_FEMALE" Language="zh_Hans_CN">
+			<Text>哲学家{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_VENERABLE_MALE" Language="zh_Hans_CN">
+			<Text>庄严的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_VENERABLE_FEMALE" Language="zh_Hans_CN">
+			<Text>庄严的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_DIPLOMAT_MALE" Language="zh_Hans_CN">
+			<Text>外交官{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_DIPLOMAT_FEMALE" Language="zh_Hans_CN">
+			<Text>外交官{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_PEACEMAKER_MALE" Language="zh_Hans_CN">
+			<Text>和事佬{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_PEACEMAKER_FEMALE" Language="zh_Hans_CN">
+			<Text>和事佬{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_PACIFIC_MALE" Language="zh_Hans_CN">
+			<Text>太平的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_PACIFIC_FEMALE" Language="zh_Hans_CN">
+			<Text>太平的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_ILLUSTRIOUS_MALE" Language="zh_Hans_CN">
+			<Text>杰出的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_ILLUSTRIOUS_FEMALE" Language="zh_Hans_CN">
+			<Text>杰出的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_WISE_MALE" Language="zh_Hans_CN">
+			<Text>明智的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_WISE_FEMALE" Language="zh_Hans_CN">
+			<Text>明智的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_NAVIGATOR_MALE" Language="zh_Hans_CN">
+			<Text>领航员{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_NAVIGATOR_FEMALE" Language="zh_Hans_CN">
+			<Text>领航员{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_CONFESSOR_MALE" Language="zh_Hans_CN">
+			<Text>忏悔者{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_CONFESSOR_FEMALE" Language="zh_Hans_CN">
+			<Text>忏悔者{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_BLESSED_MALE" Language="zh_Hans_CN">
+			<Text>祝福者{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_BLESSED_FEMALE" Language="zh_Hans_CN">
+			<Text>祝福者{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_PIOUS_MALE" Language="zh_Hans_CN">
+			<Text>虔诚的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_PIOUS_FEMALE" Language="zh_Hans_CN">
+			<Text>虔诚的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_SAINT_MALE" Language="zh_Hans_CN">
+			<Text>圣徒{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_SAINT_FEMALE" Language="zh_Hans_CN">
+			<Text>圣徒{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_CRUSADER_MALE" Language="zh_Hans_CN">
+			<Text>圣战者{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_CRUSADER_FEMALE" Language="zh_Hans_CN">
+			<Text>圣战者{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_DEFENDER_FAITH_MALE" Language="zh_Hans_CN">
+			<Text>信仰捍卫者{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_DEFENDER_FAITH_FEMALE" Language="zh_Hans_CN">
+			<Text>信仰捍卫者{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_SWORD_OF_GOD_MALE" Language="zh_Hans_CN">
+			<Text>上帝之剑{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_SWORD_OF_GOD_FEMALE" Language="zh_Hans_CN">
+			<Text>上帝之剑{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_RICH_MALE" Language="zh_Hans_CN">
+			<Text>富裕的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_RICH_FEMALE" Language="zh_Hans_CN">
+			<Text>富裕的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_POOR_MALE" Language="zh_Hans_CN">
+			<Text>贫穷的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_POOR_FEMALE" Language="zh_Hans_CN">
+			<Text>贫穷的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_BLACK_MALE" Language="zh_Hans_CN">
+			<Text>黑皇帝{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_BLACK_FEMALE" Language="zh_Hans_CN">
+			<Text>黑皇后{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_SPIDER_MALE" Language="zh_Hans_CN">
+			<Text>圈套者{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_SPIDER_FEMALE" Language="zh_Hans_CN">
+			<Text>圈套者{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_MAGNANIMOUS_MALE" Language="zh_Hans_CN">
+			<Text>宽宏大量的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_MAGNANIMOUS_FEMALE" Language="zh_Hans_CN">
+			<Text>宽宏大量的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_ENLIGHTENED_MALE" Language="zh_Hans_CN">
+			<Text>开明的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_ENLIGHTENED_FEMALE" Language="zh_Hans_CN">
+			<Text>开明的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_UNREADY_MALE" Language="zh_Hans_CN">
+			<Text>迟钝的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_UNREADY_FEMALE" Language="zh_Hans_CN">
+			<Text>迟钝的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_CARELESS_MALE" Language="zh_Hans_CN">
+			<Text>粗心的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_CARELESS_FEMALE" Language="zh_Hans_CN">
+			<Text>粗心的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_GREAT_MALE" Language="zh_Hans_CN">
+			<Text>{1_Name}大帝</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_GREAT_FEMALE" Language="zh_Hans_CN">
+			<Text>{1_Name}大帝</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_MAGNIFICENT_MALE" Language="zh_Hans_CN">
+			<Text>华丽的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_MAGNIFICENT_FEMALE" Language="zh_Hans_CN">
+			<Text>华丽的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_GOOD_MALE" Language="zh_Hans_CN">
+			<Text>无误的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_GOOD_FEMALE" Language="zh_Hans_CN">
+			<Text>无误的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_MARVELOUS_MALE" Language="zh_Hans_CN">
+			<Text>非凡的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_MARVELOUS_FEMALE" Language="zh_Hans_CN">
+			<Text>非凡的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_SAILOR_KING_MALE" Language="zh_Hans_CN">
+			<Text>水手之王{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_SAILOR_KING_FEMALE" Language="zh_Hans_CN">
+			<Text>水手女王{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_THEATER_KING_MALE" Language="zh_Hans_CN">
+			<Text>剧院之王{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_THEATER_KING_FEMALE" Language="zh_Hans_CN">
+			<Text>剧院女王{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_SUN_KING_MALE" Language="zh_Hans_CN">
+			<Text>太阳王{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_SUN_KING_FEMALE" Language="zh_Hans_CN">
+			<Text>太阳王后{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_LUXURIOUS_MALE" Language="zh_Hans_CN">
+			<Text>奢侈的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_LUXURIOUS_FEMALE" Language="zh_Hans_CN">
+			<Text>奢侈的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_ASTUTE_MALE" Language="zh_Hans_CN">
+			<Text>精明的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_ASTUTE_FEMALE" Language="zh_Hans_CN">
+			<Text>精明的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_DESTROYER_MALE" Language="zh_Hans_CN">
+			<Text>破坏者{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_DESTROYER_FEMALE" Language="zh_Hans_CN">
+			<Text>破坏者{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_SCOURGE_OF_GOD_MALE" Language="zh_Hans_CN">
+			<Text>上帝之鞭{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_SCOURGE_OF_GOD_FEMALE" Language="zh_Hans_CN">
+			<Text>上帝之鞭{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_APOSTLE_MALE" Language="zh_Hans_CN">
+			<Text>使徒{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_APOSTLE_FEMALE" Language="zh_Hans_CN">
+			<Text>使徒{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_LEARNED_MALE" Language="zh_Hans_CN">
+			<Text>博学的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_LEARNED_FEMALE" Language="zh_Hans_CN">
+			<Text>博学的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_INDUSTRIOUS_MALE" Language="zh_Hans_CN">
+			<Text>勤劳的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_INDUSTRIOUS_FEMALE" Language="zh_Hans_CN">
+			<Text>勤劳的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_WARRIOR_MALE" Language="zh_Hans_CN">
+			<Text>勇士{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_WARRIOR_FEMALE" Language="zh_Hans_CN">
+			<Text>勇士{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_GUARDIAN_MALE" Language="zh_Hans_CN">
+			<Text>守护者{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_GUARDIAN_FEMALE" Language="zh_Hans_CN">
+			<Text>守护者{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_IMPALER_MALE" Language="zh_Hans_CN">
+			<Text>突击者{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_IMPALER_FEMALE" Language="zh_Hans_CN">
+			<Text>突击者{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_FOX_MALE" Language="zh_Hans_CN">
+			<Text>老滑头{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_FOX_FEMALE" Language="zh_Hans_CN">
+			<Text>老滑头{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_CUNNING_MALE" Language="zh_Hans_CN">
+			<Text>狡猾的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_CUNNING_FEMALE" Language="zh_Hans_CN">
+			<Text>狡猾的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_HOLY_MALE" Language="zh_Hans_CN">
+			<Text>神圣的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_HOLY_FEMALE" Language="zh_Hans_CN">
+			<Text>神圣的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_FARMER_MALE" Language="zh_Hans_CN">
+			<Text>耕耘者{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_FARMER_FEMALE" Language="zh_Hans_CN">
+			<Text>耕耘者{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_UNCONQUERED_MALE" Language="zh_Hans_CN">
+			<Text>未被征服的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_UNCONQUERED_FEMALE" Language="zh_Hans_CN">
+			<Text>未被征服的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_SAILOR_MALE" Language="zh_Hans_CN">
+			<Text>水手之王{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_SAILOR_FEMALE" Language="zh_Hans_CN">
+			<Text>水手女王{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_EUERGETES_MALE" Language="zh_Hans_CN">
+			<Text>{1_Name}施主</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_EUERGETES_FEMALE" Language="zh_Hans_CN">
+			<Text>{1_Name}女施主</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_CRUEL_MALE" Language="zh_Hans_CN">
+			<Text>残忍的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_CRUEL_FEMALE" Language="zh_Hans_CN">
+			<Text>残忍的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_TERRIBLE_MALE" Language="zh_Hans_CN">
+			<Text>可怕的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_TERRIBLE_FEMALE" Language="zh_Hans_CN">
+			<Text>可怕的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_BAD_MALE" Language="zh_Hans_CN">
+			<Text>邪恶的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_BAD_FEMALE" Language="zh_Hans_CN">
+			<Text>邪恶的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_ILL_RULER_MALE" Language="zh_Hans_CN">
+			<Text>昏君{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_ILL_RULER_FEMALE" Language="zh_Hans_CN">
+			<Text>昏君{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_TYRANT_MALE" Language="zh_Hans_CN">
+			<Text>暴君{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_TYRANT_FEMALE" Language="zh_Hans_CN">
+			<Text>暴君{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_OPPRESSOR_MALE" Language="zh_Hans_CN">
+			<Text>压迫者{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_OPPRESSOR_FEMALE" Language="zh_Hans_CN">
+			<Text>压迫者{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_JUST_MALE" Language="zh_Hans_CN">
+			<Text>公正的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_JUST_FEMALE" Language="zh_Hans_CN">
+			<Text>公正的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_BELOVED_MALE" Language="zh_Hans_CN">
+			<Text>挚爱的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_BELOVED_FEMALE" Language="zh_Hans_CN">
+			<Text>挚爱的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_EXECUTOR_MALE" Language="zh_Hans_CN">
+			<Text>刽子手{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_EXECUTOR_FEMALE" Language="zh_Hans_CN">
+			<Text>刽子手{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_GOLDEN_MALE" Language="zh_Hans_CN">
+			<Text>黄金一号{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_GOLDEN_FEMALE" Language="zh_Hans_CN">
+			<Text>黄金一号{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_MYSTIC_MALE" Language="zh_Hans_CN">
+			<Text>神秘的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_MYSTIC_FEMALE" Language="zh_Hans_CN">
+			<Text>神秘的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_DAMNED_MALE" Language="zh_Hans_CN">
+			<Text>可恶的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_DAMNED_FEMALE" Language="zh_Hans_CN">
+			<Text>可恶的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_DEVIL_MALE" Language="zh_Hans_CN">
+			<Text>恶棍{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_DEVIL_FEMALE" Language="zh_Hans_CN">
+			<Text>恶棍{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_ILL_TEMPERED_MALE" Language="zh_Hans_CN">
+			<Text>暴躁的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_ILL_TEMPERED_FEMALE" Language="zh_Hans_CN">
+			<Text>暴躁的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_MAD_MALE" Language="zh_Hans_CN">
+			<Text>疯狂的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_MAD_FEMALE" Language="zh_Hans_CN">
+			<Text>疯狂的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_INDOLENT_MALE" Language="zh_Hans_CN">
+			<Text>懒惰的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_INDOLENT_FEMALE" Language="zh_Hans_CN">
+			<Text>懒惰的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_SIMPLE_MALE" Language="zh_Hans_CN">
+			<Text>单纯的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_SIMPLE_FEMALE" Language="zh_Hans_CN">
+			<Text>单纯的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_WEAK_MALE" Language="zh_Hans_CN">
+			<Text>虚弱的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_WEAK_FEMALE" Language="zh_Hans_CN">
+			<Text>虚弱的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_HEATHEN_MALE" Language="zh_Hans_CN">
+			<Text>粗野的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_HEATHEN_FEMALE" Language="zh_Hans_CN">
+			<Text>粗野的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_DECADENT_MALE" Language="zh_Hans_CN">
+			<Text>颓废的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_DECADENT_FEMALE" Language="zh_Hans_CN">
+			<Text>颓废的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_RASH_MALE" Language="zh_Hans_CN">
+			<Text>鲁莽的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_RASH_FEMALE" Language="zh_Hans_CN">
+			<Text>鲁莽的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_FOOL_MALE" Language="zh_Hans_CN">
+			<Text>愚蠢的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_FOOL_FEMALE" Language="zh_Hans_CN">
+			<Text>愚蠢的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_VAIN_MALE" Language="zh_Hans_CN">
+			<Text>徒劳的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_VAIN_FEMALE" Language="zh_Hans_CN">
+			<Text>徒劳的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_DRUNKARD_MALE" Language="zh_Hans_CN">
+			<Text>酒鬼{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_DRUNKARD_FEMALE" Language="zh_Hans_CN">
+			<Text>酒鬼{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_DO_NOTHING_MALE" Language="zh_Hans_CN">
+			<Text>游手好闲的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_DO_NOTHING_FEMALE" Language="zh_Hans_CN">
+			<Text>游手好闲的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_QUARRELLER_MALE" Language="zh_Hans_CN">
+			<Text>爱争吵的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_QUARRELLER_FEMALE" Language="zh_Hans_CN">
+			<Text>爱争吵的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_SMALL_MALE" Language="zh_Hans_CN">
+			<Text>矮小的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_SMALL_FEMALE" Language="zh_Hans_CN">
+			<Text>矮小的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_TIMID_MALE" Language="zh_Hans_CN">
+			<Text>胆小的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_TIMID_FEMALE" Language="zh_Hans_CN">
+			<Text>胆小的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_IMPETUOUS_MALE" Language="zh_Hans_CN">
+			<Text>冲动的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_IMPETUOUS_FEMALE" Language="zh_Hans_CN">
+			<Text>冲动的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_WOLF_MALE" Language="zh_Hans_CN">
+			<Text>孤狼{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_WOLF_FEMALE" Language="zh_Hans_CN">
+			<Text>孤狼{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_BEGGER_MALE" Language="zh_Hans_CN">
+			<Text>乞丐之王{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_BEGGER_FEMALE" Language="zh_Hans_CN">
+			<Text>乞丐王后{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_KING_OF_MARKETS_MALE" Language="zh_Hans_CN">
+			<Text>经济之王{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_KING_OF_MARKETS_FEMALE" Language="zh_Hans_CN">
+			<Text>经济王后{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_DOVE_MALE" Language="zh_Hans_CN">
+			<Text>温和派{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_DOVE_FEMALE" Language="zh_Hans_CN">
+			<Text>温和派{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_INVINCIBLE_MALE" Language="zh_Hans_CN">
+			<Text>无敌的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_INVINCIBLE_FEMALE" Language="zh_Hans_CN">
+			<Text>无敌的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_PEOPLES_KING_MALE" Language="zh_Hans_CN">
+			<Text>人民之王{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_PEOPLES_KING_FEMALE" Language="zh_Hans_CN">
+			<Text>人民王后{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_HUNTER_MALE" Language="zh_Hans_CN">
+			<Text>猎寻者{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_HUNTER_FEMALE" Language="zh_Hans_CN">
+			<Text>猎寻者{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_DOWNCAST_MALE" Language="zh_Hans_CN">
+			<Text>沮丧的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_DOWNCAST_FEMALE" Language="zh_Hans_CN">
+			<Text>沮丧的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_DULL_MALE" Language="zh_Hans_CN">
+			<Text>呆滞的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_DULL_FEMALE" Language="zh_Hans_CN">
+			<Text>呆滞的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_VICTORIOUS_MALE" Language="zh_Hans_CN">
+			<Text>胜利者{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_VICTORIOUS_FEMALE" Language="zh_Hans_CN">
+			<Text>胜利者{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_BUTCHER_MALE" Language="zh_Hans_CN">
+			<Text>屠夫{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_BUTCHER_FEMALE" Language="zh_Hans_CN">
+			<Text>屠夫{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_TREASURER_MALE" Language="zh_Hans_CN">
+			<Text>财务主管{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_TREASURER_FEMALE" Language="zh_Hans_CN">
+			<Text>财务主管{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_WONDER_MALE" Language="zh_Hans_CN">
+			<Text>奇观之王{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_WONDER_FEMALE" Language="zh_Hans_CN">
+			<Text>奇观王后{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_AUGUST_MALE" Language="zh_Hans_CN">
+			<Text>威严的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_AUGUST_FEMALE" Language="zh_Hans_CN">
+			<Text>威严的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_CARDINAL_MALE" Language="zh_Hans_CN">
+			<Text>红衣主教{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_CARDINAL_FEMALE" Language="zh_Hans_CN">
+			<Text>红衣主教{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_FEARLESS_MALE" Language="zh_Hans_CN">
+			<Text>无畏的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_FEARLESS_FEMALE" Language="zh_Hans_CN">
+			<Text>无畏的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_RESOURCEFUL_MALE" Language="zh_Hans_CN">
+			<Text>足智多谋的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_RESOURCEFUL_FEMALE" Language="zh_Hans_CN">
+			<Text>足智多谋的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_INSPIRED_MALE" Language="zh_Hans_CN">
+			<Text>灵感之王{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_INSPIRED_FEMALE" Language="zh_Hans_CN">
+			<Text>灵感王后{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_MONK_MALE" Language="zh_Hans_CN">
+			<Text>{1_Name}修士</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_MONK_FEMALE" Language="zh_Hans_CN">
+			<Text>{1_Name}修女</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_SINGER_MALE" Language="zh_Hans_CN">
+			<Text>{1_Name}歌王</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_SINGER_FEMALE" Language="zh_Hans_CN">
+			<Text>{1_Name}歌后</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_VIKING_MALE" Language="zh_Hans_CN">
+			<Text>海盗王{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_VIKING_FEMALE" Language="zh_Hans_CN">
+			<Text>海盗女王{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_KNIGHT_MALE" Language="zh_Hans_CN">
+			<Text>骑士王{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_KNIGHT_FEMALE" Language="zh_Hans_CN">
+			<Text>骑士女王{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_ABLE_MALE" Language="zh_Hans_CN">
+			<Text>能干的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_ABLE_FEMALE" Language="zh_Hans_CN">
+			<Text>能干的{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_AGGRESSOR_MALE" Language="zh_Hans_CN">
+			<Text>侵略者{1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SC_EPITHET_AGGRESSOR_FEMALE" Language="zh_Hans_CN">
+			<Text>侵略者{1_Name}</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

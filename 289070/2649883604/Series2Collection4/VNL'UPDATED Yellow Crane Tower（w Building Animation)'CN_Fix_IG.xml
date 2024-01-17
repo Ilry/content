@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'UPDATED Yellow Crane Tower（w Building Animation)'CN_Fix_IG -->
+<!-- Author: Clear8Sky -->
+<!-- DateCreated: 2021/6/13 8:51:19 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “【UPDATED】Yellow Crane Tower（w/ Building Animation!)” 。该文件在 InGame 时载入，无需任何 Criteria -->
+	<LocalizedText>
+		<Replace Tag="LOC_BUILDING_YELLOW_CRANE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>建造完成后，每使用一位大作家，则使您当前积累的 [ICON_GreatWriter] 大作家伟人点数+30%。[NEWLINE][NEWLINE]必须在沿河的丘陵上建造。</Text>
+		</Replace>
+		<Replace Tag="LOC_NOTIFIER_GREATWRITER_YELLOWCRANE_GPP" Language="zh_Hans_CN">
+			<Text>点 [ICON_GreatWriter] 大作家伟人点数 来自 黄鹤楼效果！</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

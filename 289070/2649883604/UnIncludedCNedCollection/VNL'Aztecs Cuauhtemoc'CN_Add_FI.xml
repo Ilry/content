@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'Aztecs Cuauhtemoc'CN_Add_FI -->
+<!-- Author: 春 , Clear8Sky -->
+<!-- DateCreated: 2021/8/10 0:28:17 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Aztecs: Cuauhtemoc” 。该文件在 FrontEnd 与 InGame 时载入，需 Criteria ：Active_DLC_Aztec -->
+	<LocalizedText>
+		
+		<!-- 模组页面 -->
+		
+		<Replace Tag="LOC_MOD_JFD_AZTECS_CUAUHTEMOC_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>------------------------------------[NEWLINE]领袖名称 -- 瓜特穆斯[NEWLINE][NEWLINE]领袖特性 - 下行雄鹰[NEWLINE]宣战后可基于当前每回合大将军点数获取值，获得大量 [ICON_GreatGeneral] 大将军点数奖励；若您被宣战，则该奖励翻倍。被 [ICON_GreatGeneral] 大将军护送的单位能获得与之相同的 [ICON_Movement] 移动力。[NEWLINE][NEWLINE]领袖议程 - 明智的首领[NEWLINE]试图获得尽可能多的大将军。喜欢与他建立长期同盟的拥有强大军事力量的文明，不喜欢发动突袭战争的文明。</Text>
+		</Replace>
+		
+		<!-- 领袖 -->
+		
+		<Replace Tag="LOC_LEADER_JFD_CUAUHTEMOC_NAME" Language="zh_Hans_CN">
+			<Text>瓜特穆斯</Text>
+		</Replace>
+
+		<!-- 议程 -->
+
+		<Replace Tag="LOC_AGENDA_JFD_CUAUHTLATOANI_NAME" Language="zh_Hans_CN">
+			<Text>明智的首领</Text>
+		</Replace>
+		<Replace Tag="LOC_AGENDA_JFD_CUAUHTLATOANI_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>试图获得尽可能多的大将军。喜欢与他建立长期同盟的拥有强大军事力量的文明，不喜欢发动突袭战争的文明。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_LEADER_JFD_CUAUHTEMOC_REASON_AVERSE_SURPRISE_WAR" Language="zh_Hans_CN">
+			<Text>（您背刺了朋友，或发动了突袭战争）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_JFD_CUAUHTLATOANI_AVERSE_SURPRISE_WAR" Language="zh_Hans_CN">
+			<Text>瓜特穆斯不喜欢发动突袭之徒。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_JFD_CUAUHTEMOC_REASON_FRIEND_LEADS_STANDING_ARMY" Language="zh_Hans_CN">
+			<Text>（您维持了一支强大军队，并且是他的朋友）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_AGENDA_JFD_CUAUHTLATOANI_FRIEND_LEADS_STANDING_ARMY" Language="zh_Hans_CN">
+			<Text>瓜特穆斯喜欢拥有强大军事力量的朋友。</Text>
+		</Replace>
+		
+		<!-- 载入 -->
+		
+		<Replace Tag="LOC_LOADING_INFO_LEADER_JFD_CUAUHTEMOC" Language="zh_Hans_CN">
+			<Text>荣耀的瓜特穆斯，统治帝国并非所有人之愿。但现在，人民比以往任何时刻都需要一个在战斗中意志坚定的特拉托阿尼。像雄鹰一样攻击您的敌人，保卫帝国免遭灭亡。</Text>
+		</Replace>
+		
+		<!-- 特性 -->
+		
+		<Replace Tag="LOC_TRAIT_LEADER_JFD_DESCENDING_EAGLE_NAME" Language="zh_Hans_CN">
+			<Text>下行雄鹰</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_JFD_DESCENDING_EAGLE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>宣战后可基于当前每回合大将军点数获取值，获得大量 [ICON_GreatGeneral] 大将军点数奖励；若您被宣战，则该奖励翻倍。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_JFD_DESCENDING_EAGLE_NAME" Language="zh_Hans_CN">
+			<Text>下行雄鹰</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_JFD_DESCENDING_EAGLE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>被护送的单位获得与之相同的 [ICON_Movement] 移动力。</Text>
+		</Replace>
+		
+		<!-- 百科 -->
+		
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_CUAUHTEMOC_TITLE" Language="zh_Hans_CN">
+			<Text>瓜特穆斯</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_CUAUHTEMOC_SUBTITLE" Language="zh_Hans_CN">
+			<Text>特诺奇提特兰的特拉托阿尼</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_CUAUHTEMOC_QUOTE" Language="zh_Hans_CN">
+			<Text>让天主处治你吧，就像我在墨西哥把自己交予你处治一样！</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_CUAUHTEMOC_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】Cuauhtémoc was the Aztec ruler (tlatoani) of Tenochtitlan from 1520 to 1521, making him the last Aztec Emperor. The name Cuauhtemōc means "one who has descended like an eagle", and is commonly rendered in English as "Descending Eagle", as in the moment when an eagle folds its wings and plummets down to strike its prey. This is a name that implies aggressiveness and determination.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_CUAUHTEMOC_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>Cuauhtémoc took power in 1520 as successor of Cuitláhuac and was a cousin of the late emperor Moctezuma II. His young wife, who was later known as Isabel Moctezuma, was one of Moctezuma's daughters. He ascended to the throne when he was around 25 years old, while Tenochtitlan was being besieged by the Spanish and devastated by an epidemic of smallpox brought to the New World by the invaders. After the killings in the Great Temple, there were probably few Aztec captains available to take the position.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_CUAUHTEMOC_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>Cuauhtemoc is the embodiment of indigenist nationalism in Mexico, being the only Aztec emperor who survived the conquest by the Spanish Empire (and their native allies). He is honored by a monument on the Paseo de la Reforma, his face has appeared on Mexican banknotes, and he is celebrated in paintings, music, and popular culture.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_CUAUHTEMOC_CHAPTER_CAPSULE_BODY" Language="zh_Hans_CN">
+			<Text>瓜特穆斯是一位激进的扩张主义者，他能招募那些最熟练的将领们（大将军）来推动自己帝国的发展。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_CUAUHTEMOC_CHAPTER_DETAILED_BODY" Language="zh_Hans_CN">
+			<Text>阿兹特克在对局中将扮演一名好战者，且他们应招揽大量的大将军来为他们在战争中提供优势。他们最初的优势是用雄鹰战士来碾压敌人，并俘虏他们成为阿兹特克的建造者。而后，这些建造者充当“燃料”加速阿兹特克城市的发展，利用文明特色能力消耗其劳动力加快区域的建造。最终，他们希望拥有尽可能广阔的帝国版图，因为其争取到的每种奢侈品资源都可为阿兹特克的城市额外提供 [ICON_Amenities] 宜居度，并为其单位提供更多 [ICON_Strength] 攻击力加成。</Text>
+		</Replace>
+		
+		<!-- 外交 -->
+		
+		<!-- 初次见面 -->
+		<!-- 开场白 -->
+		
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_JFD_CUAUHTEMOC_ANY" Language="zh_Hans_CN">
+			<Text>你好。我是瓜特穆斯，特诺奇提特兰的统治者。如果你是可敬之人，那么你在这里就是受欢迎的。</Text>
+		</Replace>
+		
+		<!-- 到附近城市的邀请 -->
+		
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_JFD_CUAUHTEMOC_ANY" Language="zh_Hans_CN">
+			<Text>我邀请你到我们附近的首都来与我交谈。</Text>
+		</Replace>
+		
+		<!-- AI接受玩家邀请 -->
+		
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NEAR_INITIATOR_POSITIVE_LEADER_JFD_CUAUHTEMOC_ANY" Language="zh_Hans_CN">
+			<Text>是的，我会亲自和你谈谈。</Text>
+		</Replace>
+		
+		<!-- AI邀请玩家交换首都信息 -->
+		
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_JFD_CUAUHTEMOC_ANY" Language="zh_Hans_CN">
+			<Text>我要求我们分享两国首都的信息。</Text>
+		</Replace>
+		
+		<!-- 问候 -->
+		
+		<Replace Tag="LOC_DIPLO_GREETING_LEADER_JFD_CUAUHTEMOC_ANY" Language="zh_Hans_CN">
+			<Text>你好。</Text>
+		</Replace>
+		
+		<!-- 代表团 -->
+		<!-- AI接受 -->
+		
+		<Replace Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_HUMAN_LEADER_JFD_CUAUHTEMOC_ANY" Language="zh_Hans_CN">
+			<Text>我接受。</Text>
+		</Replace>
+		
+		<!-- AI拒绝 -->
+		
+		<Replace Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_HUMAN_LEADER_JFD_CUAUHTEMOC_ANY" Language="zh_Hans_CN">
+			<Text>我不会接受你的任何代表团。</Text>
+		</Replace>
+		
+		<!-- AI请求 -->
+		
+		<Replace Tag="LOC_DIPLO_DELEGATION_FROM_AI_LEADER_JFD_CUAUHTEMOC_ANY" Language="zh_Hans_CN">
+			<Text>我祈祷我的代表团能到你那里，他们随身带着我国人民最好的黑曜石刀，以表示我的善意。</Text>
+		</Replace>
+		
+		<!-- 开放边境 -->
+		<!-- AI接受 -->
+		
+		<Replace Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_HUMAN_LEADER_JFD_CUAUHTEMOC_ANY" Language="zh_Hans_CN">
+			<Text>我接受。</Text>
+		</Replace>
+		
+		<!-- AI拒绝 -->
+		
+		<Replace Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_HUMAN_LEADER_JFD_CUAUHTEMOC_ANY" Language="zh_Hans_CN">
+			<Text>现在是危险的时期，我们不能允许任何人进入阿兹特克的土地。</Text>
+		</Replace>
+		
+		<!-- AI请求 -->
+		
+		<Replace Tag="LOC_DIPLO_OPEN_BORDERS_FROM_AI_LEADER_JFD_CUAUHTEMOC_ANY" Language="zh_Hans_CN">
+			<Text>阿兹特克的土地欢迎你的人民。你也会这么做吗？</Text>
+		</Replace>
+		
+		<!-- 宣布友谊 -->
+		<!-- AI接受 -->
+		
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_HUMAN_LEADER_JFD_CUAUHTEMOC_ANY" Language="zh_Hans_CN">
+			<Text>您给了我以荣誉。</Text>
+		</Replace>
+		
+		<!-- AI拒绝 -->
+		
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_HUMAN_LEADER_JFD_CUAUHTEMOC_ANY" Language="zh_Hans_CN">
+			<Text>我不会与你来往，辱没我的先祖。</Text>
+		</Replace>
+		
+		<!-- AI请求 -->
+		
+		<Replace Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_JFD_CUAUHTEMOC_ANY" Language="zh_Hans_CN">
+			<Text>如果您能称自己为我的人民的朋友，我会非常荣幸的。</Text>
+		</Replace>
+		
+		<!-- 玩家接受后AI回应 -->
+		
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_CUAUHTEMOC_ANY" Language="zh_Hans_CN">
+			<Text>你很明智。</Text>
+		</Replace>
+		
+		<!-- 玩家拒绝后AI回应 -->
+		
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_CUAUHTEMOC_ANY" Language="zh_Hans_CN">
+			<Text>我没有意识到你会这么愚蠢。</Text>
+		</Replace>
+		
+		<!-- 结盟 -->
+		<!-- AI请求 -->
+		
+		<Replace Tag="LOC_DIPLO_MAKE_ALLIANCE_FROM_AI_LEADER_JFD_CUAUHTEMOC_ANY" Language="zh_Hans_CN">
+			<Text>我们需要盟友提供强有力的支撑。你愿意加入我们吗？</Text>
+		</Replace>
+		
+		<!-- 赞成与警告 -->
+		<!-- AI赞成 -->
+		
+		<Replace Tag="LOC_DIPLO_KUDO_EXIT_LEADER_JFD_CUAUHTEMOC_ANY" Language="zh_Hans_CN">
+			<Text>你是一位值得尊敬的朋友，我希望这一点不会改变。</Text>
+		</Replace>
+		
+		<!-- AI警告 -->
+		
+		<Replace Tag="LOC_DIPLO_WARNING_EXIT_LEADER_JFD_CUAUHTEMOC_ANY" Language="zh_Hans_CN">
+			<Text>你没有荣誉可言。在一场非正义的战争中，被杀害之人的鲜血无法浇灭诸神的欲望。</Text>
+		</Replace>
+		
+		<!-- AI警告玩家离开边境 -->
+		
+		<Replace Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_LEADER_JFD_CUAUHTEMOC_ANY" Language="zh_Hans_CN">
+			<Text>你派遣你的战士献祭吗？如果不是，他们应该离开我的领土。</Text>
+		</Replace>
+		
+		<!-- 贸易 -->
+		<!-- AI接受交易 -->
+		
+		<Replace Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_JFD_CUAUHTEMOC_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_CUAUHTEMOC_ANY}</Text>
+		</Replace>
+		
+		<!-- AI拒绝交易 -->
+		
+		<Replace Tag="LOC_DIPLO_REJECT_MAKE_DEAL_FROM_AI_LEADER_JFD_CUAUHTEMOC_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_CUAUHTEMOC_ANY}</Text>
+		</Replace>
+		
+		<!-- 谴责 -->
+		<!-- 受到谴责回应 -->
+		
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_JFD_CUAUHTEMOC_ANY" Language="zh_Hans_CN">
+			<Text>我不会接受这种羞辱。那将是你的血。</Text>
+		</Replace>
+		
+		<!-- AI谴责玩家 -->
+		
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_JFD_CUAUHTEMOC_ANY" Language="zh_Hans_CN">
+			<Text>你是一个软弱的统治者，是时候提取你的血液。[NEWLINE]（谴责你）</Text>
+		</Replace>
+		
+		<!-- 谴责理由 -->
+		
+		<Replace Tag="LOC_DIPLO_DENOUNCE_REASON_FROM_AI_LEADER_ANY_REASON_JFD_CUAUHTLATOANI_AVERSE_SURPRISE_WAR" Language="zh_Hans_CN">
+			<Text>（您对他人发动了突袭战争）</Text>
+		</Replace>
+		
+		<!-- 宣战 -->
+		<!-- 受到宣战后回应 -->
+		
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_JFD_CUAUHTEMOC_ANY" Language="zh_Hans_CN">
+			<Text>你的战士会遭献祭。</Text>
+		</Replace>
+		
+		<!-- AI宣战 -->
+		
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_JFD_CUAUHTEMOC_ANY" Language="zh_Hans_CN">
+			<Text>诸神需要鲜血。</Text>
+		</Replace>
+		
+		<!-- 求和 -->
+		<!-- AI接受求和 -->
+		
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_ACCEPT_DEAL_LEADER_JFD_CUAUHTEMOC_ANY" Language="zh_Hans_CN">
+			<Text>这次我同意和平。但我们很快就会重返战场。</Text>
+		</Replace>
+		
+		<!-- AI拒绝求和 -->
+		
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_REFUSE_DEAL_LEADER_JFD_CUAUHTEMOC_ANY" Language="zh_Hans_CN">
+			<Text>如果我接受这些条件，我就不适合统治我的人民。我必须拒绝。</Text>
+		</Replace>
+		
+		<!-- AI求和 -->
+		
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_FROM_AI_LEADER_JFD_CUAUHTEMOC_ANY" Language="zh_Hans_CN">
+			<Text>我们并没有辱没你。请你以和平为念，免得手染鲜血。</Text>
+		</Replace>
+		
+		<!-- 击败 -->
+		<!-- AI被击败 -->
+		
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_JFD_CUAUHTEMOC_ANY" Language="zh_Hans_CN">
+			<Text>立刻杀了我吧。</Text>
+		</Replace>
+		
+		<!-- 玩家被击败（在热座模式中会显示） -->
+		
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_JFD_CUAUHTEMOC_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_JFD_CUAUHTEMOC_ANY}</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

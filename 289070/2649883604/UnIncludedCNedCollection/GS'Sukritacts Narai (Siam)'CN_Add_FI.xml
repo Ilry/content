@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- GS'Sukritacts Narai (Siam)'CN_Add_FI -->
+<!-- Author: 春 , Clear8Sky -->
+<!-- DateCreated: 2021/9/13 16:25:34 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Sukritact's Narai (Siam)” 。该文件在 FrontEnd 与 InGame 时载入，需 Criteria ： Active_Expansion_2 -->
+	<LocalizedText>
+		<Replace Tag="LOC_LEADER_SUK_NARAI_NAME" Language="zh_Hans_CN">
+			<Text>那莱</Text>
+		</Replace>
+
+		<!-- 领袖特性 -->
+		
+		<Replace Tag="LOC_TRAIT_LEADER_SUK_SIAMOISES_NAME" Language="zh_Hans_CN">
+			<Text>暹罗大使馆</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_SUK_SIAMOISES_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>所有同盟类型的同盟点数每回合额外+0.25，每个有效同盟可为双方提供+15 [ICON_Gold] 金币、+3 [ICON_Culture] 文化值、+2 [ICON_Favor] 外交支持。水上市场及其每座建筑可为以所在城市为出发地的国际 [ICON_TradeRoute] 贸易路线各提供+1 [ICON_Science] 科技值。</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_TRAIT_LEADER_SUK_SIAMOISES_DESCRIPTION_XP2_DLC" Language="zh_Hans_CN">
+			<Text>拥有外交区的城市，可基于 [ICON_Citizen] 人口限制额外建造一个区域。区域及其每座建筑每回合可额外+1 [ICON_Favor] 外交支持、+1 [ICON_InfluencePerTurn] 影响力点数。成为宗主国时，下辖各类城邦对宫殿、领事馆、外交办提供的各类加成额外+1。每个有效同盟可为双方提供+3% [ICON_Gold] 金币、[ICON_Science] 科技值、[ICON_Culture] 文化值。</Text>
+		</Replace>
+
+		<!-- 领袖议程 -->
+		
+		<Replace Tag="LOC_AGENDA_SUK_PHRAKHLANG_NAME" Language="zh_Hans_CN">
+			<Text>财政部</Text>
+		</Replace>
+		<Replace Tag="LOC_AGENDA_SUK_PHRAKHLANG_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>喜欢和他结盟的拥有高额外交支持的文明。不喜欢有许多盟友却不与他结盟的文明。</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_SUK_NARAI_REASON_ANY" Language="zh_Hans_CN">
+			<Text>（您是一个在外交上很受欢迎的盟友）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_SUK_PHRAKHLANG_ALLIED" Language="zh_Hans_CN">
+			<Text>那莱很高兴有这么一个盟友。</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_DIPLO_WARNING_LEADER_SUK_NARAI_REASON_ANY" Language="zh_Hans_CN">
+			<Text>（您有许多盟友，却没有跟他结盟）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_SUK_PHRAKHLANG_NOT_ALLIED" Language="zh_Hans_CN">
+			<Text>那莱被轻视了，他不是你众多盟友中的一个。</Text>
+		</Replace>
+
+		<!-- 载入文本 -->
+		
+		<Replace Tag="LOC_LOADING_INFO_LEADER_SUK_NARAI" Language="zh_Hans_CN">
+			<Text>让您统治下的国家成为和平之国吧，那莱国王，让暹罗得以在繁荣中宁静绽放。开放的思想会为您赢得许多朋友，而小心谨慎，这些友谊将成为坚不可摧的同盟。通过与他们的贸易，你们的国家将会繁荣昌盛，暹罗也将一无所求，去吧！世界之冠上的宝石！</Text>
+		</Replace>
+
+		<!-- 外交 -->
+		<!-- 初次见面 -->
+		
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_SUK_NARAI_ANY" Language="zh_Hans_CN">
+			<Text>你一定是那个要来见我的外国人，我是那莱，暹罗的国王。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_SUK_NARAI_ANY" Language="zh_Hans_CN">
+			<Text>我的天文学家预测在我附近的一个城市可以看到日全食。也许你愿意和我一起去看看？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NEAR_INITIATOR_POSITIVE_LEADER_SUK_NARAI_ANY" Language="zh_Hans_CN">
+			<Text>你的慷慨说明你很仁慈。谢谢你！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_SUK_NARAI_ANY" Language="zh_Hans_CN">
+			<Text>如果我们要互相贸易，我们必须知道彼此首都的位置。同意吗？</Text>
+		</Replace>
+		
+		<!-- 议程外交 -->
+		
+		<Replace Tag="LOC_DIPLO_KUDO_EXIT_LEADER_SUK_NARAI_ANY" Language="zh_Hans_CN">
+			<Text>我认为有你这样一位精明的盟友是我的幸运，我可敬的朋友。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_EXIT_LEADER_SUK_NARAI_ANY" Language="zh_Hans_CN">
+			<Text>暹罗是一块富饶的土地。你会后悔没有把我们当作可能的盟友。</Text>
+		</Replace>
+		
+		<!-- 战争与和平 -->
+		<!-- 受到宣战后回应 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_SUK_NARAI_ANY" Language="zh_Hans_CN">
+			<Text>我本可以友好地赠予你很多，但你却坚持要用武力来夺取。那就放马过来吧，我的臣民和朋友会消灭你们这帮强盗。</Text>
+		</Replace>
+
+		<!-- AI宣战 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_SUK_NARAI_ANY" Language="zh_Hans_CN">
+			<Text>我们尝试了外交手段，但没有取得任何成果。战争是我们唯一的选择。</Text>
+		</Replace>
+
+		<!-- 求和 -->
+		
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_ACCEPT_DEAL_LEADER_SUK_NARAI_ANY" Language="zh_Hans_CN">
+			<Text>暹罗厌倦了这场战争。愿我们彼此和睦。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_REFUSE_DEAL_LEADER_SUK_NARAI_ANY" Language="zh_Hans_CN">
+			<Text>我很遗憾地说，我的答案是否定的。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_FROM_AI_LEADER_SUK_NARAI_ANY" Language="zh_Hans_CN">
+			<Text>我们臣民的苦难已经持续很久了。让我们寻求和平。</Text>
+		</Replace>
+		
+		<!-- 战败 -->
+		
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_SUK_NARAI_ANY" Language="zh_Hans_CN">
+			<Text>我尽力为暹罗和她的人民服务。看来我失败了。我不在时请照顾我的家人。</Text>
+		</Replace>
+		
+		<!-- 宣布友谊 -->
+		
+		<Replace Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_SUK_NARAI_ANY" Language="zh_Hans_CN">
+			<Text>如果我们宣布我们愿意合作，我们两国将会更加强大。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_SUK_NARAI_ANY" Language="zh_Hans_CN">
+			<Text>太棒了！让这成为更伟大的事情的开始。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_SUK_NARAI_ANY" Language="zh_Hans_CN">
+			<Text>很遗憾。也许下次吧。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_HUMAN_LEADER_SUK_NARAI_ANY" Language="zh_Hans_CN">
+			<Text>是的！愿友谊和商业永远把我们联系在一起。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_HUMAN_LEADER_SUK_NARAI_ANY" Language="zh_Hans_CN">
+			<Text>我的贵族们不准备接受如此慷慨的提议。也许等我们之间更熟悉些？</Text>
+		</Replace>
+		
+		<!-- 代表团 -->
+		
+		<Replace Tag="LOC_DIPLO_DELEGATION_FROM_AI_LEADER_SUK_NARAI_ANY" Language="zh_Hans_CN">
+			<Text>我为你们送去了我的一名奴隶发明的暹罗甜品——蛋黄花和蛋黄球。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_HUMAN_LEADER_SUK_NARAI_ANY" Language="zh_Hans_CN">
+			<Text>欢迎你的代表团。我将让我的皇室剧作家准备一部戏剧来接待他们。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_HUMAN_LEADER_SUK_NARAI_ANY" Language="zh_Hans_CN">
+			<Text>暹罗礼貌地拒绝了你的代表团。我们不需要你的礼物，但还是要谢谢你。</Text>
+		</Replace>
+		
+		<!-- 谴责 -->
+		
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_SUK_NARAI_ANY" Language="zh_Hans_CN">
+			<Text>你的言辞与公义仁慈之君不相称，我必不容你如此侮辱我。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_SUK_NARAI_ANY" Language="zh_Hans_CN">
+			<Text>尽管我试着去明白外邦人的处事之道，却仍不能容忍你的不义。</Text>
+		</Replace>
+		
+		<!-- 结盟 -->
+		
+		<Replace Tag="LOC_DIPLO_MAKE_ALLIANCE_FROM_AI_LEADER_SUK_NARAI_ANY" Language="zh_Hans_CN">
+			<Text>我们是好朋友，不是吗？你愿意建立一个同盟深化这种关系吗？</Text>
+		</Replace>
+		
+		<!-- 其他日常对话 -->
+		
+		<Replace Tag="LOC_DIPLO_GREETING_LEADER_SUK_NARAI_ANY" Language="zh_Hans_CN">
+			<Text>日安。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_MAKE_DEAL_FROM_AI_LEADER_SUK_NARAI_ANY" Language="zh_Hans_CN">
+			<Text>不可能。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_SUK_NARAI_ANY" Language="zh_Hans_CN">
+			<Text>太好了，我让财政大臣来处理细节。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_OPEN_BORDERS_FROM_AI_LEADER_SUK_NARAI_ANY" Language="zh_Hans_CN">
+			<Text>让我们本着友谊和商业的精神开放我们的相互边界！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_HUMAN_LEADER_SUK_NARAI_ANY" Language="zh_Hans_CN">
+			<Text>我允许你们自由通过暹罗的土地。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_HUMAN_LEADER_SUK_NARAI_ANY" Language="zh_Hans_CN">
+			<Text>在我弄清楚你的意图之前，我不能答应你。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_LEADER_SUK_NARAI_ANY" Language="zh_Hans_CN">
+			<Text>别以为你可以悄无声息地把你的士兵留在我的边境上。马上把它们撤走。</Text>
+		</Replace>
+		
+		<!-- 其他非日常对话 -->
+		
+		<Replace Tag="LOC_DIPLO_ACCEPT_MAKE_ALLIANCE_FROM_AI_LEADER_SUK_NARAI_ANY" Language="zh_Hans_CN">
+			<Text>愿我们的使节往来不受干扰，愿我们的友谊长存。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_RENEW_ALLIANCE_FROM_AI_LEADER_SUK_NARAI_ANY" Language="zh_Hans_CN">
+			<Text>我威严的朋友，我祈祷你愿意继续我们的同盟，我们俩都从中获益匪浅。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_ACCEPT_RENEW_ALLIANCE_FROM_HUMAN_LEADER_SUK_NARAI_ANY" Language="zh_Hans_CN">
+			<Text>是的！我将送你礼物以庆祝我们的长期同盟。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_RENEW_ALLIANCE_FROM_HUMAN_LEADER_SUK_NARAI_ANY" Language="zh_Hans_CN">
+			<Text>我们遗憾地说，暹罗现在不愿意继续同盟。我们真诚地道歉。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_ACCEPT_RENEW_ALLIANCE_FROM_AI_LEADER_SUK_NARAI_ANY" Language="zh_Hans_CN">
+			<Text>太棒了！谢谢，我国的商人们听到这个消息会很高兴的。当然，我也是。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_RENEW_ALLIANCE_FROM_AI_LEADER_SUK_NARAI_ANY" Language="zh_Hans_CN">
+			<Text>我不能强迫你同意，但我想你已经认识到你所犯的错误了。</Text>
+		</Replace>
+
+		<!-- 引言与百科 -->
+		
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_SUK_NARAI_QUOTE" Language="zh_Hans_CN">
+			<!-- 引用来源：http://www.siamese-heritage.org/jsspdf/1991/JSS_080_1h_FrancoSiameseRelationsIn17thCentury.pdf -->
+			<Text>愿我们的使馆能自由进出，无所顾忌；愿我们的友谊能坚定牢固，长久不衰。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_SUK_NARAI_TITLE" Language="zh_Hans_CN">
+			<Text>那莱</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_SUK_NARAI_SUBTITLE" Language="zh_Hans_CN">
+			<Text>那莱大帝</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_SUK_NARAI_CHAPTER_CAPSULE_BODY" Language="zh_Hans_CN">
+			<Text>与历史上相同，暹罗是外交与商业的中心。那莱加强了外交力度，为维持结盟提供有力的奖赏。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_SUK_NARAI_CHAPTER_DETAILED_BODY" Language="zh_Hans_CN">
+			<Text>暹罗的外交无与伦比，当解锁任何可奖励使者的市政时都会额外获得一位使者。下辖的城邦也会为暹罗的区域提供有效加成。为增加此效果，请将区域建在河流旁边以获得额外 [ICON_Amenities] 宜居度，以助扩展。暹罗的水上市场也将促使其争夺更多奢侈品资源，且公民在此工作时提供 [ICON_Culture] 文化值与 [ICON_Gold] 金币，因此在建立城市时请牢记这一点。那莱还将暹罗的外交优势扩展到其他主要参与者中，并为维持结盟和贸易提供了额外增益。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_SUK_NARAI_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]King Narai the Great or Ramathibodi III was the 27th monarch of Ayutthaya Kingdom, the 4th and the last monarch of the Prasat Thong dynasty. He was the king of Ayutthaya Kingdom from 1656 to 1688 and arguably the most famous king of the Prasat Thong dynasty.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_SUK_NARAI_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>Narai was a son of King Prasat Thong by a queen who was a daughter of King Song Tham, and he came to the throne after violent palace upheavals had cut short the reigns of his elder brother and his uncle. He was an effective ruler who dealt successfully with Siam’s traditional Southeast Asian rivals and was ambitious to thrust his kingdom onto the stage of world politics. Domestic policies in King Narai's reign were greatly affected by the interference of foreign powers most notably the Chinese to the north, the Dutch to the South, and the English who were making their first forays into India to the west. Policies revolved around either directly countering the influence, or creating a delicate balance of power between the different parties.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_SUK_NARAI_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>In 1660, the Chinese invaded the Burmese capitol at Ava to capture Zhu Youlang, the last Southern Ming emperor. Sensing a possible weakening of Burmese influence in the northern vassal states, King Narai began the Burmese–Siamese War of 1662–64 to bring Chiang Mai under the direct control of Ayutthya. Although the expedition was successful in taking control of Lampang and other smaller cities, a second expedition had to be conducted to bring Chiang Mai under control in 1662. After stopping a Burmese army incursion in 1663 at Sai Yok, Narai led an army of 60,000 in an invasion of Burma, capturing Martaban, Syriam, Rangoon, Hongsawadi, and then in 1664 laid siege to Pagan. After “causing many casualties in dead and wounded and capturing many prisoners of war”, the Siamese retreated.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_SUK_NARAI_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>After ruling from the city of Ayutthaya for ten years, he had the city of Lopburi restored so it could be a reserve capital. King Narai would eventually come to stay in Lopburi for long periods of time, about 8–9 months a year. The official reason for this move was that Lopburi afforded the king plenty of fresh air, and gave him plenty of opportunity for royal hunts, but the move to Lopburi was arguably prompted by the Dutch naval blockade of Ayutthaya in 1664 to enforce a fur monopoly. Lopburi, unlike Ayutthaya, was not vulnerable an attack by sea.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_SUK_NARAI_CHAPTER_HISTORY_PARA_5" Language="zh_Hans_CN">
+			<Text>The most remarkable aspect of King Narai's reign were the diplomatic missions that he sent and received during his reign. Missions were sent as far afield as France, England, and the Vatican, although at least two missions were lost at sea. Ties with states closer to Ayutthaya were not neglected as missions were also sent to Persia, Golconda (India), China, as well as other neighbouring states. 1662 marked the arrival of more French priests, their quarrels with the Portuguese Jesuits and Dominicans established in Ayutthaya, their vain attempts to heal the paralysis of Chaofa Aphaitot, the king's half-brother, the consecration of Louis Laneau as first Bishop of Ayutthaya, etc. They maintained excellent contacts with the Royal Court. The king was presented with sumptuously bound volumes containing not only copper engravings of biblical scenes, but also of Louis XIV, the royal palaces, vistas of Paris, and so on.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_SUK_NARAI_CHAPTER_HISTORY_PARA_6" Language="zh_Hans_CN">
+			<Text>Narai was very curious about the world outside Siam and he listened eagerly to these eulogies. The idea seeped (or was seeped) in to his mind that diplomatic contacts with so powerful a prince would enhance his status among the rulers of Southeast Asia and. rein in the Dutch. Their arrogance and power in the region worried him, and he never truly forgave nor forgot the 1663 blockade of the Chao Phraya river mouth. The French bishops Lambert and Laneau urged him to send an embassy to Versailles, and the agents of the Royal Company offered him passage for his envoys on the Soleil d'Orient. The King dispatched a lavish and vast embassy. Court astrologers had predicted all kinds of disasters for Siamese reckless enough to board western vessels, and events proved them to be right. The Soleil d'Orient left Bantam in August 1681, but never reached her destination. The hapless vessel likely perished somewhere between Madagascar and the Cape, with Siamese and French official suspecting Dutch interference.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_SUK_NARAI_CHAPTER_HISTORY_PARA_7" Language="zh_Hans_CN">
+			<Text>It would not be until later that Narai would try again. In the interval a Greek adventurer with the Latinized name of Constantine Phaulkon who formerly worked for the English East India Company was introduced into the court in 1681 as a skilled interpreter and quickly gained royal favor. He became a favourite of Narai, and urged the king to pursue his overtures towards the French. A modest mission of two nobles and a French priest to act as interpreter, set off for France in January 1684 on a small British vessel and reached Paris safely before the end of the year. They were recieved personally by Louis XIV in the Gallery of Mirrors in Versailles. The king said to him in his usual royal manner: “Please assure these gentlemen that I am delighted to have seen them, and that I shall comply with the utmost pleasure with the wishes of my brother the king of Siam”. In response, Louis XIV appointed Alexandre de Chaumont as his ambassador, and assigned the Abbe de Choisy as counsel and possible replacement. Six Jesuits, well-grounded in astronomy and mathematics, were to sail with the ambassador on the Oiseau and Maligne.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_SUK_NARAI_CHAPTER_HISTORY_PARA_8" Language="zh_Hans_CN">
+			<Text>The two vessels returned to France with an important Siamese embassy, a letter on gold foil and magnificent presents for the King and the Royal Family. The three ambassadors were selected with great care. The first ambassador was no one less than Okphra Visut Sunthorn, better known as Kosa Pan, who had shared a wet nurse with Phra Narai and was raised with him. The second and third ambassadors were outstanding mandarins with diplomatic experience. In June 1686 the two vessels dropped anchor in the seaport of Brest in Brittany after a smooth return voyage of hardly six months. All along the journey the three Siamese ambassadors had prepared themselves eagerly for their mission in France, asking lost of questions and taking notes. Father Vachet, who escorted them, was very helpful in this respect. We are very well informed about the eight months the Siamese delegation spent in France. Father Vachet's Memoirs, and the Diaries kept by several French courtiers such as Sourches and Dangeau, provide us with a wealth of details. But the most impressive source is the monthly Mercure galant which devoted no less than 2,000 small pages to the Siamese embassy.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_SUK_NARAI_CHAPTER_HISTORY_PARA_9" Language="zh_Hans_CN">
+			<Text>But this is where things begin to fall apart. Phaulkon was desperate for a French presence in Siam on which he could rely in case of emergency. He offered the fortresses of Bangkok and Mergui, the two “keys of the kingdom,” to the French. Thus the return mission carried soldiers to garrison these fortresses. Father Tachard managed to disembark well ahead of the others and to meet Phaulkon before Kosa Pan and his colleagues could advise against the cession of Bangkok and Mergui. The Greek convinced Phra Narai and his Council to put the two strongholds under French “protection.” Phra Phetracha, chief of the elephantry, was the only member of the Council to speak against the proposal, which was in the end approved by the king. Phetracha became in no time the heart of a nationalist anti-French movement, which was joined soon after by Kromluang Yothathep, Phra Narai's strongheaded daughter.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_SUK_NARAI_CHAPTER_HISTORY_PARA_10" Language="zh_Hans_CN">
+			<Text>Matters were brought to a head when King Narai fell gravely ill in March 1688 while the king stayed in Lopburi palaces. Aware of the coming succession dispute, in May 1688 Narai called together his closest councillors: Phaulkon, Phra Phetracha, and Mom Pi and nominated his daughter, Kromluang Yothathep to succeed him. The three councillors were to act as regents until the princess took on a partner of her choice from one of the two Siamese councillors. But when Narai was seriously ill with no hope of recovery, Phetracha arrested Phaulkon and the French officers. After questioning Mom Pi, he discovered Mom Pi had conspired with Phaulkon to assume the throne, and Mom Pi was executed. Further questioning of Phaulkon revealed a plot to raise a rebellion, and he too was executed. Narai, on his deathbed, was unable to do anything, except curse Phetracha and his son, Luang Sorasak. Luang Sorasak then had Narai's two brothers executed. On the death of King Narai, Phetracha proclaimed himself king. Siamese troops attacked the French troops during the Siege of Bangkok. Finally, the French soldiers were allowed to return to France. Thus ended the era of French influence in Siam.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_SUK_NARAI_CHAPTER_HISTORY_PARA_11" Language="zh_Hans_CN">
+			<Text>Although King Narai's reign witnessed the greatest extent of foreign influence at the Siamese court, his diplomatic achievements were to be reversed by his successor. It is debatable whether the new introspective attitude of his successors contributed to the weakening and eventual fall of Ayutthaya. Nevertheless, his reign's diplomatic achievements contributed to him being posthumously styled “the Great,” one of seven recognised as such in the history of Thailand. At the same time, the records of those involved in the diplomatic missions, particularly those from the west, have allowed historians to obtain a rare glimpse into the world of the Ayutthayan court as most original Ayutthaya records were destroyed with the city in 1767. These include the French accounts of the Chevalier de Chaumont, the Abbé de Choisy, Fr. Tachard, Claude de Forbin, de la Loubere and the Persian account of Muhammad Rabi' ibn Muhammad Ibrahim. Domestically, the relative stability during his reign also gave rise to the revival of Siamese literature during his reign. In addition, among the gifts that were exchanged between the Siamese and the French courts, two items from Siam were to have an unexpected impact on French history. The items were a pair of silver cannons that were eventually stored in the Royal Furniture Repository in Paris since they were classed as gifts rather than weapons. On the 14th of July, 1789, rioting Parisians discovered these cannons and hauled them over to the Bastille.</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

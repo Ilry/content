@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- GS'EpsTweak for Civic Units'CN_Add_IG -->
+<!-- Author: 牛奶大魔王 , Clear8Sky -->
+<!-- DateCreated: 2021/10/2 1:34:22 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “EpsTweak for Civic Units” 。该文件在 InGame 时载入，需 Criteria ：Active_Expansion_2 -->
+	<LocalizedText>
+		
+	<!-- GameText.xml文件 -->
+		<!-- 市政单位 -->
+		
+		<Replace Tag="LOC_EPSTWEAK_CIVIC_UNIT_LANDSKNECHT_PIKEMAN_NAME" Language="zh_Hans_CN">
+			<Text>长矛佣兵</Text>
+		</Replace>
+		<Replace Tag="LOC_EPSTWEAK_CIVIC_UNIT_LANDSKNECHT_PIKEMAN_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>中世纪抗骑兵单位。相较于长矛兵，训练长矛佣兵消耗的 [ICON_Production] 生产力减少40%，但每回合需要额外的 [ICON_Gold] 维护费用。攻击后可移动。</Text>
+		</Replace>
+		<Replace Tag="LOC_EPSTWEAK_CIVIC_UNIT_LANDSKNECHT_PIKENSHOT_NAME" Language="zh_Hans_CN">
+			<Text>枪刺与射击佣兵队</Text>
+		</Replace>
+		<Replace Tag="LOC_EPSTWEAK_CIVIC_UNIT_LANDSKNECHT_PIKENSHOT_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>文艺复兴时期的抗骑兵单位。相较于枪刺与射击方阵，训练枪刺与射击佣兵队消耗的 [ICON_Production] 生产力减少40%，但每回合需要额外的 [ICON_Gold] 维护费用。攻击后可移动。</Text>
+		</Replace>
+		<Replace Tag="LOC_EPSTWEAK_CIVIC_UNIT_TEMPLAR_KNIGHT_NAME" Language="zh_Hans_CN">
+			<Text>神殿骑士</Text>
+		</Replace>
+		<Replace Tag="LOC_EPSTWEAK_CIVIC_UNIT_TEMPLAR_KNIGHT_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>强大并昂贵的重骑兵单位，只能在拥有神社的城市用 [ICON_Faith] 信仰值购买。与宗教单位通处一个单元格时+5 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_EPSTWEAK_CIVIC_UNIT_COMMANDO_NAME" Language="zh_Hans_CN">
+			<Text>敢死队</Text>
+		</Replace>
+		<Replace Tag="LOC_EPSTWEAK_CIVIC_UNIT_COMMANDO_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>强大并昂贵的近战单位。无法用 [ICON_Gold] 金币购买，需要在拥有军事学院的城市中训练。可空投至7格范围内的任意位置（包括敌方单元格）；若在航空港或飞机跑道上进行空投，则范围延伸至12格。无视敌方区域控制。</Text>
+		</Replace>
+		<Replace Tag="LOC_EPSTWEAK_CIVIC_ABILITY_LANDSKNECHT_NAME" Language="zh_Hans_CN">
+			<Text>游击</Text>
+		</Replace>
+		<Replace Tag="LOC_EPSTWEAK_CIVIC_ABILITY_LANDSKNECHT_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>攻击后可移动。</Text>
+		</Replace>
+		<Replace Tag="LOC_EPSTWEAK_CIVIC_ABILITY_TEMPLAR_KNIGHT_NAME" Language="zh_Hans_CN">
+			<Text>神性狂热</Text>
+		</Replace>
+		<Replace Tag="LOC_EPSTWEAK_CIVIC_ABILITY_TEMPLAR_KNIGHT_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>与宗教单位通处一个单元格时+5 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		
+	<!-- Civilopedia.xml文件 -->
+		
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_EPSTWEAK_CIVIC_UNIT_LANDSKNECHT_PIKEMAN_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]Brainchild of archduke Maximilian I von Habsburg, the landsknecht were German mercenary pikemen of the 16th century. They were created in imitation of the legendary Swiss Reisläufer after their decisive victories in the Burgundian Wars, and would eventually supplant them as the best mercenary infantry available in Europe, fighting in almost every major engagement in the 16th century – often on both sides.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_EPSTWEAK_CIVIC_UNIT_LANDSKNECHT_PIKEMAN_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>In battle, landsknechts generally carried pikes of up to twenty feet in length. Some few also carried huge two-handed swords or halberds; these were used to chop the heads off of the pikes of their opponents. As the 16th century progressed and European armies steadily embraced gunpowder, landsknechts saw increased use in Pike and Shot formations.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_EPSTWEAK_CIVIC_UNIT_LANDSKNECHT_PIKENSHOT_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]Brainchild of archduke Maximilian I von Habsburg, the landsknecht were German mercenary pikemen of the 16th century. They were created in imitation of the legendary Swiss Reisläufer after their decisive victories in the Burgundian Wars, and would eventually supplant them as the best mercenary infantry available in Europe, fighting in almost every major engagement in the 16th century – often on both sides.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_EPSTWEAK_CIVIC_UNIT_LANDSKNECHT_PIKENSHOT_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>In battle, landsknechts generally carried pikes of up to twenty feet in length. Some few also carried huge two-handed swords or halberds; these were used to chop the heads off of the pikes of their opponents. As the 16th century progressed and European armies steadily embraced gunpowder, landsknechts saw increased use in Pike and Shot formations.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_EPSTWEAK_CIVIC_UNIT_TEMPLAR_KNIGHT_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>骑士团出现于中世纪的十字军东征期间，系西欧封建主为保卫他们在东方所侵占的领地而建立的宗教性封建军事组织。[NEWLINE]第一次十字军远征（1096-1099年）结束后，十字军陆续占领了地中海东岸最富庶的地区和最繁荣的工商业城市，并在这一带建立起4个十字军国家，其所占领地首尾相接从南到北竟有1200公里长。由于这一带地处沿海，地势平坦，缺少天然屏障，易攻难守，时刻有遭受进攻的可能，在穆斯林虎视眈眈的威胁之下，十字军国家处于动荡不安之中。[NEWLINE]为巩固这些国家，亟需建立一支常备武装力量。于是，罗马教皇又组织起几个僧侣骑士团，这就是历史上著名的三大骑士团，即医院骑士团（12世纪初）、圣殿骑士团（约1118年）和条顿骑士团（1198年）。其使命是镇压十字军国家中人民的反抗，与毗邻的穆斯林国家作战，保卫并扩大十字军领地。这三个骑士团不久便发展为精锐的职业军，能够在任何地方与敌人交手。他们在欧洲大规模招兵买马，其实力日渐强大。[NEWLINE]就表面上的形式和性质而论，骑士团是一种僧侣帮会，其宗教方面的约束类似于修道士。这些僧侣骑士绝大部分是西欧各国破落贵族出身的亡命徒，他们被按照修道会方式组织起来，为"保卫基督教"而奉献一生。骑士团的成员不得娶妻生子，不得谋求财富，不可违背上级（天主教会）的旨意，决不可因迷恋世俗生活而动摇自己"献身基督教"的意志。</Text>
+			<!-- 译者注：笨蛋奶自己从别处找资料写的，以后自己翻译补上，附原文：After the conquest of Jerusalem by the first christian crusade in the late 11th century, its leaders were burdened with many new administrative and humanitarian problems in a very unstable political situation. Several of the crusading knights stepped up to the task of solving them as volunteers, forming religious orders in the style of monastic ones, each devoted to a specific purpose in the holy land, such as the Knights Templar, the Knights Hospitaller, and the Teutonic Knights. After these initial organisations were recognized by the Pope and gained fame across Christianity, several other orders were formed across Europe to combat what the Vatican perceived as threats to it: Muslim invaders in the Iberian Peninsula (modern-day Spain and Portugal) and Eastern Europe, as well as pagan tribes. -->
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_EPSTWEAK_CIVIC_UNIT_TEMPLAR_KNIGHT_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>其中，最著名的是圣殿骑士。他们的骑士团成立于1119年，他们致力于保护基督徒前往圣地朝圣。当耶路撒冷城安全的时候，周围的土地被强盗和掠夺者蹂躏着毫无防备的朝圣者。圣堂武士作为武装护卫者守护着他们，但同时也提供了一种创新的金融服务，让朝圣者将财富存放起来以备保管，这使得他们成为强盗们不太理想的目标。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_EPSTWEAK_CIVIC_UNIT_TEMPLAR_KNIGHT_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>骑士团一开始只有9名骑士，但通过大量捐赠，成指数增长成为中世纪世界最有影响力的力量之一。教皇英诺森二世允许他们免于遵守当地法律，这意味着他们可以跨越任何边界，不需要纳税，也不需要对教皇以外的任何人负责。他们利用这一私有地位，在整个欧洲建立了一个由征用地、堡垒、农场和工业组成的庞大网络，并成为其事实上的银行体系。然而，在耶路撒冷失守后，对该组织的支持减弱，取而代之的是越来越严重的不信任。他们达到了一个规模，他们开始不方便许多贵族，和野生谣言漩涡有关他们的秘密仪式和传统。法国国王菲利浦四世以此为契机，通过摆脱骑士团本身，摆脱了他在骑士团中积累的巨额债务。1312年，他在没有任何警告的情况下迫使教皇解散了该组织，在法国逮捕了该组织的成员，对他们施以酷刑，使他们对异端邪说供认不讳，并将他们烧死在火刑柱上。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_EPSTWEAK_CIVIC_UNIT_TEMPLAR_KNIGHT_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>在随后的几个世纪里，圣殿骑士团的天文财富、秘密和戏剧性的结局共同引发了许多猜测和阴谋论，在其他骑士团失去所有关联的情况下，他们的名字在各种著作中保留了很久。正因为如此，围绕着他们传说的丰富神话在流行文化中经久不衰，“圣殿骑士”这个词的原意也被侵蚀了。相反，它已被用来作为一个笼统的术语，任何骑士属于一个宗教秩序。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_EPSTWEAK_CIVIC_UNIT_COMMANDO_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>1940年6月，在经历了法国战役的灾难性挫折之后，温斯顿·丘吉尔呼吁组建一支经过训练的特种部队，对德国占领的欧洲进行突击行动。负责执行这一指令的英国总参谋长助理达德利·克拉克中校建议，新兵团应仿效布尔突击队以及他们在1899-1902年第二次布尔战争中所采用的战术。由此产生的部队将被称为英国突击队，他在第二次世界大战的每一个主要战区服役，并极大地影响了此后几乎每一个盟国其他特种部队的组建。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_EPSTWEAK_CIVIC_UNIT_COMMANDO_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>“突击队”这个词在17世纪中期首次被使用，在南非的荷兰开普殖民地，它指的是一队骑兵。然而，起源语言存在争议。各种来源引用它作为荷兰语（“kommando”）或葡萄牙语（“comando”），甚至南非荷兰语，这反过来又借用了其他两个词之一，并赋予它“民兵”或“袭击”的含义。脱离荷兰殖民地后，布尔人继续以非常规战术使用突击队，以避开人数上占优势的祖鲁人，后来在布尔战争中与英国帝国军作战。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_EPSTWEAK_CIVIC_UNIT_COMMANDO_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>英军突击队在整个战争期间的各种行动中，采用了小队突袭和全旅快速攻击的混合方式。与普通步兵相比，他们的装备和装甲都不那么精良，并且使用了各种各样的专用装备，提高了他们的机动性，同时也具备了一些无声突袭的能力。这种非常规的装载和方法被大多数后来的特种部队仿效，尽管在现代这些部队更倾向于集中于直接缓和、前线侦察和镇压叛乱。</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

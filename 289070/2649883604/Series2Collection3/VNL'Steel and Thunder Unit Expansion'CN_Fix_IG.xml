@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'Steel and Thunder Unit Expansion'CN_Fix_IG -->
+<!-- Author: Clear8Sky -->
+<!-- DateCreated: 2021/8/27 10:55:22 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Steel and Thunder: Unit Expansion” 。该文件在 InGame 时载入，无需任何 Criteria -->
+	<LocalizedText>
+		<Replace Tag="LOC_ABILITY_AUTOMATIC_GUNFIRE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>对抗除重骑兵以外陆地战斗单位+8 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_CITY_CENTER_NERF_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>对抗区域时 [COLOR_RED]-6 [ICON_Ranged][ENDCOLOR] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_EXPLORER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>[ICON_Movement] 移动时无视河流影响，且登陆不消耗 [ICON_Movement] 移动力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_PLUS_X_WHEN_DEFENDING_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>防御时+8 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_PRE_GUNPOWDER_MELEE_ATTACK_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>于非区域单元格上对抗文艺复兴时代前近战单位+6 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_UNIT_COG_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>中世纪海军近战单位。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_EXPLORER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>文艺复兴时期快速移动的侦察单位，跨河或从海上登陆不消耗 [ICON_Movement] 移动力。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_GATLING_GUN_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>工业时代远程单位。对抗近战、抗骑兵和轻骑兵单位时+8 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_MACHINE_GUN_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>原子能时代远程单位。对抗近战、抗骑兵和轻骑兵单位时+8 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_ROCKET_ARTILLERY_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>信息时代远程单位。</Text>
+		</Replace>
+
+		<Replace Tag="MINUS_X_VS_CITY_CENTERS_DESC" Language="zh_Hans_CN">
+			<Text>[COLOR_RED]-6 [ICON_Ranged][ENDCOLOR] 战斗力 来自于对抗区域</Text>
+		</Replace>
+		<Replace Tag="PLUS_15_VS_LIGHT_CAVALRY_COMBAT_BONUS_DESC" Language="zh_Hans_CN">
+			<Text>+15 [ICON_Strength] 战斗力 来自于对抗轻骑兵单位</Text>
+		</Replace>
+		<Replace Tag="PLUS_20_VS_HEAVY_CAVALRY_COMBAT_BONUS_DESC" Language="zh_Hans_CN">
+			<Text>+20 [ICON_Strength] 战斗力 来自于对抗重骑兵单位</Text>
+		</Replace>
+		<Replace Tag="PLUS_X_VS_MELEE_ANTICAV_LIGHTCAV_COMBAT_BONUS_DESC" Language="zh_Hans_CN">
+			<Text>+8 [ICON_Strength] 战斗力 来自于对抗除重骑兵以外的陆地战斗单位</Text>
+		</Replace>
+		<Replace Tag="PLUS_X_VS_PRE_GUNPOWDER_MELEE_DESC" Language="zh_Hans_CN">
+			<Text>+6 [ICON_Strength] 战斗力 来自于在非区域单元格上对抗文艺复兴时代前的近战单位</Text>
+		</Replace>
+		<Replace Tag="PLUS_X_WHEN_DEFENDING_DESC" Language="zh_Hans_CN">
+			<Text>+8 [ICON_Strength] 战斗力 来自于防御</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

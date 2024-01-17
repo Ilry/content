@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RFXGS'Gedemo Mongke Khan'CN_Add_FI -->
+<!-- Author: 春 , Clear8Sky -->
+<!-- DateCreated: 2021/9/11 22:26:27 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Gedemo Mongke Khan” 。该文件在 FrontEnd 与 InGame 时载入，需 Criteria ： Active_Expansion_1 与 Active_Expansion_2 -->
+	<LocalizedText>
+		<Replace Tag="LOC_GEDEMO_CITY_CENTER_GET_SCIENCE" Language="zh_Hans_CN">
+			<Text>+{1_num} [ICON_Science] 科技值 来自相邻 区域</Text>
+		</Replace>
+
+		<Replace Tag="LOC_TRAIT_LEADER_GEDEMO_KUBILAI_NAME" Language="zh_Hans_CN">
+			<Text>拖雷革命</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_GEDEMO_KUBILAI_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>相邻 [ICON_DISTRICT_CITY_CENTER] 市中心的 [ICON_District] 区域每回合提供+1 [ICON_GreatGeneral] 大将军点数。完成科技“工程”后，[ICON_DISTRICT_CITY_CENTER] 市中心可从区域获得标准 [ICON_Science] 科技值相邻加成。建立城市可获得额外领土。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_LEADER_GEDEMO_KUBILAI" Language="zh_Hans_CN">
+			<Text>蒙哥汗</Text>
+		</Replace>
+
+		<Replace Tag="LOC_LOADING_INFO_LEADER_GEDEMO_KUBILAI" Language="zh_Hans_CN">
+			<Text>赞美您，蒙古帝国的蒙哥汗皇帝！您是拖雷家族的第一位可汗；在您统治期间，您为改善帝国的理政进行了重大改革。在您的指挥下，大理、伊拉克和叙利亚尽数被征服。尽管您的帝国幅员辽阔，但您依然努力维护蒙古族的传统，而这些都有目共睹。[NEWLINE]您能建立一个经得起时间考验的文明吗？</Text>
+		</Replace>
+
+		<!-- 百科 -->
+
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_GEDEMO_KUBILAI_TITLE" Language="zh_Hans_CN">
+			<Text>蒙哥汗</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_GEDEMO_KUBILAI_SUBTITLE" Language="zh_Hans_CN">
+			<Text>蒙古帝国第四代可汗</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_GEDEMO_KUBILAI_QUOTE" Language="zh_Hans_CN">
+			<Text>我们蒙古人相信一位神，依靠祂我们生老病死。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_GEDEMO_KUBILAI_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]Great khan of the Mongols (1251-1259), born around 1208 in Mongolia, died in 1259 in Sichuan, China. Grandson of Genghis Khan and heir to the vast Mongol Empire, Möngke was elected Grand Khan in 1251. He will be the last bearer of this title to settle his capital in Karakorum, in the heart of Mongolia. During his reign, the city reached an unprecedented splendor, while the expansion of the empire continued at a steady pace. Its territories become so vast and diverse that Möngke is the last Grand Khan capable of exercising real authority over all Mongol conquests. In the West, his armies, led by his brother Hulegu, launched an attack against Iran, crushing the last pockets of resistance at the end of the year 1256. The Mongols then advanced towards Iraq and seized the capital, Baghdad, in 1258. They then continue as far as Syria in 1259 and seize Damascus and Aleppo before reaching the Mediterranean.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_GEDEMO_KUBILAI_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>In the east, Möngke's armies, under the command of his other brother, the famous Qubilai (1215-1294), overwhelmed the Chinese to the south and conquered the Thai kingdom of Nanzhao in 1253, located in the present-day province of Yunnan (China). They then subjugate a large part of the land constituting Vietnam today. At the same time, most of the Mongolian troops began to advance into China proper. In 1257, Möngke himself took the lead of his armies in the region. However, an epidemic decimates his ranks and he in turn succumbs to it while on the battlefield. His brother Qubilai then succeeded him and finished conquering China. A severe man considered a benevolent sovereign by his contemporaries, Möngke tried to preserve ancestral Mongol traditions.</Text>
+		</Replace>
+
+		<!-- 外交 -->
+
+		<!-- 初次见面 -->
+		<!-- 开场白 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_GEDEMO_KUBILAI_ANY" Language="zh_Hans_CN">
+			<Text>你当惧怕战兢，因为你站在天之子的面前。你有什么资本能跟我这样的征服者打交道？</Text>
+		</Replace>
+
+		<!-- 到附近城市的邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_GEDEMO_KUBILAI_ANY" Language="zh_Hans_CN">
+			<Text>我是忽必烈·可汗，伟大的可汗！你想参观我们最近的城市吗？</Text>
+		</Replace>
+
+		<!-- AI接受玩家邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NEAR_INITIATOR_POSITIVE_LEADER_GEDEMO_KUBILAI_ANY" Language="zh_Hans_CN">
+			<Text>谢谢你。</Text>
+		</Replace>
+
+		<!-- AI邀请玩家交换首都信息 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_GEDEMO_KUBILAI_ANY" Language="zh_Hans_CN">
+			<Text>我邀请你交换首都的信息。</Text>
+		</Replace>
+
+		<!-- 问候 -->
+
+		<Replace Tag="LOC_DIPLO_GREETING_LEADER_GEDEMO_KUBILAI_ANY" Language="zh_Hans_CN">
+			<Text>你好！</Text>
+		</Replace>
+
+		<!-- 代表团 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_HUMAN_LEADER_GEDEMO_KUBILAI_ANY" Language="zh_Hans_CN">
+			<Text>我愉快地接受你的代表团。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_HUMAN_LEADER_GEDEMO_KUBILAI_ANY" Language="zh_Hans_CN">
+			<Text>很不幸，不行。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DELEGATION_FROM_AI_LEADER_GEDEMO_KUBILAI_ANY" Language="zh_Hans_CN">
+			<Text>我向你们派遣了商贸团，带着我国的礼物：咸奶茶、牛肉炸饺和马奶酒。</Text>
+		</Replace>
+
+		<!-- 开放边境 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_HUMAN_LEADER_GEDEMO_KUBILAI_ANY" Language="zh_Hans_CN">
+			<Text>我同意为你们的士兵开放边境。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_HUMAN_LEADER_GEDEMO_KUBILAI_ANY" Language="zh_Hans_CN">
+			<Text>我目前不感兴趣。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_OPEN_BORDERS_FROM_AI_LEADER_GEDEMO_KUBILAI_ANY" Language="zh_Hans_CN">
+			<Text>你能允许我的部队通过你的领土吗？</Text>
+		</Replace>
+
+		<!-- 宣布友谊 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_HUMAN_LEADER_GEDEMO_KUBILAI_ANY" Language="zh_Hans_CN">
+			<Text>我接受你的友谊。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_HUMAN_LEADER_GEDEMO_KUBILAI_ANY" Language="zh_Hans_CN">
+			<Text>我拒绝这样荒谬的提议。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_GEDEMO_KUBILAI_ANY" Language="zh_Hans_CN">
+			<Text>仔细考虑一下我们的友谊吧，这对你很有好处。</Text>
+		</Replace>
+
+		<!-- 玩家接受后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_GEDEMO_KUBILAI_ANY" Language="zh_Hans_CN">
+			<Text>感谢你，朋友。</Text>
+		</Replace>
+
+		<!-- 玩家拒绝后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_GEDEMO_KUBILAI_ANY" Language="zh_Hans_CN">
+			<Text>真失望。</Text>
+		</Replace>
+
+		<!-- 结盟 -->
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_ALLIANCE_FROM_AI_LEADER_GEDEMO_KUBILAI_ANY" Language="zh_Hans_CN">
+			<Text>你愿意和大汗结盟吗？</Text>
+		</Replace>
+
+		<!-- 赞成与警告 -->
+		<!-- AI赞成 -->
+
+		<Replace Tag="LOC_DIPLO_KUDO_EXIT_LEADER_GEDEMO_KUBILAI_ANY" Language="zh_Hans_CN">
+			<Text>嘿！你真不错！！！</Text>
+		</Replace>
+
+		<!-- AI警告 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_EXIT_LEADER_GEDEMO_KUBILAI_ANY" Language="zh_Hans_CN">
+			<Text>你正滑向深渊！</Text>
+		</Replace>
+
+		<!-- AI警告玩家离开边境 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_LEADER_GEDEMO_KUBILAI_ANY" Language="zh_Hans_CN">
+			<Text>大批军队正在我们边界之间集结，你愿意在不幸的事情发生之前把他们撤走吗？</Text>
+		</Replace>
+
+		<!-- 贸易 -->
+		<!-- AI接受交易 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_GEDEMO_KUBILAI_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_GEDEMO_KUBILAI_ANY}</Text>
+		</Replace>
+
+		<!-- AI拒绝交易 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_MAKE_DEAL_FROM_AI_LEADER_GEDEMO_KUBILAI_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_GEDEMO_KUBILAI_ANY}</Text>
+		</Replace>
+
+		<!-- 谴责 -->
+		<!-- 受到谴责回应 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_GEDEMO_KUBILAI_ANY" Language="zh_Hans_CN">
+			<Text>我对你已经厌烦了。</Text>
+		</Replace>
+
+		<!-- AI谴责玩家 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_GEDEMO_KUBILAI_ANY" Language="zh_Hans_CN">
+			<Text>你在我们背后搞阴谋。请放心，我会警告别人的！[NEWLINE]（谴责你）</Text>
+		</Replace>
+
+		<!-- 宣战 -->
+		<!-- 受到宣战后回应 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_GEDEMO_KUBILAI_ANY" Language="zh_Hans_CN">
+			<Text>我会吞并你的领土！</Text>
+		</Replace>
+
+		<!-- AI宣战 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_GEDEMO_KUBILAI_ANY" Language="zh_Hans_CN">
+			<Text>战争爆发了！</Text>
+		</Replace>
+
+		<!-- 求和 -->
+		<!-- AI接受求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_ACCEPT_DEAL_LEADER_GEDEMO_KUBILAI_ANY" Language="zh_Hans_CN">
+			<Text>让我们和解！</Text>
+		</Replace>
+
+		<!-- AI拒绝求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_REFUSE_DEAL_LEADER_GEDEMO_KUBILAI_ANY" Language="zh_Hans_CN">
+			<Text>不可能。</Text>
+		</Replace>
+
+		<!-- AI求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_FROM_AI_LEADER_GEDEMO_KUBILAI_ANY" Language="zh_Hans_CN">
+			<Text>我提议休战，你认为到时候了吗？</Text>
+		</Replace>
+
+		<!-- 击败 -->
+		<!-- AI被击败 -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_GEDEMO_KUBILAI_ANY" Language="zh_Hans_CN">
+			<Text>我的帝国陨落了，你接替了我的事业。</Text>
+		</Replace>
+
+		<!-- 玩家被击败（在热座模式中会显示） -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_GEDEMO_KUBILAI_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_GEDEMO_KUBILAI_ANY}</Text>
+		</Replace>
+
+		<Replace Tag="LOC_AGENDA_GEDEMO_KUBILAI_NAME" Language="zh_Hans_CN">
+			<Text>忽里勒台</Text>
+		</Replace>
+		<Replace Tag="LOC_AGENDA_GEDEMO_KUBILAI_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>试图在他的帝国中揽括尽可能多的领土。不喜欢控制领土狭小的文明。</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

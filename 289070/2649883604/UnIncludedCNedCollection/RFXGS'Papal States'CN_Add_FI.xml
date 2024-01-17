@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RFXGS'Papal States'CN_Add_FI -->
+<!-- Author: Clear8Sky -->
+<!-- DateCreated: 2021/9/25 15:48:08 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Papal States” 。该文件在 FrontEnd 与 InGame 时载入，需 Criteria ： Active_Expansion_1 与 Active_Expansion_2 -->
+	<LocalizedText>
+		
+		<!-- 模组 -->
+		
+		<Replace Tag="LOC_MOD_JFD_PAPAL_STATES_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>------------------------------------[NEWLINE]文明 - 教皇领[NEWLINE][NEWLINE]文明特性 - 圣座[NEWLINE]初始每回合+1 [ICON_GREATPROPHET] 大预言家点数。所有宗教单位的使用次数+1，且无视区域控制。[NEWLINE][NEWLINE]特色区域 - 教区[NEWLINE]教皇领特色区域，取代圣地。[NEWLINE]所在城市可用 [ICON_Faith] 信仰值购买神社与寺庙。教区与市中心、市政广场或外交区相邻时，可提供大量信仰值相邻加成。[NEWLINE][NEWLINE]特色单位 - 宗座瑞士卫队[NEWLINE]教皇领文艺复兴时期特色近战单位，由市政“外交部门”解锁。可用 [ICON_Gold] 金币购买。防御城市攻击时+10 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		
+		<!-- 文明 -->
+		
+		<Replace Tag="LOC_CIVILIZATION_JFD_PAPAL_STATES_NAME" Language="zh_Hans_CN">
+			<Text>教皇领</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVILIZATION_JFD_PAPAL_STATES_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>教宗帝国</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVILIZATION_JFD_PAPAL_STATES_ADJECTIVE" Language="zh_Hans_CN">
+			<Text>教皇领的</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVILIZATION_JFD_PAPAL_STATES_DESCRIPTION_JFD_CIVILIZATION" Language="zh_Hans_CN">
+			<Text>教宗文明</Text>
+		</Replace>
+		
+		<!-- 文明百科 -->
+		
+		<Replace Tag="LOC_CIVINFO_JFD_PAPAL_STATES_LOCATION" Language="zh_Hans_CN">
+			<Text>欧洲</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVINFO_JFD_PAPAL_STATES_POPULATION" Language="zh_Hans_CN">
+			<Text>约1000（梵蒂冈城）</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVINFO_JFD_PAPAL_STATES_SIZE" Language="zh_Hans_CN">
+			<Text>约0.17平方英里（0.44平方公里）（梵蒂冈城）</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVINFO_JFD_PAPAL_STATES_CAPITAL" Language="zh_Hans_CN">
+			<Text>罗马</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_JFD_PAPAL_STATES_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]The Papal States from 754 to 1870 was an independent territory under the temporal rule of the popes, also called the States of the Church and the Pontifical States. The territory varied in size at different times; in 1859 it included c.16,000 sq mi (41,440 sq km) extending north-south on the Italian peninsula, from the Adriatic Sea and lower course of the Po River to the Tyrrhenian Sea, thus including the present regions of Latium, Umbria, Marche, and eastern Emilia-Romagna.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_JFD_PAPAL_STATES_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>The nucleus of the states consisted of endowments given to the popes from the 4th cent. in and around Rome, in other areas of the Italian mainland, and in Sicily, Sardinia, and other lands; these came to be called the Patrimony of St. Peter. The popes gradually lost their more distant lands, but in the duchy of Rome papal power became stronger and increasingly independent of the Eastern emperors and of the other states in Italy.[NEWLINE][NEWLINE]In 754 (confirmed 756), Pepin the Short gave to Pope Stephen II the exarchate of Ravenna and the Pentapolis (Rimini, Ancona, Fano, Pesaro, and Senigallia). (Like Pope Zacharias, Pope Stephen II had recognized Pepin as rightful king of the Franks, and Pepin now needed papal assistance against the Lombards.) Over these vast territories the popes were long unable to exercise effective temporal sovereignty. In 774, Charlemagne confirmed the donation of his father, Pepin the Short; moreover, to give the papal claim to temporal power greater antiquity, the so-called Donation of Constantine (see Constantine, Donation of) to Pope Sylvester I was forged. On its basis later popes also claimed suzerainty over Naples, Sicily, and Sardinia. In 1115, Countess Matilda of Tuscany, by leaving her territories to the church, helped to precipitate a long struggle between popes and emperors.[NEWLINE][NEWLINE]In Rome itself, the popes' temporal power, almost nonexistent in the 10th cent., remained greatly limited until the 14th cent. by the interference of the emperors, by the power of the nobles, and by the ambitions of the commune of Rome, which contended that its authority also extended over the Papal States. In the 13th and 14th cent., the emperors renounced their claims to the duchy of Spoleto, the Romagna, and the March of Ancona; however, the free communes and petty tyrannies that dominated these regions long resisted effective papal control. The Comtat Venaissin, a papal possession in S France until 1791 (though not a part of the Papal States), was acquired in 1274; in 1309, Avignon became the seat of the popes. From 1309 to 1417, during the "Babylonian Captivity" at Avignon and the Great Schism, the Papal States were in chaotic condition, only temporarily relieved by the efforts of Cardinal Albornoz.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_JFD_PAPAL_STATES_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>Actual control by the papacy of its territories began in the 16th cent., when Cesare Borgia, son of Pope Alexander VI, conquered the petty states of the Romagna and Marche; after his fall (1503) most of them passed directly under papal rule. In the early 16th cent., Pope Julius II consolidated papal power by abolishing local autonomies and by participating effectively in the Italian Wars. The last principalities to lose their autonomy to the popes were Ferrara (1598) and Urbino (1631). The duchy of Castro was added in 1649. Parma and Piacenza were alienated (1545) through the nepotism of Pope Paul III.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_JFD_PAPAL_STATES_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>After the Counter Reformation (16th cent.) the spiritual power of the papacy grew while its political power waned. Papal troops, mostly Swiss and other mercenaries, offered almost no resistance to the French invaders under Napoleon Bonaparte (see Napoleon I) in 1796. Pius VI and his successor, Pius VII, saw their states curtailed, occupied, and twice abolished between 1796 and 1814. The Congress of Vienna fully restored (1815) the states of the papacy and placed them under Austrian protection.[NEWLINE][NEWLINE]Conspiracies and revolutions (notably of 1831 and 1848–49) characterized the following decades. Pius IX was liberal at his accession and granted his states a constitution, but the events of 1848 turned him against the revolutionists. During the Risorgimento, only French intervention at Rome prevented the total absorption of the Papal States. After the Austrians left (1859) Bologna and the Romagna, both united (1860) with the kingdom of Sardinia, as did Marche and Umbria. Giuseppe Garibaldi invaded the remaining Papal States twice but was prevented from taking Rome—in 1862 by the intervention of Victor Emmanuel II of Italy, and in 1867 by Napoleon III.[NEWLINE][NEWLINE]The fall of Napoleon permitted Victor Emmanuel to seize Rome in 1870. However, Pius IX refused to recognize the loss of temporal power and became a "prisoner" in the Vatican; his successors followed his example. The so-called Roman Question was only resolved in 1929 by the Lateran Treaty, which, among other things, established Vatican City.</Text>
+		</Replace>
+		
+		<!-- 文明特性 -->
+		
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_JFD_APOSTOLIC_SEE_NAME" Language="zh_Hans_CN">
+			<Text>圣座</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_JFD_APOSTOLIC_SEE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>初始每回合+1 [ICON_GREATPROPHET] 大预言家点数。所有宗教单位的使用次数+1，且无视区域控制。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_JFD_APOSTOLIC_SEE_NAME" Language="zh_Hans_CN">
+			<Text>圣座</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_JFD_APOSTOLIC_SEE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>无视区域控制。</Text>
+		</Replace>
+		
+		<!-- 城市 -->
+		
+		<Replace Tag="LOC_CITY_NAME_JFD_PAPAL_STATES_2" Language="zh_Hans_CN">
+			<Text>贝内文托</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_PAPAL_STATES_3" Language="zh_Hans_CN">
+			<Text>蓬泰科尔沃</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_PAPAL_STATES_4" Language="zh_Hans_CN">
+			<Text>阿斯科利</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_PAPAL_STATES_5" Language="zh_Hans_CN">
+			<Text>甘多尔福堡</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_PAPAL_STATES_6" Language="zh_Hans_CN">
+			<Text>阿维尼翁</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_PAPAL_STATES_7" Language="zh_Hans_CN">
+			<Text>拉韦纳</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_PAPAL_STATES_8" Language="zh_Hans_CN">
+			<Text>博洛尼亚</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_PAPAL_STATES_9" Language="zh_Hans_CN">
+			<Text>费拉拉</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_PAPAL_STATES_10" Language="zh_Hans_CN">
+			<Text>奇维塔韦基亚</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_PAPAL_STATES_11" Language="zh_Hans_CN">
+			<Text>佩鲁贾</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_PAPAL_STATES_12" Language="zh_Hans_CN">
+			<Text>阿西西</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_PAPAL_STATES_13" Language="zh_Hans_CN">
+			<Text>奥尔维耶托</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_PAPAL_STATES_14" Language="zh_Hans_CN">
+			<Text>西尼加利亚</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_PAPAL_STATES_15" Language="zh_Hans_CN">
+			<Text>安科纳</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_PAPAL_STATES_16" Language="zh_Hans_CN">
+			<Text>古比奥</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_PAPAL_STATES_17" Language="zh_Hans_CN">
+			<Text>卡梅里诺</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_PAPAL_STATES_18" Language="zh_Hans_CN">
+			<Text>费尔莫</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_PAPAL_STATES_19" Language="zh_Hans_CN">
+			<Text>里米尼</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_PAPAL_STATES_20" Language="zh_Hans_CN">
+			<Text>乌尔比诺</Text>
+		</Replace>
+		
+		<!-- 公民 -->
+		
+		<Replace Tag="LOC_CITIZEN_JFD_PAPAL_STATES_MALE_1" Language="zh_Hans_CN">
+			<Text>乔瓦尼</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_PAPAL_STATES_MALE_2" Language="zh_Hans_CN">
+			<Text>法比奥</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_PAPAL_STATES_MALE_3" Language="zh_Hans_CN">
+			<Text>朱利奥</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_PAPAL_STATES_MALE_4" Language="zh_Hans_CN">
+			<Text>德乔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_PAPAL_STATES_MALE_5" Language="zh_Hans_CN">
+			<Text>费代里科</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_PAPAL_STATES_MALE_6" Language="zh_Hans_CN">
+			<Text>弗朗切斯科</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_PAPAL_STATES_MALE_7" Language="zh_Hans_CN">
+			<Text>阿尔代拉诺</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_PAPAL_STATES_MALE_8" Language="zh_Hans_CN">
+			<Text>詹巴蒂斯塔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_PAPAL_STATES_MALE_9" Language="zh_Hans_CN">
+			<Text>法布里齐奥</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_PAPAL_STATES_MODERN_MALE_1" Language="zh_Hans_CN">
+			<Text>法尔乔治</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_PAPAL_STATES_MODERN_MALE_2" Language="zh_Hans_CN">
+			<Text>尼科洛</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_PAPAL_STATES_MODERN_MALE_3" Language="zh_Hans_CN">
+			<Text>安东尼</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_PAPAL_STATES_MODERN_MALE_4" Language="zh_Hans_CN">
+			<Text>朱塞佩</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_PAPAL_STATES_MODERN_MALE_5" Language="zh_Hans_CN">
+			<Text>西尔维奥</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_PAPAL_STATES_MODERN_MALE_6" Language="zh_Hans_CN">
+			<Text>阿尔贝里科</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_PAPAL_STATES_MODERN_MALE_7" Language="zh_Hans_CN">
+			<Text>洛多威克</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_PAPAL_STATES_MODERN_MALE_8" Language="zh_Hans_CN">
+			<Text>伊尼亚齐奥</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_PAPAL_STATES_MODERN_MALE_9" Language="zh_Hans_CN">
+			<Text>拉扎罗</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_PAPAL_STATES_MODERN_MALE_10" Language="zh_Hans_CN">
+			<Text>弗朗西斯</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_PAPAL_STATES_FEMALE_1" Language="zh_Hans_CN">
+			<Text>朱莉娅</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_PAPAL_STATES_FEMALE_2" Language="zh_Hans_CN">
+			<Text>克拉拉</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_PAPAL_STATES_FEMALE_3" Language="zh_Hans_CN">
+			<Text>马丁娜</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_PAPAL_STATES_FEMALE_4" Language="zh_Hans_CN">
+			<Text>西尔维娅</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_PAPAL_STATES_FEMALE_5" Language="zh_Hans_CN">
+			<Text>弗朗西丝</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_PAPAL_STATES_FEMALE_6" Language="zh_Hans_CN">
+			<Text>埃莉莎</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_PAPAL_STATES_FEMALE_7" Language="zh_Hans_CN">
+			<Text>费代丽卡</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_PAPAL_STATES_FEMALE_8" Language="zh_Hans_CN">
+			<Text>阿莱西娅</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_PAPAL_STATES_FEMALE_9" Language="zh_Hans_CN">
+			<Text>劳拉</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_PAPAL_STATES_FEMALE_10" Language="zh_Hans_CN">
+			<Text>埃莱娜</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_PAPAL_STATES_MODERN_FEMALE_1" Language="zh_Hans_CN">
+			<Text>乔姬雅</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_PAPAL_STATES_MODERN_FEMALE_2" Language="zh_Hans_CN">
+			<Text>安娜</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_PAPAL_STATES_MODERN_FEMALE_3" Language="zh_Hans_CN">
+			<Text>玛尔塔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_PAPAL_STATES_MODERN_FEMALE_4" Language="zh_Hans_CN">
+			<Text>罗伯塔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_PAPAL_STATES_MODERN_FEMALE_5" Language="zh_Hans_CN">
+			<Text>贝娅特丽克丝</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_PAPAL_STATES_MODERN_FEMALE_6" Language="zh_Hans_CN">
+			<Text>贾达</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_PAPAL_STATES_MODERN_FEMALE_7" Language="zh_Hans_CN">
+			<Text>瓦莱里娅</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_PAPAL_STATES_MODERN_FEMALE_8" Language="zh_Hans_CN">
+			<Text>西蒙娜</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_PAPAL_STATES_MODERN_FEMALE_9" Language="zh_Hans_CN">
+			<Text>贝妮代塔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_JFD_PAPAL_STATES_MODERN_FEMALE_10" Language="zh_Hans_CN">
+			<Text>卢多维卡</Text>
+		</Replace>
+		
+		<!-- 教区 -->
+		
+		<Replace Tag="LOC_DISTRICT_JFD_DIOCESE_NAME" Language="zh_Hans_CN">
+			<Text>教区</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_JFD_DIOCESE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>教皇领特色区域，取代圣地。[NEWLINE]所在城市可用 [ICON_Faith] 信仰值购买神社与寺庙。教区与市中心、市政广场或外交区相邻时，可提供大量信仰值相邻加成。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_DISTRICTS_PAGE_DISTRICT_JFD_DIOCESE_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]The word diocese is derived from a Greek term meaning "administration". When now used in an ecclesiastical sense, it refers to an administrative territorial entity. In the Western Church, the district is under the supervision of a bishop (who may have assistant bishops to help him or her) and is divided into parishes under the care of priests; but in the Eastern Church, the word denotes the area under the jurisdiction of a patriarch and the bishops under his jurisdiction administer parishes. This structure of church governance is known as episcopal polity.</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_JFD_DIOCESE_FAITH" Language="zh_Hans_CN">
+			<Text>+{1_num} [ICON_Faith] 信仰值 来自相邻 教区</Text>
+		</Replace>
+		
+		<!-- 宗座瑞士卫队 -->
+		
+		<Replace Tag="LOC_UNIT_JFD_SWISS_GUARD_NAME" Language="zh_Hans_CN">
+			<Text>宗座瑞士卫队</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_JFD_SWISS_GUARD_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>教皇领文艺复兴时期特色近战单位，由市政“外交部门”解锁。可用 [ICON_Gold] 金币购买。防御城市攻击时+10 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_JFD_SWISS_GUARD_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]Swiss Guards describe, historically, the mercenaries who from Switzerland sought to serve as bodyguards throughout courts of Europe during the Middle Ages and the Renaissance. Lauded for their enduring loyalty and bravery, Swiss Guards served a wide variety of functions: from ceremonial guards to front-line troops, and were in use by the armies of some of Europe's greatest powers: including France, Spain and Naples. Although in 1874 the recruitment of Swiss Guards by foreign powers was forbidden by the Swiss Constitution, the Pontifical Swiss Guard that served the Holy See was an exception, and today remains the primary force of the Vatican; responsible for the safety of the Pope and the security of the Apostolic Palace.</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_JFD_SWISS_GUARD_NAME" Language="zh_Hans_CN">
+			<Text>教皇卫队</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_JFD_SWISS_GUARD_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>防御城市攻击时+10 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_JFD_SWISS_GUARD_CITY_CENTER_COMBAT_DESC" Language="zh_Hans_CN">
+			<Text>+{1_value} [ICON_STRENGTH] 战斗力 来自于防御城市攻击</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

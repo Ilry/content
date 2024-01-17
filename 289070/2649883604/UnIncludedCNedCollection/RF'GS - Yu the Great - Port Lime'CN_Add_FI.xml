@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RF'GS - Yu the Great - Port Lime'CN_Add_FI -->
+<!-- Author: 春 , Clear8Sky -->
+<!-- DateCreated: 2021/9/1 17:25:13 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “[GS] - Yu the Great - Port Lime” 。该文件在 FrontEnd 与 InGame 时载入，需 Criteria ： Active_Expansion_1 -->
+	<LocalizedText>
+
+		<!-- 领袖 -->
+
+		<Replace Tag="LOC_LEADER_LIME_CHINA_YU_NAME" Language="zh_Hans_CN">
+			<Text>禹</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_LIME_CHINA_YU_ANYI" Language="zh_Hans_CN">
+			<Text>安邑</Text>
+		</Replace>
+
+		<!-- 议程 -->
+
+		<Replace Tag="LOC_AGENDA_LIME_CHINA_YU_SON_OF_HEAVEN_NAME" Language="zh_Hans_CN">
+			<Text>圣君</Text>
+		</Replace>
+		<Replace Tag="LOC_AGENDA_LIME_CHINA_YU_SON_OF_HEAVEN_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>喜欢科技值和宜居度高的文明，不喜欢科技值和宜居度低的文明。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDOS_LEADER_LIME_CHINA_YU_SON_OF_HEAVEN_POSITIVE_GOOD_KING" Language="zh_Hans_CN">
+			<Text>（您是优秀的统治者）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_LEADER_LIME_CHINA_YU_SON_OF_HEAVEN_POSITIVE_GOOD_KING" Language="zh_Hans_CN">
+			<Text>禹认为你是个好国王</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDOS_LEADER_LIME_CHINA_YU_SON_OF_HEAVEN_POSITIVE_SCIENCE" Language="zh_Hans_CN">
+			<Text>（您的科技先进）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_LEADER_LIME_CHINA_YU_SON_OF_HEAVEN_POSITIVE_SCIENCE" Language="zh_Hans_CN">
+			<Text>禹欣赏你的学识。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDOS_LEADER_LIME_CHINA_YU_SON_OF_HEAVEN_POSITIVE_AMENITIES" Language="zh_Hans_CN">
+			<Text>（您的宜居度高）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_LEADER_LIME_CHINA_YU_SON_OF_HEAVEN_POSITIVE_AMENITIES" Language="zh_Hans_CN">
+			<Text>禹看到你的人民很幸福。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_LEADER_LIME_CHINA_YU_SON_OF_HEAVEN_NEGATIVE_WORST_KING" Language="zh_Hans_CN">
+			<Text>（您是个糟糕的统治者）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_LEADER_LIME_CHINA_YU_SON_OF_HEAVEN_NEGATIVE_WORST_KING" Language="zh_Hans_CN">
+			<Text>禹认为你是最糟糕的一类君王。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_LEADER_LIME_CHINA_YU_SON_OF_HEAVEN_NEGATIVE_SCIENCE" Language="zh_Hans_CN">
+			<Text>（您的科技落后）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_LEADER_LIME_CHINA_YU_SON_OF_HEAVEN_NEGATIVE_SCIENCE" Language="zh_Hans_CN">
+			<Text>禹认为你落后、缺乏文化。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_LEADER_LIME_CHINA_YU_SON_OF_HEAVEN_NEGATIVE_AMENITIES" Language="zh_Hans_CN">
+			<Text>（您的人民并不幸福）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_LEADER_LIME_CHINA_YU_SON_OF_HEAVEN_NEGATIVE_AMENITIES" Language="zh_Hans_CN">
+			<Text>禹认为你应该专注于愉悦你的人民。</Text>
+		</Replace>
+
+		<!-- 载入 -->
+
+		<Replace Tag="LOC_LOADING_INFO_LEADER_LIME_CHINA_YU" Language="zh_Hans_CN">
+			<Text>上苍祝福你与您的子民，禹，您注定要开启你的统治。您治理河山，让您的百姓皆各得其所。用木头、岩石、青铜建造奇妙的殿宇，让你的人们富足。请您保护好你的百姓，成为最好的君王，让您的百姓昌盛。前进吧，大禹！成为最圣明的君王！</Text>
+		</Replace>
+
+		<!-- 特性 -->
+
+		<Replace Tag="LOC_TRAIT_LEADER_LIME_CHINA_YU_GATEWAY_NAME" Language="zh_Hans_CN">
+			<Text>驯服黄河</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_LIME_CHINA_YU_GATEWAY_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>沿河建立的城市可免费获得一名建造者。消耗建造者最后一次 [ICON_Charges] 劳动力将额外提供 [ICON_Culture] 文化值和 [ICON_Science] 科技值。免疫中型洪水和大型洪水的影响。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_LEADER_LIME_CHINA_YU_GATEWAY_BUILDER_SPAWN_NAME" Language="zh_Hans_CN">
+			<Text>驯服黄河</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_LEADER_LIME_CHINA_YU_GATEWAY_BUILDER_SPAWN_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>沿河建立的城市可免费获得一名建造者。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_LEADER_LIME_CHINA_YU_GATEWAY_BUILDER_USED_NAME" Language="zh_Hans_CN">
+			<Text>驯服黄河</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_LEADER_LIME_CHINA_YU_GATEWAY_BUILDER_USED_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>消耗建造者最后一次 [ICON_Charges] 劳动力将额外提供 [ICON_Culture] 文化值和 [ICON_Science] 科技值。</Text>
+		</Replace>
+		<Replace Tag="LOC_LIME_CHINA_YU_SCIENCE_DROPTEXT" Language="zh_Hans_CN">
+			<Text>[COLOR_FLOAT_SCIENCE]当前科技解锁的进度+10%[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_LIME_CHINA_YU_CULTURE_DROPTEXT" Language="zh_Hans_CN">
+			<Text>[COLOR_FLOAT_CULTURE]当前市政解锁的进度+10%[ENDCOLOR]</Text>
+		</Replace>
+
+		<!-- 百科 -->
+
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_LIME_CHINA_YU_TITLE" Language="zh_Hans_CN">
+			<Text>禹</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_LIME_CHINA_YU_SUBTITLE" Language="zh_Hans_CN">
+			<Text>夏朝开国君王</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_LIME_CHINA_YU_QUOTE" Language="zh_Hans_CN">
+			<Text>禹是一位伟大的圣人，他为天下人的利益而鞠躬尽瘁。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_LIME_CHINA_YU_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]Yu, known as Yu the Great, Great Yu, and occasionally Yu the Engineer, was a prehistoric Chinese monarch who was later deified and achieved legendary and mythical status. He is reputed to have founded the first Chinese Imperial Dynasty, the Xia Dynasty (though the existence of this era is disputed by some historians) and to have tamed the yellow river in order to allow his people to farm more reliably.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_LIME_CHINA_YU_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>It is said that the chinese heartland constantly flooded under King Yao, and that these floods were hindering development and endangering the people. Yao tasked Yu’s father, Gun, with creating a flood control system, but he failed despite nine years of work. Yu continued his father’s work and carefully studied Gun’s efforts with the innovation of dikes, dams, and self-expanding soil.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_LIME_CHINA_YU_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>After collaborating with a master of agriculture, Yu created a system to control the floods through a series of irrigation canals. It is said that during the construction of this project, he ate and slept with the workers, and did not visit his own wife and son. He personally assisted construction for thirteen years, and by the end he had become paralyzed. However, his efforts were successful and Chinese culture flourished as a result.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_LIME_CHINA_YU_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>King Shun (who reigned after Yao) was so impressed by Yu’s engineering and devotion that he passed the throne to Yu. Though Yu initially declined, his efforts had made him so popular with the lords and chiefs that he agreed to become the new emperor. His flood control work made him very familiar with all the Han territories, and he divided his realm into nine provinces. It is written in the Bamboo Annals that Yu ruled for forty-five years and eventually died of illness.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_LIME_CHINA_YU_CHAPTER_HISTORY_PARA_5" Language="zh_Hans_CN">
+			<Text>Though the veracity of the legend of Yu is disputed, he was highly regarded by all who came after him. He is one of the few Chinese Emperors ever afforded the title “the Great”, and was regarded as an ideal ruler in confucianism. He also became a water deity in Taoism and some Chinese folk religions. He continues to be revered to this day as one of the best emperors China ever had.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_LIME_CHINA_YU_CHAPTER_CAPSULE_BODY" Language="zh_Hans_CN">
+			<Text>禹随同建造者一同建设繁荣，给予玩家获得更多建造者的方法，并在其劳动力被使用完时给予奖励。而这将使您与大禹领导的文明，在农业、科学、基建与文化上更加先进。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_LIME_CHINA_YU_CHAPTER_DETAILED_BODY" Language="zh_Hans_CN">
+			<Text>中国的“朝代更替”提供了在科技上领先的好办法，而且禹的能力进一步补充了这一点，即创造了获得建造者的新途径，以及通过使用建造者来提升科技与文化发展的新方式。游戏早期的生产力加成同样使得中国首批城市的发展相当繁荣，甚至于有实力抢占起初的数座奇观。妙用此优势，让自己在游戏前期取得领先。</Text>
+		</Replace>
+
+		<!-- 外交 -->
+
+		<!-- 初次见面 -->
+		<!-- 开场白 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_LIME_CHINA_YU_ANY" Language="zh_Hans_CN">
+			<Text>欢迎，旅行者。我是鲧之子——禹，我是中国百姓的君主，我将尽我所能来配得上这个称号。</Text>
+		</Replace>
+
+		<!-- 到附近城市的邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_LIME_CHINA_YU_ANY" Language="zh_Hans_CN">
+			<Text>请到附近的村落来，在那里我必须参加一个在建的工程，但欢迎你加入我。</Text>
+		</Replace>
+
+		<!-- AI接受玩家邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NEAR_INITIATOR_POSITIVE_LEADER_LIME_CHINA_YU_ANY" Language="zh_Hans_CN">
+			<Text>我很乐意去访。</Text>
+		</Replace>
+
+		<!-- AI邀请玩家交换首都信息 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_LIME_CHINA_YU_ANY" Language="zh_Hans_CN">
+			<Text>来我的首都看看，我们可以参观建筑、喝一些茶，它可能不是最奢侈的茶，但却是我最喜欢的。</Text>
+		</Replace>
+
+		<!-- 问候 -->
+
+		<Replace Tag="LOC_DIPLO_GREETING_LEADER_LIME_CHINA_YU_ANY" Language="zh_Hans_CN">
+			<Text>上苍引导你。</Text>
+		</Replace>
+
+		<!-- 代表团 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_HUMAN_LEADER_LIME_CHINA_YU_ANY" Language="zh_Hans_CN">
+			<Text>你当然可以来！我会安排一场展览来展示我们最精致的建筑。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_HUMAN_LEADER_LIME_CHINA_YU_ANY" Language="zh_Hans_CN">
+			<Text>我正忙于一个工程——建造大坝，但也许建成后你可以来看看。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DELEGATION_FROM_AI_LEADER_LIME_CHINA_YU_ANY" Language="zh_Hans_CN">
+			<Text>我治下的建筑师们希望学习如何建造一些别的东西，我本人也对此深有兴趣。你会允许他们去看看吗？</Text>
+		</Replace>
+
+		<!-- 开放边境 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_HUMAN_LEADER_LIME_CHINA_YU_ANY" Language="zh_Hans_CN">
+			<Text>你的百姓可以自由进入我的领土。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_HUMAN_LEADER_LIME_CHINA_YU_ANY" Language="zh_Hans_CN">
+			<Text>我不会允许的，抱歉。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_OPEN_BORDERS_FROM_AI_LEADER_LIME_CHINA_YU_ANY" Language="zh_Hans_CN">
+			<Text>我的百姓希望到你的土地上去，我希望我们已经建立了足够融洽的关系，我不想令他们失望！</Text>
+		</Replace>
+
+		<!-- 宣布友谊 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_HUMAN_LEADER_LIME_CHINA_YU_ANY" Language="zh_Hans_CN">
+			<Text>我很荣幸。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_HUMAN_LEADER_LIME_CHINA_YU_ANY" Language="zh_Hans_CN">
+			<Text>恐怕不行。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_LIME_CHINA_YU_ANY" Language="zh_Hans_CN">
+			<Text>你证明了自己是个好君主，我希望我们能成为朋友。</Text>
+		</Replace>
+
+		<!-- 玩家接受后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_LIME_CHINA_YU_ANY" Language="zh_Hans_CN">
+			<Text>太好了，谢谢你。</Text>
+		</Replace>
+
+		<!-- 玩家拒绝后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_LIME_CHINA_YU_ANY" Language="zh_Hans_CN">
+			<Text>嗯……不过没关系，你仍然是一个伟大君王，尽管我喜欢我们能成为朋友。</Text>
+		</Replace>
+
+		<!-- 结盟 -->
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_ALLIANCE_FROM_AI_LEADER_LIME_CHINA_YU_ANY" Language="zh_Hans_CN">
+			<Text>我希望身边能围绕着最优秀的人才——而你便是其中之一。</Text>
+		</Replace>
+
+		<!-- 赞成与警告 -->
+		<!-- AI赞成 -->
+
+		<Replace Tag="LOC_DIPLO_KUDO_EXIT_LEADER_LIME_CHINA_YU_ANY" Language="zh_Hans_CN">
+			<Text>你是英明而渊博的、正义的统治者，我看到了你内心有一种荣誉感。</Text>
+		</Replace>
+
+		<!-- AI警告 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_EXIT_LEADER_LIME_CHINA_YU_ANY" Language="zh_Hans_CN">
+			<Text>你有太多东西需要去学，也许只有经验能交给你，前提是你愿意去倾听。</Text>
+		</Replace>
+
+		<!-- AI警告玩家离开边境 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_LEADER_LIME_CHINA_YU_ANY" Language="zh_Hans_CN">
+			<Text>在我的边境集结部队准备突然袭击吗？这是不光彩的，我希望我对你的期望是正确的。</Text>
+		</Replace>
+
+		<!-- 贸易 -->
+		<!-- AI接受交易 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_LIME_CHINA_YU_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_LIME_CHINA_YU_ANY}</Text>
+		</Replace>
+
+		<!-- AI拒绝交易 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_MAKE_DEAL_FROM_AI_LEADER_LIME_CHINA_YU_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_LIME_CHINA_YU_ANY}</Text>
+		</Replace>
+
+		<!-- 谴责 -->
+		<!-- 受到谴责回应 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_LIME_CHINA_YU_ANY" Language="zh_Hans_CN">
+			<Text>我做了什么来承受这样的谴责？告诉我。</Text>
+		</Replace>
+
+		<!-- AI谴责玩家 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_LIME_CHINA_YU_ANY" Language="zh_Hans_CN">
+			<Text>你辜负了你的人民，你没有荣誉感，你不配称王！[NEWLINE]（谴责你）</Text>
+		</Replace>
+
+		<!-- 谴责理由 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_REASON_FROM_AI_LEADER_ANY_REASON_LEADER_LIME_CHINA_YU_SON_OF_HEAVEN_NEGATIVE_WORST_KING" Language="zh_Hans_CN">
+			<Text>（您是个庸王）</Text>
+		</Replace>
+
+		<!-- 宣战 -->
+		<!-- 受到宣战后回应 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_LIME_CHINA_YU_ANY" Language="zh_Hans_CN">
+			<Text>所以我们不能成为朋友？甚至不能拥有和平？我感到遗憾，但我会保护我们自己。</Text>
+		</Replace>
+
+		<!-- AI宣战 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_LIME_CHINA_YU_ANY" Language="zh_Hans_CN">
+			<Text>我希望我们能共存，但这似乎不是我们的天命。无论如何，我很抱歉，但现在我们必须战斗。</Text>
+		</Replace>
+
+		<!-- 求和 -->
+		<!-- AI接受求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_ACCEPT_DEAL_LEADER_LIME_CHINA_YU_ANY" Language="zh_Hans_CN">
+			<Text>同意，谢谢你。</Text>
+		</Replace>
+
+		<!-- AI拒绝求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_REFUSE_DEAL_LEADER_LIME_CHINA_YU_ANY" Language="zh_Hans_CN">
+			<Text>我义不容辞地为我的百姓做正确的事情，我决不接受。</Text>
+		</Replace>
+
+		<!-- AI求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_FROM_AI_LEADER_LIME_CHINA_YU_ANY" Language="zh_Hans_CN">
+			<Text>现在到了放下刀枪，两国人民讲和的时候了。</Text>
+		</Replace>
+
+		<!-- 击败 -->
+		<!-- AI被击败 -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_LIME_CHINA_YU_ANY" Language="zh_Hans_CN">
+			<Text>你我皆为荣誉而战，夫复何求？祝贺你的胜利，也感谢你让我得以休息，这都是我们应有的。</Text>
+		</Replace>
+
+		<!-- 玩家被击败（在热座模式中会显示） -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_LIME_CHINA_YU_ANY" Language="zh_Hans_CN">
+			<Text>即便是敌人也拥有最后的权利，希望你下辈子能得到安宁，上苍祝福你，一切如意。</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

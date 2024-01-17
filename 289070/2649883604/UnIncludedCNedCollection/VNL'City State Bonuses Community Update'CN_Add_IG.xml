@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'City State Bonuses Community Update'CN_Add_IG -->
+<!-- Author: Clear8Sky -->
+<!-- DateCreated: 2022/1/7 13:00:46 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “City State Bonuses: Community Update”的 UC_CSB_Text_PapalPrimacy 文件。该文件在 InGame 时载入，需 Criteria ：Active_Base_Core -->
+	<LocalizedText>
+		<Replace Tag="LOC_BELIEF_PAPAL_PRIMACY_DESCRIPTION_JNR_CSB" Language="zh_Hans_CN">
+			<Text>皈依您文明宗教的城邦，其对您原始 [ICON_Capital] 首都专业化区域的加成提升至原来的3倍。</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Qin -->
+<!-- Author: aall1 -->
+<!-- DateCreated: 2/28/2019 6:29:52 PM -->
+<GameData>
+	<!--<Building_ValidTerrains>
+		--><!--Alhambra 阿尔罕布拉宫--><!--
+		<Row BuildingType="BUILDING_ALHAMBRA" TerrainType="TERRAIN_GRASS_MOUNTAIN"/>
+		<Row BuildingType="BUILDING_ALHAMBRA" TerrainType="TERRAIN_PLAINS_MOUNTAIN"/>
+		<Row BuildingType="BUILDING_ALHAMBRA" TerrainType="TERRAIN_TUNDRA_MOUNTAIN"/>
+		<Row BuildingType="BUILDING_ALHAMBRA" TerrainType="TERRAIN_SNOW_MOUNTAIN"/>
+		<Row BuildingType="BUILDING_ALHAMBRA" TerrainType="TERRAIN_DESERT_MOUNTAIN"/>
+		--><!--Cristo Redentor	 救世耶稣像--><!--
+		<Row BuildingType="BUILDING_CRISTO_REDENTOR" TerrainType="TERRAIN_GRASS_MOUNTAIN"/>
+		<Row BuildingType="BUILDING_CRISTO_REDENTOR" TerrainType="TERRAIN_PLAINS_MOUNTAIN"/>
+		<Row BuildingType="BUILDING_CRISTO_REDENTOR" TerrainType="TERRAIN_TUNDRA_MOUNTAIN"/>
+		<Row BuildingType="BUILDING_CRISTO_REDENTOR" TerrainType="TERRAIN_SNOW_MOUNTAIN"/>
+		<Row BuildingType="BUILDING_CRISTO_REDENTOR" TerrainType="TERRAIN_DESERT_MOUNTAIN"/>
+		--><!--Oracle 神谕--><!--
+		<Row BuildingType="BUILDING_ORACLE" TerrainType="TERRAIN_GRASS_MOUNTAIN"/>
+		<Row BuildingType="BUILDING_ORACLE" TerrainType="TERRAIN_PLAINS_MOUNTAIN"/>
+		<Row BuildingType="BUILDING_ORACLE" TerrainType="TERRAIN_TUNDRA_MOUNTAIN"/>
+		<Row BuildingType="BUILDING_ORACLE" TerrainType="TERRAIN_SNOW_MOUNTAIN"/>
+		<Row BuildingType="BUILDING_ORACLE" TerrainType="TERRAIN_DESERT_MOUNTAIN"/>
+		--><!--Potala Palace 布达拉宫--><!--
+		<Row BuildingType="BUILDING_POTALA_PALACE" TerrainType="TERRAIN_GRASS_MOUNTAIN"/>
+		<Row BuildingType="BUILDING_POTALA_PALACE" TerrainType="TERRAIN_PLAINS_MOUNTAIN"/>
+		<Row BuildingType="BUILDING_POTALA_PALACE" TerrainType="TERRAIN_TUNDRA_MOUNTAIN"/>
+		<Row BuildingType="BUILDING_POTALA_PALACE" TerrainType="TERRAIN_SNOW_MOUNTAIN"/>
+		<Row BuildingType="BUILDING_POTALA_PALACE" TerrainType="TERRAIN_DESERT_MOUNTAIN"/>
+		--><!--Jebel Barkal 博尔戈尔山--><!--
+		<Row BuildingType="BUILDING_JEBEL_BARKAL" TerrainType="TERRAIN_DESERT_MOUNTAIN"/>
+	</Building_ValidTerrains>-->
+	
+	<!--————————————————————————————————改良————————————————————————————————-->
+	
+	<Types>
+		<Row Type="IMPROVEMENT_STONEWORKS" Kind="KIND_IMPROVEMENT"/>
+		<Row Type="IMPROVEMENT_PEBBLESTACKS" Kind="KIND_IMPROVEMENT"/>
+		<Row Type="IMPROVEMENT_ARTIFICIAL_ISLAND" Kind="KIND_IMPROVEMENT"/>
+	</Types>
+	<Improvements>
+		<Row ImprovementType="IMPROVEMENT_STONEWORKS" Name="LOC_IMPROVEMENT_STONEWORKS_NAME" Description="LOC_IMPROVEMENT_STONEWORKS_DESCRIPTION" Icon="ICON_IMPROVEMENT_QUARRY" PlunderType="NO_PLUNDER" Buildable="true" PrereqTech="TECH_MASONRY" SameAdjacentValid="false" Workable="false" CanBuildOutsideTerritory="true"/>
+		<Row ImprovementType="IMPROVEMENT_PEBBLESTACKS" Name="LOC_IMPROVEMENT_PEBBLESTACKS_NAME" Description="LOC_IMPROVEMENT_PEBBLESTACKS_DESCRIPTION" Icon="ICON_IMPROVEMENT_MINE" PlunderType="NO_PLUNDER" PlunderAmount="50" Buildable="true" PrereqTech="TECH_SHIPBUILDING" Domain="DOMAIN_SEA" CanBuildOutsideTerritory="true"/>
+		<Row ImprovementType="IMPROVEMENT_ARTIFICIAL_ISLAND" Name="LOC_IMPROVEMENT_ARTIFICIAL_ISLAND_NAME" Description="LOC_IMPROVEMENT_ARTIFICIAL_ISLAND_DESCRIPTION" Icon="ICON_IMPROVEMENT_BEACH_RESORT" PlunderType="NO_PLUNDER" PlunderAmount="50" Buildable="true" PrereqTech="TECH_SEASTEADS" Domain="DOMAIN_SEA" CanBuildOutsideTerritory="true"/>
+	</Improvements>
+	<!--<Improvements_XP2>
+		<Row ImprovementType="IMPROVEMENT_STONEWORKS" BuildOnAdjacentPlot="true"/>
+		<Row ImprovementType="IMPROVEMENT_PEBBLESTACKS" BuildOnAdjacentPlot="true"/>
+		<Row ImprovementType="IMPROVEMENT_ARTIFICIAL_ISLAND" BuildOnAdjacentPlot="true"/>
+	</Improvements_XP2>-->
+	<Improvement_ValidTerrains>
+		<Row ImprovementType="IMPROVEMENT_STONEWORKS" TerrainType="TERRAIN_GRASS_MOUNTAIN"/>
+		<Row ImprovementType="IMPROVEMENT_STONEWORKS" TerrainType="TERRAIN_PLAINS_MOUNTAIN"/>
+		<Row ImprovementType="IMPROVEMENT_STONEWORKS" TerrainType="TERRAIN_DESERT_MOUNTAIN"/>
+		<Row ImprovementType="IMPROVEMENT_STONEWORKS" TerrainType="TERRAIN_TUNDRA_MOUNTAIN"/>
+		<Row ImprovementType="IMPROVEMENT_STONEWORKS" TerrainType="TERRAIN_SNOW_MOUNTAIN"/>
+		<Row ImprovementType="IMPROVEMENT_PEBBLESTACKS" TerrainType="TERRAIN_COAST"/>
+		<Row ImprovementType="IMPROVEMENT_ARTIFICIAL_ISLAND" TerrainType="TERRAIN_COAST"/>
+		<Row ImprovementType="IMPROVEMENT_ARTIFICIAL_ISLAND" TerrainType="TERRAIN_OCEAN"/>
+	</Improvement_ValidTerrains>
+	<Improvement_ValidFeatures>
+		<Row ImprovementType="IMPROVEMENT_PEBBLESTACKS" FeatureType="FEATURE_REEF"/>
+		<Row ImprovementType="IMPROVEMENT_ARTIFICIAL_ISLAND" FeatureType="FEATURE_REEF"/>
+	</Improvement_ValidFeatures>
+	<Improvement_ValidBuildUnits>
+		<Row ImprovementType="IMPROVEMENT_STONEWORKS" UnitType="UNIT_YUGONG"/>
+		<Row ImprovementType="IMPROVEMENT_PEBBLESTACKS" UnitType="UNIT_JINGWEI"/>
+		<Row ImprovementType="IMPROVEMENT_ARTIFICIAL_ISLAND" UnitType="UNIT_TIAN_KUN_HAO"/>
+	</Improvement_ValidBuildUnits>
+
+	<BuildingModifiers>
+		<!--<Row>
+			<BuildingType>BUILDING_TEMPLE</BuildingType>
+			<ModifierId>MOD_JINGWEI_PRODUCTION</ModifierId>
+		</Row>-->
+		<Row>
+		    <BuildingType>BUILDING_SEAPORT</BuildingType>
+			<ModifierId>MOD_TIANKUNHAO_PURCHASED</ModifierId>
+		</Row>
+	</BuildingModifiers>
+
+	<Modifiers>
+		<Row>
+			<ModifierId>MOD_JINGWEI_PRODUCTION</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_UNITS_ADJUST_UNIT_PRODUCTION</ModifierType>
+		</Row>
+		<Row>
+			<ModifierId>MOD_TIANKUNHAO_PURCHASED</ModifierId>
+			<ModifierType>MODIFIER_SINGLE_CITY_ADJUST_UNIT_PURCHASE_COST</ModifierType>
+		</Row>
+	</Modifiers>
+	<ModifierArguments>
+		<Row>
+			<ModifierId>MOD_JINGWEI_PRODUCTION</ModifierId>
+			<Name>UnitType</Name>
+			<Value>UNIT_JINGWEI</Value>
+		</Row>
+		<Row>
+			<ModifierId>MOD_JINGWEI_PRODUCTION</ModifierId>
+			<Name>Amount</Name>
+			<Value>25</Value>
+		</Row>
+		<Row>
+			<ModifierId>MOD_TIANKUNHAO_PURCHASED</ModifierId>
+			<Name>UnitType</Name>
+			<Value>UNIT_TIAN_KUN_HAO</Value>
+		</Row>
+		<Row>
+			<ModifierId>MOD_TIANKUNHAO_PURCHASED</ModifierId>
+			<Name>Amount</Name>
+			<Value>30</Value>
+		</Row>
+	</ModifierArguments>
+</GameData>

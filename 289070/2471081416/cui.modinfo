@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mod id="37a200f6-c262-46a8-addb-d92566be1d27" version="1.8.2">
+  <Properties>
+    <Name>[COLOR_Civ6LightBlue]Concise UI Reloaded[ENDCOLOR]</Name>
+    <Teaser>For a better gaming experience.</Teaser>
+    <Description>Concise UI greatly improves the game experience by modifying the vanilla UI and adding new UI elements to the game.[NEWLINE][NEWLINE]Game Version: 1.0.12.9 (516180 / April 2021 Patch).[NEWLINE]Updated version of the original Concise UI.</Description>
+    <Authors>eudaimonia,Adriaman</Authors>
+    <Created>1619427950</Created>
+    <Teaser>Better UI for Civlilzation VI.</Teaser>
+    <CompatibleVersions>1.2,2.0</CompatibleVersions>
+	<AffectsSavedGames>0</AffectsSavedGames>
+	<SupportsSinglePlayer>1</SupportsSinglePlayer>
+	<SupportsMultiplayer>1</SupportsMultiplayer>
+	<SupportsHotSeat>1</SupportsHotSeat>
+	<SupportsPlayByCloud>1</SupportsPlayByCloud>
+	<Stability>Stable</Stability>
+
+  </Properties>
+  <ActionCriteria>
+    <Criteria id="Expansion1AndBeyond" any="1">
+      <RuleSetInUse>RULESET_EXPANSION_1,RULESET_EXPANSION_2</RuleSetInUse>
+    </Criteria>
+    <Criteria id="Expansion2AndBeyond" any="1">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+    </Criteria>
+	<Criteria id="Heroes_Mode">
+		<ConfigurationValueMatches>
+			<Group>Game</Group>
+			<ConfigurationId>GAMEMODE_HEROES</ConfigurationId>
+			<Value>1</Value>
+		</ConfigurationValueMatches>
+	</Criteria>
+	
+	<Criteria id="NotUsingSukUI">
+		<ModInUse inverse="1">805cc499-c534-4e0a-bdce-32fb3c53ba38</ModInUse>
+	</Criteria>
+
+	<Criteria id="NotUsingSukUI_Expansion1AndBeyond">
+		<ModInUse inverse="1">805cc499-c534-4e0a-bdce-32fb3c53ba38</ModInUse>
+		<RuleSetInUse>RULESET_EXPANSION_1,RULESET_EXPANSION_2</RuleSetInUse>
+	</Criteria>
+	
+	<!-- Happiness and Growth Indicators -->
+	<Criteria id="NotUsingHGI">
+		<ModInUse inverse="1">fba4a935-06f0-414b-973d-5ffcd80c6d0e</ModInUse>
+	</Criteria>
+  </ActionCriteria>
+  
+  <FrontEndActions>
+    <UpdateText id="Cui_Front_End_Text">
+      <File>config/cui_config.sql</File>
+    </UpdateText>
+    <UpdateDatabase id="Cui_Front_End_Database">
+      <File>config/cui_config.xml</File>
+    </UpdateDatabase>
+  </FrontEndActions>
+  <InGameActions>
+    <ImportFiles id="Cui_Assets">
+      <File>assets/advisor_bubble.dds</File>
+      <File>assets/advisor_icon.dds</File>
+      <File>assets/bg_note_turn.dds</File>
+      <File>assets/button_resource.dds</File>
+      <File>assets/button_unit.dds</File>
+      <File>assets/icon_no.dds</File>
+      <File>assets/icon_ready.dds</File>
+      <File>assets/icon_yes.dds</File>
+      <File>assets/production_branch.dds</File>
+      <File>assets/production_wrench.dds</File>
+      <File>assets/screenshot.dds</File>
+    </ImportFiles>
+    <UpdateText id="Cui_Text">
+      <File>config/cui_config.sql</File>
+      <File>localization/cui_de_de.sql</File>
+      <File>localization/cui_en_us.sql</File>
+      <File>localization/cui_es_es.sql</File>
+      <File>localization/cui_fr_fr.sql</File>
+      <File>localization/cui_it_it.sql</File>
+      <File>localization/cui_ja_jp.sql</File>
+      <File>localization/cui_ko_kr.sql</File>
+      <File>localization/cui_pl_pl.sql</File>
+      <File>localization/cui_pt_br.sql</File>
+      <File>localization/cui_ru_ru.sql</File>
+      <File>localization/cui_zh_cn.sql</File>
+      <File>localization/cui_zh_hk.sql</File>
+    </UpdateText>
+    <ImportFiles id="Cui_Lib">
+      <Properties>
+        <LoadOrder>20</LoadOrder>
+      </Properties>
+      <File>lib/cui_settings.lua</File>
+      <File>lib/cui_update.lua</File>
+      <File>lib/cui_utils.lua</File>
+    </ImportFiles>
+    <ImportFiles id="Cui_Support">
+      <Properties>
+        <LoadOrder>21</LoadOrder>
+      </Properties>
+      <!-- <File>modules/deal_panel/support/cui_deal_support.lua</File> -->
+      <File>modules/leader_icons/support/cui_leader_icon_support.lua</File>
+      <File>modules/popup_and_remind/support/cui_tech_civic_support.lua</File>
+      <File>modules/production_panel/support/cui_production_data.lua</File>
+      <File>modules/production_panel/support/cui_production_support.lua</File>
+      <File>modules/production_panel/support/cui_production_ui.lua</File>
+      <File>modules/victory_tracking/support/cui_victory_support.lua</File>
+      <File>modules/world_tracker/support/cui_tracker_support.lua</File>
+    </ImportFiles>
+    <ImportFiles id="Cui_Base">
+      <Properties>
+        <LoadOrder>22</LoadOrder>
+      </Properties>
+      <File>modules/city_states/base/citystates.lua</File>
+      <File>modules/city_states/base/citystates.xml</File>
+      <!-- <File>modules/deal_panel/base/diplomacydealview.lua</File>
+      <File>modules/deal_panel/base/diplomacydealview.xml</File> -->
+      <File>modules/great_work/base/greatworksoverview.lua</File>
+      <File>modules/great_work/base/greatworksoverview.xml</File>
+      <File>modules/leader_icons/base/diplomacyactionview.lua</File>
+      <File>modules/leader_icons/base/diplomacyribbon.lua</File>
+      <File>modules/leader_icons/base/leadericon.xml</File>
+      <File>modules/map_options/base/selectedunit.lua</File>
+      <File>modules/map_options/base/unitflagmanager.lua</File>
+      <File>modules/map_options/base/worldviewiconsmanager.lua</File>
+      <File>modules/map_tacks/base/mappinlistpanel.lua</File>
+      <File>modules/map_tacks/base/mappinlistpanel.xml</File>
+	  <!-- Do not replace original game files -->
+	  <!-- CUI files need to be recoded -->
+	  <!--
+      <File>modules/map_tacks/base/mappinpopup.lua</File>
+      <File>modules/map_tacks/base/mappinpopup.xml</File>
+	  -->
+      <File>modules/popup_and_remind/base/civicschooser.lua</File>
+      <File>modules/popup_and_remind/base/greatworkshowcase.lua</File>
+      <File>modules/popup_and_remind/base/researchchooser.lua</File>
+      <File>modules/popup_and_remind/base/techciviccompletedpopup.lua</File>
+      <File>modules/production_panel/base/productionpanel.lua</File>
+      <File>modules/production_panel/base/productionpanel.xml</File>
+      <File>modules/world_tracker/base/statusmessagepanel.lua</File>
+      <File>modules/world_tracker/base/worldtracker.lua</File>
+      <File>modules/world_tracker/base/worldtracker.xml</File>
+      <File>modules/_options/base/options.lua</File>
+    </ImportFiles>
+
+    <ImportFiles id="Cui_Base_nSukUI" criteria="NotUsingSukUI">
+      <Properties>
+        <LoadOrder>22</LoadOrder>
+      </Properties>
+      <File>modules/city_panel/base/citypanel.lua</File>
+      <File>modules/city_panel/base/citypanel.xml</File>
+    </ImportFiles>
+
+    <ImportFiles id="Cui_Expansion1" criteria="Expansion1AndBeyond">
+      <Properties>
+        <LoadOrder>23</LoadOrder>
+      </Properties>
+      <File>modules/city_states/expansion1/citystates.xml</File>
+      <File>modules/leader_icons/expansion1/diplomacyribbon_expansion1.lua</File>
+      <File>modules/popup_and_remind/expansion1/historicmoments.lua</File>
+    </ImportFiles>
+	
+    <ImportFiles id="Cui_Expansion1_nSukUI" criteria="NotUsingSukUI_Expansion1AndBeyond">
+      <Properties>
+        <LoadOrder>23</LoadOrder>
+      </Properties>
+      <File>modules/city_panel/expansion1/citypanel_expansion1.lua</File>
+    </ImportFiles>
+	
+    <ImportFiles id="Cui_Expansion2" criteria="Expansion2AndBeyond">
+      <Properties>
+        <LoadOrder>24</LoadOrder>
+      </Properties>
+      <File>modules/city_states/expansion2/citystates.xml</File>
+      <!-- <File>modules/deal_panel/expansion2/diplomacydealview.lua</File>
+      <File>modules/deal_panel/expansion2/diplomacydealview_expansion2.lua</File> -->
+      <File>modules/great_work/expansion2/greatworksoverview_expansion2.lua</File>
+      <File>modules/leader_icons/expansion2/diplomacyactionview.xml</File>
+      <File>modules/leader_icons/expansion2/worldcongresspopup.lua</File>
+      <File>modules/popup_and_remind/expansion2/historicmoments.lua</File>
+    </ImportFiles>
+    <ImportFiles id="Cui_Heroes" criteria="Heroes_Mode">
+      <Properties>
+        <LoadOrder>25</LoadOrder>
+      </Properties>
+	  <File>modules/production_panel/heroes/productionpanel_babylon_heroes.lua</File>
+    </ImportFiles>
+    <ImportFiles id="Cui_Additions">
+      <Properties>
+        <LoadOrder>26</LoadOrder>
+      </Properties>
+      <File>modules/leader_icons/additions/cui_leader_icon_tt.lua</File>
+      <File>modules/leader_icons/additions/cui_leader_icon_tt.xml</File>
+      <File>modules/map_options/additions/cui_map_options.lua</File>
+      <File>modules/map_options/additions/cui_map_options.xml</File>
+      <File>modules/notes/additions/cui_note_button.lua</File>
+      <File>modules/notes/additions/cui_note_button.xml</File>
+      <File>modules/notes/additions/cui_note_screen.lua</File>
+      <File>modules/notes/additions/cui_note_screen.xml</File>
+      <File>modules/popup_and_remind/additions/cui_remind_panel.lua</File>
+      <File>modules/popup_and_remind/additions/cui_remind_panel.xml</File>
+      <File>modules/screenshot/additions/cui_screenshot.lua</File>
+      <File>modules/screenshot/additions/cui_screenshot.xml</File>
+      <File>modules/unit_list/additions/cui_unitlist_button.lua</File>
+      <File>modules/unit_list/additions/cui_unitlist_button.xml</File>
+      <File>modules/unit_list/additions/cui_unitlist_screen.lua</File>
+      <File>modules/unit_list/additions/cui_unitlist_screen.xml</File>
+      <File>modules/victory_tracking/additions/cui_victory_tracking.lua</File>
+      <File>modules/victory_tracking/additions/cui_victory_tracking.xml</File>
+      <File>modules/world_tracker/additions/cui_city_status.lua</File>
+      <File>modules/world_tracker/additions/cui_city_status.xml</File>
+      <File>modules/_log/additions/cui_gameinfo.lua</File>
+      <File>modules/_log/additions/cui_log.lua</File>
+      <File>modules/_log/additions/cui_log.xml</File>
+      <File>modules/_options/additions/cui_options_button.lua</File>
+      <File>modules/_options/additions/cui_options_button.xml</File>
+      <File>modules/_options/additions/cui_options_menu.lua</File>
+      <File>modules/_options/additions/cui_options_menu.xml</File>
+    </ImportFiles>
+    <ImportFiles id="Cui_Additions_HGI" criteria="NotUsingHGI">
+      <Properties>
+        <LoadOrder>26</LoadOrder>
+      </Properties>
+      <File>modules/spy_info/additions/cui_spy_info.lua</File>
+      <File>modules/spy_info/additions/cui_spy_info.xml</File>
+    </ImportFiles>
+	<!-- Adriaman: split to make sure we add the files in the same order -->
+    <AddUserInterfaces id="Cui_UI">
+      <Properties>
+        <Context>InGame</Context>
+      </Properties>
+      <File>modules/leader_icons/additions/cui_leader_icon_tt.xml</File>
+      <File>modules/map_options/additions/cui_map_options.xml</File>
+      <File>modules/notes/additions/cui_note_button.xml</File>
+      <File>modules/notes/additions/cui_note_screen.xml</File>
+      <File>modules/popup_and_remind/additions/cui_remind_panel.xml</File>
+      <File>modules/screenshot/additions/cui_screenshot.xml</File>
+    </AddUserInterfaces>
+    <AddUserInterfaces id="Cui_UI_nHGI" criteria="NotUsingHGI">
+      <Properties>
+        <Context>InGame</Context>
+      </Properties>
+      <File>modules/spy_info/additions/cui_spy_info.xml</File>
+    </AddUserInterfaces>
+    <AddUserInterfaces id="Cui_UI_2">
+      <Properties>
+        <Context>InGame</Context>
+      </Properties>
+      <File>modules/unit_list/additions/cui_unitlist_button.xml</File>
+      <File>modules/unit_list/additions/cui_unitlist_screen.xml</File>
+      <File>modules/victory_tracking/additions/cui_victory_tracking.xml</File>
+      <File>modules/world_tracker/additions/cui_city_status.xml</File>
+      <File>modules/_log/additions/cui_log.xml</File>
+      <File>modules/_options/additions/cui_options_button.xml</File>
+      <File>modules/_options/additions/cui_options_menu.xml</File>
+    </AddUserInterfaces>
+  </InGameActions>
+  <Files>
+    <File>assets/advisor_bubble.dds</File>
+    <File>assets/advisor_icon.dds</File>
+    <File>assets/bg_note_turn.dds</File>
+    <File>assets/button_resource.dds</File>
+    <File>assets/button_unit.dds</File>
+    <File>assets/icon_no.dds</File>
+    <File>assets/icon_ready.dds</File>
+    <File>assets/icon_yes.dds</File>
+    <File>assets/production_branch.dds</File>
+    <File>assets/production_wrench.dds</File>
+    <File>assets/screenshot.dds</File>
+    <File>config/cui_config.sql</File>
+    <File>config/cui_config.xml</File>
+    <File>lib/cui_settings.lua</File>
+    <File>lib/cui_update.lua</File>
+    <File>lib/cui_utils.lua</File>
+    <File>localization/cui_de_de.sql</File>
+    <File>localization/cui_en_us.sql</File>
+    <File>localization/cui_es_es.sql</File>
+    <File>localization/cui_fr_fr.sql</File>
+    <File>localization/cui_it_it.sql</File>
+    <File>localization/cui_ja_jp.sql</File>
+    <File>localization/cui_ko_kr.sql</File>
+    <File>localization/cui_pl_pl.sql</File>
+    <File>localization/cui_pt_br.sql</File>
+    <File>localization/cui_ru_ru.sql</File>
+    <File>localization/cui_zh_cn.sql</File>
+    <File>localization/cui_zh_hk.sql</File>
+    <File>modules/city_panel/base/citypanel.lua</File>
+    <File>modules/city_panel/base/citypanel.xml</File>
+    <File>modules/city_panel/expansion1/citypanel_expansion1.lua</File>
+    <File>modules/city_states/base/citystates.lua</File>
+    <File>modules/city_states/base/citystates.xml</File>
+    <File>modules/city_states/expansion1/citystates.xml</File>
+    <File>modules/city_states/expansion2/citystates.xml</File>
+    <!-- <File>modules/deal_panel/base/diplomacydealview.lua</File>
+    <File>modules/deal_panel/base/diplomacydealview.xml</File>
+    <File>modules/deal_panel/expansion2/diplomacydealview.lua</File>
+    <File>modules/deal_panel/expansion2/diplomacydealview_expansion2.lua</File>
+    <File>modules/deal_panel/support/cui_deal_support.lua</File> -->
+    <File>modules/great_work/base/greatworksoverview.lua</File>
+    <File>modules/great_work/base/greatworksoverview.xml</File>
+    <File>modules/great_work/expansion2/greatworksoverview_expansion2.lua</File>
+    <File>modules/leader_icons/additions/cui_leader_icon_tt.lua</File>
+    <File>modules/leader_icons/additions/cui_leader_icon_tt.xml</File>
+    <File>modules/leader_icons/base/diplomacyactionview.lua</File>
+    <File>modules/leader_icons/base/diplomacyribbon.lua</File>
+    <File>modules/leader_icons/base/leadericon.xml</File>
+    <File>modules/leader_icons/expansion1/diplomacyribbon_expansion1.lua</File>
+    <File>modules/leader_icons/expansion2/diplomacyactionview.xml</File>
+    <File>modules/leader_icons/expansion2/worldcongresspopup.lua</File>
+    <File>modules/leader_icons/support/cui_leader_icon_support.lua</File>
+    <File>modules/map_options/additions/cui_map_options.lua</File>
+    <File>modules/map_options/additions/cui_map_options.xml</File>
+    <File>modules/map_options/base/selectedunit.lua</File>
+    <File>modules/map_options/base/unitflagmanager.lua</File>
+    <File>modules/map_options/base/worldviewiconsmanager.lua</File>
+    <File>modules/map_tacks/base/mappinlistpanel.lua</File>
+    <File>modules/map_tacks/base/mappinlistpanel.xml</File>
+	<!-- Keep original game files -->
+    <!-- <File>modules/map_tacks/base/mappinpopup.lua</File>
+    <File>modules/map_tacks/base/mappinpopup.xml</File> -->
+    <File>modules/notes/additions/cui_note_button.lua</File>
+    <File>modules/notes/additions/cui_note_button.xml</File>
+    <File>modules/notes/additions/cui_note_screen.lua</File>
+    <File>modules/notes/additions/cui_note_screen.xml</File>
+    <File>modules/popup_and_remind/additions/cui_remind_panel.lua</File>
+    <File>modules/popup_and_remind/additions/cui_remind_panel.xml</File>
+    <File>modules/popup_and_remind/base/civicschooser.lua</File>
+    <File>modules/popup_and_remind/base/greatworkshowcase.lua</File>
+    <File>modules/popup_and_remind/base/researchchooser.lua</File>
+    <File>modules/popup_and_remind/base/techciviccompletedpopup.lua</File>
+    <File>modules/popup_and_remind/expansion1/historicmoments.lua</File>
+    <File>modules/popup_and_remind/expansion2/historicmoments.lua</File>
+    <File>modules/popup_and_remind/support/cui_tech_civic_support.lua</File>
+    <File>modules/production_panel/base/productionpanel.lua</File>
+    <File>modules/production_panel/base/productionpanel.xml</File>
+    <File>modules/production_panel/heroes/productionpanel_babylon_heroes.lua</File>
+    <File>modules/production_panel/support/cui_production_data.lua</File>
+    <File>modules/production_panel/support/cui_production_support.lua</File>
+    <File>modules/production_panel/support/cui_production_ui.lua</File>
+    <File>modules/screenshot/additions/cui_screenshot.lua</File>
+    <File>modules/screenshot/additions/cui_screenshot.xml</File>
+    <File>modules/spy_info/additions/cui_spy_info.lua</File>
+    <File>modules/spy_info/additions/cui_spy_info.xml</File>
+    <File>modules/unit_list/additions/cui_unitlist_button.lua</File>
+    <File>modules/unit_list/additions/cui_unitlist_button.xml</File>
+    <File>modules/unit_list/additions/cui_unitlist_screen.lua</File>
+    <File>modules/unit_list/additions/cui_unitlist_screen.xml</File>
+    <File>modules/victory_tracking/additions/cui_victory_tracking.lua</File>
+    <File>modules/victory_tracking/additions/cui_victory_tracking.xml</File>
+    <File>modules/victory_tracking/support/cui_victory_support.lua</File>
+    <File>modules/world_tracker/additions/cui_city_status.lua</File>
+    <File>modules/world_tracker/additions/cui_city_status.xml</File>
+    <File>modules/world_tracker/base/statusmessagepanel.lua</File>
+    <File>modules/world_tracker/base/worldtracker.lua</File>
+    <File>modules/world_tracker/base/worldtracker.xml</File>
+    <File>modules/world_tracker/support/cui_tracker_support.lua</File>
+    <File>modules/_log/additions/cui_gameinfo.lua</File>
+    <File>modules/_log/additions/cui_log.lua</File>
+    <File>modules/_log/additions/cui_log.xml</File>
+    <File>modules/_options/additions/cui_options_button.lua</File>
+    <File>modules/_options/additions/cui_options_button.xml</File>
+    <File>modules/_options/additions/cui_options_menu.lua</File>
+    <File>modules/_options/additions/cui_options_menu.xml</File>
+    <File>modules/_options/base/options.lua</File>
+  </Files>
+</Mod>

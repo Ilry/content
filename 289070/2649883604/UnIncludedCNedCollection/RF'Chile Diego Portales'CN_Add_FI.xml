@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RF'Chile Diego Portales'CN_Add_FI -->
+<!-- Author: ChiYiuWong , Clear8Sky -->
+<!-- DateCreated: 2021/9/25 14:31:54 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Chile: Diego Portales” 。该文件在 FrontEnd 与 InGame 时载入，需 Criteria ： Active_Expansion_1 -->
+	<LocalizedText>
+
+		<!-- 模组 -->
+
+		<Replace Tag="LOC_MOD_JFD_CHILE_PORTALES_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>------------------------------------[NEWLINE]领袖名称 -- 迭戈·波塔莱斯[NEWLINE][NEWLINE]领袖特性 - 美德共和国[NEWLINE]每次解锁新政体，您文明所有城市的忠诚度提升至满；若所有城市忠诚度皆为满，则改为获得时代得分。处于 [ICON_Glory_Golden_Age] 黄金时代时，当前政体可额外+1经济政策槽位。[NEWLINE][NEWLINE]领袖议程 - 假发党[NEWLINE]致力于创建一个强大的政府，并尊重与他相同政体同时保持城市忠诚度的文明。强烈反对在他大陆上发动战争的文明。</Text>
+		</Replace>
+
+		<!-- 领袖 -->
+
+		<Replace Tag="LOC_LEADER_JFD_PORTALES_NAME" Language="zh_Hans_CN">
+			<Text>迭戈·波塔莱斯</Text>
+		</Replace>
+
+		<!-- 议程 -->
+
+		<Replace Tag="LOC_AGENDA_JFD_PELUCONES_NAME" Language="zh_Hans_CN">
+			<Text>假发党</Text>
+		</Replace>
+		<Replace Tag="LOC_AGENDA_JFD_PELUCONES_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>致力于创建一个强大的政府，并尊重与他相同政体同时保持城市忠诚度的文明。强烈反对在他大陆上发动战争的文明。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_JFD_PORTALES_REASON_GAINING_CITIES_AND_SAME_GOVERNMENT" Language="zh_Hans_CN">
+			<Text>（您的城市很忠诚，且你们政体相同）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_AGENDA_JFD_PELUCONES_GAINING_CITIES_AND_SAME_GOVERNMENT" Language="zh_Hans_CN">
+			<Text>迭戈·波塔莱斯尊重您的公民美德。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_LEADER_JFD_PORTALES_REASON_ATTACKED_CONTINENT" Language="zh_Hans_CN">
+			<Text>（您在他的大陆上发动了一场战争）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_AGENDA_JFD_PELUCONES_ATTACKED_CONTINENT" Language="zh_Hans_CN">
+			<Text>迭戈·波塔莱斯抵抗您的入侵行为。</Text>
+		</Replace>
+
+		<!-- 载入 -->
+
+		<Replace Tag="LOC_LOADING_INFO_LEADER_JFD_PORTALES" Language="zh_Hans_CN">
+			<Text>不受约束的民主是良好政府的寄生虫。智利要求的是强有力且有效的领导，迭戈·波塔莱斯。让您的政府与您的国家团结在一起，智利的财富将如河水一般自由流动。只有权威和尊严，才能带来繁荣。</Text>
+		</Replace>
+
+		<!-- 特性 -->
+
+		<Replace Tag="LOC_TRAIT_LEADER_JFD_REPUBLIC_VIRTUE_NAME" Language="zh_Hans_CN">
+			<Text>美德共和国</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_JFD_REPUBLIC_VIRTUE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>每次解锁新政体，您文明所有城市的忠诚度提升至满；若所有城市忠诚度皆为满，则改为获得时代得分。处于 [ICON_Glory_Golden_Age] 黄金时代时，当前政体可额外+1经济政策槽位。</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_JFD_REPUBLIC_VIRTUE_NOTIFICATION" Language="zh_Hans_CN">
+			<Text>我们人民的美德使国家团结一致。[COLOR_GREEN]+{1_Num}时代得分。[ENDCOLOR]</Text>
+		</Replace>
+
+		<!-- 百科 -->
+
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PORTALES_TITLE" Language="zh_Hans_CN">
+			<Text>迭戈·波塔莱斯</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PORTALES_SUBTITLE" Language="zh_Hans_CN">
+			<Text>智利总统（非正式）</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PORTALES_QUOTE" Language="zh_Hans_CN">
+			<Text>被迷惑者如此高声宣扬的民主在我们国家是荒谬的，这会让智利充斥着罪恶和缺乏美德的公民。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PORTALES_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>迭戈·何塞·佩德罗·维克多·波塔莱斯·帕拉苏埃洛斯（生于1793年6月15日；卒于1837年6月6日），智利政治领袖和国家政治稳定的缔造者。波塔莱斯是指挥铸币厂的西班牙殖民官员的23个孩子之一。他原本是为宗教方面奋斗，后来转向更世俗的追求。作为圣费利佩大学的毕业生，他放弃学习法律，成为了铸币厂的化验师。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PORTALES_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>波塔莱斯的父母都参加了争取独立的斗争，并因他们的政治诉求而受苦：他的父亲被流放到太平洋岛屿胡安费尔南德斯，他的母亲被监禁。1819年，波塔莱斯与他的第一个表姐约瑟夫·波塔莱斯·拉林结婚，后者在两年后去世。她的死，以及他年幼的儿子的死，深深地影响了波塔莱斯，激起他的宗教信念，发誓再也不结婚。尽管波塔莱斯的宗教热情随后消退，但他从未再婚。尽管如此，虽然避开了婚姻，但很明显他并没有过着独身生活。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PORTALES_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>在这些事件之后，波塔莱斯移居秘鲁，并于1821年至1822年在那里与何塞·曼努埃尔·塞亚合作建立了一家企业。这一经历显然对塑造波塔莱斯的政治哲学至关重要。秘鲁的政治环境变得非常混乱，以至于波塔莱斯不得不以亏损巨大个人成本的代价结束他的生意。1824年，他回到智利，在那里他和塞亚从政府那购买了特许权，给予他们销售烟草、扑克牌和酒的专属权力。然而，在秘鲁困扰波塔莱斯的问题同样在智利也困扰着他：政局不稳使他无法从政府的让步中获利。政治动荡第二次让波塔莱斯失去了他的资产。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PORTALES_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>波塔莱斯的结论是，由于拉丁美洲的公民缺乏必要的公民文化或教育，其国家无法在民主下运作。他认为，在拉丁民族为这种形式的政府做好准备之前，还需要几年时间。毫不奇怪，波塔莱斯认为，智利要想生存并繁荣下去，迫切需要整顿内部秩序。因此，他参与了一个名为垄断者的政治团体，该团体主张建立一个强大的中央政府，以保障财产权并恢复国内稳定。波塔莱斯与保守党结盟，后者在1830年的利尔凯战役中击败了自由党。这场胜利为波塔莱斯提供了实现他想法的机会。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PORTALES_CHAPTER_HISTORY_PARA_5" Language="zh_Hans_CN">
+			<Text>波塔莱斯害怕并厌恶不稳定的政治前景。因此，他努力工作以确保政府拥有必要的政治权力。他支持1833年宪法，该宪法实际上将国家政治体系的控制权交给了寡头政治。此外，他开始铲除他的政治反对派，剥夺了贝尔纳多·奥希金斯和旧自由党的支持者的权力，在某些情况下甚至剥夺了他们的生命。 波塔莱斯还清除了军队中任何可能威胁政府的军官，建立了一所军事学院来培训专业的——非政治性的——下属，并建立了一支国民警卫队，可以在紧急情况下粉碎军事阴谋。虽然他不信教，但他给予天主教会一个特权地位，甚至要求政府官员参加弥撒以换取教会对其政权的支持。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PORTALES_CHAPTER_HISTORY_PARA_6" Language="zh_Hans_CN">
+			<Text>波塔莱斯与该国的寡头政治者达成了浮士德式的交易：授予贵族控制政府的权力同时也希望他们遵守制定的法律。这条原则一旦确立，以政府的刺刀为后盾，确保了秩序，也许繁荣就能由此而来。尽管宪法看起来很民主，但高投票限制使波塔莱斯成为了一个虚拟的独裁者。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PORTALES_CHAPTER_HISTORY_PARA_7" Language="zh_Hans_CN">
+			<Text>波塔莱斯希望将党派活动限制在最低限度，这不是因为他个人渴望权力，而是因为像亨利八世一样，他将规矩视为保证政治秩序的一种手段。波塔莱斯坚定地相信总统竞选会对这个最近建立的共和国造成无法承受的杀伤力。因此，他坚持让华金·普列托总统继续任职，而不是让智利陷入一场他十分担心的运动，这会使国家陷入内战的漩涡。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PORTALES_CHAPTER_HISTORY_PARA_8" Language="zh_Hans_CN">
+			<Text>尽管波塔莱斯拥有巨大的权力，但他从未担任过选举职务，更愿意成为普列托的亲信。他确实担任过各种职务，包括内政部长（仅次于总统的第二重要职位）、战争部长、海军部长和外交关系部长，以及瓦尔帕莱索州长。波塔莱斯从未积极寻求职位。事实上，在1833年，他辞去了公职，回到了他的埃尔拉多庄园。在那里，他与政府保持联系，政府经常向他咨询问题。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PORTALES_CHAPTER_HISTORY_PARA_9" Language="zh_Hans_CN">
+			<Text>1835年9月，当华金·托科纳尔和曼努埃尔·伦吉福部长之间的斗争威胁到国家政治平衡时，波塔莱斯重新回到政坛，先是担任战争和海军部长，后担任内政和对外关系部长。出于任何意图和目的，波塔莱斯又开始管理智利。但和以前一样，他更愿意留在权力席位之外，他精心策划让普列托连任总统职位。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PORTALES_CHAPTER_HISTORY_PARA_10" Language="zh_Hans_CN">
+			<Text>虽然他在政治上具有创新精神，但波塔莱斯并没有实质性地偏离他前任的经济政策。对智利来说幸运的是，独立战争并没有破坏位于该国北部的矿山。因此，智利最宝贵的自然资源继续为经济做出巨大贡献。黄金产量放缓，但在查尼亚西洛发现的推动下，银矿开采在1830年至1840年期间增加了60%，而铜产量几乎翻了一番。这些金属的开采吸引了大量外国投资，为国家提供了可观的收入。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PORTALES_CHAPTER_HISTORY_PARA_11" Language="zh_Hans_CN">
+			<Text>他与公共财产部长曼努埃尔·伦吉福合作，将瓦尔帕莱索发展成为该半球在太平洋上的首要港口。为了吸引前往西半球东部和太平洋沿岸的国际航运，该州花费大量资金改善瓦尔帕莱索的设施，建造新码头以及安全仓库。1832年的一项法律允许在瓦尔帕莱索以非常低的税率储存货物长达三年。创新的法律和现代化的设施相结合，使瓦尔帕莱索成为商船停靠干船坞进行维修和补给的理想场所。政府还对科金博和瓦斯科港口进行了现代化改造。此外，他还颁布了新的海关法典，试图鼓励建立商船并为智利国民保留沿海交通。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PORTALES_CHAPTER_HISTORY_PARA_12" Language="zh_Hans_CN">
+			<Text>波塔莱斯确实为智利制定了新的外交政策目标。他正式表示，智利在积极捍卫其主权的同时，将远离南半球的纷争。然而，事实上，波塔莱斯似乎愿意将智利的意愿强加于其邻国，正如其国家格言所规定的那样，无论是“理性还是武力”。从根本上说，波塔莱斯试图确保没有国家可以威胁智利的领土完整。因此，他蔑视美国及其门罗主义，警告他所有的西班牙裔邻居提防华盛顿的邪恶意图。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PORTALES_CHAPTER_HISTORY_PARA_13" Language="zh_Hans_CN">
+			<Text>1836年，玻利维亚将军安德烈斯·圣克鲁斯建立的秘鲁-玻利维亚联邦威胁到了波塔莱斯的太平洋愿景。显然，这个新国家的土地面积和人口总和使智利相形见绌，对圣地亚哥政府构成了潜在的军事威胁。此外，该联邦在早期就表现出一种不健康的独立性，其中一个例子是圣克鲁斯政府废除了1835年允许智利小麦进入秘鲁市场的条约。更糟糕的是圣克鲁斯希望将卡亚俄港恢复到其殖民统治地位。为了实现这一目标，他对通过瓦尔帕莱索进入联邦的所有进口商品征收特别税。显然，波利维亚领导人因为他是“印第安人”而反对他，他正在挑战瓦尔帕莱索获得商业霸权的企图。1836年12月，由于担心智利的北方邻国最终会背叛它，波塔莱斯发动了一场先发制人的战争，以在它危及智利对该地区的经济和政治统治之前将其摧毁。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PORTALES_CHAPTER_HISTORY_PARA_14" Language="zh_Hans_CN">
+			<Text>这场不受欢迎的战争的爆发——群众不想在军队中服役而不得不在军队中留下“深刻印象”——使人民威胁要摧毁波塔莱斯的政府。政治阴谋者希望利用民众的不满情绪推翻华金·普列托政府。波塔莱斯的回应是组织军事法庭，审判并处决涉嫌密谋反对政权的个人。这种策略只取得了有限的成功。 一个叛变的军队在他访问基洛塔的驻军后俘虏了波塔莱斯。叛军将波塔莱斯带到瓦尔帕莱索，他们希望在那里吸引其他军队加入叛乱。当忠诚的驻军拒绝时，叛军杀害了波塔莱斯，捅了他三十多刀，肢解了他的身体，并剥光了他的衣服，然后将他的衣服分给了士兵。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PORTALES_CHAPTER_HISTORY_PARA_15" Language="zh_Hans_CN">
+			<Text>他建立的政治体系在波塔莱斯死后幸存下来。尽管严厉，但这种政府形式加强了经济发展和进步所必需的秩序。因此，当其他拉丁美洲国家处在内部动荡中而经济萧条时，智利在很大程度上得益于迭戈·波塔莱斯的政策而繁荣起来。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PORTALES_CHAPTER_CAPSULE_BODY" Language="zh_Hans_CN">
+			<Text>智利毫不迟疑地寻求着扩大领土，尤其是沿着海岸线。事实上，他们的同胞将用自己的生命捍卫这项权利。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PORTALES_CHAPTER_DETAILED_BODY" Language="zh_Hans_CN">
+			<Text>智利努力争取尽可能多的海岸线和战略领土，通过建造沿海岸改良设施更快地扩张。智利将凭借特色改良设施“硝石矿场”，发展出富有生产力的矿业，并且在迭戈·波塔莱斯的领导下建立一个强大而繁荣的国家。保护这一行业将是智利的重点之一，因为这将确保其人民保持忠诚。这种忠诚使他们建造一支强大的现代海军，以追求统治胜利。</Text>
+		</Replace>
+
+		<!-- 外交 -->
+
+		<!-- 初次见面 -->
+		<!-- 开场白 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_JFD_PORTALES_ANY" Language="zh_Hans_CN">
+			<Text>与拥有美德的朋友说话，我对诡计没有耐心。我是智利的迭戈·波塔莱斯。</Text>
+		</Replace>
+
+		<!-- 到附近城市的邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_JFD_PORTALES_ANY" Language="zh_Hans_CN">
+			<Text>圣地亚哥是拉丁城市的光辉典范。来，我带你看看。它就在附近。</Text>
+		</Replace>
+
+		<!-- AI接受玩家邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NEAR_INITIATOR_POSITIVE_LEADER_JFD_PORTALES_ANY" Language="zh_Hans_CN">
+			<Text>我接受你的邀请。</Text>
+		</Replace>
+
+		<!-- AI邀请玩家交换首都信息 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_JFD_PORTALES_ANY" Language="zh_Hans_CN">
+			<Text>你是如何在你的首都进行政府运作的 我承认，你让我很感兴趣。</Text>
+		</Replace>
+
+		<!-- 问候 -->
+
+		<Replace Tag="LOC_DIPLO_GREETING_LEADER_JFD_PORTALES_ANY" Language="zh_Hans_CN">
+			<Text>向你致以问候。</Text>
+		</Replace>
+
+		<!-- 代表团 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_HUMAN_LEADER_JFD_PORTALES_ANY" Language="zh_Hans_CN">
+			<Text>我接受你的代表团。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_HUMAN_LEADER_JFD_PORTALES_ANY" Language="zh_Hans_CN">
+			<Text>我目前没有兴趣与贵国代表团交谈。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DELEGATION_FROM_AI_LEADER_JFD_PORTALES_ANY" Language="zh_Hans_CN">
+			<Text>如果你还没有读过我关于强权政府美德的论文，我会让一个来自我国的代表团一起带些过去。我希望你能好好利用它们。</Text>
+		</Replace>
+
+		<!-- 开放边境 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_HUMAN_LEADER_JFD_PORTALES_ANY" Language="zh_Hans_CN">
+			<Text>我同意这些条件。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_HUMAN_LEADER_JFD_PORTALES_ANY" Language="zh_Hans_CN">
+			<Text>我无法接受。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_OPEN_BORDERS_FROM_AI_LEADER_JFD_PORTALES_ANY" Language="zh_Hans_CN">
+			<Text>是时候把彼此当作好邻居了。我提议开放边界。</Text>
+		</Replace>
+
+		<!-- 宣布友谊 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_HUMAN_LEADER_JFD_PORTALES_ANY" Language="zh_Hans_CN">
+			<Text>对此我表示感谢。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_HUMAN_LEADER_JFD_PORTALES_ANY" Language="zh_Hans_CN">
+			<Text>今天不行。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_JFD_PORTALES_ANY" Language="zh_Hans_CN">
+			<Text>我建议让世界知道，我们两国是好朋友。</Text>
+		</Replace>
+
+		<!-- 玩家接受后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_PORTALES_ANY" Language="zh_Hans_CN">
+			<Text>愿这对我们双方都有利。</Text>
+		</Replace>
+
+		<!-- 玩家拒绝后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_PORTALES_ANY" Language="zh_Hans_CN">
+			<Text>我不介意。</Text>
+		</Replace>
+
+		<!-- 结盟 -->
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_ALLIANCE_FROM_AI_LEADER_JFD_PORTALES_ANY" Language="zh_Hans_CN">
+			<Text>我来寻求联盟，因为智利的敌人一天比一天更大胆了。</Text>
+		</Replace>
+
+		<!-- 赞成与警告 -->
+		<!-- AI赞成 -->
+
+		<Replace Tag="LOC_DIPLO_KUDO_EXIT_LEADER_JFD_PORTALES_ANY" Language="zh_Hans_CN">
+			<Text>政府的力量是最可靠的美德。</Text>
+		</Replace>
+
+		<!-- AI警告 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_EXIT_LEADER_JFD_PORTALES_ANY" Language="zh_Hans_CN">
+			<Text>那些无法置身于智利事务之外的人会发现自己不和。</Text>
+		</Replace>
+
+		<!-- AI警告玩家离开边境 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_LEADER_JFD_PORTALES_ANY" Language="zh_Hans_CN">
+			<Text>智利的军队已准备好向你进攻。我们附近有什么吸引你的？</Text>
+		</Replace>
+
+		<!-- 贸易 -->
+		<!-- AI接受交易 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_JFD_PORTALES_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_PORTALES_ANY}</Text>
+		</Replace>
+
+		<!-- AI拒绝交易 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_MAKE_DEAL_FROM_AI_LEADER_JFD_PORTALES_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_PORTALES_ANY}</Text>
+		</Replace>
+
+		<!-- 谴责 -->
+		<!-- 受到谴责回应 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_JFD_PORTALES_ANY" Language="zh_Hans_CN">
+			<Text>这不会以对你有利的方式结束。</Text>
+		</Replace>
+
+		<!-- AI谴责玩家 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_JFD_PORTALES_ANY" Language="zh_Hans_CN">
+			<Text>我将竭尽全力捍卫智利的统一。如果这意味着要对抗你这样的人，那就这样吧。[NEWLINE]（谴责你）</Text>
+		</Replace>
+
+		<!-- 谴责理由 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_REASON_FROM_AI_LEADER_ANY_REASON_JFD_PELUCONES_ATTACKED_CONTINENT" Language="zh_Hans_CN">
+			<Text>（您在他的大陆上发动了一场战争）</Text>
+		</Replace>
+
+		<!-- 宣战 -->
+		<!-- 受到宣战后回应 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_JFD_PORTALES_ANY" Language="zh_Hans_CN">
+			<Text>智利不会向你屈服。</Text>
+		</Replace>
+
+		<!-- AI宣战 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_JFD_PORTALES_ANY" Language="zh_Hans_CN">
+			<Text>彰显智利实力的时候到了。我们的话谈完了。</Text>
+		</Replace>
+
+		<!-- 求和 -->
+		<!-- AI接受求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_ACCEPT_DEAL_LEADER_JFD_PORTALES_ANY" Language="zh_Hans_CN">
+			<Text>我接受你的条件。</Text>
+		</Replace>
+
+		<!-- AI拒绝求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_REFUSE_DEAL_LEADER_JFD_PORTALES_ANY" Language="zh_Hans_CN">
+			<Text>这样的和平会危及我国政府的稳定。我做不到。</Text>
+		</Replace>
+
+		<!-- AI求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_FROM_AI_LEADER_JFD_PORTALES_ANY" Language="zh_Hans_CN">
+			<Text>这场战争对我们两国都没有好处。让它结束吧。</Text>
+		</Replace>
+
+		<!-- 击败 -->
+		<!-- AI被击败 -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_JFD_PORTALES_ANY" Language="zh_Hans_CN">
+			<Text>智利将用比以往更大的力量从我的失败中重生。</Text>
+		</Replace>
+
+		<!-- 玩家被击败（在热座模式中会显示） -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_JFD_PORTALES_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_JFD_PORTALES_ANY}</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

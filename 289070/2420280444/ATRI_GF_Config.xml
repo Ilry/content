@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ATRI_GF_Config -->
+<!-- Author: UFO300 -->
+<!-- DateCreated: 3/7/2021 8:43:03 PM -->
+<GameData>
+	<Players>
+		<Row Domain="Players:Expansion2_Players" CivilizationType="CIVILIZATION_EDEN_GF" LeaderType="LEADER_ATRI_GF"
+					 CivilizationName="LOC_CIVILIZATION_EDEN_GF_NAME" CivilizationIcon="ICON_CIVILIZATION_EDEN_GF" LeaderName="LOC_LEADER_ATRI_GF_NAME"
+					 LeaderIcon="ICON_LEADER_ATRI_GF" CivilizationAbilityName="LOC_TRAIT_CIVILIZATION_EDEN_GF_FC_NAME"
+					 CivilizationAbilityDescription="LOC_TRAIT_CIVILIZATION_EDEN_GF_FC_DESCRIPTION" CivilizationAbilityIcon="ICON_CIVILIZATION_EDEN_GF" LeaderAbilityName="LOC_TRAIT_LEADER_ATRI_GF_HPR_NAME"
+					 LeaderAbilityDescription="LOC_TRAIT_LEADER_ATRI_GF_HPR_DESCRIPTION" LeaderAbilityIcon="ICON_LEADER_ATRI_GF" Portrait="ATRI_GF_FG"/>
+
+		<Row Domain="Players:Expansion2_Players" CivilizationType="CIVILIZATION_EDEN_GF" LeaderType="LEADER_XIASHENG"
+					 CivilizationName="LOC_CIVILIZATION_EDEN_GF_NAME" CivilizationIcon="ICON_CIVILIZATION_EDEN_GF" LeaderName="LOC_LEADER_XIASHENG_NAME"
+					 LeaderIcon="ICON_LEADER_XIASHENG" CivilizationAbilityName="LOC_TRAIT_CIVILIZATION_EDEN_GF_FC_NAME"
+					 CivilizationAbilityDescription="LOC_TRAIT_CIVILIZATION_EDEN_GF_FC_DESCRIPTION" CivilizationAbilityIcon="ICON_CIVILIZATION_EDEN_GF" LeaderAbilityName="LOC_TRAIT_LEADER_XIASHENG_ST_NAME"
+					 LeaderAbilityDescription="LOC_TRAIT_LEADER_XIASHENG_ST_DESCRIPTION" LeaderAbilityIcon="ICON_LEADER_XIASHENG" Portrait="XIASHENG_FG"/>
+	</Players>
+
+	<PlayerItems>
+		<Row Domain="Players:Expansion2_Players" CivilizationType="CIVILIZATION_EDEN_GF" LeaderType="LEADER_ATRI_GF"
+				 Type="DISTRICT_DT_GF" Name="LOC_DISTRICT_DT_GF_NAME"
+				 Description="LOC_DISTRICT_DT_GF_DESCRIPTION" Icon="ICON_DISTRICT_HANSA" SortIndex="20"/>
+
+		<Row Domain="Players:Expansion2_Players" CivilizationType="CIVILIZATION_EDEN_GF" LeaderType="LEADER_XIASHENG"
+				 Type="DISTRICT_GL" Name="LOC_DISTRICT_GL_NAME"
+				 Description="LOC_DISTRICT_GL_DESCRIPTION" Icon="ICON_DISTRICT_CAMPUS" SortIndex="2"/>
+
+		<Row Domain="Players:Expansion2_Players" CivilizationType="CIVILIZATION_EDEN_GF" LeaderType="LEADER_ATRI_GF"
+				 Type="BUILDING_INSTITUTE" Name="LOC_BUILDING_INSTITUTE_NAME"
+				 Description="LOC_BUILDING_INSTITUTE_DESCRIPTION" Icon="ICON_BUILDING_UNIVERSITY" SortIndex="18"/>
+
+		<Row Domain="Players:Expansion2_Players" CivilizationType="CIVILIZATION_EDEN_GF" LeaderType="LEADER_XIASHENG"
+				 Type="BUILDING_INSTITUTE" Name="LOC_BUILDING_INSTITUTE_NAME"
+				 Description="LOC_BUILDING_INSTITUTE_DESCRIPTION" Icon="ICON_BUILDING_UNIVERSITY" SortIndex="18"/>
+
+		<Row Domain="Players:Expansion2_Players" CivilizationType="CIVILIZATION_EDEN_GF" LeaderType="LEADER_ATRI_GF"
+			 Type="UNIT_ESUBMARINE" Name="LOC_UNIT_ESUBMARINE_NAME"
+			 Description="LOC_UNIT_ESUBMARINE_DESCRIPTION" Icon="ICON_UNIT_ESUBMARINE" SortIndex="0"/>
+
+		<Row Domain="Players:Expansion2_Players" CivilizationType="CIVILIZATION_EDEN_GF" LeaderType="LEADER_XIASHENG"
+				 Type="UNIT_ESUBMARINE" Name="LOC_UNIT_ESUBMARINE_NAME"
+				 Description="LOC_UNIT_ESUBMARINE_DESCRIPTION" Icon="ICON_UNIT_ESUBMARINE" SortIndex="0"/>
+	</PlayerItems>
+
+	<DuplicateLeaders>
+		<Row Domain="Players:Expansion2_Players" LeaderType="LEADER_ATRI_GF" OtherLeaderType="LEADER_XIASHENG"/>
+	</DuplicateLeaders>
+</GameData>

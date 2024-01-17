@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- GS'Area 51 - World Wonder Alien Units'CN_Add_IG -->
+<!-- Author: 牛奶大魔王 , Clear8Sky -->
+<!-- DateCreated: 2021/11/21 5:17:22 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Area 51 - World Wonder + Alien Units” 。该文件在 InGame 时载入，需 Criteria ：Active_Expansion_2 -->
+	<LocalizedText>
+		<Replace Tag="LOC_BUILDING_JNR_AREA_51_NAME" Language="zh_Hans_CN">
+			<Text>51区</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_JNR_AREA_51_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>所在城市立即获得一艘“U.F.O”以及两名“外星渗透者”，允许此城使用 [ICON_Faith] 信仰值购买外星渗透者（每次购买需消耗1 [ICON_Citizen] 人口，城市至少拥有2 [ICON_Citizen] 人口才可购买）；若U.F.O拥有“克隆中心”的 [ICON_Promotion] 强化，则无需消耗 [ICON_Citizen] 人口。[NEWLINE]所有单位每回合额外恢复10点 [ICON_Damaged] 生命值（即使已经进行过移动或攻击）。[NEWLINE]必须建在与拥有机库的航空港相邻的沙漠上。</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_JNR_AREA_51_QUOTE" Language="zh_Hans_CN">
+			<Text>与你在小报上读到的相反，没有51区更没有宇宙飞船。[NEWLINE]——比尔·普尔曼（电影《独立日》中饰演总统）</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_JNR_51_UFO_NAME" Language="zh_Hans_CN">
+			<Text>U.F.O</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_JNR_51_UFO_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>完成奇观“51区”后可获得的唯一近战单位。[NEWLINE]无法训练，但被击杀后将以1点 [ICON_Damaged] 生命值撤退至“51区”内。拥有独特的强化路线。[NEWLINE]可在水域中移动与战斗。抵抗大规模杀伤性武器。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_JNR_51_ALIEN_NAME" Language="zh_Hans_CN">
+			<Text>外星渗透者</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_JNR_51_ALIEN_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>完成奇观“51区”后可获得的特殊近战单位，无法通过战斗获取经验值，但可依靠U.F.O的 [ICON_Promotion] 强化来获得晋升。[NEWLINE]必须使用 [ICON_Faith] 信仰值购买，且仅限于拥有“51区”的城市。购买外星渗透者需消耗1 [ICON_Citizen] 人口，城市至少拥有2 [ICON_Citizen] 人口才可购买；若U.F.O拥有“克隆中心”的 [ICON_Promotion] 强化，则无需消耗 [ICON_Citizen] 人口。</Text>
+		</Replace>
+		<Replace Tag="LOC_PROMOTION_CLASS_JNR_51_UFO_NAME" Language="zh_Hans_CN">
+			<Text>监视</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_JNR_51_HIVEMIND_NAME" Language="zh_Hans_CN">
+			<Text>蜂巢传链</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_JNR_51_HIVEMIND_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>+10 [ICON_Strength] 战斗力 来自于相邻U.F.O.</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_JNR_51_XENO_CAMOUFLAGE_NAME" Language="zh_Hans_CN">
+			<Text>异种伪形</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_JNR_51_XENO_CAMOUFLAGE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>+1视野。攻击后可移动，且获得隐身能力，只有相邻敌方单位才可发现该单位。</Text>
+		</Replace>
+		<Replace Tag="LOC_PROMOTION_JNR_51_UFO_HIVEMIND_NAME" Language="zh_Hans_CN">
+			<Text>蜂巢</Text>
+		</Replace>
+		<Replace Tag="LOC_PROMOTION_JNR_51_UFO_HIVEMIND_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>+1空中单位槽位。2格范围内所有外星渗透者获得+10 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_PROMOTION_JNR_51_UFO_MIND_CONTROL_NAME" Language="zh_Hans_CN">
+			<Text>心灵控制</Text>
+		</Replace>
+		<Replace Tag="LOC_PROMOTION_JNR_51_UFO_MIND_CONTROL_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>2格范围内的己方城市每回合+10忠诚度，而敌方城市-10忠诚度。</Text>
+		</Replace>
+		<Replace Tag="LOC_PROMOTION_JNR_51_UFO_SHIELDING_NAME" Language="zh_Hans_CN">
+			<Text>超导装甲</Text>
+		</Replace>
+		<Replace Tag="LOC_PROMOTION_JNR_51_UFO_SHIELDING_WEAK_SPOT_NAME" Language="zh_Hans_CN">
+			<Text>弱点锁定</Text>
+		</Replace>
+		<Replace Tag="LOC_PROMOTION_JNR_51_UFO_SHIELDING_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>防御时+17 [ICON_Strength] 战斗力，但防御双翼飞机及特色空中单位时[COLOR_RED]-17[ENDCOLOR] [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_PROMOTION_JNR_51_UFO_XENO_CAMOUFLAGE_NAME" Language="zh_Hans_CN">
+			<Text>伪装植入</Text>
+		</Replace>
+		<Replace Tag="LOC_PROMOTION_JNR_51_UFO_XENO_CAMOUFLAGE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>外星渗透者+1视野，攻击后可移动，且获得隐身能力，只有相邻敌方单位才可发现该单位。</Text>
+		</Replace>
+		<Replace Tag="LOC_PROMOTION_JNR_51_UFO_CLONING_VATS_NAME" Language="zh_Hans_CN">
+			<Text>克隆中心</Text>
+		</Replace>
+		<Replace Tag="LOC_PROMOTION_JNR_51_UFO_CLONING_VATS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>训练外星渗透者无需消耗 [ICON_Citizen] 人口。</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

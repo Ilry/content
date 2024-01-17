@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RF'ShinkiGod'CN_Fix_FI -->
+<!-- Author: Clear8Sky -->
+<!-- DateCreated: 2021/6/15 9:25:46 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “[TouHou mod]ShinkiGod-创世神神绮-创世神しんき” 。该文件在 FrontEnd 与 InGame 时载入，需 Criteria ：Active_Expansion_1 -->
+	<LocalizedText>
+		<Replace Tag="LOC_CIVILIZATION_SHINKIGOD_ADJECTIVE" Language="zh_Hans_CN">
+			<Text>魔神族的</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_SHINKIGOD_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>每位 [ICON_Citizen] 公民产出+2 [ICON_Faith] 信仰值。战斗单位获得魔神族修正（战斗单位和宗教单位+10 [ICON_Strength] 战斗力）。当倒数第二位大预言家被招募后（若您尚未获得大预言家），自动获得最后一位 [ICON_GreatProphet] 大预言家。可从每个信徒中获得+2 [ICON_Faith] 信仰值。</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_SHINKIGOD_RACE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>创世支配：+1通配符槽位。[NEWLINE]神创万物：3倍 [ICON_Faith] 信仰值产出，可用 [ICON_Faith] 信仰值购买所有单位和建筑，且购买时消耗的 [ICON_Faith] 信仰值减少50%。[ICON_Faith] 信仰值足够时，建造区域或奇观会消耗当前所需 [ICON_Production] 生产力的 [ICON_Faith] 信仰值，直接完成；但是 [ICON_Faith] 信仰值需要承担一半的维护费用。能够通过“创造魔人”项目获得 [ICON_Citizen] 人口。</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_SHINKIGOD_PANSAEMONIUM_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>魔神族文明特有奇观，初始即可解锁。提供+20 [ICON_Faith] 信仰值，提供除了祭祀建筑以外的所有信仰和万神殿效果。</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_UNIT_MISSIONARY_SHINKIGOD_NAME" Language="zh_Hans_CN">
+			<Text>宣读魔神族神意</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_UNIT_MISSIONARY_SHINKIGOD_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>创世神神绮作为领袖时的特色单位，取代传教士。相较于后者+10 [ICON_Religion] 宗教战斗力、+1传教次数。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_MISSIONARY_SHINKIGOD_NAME" Language="zh_Hans_CN">
+			<Text>{LOC_TRAIT_CIVILIZATION_UNIT_MISSIONARY_SHINKIGOD_NAME}</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_MISSIONARY_SHINKIGOD_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>{LOC_TRAIT_CIVILIZATION_UNIT_MISSIONARY_SHINKIGOD_DESCRIPTION}</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_UNIT_ABILITY_MISSIONARY_SHINKIGOD_NAME" Language="zh_Hans_CN">
+			<Text>{LOC_TRAIT_CIVILIZATION_UNIT_MISSIONARY_SHINKIGOD_NAME}</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_UNIT_ABILITY_MISSIONARY_SHINKIGOD_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>{LOC_TRAIT_CIVILIZATION_UNIT_MISSIONARY_SHINKIGOD_DESCRIPTION}</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_UNIT_DISCIPLE_SHINKIGOD_NAME" Language="zh_Hans_CN">
+			<Text>宣告魔神族神威</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_UNIT_DISCIPLE_SHINKIGOD_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>神绮作为领袖时的特色单位，取代使徒。相较于后者+10 [ICON_Religion] 宗教战斗力、+1传教次数。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_DISCIPLE_SHINKIGOD_NAME" Language="zh_Hans_CN">
+			<Text>{LOC_TRAIT_CIVILIZATION_UNIT_DISCIPLE_SHINKIGOD_NAME}</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_DISCIPLE_SHINKIGOD_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>{LOC_TRAIT_CIVILIZATION_UNIT_DISCIPLE_SHINKIGOD_DESCRIPTION}</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_UNIT_ABILITY_DISCIPLE_SHINKIGOD_NAME" Language="zh_Hans_CN">
+			<Text>{LOC_TRAIT_CIVILIZATION_UNIT_DISCIPLE_SHINKIGOD_NAME}</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_UNIT_ABILITY_DISCIPLE_SHINKIGOD_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>{LOC_TRAIT_CIVILIZATION_UNIT_DISCIPLE_SHINKIGOD_DESCRIPTION}</Text>
+		</Replace>
+		<Replace Tag="LOC_SHINKIGOD_PROMOTION_DEFENDER_OF_FAITH_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>魔神复诵：+{1_Amount} 战斗力</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_MAKE_SHINKIGOD_PEOPLE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>魔神族文明的特色项目。+1 [ICON_Citizen] 人口。</Text>
+		</Replace>
+		<Replace Language="zh_Hans_CN" Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_SHINKIGOD_ANY">
+			<Text>若你继续阻碍我们，请小心点。[NEWLINE]（谴责你）</Text>
+		</Replace>
+		<Replace Language="zh_Hans_CN" Tag="LOC_DIPLO_WARNING_LEADER_SHINKIGOD_REASON_ANY">
+			<Text>（您不信仰他们的宗教）</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_SHINKIGOD_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>魔神族：神绮的造物，所有存在都是世界主级别的，虽然自己毫无自觉，自愿受神绮的绝对支配，经常被随性的唯一神坑……</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_SHINKIGOD_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>种族修正（每位 [ICON_Citizen] 公民产出+1 [ICON_Faith] 信仰值）：身为神绮的造物，为神绮奉献终身是唯一的生存目标。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_SHINKIGOD_CHAPTER_HISTORY_PARA_5" Language="zh_Hans_CN">
+			<Text>种族特质（当倒数第二位大预言家被招募后（若您尚未获得大预言家），自动获得最后一位 [ICON_GreatProphet] 大预言家。可从每个信徒中获得+1 [ICON_Faith] 信仰值）：创世神对信仰没有需求，不过众多的追随者还是会让她感到愉悦，即使是神绮也不例外。</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVINFO_SHINKIGOD_PEOPLE" Language="zh_Hans_CN">
+			<Text>魔神族，神绮的造物，所有存在都是世界主级别的，虽然自己毫无自觉，自愿受神绮的绝对支配，经常被随性的唯一神坑……</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_BUILDINGS_PAGE_BUILDING_SHINKIGOD_PANSAEMONIUM_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>万魔殿，魔神族们向全世界展示神绮的全知全能的伟大奇观。也可以作为神绮化身的活动中心，加强化身与魔神界的联系，让神绮将力量发挥多发挥出那么一点点……</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_SHINKIGOD_CHAPTER_HISTORY_PARA_6" Language="zh_Hans_CN">
+			<Text>故事背景：神族虽然是追赶着月兔进入的异界，但是时机非常凑巧和幻想乡领袖观光团的爱丽丝在同一时间进入了异界，而这引起了神绮的警觉。神绮担心神族在新世界没有创世神的约束会对爱丽丝不利，因而也悄悄让化身带领魔神族进入了异界。随后神族与月兔发生了战争，史称神月异界战争。月兔战败，开始撤出异界，神族开始追击，正巧爱丽丝正在进行维稳行动，随着月兔的逐步撤离，爱丽丝和其他领袖也认为异界环境即将稳定，于是也开始陆续撤离。这一时刻便产生了一个非常有趣的现象：月兔和幻想乡领袖撤离异界，神族在追击。神绮因而愈发担心爱丽丝的安危，因而让化身带领魔神族阻碍神族的行动。神族本身对魔神族积怨已久（虽然魔神族对神族没什么不满），两方冲突瞬间爆发，史称神魔异界战争。与以局部战争收场的不对等的神月异界战争不同的是，由于交战的双方都是高等的存在，神魔异界战争逐渐将整个异界卷了进来。面对创世神级别的力量，神族虽然拥有更大的领土、更多的人力，却还是逐渐落入下风。不得已，神族开始强征异界的各个种族与魔神族作战。幻想乡完全不想掺和进这两者之间，因而贤者议会以及幻想乡各领袖商讨后一致同意关闭异界通路，将异界与幻想乡彻底分割开来，于是一场浩浩荡荡的异界大撤离开始了。在这期间，由于爱丽丝已经安全离开了异界，神绮开始以游戏的心态进行战斗了，这给了神族宝贵的喘息时间，也使得神族强征其他种族的行动暂停了，因而幻想乡大撤离得以顺利进行。随后贤者们将幻想乡与异界的联系隔断，彻底断绝了与异界的联系。于是这场将整个幻想乡，月面乃至神魔都卷进来的“异界异变”正式落下帷幕，成为幻想乡无数异变的其中一个，在历史的长河中褪去了。虽然神魔还在异界相爱相杀，不过那就是另一个故事了……</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

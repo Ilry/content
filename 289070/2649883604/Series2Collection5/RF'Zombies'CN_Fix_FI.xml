@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RF'Zombies'CN_Fix_FI -->
+<!-- Author: Clear8Sky -->
+<!-- DateCreated: 2021/7/29 15:56:14 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “[TouHou mod]Zombies-僵尸-ゾンビ” 。该文件在 FrontEnd 与 InGame 时载入，需 Criteria ：Active_Expansion_1 -->
+	<LocalizedText>
+		
+		<!-- 功能类文本 -->
+		
+		<Replace Tag="LOC_CIVILIZATION_ZOMBIE_ADJECTIVE" Language="zh_Hans_CN">
+			<Text>死灵族的</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_ZOMBIE_DEAD_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>每位 [ICON_Citizen] 公民产出+0.4 [ICON_Production] 生产力。军事单位获得死灵修正（单位[COLOR_RED]-5[ENDCOLOR] [ICON_Strength] 战斗力，训练单位时+50% [ICON_Production] 生产力）。[ICON_Citizen] 人口不能自然增长，每过一段时间猫车们会往 [ICON_Citizen] 人口小于 [ICON_Housing] 住房的城市运送 [ICON_Citizen] 人口。</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_ZOMBIES_HAPPY_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>死灵共和：+1经济政策槽位。[NEWLINE]死灵代言：所有城市+3 [ICON_Amenities] 宜居度。</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_ZOMBIE_RIN_FIND_BETTER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>牧人独裁：+1军事政策槽位。[NEWLINE]择优选尸：每位 [ICON_Citizen] 公民额外产出+0.2 [ICON_Production] 生产力。</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_ZOMBIE_GRAVE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>火焰猫燐或宫古芳香作为领袖时的特色建筑，取代粮仓。不提供 [ICON_Food] 食物，转而提供+4 [ICON_Housing] 住房。</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_ZOMBIE_TOWER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>火焰猫燐或宫古芳香作为领袖时的特色建筑，取代纪念碑。使此城的忠诚度每回合+4。</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_UNIT_LITTLE_ZOMBIE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>火焰猫燐或宫古芳香作为领袖时的特色单位，初始可用，训练费用低，[ICON_Strength] 战斗力稍弱。可使周围单位-5 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_LITTLE_ZOMBIE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>{LOC_TRAIT_CIVILIZATION_UNIT_LITTLE_ZOMBIE_DESCRIPTION}</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_UNIT_ABILITY_LITTLE_ZOMBIE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>{LOC_TRAIT_CIVILIZATION_UNIT_LITTLE_ZOMBIE_DESCRIPTION}</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_LITTLE_ZOMBIE_POISON_MODIFIER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>{1_Amount} [ICON_Strength] 战斗力 来自于被僵尸的毒素侵蚀</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_LEADER_ZOMBIES_REASON_ANY" Language="zh_Hans_CN">
+			<Text>（没有人知道她们到底在表达什么，或者什么都没有表达）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_RIN_ANY" Language="zh_Hans_CN">
+			<Text>我们讨厌你！[NEWLINE]（谴责你）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_RIN_ANY" Language="zh_Hans_CN">
+			<Text>欢迎来到尸体集散地。怎么？看到老朋友了吗？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_RIN_ANY" Language="zh_Hans_CN">
+			<Text>很荣幸见到您，我邀请您参观尸体集散地。怎么？看到老朋友了吗？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_LEADER_RIN_REASON_ANY" Language="zh_Hans_CN">
+			<Text>（火焰猫燐讨厌您保持和平）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_RIN_ANY" Language="zh_Hans_CN">
+			<Text>我的收藏……</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_ZOMBIES_LOADING_INFO" Language="zh_Hans_CN">
+			<Text>啊～～～啊啊啊～～啊～～啊啊～～～～啊！（僵尸的低吼）</Text>
+		</Replace>
+		
+		<!-- 百科类文本暂补 -->
+		
+		<Replace Tag="LOC_CIVINFO_ZOMBIE_LOCATION" Language="zh_Hans_CN">
+			<Text>暂无</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVINFO_ZOMBIE_SIZE" Language="zh_Hans_CN">
+			<Text>暂无</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVINFO_ZOMBIE_POPULATION" Language="zh_Hans_CN">
+			<Text>暂无</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVINFO_ZOMBIE_CAPITAL" Language="zh_Hans_CN">
+			<Text>暂无</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

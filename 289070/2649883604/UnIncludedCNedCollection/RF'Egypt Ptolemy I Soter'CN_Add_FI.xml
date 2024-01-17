@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RF'Egypt Ptolemy I Soter'CN_Add_FI -->
+<!-- Author: 春 , Clear8Sky -->
+<!-- DateCreated: 2021/8/31 20:47:32 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Egypt: Ptolemy I Soter” 。该文件在 FrontEnd 与 InGame 时载入，需 Criteria ： Active_Expansion_1 -->
+	<LocalizedText>
+
+		<!-- 模组 -->
+
+		<Replace Tag="LOC_MOD_JFD_EGYPT_PTOLEMY_SOTER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>------------------------------------[NEWLINE]领袖名称 -- 托勒密·索特尔[NEWLINE][NEWLINE]领袖特性 - 地中海明珠[NEWLINE]每建成一座港口建筑，可获得一个海军单位。建造港口+50% [ICON_Production] 生产力。完成科技“造船术”解锁特色单位四十桨战船。[NEWLINE][NEWLINE]特色单位 - 四十桨战船[NEWLINE]托勒密·索特尔作为领袖时的埃及古典时期特色海上单位。不擅长战斗，但驻扎在港口时每回合提供+2 [ICON_InfluencePerTurn] 影响力点数。[NEWLINE][NEWLINE]特色议程 - 塞拉皮斯崇拜[NEWLINE]维持强大的常备军的同时保持高额的 [ICON_Culture] 文化和 [ICON_Faith] 信仰。喜欢 [ICON_Faith] 信仰比他少的文明。不喜欢拥有庞大常备军的文明。</Text>
+		</Replace>
+
+		<!-- 领袖 -->
+
+		<Replace Tag="LOC_LEADER_JFD_PTOLEMY_NAME" Language="zh_Hans_CN">
+			<Text>托勒密·索特尔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JFD_ALEXANDRIA" Language="zh_Hans_CN">
+			<Text>亚历山大</Text>
+		</Replace>
+
+		<!-- 议程 -->
+
+		<Replace Tag="LOC_AGENDA_JFD_CULT_SERAPIS_NAME" Language="zh_Hans_CN">
+			<Text>塞拉皮斯崇拜</Text>
+		</Replace>
+		<Replace Tag="LOC_AGENDA_JFD_CULT_SERAPIS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>维持强大的常备军的同时保持高额的 [ICON_Culture] 文化和 [ICON_Faith] 信仰。喜欢 [ICON_Faith] 信仰比他少的文明。不喜欢拥有庞大常备军的文明。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_JFD_PTOLEMY_REASON_LAGS_FAITH" Language="zh_Hans_CN">
+			<Text>(您的信仰落后)</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_JFD_CULT_SERAPIS_LAGS_FAITH" Language="zh_Hans_CN">
+			<Text>托勒密一世确信你的信仰不会对他构成威胁。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_LEADER_JFD_PTOLEMY_REASON_LEADS_STANDING_ARMY" Language="zh_Hans_CN">
+			<Text>(您维持了庞大的常备军)</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_AGENDA_JFD_CULT_SERAPIS_LEADS_STANDING_ARMY" Language="zh_Hans_CN">
+			<Text>托勒密·索特尔感受到了你强大军队的威胁。</Text>
+		</Replace>
+
+		<!-- 载入 -->
+
+		<Replace Tag="LOC_LOADING_INFO_LEADER_JFD_PTOLEMY" Language="zh_Hans_CN">
+			<Text>伟大的亚历山大国王已经陨落，为争夺他的遗产，世界陷入了混乱。托勒密一世，您的任务是把埃及的信仰和文化结合起来。通过外交和武力保护亚历山大伟大的财富。</Text>
+		</Replace>
+
+		<!-- 特性 -->
+
+		<Replace Tag="LOC_TRAIT_LEADER_JFD_PEARL_MEDITERRANEAN_NAME" Language="zh_Hans_CN">
+			<Text>地中海明珠</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_JFD_PEARL_MEDITERRANEAN_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>每建成一个港口建筑，可获得一个海军单位。建造港口+50% [ICON_Production] 生产力。完成科技“造船术”解锁特色单位四十桨战船。</Text>
+		</Replace>
+
+		<!-- 百科 -->
+
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PTOLEMY_TITLE" Language="zh_Hans_CN">
+			<Text>托勒密·索特尔</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PTOLEMY_SUBTITLE" Language="zh_Hans_CN">
+			<Text>埃及法老</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PTOLEMY_QUOTE" Language="zh_Hans_CN">
+			<Text>若法老希望如此，那便必然如此。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PTOLEMY_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]Ptolemy I Soter (366 BCE – 282 BCE) was one of the successor kings to the empire of Alexander the Great. He served not only as king of Egypt but also the founder of the Ptolemaic dynasty, a dynasty which included the infamous Cleopatra VII.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PTOLEMY_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>Ptolemy was a Macedonian nobleman, son of Lagos. Rumors circulated, however, that he was actually the illegitimate son of Alexander’s father Phillip II, a possibility that would have made him Alexander’s half-brother. Although older than Alexander and many of the other generals who followed Alexander into Persia, he still became a close friend, advisor and later one of his seven personal bodyguards. Following Phillips II’s death at the hands of Pausanias, Alexander embarked on his quest to meet, defeat and conquer Darius III and the Persian Empire. Although historians are in disagreement concerning Ptolemy’s role in the Persian campaign, they do agree that he did participate in a number of battles. This disagreement stems from the fact that Ptolemy was also a historian of sorts and his biography of Alexander may have exaggerated his own contributions.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PTOLEMY_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>Ptolemy’s name first appears during Alexander’s defeat of Memnon, the Greek mercenary general in the service of Persia, at Halicarnassus. Supposedly, Alexander left Ptolemy with a force of 3000 men to finish subjugating the city while he moved on to Gordium. Ptolemy next appears at the battles of Issus and Gaugamela. At Issus he served in the left flank under the command of Parmenio. Next, when the Persian king Darius III was found dying after his defeat at Gaugamela and his assassin Bessus had been identified, it was Ptolemy who was sent to collect the assassin. He brought him to Alexander naked, in chains, and wearing a dog collar.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PTOLEMY_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>In Persepolis, Ptolemy was linked to the burning of the city. At one of Alexander’s celebrations, Ptolemy’s mistress Thais suggested the palace should be burned. In his World History Diodorus made mention of this incident:[NEWLINE][NEWLINE]"When the Companions were feasting, and intoxication was gReplaceing [...] a violent madness took hold of these drunken men. One of the women (Thasis) declared that it would be Alexander’s greatest achievement in Asia to join in their procession and set fire to the royal palace. [...] Others joined in the cry and said that only Alexander was worthy of this deed [... and] a quantity of torches was quickly collected. [...] The king led them to the revel, with Thais the courtesan conducting the ceremony. She was the first after the king to thReplace her blazing torch into the palace."[NEWLINE][NEWLINE]Although his role is unclear, most historical accounts are in agreement that Ptolemy was with Alexander in both Egypt and India. He was in Egypt in 332 BC at Siwa and Memphis, but his History of Alexander has him playing a vital role in a number of conflicts in India while others have him as only a minor if not insignificant participant. One story which may or may not be true has Ptolemy’s life being saved during the campaign into India. After Ptolemy was struck by a poisoned arReplace, it was Alexander who saved his life by using various native herbs to extract the poison. It was during this time, after a failed conspiracy to kill Alexander was discovered, that Ptolemy was named one of the king’s personal bodyguards.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PTOLEMY_CHAPTER_HISTORY_PARA_5" Language="zh_Hans_CN">
+			<Text>When Alexander died in 323 BC, the fate of the empire was left in the hands of Perdiccas, the cavalry leader, who had been handed Alexander’s signet ring on the king’s deathbed, a possible transference of power. Wanting to keep the empire intact, Perdiccas suggested everyone wait to name a successor until after the birth of Alexander and Roxanne’s child (the future Alexander IV). Ptolemy was completely against this idea and led a campaign to divide the empire among the leading generals. He got his wish and received in the division his first choice – Egypt. The alliances that would be formed among these new satraps were tenuous and both war and peace would reign for thirty years. These battles became known as the Diadochi or Successor Wars.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PTOLEMY_CHAPTER_HISTORY_PARA_6" Language="zh_Hans_CN">
+			<Text>The one common threat among these “kings” was that no one liked Perdiccas, and Perdiccas disliked Ptolemy above all. It was obvious that these two men would never agree, and this was even more evident when Ptolemy stole Alexander’s remains: Perdiccas sent Alexander’s body to a newly constructed tomb in Macedonia, but Ptolemy hijacked the body when it arrived in Damascus. Diodorus’s history recorded this theft:[NEWLINE]{NEWLINE]"Ptolemy, moreover, doing honour to Alexander, went to meet it with an army as far as Syria and, receiving the body, deemed it worthy of the greatest consideration. He decided for the present not to send it to Ammon, but to entomb it in the city that had been founded by Alexander himself… There he prepared a precinct worthy of the glory of Alexander in size and construction."[NEWLINE][NEWLINE]Perdiccas resented this theft and immediately took action, attacking Egypt. This attack, however, would be his downfall; he led his troops on three separate missions into Egypt, failing each time to cross the Nile. With this failure and a loss of 2000 soldiers, his men revolted and executed him.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PTOLEMY_CHAPTER_HISTORY_PARA_7" Language="zh_Hans_CN">
+			<Text>Unlike the other generals, Ptolemy’s major concern and ambition did not go far beyond the borders of Egypt.  While he became involved in the in-fighting among the others and eventually acquired lands in the eastern Mediterranean, his major concern was Egypt. When Antigonos invaded Babylon, Selecuos sought asylum in Egypt with Ptolemy, but after Ptolemy’s defeat of Antigonos’s son Demetrios at Gaza, Selecuos was able return to Babylon. Following a brief peace, Ptolemy was involved in a series of conflicts with both Antigonos and Demetrios, finally aiding in their defeat and Antigonos’s death at Ipsus in 301 BC. By then Ptolemy had assumed the title of king as well as being named Soter meaning “savior” for his defense of Rhodes against Demetrios.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PTOLEMY_CHAPTER_HISTORY_PARA_8" Language="zh_Hans_CN">
+			<Text>During Ptolemy’s rule of Egypt, he put the country on sound economic and administrative footing. Since he didn’t want to fall under the influence of the priests and officials at Memphis, Ptolemy’s first decision was to move the country’s capital to Alexandria. He preferred the location of Alexandria: Since it was on the Mediterranean Sea, it was strategically better, providing easier access to both the sea and his homeland of Greece. Because of this move, Alexandria became more of a Greek rather than Egyptian city. Greek became the language of both government and commerce. Amazingly, the only member of the Ptolemaic Dynasty to ever learn Egyptian was Cleopatra VII.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PTOLEMY_CHAPTER_HISTORY_PARA_9" Language="zh_Hans_CN">
+			<Text>While he gave respect to the Egyptian priests and even rebuilt temples destroyed by the Persians, he believed he needed another way to connect with the Egyptian people. One of his first actions was to establish a cult of Alexander; of course, by doing this, he established himself as a legitimate heir. Alexander became a “state god” and his “priest” the highest clerical position in Egypt. Next, he created a new religion with a new god Serapis, the god of healing. This new religion was a combination of both Greek and Egyptian influences, although the Egyptians saw it as more Greek than Egyptian. It never achieved much success and government funding was eventually withdrawn.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PTOLEMY_CHAPTER_HISTORY_PARA_10" Language="zh_Hans_CN">
+			<Text>Ptolemy made Alexandria the intellectual center of the Mediterranean when he built a massive library and museum there. The museum contained a covered arcade, seating for quiet contemplation as well as a dining hall. The library contained thousands of papyrus scrolls and attracted men of literature and science from all over the Mediterranean area for years to come, Euclid and Archimedes being two of the more notable. It became the center of Hellenistic culture.  Ptolemy began the construction of Pharos, a lighthouse (to be completed by his son Ptolemy II). The lighthouse was a massive structure of three stories with a statue of Zeus atop. A beacon was visible for miles and was lit day and night. It became one of the seven wonders of the ancient world. After Ptolemy died in 282 BC, his descendants would rule Egypt for almost three hundred years until it was conquered by Julius Caesar and the Romans. After his death, Ptolemy was deified and a festival was held in his honor for years to come.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PTOLEMY_CHAPTER_CAPSULE_BODY" Language="zh_Hans_CN">
+			<Text>在世界奇观争夺中，托勒密·索特尔为秦始皇的有力竞争者；不过他并没有选择用长城隐后，相反，他利用庞大的海军与港口网络来保护领土。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PTOLEMY_CHAPTER_DETAILED_BODY" Language="zh_Hans_CN">
+			<Text>埃及沿河而建，他们在此处因为建造区域和奇观而获得加成。和附近的狮身人面像一起时，这些奇观会变得尤其重要，能让埃及在游戏里的各领域快速开始。如果托勒密·索特尔接下来和其他强大文明成为朋友（或许因为他们能通过和他的贸易获得 [ICON_Food] 食物），他将能继续使用奇观向前迈进。这使他能获得任何类型的胜利，但在奇观和狮身人面像的帮助下，尤其擅长在游戏中取得文化胜利。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_CLEOPATRA_CHAPTER_DETAILED_BODY" Language="zh_Hans_CN">
+			<Text>埃及沿河或沿湖而建，他们在此处因为建造区域和奇观而获得加成。和附近的狮身人面像一起时，这些奇观会变得尤其重要，能让埃及在游戏里的各领域快速开始。如果托勒密·索特尔接下来和其他强大文明成为朋友（或许因为他们能通过和他的贸易获得 [ICON_Food] 食物），他将能继续使用奇观向前迈进。这使他能获得任何类型的胜利，但在奇观和狮身人面像的帮助下，尤其擅长在游戏中取得文化胜利。</Text>
+		</Replace>
+
+		<!-- 外交 -->
+
+		<!-- 初次见面 -->
+		<!-- 开场白 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_JFD_PTOLEMY_ANY" Language="zh_Hans_CN">
+			<Text>欢迎来到埃及。我是托勒密·索特尔，埃及法老和国王。这个伟大的王国，现在属于我了。……抱歉。开个玩笑，请您继续。</Text>
+		</Replace>
+
+		<!-- 到附近城市的邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_JFD_PTOLEMY_ANY" Language="zh_Hans_CN">
+			<Text>我邀请你访问我的首都。它和你以前见过的完全不同。</Text>
+		</Replace>
+
+		<!-- AI接受玩家邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NEAR_INITIATOR_POSITIVE_LEADER_JFD_PTOLEMY_ANY" Language="zh_Hans_CN">
+			<Text>当然，我很乐意接受你的邀请。</Text>
+		</Replace>
+
+		<!-- AI邀请玩家交换首都信息 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_JFD_PTOLEMY_ANY" Language="zh_Hans_CN">
+			<Text>我想和你交换一下我们首都的情况。我相信你没有什么好羞愧的。</Text>
+		</Replace>
+
+		<!-- 问候 -->
+
+		<Replace Tag="LOC_DIPLO_GREETING_LEADER_JFD_PTOLEMY_ANY" Language="zh_Hans_CN">
+			<Text>嘿。</Text>
+		</Replace>
+
+		<!-- 代表团 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_HUMAN_LEADER_JFD_PTOLEMY_ANY" Language="zh_Hans_CN">
+			<Text>我大度地接受你的代表团。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_HUMAN_LEADER_JFD_PTOLEMY_ANY" Language="zh_Hans_CN">
+			<Text>不是今天，不是明天，也许永远不会有，我拒绝你的代表团。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DELEGATION_FROM_AI_LEADER_JFD_PTOLEMY_ANY" Language="zh_Hans_CN">
+			<Text>你愿意接受我的代表团吗？他们带来了一些礼物：最好的染料和化妆品，你应该掩盖一下那糟糕的皮肤。</Text>
+		</Replace>
+
+		<!-- 开放边境 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_HUMAN_LEADER_JFD_PTOLEMY_ANY" Language="zh_Hans_CN">
+			<Text>当然，我同意。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_HUMAN_LEADER_JFD_PTOLEMY_ANY" Language="zh_Hans_CN">
+			<Text>我的领土就足够了，谢谢。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_OPEN_BORDERS_FROM_AI_LEADER_JFD_PTOLEMY_ANY" Language="zh_Hans_CN">
+			<Text>我相信我们的贸易航道将从开放边界协议中受益，你说呢？</Text>
+		</Replace>
+
+		<!-- 宣布友谊 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_HUMAN_LEADER_JFD_PTOLEMY_ANY" Language="zh_Hans_CN">
+			<Text>我很荣幸。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_HUMAN_LEADER_JFD_PTOLEMY_ANY" Language="zh_Hans_CN">
+			<Text>我认为不行。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_JFD_PTOLEMY_ANY" Language="zh_Hans_CN">
+			<Text>我很乐意称你为我的朋友。你会接受吗？</Text>
+		</Replace>
+
+		<!-- 玩家接受后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_PTOLEMY_ANY" Language="zh_Hans_CN">
+			<Text>太好了。</Text>
+		</Replace>
+
+		<!-- 玩家拒绝后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_PTOLEMY_ANY" Language="zh_Hans_CN">
+			<Text>那你还站在这里干嘛？</Text>
+		</Replace>
+
+		<!-- 结盟 -->
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_ALLIANCE_FROM_AI_LEADER_JFD_PTOLEMY_ANY" Language="zh_Hans_CN">
+			<Text>埃及是一个古老而骄傲的国家，但它是与强大的盟友一起走到今天的。我能把你算在他们当中吗？</Text>
+		</Replace>
+
+		<!-- 赞成与警告 -->
+		<!-- AI赞成 -->
+
+		<Replace Tag="LOC_DIPLO_KUDO_EXIT_LEADER_JFD_PTOLEMY_ANY" Language="zh_Hans_CN">
+			<Text>你们没有干涉我们的活动，干得好。</Text>
+		</Replace>
+
+		<!-- AI警告 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_EXIT_LEADER_JFD_PTOLEMY_ANY" Language="zh_Hans_CN">
+			<Text>我将尽我所能来维护我的王位。你最好从别处寻找权力。</Text>
+		</Replace>
+
+		<!-- AI警告玩家离开边境 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_LEADER_JFD_PTOLEMY_ANY" Language="zh_Hans_CN">
+			<Text>你想要得到这个富丽堂皇的王座吗？我很乐意捍卫我的权利。</Text>
+		</Replace>
+
+		<!-- 贸易 -->
+		<!-- AI接受交易 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_JFD_PTOLEMY_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_PTOLEMY_ANY}</Text>
+		</Replace>
+
+		<!-- AI拒绝交易 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_MAKE_DEAL_FROM_AI_LEADER_JFD_PTOLEMY_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_PTOLEMY_ANY}</Text>
+		</Replace>
+
+		<!-- 谴责 -->
+		<!-- 受到谴责回应 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_JFD_PTOLEMY_ANY" Language="zh_Hans_CN">
+			<Text>我已经习惯了这种嫉妒。</Text>
+		</Replace>
+
+		<!-- AI谴责玩家 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_JFD_PTOLEMY_ANY" Language="zh_Hans_CN">
+			<Text>你玷污了这片大地。[NEWLINE] (谴责你)。</Text>
+		</Replace>
+
+		<!-- 谴责理由 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_REASON_FROM_AI_LEADER_ANY_REASON_JFD_CULT_SERAPIS_LEADS_STANDING_ARMY" Language="zh_Hans_CN">
+			<Text>(您维持了庞大的常备军)</Text>
+		</Replace>
+
+		<!-- 宣战 -->
+		<!-- 受到宣战后回应 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_JFD_PTOLEMY_ANY" Language="zh_Hans_CN">
+			<Text>我要用你的血来捍卫我的宝座。</Text>
+		</Replace>
+
+		<!-- AI宣战 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_JFD_PTOLEMY_ANY" Language="zh_Hans_CN">
+			<Text>我想要的东西不止于我的边界，你要么投降，要么就被消灭。</Text>
+		</Replace>
+
+		<!-- 求和 -->
+		<!-- AI接受求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_ACCEPT_DEAL_LEADER_JFD_PTOLEMY_ANY" Language="zh_Hans_CN">
+			<Text>很好。</Text>
+		</Replace>
+
+		<!-- AI拒绝求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_REFUSE_DEAL_LEADER_JFD_PTOLEMY_ANY" Language="zh_Hans_CN">
+			<Text>我不能接受这种虚假的和平。</Text>
+		</Replace>
+
+		<!-- AI求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_FROM_AI_LEADER_JFD_PTOLEMY_ANY" Language="zh_Hans_CN">
+			<Text>和平的时刻到了。</Text>
+		</Replace>
+
+		<!-- 击败 -->
+		<!-- AI被击败 -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_JFD_PTOLEMY_ANY" Language="zh_Hans_CN">
+			<Text>我担心你会让这个辉煌的王国沦为废墟。</Text>
+		</Replace>
+
+		<!-- 玩家被击败（在热座模式中会显示） -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_JFD_PTOLEMY_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_JFD_PTOLEMY_ANY}</Text>
+		</Replace>
+		
+		<!-- 四十桨战船 -->
+		
+		<Replace Tag="LOC_UNIT_JFD_TESSERAKONTERES_NAME" Language="zh_Hans_CN">
+			<Text>四十桨战船</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_JFD_TESSERAKONTERES_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>托勒密·索特尔作为领袖时的埃及古典时期特色海上单位。不擅长战斗，但驻扎在港口时每回合提供+2 [ICON_InfluencePerTurn] 影响力点数。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_JFD_TESSERAKONTERES_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]The Tessarakonteres, or simply "forty" was a very large galley reportedly built in the Hellenistic period. The name "forty" refers to the number of Replaceers on each column of oars that propelled it. It would have been the largest ship constructed in antiquity, and probably the largest human-powered vessel ever built. According to Plutarch, its enormous size made it impractical and it was built only for show.</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'Sukritacts Simple UI Adjustments'CN_Add_FI -->
+<!-- Author: Clear8Sky -->
+<!-- DateCreated: 3/2/2021 1:48:35 AM -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Sukritact's Simple UI Adjustments” 。该文件在 FrontEnd 与 InGame 时载入，无需任何 Criteria -->
+	<LocalizedText>
+
+		<!-- 屏幕截图模式 -->
+		<!-- 按钮 -->
+
+		<Replace Tag="LOC_SUK_SCREENSHOT_MODE_NAME" Language="zh_Hans_CN">
+			<Text>屏幕截图模式</Text>
+		</Replace>
+		<Replace Tag="LOC_SUK_SCREENSHOT_MODE_TT" Language="zh_Hans_CN">
+			<Text>使用当前设置，左键单击进入屏幕截图模式。右键单击打开屏幕截图模式选项面板。</Text>
+		</Replace>
+		<Replace Tag="LOC_SUK_SCREENSHOT_MODE_DESC" Language="zh_Hans_CN">
+			<Text>进入屏幕截图模式。[NEWLINE][NEWLINE]屏幕截图模式将隐藏大部分或所有的界面要素，帮助您获取清爽的屏幕截图。[NEWLINE][NEWLINE]您可用WASD键平移屏幕；用Q和E键旋转；若启用了可变倾角，则可使用Z和C键调整倾角。在此模式下，视角的旋转不会复原。[NEWLINE][NEWLINE]按ESC退出屏幕截图模式。</Text>
+		</Replace>
+
+		<!-- 热键 -->
+
+		<Replace Tag="LOC_OPTIONS_HOTKEY_SUK_SCREENSHOT_MODE" Language="zh_Hans_CN">
+			<Text>进入{LOC_SUK_SCREENSHOT_MODE_NAME}</Text>
+		</Replace>
+		<Replace Tag="LOC_OPTIONS_HOTKEY_SUK_SCREENSHOT_MODE_HELP" Language="zh_Hans_CN">
+			<Text>进入{LOC_SUK_SCREENSHOT_MODE_NAME}</Text>
+		</Replace>
+
+		<!-- 选项 -->
+
+		<Replace Tag="LOC_SUK_SCREENSHOT_MODE_FIXED_TILT_NAME" Language="zh_Hans_CN">
+			<Text>启用可变倾角</Text>
+		</Replace>
+		<Replace Tag="LOC_SUK_SCREENSHOT_MODE_FIXED_TILT_DESC" Language="zh_Hans_CN">
+			<Text>在屏幕截图模式下启用可变倾角功能。可按住Alt键并拖动以调整俯视倾角，也可使用Z键和C键。[NEWLINE][NEWLINE][COLOR_RED]警告：某些倾角可能会导致游戏崩溃。请小心一点！[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_SUK_SCREENSHOT_MODE_UNIT_FLAG_NAME" Language="zh_Hans_CN">
+			<Text>隐藏单位标志</Text>
+		</Replace>
+		<Replace Tag="LOC_SUK_SCREENSHOT_MODE_UNIT_FLAG_DESC" Language="zh_Hans_CN">
+			<Text>在屏幕截图模式下隐藏单位标志。</Text>
+		</Replace>
+		<Replace Tag="LOC_SUK_SCREENSHOT_MODE_CITY_BANNER_NAME" Language="zh_Hans_CN">
+			<Text>隐藏城市横幅</Text>
+		</Replace>
+		<Replace Tag="LOC_SUK_SCREENSHOT_MODE_CITY_BANNER_DESC" Language="zh_Hans_CN">
+			<Text>在截图模式下隐藏城市横幅。</Text>
+		</Replace>
+		<Replace Tag="LOC_SUK_SCREENSHOT_MODE_BORDERS_NAME" Language="zh_Hans_CN">
+			<Text>隐藏边境</Text>
+		</Replace>
+		<Replace Tag="LOC_SUK_SCREENSHOT_MODE_BORDERS_DESC" Language="zh_Hans_CN">
+			<Text>在屏幕截图模式下隐藏帝国边境。</Text>
+		</Replace>
+		<Replace Tag="LOC_SUK_SCREENSHOT_MODE_MAP_LABELS_NAME" Language="zh_Hans_CN">
+			<Text>隐藏地图标签</Text>
+		</Replace>
+		<Replace Tag="LOC_SUK_SCREENSHOT_MODE_MAP_LABELS_DESC" Language="zh_Hans_CN">
+			<Text>在屏幕截图模式下隐藏地图标签（若尚未隐藏）。</Text>
+		</Replace>
+		<Replace Tag="LOC_SUK_SCREENSHOT_MODE_YIELDS_NAME" Language="zh_Hans_CN">
+			<Text>隐藏收益</Text>
+		</Replace>
+		<Replace Tag="LOC_SUK_SCREENSHOT_MODE_YIELDS_DESC" Language="zh_Hans_CN">
+			<Text>在屏幕截图模式下隐藏单元格收益（若尚未隐藏）。</Text>
+		</Replace>
+
+		<!-- 生产队列的悬停提示 -->
+
+		<Replace Tag="LOC_CITY_YIELD_FROM_BUILDINGS_SUMMARY_TOOLTIP" Language="zh_Hans_CN">
+			<Text>{Value : number +#.#;-#.#} 来自建筑（总计）</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_YIELD_FROM_DISTRICTS_SUMMARY_TOOLTIP" Language="zh_Hans_CN">
+			<Text>{Value : number +#.#;-#.#} 来自区域（总计）</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_GET_UNIT_PRODUCTION_MODIFIER" Language="zh_Hans_CN">
+			<Text>{Value : number +#;-#}%（{ActualValue : number +#.#;-#.#}）训练单位</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_GET_BUILDING_PRODUCTION_MODIFIER" Language="zh_Hans_CN">
+			<Text>{Value : number +#;-#}%（{ActualValue : number +#.#;-#.#}）建造建筑和奇观</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_GET_BUILDING_NON_WONDER_PRODUCTION_MODIFIER" Language="zh_Hans_CN">
+			<Text>{Value : number +#;-#}%（{ActualValue : number +#.#;-#.#}）建造建筑</Text>
+		</Replace>
+
+		<!-- 人口增长与区域的悬停提示 -->
+
+		<Replace Tag="LOC_SUK_DISTRICT_POPULATION_TOOLTIP" Language="zh_Hans_CN">
+			<Text>城市需{2} [ICON_Citizen] 人口可再建造一个专业化区域。您目前最多可建造{1}个专业化区域。</Text>
+		</Replace>
+		<Replace Tag="LOC_SUK_CITY_YIELD_FROM_POPULATION_TOOLTIP" Language="zh_Hans_CN">
+			<Text>{1} 来自人口</Text>
+		</Replace>
+		<Replace Tag="LOC_SUK_CITY_YIELD_FROM_HAPPINESS_TOOLTIP" Language="zh_Hans_CN">
+			<Text>{1}%（{2}）来自宜居度</Text>
+		</Replace>
+		<Replace Tag="LOC_SUK_CITY_YIELD_FROM_HOUSING_TOOLTIP" Language="zh_Hans_CN">
+			<Text>{1}%（{2}）来自住房</Text>
+		</Replace>
+		<Replace Tag="LOC_SUK_CITY_YIELD_FROM_OCCUPATION_TOOLTIP" Language="zh_Hans_CN">
+			<Text>{1}%（{2}）来自公民产出</Text>
+		</Replace>
+
+		<!-- 城市界面概览 -->
+
+		<Replace Tag="LOC_HUD_REPORTS_SUK_OTHER_ADJACENCY_BONUS" Language="zh_Hans_CN">
+			<Text>其他加成</Text>
+		</Replace>
+
+		<!-- 杂项 -->
+
+		<Replace Tag="LOC_OPTIONS_HOTKEY_CATEGORY_SUK_HOTKEYS" Language="zh_Hans_CN">
+			<Text>用户界面（Suk的模组）：</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

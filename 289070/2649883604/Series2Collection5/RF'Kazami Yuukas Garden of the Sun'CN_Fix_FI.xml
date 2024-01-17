@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RF'Kazami Yuukas Garden of the Sun'CN_Fix_FI -->
+<!-- Author: Clear8Sky -->
+<!-- DateCreated: 2021/7/29 13:15:45 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “【TOUHOU MOD】太阳花田的风见幽香” 。该文件在 FrontEnd 与 InGame 时载入，需 Criteria ：Active_Expansion_1 -->
+	<LocalizedText>
+		<Replace Tag="LOC_CIVILIZATION_SUNFLOWERFARM_ADJECTIVE" Language="zh_Hans_CN">
+			<Text>太阳花田女王的</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_JINKELA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>美国圣地亚戈农业集团声称部分金坷拉下落不明，幽香表示并没有从黑白魔法使那里获得过任何妙不可言的物品。[NEWLINE][NEWLINE]首都城市所有单元格魅力值+1；农场产出+1 [ICON_Food] 食物、+1 [ICON_Production] 生产力。[NEWLINE][NEWLINE]种植园产出+1 [ICON_Food] 食物、+1 [ICON_Culture] 文化值，且可触发文化炸弹。</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_THE_QUEEN_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>拥有驻军的城市每回合+3忠诚度，额外+2 [ICON_Production] 生产力、+2 [ICON_Faith] 信仰值、+5 [ICON_Gold] 金币产出，但[COLOR_RED]-1[ENDCOLOR] [ICON_Amenities] 宜居度。[NEWLINE][NEWLINE]被宣战、宣布收复战争以及宣布保卫城邦战争时，所有城市+100% [ICON_Production] 生产力，所有单位+2 [ICON_Movement] 移动。持续20回合。[NEWLINE]解锁市政“防御战术”后，即可宣布解放战争和保卫城邦战争。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_LINGLAN_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>风见幽香作为领袖时的古典时代特色近战单位，取代剑士。[ICON_Movement] 移动力高且无需 [ICON_RESOURCE_IRON] 铁。[ICON_Strength] 战斗力比剑士稍低，但可以释放毒素，使攻击范围内的敌人-5 [ICON_Strength] 战斗力，并对其造成伤害。</Text>
+		</Replace>
+		<Replace Tag="LOC_IMPROVEMENT_FLOWER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>建造者可修建太阳花田文明特色改良设施“太阳花田”。[NEWLINE][NEWLINE]+1 [ICON_Food] 食物、+1 [ICON_Production] 生产力、+0.5 [ICON_Housing] 住房，所在单元格+1魅力值，且根据单元格魅力值产出等量 [ICON_Gold] 金币。[NEWLINE][NEWLINE]解锁市政“封建主义”后，若与其他两个太阳花田相邻，则会获得额外加成。[NEWLINE][NEWLINE]解锁市政“土木工程”后，可+1 [ICON_Housing] 住房。[NEWLINE][NEWLINE]解锁科技“飞行”后可产出等同于其 [ICON_Gold] 金币产出一半的 [ICON_Tourism] 旅游业绩。[NEWLINE][NEWLINE]必须建造在魅力为“迷人的”及以上的草原或平原上。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_LEADER_YUUKA_REASON_ANY" Language="zh_Hans_CN">
+			<Text>（您不注重土地的开发）</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

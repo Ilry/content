@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameInfo>
+	<Types>
+		<!--千古一帝-->
+		<Row Type="TRAIT_CIVILIZATION_QIAN_GU_YI_DI" Kind="KIND_TRAIT"/>
+		<!--横扫六合-->
+		<Row Type="TRAIT_CIVILIZATION_HENG_SAO_LIU_HE" Kind="KIND_TRAIT"/>
+		<!--长生不老-->
+		<Row Type="TRAIT_CIVILIZATION_CHANG_SHENG_BU_LAO" Kind="KIND_TRAIT"/>
+		<!--特色建筑：三十六郡-->
+		<Row Type="TRAIT_CIVILIZATION_BUILDING_SAN_SHI_LIU_JUN" Kind="KIND_TRAIT"/>  
+		<!--建筑：三十六郡-->
+		<Row Type="BUILDING_SAN_SHI_LIU_JUN" Kind="KIND_BUILDING"/> 
+		<!--政策：书同文-->
+		<Row Type="POLICY_SHU_TONG_WEN" Kind="KIND_POLICY"/>
+		<!--政策：车同轨-->
+		<Row Type="POLICY_CHE_TONG_GUI" Kind="KIND_POLICY"/>
+		<!--政策：统一度量-->
+		<Row Type="POLICY_TONG_YI_DU_LIANG" Kind="KIND_POLICY"/>
+	</Types>
+	
+	<Traits>
+		<!--千古一帝-->
+		<Row TraitType="TRAIT_CIVILIZATION_QIAN_GU_YI_DI" Name="LOC_TRAIT_CIVILIZATION_QIAN_GU_YI_DI_NAME" Description="LOC_TRAIT_CIVILIZATION_QIAN_GU_YI_DI_DESCRIPTION"/>
+		<!--横扫六合-->
+		<Row TraitType="TRAIT_CIVILIZATION_HENG_SAO_LIU_HE" Name="LOC_TRAIT_CIVILIZATION_HENG_SAO_LIU_HE_NAME" Description="LOC_TRAIT_CIVILIZATION_HENG_SAO_LIU_HE_DESCRIPTION"/>
+		<!--长生不老-->
+		<Row TraitType="TRAIT_CIVILIZATION_CHANG_SHENG_BU_LAO" Name="LOC_TRAIT_CIVILIZATION_CHANG_SHENG_BU_LAO_NAME" Description="LOC_TRAIT_CIVILIZATION_CHANG_SHENG_BU_LAO_DESCRIPTION"/>
+		<!--特色建筑：三十六郡-->
+		<Row TraitType="TRAIT_CIVILIZATION_BUILDING_SAN_SHI_LIU_JUN" Name="LOC_TRAIT_CIVILIZATION_BUILDING_SAN_SHI_LIU_JUN_NAME"/> 
+	</Traits>
+	
+	<Policies>
+		<!--法典-->
+		<!--政策：书同文-->
+		<Row PolicyType="POLICY_SHU_TONG_WEN" PrereqCivic="CIVIC_CODE_OF_LAWS" GovernmentSlotType="SLOT_ECONOMIC" Name="LOC_POLICY_SHU_TONG_WEN_NAME" Description="LOC_POLICY_SHU_TONG_WEN_DESCRIPTION"/>
+		<!--政策：车同轨-->
+		<Row PolicyType="POLICY_CHE_TONG_GUI" PrereqCivic="CIVIC_CODE_OF_LAWS" GovernmentSlotType="SLOT_ECONOMIC" Name="LOC_POLICY_CHE_TONG_GUI_NAME" Description="LOC_POLICY_CHE_TONG_GUI_DESCRIPTION"/>
+		
+		<!--封建主义-->
+		<!--政策：统一度量-->
+		<Row PolicyType="POLICY_TONG_YI_DU_LIANG" PrereqCivic="CIVIC_FEUDALISM" GovernmentSlotType="SLOT_ECONOMIC" Name="LOC_POLICY_TONG_YI_DU_LIANG_NAME" Description="LOC_POLICY_TONG_YI_DU_LIANG_DESCRIPTION"/>
+	</Policies>
+	
+	<ObsoletePolicies>
+		<Row PolicyType="POLICY_SHU_TONG_WEN" ObsoletePolicy="POLICY_TONG_YI_DU_LIANG"/>
+		<Row PolicyType="POLICY_CHE_TONG_GUI" ObsoletePolicy="POLICY_TONG_YI_DU_LIANG"/>
+	</ObsoletePolicies>
+	
+	<CivilizationTraits>
+		<!--千古一帝-->
+		<Row CivilizationType="CIVILIZATION_CHINA" TraitType="TRAIT_CIVILIZATION_QIAN_GU_YI_DI"/>
+		<!--横扫六合-->
+		<Row CivilizationType="CIVILIZATION_CHINA" TraitType="TRAIT_CIVILIZATION_HENG_SAO_LIU_HE"/>
+		<!--长生不老-->
+		<Row CivilizationType="CIVILIZATION_CHINA" TraitType="TRAIT_CIVILIZATION_CHANG_SHENG_BU_LAO"/>
+		<!--特色建筑：三十六郡-->
+		<Row CivilizationType="CIVILIZATION_CHINA" TraitType="TRAIT_CIVILIZATION_BUILDING_SAN_SHI_LIU_JUN"/> 
+	</CivilizationTraits>
+	
+	<Buildings> 
+		<!--建筑：三十六郡-->
+		<Row BuildingType="BUILDING_SAN_SHI_LIU_JUN" 
+		TraitType="TRAIT_CIVILIZATION_BUILDING_SAN_SHI_LIU_JUN" 
+		Name="LOC_BUILDING_SAN_SHI_LIU_JUN_NAME" 
+		Description="LOC_BUILDING_SAN_SHI_LIU_JUN_DESCRIPTION"
+			PrereqDistrict="DISTRICT_CITY_CENTER" PurchaseYield="YIELD_GOLD" MaxPlayerInstances="36"
+			Cost="60" Housing="2" Entertainment="1"/> 
+	</Buildings>  
+	
+	<MomentIllustrations>
+		<!--建筑：三十六郡-->
+		<Row MomentIllustrationType="MOMENT_ILLUSTRATION_UNIQUE_BUILDING" MomentDataType="MOMENT_DATA_BUILDING" GameDataType="BUILDING_SAN_SHI_LIU_JUN" Texture="Moment_Infrastructure_Norway.dds"/>
+	</MomentIllustrations>	
+	
+	<Building_YieldChanges> 
+		<!--生产力-->
+		<Row BuildingType="BUILDING_SAN_SHI_LIU_JUN" YieldType="YIELD_PRODUCTION" YieldChange="2"/>
+		<!--金币-->
+		<Row BuildingType="BUILDING_SAN_SHI_LIU_JUN" YieldType="YIELD_GOLD" YieldChange="2"/>
+		<!--文化-->
+		<Row BuildingType="BUILDING_SAN_SHI_LIU_JUN" YieldType="YIELD_CULTURE" YieldChange="2"/>
+		<!--食物-->
+		<Row BuildingType="BUILDING_SAN_SHI_LIU_JUN" YieldType="YIELD_FOOD" YieldChange="2"/>
+	</Building_YieldChanges> 
+	
+	<TraitModifiers>
+		<!--千古一帝-->
+		
+		<!--生产力+10%-->
+		<Row TraitType="TRAIT_CIVILIZATION_QIAN_GU_YI_DI" ModifierId="QIAN_GU_YI_DI_CITIES_ADJUST_CITY_YIELD_MODIFIER_1"/>
+		<!--金币+10%-->
+		<Row TraitType="TRAIT_CIVILIZATION_QIAN_GU_YI_DI" ModifierId="QIAN_GU_YI_DI_CITIES_ADJUST_CITY_YIELD_MODIFIER_2"/>
+		<!--信仰+10%-->
+		<Row TraitType="TRAIT_CIVILIZATION_QIAN_GU_YI_DI" ModifierId="QIAN_GU_YI_DI_CITIES_ADJUST_CITY_YIELD_MODIFIER_3"/>
+		<!--文化+10%-->
+		<Row TraitType="TRAIT_CIVILIZATION_QIAN_GU_YI_DI" ModifierId="QIAN_GU_YI_DI_CITIES_ADJUST_CITY_YIELD_MODIFIER_4"/>
+		<!--食物+10%-->
+		<Row TraitType="TRAIT_CIVILIZATION_QIAN_GU_YI_DI" ModifierId="QIAN_GU_YI_DI_CITIES_ADJUST_CITY_YIELD_MODIFIER_5"/>
+		<!--科技+10%-->
+		<Row TraitType="TRAIT_CIVILIZATION_QIAN_GU_YI_DI" ModifierId="QIAN_GU_YI_DI_CITIES_ADJUST_CITY_YIELD_MODIFIER_6"/>
+		<!--建造者建造奇观加成20%-->
+		<!--<Row TraitType="TRAIT_CIVILIZATION_QIAN_GU_YI_DI" ModifierId="QIAN_GU_YI_DI_ADJUST_UNIT_WONDER_PERCENT"/>-->
+		<!--建造者建造区域加成20%-->
+		<!--<Row TraitType="TRAIT_CIVILIZATION_QIAN_GU_YI_DI" ModifierId="QIAN_GU_YI_DI_ADJUST_UNIT_DISTRICT_PERCENT"/>-->
+		<!--商路食物+1-->
+		<Row TraitType="TRAIT_CIVILIZATION_QIAN_GU_YI_DI" ModifierId="QIAN_GU_YI_DI_ADJUST_TRADE_ROUTE_YIELD_1"/>
+		<!--商路金币+1-->
+		<Row TraitType="TRAIT_CIVILIZATION_QIAN_GU_YI_DI" ModifierId="QIAN_GU_YI_DI_ADJUST_TRADE_ROUTE_YIELD_2"/>
+		<!--通用政策槽位-->
+		<Row TraitType="TRAIT_CIVILIZATION_QIAN_GU_YI_DI" ModifierId="QIAN_GU_YI_DI_CULTURE_ADJUST_GOVERNMENT_SLOTS_MODIFIER_1"/>
+		<!--通用政策槽位-->
+		<Row TraitType="TRAIT_CIVILIZATION_QIAN_GU_YI_DI" ModifierId="QIAN_GU_YI_DI_CULTURE_ADJUST_GOVERNMENT_SLOTS_MODIFIER_2"/>
+
+		<!--横扫六合-->
+		
+		<!--攻击力+10-->
+		<Row TraitType="TRAIT_CIVILIZATION_HENG_SAO_LIU_HE" ModifierId="HENG_SAO_LIU_HE_UNITS_ADJUST_COMBAT_STRENGTH"/>
+		<!--移动+1-->
+		<Row TraitType="TRAIT_CIVILIZATION_HENG_SAO_LIU_HE" ModifierId="HENG_SAO_LIU_HE_UNITS_ADJUST_MOVEMENT"/>
+		<!--经验加成50%-->
+		<Row TraitType="TRAIT_CIVILIZATION_HENG_SAO_LIU_HE" ModifierId="HENG_SAO_LIU_HE_UNITS_ADJUST_UNIT_EXPERIENCE_MODIFIER"/>
+		<!--大将军点数+10%-->
+		<Row TraitType="TRAIT_CIVILIZATION_HENG_SAO_LIU_HE" ModifierId="HENG_SAO_LIU_HE_ADJUST_GREAT_PERSON_POINTS_PERCENT"/>
+		<!--忠诚度+2-->
+		<Row TraitType="TRAIT_CIVILIZATION_HENG_SAO_LIU_HE" ModifierId="HENG_SAO_LIU_HE_CITIES_ADJUST_IDENTITY_PER_TURN"/>
+		
+		<!--长生不老-->
+		
+		<!--大科学家点数+10%-->
+		<Row TraitType="TRAIT_CIVILIZATION_CHANG_SHENG_BU_LAO" ModifierId="SAN_SHI_LIU_JUN_ADJUST_GREAT_PERSON_POINTS_PERCENT"/>
+		<!--巨作槽位+2-->
+		<Row TraitType="TRAIT_CIVILIZATION_CHANG_SHENG_BU_LAO" ModifierId="SAN_SHI_LIU_JUN_CITIES_ADJUST_EXTRA_GREAT_WORK_SLOTS"/>
+		<!--贸易路线+2-->
+		<Row TraitType="TRAIT_CIVILIZATION_CHANG_SHENG_BU_LAO" ModifierId="SAN_SHI_LIU_JUN_ADJUST_TRADE_ROUTE_CAPACITY"/>
+	</TraitModifiers>
+	
+	<PolicyModifiers>
+		<!--书同文-->
+		
+		<!--文化+1-->
+		<Row PolicyType="POLICY_SHU_TONG_WEN" ModifierId="SHU_TONG_WEN_CITIES_ADJUST_CITY_YIELD_CHANGE"/>
+		<!--影响力点数+1-->
+		<Row PolicyType="POLICY_SHU_TONG_WEN" ModifierId="SHU_TONG_WEN_ADJUST_INFLUENCE_POINTS_PER_TURN"/>
+		
+		<!--车同轨-->
+		
+		<!--生产力+1-->
+		<Row PolicyType="POLICY_CHE_TONG_GUI" ModifierId="CHE_TONG_GUI_CITIES_ADJUST_CITY_YIELD_CHANGE"/>
+		<!--影响力点数+1-->
+		<Row PolicyType="POLICY_CHE_TONG_GUI" ModifierId="CHE_TONG_GUI_ADJUST_INFLUENCE_POINTS_PER_TURN"/>
+		
+		<!--政策：统一度量-->
+		<!--文化+2-->
+		<Row PolicyType="POLICY_TONG_YI_DU_LIANG" ModifierId="TONG_YI_DU_LIANG_CITIES_ADJUST_CITY_YIELD_CHANGE_1"/>
+		<!--生产力+2-->
+		<Row PolicyType="POLICY_TONG_YI_DU_LIANG" ModifierId="TONG_YI_DU_LIANG_CITIES_ADJUST_CITY_YIELD_CHANGE_2"/>
+		<!--影响力点数+2-->
+		<Row PolicyType="POLICY_TONG_YI_DU_LIANG" ModifierId="TONG_YI_DU_LIANG_ADJUST_INFLUENCE_POINTS_PER_TURN"/>
+		<!--劳动力+2-->
+		<Row PolicyType="POLICY_TONG_YI_DU_LIANG" ModifierId="TONG_YI_DU_LIANG_TRAINED_UNITS_ADJUST_BUILDER_CHARGES"/>
+	</PolicyModifiers>
+	
+	<Modifiers>
+		<!--千古一帝-->
+		
+		<!--生产力+10%-->
+		<Row ModifierId="QIAN_GU_YI_DI_CITIES_ADJUST_CITY_YIELD_MODIFIER_1" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER" OwnerRequirementSetId="PLAYER_IS_HUMAN"/>
+		<!--金币+10%-->
+		<Row ModifierId="QIAN_GU_YI_DI_CITIES_ADJUST_CITY_YIELD_MODIFIER_2" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER" OwnerRequirementSetId="PLAYER_IS_HUMAN"/>
+		<!--信仰+10%-->
+		<Row ModifierId="QIAN_GU_YI_DI_CITIES_ADJUST_CITY_YIELD_MODIFIER_3" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER" OwnerRequirementSetId="PLAYER_IS_HUMAN"/>
+		<!--文化+10%-->
+		<Row ModifierId="QIAN_GU_YI_DI_CITIES_ADJUST_CITY_YIELD_MODIFIER_4" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER" OwnerRequirementSetId="PLAYER_IS_HUMAN"/>
+		<!--食物+10%-->
+		<Row ModifierId="QIAN_GU_YI_DI_CITIES_ADJUST_CITY_YIELD_MODIFIER_5" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER" OwnerRequirementSetId="PLAYER_IS_HUMAN"/>
+		<!--科技+10%-->
+		<Row ModifierId="QIAN_GU_YI_DI_CITIES_ADJUST_CITY_YIELD_MODIFIER_6" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER" OwnerRequirementSetId="PLAYER_IS_HUMAN"/>
+		<!--建造者建造奇观加成20%-->
+		<!--<Row ModifierId="QIAN_GU_YI_DI_ADJUST_UNIT_WONDER_PERCENT" ModifierType="MODIFIER_PLAYER_ADJUST_UNIT_WONDER_PERCENT" OwnerRequirementSetId="PLAYER_IS_HUMAN"/>-->
+		<!--建造者建造区域加成20%-->
+		<!--<Row ModifierId="QIAN_GU_YI_DI_ADJUST_UNIT_DISTRICT_PERCENT" ModifierType="MODIFIER_PLAYER_ADJUST_UNIT_DISTRICT_PERCENT" OwnerRequirementSetId="PLAYER_IS_HUMAN"/>-->
+		<!--商路食物+1-->
+		<Row ModifierId="QIAN_GU_YI_DI_ADJUST_TRADE_ROUTE_YIELD_1" ModifierType="MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD" OwnerRequirementSetId="PLAYER_IS_HUMAN"/>
+		<!--商路金币+1-->
+		<Row ModifierId="QIAN_GU_YI_DI_ADJUST_TRADE_ROUTE_YIELD_2" ModifierType="MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_YIELD" OwnerRequirementSetId="PLAYER_IS_HUMAN"/>
+		<!--通用政策槽位-->
+		<Row ModifierId="QIAN_GU_YI_DI_CULTURE_ADJUST_GOVERNMENT_SLOTS_MODIFIER_1" ModifierType="MODIFIER_PLAYER_CULTURE_ADJUST_GOVERNMENT_SLOTS_MODIFIER" OwnerRequirementSetId="PLAYER_IS_HUMAN"/>
+		<!--通用政策槽位-->
+		<Row ModifierId="QIAN_GU_YI_DI_CULTURE_ADJUST_GOVERNMENT_SLOTS_MODIFIER_2" ModifierType="MODIFIER_PLAYER_CULTURE_ADJUST_GOVERNMENT_SLOTS_MODIFIER" OwnerRequirementSetId="PLAYER_IS_HUMAN"/>
+		
+		<!--横扫六合-->
+		
+		<!--攻击力+10-->
+		<Row ModifierId="HENG_SAO_LIU_HE_UNITS_ADJUST_COMBAT_STRENGTH" ModifierType="MODIFIER_PLAYER_UNITS_ADJUST_COMBAT_STRENGTH" OwnerRequirementSetId="PLAYER_IS_HUMAN"/>
+		<!--移动+1-->
+		<Row ModifierId="HENG_SAO_LIU_HE_UNITS_ADJUST_MOVEMENT" ModifierType="MODIFIER_PLAYER_UNITS_ADJUST_MOVEMENT" OwnerRequirementSetId="PLAYER_IS_HUMAN"/>
+		<!--经验加成50%-->
+		<Row ModifierId="HENG_SAO_LIU_HE_UNITS_ADJUST_UNIT_EXPERIENCE_MODIFIER" ModifierType="MODIFIER_PLAYER_UNITS_ADJUST_UNIT_EXPERIENCE_MODIFIER" OwnerRequirementSetId="PLAYER_IS_HUMAN"/>
+		<!--大将军点数+10%-->
+		<Row ModifierId="HENG_SAO_LIU_HE_ADJUST_GREAT_PERSON_POINTS_PERCENT" ModifierType="MODIFIER_PLAYER_ADJUST_GREAT_PERSON_POINTS_PERCENT" OwnerRequirementSetId="PLAYER_IS_HUMAN"/>
+		<!--忠诚度+2-->
+		<Row ModifierId="HENG_SAO_LIU_HE_CITIES_ADJUST_IDENTITY_PER_TURN" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_IDENTITY_PER_TURN" OwnerRequirementSetId="PLAYER_IS_HUMAN"/>
+		
+		<!--长生不老-->
+		
+		<!--大科学家点数+10%-->
+		<Row ModifierId="SAN_SHI_LIU_JUN_ADJUST_GREAT_PERSON_POINTS_PERCENT" ModifierType="MODIFIER_PLAYER_ADJUST_GREAT_PERSON_POINTS_PERCENT" OwnerRequirementSetId="PLAYER_IS_HUMAN"/>
+		<!--巨作槽位+2-->
+		<Row ModifierId="SAN_SHI_LIU_JUN_CITIES_ADJUST_EXTRA_GREAT_WORK_SLOTS" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_EXTRA_GREAT_WORK_SLOTS" OwnerRequirementSetId="PLAYER_IS_HUMAN"/>
+		<!--贸易路线+2-->
+		<Row ModifierId="SAN_SHI_LIU_JUN_ADJUST_TRADE_ROUTE_CAPACITY" ModifierType="MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_CAPACITY" OwnerRequirementSetId="PLAYER_IS_HUMAN"/>
+		
+		<!--书同文-->
+		
+		<!--文化+1-->
+		<Row ModifierId="SHU_TONG_WEN_CITIES_ADJUST_CITY_YIELD_CHANGE" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE" OwnerRequirementSetId="PLAYER_IS_HUMAN"/>
+		<!--影响力点数+1-->
+		<Row ModifierId="SHU_TONG_WEN_ADJUST_INFLUENCE_POINTS_PER_TURN" ModifierType="MODIFIER_PLAYER_ADJUST_INFLUENCE_POINTS_PER_TURN" OwnerRequirementSetId="PLAYER_IS_HUMAN"/>
+		
+		<!--车同轨-->
+		
+		<!--生产力+1-->
+		<Row ModifierId="CHE_TONG_GUI_CITIES_ADJUST_CITY_YIELD_CHANGE" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE" OwnerRequirementSetId="PLAYER_IS_HUMAN"/>
+		<!--影响力点数+1-->
+		<Row ModifierId="CHE_TONG_GUI_ADJUST_INFLUENCE_POINTS_PER_TURN" ModifierType="MODIFIER_PLAYER_ADJUST_INFLUENCE_POINTS_PER_TURN" OwnerRequirementSetId="PLAYER_IS_HUMAN"/>
+		
+		<!--政策：统一度量-->
+		<!--文化+2-->
+		<Row ModifierId="TONG_YI_DU_LIANG_CITIES_ADJUST_CITY_YIELD_CHANGE_1" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE" OwnerRequirementSetId="PLAYER_IS_HUMAN"/>
+		<!--生产力+2-->
+		<Row ModifierId="TONG_YI_DU_LIANG_CITIES_ADJUST_CITY_YIELD_CHANGE_2" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE" OwnerRequirementSetId="PLAYER_IS_HUMAN"/>
+		<!--影响力点数+2-->
+		<Row ModifierId="TONG_YI_DU_LIANG_ADJUST_INFLUENCE_POINTS_PER_TURN" ModifierType="MODIFIER_PLAYER_ADJUST_INFLUENCE_POINTS_PER_TURN" OwnerRequirementSetId="PLAYER_IS_HUMAN"/>
+		<!--劳动力+2-->
+		<Row ModifierId="TONG_YI_DU_LIANG_TRAINED_UNITS_ADJUST_BUILDER_CHARGES" ModifierType="MODIFIER_PLAYER_TRAINED_UNITS_ADJUST_BUILDER_CHARGES" SubjectRequirementSetId="UNIT_IS_BUILDER" Permanent="true" OwnerRequirementSetId="PLAYER_IS_HUMAN"/>
+	</Modifiers>
+
+	<ModifierArguments>
+		<!--千古一帝-->
+		
+		<!--生产力+10%-->
+		<Row ModifierId="QIAN_GU_YI_DI_CITIES_ADJUST_CITY_YIELD_MODIFIER_1" Name="YieldType" Value="YIELD_PRODUCTION"/>	
+		<Row ModifierId="QIAN_GU_YI_DI_CITIES_ADJUST_CITY_YIELD_MODIFIER_1" Name="Amount" Value="10"/>	
+		<!--金币+10%-->
+		<Row ModifierId="QIAN_GU_YI_DI_CITIES_ADJUST_CITY_YIELD_MODIFIER_2" Name="YieldType" Value="YIELD_GOLD"/>
+		<Row ModifierId="QIAN_GU_YI_DI_CITIES_ADJUST_CITY_YIELD_MODIFIER_2" Name="Amount" Value="10"/>
+		<!--信仰+10%-->
+		<Row ModifierId="QIAN_GU_YI_DI_CITIES_ADJUST_CITY_YIELD_MODIFIER_3" Name="YieldType" Value="YIELD_FAITH"/>
+		<Row ModifierId="QIAN_GU_YI_DI_CITIES_ADJUST_CITY_YIELD_MODIFIER_3" Name="Amount" Value="10"/>
+		<!--文化+10%-->
+		<Row ModifierId="QIAN_GU_YI_DI_CITIES_ADJUST_CITY_YIELD_MODIFIER_4" Name="YieldType" Value="YIELD_CULTURE"/>
+		<Row ModifierId="QIAN_GU_YI_DI_CITIES_ADJUST_CITY_YIELD_MODIFIER_4" Name="Amount" Value="10"/>
+		<!--食物+10%-->
+		<Row ModifierId="QIAN_GU_YI_DI_CITIES_ADJUST_CITY_YIELD_MODIFIER_5" Name="YieldType" Value="YIELD_FOOD"/>
+		<Row ModifierId="QIAN_GU_YI_DI_CITIES_ADJUST_CITY_YIELD_MODIFIER_5" Name="Amount" Value="10"/>
+		<!--科技+10%-->
+		<Row ModifierId="QIAN_GU_YI_DI_CITIES_ADJUST_CITY_YIELD_MODIFIER_6" Name="YieldType" Value="YIELD_SCIENCE"/>
+		<Row ModifierId="QIAN_GU_YI_DI_CITIES_ADJUST_CITY_YIELD_MODIFIER_6" Name="Amount" Value="10"/>
+		<!--建造者建造奇观加成20%-->
+		<!--<Row ModifierId="QIAN_GU_YI_DI_ADJUST_UNIT_WONDER_PERCENT" Name="Amount" Value="20"/>-->
+		<!--建造者建造区域加成20%-->
+		<!--<Row ModifierId="QIAN_GU_YI_DI_ADJUST_UNIT_DISTRICT_PERCENT" Name="Amount" Value="20"/>-->
+		<!--商路食物+1-->
+		<Row ModifierId="QIAN_GU_YI_DI_ADJUST_TRADE_ROUTE_YIELD_1" Name="YieldType" Value="YIELD_FOOD"/>
+		<Row ModifierId="QIAN_GU_YI_DI_ADJUST_TRADE_ROUTE_YIELD_1" Name="Amount" Value="1"/>
+		<!--商路金币+1-->
+		<Row ModifierId="QIAN_GU_YI_DI_ADJUST_TRADE_ROUTE_YIELD_2" Name="YieldType" Value="YIELD_GOLD"/>
+		<Row ModifierId="QIAN_GU_YI_DI_ADJUST_TRADE_ROUTE_YIELD_2" Name="Amount" Value="1"/>
+		<!--通用政策槽位-->
+		<Row ModifierId="QIAN_GU_YI_DI_CULTURE_ADJUST_GOVERNMENT_SLOTS_MODIFIER_1" Name="GovernmentSlotType" Value="SLOT_WILDCARD"/>
+		<!--通用政策槽位-->
+		<Row ModifierId="QIAN_GU_YI_DI_CULTURE_ADJUST_GOVERNMENT_SLOTS_MODIFIER_2" Name="GovernmentSlotType" Value="SLOT_WILDCARD"/>
+		
+		<!--横扫六合-->
+		
+		<!--攻击力+10-->
+		<Row ModifierId="HENG_SAO_LIU_HE_UNITS_ADJUST_COMBAT_STRENGTH" Name="Amount" Value="10"/>
+		<!--移动+1-->
+		<Row ModifierId="HENG_SAO_LIU_HE_UNITS_ADJUST_MOVEMENT" Name="Amount" Value="1"/>
+		<!--经验加成50%-->
+		<Row ModifierId="HENG_SAO_LIU_HE_UNITS_ADJUST_UNIT_EXPERIENCE_MODIFIER" Name="Amount" Value="50"/>
+		<!--大将军点数+10%-->
+		<Row ModifierId="HENG_SAO_LIU_HE_ADJUST_GREAT_PERSON_POINTS_PERCENT" Name="GreatPersonClassType" Value="GREAT_PERSON_CLASS_GENERAL"/>
+		<Row ModifierId="HENG_SAO_LIU_HE_ADJUST_GREAT_PERSON_POINTS_PERCENT" Name="Amount" Value="10"/>
+		<!--忠诚度+2-->
+		<Row ModifierId="HENG_SAO_LIU_HE_CITIES_ADJUST_IDENTITY_PER_TURN" Name="Amount" Value="2"/>
+		
+		<!--长生不老-->
+		
+		<!--大科学家点数+10%-->
+		<Row ModifierId="SAN_SHI_LIU_JUN_ADJUST_GREAT_PERSON_POINTS_PERCENT" Name="GreatPersonClassType" Value="GREAT_PERSON_CLASS_SCIENTIST"/>
+		<Row ModifierId="SAN_SHI_LIU_JUN_ADJUST_GREAT_PERSON_POINTS_PERCENT" Name="Amount" Value="10"/>
+		<!--巨作槽位+2-->
+		<Row ModifierId="SAN_SHI_LIU_JUN_CITIES_ADJUST_EXTRA_GREAT_WORK_SLOTS" Name="BuildingType" Value="BUILDING_PALACE"/>
+		<Row ModifierId="SAN_SHI_LIU_JUN_CITIES_ADJUST_EXTRA_GREAT_WORK_SLOTS" Name="GreatWorkSlotType" Value="GREATWORKSLOT_PALACE"/>
+		<Row ModifierId="SAN_SHI_LIU_JUN_CITIES_ADJUST_EXTRA_GREAT_WORK_SLOTS" Name="Amount" Value="2"/>
+		<!--贸易路线+2-->
+		<Row ModifierId="SAN_SHI_LIU_JUN_ADJUST_TRADE_ROUTE_CAPACITY" Name="Amount" Value="2"/>
+		
+		<!--书同文-->
+		
+		<!--文化+1-->
+		<Row ModifierId="SHU_TONG_WEN_CITIES_ADJUST_CITY_YIELD_CHANGE" Name="YieldType" Value="YIELD_CULTURE"/>
+		<Row ModifierId="SHU_TONG_WEN_CITIES_ADJUST_CITY_YIELD_CHANGE" Name="Amount" Value="1"/>
+		<!--影响力点数+1-->
+		<Row ModifierId="SHU_TONG_WEN_ADJUST_INFLUENCE_POINTS_PER_TURN" Name="Amount" Value="1"/>
+		
+		<!--车同轨-->
+		
+		<!--生产力+1-->
+		<Row ModifierId="CHE_TONG_GUI_CITIES_ADJUST_CITY_YIELD_CHANGE" Name="YieldType" Value="YIELD_PRODUCTION"/>
+		<Row ModifierId="CHE_TONG_GUI_CITIES_ADJUST_CITY_YIELD_CHANGE" Name="Amount" Value="1"/>
+		<!--影响力点数+1-->
+		<Row ModifierId="CHE_TONG_GUI_ADJUST_INFLUENCE_POINTS_PER_TURN" Name="Amount" Value="1"/>
+		
+		<!--政策：统一度量-->
+		<!--文化+2-->
+		<Row ModifierId="TONG_YI_DU_LIANG_CITIES_ADJUST_CITY_YIELD_CHANGE_1" Name="YieldType" Value="YIELD_CULTURE"/>
+		<Row ModifierId="TONG_YI_DU_LIANG_CITIES_ADJUST_CITY_YIELD_CHANGE_1" Name="Amount" Value="2"/>
+		<!--生产力+2-->
+		<Row ModifierId="TONG_YI_DU_LIANG_CITIES_ADJUST_CITY_YIELD_CHANGE_2" Name="YieldType" Value="YIELD_PRODUCTION"/>
+		<Row ModifierId="TONG_YI_DU_LIANG_CITIES_ADJUST_CITY_YIELD_CHANGE_2" Name="Amount" Value="2"/>
+		<!--影响力点数+2-->
+		<Row ModifierId="TONG_YI_DU_LIANG_ADJUST_INFLUENCE_POINTS_PER_TURN" Name="Amount" Value="2"/>
+		<!--劳动力+2-->
+		<Row ModifierId="TONG_YI_DU_LIANG_TRAINED_UNITS_ADJUST_BUILDER_CHARGES" Name="Amount" Value="2"/>
+	</ModifierArguments>
+
+	<ModifierStrings>
+		<Row ModifierId="HENG_SAO_LIU_HE_UNITS_ADJUST_COMBAT_STRENGTH" Context="Preview" Text="LOC_TRAIT_CIVILIZATION_HENG_SAO_LIU_HE_STRENGTH"/>
+	</ModifierStrings>
+	
+	<UnitCommands>
+		<Update>
+			<Where CommandType="UNITCOMMAND_WONDER_PRODUCTION"/>
+			<!--建造者加速奇观时代，老秦默认2-->
+			<Set MaxEra="8"/>
+		</Update>
+	</UnitCommands>
+</GameInfo>

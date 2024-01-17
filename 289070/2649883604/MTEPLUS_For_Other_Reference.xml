@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- MTEPLUS_For_Other_Reference -->
+<!-- Author: Clear8Sky -->
+<!-- DateCreated: 2021/5/27 23:05:54 -->
+<GameData>
+	<EnglishText>
+		<!-- 他人引用本模组时，可用以下创建的 Tag 作为引子用于 WHERE EXISTS 语句中 -->
+		<Row Tag="LOC_C8S_MTEPLUS_ONLY_SAMPLE">
+			<Text>Sample</Text>
+		</Row>
+	</EnglishText>
+	<LocalizedText>
+		<Replace Tag="LOC_C8S_MTEPLUS_ONLY_SAMPLE" Language="zh_Hans_CN">
+			<Text>引子</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

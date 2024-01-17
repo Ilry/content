@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RF'Chile Aguirre Cerda'CN_Add_FI -->
+<!-- Author: ChiYiuWong , Clear8Sky -->
+<!-- DateCreated: 2021/9/25 9:50:35 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Chile: Aguirre Cerda” 。该文件在 FrontEnd 与 InGame 时载入，需 Criteria ： Active_Expansion_1 -->
+	<LocalizedText>
+
+		<!-- 模组 -->
+
+		<Replace Tag="LOC_MOD_JFD_CHILE_CERDA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>------------------------------------[NEWLINE]领袖名称 -- 阿吉雷·塞尔达[NEWLINE][NEWLINE]领袖特性 - 向内成长[NEWLINE]拥有学院的城市建造工业区+50% [ICON_Production] 建造速度，反之亦然。若城市拥有学院，则其境内每处修建在加成资源或战略资源上的矿山可提供+1 [ICON_GreatEngineer] 大工程师点数；若拥有工业区，则上述矿山改为提供+1 [ICON_GreatScientist] 大科学家点数。[NEWLINE][NEWLINE]领袖议程 - 治理就是教育[NEWLINE]努力让他的人民接受教育，同时平衡智利的生产力。与和他相同政体的文明相处得很好，同时也力图保持高 [ICON_Science] 科技值。认为 [ICON_Production] 生产力高但 [ICON_Science] 科技值低的文明是祸根。</Text>
+		</Replace>
+
+		<!-- 领袖 -->
+
+		<Replace Tag="LOC_LEADER_JFD_CERDA_NAME" Language="zh_Hans_CN">
+			<Text>阿吉雷·塞尔达</Text>
+		</Replace>
+
+		<!-- 议程 -->
+
+		<Replace Tag="LOC_AGENDA_JFD_GOVERN_TO_EDUCATE_NAME" Language="zh_Hans_CN">
+			<Text>治理就是教育</Text>
+		</Replace>
+		<Replace Tag="LOC_AGENDA_JFD_GOVERN_TO_EDUCATE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>努力让他的人民接受教育，同时平衡智利的生产力。与和他相同政体的文明相处得很好，同时也力图保持高 [ICON_Science] 科技值。认为 [ICON_Production] 生产力高但 [ICON_Science] 科技值低的文明是祸根。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_JFD_CERDA_REASON_LEADS_SCIENCE_AND_SAME_GOVERNMENT" Language="zh_Hans_CN">
+			<Text>（您在科技方面很强大，并且与他政体相同）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_AGENDA_JFD_GOVERN_TO_EDUCATE_LEADS_SCIENCE_AND_SAME_GOVERNMENT" Language="zh_Hans_CN">
+			<Text>阿吉雷·塞尔达很高兴您与他的教育理念相同。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_LEADER_JFD_CERDA_REASON_LEADS_PRODUCTION_AND_LAGS_SCIENCE" Language="zh_Hans_CN">
+			<Text>（您在工业方面很强大，但在科技方面很薄弱）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_AGENDA_JFD_GOVERN_TO_EDUCATE_LEADS_PRODUCTION_AND_LAGS_SCIENCE" Language="zh_Hans_CN">
+			<Text>阿吉雷·塞尔达认为您正在利用您的工业，而没有重视科学。</Text>
+		</Replace>
+
+		<!-- 载入 -->
+
+		<Replace Tag="LOC_LOADING_INFO_LEADER_JFD_CERDA" Language="zh_Hans_CN">
+			<Text>一个民族不应没有工作；一个国家不应没有受过教育。这些将是智利在您——阿吉雷·塞尔达政府领导下的指导原则。留心您的工业及人民的教育，他们就会不断带来创新与繁荣。</Text>
+		</Replace>
+
+		<!-- 特性 -->
+
+		<Replace Tag="LOC_TRAIT_LEADER_JFD_GROWTH_INWARD_NAME" Language="zh_Hans_CN">
+			<Text>向内成长</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_JFD_GROWTH_INWARD_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>拥有学院的城市建造工业区+50% [ICON_Production] 建造速度，反之亦然。若城市拥有学院，则其境内每处修建在加成资源或战略资源上的矿山可提供+1 [ICON_GreatEngineer] 大工程师点数；若拥有工业区，则上述矿山改为提供+1 [ICON_GreatScientist] 大科学家点数。</Text>
+		</Replace>
+
+		<!-- 百科 -->
+
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_CERDA_TITLE" Language="zh_Hans_CN">
+			<Text>阿吉雷·塞尔达</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_CERDA_SUBTITLE" Language="zh_Hans_CN">
+			<Text>智利总统</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_CERDA_QUOTE" Language="zh_Hans_CN">
+			<Text>国家有责任为所有社会成员提供社区对公民和社会生活所需的最低限度的准备。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_CERDA_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>阿吉雷·塞尔达是智利政治人物。自由派成员，他被认为是1938年总统选举的热门候选人，并成功胜选。他统治智利直到1941年去世。阿吉雷·塞尔达是巴斯克人的后裔。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_CERDA_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>他出生在智利洛斯安第斯市附近的一个小村庄波库罗，是胡安·包蒂斯塔·阿吉雷和克拉丽莎·塞尔达十一个孩子中的第七个。他的父亲是一名农民，于1887年他8岁时去世。他的母亲不得不独自经营农场并抚养他和他所有的兄弟。[NEWLINE][NEWLINE]他在圣地亚哥的教育学院完成了他的大学学业，1900年成为西班牙语教师。1904年成为律师。他娶了他的表妹胡安娜·罗莎·阿吉雷·卢科，但没有孩子。1910年，由于获得政府奖学金，他在索邦大学学习行政和金融法，并在法兰西学院学习政治经济学和社会立法。他于1914年返回智利，并在国家学院担任教师。他还成为了全国教师协会的主席。[NEWLINE][NEWLINE]他是一位非常杰出的教师、律师、代表和参议员。他还是智利大学新经济学院的首任院长。作为激进党的成员，他在胡安·路易斯·桑富恩特斯和阿图罗·亚历山德执政期间担任公共教育和内政部长。在军事统治时期，他受到迫害，成为卡洛斯·伊瓦涅斯·德尔坎波将军政府的积极反对派领导人。[NEWLINE][NEWLINE]1938年总统选举，他是人民阵线的候选人，并以微弱优势击败保守派候选人古斯塔沃罗斯，主要是因为奥布雷罗塞古罗大屠杀引起的政治反弹。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_CERDA_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>1938年12月25日提出口号“Gobernar es Educar”（以教育治理国家）作为一位教师，他政府的优先事项是推广教育。因此，他促进了技术工业学校的发展，以此作为促进国家新兴工业化技术人员形成的手段。他还创建了数千所新的正规学校，并鼓励将大学系统发展到覆盖全国。阿吉雷政府还重新分配了一些土地，鼓励形成农业定居点，建造廉价住房和学校，并将马克思主义政党纳入政治体系。[NEWLINE][NEWLINE]在他执政的第一年，他不得不面对军方反对他的计划，即所谓的阿里奥斯塔佐计划，但他依然创下不错的政绩，还为加布里埃拉·米斯特拉尔争取诺贝尔奖，并在他的继任者胡安·安东尼奥·里奥斯领导下取得了阶段性成果。生产发展公司（CORFO）通过补贴和直接投资鼓励雄心勃勃的进口替代工业化计划。这是智利工业化的基础。钢铁、制造业和制糖业由此兴起。[NEWLINE][NEWLINE]1941年，由于病情迅速恶化，他任命内政部长热罗尼莫·门德斯为副总统。不久之后，他于1941年11月25日在智利圣地亚哥死于肺结核。门德斯一直担任代理总统，直到1942年2月1日当选的胡安·安东尼奥·里奥斯于4月2日就职。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_CERDA_CHAPTER_CAPSULE_BODY" Language="zh_Hans_CN">
+			<Text>智利毫不迟疑地寻求着扩大领土，尤其是沿着海岸线。事实上，他们的同胞将用自己的生命捍卫这项权利。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_CERDA_CHAPTER_DETAILED_BODY" Language="zh_Hans_CN">
+			<Text>智利努力争取尽可能多的海岸线和战略领土，通过建造沿海岸改良设施更快地扩张。智利将凭借其独特的智利硝石矿，发展出富有生产力的矿业，在阿吉雷·塞尔达的领导下，将该行业转变为科研的动力。保护这一行业将是智利的重点之一，因为这将确保其人民保持忠诚。这种忠诚使他们建造一支强大的现代海军，以追求统治胜利。</Text>
+		</Replace>
+
+		<!-- 外交 -->
+
+		<!-- 初次见面 -->
+		<!-- 开场白 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_JFD_CERDA_ANY" Language="zh_Hans_CN">
+			<Text>我代表我的国家欢迎你来到智利。我是阿吉雷·塞尔达。</Text>
+		</Replace>
+
+		<!-- 到附近城市的邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_JFD_CERDA_ANY" Language="zh_Hans_CN">
+			<Text>我附近有一个城市。我想在那里和你谈谈。</Text>
+		</Replace>
+
+		<!-- AI接受玩家邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NEAR_INITIATOR_POSITIVE_LEADER_JFD_CERDA_ANY" Language="zh_Hans_CN">
+			<Text>我会跟你交谈的，必须的。</Text>
+		</Replace>
+
+		<!-- AI邀请玩家交换首都信息 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_JFD_CERDA_ANY" Language="zh_Hans_CN">
+			<Text>我有一个提议，那就是我们分享彼此首都的信息。</Text>
+		</Replace>
+
+		<!-- 问候 -->
+
+		<Replace Tag="LOC_DIPLO_GREETING_LEADER_JFD_CERDA_ANY" Language="zh_Hans_CN">
+			<Text>欢迎回来。</Text>
+		</Replace>
+
+		<!-- 代表团 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_HUMAN_LEADER_JFD_CERDA_ANY" Language="zh_Hans_CN">
+			<Text>我代表我国接受你的代表团。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_HUMAN_LEADER_JFD_CERDA_ANY" Language="zh_Hans_CN">
+			<Text>我看不出与贵国代表团会面会有什么好处。我必须拒绝。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DELEGATION_FROM_AI_LEADER_JFD_CERDA_ANY" Language="zh_Hans_CN">
+			<Text>我代表我国向贵国派遣了一个代表团。 我希望你能和他们一起尝尝我们最好的牛扒，以彰显我们的友谊之情。</Text>
+		</Replace>
+
+		<!-- 开放边境 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_HUMAN_LEADER_JFD_CERDA_ANY" Language="zh_Hans_CN">
+			<Text>我的这些安排证明它对我们双方都有好处。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_HUMAN_LEADER_JFD_CERDA_ANY" Language="zh_Hans_CN">
+			<Text>我不能接受。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_OPEN_BORDERS_FROM_AI_LEADER_JFD_CERDA_ANY" Language="zh_Hans_CN">
+			<Text>我提出了一条向彼此开放边界的提议。</Text>
+		</Replace>
+
+		<!-- 宣布友谊 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_HUMAN_LEADER_JFD_CERDA_ANY" Language="zh_Hans_CN">
+			<Text>我和我的国家接受你的提议。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_HUMAN_LEADER_JFD_CERDA_ANY" Language="zh_Hans_CN">
+			<Text>我无权同意这一点。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_JFD_CERDA_ANY" Language="zh_Hans_CN">
+			<Text>我代表我的国家伸出手，公开向您宣布友谊。</Text>
+		</Replace>
+
+		<!-- 玩家接受后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_CERDA_ANY" Language="zh_Hans_CN">
+			<Text>太好了。</Text>
+		</Replace>
+
+		<!-- 玩家拒绝后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_CERDA_ANY" Language="zh_Hans_CN">
+			<Text>这是令人失望的。</Text>
+		</Replace>
+
+		<!-- 结盟 -->
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_ALLIANCE_FROM_AI_LEADER_JFD_CERDA_ANY" Language="zh_Hans_CN">
+			<Text>我来寻求我们两个伟大国家之间的联盟。我相信你会接受的。</Text>
+		</Replace>
+
+		<!-- 赞成与警告 -->
+		<!-- AI赞成 -->
+
+		<Replace Tag="LOC_DIPLO_KUDO_EXIT_LEADER_JFD_CERDA_ANY" Language="zh_Hans_CN">
+			<Text>一个明智的领导者将他的公民视为需要被教导和训练的学生。你是一个明智的领导者。</Text>
+		</Replace>
+
+		<!-- AI警告 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_EXIT_LEADER_JFD_CERDA_ANY" Language="zh_Hans_CN">
+			<Text>您的统治是否如此不稳定，以至于您必须拒绝您的人民接受教育？</Text>
+		</Replace>
+
+		<!-- AI警告玩家离开边境 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_LEADER_JFD_CERDA_ANY" Language="zh_Hans_CN">
+			<Text>你的军队侵犯了我国家的主权。您必须移走它们，否则将面临后果。</Text>
+		</Replace>
+
+		<!-- 贸易 -->
+		<!-- AI接受交易 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_JFD_CERDA_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_CERDA_ANY}</Text>
+		</Replace>
+
+		<!-- AI拒绝交易 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_MAKE_DEAL_FROM_AI_LEADER_JFD_CERDA_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_CERDA_ANY}</Text>
+		</Replace>
+
+		<!-- 谴责 -->
+		<!-- 受到谴责回应 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_JFD_CERDA_ANY" Language="zh_Hans_CN">
+			<Text>这种对我国家的不尊重不会被忽视。</Text>
+		</Replace>
+
+		<!-- AI谴责玩家 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_JFD_CERDA_ANY" Language="zh_Hans_CN">
+			<Text>你非常不尊重我的国家，我代表它谴责你。[NEWLINE]（谴责你）</Text>
+		</Replace>
+
+		<!-- 谴责理由 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_REASON_FROM_AI_LEADER_ANY_REASON_JFD_GOVERN_TO_EDUCATE_LEADS_PRODUCTION_AND_LAGS_SCIENCE" Language="zh_Hans_CN">
+			<Text>（您在工业方面很强大，但在科技方面很薄弱）</Text>
+		</Replace>
+
+		<!-- 宣战 -->
+		<!-- 受到宣战后回应 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_JFD_CERDA_ANY" Language="zh_Hans_CN">
+			<Text>我的国家会挺过去的。</Text>
+		</Replace>
+
+		<!-- AI宣战 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_JFD_CERDA_ANY" Language="zh_Hans_CN">
+			<Text>和平让我们失望了，所以我被授权与你开战。</Text>
+		</Replace>
+
+		<!-- 求和 -->
+		<!-- AI接受求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_ACCEPT_DEAL_LEADER_JFD_CERDA_ANY" Language="zh_Hans_CN">
+			<Text>我代表我的国家接受这种和平。</Text>
+		</Replace>
+
+		<!-- AI拒绝求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_REFUSE_DEAL_LEADER_JFD_CERDA_ANY" Language="zh_Hans_CN">
+			<Text>我没有被允许接受你的和平。我必须拒绝。</Text>
+		</Replace>
+
+		<!-- AI求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_FROM_AI_LEADER_JFD_CERDA_ANY" Language="zh_Hans_CN">
+			<Text>我的国家在这场战争中受苦。我代表它祈求和平。</Text>
+		</Replace>
+
+		<!-- 击败 -->
+		<!-- AI被击败 -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_JFD_CERDA_ANY" Language="zh_Hans_CN">
+			<Text>我必须代表我的国家接受这次失败。</Text>
+		</Replace>
+
+		<!-- 玩家被击败（在热座模式中会显示） -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_JFD_CERDA_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_JFD_CERDA_ANY}</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

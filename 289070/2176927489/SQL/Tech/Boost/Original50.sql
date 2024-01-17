@@ -1,0 +1,6 @@
+-- Built by Take your Time Generator at 23:19 23/08/2020
+CREATE TABLE IF NOT EXISTS TakeYourTimeCostChanges (Type TEXT, Era INT, CostID INT, Value REAL, CalculatedPower1 REAL, CalculatedPower2 REAL);
+UPDATE Boosts SET Boost = MIN(MAX(1, 50/(COALESCE((SELECT Value FROM TakeYourTimeCostChanges WHERE Era IS NULL AND Type = "Tech" LIMIT 1), 1) * COALESCE((SELECT Value FROM TakeYourTimeCostChanges WHERE Era IS NOT NULL AND CostID IS NULL AND Era = (SELECT ChronologyIndex FROM Eras WHERE Eras.EraType = (SELECT EraType FROM Technologies WHERE Technologies.TechnologyType = Boosts.TechnologyType)) AND Type = "Tech" GROUP BY Era LIMIT 1), 1) * COALESCE((SELECT Value FROM TakeYourTimeCostChanges WHERE CostID IS NOT NULL AND CostID = (SELECT (SELECT COUNT(DISTINCT a.Cost) FROM Technologies a WHERE a.Cost < Technologies.Cost) FROM Technologies WHERE Technologies.TechnologyType = Boosts.TechnologyType) AND Type = "Tech" GROUP BY Era LIMIT 1), 1))), 100) WHERE TechnologyType IS NOT NULL;
+
+--China Bonus
+UPDATE ModifierArguments SET Value = MIN(MAX(1, Value/COALESCE((SELECT Value FROM TakeYourTimeCostChanges WHERE Era IS NULL AND Type = "Tech" LIMIT 1), 1)), 100) WHERE ModifierId = "TRAIT_TECHNOLOGY_BOOST";

@@ -1,0 +1,1795 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'Hyperdimension Neptunia Lowee Mk2 (Civ 6)'CN_Add_FI -->
+<!-- Author: Clear8Sky -->
+<!-- DateCreated: 2021/8/6 21:20:22 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Hyperdimension Neptunia: Lowee Mk2 (Civ 6)” 。该文件在 FrontEnd 与 InGame 时载入，无需任何 Criteria -->
+	<LocalizedText>
+		
+	<!-- RomRamGameText.xml 文件 -->
+		
+		<!-- ***************************** 文明 ***************************** -->
+		
+		<Replace Tag="LOC_CIVILIZATION_BWH_LOWEE_MK2_NAME" Language="zh_Hans_CN">
+			<Text>白露之滨</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVILIZATION_BWH_LOWEE_MK2_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>白露之滨帝国</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVILIZATION_BWH_LOWEE_MK2_ADJECTIVE" Language="zh_Hans_CN">
+			<Text>白露之滨的</Text>
+		</Replace>
+		
+		<!-- ***************************** 文明特色能力 ***************************** -->
+		
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_BWH_LAND_OF_WHITE_SERENITY_NAME" Language="zh_Hans_CN">
+			<Text>纯白宁静之地</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_BWH_LAND_OF_WHITE_SERENITY_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>所有冻土和雪地单元格产出+1 [ICON_Culture] 文化值。</Text>
+		</Replace>
+		
+		<!-- ***************************** 信息 ***************************** -->
+		
+		<Replace Tag="LOC_CIVINFO_BWH_LOWEE_MK2_LOCATION" Language="zh_Hans_CN">
+			<Text>游汐叶界</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVINFO_BWH_LOWEE_MK2_SIZE" Language="zh_Hans_CN">
+			<Text>约37500平方英里（数据来自海王星系列游戏维基）</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVINFO_BWH_LOWEE_MK2_POPULATION" Language="zh_Hans_CN">
+			<Text>大约57000（数据来自海王星系列游戏维基）</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVINFO_BWH_LOWEE_MK2_CAPITAL" Language="zh_Hans_CN">
+			<Text>白露之滨</Text>
+		</Replace>
+		
+		<!-- ***************************** 百科文本与引言 ***************************** -->
+		
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_BWH_LOWEE_MK2_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>白露之滨是统治游汐叶界的四大国家之一。白露之滨的极地气候十分严苛，但尽管如此，在纯白之心的领导下白露之滨依然崛起成为游汐叶界政治舞台上的四极之一。白露之滨的街道上洋溢着欢乐喜庆的七分，由随处可见的彩虹，多彩的建筑和地平线上星星点点的气球点缀而成。白露之滨以四大国中最为宽松的移民政策而著名，这是一座敞开国门欢迎各个年龄段的人们并与他们一起分享欢乐的美丽国度。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_BWH_LOWEE_MK2_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>白露之滨坐落在游汐叶界的寒冷北地，以发达的魔法工业著称。魔法覆盖这个国度的方方面面，包括公共工程和日常学习。白露之滨也在上一次危机中成为了犯罪神组织的主要目标。据西泽美奈所说，组织首脑玛吉空奴正是出身于白露之滨，这里也依然有大量的2D怪物盘踞。根据诸多的历史记载，在漫长的历史中许多女神曾统治过白露之滨，每一任女神都在退休之后继续住在这里直至他们离开人世。</Text>
+		</Replace>
+		
+		<!-- ***************************** 萝姆 ***************************** -->
+		<!-- ***************************** 领袖萝姆 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_BWH_ROM_NAME" Language="zh_Hans_CN">
+			<Text>萝姆</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_BWH_ROM_NAME_C4T" Language="zh_Hans_CN">
+			<Text>{LOC_LEADER_BWH_ROM_NAME} [ICON_Culture][ICON_Amenities]</Text>
+		</Replace>
+		
+		<!-- ***************************** 领袖特色能力 ***************************** -->
+		
+		<Replace Tag="LOC_TRAIT_LEADER_BWH_WHITESAPPHIRE_OF_BINARY_STAR_NAME" Language="zh_Hans_CN">
+			<Text>纯白双星·蓝宝石</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_BWH_WHITESAPPHIRE_OF_BINARY_STAR_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>每与一个不同的文明建立 [ICON_TradeRoute] 贸易路线，则文明可获得+3 [ICON_Culture] 文化值。</Text>
+		</Replace>
+		
+		<!-- ***************************** 领袖议程 ***************************** -->
+		
+		<Replace Tag="LOC_AGENDA_BWH_BIG_BULLY_NAME" Language="zh_Hans_CN">
+			<Text>谨小慎微</Text>
+		</Replace>
+		<Replace Tag="LOC_AGENDA_BWH_BIG_BULLY_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>从不宣布突袭或正式战争，喜欢不构成威胁的文明，不喜欢向她宣战的文明。</Text>
+		</Replace>
+		
+		<!-- ***************************** 领袖百科与引言 ***************************** -->
+		
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_BWH_ROM_QUOTE" Language="zh_Hans_CN">
+			<Text>让我们再来一起玩吧！</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_BWH_ROM_TITLE" Language="zh_Hans_CN">
+			<Text>萝姆，白心之妹</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_BWH_ROM_SUBTITLE" Language="zh_Hans_CN">
+			<Text>白露之滨的女神候补生，布兰的“右手”</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_BWH_ROM_CHAPTER_CAPSULE_BODY" Language="zh_Hans_CN">
+			<Text>萝姆是布兰的两个妹妹中较为年长的那个，当她执政时，她比自己的妹妹拉姆要更加谨慎。她喜欢与人为善，但她并不喜欢人们彼此欺侮。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_BWH_ROM_CHAPTER_DETAILED_BODY" Language="zh_Hans_CN">
+			<Text>在萝姆的统治下，她会尽可能的与其他文明建立商路来获得文化。同时萝姆会非常害怕拥有庞大军队的文明，比如优尼。她会尤其讨厌那些对自己宣战的文明。她喜欢拥有较小军队的文明，且永远不会对他们宣战。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_BWH_ROM_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>萝姆，即大众所知的纯白妹妹之一，是白露之滨的女神，但她实际上只是一名女神候补生。萝姆更多的喜欢跟西泽美奈一起玩2D或者3D的主机游戏，也经常被拉姆拉着一起在布兰心爱的书上乱涂乱画，然后跟怒火满怀的布兰一起展开一场激烈的追逐战。萝姆喜欢跟其他女神交谈，虽然她依然非常害羞，而且由于某种原因，她从来不跟诺瓦露说话。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_BWH_ROM_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>萝姆的年龄看起来比爱子（Aiko）和拉姆大一点。</Text>
+		</Replace>
+		
+		<!-- ***************************** 拉姆 ***************************** -->
+		<!-- ***************************** 领袖拉姆 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_BWH_RAM_NAME" Language="zh_Hans_CN">
+			<Text>拉姆</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_BWH_RAM_NAME_C4T" Language="zh_Hans_CN">
+			<Text>{LOC_LEADER_BWH_RAM_NAME} [ICON_Culture][ICON_Ability]</Text>
+		</Replace>
+		
+		<!-- ***************************** 领袖特色能力 ***************************** -->
+		
+		<Replace Tag="LOC_TRAIT_LEADER_BWH_WHITERUBY_OF_BINARY_STAR_NAME" Language="zh_Hans_CN">
+			<Text>纯白双星·红宝石</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_BWH_WHITERUBY_OF_BINARY_STAR_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>击杀敌方单位可获得等同于其 [ICON_Strength] 战斗力25%的 [ICON_Culture] 文化值。每处沼泽、绿洲和泛滥平原产出+1 [ICON_Culture] 文化值。</Text>
+		</Replace>
+		
+		<!-- ***************************** 领袖议程 ***************************** -->
+		
+		<Replace Tag="LOC_AGENDA_BWH_DREW_EVERY_BOOK_NAME" Language="zh_Hans_CN">
+			<Text>画遍姐姐的每本小说！</Text>
+		</Replace>
+		<Replace Tag="LOC_AGENDA_BWH_DREW_EVERY_BOOK_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>喜欢拥有高文化的文明，不喜欢比自己文化低的文明。</Text>
+		</Replace>
+		
+		<!-- ***************************** 领袖百科与引言 ***************************** -->
+		
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_BWH_RAM_QUOTE" Language="zh_Hans_CN">
+			<Text>没错，我们就是白露之滨的双子星！我是拉姆，这是我姐姐萝姆！</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_BWH_RAM_TITLE" Language="zh_Hans_CN">
+			<Text>拉姆，白心之妹</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_BWH_RAM_SUBTITLE" Language="zh_Hans_CN">
+			<Text>白露之滨的女神候补生，布兰的“左手”</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_BWH_RAM_CHAPTER_CAPSULE_BODY" Language="zh_Hans_CN">
+			<Text>拉姆是布兰的两个妹妹中较为年幼的那个，同时也是布兰的左手。当她执政时，由于她的天性，她比萝姆要更加欢乐活泼。她喜欢在每本书上留下自己的得意画作，但不喜欢那些从来没有多少文化的人。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_BWH_RAM_CHAPTER_DETAILED_BODY" Language="zh_Hans_CN">
+			<Text>当她执政时，她会尽她所能来保证国家处于领先地位，吸引更多的人来她的国家履行。她致力于提升文化产出并带领她的国家赢得文化胜利。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_BWH_RAM_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>拉姆，即大众所知的白色妹妹之一，是白露之滨的女神，但她实际上是一名女神候补生。拉姆更喜欢跟萝姆一起玩2D或是3D的主机游戏，也喜欢跟萝姆一起在在姐姐的爱书上乱涂乱画然后跟怒火满怀的布兰一起展开一场激烈的追逐战。拉姆经常抵制紫耀之都的女神，尤其是涅普迪努，因为她们每次见面后者都会好好恶搞她一番。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_BWH_RAM_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>拉姆的年龄看起来比爱子（Aiko）大，但是比萝姆小。</Text>
+		</Replace>
+		
+		<!-- ***************************** 宗教 ***************************** -->
+		
+		<Replace Tag="LOC_RELIGION_BWH_LOWEE_ROM" Language="zh_Hans_CN">
+			<Text>白心之妹萝姆教会</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_RELIGIONS_PAGE_RELIGION_BWH_LOWEE_ROM_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>一个代表白之妹妹萝姆的宗教，同时也是她信仰占有度（Shares）的主要来源。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_RELIGION_BWH_LOWEE_RAM" Language="zh_Hans_CN">
+			<Text>白心之妹拉姆教会</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_RELIGIONS_PAGE_RELIGION_BWH_LOWEE_RAM_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>一个代表白之妹妹拉姆的宗教，同时也是她信仰占有度（Shares）的主要来源。</Text>
+		</Replace>
+		
+		<!-- ***************************** 单位 魔导步兵 ***************************** -->
+		
+		<Replace Tag="LOC_UNIT_BWH_LOWEE_SNOW_INFANTRY_NAME" Language="zh_Hans_CN">
+			<Text>魔导步兵</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_BWH_LOWEE_SNOW_INFANTRY_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>白露之滨文明文艺复兴时期特色近战单位，取代火枪手。相较于后者更弱，但在冻土和雪地上更强，且无视这些地形的影响。无需消耗任何战略资源即可训练。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_BWH_LOWEE_SNOW_INFANTRY_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>白露之滨的女性士兵同时掌握射术和魔法两种技艺，同时布兰也把她在小说中学到的战斗方式添加到这些士兵的训练日程中。不仅如此，布兰甚至把很多自己小说中的中二魔法加入训练日程，使得她麾下的这些魔导步兵在战场上爆发出令人胆寒的战斗力。由于如此严苛的训练，加上布兰在第一次玛吉空奴事件中亲自对这些魔导步兵发动了攻击，使得这些士兵面临相当严重的补员问题。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_BWH_MOD_BWH_LOWEESOLDIER_COMBAT" Language="zh_Hans_CN">
+			<Text>在冻土和雪地上+20 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		
+		<!-- ***************************** 单位 玛溜劳工 ***************************** -->
+		
+		<Replace Tag="LOC_UNIT_BWH_LOWEE_MARYO_WORKER_NAME" Language="zh_Hans_CN">
+			<Text>玛溜劳工</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_BWH_LOWEE_MARYO_WORKER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>拉姆作为领袖时的特色单位，取代建造者。相较于后者拥有两倍 [ICON_Charges] 劳动力。当与“千幸”的“R-2无人机”相邻时会立即消耗掉所有 [ICON_Charges] 劳动力而消失。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_BWH_LOWEE_MARYO_WORKER_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>玛溜劳工是由真正的玛优训练而来。当拉姆第一次在电子游戏中看到它们时她就十分喜欢这些可爱的吉祥物，如今作为白露之滨的最受欢迎的吉祥物在拉姆的领导下成为了出色的工人。它们在维修危险管道方面比一般工人更有效率，行动也更加迅捷。但在初美琴里到来之后，玛溜劳工的数量开始急速下降，因为前者带来了像R-2无人机这样更加先进的工人。当发现它们敬爱的领袖拉姆也喜欢这些机器人的时候，玛溜劳工纷纷开始暴动。虽然拉姆依然保留着白露之滨的传统不会消亡，然而这些工人仍跟R-2无人机之间保持着紧张的关系。</Text>
+		</Replace>
+		
+		<!-- ***************************** 改良设施部分 ***************************** -->
+		
+		<Replace Tag="LOC_IMPROVEMENT_BWH_LOWEE_MUSHROOM_NAME" Language="zh_Hans_CN">
+			<Text>蘑菇领域</Text>
+		</Replace>
+		<Replace Tag="LOC_IMPROVEMENT_BWH_LOWEE_MUSHROOM_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>解锁建造者修建白露之滨文明特色改良设施“蘑菇领域”的能力。[NEWLINE][NEWLINE]+1 [ICON_Food] 食物；若与地热裂缝相邻，则再+1 [ICON_Food] 食物。解锁科技“电力”后+1 [ICON_Gold] 金币，解锁科技“电脑”后+1 [ICON_Culture] 文化值。必须修建在冻土或雪地上。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_IMPROVEMENTS_PAGE_IMPROVEMENT_BWH_LOWEE_MUSHROOM_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>白露之滨的建筑风格以其明快的配色和对蘑菇和水管装饰物的热爱而著称。利用魔法，白露之滨的蘑菇即使在冻土和雪地这样的不毛之地也能长的十分巨大。</Text>
+		</Replace>
+		
+		<!--因为被注释掉了所以就先不译了-->
+		
+		<!-- ***************************** Building, Lowee Observatory ***************************** -->
+		
+		<!--
+		<Replace Tag="LOC_BUILDING_BWH_LOWEE_OBSERVATORY_NAME" Language="zh_Hans_CN">
+			<Text>Lowee Observatory</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_BWH_LOWEE_OBSERVATORY_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>Rom's unique encampment district that have double hit points and +1 Amenity.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_DISTRICTS_PAGE_DISTRICT_BWH_LOWEE_OBSERVATORY_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>Lowee Observatory is central building in Lowee City, it serve as Goddess house and Observatory to overwatch around the city, during battle with ASIC, this place was using as castle and basilicom at same time with Rom and Ram were watch city with this building.</Text>
+		</Replace>
+		-->
+		
+		<!-- ***************************** Unit, Maryo Worker ***************************** -->
+		
+		<!--
+		<Replace Tag="LOC_BUILDING_BWH_LOWEE_MARYO_LAND_NAME" Language="zh_Hans_CN">
+			<Text>Maryo Land</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_BWH_LOWEE_MARYO_LAND_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>Ram's unique building that replaced Water Mill, gain +2 Amenity and it don't require to Adjacent River.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_BUILDINGS_PAGE_BUILDING_BWH_LOWEE_MARYO_LAND_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>Maryo Land is the place were Maryo Worker were in which full of Amusement park include with Super Maryo Bros., Super Maryo Galaxy, Maryo Party and Maryo Kart, although these are copyright by Lowee Authority and they have to take down this park, many people love this replica place to have to keep it, there are rumor from Underling that Kotori Hatsumi have using Lowee Imperial Navy SEALs like Alpha Seven using this place as an base of operation.</Text>
+		</Replace>
+		-->
+		
+		<!-- ***************************** 载入 ***************************** -->
+		
+		<Replace Tag="LOC_LOADING_INFO_LEADER_BWH_ROM" Language="zh_Hans_CN">
+			<Text>啊……萝姆女神，白之妹妹的您已将自己的国度发展到了最高水平，您强大的能力也必将让您的国度跃升为游汐叶界最强的存在，尽管这个世界还有一些竞争对手。噢……萝姆，您是布兰的妹妹，没有了姐姐，您不得不独自去面对……而我，能让您勇敢面对那群想要摧毁这片静谧之地的大恶霸们！</Text>
+		</Replace>
+		<Replace Tag="LOC_LOADING_INFO_LEADER_BWH_RAM" Language="zh_Hans_CN">
+			<Text>啊……拉姆女神，白之妹妹的您已将自己的国度发展到了最高水平，您强大的能力也必将让您的国度跃升为游汐叶界最强的存在，尽管这个世界还有一些竞争对手。噢……拉姆，您是布兰的妹妹，没有了姐姐，您不得不独自去面对……而我，能让您勇敢面对那群想要摧毁这片静谧之地的大恶霸们！</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 初次见面 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>唔……你好，我是萝姆，白露之滨的女神候补生……你一定是新来的客人，对吧，我觉得你能够与我和平相处，但我不喜欢欺负别人，因为那样真的很痛。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>你愿意来我的城市四处逛一逛吧。只要你喜欢，你可以在这里找到一处安静迷人的地方。还有，请尽量不要欺负我的人民。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NEAR_INITIATOR_POSITIVE_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>好，我希望你的居所如梦般美好。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>我的白露之滨历史书上有传言说，像你这样的神秘国度已有很长时间的记载了，但这是我第一次看到你的居所。你愿意和我交换首都信息吗？</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>Hi～！我是拉姆，是白露之滨国度最强的女神候补生，如果你想要做点什么的话，我这里有很多姐姐的书，可以画出你想要的一切。我希望你是和平的。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>今天来参观我的城市，你就可以促使我的国度成为游汐叶界的佼佼者。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NEAR_INITIATOR_POSITIVE_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>好的，谢谢。我希望你的城市如我所想般美好。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>我听说你的城市很适合画在地图上。你能和我交换下地图吗？</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 问候 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_GREETING_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>欢迎，陌生的客人。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_GREETING_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>Hi～！陌生的客人。</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 宣布友谊 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_HUMAN_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>好的，我很愿意。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_HUMAN_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>抱歉，我不能和好感度不足100%的人成为朋友。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>那个……你愿意宣布我们的友谊吗？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>太好了。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>咕……我不开心。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_HUMAN_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>好呀！我同意。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_HUMAN_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>什……什么！我可看不出你是个好朋友。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>嗯……我很清楚你是最棒的，那我们可以宣布友谊吗？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>耶～！谢啦！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>啊……好伤心。</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 宣战 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>……你这个大恶霸！我讨厌你，我会教训你的！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>你是个大坏蛋，我要带领我的军队来对付你！</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>想打我？我会迎战的，还要把你的军队给冰封在严寒里。大笨蛋！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>我要让你知道，白露之滨是最强的国家，我是不会倒下的！</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 贸易 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_MAKE_DEAL_AI_ACCEPT_DEAL_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>嗯，我接受。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MAKE_DEAL_AI_REFUSE_DEAL_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>……我拒绝，交易不会生效的。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_MAKE_DEAL_FROM_AI_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>唔……你不喜欢吗？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MAKE_DEAL_AI_ADJUST_DEAL_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>这次交易会生效的。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>谢谢。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_MAKE_DEAL_AI_ACCEPT_DEAL_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>好的，好的，我同意。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MAKE_DEAL_AI_REFUSE_DEAL_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>不，不，不，这样不行。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_MAKE_DEAL_FROM_AI_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>啊呜……</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MAKE_DEAL_AI_ADJUST_DEAL_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>我喜欢这样，你觉得呢？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>耶～！</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 击败 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>我……我不敢相信你竟然欺负了我。我讨厌你，我！讨！厌！你！啊呜……</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_ROM_ANY}</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>可恶！！！这是幻觉吗？不……不，我亲眼看着我的人民哭着跑开了。你！你这个大坏蛋！我讨厌……啊呜…好痛……</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BWH_RAM_ANY}</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 代表团 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_HUMAN_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>我同意你的代表团现在就来访问……</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_HUMAN_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>唔……不，你的人民还不是那么可信。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DELEGATION_FROM_AI_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>我的国家想要派遣代表团访问你的城市，你能来这里将他们接走吗？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_AI_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>好的。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_AI_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>唔……真的不行么？</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_HUMAN_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>你的人民现在可以来我最强大的国家看一看了……</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_HUMAN_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>不许！！！！你的人民都是笨蛋，我不同意。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DELEGATION_FROM_AI_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>唔……我的人民想要去往你伟大的国度参观一下，你愿意接受他们吗？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_AI_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>哈哈……谢啦！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_AI_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>啊呜……</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 谴责 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>……你欺负我！我会记住你的。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>走开！你们这些笨蛋！我要让全世界都知道你是那种不可信任的人！[NEWLINE]（谴责你）</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>啊呜……你敢欺负我！你给我等着！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>你现在真的是世界上都数得着的大坏蛋，其他人都会看清你的！[NEWLINE]（谴责你）</Text>
+		</Replace>
+
+		<!-- 这大概是为什么她们无论如何也要谴责你 -->
+		
+		<Replace Tag="LOC_DIPLO_DENOUNCE_REASON_FROM_AI_LEADER_ANY_REASON_AGENDA_BWH_BIG_BULLY_BAD_ACTION" Language="zh_Hans_CN">
+			<Text>（您欺负了她）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DENOUNCE_REASON_FROM_AI_LEADER_ANY_REASON_AGENDA_BWH_BIG_BULLY_BAD_ACTION_WAR" Language="zh_Hans_CN">
+			<Text>（她真的很害怕那些率领大军进行激烈战争的人）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DENOUNCE_REASON_FROM_AI_LEADER_ANY_REASON_AGENDA_BWH_DREW_EVERY_BOOK_BAD_ACTION" Language="zh_Hans_CN">
+			<Text>（您从未在她姐姐的书上画画来获得文化，您只是将其和文化都放得很低）</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 大使馆 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_ACCEPT_EMBASSY_FROM_HUMAN_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>好的，我喜欢看到你的大使馆在我的国家建立。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_EMBASSY_FROM_HUMAN_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>不行，我不想要你的国家的大使馆。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_EMBASSY_FROM_AI_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>我想在你的首都建立一座白露之滨的大使馆，你愿意吗？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_ACCEPT_EMBASSY_FROM_AI_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>谢谢了。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_EMBASSY_FROM_AI_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>好吧，那我改天再问……</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_EMBASSY_FROM_HUMAN_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>我同意。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_EMBASSY_FROM_HUMAN_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>不行不行……我是不会接受像你一样笨蛋的大使馆的。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_EMBASSY_FROM_AI_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>我能在你首都建立大使馆吗？我想把你们的信息分享给我的人民，这样就能更友好啦。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_ACCEPT_EMBASSY_FROM_AI_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>哈哈，谢啦。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_EMBASSY_FROM_AI_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>啊呜……</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 赞成与警告 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_WARNING_EXIT_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>我……我不喜欢像你这样的大人，走开。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_LEADER_BWH_ROM_REASON_ANY" Language="zh_Hans_CN">
+			<Text>（您拥有大量军队）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_EXIT_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>我很高兴你不会欺负我……谢谢你。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_BWH_ROM_REASON_ANY" Language="zh_Hans_CN">
+			<Text>（您的军队不会威胁到她）</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_MODIFIER_BWH_BIG_BULLY_DOF" Language="zh_Hans_CN">
+			<Text>萝姆喜欢你不欺负她。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_BWH_BIG_BULLY_DEMAND_OF_THEM" Language="zh_Hans_CN">
+			<Text>萝姆讨厌你欺负她。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_BWH_BIG_BULLY_WAR" Language="zh_Hans_CN">
+			<Text>萝姆讨厌你去率领大军进行激烈战争。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_WARNING_EXIT_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>哎呀，我是想让你在姐姐的书上画画的，别放着不动呀，笨蛋。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_LEADER_BWH_RAM_REASON_ANY" Language="zh_Hans_CN">
+			<Text>（您的文化值低于她）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_EXIT_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>耶～！我喜欢这样随心地在书上画画，你能再多画些吗？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_BWH_RAM_REASON_ANY" Language="zh_Hans_CN">
+			<Text>（您的文化值很高）</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_MODIFIER_BWH_DREW_EVERY_BOOK_HIGH_CULTURE" Language="zh_Hans_CN">
+			<Text>拉姆喜欢你有很高的文化值。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_BWH_DREW_EVERY_BOOK_LOW_CULTURE" Language="zh_Hans_CN">
+			<Text>拉姆讨厌你文化值低。</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 索取 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_AI_REFUSE_DEMAND_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>我不允许别人欺负我们！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_AI_ACCEPT_DEMAND_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>唔……好吧，你这个大恶霸！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_HUMAN_ACCEPT_DEMAND_FROM_AI_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>谢谢……这样很好。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_HUMAN_REFUSE_DEMAND_FROM_AI_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>唔……我讨厌你。</Text>
+		</Replace>
+
+		<!-- 我猜这是为柊笠见（布兰）准备的，而非拉姆 -->
+		
+		<Replace Tag="LOC_DIPLO_AI_REFUSE_DEMAND_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>不！你在欺负我的国家，好吧，请你“做个交易”，而不是向我“提出索取”！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_AI_ACCEPT_DEMAND_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>啊呜……我明白了，你除了大恶霸以外，什么都不是！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_HUMAN_ACCEPT_DEMAND_FROM_AI_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>耶～！谢谢你！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_HUMAN_REFUSE_DEMAND_FROM_AI_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>啊呜……我不会忘记的。</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 和平 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_ACCEPT_DEAL_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>好，我不愿再和你这样的大恶霸打下去了。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_REFUSE_DEAL_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>你是个大恶霸，而且我的国家更强大，我是不会接受的。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_FROM_AI_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>我不想再和你这样的大恶霸打下去了，我们能和好吗？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_ACCEPT_MAKE_PEACE_FROM_AI_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>太好了……</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_MAKE_PEACE_FROM_AI_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>啊呜……</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_ACCEPT_DEAL_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>好吧，我不愿再和你这样的大笨蛋打下去了。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_REFUSE_DEAL_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>不行，这是场伟大的战争，大笨蛋不应逃避这场战斗游戏。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_FROM_AI_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>这场游戏我已经打累了，不想再玩了，你愿意让我们和好吗？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_ACCEPT_MAKE_PEACE_FROM_AI_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>好吧，我得说，游戏结束了！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_MAKE_PEACE_FROM_AI_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>啊呜……</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 开放边境 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_HUMAN_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>我接受你的请求，免费通行吧。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_HUMAN_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>抱歉，这是付费通道，并非免费，我不会接受的。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_OPEN_BORDERS_FROM_AI_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>你能，开放“游戏接口”吗？我想在你的境内自由走动，别让我的部队在你边境上吃亏。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_AI_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>谢谢……</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_AI_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>好吧，可这不合适。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_HUMAN_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>好呀，这样我就能看到你的赛车在我这里四处漂移啦。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_HUMAN_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>不要！你要是个玉米饼卷（Taco）我就不会打开这个边境游戏！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_OPEN_BORDERS_FROM_AI_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>我想穿过你的边境，不想翻越你的城墙，你同意吗？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_AI_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>耶～！NICE！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_AI_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>啊呜……</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 别在附近定居 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_AI_RESPONSE_POSITIVE_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>对不起，我再也不这样做了。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_AI_RESPONSE_NEGATIVE_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>虽然我不想说，但这是我的领土，白露之滨需要这片土地，你不能妨碍我们。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_AI_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>我看到你在我们附近定居了。你能否别再我的白露之滨旁边建立新城市了吗？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_HUMAN_RESPONSE_POSITIVE_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>那就好，希望你能找到一个更好的地方。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_HUMAN_RESPONSE_NEGATIVE_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>这是我白露之滨的领土，我不允许别人欺负我的领土。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_AI_RESPONSE_POSITIVE_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>我接受了，我不会再在你的领土上建立城市啦。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_AI_RESPONSE_NEGATIVE_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>不要！你的领土小的可怜，本就应该让我的人民去定居，给这些土地附上更好的颜色。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_AI_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>我看到有人在我眼皮底下定居来寻找更多姐姐的书？我不准，那是我的地盘，你能别这么做了吗？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_HUMAN_RESPONSE_POSITIVE_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>那就好，去其他人那里找吧，不要放弃哦。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_DONT_SETTLE_NEAR_ME_HUMAN_RESPONSE_NEGATIVE_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>啊呜……你要是再在我们附近定居，接下来会发生什么，你是知道的吧。</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 很多军队在边境附近 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_AI_RESPONSE_POSITIVE_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>我希望你不是来欺负我的。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_AI_RESPONSE_NEGATIVE_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>太讨厌了，我现在真的要和大恶霸打了，一定会打赢的！</Text>
+		</Replace>
+		
+		<!-- 我觉得这更像是柊笠见（布兰）的引言，因为她比萝姆更有可能说出这种话 -->
+		
+		<Replace Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>我想说的是，如果你只是想探图的话，你不应该错误地把军队靠近我这里，为什么不用侦察单位呢？</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_AI_RESPONSE_POSITIVE_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>谢谢，但别把这儿弄坏了，你明白的。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_AI_RESPONSE_NEGATIVE_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>我看清你的本性了，来战吧！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>我听说你的军队就在我边境附近，我想你只是前去和比我更强大的人打，还是说真的要和我打？</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 别在我这里用间谍 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_AI_RESPONSE_POSITIVE_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>唔……我现在不再会偷窃或做什么别的事情了。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_AI_RESPONSE_NEGATIVE_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>我的人民将会尽他们所能的。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_LEADER_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>我看到你的人民在欺负我们，请别再欺负下去了。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_HUMAN_RESPONSE_POSITIVE_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>好吧……我希望你别再欺负人了。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_HUMAN_RESPONSE_NEGATIVE_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>我要保护我的人民，不受你们的欺负。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_AI_RESPONSE_POSITIVE_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>好啦，我暂时不会把我的人带过来啦。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_AI_RESPONSE_NEGATIVE_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>不行，我的人会继续从你手中拯救我的国家，这不是你能要求的。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_LEADER_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>我每天都感觉丢了很多书，但上次我看见你的人偷走了一本我想在上面画画的书，你能别再这么做吗？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_HUMAN_RESPONSE_POSITIVE_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>太好啦。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_SPYING_ON_ME_HUMAN_RESPONSE_NEGATIVE_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>你会为此付出代价的，我的人民会尽其所能将你的人压在膝盖下的！</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 别在这里挖掘文物 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_DIGGING_UP_ARTIFACTS_AI_RESPONSE_POSITIVE_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>我不会再偷拿你的文物了。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_DIGGING_UP_ARTIFACTS_AI_RESPONSE_NEGATIVE_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>不好意思，你的人懒得将它发掘出来，而我的人民会尽力保证它不被你发现。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_DIGGING_UP_ARTIFACTS_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>唔……请别再让你的人从我的国家挖走我的文物了，求你了。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_DIGGING_UP_ARTIFACTS_HUMAN_RESPONSE_POSITIVE_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>好的，我希望你别再这么做了。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_DIGGING_UP_ARTIFACTS_HUMAN_RESPONSE_NEGATIVE_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>不要，我最爱的书，之后再见吧！</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_DIGGING_UP_ARTIFACTS_AI_RESPONSE_POSITIVE_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>啊啦，我只是……抱歉抱歉，我不会再这么做了。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_DIGGING_UP_ARTIFACTS_AI_RESPONSE_NEGATIVE_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>不要，如果你不是我姐姐，我就不会停手，略略略～！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_DIGGING_UP_ARTIFACTS_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>我不敢去想，因为你从我的地盘里把我的书给偷走了，你能停手吗？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_DIGGING_UP_ARTIFACTS_HUMAN_RESPONSE_POSITIVE_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>谢谢啦，我觉得可能是在你那里发现的，而不是我这里。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_DIGGING_UP_ARTIFACTS_HUMAN_RESPONSE_NEGATIVE_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>我是不会忘记你的所作所为的。</Text>
+		</Replace>
+		
+		<!-- ***************************** 外交 别转换我的信仰 ***************************** -->
+		
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_CONVERTING_MY_CITIES_AI_RESPONSE_POSITIVE_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>好吧，我的先知会离开的，你的人民也会信仰你们自己的宗教。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_CONVERTING_MY_CITIES_AI_RESPONSE_NEGATIVE_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>你的人民会聆听我的语言所能传达之物，这就是我的宗教！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_CONVERTING_MY_CITIES_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>我看到你的先知那般肆意入侵我的领土，现在就停手吧。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_CONVERTING_MY_CITIES_HUMAN_RESPONSE_POSITIVE_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>好的，那之后让你的先知离开我这里吧。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_CONVERTING_MY_CITIES_HUMAN_RESPONSE_NEGATIVE_LEADER_BWH_ROM_ANY" Language="zh_Hans_CN">
+			<Text>我不会忘记你先知的那般作为，不久之后你就会血偿的！</Text>
+		</Replace>
+
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_CONVERTING_MY_CITIES_AI_RESPONSE_POSITIVE_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>好吧，我的先知会离开的，你的人民也会信仰你们自己的宗教。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_CONVERTING_MY_CITIES_AI_RESPONSE_NEGATIVE_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>你的人民会聆听我的语言所能传达之物，这就是我的宗教！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_CONVERTING_MY_CITIES_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>我看到你的先知那般肆意入侵我的领土，现在就停手吧。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_CONVERTING_MY_CITIES_HUMAN_RESPONSE_POSITIVE_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>好的，那之后让你的先知离开我这里吧。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_STOP_CONVERTING_MY_CITIES_HUMAN_RESPONSE_NEGATIVE_LEADER_BWH_RAM_ANY" Language="zh_Hans_CN">
+			<Text>我不会忘记你先知的那般作为，不久之后你就会血偿的！</Text>
+		</Replace>
+
+		<!-- ***************************** 城市 ***************************** -->
+		<!-- 抱歉，我现在还不会加动态城市(Dynamic City) -->
+		
+		<Replace Tag="LOC_CITY_NAME_BWH_HDNCAPITAL_LOWEE_CAPITAL" Language="zh_Hans_CN">
+			<Text>白露之滨</Text>
+		</Replace>
+
+		<Replace Tag="LOC_CITY_NAME_BWH_HDNCAPITAL_LOWEE_ROM_CAPITAL" Language="zh_Hans_CN">
+			<Text>白露之滨的蓝宝石</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_HDNCAPITAL_LOWEE_RAM_CAPITAL" Language="zh_Hans_CN">
+			<Text>白露之滨的红宝石</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LOWEE_GLOBALEXPO" Language="zh_Hans_CN">
+			<!-- 来自：重生2 -->
+			<Text>白露之滨国际展览中心</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LOWEE_WORLDLABYRINTH" Language="zh_Hans_CN">
+			<!-- 来自：重生2 -->
+			<Text>世界的迷宫</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LOWEE_IRISFIELD" Language="zh_Hans_CN">
+			<!-- 来自：重生2 -->
+			<Text>深紫草原</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LOWEE_ATARIMARSH" Language="zh_Hans_CN">
+			<!-- 来自：重生2 -->
+			<Text>雅达利湿地</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LOWEE_ICICLEPATHWAY" Language="zh_Hans_CN">
+			<!-- 来自：重生2 -->
+			<Text>冰柱大厅</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LOWEE_RUDARMSSEWER" Language="zh_Hans_CN">
+			<!-- 来自：重生3 -->
+			<Text>荒野历险地下道</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LOWEE_CASTLE" Language="zh_Hans_CN">
+			<!-- 来自：重生3 -->
+			<Text>白露城堡</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LOWEE_SNOWFIELD" Language="zh_Hans_CN">
+			<!-- 来自：重生1 -->
+			<Text>白露雪原</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LOWEE_HYRARULESNOWFIELD" Language="zh_Hans_CN">
+			<!-- 来自：重生1 -->
+			<Text>海拉鲁尔雪原</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LOWEE_STELLAPLAINS" Language="zh_Hans_CN">
+			<!-- 来自：重生1 -->
+			<Text>斯特拉平原</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LOWEE_MFRONTIERCAVE" Language="zh_Hans_CN">
+			<!-- 来自：重生1 -->
+			<Text>M边境洞窟</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LOWEE_DONKONGRUINS" Language="zh_Hans_CN">
+			<!-- 来自：重生1 -->
+			<Text>金刚遗迹</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LOWEE_MILLENNIUMLABYRINTH" Language="zh_Hans_CN">
+			<!-- 来自：重生1 -->
+			<Text>千禧迷宫</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LOWEE_UWIIRUINS" Language="zh_Hans_CN">
+			<!-- 来自：重生1 -->
+			<Text>Uwii遗迹</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LOWEE_DEESSNOWFOREST" Language="zh_Hans_CN">
+			<!-- 来自：重生1 -->
+			<Text>迪斯纽森林</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LOWEE_METROIDSHELTER" Language="zh_Hans_CN">
+			<!-- 来自：重生3 -->
+			<Text>银河战士庇护所</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LOWEE_ARIOPLATEAU" Language="zh_Hans_CN">
+			<!-- 来自：重生3 -->
+			<Text>亚利欧高原</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LOWEE_RELOADGRASSLANDS" Language="zh_Hans_CN">
+			<!-- 来自：重生3 -->
+			<Text>回归之草原</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LOWEE_LUGIPLATEAU" Language="zh_Hans_CN">
+			<!-- 来自：重生3 -->
+			<Text>路吉易高原</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LOWEE_NINTENPARK" Language="zh_Hans_CN">
+			<!-- 来自：未知 -->
+			<Text>任天〇公园</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LOWEE_HEXPASTURES" Language="zh_Hans_CN">
+			<!-- 可能来自：新次元V2 -->
+			<Text>六角格草原</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BWH_LOWEE_MARYOLAND" Language="zh_Hans_CN">
+			<!-- 可能来自：新次元V2 -->
+			<Text>玛溜乐园</Text>
+		</Replace>
+		
+		<!-- ***************************** 公民 ***************************** -->
+		
+		<Replace Tag="LOC_CITIZEN_BWH_LOWEE_MK2_MALE_1" Language="zh_Hans_CN">
+			<Text>马里奥</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_BWH_LOWEE_MK2_MALE_2" Language="zh_Hans_CN">
+			<Text>路易吉</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_BWH_LOWEE_MK2_MALE_3" Language="zh_Hans_CN">
+			<Text>高桥专家</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_BWH_LOWEE_MK2_MALE_4" Language="zh_Hans_CN">
+			<Text>小初体</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_BWH_LOWEE_MK2_MALE_5" Language="zh_Hans_CN">
+			<Text>诡计初体</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_BWH_LOWEE_MK2_MALE_6" Language="zh_Hans_CN">
+			<Text>宝苛梦大师</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_BWH_LOWEE_MK2_MALE_7" Language="zh_Hans_CN">
+			<Text>远古巨兽</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_BWH_LOWEE_MK2_MALE_8" Language="zh_Hans_CN">
+			<Text>游戏狂</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_BWH_LOWEE_MK2_MALE_9" Language="zh_Hans_CN">
+			<Text>任天堂情报开发本部</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_BWH_LOWEE_MK2_MALE_10" Language="zh_Hans_CN">
+			<Text>Hudson酱</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_BWH_LOWEE_MK2_FEMALE_1" Language="zh_Hans_CN">
+			<Text>费南雪</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_BWH_LOWEE_MK2_FEMALE_2" Language="zh_Hans_CN">
+			<Text>蛙女</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_BWH_LOWEE_MK2_FEMALE_3" Language="zh_Hans_CN">
+			<Text>GUST酱</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_BWH_LOWEE_MK2_FEMALE_4" Language="zh_Hans_CN">
+			<Text>母初体</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_BWH_LOWEE_MK2_FEMALE_5" Language="zh_Hans_CN">
+			<Text>翔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_BWH_LOWEE_MK2_FEMALE_6" Language="zh_Hans_CN">
+			<Text>西泽美奈</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_BWH_LOWEE_MK2_FEMALE_7" Language="zh_Hans_CN">
+			<Text>月光虫</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_BWH_LOWEE_MK2_FEMALE_8" Language="zh_Hans_CN">
+			<Text>IS</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_BWH_LOWEE_MK2_FEMALE_9" Language="zh_Hans_CN">
+			<Text>老游戏玩家</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_BWH_LOWEE_MK2_FEMALE_10" Language="zh_Hans_CN">
+			<Text>白露之滨士兵</Text>
+		</Replace>
+		
+		<!-- ***************************** 地名 ***************************** -->
+		
+		<Replace Tag="LOC_NAMED_RIVER_LTD_LOWEE_1_NAME" Language="zh_Hans_CN">
+			<Text>海拉鄂瀑布</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_LTD_LOWEE_2_NAME" Language="zh_Hans_CN">
+			<Text>金刚小溪</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_LTD_LOWEE_3_NAME" Language="zh_Hans_CN">
+			<Text>泽贝斯河</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_LTD_LOWEE_4_NAME" Language="zh_Hans_CN">
+			<Text>拐角湍流</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_LTD_LOWEE_5_NAME" Language="zh_Hans_CN">
+			<Text>忒柳斯托奔流</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_LTD_LOWEE_6_NAME" Language="zh_Hans_CN">
+			<Text>奥内特瀑布</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_LTD_LOWEE_7_NAME" Language="zh_Hans_CN">
+			<Text>蹒流小溪</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_LTD_LOWEE_8_NAME" Language="zh_Hans_CN">
+			<Text>静音之河</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_LTD_LOWEE_9_NAME" Language="zh_Hans_CN">
+			<Text>彩虹湍流</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_LTD_LOWEE_10_NAME" Language="zh_Hans_CN">
+			<Text>德尔菲诺奔流</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_MOUNTAIN_LTD_LOWEE_1_NAME" Language="zh_Hans_CN">
+			<Text>伊利斯峰</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_MOUNTAIN_LTD_LOWEE_2_NAME" Language="zh_Hans_CN">
+			<Text>梅塔山脉</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_MOUNTAIN_LTD_LOWEE_3_NAME" Language="zh_Hans_CN">
+			<Text>洛伊瓦斯山隘</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_MOUNTAIN_LTD_LOWEE_4_NAME" Language="zh_Hans_CN">
+			<Text>托板山脉</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_MOUNTAIN_LTD_LOWEE_5_NAME" Language="zh_Hans_CN">
+			<Text>铬绿之顶</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_MOUNTAIN_LTD_LOWEE_6_NAME" Language="zh_Hans_CN">
+			<Text>薰衣紫峰</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_MOUNTAIN_LTD_LOWEE_7_NAME" Language="zh_Hans_CN">
+			<Text>耀·斯特山脉</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_MOUNTAIN_LTD_LOWEE_8_NAME" Language="zh_Hans_CN">
+			<Text>天空阁山隘</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_MOUNTAIN_LTD_LOWEE_9_NAME" Language="zh_Hans_CN">
+			<Text>玛吉坎特山脉</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_MOUNTAIN_LTD_LOWEE_10_NAME" Language="zh_Hans_CN">
+			<Text>毒液之峰</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_VOLCANO_LTD_LOWEE_1_NAME" Language="zh_Hans_CN">
+			<Text>布林斯塔火山</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_VOLCANO_LTD_LOWEE_2_NAME" Language="zh_Hans_CN">
+			<Text>塔兹米利圆丘</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_VOLCANO_LTD_LOWEE_3_NAME" Language="zh_Hans_CN">
+			<Text>哈依迪亚山谷</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_VOLCANO_LTD_LOWEE_4_NAME" Language="zh_Hans_CN">
+			<Text>阿尔特阿火山</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_VOLCANO_LTD_LOWEE_5_NAME" Language="zh_Hans_CN">
+			<Text>克里波山</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_VOLCANO_LTD_LOWEE_6_NAME" Language="zh_Hans_CN">
+			<Text>克林姆山脉</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_VOLCANO_LTD_LOWEE_7_NAME" Language="zh_Hans_CN">
+			<Text>流行明星圆丘</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_VOLCANO_LTD_LOWEE_8_NAME" Language="zh_Hans_CN">
+			<Text>战地山谷</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_VOLCANO_LTD_LOWEE_9_NAME" Language="zh_Hans_CN">
+			<Text>Uwii火山</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_VOLCANO_LTD_LOWEE_10_NAME" Language="zh_Hans_CN">
+			<Text>3DS山脉</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_DESERT_LTD_LOWEE_1_NAME" Language="zh_Hans_CN">
+			<Text>朱砂荒漠</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_DESERT_LTD_LOWEE_2_NAME" Language="zh_Hans_CN">
+			<Text>泰森沙漠</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_DESERT_LTD_LOWEE_3_NAME" Language="zh_Hans_CN">
+			<Text>惩罚沙丘</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_DESERT_LTD_LOWEE_4_NAME" Language="zh_Hans_CN">
+			<Text>鲁比内尔沙漠</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_DESERT_LTD_LOWEE_5_NAME" Language="zh_Hans_CN">
+			<Text>图森荒地</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_DESERT_LTD_LOWEE_6_NAME" Language="zh_Hans_CN">
+			<Text>加德荒漠</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_DESERT_LTD_LOWEE_7_NAME" Language="zh_Hans_CN">
+			<Text>露玛沙漠</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_DESERT_LTD_LOWEE_8_NAME" Language="zh_Hans_CN">
+			<Text>乔佐沙丘</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_DESERT_LTD_LOWEE_9_NAME" Language="zh_Hans_CN">
+			<Text>安德罗斯沙漠</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_DESERT_LTD_LOWEE_10_NAME" Language="zh_Hans_CN">
+			<Text>库普荒地</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_LAKE_LTD_LOWEE_1_NAME" Language="zh_Hans_CN">
+			<Text>塔布乌湖</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_LAKE_LTD_LOWEE_2_NAME" Language="zh_Hans_CN">
+			<Text>沙希咸水湖</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_LAKE_LTD_LOWEE_3_NAME" Language="zh_Hans_CN">
+			<Text>Mac红树湖</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_LAKE_LTD_LOWEE_4_NAME" Language="zh_Hans_CN">
+			<Text>吉诺浅池</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_LAKE_LTD_LOWEE_5_NAME" Language="zh_Hans_CN">
+			<Text>芬德拉纳水域</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_LAKE_LTD_LOWEE_6_NAME" Language="zh_Hans_CN">
+			<Text>新巴克湖</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_LAKE_LTD_LOWEE_7_NAME" Language="zh_Hans_CN">
+			<Text>埃克鲁托克咸水湖</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_LAKE_LTD_LOWEE_8_NAME" Language="zh_Hans_CN">
+			<Text>双叶红树湖</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_LAKE_LTD_LOWEE_9_NAME" Language="zh_Hans_CN">
+			<Text>卡纳拉韦浅池</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_LAKE_LTD_LOWEE_10_NAME" Language="zh_Hans_CN">
+			<Text>迷宫水域</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_SEA_LTD_LOWEE_1_NAME" Language="zh_Hans_CN">
+			<Text>虹色海岸</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_SEA_LTD_LOWEE_2_NAME" Language="zh_Hans_CN">
+			<Text>雅达利湾</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_SEA_LTD_LOWEE_3_NAME" Language="zh_Hans_CN">
+			<Text>冰柱海岸</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_SEA_LTD_LOWEE_4_NAME" Language="zh_Hans_CN">
+			<Text>荒野历险象牙海岸</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_SEA_LTD_LOWEE_5_NAME" Language="zh_Hans_CN">
+			<Text>雪原米色湾</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_SEA_LTD_LOWEE_6_NAME" Language="zh_Hans_CN">
+			<Text>斯缇拉海岸</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_SEA_LTD_LOWEE_7_NAME" Language="zh_Hans_CN">
+			<Text>M边境湾</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_SEA_LTD_LOWEE_8_NAME" Language="zh_Hans_CN">
+			<Text>金刚海岸</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_SEA_LTD_LOWEE_9_NAME" Language="zh_Hans_CN">
+			<Text>千禧赭湾</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_SEA_LTD_LOWEE_10_NAME" Language="zh_Hans_CN">
+			<Text>Uwii珊瑚湾</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_OCEAN_LTD_LOWEE_1_NAME" Language="zh_Hans_CN">
+			<Text>米娜之海</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_OCEAN_LTD_LOWEE_2_NAME" Language="zh_Hans_CN">
+			<Text>萝姆之海</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_OCEAN_LTD_LOWEE_3_NAME" Language="zh_Hans_CN">
+			<Text>拉姆之海</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_OCEAN_LTD_LOWEE_4_NAME" Language="zh_Hans_CN">
+			<Text>布兰之海</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_OCEAN_LTD_LOWEE_5_NAME" Language="zh_Hans_CN">
+			<Text>纯白之海</Text>
+		</Replace>
+
+	<!-- LTD_RomRamNominaText.xml 文件 -->
+		
+		<!-- ***************************** Nomina模组 ***************************** -->
+		
+		<!-- ***************************** 文明头衔 ***************************** -->
+		<!-- ***************************** 游牧 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_JFD_NOMADS_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}领袖</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_JFD_NOMADS_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}领袖</Text>
+		</Replace>
+
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_JFD_NOMADS_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_JFD_NOMADS_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨文明</Text>
+		</Replace>
+		
+		<!-- ***************************** 酋邦 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_CHIEFDOM_LARGE_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}领袖</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_CHIEFDOM_LARGE_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}领袖</Text>
+		</Replace>
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_CHIEFDOM_LARGE_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨酋邦</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_CHIEFDOM_LARGE_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨酋邦</Text>
+		</Replace>
+
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_CHIEFDOM_SMALL_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}领袖</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_CHIEFDOM_SMALL_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}领袖</Text>
+		</Replace>
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_CHIEFDOM_SMALL_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨部落</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_CHIEFDOM_SMALL_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨部落</Text>
+		</Replace>
+		
+		<!-- ***************************** 部落 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_JFD_HORDE_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}领袖</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_JFD_HORDE_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}领袖</Text>
+		</Replace>
+
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_JFD_HORDE_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨群落</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_JFD_HORDE_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨群落</Text>
+		</Replace>
+		
+		<!-- ***************************** 城邦 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_JFD_POLIS_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}领袖</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_JFD_POLIS_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}领袖</Text>
+		</Replace>
+
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_JFD_POLIS_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨都会</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_JFD_POLIS_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨都会</Text>
+		</Replace>
+		
+		<!-- ***************************** 独裁 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_AUTOCRACY_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_AUTOCRACY_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_AUTOCRACY_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨王国</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_AUTOCRACY_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨王国</Text>
+		</Replace>
+		
+		<!-- ***************************** 古典共和 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_CLASSICAL_REPUBLIC_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_CLASSICAL_REPUBLIC_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_CLASSICAL_REPUBLIC_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨共和国</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_CLASSICAL_REPUBLIC_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨共和国</Text>
+		</Replace>
+		
+		<!-- ***************************** 寡头政治 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_OLIGARCHY_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_OLIGARCHY_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_OLIGARCHY_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨理事会</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_OLIGARCHY_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨理事会</Text>
+		</Replace>
+		
+		<!-- ***************************** 商业共和国 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_MERCHANT_REPUBLIC_TINY_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_MERCHANT_REPUBLIC_TINY_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_MERCHANT_REPUBLIC_TINY_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨店集会</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_MERCHANT_REPUBLIC_TINY_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨店集会</Text>
+		</Replace>
+		
+		<!-- 海洋文明 -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_MERCHANT_REPUBLIC_SMALL_SEA_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_MERCHANT_REPUBLIC_SMALL_SEA_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_MERCHANT_REPUBLIC_SMALL_SEA_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨商集会</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_MERCHANT_REPUBLIC_SMALL_SEA_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨商集会</Text>
+		</Replace>
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_MERCHANT_REPUBLIC_SMALL_SEA_ADJ_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨商集会的</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_MERCHANT_REPUBLIC_SMALL_SEA_ADJ_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨商集会的</Text>
+		</Replace>
+
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_MERCHANT_REPUBLIC_MEDIUM_SEA_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_MERCHANT_REPUBLIC_MEDIUM_SEA_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_MERCHANT_REPUBLIC_MEDIUM_SEA_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨商港集会</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_MERCHANT_REPUBLIC_MEDIUM_SEA_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨商港集会</Text>
+		</Replace>
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_MERCHANT_REPUBLIC_MEDIUM_SEA_ADJ_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨商港集会的</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_MERCHANT_REPUBLIC_MEDIUM_SEA_ADJ_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨商港集会的</Text>
+		</Replace>
+
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_MERCHANT_REPUBLIC_LARGE_SEA_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_MERCHANT_REPUBLIC_LARGE_SEA_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_MERCHANT_REPUBLIC_LARGE_SEA_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨海港商业群</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_MERCHANT_REPUBLIC_LARGE_SEA_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨海港商业群</Text>
+		</Replace>
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_MERCHANT_REPUBLIC_LARGE_SEA_ADJ_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨海港商业群的</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_MERCHANT_REPUBLIC_LARGE_SEA_ADJ_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨海港商业群的</Text>
+		</Replace>
+
+		<!-- 陆地文明 -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_MERCHANT_REPUBLIC_SMALL_LAND_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_MERCHANT_REPUBLIC_SMALL_LAND_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_MERCHANT_REPUBLIC_SMALL_LAND_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨市集会</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_MERCHANT_REPUBLIC_SMALL_LAND_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨市集会</Text>
+		</Replace>
+
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_MERCHANT_REPUBLIC_MEDIUM_LAND_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>领主 {1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_MERCHANT_REPUBLIC_MEDIUM_LAND_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_MERCHANT_REPUBLIC_MEDIUM_LAND_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨超级市场</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_MERCHANT_REPUBLIC_MEDIUM_LAND_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨超级市场</Text>
+		</Replace>
+
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_MERCHANT_REPUBLIC_LARGE_LAND_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_MERCHANT_REPUBLIC_LARGE_LAND_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_MERCHANT_REPUBLIC_LARGE_LAND_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨国际展会</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_MERCHANT_REPUBLIC_LARGE_LAND_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨国际展会</Text>
+		</Replace>
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_MERCHANT_REPUBLIC_LARGE_LAND_ADJ_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨国际展会的</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_MERCHANT_REPUBLIC_LARGE_LAND_ADJ_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨国际展会的</Text>
+		</Replace>
+		
+		<!-- ***************************** 君主制 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_MONARCHY_TINY_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_MONARCHY_TINY_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_MONARCHY_TINY_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨公国</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_MONARCHY_TINY_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨公国</Text>
+		</Replace>
+
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_MONARCHY_SMALL_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_MONARCHY_SMALL_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_MONARCHY_SMALL_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨大公国</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_MONARCHY_SMALL_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨大公国</Text>
+		</Replace>
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_MONARCHY_SMALL_ADJ_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨大公国的</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_MONARCHY_SMALL_ADJ_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨大公国的</Text>
+		</Replace>
+
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_MONARCHY_MEDIUM_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_MONARCHY_MEDIUM_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_MONARCHY_MEDIUM_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨君主国</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_MONARCHY_MEDIUM_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨君主国</Text>
+		</Replace>
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_MONARCHY_MEDIUM_ADJ_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨君主国的</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_MONARCHY_MEDIUM_ADJ_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨君主国的</Text>
+		</Replace>
+
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_MONARCHY_LARGE_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_MONARCHY_LARGE_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_MONARCHY_LARGE_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨王国</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_MONARCHY_LARGE_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨王国</Text>
+		</Replace>
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_MONARCHY_LARGE_ADJ_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨王国的</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_MONARCHY_LARGE_ADJ_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨王国的</Text>
+		</Replace>
+		
+		<!-- ***************************** 君主专制 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_JFD_ABSOLUTE_MONARCHY_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_JFD_ABSOLUTE_MONARCHY_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_JFD_ABSOLUTE_MONARCHY_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨纯白领域</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_JFD_ABSOLUTE_MONARCHY_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨纯白领域</Text>
+		</Replace>
+		
+		<!-- ***************************** 神圣共和国 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_JFD_NOBLE_REPUBLIC_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_JFD_NOBLE_REPUBLIC_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_JFD_NOBLE_REPUBLIC_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨纯白联盟</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_JFD_NOBLE_REPUBLIC_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨纯白联盟</Text>
+		</Replace>
+		
+		<!-- ***************************** 议会民主制 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_JFD_PARLIAMENTARY_DEMOCRACY_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_JFD_PARLIAMENTARY_DEMOCRACY_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_JFD_PARLIAMENTARY_DEMOCRACY_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨纯白共和国</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_JFD_PARLIAMENTARY_DEMOCRACY_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨纯白共和国</Text>
+		</Replace>
+		
+		<!-- ***************************** 共产主义 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_COMMUNISM_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_COMMUNISM_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_COMMUNISM_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨人民共和国</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_COMMUNISM_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨人民共和国</Text>
+		</Replace>
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_COMMUNISM_ADJ_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨人民共和国的</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_COMMUNISM_ADJ_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨人民共和国的</Text>
+		</Replace>
+		
+		<!-- ***************************** 民主制 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_DEMOCRACY_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_DEMOCRACY_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_DEMOCRACY_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨民主共和国</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_DEMOCRACY_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨民主共和国</Text>
+		</Replace>
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_DEMOCRACY_ADJ_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨民主共和国的</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_DEMOCRACY_ADJ_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨民主共和国的</Text>
+		</Replace>
+		
+		<!-- ***************************** 法西斯 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_FASCISM_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_FASCISM_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_FASCISM_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>大白露之滨民族</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_FASCISM_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>大白露之滨民族</Text>
+		</Replace>
+		
+		<!-- ***************************** 企业自由意志主义 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_CORPORATE_LIBERTARIANISM_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_CORPORATE_LIBERTARIANISM_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_CORPORATE_LIBERTARIANISM_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨大企业</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_CORPORATE_LIBERTARIANISM_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨大企业</Text>
+		</Replace>
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_CORPORATE_LIBERTARIANISM_ADJ_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨大企业的</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_CORPORATE_LIBERTARIANISM_ADJ_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨大企业的</Text>
+		</Replace>
+		
+		<!-- ***************************** 数字民主主义 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_DIGITAL_DEMOCRACY_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_DIGITAL_DEMOCRACY_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_DIGITAL_DEMOCRACY_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨数字化共和国</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_DIGITAL_DEMOCRACY_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨数字化共和国</Text>
+		</Replace>
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_DIGITAL_DEMOCRACY_ADJ_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨数字化共和国的</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_DIGITAL_DEMOCRACY_ADJ_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨数字化共和国的</Text>
+		</Replace>
+		
+		<!-- ***************************** 合成专家统治 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_SYNTHETIC_TECHNOCRACY_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_SYNTHETIC_TECHNOCRACY_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_SYNTHETIC_TECHNOCRACY_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨专家统治</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_SYNTHETIC_TECHNOCRACY_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨专家统治</Text>
+		</Replace>
+		
+		<!-- ***************************** 帝国 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_EMPIRE_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_EMPIRE_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_EMPIRE_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨帝国</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_EMPIRE_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨帝国</Text>
+		</Replace>
+		
+		<!-- ***************************** 无政府 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_ANARCHY_EARLY_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>NPC {1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_ANARCHY_EARLY_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>NPC {1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_ANARCHY_EARLY_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨城邦</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_ANARCHY_EARLY_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨城邦</Text>
+		</Replace>
+
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_ANARCHY_RENAISSANCE_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>NPC {1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_ANARCHY_RENAISSANCE_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>NPC {1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_ANARCHY_RENAISSANCE_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨城邦</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_ANARCHY_RENAISSANCE_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨城邦</Text>
+		</Replace>
+
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_ANARCHY_MODERN_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>NPC {1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_ANARCHY_MODERN_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>NPC {1_Name}</Text>
+		</Replace>
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_ANARCHY_MODERN_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨城邦</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_ANARCHY_MODERN_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨城邦</Text>
+		</Replace>
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_ANARCHY_MODERN_ADJ_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨城邦的</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_ANARCHY_MODERN_ADJ_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨城邦的</Text>
+		</Replace>
+		
+		<!-- ***************************** 神权政治 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_THEOCRACY_NO_RELIGION_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_THEOCRACY_NO_RELIGION_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_THEOCRACY_NO_RELIGION_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>神圣白露之滨</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_THEOCRACY_NO_RELIGION_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>神圣白露之滨</Text>
+		</Replace>
+
+		<Replace Tag="LOC_LEADER_MALE_GOVERNMENT_THEOCRACY_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOVERNMENT_THEOCRACY_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_THEOCRACY_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>神圣白露之滨国度</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_THEOCRACY_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>神圣白露之滨国度</Text>
+		</Replace>
+		<Replace Tag="LOC_SHORT_CIV_GOVERNMENT_THEOCRACY_ADJ_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>神圣白露之滨国度的</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_GOVERNMENT_THEOCRACY_ADJ_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>神圣白露之滨国度的</Text>
+		</Replace>
+		
+		<!-- ***************************** 杂项 ***************************** -->
+		
+		<Replace Tag="LOC_LEADER_MALE_GOD_KING_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_GOD_KING_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+
+		<Replace Tag="LOC_LEADER_MALE_DIPLOMATIC_LEAGUE_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}君主</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_FEMALE_DIPLOMATIC_LEAGUE_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>{1_Name}女王</Text>
+		</Replace>
+		<Replace Tag="LOC_SHORT_CIV_DIPLOMATIC_LEAGUE_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨联盟</Text>
+		</Replace>
+		<Replace Tag="LOC_LONG_CIV_DIPLOMATIC_LEAGUE_CIVILIZATION_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>白露之滨联盟</Text>
+		</Replace>
+
+	<!-- RomRamRWFSupportText.xml 文件 -->
+		
+		<!-- ***************************** RwF模组(Rule with Faith)部分 ***************************** -->
+		
+		<Replace Tag="LOC_CIVILIZATION_BWH_LOWEE_MK2_DESCRIPTION_JFD_CIVILIZATION" Language="zh_Hans_CN">
+			<Text>白露之滨文明</Text>
+		</Replace>
+		
+		<!-- ***************************** 头衔 ***************************** -->
+		
+		<Replace Tag="LOC_GOVERNMENT_JFD_CHIEFDOM_LEADER_TITLE_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>领袖</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_CHIEFDOM_LEADER_TITLE_BWH_LOWEE_MK2_FEMININE" Language="zh_Hans_CN">
+			<Text>领袖</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_ALL_GOVERNMENT_LEADER_TITLE_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>君主</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_ALL_GOVERNMENT_LEADER_TITLE_BWH_LOWEE_MK2_FEMININE" Language="zh_Hans_CN">
+			<Text>女王</Text>
+		</Replace>
+
+		<Replace Tag="LOC_GOVERNMENT_JFD_THEOCRACY_LEADER_TITLE_BWH_LOWEE_MK2" Language="zh_Hans_CN">
+			<Text>圣王</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_THEOCRACY_LEADER_TITLE_BWH_LOWEE_MK2_FEMININE" Language="zh_Hans_CN">
+			<Text>女神</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

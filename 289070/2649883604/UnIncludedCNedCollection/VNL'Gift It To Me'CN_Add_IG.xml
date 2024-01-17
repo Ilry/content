@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'Gift It To Me'CN_Add_IG -->
+<!-- Author: Flactine , Clear8Sky -->
+<!-- DateCreated: 2021/8/12 17:02:13 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Gift It To Me” 。该文件在 InGame 时载入，无需任何 Criteria -->
+	<LocalizedText>
+		
+		<!-- 单位面板 -->
+		
+		<Replace Tag="LOC_GIFTITTOME_GIFT_THIS_UNIT" Language="zh_Hans_CN">
+			<Text>赠送单位</Text>
+		</Replace>
+		<Replace Tag="LOC_GIFTITTOME_GIFT_THIS_UNIT_DISABLED" Language="zh_Hans_CN">
+			<Text>赠送单位[NEWLINE][ICON_Bullet]需要在其他文明所属城市境内[NEWLINE][ICON_Bullet]伟人单位无法被赠送[NEWLINE][ICON_Bullet]宗教单位、开拓者和考古学家无法赠送给城邦[NEWLINE][ICON_Bullet]征召城邦的单位无法被赠送[NEWLINE][ICON_Bullet][COLOR:FoodDark]匈牙利[ENDCOLOR]若赠送战斗单位给下辖城邦，需一并支付额外 [ICON_Gold] 金币[NEWLINE][ICON_Bullet]无法将单位赠送给正在与您交战的文明[NEWLINE][ICON_Bullet]每 [ICON_Turn] 回合最多只能赠送{1_MaxGifts}个单位[NEWLINE][ICON_Bullet]单位的 [ICON_Damaged] 生命值需大于[COLOR_GREEN]90[ENDCOLOR]点</Text>
+		</Replace>
+		<Replace Tag="LOC_HUD_UNIT_PANEL_ARE_YOU_SURE_GIFT" Language="zh_Hans_CN">
+			<Text>确定要将您的{1_UnitName}赠送给其他文明吗？[NEWLINE]（本 [ICON_Turn] 回合已赠送{2_GiftCount}个 [ICON_Unit] 单位/最多赠送{3_MaxGiftCount}个 [ICON_Unit] 单位）</Text>
+		</Replace>
+		<Replace Tag="LOC_HUD_UNIT_PANEL_ARE_YOU_SURE_GIFT_PAY" Language="zh_Hans_CN">
+			<Text>确定要将您的{1_UnitName}和{2_Gold} [ICON_Gold] 金币赠送给城邦吗？[NEWLINE]（本 [ICON_Turn] 回合已赠送{3_GiftCount}个 [ICON_Unit] 单位/最多赠送{4_MaxGiftCount}个 [ICON_Unit] 单位）[NEWLINE]（[COLOR:FoodDark]匈牙利[ENDCOLOR]若将战斗单位赠送给城邦，需要支付额外的 [ICON_Gold] 金币）</Text>
+		</Replace>
+		<Replace Tag="LOC_GIFTITTOME_WARNING_HEADLINE" Language="zh_Hans_CN">
+			<Text>{1_LeaderName}发来警告</Text>
+		</Replace>
+		<Replace Tag="LOC_GIFTITTOME_WARNING_CONTENT" Language="zh_Hans_CN">
+			<Text>“若你试图资助我们的敌人，我们将会采取外交行动作为反击！”</Text>
+		</Replace>
+		<Replace Tag="LOC_GIFTITTOME_INFO_HEADLINE" Language="zh_Hans_CN">
+			<Text>{1_LeaderName}赠送给您一个单位！</Text>
+		</Replace>
+		<Replace Tag="LOC_GIFTITTOME_INFO_CONTENT" Language="zh_Hans_CN">
+			<Text>您成功赠送了{1_UnitName}！</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

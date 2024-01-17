@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'RwF Great Theologians'CN_Add_IG1 -->
+<!-- Author: 牛奶大魔王 , Clear8Sky -->
+<!-- DateCreated: 2021/9/29 8:02:23 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “RwF: Great Theologians” 。该文件在 InGame 时载入，无需任何 Criteria -->
+	<LocalizedText>
+		
+		<!-- 大神学家 -->
+		<!-- 文艺复兴时期 -->
+		<!-- 扬·胡斯 -->
+
+		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_JFD_JAN_HUS_NAME" Language="zh_Hans_CN">
+			<Text>扬·胡斯</Text>
+		</Replace>
+		
+		<!--	针对这些Tag对游戏自带“托马斯·阿奎那”伟人的背景相关文本做的改动，将以下汉化移至 VNL'RwF Great Theologians'CN_Add_IG2.sql 并添加条件
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_THOMAS_AQUINAS_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>扬·胡斯（又译作约翰·胡斯、约翰·胡司），哲学家、改革家，捷克伟大的爱国者，曾任布拉格查理大学校长。胡司以献身教会改革和捷克民族主义的大义而殉道留名于世，他的追随者被称为胡斯（胡司）信徒。主张建立独立于天主教的民族教会，发动反抗德国封建主的民族解放运动，一四一五年，康斯坦茨教长会议在他拒绝放弃新教教义后处以死刑，将他烧死。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_THOMAS_AQUINAS_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>在基督教改革理论家约翰·怀克里夫之后，胡斯被认为是第一位教会改革家，因为他生活在路德、卡尔文和茨温利时代之前。他的教义对西欧教会产生了强烈影响，最快的是通过改革后的波西米亚宗教教派，一个多世纪后，对马丁·路德本人也产生了影响。[NEWLINE][NEWLINE]他曾任布拉格查理大学校长。胡斯以献身教会改革和捷克民族主义的大义而殉道留名于世，他的追随者被称为胡斯信徒。罗马天主教视其为异教徒，于1411年革除其教籍。1414年，康斯坦茨宗教会议判罚胡斯有罪，于次年将其处以火刑。胡斯之死直接导致了胡斯战争的爆发。1999年，罗马天主教会为此进行道歉。[NEWLINE][NEWLINE]他曾经接受神父的训练，后来成为波希米亚布拉格大学神学部主任，最後成为校长。[NEWLINE][NEWLINE]早在胡斯出生前波希米亚早就已经发展出一股强烈反罗马教会的意识，在神学思想上他受英国的威克里夫很深的影响。[NEWLINE][NEWLINE]扬胡斯被处以火刑胡斯是宗教改革运动的先驱，他的许多言论，为後来的新教所接受。他对整个欧洲各国和马丁·路德也产生了重要影响。胡斯一生有多部著作，在捷克文学历史上贡献卓越。胡斯认为圣经至上，而非教宗等圣职人员所订的规条，强调教会的主权属耶稣基督，为了此种意念及想法於是撰写了《论教会》（De ecclesia，1413）一书，甚至大肆批评教宗等圣职人员，已偏离基督真道，贪爱钱财及滥权等等，真是改教的先驱之一。[NEWLINE][NEWLINE]当时教会正值“大分裂”（主后1378-1417）的状况：罗马枢机院前于所选出的两个教宗，分别是位于罗马的贵格利十二世及位于亚威农的约翰二十三世，两人互相较竞。约翰二十三世为了对抗拿坡里王（为贵格利十二世所支持）而释出赎罪券给所有需要的人，以金钱来换取，胡斯过去虽曾花大把银子买赎罪券，但如今胡斯大大地谴责此种违反圣经教导的作法，於是约翰二十三世将胡斯取消教籍，最後甚至以异端名义将他下进监牢中。[NEWLINE][NEWLINE]经过长达8个月的监禁，胡斯面容憔悴、身体虚弱，被提出监来上城门口，并将他绑在火刑柱上，终被烧死。导致“十字军”再度兴起和胡斯所在的波希米亚的信众展开了一场场的战役，直到十五世纪才结束。胡斯还创造了新的正字法，为捷克语书面语言奠定了基础。[NEWLINE][NEWLINE]胡斯逝世的7月6日被称为胡斯日，是捷克的公共假期。如今，大多数捷克人都自认为没有宗教信仰，而且捷克的天主教信徒要远多于胡斯信徒，但扬·胡斯仍然被认为是国家英雄。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_THOMAS_AQUINAS_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>胡斯之死，在整个捷克引起了强烈的反应，人们把对胡斯的迫害看作对整个民族的冒犯，反抗罗马教皇和帝国皇帝的斗争更趋激烈，一四一九年七月在胡斯宗教改革的旗帜下，爆发了捷克史上伟大的农民战争——胡斯战争。[NEWLINE][NEWLINE]这一震撼整个欧洲的胡斯运动以及此后十余年的胡斯战争，给帝国和罗马教廷的统治以沉重的打击，扫除了德国上层剥削者在捷克的势力，保证了以后一个多世纪捷克完全脱离帝国的统治。[NEWLINE][NEWLINE]金色布拉格的古城广场正中，矗立着一座令人肃然起敬的巨大塑像，这就是马克思、恩格斯都曾赞扬过的捷克民族权利和人民权利的保护者、中世纪著名的宗教改革家扬·胡斯。每年夏天，在胡斯遇难的日子里，人们纷纷来到这里，向这位为真理而斗争的战士致敬。[NEWLINE][NEWLINE]十四世纪末到十五世纪中叶的捷克王国，是所谓神圣罗马帝国的一部分。捷克广大农民受着封建土地的占有者——德国僧侣把持的天主教教会和德国贵族的残酷的剥削。捷克人民不堪忍受剥削，展开了反对民族压迫和社会压迫的斗争。他们首先起来反对宗教压迫。传教士扬·胡斯是这一斗争的领袖人物。</Text>
+		</Replace>
+		-->
+		
+		<!-- 大神学家 -->
+		<!-- 伟人百科 -->
+
+		<Replace Tag="LOC_UNIT_JFD_GREAT_THEOLOGIAN_NAME" Language="zh_Hans_CN">
+			<Text>大神学家</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_JFD_GREAT_THEOLOGIAN_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>每一位 [ICON_GreatProphet] 大神学家都拥有独特的能力。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_JFD_GREAT_THEOLOGIAN_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>神学家是研究神学的学者。神学是对神圣本质的批判性研究。它作为一门学术学科，通常在大学、神学院和神学院教授。在基督教于罗马获得胜利以后，神学一词多被用以指称基督教信仰观的诸多理论。神学一词的希腊文Θεολογια是由Θεος(即神/上帝)和λογος(即道/话语)两个字组合﹐字面上便有建立人类对上帝正确认识的学说之意。</Text>
+		</Replace>
+
+		<!-- 大神学家 -->
+
+		<Replace Tag="LOC_GREAT_PERSON_CLASS_JFD_THEOLOGIAN_NAME" Language="zh_Hans_CN">
+			<Text>大神学家</Text>
+		</Replace>
+		<Replace Tag="LOC_GREAT_PEOPLE_CANNOT_EARN_PERSON_JFD_NO_PROPHET" Language="zh_Hans_CN">
+			<Text>您必须创立一个 [ICON_Religion] 宗教，或您的城市已皈依一个 [ICON_Religion] 宗教。一个伟大的神学家必须依靠一个宗教才可以诞生，而非凭空出现。</Text>
+		</Replace>
+
+		<!-- 伟人-->
+		<!-- 古典时代-->
+		<!-- 圣·奥古斯丁
+		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_JFD_AUGUSTINE_NAME" Language="zh_Hans_CN">
+			<Text>圣·奥古斯丁</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_JFD_AUGUSTINE_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>圣·奥古斯丁是早期基督教神学家和哲学家，他的著作影响了西方基督教和西方哲学的发展。他是位于努米迪亚的河马主教。奥古斯丁是西方基督教最重要的教父之一。奥古斯丁最重要的作品是《上帝之城》和《忏悔录》。根据他同时代的杰罗姆所说，奥古斯丁“重新确立了古老的信仰”。他年轻时被摩尼教所吸引，后来又被新柏拉图主义所吸引。在386年接受洗礼并皈依基督教之后，奥古斯丁发展了自己的哲学和神学方法，容纳了各种各样的方法和观点。他相信基督的恩典对人类的自由是不可或缺的，他帮助制定了原罪学说，并对正义战争理论的发展作出了开创性的贡献。当西罗马帝国开始解体时，奥古斯丁把教堂想象成上帝的精神之城，与物质的尘世之城截然不同。他的思想深刻地影响了中世纪的世界观。坚持尼西亚理事会和君士坦丁堡理事会定义的三位一体概念的教堂部分，与奥古斯丁的三位一体密切相关。[NEWLINE][NEWLINE]]奥古斯丁被认为是天主教堂，东方基督教会的圣徒，圣公会圣人和作为一个卓越的教会医生。他的纪念日是8月28日，也就是他去世的那一天。奥古斯丁是酿酒师、印刷工、神学家、缓解眼睛疼痛的人以及许多城市和教区的守护神。许多新教徒，特别是加尔文派和路德派，认为他是一个神学父亲的新教改革，由于他的教导，拯救和神的恩典。一般来说，新教改革家，特别是马丁路德，认为奥古斯丁在早期教会的父亲中是卓越的。从1505年到1521年，路德本人是奥古斯丁埃雷米特教团的成员。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREAT_PERSON_JFD_AUGUSTINE_HELP" Language="zh_Hans_CN">
+			<Text>所有 [ICON_GreatProphet] 大预言家点数获取+25%。</Text>
+		</Replace>
+		-->
+
+		<!-- 阇弥尼
+		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_JFD_JAIMINI_NAME" Language="zh_Hans_CN">
+			<Text>阇弥尼</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_JFD_JAIMINI_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>阇弥尼是一位古代印度学者，他创立了曼萨学派（Mimamsa-Schule），为古代印度教正统哲学的六大流派之一，因《弥曼萨经》（成书于公元1-2世纪）而得名。他是圣人吠陀的弟子，吠陀是帕拉萨拉的儿子。传统上认为他是《密宗经》和《耆那教经》的作者，据估计他生活在公元前4世纪左右。他的学派被认为是非有神论的，但强调吠陀经中的仪式部分对佛法至关重要。[NEWLINE][NEWLINE]阇弥尼的老师是巴达罗亚纳，后者创立了印度哲学的吠檀多学派，强调吠陀经中的知识部分，并被认为是梵天经的作者。巴达拉亚纳和阇弥尼在分析彼此的理论时都互相引用，巴达拉亚纳强调知识，阇弥尼强调仪式，有时同意，有时不同意，通常是另一方的反命题。</Text>
+			<译者注>以后自己再翻译补上，理由同最前。附原文：Plotinus is generally regarded as the founder of Neoplatonism. He is one of the most influential philosophers in antiquity after Plato and Aristotle. The term ‘Neoplatonism’ is an invention of early 19th century European scholarship and indicates the penchant of historians for dividing ‘periods’ in history. In this case, the term was intended to indicate that Plotinus initiated a new phase in the development of the Platonic tradition. What this ‘newness’ amounted to, if anything, is controversial, largely because one’s assessment of it depends upon one’s assessment of what Platonism is. In fact, Plotinus (like all his successors) regarded himself simply as a Platonist, that is, as an expositor and defender of the philosophical position whose greatest exponent was Plato himself. Originality was thus not held as a premium by Plotinus. Nevertheless, Plotinus realized that Plato needed to be interpreted. In addition, between Plato and himself, Plotinus found roughly 600 years of philosophical writing, much of it reflecting engagement with Plato and the tradition of philosophy he initiated. Consequently, there were at least two avenues for originality open to Plotinus, even if it was not his intention to say fundamentally new things. The first was in trying to say what Plato meant on the basis of what he wrote or said or what others reported him to have said. This was the task of exploring the philosophical position that we happen to call ‘Platonism’. The second was in defending Plato against those who, Plotinus thought, had misunderstood him and therefore unfairly criticized him. Plotinus found himself, especially as a teacher, taking up these two avenues. His originality must be sought for by following his path.</译者注>
+		</Replace>
+		<Replace Tag="LOC_GREAT_PERSON_JFD_JAIMINI_HELP" Language="zh_Hans_CN">
+			<Text>获得巨作“弥曼差经”（[ICON_GreatWork_Writing] 著作；获得 [ICON_Faith] 信仰值）</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_JFD_MIMAMSA_SUTRA_NAME" Language="zh_Hans_CN">
+			<Text>弥曼差经</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_JFD_MIMAMSA_SUTRA_QUOTE" Language="zh_Hans_CN">
+			<Text>知识是吠陀经的力量。</Text>
+		</Replace>
+		-->
+
+		<!-- 普罗提诺
+		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_JFD_PLOTINUS_NAME" Language="zh_Hans_CN">
+			<Text>普罗提诺</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_JFD_PLOTINUS_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>普罗提诺（公元205-270年），又译作柏罗丁、普洛丁，新柏拉图主义奠基人。他是继柏拉图和亚里士多德之后，古代最有影响的哲学家之一。“新柏拉图主义”一词是19世纪早期欧洲学术界的一项发明，表明历史学家倾向于在历史上划分时期。在这种情况下，这个词意在表明普罗提努斯开创了柏拉图传统发展的一个新阶段。他是晚期古罗马哲学中无可争议的大师级人物，堪称整个古代希腊哲学伟大传统的最后一个辉煌代表。[NEWLINE][NEWLINE]普罗提诺主张有神论，同时主张迷信与法术（本句描述恰与其著作所言背道而驰）。他不是基督徒，但他的哲学对当时基督教的教父哲学产生了极大影响。因为影响早期基督教教父们的“柏拉图主义”不是柏拉图对话录本身，而是大多经过以普罗提诺为代表的新柏拉图主义中介过的柏拉图理论体系。[NEWLINE][NEWLINE]普罗提诺突出了柏拉图哲学中的“巴门尼德”方面，强调最高精神本体即“太一”，太一不仅高于我们这个世界，而且高于“相”或本真存在，是人的认识完全无法达到的。从太一漫溢出的第二层本体是“神圣理智”，这相当于柏拉图的相和亚里士多德的纯粹自我观照的形式；由神圣理智再漫溢向下，产生了第三层本体——“宇宙灵魂”，是我们这个世界的主导原则。至于具体个人的灵魂和具体万事万物，又是本体进一步漫溢的结果。[NEWLINE][NEWLINE]普罗提诺继承和发展了柏拉图的idea。什么是idea？idea就是物的原型。他把idea的世界归纳为太一，它超越了一切，绝对完美，放射除了心智和灵魂，而灵魂的一部分以追逐心智为目标，另一部分在有形的物质躯体。太一是空无一物的，因为万物皆由它而生；所以太一就是我们的“道”，是“零”，而不是“一”。</Text>
+			<译者注>以后自己再翻译补上，原因同最前。附原文：Plotinus is generally regarded as the founder of Neoplatonism. He is one of the most influential philosophers in antiquity after Plato and Aristotle. The term ‘Neoplatonism’ is an invention of early 19th century European scholarship and indicates the penchant of historians for dividing ‘periods’ in history. In this case, the term was intended to indicate that Plotinus initiated a new phase in the development of the Platonic tradition. What this ‘newness’ amounted to, if anything, is controversial, largely because one’s assessment of it depends upon one’s assessment of what Platonism is. In fact, Plotinus (like all his successors) regarded himself simply as a Platonist, that is, as an expositor and defender of the philosophical position whose greatest exponent was Plato himself. Originality was thus not held as a premium by Plotinus. Nevertheless, Plotinus realized that Plato needed to be interpreted. In addition, between Plato and himself, Plotinus found roughly 600 years of philosophical writing, much of it reflecting engagement with Plato and the tradition of philosophy he initiated. Consequently, there were at least two avenues for originality open to Plotinus, even if it was not his intention to say fundamentally new things. The first was in trying to say what Plato meant on the basis of what he wrote or said or what others reported him to have said. This was the task of exploring the philosophical position that we happen to call ‘Platonism’. The second was in defending Plato against those who, Plotinus thought, had misunderstood him and therefore unfairly criticized him. Plotinus found himself, especially as a teacher, taking up these two avenues. His originality must be sought for by following his path.</译者注>
+		</Replace>
+		<Replace Tag="LOC_GREAT_PERSON_JFD_PLOTINUS_HELP" Language="zh_Hans_CN">
+			<Text>随机触发一个远古或古典时代的 [ICON_TechBoosted] 尤里卡。</Text>
+		</Replace>
+		-->
+
+		<!-- 中世纪 -->
+		<!-- 格里高利·帕拉玛 -->
+
+		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_JFD_GREGORY_PALAMAS_NAME" Language="zh_Hans_CN">
+			<Text>格里高利·帕拉玛</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_JFD_GREGORY_PALAMAS_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>格里高利·帕拉玛（Gregory Palamas，1296-1359）他曾是希腊圣山阿陀斯山(Mount Athos)上的一个隐修士，后来成了塞萨洛尼基（Thessaloniki) 的主教，他是杰出的静观主义（Hesychasm）神学家。他被东正教尊为圣徒。早在阿陀斯山修道的时候，格里高利就应其他修道士所请来反驳来自柏拉图主义哲学家巴尔拉安（Barlaam of Calabria）的指责。巴尔拉安认为哲学家能比先知更好地了解上帝，他还认为教育和学习比沉思祈祷更有价值。鉴于此，他认为阿陀斯山的修道士们更应该学习哲学，而不是靠沉思祈祷来虚掷光阴。格里高利辩称，先知们因能直接看到或者听到上帝本身，故他们对于上帝的知识更有价值。为了回应人怎么能够获得关于超越一切的不可理解的上帝的知识，他把关于上帝的知识作了区分：关于上帝本质的知识（God in his essence 希腊语ousia）和关于上帝能力的知识。他用东正教的教义来诠释：了解上帝的本质（即上帝本身怎样），这是不可能的；但是了解上帝的能力（即上帝如何行事，他的造物），这个是可能的，因为上帝向人类展示了自我。为此他引用了迦帕多斯教父们（Cappadocian Fathers）和其他早期基督教的教父著述。[NEWLINE][NEWLINE]格里高利进一步指出，当彼得、雅各和约翰见证了耶稣在提波山（Mount Tabor）显圣容的时候，他们实际上看到了上帝的特惠之光（uncreated light），当然通过特殊的灵性训练和静祷，其他人也可以看到这样的特惠之光。[NEWLINE][NEWLINE]1341年的布雷契耐（Blachernae）公会郑重地宣布了格里高利静观主义教导的正统性。</Text>
+			<!-- 译者注：以后自己再翻译补上，原因同最前。附原文：Gregory Palamas was a prominent theologian and ecclesiastical figure of the late Byzantine period. A monk of Mount Athos (modern Greece) and later archbishop of Thessaloniki, he is famous for his defense of hesychast spirituality, the uncreated character of the light of the Transfiguration, and the distinction between God's essence and energies (i.e., the divine will, divine grace, etc.). His teaching unfolded over the course of three major controversies, (1) with the Italo-Greek Barlaam between 1336 and 1341, (2) with the monk Gregory Akindynos between 1341 and 1347, and (3) with the philosopher Gregoras, from 1348 to 1355. His theological contributions are sometimes referred to as Palamism, and his followers as Palamites.[NEWLINE][NEWLINE]Gregory is venerated, since 1368, as a Saint in the Eastern Orthodox Church; and some Byzantine Catholic Churches, which form part of the communion of the Church of Rome have also included him in their liturgical books. (He has also been called a saint, and repeatedly cited as a great theological writer, by Pope John Paul II.) Some of his writings are collected in the Philokalia, and since the Ottoman period, the second Sunday of Great Lent is dedicated to the memory Gregory Palamas in the Orthodox Church. The Byzantine Synodikon of Orthodoxy also celebrates his memory and theology while condemning his opponents, including some anti-Palamites who flourished after Gregory's death. -->
+		</Replace>
+		<Replace Tag="LOC_GREAT_PERSON_JFD_GREGORY_PALAMAS_HELP" Language="zh_Hans_CN">
+			<Text>获得200点 [ICON_Faith] 信仰值，且可用 [ICON_Faith] 信仰购买神社和寺庙。</Text>
+		</Replace>
+
+		<!-- 托马斯·阿奎那 -->
+		
+		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_JFD_THOMAS_AQUINAS_NAME" Language="zh_Hans_CN">
+			<Text>托马斯·阿奎那</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_JFD_THOMAS_AQUINAS_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>“有多少天使能在一根大头针上跳舞？”尽管这个问题在今天听起来很愚蠢，但自然哲学的支持者托马斯·阿奎那（Thomas Aquinas）认真地考虑了这个问题，他通过辩证推理探索了空间的哲学方面与天使的特质的交叉点。在一个需要理性作为对信仰的赞美的时期，面临文艺复兴时期进步思想家挑战的天主教神学来说至关重要，阿奎那证明了基督教。他被认为是“自然神学”的创始人；因此他在公元1323年被封为圣徒。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_JFD_THOMAS_AQUINAS_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>托马斯·阿奎纳（Thomas Aquinas，约1225年—1274年3月7日），中世纪经院哲学的哲学家、神学家。他把理性引进神学，用 “自然法则”来论证“君权神授”说，是自然神学最早的提倡者之一，也是托马斯哲学学派的创立者，成为天主教长期以来研究哲学的重要根据。死后也被封为天使博士（天使圣师）或全能博士。他所撰写的最知名著作是《神学大全》（Summa Theologiae）。天主教教会认为他是历史上最伟大的神学家，将其评为33位教会圣师之一。他是西欧封建社会基督教神学和神权政治理论的最高权威，经院哲学的集大成者。他所建立的系统的、完整的神学体系对基督教神学的发展具有重要的影响，他本人被基督教会奉为圣人，有“神学界之王”之称。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_JFD_THOMAS_AQUINAS_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>许多现代的伦理学家，包括天主教徒或非天主教徒在内，开始主张阿奎纳的美德伦理概念可能可以用作取代康德的功利主义学派。透过许多20世纪的哲学家，例如伊利莎白·安司孔（Elizabeth Anscombe）等人的著作，阿奎纳在有关行为意图的理论上也变的相当具影响力。[NEWLINE][NEWLINE]值得注意的是阿奎纳的美学理论，尤其是“明白”（claritas）的概念，极大的影响了现代作家詹姆斯·乔伊斯的文学风格，乔伊斯赞美阿奎纳是西方哲学里排名第二的哲学家，仅次于亚里士多德。阿奎纳的美学概念的影响也可以在意大利符号学家翁贝托·埃可的作品里观察到，埃可也写了一篇有关阿奎纳的美学概念的论文。[NEWLINE][NEWLINE]数个世纪以来有许多阿奎纳的传记被出版，其中最知名的是由却斯特顿写成。[NEWLINE][NEWLINE]托马斯的神学和哲学思想，集中概括在他的主要著作《神学大全》中。这部标志托马斯主义的著作分为三部分，包括38篇论文，631个问题，3000个条目和10000个异论，是一部中世纪经院哲学的百科全书。除此之外，托马斯的著作还有：《伦巴德箴言四书注释》《论存在与本质》《反异教大全》《亚里士多德形而上学注释》等。[NEWLINE][NEWLINE]托马斯的政治思想是神权政治论，其核心是天主高于一切，一切服务于天主。他主张政治隶属于宗教，世俗服从于教会，皇帝受命于教皇，其实质是维护封建宗教神学和教会的利益。[NEWLINE][NEWLINE]首先，托马斯同意亚里士多德关于人是社会的动物的观点，指出人是天然要过政治生活的，人并不是仅仅依赖个人的理性以达到目的的单独个体，他生来就是社会或政治的存在，生来就同自己的伙伴一起生活在社会中。关于人的社会性的最显著的标志就是只有人通过语言中介来表达自己的思想，其他动物则只能用一般声音来表现自己的感情。[NEWLINE][NEWLINE]其次，托马斯指出，既然社会对于人是自然的，那么维护社会秩序的国家也是自然的，社会和国家都有神圣的正义和权威，国家既不是原罪的产物，也不是个人主义的结果，它的建立乃是为了公共的善。他承认，君主政体、贵族政体、民主政体都是好的形式，但是，人类社会中最好的政体就是由一人所掌握的政体，即君主政体。[NEWLINE][NEWLINE]最后，托马斯指出，教会的目的是追求超自然的善即认识天主。超自然的善高于国家所谋求实现的公共的善，所以教会高于国家。归根到底，国家要听教会的使唤，国王是天主的一个仆人。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREAT_PERSON_JFD_THOMAS_AQUINAS_HELP" Language="zh_Hans_CN">
+			<Text>为招募伟人提供10点 [ICON_GreatPerson] 伟人点数。立即在该区域建成一所大学。</Text>
+		</Replace>
+
+		<!-- 玄奘 -->
+
+		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_JFD_XUANZANG_NAME" Language="zh_Hans_CN">
+			<Text>玄奘</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_JFD_XUANZANG_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>玄奘是一位中国佛教僧侣、学者、旅行者和翻译家，中国汉传佛教唯识宗创始人，他在七世纪来到印度，描述了唐朝初期中国佛教和印度佛教之间的不同差异。[NEWLINE][NEWLINE]在旅途中，他参观了现在巴基斯坦、印度、尼泊尔的许多佛教圣地。[NEWLINE][NEWLINE]玄奘13岁出家，21岁受具足戒。曾游历各地，参访名师，学习《涅槃经》《摄大乘论》《杂阿毗昙心论》《俱舍论》等经论。因为感到各师所说不一，各种经典也不尽相同，于是决定西行求法，以解迷惑。曾陈表朝廷奏请去西方求法，未被允准。贞观三年（629）朝廷因饥荒允许百姓自行求生，他即从长安出发，经姑臧出敦煌，经今新疆及中亚等地，辗转到达中印度摩揭陀国王舍城。进入当时印度佛教中心那烂陀寺，师从戒贤学习《瑜伽师地论》《显扬圣教论》《对法论》《集量论》《中论》《百论》《俱舍论》《大毗婆沙论》《顺正理论》《因明论》《声明论》等论典，着重钻研《瑜伽师地论》，兼学梵书《声明记论》。不久，声名大起。五年后，游历印度东部、南部、西部、北部数十国。回到那烂陀寺后，戒贤让他主讲《摄大乘论》《唯识决择论》。著《会宗论》三千颂，融会了空有二宗，批驳了师子光反对《瑜伽师地论》的观点，因而受到戒贤的赞赏。曾和“顺世论”者辩论获胜；还奉戒贤之命独自同小乘论师辩论并获胜。戒日王在曲女城为玄奘设无遮大会，玄奘宣讲大乘教义，获得更大声誉。于贞观十九年返回长安。史书记载，玄奘西行求法，往返十七年，旅程五万里，所历“百有三十八国”，带回大小乘佛教经律论共五百二十夹，六百五十七部。归国后受唐太宗召见，住长安弘福寺，后又住大慈恩寺。[NEWLINE][NEWLINE]他因17年的印度陆路旅行（包括那兰达）而出名，《西域大唐记》中有详细记载，为玄奘死后九个世纪左右的明代吴承恩的小说《西游记》提供了灵感。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREAT_PERSON_JFD_XUANZANG_HELP" Language="zh_Hans_CN">
+			<Text>所有使徒、传教士和审判官+1 [ICON_Movement] 移动力。</Text>
+		</Replace>
+
+		<!-- 文艺复兴时期 -->
+		<!-- 卡洛·博罗梅奥 -->
+
+		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_JFD_CHARLES_BORROMEO_NAME" Language="zh_Hans_CN">
+			<Text>卡洛·博罗梅奥</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_JFD_CHARLES_BORROMEO_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>卡洛出生于伦巴第最古老、最富有的博罗梅奥家族，同时还具有意大利著名家族美地奇的血脉，又是教皇庇护四世的外甥，其身份之高贵不言而喻。[NEWLINE][NEWLINE]在卡洛年仅25岁的时候，就以枢机侄子的身份被舅舅提拨到教会的高位，被任命为教皇私人秘书和国务卿、西斯廷主教。方济各会、加尔默罗会、马耳他骑士团的管理人。安科纳和米兰大主教。罗马荣誉市民。斯波莱托大主教和教廷咨询会议主席等等，在教会中权力仅次于教皇，并且因为其强势的性格，其权势堪称一手遮天。[NEWLINE][NEWLINE]卡洛·博罗梅奥发起的天主教复兴运动，支持办学，打击异端，1577年在卢塞恩建立耶稣会学院，1579年在米兰建立海尔维蒂学院。在他的激励下，瑞士天主教的反击能力大为增强，开始了长达数百年的宗教对峙。</Text>
+			<!-- 译者注：以后自己再翻译补上，原因同最前。附原文：Charles Borromeo was a cardinal who was archbishop of Milan from 1564 to 1584. Among the great reformers of the troubled sixteenth century, Borromeo, with St. Ignatius of Loyola, St. Philip Neri, and others, led the movement to combat the inroads of the Protestant Reformation. He was a leading figure during the Counter-Reformation and was responsible for significant reforms in the Catholic Church, including the founding of seminaries for the education of priests.[NEWLINE][NEWLINE]Borromeo's correspondence shows his influential position in Europe during his lifetime. The Popes under whom he served sought his advice. The Catholic sovereigns of Europe – Henry III of France, Philip II of Spain, Mary, Queen of Scots – and others showed how they valued his influence. Cardinal Valerio of Verona said of him that Borromeo was "to the well-born a pattern of virtue, to his brother cardinals an example of true nobility." Cardinal Baronius styled him "a second Ambrose, whose early death, lamented by all good men, inflicted great loss on the Church."[NEWLINE][NEWLINE]Late in the sixteenth or at the beginning of the seventeenth century, Catholics in England circulated among themselves a "Life of St. Charles". -->
+		</Replace>
+		<Replace Tag="LOC_GREAT_PERSON_JFD_CHARLES_BORROMEO_HELP" Language="zh_Hans_CN">
+			<Text>立即获得400点 [ICON_Faith] 信仰值，且所有使徒获得“辩论者”（+20 [ICON_Religion] 宗教战斗力）的 [ICON_Promotion] 强化。</Text>
+		</Replace>
+
+		<!-- 穆拉·萨德拉 -->
+
+		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_JFD_MULLA_SADRA_NAME" Language="zh_Hans_CN">
+			<Text>穆拉·萨德拉</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_JFD_MULLA_SADRA_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>穆拉·萨德拉（Mulla Sadra，约157l-1640）波斯萨法维帝国时期的伊斯兰教什叶派教义学家、圣训学家、哲学家。全名穆拉·萨德鲁丁·穆罕默德·伊本·伊卜拉欣。穆拉生于设拉子，出身于什叶派学者世家。幼承家学，受传统的伊斯兰教育。曾一度在库姆经商，后到伊斯法汗师从什叶派著名长老巴哈丁·阿米里和米尔·达马德学习。[NEWLINE][NEWLINE]他是伊斯法汗神秘哲学光照学派的代表，认为世界(包括自然和人类)是真主之光照的创造之物，真主之光是万物的永恒根源，真主之光是无限的，世界万物及其变化是真主无限光明的各种表现。在解释自然界的起源时，指出除真主和他的真知（即永恒的灵知）外，地球、星辰、万物等，既有永恒的根源，也有暂时的根源。他认为“自然”是一切事物的质，也是一切运动的因，因此自然是永恒的，成为永恒存在体与受造物之间的永久链环。他认为人的灵魂借助精神升华，才能达到与安拉的合一。真主之光赋予人以先天的灵知是最高的知识形式，它弥补人后天的缺陷，使人成为“完人”。在教法上，他认为除依据《古兰经》、圣训外，还可应用类比、公议等推理方法制定教法律例。他还认为，伊斯兰教在每一个时代，都会出现一个复兴者，他们具有渊博的知识、独到的见解和绝妙的宗教洞察力。应以这些贤哲的学说思想为指导，组织波斯的伊斯兰文化复兴运动。他的学说曾遭到什叶派正统学者的责难。[NEWLINE][NEWLINE]他著有教义学、哲学著作多部，最著名的是《旅程》（一译《真主的见证》），是一部宗教哲学著作，后在什叶派穆斯林中广泛流传。他还对《古兰经》、库莱尼的《宗教学大全》和伊本·西拿的《治疗论》作过注释及评论。后世伊朗学者称他为“伊朗历史上最伟大的哲学家”、“伊朗伊斯兰文化复兴运动的代表人物”。</Text>
+			<!-- 译者注：以后自己再翻译补上，原因同最前。附原文：Sadr ad-Din Muhammad Shirazi, also called Mulla Sadrā, was an Iranian Shia Islamic philosopher, theologian and ‘Ālim who led the Iranian cultural renaissance in the 17th century. According to Oliver Leaman, Mulla Sadra is arguably the single most important and influential philosopher in the Muslim world in the last four hundred years.[NEWLINE][NEWLINE]Though not its founder, he is considered the master of the Illuminationist (or, Ishraghi or Ishraqi) school of Philosophy, a seminal figure who synthesized the many tracts of the Islamic Golden Age philosophies into what he called the Transcendent Theosophy or al-hikmah al-muta’liyah.[NEWLINE][NEWLINE]Mulla Sadra brought "a new philosophical insight in dealing with the nature of reality" and created "a major transition from essentialism to existentialism" in Islamic philosophy, although his existentialism should not be too readily compared to Western existentialism. His was a question of existentialist cosmology as it pertained to God, and thus differs considerably from the individual, moral, and/or social, questions at the heart of Russian, French, German, or American Existentialism.[NEWLINE][NEWLINE]Mulla Sadra's philosophy ambitiously synthesized Avicennism, Shahab al-Din Suhrawardi's Illuminationist philosophy, Ibn Arabi's Sufi metaphysics, and the theology of the Ash'ari school and Twelvers. -->
+			
+		</Replace>
+		<Replace Tag="LOC_GREAT_PERSON_JFD_MULLA_SADRA_HELP" Language="zh_Hans_CN">
+			<Text>立即获得50点 [ICON_Science] 科技值，并随机触发一次文艺复兴时期的 [ICON_CivicBoosted] 鼓舞。</Text>
+		</Replace>
+
+		<!-- 约瑟夫·卡罗 -->
+
+		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_JFD_YOSEF_CARO_NAME" Language="zh_Hans_CN">
+			<Text>约瑟夫·卡罗</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_JFD_YOSEF_CARO_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>是阿拉伯犹太教中最重要的作家之一，是最后一部伟大的犹太法典的作者。在他任职期间，他还是巴勒斯坦犹太人社区（以色列）的重要领导人。他对塔木德和后来的犹太法律著作的大量文献进行了大量评论因此成为历史上最有影响力的犹太作家之一。</Text>
+			<!-- 译者注：以后自己再翻译补上，原因同最前。附原文：Yosef Karo was author of the last great codification of Jewish law, the Shulchan Aruch, which is still authoritative for all Jews pertaining to their respective communities. To this end he is often referred to as HaMechaber ("The Author"‎‎) and as Maran ("Our Master"). Karo's literary works are considered among the masterpieces of rabbinic literature.[NEWLINE][NEWLINE]Karo's literary works are considered among the masterpieces of rabbinic literature. The Maggid Meisharim (1646, Preacher of Righteousness), another major work, a strange and mystical diary, is a kind of diary in which Karo during a period of fifty years recorded the nocturnal visits of an angelic being, his heavenly mentor, the personified Mishna (the authoritative collection of Jewish Oral Law). His visitor spurred him to acts of righteousness and even asceticism, exhorted him to study the Kabbala, and reproved him for moral laxities. -->
+		</Replace>
+		<Replace Tag="LOC_GREAT_PERSON_JFD_YOSEF_CARO_HELP" Language="zh_Hans_CN">
+			<Text>寺庙+1巨作槽位，可放置 [ICON_GreatWork_Writing] 著作。</Text>
+		</Replace>
+
+		<!-- 工业时代 -->
+		<!-- 卜凯瑟琳 -->
+		
+		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_JFD_CATHERINE_BOOTH_NAME" Language="zh_Hans_CN">
+			<Text>卜凯瑟琳</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_JFD_CATHERINE_BOOTH_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>卜凯瑟琳是救世军创始人（卜威廉）的妻子，她自己也是一位能言善辩的传教士和社会工作者。[NEWLINE][NEWLINE]她的父亲是一位马车工人，也是卫理公会的传教士，她的母亲是一位虔诚的清教徒。卜凯瑟琳年轻时在家里接受教育，很早就掌握了神学知识。1844年全家搬到伦敦，她成为布里克斯顿卫理公会的活跃成员。当教会驱逐一群“改革者”时，她和她未来的丈夫也加入了他们。他们于1855年结婚，凯瑟琳成了她丈夫忠实的助手。[NEWLINE][NEWLINE]卜凯瑟琳是一个深信妇女有权传福音的信徒。1860年，她自己开始在盖茨黑德她丈夫的教堂传教。她成为一位著名的演说家，并在1880年至1884年在伦敦西区的各个大厅举行了非常成功的会议。1885年，她参加了一项旨在保护年轻女孩的《刑法修正案》获得通过的运动。[NEWLINE][NEWLINE]她不相信圣礼对获得拯救是必要的。虽然救世军圣礼态度的演变不能完全归因于卜凯瑟琳，但她的信仰无疑是有影响的。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREAT_PERSON_JFD_CATHERINE_BOOTH_HELP" Language="zh_Hans_CN">
+			<Text>所在城市+1 [ICON_Amenities] 宜居度，+1 [ICON_Housing] 住房。</Text>
+		</Replace>
+
+		<!-- 本居宣长 -->
+
+		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_JFD_NORINAGA_NAME" Language="zh_Hans_CN">
+			<Text>本居宣长</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_JFD_NORINAGA_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>本居宣长（Motoori Norinaga，もとおりのりなが，1730—1801），日本江户时期的国学四大名人之一（荷田春满、贺茂真渊、平田笃胤），又号芝兰、舜庵。是日本复古国学的集大成者，早年上京都学习儒学、医学。回乡后边行医为业，边研究国学。长期钻研《源氏物语》、《古事记》等日本古典作品。其古典的研究运用实证的方法，努力按照古典记载的原貌，排除儒家和佛家的解释和影响，探求“古道”。提倡日本民族固有的情感“物哀”为日本国学的发展和神道的复兴确立了思想理论基础。其门下学者辈出。[NEWLINE][NEWLINE]本居宣长把产灵神和天照大神视为最高神从而否定了天御中主神和国常立神作为最高神的资格，理由：后二者只是最初神而不是最高神。主张世界万事万物均可分为“显事”和“幽事”，前者由天照大御神的子孙统治，后者由大国主命主宰。他说：“盖人世事皆由于神的安排，就显事而言，亦不出幽事以外”。他认为“神道之安人心就在于人死亡后，不论善人恶人统统进入冥府，即要到阴冷的黄泉国去受罪。日本是天照大神的本国，天照大神即太阳，“世界万国之中最优秀的国，那可以说是祖国的国”。</Text>
+			<!-- 译者注：以后自己再翻译补上，原因同最前。附原文：Motoori Norinaga was a Japanese scholar of Kokugaku active during the Edo period. He is probably the best known and most prominent of all scholars in this tradition.[NEWLINE][NEWLINE]Norinaga’s most important works include the Kojiki-den (Commentaries on the Kojiki), made over a period of around 35 years, and his annotations on the Tale of Genji. Using the methods of Kokugaku and Kaozheng, Norinaga claimed that the Kojiki was the oldest surviving Japanese text. He used the supposed antiquity of the Kojiki to develop an idea of indigenous Japanese religion, laws, and religion which were later used in the development of an idea of State Shinto.[NEWLINE][NEWLINE]Norinaga took the view that the heritage of ancient Japan was one of natural spontaneity in feelings and spirit, and that imported Confucianism ran counter to such natural feelings. He criticized Ogyū Sorai for his over-valuing of Chinese civilization and thought, although it has been pointed out that his philological methodology was heavily influenced by Sorai's. His ideas were influenced by the Chinese intellectual Wang Yangming (Ō Yōmei in Japanese), who had argued for innate knowing, that mankind had a naturally intuitive (as opposed to rational) ability to distinguish good and evil. -->
+		</Replace>
+		<Replace Tag="LOC_GREAT_PERSON_JFD_NORINAGA_HELP" Language="zh_Hans_CN">
+			<Text>立即获得200点 [ICON_Culture] 文化值，且圣地可提供等同于其 [ICON_FAITH] 信仰值相邻加成的 [ICON_Culture] 文化值加成。</Text>
+		</Replace>
+
+		<!-- 内奥林 -->
+
+		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_JFD_NEOLIN_NAME" Language="zh_Hans_CN">
+			<Text>内奥林</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_JFD_NEOLIN_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>内奥林是来自俄亥俄州马斯京根县地区的特拉华的先知。他的出生和死亡日期不详。受到1761年宗教观点的启发，内奥林宣称，美洲土著人需要拒绝欧洲定居者的商品和生活方式，回归更传统的生活方式，特别是拒绝酒精、物质主义和一夫多妻制，要把白人从他们的土地上赶走。尼奥林最著名的追随者是庞蒂亚克（美国最伟大的部族联盟领袖之一)[NEWLINE][NEWLINE]内奥林的教义，被庞蒂亚克采纳，影响了“从安大略湖到密西西比的近20个部落的政策，其中包括奥吉布瓦，渥太华，波塔瓦托米，塞内卡，休伦，迈阿密，肖尼"。</Text>
+			<!-- 译者注：以后自己再翻译补上，原因同最前。附原文：Neolin (meaning the enlightened in Algonquian) was a prophet of the Lenni Lenape (also known as Delaware) from the area of Muskingum County, Ohio. His dates of birth and death are unknown. Inspired by a religious vision in 1761, Neolin proclaimed that Native Americans needed to reject the goods and lifestyles of the European settlers and return to a more traditional lifestyle, specifically rejecting alcohol, materialism, and polygamy. Neolin's most famous follower was Pontiac.[NEWLINE][NEWLINE]Neolin's teachings, as adopted by Pontiac, affected the policy "of nearly twenty tribes from Lake Ontario to the Mississippi, including among them the Ojibwa, Ottawa, Potawatomi, Seneca, Huron, Miami, Shawnee, and Delaware." Pontiac was known to use "Neolin's message as a slogan…to attract warriors" for the military movement on Detroit" (Dowd 35). -->
+		</Replace>
+		<Replace Tag="LOC_GREAT_PERSON_JFD_NEOLIN_HELP" Language="zh_Hans_CN">
+			<Text>陆地战斗单位击杀敌方单位可获得 [ICON_Faith] 信仰值与 [ICON_GreatGeneral] 大将军点数。</Text>
+		</Replace>
+
+		<!-- 现代 -->
+		<!-- 亨利·斯锑尔·奥尔考特 -->
+
+		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_JFD_HENRY_STEEL_OLCOTT_NAME" Language="zh_Hans_CN">
+			<Text>亨利·斯锑尔·奥尔考特</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_JFD_HENRY_STEEL_OLCOTT_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>亨利·斯锑尔·奥尔考特上校是一位美国军官、记者、律师，也是神智学会的联合创始人和第一任主席。他后来作为神智学会主席的行为，促成了佛教研究的复兴。奥尔科特被认为是一个佛教现代派，因为他通过西方化的视角来诠释佛教。[NEWLINE][NEWLINE]亨利·斯锑尔·奥尔考特是斯里兰卡佛教的主要复兴者，他仍然因为这些努力在斯里兰卡受到尊敬。奥尔考特被斯里兰卡人称为“我们独立斗争中的英雄之一，目前宗教、民族和文化复兴的先驱”。 </Text>
+			<!-- 译者注：以后自己再翻译补上，原因同最前。附原文：Colonel Henry Steel Olcott  was an American military officer, journalist, lawyer and the co-founder and first President of the Theosophical Society.[NEWLINE][NEWLINE]Olcott was the first well-known American of European ancestry to make a formal conversion to Buddhism. His subsequent actions as president of the Theosophical Society helped create a renaissance in the study of Buddhism. Olcott is considered a Buddhist modernist for his efforts in interpreting Buddhism through a Westernized lens.[NEWLINE][NEWLINE]Olcott was a major revivalist of Buddhism in Sri Lanka and he is still honored in Sri Lanka for these efforts. Olcott has been called by Sri Lankans "one of the heroes in the struggle of our independence and a pioneer of the present religious, national and cultural revival". -->
+		</Replace>
+		<Replace Tag="LOC_GREAT_PERSON_JFD_HENRY_STEEL_OLCOTT_HELP" Language="zh_Hans_CN">
+			<Text>获得此城每个 [ICON_Religion] 宗教（至少拥有一个信徒）的信徒信仰加成。</Text>
+		</Replace>
+
+		<!-- 释宗演 -->
+
+		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_JFD_SOYEN_SHAKU_NAME" Language="zh_Hans_CN">
+			<Text>释宗演</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_JFD_SOYEN_SHAKU_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>释宗演（釈宗演，Soyen Shaku，1859-1919），若狭（福井县）人，日本临济宗僧。大正八年病逝，享年六十一。[NEWLINE][NEWLINE]宗演禅师在圆觉寺接受禅法教育，并正式成为今北洪川的法子，后来得到印可。那一年，他24岁。为了寻求佛教与西方式科学教育的契合点，宗演禅师先在庆应大学(日本有名的私立大学)学习，而后远赴锡兰学习巴利文，并接受了上座部的传戒。他回国以后被各佛寺的联合会选出来，为一部重要佛教图书的作编撰工作。此书名为《日本诸宗佛教要义》。作为现代佛教在日本的开创人，他的大部分时间也用来教授在家人习禅，他在东京和各地的寺庙中都担任教授禅法。1893年，他代表日本佛教界参加了美国芝加哥的“世界宗教大会”。当时为他担任演讲翻译的是他的俗家弟子——铃木大拙，他的演讲中这么介绍日本的佛教：“各位代表，我想提请大家注意以下几点：日本人是充满忠诚和爱国精神的人民；佛教对于日本有着极大的影响力；精神性对于历代的天皇也都有着很大的影响；佛教是普世性的宗教，它同我们今 日所说的科学与哲学是完全相应的；我们一定要排除偏见，我们相信，大乘佛教同样是佛陀的真正教诲……”[NEWLINE][NEWLINE]宗演禅师在日俄战争期间（1904-1905）作为僧职人员随军布教，在我国的东北担任一座寺院的主持，他认为这种行为是正当的。1904年，俄国大文豪列夫托尔斯泰写信征集他的签名，希望他一起反对战争，但是被释宗演法师拒绝，他说：“战争是一种让不相容的变成相容和谐的手段，杀戮和征战是必须的。”战后，释宗演法师把日本的胜利归功于武士道文化，他认为武士道是佛教、儒教和神道教融合的结果。</Text>
+			<!-- 译者注：以后自己再翻译补上，原因同最前。附原文：Soyen Shaku was the first Zen Buddhist master to teach in the United States. He was a Roshi of the Rinzai school and was abbot of both Kenchō-ji and Engaku-ji temples in Kamakura, Japan. Shaku was a disciple of Imakita Kosen. In 1893 Shaku was one of four priests and two laymen, representing Rinzai Zen, Jōdo Shinshū, Nichirin, Tendai, and Esoteric schools, composing the Japanese delegation that participated in the World Parliament of Religions in Chicago. -->
+		</Replace>
+		<Replace Tag="LOC_GREAT_PERSON_JFD_SOYEN_SHAKU_HELP" Language="zh_Hans_CN">
+			<Text>立即获得500点 [ICON_Faith] 信仰值，且所有使徒获得“演说家”（额外传教两次）的 [ICON_Promotion] 强化。</Text>
+		</Replace>
+
+		<!-- 熊十力 -->
+
+		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_JFD_XIONG_SHILI_NAME" Language="zh_Hans_CN">
+			<Text>熊十力</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_JFD_XIONG_SHILI_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>熊十力（1885.2.18—1968.5.24），原名继智、升恒、定中，号子真、逸翁，晚年号漆园老人，汉族。湖北省黄冈（今团风）县上巴河镇张家湾人。中国著名哲学家、思想家。新儒家开山祖师，国学大师。与其三弟子（牟宗三、唐君毅、徐复观）和张君劢、梁漱溟、冯友兰、方东美被称为“新儒学八大家”。[NEWLINE][NEWLINE]1949年以后，以特别人士身份邀请参加首届全国政治协商会议，后被选为全国政协二、三、四届委员。因文革期间患肺炎而心力衰竭，在上海虹口医院病逝，享年84岁。[NEWLINE][NEWLINE]著有《新唯识论》《原儒》《体用论》《明心篇》《佛教名相通释》《乾坤衍》等书。其哲学观点以佛教唯识学重建儒家形而上道德本体，其学说影响深远，在哲学界自成一体，“熊学”研究者也遍及中国和海外，他的观点影响了学者们直到今天。《大英百科全书》称“熊十力与冯友兰为中国当代哲学之杰出人物”。[NEWLINE][NEWLINE]在20世纪中国文化中，中国古典哲学的继承、发展的重要途径之一是有关哲学重构的努力，即通过对比和吸收西方哲学的理论、观念、方法，重新建构中国哲学的哲学系统，使之成为既具有近代性的哲学体系，又可彰显出中国哲学传统的本体论和宇宙论特色，并使之在世界哲学中占有一席地位。在这个方面，比起有志发扬其他古代思想流派的学者，现代新儒家的成绩可谓卓然有成。当然，每一位现代新儒家对何为儒家思想（儒学）的核心认识不同，由之决定了他们所入手的方向不同，故他们所建构的体系也各不同，而熊十力的哲学体用论，就其继承发展中国哲学而言，是他的同时代人公认最有特色且最为成功的一个体系。[NEWLINE][NEWLINE]熊十力哲学最突出之处，是他的体大思精的本体枣宇宙论。20世纪，不仅中国哲学遭遇强大的颠覆力量，西方哲学传统也受到了根本挑战。在这种情形下，如何在肯定对古代或过去哲学的突破和超越的同时，通过阐释和发展，重新塑造东西方的哲学传统，就成为很重要的课题。近代哲学发展的大势，熊十力亦有了解。他了解本体论是西洋旧哲学所喜谈，而为晚近所忽略；但他坚持本体论对哲学的基础意义，努力发展出一种体现中国哲学精神的近代化的本体枣宇宙论。在他的哲学建构中，在总结中国哲学的基础上，吸收了西方唯物、唯心等哲学的思考，致力回应西方哲学对东方哲学的挑战，成功地建立了他的富有特色的宇宙论枣本体论哲学体系。这一体系的深刻性、独特性、宏大性，使得他的哲学已经无可争辩地成为了近代中国哲学走向世界的典范。</Text>
+			<!-- 笨蛋奶自己写的，但不再遵照原文修改，中国名人的背景还是自己写的比较好。附原文：Xiong Shili was a modern Chinese philosopher whose major work A New Treatise on Consciousness-only is a Confucian critique of the Buddhist "consciousness-only" theory popularized in China by the Tang-dynasty pilgrim Xuanzang.[NEWLINE][NEWLINE]Xiong is widely regarded as the thinker who laid down the basis for the revival of Confucianism during the twentieth century, and the main voice in contemporary Chinese philosophy who called for a revival of the Confucian dao. He felt it could provide a guide for the country during its tumultuous period following the May Fourth Movement in 1919. He felt that national survival was predicated on a sense of community, which in turn could only come from trusting commitments from the people involved. He believed that the most urgent task for the educated elite in China was to raise the cultural awareness and sensitivity of the people that the clash between the West and China was not solely a clash of economic strength and military might, but also a conflict between basic human values. While he led a fairly secluded life throughout his career as a teacher and his association with the academic community did not begin until he was in his late thirties, his views have influenced scholars to this day. -->
+			
+		</Replace>
+		<Replace Tag="LOC_GREAT_PERSON_JFD_XIONG_SHILI_HELP" Language="zh_Hans_CN">
+			<Text>触发市政“文化遗产”的 [ICON_CivicBoosted] 鼓舞，且所有政体+1文化政策槽位。</Text>
+			<!-- 这里的文化政策槽位是JFD的RwF系列某个模组增加的一种政策槽位。 -->
+		</Replace>
+		
+		<!-- 原子能 -->
+		<!-- 阿布尔·阿拉·毛杜迪 -->
+
+		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_JFD_MAUDUDI_NAME" Language="zh_Hans_CN">
+			<Text>阿布尔·阿拉·毛杜迪</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_JFD_MAUDUDI_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>阿布尔·阿拉·毛杜迪是巴基斯坦穆斯林哲学家、法学家、记者和伊玛目。他的许多作品“涵盖了古兰经、圣训、法律、哲学和历史等一系列学科”，都是用乌尔都语写成的，但后来被翻译成英语、阿拉伯语、印地语、孟加拉语、泰米尔语、缅甸语和许多其他语言。他试图复兴伊斯兰教，并宣传他所理解的“真正的伊斯兰教”。他认为伊斯兰教对政治至关重要，有必要建立伊斯兰教法，保护伊斯兰文化不受世俗主义、民族主义和社会主义的影响，他认为这些都是西方帝国主义的影响，作为当时亚洲最大的伊斯兰组织，他和他的政党被认为是将伊斯兰政治化和为巴基斯坦的伊斯兰国争取支持的先驱。他们被认为启发了穆罕默德·齐亚·乌尔·哈克将军向巴基斯坦推行“伊斯兰化”。1979年，他因对伊斯兰教的贡献而成为费萨尔国王国际奖的第一位获奖者。（世界四大国际奖之一）</Text>
+			<!-- 译者注：以后自己再翻译补上，原因同最前。附原文：Syed Abul A'la Maududi Chishti, also known as Abul Ala Maududi, was a Pakistani Muslim philosopher, jurist, journalist and imam. His numerous works, which "covered a range of disciplines such as Qur’anic exegesis, hadith, law, philosophy and history", were written in Urdu, but then translated into English, Arabic, Hindi, Bengali, Tamil, Burmese and many other languages. He sought to revive Islam, and to propagate what he understood to be "true Islam". He believed that Islam was essential for politics, and that it was necessary to institute sharia and preserve Islamic culture from what he viewed as the evils of secularism, nationalism and socialism, which he understood to be the influence Western imperialism.[NEWLINE][NEWLINE]He was the founder of the Jamaat-e-Islami, the then largest Islamic organisation in Asia He and his party are thought to have been the pioneer in politicizing Islam and generating support for an Islamic state in Pakistan. They are thought to have helped inspire General Muhammad Zia-ul-Haq to introduce "Sharization" to Pakistan, and to have been greatly strengthened by him after tens of thousands of members and sympathizers were given jobs in the judiciary and civil1service during his administration. He was the first recipient of the Saudi Arabian King Faisal International Award for his service to Islam in 1979. He has been the second person in history whose absentee funeral was observed in the Kaaba, succeeding King Ashama ibn-Abjar. -->
+		</Replace>
+		<Replace Tag="LOC_GREAT_PERSON_JFD_MAUDUDI_HELP" Language="zh_Hans_CN">
+			<Text>立即获得600点 [ICON_Faith] 信仰值，且赞助 [ICON_GreatPerson] 伟人消耗的 [ICON_Faith] 信仰值减少15%。</Text>
+		</Replace>
+
+		<!-- 卡尔·巴特 -->
+
+		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_JFD_KARL_BARTH_NAME" Language="zh_Hans_CN">
+			<Text>卡尔·巴特</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_JFD_KARL_BARTH_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>尔·巴特（Karl Barth，1886-1968）新教神学家，新正统神学的代表人物之一。生于瑞士巴塞尔州的一个传统的新教家庭中，巴特的童年时期在该国的伯尔尼州渡过。巴特的父亲、祖父跟外祖父都是改革宗的牧师，父亲弗利茨·巴特是神学博士。[NEWLINE][NEWLINE]巴特可说是基督新教二十世纪最伟大的神学家，代表著作：《教会教义学》影响深远，其后的神学家无论派别，在研究神学之初都不得不与之对话。[NEWLINE][NEWLINE]巴特认为一个没有提及耶稣基督真实性的信仰并不是基督教的信仰。因此，巴特寻求将神学的所有陈述，固定于基督上。人们认识基督信仰，需要透过耶稣基督的显现，被告知关于他自己的知识，否则人们就不能迈出任何信仰的一步。神学必须开始于耶稣基督，而不是开始于一般的原则。然而，神学也必须结束于上帝，而不是结束于假设自我证明的一般结论。基督是藉于神与世界，神与人之间的一座桥梁，而且不仅包含在知识上也在启示的观点上，包含了拣选、创造、和好与救赎。在巴特的神学是以“基督中心论”为重点。基督是最大的真理而且包含了所有的真理。[NEWLINE][NEWLINE]巴特的神学基本上是以“基督中心论”为主轴，他以此立论来对教会论作论述。基督曾是被差遣的负责在世界上见证上帝之国、宣讲上帝之道、服务于这个世界的。基督教会是属于基督的，而不是属于教会自身的存在和利益。巴特为了基督的教会和为了自身的教会这一原则区分了真宗教和假宗教，也区分真教会与假教会，统一的教会和分裂的教会，自我更新的教会和故步自封的教会，普世的教会和封闭的教会。正是将教会建立在基督中心之上，巴特为天主教与新教统一的普世运动提供了新的思考，而且，还在基督中心论的基础上为解决犹太人问题，也为基督徒的负责任地生活提供思考的基础。可以说，建立在“基督中心论”基础上的教会论，是巴特神学的重要贡献之一。今日基督教会的使命是传讲神的道，上帝宣告他自己是借着向教会宣告，如同路得派与加尔文派都认为讲道是上帝彰显他自己的方式。巴特认为传讲神的道要有解经（圣经神学）及应用（实用神学），而基督教教义就在这两者之间维持一个关系。</Text>
+			<!-- 译者注：以后自己再翻译补上，原因同最前。附原文：Karl Barth was a Swiss Reformed theologian who is often regarded as the greatest Protestant theologian of the twentieth century. His influence expanded well beyond the academic realm to mainstream culture, leading him to be featured on the cover of Time on April 20, 1962.[NEWLINE][NEWLINE]Beginning with his experience as a pastor, Barth rejected his training in the predominant liberal theology typical of 19th-century European Protestantism. He also rejected more conservative forms of Christianity. Instead he embarked on a new theological path initially called dialectical theology due to its stress on the paradoxical nature of divine truth (e.g., God's relationship to humanity embodies both grace and judgment). Many critics have referred to Barth as the father of neo-orthodoxy – a term that Barth emphatically rejected. A more charitable description of his work might be "a theology of the Word". Barth's work had a profound impact on twentieth century theology and figures such as Dietrich Bonhoeffer – who supported the Confessing Church – Thomas F. Torrance, Reinhold Niebuhr, Jacques Ellul, Stanley Hauerwas, Hans Küng, Jürgen Moltmann, and novelists such as John Updike and Miklós Szentkuthy.[NEWLINE][NEWLINE]Barth's unease with the dominant theology which characterized Europe led him to become a leader in the Confessing Church in Germany, which actively opposed Adolf Hitler and the Nazi regime. In particular, Barth and other members of the movement vigorously attempted to prevent the Nazis from taking over the existing church and establishing a state church controlled by the regime. This culminated in Barth's authorship of the Barmen Declaration, which fiercely criticized Christians who supported the Nazis.[NEWLINE][NEWLINE]He was one of the most prolific and influential theologians of the twentieth century. Barth emphasized the sovereignty of God, particularly through his reinterpretation of the Calvinistic doctrine of election, the sinfulness of humanity, and the "infinite qualitative distinction between God and mankind". His most famous works are his The Epistle to the Romans, which marked a clear break from his earlier thinking, and his massive thirteen-volume work Church Dogmatics, one of the largest works of systematic theology ever written. -->
+		</Replace>
+		<Replace Tag="LOC_GREAT_PERSON_JFD_KARL_BARTH_HELP" Language="zh_Hans_CN">
+			<Text>获得巨作“巴门宣言”与“教会教义学”（[ICON_GreatWork_Writing] 著作；获得 [ICON_Faith] 信仰值、[ICON_Culture] 文化值）。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_JFD_BARMEN_DECLARATION_NAME" Language="zh_Hans_CN">
+			<Text>巴门宣言</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_JFD_BARMEN_DECLARATION_QUOTE" Language="zh_Hans_CN">
+			<Text>我们拒绝错误的教义，就好像教会的傲慢，它自认可以把主的话语和工作服务于任何的欲望、目的和计划。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_JFD_CHURCH_DOGMATICS_NAME" Language="zh_Hans_CN">
+			<Text>教会教义学</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATWORK_JFD_CHURCH_DOGMATICS_QUOTE" Language="zh_Hans_CN">
+			<Text>因此神的公正是指，作为一个公义的审判者，神独自看待和估量被造之物的内在和因由，并且不顾被造之物的反对，将被造之物判刑，为其塑造自己的公义。</Text>
+		</Replace>
+
+		<!-- 玛塔·阿姆里塔南达玛依·德维 -->
+
+		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_JFD_MATA_AMMA_NAME" Language="zh_Hans_CN">
+			<Text>玛塔·阿姆里塔南达玛依·德维</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_JFD_MATA_AMMA_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>玛塔·阿姆里塔南达玛依·德维，简称安玛（“母亲”），是印度教的精神领袖和上师，被她的追随者尊崇为圣徒。安玛安慰方式是拥抱别人。她说：“人们过去常常来告诉我他们的困难。他们会哭，我会擦干他们的眼泪。当他们哭着倒在我腿上时，我常常拥抱他们。然后下一个人也想要拥抱“因此，这个习惯开始流行起来。“安玛在过去30多年里，已经在全世界拥抱了3300多万人。[NEWLINE][NEWLINE]拥抱世界，安玛的慈善组织网络，为穷人提供食物、住房、教育和医疗服务。这一全球网络遍布全球40个国家，在印度各地建立抑或支持建设学校、孤儿院、住房和医院。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREAT_PERSON_JFD_MATA_AMMA_HELP" Language="zh_Hans_CN">
+			<Text>寺庙+1 [ICON_Housing] 住房、+3 [ICON_Food] 食物。</Text>
+		</Replace>
+
+		<!-- 信息 -->
+		<!-- 查尔斯·泰勒 -->
+
+		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_JFD_CHARLES_TAYLOR_NAME" Language="zh_Hans_CN">
+			<Text>查尔斯·泰勒</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_JFD_CHARLES_TAYLOR_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>查尔斯·泰勒（Charles Taylor），加拿大哲学家，其最著名的作品是《自我的来源》。1961年在牛津大学取得哲学博士学位，现任麦吉尔大学教授。[NEWLINE][NEWLINE]泰勒迄今为止在这一领域最重要的贡献是他的著作《自我的来源》，该书反对马克斯·韦伯的世俗化理论，世俗化理论认为，随着现代性（包括科学、技术和理性权威形式在内的一系列现象）的发展，宗教的影响力逐渐减弱。泰勒的出发点是，现代世界并没有看到宗教的消失，而是宗教的多样化和在许多地方的增长。然后，鉴于世俗化理论尚未得到证实，他对世俗化的实际含义提出了一个复杂的替代概念。在这个过程中，泰勒也极大地深化了他对道德、政治和精神现代性的描述。</Text>
+			<!-- 译者注：以后自己再翻译补上，原因同最前。附原文：Charles Margrave Taylor is a Canadian philosopher from Montreal, Quebec, and professor emeritus at McGill University best known for his contributions to political philosophy, the philosophy of social science, the history of philosophy, and intellectual history. This work has earned him the Kyoto Prize, the Templeton Prize, the Berggruen Prize for Philosophy, and the John W. Kluge Prize.[NEWLINE][NEWLINE]In 2007, Taylor served with Gérard Bouchard on the Bouchard–Taylor Commission on reasonable accommodation with regard to cultural differences in the province of Quebec. He has also made contributions to moral philosophy, epistemology, hermeneutics, aesthetics, the philosophy of mind, the philosophy of language, and the philosophy of action.[NEWLINE][NEWLINE]Taylor's most significant contribution in this field to date is his book A Secular Age which argues against the secularization thesis of Max Weber, Steve Bruce, and others. In rough form, the secularization thesis holds that as modernity (a bundle of phenomena including science, technology, and rational forms of authority) progresses, religion gradually diminishes in influence. Taylor begins from the fact that the modern world has not seen the disappearance of religion but rather its diversification and in many places its growth. He then develops a complex alternative notion of what secularization actually means given that the secularization thesis has not been borne out. In the process, Taylor also greatly deepens his account of moral, political, and spiritual modernity that he had begun in Sources of the Self. -->
+		</Replace>
+		<Replace Tag="LOC_GREAT_PERSON_JFD_CHARLES_TAYLOR_HELP" Language="zh_Hans_CN">
+			<Text>[ICON_GreatWork_Relic] 文物与圣城的 [ICON_Tourism] 旅游业绩产出不会因其他文明解锁市政“启蒙”而减少。</Text>
+		</Replace>
+
+		<!-- 方济各 -->
+
+		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_JFD_JORGE_BERGOGLIO_NAME" Language="zh_Hans_CN">
+			<Text>方济各</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_JFD_JORGE_BERGOGLIO_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>教皇方济各是第266任现任教皇，也是梵蒂冈城邦的君主。方济各是第一位耶稣会教宗，第一位来自美洲，第一位来自南半球，也是自8世纪统治叙利亚的格雷戈里三世以来第一位来自欧洲以外的教宗。[NEWLINE][NEWLINE]方济各的父母是意大利皮埃蒙特人。父亲马里奥是一名铁路工人，母亲雷吉纳是一名家庭主妇。这个未来的教皇以他的福音简朴性与和蔼可亲的性格而出名。教皇方济各是化学工程学毕业，但后选择了司铎生活，进入首都维拉·德沃托（Villa Devoto）修院学习，成为耶稣会的初学生。他在智利完成人文学科后于1963年返回布宜诺斯艾利斯，在圣米格尔的“圣若瑟”大学获得哲学学位。60年代中期，这位曾留学德国的新教皇在阿根廷圣菲市的“无玷圣母学院”教授文学和心理学，之后也在“布宜诺斯艾利斯救主学院”教授同样的课程。作为一个真正的阿根廷人，他也热爱探戈舞和足球，当下仍是阿根廷首都圣洛伦索足球俱乐部的球迷。[NEWLINE][NEWLINE]1969年晋铎，四年后发了末愿。1973年7月，年仅37岁当选耶稣会阿根廷省会长，并担当此重任6年之久。他致力于大公对话，喜爱文学，钟爱古典文学，总是对移民、妇女和青年给予很大的关注，尤其是穷人。1992年，教皇若望保禄二世任命他为布宜诺斯艾利斯的辅理主教。贝尔格里奥主教因他朴实的生活品行和开朗的性格，受到信徒们的敬佩与爱戴。[NEWLINE][NEWLINE]1998年2月28日，担任阿根廷首都的总主教，并担任了几年阿根廷主教团的主席。教皇若望保禄二世于2001年擢升他为领衔圣罗伯特·白拉敏枢机主教。虽然他改变了着装和圆顶帽的颜色，但是他牧灵的方式从未改变。他总是贫穷者的牧人，总是弱者的发言人和代表。[NEWLINE][NEWLINE]2016年2月，在新电影《超越太阳》（Beyond the Sun）中扮演自己，这也是罗马教皇在电影史上的首秀。这部电影的全部利润都将捐献给阿根廷的两个慈善机构。[NEWLINE][NEWLINE]在他的整个教皇生活中，方济各教皇一直以他的谦逊、强调上帝的仁慈、作为教皇的国际知名度、对穷人的关心和对不同信仰间之间对话承诺而闻名。他被认为比历代教皇更加开放，例如，他选择住在圣马丁宫，而不是以前教皇使用教皇公寓。他坚持认为教会应该更加开放和欢迎。他不支持肆无忌惮的资本主义、马克思主义，也不支持马克思主义版本的解放神学。方济各坚持教会关于堕胎、婚姻、妇女圣职和牧师单身的传统观点。他反对消费主义和过度发展，并支持采取行动应对气候变化，这是他教皇任期的一个重点。在国际外交方面，他帮助恢复了美国和古巴之间的全面外交关系。自2016年以来，方济面临来自神学保守派的批评。2019年2月21日，方济各在梵蒂冈召开为期四天的“在教会内保护儿童”反性侵主题峰会，决心根除天主教内部泛滥的神职人员性侵害现象。</Text>
+		</Replace>
+		<Replace Tag="LOC_GREAT_PERSON_JFD_JORGE_BERGOGLIO_HELP" Language="zh_Hans_CN">
+			<Text>获得两位 [ICON_Envoy] 使者。每位派往城邦的 [ICON_Envoy] 使者+1 [ICON_Faith] 信仰值。</Text>
+		</Replace>
+
+		<!-- 丹增嘉措 -->
+
+		<Replace Tag="LOC_GREAT_PERSON_INDIVIDUAL_JFD_TENZIN_GYATO_NAME" Language="zh_Hans_CN">
+			<Text>丹增嘉措</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_GREATPEOPLE_PAGE_GREAT_PERSON_INDIVIDUAL_JFD_TENZIN_GYATO_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>十四世达赖喇嘛·丹增嘉措，1935年7月出生于青海湟中县祁家川（今青海省平安县红崖村），乳名拉木登珠。1938年，拉木登珠被原西藏地方政府遴选为第十三世达赖喇嘛的唯一转世灵童，后报请当时的国民政府特准免予“金瓶掣签”，在中央政府特派大员吴忠信会同热振呼图克图的主持下，1940年在拉萨举行坐床典礼，继位为第十四世达赖喇嘛。1950年11月17日开始亲政，年仅16岁即接替了西藏地方的政教大权。后派代表与中央政府谈判，达成了和平解放西藏办法的协议（又称“十七条协议”）。西藏和平解放后，曾先后担任全国人大第一、二届副委员长，全国政协第一届委员、第二届常务委员，西藏自治区筹备委员会主任委员、委员等职务。</Text>
+			<!-- 译者注：以后自己再翻译补上，原因同最前。附原文：The 14th Dalai Lama is the current Dalai Lama. Dalai Lamas are important monks of the Gelug school, the newest school of Tibetan Buddhism which was formally headed by the Ganden Tripas. From the time of the 5th Dalai Lama to 1959, the central government of Tibet, the Ganden Phodrang, invested the position of Dalai Lama with temporal duties.[NEWLINE][NEWLINE]The 14th Dalai Lama was born in Taktser, Amdo, Tibet, and was selected as the tulku of the 13th Dalai Lama in 1937 and formally recognized as the 14th Dalai Lama at a public declaration near the town of Bumchen in 1939. His enthronement ceremony as the Dalai Lama was held in Lhasa on 22 February 1940, and he eventually assumed full temporal (political) duties on 17 November 1950, at the age of 15, after the People's Republic of China's incorporation of Tibet. The Gelug school's government administered an area roughly corresponding to the Tibet Autonomous Region just as the nascent PRC wished to assert control over it.[NEWLINE][NEWLINE]During the 1959 Tibetan uprising, the Dalai Lama fled to India, where he currently lives as a refugee. The 14th Dalai Lama received the Nobel Peace Prize in 1989. Time Magazine named him one of the "Children of Mahatma Gandhi" and his spiritual heir to nonviolence. He has traveled the world and has spoken about the welfare of Tibetans, environment, economics, women's rights, non-violence, interfaith dialogue, physics, astronomy, Buddhism and science, cognitive neuroscience, reproductive health, and sexuality, along with various topics of Mahayana and Vajrayana Buddhist teachings. -->
+		</Replace>
+		<Replace Tag="LOC_GREAT_PERSON_JFD_TENZIN_GYATO_HELP" Language="zh_Hans_CN">
+			<Text>立即获得800点 [ICON_Faith] 信仰值，且所有使徒获得“翻译员”（在其他文明的城市，宗教传播增强三倍）的 [ICON_Promotion] 强化。 </Text>
+		</Replace>
+		
+		<!-- 项目 -->
+		
+		<Replace Tag="LOC_PROJECT_ENHANCE_DISTRICT_HOLY_SITE_DESCRIPTION_JFD_THEOLOGIANS" Language="zh_Hans_CN">
+			<Text>基于区域的项目。项目进行时提供 [ICON_Faith] 信仰值，且 [ICON_Religion] 宗教压力增加100%。项目完成时可获得 [ICON_GreatProphet] 大预言家和 [ICON_GreatProphet] 大神学家点数。</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

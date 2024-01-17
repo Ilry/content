@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'Fate Stay Night - Emiya(Archer)'CN_Fix_FI -->
+<!-- Author: Clear8Sky -->
+<!-- DateCreated: 2021/8/3 17:25:58 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Fate Stay Night - 卫宫（Archer）” 。该文件在 FrontEnd 与 InGame 时载入，无需任何 Criteria -->
+	<LocalizedText>
+		<Replace Tag="LOC_LEADER_FSN_ARCHER_EMIYA_UBW_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>领土扩张速度+100%。[NEWLINE]拥有粮仓的城市 [ICON_Citizen] 人口增长速度+50%。[NEWLINE]单位+4 [ICON_Range] 射程，但[COLOR_RED]-8[ENDCOLOR] [ICON_Strength] 战斗力，解锁科技“工业化”后可移除负面效果。</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

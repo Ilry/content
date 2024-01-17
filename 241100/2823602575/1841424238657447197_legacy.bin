@@ -1,0 +1,762 @@
+"controller_mappings"
+{
+	"version"		"3"
+	"revision"		"46"
+	"title"		"Official Configuration for TMNT: Shredder's Revenge"
+	"description"		"Configuration created by Tribute Games Inc. for use with the Xbox 360 Controller."
+	"creator"		"76561198002626662"
+	"progenitor"		""
+	"url"		""
+	"export_type"		"unknown"
+	"controller_type"		"controller_xboxone"
+	"major_revision"		"0"
+	"minor_revision"		"0"
+	"Timestamp"		"1655737542"
+	"actions"
+	{
+		"Player"
+		{
+			"title"		"#inputPlayerControls"
+			"legacy_set"		"0"
+			"StickPadGyro"
+			{
+				"PlayerMoveAnalog"
+				{
+					"title"		"#inputPlayerMove"
+					"input_mode"		"joystick_move"
+				}
+			}
+			"Button"
+			{
+				"PlayerAttack"		"#inputPlayerAttack"
+				"PlayerJump"		"#inputPlayerJump"
+				"PlayerBackflip"		"#inputPlayerBackflip"
+				"PlayerSpecialAttack"		"#inputPlayerSpecialAttack"
+				"PlayerTaunt"		"#inputPlayerTaunt"
+				"PlayerCheerUpRevive"		"#inputPlayerCheerUpRevive"
+				"PlayerPause"		"#inputMenuPause"
+				"ShowPlayerID"		"#inputPlayerShowPlayerID"
+			}
+		}
+		"Menu"
+		{
+			"title"		"#inputMenuControls"
+			"legacy_set"		"0"
+			"StickPadGyro"
+			{
+				"MenuMove"
+				{
+					"title"		"#inputMenuMove"
+					"input_mode"		"joystick_move"
+				}
+			}
+			"Button"
+			{
+				"MenuPause"		"#inputMenuPause"
+				"MenuAccept"		"#inputMenuConfirm"
+				"MenuCancel"		"#inputMenuBack"
+				"MenuActionX"		"#inputMenuFunction1"
+				"MenuActionY"		"#inputMenuFunction2"
+				"MenuActionLB"		"#inputMenuFunction3"
+				"MenuActionRB"		"#inputMenuFunction4"
+			}
+		}
+	}
+	"action_layers"
+	{
+	}
+	"localization"
+	{
+		"english"
+		{
+			"inputPlayerControls"		"Player Controls"
+			"inputPlayerMove"		"Movement"
+			"inputPlayerAttack"		"Attack"
+			"inputPlayerJump"		"Jump"
+			"inputPlayerBackflip"		"Backflip"
+			"inputPlayerSpecialAttack"		"Super Attack"
+			"inputPlayerTaunt"		"Taunt"
+			"inputPlayerCheerUpRevive"		"Cheer up/Revive"
+			"inputMenuPause"		"Pause"
+			"inputPlayerShowPlayerID"		"Show Player ID"
+			"inputMenuControls"		"Menu Controls"
+			"inputMenuMove"		"Menu Movement"
+			"inputMenuConfirm"		"Confirm"
+			"inputMenuBack"		"Back"
+			"inputMenuFunction1"		"Menu Function 1"
+			"inputMenuFunction2"		"Menu Function 2"
+			"inputMenuFunction3"		"Menu Function 3"
+			"inputMenuFunction4"		"Menu Function 4"
+		}
+		"french"
+		{
+			"inputPlayerControls"		"Commandes du joueur"
+			"inputPlayerMove"		"Déplacement"
+			"inputPlayerAttack"		"Attaquer"
+			"inputPlayerJump"		"Sauter"
+			"inputPlayerBackflip"		"Salto arrière"
+			"inputPlayerSpecialAttack"		"Super attaque"
+			"inputPlayerTaunt"		"Provoquer"
+			"inputPlayerCheerUpRevive"		"Encourager/ranimer"
+			"inputMenuPause"		"Pause"
+			"inputPlayerShowPlayerID"		"Afficher l'identifiant du joueur"
+			"inputMenuControls"		"Menu Commandes"
+			"inputMenuMove"		"Menu Déplacement"
+			"inputMenuConfirm"		"Confirmer"
+			"inputMenuBack"		"Retour"
+			"inputMenuFunction1"		"Menu Fonction 1"
+			"inputMenuFunction2"		"Menu Fonction 2"
+			"inputMenuFunction3"		"Menu Fonction 3"
+			"inputMenuFunction4"		"Menu Fonction 4"
+		}
+		"japanese"
+		{
+			"inputPlayerControls"		"プレイヤー操作"
+			"inputPlayerMove"		"動作"
+			"inputPlayerAttack"		"攻撃"
+			"inputPlayerJump"		"ジャンプ"
+			"inputPlayerBackflip"		"バク転"
+			"inputPlayerSpecialAttack"		"必殺技"
+			"inputPlayerTaunt"		"挑発"
+			"inputPlayerCheerUpRevive"		"励ます/蘇生"
+			"inputMenuPause"		"一時停止"
+			"inputPlayerShowPlayerID"		"プレイヤーIDを表示する"
+			"inputMenuControls"		"メニュー操作"
+			"inputMenuMove"		"メニューの動作"
+			"inputMenuConfirm"		"確定"
+			"inputMenuBack"		"戻る"
+			"inputMenuFunction1"		"メニュー機能1"
+			"inputMenuFunction2"		"メニュー機能2"
+			"inputMenuFunction3"		"メニュー機能3"
+			"inputMenuFunction4"		"メニュー機能4"
+		}
+		"german"
+		{
+			"inputPlayerControls"		"Spielsteuerung"
+			"inputPlayerMove"		"Bewegen"
+			"inputPlayerAttack"		"Angreifen"
+			"inputPlayerJump"		"Springen"
+			"inputPlayerBackflip"		"Rückwärtssalto"
+			"inputPlayerSpecialAttack"		"Superangriff"
+			"inputPlayerTaunt"		"Verspotten"
+			"inputPlayerCheerUpRevive"		"Aufheitern/Wiederbeleben"
+			"inputMenuPause"		"Pause"
+			"inputPlayerShowPlayerID"		"Spieler-ID anzeigen"
+			"inputMenuControls"		"Menüsteuerung"
+			"inputMenuMove"		"Menübewegung"
+			"inputMenuConfirm"		"Bestätigen"
+			"inputMenuBack"		"Zurück"
+			"inputMenuFunction1"		"Menüfunktion 1"
+			"inputMenuFunction2"		"Menüfunktion 2"
+			"inputMenuFunction3"		"Menüfunktion 3"
+			"inputMenuFunction4"		"Menüfunktion 4"
+		}
+		"schinese"
+		{
+			"inputPlayerControls"		"玩家控制选项"
+			"inputPlayerMove"		"移动"
+			"inputPlayerAttack"		"攻击"
+			"inputPlayerJump"		"跳跃"
+			"inputPlayerBackflip"		"后空翻"
+			"inputPlayerSpecialAttack"		"必杀技"
+			"inputPlayerTaunt"		"嘲讽"
+			"inputPlayerCheerUpRevive"		"振作/复活"
+			"inputMenuPause"		"暂停"
+			"inputPlayerShowPlayerID"		"显示玩家ID"
+			"inputMenuControls"		"菜单控制选项"
+			"inputMenuMove"		"菜单移动"
+			"inputMenuConfirm"		"确认"
+			"inputMenuBack"		"返回"
+			"inputMenuFunction1"		"菜单功能1"
+			"inputMenuFunction2"		"菜单功能2"
+			"inputMenuFunction3"		"菜单功能3"
+			"inputMenuFunction4"		"菜单功能4"
+		}
+		"spanish"
+		{
+			"inputPlayerControls"		"Controles del jugador"
+			"inputPlayerMove"		"Movimiento"
+			"inputPlayerAttack"		"Atacar"
+			"inputPlayerJump"		"Saltar"
+			"inputPlayerBackflip"		"Voltereta hacia atrás"
+			"inputPlayerSpecialAttack"		"Superataque"
+			"inputPlayerTaunt"		"Provocar"
+			"inputPlayerCheerUpRevive"		"Animar/Revivir"
+			"inputMenuPause"		"Pausa"
+			"inputPlayerShowPlayerID"		"Mostrar ID del jugador"
+			"inputMenuControls"		"Controles del menú"
+			"inputMenuMove"		"Movimiento del menú"
+			"inputMenuConfirm"		"Confirmar"
+			"inputMenuBack"		"Atrás"
+			"inputMenuFunction1"		"Función del menú 1"
+			"inputMenuFunction2"		"Función del menú 2"
+			"inputMenuFunction3"		"Función del menú 3"
+			"inputMenuFunction4"		"Función del menú 4"
+		}
+		"italian"
+		{
+			"inputPlayerControls"		"Controlli giocatore"
+			"inputPlayerMove"		"Movimento"
+			"inputPlayerAttack"		"Attacca"
+			"inputPlayerJump"		"Salta"
+			"inputPlayerBackflip"		"Salto mortale all'indietro"
+			"inputPlayerSpecialAttack"		"Super attacco"
+			"inputPlayerTaunt"		"Schernisci"
+			"inputPlayerCheerUpRevive"		"Tira su di morale/Rianima"
+			"inputMenuPause"		"Pausa"
+			"inputPlayerShowPlayerID"		"Mostra ID giocatore"
+			"inputMenuControls"		"Controlli menu"
+			"inputMenuMove"		"Movimento menu"
+			"inputMenuConfirm"		"Conferma"
+			"inputMenuBack"		"Indietro"
+			"inputMenuFunction1"		"Funzione menu 1"
+			"inputMenuFunction2"		"Funzione menu 2"
+			"inputMenuFunction3"		"Funzione menu 3"
+			"inputMenuFunction4"		"Funzione menu 4"
+		}
+		"portuguese"
+		{
+			"inputPlayerControls"		"Controles do Jogador"
+			"inputPlayerMove"		"Movimento"
+			"inputPlayerAttack"		"Atacar"
+			"inputPlayerJump"		"Pular"
+			"inputPlayerBackflip"		"Mortal Pra Trás"
+			"inputPlayerSpecialAttack"		"Super Ataque"
+			"inputPlayerTaunt"		"Provocar"
+			"inputPlayerCheerUpRevive"		"Animar/Reviver"
+			"inputMenuPause"		"Pausa"
+			"inputPlayerShowPlayerID"		"Mostrar ID do jogador"
+			"inputMenuControls"		"Controles de Menu"
+			"inputMenuMove"		"Menu de Movimento"
+			"inputMenuConfirm"		"Confirmar"
+			"inputMenuBack"		"Voltar"
+			"inputMenuFunction1"		"Menu de Função 1"
+			"inputMenuFunction2"		"Menu de Função 2"
+			"inputMenuFunction3"		"Menu de Função 3"
+			"inputMenuFunction4"		"Menu de Função 4"
+		}
+		"koreana"
+		{
+			"inputPlayerControls"		"플레이어 조작법"
+			"inputPlayerMove"		"이동(기술)"
+			"inputPlayerAttack"		"공격"
+			"inputPlayerJump"		"점프"
+			"inputPlayerBackflip"		"뒤공중돌기"
+			"inputPlayerSpecialAttack"		"슈퍼 공격"
+			"inputPlayerTaunt"		"도발"
+			"inputPlayerCheerUpRevive"		"응원/부활"
+			"inputMenuPause"		"일시 정지"
+			"inputPlayerShowPlayerID"		"플레이어 ID 표시"
+			"inputMenuControls"		"메뉴 조작법"
+			"inputMenuMove"		"메뉴 이동(기술)"
+			"inputMenuConfirm"		"확인"
+			"inputMenuBack"		"뒤로"
+			"inputMenuFunction1"		"메뉴 기능 1"
+			"inputMenuFunction2"		"메뉴 기능 2"
+			"inputMenuFunction3"		"메뉴 기능 3"
+			"inputMenuFunction4"		"메뉴 기능 4"
+		}
+		"tchinese"
+		{
+			"inputPlayerControls"		"玩者基本操作"
+			"inputPlayerMove"		"移動(技能)"
+			"inputPlayerAttack"		"攻擊"
+			"inputPlayerJump"		"跳躍"
+			"inputPlayerBackflip"		"後空翻"
+			"inputPlayerSpecialAttack"		"超級攻擊"
+			"inputPlayerTaunt"		"挑釁"
+			"inputPlayerCheerUpRevive"		"助威/復活"
+			"inputMenuPause"		"暫停"
+			"inputPlayerShowPlayerID"		"顯示玩者ID"
+			"inputMenuControls"		"選單基本操作"
+			"inputMenuMove"		"選單移動(技能)"
+			"inputMenuConfirm"		"確定"
+			"inputMenuBack"		"返回"
+			"inputMenuFunction1"		"選單功能1"
+			"inputMenuFunction2"		"選單功能2"
+			"inputMenuFunction3"		"選單功能3"
+			"inputMenuFunction4"		"選單功能4"
+		}
+	}
+	"group"
+	{
+		"id"		"1"
+		"mode"		"four_buttons"
+		"description"		""
+		"inputs"
+		{
+			"button_a"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"game_action Player PlayerJump"
+						}
+					}
+				}
+				"disabled_activators"
+				{
+				}
+			}
+			"button_b"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"game_action Player PlayerBackflip"
+						}
+					}
+				}
+				"disabled_activators"
+				{
+				}
+			}
+			"button_x"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"game_action Player PlayerAttack"
+						}
+					}
+				}
+				"disabled_activators"
+				{
+				}
+			}
+			"button_y"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"game_action Player PlayerSpecialAttack"
+						}
+					}
+				}
+				"disabled_activators"
+				{
+				}
+			}
+		}
+	}
+	"group"
+	{
+		"id"		"2"
+		"mode"		"trigger"
+		"description"		""
+		"inputs"
+		{
+			"click"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"game_action Player ShowPlayerID"
+						}
+						"settings"
+						{
+							"haptic_intensity"		"2"
+						}
+					}
+				}
+				"disabled_activators"
+				{
+				}
+			}
+		}
+	}
+	"group"
+	{
+		"id"		"3"
+		"mode"		"trigger"
+		"description"		""
+		"inputs"
+		{
+		}
+	}
+	"group"
+	{
+		"id"		"5"
+		"mode"		"four_buttons"
+		"description"		""
+		"inputs"
+		{
+			"button_a"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"game_action Menu MenuAccept"
+						}
+					}
+				}
+				"disabled_activators"
+				{
+				}
+			}
+			"button_b"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"game_action Menu MenuCancel"
+						}
+					}
+				}
+				"disabled_activators"
+				{
+				}
+			}
+			"button_x"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"game_action Menu MenuActionX"
+						}
+					}
+				}
+				"disabled_activators"
+				{
+				}
+			}
+			"button_y"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"game_action Menu MenuActionY"
+						}
+					}
+				}
+				"disabled_activators"
+				{
+				}
+			}
+		}
+	}
+	"group"
+	{
+		"id"		"6"
+		"mode"		"trigger"
+		"description"		""
+		"inputs"
+		{
+		}
+	}
+	"group"
+	{
+		"id"		"7"
+		"mode"		"trigger"
+		"description"		""
+		"inputs"
+		{
+		}
+	}
+	"group"
+	{
+		"id"		"8"
+		"mode"		"joystick_move"
+		"description"		""
+		"inputs"
+		{
+		}
+		"settings"
+		{
+			"virtual_mode"		"1"
+		}
+	}
+	"group"
+	{
+		"id"		"9"
+		"mode"		"joystick_move"
+		"description"		""
+		"inputs"
+		{
+		}
+		"settings"
+		{
+			"virtual_mode"		"1"
+		}
+	}
+	"group"
+	{
+		"id"		"10"
+		"mode"		"dpad"
+		"description"		""
+		"inputs"
+		{
+		}
+		"settings"
+		{
+			"requires_click"		"0"
+		}
+	}
+	"group"
+	{
+		"id"		"11"
+		"mode"		"dpad"
+		"description"		""
+		"inputs"
+		{
+		}
+		"settings"
+		{
+			"requires_click"		"0"
+			"haptic_intensity_override"		"0"
+		}
+	}
+	"group"
+	{
+		"id"		"12"
+		"mode"		"joystick_move"
+		"description"		""
+		"inputs"
+		{
+		}
+		"settings"
+		{
+			"virtual_mode"		"1"
+			"deadzone_inner_radius"		"10400"
+			"deadzone_shape"		"0"
+		}
+		"gameactions"
+		{
+			"Menu"		"MenuMove"
+		}
+	}
+	"group"
+	{
+		"id"		"13"
+		"mode"		"joystick_move"
+		"description"		""
+		"inputs"
+		{
+		}
+		"settings"
+		{
+			"virtual_mode"		"1"
+		}
+		"gameactions"
+		{
+			"Menu"		"MenuMove"
+		}
+	}
+	"group"
+	{
+		"id"		"14"
+		"mode"		"joystick_move"
+		"description"		""
+		"inputs"
+		{
+		}
+		"settings"
+		{
+			"virtual_mode"		"1"
+		}
+		"gameactions"
+		{
+			"Player"		"PlayerMoveAnalog"
+		}
+	}
+	"group"
+	{
+		"id"		"15"
+		"mode"		"joystick_move"
+		"description"		""
+		"inputs"
+		{
+		}
+		"settings"
+		{
+			"virtual_mode"		"1"
+		}
+		"gameactions"
+		{
+			"Player"		"PlayerMoveAnalog"
+		}
+	}
+	"group"
+	{
+		"id"		"16"
+		"mode"		"disabled"
+		"description"		""
+	}
+	"group"
+	{
+		"id"		"0"
+		"mode"		"switches"
+		"description"		""
+		"inputs"
+		{
+			"button_escape"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"game_action Player PlayerPause"
+						}
+					}
+				}
+				"disabled_activators"
+				{
+				}
+			}
+			"left_bumper"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"game_action Player PlayerCheerUpRevive"
+						}
+					}
+				}
+				"disabled_activators"
+				{
+				}
+			}
+			"right_bumper"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"game_action Player PlayerTaunt"
+						}
+					}
+				}
+				"disabled_activators"
+				{
+				}
+			}
+		}
+	}
+	"group"
+	{
+		"id"		"4"
+		"mode"		"switches"
+		"description"		""
+		"inputs"
+		{
+			"button_escape"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"game_action Menu MenuPause"
+						}
+					}
+				}
+				"disabled_activators"
+				{
+				}
+			}
+			"left_bumper"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"game_action Menu MenuActionLB"
+						}
+					}
+				}
+				"disabled_activators"
+				{
+				}
+			}
+			"right_bumper"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"game_action Menu MenuActionRB"
+						}
+					}
+				}
+				"disabled_activators"
+				{
+				}
+			}
+		}
+	}
+	"preset"
+	{
+		"id"		"0"
+		"name"		"Player"
+		"group_source_bindings"
+		{
+			"0"		"switch active"
+			"1"		"button_diamond active"
+			"2"		"left_trigger active"
+			"3"		"right_trigger active"
+			"8"		"joystick inactive"
+			"15"		"joystick active"
+			"9"		"dpad inactive"
+			"14"		"dpad active"
+			"16"		"right_joystick inactive"
+		}
+	}
+	"preset"
+	{
+		"id"		"1"
+		"name"		"Menu"
+		"group_source_bindings"
+		{
+			"4"		"switch active"
+			"5"		"button_diamond active"
+			"6"		"left_trigger active"
+			"7"		"right_trigger active"
+			"10"		"joystick inactive"
+			"13"		"joystick active"
+			"11"		"dpad inactive"
+			"12"		"dpad active"
+		}
+	}
+	"settings"
+	{
+	}
+}

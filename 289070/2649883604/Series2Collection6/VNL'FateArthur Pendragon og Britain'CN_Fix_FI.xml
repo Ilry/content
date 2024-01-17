@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'FateArthur Pendragon og Britain'CN_Fix_FI -->
+<!-- Author: Clear8Sky -->
+<!-- DateCreated: 2021/8/3 4:40:05 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “[命运]亚瑟·潘德拉贡领导的不列颠” 。该文件在 FrontEnd 与 InGame 时载入，无需任何 Criteria -->
+	<LocalizedText>
+		
+		<!-- 游戏前文本 -->
+		
+		<Replace Tag="LOC_TRAIT_LEADER_EXCALIBUR_ARTHUR_DESCRIPTION" Language="zh_Hans_CN" >
+			<Text>训练非特色的陆地战斗单位，完成时可额外获得一个相同单位。[NEWLINE]建造者+2 [ICON_Charges] 劳动力，可消耗 [ICON_Charges] 劳动力推进区域建造25%的原始进度；且特色单位、开拓者与建造者均+1 [ICON_Movement] 移动力。[NEWLINE]拥有特色建筑的城市获取 [ICON_GreatPerson] 伟人点数+50%；且当帝国境内特色建筑总数量达到12座及以上时，所有单位属性将获得大幅提升。[NEWLINE]可无视 [ICON_Citizen] 人口限制建造区域；此外，建造区域+4 [ICON_Production] 生产力。</Text>
+		</Replace>
+		
+		<!-- 游戏内文本 -->
+		
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_FATE_ARTHUR_ANY" Language="zh_Hans_CN" >
+			<Text>停止吧，这不是你能够前进的方向。[NEWLINE]（谴责你）</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

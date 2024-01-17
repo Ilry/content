@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RF'Papal States Pius IX'CN_Add_FI -->
+<!-- Author: ChiYiuWong , Clear8Sky -->
+<!-- DateCreated: 2021/9/25 15:17:03 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Papal States: Pius IX” 。该文件在 FrontEnd 与 InGame 时载入，需 Criteria ： Active_Expansion_1 -->
+	<LocalizedText>
+
+		<!-- 模组 -->
+
+		<Replace Tag="LOC_MOD_JFD_PAPAL_STATES_PIUS_IX_DESCRIPTION" Language="en_US">
+			<Text>------------------------------------[NEWLINE]领袖名称 -- 庇护九世[NEWLINE][NEWLINE]领袖特性 -- 梵蒂冈议会[NEWLINE]完成市政“神学”后政体+1外交政策槽位；完成市政“归正会”后改为+2。任何宗教建立时您均可获得一位 [ICON_Envoy] 使者；若该宗教由您文明创立，则改为两位。[NEWLINE][NEWLINE]领袖议程 - 教皇无误[NEWLINE]对那些 [ICON_Faith] 信仰薄弱并信仰相同宗教的文明友好。不喜欢信仰不同宗教的异端文明。</Text>
+		</Replace>
+
+		<!-- 领袖 -->
+		
+		<Replace Tag="LOC_LEADER_JFD_PIUS_IX_NAME" Language="zh_Hans_CN">
+			<Text>庇护九世</Text>
+		</Replace>
+
+		<!-- 议程 -->
+
+		<Replace Tag="LOC_AGENDA_JFD_INFALLABILITY_NAME" Language="zh_Hans_CN">
+			<Text>教皇无误</Text>
+		</Replace>
+		<Replace Tag="LOC_AGENDA_JFD_INFALLABILITY_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>对那些 [ICON_Faith] 信仰薄弱并信仰相同宗教的文明友好。不喜欢信仰不同宗教的异端文明。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_JFD_PIUS_IX_LAGS_FAITH" Language="zh_Hans_CN">
+			<Text>（您在信仰方面很薄弱）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_JFD_INFALLABILITY_LAGS_FAITH" Language="zh_Hans_CN">
+			<Text>庇护九世会因你可怜的信仰为你提供咨询。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_LEADER_JFD_PIUS_IX_REASON_DIFF_RELIGION" Language="zh_Hans_CN">
+			<Text>（您不认同他的宗教）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_AGENDA_JFD_INFALLABILITY_DIFF_RELIGION" Language="zh_Hans_CN">
+			<Text>庇护九世谴责你的异端邪说。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_JFD_PIUS_IX_REASON_SAME_RELIGION" Language="zh_Hans_CN">
+			<Text>（您和他信仰相同的宗教）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_AGENDA_JFD_INFALLABILITY_SAME_RELIGION" Language="zh_Hans_CN">
+			<Text>庇护九世称赞你遵循了一个真正的信仰。</Text>
+		</Replace>
+
+		<!-- 载入 -->
+
+		<Replace Tag="LOC_LOADING_INFO_LEADER_JFD_PIUS_IX" Language="zh_Hans_CN">
+			<Text>教宗庇护九世，基督的代牧，基督教文明掌握在你手中。但假宗教和狂热民族主义的融合有可能将世界笼罩在黑暗中。以圣母教堂的世俗力量，用它来恢复上帝在地球上的国度。</Text>
+		</Replace>
+
+		<!-- 特性 -->
+
+		<Replace Tag="LOC_TRAIT_LEADER_JFD_VATICAN_COUNCILS_NAME" Language="zh_Hans_CN">
+			<Text>梵蒂冈议会</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_JFD_VATICAN_COUNCILS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>完成市政“神学”后政体+1外交政策槽位；完成市政“归正会”后改为+2。任何宗教建立时您均可获得一位 [ICON_Envoy] 使者；若该宗教由您文明创立，则改为两位。</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_JFD_VATICAN_COUNCILS_NOTIFICATION" Language="zh_Hans_CN">
+			<Text>一种新的宗教预示着关于信仰问题的新外交。[COLOR_GREEN]获得{1_Num}位 [ICON_Envoy] 使者。[ENDCOLOR]</Text>
+		</Replace>
+
+		<!-- 百科 -->
+
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PIUS_IX_TITLE" Language="zh_Hans_CN">
+			<Text>庇护九世</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PIUS_IX_SUBTITLE" Language="zh_Hans_CN">
+			<Text>教宗</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PIUS_IX_QUOTE" Language="zh_Hans_CN">
+			<Text>如果未来的教皇教授任何违背天主教信仰的东西，不要跟随他。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PIUS_IX_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>庇护九世于1792年5月13日出生于意大利的塞尼加利亚，原名若望·玛利亚·马斯塔伊·费雷提。他于1827年成为斯波莱托大主教，1832年成为伊莫拉主教。1840年被任命为红衣主教时，他已被公认为是自由主义者。在格列高利十六世去世后，由进步派和保守派主教组成的秘密会议于6月16日选择新教皇，1846 年，马斯塔伊·费雷提成为了教皇，而不是反动的路易吉·兰布鲁斯基尼。[NEWLINE][NEWLINE]新教皇通过发起急需的改革开始了他的教皇生涯——他是历史上在位最久的教皇。教皇国的财政管理和罪犯待遇有所改善，随后审查制度有所放松。1847年的政治创新规定，只有国务卿必须是牧师，而教皇及其部长的顾问委员会将被选为官员。他为罗马建立了一个市政府，其中一部分由民选代表组成。庇护九世在他自己的领土上主持这些具体的自由主义变革的同时，也鼓动了意大利的民族主义。[NEWLINE][NEWLINE]但他始终是一个改革者，从来没有成为革命者。庇护九世在1848年的革命之后很快就证明了这一点。他被迫离开罗马到两西西里王国避难。罗马共和国的建立冷却了他对意大利民族主义的热情。他首先并且始终致力于教会的福利，他一直愿意支持将民主元素引入其中，但他永远不会同意失去教皇的世俗权力。[NEWLINE][NEWLINE]1859年第二次意大利独立战争时，庇护四世试图保持中立，但他无法阻止教皇国领土被肢解。他在与胜利的意大利人的谈判中拒绝让出这些领土的任何部分，这使他失去了所有这些领土。1860年9月18日，教皇国被占领，只有法国驻军的存在保护了罗马。自由主义的意大利王国成立了，至死不渝的庇护九世仍然是最令它头疼的敌人。[NEWLINE][NEWLINE]只要法国驻军罗马，庇护九世就能够守住他的首都，并从那里分发了所有的他军火库中的精神武器，即著名的1864年错误教学大纲，一系列错误的现代主义陈述，特别否定了教皇将永远与进步或现代文明结盟的观点。1870年7月18日，梵蒂冈大公会议将教皇无误的古老教义变成了教会的教条。庇护九世将中世纪教会的极端山地权威重新强加给忠实信徒作为他的不懈任务。[NEWLINE][NEWLINE]法国于1870年普法战争爆发后从罗马撤军。意大利士兵于同年9月20日占领了这座城市，并于10月举行了全民公投，其中压倒性多数投票决定让罗马成为意大利王国的一部分。庇护九世在梵蒂冈度过了他的余生。他拒绝与新王国谈判，新王国的议会单方面宣布教皇仍然保留对梵蒂冈的主权和绝对控制权。他可以与其他国家建立外交关系，并因失去领土而得到补偿。这些安排并没有抚平他的情绪，于1878年2月7日不甘心地去世了。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PIUS_IX_CHAPTER_CAPSULE_BODY" Language="zh_Hans_CN">
+			<Text>作为一个政教合一的国家，教皇领是一个强大的宗教参与者。宗教单位坚持不懈且勤奋努力，其信仰也不会改变。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_JFD_PIUS_IX_CHAPTER_DETAILED_BODY" Language="zh_Hans_CN">
+			<Text>教皇领的宗教单位在场时间更长，更能挑战他们的敌人，这得益于他们的额外行动力和对区域控制的抵抗。庇护九世的额外使者将允许他利用他的宗教来统治城邦。他们的特色区域“教区”可保持他们极高的 [ICON_Faith] 信仰值；而有了宗座瑞士卫队，他们的安全将得到保障，免受那些试图从军事上击败自己的敌人的影响。</Text>
+		</Replace>
+
+		<!-- 外交 -->
+
+		<!-- 初次见面 -->
+		<!-- 开场白 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_JFD_PIUS_IX_ANY" Language="zh_Hans_CN">
+			<Text>欢迎，我的孩子。我是庇护九世，最高教皇和罗马主教。我祈祷您会发现您的居住地很干净。</Text>
+		</Replace>
+
+		<!-- 到附近城市的邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_JFD_PIUS_IX_ANY" Language="zh_Hans_CN">
+			<Text>我将邀请您到我们辉煌的首都——它是因对上帝的信仰而建立的。</Text>
+		</Replace>
+
+		<!-- AI接受玩家邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NEAR_INITIATOR_POSITIVE_LEADER_JFD_PIUS_IX_ANY" Language="zh_Hans_CN">
+			<Text>我很高兴您接受了。</Text>
+		</Replace>
+
+		<!-- AI邀请玩家交换首都信息 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_JFD_PIUS_IX_ANY" Language="zh_Hans_CN">
+			<Text>我建议交换有关我们首都的信息。</Text>
+		</Replace>
+
+		<!-- 问候 -->
+
+		<Replace Tag="LOC_DIPLO_GREETING_LEADER_JFD_PIUS_IX_ANY" Language="zh_Hans_CN">
+			<Text>欢迎，我的孩子。</Text>
+		</Replace>
+
+		<!-- 代表团 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_HUMAN_LEADER_JFD_PIUS_IX_ANY" Language="zh_Hans_CN">
+			<Text>我已经接受了你们的代表团，希望它能加强我们的信仰。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_HUMAN_LEADER_JFD_PIUS_IX_ANY" Language="zh_Hans_CN">
+			<Text>我已经拒绝了你们的代表团。我们不会轻易欢迎恶徒和异教徒。</Text>
+		</Replace>
+		
+		<!-- AI请求 -->
+		
+		<Replace Tag="LOC_DIPLO_DELEGATION_FROM_AI_LEADER_JFD_PIUS_IX_ANY" Language="zh_Hans_CN">
+			<Text>我已向您派遣了一位教皇使者，教会的盛况和威严也随之而来。</Text>
+		</Replace>
+
+		<!-- 开放边境 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_HUMAN_LEADER_JFD_PIUS_IX_ANY" Language="zh_Hans_CN">
+			<Text>所以我同意了。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_HUMAN_LEADER_JFD_PIUS_IX_ANY" Language="zh_Hans_CN">
+			<Text>我不能同意。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_OPEN_BORDERS_FROM_AI_LEADER_JFD_PIUS_IX_ANY" Language="zh_Hans_CN">
+			<Text>我要求您与我们互相开放边界。</Text>
+		</Replace>
+
+		<!-- 宣布友谊 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_HUMAN_LEADER_JFD_PIUS_IX_ANY" Language="zh_Hans_CN">
+			<Text>我可以同意。</Text>
+		</Replace>
+		
+		<!-- AI拒绝 -->
+		
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_HUMAN_LEADER_JFD_PIUS_IX_ANY" Language="zh_Hans_CN">
+			<Text>我不能接受。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_JFD_PIUS_IX_ANY" Language="zh_Hans_CN">
+			<Text>我愿伸出友谊之手。</Text>
+		</Replace>
+
+		<!-- 玩家接受后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_PIUS_IX_ANY" Language="zh_Hans_CN">
+			<Text>这是我欠你的人情。</Text>
+		</Replace>
+
+		<!-- 玩家拒绝后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_PIUS_IX_ANY" Language="zh_Hans_CN">
+			<Text>我很失望。</Text>
+		</Replace>
+
+		<!-- 结盟 -->
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_ALLIANCE_FROM_AI_LEADER_JFD_PIUS_IX_ANY" Language="zh_Hans_CN">
+			<Text>我寻求盟友来驱散人们心中的黑暗。你会加入我的神圣追求吗？</Text>
+		</Replace>
+
+		<!-- 赞成与警告 -->
+		<!-- AI赞成 -->
+
+		<Replace Tag="LOC_DIPLO_KUDO_EXIT_LEADER_JFD_PIUS_IX_ANY" Language="zh_Hans_CN">
+			<Text>如果您对我们缺乏信心，您的奉献是鼓舞人心的。</Text>
+		</Replace>
+
+		<!-- AI警告 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_EXIT_LEADER_JFD_PIUS_IX_ANY" Language="zh_Hans_CN">
+			<Text>你的异端邪说不会被容忍多久。</Text>
+		</Replace>
+
+		<!-- AI警告玩家离开边境 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_LEADER_JFD_PIUS_IX_ANY" Language="zh_Hans_CN">
+			<Text>我请求你让你的士兵远离我们的神圣领土。</Text>
+		</Replace>
+
+		<!-- 贸易 -->
+		<!-- AI接受交易 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_JFD_PIUS_IX_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_PIUS_IX_ANY}</Text>
+		</Replace>
+		
+		<!-- AI接受交易 -->
+		
+		<Replace Tag="LOC_DIPLO_REJECT_MAKE_DEAL_FROM_AI_LEADER_JFD_PIUS_IX_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_JFD_PIUS_IX_ANY}</Text>
+		</Replace>
+
+		<!-- 谴责 -->
+		<!-- 受到谴责回应 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_JFD_PIUS_IX_ANY" Language="zh_Hans_CN">
+			<Text>我很震惊你会如此厚颜无耻。</Text>
+		</Replace>
+
+		<!-- AI谴责玩家 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_JFD_PIUS_IX_ANY" Language="zh_Hans_CN">
+			<Text>是时候结束你的异端邪说了。我谴责你。[NEWLINE]（谴责你）</Text>
+		</Replace>
+
+		<!-- 谴责理由 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_REASON_FROM_AI_LEADER_ANY_REASON_JFD_INFALLABILITY_DIFF_RELIGION" Language="zh_Hans_CN">
+			<Text>（您不认同他的宗教）</Text>
+		</Replace>
+
+		<!-- 宣战 -->
+		<!-- 受到宣战后回应 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_JFD_PIUS_IX_ANY" Language="zh_Hans_CN">
+			<Text>你不会胜利的。</Text>
+		</Replace>
+
+		<!-- AI宣战 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_JFD_PIUS_IX_ANY" Language="zh_Hans_CN">
+			<Text>我将做必须以上帝和他神圣的母亲教会的名义所做的事情。</Text>
+		</Replace>
+
+		<!-- 求和 -->
+		<!-- AI接受求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_ACCEPT_DEAL_LEADER_JFD_PIUS_IX_ANY" Language="zh_Hans_CN">
+			<Text>我们同意和平。</Text>
+		</Replace>
+
+		<!-- AI拒绝求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_REFUSE_DEAL_LEADER_JFD_PIUS_IX_ANY" Language="zh_Hans_CN">
+			<Text>我们不能满足你愚蠢的要求。</Text>
+		</Replace>
+
+		<!-- AI求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_FROM_AI_LEADER_JFD_PIUS_IX_ANY" Language="zh_Hans_CN">
+			<Text>在这困难时期，我们祈求和平。</Text>
+		</Replace>
+
+		<!-- 击败 -->
+		<!-- AI被击败 -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_JFD_PIUS_IX_ANY" Language="zh_Hans_CN">
+			<Text>愿上帝怜悯你。</Text>
+		</Replace>
+
+		<!-- 玩家被击败（在热座模式中会显示） -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_JFD_PIUS_IX_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_DEFEAT_FROM_AI_LEADER_JFD_PIUS_IX_ANY}</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

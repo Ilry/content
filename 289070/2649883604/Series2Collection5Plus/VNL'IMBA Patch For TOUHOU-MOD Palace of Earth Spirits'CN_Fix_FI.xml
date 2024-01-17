@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'IMBA Patch For TOUHOU-MOD Palace of Earth Spirits'CN_Fix_FI -->
+<!-- Author: Clear8Sky -->
+<!-- DateCreated: 2021/7/29 22:10:20 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “IMBA Patch For TOUHOU-MOD Palace of Earth Spirits” 。该文件在 FrontEnd 与 InGame 时载入，无需任何 Criteria -->
+	<LocalizedText>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_KOMEIJI_SATORI_IMBA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>初始解锁科技“畜牧业”和“采矿业”，并可观察到 [ICON_RESOURCE_IRON] 铁、[ICON_RESOURCE_NITER] 硝石、[ICON_RESOURCE_COAL] 煤、[ICON_RESOURCE_OIL] 石油、[ICON_RESOURCE_ALUMINUM] 铝和 [ICON_RESOURCE_URANIUM] 铀资源。矿山和采石场+2 [ICON_Production] 生产力、+2 [ICON_Science] 科技值、+2 [ICON_Gold] 金币。[ICON_GreatEngineer] 大工程师使用次数额外+5。拥有特色总督“火焰猫燐”。</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_KOMEIJI_KOISHI_IMBA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>初始解锁科技“畜牧业”和“采矿业”，并可观察到 [ICON_RESOURCE_IRON] 铁、[ICON_RESOURCE_NITER] 硝石、[ICON_RESOURCE_COAL] 煤、[ICON_RESOURCE_OIL] 石油、[ICON_RESOURCE_ALUMINUM] 铝和 [ICON_RESOURCE_URANIUM] 铀资源。矿山和采石场+2 [ICON_Production] 生产力、+2 [ICON_Science] 科技值、+2 [ICON_Gold] 金币。[ICON_GreatEngineer] 大工程师使用次数额外+5。拥有特色总督“火焰猫燐”。</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_REIUJI_UTSUHO_IMBA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>初始解锁科技“畜牧业”和“采矿业”，并可观察到 [ICON_RESOURCE_IRON] 铁、[ICON_RESOURCE_NITER] 硝石、[ICON_RESOURCE_COAL] 煤、[ICON_RESOURCE_OIL] 石油、[ICON_RESOURCE_ALUMINUM] 铝和 [ICON_RESOURCE_URANIUM] 铀资源。矿山和采石场+2 [ICON_Production] 生产力、+2 [ICON_Science] 科技值、+2 [ICON_Gold] 金币。[ICON_GreatEngineer] 大工程师使用次数额外+5。拥有特色总督“火焰猫燐”。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_SATORI_OBSERVER_IMBA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>古明地觉作为领袖时的特色支援单位，可以训练或使用 [ICON_Faith] 信仰值购买。拥有4点 [ICON_Movement] 移动力，以及不受地形阻碍的超远视野和撤退能力。相邻的攻城单位+1 [ICON_Range] 射程，+5 [ICON_Bombard] 轰炸攻击力。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_OKUU_ROD_MASTER_IMBA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>灵乌路空作为领袖时的的工业时代特色攻城单位，训练成本很高。拥有4点 [ICON_Movement] 移动力，可在攻击后移动。拥有超远 [ICON_Range] 射程，并可以发射核装置与热核装置。（解锁科技“高级弹道学”和“纳米技术”后各获得+25 [ICON_Strength] 战斗力、+1 [ICON_Movement] 移动力）</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_UNIT_ABILITY_OKUU_ROD_MASTER_IMBA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>拥有超远 [ICON_Range] 射程，可在攻击后移动，并可以发射核装置与热核装置。</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_HELL_OF_BLAZING_FIRES_IMBA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>地灵殿文明的特色区域，取代工业区。相邻单元格-6魅力值，不能建造在与市中心相邻的单元格上。在灼热地狱分址工作的每位 [ICON_Citizen] 专家产出+6 [ICON_Production] 生产力。建造完成后可对相邻单元格释放文化炸弹。可解锁特色建筑。</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_KOMEIJI_RESOURSE_CENTER_IMBA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>地灵殿文明的特色建筑，仅能建造一座。初始解锁，增加一个 [ICON_Citizen] 专家槽位。+5 [ICON_Production] 生产力，且其 [ICON_Production] 生产力加成可延伸至己方所有城市。获得5个特殊奢侈品资源：[ICON_RESOURCE_MINERAL_SAKURA] 石樱。所有已改良的 [ICON_RESOURCE_IRON] 铁、[ICON_RESOURCE_NITER] 硝石、[ICON_RESOURCE_COAL] 煤、[ICON_RESOURCE_OIL] 石油、[ICON_RESOURCE_ALUMINUM] 铝和 [ICON_RESOURCE_URANIUM] 铀每回合可额外产出1点资源。</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_KOMEIJI_NUCLEAR_FURNACE_IMBA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>地灵殿文明的特色建筑，仅能建造一座，且仅能在拥有“地下资源调度中心”的灼热地狱分址建造。初始解锁，增加一个 [ICON_Citizen] 专家槽位。+6 [ICON_Production] 生产力、+6 [ICON_Science] 科技值，且其 [ICON_Production] 生产力和 [ICON_Science] 科技值加成可延伸至己方所有城市。建造完成后，所在城市可以通过特色项目获得核装置与热核装置。通过特色项目获得的核装置与热核装置无需消耗 [ICON_RESOURCE_URANIUM] 铀。</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_KOMEIJI_POWER_CENTER_IMBA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>地灵殿文明的特色建筑，仅能建造一座，且仅能在拥有“核融合炉心”的灼热地狱分址建造。初始解锁，增加一个 [ICON_Citizen] 专家槽位。+8 [ICON_Production] 生产力、+8 [ICON_Science] 科技值，且其 [ICON_Production] 生产力和 [ICON_Science] 科技值加成可延伸至己方所有城市。不消耗任何战略资源，即可为所有城市提供充足的 [ICON_Power] 电力。</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_KOISHI_MARY_PHONE_IMBA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>古明地恋作为领袖时的特色建筑，初始解锁。+5 [ICON_Gold] 金币，+1间谍容量，+4 [ICON_Culture] 文化值。此城训练的近战单位获得空降能力。</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- GS'Ski Resort Complexity'CN_Add_IG -->
+<!-- Author: ChiYiuWong , Clear8Sky -->
+<!-- DateCreated: 2021/9/26 20:59:59 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Ski Resort Complexity” 。该文件在 InGame 时载入，需 Criteria ：Active_Expansion_2 -->
+	<LocalizedText>
+		<Replace Tag="LOC_IMPROVEMENT_SKI_RESORT_DESCRIPTION_JNR_II" Language="zh_Hans_CN">
+			<Text>解锁建造者修建滑雪场的能力。[NEWLINE][NEWLINE]为所在城市提供+1 [ICON_Amenities] 宜居度。[NEWLINE]提供等同于该滑雪场 [ICON_Gold] 金币产出的 [ICON_Tourism] 旅游业绩。[NEWLINE]为相邻海滨度假区提供+1 [ICON_Gold] 金币。[NEWLINE][NEWLINE]仅能修建在山脉上，且不能与其他滑雪场相邻。无法被移除。</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

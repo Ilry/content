@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'Corrected Dialogue'CN_Add_IG -->
+<!-- Author: 邓半仙人 , Clear8Sky -->
+<!-- DateCreated: 2021/10/1 10:50:48 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Corrected Dialogue” 。该文件在 InGame 时载入，需 Criteria ：Active_Mod_CorreDiplo -->
+	<!-- 由于原模组与 Dynamic Diplomacy (Friendship Bonuses Version) 都涉及修改领袖对白文本，且前者先加载，故此处标注：该文件的 LoadOrder 需要小于 VNL'Dynamic Diplomacy (Friendship Bonuses Version)'CN_Add_IG.sql 文件 -->
+	<LocalizedText>
+		
+		<!-- 弗雷德里克·巴巴罗萨 -->
+		
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_BARBAROSSA_ANY" Language="zh_Hans_CN">
+			<Text>上帝保佑你，旅行者。我是弗雷德里克皇帝，我统治着德国和意大利的土地，也统治着勃艮第和其他许多地方。我相信你也会用武力统治。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_BARBAROSSA_ANY" Language="zh_Hans_CN">
+			<Text>你或许已经听到警告了，但你还在继续挑衅。是时候给你点教训了，就像之前和你一样的人受到的那样。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_BARBAROSSA_ANY" Language="zh_Hans_CN">
+			<Text>你要怎么打败我这个摧毁过无数敌人的人呢？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_BARBAROSSA_ANY" Language="zh_Hans_CN">
+			<Text>我用尽了对上帝的虔诚和上帝赐予我的祝福……别在意那些。是你取得了最终的胜利。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_BARBAROSSA_ANY" Language="zh_Hans_CN">
+			<Text>我用尽了对上帝的虔诚和上帝赐予我的祝福……别在意那些。是你取得了最终的胜利。</Text>
+		</Replace>
+		
+		<!-- 凯瑟琳·德·美帝奇 -->
+		
+		<Replace Tag="LOC_DIPLO_KUDO_EXIT_LEADER_CATHERINE_DE_MEDICI_ANY" Language="zh_Hans_CN">
+			<Text>看起来你的间谍到处都是啊，我的宫廷女士们会很乐意地在节日聚会上与他们交流的。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_EXIT_LEADER_CATHERINE_DE_MEDICI_ANY" Language="zh_Hans_CN">
+			<Text>你真的应该关心一下周围发生了什么。相信我，真的有太多小把戏正在上演呢。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_CATHERINE_DE_MEDICI_ANY" Language="zh_Hans_CN">
+			<Text>哈哈哈，别惊讶，你要是注意不到周围发生了什么，那你就真是个傻瓜了！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_CATHERINE_DE_MEDICI_ANY" Language="zh_Hans_CN">
+			<Text>你竟敢攻击我的领地？我开始怀疑我的占卜师到底会不会占卜了。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_CATHERINE_DE_MEDICI_ANY" Language="zh_Hans_CN">
+			<Text>我活得够久了，能看出来我已经被打败了。你继续你的征途吧。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_CATHERINE_DE_MEDICI_ANY" Language="zh_Hans_CN">
+			<Text>我活得够久了，能看出来我已经被打败了。你继续你的征途吧。</Text>
+		</Replace>
+		
+		<!-- 戈尔戈 -->
+		
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_GORGO_ANY" Language="zh_Hans_CN">
+			<Text>强者展现力量而弱者却只能默默忍受。而这就是你的下场。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_GORGO_ANY" Language="zh_Hans_CN">
+			<Text>现在我们要看看你有什么能耐了。做好准备吧！</Text>
+		</Replace>
+		
+		<!-- 哈拉尔德·哈德拉达 -->
+		
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_HARDRADA_ANY" Language="zh_Hans_CN">
+			<Text>为了索尔！为了奥丁！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_HARDRADA_ANY" Language="zh_Hans_CN">
+			<Text>当你点火之前你应该知道怎么控制它……呵呵呵呵，不！你就是那个不知道控制的人。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_HARDRADA_ANY" Language="zh_Hans_CN">
+			<Text>当你在这的时候，我们可以在瓦尔哈拉殿堂里与英灵们坐在一起，参加长宴。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_HARDRADA_ANY" Language="zh_Hans_CN">
+			<Text>当你在这的时候，我们可以在瓦尔哈拉殿堂里与英灵们坐在一起，参加长宴。</Text>
+		</Replace>
+		
+		<!-- 伯里克利 -->
+		
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_PERICLES_ANY" Language="zh_Hans_CN">
+			<Text>你好。我是雅典的伯里克利，我代表民主向你们表达敬意。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_PERICLES_ANY" Language="zh_Hans_CN">
+			<Text>这是为了更伟大的好处。你会明白的……迟早。</Text>
+		</Replace>
+		
+		<!-- 彼得 -->
+		
+		<Replace Tag="LOC_DIPLO_KUDO_EXIT_LEADER_PETER_GREAT_ANY" Language="zh_Hans_CN">
+			<Text>你的人民真让人羡慕。艺术，科学……你还想要些什么呢？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_PETER_GREAT_ANY" Language="zh_Hans_CN">
+			<Text>我宣布你是俄国、俄国盟友以及上帝的敌人。愿上帝宽恕你的灵魂。</Text>
+		</Replace>
+		
+		<!-- 菲利普二世 -->
+		
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_PHILIP_II_ANY" Language="zh_Hans_CN">
+			<Text>我是菲利普，西班牙和葡萄牙国王。但总而言之，我是唯一的真正宗教的虔诚信徒。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_EXIT_LEADER_PHILIP_II_ANY" Language="zh_Hans_CN">
+			<Text>我们都是一个有信仰的国家，你对我们的虔诚也使你倍加光荣。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_EXIT_LEADER_PHILIP_II_ANY" Language="zh_Hans_CN">
+			<Text>你没有忏悔。你真是在亵渎上帝！上帝的复仇将落在你的头上。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_PHILIP_II_ANY" Language="zh_Hans_CN">
+			<Text>你的罪已经被审判了，现在你将立马被抹除！愿上帝宽恕你的灵魂。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_PHILIP_II_ANY" Language="zh_Hans_CN">
+			<Text>太荒唐了，你在对我们宣战吗？你是忽视了我的无敌舰队的力量吗？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_PHILIP_II_ANY" Language="zh_Hans_CN">
+			<Text>我的领土……为什么啊我的主？为什么抛弃我？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_PHILIP_II_ANY" Language="zh_Hans_CN">
+			<Text>我的领土……为什么啊我的主？为什么抛弃我？</Text>
+		</Replace>
+		
+		<!-- 秦始皇 -->
+		
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_QIN_ANY" Language="zh_Hans_CN">
+			<Text>今，汝之来也。其欲观秦国山川之盛？寡人，乃秦之主也。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_EXIT_LEADER_QIN_ANY" Language="zh_Hans_CN">
+			<Text>勿犯寡人，寡人之秦，天下莫之与抗。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_EXIT_LEADER_QIN_ANY" Language="zh_Hans_CN">
+			<Text>汝观寡人，疆域之广，文物之盛，而贵国何有乎？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_QIN_ANY" Language="zh_Hans_CN">
+			<Text>战则战矣，寡人其将助成尔等！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_QIN_ANY" Language="zh_Hans_CN">
+			<Text>敢犯天威，寡人将发大军，毁汝宗庙，灭尔人民，誓无孑遗！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_QIN_ANY" Language="zh_Hans_CN">
+			<Text>寡人未曾料及，而言非也。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_QIN_ANY" Language="zh_Hans_CN">
+			<Text>寡人未曾料及，而言非也。</Text>
+		</Replace>
+		
+		<!-- 萨拉丁 -->
+		
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_SALADIN_ANY" Language="zh_Hans_CN">
+			<Text>借着唯一，强大，不败，权力永恒的真主之名，我向您发出祝福，我的朋友。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_EXIT_LEADER_SALADIN_ANY" Language="zh_Hans_CN">
+			<Text>以安拉之名愿您永享安宁，您用自己的行为传播了真诚和爱。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_EXIT_LEADER_SALADIN_ANY" Language="zh_Hans_CN">
+			<Text>我不允许你亵渎这片土地，安拉会惩罚你的亵渎和不敬。那可是一位完美、被爱着的神啊。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_SALADIN_ANY" Language="zh_Hans_CN">
+			<Text>我向你保证在你投降之前没有人可以尝到和平的滋味。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_SALADIN_ANY" Language="zh_Hans_CN">
+			<Text>我们相互使用暴力是很丢人的，互相残杀可不是君主的行为。</Text>
+		</Replace>
+		
+		<!-- 图拉真 -->
+		
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_TRAJAN_ANY" Language="zh_Hans_CN">
+			<Text>你好，陌生人。我是远在罗马的皇帝凯撒图拉真。你是谁？你的国家叫什么？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_TRAJAN_ANY" Language="zh_Hans_CN">
+			<Text>木已成舟。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_TRAJAN_ANY" Language="zh_Hans_CN">
+			<Text>你会死于你的无知，一切都会被罗马的力量所征服。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_TRAJAN_ANY" Language="zh_Hans_CN">
+			<Text>没有希望是一个人最大的安全。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_TRAJAN_ANY" Language="zh_Hans_CN">
+			<Text>没有希望是一个人最大的安全。</Text>
+		</Replace>
+		
+		<!-- 阇耶跋摩七世 -->
+		
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_JAYAVARMAN_ANY" Language="zh_Hans_CN">
+			<Text>我是阇耶跋摩七世，高棉人民允许我来领导这个国家。他们的苦难就是我的苦难。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_EXIT_LEADER_JAYAVARMAN_ANY" Language="zh_Hans_CN">
+			<Text>因为消除精神痛苦很重要，所以减轻身体疲劳也很重要。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_JAYAVARMAN_ANY" Language="zh_Hans_CN">
+			<Text>战争？然后呢？傻瓜认为命运会站在他们这边。但当你把运气用完时，你还能会怪谁呢？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_JAYAVARMAN_ANY" Language="zh_Hans_CN">
+			<Text>您的举动表明了您对战争的狼子野心，高棉人民有义务帮助你一把。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_JAYAVARMAN_ANY" Language="zh_Hans_CN">
+			<Text>失败时，人变得谦卑。我愿你能把所有人变得谦卑。</Text>
+		</Replace>
+		
+		<!-- 劳瑞尔 -->
+		
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_LAURIER_ANY" Language="zh_Hans_CN">
+			<Text>为了应对迄今为止你们与加拿大之间被定义为无情的恶性事件，我们除了战争别无选择。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_LAURIER_ANY" Language="zh_Hans_CN">
+			<Text>寻求与你达成协议看来是不太可能的。但我永远不会后悔保卫我的人民。</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

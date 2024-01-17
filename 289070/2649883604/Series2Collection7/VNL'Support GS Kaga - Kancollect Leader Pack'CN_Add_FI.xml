@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'Support GS Kaga - Kancollect Leader Pack'CN_Add_FI -->
+<!-- Author: Clear8Sky -->
+<!-- DateCreated: 2021/8/6 22:22:17 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “[支持G&S] 加贺 - Kancollect Leader Kaga Pack” 。该文件在 FrontEnd 与 InGame 时载入，无需任何 Criteria -->
+	<LocalizedText>
+		<Replace Tag="LOC_TRAIT_LEADER_KAGAWIFE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>建造学院+100% [ICON_Production] 生产力。[NEWLINE]所有城市的 [ICON_Science] 科技值产出+25%。[NEWLINE]每次进入新时代获得一名特殊伟人单位——加贺老师。</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_UNIT_CV_KAGA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>加贺作为领袖时的现代特色海军运输船，取代航空母舰。由科技“钢材”解锁。空中单位容量为4。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_CV_KAGA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>{LOC_TRAIT_LEADER_UNIT_CV_KAGA_DESCRIPTION}</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_KAGA_REASON_ANY" Language="zh_Hans_CN">
+			<Text>（您不是一个好战者）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_LEADER_KAGA_REASON_ANY" Language="zh_Hans_CN">
+			<Text>（您是一个好战者）</Text>
+		</Replace>
+		<Replace Tag="LOC_GREATPERSON_KAGA_SENSEI_ACTIVE" Language="zh_Hans_CN">
+			<Text>立即完成一个随机科技的研究，为一个随机市政启动 [ICON_CivicBoosted] 鼓舞时刻。本文明所有图书馆额外提供+1 [ICON_Science] 科技值和 [ICON_Culture] 文化值。</Text>
+		</Replace>
+		<Replace Tag="LOC_KAGA_SENSEI_GRANT_ONE_TECH" Language="zh_Hans_CN">
+			<Text>{LOC_GREATPERSON_KAGA_SENSEI_ACTIVE}</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

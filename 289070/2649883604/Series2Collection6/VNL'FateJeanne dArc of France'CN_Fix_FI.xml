@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'FateJeanne dArc of France'CN_Fix_FI -->
+<!-- Author: Clear8Sky -->
+<!-- DateCreated: 2021/8/3 17:50:32 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “[命运]贞德领导的法国 (First Version)” 。该文件在 FrontEnd 与 InGame 时载入，无需任何 Criteria -->
+	<LocalizedText>
+		<Replace Tag="LOC_TRAIT_LEADER_LUMINOSITE_DESCRIPTION" Language="zh_Hans_CN" >
+			<Text>与宗教单位处于同一单元格的战斗单位防御时+7 [ICON_Strength] 战斗力，防御远程攻击时额外+7 [ICON_Strength] 战斗力。[NEWLINE]城市建造圣地与军营+100% [ICON_Production] 生产力，且与这两个区域相邻的单元格产出+2 [ICON_Faith] 信仰值、+1 [ICON_Culture] 文化值。[NEWLINE]可用 [ICON_Faith] 信仰值购买近战和重骑兵单位。</Text>
+		</Replace>	
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_JEANNEENT_ANY" Language="zh_Hans_CN" >
+			<Text>主永远不会原谅你的罪行！[NEWLINE]（谴责你）</Text>
+		</Replace>
+		<Replace Tag="LOC_LUMINOSITE_DEFENCE_MDOFIER_DESCRIPTION" Language="zh_Hans_CN" >
+			<Text>+7 [ICON_Strength] 战斗力 来自于防御时（宝具『吾主在此』）</Text>
+		</Replace>
+		<Replace Tag="LOC_LUMINOSITE_DISTANCE_DEFENCE_MDOFIER_DESCRIPTION" Language="zh_Hans_CN" >
+			<Text>+7 [ICON_Strength] 战斗力 来自于防御远程攻击时（宝具『吾主在此』）</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_UNIT_FRANCE_PALADIN_DESCRIPTION" Language="zh_Hans_CN" >
+			<Text>贞德作为领袖时的中世纪特色重骑兵单位，取代骑士。完成市政“王权神授”解锁，消耗 [ICON_Production] 生产力略多（200）。[NEWLINE]击杀敌方单位可产出等同于其 [ICON_Strength] 战斗力50%的 [ICON_Faith] 信仰值。[NEWLINE]征服城市后，其将自动皈依您文明的主流 [ICON_Religion] 宗教。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_FRANCE_PALADIN_DESCRIPTION" Language="zh_Hans_CN" >
+			<Text>{LOC_TRAIT_LEADER_UNIT_FRANCE_PALADIN_DESCRIPTION}</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_FRANCE_PALADIN_DESCRIPTION" Language="zh_Hans_CN" >
+			<Text>击杀敌方单位时可产出等同于其 [ICON_Strength] 战斗力50%的 [ICON_Faith] 信仰值。[NEWLINE]征服城市后，其将自动皈依您文明的主流 [ICON_Religion] 宗教。</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

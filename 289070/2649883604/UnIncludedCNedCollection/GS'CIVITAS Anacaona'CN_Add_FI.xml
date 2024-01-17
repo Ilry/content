@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- GS'CIVITAS Anacaona'CN_Add_FI -->
+<!-- Author: LouisOdin , 酒酿小眠子 , Clear8Sky -->
+<!-- DateCreated: 2021/9/27 12:23:40 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “CIVITAS Anacaona” 。该文件在 FrontEnd 与 InGame 时载入，需 Criteria ： Active_Expansion_2 -->
+	<LocalizedText>
+
+		<!-- 领袖 -->
+
+		<Replace Tag="LOC_LEADER_CVS_ANACAONA_NAME" Language="zh_Hans_CN">
+			<Text>阿纳卡纳</Text>
+		</Replace>
+
+		<!-- 领袖特性 -->
+
+		<Replace Tag="LOC_TRAIT_LEADER_CVS_ANACAONA_UA_NAME" Language="zh_Hans_CN">
+			<Text>黄金之花</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_CVS_ANACAONA_UA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>赞助 [ICON_GreatPerson] 伟人消耗的 [ICON_Faith] 信仰值减少25%。可从每位派遣至城邦的 [ICON_Envoy] 使者中获得+1 [ICON_Faith] 信仰值。建造者可修建特色改良设施“小耕丘”。</Text>
+		</Replace>
+
+		<!-- 特色改良设施 -->
+
+		<Replace Tag="LOC_IMPROVEMENT_CVS_ANACAONA_UI_NAME" Language="zh_Hans_CN">
+			<Text>小耕丘</Text>
+		</Replace>
+		<Replace Tag="LOC_IMPROVEMENT_CVS_ANACAONA_UI_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>解锁建造者修建泰诺特色改良设施“小耕丘”的能力。[NEWLINE][NEWLINE]单元格的基础产出翻倍，且额外+1 [ICON_Culture] 文化值。随着科技和市政的发展，其将产出更多 [ICON_Culture] 文化值。必须修建在与奢侈品或加成资源相邻的单元格上，无法修建在丘陵、沙漠或雪地上。</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_ADJ_CVS_ANACAONA_UI_GOLD_RESOURCES" Language="zh_Hans_CN">
+			<Text>+{1_num} [ICON_Gold] 金币 来自相邻 奢侈品资源</Text>
+		</Replace>
+		<Replace Tag="LOC_ADJ_CVS_ANACAONA_UI_CULTURE_RESOURCES" Language="zh_Hans_CN">
+			<Text>+{1_num} [ICON_Culture] 文化值 来自相邻 加成资源</Text>
+		</Replace>
+
+		<!-- 领袖议程 -->
+
+		<Replace Tag="LOC_AGENDA_CVS_ANACAONA_NAME" Language="zh_Hans_CN">
+			<Text>友谊盟誓</Text>
+		</Replace>
+		<Replace Tag="LOC_AGENDA_CVS_ANACAONA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>努力维护和平，并尊重同样这样做的其他文明。非常不喜欢攻击城邦的文明。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_CVS_ANACAONA_REASON_ANY" Language="zh_Hans_CN">
+			<Text>（您正在维护和平）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_CVS_ANACAONA_HAPPY" Language="zh_Hans_CN">
+			<Text>阿纳卡纳对你正在维护和平感到高兴。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_LEADER_CVS_ANACAONA_REASON_ANY" Language="zh_Hans_CN">
+			<Text>（您曾在她的领土上交战或袭击过一座城邦）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_CVS_ANACAONA_UNHAPPY" Language="zh_Hans_CN">
+			<Text>阿纳卡纳因你对城邦的侵略而感到心烦。</Text>
+		</Replace>
+
+		<!-- 载入 -->
+
+		<Replace Tag="LOC_LOADING_INFO_LEADER_CVS_ANACAONA" Language="zh_Hans_CN">
+			<Text>最睿智的统治者直到战争不过是外交的失败。阿纳卡纳，泰诺高贵的酋长。正是您的人民对这片土地的了解使他们能够享用大地母亲馈赠的果实，不过更宝贵的礼物来源于与小势力的结盟。用阿瑞托舞蹈的热情吸引他们的注意吧！请记住保持善良。</Text>
+		</Replace>
+
+		<!-- 外交 -->
+
+		<!-- 初次见面 -->
+		<!-- 开场白 -->
+		
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_CVS_ANACAONA_ANY" Language="zh_Hans_CN">
+			<Text>你好，旅行者。我是阿纳卡纳，泰诺人的酋长。你来自哪个国家？</Text>
+		</Replace>
+
+		<!-- 到附近城市的邀请 -->
+		
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_CVS_ANACAONA_ANY" Language="zh_Hans_CN">
+			<Text>泰诺人的待客习俗是举行盛大的宴会，并表演阿瑞托舞蹈。我想邀请你加入我们的晚宴。</Text>
+		</Replace>
+
+		<!-- AI接受玩家邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NEAR_INITIATOR_POSITIVE_LEADER_CVS_ANACAONA_ANY" Language="zh_Hans_CN">
+			<Text>我很荣幸，谢谢。</Text>
+		</Replace>
+
+		<!-- AI邀请玩家交换首都信息 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_CVS_ANACAONA_ANY" Language="zh_Hans_CN">
+			<Text>让我们享受彼此的热情款待并交换我们首都的信息。你觉得呢？</Text>
+		</Replace>
+
+		<!-- 问候 -->
+
+		<Replace Tag="LOC_DIPLO_GREETING_LEADER_CVS_ANACAONA_ANY" Language="zh_Hans_CN">
+			<Text>你好，我的朋友。有什么我能为你做的吗？</Text>
+		</Replace>
+
+		<!-- 代表团 -->
+		<!-- AI接受 -->
+		
+		<Replace Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_HUMAN_LEADER_CVS_ANACAONA_ANY" Language="zh_Hans_CN">
+			<Text>我很乐意迎接你的使团。我将确保他们在这里受到欢迎并被铭记。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_HUMAN_LEADER_CVS_ANACAONA_ANY" Language="zh_Hans_CN">
+			<Text>很抱歉，我拒绝。先让我们增进一下对彼此的了解吧。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DELEGATION_FROM_AI_LEADER_CVS_ANACAONA_ANY" Language="zh_Hans_CN">
+			<Text>我送了木薯面包和烟草作为礼物供你享用。我相信我的使团也会受到相同的尊重。</Text>
+		</Replace>
+
+		<!-- 开放边境 -->
+		<!-- AI同意 -->
+		
+		<Replace Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_HUMAN_LEADER_CVS_ANACAONA_ANY" Language="zh_Hans_CN">
+			<Text>当然，只要你愿意请随时访问我们。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_HUMAN_LEADER_CVS_ANACAONA_ANY" Language="zh_Hans_CN">
+			<Text>为了我的子民的安全考虑，我必须拒绝。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_OPEN_BORDERS_FROM_AI_LEADER_CVS_ANACAONA_ANY" Language="zh_Hans_CN">
+			<Text>如果我们固守边界，要如何互相学习呢？让我们彼此共享开放的边界吧。</Text>
+		</Replace>
+
+		<!-- 宣布友谊 -->
+		<!-- AI接受 -->
+		
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_HUMAN_LEADER_CVS_ANACAONA_ANY" Language="zh_Hans_CN">
+			<Text>当然。我的朋友即是我的子民的友人。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_HUMAN_LEADER_CVS_ANACAONA_ANY" Language="zh_Hans_CN">
+			<Text>现在正式宣布友谊似乎为时过早。再稍等一会儿。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_CVS_ANACAONA_ANY" Language="zh_Hans_CN">
+			<Text>我赞赏你管理人民的方式。请允许我伸出友谊之手。</Text>
+		</Replace>
+
+		<!-- 玩家接受后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_CVS_ANACAONA_ANY" Language="zh_Hans_CN">
+			<Text>谢谢，我的朋友。</Text>
+		</Replace>
+
+		<!-- 玩家拒绝后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_CVS_ANACAONA_ANY" Language="zh_Hans_CN">
+			<Text>没事，别在意。</Text>
+		</Replace>
+
+		<!-- 结盟 -->
+		<!-- AI请求 -->
+		
+		<Replace Tag="LOC_DIPLO_MAKE_ALLIANCE_FROM_AI_LEADER_CVS_ANACAONA_ANY" Language="zh_Hans_CN">
+			<Text>你已经成为这个世界上我最信任的人之一。你对建立我们国家间的同盟有什么想法？</Text>
+		</Replace>
+
+		<!-- 赞成与警告 -->
+		<!-- AI赞成 -->
+		
+		<Replace Tag="LOC_DIPLO_KUDO_EXIT_LEADER_CVS_ANACAONA_ANY" Language="zh_Hans_CN">
+			<Text>你应该为自己的成就感到自豪。我看到了对你和你的子民而言很棒的事情。</Text>
+		</Replace>
+
+		<!-- AI警告 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_EXIT_LEADER_CVS_ANACAONA_ANY" Language="zh_Hans_CN">
+			<Text>他人出于什么目的才必须忍受你的鲁莽行为？请重新考虑一下你所走的路。</Text>
+		</Replace>
+
+		<!-- AI警告玩家离开边境 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_LEADER_CVS_ANACAONA_ANY" Language="zh_Hans_CN">
+			<Text>我们是一个热情好客且友善的国家，但我们不会忍受无谓的威胁。请撤出你在我国境线上的军队。</Text>
+		</Replace>
+
+		<!-- 贸易 -->
+		<!-- AI接受交易 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_CVS_ANACAONA_ANY" Language="zh_Hans_CN">
+			<Text>我想我们可以对此达成共识。</Text>
+		</Replace>
+
+		<!-- AI拒绝交易 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_MAKE_DEAL_FROM_AI_LEADER_CVS_ANACAONA_ANY" Language="zh_Hans_CN">
+			<Text>真遗憾。</Text>
+		</Replace>
+
+		<!-- 谴责 -->
+		<!-- 受到谴责回应 -->
+		
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_CVS_ANACAONA_ANY" Language="zh_Hans_CN">
+			<Text>我不知道你这么做的原因，但我知道我并不必要去关心这个原因。</Text>
+		</Replace>
+
+		<!-- AI谴责玩家 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_CVS_ANACAONA_ANY" Language="zh_Hans_CN">
+			<Text>如果你马上停止愚蠢的行径，或许你能更被这个世界所欢迎。[NEWLINE]（谴责你）</Text>
+		</Replace>
+
+		<!-- 宣战 -->
+		<!-- 受到宣战后回应 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_CVS_ANACAONA_ANY" Language="zh_Hans_CN">
+			<Text>很遗憾事情已经到了这个地步。但我一定不会不战而败。</Text>
+		</Replace>
+
+		<!-- AI宣战 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_CVS_ANACAONA_ANY" Language="zh_Hans_CN">
+			<Text>想想你是多么糟糕恶劣以至于让泰诺人民对你宣战。这虽然是罕见的时刻却又是必要的。</Text>
+		</Replace>
+
+		<!-- 求和 -->
+		<!-- AI接受求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_ACCEPT_DEAL_LEADER_CVS_ANACAONA_ANY" Language="zh_Hans_CN">
+			<Text>是的，我认为这符合我们双方的利益。</Text>
+		</Replace>
+
+		<!-- AI拒绝求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_REFUSE_DEAL_LEADER_CVS_ANACAONA_ANY" Language="zh_Hans_CN">
+			<Text>不。世界已不能再容忍你的行为，你必须被阻止。</Text>
+		</Replace>
+
+		<!-- AI求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_FROM_AI_LEADER_CVS_ANACAONA_ANY" Language="zh_Hans_CN">
+			<Text>难道你看不见生命中除了痛苦和苦难之外的其他东西吗？为了我们两国人民的利益，让我们宣布停战。</Text>
+		</Replace>
+
+		<!-- 击败 -->
+		<!-- AI被击败 -->
+		
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_CVS_ANACAONA_ANY" Language="zh_Hans_CN">
+			<Text>很遗憾诸神没有回应我的呼唤。虽然你能像飓风一样夺走许多人的生命，但请注意，有时即便是蝴蝶也能改变风的动向。你会遇到你的报应。</Text>
+		</Replace>
+
+		<!-- 玩家被击败（在热座模式中会显示） -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_CVS_ANACAONA_ANY" Language="zh_Hans_CN">
+			<Text>很遗憾诸神没有回应我的呼唤。虽然你能像飓风一样夺走许多人的生命，但请注意，有时即便是蝴蝶也能改变风的动向。你会遇到你的报应。</Text>
+		</Replace>
+
+		<!-- 引言与百科 -->
+
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_CVS_ANACAONA_QUOTE" Language="zh_Hans_CN">
+			<Text>所追求的不是吸引眼球的事物，而是能捕获人心的事物。</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_CVS_ANACAONA_TITLE" Language="zh_Hans_CN">
+			<Text>阿纳卡纳</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_CVS_ANACAONA_SUBTITLE" Language="zh_Hans_CN">
+			<Text>泰诺的酋长</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_CVS_ANACAONA_CHAPTER_CAPSULE_BODY" Language="zh_Hans_CN">
+			<Text>可追求多种胜利方式，而与城邦的外交则是阿纳卡纳成功的关键。</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_CVS_ANACAONA_CHAPTER_DETAILED_BODY" Language="zh_Hans_CN">
+			<Text>对局初始的泰诺文明可通过快速训练“马卡纳”，来尽可能多地与城邦会面。进行特色项目“阿瑞托仪式”可让他们获得尽可能多的 [ICON_Envoy] 使者，从而获得双倍的城邦加成。在阿纳卡纳的领导下，泰诺拥有得天独厚的机会，他们可以通过修建特色改良设施“小耕丘”，将地形产出翻倍，从而使城市发展得更快。又因阿纳卡纳赞助 [ICON_GreatPerson] 伟人消耗的 [ICON_Faith] 信仰值减少25%，因而该项优势可适用于追求任何胜利方式。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_CVS_ANACAONA_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>阿纳卡纳是出生于酋长家庭的泰诺女酋长，是雅拉瓜酋长博希奇奥的妹妹。她的丈夫卡纳博是附近马瓜纳领地的酋长。当西班牙人于1492年第一次抵达时，她的兄长和她的丈夫是统治伊斯帕尼奥拉岛（现在被称为海地和多米尼加共和国）的五位地位最高的酋长中的两位。同时阿纳卡纳作为一名阿瑞托仪式中的叙事歌曲创作者，也被人民所纪念。她在海地与多米尼加共和国所交织的历史中永垂不朽。许多海地人声称她是海地早期历史上的重要人物，也是他们国家的原始创始人。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_CVS_ANACAONA_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>阿纳卡纳出生于马瓜纳（靠近现在海地的城镇莱奥甘），1474年，当时她的兄长是马瓜纳的酋长。1496年底，哥伦布访问伊斯帕尼奥拉岛的雅拉瓜领地期间，阿纳卡纳和她的兄长博希奇奥作为平等的谈判者出现。根据巴图罗姆·德·拉斯卡萨斯的描述，哥伦布成功地通过谈判为他麾下的西班牙定居者提供了包含食物和棉花在内的贡品。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_CVS_ANACAONA_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>这次访问被描述为是在友好的气氛中进行的。几个月后，哥伦布乘着轻快帆船抵达来这里收集贡品。阿纳卡纳和博希奇奥也曾作为哥伦布的宾客在帆船上短暂航行（在今天的太子港附近的戈纳夫湾）。起初当地人和殖民者之间的关系是亲切的，而当他们意识到自己的土地实际上正在被掠夺，而他们也正在被奴役时已经为时已晚。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_CVS_ANACAONA_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>阿纳卡纳的崇高地位可能源于泰诺社会中对母系血脉的重视。泰诺酋长通常将遗产传给他们姊妹的长子。如果他们的姊妹没有孩子，他们就会从兄弟的孩子中进行选择，当他们的兄弟也没有孩子时，他们才会从自己的子女中进行选择。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_CVS_ANACAONA_CHAPTER_HISTORY_PARA_5" Language="zh_Hans_CN">
+			<Text>阿纳卡纳在她哥哥死后成为了雅拉瓜的首领。她的丈夫卡纳博由于被怀疑组织了对拉纳维达（位于伊斯帕尼奥拉岛西北部的一个西班牙定居点）的袭击，被阿隆索·德·奥赫达俘虏并运往西班牙，在途中死于海难，正如许多其他的泰诺领导者也在远离他们家乡的西班牙船只上死亡。饱受入侵者虐待的泰诺人发动起义，并与殖民者进行了长期的战争。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_CVS_ANACAONA_CHAPTER_HISTORY_PARA_6" Language="zh_Hans_CN">
+			<Text>1503年，在与包括阿纳卡纳在内的共计80名酋长的会议中，西班牙总督尼古拉斯·德·奥万多下令火烧教堂，将他们活活烧死。阿纳卡纳和她的泰诺贵族们也被捕—他们被指控共谋反抗西班牙殖民者的占领并被处决。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_CVS_ANACAONA_CHAPTER_HISTORY_PARA_7" Language="zh_Hans_CN">
+			<Text>在她被处决之前，阿纳卡纳被给予宽大处理的机会，只要她愿意成为一名西班牙人的侍妾，这种情况在那个时代很常见。然而这位加勒比土著女性领袖与她的泰诺同胞团结一致，选择被处决而非与她的西班牙敌人勾结，她的拒绝也塑造了她的传奇。直到被公开暴力处决前，阿纳卡纳始终保持独立和对殖民者的反抗。由于阿纳卡纳在其他人被枪决时拒绝了西班牙入侵者的性提议，她被公开处以绞刑。当时她只有29岁。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_IMPROVEMENTS_PAGE_IMPROVEMENT_CVS_ANACAONA_UI_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>在波多黎各、伊斯帕尼奥拉岛和牙买加等比较发到的岛屿上，泰诺人主要依赖农业（耕种和其他工作）。而种植块根作物（例如泰诺人的主食木薯）的田地，是经过堆土的改良的。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_IMPROVEMENTS_PAGE_IMPROVEMENT_CVS_ANACAONA_UI_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>这种改良过的土丘可以改善土壤的排水和肥力，并减缓侵蚀，使得作物能够在地下储存更长时间。而不太重要的作物的耕地，比如玉米地，就只是通过简单地刀耕火种方式进行清理。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_IMPROVEMENTS_PAGE_IMPROVEMENT_CVS_ANACAONA_UI_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>通常情况下，堆土种植丘高3英尺，周长9英尺，排列成行。主要种植作物是木薯，是一种木本灌木，因其可以被食用且含有淀粉的块根而被种植。泰诺人使用一种木质锄头进行木薯种植，妇女们通过挤压榨取有毒汁液对有毒的木薯品种进行加工，然后她们会将木薯根磨成面粉来烤制面包。此外，甜薯是第二重要的块根作物。</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

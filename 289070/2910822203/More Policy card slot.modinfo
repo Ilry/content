@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mod id="e41090f0-189a-4f06-8667-45174e38e5f2" version="1">
+  <Properties>
+    <Name>更多通用政策槽</Name>
+    <Description>在研究法典市政后增加5个通用政策槽位,附带五张白板填位卡。</Description>
+    <Created>1672595772</Created>
+    <Teaser>更多通用政策槽</Teaser>
+    <Authors>C.W.</Authors>
+    <CompatibleVersions>1.2,2.0</CompatibleVersions>
+  </Properties>
+  <Dependencies>
+    <Mod id="1B28771A-C749-434B-9053-D1380C553DE9" title="Expansion: Rise and Fall" />
+    <Mod id="4873eb62-8ccc-4574-b784-dda455e74e68" title="Expansion: Gathering Storm" />
+  </Dependencies>
+  <InGameActions>
+    <UpdateDatabase id="add_Policy_card_slot">
+      <File>add_plot.sql</File>
+      <File>add_null_card.sql</File>
+    </UpdateDatabase>
+  </InGameActions>
+  <Files>
+    <File>add_null_card.sql</File>
+    <File>add_plot.sql</File>
+  </Files>
+</Mod>

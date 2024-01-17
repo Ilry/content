@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- GameData -->
+<!-- Author: Sakemy -->
+<!-- DateCreated: 3/27/2018 8:17:21 PM -->
+<GameData>
+	<Building_GreatWorks>
+		<Update>
+			<Where BuildingType="BUILDING_AMPHITHEATER"/>
+			<Set NumSlots="4"/>
+		</Update>
+	</Building_GreatWorks>
+</GameData>

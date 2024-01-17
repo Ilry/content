@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- GS'CIVITAS TaiAno'CN_Add_FI -->
+<!-- Author: 酒酿小眠子 , Clear8Sky -->
+<!-- DateCreated: 2021/9/20 16:58:36 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “CIVITAS TaiÂ­no” 。该文件在 FrontEnd 与 InGame 时载入，需 Criteria ：Active_Expansion_2 -->
+	<LocalizedText>
+
+		<!-- 文明 -->
+
+		<Replace Tag="LOC_CIVILIZATION_CVS_TAINO_NAME" Language="zh_Hans_CN">
+			<Text>泰诺</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVILIZATION_CVS_TAINO_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>泰诺文明</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVILIZATION_CVS_TAINO_ADJECTIVE" Language="zh_Hans_CN">
+			<Text>泰诺的</Text>
+		</Replace>
+
+		<!-- 文明特性 -->
+		
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_CVS_TAINO_UA_NAME" Language="zh_Hans_CN">
+			<Text>友谊盟誓</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_CVS_TAINO_UA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>成为宗主国时，下辖不同种类城邦提供的相应加成翻倍。</Text>
+		</Replace>
+
+		<!-- 特色单位 -->
+
+		<Replace Tag="LOC_UNIT_CVS_TAINO_UU_NAME" Language="zh_Hans_CN">
+			<Text>马卡纳</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_CVS_TAINO_UU_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>泰诺特色侦察单位，取代勇士，但仍拥有侦察单位的 [ICON_Promotion] 强化路线。击杀敌方单位可产出等同于其 [ICON_Strength] 战斗力50%的 [ICON_Faith] 信仰值。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_CVS_TAINO_UU_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>击杀敌方单位可产出等同于其 [ICON_Strength] 战斗力50%的 [ICON_Faith] 信仰值。</Text>
+		</Replace>
+
+		<!-- 特色设施 -->
+		
+		<Replace Tag="LOC_DISTRICT_CVS_TAINO_UI_NAME" Language="zh_Hans_CN">
+			<Text>巴带依</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_CVS_TAINO_UI_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>泰诺文明特色区域，取代娱乐中心。该区域内的建筑可提供+1宜居度。允许所在城市进行特色项目“阿瑞托仪式”：项目进行时每回合+1 [ICON_InfluencePerTurn] 影响力点数，项目完成时可奖励 [ICON_GreatWriter] 大作家、[ICON_GreatArtist] 大艺术家、[ICON_GreatMusician] 大音乐家点数。</Text>
+		</Replace>
+
+		<!-- 特色项目与建筑 -->
+		
+		<Replace Tag="LOC_PROJECT_CVS_TAINO_UP_NAME" Language="zh_Hans_CN">
+			<Text>阿瑞托仪式</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CVS_TAINO_UP_SHORTNAME" Language="zh_Hans_CN">
+			<Text>阿瑞托仪式</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CVS_TAINO_UP_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>泰诺特色项目。项目进行时，所在城市可获得等同于其 [ICON_Production] 生产力产出15%的 [ICON_Faith] 信仰值产出，且每回合+1 [ICON_InfluencePerTurn] 影响力点数。项目完成时，奖励 [ICON_GreatWriter] 大作家、[ICON_GreatArtist] 大艺术家、[ICON_GreatMusician] 大音乐家点数。</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_BUILDING_CVS_TAINO_UP_DUMMY_NAME" Language="zh_Hans_CN">
+			<Text>阿瑞托仪式</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_CVS_TAINO_UP_DUMMY_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>阿瑞托仪式在此城开始了。</Text>
+		</Replace>
+
+		<!-- 山脉名称 -->
+		
+		<Replace Tag="LOC_NAMED_MOUNTAIN_GUANIGUANICO" Language="zh_Hans_CN">
+			<Text>瓜尼瓜尼可山脉</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_MOUNTAIN_BAORUCO" Language="zh_Hans_CN">
+			<Text>巴奥罗可山</Text>
+		</Replace>
+
+		<!-- 江河名称 -->
+			
+		<Replace Tag="LOC_NAMED_RIVER_ARTIBONITE" Language="zh_Hans_CN">
+			<Text>阿蒂博尼特河</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_THOA" Language="zh_Hans_CN">
+			<Text>索阿河</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_YAQUE" Language="zh_Hans_CN">
+			<Text>雅格江</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_YUNA" Language="zh_Hans_CN">
+			<Text>尤纳河</Text>
+		</Replace>
+		<Replace Tag="LOC_NAMED_RIVER_OZAMA" Language="zh_Hans_CN">
+			<Text>奥扎马河</Text>
+		</Replace>
+
+		<!-- 城市 -->
+		
+		<Replace Tag="LOC_CITY_NAME_YAGUANA" Language="zh_Hans_CN">
+			<Text>雅瓜纳</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_GUARICO" Language="zh_Hans_CN">
+			<Text>瓜利可</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_MAGUA" Language="zh_Hans_CN">
+			<Text>马瓜</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_MAGUANA" Language="zh_Hans_CN">
+			<Text>马瓜纳</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_HIGUEY" Language="zh_Hans_CN">
+			<Text>格魏</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_GUAYNIA" Language="zh_Hans_CN">
+			<Text>峣可</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_GUAYNIA" Language="zh_Hans_CN">
+			<Text>瓜尼亚</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_TOA" Language="zh_Hans_CN">
+			<Text>托阿</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ARASIBO" Language="zh_Hans_CN">
+			<Text>阿瑞希伯</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_AYMAMON" Language="zh_Hans_CN">
+			<Text>阿玛摩</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_CAYNIABON" Language="zh_Hans_CN">
+			<Text>坎尼亚伯恩</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_TURABO" Language="zh_Hans_CN">
+			<Text>杜拉博</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_SEBUCO" Language="zh_Hans_CN">
+			<Text>色布可</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_GUAYANEY" Language="zh_Hans_CN">
+			<Text>瓜亚纳</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_GUAYAMA" Language="zh_Hans_CN">
+			<Text>瓜亚玛</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_OTOAO" Language="zh_Hans_CN">
+			<Text>奥托奥</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_MACAO" Language="zh_Hans_CN">
+			<Text>玛卡奥</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_GUAJATACA" Language="zh_Hans_CN">
+			<Text>瓜加塔卡</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BAYAMON" Language="zh_Hans_CN">
+			<Text>巴亚盟</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_GUAYNABO" Language="zh_Hans_CN">
+			<Text>瓜依娜柏</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_YAGUECAS" Language="zh_Hans_CN">
+			<Text>亚古额卡斯</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_DAGUAO" Language="zh_Hans_CN">
+			<Text>达瓜奥</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JAYMANIO" Language="zh_Hans_CN">
+			<Text>加美尼奥</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_COABEY" Language="zh_Hans_CN">
+			<Text>考阿贝</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_CAYEY" Language="zh_Hans_CN">
+			<Text>卡耶伊</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_JATIBONICU" Language="zh_Hans_CN">
+			<Text>贾提伯纳福</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BIEKE" Language="zh_Hans_CN">
+			<Text>毕克</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ABEYNO" Language="zh_Hans_CN">
+			<Text>阿贝依诺</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_HOROMICO" Language="zh_Hans_CN">
+			<Text>赫罗米可</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_MAYGUEZ" Language="zh_Hans_CN">
+			<Text>玛雅格维兹</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BARACOA" Language="zh_Hans_CN">
+			<Text>巴拉瓜阿</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_CAMAGUEY" Language="zh_Hans_CN">
+			<Text>坎马格依</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_YABUCOA" Language="zh_Hans_CN">
+			<Text>亚布寇阿</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_HAYUYA" Language="zh_Hans_CN">
+			<Text>哈羽雅</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_CAMUY" Language="zh_Hans_CN">
+			<Text>卡慕依</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_BAYAMO" Language="zh_Hans_CN">
+			<Text>巴亚莫</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_AMONA" Language="zh_Hans_CN">
+			<Text>阿莫纳</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_GONAIBO" Language="zh_Hans_CN">
+			<Text>高纳伯</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_GUANTANAMO" Language="zh_Hans_CN">
+			<Text>广塔纳摩</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_ABAWANA" Language="zh_Hans_CN">
+			<Text>阿巴瓦纳</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_GUANABO" Language="zh_Hans_CN">
+			<Text>瓜纳博</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_YAQUIMEL" Language="zh_Hans_CN">
+			<Text>亚坤梅尔</Text>
+		</Replace>
+
+		<!-- 公民 -->
+		
+		<Replace Tag="LOC_CITIZEN_CVS_TAINO_MALE_1" Language="zh_Hans_CN">
+			<Text>阿玛尤</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_CVS_TAINO_MALE_2" Language="zh_Hans_CN">
+			<Text>阿玛可</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_CVS_TAINO_MALE_3" Language="zh_Hans_CN">
+			<Text>可梅里奥</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_CVS_TAINO_MALE_4" Language="zh_Hans_CN">
+			<Text>卡加亚</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_CVS_TAINO_MALE_5" Language="zh_Hans_CN">
+			<Text>凯蛮</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_CVS_TAINO_MALE_6" Language="zh_Hans_CN">
+			<Text>卡卡塔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_CVS_TAINO_MALE_7" Language="zh_Hans_CN">
+			<Text>古依</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_CVS_TAINO_MALE_8" Language="zh_Hans_CN">
+			<Text>卡拉雅</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_CVS_TAINO_MALE_9" Language="zh_Hans_CN">
+			<Text>阿坎欧蕾克斯</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_CVS_TAINO_MALE_10" Language="zh_Hans_CN">
+			<Text>玛加瓜</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_CVS_TAINO_FEMALE_1" Language="zh_Hans_CN">
+			<Text>阿纳妮</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_CVS_TAINO_FEMALE_2" Language="zh_Hans_CN">
+			<Text>瓜玛</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_CVS_TAINO_FEMALE_3" Language="zh_Hans_CN">
+			<Text>莉仁</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_CVS_TAINO_FEMALE_4" Language="zh_Hans_CN">
+			<Text>雅比希</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_CVS_TAINO_FEMALE_5" Language="zh_Hans_CN">
+			<Text>克里布利</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_CVS_TAINO_FEMALE_6" Language="zh_Hans_CN">
+			<Text>多妮婀</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_CVS_TAINO_FEMALE_7" Language="zh_Hans_CN">
+			<Text>妮蜜塔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_CVS_TAINO_FEMALE_8" Language="zh_Hans_CN">
+			<Text>提妮玛</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_CVS_TAINO_FEMALE_9" Language="zh_Hans_CN">
+			<Text>卡希古雅</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_CVS_TAINO_FEMALE_10" Language="zh_Hans_CN">
+			<Text>于伊莎</Text>
+		</Replace>
+
+		<!-- 信息 -->
+		
+		<Replace Tag="LOC_CIVINFO_CVS_TAINO_LOCATION" Language="zh_Hans_CN">
+			<Text>加勒比</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVINFO_CVS_TAINO_SIZE" Language="zh_Hans_CN">
+			<Text>约20万平方公里</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVINFO_CVS_TAINO_POPULATION" Language="zh_Hans_CN">
+			<Text>大约60万～100万</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVINFO_CVS_TAINO_CAPITAL" Language="zh_Hans_CN">
+			<Text>拥有众多部落首都</Text>
+		</Replace>
+
+		<!-- 百科 -->
+
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_CVS_TAINO_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>泰诺人是加勒比地区主要原住民之一。在15世纪后期欧洲人到达之前，是古巴、牙买加、伊斯帕尼奥拉岛（现在的海地和多米尼加共和国）、波多黎各的最主要的居民。在大安德列斯群岛、小安德列斯群岛北部和巴哈马等地，他们被称为卢卡亚人。他们说泰诺语，属于阿拉瓦克语系。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_CVS_TAINO_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>泰诺人的祖先是从南美进入加勒比地区的，他们的文化与中美洲人的文化密切相关。按接触时间的不同，泰诺人被分为三类：西泰诺人（牙买加、古巴大部、巴哈马）；传统泰诺人（伊斯帕尼奥拉岛和波多黎各）；东泰诺人（小安的列斯群岛北部）。泰诺族群与小安德列斯群岛南部的加勒比人存在冲突。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_CVS_TAINO_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>1492 年哥伦布抵达时，伊斯帕尼奥拉岛上有五个泰诺酋长的领地，每个领地都由各自的首领酋长管辖，并向他们进贡。埃伊地（高山之地）是伊斯帕尼奥拉岛的泰诺语名，而西侧岛屿则在法语中保留了海地的名称。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_CVS_TAINO_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]Cuba, the largest island of the Antilles, was originally divided into 29 chiefdoms. Most of the native settlements later became the site of Spanish colonial cities retaining the original Taíno names, including Havana, Batabanó, Camagüey, Baracoa, and Bayamo. The name Cuba comes from the Taíno language, although the exact meaning of the name is unclear. It can be translated as 'where fertile land is abundant' (cubao), or a 'great place' (coabana). Puerto Rico also was divided into chiefdoms. As the hereditary head chief of Taíno nation, the cacique received significant tribute. At the time of the Spanish conquest, the largest Taíno population centers may have had more than 3,000 people each.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_CVS_TAINO_CHAPTER_HISTORY_PARA_5" Language="zh_Hans_CN">
+			<Text>The Taíno were historically enemies of the neighboring Carib nations, a different group which also had its origins in South America and lived mainly in the Lesser Antilles. The relationship between the rival groups has been the subject of many studies. For much of the 15th century, the Taíno tribe was being driven to the northeast in the Caribbean because of raids by the Carib. Women were taken as captives, resulting in many Carib women speaking Taíno.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_CVS_TAINO_CHAPTER_HISTORY_PARA_6" Language="zh_Hans_CN">
+			<Text>The Spaniards who arrived in the Bahamas, Cuba, and Hispaniola in 1492, and later in Puerto Rico, did not bring women on their first expeditions. Since the arrival of the conquistadores, Taino women were stolen and some became commodities for Spaniards to trade. The rape of Taíno women in Hispaniola by the Spanish was common, resulting in mestizo children. Scholars suggest there was also substantial mestizaje (racial and cultural mixing) in Cuba, and several Indian pueblos survived into the 19th century.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_CVS_TAINO_CHAPTER_HISTORY_PARA_7" Language="zh_Hans_CN">
+			<Text>The Taíno became nearly extinct as a culture following settlement by Spanish colonists, primarily due to infectious diseases for which they had no immunity. The first recorded smallpox outbreak in Hispaniola was in either December 1518 or January 1519. This smallpox epidemic killed almost 90% of the Native Americans who had not already perished. Warfare and harsh enslavement by the colonists also caused many deaths. By 1548, the Taíno population had declined to fewer than 500. Starting in about 1840, there have been attempts to create a quasi-indigenous Taíno identity in rural areas of Cuba, the Dominican Republic, and Puerto Rico. This trend accelerated among the Puerto Rican community in the mainland United States in the 1960s. At the 2010 U.S. census, 1,098 people in Puerto Rico identified themselves as 'Puerto Rican Indian,' 1,410 identified as 'Spanish American Indian,' and 9,399 identified as Taíno. In total, 35,856 Puerto Ricans considered themselves Native American.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_CVS_TAINO_CHAPTER_HISTORY_PARA_8" Language="zh_Hans_CN">
+			<Text>Taíno society was divided into two classes: naborias (commoners) and nitaínos (nobles). These were governed by male chiefs known as caciques, who were advised by priests/healers known as bohiques. Caciques enjoyed the privilege of wearing golden pendants called guanín, living in square bohíos, instead of the round ones of ordinary villagers, and sitting on wooden stools to be above the guests they received. Bohiques were extolled for their healing powers and ability to speak with gods. They were consulted and granted the Taíno permission to engage in important tasks.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_CVS_TAINO_CHAPTER_HISTORY_PARA_9" Language="zh_Hans_CN">
+			<Text>The Taíno had a matrilineal system of kinship, descent and inheritance. When a male heir was not present, the inheritance or succession would go to the oldest male child of the deceased's sister. The Taíno had avunculocal post-marital residence, meaning a newly married couple lived in the household of the maternal uncle. He was more important in the lives of his niece's children than their biological father; the uncle introduced the boys to men's societies. Some Taíno practiced polygamy. Men, and sometimes women, might have two or three spouses. A few caciques had as many as 30 wives.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_CVS_TAINO_CHAPTER_HISTORY_PARA_10" Language="zh_Hans_CN">
+			<Text>The Taíno women were highly skilled in agriculture. The people depended on it, but the men also fished and hunted. They made fishing nets and ropes from cotton and palm. Their dugout canoes (kanoa) were made in various sizes, which could hold from 2 to 150 people. An average-sized canoe would hold about 15–20 people. They used bows and arrows for hunting, and developed the use of poisons on their arrowheads.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_CVS_TAINO_CHAPTER_HISTORY_PARA_11" Language="zh_Hans_CN">
+			<Text>A frequently worn hair style for women featured bangs in front and longer hair in back. They sometimes wore gold jewelry, paint, and/or shells. Taíno men and unmarried women were usually naked although women wore a small cotton apron called a nagua after marriage. The Taíno lived in settlements called yucayeques, which varied in size depending on the location. Those in Puerto Rico and Hispaniola were the largest, and those in the Bahamas were the smallest. In the center of a typical village was a central plaza, used for various social activities such as games, festivals, religious rituals, and public ceremonies. These plazas had many shapes, including oval, rectangular, and narrow and elongated. Ceremonies where the deeds of the ancestors were celebrated, called areitos, were performed here.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_CVS_TAINO_CHAPTER_HISTORY_PARA_12" Language="zh_Hans_CN">
+			<Text>Often, the general population lived in large circular buildings (bohios), constructed with wooden poles, woven straw, and palm leaves. These houses, built surrounding the central plaza, could hold 10-15 families each. The cacique and his family lived in rectangular buildings (caney) of similar construction, with wooden porches. Taíno home furnishings included cotton hammocks (hamaca), sleeping and sitting mats made of palms, wooden chairs (dujo or duho) with woven seats, platforms, and cradles for children.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_CVS_TAINO_CHAPTER_HISTORY_PARA_13" Language="zh_Hans_CN">
+			<Text>The Taíno played a ceremonial ball game called batey. Opposing teams had 10 to 30 players per team and used a solid rubber ball. Normally, the teams were composed of men, but occasionally women played the game as well. The Classic Taíno played in the village's center plaza or on especially designed rectangular ball courts called batey. Games on the batey are believed to have been used for conflict resolution between communities. The most elaborate ball courts are found at chiefdoms' boundaries. Often, chiefs made wagers on the possible outcome of a game.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_CVS_TAINO_CHAPTER_HISTORY_PARA_14" Language="zh_Hans_CN">
+			<Text>Taíno spoke an Arawakan language and used an early form of writing Proto-writing in the form of petroglyph. Some of the words used by them, such as barbacoa ('barbecue'), hamaca ('hammock'), kanoa ('canoe'), tabaco ('tobacco'), yuca, batata ('sweet potato'), and juracán ('hurricane'), have been incorporated into Spanish and English. For warfare, the men made wooden war clubs, which they called a macana. It was about one inch thick and was similar to the coco macaque.</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_PEDIA_DISTRICTS_PAGE_DISTRICT_CVS_TAINO_UI_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]Batéy was the name given to a special plaza around which the native Caribbean Taíno Indians built their settlements. It was usually a rectangular area surrounded by stones with carved symbols (petroglyphs).</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_DISTRICTS_PAGE_DISTRICT_CVS_TAINO_UI_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>The batey was the area in which batey events (e.g. ceremonies, the ball game, etc.) took place. The batey ceremony (also known as batu) can be viewed from some historical accounts as more of a judicial contest rather than a game. Because historical accounts of the game and court space come from (mostly Spanish) European explorers, the true nature, history, and function of the batey is still contested. Neighboring tribes may have used batey matches to resolve differences without warfare.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_DISTRICTS_PAGE_DISTRICT_CVS_TAINO_UI_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>There is no consensus as to whether the batey ball game in the Caribbean was independently developed in different regions of the New World or whether it diffused from one or more locations. The large centrally located cemeteries in Saladoid villages served as plazas like those seen in the lowland communities of South America.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_DISTRICTS_PAGE_DISTRICT_CVS_TAINO_UI_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>The ceremonial and religious significance of the later-developed ball game appears to indicate a connection with the Mesoamerican ballgame, and it has been argued that the batey ball game of the Caribbean is a simplified version of the Maya pok ta pok, specified to the culture and religion of the Taíno. It is possible that the route of diffusion of the game of pok ta pok and other elements of Mayan culture was not a direct one from the Yucatan to the Caribbean, but an indirect one by way of South America, because the Otomacos in South America also played a similar game.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_DISTRICTS_PAGE_DISTRICT_CVS_TAINO_UI_CHAPTER_HISTORY_PARA_5" Language="zh_Hans_CN">
+			<Text>The majority of the documented information about the ball game specific to the Caribbean islands comes from the historic accounts of Gonzalo Fernández de Oviedo y Valdez and Bartolomé de Las Casas. The native name for the ball court and game was batey. Oviedo’s description of the balls is reminiscent of rubber or some kind of resin with rubber-like qualities; in all sources, some kind of reference is made to the unfamiliar bounciness of the balls.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_DISTRICTS_PAGE_DISTRICT_CVS_TAINO_UI_CHAPTER_HISTORY_PARA_6" Language="zh_Hans_CN">
+			<Text>The game was played by two teams, each team consisting anywhere from ten to thirty players. Normally, the teams were composed of only men, but occasionally women played the game as well. Oviedo noted that sometimes men and women would play on mixed teams, men and women against each other, and the married women against unwed female virgins. Married woman wore a shawl wrapped around their bodies while the men and virgin women went bare. Archaeologists have noted a connection between the ball courts and the stone elbow and neck collars prominent in Puerto Rico around the ball court sites. The function of these collars is not evident or explicitly detailed in historic accounts. However, it is interesting to note the similarity between the Caribbean stone collars and the Mexican stone yokes that were worn by Mesoamerican ball game players as ceremonial belts.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_DISTRICTS_PAGE_DISTRICT_CVS_TAINO_UI_CHAPTER_HISTORY_PARA_7" Language="zh_Hans_CN">
+			<Text>Faltas (errors or faults) were made when the ball came to a halt on the ground or if it had been thrown out of bounds (outside the stone boundary markers). The ball could only be struck from the shoulder, the elbow, the head, the hips, the buttock, or the knees and never with the hands. Las Casas noted that when women played the game they did not use their hips or shoulders, but their knees. Points were earned when the ball failed to be returned from a non-faulted play (similar to the earning of points in today’s volleyball). Play continued until the number of predetermined points was earned by a side. Often, players and chiefs made bets or wagers on the possible outcome of a game. These wagers were paid after a game was concluded.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_DISTRICTS_PAGE_DISTRICT_CVS_TAINO_UI_CHAPTER_HISTORY_PARA_8" Language="zh_Hans_CN">
+			<Text>Petroglyphs have been found on river boulders, walls of caves and rock shelters, and on upright stone slabs outlining ball court plazas. Unfortunately, many of these artifacts have been stolen by collectors or looters. There are two main types of petroglyphs: geometric designs, and images representing human or animal forms. Rouse has described the petroglyphs as “human-like bodies and heads, of faces, and of geometric designs, several of which suggest the sun and the moon”.</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_PEDIA_PROJECTS_PAGE_PROJECT_CVS_TAINO_UP_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]The Indian Taínos celebrated their circumstances through a religious ceremony called Areyto. Music played a vital role in the history and culture of Borikén, named the Taínos gave to Puerto Rico, meaning in their language, the land of God.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_PROJECTS_PAGE_PROJECT_CVS_TAINO_UP_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>Throughout thousands of years, the Areyto evolved into other genres of music and even when unfortunate circumstances could be devastating to the island; this art of science called music is the magical element that shifts sadness into bliss. It reminds Puerto Ricans that they can find the solutions to their problem through singing and dancing.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_PROJECTS_PAGE_PROJECT_CVS_TAINO_UP_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>Starting with the national hymn of Puerto Rico, called La Borinqueña, the Indian Taínos left us a legacy of their customs and culture. The Areyto ceremony played a significant role in their social, political and religious life, and its purpose was to worship their ancestors and to seek spiritual guidance from the spirit world.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_PROJECTS_PAGE_PROJECT_CVS_TAINO_UP_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>By performing dances and music, the community participated in the Areyto, and the festivities could go on for days. It usually took place in the central plaza of a village, called the Batey.  Also known as dance courts, this rectangular and vast area was surrounded by stones slabs, and decorated with carvings of zemís to hold the spirits of Yocahú and Atabey.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_PROJECTS_PAGE_PROJECT_CVS_TAINO_UP_CHAPTER_HISTORY_PARA_5" Language="zh_Hans_CN">
+			<Text>Taínos believed zemís had powers that affected their physical environments, such as the weather, health, death, and childbirth. The Carved zemís from stone or wood were made in all shapes and sizes, as well as adorned with gold and semiprecious stones.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_PROJECTS_PAGE_PROJECT_CVS_TAINO_UP_CHAPTER_HISTORY_PARA_6" Language="zh_Hans_CN">
+			<Text>Led by the cacique, which was the chief of the tribe, the Areyto was a religious ceremony, helping him the bohique, a shaman with supernatural powers. Before the ceremony, he painted or tattooed his body with zemís. Besides using medicine herbs, chants, tobacco, and maracas to create an immortal sound; magic was the most powerful element he used for healing.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_PROJECTS_PAGE_PROJECT_CVS_TAINO_UP_CHAPTER_HISTORY_PARA_7" Language="zh_Hans_CN">
+			<Text>Both the bohíque and the cacique inhaled cohoba seeds. The purpose of this hallucinating drug was to reach a state of mind that would transport them to the spirit world. There were times when they added the cohoba to the tobacco and ground shells, with the means to enhance its effectiveness.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_PROJECTS_PAGE_PROJECT_CVS_TAINO_UP_CHAPTER_HISTORY_PARA_8" Language="zh_Hans_CN">
+			<Text>Before beginning the Areyto ceremony, they would go through a purifying process by fasting or by inserting a stick in their throat to cause vomiting. Inhaling the Cohoba into the nose with tubes made of bones or wood, the bohíque, and the cacique’s state of hallucination was to communicate with their gods, hoping to receive guidance and answers.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_PROJECTS_PAGE_PROJECT_CVS_TAINO_UP_CHAPTER_HISTORY_PARA_9" Language="zh_Hans_CN">
+			<Text>To prepare for these ceremonies, the Taínos liked to paint their bodies with dyes made from plants and adorned their bodies with parrot feathers and jewelry made of shells. The caciques and bohíques wore capes decorated with feathers. The Areyto began with a procession of the Taínos carrying baskets of cassava bread, and singing songs about the zemís. They also went through a cleansing process by pressing a stick down their throat and vomiting.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_PROJECTS_PAGE_PROJECT_CVS_TAINO_UP_CHAPTER_HISTORY_PARA_10" Language="zh_Hans_CN">
+			<Text>The woman brought cassava bread to the bohíques, who offered it to the zemís. Dancing, singing, and chanting followed, glorifying the deities and praying for prosperity and health. They created music with a wooden drum, made from a tree, called atambor. This instrument was accompanied by maracas, guiros, conch shell trumpets and flutes that were made from bones. When the indigenous were not performing, they sat on stones, while the caciques and bohíques sat on their stools.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_PROJECTS_PAGE_PROJECT_CVS_TAINO_UP_CHAPTER_HISTORY_PARA_11" Language="zh_Hans_CN">
+			<Text>Among the different reasons Areitos were celebrated, the visit of prominent guests was one of them. Fray Bartolomé de las Casas, a Spanish priest who lived in Puerto Rico during the Spanish colonization, described an Areyto ceremony as a beautiful and magical ritual where the Taínos expressed their essence by telling tales of their past circumstances and their ancestors to their children while they danced and sang.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_PROJECTS_PAGE_PROJECT_CVS_TAINO_UP_CHAPTER_HISTORY_PARA_12" Language="zh_Hans_CN">
+			<Text>Known as one of the largest Taíno settlements in Puerto Rico, the Ceremonial Plaza of Caguana was one of the preferred sites for the Taínos to celebrate the Areyto. Located in Ponce, this center is one of the largest and oldest plazas in the Caribbean, providing this site an ideal setting for archeologists to study the evolution of the Taíno culture.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_PROJECTS_PAGE_PROJECT_CVS_TAINO_UP_CHAPTER_HISTORY_PARA_13" Language="zh_Hans_CN">
+			<Text>Historians believe the Areyto was a medium to escape this world and to reach higher dimensions. Even though only the cacique and the bohique were the ones establishing communication with higher spiritual realms, the purifying state they were all able to reach through the Areyto ceremony, would benefit each one of them, allowing them to receive grace, wisdom, and joy.</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_CVS_TAINO_UU_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]The term macana, of Taíno origin, refers to wooden weapons used by the various native cultures of Central and South America. The earliest meaning attributed to macana is a sword-like weapon made out of wood, but still sharp enough to be dangerous. The term is also sometimes applied to the similar Aztec weapon, which is studded with pieces of obsidian in order to create a blade, though some authorities distinguish this item by using the Nahuatl name macuahuitl.</Text>
+		</Replace>
+
+		<!-- 模组支持（RwF模组） -->
+		
+		<Replace Tag="LOC_CIVILIZATION_CVS_ROMANIA_DESCRIPTION_JFD_CIVILIZATION" Language="zh_Hans_CN">
+			<Text>泰诺文明</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_EMPIRE_LEADER_TITLE_CVS_ROMANIA" Language="zh_Hans_CN">
+			<Text>国王</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_EMPIRE_LEADER_TITLE_CVS_ROMANIA_FEMININE" Language="zh_Hans_CN">
+			<Text>女王</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_GOVERNMENT_JFD_CHIEFDOM_LEADER_TITLE_CVS_ROMANIA" Language="zh_Hans_CN">
+			<Text>国王</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_CHIEFDOM_LEADER_TITLE_CVS_ROMANIA_FEMININE" Language="zh_Hans_CN">
+			<Text>女王</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_HORDE_LEADER_TITLE_CVS_ROMANIA" Language="zh_Hans_CN">
+			<Text>元帅</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_HORDE_LEADER_TITLE_CVS_ROMANIA_FEMININE" Language="zh_Hans_CN">
+			<Text>元帅</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_POLIS_LEADER_TITLE_CVS_ROMANIA" Language="zh_Hans_CN">
+			<Text>国王</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_POLIS_LEADER_TITLE_CVS_ROMANIA_FEMININE" Language="zh_Hans_CN">
+			<Text>女王</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_GOVERNMENT_JFD_AUTOCRACY_LEADER_TITLE_CVS_ROMANIA" Language="zh_Hans_CN">
+			<Text>国王</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_AUTOCRACY_LEADER_TITLE_CVS_ROMANIA_FEMININE" Language="zh_Hans_CN">
+			<Text>女王</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_OLIGARCHY_LEADER_TITLE_CVS_ROMANIA" Language="zh_Hans_CN">
+			<Text>女王</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_OLIGARCHY_LEADER_TITLE_CVS_ROMANIA_FEMININE" Language="zh_Hans_CN">
+			<Text>女王</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_CLASSICAL_DEMOCRACY_LEADER_TITLE_CVS_ROMANIA" Language="zh_Hans_CN">
+			<Text>女王</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_CLASSICAL_DEMOCRACY_LEADER_TITLE_CVS_ROMANIA_FEMININE" Language="zh_Hans_CN">
+			<Text>女王</Text>
+		</Replace>
+
+
+
+		<Replace Tag="LOC_GOVERNMENT_JFD_REPUBLIC_LEADER_TITLE_CVS_ROMANIA" Language="zh_Hans_CN">
+			<Text>国王</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_REPUBLIC_LEADER_TITLE_CVS_ROMANIA_FEMININE" Language="zh_Hans_CN">
+			<Text>女王</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_MONARCHY_LEADER_TITLE_CVS_ROMANIA" Language="zh_Hans_CN">
+			<Text>议长</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_MONARCHY_LEADER_TITLE_CVS_ROMANIA_FEMININE" Language="zh_Hans_CN">
+			<Text>议长</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_LIBERAL_DEMOCRACY_LEADER_TITLE_CVS_ROMANIA" Language="zh_Hans_CN">
+			<Text>国王</Text>
+		</Replace>
+		<Replace Tag="LOC_GOVERNMENT_JFD_LIBERAL_DEMOCRACY_LEADER_TITLE_CVS_ROMANIA_FEMININE" Language="zh_Hans_CN">
+			<Text>女王</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

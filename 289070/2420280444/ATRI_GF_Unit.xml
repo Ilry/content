@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ATRI_GF_Unit -->
+<!-- Author: UFO300 -->
+<!-- DateCreated: 8/7/2021 7:25:43 PM -->
+<GameData>
+	<Types>
+		<Row Type="UNIT_ESUBMARINE" Kind="KIND_UNIT"/>
+		<Row Type="TRAIT_CIVILIZATION_UNIT_ESUBMARINE" Kind="KIND_UNIT"/>
+		<Row Type="ABILITY_UNIT_ESUBMARINE" Kind="KIND_ABILITY"/>
+	</Types>
+	<UnitAiInfos>
+		<Row UnitType="UNIT_ESUBMARINE" AiType="UNITAI_COMBAT"/>
+		<Row UnitType="UNIT_ESUBMARINE" AiType="UNITTYPE_RANGED"/>
+		<Row UnitType="UNIT_ESUBMARINE" AiType="UNITTYPE_NAVAL"/>
+	</UnitAiInfos>
+	
+	<TypeTags>
+		<Row Type="UNIT_ESUBMARINE" Tag="CLASS_NAVAL_RANGED"/>
+		<Row Type="UNIT_ESUBMARINE" Tag="CLASS_STEALTH"/>
+		<Row Type="UNIT_ESUBMARINE" Tag="CLASS_EDEN_ESUBMARINE"/>
+	</TypeTags>
+
+	<Tags>
+		<Row Tag="CLASS_EDEN_ESUBMARINE" Vocabulary="ABILITY_CLASS"/>
+	</Tags>
+	
+	<Units>
+		<Row UnitType="UNIT_ESUBMARINE" Cost="100" Maintenance="1" BaseMoves="4" BaseSightRange="2" ZoneOfControl="true"
+			 Domain="DOMAIN_SEA" Combat="25" RangedCombat="30" Range="2" FormationClass="FORMATION_CLASS_NAVAL"
+			 PromotionClass="PROMOTION_CLASS_ATRI_CLASS_SUBMARINE" AdvisorType="ADVISOR_CONQUEST" Name="LOC_UNIT_ESUBMARINE_NAME" 
+			 Description="LOC_UNIT_ESUBMARINE_DESCRIPTION" PurchaseYield="YIELD_GOLD" PseudoYieldType="PSEUDOYIELD_UNIT_NAVAL_COMBAT"
+			 PrereqTech="TECH_SHIPBUILDING" TraitType="TRAIT_CIVILIZATION_UNIT_ESUBMARINE"/>
+	</Units>
+
+</GameData>

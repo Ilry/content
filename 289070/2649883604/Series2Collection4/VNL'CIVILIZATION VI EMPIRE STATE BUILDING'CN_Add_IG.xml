@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'CIVILIZATION VI EMPIRE STATE BUILDING'CN_Add_IG -->
+<!-- Author: 牛奶大魔王 , Clear8Sky -->
+<!-- DateCreated: 2021/9/18 23:09:30 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “CIVILIZATION VI: EMPIRE STATE BUILDING” 。该文件在 InGame 时载入，无需任何 Criteria -->
+	<LocalizedText>
+		<Replace Tag="LOC_WON_CL_EMPIRE_STATES_NAME" Language="zh_Hans_CN">
+			<Text>帝国大厦</Text>
+		</Replace>
+		<Replace Tag="LOC_WON_CL_EMPIRE_STATES_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>所在城市+20% [ICON_Gold] 金币产出，此城所有世界奇观提供+6 [ICON_Gold] 金币，且 [ICON_Tourism] 旅游业绩产出+50%。必须建在靠在市中心的平原上。</Text>
+		</Replace>
+		<Replace Tag="LOC_WON_CL_EMPIRE_STATES_QUOTE" Language="zh_Hans_CN">
+			<Text>当我置身纽约，望着帝国大厦，心觉似乎它正属于我……抑或我为它所有？[NEWLINE]——菲伊·雷（电影《金刚》女主角）</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

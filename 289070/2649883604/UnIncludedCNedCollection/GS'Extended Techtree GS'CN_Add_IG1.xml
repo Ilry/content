@@ -1,0 +1,854 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- GS'Extended Techtree GS'CN_Add_IG1 -->
+<!-- Author: 牛奶大魔王 , Clear8Sky -->
+<!-- DateCreated: 2021/9/27 13:08:30 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Extended Techtree [GS]” 。该文件在 InGame 时载入，需 Criteria ：Active_Expansion_2 -->
+	<LocalizedText>
+		
+	<!-- Boosts_Text.xml文件 -->
+
+		<Replace Tag="LOC_BOOST_TRIGGER_SPEAR" Language="zh_Hans_CN">
+			<Text>拥有一辆重型战车。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_SPEAR" Language="zh_Hans_CN">
+			<Text>您发明的新型重型战车似乎是一种强力武器。但是当敌人缴获并使用它时您会怎么做呢？</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_COLUMNS" Language="zh_Hans_CN">
+			<Text>建造两座纪念碑。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_COLUMNS" Language="zh_Hans_CN">
+			<Text>建造几座纪念碑教会了您的工人很多关于建造柱子的知识。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_MECHANICS" Language="zh_Hans_CN">
+			<Text>建造两个不同的专业化区域。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_MECHANICS" Language="zh_Hans_CN">
+			<Text>建造不同区域教会了您的区域规划师力学的基本原理。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_WATER_SUPPLY" Language="zh_Hans_CN">
+			<Text>修建两片种植园。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_WATER_SUPPLY" Language="zh_Hans_CN">
+			<Text>是否有一种更好的方法能把水带到您的种植园呢？</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGSWORD" Language="zh_Hans_CN">
+			<Text>击杀12名蛮族。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_LONGSWORD" Language="zh_Hans_CN">
+			<Text>您与蛮族的战斗提高了对更强大武器的需求。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_ADVANCED_SHIPBUILDING" Language="zh_Hans_CN">
+			<Text>拥有三艘四段帆船。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_ADVANCED_SHIPBUILDING" Language="zh_Hans_CN">
+			<Text>构建一支四段帆船中队教会了您很多关于先进船只制造的知识。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_DISTRIBUTED_WEAPONS" Language="zh_Hans_CN">
+			<Text>解锁市政“海军传统”。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_DISTRIBUTED_WEAPONS" Language="zh_Hans_CN">
+			<Text>基于您制定的海军传统，您的水手们开始考虑在船上配置大炮。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_ADVANCED_MINING" Language="zh_Hans_CN">
+			<Text>修建8座矿山。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_ADVANCED_MINING" Language="zh_Hans_CN">
+			<Text>您的矿工们掌握了充足的经验，可以挖得更深了。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_EARLY_BALLISTICS" Language="zh_Hans_CN">
+			<Text>用投石机击杀一个单位。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_EARLY_BALLISTICS" Language="zh_Hans_CN">
+			<Text>掌握弹道学可以造成很多伤害，您应该继续这方面的研究。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_ARCHITECTURE" Language="zh_Hans_CN">
+			<Text>建造三座世界奇观。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_ARCHITECTURE" Language="zh_Hans_CN">
+			<Text>雄伟的奇观让建筑师明白了更多建筑的知识。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_PIKE_AND_SHOTS" Language="zh_Hans_CN">
+			<Text>拥有3名火枪手。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_PIKE_AND_SHOTS" Language="zh_Hans_CN">
+			<Text>您的枪兵与火枪手们正在寻找新的队形从而更好地编队。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_BUREAUCRACY" Language="zh_Hans_CN">
+			<Text>解锁市政“外交部门”。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_BUREAUCRACY" Language="zh_Hans_CN">
+			<Text>您的外交官们正在寻找新的管理方式。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_PRECISION_ENGINEERING" Language="zh_Hans_CN">
+			<Text>拥有市政“探索”。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_PRECISION_ENGINEERING" Language="zh_Hans_CN">
+			<Text>我们的征途是星辰大海，但是我们需要新的测量世界的仪器来探索远方。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_ACID" Language="zh_Hans_CN">
+			<Text>用矿山改良6处资源。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_ACID" Language="zh_Hans_CN">
+			<Text>有很多资源来自各种各样的矿山。根据炼金术师们描述，他们可以把这些炼成黄金。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_FERTILIZER" Language="zh_Hans_CN">
+			<Text>修建5片牧场。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_FERTILIZER" Language="zh_Hans_CN">
+			<Text>在您的牧场上饲养的动物产生了不少废物。为何我们不利用它们呢？</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_PENDULUM" Language="zh_Hans_CN">
+			<Text>建造3座圣地。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_PENDULUM" Language="zh_Hans_CN">
+			<Text>许多信徒在您的圣地中祈祷，为何我们不让这些朝圣者们休息下呢？</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_MEDICINE" Language="zh_Hans_CN">
+			<Text>用射石炮击杀一个单位。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_MEDICINE" Language="zh_Hans_CN">
+			<Text>大夫！我们的方阵被击溃了！快用你无敌的医术想想办法呀！</Text>
+			<!-- 译者注：既然笨蛋奶想整活，那我就陪你整一下hhhh -->
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_ENGINE" Language="zh_Hans_CN">
+			<Text>改良一处 [ICON_RESOURCE_COAL] 煤资源。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_ENGINE" Language="zh_Hans_CN">
+			<Text>既然我们有了稳定的煤矿，那我们的工程师们需要想办法更好地将其利用。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_GATLING_PRINCIPLE" Language="zh_Hans_CN">
+			<Text>建造一家工厂。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_GATLING_PRINCIPLE" Language="zh_Hans_CN">
+			<Text>新工厂正源源不断地推陈出新。这是一种新型竞争的开始吗？</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_SHIP_PROPELLER" Language="zh_Hans_CN">
+			<Text>建造水上乐园。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_SHIP_PROPELLER" Language="zh_Hans_CN">
+			<Text>您们的工程师通过他们在水上公园的工作，学到了很多关于流体动力学的知识。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_DYNAMIT" Language="zh_Hans_CN">
+			<Text>只能通过大科学家或间谍获得。</Text>
+		</Replace>
+
+		<!-- 
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_DYNAMIT" Language="zh_Hans_CN">
+			<Text></Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_MODERN_LOGISTICS" Language="zh_Hans_CN">
+			<Text>拥有10条贸易路线。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_MODERN_LOGISTICS" Language="zh_Hans_CN">
+			<Text></Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_TANK" Language="zh_Hans_CN">
+			<Text>长矛</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_TANK" Language="zh_Hans_CN">
+			<Text>长矛</Text>
+		</Replace>
+		-->
+		
+		<Replace Tag="LOC_BOOST_TRIGGER_WIRE_ROPE" Language="zh_Hans_CN">
+			<Text>修建6座伐木场。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_WIRE_ROPE" Language="zh_Hans_CN">
+			<Text>许多人在您的伐木场工作，如果能保证他们在工作时不再受伤就更好了。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_HIGH_POWER_RIFELS" Language="zh_Hans_CN">
+			<Text>用步兵击杀一个单位。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_HIGH_POWER_RIFELS" Language="zh_Hans_CN">
+			<Text>您的步兵们庆祝了这次凯旋。为了更容易地击败更强大的敌人，我们的部队需要更好的装备。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_WAR_PLANES" Language="zh_Hans_CN">
+			<Text>拥有一个观测气球。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_WAR_PLANES" Language="zh_Hans_CN">
+			<Text>您的观测气球漂浮在您的土地上，将领们想知道这片空域是否能得到更好的利用。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_SNIPER_RIFLES" Language="zh_Hans_CN">
+			<Text>用特种部队击杀一个单位。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_SNIPER_RIFLES" Language="zh_Hans_CN">
+			<Text>如果我们有一种远距离射击的武器，那么我们可以发动全民游击战。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_SHIP_STABILIZER" Language="zh_Hans_CN">
+			<Text>用潜艇击杀一个单位。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_SHIP_STABILIZER" Language="zh_Hans_CN">
+			<Text>您的潜艇能有效地摧毁敌舰。但如何保证自己的船不被击沉呢？</Text>
+		</Replace>
+
+		<!--
+		<Replace Tag="LOC_BOOST_TRIGGER_MACHINE_GUN" Language="zh_Hans_CN">
+			<Text>只能通过大科学家或间谍获得。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_MACHINE_GUN" Language="zh_Hans_CN">
+			<Text></Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_COMBINED_SEWER" Language="zh_Hans_CN">
+			<Text>建造5个下水道。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_COMBINED_SEWER" Language="zh_Hans_CN">
+			<Text></Text>
+		</Replace>
+		-->
+
+		<Replace Tag="LOC_BOOST_TRIGGER_MICROPROZESSOR" Language="zh_Hans_CN">
+			<Text>只能通过大科学家或间谍获得。</Text>
+		</Replace>
+
+		<!--
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_MICROPROZESSOR" Language="zh_Hans_CN">
+			<Text></Text>
+		</Replace>
+		-->
+
+		<Replace Tag="LOC_BOOST_TRIGGER_NUCLEAR_POWER" Language="zh_Hans_CN">
+			<Text>拥有市政“核计划”。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_NUCLEAR_POWER" Language="zh_Hans_CN">
+			<Text>参与您核计划的科学家们想知道是否有一种方法让这些武器可以民用？</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_HARPOON_MISSLE" Language="zh_Hans_CN">
+			<Text>只能通过大科学家或间谍获得。</Text>
+		</Replace>
+
+		<!--
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_HARPOON_MISSLE" Language="zh_Hans_CN">
+			<Text></Text>
+		</Replace>
+		-->
+
+		<Replace Tag="LOC_BOOST_TRIGGER_GAS_POWER" Language="zh_Hans_CN">
+			<Text>获得一名自然学家。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_GAS_POWER" Language="zh_Hans_CN">
+			<Text>自然主义运动影响了您的人民。您的科学家们渴望找到更多无污染的方式来产生能量。</Text>
+		</Replace>
+		<Replace Tag="LOC_BOOST_TRIGGER_TANDEM_WARHEAD" Language="zh_Hans_CN">
+			<Text>只能通过大科学家或间谍获得。</Text>
+		</Replace>
+
+		<!--
+		<Replace Tag="LOC_BOOST_TRIGGER_LONGDESC_TANDEM_WARHEAD" Language="zh_Hans_CN">
+			<Text></Text>
+		</Replace>
+		-->
+
+	<!-- NewTechnologys_Descriptions.xml文件 -->
+		<!-- 引言 -->
+		
+		<Replace Tag="LOC_TECH_FERTILIZER_1_QUOTE" Language="zh_Hans_CN">
+			<Text>一块土地最好的肥料是它主人的脚印。[NEWLINE][NEWLINE]——林登·贝恩斯·约翰逊（第36任美国总统）</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_FERTILIZER_2_QUOTE" Language="zh_Hans_CN">
+			<Text>失败就像肥料，虽然这很糟糕，但它会让事情在未来发展得更快。[NEWLINE][NEWLINE]——丹尼斯·威特利（美国励志演讲人、美国酬劳最高的演讲人）</Text>
+		</Replace>
+		
+		<!-- 远古 -->
+		
+		<Replace Tag="LOC_TECH_MECHANICS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>长城+1 [ICON_Gold] 金币。</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_ADVANCED_MINING_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>矿山+1 [ICON_Production] 生产力。</Text>
+		</Replace>
+		
+		<!-- 这些Tag因涉及替换游戏自带文本，已被移入 GS'Extended Techtree GS'CN_Add_IG2.sql 文件中特殊对待，此处就注释掉
+		<Replace Tag="LOC_TECH_CARTOGRAPHY_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>所有海上战斗及上船单位皆可驶入海洋。</Text>
+		</Replace>
+		-->
+		
+		<Replace Tag="LOC_TECH_BUREAUCRACY_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>渔船+2 [ICON_Gold] 金币。</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_ACID_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>采石场+2 [ICON_Gold] 金币。</Text>
+		</Replace>
+		
+		<!-- 原因同上
+		<Replace Tag="LOC_TECH_PRINTING_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>所有巨作的 [ICON_Tourism] 旅游业绩产出翻倍。</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_PRECISION_ENGINEERING_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>+1 [ICON_VisLimited] 外交能见度等级。</Text>
+		</Replace>
+		-->
+		
+		<Replace Tag="LOC_TECH_FERTILIZER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>种植园+1 [ICON_Food] 食物。圩田每与其他圩田相邻则+2 [ICON_Food] 食物、+1 [ICON_Production] 生产力。</Text>
+		</Replace>
+		
+		<!-- 原因同上
+		<Replace Tag="LOC_TECH_COMBUSTION_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>所有上船单位+1 [ICON_Movement] 移动力。农场将改造升级为机械化农业园，每片农场+1 [ICON_Food] 食物。</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_RADIO_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>所有能产出 [ICON_Culture] 文化值的改良设施可获得等同于该数值的 [ICON_Tourism] 旅游业绩产出。</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_STEEL_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>解锁城市防御，自动赋予您文明所有城市200点 [ICON_Strength] 城市战斗力，以及使用 [ICON_Ranged]“城市远程攻击”的能力。所有先前时代的城墙建筑将被淘汰，攻城支援单位也将失效。</Text>
+		</Replace>
+		-->
+		
+		<Replace Tag="LOC_TECH_CHEMISTRY_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>伐木场+1 [ICON_Production] 生产力。</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_DYNAMIT_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>采石场+1 [ICON_Production] 生产力。</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_PREDICTIVE_SYSTEMS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>所有牧场、油井和海上石油钻机+1 [ICON_Production] 生产力。</Text>
+		</Replace>
+
+		<!-- 原因同上
+		<Replace Tag="LOC_TECH_ROBOTICS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>末日机甲可通过未来时代的科技获得加强。</Text>
+		</Replace>
+		-->
+
+	<!-- NewTechnologys_Text.xml文件 -->
+		<!-- 远古时代 -->
+		
+		<Replace Tag="LOC_TECH_SPEAR_NAME" Language="zh_Hans_CN">
+			<Text>密集方阵</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_COLUMNS_NAME" Language="zh_Hans_CN">
+			<Text>圆柱结构</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_MECHANICS_NAME" Language="zh_Hans_CN">
+			<Text>力学</Text>
+		</Replace>
+
+		<!-- 古典时代 -->
+		
+		<Replace Tag="LOC_TECH_WATER_SUPPLY_NAME" Language="zh_Hans_CN">
+			<Text>供水系统</Text>
+		</Replace>
+
+		<!-- 中世纪 -->
+		
+		<Replace Tag="LOC_TECH_DISTRIBUTED_WEAPONS_NAME" Language="zh_Hans_CN">
+			<Text>分布式武器</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_ADVANCED_SHIPBUILDING_NAME" Language="zh_Hans_CN">
+			<Text>中世纪造船术</Text>
+		</Replace>
+
+		<!--
+		<Replace Tag="LOC_TECH_LONGSWORD_NAME" Language="zh_Hans_CN">
+			<Text>手半剑</Text>
+		</Replace>
+		-->
+		
+		<Replace Tag="LOC_TECH_EARLY_BALLISTICS_NAME" Language="zh_Hans_CN">
+			<Text>早期弹道学</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_ADVANCED_MINING_NAME" Language="zh_Hans_CN">
+			<Text>中世纪采矿法</Text>
+		</Replace>
+
+		<!-- 文艺复兴时期 -->
+		
+		<Replace Tag="LOC_TECH_TRANSPROTATION_NAME" Language="zh_Hans_CN">
+			<Text>运输系统</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_PIKE_AND_SHOTS_NAME" Language="zh_Hans_CN">
+			<Text>枪刺与射击</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_ARCHITECTURE_NAME" Language="zh_Hans_CN">
+			<Text>建筑学</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_ACID_NAME" Language="zh_Hans_CN">
+			<Text>炼金术</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_PRECISION_ENGINEERING_NAME" Language="zh_Hans_CN">
+			<Text>精密机械</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_BUREAUCRACY_NAME" Language="zh_Hans_CN">
+			<Text>官僚制</Text>
+		</Replace>
+
+		<!-- 工业时代 -->
+		
+		<Replace Tag="LOC_TECH_ENGINE_NAME" Language="zh_Hans_CN">
+			<Text>引擎</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_GATLING_PRINCIPLE_NAME" Language="zh_Hans_CN">
+			<Text>全面战争</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_MEDICINE_NAME" Language="zh_Hans_CN">
+			<Text>医学</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_PENDULUM_NAME" Language="zh_Hans_CN">
+			<Text>钟摆</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_FERTILIZER_NAME" Language="zh_Hans_CN">
+			<Text>化肥</Text>
+		</Replace>
+
+		<!-- 现代 -->
+		
+		<Replace Tag="LOC_TECH_WAR_PLANES_NAME" Language="zh_Hans_CN">
+			<Text>军用战机</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_SHIP_PROPELLER_NAME" Language="zh_Hans_CN">
+			<Text>螺旋桨</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_DYNAMIT_NAME" Language="zh_Hans_CN">
+			<Text>炸药</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_MODERN_LOGISTICS_NAME" Language="zh_Hans_CN">
+			<Text>现代物流</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_HIGH_POWER_RIFELS_NAME" Language="zh_Hans_CN">
+			<Text>反坦克步枪</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_WIRE_ROPE_NAME" Language="zh_Hans_CN">
+			<Text>钢丝绳</Text>
+		</Replace>
+
+		<!--
+		<Replace Tag="LOC_TECH_TANK_NAME" Language="zh_Hans_CN">
+			<Text>坦克</Text>
+		</Replace>
+		-->
+		
+		<!-- 原子能时代 -->
+		
+		<Replace Tag="LOC_TECH_SNIPER_RIFLES_NAME" Language="zh_Hans_CN">
+			<Text>狙击步枪</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_BAUXITE_MINING_NAME" Language="zh_Hans_CN">
+			<Text>铝土矿开采法</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_MACHINE_GUN_NAME" Language="zh_Hans_CN">
+			<Text>机关枪</Text>
+		</Replace>
+
+		<!--
+		<Replace Tag="LOC_TECH_COMBINED_SEWER_NAME" Language="zh_Hans_CN">
+			<Text>合流排水系统</Text>
+		</Replace>
+		-->
+		
+		<Replace Tag="LOC_TECH_NUCLEAR_POWER_NAME" Language="zh_Hans_CN">
+			<Text>核能</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_SHIP_STABILIZER_NAME" Language="zh_Hans_CN">
+			<Text>船舶稳定器</Text>
+		</Replace>
+
+		<!-- 信息时代 -->
+		
+		<Replace Tag="LOC_TECH_MICROPROZESSOR_NAME" Language="zh_Hans_CN">
+			<Text>微处理器</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_HARPOON_MISSLE_NAME" Language="zh_Hans_CN">
+			<Text>反舰导弹</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_GAS_POWER_NAME" Language="zh_Hans_CN">
+			<Text>燃气动力</Text>
+		</Replace>
+		<Replace Tag="LOC_TECH_TANDEM_WARHEAD_NAME" Language="zh_Hans_CN">
+			<Text>聚能效应</Text>
+		</Replace>
+
+	<!-- PediaTexts.xml文件 -->
+
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_SPEAR_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>密集方阵是一种军事战术编队，让士兵靠得很近，并有规律地进行兵力的战术集中。大约在美国南北战争（1861-1865）时期，这种士兵的战斗编队变得不常见了【译者注：毕竟出现了无敌的马克沁机枪战术】，当时改进的小武器和大炮为任何暴露在外的编队制造了一个开阔死亡方阵。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_SPEAR_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>在世界军事史上我们也发现，不仅是中国，许多国家都依靠着多兵种组成密集的军阵来提高军队的生存力、战斗力。古希腊城邦军阵、马其顿方阵，以及罗马帝国时期的罗马军团，他们与秦军都存在着惊人的相似之处。[NEWLINE][NEWLINE]在这些方阵中，最著名的当属马其顿方阵。马其顿国王腓力二世即位，立即着手仿效希腊人的制度，实行政治、军事改革。他根据希腊底比斯步兵方阵，创立了包括步兵、骑兵和海军在内的马其顿常备军，将步兵组成密集、纵深的作战队形，号称马其顿方阵。这种方阵中间是重装步兵，两侧为轻装步兵，每个方阵还配有由贵族子弟组成的重装骑兵，作为方阵的前锋和护翼。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_SPEAR_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>腓力之子亚历山大即位后，方阵得到进一步改良，马其顿方阵纵深由希腊方阵的8至12排人扩大到16排，增大士兵之间的间距，士兵以重装步兵为主，全身装备青铜头盔、胸铠和胫甲，使用的兵器主要是盾牌、利剑和长矛。矛长达6米，比秦军使用的矛稍短，长矛必须双手才能持用。把矛举起来，前后共组成16排。处于阵中的士兵是无法自由行动的，只能跟随着方阵整体的步骤前进，否则即使不是为敌方杀死，也是为己方践踏而死。在方阵的左右侧翼，部署有轻装步兵和骑兵作为掩护，与方阵构成一个坚固的整体。[NEWLINE][NEWLINE]帝国时代的罗马军团，声名显赫一时。罗马军团由轻步兵、重装标枪兵、重装步兵、长枪兵、骑兵等兵种组成，士兵排列成密集的队形，由最外层的重装步兵用盾牌排列出“龟甲阵形”，保护己方不为敌人的投枪和弓箭等投射兵器所伤，最富经验的长枪兵则紧随其后，在战斗最后关头，长枪兵往往就是决定胜负的力量。轻步兵更为靠前，以灵活机动战术骚扰和疲劳敌军，并为军阵的突击扫平道路。骑兵布置在两翼，既是为了突击，又是为了掩护整个军团。帝国时代的罗马军团，往往排列成正面宽200米、纵深90米的庞大的、无坚不摧的军阵。[NEWLINE][NEWLINE]在罗马的军事征服史上我们可以发现，军阵的威力最主要是与地形、地势的起伏、缓急密切相关。在东方，中国先秦时代盛极一时的车战，就是适应中原地区的平坦、广阔的地形而形成的军事技术。在西方，马其顿严密的步兵方阵与两翼的重骑兵，在平坦的地势上就好似排山倒海，足以摧垮任何对垒的敌人，这种压倒一切的威势，需要借助于平坦的作战地形才能发挥到极致。但是一遇到起伏的地形，如山地，马其顿方阵就没法保持紧密的队形，而一旦出现缺口，方阵就等于被破解了。[NEWLINE][NEWLINE]在公元前168年的皮得纳战役中，罗马人就是这样打败马其顿方阵的。罗马人引诱马其顿方阵进入山地，使之无法保持队形，最终只以100多人的伤亡代价，消灭马其顿军主力3万余人，马其顿国王伯尔修战败被俘，马其顿王国从此灭亡。战争的经验教训告诉我们，密集方阵一般只能适用于平原地带，到了复杂的地形上完全施展不开。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_SPEAR_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>军队以密集的阵形出现在战争史上，其中一个重要原因是武器装备所决定的。当投射兵器还不能发挥它的优势的时候，密集阵形的重装步兵就几乎成为克敌制胜的惟一选择。[NEWLINE][NEWLINE]大多数历史学家均认为，当骑兵与弓箭结合得更为完美之时，往往密集的步兵方阵就陷入了灭顶之灾。公元前53年，罗马三巨头之一的克拉苏率7个军团，4.5万人的精锐部队，气势汹汹地发动了对帕提亚王国的战争。在帕提亚高度机动的轻骑兵战术、密集的箭雨面前遭到惨败，克拉苏本人也成了阶下囚而被处死。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_MECHANICS_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>力学是一门科学领域，是有关力、运动和介质（固体、液体、气体和等离子体），宏、细、微观力学性质的学科，研究以机械运动为主，及其同物理、化学、生物运动耦合的现象。起源于古希腊亚里士多德和阿基米德的著作。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_MECHANICS_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>力学是一门基础学科，同时又是一门技术学科。它研究能量和力以及它们与固体、液体及气体的平衡、变形或运动的关系。力学可区分为静力学、运动学和动力学三部分，静力学研究力的平衡或物体的静止问题；运动学只考虑物体怎样运动，不讨论它与所受力的关系；动力学讨论物体运动和所受力的关系。现代的力学实验设备，诸如大型的风洞、水洞，它们的建立和使用本身就是一个综合性的科学技术项目，需要多工种、多学科的协作。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_MECHANICS_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>在西方，古希腊的阿基米德初步奠定了静力学即平衡理论的基础。而中国古代力学有两个发展高峰期：一在战国时期，在力学的应用方面可以和古希腊相媲美，在理论方面则稍逊色；后一个是宋代，取得了中世纪欧洲望尘莫及的成就。但是，总的说来，在中国古代并没有出现一部专门的力学著作，力学知识散见于各种书籍之中。总的特点是：经验多于理论，器具制造多于数理总结。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_MECHANICS_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>力学特别是其中的动力学，就是在反对地心说、创建日心说的过程中成熟起来的。日心说战胜地心说，其意义不但是天文学史上的一场革命，而且是真理观的一次革命。它使中世纪以前傲慢的权贵不得不向新兴的科学低头具有重要意义，力学的成熟与发展，大大促进了人类认识世界的进程。在牛顿之后，力学成为研究天文学的主要工具。到19世纪末以后，力学在大气、化合与分解、地质构造、生命现象等领域的研究中发挥了越来越重要的作用。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_COLUMNS_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>所有重要的铁器时代文明都使用了柱子。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_COLUMNS_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>早在公元前2600年的古埃及建筑中，建筑师伊姆霍特普就使用石柱，石柱的表面被雕刻，以反映捆成捆的芦苇的有机形态，如纸莎草纸、莲花和棕榈；在后来的埃及建筑中，多面圆柱也很常见。他们的形式被认为是来自古老的芦苇建造的神殿。在古代世界,柱子的象征意义通常极为重要,代表着神的力量与权威,也代表着生命力。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_COLUMNS_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>在古代世界，一些最精致的柱子是波斯人的，尤其是在波斯波利斯建造的巨大石柱。他们的首都有双牛结构。波斯波利斯的百柱殿，尺寸70×70米，由阿契美尼国王大流士一世（公元前524-486年）建造。古波斯的许多柱子都矗立着，有些高达30多米。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_COLUMNS_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>在西方的柱子风格有很多，常见的有希腊多立克柱式（巴特农神庙）、希腊科林斯柱式（宙斯神庙）。罗马人继承了希腊柱式﹐根据新的审美要求和技术条件加以改造和发展，古罗马的柱式规范的影响非常深远，成为了西方建筑的基本母题，至今仍在被广大建筑师所学习和模仿。但是西罗马帝国灭亡(476)后﹐欧洲大多数地区柱式建筑不再流行。在意大利虽然流风尚存﹐但细部和组合方式等都不很严格﹐与罗马柱式有很大差别。，古罗马的柱式规范的影响非常深远，成为了西方建筑的基本母题，至今仍在被广大建筑师所学习和模仿。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_WATER_SUPPLY_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>供水的历史是一个后勤方面的挑战之一，从文明的曙光开始就提供清洁的水和卫生系统。在水资源、基础设施或卫生系统不足的地方，疾病蔓延，人们生病或过早死亡。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_WATER_SUPPLY_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>人类住区最初只能在地表淡水丰富的地方发展，例如靠近河流或天然泉水的地方（四大文明起源都是大河流域）。纵观历史，人们已经设计出各种系统，使水进入他们的社区和家庭，处理废水更加方便。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_WATER_SUPPLY_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>古希腊克里特文明，被称为米诺斯文明，是第一个使用地下粘土管道进行卫生和供水的文明。他们的首都克诺索斯有一个组织良好的供水系统，可以在暴雨时引入清洁的水，排出废水和暴雨污水渠。来伊达拉里亚人留给罗马人的古代世界最为宏伟的下水道：马克西姆下水道。公元前6世纪左右，伊达拉里亚人挖掘了排入台伯河的下水道，其主干道宽度超过16英尺，尔后又为罗马人扩建。下水道的7个分支流经城市街道，最终汇入主道马克西姆下水道。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_WATER_SUPPLY_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>在我国古人排水的概念中，基本是把“水往低处流”这个概念发挥到淋漓极致，所以并没有现代意义的下水道。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_ADVANCED_MINING_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>采矿业在中世纪的欧洲经历了巨大的变化。中世纪早期的采矿业主要集中于铜和铁的开采。其他贵金属也被使用，主要用于镀金或铸币。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_ADVANCED_MINING_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>最初，许多金属是通过露天开采获得的，矿石主要从浅层开采，而不是通过深井开采。大约在14世纪，武器、盔甲、马镫和马蹄铁的使用日益增多，大大增加了对铁的需求。例如，中世纪的骑士除了佩剑、长矛和其他武器外，通常还携带高达100磅（45公斤）的板甲或链甲。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_ADVANCED_MINING_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>军事用途对铁的巨大依赖刺激了铁的生产和提取过程。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_ADVANCED_MINING_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>第一次工业革命之前，中国历朝在钢铁冶金长期处于首位世界领先水平。在欧洲工业革命开始后，使用焦炭冶铁的工艺在钢铁冶金上掀起了翻天覆地的变化，使得欧洲各国生铁产量在18-19世纪急速上升，并很快取代了中国冶铁第一大国的地位。值得一提的是，当今出土的宋代末期官窑已有使用焦炭冶铁的例子，但显然时年尚未普及。[NEWLINE][NEWLINE]1850年后主要使用的炼钢法包括贝塞麦转炉炼钢法、平炉炼钢法、电弧炉法和碱性氧气法等。时至今日，由于铁路、建筑等行业的庞大需求，中国大陆的钢铁产量已常年稳居世界首位，不过这同时也导致了近年来其国内钢铁供过于求的问题。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_EARLY_BALLISTICS_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>经过几千年的经验发展，弹道学这门学科最初是由意大利数学家尼科洛·塔尔塔利亚在1537年发表《新科学》中研究和发展起来。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_EARLY_BALLISTICS_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>他继续使用直线运动的片段，由萨克森州的阿维森纳和阿尔伯特建立的惯例，但创新的是，他用圆弧连接直线。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_EARLY_BALLISTICS_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>弹道学这个词来自来自希腊语“丢掉”。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_EARLY_BALLISTICS_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>从早期的弹道学扩展到各分支学科的形成，经历了两个多世纪。最初是以身管武器的膛口为界，划分为膛内弹道学和膛外弹道学；经过一个多世纪的发展，到19世纪后期，才初步完善了各自的学科体系。介于其间的膛口现象研究，原先仅作为内弹道现象的延续。随着对武器的威力和射击精度要求不断提高，以及应用膛口装置之后，膛口气流的利用及有害现象的抑制等问题的出现，促使对膛口气流的研究日益受到重视，而气体动力学理论、计算技术以及流场测试技术的相继发展，又为这方面的研究提供了必要的条件。20世纪60年代以后，这一新领域的研究，已从内弹道学中分化出来，形成了中间弹道学学科。弹道起始段的研究，虽然原来也是属于内弹道学的一个组成部分，但随着武器向高初速、高膛压及高装填密度方向发展的需要，发射装药起始燃烧阶段对射击安全性和弹道稳定性等的重要影响，日益受到重视，而现代燃烧理论、内弹道两相流理论以及脉冲X光测试技术等也为这方面的研究提供了必要的条件，使这个领域研究的深度和广度都在不断发展，起始弹道学也逐渐地从内弹道学中分化出来自成体系。终点弹道学的研究虽然早在19世纪前期即已兴起，但是它的发展进程同中间弹道学的情况一样，也是20世纪中期在有关基础学科和测试技术发展的推动下，才逐渐形成了较完整的学科体系。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_DISTRIBUTED_WEAPONS_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>分布式武器为堡垒防御和建造新型舰艇带来了有利条件。典型例子就是加莱赛型战船。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_DISTRIBUTED_WEAPONS_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>加莱赛型战船是一种主要由威尼斯人制造，在地中海使用的大型战船，在17世纪颇为流行。加莱赛型战船的排水量可达600吨以上乃至接近1000吨，是一种划桨和风帆结合的大型战舰，需要数百名划桨手一同运作。通常这种船还会在船头和侧面安装几门火炮并能搭载数量可观的水手。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_DISTRIBUTED_WEAPONS_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>所以新的船型可以像旧船一样朝着更大的方向开火，而不仅仅是朝着运动的方向。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_DISTRIBUTED_WEAPONS_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>加莱赛型战船刚出现时，相对于当时常见的地中海船只来说是一个真正的巨无霸。其吃水深，可以很稳定的在地中海航行，数百名划桨手和风帆的结合提供优秀的动力，在发动攻击前它能用更大的火炮优先轰击敌船，而后让数量占绝对优势的水手进行接舷肉搏战歼灭其他小船数量极少的敌人。[NEWLINE][NEWLINE]加莱赛型战船虽然威力强大，但搭载大量人员和使用划桨使得其不适合远洋。随着风帆船的崛起以及炮战在海战中地位的提升，加莱赛型战船逐渐被淘汰出主流。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_ADVANCED_SHIPBUILDING_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>中世纪时代，欧洲人的造船技术分为南北两种风格。中世纪前期，以北欧人的造船术最富特色。北欧地区水域宽广，居民们很早就建造了船只作为水上交通工具。考古学家曾在丹麦发现了许多属于青铜时代的船只的图画。这些图画有的刻在岩石上，有的刻在武器上甚至男子的剃须刀上。画中船只船体较长，船首十分高大，类似天鹅颈状，上面还刻有各类动物头像，船只中央画着一株竖立起来的树木。在日德兰南部的约尔斯普林沼泽地区，发掘了一只大约建造于公元前后的船，与青铜时代的图画船颇为相似。船身细长，长达42英尺，结构精巧，宛如一艘竞赛快艇。每块船板都很窄，不用钉拢，而是合了缝之后再绑缚在骨架上。中世纪早期，北欧船又有一些新的发展。1863年，在丹麦的尼达姆地区发现了两艘大船。其中一艘现存石勒苏维格的一个博物馆里，船长60多英尺。此船已显示了北方船不同于南方船的三个特点。[NEWLINE][NEWLINE]1.船板，即船板相叠而成，而地中海船舶是“平接”（Carvel-built），船板合缝拼平，所以表面光滑。[NEWLINE][NEWLINE]2.尼达姆船是“双头”，即船首和船尾都高昂，造型没有什么区别，而南方船只的头尾很不一样。[NEWLINE][NEWLINE]3.无甲板。船主要靠桨来推动，还没有桅和帆。此船略带圆形，只有一个粗糙的龙骨。[NEWLINE][NEWLINE]12至14世纪里，以维京人船为代表的北方船又有一些新发展。首先是船尾舵的出现，取代了过去的舵桨。关于尾舵及连用舵柄的最早图画，发现于一个1200年的英国城市印章里，它表明最初的尾舵是弯曲的，以适应船尾曲线。后来船尾成了直线型，尾舵也随之改进，一个1242年的德国北部印章表明了这一点。尾舵使用有助于船向风行驶，加上船体加深，船在逆风情况下可以斜向航行了。其次是维京船的低干舷也在1100年后发生了变化，即在船头和船尾都建立了上层结构，称之为“堡”（Castle）。“堡”原出于军事目的而建。那时海战船靠得很近，头尾堡可在敌人登上船腰时起一定的防卫作用。后也扩及到了商船。船上有这种高层建筑，给人一种外观“头重脚轻”之感。为此，船首甲板（Forecastle）实际成了船头的“水手舱”。再次是北方商船的出现和演进。北方商船称为“诺尔”船（Knorr），船身比长船宽、深，是北方最早能利用逆风的船。14世纪时，诺尔船发展为标准的商船，其型式统治了北欧达400年之久。北方闻名的“科格”船（Cog）实际上也是其翻版。科格船有名副其实的船尾舵来控制方向，有一个长长的伸向前方的船首斜桅，挂方帆，船体特别坚固。1400年左右，在科格船的基础上，北方又出现了更大的“霍尔克”船（Holk）。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_ADVANCED_SHIPBUILDING_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>中世纪时，南欧船既继承了古代地中海船型的传统，亦受到了同时代阿拉伯船只的影响。其主要特点是船的外壳板合缝平接，并用铁钉钉在肋骨上，缝中填以沥青等物，船面光滑，船上有甲板。但各国各时代的船各有特点。[NEWLINE][NEWLINE]9世纪左右，拜占廷人建造的平滑船体的船，使用新式大三角帆装置（接受阿拉伯人技术），船能在风向的60°角内行驶。船的圆体形状、平滑表面均减少了船身同水的磨擦，使这些庞大的船有一个很好的航行质量。船在不太需要关心风向的情况下仍能基本按预定方向行驶。这类船在随后的二三个世纪里越来越大、越笨重，称为“内夫”（Nef）船，有2至3桅，都采用大三角帆装置，排水量超过千吨。意大利船两头都有船楼。中世纪盛期，一种结合了长船和帆船特点的称为“泰里达”（Tarida）的船舶广泛使用。之所以要结合长船特点，是因为商用帆船上还得对付海盗们的进攻。用水手，既能在无风的情况下行驶，也具有一定的战船功能。[NEWLINE][NEWLINE]12世纪中期，热那亚船有两层甲板，13世纪后期出现3层甲板。二桅，前桅略高、略大，挂三面大三角帆，后帆挂两面三角帆。最好的桅，用的是热那亚或马赛所产的硬质的棉或麻帆布。13世纪中期，有些地中海船只长达30米。控制方向的装置是侧舵。侧舵有一对，安装在船尾附近，两侧各一。14世纪时，地中海船只也开始用船尾舵。同时，北方式的科格船大约也在13世纪里开始出现在地中海上。14世纪初，意大利人已广泛造用这种单桅大船来装载远航货物了。[NEWLINE][NEWLINE]14世纪末以后，南北船特点开始混合，产生了一种新的大型船只“卡拉克”（Carrack）船。此船后来成为西欧远洋航船的最初式样，也是西方世界在大帆船时代（16—18世纪）到来之前的最典型船只，既可军用更可商用。据说，南北特点的混合源于十字军时代，因为那时各国的十字军都有机会观看别人的的船型及其建造方法。北方的船上装置技术，如固定船舱、单面大帆，南方的船体构造技术，如甲板、平接船板技术，都被视为长处而结合在新型船只中。卡拉克船最先出现于威尼斯、热那亚和西班牙等地，船体既深且宽，有一个很高的船尾，巨大的前船楼凸出了船头，船身平滑，整个侧形颇似过去的北方船，有一条优雅的圆弧形线条。船舵已不再在一侧，而是安装在船体中心线上。[NEWLINE][NEWLINE]15世纪后，卡拉克船从一桅一帆演变成为三桅大船。三桅是前桅（Foremast），较矮，主桅（Mainmast），较高，以及后桅（Mizzenmast）。最初，前桅挂一大三角帆。后来，在船首置一杆后送，上挂一方形斜杠帆，这就可使前桅后移并增加高度。后又增加了一些横桅索来做辅助用途，增加梯索（系于横桅索上）取代了以往用于攀缘桅杆的木梯。在行驶过程中，由于感觉到驾驭大帆太累，结果导致了一系列小帆的使用。先是有些大船在主桅上挂三面帆，从下到上依次为主帆（Course）、顶帆（Topsail）和上桅帆（Topgallant），后来船的每桅上一般都有三截帆。也出现了四桅船，前桅挂若干方形帆，后三桅则挂大三角帆。后来还发明了一些缩帆的方法。方帆不再象以往那样靠收帆来减小帆面，而是用一块块小旗似的帆布系上，不需时解开带子拿走就行。微风时如需增加帆的面积，也用一些窄布条系加在小块帆布上。15世纪时，装有帆桅装置的卡拉克船一般长度24至27米不等。三桅多帆的卡拉克船，奠定了16至18世纪大帆船时代船的桅帆装置的基本样式。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_ADVANCED_SHIPBUILDING_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>不过，不论是哪种船，中世纪欧洲船的吨位一船都不大，船体远小于中国船。北方船更小，南方地中海船稍大。1066年诺曼底人渡英吉利海峡所乘的船，每只载重不过30吨。14世纪初，英国船只平均载重为200吨，最大的船也不过300吨。而威尼斯在十字军东征时所提供的船只平均能载运500多吨。14世纪以后，威尼斯开始建造商船队。其船为长船形，吨位原为100吨，后达300吨。而15世纪时热那亚的卡拉克船中竟有达到甚至超过了1000吨的。14世纪初，一艘普通汉萨商船的吨位大约是75吨。1440年时，汉萨商船主要是霍尔克船，平均载重大约为150吨。三十年后，汉萨船队中出现了“卡维尔式”（Carvel—type）快帆船，其平均吨位在300吨左右。在法英酒类贸易中，155世纪早期没有船能装载100吨以上的酒。但到这个世纪的中叶，来自波尔多的船只平均可载150吨，少数船还可装运500吨酒。在威尼斯，1450年左右，超过200吨的船被看成是大船了，但对随后的大多数科格船来说，400吨只能算是一个普通吨位。16世纪中叶，威尼斯的卡拉克船中很有些达到600吨甚至700吨。葡萄牙的船只在1450至1550年间，平均吨位至少翻了一番。从事波罗的海谷物贸易的荷兰人，15世纪里用的有几种船。没有龙骨、圆形船身的霍尔克船吨位从200吨到400吨不等。长型中底的快船吨位则从250吨到500吨左右。不能简单地以船的大小来判断船的航海能力，因为哥伦布和达·伽马他们在进行远洋航海时，各自所乘的旗舰也不过载重150吨左右。航船的耐波性和续航能力也非常重要。当然更重要的是航海（主要是导航）技术。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_ADVANCED_SHIPBUILDING_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>不过，不论是哪种船，中世纪欧洲船的吨位一船都不大，船体远小于中国船。北方船更小，南方地中海船稍大。1066年诺曼底人渡英吉利海峡所乘的船，每只载重不过30吨。14世纪初，英国船只平均载重为200吨，最大的船也不过300吨。而威尼斯在十字军东征时所提供的船只平均能载运500多吨。14世纪以后，威尼斯开始建造商船队。其船为长船形，吨位原为100吨，后达300吨。而15世纪时热那亚的卡拉克船中竟有达到甚至超过了1000吨的。１４世纪初，一艘普通汉萨商船的吨位大约是75吨。1440年时，汉萨商船主要是霍尔克船，平均载重大约为150吨。三十年后，汉萨船队中出现了“卡维尔式”（ｃａrvｅl—typｅ）快帆船，其平均吨位在300吨左右。在法英酒类贸易中，15５世纪早期没有船能装载100吨以上的酒。但到这个世纪的中叶，来自波尔多的船只平均可载150吨，少数船还可装运500吨酒。在威尼斯，1450年左右，超过200吨的船被看成是大船了，但对随后的大多数科格船来说，400吨只能算是一个普通吨位。16世纪中叶，威尼斯的卡拉克船中很有些达到600吨甚至700吨。葡萄牙的船只在1450至1550年间，平均吨位至少翻了一番。从事波罗的海谷物贸易的荷兰人，15世纪里用的有几种船。没有龙骨、圆形船身的霍尔克船吨位从200吨到400吨不等。长型中底的快船吨位则从250吨到500吨左右。不能简单地以船的大小来判断船的航海能力，因为哥伦布和达·伽马他们在进行远洋航海时，各自所乘的旗舰也不过载重150吨左右。航船的耐波性和续航能力也非常重要。当然更重要的是航海（主要是导航）技术。[NEWLINE][NEWLINE]大约从1300年起，欧洲出现了“第一批真正的地图”即地中海沿岸航海图。这些海图在意大利常常被称为“港口指引”或“指南手册”，提供了许多详尽的航海资料。这些资料直到１6世纪时还成为地图学家们的可靠资料来源，甚至还曾是荷兰航海人员的航行指南。[NEWLINE][NEWLINE]现存的这些14世纪地图中，最著名的是《加泰隆地图集》。这是一个叫亚伯拉罕·克雷斯克斯的犹太人为阿拉贡国王绘制的，现存于巴黎国家图书馆内。它将自东向西的世界中心地区（自印度至西班牙）绘成12幅地图，装订在木板上，可以折叠展开，基本上是一本沿海航行地图集，参照了世代航海家们所记录的无数资料，比较准确地绘出了黑海、地中海和西欧海岸。而且东边也第一次把印度当作一个巨大的半岛来表示，西边也显示了当时还不大为人所知的“西方海洋”（即大西洋），这确是一大进步。[NEWLINE][NEWLINE]中世纪欧洲较为典型精确的沿海航行图，其特点是表示了风向与气候关系的几何图形，形状恰似蔷薇花。海图上一般有一个中心点，周围有一个圈，圈内又有8至16个点，每个点都有不少线条向四处放射。这些射线既显示了风向，其中许多实际还标志着航线。这些海图在宏观上有实用价值，但难以确定船在航行过程中的具体方位。而且，这些图大多为手工绘制，没有一幅图是相同的。因此，到15世纪时，随着托勒密地理地图学说被欧洲人所重新认识，航海家们很快就采用纬线与子午线座标系来绘制海图了。加上印刷术的应用，标有方向线和距离的几何结构海图，开始在欧洲广泛流行。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_ARCHITECTURE_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>建筑学，从广义上来说，是研究建筑及其环境的学科。建筑学是一门横跨工程技术和人文艺术的学科。[NEWLINE][NEWLINE]建筑学所涉及的建筑艺术和建筑技术、以及作为实用艺术的建筑艺术所包括的美学的一面和实用的一面，它们虽有明确的不同但又密切联系，并且其分量随具体情况和建筑物的不同而大不相同。本科建筑类专业包括：建筑学专业、城乡规划专业、风景园林等专业。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_ARCHITECTURE_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>在开始，人类面对世界的同时，完全被神，魔鬼和精神围绕，对科学的物质世界一无所知。人们通过建立全能的神与他们的环境达成妥协。许多日常生活的各个方面被神学家或者超自然力量解释：年，季节，白天和黑夜。例如收割被视为神的生育力的善行。因而，城市的建立和秩序城市和她的最重要的建筑（宫殿或寺庙），经常由教士执行甚至统治者本身，建筑伴随着对应的仪式意欲将人类活动加入对神的持续的祝福。古老建筑表现了在天界和冥界之间的紧张关系。城市标记为超越外面自然原野的神圣空间的容器，并且寺庙或宫殿作为神的家继续了这一规则。建筑师，教士或统治者，不是唯一的重要规划者； 他仅仅作为保持传统的一部分</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_ARCHITECTURE_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>由于生活方式的不同古希腊和古罗马的建筑学和城市规划与埃及或者波斯的比较在是非常不同。在古代，宗教事务是作为统制秩序而保持的；在希腊时期，的时候，神秘的宗教转化成了寺庙和宫殿组合体，成为了公民的区域或城邦。希腊的日常生活形成了新的由公共建筑围拢的露天场所，该场所称为集市，它包括了商店和寺庙。集市通过开放辩论而不是皇家命令表现了新的对社会正义的尊重，然而神的智慧仍然主持了人间的事理。古老文明生活仪式转变成刻画在各个场地上，如在通往卫城的道路上。各个地方有它自己风俗，通过神话来反映世界，因而所有的寺庙都选在山上以便更好的接触天堂。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_ARCHITECTURE_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>而到了1961年，因为对东方的持续研究使得西方的学者认识到了东方风格的历史性，因此将建筑之树变成贯穿始末的两大部分，并且将非历史性风格更名为东方风格，将历史性风格更名为西方风格，取消了建筑之树。后进一步将东西两大部分同时取消，而将各个文明圈内的建筑风格演变用时间分章节，并且在全球范围内寻找合适的专家专门编写特定地区条目。这也是符合世界历史学研究的总进化过程的。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_BUREAUCRACY_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>"官僚主义"一词起源于法语：它结合了法语单词局——办公桌或办公室——与希腊语单词Kratos——统治或政治权力。法国经济学家雅克·克劳德·玛丽·文森特·德古尔奈（1712-1759）在18世纪中叶创造了这个词。古尔奈从来没有写下这个词，但一封当代人后来的信引用了他的话：[NEWLINE][NEWLINE]已故的古尔奈……有时常说："我们在法国有一种疾病，它公平地对我们造成破坏：这种疾病被称为局狂躁症。有时，他经常以"官僚主义"为标题，发明第四或第五形式的政府。—冯·格林男爵（1723-1807）[NEWLINE][NEWLINE]第一个已知的英语使用可以追溯到1818年，爱尔兰小说家摩根夫人提到英国人用来征服爱尔兰殖民地的机器是"官僚机构，或办公室暴政，爱尔兰长期以来一直受统治"。[NEWLINE][NEWLINE]到19世纪中叶，这个词出现在一个更中立的意义上，指的是一种公共行政制度，其中办公室由未经选举产生的职业官员担任。在这种情况下，"官僚主义"被视为一种独特的管理形式，往往屈从于君主制。[NEWLINE][NEWLINE]20世纪20年代，德国社会学家马克斯·韦伯扩大了定义范围，将训练有素的专业人员根据固定规则进行的任何行政系统都包括在内。韦伯认为官僚作风是一个相对积极的发展：然而，到1944年，奥地利经济学家路德维希·冯·米塞斯在纳粹政权的经历中认为，官僚主义一词“总是带有令人发指的内涵”。到1957年，美国社会学家罗伯特·默顿提出，“官僚”一词在某些情况下已成为一个“绰号”。[NEWLINE][NEWLINE]"官僚主义"一词也用于政治和政府，其语气不赞成贬低使事情难以做到的官方规则。在工作场所，这个词经常被谁用来指责复杂的规则、流程和书面工作，这些规则、流程和书面工作使得很难完成某些事情。然后，社会官僚主义将提到可能影响社会功能的某些社会影响。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_BUREAUCRACY_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>虽然"官僚主义"一词最早起源于18世纪中叶，但有组织、一致的行政制度存在得要早得多。写作的发展（公元前3500年）和文件的使用对于这个系统的管理至关重要，官僚主义的首次最终出现发生在古代苏默尔，在那里，一群新兴的抄写员使用粘土片来管理收成和分配其战利品。 古埃及也有管理公务员官僚机构的世袭抄写员。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_BUREAUCRACY_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>一个等级的区域前体和他们的副手管理罗马帝国。迪奥克莱蒂安（皇帝从284人增加到305人）的改革使行政区的数量增加了一倍，并导致罗马官僚机构的大规模扩张。早期的基督教作家拉坦提乌斯声称，迪奥克莱蒂安的改革导致了广泛的经济停滞，因为"各省被分成几分钟，许多总统和许多低级军官在每一个领土上都处于重任。帝国分裂后，拜占庭帝国形成了一个众所周知的复杂的行政等级制度，在20世纪，"拜占庭"一词开始指任何复杂的官僚结构。[NEWLINE][NEWLINE]在中国，秦朝（公元前221-206年）统一中国时，秦始皇将行政权分配给专职官员而不是贵族，结束了中国的分封制，代之以中央集权的封建制并被历朝代继承发展。在这个制度下，政府蓬勃发展，因为人才在转型的社会中更容易被识别出来。汉朝（公元前202年至公元前220年）为了适应国家统治的需要，建立了一整套选拔官吏的制度，名为“察举制”。察举是自下而上推选人才的制度，也叫“选举”，汉代察举制度，严格地说是从文帝（公元前179年—公元前157年在位）开始，他下诏要求“举贤良方正能直言极谏者”，并且定下了“对策”（考试）和等第。武帝时“察举制”达到完备，各种规定相继推出。其后，各种科目不断充实，特别是有了统一的选才标准和考试办法。考试是汉代察举制度的重要环节。被举者经考试后，由政府量才录用，这样既保证了选才标准能贯彻实行，选出真正的人才，还能保证竞争的相对公平，令下层人士有进入国家管理层的可能。随着考试制度不断发展和完善，到隋唐以后更发展成“科举制度”，这一制度实行了300年之久，成为中国重要的选官制度。随着随后的每一个王朝，官僚机构都发生了演变。[NEWLINE][NEWLINE]在隋朝（581-618）和随后的唐朝（618-907），开始通过全面标准化的公务员考试制度——科举制，部分招募那些通过标准考试并获得官方学位的人。然而察举制在两个朝代中仍然很突出。直到宋朝（960-1279），宋朝大幅增加了科举录取名额，宋太宗在位二十二年，仅进士一科取人近万名，平均每年达四百五十余人。唐朝总共取进士总数才六千多人。宋仁宗对进士名额做了限制，规定每科不超过四百人。按三年一科算，平均每年仍达一百三十多人，宋朝平均每年取进士数是唐朝每年取进士数的十几倍。科举制一直持续到1905年，也就是清朝垮台前的六年，标志着中国传统官僚制度的终结。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_BUREAUCRACY_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>到19世纪中叶，整个工业化国家都牢固地形成了官僚主义的管理形式。像约翰·斯图亚特·米尔和卡尔·马克思这样的思想家开始对当代生活中官僚主义的经济功能和权力结构进行理论研究。马克斯·韦伯是第一个将官僚主义视为现代性的必要特征的人，到19世纪末，官僚形式开始从政府扩展到其他大型机构。[NEWLINE][NEWLINE]20世纪，官僚化的趋势仍在继续，许多西方国家的公共部门雇佣了5%以上的劳动力。在资本主义制度中，非正式的官僚结构开始以公司权力等级的形式出现，如本世纪中叶的《组织人》和《灰色法兰绒套装的人》等作品所详述的那样。与此同时，在苏联和东方集团国家，一个强大的官僚行政阶层被称为"党政要员"，几乎统治着公共生活的方方面面。[NEWLINE][NEWLINE]20世纪80年代，人们对"大政府"和相关官僚机构的看法产生了强烈的反响。玛格丽特·撒切尔和罗纳德·里根等政治家通过承诺消除他们认为霸道的政府监管官僚机构，将经济生产恢复到更纯粹的资本主义模式而获得权力，他们认为这种模式更有效率。在商业世界中，像杰克·韦尔奇这样的经理人通过消除公司内部的官僚结构而获得了财富和声誉。然而，在现代世界，大多数有组织的机构依靠官僚系统来管理信息、处理记录和管理复杂的系统，尽管文书工作的减少和电子数据库的广泛使用正在改变官僚机构的运作方式。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_PRECISION_ENGINEERING_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>精密机械（或称“精细机械”）是一门工程学科，涉及对小型精密机械的设计与制造，通常包括不同种类的测量与控制器械。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_PRECISION_ENGINEERING_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>该学科亦可进一步定义为刚体运动学对微米级以及更小尺度下物体的定位与稳定的实践研究。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_PRECISION_ENGINEERING_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text></Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_PRECISION_ENGINEERING_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text></Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_PIKE_AND_SHOTS_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>枪刺与射击（Pike and shot）是一种历史上的步兵方阵，也是指欧洲的一个战争时代，此时代大略指从意大利战争到演化出刺刀的十七世纪末这段时期。这个步兵阵混和了长枪兵与火枪兵（钩铳兵或鸟铳兵）。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_PIKE_AND_SHOTS_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>在十五世纪末，在百年战争与勃艮地战争为主的战场中，一些晚中世纪的部队已经证明了他们当时最成功的部队，特别是重装骑士、瑞士佣兵与国土佣仆的长枪兵和一些新兴的加农炮兵团。随着科技水平的迅速提升，瓦卢瓦王朝的法兰西军队因拥有这些单位而特别难对付。[NEWLINE][NEWLINE]法国主导战争的地位在这时候受到反对瓦卢瓦野心国家的挑战，特别是在意大利。在1495年的Seminara战役，未尝败绩的西班牙军团在抵抗法兰西入侵那不勒斯时被由装甲贵族重骑兵和瑞士步佣兵所组成的法军打得落花流水。学到经验的西班牙军队在贡萨路·费南迪斯·迪·科尔多瓦的主导下试图对军队与战术进行重组。[NEWLINE][NEWLINE]科尔多瓦意识到无法比上法兰西贵族重骑和瑞士长枪纯粹的进攻力量，决定将当时的新兴技术—枪械的射击力量和长枪的防御力量作结合，且使他们成为一个互相援助的阵式，最适合采取防守位置。[NEWLINE][NEWLINE]起初这种混合步兵方阵被称作上校（Colunella），因全阵由一名上校所指挥。这种阵式穿插了密集的长枪手与松散的钩铳（一种早期枪械）手。钩铳手可以射击敌军、且在敌方的骑兵或步兵靠近时可以跑到我方长枪手的附近寻找掩护；这是特别必要的，因为十六世纪时的枪械准度偏低、装填耗时且射程短，这意味着射手只能在他们的敌人面前射击几次而已。[NEWLINE][NEWLINE]这种新的战术使西班牙和科尔多瓦的上校方阵在切里尼奥拉战役中获胜，这是意大利战争中伟大的胜利之一，数量庞大的西班牙火枪队在防御位置上粉碎了法兰西军队的贵族重骑兵与瑞士佣兵的攻击。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_PIKE_AND_SHOTS_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>古斯塔夫二世·阿道夫在波兰的经典特西奥斯编队经历糟糕之后，决定重组他的战场编队，最初采用"荷兰队形"，但后来又增加了一些自己的创新。[NEWLINE][NEWLINE]他开始重新排列地层更薄，通常只有四到六个等级深，水平分布到矩形，而不是正方形。这进一步最大限度地增加了地层前部附近的火枪手数量。此外，他还设计了排队射击的战法，所有炮兵将同时开火。此举意在使对方部队前线的尽可能多的成员倒下，导致在他们身后的队伍中前进，在他们被后方的队伍逼近时绊倒。最后，他把四支小型"步兵枪"嵌入每个营，允许他们独立行动，如果脱离，就不会受到炮火的射击。[NEWLINE][NEWLINE]古斯塔夫还在骑兵中将分离的火枪手安置在小单位中。在传统的部署中，步兵将部署在中间，双方有骑兵，保护侧翼。战斗通常会开始，骑兵攻击他们的对手，试图把他们赶走，从而打开步兵从侧面骑兵冲锋。试图这样做，反对他的新编队将遇到排队射击，也许本身并不危险，但给瑞典骑兵一个真正的优势之前，两军相遇。在正常情况下，没有枪刺与射击方阵的阻挡，火枪手很容易成为敌军骑兵的目标，但如果它们靠近射程，瑞典骑兵将更直接地受到关注。[NEWLINE][NEWLINE]这些变化的影响是深远的。虽然古斯塔夫在波兰取得好坏参半的成绩后，但是基本上被欧洲大部分地区所忽视，当他于1630年抵达德国时，他并没有立即受到挑战。他设法建立了一支由24，000名常备军部队，并在冯·阿尼姆的领导下加入了一支由18，000名的撒克逊人组成的部队。战斗第一次以主要形式加入时，约翰·采克莱斯，蒂莉伯爵把他的31，000人老兵军队做战斗，满足古斯塔夫在布赖滕费尔德战役在1631年。战斗以传统方式开始，蒂利的骑兵向前推进，攻击侧翼。这驱赶了一侧的撒克逊人，但另一侧古斯塔夫的新联合骑兵部队驱赶了任何冲锋的企图。随着一侧翼的开放，蒂利仍然有一个主要的位置优势，但古斯塔夫的更小和更轻的单位能够很容易地重新调整，面对以前开放的侧翼，他们的方阵切入他们的行列，而双方展开肉搏战。蒂利伯爵很快就被赶出了战场，他的部队一片混乱。[NEWLINE][NEWLINE]后续战斗也有类似的结果，蒂利伯爵最终在其中一次战斗中受了重伤。到1632年底，古斯塔夫控制了德国大部分地区。然而，他的成功是短暂的，因为敌对的神圣罗马帝国军队很快采取了类似的战术。从这一点上，枪刺与射击方阵逐渐蔓延到越来越宽的矩形，以最大限度地提高步枪的火力，编队变得更加灵活，具有更多的火力和行动的独立性。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_PIKE_AND_SHOTS_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>十七世纪中叶以后，采用燧发枪的军队开始完全放弃枪刺与射击方阵，或大幅减少其数量。相反，刺刀可以贴在火枪上，把它变成长矛，而步枪的火力非常致命，战斗往往由单独射击决定。在步兵编队中使用枪刺与射击方阵的一个共同结束日期是1700年，尽管一些军队，如普鲁士人，在几十年前就已经放弃了枪刺与射击方阵，而另一些军队，如瑞典和俄罗斯军队，在几十年后继续使用枪刺与射击方阵——特别是查尔斯十二世国王的瑞典人，在1721年之前一直使用它。[NEWLINE][NEWLINE]1699年，神圣罗马帝国的军队正式停止使用枪刺与射击方阵。自三十年战争以来，它一直在逐步淘汰枪刺与射击方阵和长矛。1660年代蒙特库科利改革后，帝国步兵连的纸面兵力为48人、火枪手88人和盾牌兵8人。帝国军队在大土耳其战争期间使用这种配置，最著名的是在维也纳战役中，燧发枪被大量生产（火石锁要到1699年才能进入正规服役）。在同一次冲突中，波兰-立陶宛军队也大量使用枪刺与射击方阵。[NEWLINE][NEWLINE]甚至更晚，在爱尔兰、俄罗斯和中国等国家，这些过时的枪刺与射击方阵仍然会被使用，这些国家通常掌握在绝望的农民反叛分子手中，因为他们无法获得枪支。[NEWLINE][NEWLINE]1862年，美国内战期间，美国联邦招募了20个枪刺与射击方阵团，试图将枪刺与射击方阵作为主要步兵武器复活。1862年4月，它被授权，每个邦联步兵团将包括两个枪刺与射击方阵连，该计划由罗伯特·李支持。许多枪刺与射击方阵被生产出来，但从未在战斗中使用过，在军队中加入枪刺与射击方阵的计划被放弃了。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_ACID_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>炼金术（Alchemy）是中世纪的一种化学哲学的思想和始祖，是当代化学的雏形。其主要目标是将贱金属转变为贵金属，尤其是黄金。后来又发展出不同的研究，比如制造万能药（例如阿佐特），寻获贤者之石以及创造人造人（Homunculus）。[NEWLINE][NEWLINE]现在的科学表明这种方法是行不通的。但是直到19世纪之前，炼金术尚未被科学证据所否定。包括艾萨克·牛顿在内的一些著名科学家都曾进行过炼金术尝试。现代化学的出现才使人们对炼金术的可能性产生了怀疑。[NEWLINE][NEWLINE]炼金术在一个复杂网络之下跨越至少2500年，曾存在于美索不达米亚、古埃及、波斯、印度、中国、日本、朝鲜、古希腊和罗马，以及穆斯林文明，然后在欧洲存在直至19世纪。[NEWLINE][NEWLINE]在赫耳墨斯主义中，炼金术与占星术（Astrology）、神通术（Theurgy）等一起例为“全宇宙三大智慧”，它们由一位名为“赫耳墨斯·特里斯墨吉斯忒斯（Hermes Trismegistus）”的传说人物开创，所以他被看作是炼金术师的始祖。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_ACID_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>炼金术是起于12世纪欧洲的一个名字。到公元八世纪，炼金术真正开始了。早期的炼金术者的生活时代是从公元一世纪到五世纪。西方最早的炼金术著作是德谟克利特(Democritus)写的（约公元100年）。西方炼金术认为金属都是活的有机体，逐渐发展成为十全十美的黄金。这种发展可加以促进，或者用人工仿造。所采取的手段是把黄金的形式或者灵魂隔离开来，使其转入进金属；这样炼金属就会具有黄金的形式或特征。金属的灵魂或形式被看作是一种灵气，主要是表金属的颜色上，因此贱金属的表面镀上金银就被当作是炼金术者所促成的转化。[NEWLINE][NEWLINE]西方的炼金术可追溯到希腊化时期，最早、最可靠的代表人物是佐西默斯。大约生活在公元350至420年的佐西默斯相信存在着一种物质，它能魔术般地使金属出现人所企望的变化。他对这种物质的称呼，经阿拉伯传入拉丁语系后，叫做“Elixirvitae”（长生不老药），也就是类似于中国所说的“能令人不老不死”的“上品之神药”———“金丹”。另一位炼金术士，活动于公元三世纪的赫尔墨斯，是埃及的僧侣。作为一切有用的技艺的发明者，赫尔墨斯受到普遍的尊重，被看作与埃及的月神有沟通，后来慢慢地被神化为“三次最伟大的赫尔墨斯”（Hermes Trismegistus），以至于他的名字，最后就直接演变成为“炼金术”。[NEWLINE][NEWLINE]炼金术士相信，“炼金术”的精馏和提纯贱金属，是一道经由死亡、复活而完善的过程，象征了从事炼金的人的灵魂由死亡、复活而完善，炼金术能使他获得享福的生活、高超的智慧、高尚的道德，改变他的精神面貌，最终达到与造物主沟通。不用说，这样的目标是无法达到的。炼金术士也明白这一点，因而从各方面来作出“说明”。例如，一部炼金术著作解释长生之难求说：“由于它是人世间一切幸事中的幸事，所以我认为它只能由极少数人通过上帝的善良天使的启示而不是个人的勤奋才获得贤者之石的。”而且对服用“贤者之石”能否治病长生的方法，也故意说得非常微妙。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_ACID_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>铅或铜这样的贱金属，怎样才能变成黄金？炼金家认为，铅或铜之所以不像黄金那样的高贵和耐久，是因为在性质上有缺欠的地方。因而就需要设法用各种物质来加以补充。一些人又认为在亚里士多德所主张的四元素以外，作为各种金属的最常见的共同元素，还有汞、硫和盐这三种。根据这三种元素的配比的不同，就可以得到铅、铜或黄金。于是他们就以不同的方法并按不同的比例把三种元素相混合，或是在贱金属中加入某一种元素，以试验能否制出黄金。[NEWLINE][NEWLINE]另外，还有人认为，有一种具有不可思议的力量的神秘之“圣石”。它可以随心所欲地把铅变成金或银。这种“圣石”究竟在何处，虽然尚未得知，但是要想制出黄金，就必须首先找到它。他们把这种“圣石”称之为所谓“贤者之石”。[NEWLINE][NEWLINE]但是尽管如此，由于长生的诱惑力，直到用化学方法制金的可能性未能被科学证据否定的19世纪之前，它一直都有广阔的市场，甚至像艾萨克·牛顿这样的大科学家都认为，通过实验来制取黄金，是值得做的。西方的不少国王，也与中国的那些皇帝一样，一心希望通过炼金术使自己达到长寿永生。如英国国王亨利六世、法国国王查理七世、查理九世、瑞典国王查理十二世、普鲁士国王腓特烈·威廉一世、腓特烈·威廉二世，都是炼金术的忠实信徒。其中特别有趣的，像英国的伊丽莎白女王，对炼金术士约翰·迪真是宠幸得无以复加，甚至特许他在宫中从事炼金术活动。在号称“炼金术的中心”的布拉格，神圣罗马帝国的皇帝鲁道夫二世把炼金术士迈克尔·梅尔特封为伯爵。[NEWLINE][NEWLINE]近代化学的出现，使人们对制金的可能性产生了怀疑，到了17世纪以后，炼金术遭到了批判。炼金术的希望破灭了。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_ACID_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>炼金术经过现代科学证明是错误的。但作为近代化学的先驱在化学发展史上起到了一定的积极作用。通过炼金术，人们积累了化学操作的经验，发明了多种实验器具，认识了许多天然矿物。炼金术在欧洲成为近代化学产生和发展的基础。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_ENGINE_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>发动机（亦称“引擎”）是一种能够把其它形式的能转化为机械能的机器，包括如内燃机（往复活塞式发动机）、外燃机（斯特林发动机、蒸汽机等）、喷气发动机、电动机等。如内燃机通常是把化学能转化为机械能。发动机既适用于动力发生装置，也可指包括动力装置的整个机器（如：汽油发动机、航空发动机）。发动机最早诞生在英国，所以，发动机的概念也源于英语，它的本义是指那种“产生动力的机械装置”。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_ENGINE_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>利用燃料燃烧产生的热加热做功介质，再利用介质膨胀做功的发动机，被称为外燃机。外燃机的燃烧过程发生在汽缸之外，例如一个外置的锅炉中。锅炉内燃烧产生的热气经管线导入汽缸或涡轮机（Turbine）内，推动活塞或涡轮扇叶来产生推力。西元一世纪，古希腊的希罗描述了以蒸汽为动力的汽转球。然而这只是一种娱乐玩具，并没有真正的起到取代人力劳动的功效。十八世纪，欧洲发生了以蒸汽机的发明为标志的第一次工业革命。1698年，萨弗里发明了用于矿井抽水的蒸汽机：矿工之友。1705年，纽可门开发出实用大气蒸汽机。然而这些蒸汽机都需要向汽缸喷洒冷水造成蒸汽冷凝，汽缸的热量在反复冷却与加热中被浪费。1769年，詹姆斯·瓦特获得了独立冷凝器蒸汽机的专利。同年，居诺制成三轮蒸汽汽车。1802年，特里维西克制造了使用蒸汽机的实验性火车。1807年，罗伯特·富尔顿制成以蒸汽机为动力的船克莱蒙脱号。[NEWLINE][NEWLINE]利用燃料燃烧后在有限空间内自身的膨胀直接做功的发动机，被称为内燃机。内燃发动机中最常见的是往复式发动机：燃烧后的气体推动活塞进行往复运动，活塞再透过曲柄轴（Crank）将原本直线往复的动力输出转为旋转运动，是今日汽车与摩托车上最常见到的动力型式，早期螺旋桨飞机，部分小型船只和某些情况下用来驱动发电机的发动机也都采用这种形式。旋转式发动机又可分为喷气发动机和转子发动机。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_ENGINE_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>当前发动机主要以不可再生的化石燃料为能量来源，由此产生了三个主要问题：资源消耗、环境污染、温室气体排放。[NEWLINE][NEWLINE]发动机的效率普遍比较低下。根据卡诺定理，理想热机的效率取决于高温热源和低温热源之间的温度比。因此，提升高温热源温度，降低低温热源温度就成了理论上提高效率的解决办法。发动机排放的废气往往温度太高，大量的热被包含在其中而浪费掉。对于内燃机而言，可以通过加装废气涡轮增压系统的办法来回收部分能量。而对于温度更高的燃气轮机来说，其废气甚至可以作为蒸汽轮机的高温热源，由此而组成的燃气-蒸汽联合系统是一种效率十分高的动力来源。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_ENGINE_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>污染可以分为固体污染、水污染、大气污染与噪声污染。对于燃烧煤的外燃机来说，产生污染（比如：伦敦型烟雾）的原因主要为燃料不能充分燃烧所产生的燃烧产物（煤灰），以及燃料中的杂质（主要为硫）的燃烧产物。而对燃烧汽油和柴油的内燃机来说，除了上述类型的污染物，氮气与氧气在汽缸内高温下反应所产生的氮氧化合物是一种更重要的污染来源（比如：洛杉矶型烟雾）。由此可见，提升燃料燃烧率是一种既可以节约资源，又可以减少污染的方法。另一方面，在发动机废气出口处加装过虑、催化反应装置将有害物质转化为无害物质也是一种减少污染的重要途径。为了减少汽油发动机的爆震，需要在燃料中加入抗暴剂。在很长的一段时间里，四乙基铅都是一种常用的汽油抗暴剂。因此导致汽车尾气中含有有害的铅元素，这也是空气中铅的主要来源。由于铅的毒性，到20世纪末，世界上大多数国家已经停止生产与销售含铅汽油。喷气式发动机和火箭发动机的数量虽然较少，但由于工作高度高，产生的氮氧化物更容易破坏臭氧层。喷气发动机和火箭发动机的噪声污染也远大于其他类型的发动机。[NEWLINE][NEWLINE]燃烧化石燃料的发动机所产生的二氧化碳是温室气体的一个重要来源。飞机使用的喷气发动机所产生的凝结水蒸气也会造成温室效应。减少温室效应，一方面可以减少燃料消耗以降低二氧化碳排放。还可以采用其他燃料如含生物柴油来取代现有燃料，采用使用混合动力的发动机来减少温室气体排放。[NEWLINE][NEWLINE]为了降低发动机怠速时的排放，有人采用升高进气温度，减少汽缸吸入的空气质量，减少喷油量，在空燃比不变的情况下，降低排放，降低油耗。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_PENDULUM_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>钟摆是一种时钟，由荷兰物理学家克里斯·惠更斯（Christiaan Huygens）发明于1656年，根据单摆定律制造，用摆锤控制其它机件，使钟走的快慢均匀，一般能报点，要用发条来提供能量使其摆动。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_PENDULUM_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>这是对现有机械钟的极大改进；他们的最佳精确度从每天15分钟左右提高到了每天15秒左右。摆钟遍布欧洲，因为现有的钟都是用摆钟改装的。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_PENDULUM_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>在18世纪和19世纪，钟摆钟作为最精确计时器的作用激发了许多改进钟摆的实际研究。结果表明，摆杆随环境温度的变化而膨胀和收缩，从而改变摆杆的摆动周期，是产生误差的主要原因。温度补偿摆的发明解决了这一问题，1721年的水银摆钟和1726年的格子摆钟摆钟的误差降低到每周几秒钟。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_PENDULUM_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>摆钟是利用摆锤的周期性振动（摆动）过程来计量时间，时间 = 摆的振动周期 × 振动次数。而摆的振动周期：[NEWLINE][NEWLINE]T = 2π（L/g)^0.5[NEWLINE]其中L为摆长，g为重力加速度[NEWLINE][NEWLINE]一般来说，摆的重量是确定的，调节摆的引用长度（L）即可调整摆的振动周期。摆的引用长度减短，时钟变快；反之则变慢。对精密摆钟，也有用附加重物法来微调摆的振动周期。摆钟放置在不同的地理位置（不同的地球纬度和海拔高度）中，摆锤的重力加速度会发生变化从而影响其振动周期。摆钟放置在不同温度和气压的环境中，也会引起振动周期的变化。温度变化会引起摆的各部分尺寸包括摆的引用长度的变化。一般是温度升高，摆胀长而钟变慢；反之则摆缩短而钟变快。因此，精密摆钟常用不同的线胀系数的材料制成温度补偿管，以补偿温度影响。气压的变化会引起空气阻力和空气密度的变化，从而引起振动周期的变化。因此，精密的摆钟常将摆安装在恒压的壳体中，以消除气压影响。[NEWLINE][NEWLINE]摆的振动幅度影响到钟的等时性。振幅愈小，振幅变化所造成的日差（见钟表日差）变化愈小，即等时性愈好，因而精密摆钟常采用长摆杆小摆幅。但是，小摆幅对外界来的震动和撞击很敏感，因而对安装环境要求很高。摆钟的走时日差一般可以达到20秒/天以内，精密摆钟达千分之几秒。[NEWLINE][NEWLINE]摆动的钟摆是靠重力势能和动能相互转化来摆动的，简单的说，如果你把钟摆拉高，由于重力影响它会往下摆，而到达最低位置后它具有一个速度，不可能直接停在那（就好象刹车不能立即停下一样），它会继续冲过最低位置，而摆至最高位置就往回摆是因为重力使它减速直到0，然后向回摆（就象往天上仍东西，它会在上升中减速到0，然后落下）。如此往复，就不停的摆动了。[NEWLINE][NEWLINE]按照上述，钟摆可以永远摆下去，但由于阻力存在，它会摆动逐渐减小，最后停止。所以要用发条来提供能量使其摆动。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_MEDICINE_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>医学（Medicine）是通过科学或技术的手段处理生命的各种疾病或病变的一种学科，促进病患恢复健康的一种专业。它是生物学的应用学科，分基础医学、临床医学。从生理解剖、分子遗传、生化物理等层面来处理人体疾病的高级科学。医学伦理目前最广为人知的是四初确原则方法论：“自主、行善、不伤害、正义”。[NEWLINE][NEWLINE]在人类社会中，医学已经存在数千年之久。现代医学起源于17世纪科学革命后的欧洲，以科学的过程及办法来进行医学治疗、研究与验证。研究领域大方向包括基础医学、临床医学、检验医学、预防医学、保健医学、康复医学等等。在现代医学兴起前发展的医学，称为传统医学；传统医学在现代则以替代医学的形式在科学医学尚未普及的地区继续存在，或以现代医学科学方法进行研究。[NEWLINE][NEWLINE]现代医学以自然科学为基础，对维持生命的规律及体质变化作出科学的精细的分析，对病理、药理、流行病学等作出有系统的分析与临床研究。现代医学的发展得益于工业文明及有效利用科技发展的成果，令其在检测、医药及手术等范畴的研究与应用都得到充实。现代医学在外科手术、器官移植、流行病控制、疫苗及免疫、基因及干细胞研究、动物实验、新药开发及医学工程等方面，在当代人类的健康及人均寿命都有重要影响。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_MEDICINE_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>东、西方文化历史背景是中、西医学形成、发展的土壤。公元2世纪东、西方的两位医学巨匠张仲景和盖伦，传承了不同的学术思想，创建了迥异的医学范式，发展和完善了不同的理论体系，使中、西医学各自走向了两条完全不同的发展道路。[NEWLINE][NEWLINE]在汉代医学家张仲景所著述的《伤寒杂病论》之前，就有《内经》《难经》《本草经》等古典医药典籍。张仲景总结了汉代以前的医学成就，继承了《内经》等基本理论和丰富的医药知识，结合自己的临床实践，写成了《伤寒杂病论》。其贡献在于确立了中医学辨证论治的理论体系，为后世中医临床医学的发展，奠定了坚实的基础。[NEWLINE][NEWLINE]在西方，盖伦的一生生活在罗马帝国时安东尼父子的执政期。彼时，罗马帝国的繁荣，为盖伦的医学成就、以及西方医学的昌盛，提供了可靠的政治、经济、科技和文化保证。盖伦继承希波克拉底的学术思想，著述200余部著作，现存的83部著作中，内容涉及解剖、生理、病理、卫生、药物、《希波克拉底文集》研究、哲学、语言学、逻辑学、数学、历史、法律等。倡导实证医学，他的科学方法论具有重视实验、疾病局部定位思想、重视形式逻辑、强调演绎法等特点，对后世西医学的发展影响深远。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_MEDICINE_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>西方近代医学是指文艺复兴以后逐渐兴起的医学，一般包括16世纪、17世纪、18世纪和19世纪的欧洲医学。[NEWLINE][NEWLINE]中世纪的医学校中，主要讲阿维森纳的《医典》，以及盖伦和希波克拉底的著作。教师照本宣科，一切墨守成规，毫无生气。文艺复兴的狂潮，很快就波及医学领域。帕拉切尔苏斯指出人体的生命过程是化学过程。他在巴塞尔大学任教时主张用流行的德语写书和讲演，使医学易为大众所接受，这是一件伟大的改革。他重视实践，反对烦琐的经院哲学，反对中世纪顽固的传统和权威观念，他说：“没有科学和经验，谁也不能成为医生。我的著作不是引证古代权威的著作，而是靠最大的教师──经验写成的”。他勇敢地向墨守成规和盲目崇拜进行斗争，公开焚毁了盖伦和阿维森纳的著作。[NEWLINE][NEWLINE]首先革新解剖学的是意大利的达·芬奇，他认为作为现实主义的画家，有明了解剖的必要，尤其需要了解骨骼与肌肉，于是从事人体解剖。不过，他所绘制的700多幅解剖图，传至今日还有150余幅。画得大都准确、优美。他首先对加伦的解剖学发生疑问。他曾往气管吹入空气，但无论如何用力，也不见心脏膨胀起来，于是得出结论：盖伦所谓肺与心相通的学说是错误的。他还检查过心脏的构造与形态，他所画的心脏图较以往有关图画正确得多。此外，他还发现了主动脉根部瓣膜的活动及其性质，证明瓣膜的作用在于阻止血液回流。他所提到的心血管方面的问题，不久就引起了医学家们的注意。[NEWLINE][NEWLINE]根据直接的观察来写作人体解剖学教科书这一工作由A.维萨里完成。维萨里先肄业于卢万大学，后转入巴黎大学。当时，这两所大学讲解剖时，仍是教授高坐椅上讲课，助手和匠人在台下操作，而且一年内最多只允许进行3或4次解剖。维萨里不满足这种状况，曾夜间到野外去盗窃尸体来进行解剖。当时意大利的帕多瓦大学有欧洲最好的解剖教室。于是他到那里任教。1543年，他将工作中积累起来的材料整理成书，公开发表。这本书就是《人体构造论》。此书指出盖伦的错误达200多处，如5叶肝、两块下颌骨等。并指出盖伦解剖学的依据是动物如猴等。维萨里虽然也受到当时保守派的指责，但他的学生们发展了解剖学。[NEWLINE][NEWLINE]总之，16世纪欧洲医学摆脱了古代权威的束缚，开始独立发展，其主要成就是人体解剖学的建立。这既表明一门古老的学科在新的水平上复活，又标志着医学新征途的开始。[NEWLINE][NEWLINE]16世纪，尼德兰发生革命，产生了独立的资产阶级国家荷兰。17世纪，英国推翻了专制王权，建立资产阶级的议会制度。新兴资产阶级为了发展工商业支持科学技术，提倡宽容，这些都有进步作用。哲学上培根提出经验主义，提倡观察实验，主张一切知识来自经验，并提倡归纳法；他的名言“知识就是力量”激励了后人的探索热情。笛卡尔是唯理论的代表，他重视人的思维能力，同时，又把机械论观点运用于对生理问题的研究，对后世的生命科学影响很大。这时期还出现了一些科学社团，它促进了交流，推动了科学进步。在17世纪，英国科学处于领先地位。[NEWLINE][NEWLINE]生理学的进步。17世纪，量度观念已很普及。最先在医界使用量度手段的是圣托里奥（1561～1636）。他制作了体温计和脉搏计。还制造了一个像小屋似的大秤，可在其中生活、睡眠、运动、进食；在排泄前后，他都秤量自己的体重，如此不厌其烦地进行了30余年。他发现体重在不排泄时也在减轻，认为其原因是“不易觉察的出汗”。这可以说是最早的新陈代谢研究。[NEWLINE][NEWLINE]在17世纪以前，欧洲并无有组织的临床教育，学生到医校学习，只要读书，经过考试及格就可领到毕业证书。17世纪中叶荷兰的莱顿大学开始实行临床教学并取消宗教派别的限制，吸收了不少外国学生。到18世纪，临床医学教学兴盛起来，莱顿大学在医院中设立了教学病床，H.布尔哈维（1668～1738）成了当时世界有名的临床医学家。布尔哈维充分利用病床教学，他在进行病理解剖之前，尽量给学生提供临床的症候以及这些与病理变化关系的资料，这是以后临床病理讨论会（C.P.C.）的先驱。[NEWLINE][NEWLINE]E.詹纳（1749～1823）发明牛痘接种法，这是18世纪预防医学的一件大事。16世纪，中国已用人痘接种来预防天花。18世纪初，这种方法经土耳其传到英国，詹纳在实践中发现牛痘接种比人痘接种更安全。他的这个改进增加了接种的安全性，为人类最终消灭天花作出贡献。18世纪末，工业革命兴起。农民大量涌入城市。资本家只管赚钱，不关心工人生活。工人住在肮脏、潮湿的贫民窟，劳累一天而不得温饱，因而疾病很多。这类问题引起了一些人的注意，加上启蒙运动中传播的博爱思想对一些人产生影响，于是公共卫生和社会医学方面的问题逐渐被提出来。德国人J.P.弗兰克（1745～1821）写成《医务监督的完整体系》，其中就谈到公共卫生和社会医学的很多问题。同时，还有人呼吁改善监狱卫生、解放精神病人（不能以残酷的方式如戴脚镣、手铐之类对待精神病人）。这类活动主要是个人活动，直到19世纪，政府才逐渐重视这些问题。[NEWLINE][NEWLINE]19世纪中叶，由于发酵工业的需要，由于物理学、化学的进步和显微镜的改进，细菌学诞生了。法国人L.巴斯德（1822～1895）开始研究发酵的作用，后研究微生物，证明发酵及传染病都是微生物引起的。德国人R.科赫（1843～1910）发现霍乱弧菌、结核杆菌及炭疽杆菌等，并改进了培养细菌的方法和细菌染色方法，还提出科赫三定律。他们的工作奠定了微生物学的基础。19世纪后30年，是细菌学时代，大多数主要致病菌在此时期内先后发现。[NEWLINE][NEWLINE]巴斯德还研究了鸡的霍乱、牛羊炭疽病及狂犬病等，并用减弱微生物毒力的方法首先进行疫苗的研究，从而创立了经典免疫学。以后，在巴斯德研究所工作的俄国人И.И.梅契尼科夫（1845～1916）系统阐述了吞噬现象及某些传染病的免疫现象；1880年发表微生物间的对抗和它们的变异的论述；20世纪初，又发现乳酸菌与病原菌在人肠中相互拮抗，并用乳酸菌制剂来治疗某些肠病。他对早期免疫学作出很大贡献。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_MEDICINE_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>20世纪的医学，由于自然科学的进步，牢固地建立在实验基础之上，在技术上有空前的进步；后来人们看到仅从生物学角度来考虑健康和疾病，是有很大局限性的。1977年美国医学家G.L.恩格尔（1913～）提出生物—心理—社会医学模式主张，即从生物学、心理学和社会学三个方面综合考察人类的健康和疾病问题，以弥补过去单纯从生物学角度考察的缺陷，这对未来医疗卫生事业的发展将有重大意义。[NEWLINE][NEWLINE]总之，20世纪以来，医学获得极大发展。在研究层次上，向微观和宏观发展，从分子医学的实验方法发展到系统医学的理论与实验方法结合并进。学科体系上，学科分立和学科之间的交叉融合并进。2012年国际系统医学大会在爱尔兰召开，2013年中国医学科学院在苏州成立系统医学研究所，医学研究的国际化倾向日益明显；科学成果的取得，不再只是个人努力的结果。[NEWLINE][NEWLINE]无论是中医还是西医，从诞生至今，主要作用还是治已病。20世纪末，全球医学界大讨论最终结论是：最好的医学不是治好病的医学，而是使人不生病的医学。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_FERTILIZER_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>肥料是任一天然或合成的一种或多种植物成长发育所必需的营养元素，约30%-50%的作物产量增加是来归因于天然或无机化学合成的商业肥料。[NEWLINE][NEWLINE]1840年德国人尤斯图斯·冯·李比希才首次发现植物所需的化学养分，是化学肥料的开端，农业产量因此大增，从此人类饥荒问题开始大幅减少。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_FERTILIZER_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>根据古希腊传说，用动物粪便作肥料是大力士赫拉克罗斯首先发现的。赫拉克罗斯是众神之主宙斯之子，是一个半神半人的英雄，他曾创下12项奇迹，其中之一就是在一天之内把伊利斯国王奥吉阿斯养有300头牛的牛棚打扫得干干净净。他把艾尔菲厄斯河改道，用河水冲走牛粪，沉积在附近的土地上，使农作物获得了丰收。当然这是神话，但也说明当时的人们已经意识到粪肥对作物增产的作用。古希腊人还发现旧战场上生长的作物特别茂盛，从而认识到人和动物的尸体是很有效的肥料。在《圣经》中也提到把动物血液淋在地上的施肥方法。[NEWLINE][NEWLINE]千百年来，不论是欧洲还是亚洲，都把粪肥当作主要肥料。进入18世纪以后，世界人口迅速增长，同时在欧洲爆发的工业革命，使大量人口涌入城市，加剧了粮食供应紧张，并成为社会动荡的一个起因。化学家们从18世纪中叶开始对作物的营养学进行科学研究。19世纪初流行的两大植物营养学说是“腐殖质”说和“生活力”说。前者认为植物所需的碳元素不是来自空气中的二氧化碳，而是来自腐殖质；后者认为植物可借自身特有的生活力制造植物灰分的成分。1840年，德国著名化学家李比希出版了《化学在农业及生理学上的应用》一书，创立了植物矿物质营养学说和归还学说，认为只有矿物质才是绿色植物唯一的养料，有机质只有当其分解释放出矿物质时才对植物有营养作用。李比希还指出，作物从土壤中吸走的矿物质养分必须以肥料形式如数归还土壤，否则土壤将日益贫瘠。从而否定了“腐殖质”和“生活力”学说，引起了农业理论的一场革命，为化肥的诞生提供了理论基础。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_FERTILIZER_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>828年，德国化学家维勒（F.Wöhler，1800-1882）在世界上首次用人工方法合成了尿素。按当时化学界流行的“活力论”观点，尿素等有机物中含有某种生命力，是不可能人工合成的。维勒的研究打破了无机物与有机物之间的绝对界限。但当时人们尚未认识到尿素的肥料用途。直到50多年后，合成尿素才作为化肥投放市场。[NEWLINE][NEWLINE]1838年，英国乡绅劳斯（L.B.Ross）用硫酸处理磷矿石制成磷肥，成为世界上第一种化学肥料。[NEWLINE][NEWLINE]1840年，德国化学家李比希（J.von Liebig，1803-1873）出版了《化学在农业及生理学上的应用》—书，创立了植物矿物质营养学说和归还学说，彻底否定了当时盛行的“腐殖质”和“生命力”两大植物营养学说，为化肥的发明与应用奠定了理论基础。李比希还在1850年发明了钾肥。[NEWLINE][NEWLINE]1850年前后，劳斯又发明出最早的氮肥。1909年，德国化学家哈伯（F.Haber，1868-1934）与博施（C.Bosch，1874-1940）合作创立了“哈伯-博施”氨合成法，解决了氮肥大规模生产的技术问题。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_FERTILIZER_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>保守估计报告称30%至50%的作物产量归因于天然或合成商业肥料。而中国化肥的利用率不高，当季氮肥利用率仅为35%。据联合国粮食及农业组织的资料显示，1980年至2002年中国的化肥用量增长了61%，而粮食产量只增加了31%。肥料利用率偏低一直是中国农业施肥中存在的问题。鲁如坤等的研究发现，中国农田磷肥的利用率仅为10%～25%。磷肥利用率偏低不仅造成严重的资源浪费，还会使大量的磷素积累在土壤中，从而导致农田及环境污染。因此，提高磷肥的利用率对农业的可持续发展和环境保护等均具有重要意义。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_GATLING_PRINCIPLE_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>工业时代战争是战争史上的一个时期，大致从19世纪初和工业革命的开始到原子时代的开始，通过工业化进程，民族国家的崛起，能够创造和装备大型军队，海军和空军。[NEWLINE][NEWLINE]这个时代的特点是大规模征召军队，快速运输（首先在铁路上，然后通过海空），电报和无线通信，以及全面战争的概念。在技术方面，这个时代更先进的步兵武器兴起，这种武器能够高射速、高速装载火炮、化学武器、装甲战、金属战舰、潜艇和飞机。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_GATLING_PRINCIPLE_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>工业战争的主要特征之一是"全面战争"的概念。这个词是由埃里希·卢登多夫在第一次世界大战期间创造的（也是在他的1935年著作《全面战争》中创造的），该书呼吁将包括政策和社会制度在内的所有资源完全动员和从属于德国的战争努力。它也意味着以绝对无情的方式发动战争，其今天最可识别的遗产是重新引入平民和民用基础设施，作为摧毁敌人发动战争能力的目标。[NEWLINE][NEWLINE]19世纪全面战争的兴起有几个原因。主要是工业化。随着各国资本和自然资源的增长，某些形式的战争显然比其他国家需要更多的资源。因此，战争成本的增加是显而易见的。一个工业化国家可以区分，然后选择它希望参与的战争强度。[NEWLINE][NEWLINE]此外，战争正变得越来越机械化，需要更大的基础设施。战斗人员不能再靠陆地生活，需要一个广泛的幕后人员支持，以维持他们的食能和武装。这需要动员主场作战。现代概念，如宣传，首先被用来促进生产和保持士气以配给进行，从而提供更多的战争物资。最早的现代全面战争的例子是美国内战。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_GATLING_PRINCIPLE_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>19世纪初，从1815年至1848年，欧洲出现了漫长的和平时期，伴随着非凡的工业扩张。工业时代带来了各种技术进步，每一个都有其自身的意义。陆战从上一时代的视觉范围和人对人作战，转向不分青红皂白和非个人化的"超越视觉范围"的战争。克里米亚战争（1853-1856年）引进了战壕战、远程火炮、铁路、电报和步枪。敌方战斗人员的机械化大规模毁灭越来越致命。在第一次世界大战（1914-1918年），机枪、铁丝网、化学武器和地雷进入战场。随着现代装甲坦克在一战后期的出现，致命的僵持战壕战阶段终于过去了。[NEWLINE][NEWLINE]一个主要趋势是将大规模步兵火力和人海战术向更精细的战术过渡。这成为可能与取代早期的武器，如高度不准确的步枪。[NEWLINE][NEWLINE]二战初期，德国的拉夫特瓦夫专注于战术轰炸，使用大量的JU-87轰炸机作为陆上进攻的"飞炮"。传统炮兵速度慢，需要时间来设置射击阵地，而飞机能够更好地跟上德国装甲纵队快速前进的步伐。近距离的空中支援极大地帮助了德国军队在法国战役中取得的成功。在两栖战争中，这一点也很重要，航空母舰可以为登陆海滩的士兵提供支持。[NEWLINE][NEWLINE]相比之下，战略轰炸不同于世界之前或之后所见过的任何东西。1940年，德军试图通过攻击英国的机场和工厂来迫使英国投降，然后在闪电战中逼迫英国投降，这是第一次主要在空中决战。在欧洲和亚洲开展的运动可能涉及数千架飞机在一个城市上空投下数万吨弹药。[NEWLINE][NEWLINE]战后的军事航空业受冷战的需要支配。战后的岁月里，飞机迅速向喷气动力转换，飞机的速度和高度都大幅提高。在洲际弹道导弹问世之前，主要大国依靠高空轰炸机来提供新研制的核威慑力量。每个国家都在努力开发轰炸机和可以拦截轰炸机的高空战斗机的技术。空中优势的概念开始在美国和苏联的飞机设计中发挥重要作用。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_GATLING_PRINCIPLE_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>二战结束以来，因为拥有核武器如此具有破坏性的武器，使用这些武器将抵消胜利的优势。使用核武器的全面战争需要几十分钟，而不是需要数年时间，而是需要数十分钟才能充分调动一个国家的资源，如二战期间。这种武器的研制和维护与和平时期国防预算相对较少。[NEWLINE][NEWLINE]到20世纪50年代末，西方世界和苏联之间的冷战意识形态对峙涉及数千枚核武器被对方瞄准。从战略上讲，双方拥有的破坏力的平等平衡被称为相互保证的毁灭（MAD），即一个超级大国的核攻击将导致另一个超级大国的核反击。这将导致数以亿计的死亡，在这个世界上，用尼基塔·赫鲁晓夫的话说："活着的人会羡慕死者"。[NEWLINE][NEWLINE]在冷战期间，超级大国试图避免各自部队之间的公开冲突，因为双方都认识到，这种冲突很容易升级，并迅速涉及核武器。相反，超级大国通过参与代理战争、军事集结和外交对峙而相互争斗。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_SHIP_PROPELLER_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>螺旋桨是指靠桨叶在空气或水中旋转，将发动机转动功率转化为推进力的装置，可有两个或较多的叶与毂相连，叶的向后一面为螺旋面或近似于螺旋面的一种推进器。螺旋桨分为很多种，应用也十分广泛，如飞机、轮船的推进器等。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_SHIP_PROPELLER_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>1752年，瑞士物理学家伯努利第一次提出了螺旋桨比在它以前存在的各种推进器优越的报告，他设计了具有双导程螺旋的推进器，安装在船尾舵的前方。1764年，瑞士数学家欧拉研究了能代替帆的其它推进器，如桨轮（明轮），也包括了螺旋桨。[NEWLINE][NEWLINE]潜水器和潜艇在水面下活动，传统的桨、帆无法应用，笨重庞大的明轮也难适应。于是第一个手动螺旋桨，然而并不是用在船上，而是作为潜水器的推进工具。[NEWLINE][NEWLINE]蒸汽机问世，为船舶推进器提供了新的良好动力，螺旋桨顺应蒸汽机的发展，成为船舶推进的最新课题。[NEWLINE][NEWLINE]第一个实验动力驱动螺旋桨的是美国人斯蒂芬，他在1804年建造了一艘7.6米长的小船，用蒸汽机直接驱动，在哈得逊河上做第一次实验航行，实验中发现发动机不行，于是换上瓦特蒸汽机，实验航速是4节，最高航速曾达到8节。[NEWLINE][NEWLINE]斯蒂芬螺旋桨有4个风车式桨叶，锻制而成，和普通风车比较它增加了叶片的径向宽度，为在实验中能选择螺距与转速的较好配合，桨叶做成螺距可以调节的结构。在哈得逊河上两个星期的试验航行中，螺旋桨改变了几个螺距值，但是实验的结果都不理想，性能远不及明轮。这次实验使他明白，在蒸汽机这样低速的条件下，明轮的优越性得到了充分发挥，它的推进效率高于螺旋桨是必然的结论。[NEWLINE][NEWLINE]阿基米德螺旋的引入，最早见于1803年，1829年有英国的阿基米德螺旋桨的专利。并在此基础上于1840-1841年建造了一些民用的螺旋桨。1843年，英国海军在“雷特勒”号舰上，第一次以螺旋桨代替明轮，随后由斯密士设计了20艘螺旋桨舰，参加了对俄战争，斯密士成为著名人物。[NEWLINE][NEWLINE]1843年，美国海军建造了第一艘螺旋桨船“浦林西登”号，它是由舰长爱列松设计，在爱列松的积极推广下，美国相续建造了41艘民用螺旋桨船，最大的排水量达2000吨。[NEWLINE][NEWLINE]尽管英、美等国取得了一些成功，但是螺旋桨用作船舶推进还有很多问题，如在木壳船上可怕的振动，在水线下的螺旋桨轴轴承磨损，桨轴密封，推力轴承等。[NEWLINE][NEWLINE]随着技术的进步，螺旋桨的上述缺陷，一个一个地克服，以及蒸汽机转速的提高，愈来愈多螺旋桨在船上取代明轮。到1858年，“大东方”号装有当时世界上最大的螺旋桨，它的直径有7.3米，重量达36吨，转速每分种50转，当时，推进器标准不再具有权威性，由于螺旋桨的推进效率接近明轮，而且它却具有许多明轮无法竞争的优点，明轮逐步在海船上消失。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_SHIP_PROPELLER_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>现代飞机螺旋桨扭曲的航空翼形状是莱特兄弟开创的。虽然一些早期的工程师曾试图在海洋螺旋桨上模拟空气螺旋桨，但赖特一家意识到空气螺旋桨与机翼基本相同，并且能够使用他们早期风洞实验的机翼数据。他们还沿刀片的长度引入了扭曲。这是必要的，以确保叶片的攻击角度保持相对恒定的沿其长度。大约100年后年后，他们原来的螺旋桨叶片的效率仅比现代同类产品低5%左右。到20世纪20年代，对低速螺旋桨空气动力学的理解相当完整，但后来要求处理直径较小的功率使问题更加复杂。[NEWLINE][NEWLINE]阿尔贝托桑托斯杜蒙，另一个早期的先驱，应用他从飞艇的经验获得的知识，使螺旋桨与钢轴和铝叶片为他的14双翼飞机。他的一些设计使用弯曲的铝板刀片，从而创造了一个气翼形状。他们被严重不足，再加上没有长向扭曲使他们比赖特螺旋桨效率低。即便如此，这也许还是第一次在建造飞机时使用铝。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_SHIP_PROPELLER_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>由于我国自19世纪中叶沦为半殖民地，很少有贡献。解放后，我国造船事业得到新发展，对螺旋桨技术也进行了大量设计、研究工作，为各类舰船配上了大量自己设计制造的螺旋桨。最值得骄做的是“关刀桨”的问世，它是我国在螺旋桨技术发展中的一大创造。那是在60年代，广州文冲船厂有一位师傅，名叫周挺，他根据自己几十年制做螺旋桨的经验，把螺旋桨的桨叶轮廓做成三国演义中关公的82斤重大刀的式样，他形象地叫它“关刀桨”</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_WIRE_ROPE_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>防护手套是个人防护套装（PPE）的其中一个组成部分，旨在保护穿戴者的手部免受伤害或感染。这类防具在20世纪变得更受欢迎，并与新技术和新材料（如钢丝绳）一起投入使用。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_WIRE_ROPE_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>钢丝绳是将力学性能和几何尺寸符合要求的钢丝按照一定的规则捻制在一起的螺旋状钢丝束，钢丝绳由钢丝、绳芯及润滑脂组成。钢丝绳是先由多层钢丝捻成股，再以绳芯为中心，由一定数量股捻绕成螺旋状的绳。而较大直径的钢丝绳则由数股上述捻制方式的钢丝绳组成。钢丝绳很快被大众所接受，因为它比之前由大麻制成的绳索更加坚韧。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_WIRE_ROPE_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>19世纪后半叶，包括新型缆车在内的多种动力机械均使用钢丝绳系统作为动力传递体系。钢丝绳系统的成本仅有动力轴系统的十分之一，且摩擦功耗损失也更低。基于这些优势，钢丝绳开始用于传输跨度几英里甚至几公里的电力。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_WIRE_ROPE_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>迄今为止国内外还未找到一种更理想的产品来全面或在一个领域内替代钢丝绳，因而，钢丝绳在冶金、矿山、石油天然气钻采、机械、化工、航空航天等领域成为必不可少的部件或材料，其质量也被国内多个行业所关注，并投入大量人力、物力进行钢丝绳使用研究和产品开发工作，对钢丝绳的结构选择、日常使用、维护保养、更换报废等各个环节制定了很多规程和细则。[NEWLINE][NEWLINE]1、《煤矿安全规程》、《起重机械安全管理规程》、《汽车起重机和轮胎起重机安全规程》、《桥式起重机安全技术检验细则》等都对钢丝绳结构选择、日常使用、维护保养、更换报废等方面作出切实可行的规定。[NEWLINE]2、煤炭等行业把对钢丝绳的检查纳为日常必要的安全生产检查管理内容。[NEWLINE]3、多个研究院所参与了钢丝绳相关项目的研究，取得了可转化为生产力的成果。[NEWLINE]4、一批钢丝绳检验和报废实用规范有效实施。GB/T 5972-2006《起重机用钢丝绳检验和报废实用规范》替代GB/T 5972-1986版本标准，2006年9月1日实施。GB 9075-1988《架空索道用钢丝绳检验和报废规范》适用于单线循环式、双线循环式及往复式客运、货运架空索道用钢丝绳，但不适用于临时性货运索道及林业索道用钢丝绳。MT 716-2005煤矿重要用途钢丝绳验收技术条件和MT 717-1997煤矿重要用途在用钢丝绳生能测定方法及判定规则是煤矿安全、正确合理使用钢丝绳的法规依据。[NEWLINE]5、中国工程机械学会港口机械分会注重于钢丝绳的研究，多年来，在钢丝绳国产化，科学合理选择、使用方面作了大量有益的工作。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_DYNAMIT_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>炸药（Explosive aterial），能在极短时间内剧烈燃烧（即爆炸）的物质，是在一定的外界能量的作用下，由自身能量发生爆炸的物质。一般情况下，炸药的化学及物理性质稳定，但不论环境是否密封，药量多少，甚至在外界零供氧的情况下，只要有较强的能量（起爆药提供）激发，炸药就会对外界进行稳定的爆轰式作功。炸药爆炸时，能释放出大量的热能并产生高温高压气体，对周围物质起破坏、抛掷、压缩等作用。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_DYNAMIT_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>炸药源于我国。至迟在唐代，我国已发明火药（黑色炸药），这是世界上最早的炸药。宋代，黑色炸药已被用于战争，它需要明火点燃，爆炸效力也不大。1831年，英国人比克福德发明了安全导火索，为炸药的应用创造了方便。威力较大的黄色炸药源于瑞典。由瑞典化学家、工程师和实业家诺贝尔发明。1846年，意大利人索布雷罗合成硝化甘油，这是一种爆炸力很强的液体炸药，但使用极不安全。1859年后，诺贝尔父子对硝化甘油进行了大量研究工作，用“温热法”降服了硝化甘油，于1862年建厂生产。但炸药投产不久，工厂发生爆炸，父亲受了重伤，弟弟被炸死。政府禁止重建这座工厂。诺贝尔为寻求减少搬动硝化甘油时发生危险的方法，只好在湖面上一支驳船上进行实验。一次，他偶然发现，硝化甘油可被干燥的硅藻土所吸附；这种混合物可安全运输。1865年，他发明雷汞雷管，与安全导火索合用，成为硝化甘油炸药等高级炸药的可靠引爆手段。经过不懈地努力，他终于研制成功运输安全，性能可靠的黄色炸药，硅藻土炸药。随后，又研制成功一种威力更大的同一类型的炸药爆炸胶。约10年后，他又研制出最早的硝化甘油无烟火药弹道炸药。此后，各国的科学家们对更高级的炸药的研制从未间断，并取得了可喜的成果。炸药的用途越来越广阔。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_DYNAMIT_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>苦味酸──1771年由英国的P·沃尔夫首先合成。它是一种黄色结晶体，最初是作为黄色染料使用，1885年法国用它填炮弹之后，才在军事上得到应用。苦味酸是一种猛炸药，在19世纪末使用非常广泛。[NEWLINE][NEWLINE]雷汞──1779年由英国化学家E·霍华德发明。雷汞是一种起爆药，它用于配制火帽击发药和针刺药，也可用于装填爆破用的雷管。[NEWLINE][NEWLINE]硝化纤维（硝化棉）──1838年T·J·佩卢兹首先发现棉花浸于硝酸后可爆炸。1845年德国化学家C·F·舍恩拜发明出硝化纤维。1860年，普鲁士军队的少校E·郐尔茨用硝化纤维制成枪、炮弹的发射药。[NEWLINE][NEWLINE]硝化甘油──1846年意大利化学家A·索布雷首次制成。硝化甘油是一种烈性液体炸药，轻微震动即会称列爆炸，危险性大，不宜生产。1859年之后，瑞典的A·B·诺贝尔和他的父亲及弟弟共同研究硝化甘油的安全生产方法，终于在1862年用“温热法”降服了硝化甘油，使之能够比较安全地成批生产。[NEWLINE][NEWLINE]梯恩梯（TNT）──1863年由J·威尔勃兰德发明。是一种威力很强而又相当安全的炸药，即使被子弹击穿一般也不会燃烧和起爆。它在20世纪初开始广泛用于装填各种弹药和进行爆炸，逐渐取代了苦味酸。在第二次世界大战结束前，梯恩梯一直是综合性能最好的炸药，被称为“炸药之王”。[NEWLINE][NEWLINE]达纳炸药──1866年由A·B·诺贝尔发明。19世纪60年代，诺贝尔在法国继续进行炸药的研究。在一次事故中，他的弟弟被炸死。父亲受重伤。法国政府禁止其在陆地上进行试验。他只好租了一条驳船，在马拉伦湖上寻起了新的实验室。一次试验中，一只装有硝化甘油瓶破碎，流出的硝化甘油被瓶底下用来减少震动的惰性粉末硅土吸收。诺贝尔意外地发现，硝化甘油与硅土混合物不仅使炸药威力不减，而且生产、使用和搬运更加安全。后来，他用木浆代替了奎土，制成了新的烈性炸药──达纳炸药,“达纳”一词源于希腊文“威力”。1872年，诺贝尔又制得一种树胶样的胶质炸药──胶质达纳炸药，这是世界上第一种双基炸药。[NEWLINE][NEWLINE]无烟火药──1884年由法国化学家、工程师P·维埃利最先发明。1845年由舍恩拜因发明的硝化纤维很不安定，曾多次发生火药库爆炸事故。维埃利将其研制成胶质，再压成片状，切条干燥硬化，便制成了第一种无烟火药。这一发明具有极重要的意义。无烟火药燃烧后没有残渣，不发或只发少量烟雾，却可使发射弹丸的射程，弹道平直性和射击精度均有诞生提供了弹药方面的条件。马克沁发明的重机枪，正是由于使用了无烟火药，才得以具备实用价值。[NEWLINE][NEWLINE]1887年，诺贝尔用也制成了类似的无烟火药。他还制成更加安全而廉价的“特种达纳炸药”，又称“特强黄色火药”。诺贝尔的众多发明，使他无愧于“现代炸药之父”的赞誉。[NEWLINE][NEWLINE]黑索今──1899年由德国人亨宁发明的。在原子弹出现以前，它是威力最大的炸药，又被称为“旋风炸药”。在第二次世界大战之后，曾取代了梯恩梯的“炸药之王”的宝座。[NEWLINE][NEWLINE]C4——全称为C4塑胶炸药，简称C4，名称由来是每个单分子结构里有4个碳，是一种高效的易爆炸药，如果外边附上黏着性材料，就可以像口香糖那样牢牢地黏附在上面，因此被称为残酷"口香糖"。C4塑胶炸药原产捷克，现在美国也是主要生产国。这种炸药能轻易躲过X光安全检查，这一点是恐怖分子喜欢使用的原因。未经特定嗅识训练的警犬也难以识别它。正是由于C4的这些性质，所以它一般都是各国军队使用的，普通民间难以得到。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_DYNAMIT_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>炸药因其具有成本低廉、节省人力，并能加快工程建设的优点，和在特殊环境下作功的特性，因而已愈来愈广泛应用于国民经济各部门。在矿山开采方面，利用炸药进行大规模爆破，来开采金属矿和露天煤矿；利用聚能射流效应装填炸药的石油射孔弹，可用于石油开采；在地质勘探方面，用炸药制成的震源药柱用于地震探矿；在机械制造工业，炸药用于爆炸成型，切割金属、爆炸焊接等工艺；在水利电力工程，炸药用于修筑水坝、疏通河道、平整土地；铁路、公路建设中，炸药用于劈山开路，开凿隧道、峒室等；炸药还大量用于开采各种石料。[NEWLINE][NEWLINE]炸药在军事上可用作炮弹、航空炸弹、导弹、地雷、鱼雷、手榴弹等弹药的爆炸装药，也可用于核弹的引爆装置和军事爆破。在工业上广泛应用于采矿、筑路、兴修水利、工程爆破、金属加工等，还广泛应用于地震探查等科学技术领域。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_HIGH_POWER_RIFELS_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>反坦克步枪，射击装甲目标的专用枪械。旧称战防枪。用于装备步兵，打击300米以内的坦克和装甲车辆，也可用于射击800～1000米以内的土木工事和火力点。[NEWLINE][NEWLINE]反坦克步枪是专门用来击穿车辆装甲的步枪，它最主要的攻击对象就是装甲目标。这种步枪从坦克刚出现的时候也同时投入到战场，一直到二次世界大战结束失去效用为止；因为随着车辆的装甲愈来愈厚，单一士兵所能携带的实心弹头已经无法击穿它们。至此反战车步枪被后来的锥形装药（Shaped Charge）武器取代，例如最为人所知的“Bazooka”反坦克火箭筒。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_HIGH_POWER_RIFELS_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>“矛”与“盾”的拉锯战很久之前，由于铁甲船（Ironclad）的诞生，出现在军舰方面。但直到士兵在陆地碰上装甲车辆后，单兵武器和装甲之间的战争才正式开始。装甲车和战车的诞生造就了第一批反战车武器的发展，在这之中对抗早期装甲车辆的武器就是高威力步枪。高威力步枪最初出现于19世纪，特别用于狩猎大型猎物上（例如说大象）。而反战车步枪也照着相同的路线发展：大口径弹头配上高速度，并具备贯穿装甲的能力。[NEWLINE][NEWLINE]1941年7月，苏联军方委托颇有名望的武器设计师捷格加廖夫和西蒙诺夫尽快开发出适合步兵使用的反坦克步枪，要求使用1939/40年试验的14.5X114mm弹(B-32弹头：重64g，初速1000m/s)。在此期间，一线部队临时装备缴获的德军7.92mmPzB-39反坦克枪。一个月后V.A.捷格加廖夫设计局和S.G.西蒙诺夫设计局分别交出了自己的原型枪，口径都是14.5mm，使用相同的弹药。两种枪的测试结果都很出色，难分伯仲，最后全被采纳，于1941年8月投入量产。[NEWLINE][NEWLINE]捷格加廖夫设计的反坦克步枪叫做PTRD，该枪采用螺旋式枪机，凸起闭锁，手动装填，自动抛壳。结构简单，制造成本低廉，便于大量生产。1941年内生产了大约600支，到1942年底产量已经高达18.4万支，其后一直保持着很高的年产量。1945年1月开始逐步停产。西蒙诺夫设计的枪叫做PTRS，该枪采用导气式自动方式，回转式枪机，枪管上钻有导气孔，5发弹仓供弹。相比之下，西蒙诺夫PTRS反坦克步枪结构复杂，生产工时比PTRD长。1942年1月时，PTRS只生产出77支。但是到了1942年底，产量猛增至63308支。苏联的这两种反坦克步枪在战争中的总产量超过了40万支，堪称世界上产量最高的反坦克枪。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_HIGH_POWER_RIFELS_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>苏军于1941年12月6日开始在步兵师中编入反坦克连。按照“三三”制编有3个排，每个排有3个班。另外设有一个包括正副连长和指导员在内的7人连部。每个排有24人，装备9支PTRD反坦克步枪，配属一辆马车。1942年3月18日，苏军设立了新的步兵团建制。参照原先的师属反坦克连编制，每个师属反坦克连辖有一个团属的独立反坦克连，装备27支反坦克步枪。此外，每个步兵营编入一个反坦克连。这种营属反坦克连只有两个排，但每个排设有4个班。全连配备16支反坦克枪，其中部分是PTRS反坦克枪。这样，每个步兵团拥有的反坦克枪数量是：一个独立反坦克连27支，三个步兵营48支，总共75支PTRD和PTRS反坦克枪。具备了相当强的反坦克火力。[NEWLINE][NEWLINE]同时，师属的独立反坦克连扩编成反坦克营。辖3个新编制的反坦克连，每个连含4个排，每个排有3个班。反坦克连装备的反坦克枪总数增加到36支，并配备了4挺轻机枪和一定数量的冲锋枪。1942年7月28日，苏军编制又进行了改变。师级和团级所属的独立反坦克部队没有变化，步兵营下属的反坦克部队由一个连减少到一个排，含3个班。抽调出的两个排组成一个反坦克连，装备12支反坦克枪，被编入师属机枪营。师属炮兵连中也开始编入反坦克枪，数量是4支，两个炮兵排中各编入2支。1943年到1944年间，苏军又在步兵预备部队中编入了反坦克连。值得一提的是苏军炮兵部队在1941年到1942年期间也装备大量了PTRD和PTRS反坦克枪。这是由于大批反坦克火炮被击毁，而正在撤往后方的苏联工厂无法生产出足够数量弥补损失。等到后来情况有所好转，这些炮兵部队才换装了1937年式或者1942年式45mm反坦克炮。两名第6近卫军的优秀反坦克枪手各在库尔斯克战役中击毁了7辆德军坦克。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_HIGH_POWER_RIFELS_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>如今虽然它们不再能够穿透现代主战坦克的侧装甲，但它们能够对其外部配件造成严重损坏，如潜望镜、光学器件、传感器、坦克胎面和机枪。它们还有助于禁用甚至摧毁较小的装甲后方部队以及支援车辆、直升机、低空飞行的无人机和人员。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_WAR_PLANES_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>莱特第一次飞行后不久，一些军方开始对动力飞机感兴趣。1909年，美国陆军为美国信号军航空师购买了一架两座莱特军用飞机。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_WAR_PLANES_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>第一次世界大战初期，法国率先把地面机枪装在飞机上用于空战，随后出现了专门的战斗机。这期间的战斗机多是双翼木质结构，采用活塞式发动机，主要武器为机枪。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_WAR_PLANES_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>第二次世界大战前，战斗机的结构发展为单翼全金属结构，机上装机枪或航空机关炮，机内装有无线电通信设备。第二次世界大战期间，活塞式战斗机的飞行速度为750千米/时，升限12000米。较著名的战斗机有美国的P-51、英国的“喷火”、苏联的拉-7、德国的Fw.190和日本的“零”式等。第二次世界大战末期，喷气式战斗机开始投入使用，如德国的Me-262，速度达到900千米/时左右。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_WAR_PLANES_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>如今，许多战斗机具有多用途能力。通常只适用于固定翼飞机，此术语表示有关飞机可以是战斗机或轰炸机，具体取决于任务要求。多用途设计的一个例子是F-15E攻击鹰，F/A-18大黄蜂，F-35闪电II。第二次世界大战的例子是P-38闪电。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_SNIPER_RIFLES_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>狙击步枪，指在普通步枪中挑选或专门设计制造，射击精度高、距离远、可靠性好的专用步枪。军事上主要用于射击对方的重要目标（如指挥人员、车辆驾驶员、机枪手等）。[NEWLINE][NEWLINE]狙击步枪的结构与普通步枪基本一致，区别在狙击步枪多装有精确瞄准用的瞄准镜；枪管经过特别加工，精度非常高；射击时多以半自动方式或手动单发射击。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_SNIPER_RIFLES_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>英国殖民印度时，英国官员或贵族有游猎印度乡间或荒野间之习俗。他们于游猎中偶然发现鹬鸟极难狩猎，射手须伪装埋伏并辅之以极佳射击技术与精密度较高步枪方能猎得，是为“猎鹬者”。狙击手一词由“猎鹬者”转化而来，也因此高精密度的步枪被称之为狙击步枪。[NEWLINE][NEWLINE]随着技术的变化与精密度的提高，狙击枪亦然需要专业人员操作，因此狙击手仍需要接受专业狙击射击训练方可符合战术需求。广义的狙击步枪包括装置瞄准镜的一般军用步枪或民间猎枪，而枪支持有人或操作者亦可被称为狙击手。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_SNIPER_RIFLES_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>惠特沃斯步枪可以说是世界上第一支远程狙击步枪。由英国著名工程师约瑟夫·惠特沃斯爵士设计，它使用带六角多边形裂口的枪管，这意味着弹丸不必像传统裂口那样咬入枪管。他的步枪比1853年恩菲尔德模式精确得多，后者在最近的克里米亚战争中显示出一些弱点。在1857年的试验中，惠特沃斯的设计以三比一的速度超过了恩菲尔德。此外，惠特沃斯步枪能够击中目标在2000码的范围，而恩菲尔德只能射击在1400码的距离。在美国内战期间，配备惠特沃斯步枪的邦联神枪手被派去杀死联邦野战炮兵，并负责在斯波西瓦尼亚法院大楼杀死约翰·塞格威克少将——美国内战中阵亡的最高级别的军官之一。[NEWLINE][NEWLINE]自布尔战争以及冬季战争后，只有英国与苏联军队正式装备狙击枪。两国吸取布尔战争以及冬季战争中的教训正式训练具备狙击专长的步兵或特殊任务人员。此举对世界各国产生了深远的影响，进而纷纷效仿。[NEWLINE][NEWLINE]尽管各国陆军开始承认狙击枪的价值，但直到一战陷入壕沟战的僵局后才发现狙击枪能够在壕沟战中发挥战术上的弹性与效果。此后大量狙击枪才因此从军械库里翻出来送到前线。一般认为第一款正式的军用狙击步枪是李-恩菲尔德步枪MK III型。[NEWLINE][NEWLINE]第二次世界大战是狙击枪的另一次使用高峰：狙击枪一反第一次世界大战时的常态（当时狙击手仅为任务性需求而编装），在第二次世界大战中常态性地装备在部队里，基本上各排配属一、二名狙击手及狙击枪。狙击枪于二战中依然保持古老的无脚架手持方式，搭配2.5倍瞄准镜，较一般步枪增加了托腮板。枪厂因为瞄准镜位置重新修正设计拉机柄，拉柄截直取弯以避免干扰瞄准镜。二战末期交战各国狙击手的数量及其装备的品质均已有极大发展，在各项地面任务中将其职能与效率发挥到极致。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_SNIPER_RIFLES_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>狙击步枪在整个20世纪后期一直被朝鲜、越南和中东作为现代游击战风格的组成部分使用。现代狙击步枪是非常可靠的，能够反复射击，而不会失去准确性，而早期的狙击步枪将失去准确性，他们使用得包养。狙击步枪继续得到调整和改进，现代狙击步枪的有效射程超过1，000米，使其成为目前使用中最准确、最致命和最有效的武器之一。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_NUCLEAR_POWER_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>核能（或称原子能）是通过核反应从原子核释放的能量，符合阿尔伯特·爱因斯坦的质能方程E = mc²，其中E = 能量，m = 质量，c = 光速。核能可通过三种核反应之一释放：1、核裂变，较重的原子核分裂释放结核能。2、核聚变，较轻的原子核聚合在一起释放结核能。3、核衰变，原子核自发衰变过程中释放能量。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_NUCLEAR_POWER_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>核能（Nuclear Energy）是人类历史上的一项伟大发现，这离不开早期西方科学家的探索发现，他们为核能的发现和应用奠定了基础。可一直追溯到19世纪末英国物理学家汤姆逊发现电子开始，人类逐渐揭开了原子核的神秘面纱。[NEWLINE][NEWLINE]1895年德国物理学家伦琴发现了X射线。[NEWLINE][NEWLINE]1896年法国物理学家贝克勒尔发现了放射性。[NEWLINE][NEWLINE]1898年居里夫人与居里先生发现放射性元素钋。[NEWLINE][NEWLINE]1902年居里夫人经过三年又九个月的艰苦努力又发现了放射性元素镭。[NEWLINE][NEWLINE]1905年爱因斯坦提出质能转换公式。1914年英国物理学家卢瑟福通过实验，确定氢原子核是一个正电荷单元，称为质子。1935年英国物理学家查得威克发现了中子。1938年德国科学家奥托·哈恩用中子轰击铀原子核，发现了核裂变现象。1942年12月2日美国芝加哥大学成功启动了世界上第一座核反应堆。[NEWLINE][NEWLINE]1945年8月6日和9日美国将两颗原子弹先后投在了日本的广岛和长崎。1954年苏联建成了世界上第一座商用核电站——奥布灵斯克核电站。[NEWLINE][NEWLINE]从此人类开始将核能运用于军事、能源、工业、航天等领域。美国、俄罗斯、英国、法国、中国、日本、以色列等国相继展开核能应用研究</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_NUCLEAR_POWER_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>核能转换过程[NEWLINE][NEWLINE]核能→水和水蒸气的内能→发电机转子的机械能→电能。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_NUCLEAR_POWER_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>核能发电的历史与动力堆的发展历史密切相关。动力堆的发展最初是出于军事需要。1954年，苏联建成世界上第一座装机容量为5兆瓦（电）的奥布宁斯克核电站。英、美等国也相继建成各种类型的核电站。到1960年，有5个国家建成20座核电站，装机容量1279兆瓦（电）。由于核浓缩技术的发展，到1966年，核能发电的成本已低于火力发电的成本。核能发电真正迈入实用阶段。1978年全世界22个国家和地区正在运行的30兆瓦（电）以上的核电站反应堆已达200多座,总装机容量已达107776兆瓦（电）。80年代因化石能源短缺日益突出，核能发电的进展更快。到1991年，全世界近30个国家和地区建成的核电机组为423套，总容量为3.275亿千瓦，其发电量占全世界总发电量的约16%。中国大陆的核电起步较晚，80年代才动工兴建核电站。中国自行设计建造的30万千瓦（电）秦山核电站在1991年底投入运行。大亚湾核电站于1987年开工，于1994年全部并网发电。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_SHIP_STABILIZER_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>船舶稳定器是安装在水线下方的鳍或转子，横向从船体中伸出，以减少船舶因风浪而横摇。活动鳍由陀螺仪控制系统控制。当陀螺仪感应船只横摇时，它会改变鳍的角度，通过施加力来抵消横摇。固定鳍和小龙骨不动：当船滚动时，它们通过水的动阻力减少滚动。稳定器主要用于远洋船舶。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_SHIP_STABILIZER_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>早期有一种稳定技术是通过反摇陀螺（Anti-rolling Gyro）或陀螺稳定器（Gyroscopic Stabilization）实现的。1917年一战期间，美国军舰亨德森号（USS Henderson）是第一艘带有陀螺稳定器的大型舰船。在船的中心附近，安装有两个重达25吨、直径9英尺的飞轮，通过75 HP的交流电机以1100转的速度旋转。当舰桥上的小型传感器感应到船只开始横摇时，伺服器会向一个方向旋转垂直轴的陀螺仪，以此来抵消横摇。在测试中，该系统能够在最恶劣的海面上将横摇降低到3度。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_SHIP_STABILIZER_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>意大利客轮SS Conte di Savoia是最早使用反滚陀螺仪的最著名的船只之一，它于1932年11月首次航行。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_SHIP_STABILIZER_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>2018年，火箭和空间技术公司“蓝色起源”购买了一艘滚装船Stena，用作“新格伦”运载火箭助推器级的着陆平台船。截至2018年底，该船正在进行改装，为用作火箭着陆平台而作准备。船舶稳定技术旨在提高火箭在波涛汹涌的海面上成功回收的可能性，并帮助按时进行发射。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_MICROPROZESSOR_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>微处理器又称芯片，是由一片或少数几片大规模集成电路组成的中央处理器。这些电路执行控制部件和算术逻辑部件的功能。[NEWLINE][NEWLINE]微处理器能完成取指令、执行指令，以及与外界存储器和逻辑部件交换信息等操作，是微型计算机的运算控制部分。它可与存储器和外围电路芯片组成微型计算机</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_MICROPROZESSOR_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>微处理器与传统的中央处理器相比，具有体积小、重量轻和容易模块化等优点。微处理器的基本组成部分有：寄存器堆、运算器、时序控制电路，以及数据和地址总线。[NEWLINE][NEWLINE]自从人类1947年发明晶体管以来，50多年间半导体技术经历了硅晶体管、集成电路、超大规模集成电路、甚大规模集成电路等几代，发展速度之快是其他产业所没有的。半导体技术对整个社会产生了广泛的影响，因此被称为“产业的种子”。中央处理器是指计算机内部对数据进行处理并对处理过程进行控制的部件，伴随着大规模集成电路技术的迅速发展，芯片集成密度越来越高，CPU可以集成在一个半导体芯片上，这种具有中央处理器功能的大规模集成电路器件，被统称为“微处理器”。需要注意的是：微处理器本身并不等于微型计算机，仅仅是微型计算机的中央处理器。[NEWLINE][NEWLINE]微处理器已经无处不在，无论是录像机、智能洗衣机、移动电话等家电产品，还是汽车引擎控制，以及数控机床、导弹精确制导等都要嵌入各类不同的微处理器。微处理器不仅是微型计算机的核心部件，也是各种数字化智能设备的关键部件。国际上的超高速巨型计算机、大型计算机等高端计算系统也都采用大量的通用高性能微处理器建造。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_MICROPROZESSOR_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>根据微处理器的应用领域，微处理器大致可以分为三类：通用高性能微处理器、嵌入式微处理器和数字信号处理器、微控制器。一般而言，通用处理器追求高性能，它们用于运行通用软件，配备完备、复杂的操作系统；嵌入式微处理器强调处理特定应用问题的高性能，主要用于运行面向特定领域的专用程序，配备轻量级操作系统，主要用于蜂窝电话、CD播放机等消费类家电；微控制器价位相对较低，在微处理器市场上需求量最大，主要用于汽车、空调、自动机械等领域的自控设备。[NEWLINE][NEWLINE]CPU是Central Processing nit（中央微处理器）的缩写，它是计算机中最重要的一个部分，由运算器和控制器组成。如果把计算机比作人，那么CPU就是人的大脑。CPU的发展非常迅速，个人电脑从8088(XT)发展到Pentium 4时代，只经过了二十一年的时间。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_MICROPROZESSOR_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>自20世纪70年代初以来，微处理器容量的提高遵循了摩尔定律：这最初表明，可以安装在芯片上的组件数量每年翻倍。以目前的技术，它实际上是每两年,因此摩尔后来改变了期间为两年。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_GAS_POWER_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>燃气发电（英语：gas-fired power plant）是指借由燃烧天然气（燃气动力）来进行发电的技术。燃气发电目前占全世界发电总量约四分之一，且为主要温室气体排放的来源之一。燃气发电可填补间歇性再生能源发电量低，且水力发电及电网并联调度不足时的发电缺口。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_GAS_POWER_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>燃气发电为一种使用化石燃料发电的方式。存在天然气（主要成分为甲烷）中的化学能，经过燃烧转为热能（高温气体）和机械能（气体膨胀），再转变为机械能（转动发电机），最后转为电能。虽然其发电效率无法超过卡诺循环的理论效率极限，但可透过汽电共生来增加废热的使用，并提高其热效率。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_GAS_POWER_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>一种类型的火电厂用燃气涡轮联合废热回收蒸汽发生器（HRSG）发电。这被称作联合循环发电厂，因为它包含了燃气涡轮的布雷顿循环和HRSG的郎肯循环。其效率可达6003千焦/千瓦时，热效率接近60%，在威尔士Baglan Bay发电厂实现。[NEWLINE][NEWLINE]燃气涡轮的燃料可以是天然气、合成气或燃料油。尽管这种发电站效率更高且建造更快（甚至可以在18个月内从零建造一个1000MW的电站），但其经济性很大程度上取决于多变的燃料价格，一般是天然气。联合循环电厂的配置很多变，比如一个3-1联合循环设施有三个燃气涡轮和一个蒸汽涡轮。其他的配置包括1-1、2-1、3-1、4-1、5-1、6-1等。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_GAS_POWER_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>天然气联合循环发电与再生能源的互补性高，因为此种发电方法能在短时间内升降发电量以配合发电量不稳定的再生能源，尤其是当风力发电、太阳能电池及天然气的成本越来越低，再生能源与天然气的组合已经有经济竞争力。[NEWLINE][NEWLINE]单一循环或者开式循环的燃气涡轮发电站（不含蒸汽循环）有时候会用在紧急场合或峰值电厂中。其热效率要低很多。它的运行成本远高于初始成本，故本来就设计成一年仅运行几百个小时。还有一些采用多级的方式，即首级使用开式循环燃气涡轮，然后再连接到其他的涡轮；或在未来转换成闭式循环。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_HARPOON_MISSLE_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>T反舰导弹（Anti-ship Missile）是指从舰艇、岸上或飞机上发射，攻击水面舰船的导弹。常采用半穿甲爆破型战斗部；固体火箭发动机为动力装置；采用自主式制导、自控飞行，当导弹进入目标区，导引头自动搜索、捕捉和攻击目标。反舰导弹多次用于现代战争，在现代海战中发挥了重要作用。反舰导弹发展到近代，已经可以从多种型态的载具上使用，包括从各类飞行器上发射的空射型，由地面发射的陆射型，由水面舰艇使用的舰射型以及自潜艇发射的潜射型。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_HARPOON_MISSLE_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>自反舰导弹问世以来,已参与了第三次中东战争、印巴战争、第四次中东战争、马岛战争、1981～1987年两伊战争、锡德拉湾事件、波斯湾事件和1991年海湾战争等8次海上作战或冲突事件。反舰导弹是一种效费比很高的武器。多次海战的实践表明,1～2枚单价为四五十万美元的导弹就能使单价为1～2亿美元的驱护舰丧失战斗力甚至沉没,效费比达200～500倍,显然是十分合算的。[NEWLINE][NEWLINE]1967年10月21日，埃及使用“蚊子”级导弹快艇发射苏制SS-N-2“冥河”式舰舰导弹，击沉了以色列“埃拉特”号驱逐舰。这是舰舰导弹击沉敌舰的首次战例。[NEWLINE][NEWLINE]1982年6月12日在马尔维纳斯（福克兰）群岛战争中，阿根廷发射岸基飞鱼（MM-38）反舰导弹击中英国格拉摩根号导弹驱逐舰，还用机载飞鱼反舰导弹，击沉英国谢菲尔德号导弹驱逐舰。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_HARPOON_MISSLE_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>世界上最早的反舰导弹是德国于二战末期研制的HS-292反舰导弹，在1944年末投入实战并击沉多艘盟军运输船。[NEWLINE][NEWLINE]在过去10年中，西方国家在反舰导弹的发展方面，主要是对现有的亚音速导弹，如美国的捕鲸叉、法国的飞鱼、德国的鸬鹚、以色列的迦伯列和英国的海鹰等，进行改进。改进重点放在软件和新型导引头的研制方面，以提高导弹在硬杀伤和软杀伤对抗环境中的生存能力。而在超音速反舰导弹的研制方面，却没有什么进展。不过，如果法德的新一代反舰导弹（ANNG）研制计划得以继续实施，这一局面可能会有所改观。[NEWLINE][NEWLINE]与西方国家相反，俄罗斯在反舰导弹的研制方面侧重于大型的超音速导弹，如恒星设计局的KH-31空舰导弹、彩虹设计局的3M80舰舰导弹以及KH-15空舰导弹。许多这些导弹在10多年前就已服役。[NEWLINE][NEWLINE]如今，西方国家的反舰导弹研制方向有所变化。作战目标转向对付距海岸极近的舰船，在性能方面注重发展和提高目标分辨能力、敌我识别能力、作战破坏评估能力以及使用多枚导弹同时攻击目标的饱和防御和再次攻击能力等</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_HARPOON_MISSLE_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>由于现代的舰艇武器装备的设计都以反制反舰导弹作为重点，许多的反制装备陆续发展服役，如中远程的反弹道导弹、干扰器及近程的近防武器系统等等，所以反舰导弹为了避免为这些系统的雷达侦测发觉，遭受干扰或击毁，抑或为了扩展反舰导弹系统的用途，能以最少的资金，获得最大的效果，势必要做改良的工作，以应对未来的海战型态。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_TANDEM_WARHEAD_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>聚能效应（Gathering energy effect），通常称为“门罗效应”，源于1888年美国人门罗(Charles E. Munroe)在炸药试验中发现的定律。即炸药爆炸后，爆炸产物在高温高压下基本是沿炸药表面的法线方向向外飞散的。因此，带凹槽的装药在引爆后，在凹槽轴线上会出现一股汇聚的、速度和压强都很高的爆炸产物流，在一定的范围内使炸药爆炸释放出来的化学能集中起来。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_TANDEM_WARHEAD_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>当装药凹槽内表面衬上一个药形罩时，装药爆轰后，凹槽附近炸药爆炸的能量就会传递给药形罩，使药形罩以很大的速度向轴线运动，此时，药型罩在高温高压的爆轰产物的作用下，形成金属杆，可以看作流体。其中，药型罩的内表面形成细长的金属射流，药型罩外表面形成杵体。药型罩压垮并产生射流的过程，射流吸收的爆炸能量不会象爆炸产物那样再散失掉。金属杆在轴向上存在速度梯度，从而，引起了金属射流在飞行过程中拉断现象。炸药性能和重量、装药结构、起爆方式、药型罩材料及其几何尺寸等对金属流的形成和侵彻具有显著影响。[NEWLINE][NEWLINE]圆柱形药柱爆洪后，爆轰产物沿近似垂直原药柱表面的方向，向四周飞散，作用于钢板部分的仅仅是药柱端部的爆轰产物，作用的面积等于药柱端面积。带锥孔的圆柱形药柱则不同：锥孔部分的爆轰产物飞散时，先向轴线集中，汇聚成一股速度和压力都很高的气流，称为聚能气流。爆轰产物的能量集中在较小的面积上，在钢板上就打出了更深的孔，这就是锥形孔能够提高破坏作用的原因。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_TANDEM_WARHEAD_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>门罗效应破甲弹的空心装药技术源于1888年美国人门罗在炸药试验中发现的聚能效应（通常称为“门罗效应”）。1930年，伍德进一步改进了门罗的实验，在药柱的圆锥孔腔表面镶上金属罩，可使穿甲能力大大增强。其原理是带锥形孔的空心药柱爆炸时，能量沿药柱轴方向高度集中，能击穿很厚的钢板。但由于不明原因，瑞士人掌握了这一技术，而美国军方却对这一发明一无所知。1938年，一批瑞士专家就组织了一次新型的反坦克炸药表演试验，并且特别邀请了英国驻瑞士武官前往观看。在试验中，一发炮弹命中靶板后爆炸，并把很厚的靶板击穿。瑞士人想使英国人对这种新型的反坦克炸药感兴趣，并能购买这项技术。由于瑞士人要价很高，并对其详情秘而不宣，因此，英国武官暗中进行窥察，他发现这种新型炸药不过是市场上可以随意买到的诺贝尔黄色炸药。为了进一步探明这种炸药之所以具有如此巨大的穿甲威力的奥秘，在第二次表演试验时，英国武官专门请来伦敦伍利治兵工厂的爆炸专家前来瑞士观看。[NEWLINE][NEWLINE]英国人在探知了这一技术秘密——“门罗效应”原理后，很快就研制出了一种反坦克枪榴弹，并把它应用到英国制造的恩弗尔德步枪上。英国的反坦克枪榴弹是世界上第一种使用空心装药原理的反坦克武器。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_TECHNOLOGIES_PAGE_TECH_TANDEM_WARHEAD_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>门罗效应的最好应用便是用于对付拥有钢板防护的装甲车以及坦克，于是空心装药的破甲弹便产生了。之后有人在实验中发现如果在破甲弹空心部分加上一层薄薄的金属（比如紫铜），就可以使破甲威力大大增加，原因是原先的破甲实体是炸药爆炸后的爆轰产物，是一团高温高压的强气流，而加装了金属药罩后，爆炸产生的高温首先摧垮了金属，之后高速气流才遵循门罗效应将这些被压跨的金属向中央压缩并以极高的速度推出。这些以高温（1000℃以上）高压（100万大气压以上）高速（大约8000到9000米每秒）方式前进的物体被称作金属射流，它代替了原先简单的爆轰气流，大大加强了对重型装甲的侵彻能力</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ATRI_GF_Colors -->
+<!-- Author: UFO300 -->
+<!-- DateCreated: 3/7/2021 8:42:47 PM -->
+<GameData>
+	<Colors>
+		<Row>
+			<Type>COLOR_PLAYER_LEADER_ATRI_GF_PRIMARY</Type>
+			<Color>85,170,255,255</Color>
+		</Row>
+		<Row>
+			<Type>COLOR_PLAYER_LEADER_ATRI_GF_SECONDARY</Type>
+			<Color>255,255,255,255</Color>
+		</Row>
+
+		<Row>
+			<Type>COLOR_PLAYER_LEADER_XIASHENG_PRIMARY</Type>
+			<Color>85,170,255,255</Color>
+		</Row>
+		<Row>
+			<Type>COLOR_PLAYER_LEADER_XIASHENG_SECONDARY</Type>
+			<Color>255,255,255,255</Color>
+		</Row>
+	</Colors>
+
+	<PlayerColors>
+		<Row>
+			<Type>LEADER_ATRI_GF</Type>
+			<Usage>Unique</Usage>
+			<PrimaryColor>COLOR_PLAYER_LEADER_ATRI_GF_PRIMARY</PrimaryColor>
+			<SecondaryColor>COLOR_PLAYER_LEADER_ATRI_GF_SECONDARY</SecondaryColor>
+			<Alt1PrimaryColor>COLOR_STANDARD_WHITE_LT</Alt1PrimaryColor>
+			<Alt1SecondaryColor>COLOR_STANDARD_BULE_MD</Alt1SecondaryColor>
+			<Alt2PrimaryColor>COLOR_STANDARD_WHITE_LT</Alt2PrimaryColor>
+			<Alt2SecondaryColor>COLOR_STANDARD_RED_MD</Alt2SecondaryColor>
+			<Alt3PrimaryColor>COLOR_STANDARD_WHITE_LT</Alt3PrimaryColor>
+			<Alt3SecondaryColor>COLOR_STANDARD_GREEN_MD</Alt3SecondaryColor>
+		</Row>
+
+		<Row>
+			<Type>LEADER_XIASHENG</Type>
+			<Usage>Unique</Usage>
+			<PrimaryColor>COLOR_PLAYER_LEADER_XIASHENG_PRIMARY</PrimaryColor>
+			<SecondaryColor>COLOR_PLAYER_LEADER_XIASHENG_SECONDARY</SecondaryColor>
+			<Alt1PrimaryColor>COLOR_STANDARD_WHITE_LT</Alt1PrimaryColor>
+			<Alt1SecondaryColor>COLOR_STANDARD_BULE_MD</Alt1SecondaryColor>
+			<Alt2PrimaryColor>COLOR_STANDARD_WHITE_LT</Alt2PrimaryColor>
+			<Alt2SecondaryColor>COLOR_STANDARD_RED_MD</Alt2SecondaryColor>
+			<Alt3PrimaryColor>COLOR_STANDARD_WHITE_LT</Alt3PrimaryColor>
+			<Alt3SecondaryColor>COLOR_STANDARD_GREEN_MD</Alt3SecondaryColor>
+		</Row>
+	</PlayerColors>
+	</GameData>

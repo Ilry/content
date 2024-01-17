@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mod id="6859e7d0-e0f5-4de9-8aa2-3257ff38d876" version="1">
+  <Properties>
+    <Name>LOC_KNM_SINGLE_MODE_NAME</Name>
+    <Description>LOC_KNM_SINGLE_MODE_DESC</Description>
+    <Created>1648394456</Created>
+    <Teaser>LOC_KNM_SINGLE_MODE_TEASER</Teaser>
+    <Authors>LOC_KNM_SINGLE_MODE_AUTHOR</Authors>
+    <SpecialThanks>PhantomJ_M, KOTOMI</SpecialThanks>
+    <SupportsMultiplayer>0</SupportsMultiplayer>
+    <SupportsHotSeat>0</SupportsHotSeat>
+    <CompatibleVersions>1.2,2.0</CompatibleVersions>
+  </Properties>
+  <LocalizedText>
+    <Text id="LOC_KNM_SINGLE_MODE_NAME">
+      <en_US>Single Civilization Mode</en_US>
+      <zh_Hans_CN>单文明模式</zh_Hans_CN>
+    </Text>
+    <Text id="LOC_KNM_SINGLE_MODE_DESC">
+      <en_US>Added a new game mode, Single Civilization Mode.[NEWLINE][NEWLINE]In this mode, you are the only major civilization, and the entire map is yours (not counting city-states and barbarians). You can only choose Tech Victory, Diplomatic Victory or Score Victory.[NEWLINE][NEWLINE]Now that you have no interaction with other major civilizations, you may need to change the game thinking and gameplay.</en_US>
+      <zh_Hans_CN>添加一个新游戏模式，单文明模式。[NEWLINE][NEWLINE]该模式下，您自己是唯一的主要文明，整个地图都是您的（不算城邦和蛮族）。您只能选择科技胜利、外交胜利或分数胜利。[NEWLINE][NEWLINE]既然没了与其他主要文明的互动，您可能需要改变游戏思路和玩法。</zh_Hans_CN>
+    </Text>
+    <Text id="LOC_KNM_SINGLE_MODE_TEASER">
+      <en_US>A game mode where you are the only major civilization</en_US>
+      <zh_Hans_CN>您自己是唯一的主要文明的游戏模式</zh_Hans_CN>
+    </Text>
+    <Text id="LOC_KNM_SINGLE_MODE_AUTHOR">
+      <en_US>Konomi</en_US>
+      <zh_Hans_CN>榊野木乃实</zh_Hans_CN>
+    </Text>
+  </LocalizedText>
+  <ActionCriteria>
+    <Criteria id="SingleMode">
+      <ConfigurationValueMatches>
+        <ConfigurationId>GAMEMODE_KNM_SINGLE</ConfigurationId>
+        <Group>Game</Group>
+        <Value>1</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
+  </ActionCriteria>
+  <FrontEndActions>
+    <UpdateDatabase id="KnmSingleMode">
+      <File>Data/SingleNoAIMode_ConfigData.sql</File>
+    </UpdateDatabase>
+    <UpdateIcons id="KnmSingleMode">
+      <File>Data/SingleNoAIMode_Icons.sql</File>
+    </UpdateIcons>
+    <UpdateText id="KnmSingleMode">
+      <File>Text/SingleNoAIMode_Config_en_US.sql</File>
+      <File>Text/SingleNoAIMode_Config_zh_Hans_CN.sql</File>
+    </UpdateText>
+    <ImportFiles id="KnmSingleMode">
+      <Properties>
+        <LoadOrder>10</LoadOrder>
+      </Properties>
+      <File>UI/Replacements/AdvancedSetup.lua</File>
+      <File>UI/Replacements/GameSetupLogic.lua</File>
+    </ImportFiles>
+    <UpdateArt id="KnmSingleMode">
+      <File>SingleNoAIMode.dep</File>
+    </UpdateArt>
+  </FrontEndActions>
+  <InGameActions>
+    <AddGameplayScripts id="KnmSingleMode">
+      <Criteria>SingleMode</Criteria>
+      <File>Scripts/SingleNoAIMode_Gameplay.lua</File>
+    </AddGameplayScripts>
+    <UpdateArt id="KnmSingleMode">
+      <Criteria>SingleMode</Criteria>
+      <File>SingleNoAIMode.dep</File>
+    </UpdateArt>
+    <UpdateIcons id="KnmSingleMode">
+      <File>Data/SingleNoAIMode_Icons.sql</File>
+    </UpdateIcons>
+  </InGameActions>
+  <Files>
+    <File>ArtDefs/UITextures.artdef</File>
+    <File>Data/SingleNoAIMode_ConfigData.sql</File>
+    <File>Data/SingleNoAIMode_Icons.sql</File>
+    <File>Platforms/MacOS/BLPs/ICON_GAMEMODE_KNM_SINGLE_64.blp</File>
+    <File>Platforms/Windows/BLPs/ICON_GAMEMODE_KNM_SINGLE_64.blp</File>
+    <File>Scripts/SingleNoAIMode_Gameplay.lua</File>
+    <File>SingleNoAIMode.dep</File>
+    <File>Text/SingleNoAIMode_Config_en_US.sql</File>
+    <File>Text/SingleNoAIMode_Config_zh_Hans_CN.sql</File>
+    <File>UI/Replacements/AdvancedSetup.lua</File>
+    <File>UI/Replacements/GameSetupLogic.lua</File>
+  </Files>
+</Mod>

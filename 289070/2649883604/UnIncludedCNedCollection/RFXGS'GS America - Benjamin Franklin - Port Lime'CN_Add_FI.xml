@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RFXGS'GS America - Benjamin Franklin - Port Lime'CN_Add_FI -->
+<!-- Author: 春 , Clear8Sky -->
+<!-- DateCreated: 2021/9/12 23:37:23 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “[GS] America - Benjamin Franklin - Port Lime” 。该文件在 FrontEnd 与 InGame 时载入，需 Criteria ： Active_Expansion_1 与 Active_Expansion_2 -->
+	<LocalizedText>
+
+		<!-- 领袖 -->
+
+		<Replace Tag="LOC_LEADER_LIME_USA_FRANKLIN_NAME" Language="zh_Hans_CN">
+			<Text>本杰明·富兰克林</Text>
+		</Replace>
+
+		<!-- 议程 -->
+
+		<Replace Tag="LOC_AGENDA_LIME_USA_FRANKLIN_ALMANACK_NAME" Language="zh_Hans_CN">
+			<Text>穷查理宝典</Text>
+		</Replace>
+		<Replace Tag="LOC_AGENDA_LIME_USA_FRANKLIN_ALMANACK_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>喜欢为公民提供大量宜居度的领袖，特别是这些公民能产出高科技值与生产力时。不喜欢那些不为国民提供生活保障的领袖，即使他们拥有高科技值与生产力。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDOS_LIME_FRANKLIN_AMENITIES" Language="zh_Hans_CN">
+			<Text>（您为人民提供了宜居设施）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MOD_LIME_FRANKLIN_AMENITIES" Language="zh_Hans_CN">
+			<Text>富兰克林对你们为选民提供的服务感到满意。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDOS_LIME_FRANKLIN_SCIENCE" Language="zh_Hans_CN">
+			<Text>（您的人民是幸福的，因此也是睿智的）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MOD_LIME_FRANKLIN_SCIENCE" Language="zh_Hans_CN">
+			<Text>富兰克林相信，你们人民的幸福带来了智慧。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDOS_LIME_FRANKLIN_INDUSTRY" Language="zh_Hans_CN">
+			<Text>（您的人民是幸福的，因此也是勤劳的）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MOD_LIME_FRANKLIN_INDUSTRY" Language="zh_Hans_CN">
+			<Text>富兰克林相信，你们人民的幸福带来了勤奋。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_LIME_FRANKLIN_TYRANNY" Language="zh_Hans_CN">
+			<Text>（您几乎没有为人民提供宜居设施）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MOD_LIME_FRANKLIN_TYRANNY" Language="zh_Hans_CN">
+			<Text>你为你的同胞所做的事太少，富兰克林感到厌恶。</Text>
+		</Replace>
+
+		<!-- 载入 -->
+
+		<Replace Tag="LOC_LOADING_INFO_LEADER_LIME_USA_FRANKLIN" Language="zh_Hans_CN">
+			<Text>富兰克林先生，美国是自由的象征，但还有很多事情要做。您知道，没有进取心和努力，美国将只是一个梦想。为您的选民做好准备，让他们健康、富有、明智。为开辟新的疆界铺平道路，而不必担心言论自由和新闻自由的权利受到限制。尽管他们将铭记您是他们的先行者，但您心里清楚：您只是一个卑微的印刷工，您向这些美国人展示了他们的新国家所代表的意义。</Text>
+		</Replace>
+
+		<!-- 特性 -->
+
+		<Replace Tag="LOC_TRAIT_LEADER_LIME_USA_FRANKLIN_FIRST_AMERICAN_NAME" Language="zh_Hans_CN">
+			<Text>美国第一人</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_LIME_USA_FRANKLIN_FIRST_AMERICAN_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>忠诚度为满的城市，其每个专业化区域可额外+2各自类型的 [ICON_GreatPerson] 伟人点数。可进行特色项目“印刷讽刺报刊”。</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_LIME_USA_FRANKLIN_PRINT_PAPERS_NAME" Language="zh_Hans_CN">
+			<Text>印刷讽刺报刊</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_LIME_USA_FRANKLIN_PRINT_PAPERS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>由科技“印刷术”解锁。项目进行时，所在城市每位 [ICON_Citizen] 公民每回合[COLOR_RED]-4[ENDCOLOR] [ICON_PressureDownLarge] 忠诚度压力，但城市+2 [ICON_Amenities] 宜居度。项目完成后，城市免费获得一名军事工程师和一名开拓者（不会失去 [ICON_Citizen] 人口）。</Text>
+		</Replace>
+
+		<!-- 百科 -->
+
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_LIME_USA_FRANKLIN_TITLE" Language="zh_Hans_CN">
+			<Text>本杰明·富兰克林</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_LIME_USA_FRANKLIN_SUBTITLE" Language="zh_Hans_CN">
+			<Text>印刷商</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_LIME_USA_FRANKLIN_QUOTE" Language="zh_Hans_CN">
+			<Text>与恶习作战，与邻居和平相处，在新年里呈现一个全新的自我。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_LIME_USA_FRANKLIN_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>【译者注：正在翻译……】[NEWLINE][NEWLINE]Benjamin Franklin – his name has become almost synonymous with the colonial American period, and his writings are quoted in everyday life. Everyone knows ‘A penny saved is a penny earned’ and ‘an ounce of prevention is worth a pound of cure’, and Benjamin Franklin is most well known for the Lightning Kite anecdote (which I’ve heard no less than twelve times from other modders whilst writing this). But the man himself is a much deeper, and fatter, character. It was through his direct work that America became what it is today, and for that he is remembered as the most quintessentially American of the Founding Fathers.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_LIME_USA_FRANKLIN_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>Franklin was born in Boston, Massachusetts as one of seventeen (!!!) of Josiah Franklin’s children. While his father wanted him to attend school with the clergy, he unfortunately had only enough money to send him to school for two years (that happens when you have seventeen children). However, his voracious reading and lifelong love of books took care of the rest. Soon after he was apprenticed to his brother James, who worked as a printer. It was here that both James and Ben founded the first truly independent newspaper in the thirteen colonies – the New England Courant. It was here that he adopted the pseudonym of Silence Dogood, after his brother didn’t let him write in the paper. Silence Dogood was, supposedly, a middle-aged widow with the sharpest tongue in the colonies, and the letters from ‘her’ in the paper became the talk of Boston. Supposedly, James Franklin was annoyed when he found out his little brother Ben was the author of these articles (though, being a brother, he was likely annoyed with him to begin with). It’s from here that Franklin gained a strong advocacy for free speech. His brother was jailed for publishing material unflattering to the governor, and subsequently Mrs. Dogood proclaimed that the governor was oppressing them all. Then, Franklin was kicked out of Massachusetts.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_LIME_USA_FRANKLIN_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>Having escaped the law to Philadelphia, he began work in several printer shops. After a number of unsuccessful jobs and a brief stint in London, he returned to work as a clerk, shopkeeper, and bookkeeper. But a year after this, he set up the Junto – a discussion group for artisans and tradesmen, modeled after the coffeehouses that Franklin encountered in England. It was essentially a bookclub, but since the books needed were incredibly expensive, he had the members pool their funds, and thereby created the first subscription library. It soon thereafter became a center of the Enlightenment in the colonies, and persist today as a great scholarly and research library.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_LIME_USA_FRANKLIN_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>In Philadelphia, Benjamin continued his work as a newspaperman, becoming the publisher of the Pennsylvania Gazette. Through this, his commentary was disseminated to the populace, earning esteem with the colonies and helping instruct his peers in virtue. But most importantly, he used this venue as a way to influence the colonist hearts and minds. He was often busy with his scientific endeavors - work on electricity, heating, materials, optics, climate, and population – and therefore the gazette remained poorly published for the remainder of his tenure, and his efforts to set up intercolonial publishing offices failed.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_LIME_USA_FRANKLIN_CHAPTER_HISTORY_PARA_5" Language="zh_Hans_CN">
+			<Text>Speaking of his scientific endeavors, his primary efforts were always in the fields of electricity and optics. He famously conducted the kite experiment (However, he was not struck by lightning. If he was, he would have died. Instead the kite picked up residual electricity during a storm, managing to charge a primitive battery and give Franklin a slight shock), and also invented the bifocal lens, in addition to supporting the wave theory of light (at the time, it was fiercely unpopular, and only Franklin and Euler backed it, to the mockery of the rest of the scientific community. However, seeing as we remember Franklin and Euler’s names instead of the other guys, it’s clear to see who really won). However, his most important discoveries were on the subjects of meteorology and the currents of the North Atlantic. While they were his most important discoveries, they were also rather technical, so we won’t get into them. Suffice to say that while it took several decades to be properly implemented by sailors, it did aid in cutting down the time of the transatlantic trip by two weeks.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_LIME_USA_FRANKLIN_CHAPTER_HISTORY_PARA_6" Language="zh_Hans_CN">
+			<Text>As Franklin aged, he became more involved with public life. While printing earnt him his fame, he retired from the Gazette in 1747 as a wealthy man, and eventually became involved Philadelphian politics: by 1753, he was appointed deputy postmaster-general of all of British North America. Using his position, he was able to found a number of public services: the first volunteer firefighting service, the first hospital in what would become the united states, the first homeowner’s insurance company, and many new-model colleges. Franklin, using his expertise, printed new textbooks for these universities that would train people in professions rather than faith, and in English rather than Latin. After being drafted by the colonies to improve the relations with the Natives and in defence against the French, he proposed a broad Plan of Union for the colonies in 1754. This was almost immediately discarded, though some of the concepts would eventually end up in the Articles of Confederation and the US Constitution.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_LIME_USA_FRANKLIN_CHAPTER_HISTORY_PARA_7" Language="zh_Hans_CN">
+			<Text>After having collected a number of honorary degrees from many universities (including but not limited to: Yale, Harvard, St. Andrews, Oxford, and William and Mary), he was brought to London in 1757 as a colonial agent. His mission: protest the political influence of the Penn family on behalf of Pennsylvania. Did he succeed? Nope. His lack of influential allies spelt the end of this mission (though it was also in London that he earnt notoriety as a womanizer). In 1765, he returned to London to oppose the Stamp Act, but was entirely unable to prevent his passage. After only one very brief incident where Philadelphians threatened to burn down his house (the City of Brotherly Love, everyone), he gave a testimony that lead to the outright repeal of the despised bill.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_LIME_USA_FRANKLIN_CHAPTER_HISTORY_PARA_8" Language="zh_Hans_CN">
+			<Text>This event made Franklin the de-facto spokesman for Colonial interests in England, using newspapers to print his essays on behalf of the colonies. However, he was regarded by the British as a fomenter of serious trouble, and he was systematically humiliated in front of the Privy Council after trying to find a peaceful solution in 1774. Getting booted unceremoniously out of Britain, he returned home in 1775 to find the colonies up in arms: the American Revolution was in full swing.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_LIME_USA_FRANKLIN_CHAPTER_HISTORY_PARA_9" Language="zh_Hans_CN">
+			<Text>Pennsylvania unanimously chose Franklin as their delegate to the Second Constitutional Convention (having missed the first one), and there he famously aided in drafting the Declaration of Independence. After having signed the legendary document, he was appointed the first United States Postmaster General, and established the new Colonial post system, which eventually became the United States Post Office.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_LIME_USA_FRANKLIN_CHAPTER_HISTORY_PARA_10" Language="zh_Hans_CN">
+			<Text>Having also been drafted into becoming the Ambassador to France, he travelled to Paris in 1776. There, he succeeded in gaining an alliance with France, and in 1785 helped broker the Treaty of Paris that would end the American revolution. He returned home to Philadelphia, where he was drafted once more, this time to serve as the President of Pennsylvania during the articles of Confederation. He was acclaimed as a hero, second only to George Washington in stature. It was also during this time that Franklin became a staunch abolitionist, and freed his slaves. He also advocated the education of black slaves in Philadelphia.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_LIME_USA_FRANKLIN_CHAPTER_HISTORY_PARA_11" Language="zh_Hans_CN">
+			<Text>Throughout his life, he suffered obesity and later gout, and in 1790 Benjamin Franklin died in his home in Philadelphia. His last words were allegedly, “a dying man can do nothing easy,” as it was becoming difficult for him to breathe. Approximately 20,000 people attended the hero’s funeral, and he was buried with his wife at the Christ Church Burial Ground in Philadelphia.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_LIME_USA_FRANKLIN_CHAPTER_HISTORY_PARA_12" Language="zh_Hans_CN">
+			<Text>To this day, Benjamin Franklin is remembered for his humility, work ethic, wisdom, and scathing wit, in addition to his accomplishments during his 84 years of life. He remains as one of the few founding fathers to have never held the office of President of the United States (and only because he died before he had the chance to be very likely drafted into it), and his mark can be felt across the United States even today.</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_LIME_USA_FRANKLIN_CHAPTER_CAPSULE_BODY" Language="zh_Hans_CN">
+			<!-- 原文件此处文本与下一Tag内文本弄反了，在这里顺手纠正了过来 -->
+			<Text>本杰明·富兰克林专注于扩张与伟人的获取上。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_LIME_USA_FRANKLIN_CHAPTER_DETAILED_BODY" Language="zh_Hans_CN">
+			<Text>本杰明·富兰克林的风格基于忠诚度，您需要在为保证他的能力而维持高忠诚度与领土扩张之间取得平衡。他在很大程度上依赖于项目“印刷讽刺报刊”，获得新的开拓者与军事工程师，并以此建立新的城市。然而，当其想借助领袖特色能力“美国第一人”而来得关键的伟人时，此项目又会耗去您同样需要的忠诚度。</Text>
+		</Replace>
+
+		<!-- 外交 -->
+
+		<!-- 初次见面 -->
+		<!-- 开场白 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_LIME_USA_FRANKLIN_ANY" Language="zh_Hans_CN">
+			<Text>我和我的同胞们欢迎你们来到美利坚合众国。</Text>
+		</Replace>
+
+		<!-- 到附近城市的邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_LIME_USA_FRANKLIN_ANY" Language="zh_Hans_CN">
+			<Text>附近有一块殖民地，那里有新鲜的食物和饮料等着你。我很高兴邀请你来参加。</Text>
+		</Replace>
+
+		<!-- AI接受玩家邀请 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NEAR_INITIATOR_BORDERS_ME_LEADER_LIME_USA_FRANKLIN_ANY" Language="zh_Hans_CN">
+			<Text>感谢，朋友。</Text>
+		</Replace>
+
+		<!-- AI邀请玩家交换首都信息 -->
+
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_LIME_USA_FRANKLIN_ANY" Language="zh_Hans_CN">
+			<Text>费城会张开双臂欢迎你——毕竟，这是一个充满兄弟之爱的城市。</Text>
+		</Replace>
+
+		<!-- 问候 -->
+
+		<Replace Tag="LOC_DIPLO_GREETING_LEADER_LIME_USA_FRANKLIN_ANY" Language="zh_Hans_CN">
+			<Text>向您致以亲切问候。</Text>
+		</Replace>
+
+		<!-- 代表团 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_HUMAN_LEADER_LIME_USA_FRANKLIN_ANY" Language="zh_Hans_CN">
+			<Text>我很荣幸也很谦卑地接受。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_HUMAN_LEADER_LIME_USA_FRANKLIN_ANY" Language="zh_Hans_CN">
+			<Text>对不起，我不能同意。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DELEGATION_FROM_AI_LEADER_LIME_USA_FRANKLIN_ANY" Language="zh_Hans_CN">
+			<Text>我很荣幸地邀请你们来到宾夕法尼亚州和整个美国。</Text>
+		</Replace>
+
+		<!-- 开放边境 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_HUMAN_LEADER_LIME_USA_FRANKLIN_ANY" Language="zh_Hans_CN">
+			<Text>我相信，是的，我们的兄弟可以分享我们的土地。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_HUMAN_LEADER_LIME_USA_FRANKLIN_ANY" Language="zh_Hans_CN">
+			<Text>我恐怕这是不能接受的。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_OPEN_BORDERS_FROM_AI_LEADER_LIME_USA_FRANKLIN_ANY" Language="zh_Hans_CN">
+			<Text>现在是时候让我们的选民能够在世界各地自由往来了。</Text>
+		</Replace>
+
+		<!-- 宣布友谊 -->
+		<!-- AI接受 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_HUMAN_LEADER_LIME_USA_FRANKLIN_ANY" Language="zh_Hans_CN">
+			<Text>我相信我的信念。</Text>
+		</Replace>
+
+		<!-- AI拒绝 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_HUMAN_LEADER_LIME_USA_FRANKLIN_ANY" Language="zh_Hans_CN">
+			<Text>虽然我们可能是朋友，但恐怕我们两国还没有准备好这样做。</Text>
+		</Replace>
+
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_LIME_USA_FRANKLIN_ANY" Language="zh_Hans_CN">
+			<Text>有朋友是件好事，无论是作为人还是国家。我们可以签下我们的友谊宣言吗？</Text>
+		</Replace>
+
+		<!-- 玩家接受后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_LIME_USA_FRANKLIN_ANY" Language="zh_Hans_CN">
+			<!-- 原文件Tag缺失，这里尝试编写补上 -->
+			<Text>太好了！！</Text>
+		</Replace>
+
+		<!-- 玩家拒绝后AI回应 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_LIME_USA_FRANKLIN_ANY" Language="zh_Hans_CN">
+			<Text>很好，但在你走之前，请让我们喝点啤酒吧。</Text>
+		</Replace>
+
+		<!-- 结盟 -->
+		<!-- AI请求 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_ALLIANCE_FROM_AI_LEADER_LIME_USA_FRANKLIN_ANY" Language="zh_Hans_CN">
+			<Text>无论你走到哪里，你都带来了美德，我相信我们两国之间的联盟将给世界带来美德。</Text>
+		</Replace>
+
+		<!-- 赞成与警告 -->
+		<!-- AI赞成 -->
+
+		<Replace Tag="LOC_DIPLO_KUDO_EXIT_LEADER_LIME_USA_FRANKLIN_ANY" Language="zh_Hans_CN">
+			<Text>向知识投资，收益最佳。你们的人民可以自由地追求知识和幸福。干得好。</Text>
+		</Replace>
+
+		<!-- AI警告 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_EXIT_LEADER_LIME_USA_FRANKLIN_ANY" Language="zh_Hans_CN">
+			<Text>那些不能给他们的兄弟提供哪怕是一个追求幸福的机会的人，将永远不能给他们提供哪怕是一个获得智慧的机会。</Text>
+		</Replace>
+
+		<!-- AI警告玩家离开边境 -->
+
+		<Replace Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_LEADER_LIME_USA_FRANKLIN_ANY" Language="zh_Hans_CN">
+			<Text>以冲动为开端的，都以羞辱告终。因此，为了你自己，我真希望你不要在这个时候滋生事端。</Text>
+		</Replace>
+
+		<!-- 贸易 -->
+		<!-- AI接受交易 -->
+
+		<Replace Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_LIME_USA_FRANKLIN_ANY" Language="zh_Hans_CN">
+			<Text>让我们举杯庆祝吧。</Text>
+		</Replace>
+
+		<!-- AI拒绝交易 -->
+
+		<Replace Tag="LOC_DIPLO_REJECT_MAKE_DEAL_FROM_AI_LEADER_LIME_USA_FRANKLIN_ANY" Language="zh_Hans_CN">
+			<Text>我恐怕不能接受。</Text>
+		</Replace>
+
+		<!-- 谴责 -->
+		<!-- 受到谴责回应 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_LIME_USA_FRANKLIN_ANY" Language="zh_Hans_CN">
+			<Text>对你这样冒犯别人的行为我不可能不表示抗议。</Text>
+		</Replace>
+
+		<!-- AI谴责玩家 -->
+
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_LIME_USA_FRANKLIN_ANY" Language="zh_Hans_CN">
+			<Text>尽管我们都生来无知，但你却一点也不想改变现状。[NEWLINE]（谴责你）</Text>
+		</Replace>
+
+		<!-- 宣战 -->
+		<!-- 受到宣战后回应 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_LIME_USA_FRANKLIN_ANY" Language="zh_Hans_CN">
+			<Text>当你试图限制美国人的自由时，他们不会袖手旁观。所以，我也不会。</Text>
+		</Replace>
+
+		<!-- AI宣战 -->
+
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_LIME_USA_FRANKLIN_ANY" Language="zh_Hans_CN">
+			<Text>虽然我厌恶战争，但我不会坐视你们侵犯我亲爱的同胞的自由。</Text>
+		</Replace>
+
+		<!-- 求和 -->
+		<!-- AI接受求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_ACCEPT_DEAL_LEADER_LIME_USA_FRANKLIN_ANY" Language="zh_Hans_CN">
+			<Text>每个国家的代表都将前来签署这项决议，我相信他们会很自豪。</Text>
+		</Replace>
+
+		<!-- AI拒绝求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_REFUSE_DEAL_LEADER_LIME_USA_FRANKLIN_ANY" Language="zh_Hans_CN">
+			<Text>我站在正义一方。</Text>
+		</Replace>
+
+		<!-- AI求和 -->
+
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_FROM_AI_LEADER_LIME_USA_FRANKLIN_ANY" Language="zh_Hans_CN">
+			<Text>从来就没有好的战争，也没有坏的和平。</Text>
+		</Replace>
+
+		<!-- 击败 -->
+		<!-- AI被击败 -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_LIME_USA_FRANKLIN_ANY" Language="zh_Hans_CN">
+			<Text>也许这个世界还没有为我们这样的国家做好准备。也许一个可鄙的暴君摧毁像美国这样的国家是不可避免的。但我选择不这样认为，总有一天，自由的钟声会再次响起。</Text>
+		</Replace>
+
+		<!-- 玩家被击败（在热座模式中会显示） -->
+
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_LIME_USA_FRANKLIN_ANY" Language="zh_Hans_CN">
+			<Text>这就是所有独裁者的命运——被他们曾经压迫过的人打倒。我很遗憾，你必须以这种艰难的方式来学习这个道理。</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<TraitModifiers>
+		<Row>
+			<TraitType>TRAIT_CIVILIZATION_IMPROVEMENT_GREAT_WALL</TraitType>
+			<ModifierId>TRAIT_CULTURE_BOMB_TRIGGER_GREAT_WALL</ModifierId>
+		</Row>
+	</TraitModifiers>
+	<Modifiers>
+		<Row>
+			<ModifierId>TRAIT_CULTURE_BOMB_TRIGGER_GREAT_WALL</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_ADD_CULTURE_BOMB_TRIGGER</ModifierType>
+		</Row>
+		<Row>
+			<ModifierId>GREAT_WALL_TRAINED_CORPS_ARMY_DISCOUNT</ModifierId>
+			<ModifierType>MODIFIER_CITY_CORPS_ARMY_ADJUST_DISCOUNT</ModifierType>
+		</Row>
+	</Modifiers>
+	<ModifierArguments>
+				<Row>
+					<ModifierId>TRAIT_CULTURE_BOMB_TRIGGER_GREAT_WALL</ModifierId>
+					<Name>ImprovementType</Name>
+					<Value>IMPROVEMENT_GREAT_WALL</Value>
+				</Row>
+				<Row>
+			         <ModifierId>GREAT_WALL_TRAINED_CORPS_ARMY_DISCOUNT</ModifierId>
+			         <Name>UnitDomain</Name>
+			        <Value>DOMAIN_LAND</Value>
+		        </Row>
+		        <Row>
+			         <ModifierId>GREAT_WALL_TRAINED_CORPS_ARMY_DISCOUNT</ModifierId>
+			         <Name>Amount</Name>
+			         <Value>1</Value>
+		        </Row>
+	</ModifierArguments>
+	<Improvements>
+		<Update>
+			<Where ImprovementType="IMPROVEMENT_GREAT_WALL"/>
+			<Set CanBuildOutsideTerritory="true"/>
+		</Update>
+		<Update>
+			<Where ImprovementType="IMPROVEMENT_GREAT_WALL"/>
+			<Set BuildOnFrontier="false"/>
+		</Update>
+	</Improvements>
+</GameData>

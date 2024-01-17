@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<GameData>
+	<LocalizedText>
+		<Row Tag="LOC_ABILITY_GREAT_WALL_STEP_1_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>-1 [ICON_Movement] 移动力，来自相邻万里长城改良设施。</Text>
+		</Row>
+		<Row Tag="LOC_ABILITY_GREAT_WALL_STEP_1_DESCRIPTION" Language="en_US">
+			<Text>-1 [ICON_Movement] Movement from adjacent Great Wall improvement.</Text>
+		</Row>
+	</LocalizedText>
+</GameData>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'FatePrototype - Arash'CN_Fix_FI -->
+<!-- Author: Clear8Sky -->
+<!-- DateCreated: 2021/8/3 4:28:38 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Fate/Prototype 苍银的碎片 - 阿拉什” 。该文件在 FrontEnd 与 InGame 时载入，无需任何 Criteria -->
+	<LocalizedText>
+		
+		<!-- 游戏前文本 -->
+		
+		<Replace Tag="LOC_TRAIT_LEADER_FATE_ARCHER_ARASH_STELLA_DESC" Language="zh_Hans_CN">
+			<Text>所有 [ICON_Ranged] 远程单位（[ICON_Range] 射程大于0）攻击敌方单位时，[ICON_Strength] 战斗力额外提高500%。[NEWLINE][COLOR_FLOAT_GOLD]不会在战斗力对比界面显示该效果。[ENDCOLOR][NEWLINE][COLOR_FLOAT_CULTURE]攻击后该单位会死亡。[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_FATE_ARCHER_ARASH_BODY_DESC" Language="zh_Hans_CN">
+			<Text>[ICON_Ranged] 远程单位和城市防御的 [ICON_Range] 射程+2，单位视野+4。</Text>
+		</Replace>
+		
+		<!-- 游戏内文本 -->
+		
+		<Replace Tag="LOC_LEADER_FATE_ARCHER_ARASH_MEETING" Language="zh_Hans_CN">
+			<Text>你好！我是波斯大英雄阿拉什～嘛……没有那么伟大啦，不过很高兴认识你哦。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_HUMAN_LEADER_FATE_ARCHER_ARASH_ANY" Language="zh_Hans_CN">
+			<!-- 领袖外交信息: 你对AI宣布友谊允许的时候 -->
+			<Text>好啊好啊，朋友越多越好嘛～我们去喝酒吧？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_FATE_ARCHER_ARASH_ANY" Language="zh_Hans_CN">
+			<!-- 领袖外交信息: 当AI被其他AI击败会说这些话？ -->
+			<Text>嗯嗯～就这样，为了保守我的力量，下次再见吧～</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

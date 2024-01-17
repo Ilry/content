@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'Sukritacts Senusret III (Egypt)'CN_Add_FI -->
+<!-- Author: ChiYiuWong , Clear8Sky -->
+<!-- DateCreated: 2021/9/20 13:56:02 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Sukritact's Senusret III (Egypt)” 。该文件在 FrontEnd 与 InGame 时载入，无需任何 Criteria -->
+	<LocalizedText>
+		<Replace Tag="LOC_LEADER_SUK_SENUSRET_III_NAME" Language="zh_Hans_CN">
+			<Text>辛努塞尔特三世</Text>
+		</Replace>
+
+		<!-- 领袖特性 -->
+
+		<Replace Tag="LOC_TRAIT_LEADER_SUK_FORTRESS_OF_BUHEN_NAME" Language="zh_Hans_CN">
+			<Text>布亨要塞</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_SUK_FORTRESS_OF_BUHEN_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>军营及其建筑可额外提供 [ICON_GreatMerchant] 大商人点数。若军营沿河建成，则每30 [ICON_Turn] 回合免费获得一个近战或远程单位（标准速度下）。</Text>
+		</Replace>
+
+		<!-- 议程 -->
+
+		<Replace Tag="LOC_AGENDA_SUK_SOULS_OF_RE_NAME" Language="zh_Hans_CN">
+			<Text>现如复苏之灵</Text>
+		</Replace>
+		<Replace Tag="LOC_AGENDA_SUK_SOULS_OF_RE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>喜欢有许多世界奇观和强大军队的文明。不喜欢拥有较多奇观而军事力量却薄弱的文明。</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_SUK_SENUSRET_III_REASON_ANY" Language="zh_Hans_CN">
+			<Text>（您拥有许多世界奇观和一支强大的军队）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_SUK_SOULS_OF_RE_KUDOS" Language="zh_Hans_CN">
+			<Text>辛努塞尔特喜欢有许多世界奇观和强大军队的文明。</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_DIPLO_WARNING_LEADER_SUK_SENUSRET_III_REASON_ANY" Language="zh_Hans_CN">
+			<Text>（您看起来很颓废，虽拥众多世界奇观，却没有军队来保卫它们）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_SUK_SOULS_OF_RE_WARNING" Language="zh_Hans_CN">
+			<Text>辛努塞尔特不喜欢有许多世界奇观但军事力量薄弱的文明。</Text>
+		</Replace>
+
+		<!-- 城市 -->
+
+		<Replace Tag="LOC_CITY_NAME_SUK_EGYPT_ITJTAWY" Language="zh_Hans_CN">
+			<Text>伊塔维</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_SUK_EGYPT_BUHEN" Language="zh_Hans_CN">
+			<Text>布恩</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_SUK_EGYPT_SEMNA" Language="zh_Hans_CN">
+			<Text>塞姆纳</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_SUK_EGYPT_KUMMA" Language="zh_Hans_CN">
+			<Text>库玛</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_SUK_EGYPT_IKEN" Language="zh_Hans_CN">
+			<Text>伊肯</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_SUK_EGYPT_WAF_CHASTIU" Language="zh_Hans_CN">
+			<Text>瓦夫-查斯提乌</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_SUK_EGYPT_URONARTI" Language="zh_Hans_CN">
+			<Text>乌罗纳尔蒂</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_SUK_EGYPT_DJER_SETIU" Language="zh_Hans_CN">
+			<Text>杰尔-塞蒂乌</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_SUK_EGYPT_DABENARTI" Language="zh_Hans_CN">
+			<Text>达贝纳尔蒂</Text>
+		</Replace>
+
+		<!-- 对白 -->
+
+		<Replace Tag="LOC_LOADING_INFO_LEADER_SUK_SENUSRET_III" Language="zh_Hans_CN">
+			<Text>埃及的敌人很多，但他们都会在您——伟大的卡哈库雷·辛努塞尔特三世——强大的战车面前颤抖。引导埃及伟大的建筑师在这片土地上建造堡垒，它们提供的护卫将确保贸易流经您强大的帝国。如同复苏之灵一般，您与您的埃及将永远不败。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_SUK_SENUSRET_III_ANY" Language="zh_Hans_CN">
+			<Text>不可能的。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_SUK_SENUSRET_III_ANY" Language="zh_Hans_CN">
+			<Text>谢谢你，朋友。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_SUK_SENUSRET_III_ANY" Language="zh_Hans_CN">
+			<Text>埃及将成为你的朋友。你接受吗？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_HUMAN_LEADER_SUK_SENUSRET_III_ANY" Language="zh_Hans_CN">
+			<Text>你还配不上我们的友谊。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_HUMAN_LEADER_SUK_SENUSRET_III_ANY" Language="zh_Hans_CN">
+			<Text>我们很高兴接受你的友谊提议。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_SUK_SENUSRET_III_ANY" Language="zh_Hans_CN">
+			<Text>是时候攻击我的敌人了。为你的败局做好准备。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_SUK_SENUSRET_III_ANY" Language="zh_Hans_CN">
+			<Text>我们的箭将遮蔽太阳。你犯了一个严重的错误！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_HUMAN_LEADER_SUK_SENUSRET_III_ANY" Language="zh_Hans_CN">
+			<Text>我已经失败了？但他们还没有建成我的金字塔！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_SUK_SENUSRET_III_ANY" Language="zh_Hans_CN">
+			<Text>我已经失败了？但他们还没有建成我的金字塔！</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DELEGATION_FROM_AI_LEADER_SUK_SENUSRET_III_ANY" Language="zh_Hans_CN">
+			<Text>我给你派遣了一个带着礼物的代表团。弓、剑和一把金刀，和我拿着的一样。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_HUMAN_LEADER_SUK_SENUSRET_III_ANY" Language="zh_Hans_CN">
+			<Text>我觉得不行。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_HUMAN_LEADER_SUK_SENUSRET_III_ANY" Language="zh_Hans_CN">
+			<Text>您的贡品已收到。请接受我的感激作为回报。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_SUK_SENUSRET_III_ANY" Language="zh_Hans_CN">
+			<Text>如果我是荷鲁斯的化身，你就是赛特的化身！[NEWLINE]（谴责你）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_SUK_SENUSRET_III_ANY" Language="zh_Hans_CN">
+			<Text>总有一天，蒙图的怒火会降临到你身上，你会后悔说出这句话的。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_LEADER_SUK_SENUSRET_III_ANY" Language="zh_Hans_CN">
+			<Text>我是荷鲁斯的化身，受到阿蒙的保护。我是辛努塞尔特，两地之主。你应该知道我会用武力保护我的土地。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_SUK_SENUSRET_III_ANY" Language="zh_Hans_CN">
+			<Text>我们附近有一个城市。您想参观下吗？我可以带你去芦苇丛中狩猎。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NEAR_INITIATOR_POSITIVE_LEADER_SUK_SENUSRET_III_ANY" Language="zh_Hans_CN">
+			<Text>这是可以接受的。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_SUK_SENUSRET_III_ANY" Language="zh_Hans_CN">
+			<Text>我们所有的城市都很宏伟，但我们的首都是其中最宏伟的。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_GREETING_LEADER_SUK_SENUSRET_III_ANY" Language="zh_Hans_CN">
+			<Text>欢迎。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_EXIT_LEADER_SUK_SENUSRET_III_ANY" Language="zh_Hans_CN">
+			<Text>你变得傲慢和颓废。难道我必须派我的军队把你限制在你的土地上吗？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_EXIT_LEADER_SUK_SENUSRET_III_ANY" Language="zh_Hans_CN">
+			<Text>你的帝国是一个可以与我们抗衡的帝国。做得很好。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MAKE_ALLIANCE_FROM_AI_LEADER_SUK_SENUSRET_III_ANY" Language="zh_Hans_CN">
+			<Text>你想结成联盟吗？</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_MAKE_DEAL_FROM_AI_LEADER_SUK_SENUSRET_III_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_SUK_SENUSRET_III_ANY}</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_SUK_SENUSRET_III_ANY" Language="zh_Hans_CN">
+			<Text>{LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_SUK_SENUSRET_III_ANY}</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_ACCEPT_DEAL_LEADER_SUK_SENUSRET_III_ANY" Language="zh_Hans_CN">
+			<Text>随着塞赫迈特成为哈索尔，我们也实现了和平。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_AI_REFUSE_DEAL_LEADER_SUK_SENUSRET_III_ANY" Language="zh_Hans_CN">
+			<Text>这场纠纷还没有平息。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MAKE_PEACE_FROM_AI_LEADER_SUK_SENUSRET_III_ANY" Language="zh_Hans_CN">
+			<Text>当人们开始打架，就会出现越来越多的尸体。让我们结束这一切。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_HUMAN_LEADER_SUK_SENUSRET_III_ANY" Language="zh_Hans_CN">
+			<Text>你可以进入埃及。请远离我们的墓地。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_HUMAN_LEADER_SUK_SENUSRET_III_ANY" Language="zh_Hans_CN">
+			<Text>我不允许。荷鲁斯也不允许。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_OPEN_BORDERS_FROM_AI_LEADER_SUK_SENUSRET_III_ANY" Language="zh_Hans_CN">
+			<Text>我的军队想要获得通过你领土的许可。当然是为了和平才这么做。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_LEADER_SUK_SENUSRET_III_ANY" Language="zh_Hans_CN">
+			<Text>你的军队在考验我的耐心。不要让我向你的军队释放我方士兵的愤怒。</Text>
+		</Replace>
+
+		<!-- 引言与百科 -->
+
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_SUK_SENUSRET_III_QUOTE" Language="zh_Hans_CN">
+			<Text>现在，在我各个子嗣中，谁能维护我所定下的边界，谁就是我的钦子，生来将为王位继承。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_SUK_SENUSRET_III_TITLE" Language="zh_Hans_CN">
+			<Text>辛努塞尔特三世</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_SUK_SENUSRET_III_SUBTITLE" Language="zh_Hans_CN">
+			<Text>卡哈库雷·辛努塞尔特三世</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_SUK_SENUSRET_III_CHAPTER_CAPSULE_BODY" Language="zh_Hans_CN">
+			<Text>埃及的加成使他们在奇观竞赛中成为一个强大的竞争对手，而有了辛努塞尔特三世的加成，任何他未能建造的奇观，都可以简单地通过征服取得。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_SUK_SENUSRET_III_CHAPTER_DETAILED_BODY" Language="zh_Hans_CN">
+			<Text>埃及沿河缔造文明，其在河边建造区域和奇观可获得加成。同周围的狮身人面像一起时，这些奇观会变得非常有价值，能让埃及在各领域快速发展。辛努塞尔特的能力鼓励埃及尽早建立几座沿河的军营。因而能获得源源不断的 [ICON_GreatMerchant] 大商人点数和免费单位，以将生产力留给奇观建造。在狮身人面像对文化和信仰的加成、以及军营对军事力量和经济实力的强化下，辛努塞尔特三世将容易取得任何类型的胜利。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_SUK_SENUSRET_III_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>辛努塞尔特三世（公元前1878-1860年）可能是埃及第十二王朝最强大的法老，在他的统治下埃及非常繁荣，他在有生之年就已被神化。辛努塞尔特三世被认为是伟大的埃及法老塞索斯特里斯的继承人，根据希罗多德的说法，他在欧洲征战并殖民，根据狄奥多鲁斯·西库斯的说法，他征服了整个已知世界。辛努塞尔特三世可以说是塞索斯特里斯之后的最佳法老，因为他的统治标志着向努比亚的军事扩张以及埃及财富和权力的增加。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_SUK_SENUSRET_III_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>在辛努塞尔特三世统治期间，君主的声望下降，官方记录中的头衔也消失了，这表明该职位已被王室吞并。中央政府控制下地区权力逐渐扩大让这种解释得到了支持。然而，正如前面提到的贝尼哈桑墓葬所证明的那样，担任该职位的各个家庭似乎并没有失去他们的地位。许多铭刻的传记都讲述了一位前任君主成为忠于法老的皇家行政人员的故事。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_SUK_SENUSRET_III_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>辛努塞尔特三世是武士之王的缩影，体现了埃及的军事能力和果断行动的文化价值。在他的军队中，他被认为是不可战胜的。他在与努比亚的战役中扩大了埃及的边界，他沿边界修建的防御工事促进了贸易。他还率领探险队进入巴勒斯坦，随后与该地区建立了贸易关系。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_SUK_SENUSRET_III_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>努比亚和叙利亚战役掠夺来的财富主要用于对埃及寺庙的建造或翻新。例如，在阿拜多斯，一位名叫伊赫诺弗雷特的当地官员的铭文指出，国王委托他用黄金、银矿石、青金石、孔雀石和其他昂贵的石头翻新奥西里斯的驳船、神殿和小教堂。他还在卢克索西岸的孟图霍特普二世神庙装饰了一系列的六尊真人大小的花岗岩立像，给它们戴上了涅姆斯头饰。它们曾经被排列在较低的露台上。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_SUK_SENUSRET_III_CHAPTER_HISTORY_PARA_5" Language="zh_Hans_CN">
+			<Text>在宗教上，我们在铭文中得知，尽管他的首都、墓地和其他利益相关事物都在埃及北部，但他还帮忙扶持了大量与底比斯（南部埃及）阿蒙神教相关的牧师。他还在卡纳克以北的纳格-梅达穆德为古老的底比斯战神蒙图建造了一座大型寺庙。虽然这座寺庙在新王国时期以及希腊和罗马时期都进行了翻新，但除了1920年发现的两座雕刻精美的花岗岩大门，以及一些非常华丽的雕像和一些铭文外，它什么都没有留下。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_SUK_SENUSRET_III_CHAPTER_HISTORY_PARA_6" Language="zh_Hans_CN">
+			<Text>辛努塞尔特三世的金字塔建在达舒尔，一个主要埋葬王室成员的墓地。它是第十二王朝金字塔中最大的一座，但与其他具有泥砖核心的金字塔一样，在风吹日晒后，它的情况严重恶化。在1894-1895年的考古挖掘期间，雅克·德·摩根还在辛努塞尔特三世金字塔群的北围墙附近发现了梅雷雷特王后和西特哈索尔公主的墓葬。在这些墓葬中还发现了一些精美的珠宝，早期的劫匪没有发现。然而，一些埃及学家怀疑辛努塞尔特三世是否真的埋葬在这座金字塔中。他还在南阿比多斯建造了一座精心设计的陵墓和建筑群。这个巨大的建筑群在尼罗河泛滥平原的边缘和形成山谷西部边界的高沙漠悬崖脚下绵延一公里多。这座建筑群由一个地下墓穴组成，该墓穴至少曾一度被认为是埃及最大的墓穴（后来因在帝王谷发现拉美西斯二世之子墓而黯然失色）。其他组成部分包括位于耕地边缘的太平间寺庙和该建筑群的坟墓以南的城镇。该建筑群被称为“阿拜多斯经久不衰的卡哈库雷之地”。</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

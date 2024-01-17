@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mod id="c3a2cceb-7823-4b42-8e03-f3bbbb24fc4b" version="1">
+  <Properties>
+    <Name>LOC_KNM_SUBMERGE_MOD_NAME</Name>
+    <Description>LOC_KNM_SUBMERGE_MOD_DESCRIPTION</Description>
+    <Created>1640587335</Created>
+    <Teaser>LOC_KNM_SUBMERGE_MOD_TEASER</Teaser>
+    <Authors>Konomi</Authors>
+    <AffectsSavedGames>0</AffectsSavedGames>
+    <SupportsMultiplayer>0</SupportsMultiplayer>
+    <SupportsHotSeat>0</SupportsHotSeat>
+    <CompatibleVersions>2.0</CompatibleVersions>
+  </Properties>
+  <LocalizedText>
+	<Text id="LOC_KNM_SUBMERGE_MOD_NAME">
+	  <en_US>Submerging All Lands</en_US>
+	  <zh_Hans_CN>海平面上涨淹没全图</zh_Hans_CN>
+	</Text>
+	<Text id="LOC_KNM_SUBMERGE_MOD_TEASER">
+	  <en_US>The rising sea will submerge all lands.</en_US>
+	  <zh_Hans_CN>海平面上升会淹没所有陆地。</zh_Hans_CN>
+	</Text>
+	<Text id="LOC_KNM_SUBMERGE_MOD_DESCRIPTION">
+	  <en_US>The rising sea will submerge all lands, including hills, mountains, natural wonders, etc.</en_US>
+	  <zh_Hans_CN>海平面上升会淹没所有陆地，包括丘陵，山，自然奇观等。</zh_Hans_CN>
+	</Text>
+  </LocalizedText>
+  <Dependencies>
+    <Mod id="4873eb62-8ccc-4574-b784-dda455e74e68" title="Expansion: Gathering Storm" />
+  </Dependencies>
+  <ActionCriteria>
+    <Criteria id="Expansion2">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+    </Criteria>
+  </ActionCriteria>
+  <FrontEndActions>
+    <ImportFiles id="Konomi_Submerging_Front">
+      <Properties>
+        <LoadOrder>16001</LoadOrder>
+      </Properties>
+      <File priority="10000">CoastalLowlands.lua</File>
+    </ImportFiles>
+  </FrontEndActions>
+  <InGameActions>
+    <ImportFiles id="Konomi_Submerging_Ingame_Lua">
+      <Properties>
+        <LoadOrder>16001</LoadOrder>
+      </Properties>
+      <Criteria>Expansion2</Criteria>
+      <File priority="10000">CoastalLowlands.lua</File>
+    </ImportFiles>
+    <UpdateDatabase id="Konomi_Submerging_Ingame_DB">
+      <Properties>
+        <LoadOrder>16001</LoadOrder>
+      </Properties>
+      <Criteria>Expansion2</Criteria>
+      <File priority="10000">Cost.sql</File>
+    </UpdateDatabase>
+  </InGameActions>
+  <Files>
+    <File>CoastalLowlands.lua</File>
+    <File>Cost.sql</File>
+  </Files>
+</Mod>

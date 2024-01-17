@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'FateGrand Order Fujimaru Ritsuka(Male Female)'CN_Fix_FI -->
+<!-- Author: Clear8Sky -->
+<!-- DateCreated: 2021/8/3 17:31:14 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Fate/Grand Order 藤丸立香（咕哒君&咕哒子）” 。该文件在 FrontEnd 与 InGame 时载入，无需任何 Criteria -->
+	<LocalizedText>
+		
+		<!-- 游戏前文本 -->
+		
+		<Replace Tag="LOC_LEADER_ABILITY_FUJIMARU_RITSUKA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>额外获得两个通配符槽位。[NEWLINE]获得的 [ICON_GreatPerson] 伟人点数+500%。[NEWLINE]赞助 [ICON_GreatPerson] 伟人消耗的 [ICON_Gold] 金币或 [ICON_Faith] 信仰值减少50%。[NEWLINE]选择男性领袖时，每获得一位 [ICON_GreatPerson] 伟人则永久+30% [ICON_Culture] 文化值与 [ICON_Science] 科技值产出。（仅一次）[NEWLINE]选择女性领袖时，每获得一位 [ICON_GreatPerson] 伟人则永久+30% [ICON_Gold] 金币与 [ICON_Faith] 信仰值产出。（仅一次）[NEWLINE]宫殿、寺庙、艺术博物馆、考古博物馆、古罗马剧场以及广播中心，可各提供5个对应的巨作槽位。</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_FUJIMARU_RITSUKA_CHALDEA_ABILITY_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>没有人在这次任务中能够帮助您。</Text>
+		</Replace>
+		
+		<!-- 游戏内文本 -->
+		
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_FUJIMARU_RITSUKA_MALE_ANY" Language="zh_Hans_CN">
+			<Text>你不应该这么做。[NEWLINE]（谴责你）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_FUJIMARU_RITSUKA_FEMALE_ANY" Language="zh_Hans_CN">
+			<Text>你不应该这么做。[NEWLINE]（谴责你）</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

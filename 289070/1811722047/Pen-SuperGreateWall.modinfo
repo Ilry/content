@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mod id="f266d3eb-56c3-405c-8f63-90e308cc9fbf" version="2">
+  <Properties>
+    <Name>Pen-SuperGreateWall</Name>
+    <Description>为长城添加食物、生产力、科技值、文化值、信仰值、宜居度和住房加成，解除了边境、地形和线型的限制，并添加可触发文化炸弹特性。 
+
+[NEWLINE][NEWLINE]
+
+长城将为地块提供以下加成：[NEWLINE]
+[ICON_Gold] 金币 + 1，[NEWLINE]
+[ICON_Food] 食物 + 1，[NEWLINE]
+[ICON_Production] 生产力 + 1，[NEWLINE]
+[ICON_Science] 科技值 + 1，[NEWLINE]
+[ICON_Culture] 文化值 + 1，[NEWLINE]
+[ICON_Faith] 信仰值 + 1，[NEWLINE]
+[ICON_Housing] 住房 + 1
+
+[NEWLINE][NEWLINE]
+
+长城的相邻地块加成：[NEWLINE]
+[ICON_Gold] 金币 + 1，[NEWLINE]
+[ICON_Food] 食物 + 1，[NEWLINE]
+[ICON_Production] 生产力 + 1，[NEWLINE]
+[ICON_Science] 科技值 + 1，[NEWLINE]
+[ICON_Culture] 文化值 + 1，[NEWLINE]
+[ICON_Faith] 信仰值 + 1，[NEWLINE]
+[ICON_Amenities] 宜居度 + 1
+
+[NEWLINE][NEWLINE]
+
+长城可建造的地形增加了沙漠泛滥平原、草原泛滥平原、平原泛滥平原、树林、热带雨林、绿洲、沼泽。
+
+[NEWLINE][NEWLINE]
+
+本MOD兼容“迭起兴衰”扩充包，对“风云变幻”扩充包的兼容性未进行测试。
+
+[NEWLINE][NEWLINE]
+
+1.1.0
+- 修复不兼容“风云变幻”扩充包的问题。</Description>
+    <Created>1661586476</Created>
+    <Teaser>为长城添加食物、生产力、科技值、文化值、信仰值、宜居度和住房加成，解除了边境、地形和线型的限制，并添加可触发文化炸弹特性</Teaser>
+    <Authors>CAI Pengcheng</Authors>
+    <CompatibleVersions>1.2,2.0</CompatibleVersions>
+  </Properties>
+  <InGameActions>
+    <UpdateDatabase id="improveGWFunc">
+      <File>sql/improveGWFunc.sql</File>
+      <File>sql/updateGWText.sql</File>
+    </UpdateDatabase>
+  </InGameActions>
+  <Files>
+    <File>sql/improveGWFunc.sql</File>
+    <File>sql/updateGWText.sql</File>
+  </Files>
+</Mod>

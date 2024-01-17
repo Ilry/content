@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RF'KAPPA'CN_Fix_FI -->
+<!-- Author: Clear8Sky -->
+<!-- DateCreated: 2021/7/29 10:49:30 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “[TouHou mod]KAPPA-河童-河童” 。该文件在 FrontEnd 与 InGame 时载入，需 Criteria ：Active_Expansion_1 -->
+	<LocalizedText>
+		
+		<!-- 功能类文本 -->
+		
+		<Replace Tag="LOC_CIVILIZATION_KAPPA_ADJECTIVE" Language="zh_Hans_CN">
+			<Text>河童族的</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_KAPPA_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>每位 [ICON_Citizen] 公民产出+1 [ICON_Science] 科技值。军事单位获得河童修正（单位拥有两栖效果）。沿河的城市+2 [ICON_Amenities] 宜居度，否则-4 [ICON_Amenities] 宜居度。[NEWLINE][NEWLINE]两栖效果——单位上船或登陆不消耗 [ICON_Movement] 移动力，军事单位无视从海上进攻与跨河进攻时的 [ICON_Strength] 战斗力减益。</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_KAPPA_RACE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>科研共和：+1经济政策槽位。[NEWLINE]灵光一闪：进入新时代时随机获得3个 [ICON_TechBoosted] 尤里卡，且 [ICON_TechBoosted] 尤里卡额外提升（对应科技解锁所需科技值总量的）20%。</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_KAPPA_LIBRARY_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>河童文明的特色建筑，取代图书馆。初始即可解锁，建造或购买费用减半。</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_KAPPA_UNIVERSITY_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>河童文明的特色建筑，取代大学。初始即可解锁，建造或购买费用减半。</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_KAPPA_RESEARCH_LAB_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>河童文明的特色建筑，取代研究实验室。初始即可解锁，建造或购买费用减半。</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_KAPPA_CAMPUS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>河童文明的特色区域，取代学院。初始即可解锁，建造费用减半。</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_KAPPA_ANY" Language="zh_Hans_CN">
+			<Text>若你继续阻碍我们，请小心点。[NEWLINE]（谴责你）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_LEADER_KAPPA_REASON_ANY" Language="zh_Hans_CN">
+			<Text>（您的科技水平很低）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_KAPPA_REASON_ANY" Language="zh_Hans_CN">
+			<Text>（您的科技水平很高）</Text>
+		</Replace>
+		
+		<!-- 百科类文本 -->
+		
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_KAPPA_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>种族修正（每位 [ICON_Citizen] 公民产出+1 [ICON_Science] 科技值）：河童是天生的研究者，研究是吃饭、睡觉之外的又一基本需求，有时优先级还在吃饭、睡觉之前。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_KAPPA_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>军事修正（单位拥有两栖效果）：即便不能用妖力，河童依然是水生种族，不会被水所阻拦的。[NEWLINE]【两栖效果——单位上船或登陆不消耗 [ICON_Movement] 移动力，军事单位无视从海上进攻与跨河进攻时的 [ICON_Strength] 战斗力减益。】</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

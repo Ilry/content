@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- VNL'FateApocrypha Astolfo-Rider'CN_Fix_FI -->
+<!-- Author: Clear8Sky -->
+<!-- DateCreated: 2021/8/3 4:44:14 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Fate/Apocrypha 阿斯托尔福-骑阶” 。该文件在 FrontEnd 与 InGame 时载入，无需任何 Criteria -->
+	<LocalizedText>
+		
+		<!-- 外交文本 -->
+		
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_ASTOLFO_RIDER_REASON_ANY" Language="zh_Hans_CN">
+			<Text>（阿斯托尔福对你的好感度增加了）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_LEADER_ASTOLFO_RIDER_REASON_ANY" Language="zh_Hans_CN">
+			<Text>（阿斯托尔福对你的好感度减少了）</Text>
+		</Replace>
+		
+		<!-- 功能文本 -->
+		
+		<Replace Tag="LOC_LEADER_ABILITY_ASTOLFO_RIDER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>每回合+8 [ICON_Envoy] 影响力点数，城市内所有单元格+4魅力值。[NEWLINE]每次进入新时代可随机免费获得5次 [ICON_CivicBoosted] 鼓舞、5个 [ICON_TechBoosted] 尤里卡，但所有 [ICON_TradeRoute] 贸易路线产出-1 [ICON_Culture] 文化值、-1 [ICON_Science] 科技值，且所有城市-15% [ICON_Culture] 文化值和 [ICON_Science] 科技值产出。</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_ASTOLFO_RIDER_ABILITY_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>首个军事、经济、外交政策槽位均会转化为通配符槽位。[NEWLINE]单位+3 [ICON_Movement] 移动力；且攻击后可移动。[NEWLINE]单位攻击时[COLOR_RED]-4[ENDCOLOR] [ICON_Strength] 战斗力，防御时则+8 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVILIZATION_ASTOLFO_RIDER_FRANCIA_ADJECTIVE" Language="zh_Hans_CN">
+			<Text>“法兰克人”的</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

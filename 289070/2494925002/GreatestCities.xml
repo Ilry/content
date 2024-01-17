@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context>
+
+	<Container Style="FullScreenVignetteConsumer" />
+
+
+	<Box 		ID="Main"	Anchor="C,C"	Size="1015,843"		Color="11,27,40,255">
+		<Grid							Anchor="C,C"					Size="parent+9,parent+9"		Style="WindowFrameTopOnly" />
+
+		<!-- Window Header -->
+		<Button		ID="CloseButton"	Anchor="R,T"	Offset="-3,-1"	Size="44,44"					Texture="Controls_CloseLarge" />
+		<Image							Anchor="C,T"					Size="parent,44"		Color="61,112,154,255"	Texture="Controls_Gradient_HalfRadial" />
+
+		<GridButton ID="ButtonDumpData" Size="100, 24" Offset="-120,8" Style="ButtonLightWeightGrid" Anchor="R,T"  Hidden="1">
+			<Label ID="ButtonText" String="DumpData" Anchor="C,C" Style="ButtonFont16" LeadingOffset="-4"/>
+		</GridButton>
+		<GridButton ID="ButtonLoadData" Size="100, 24" Offset="-120,88" Style="ButtonLightWeightGrid" Anchor="R,T" Hidden="1">
+			<Label ID="ButtonText" String="LoadData" Anchor="C,C" Style="ButtonFont16" LeadingOffset="-4"/>
+		</GridButton>
+		<GridButton ID="ButtonReHookEvents" Size="100, 24" Offset="-120,128" Style="ButtonLightWeightGrid" Anchor="R,T"  Hidden="1">
+			<Label ID="ButtonText" String="ReHookEvents" Anchor="C,C" Style="ButtonFont16" LeadingOffset="-4"/>
+		</GridButton>
+
+
+		<Label     ID="WindowTitle"              Anchor="C,T" Offset="0,16"  Style="FontFlair20" String="{LOC_AKGC_CITIES_TITLE:upper}" FontStyle="Glow" Color0="133,205,235,255" Color1="203,215,225,100" Color2="254,254,254,255" SmallCapsType="EveryWord" SmallCaps="26" />
+
+		<GridButton ID="ButtonShowOptions" Size="32, 32" Offset="8,47" Style="ButtonLightWeight" Anchor="L,T"  String="" ToolTip="LOC_AKGC_BUTTON_OPTIONS_TT">
+			<Image Offset="0,0" Anchor="C,C"					Size="44,44"		Color="255,255,255,255"	Texture="ActionPanel_LittleGear.dds" />
+		</GridButton>
+
+
+		<Grid							Anchor="C,T"	Offset="0,44"	Size="parent-6,8"				Style="Divider3Grid" />
+
+		<!-- Tab Header -->
+		<Container		ID="TabArea"	Anchor="C,T"	Offset="0,44"	Size="parent,42" >
+
+			<PullDown ID="EraPullDown" Anchor="R,T" Style="PullDownBlue" ScrollThreshold="400" Size="300,24" Offset="4,7" SpaceForScroll="0"/>
+
+			<Image							Anchor="C,T"	Offset="0,4"	Size="parent-8,22"	Color="0,0,0,255"	Texture="Controls_GradientSmall" />
+			<Container	ID="TabContainer"					Offset="0,0"	Size="parent,34" />
+			<Grid							Anchor="C,B"	Offset="0,0"	Size="parent-6,8"	Style="Divider3Grid" />
+		</Container>
+		<Container						Anchor="C,T"	Offset="0,44"	Size="parent,36">
+			<SlideAnim	ID="TabAnim"		Begin="0,0" End="0,0" Cycle="Once" Speed="3.5" Function="OutQuint" Size="67,68">
+				<Image		ID="TabArrow"		Texture="Controls_TabSelectArrow" Size="42,11"/>
+			</SlideAnim>
+		</Container>
+
+		<Container			ID="CitiesHeaderRow"	Offset="0,86" Size="parent,26">
+			<Image																						Offset="4,0"	Size="parent-8,parent" Texture="Controls_GradientSmall" FlipY="1" Color="39,89,137,125" />
+			<Stack	Offset="4,0" StackGrowth="Right" Padding="10" >
+				<GridButton ID="CitiesSortByRank" String="LOC_AKGC_COL_RANK" Anchor="C,C" Size="60, parent" Offset="12,0" Style="ReportValueText" ></GridButton>
+				<GridButton ID="CitiesSortByOwner" String="LOC_AKGC_COL_OWNER" Anchor="L,C" Size="60, parent" Offset="0,0" Style="ReportValueText" ></GridButton>
+				<GridButton ID="CitiesSortByName" String="LOC_AKGC_COL_CITY" Anchor="C,C"  Size="240, parent" Offset="0,0" Style="ReportValueText" ></GridButton>
+				<GridButton ID="CitiesSortByPopulation" String="LOC_AKGC_COL_POPULATION" Anchor="C,C" Size="110, parent" Offset="0,0" Style="ReportValueText" ></GridButton>
+				<GridButton ID="CitiesSortBySpecial" String="LOC_AKGC_COL_SPECIAL" Anchor="C,C" Size="130, parent" Offset="0,0" Style="ReportValueText" ></GridButton>
+				<GridButton ID="CitiesSortByNumWonders" String="LOC_AKGC_COL_WONDERS" Anchor="C,C" Size="313, parent" Offset="0,0" Style="ReportValueText" ></GridButton>
+
+
+			</Stack>
+			<Line Offset="4,24" Size="parent-8,0"	Color="46,70,95,255" />
+		</Container>
+
+		<Container			ID="WondersHeaderRow"	Offset="0,86" Size="parent,26">
+			<Image																						Offset="4,0"	Size="parent-8,parent" Texture="Controls_GradientSmall" FlipY="1" Color="39,89,137,125" />
+			<Stack	Offset="4,0" StackGrowth="Right" Padding="40" >
+					<GridButton ID="WondersSortByTurnBuilt" String="LOC_AKGC_COL_DATEBUILT" Anchor="L,C" Size="100, parent" Offset="30,-4" Style="ReportValueText" ></GridButton>
+					<GridButton ID="WondersSortByOwner" String="LOC_AKGC_COL_OWNER"  Anchor="L,C" Size="100, parent" Offset="0,-4" Style="ReportValueText" ></GridButton>
+					<GridButton ID="WondersSortByName" String="LOC_AKGC_COL_WONDER" Anchor="L,C" Size="100, parent" Offset="0,-4" Style="ReportValueText" ></GridButton>
+					<GridButton ID="WondersSortByLocation" String="LOC_AKGC_COL_LOCATION"  Anchor="L,C" Size="100, parent" Offset="20,-4" Style="ReportValueText" ></GridButton>
+			</Stack>
+			<Line Offset="4,24" Size="parent-8,0"	Color="46,70,95,255" />
+		</Container>
+
+
+
+		<!-- Contents -->
+		<ScrollPanel	ID="Scroll"												Offset="4,112"		Size="parent-8,parent-120"				Vertical="1" AutoScrollBar="1" >
+			<Stack			ID="Stack"					Anchor="L,T"	Offset="0,1"		StackPadding="4" />
+			<ScrollBar											Anchor="R,C"	Offset="2,0"		Size="11,parent" AnchorSide="I,I"					Style="ScrollVerticalBarAlt" />
+		</ScrollPanel>
+		<Image		Anchor="C,T"	Offset="0,83"		Size="parent-8,22"				Color="0,0,0,255" Texture="Controls_GradientSmall" />
+
+		<Container		ID="Options"	Anchor="C,T"	Offset="0,46"	Size="parent-10,parent-54" Hidden="1">
+			<Box 		Anchor="C,C"	Size="parent,parent"		Color="11,27,40,255" >
+			<Grid							Anchor="C,T"	Offset="0,-2"	Size="parent,8"	Style="Divider3Grid" />
+
+			<Stack Offset="0,48" Anchor="C,T" StackGrowth="Down" Padding="10" Size="parent-100, parent" >
+				<Label String="LOC_AKGC_OPT_GENERAL" Style="HeaderLargeCaps" WrapWidth="350" Anchor="C,C" Offset="-330,0" />
+				<Stack ID="OptionsStack0" Offset="0,0" Anchor="C,T" StackGrowth="Down" Padding="10" >
+					<Container Anchor="C,C" Size="650,32" Padding="0">
+						<Slider Style="SliderControl" Anchor="R,C" Size="400,13" Offset="0,0" SpaceForScroll="0" ID="NumWorldCitiesToShowSlider"  Disabled="1"/>
+						<Label String="10" Style="ShellOptionText" WrapWidth="50" Anchor="R,C" ID="NumWorldCitiesToShowVal" Offset="430,0"  Disabled="1"/>
+						<Label String="LOC_AKGC_OPT_NumWorldCitiesToShow" Style="DiplomacyCivHeader" WrapWidth="350" Anchor="L,C" Offset="0,0" />
+					</Container>
+					<Container Anchor="C,C" Size="650,32" Padding="0">
+						<Slider Style="SliderControl" Anchor="R,C" Size="400,13" Offset="0,0" SpaceForScroll="0" ID="NumOwnCitiesToShowSlider"  Disabled="1"/>
+						<Label String="1000" Style="ShellOptionText" WrapWidth="350" Anchor="R,C" ID="NumOwnCitiesToShowVal" Offset="430,0"  Disabled="1"/>
+						<Label String="LOC_AKGC_OPT_NumOwnCitiesToShow" Style="DiplomacyCivHeader" WrapWidth="350" Anchor="L,C" Offset="0,0" />
+					</Container>
+
+					<GridButton ID="IncludeMinorsCBX" Anchor="C,C" Offset="0,0" Size="400,24" Style="CheckBoxControl" String="LOC_AKGC_OPT_IncludeMinors"  Disabled="1"/>
+					<GridButton ID="ShowLineNumbersOnCityListsCBX" Anchor="C,C" Offset="0,0" Size="400,24" Style="CheckBoxControl" String="LOC_AKGC_OPT_ShowLineNumbersOnCityLists"  Disabled="1"/>
+					<GridButton Hidden="1" ID="GrantEndofEraAwardsCBX" Anchor="C,C" Offset="0,0" Size="400,24" Style="CheckBoxControl" String="LOC_AKGC_OPT_GrantEndofEraAwards" Disabled="1" />
+					<GridButton Hidden="1" ID="DebugModeCBX" Anchor="C,T" Offset="0,0" Size="400,24" Style="CheckBoxControl" String="LOC_AKGC_OPT_DebugMode" Disabled="1" />
+
+					<!--<Container Anchor="C,C" Size="parent, parent" Offset="0,24" >  -->
+					<Stack Offset="0,36" Anchor="C,T" StackGrowth="Left" Padding="48" >
+						<Stack ID="OptionsStack2" Offset="0,12" Anchor="C,T" StackGrowth="Down" Padding="10" >
+							<Label String="LOC_AKGC_OPT_ForUndiscoverCities" Style="HeaderLargeCaps" WrapWidth="350" Anchor="L,C" Offset="3,0" />
+							<GridButton ID="ShowWondersForUndiscoveredCitiesCBX" Anchor="L,C" Offset="0,0" Size="400,24" Style="CheckBoxControl" String="LOC_AKGC_OPT_ShowWondersForUndiscoveredCities"  Disabled="1"/>
+							<GridButton ID="ShowBestOfBonusesForUndiscoveredCitiesCBX" Anchor="L,C" Offset="0,0" Size="400,24" Style="CheckBoxControl" String="LOC_AKGC_OPT_ShowBestOfBonusesForUndiscoveredCities"  Disabled="1"/>
+							<GridButton ID="ShowScoreBreakdownForUndiscoveredCitiesCBX" Anchor="L,C" Offset="0,0" Size="400,24" Style="CheckBoxControl" String="LOC_AKGC_OPT_ShowScoreBreakdownForUndiscoveredCities"  Disabled="1"/>
+							<GridButton ID="ShowCityDetailsForUndiscoveredCitiesCBX" Anchor="L,C" Offset="0,0" Size="400,24" Style="CheckBoxControl" String="LOC_AKGC_OPT_ShowCityDetailsForUndiscoveredCities"  Disabled="1"/>
+						
+							<GridButton ID="ShowCapitalForUndiscoveredCitiesCBX" Anchor="L,C" Offset="0,0" Size="400,24" Style="CheckBoxControl" String="LOC_AKGC_OPT_ShowCapitalForUndiscoveredCities"  Disabled="1"/>
+							<GridButton ID="ShowHolyCityForUndiscoveredCitiesCBX" Anchor="L,C" Offset="0,0" Size="400,24" Style="CheckBoxControl" String="LOC_AKGC_OPT_ShowHolyCityForUndiscoveredCities"  Disabled="1"/>
+							<GridButton ID="ShowCityNamesForUndiscoveredCitiesCBX" Anchor="L,C" Offset="0,0" Size="400,24" Style="CheckBoxControl" String="LOC_AKGC_OPT_ShowCityNamesForUndiscoveredCities"  Disabled="1"/>
+							<GridButton ID="ShowOwnerForUnmetCivsCBX" Anchor="L,C" Offset="0,0" Size="400,24" Style="CheckBoxControl" String="LOC_AKGC_OPT_ShowOwnerForUnmetCivs"  Disabled="1"/>
+						</Stack>
+
+						<Stack ID="OptionsStack1" Offset="0,12" Anchor="C,T" StackGrowth="Down" Padding="10" >
+							<Label String="LOC_AKGC_OPT_ForDiscoveredCities" Style="HeaderLargeCaps" WrapWidth="350" Anchor="L,C" Offset="3,0" />
+							<GridButton ID="ShowWondersForDiscoveredCitiesCBX" Anchor="L,C" Offset="0,0" Size="400,24" Style="CheckBoxControl" String="LOC_AKGC_OPT_ShowWondersForDiscoveredCities"  Disabled="1"/>
+							<GridButton ID="ShowBestOfBonusesForDiscoveredCitiesCBX" Anchor="L,C" Offset="0,0" Size="400,24" Style="CheckBoxControl" String="LOC_AKGC_OPT_ShowBestOfBonusesForDiscoveredCities"  Disabled="1"/>
+							<GridButton ID="ShowScoreBreakdownForDiscoveredCitiesCBX" Anchor="L,C" Offset="0,0" Size="400,24" Style="CheckBoxControl" String="LOC_AKGC_OPT_ShowScoreBreakdownForDiscoveredCities"  Disabled="1"/>
+							<GridButton ID="ShowCityDetailsForDiscoveredCitiesCBX" Anchor="L,C" Offset="0,0" Size="400,24" Style="CheckBoxControl" String="LOC_AKGC_OPT_ShowCityDetailsForDiscoveredCities"  Disabled="1"/>
+							<Label String="LOC_AKGC_OPT_WonderList" Style="HeaderLargeCaps" WrapWidth="350" Anchor="L,C" Offset="3,40" />
+							<GridButton ID="ShowRevealedUnderConstructionWondersCBX" Anchor="L,C" Offset="0,0" Size="400,24" Style="CheckBoxControl" String="LOC_AKGC_OPT_ShowRevealedUnderConstructionWonders"  Disabled="1"/>
+							<GridButton ID="ShowUnRevealedUnderConstructionWondersCBX" Anchor="L,C" Offset="0,0" Size="400,24" Style="CheckBoxControl" String="LOC_AKGC_OPT_ShowUnRevealedUnderConstructionWonders"  Disabled="1"/>
+							<GridButton ID="ShowWonderProgressCBX" Anchor="L,C" Offset="0,0" Size="400,24" Style="CheckBoxControl" String="LOC_AKGC_OPT_ShowWonderProgress"  Disabled="1"/>
+
+						</Stack>
+
+					<!--</Container>-->
+					</Stack>
+				
+
+				</Stack>
+				
+			</Stack>
+
+			<Stack	Offset="12,12" Anchor="R,B" StackGrowth="Left" Padding="10" >
+				<GridButton ID="ButtonSettingsSave" Size="100, 24"  Style="ButtonLightWeightGrid" >
+					<Label ID="ButtonText" String="LOC_AKGC_BUTTON_SETTINGSSAVE" Anchor="C,C" Style="ButtonFont16" LeadingOffset="-4"/>
+				</GridButton>
+				<GridButton ID="ButtonSettingsCancel" Size="100, 24" Style="ButtonLightWeightGrid" >
+					<Label ID="ButtonText" String="LOC_AKGC_BUTTON_SETTINGSCANCEL" Anchor="C,C" Style="ButtonFont16" LeadingOffset="-4"/>
+				</GridButton>
+				<GridButton ID="ButtonSettingsReset" Size="100, 24"  Style="ButtonLightWeightGrid"  >
+					<Label ID="ButtonText" String="LOC_AKGC_BUTTON_SETTINGSRESET" Anchor="C,C" Style="ButtonFont16" LeadingOffset="-4"/>
+				</GridButton>
+			</Stack>
+
+			</Box>
+		</Container>
+
+	</Box>
+
+	<!-- Tab Instance -->
+	<Instance Name="TabInstance">
+		<GridButton		ID="Button"						Size="50,34" Style="TabButton" FontSize="14" TextOffset="0,2">
+			<AlphaAnim		ID="Selection"	Offset="-2,0"	Size="parent+3,parent" Speed="4" AlphaBegin="0" AlphaEnd="1" Cycle="Once" Function="Root" Hidden="1" >
+				<GridButton										Size="parent,parent" Style="TabButtonSelected" ConsumeMouseButton="0" ConsumeMouseOver="1" />
+			</AlphaAnim>
+		</GridButton>
+	</Instance>
+
+	<!-- Non-Collapsable Rows -->
+	<Instance					Name="SimpleInstance">
+		<Stack					ID="Top"	StackGrowth="Down" />
+	</Instance>
+
+	<Instance Name="CityEntryInstance">
+		<Container	ID="Top" Offset="8,0" Size="parent-16,72">
+			<Box  ID="CityDestroyed" Offset="0,2" Size="parent-8,parent-2"	Color="25,25,25,255" Hidden="1" />
+			<Image  ID="Banner" Texture="Religion_BG" Offset="0,2" Size="parent-8,parent-2" Color="255,255,255,255"
+			TextureOffset="0,694" StretchMode="None" Hidden="1" />
+			<!-- Color="000,128,128,255" Hidden="0" /> -->
+			<Label		ID="Index"	Style="FontFlair10"	  Offset="2,6" Anchor="L,T"	String="99"  Color="128,128,128,255" />
+			<Stack	StackGrowth="Right" Padding="10" >
+				<Container	Size="68,68" Offset="2,2">
+					<!-- odd number of awards,  from bottom center -->
+					<Label ID="RankIcon1" Texture="CivDefaults16" Size="16,16" Anchor="C,C" Offset="0,18"/>
+					<Label ID="RankIcon2" Texture="CivDefaults16" Size="16,16" Anchor="C,C" Offset="-17,10"/>
+					<Label ID="RankIcon3" Texture="CivDefaults16" Size="16,16" Anchor="C,C" Offset="17,10"/>
+					<Label ID="RankIcon4" Texture="CivDefaults16" Size="16,16" Anchor="C,C" Offset="-22,-7"/>
+					<Label ID="RankIcon5" Texture="CivDefaults16" Size="16,16" Anchor="C,C" Offset="22,-7"/>
+					<Label ID="RankIcon6" Texture="CivDefaults16" Size="16,16" Anchor="C,C" Offset="-17,-23"/>
+					<Label ID="RankIcon7" Texture="CivDefaults16" Size="16,16" Anchor="C,C" Offset="17,-23"/>
+					<Label ID="RankIcon8" Texture="CivDefaults16" Size="16,16" Anchor="C,C" Offset="0,-30"/>
+
+					<!-- even number of awards,  from bottom row right -->
+					<Label ID="RankIcon11" Texture="CivDefaults16" Size="16,16" Anchor="C,C" Offset="8,18"/>
+					<Label ID="RankIcon12" Texture="CivDefaults16" Size="16,16" Anchor="C,C" Offset="-8,18"/>
+					<Label ID="RankIcon13" Texture="CivDefaults16" Size="16,16" Anchor="C,C" Offset="-22,2"/>
+					<Label ID="RankIcon14" Texture="CivDefaults16" Size="16,16" Anchor="C,C" Offset="22,2"/>
+					<Label ID="RankIcon15" Texture="CivDefaults16" Size="16,16" Anchor="C,C" Offset="-22,-16"/>
+					<Label ID="RankIcon16" Texture="CivDefaults16" Size="16,16" Anchor="C,C" Offset="22,-16"/>
+					<Label ID="RankIcon17" Texture="CivDefaults16" Size="16,16" Anchor="C,C" Offset="-8,-30"/>
+					<Label ID="RankIcon18" Texture="CivDefaults16" Size="16,16" Anchor="C,C" Offset="8,-30"/>
+
+					<Label		ID="Rank" String="$Rank$" Anchor="C,C" Style="FontFlair24" FontStyle="Glow" Color0="133,205,235,255" Color1="203,215,225,100" Color2="254,254,254,255"/>
+				</Container>
+				<Container	Size="53,parent" Offset="0,0">
+					<GridButton ID="OwnerButton" Size="parent,parent"  Offset="0,0">
+						<Image ID="CivIconBkg" Texture="CircleBacking48.dds"  Size="48,48" Anchor="L,C" Offset="-2,0"/>
+						<Image ID="CivIcon" Texture="CivDefaults45" Size="44,44" Anchor="L,C" Offset="0,0"/>
+					</GridButton>
+				</Container>
+				<Container	Size="240,parent" Offset=",0">
+					<GridButton ID="NameButton" Size="parent,parent"  Offset="0,0">
+						<Label		ID="Name"	Style="FontFlair26" Anchor="L,C" Offset="0,-8" String="$Name$" FontStyle="Glow" Color0="133,205,235,255" Color1="203,215,225,100" Color2="254,254,254,255"/>
+						<Label		ID="Description"	Style="FontFlair12"	 Anchor="L,C"	String="$Owner$" Offset="0,15" Color="203,215,225,255" />
+					</GridButton>
+				</Container>
+				<Container	Size="100,parent">
+					<Label		ID="Population"	Style="FontFlair22"	  Offset="0,0" Anchor="R,C"	String="$Population$"  Color="203,215,225,255" />
+				</Container>
+
+				<Container	Size="130,parent">
+					<Stack ID="SpecialStack" StackGrowth="Right" Anchor="C,C" Padding="0">
+						<Container ID="MinorIcon"  Size="50,50">
+							<Image Texture="Notifications40" Icon="ICON_NOTIFICATION_GIVE_INFLUENCE_TOKEN" Size="40,40"  Anchor="C,C" Color="255,255,255,255"/>
+						</Container>
+						<Container ID="CapitalIcon" Size="50,50">
+							<Image  Texture="Buildings50" Icon="ICON_BUILDING_PALACE" Size="50,50" Anchor="C,C" />
+						</Container>
+						<Container ID="HolyCityIcon" Size="50,50">
+							<Image  Texture="Buildings50"  Icon="ICON_BUILDING_TEMPLE" Size="50,50" Anchor="C,C" Offset="0,0" />
+							<!--					<Image ID="HolyCityRIconBkg" Texture="CircleBacking30.dds"  Size="30,30" Anchor="C,C" Offset="11,11" Color="50,50,50,192"/> -->
+							<Image ID="HolyCityRIconBkg" Texture="Religion_FollowersSlot"  Size="30,30" Anchor="C,C" Offset="11,11" Color="50,50,50,192"/>
+							<Image ID="HolyCityRIcon" Texture="Religion22"  Size="22,22" Anchor="C,C" Offset="11,11" Color="203,215,225,255"/>
+						</Container>
+					</Stack>
+				</Container>
+
+
+				<Container	Size="313,parent" Offset="0,0">
+					<Stack	ID="WonderStack" StackGrowth="Right" Anchor="C,C" Padding="0">
+
+					</Stack>
+				</Container>
+			</Stack>
+			<Line ID="DivLine"	Offset="0,73"	Size="parent-8,2"	Color="46,70,95,255" />
+			<!-- <Grid Offset="0,73" Size="parent-8,8" Style="DividerGrid" Color="Dark_Gray"/> -->
+
+		</Container>
+	</Instance>
+
+	<Instance Name="WonderInstance">
+		<Container	ID="WonderContainer" Offset="0,0" Size="45,parent" >
+			<!--				<Box									Size="2,parent"	Color="46,70,95,255" /> -->
+			<Image ID="WonderIcon" Texture="CivDefaults45" Size="45,45" Anchor="L,C" Offset="0,0"/>
+		</Container>
+	</Instance>
+	
+	
+	
+	<!-- World Wonders Tab list -->
+	<Instance Name="WonderEntryInstance">
+		<Container	ID="Top" Offset="8,0" Size="parent-16,145">
+			<Image  ID="WonderDestroyed" Texture="Religion_BG" Offset="0,-3" Size="parent-8,parent-2" Color="255,255,255,255" Hidden="1" />
+			<Stack	Offset="40,0" StackGrowth="Right" Padding="40" >
+				<Container	Size="100,parent" Hidden="0">
+					<Label		ID="DateBuilt"	Style="FontFlair24"	 Offset="-10,0" Anchor="C,C" Align="C,C" String="$BuiltDate$"  Color="203,215,225,255" />
+				</Container>
+
+				<Container	Size="53,53" Offset="0,-4" Anchor="L,C">
+					<GridButton ID="OwnerButton" Size="parent,parent"  Offset="0,0">
+						<Image ID="CivIconBkg" Texture="CircleBacking48.dds"  Size="48,48" Anchor="L,C" Offset="-2,0"/>
+						<Image ID="CivIcon" Texture="CivDefaults45" Size="44,44" Anchor="L,C" Offset="0,0"/>
+					</GridButton>
+				</Container>
+				
+				<Container	Size="128,128" Offset="-10,5">
+					<GridButton ID="WonderIconButton" Size="parent,parent"  Offset="0,0">
+						<Image ID="WonderIcon" Texture="CivDefaults256" Size="128,128" Anchor="L,B" Offset="0,0" Color="255,255,255,255" />
+						<Image Hidden="1" ID="WonderProgressIcon" MaskTexture="akgc_WonderProgressMask.dds"    Texture="CivDefaults256" Size="128,128" Anchor="L,B" Offset="0,0" Color="255,255,255,255"/>
+						<Image Hidden="1" ID="WonderUnderConstructionIcon" Texture="Districts80" Icon="ICON_DISTRICT_UNDER_CONSTRUCTION" Size="80,80" Anchor="C,B" Offset="0,0" Color="255,255,255,255"/>
+					</GridButton>
+				</Container>
+			
+				<Container	Size="270,parent" Anchor="C,C" Offset="0,-8">
+					<GridButton ID="WonderNameButton" Size="parent,parent"  Offset="0,0">
+						<Label		ID="WonderName"	Style="FontFlair30" Anchor="L,C" Offset="0,-26" String="$WonderName$" FontStyle="Glow" Color0="133,205,235,255" Color1="203,215,225,100" Color2="254,254,254,255"/>
+						<Label		ID="City"	Style="FontFlair24"	 Anchor="L,C"	String="$City$" Offset="20,8" Color="203,215,225,255" />
+						<Label		ID="OwnedBy"	Style="FontFlair14"	 Anchor="L,C"	String="$OwnedBy$" Offset="20,28" Color="203,215,225,255" />
+						<Label		ID="BuiltBy"	Style="FontFlair14"	 Anchor="L,C"	String="$BuiltBy$" Offset="20,44" Color="203,215,225,255" />
+					</GridButton>
+				</Container>
+				
+				<Container	Size="100,parent">
+					<Label		ID="DestroyedDate"	Style="FontFlair22"	  Offset="0,-8" Align="C,C" Anchor="L,C"	String="$DestroyedDate$"  Color="203,215,225,255" />
+				</Container>
+			</Stack>
+			<Line ID="DivLine"	Offset="0,140"	Size="parent-8,2"	Color="46,70,95,255" />
+
+		</Container>
+	</Instance>	
+
+</Context>

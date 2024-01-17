@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- GameData -->
+<!-- Author: polaris_cheung -->
+<!-- DateCreated: 11/10/2021 6:37:56 PM -->
+<GameData>
+	<Resource_YieldChanges>
+		<!-- Bonurs Resources-->
+		<Update>
+			<Where ResourceType="RESOURCE_BANANAS" YieldType="YIELD_FOOD"/>
+			<Set YieldChange="2"/>
+		</Update>
+		<Update>
+			<Where ResourceType="RESOURCE_CATTLE" YieldType="YIELD_FOOD"/>
+			<Set YieldChange="2"/>
+		</Update>
+		<Row ResourceType="RESOURCE_COPPER" YieldType="YIELD_PRODUCTION" YieldChange="1"/>
+		<Row ResourceType="RESOURCE_DEER" YieldType="YIELD_FOOD" YieldChange="1"/>
+		<Row ResourceType="RESOURCE_CRABS" YieldType="YIELD_FOOD" YieldChange="1"/>
+		<Row ResourceType="RESOURCE_FISH" YieldType="YIELD_GOLD" YieldChange="1"/>	
+		<Update>
+			<Where ResourceType="RESOURCE_RICE" YieldType="YIELD_FOOD"/>
+			<Set YieldChange="2"/>
+		</Update>
+		<Row ResourceType="RESOURCE_SHEEP" YieldType="YIELD_GOLD" YieldChange="2"/>
+		<Update>
+			<Where ResourceType="RESOURCE_WHEAT" YieldType="YIELD_FOOD"/>
+			<Set YieldChange="2"/>
+		</Update>
+		<!-- Luxury Resources-->
+		<Update>
+			<Where ResourceType="RESOURCE_COFFEE" YieldType="YIELD_GOLD"/>
+			<Set YieldChange="2"/>
+		</Update>
+		<Update>
+			<Where ResourceType="RESOURCE_COTTON" YieldType="YIELD_GOLD"/>
+			<Set YieldChange="2"/>
+		</Update>
+		<Row ResourceType="RESOURCE_COTTON" YieldType="YIELD_PRODUCTION" YieldChange="1"/>
+		<Row ResourceType="RESOURCE_DYES" YieldType="YIELD_CULTURE" YieldChange="1"/>
+		<Update>
+			<Where ResourceType="RESOURCE_FURS" YieldType="YIELD_GOLD"/>
+			<Set YieldChange="2"/>
+		</Update>
+		<Row ResourceType="RESOURCE_GYPSUM" YieldType="YIELD_CULTURE" YieldChange="1"/>
+		<Row ResourceType="RESOURCE_INCENSE" YieldType="YIELD_CULTURE" YieldChange="1"/>
+		<Update>
+			<Where ResourceType="RESOURCE_IVORY" YieldType="YIELD_GOLD"/>
+			<Set YieldChange="2"/>
+		</Update>
+		<Row ResourceType="RESOURCE_JADE" YieldType="YIELD_PRODUCTION" YieldChange="1"/>
+		<Row ResourceType="RESOURCE_MARBLE" YieldType="YIELD_PRODUCTION" YieldChange="1"/>
+		<Row ResourceType="RESOURCE_MERCURY" YieldType="YIELD_GOLD" YieldChange="2"/>
+		<Row ResourceType="RESOURCE_PEARLS" YieldType="YIELD_GOLD" YieldChange="2"/>
+		<Update>
+			<Where ResourceType="RESOURCE_SALT" YieldType="YIELD_FOOD"/>
+			<Set YieldChange="2"/>
+		</Update>
+		<Row ResourceType="RESOURCE_SILK" YieldType="YIELD_GOLD" YieldChange="2"/>
+		<Update>
+			<Where ResourceType="RESOURCE_SILVER" YieldType="YIELD_GOLD"/>
+			<Set YieldChange="2"/>
+		</Update>
+		<Row ResourceType="RESOURCE_SILVER" YieldType="YIELD_SCIENCE" YieldChange="1"/>
+		<Row ResourceType="RESOURCE_SPICES" YieldType="YIELD_CULTURE" YieldChange="1"/>
+		<Update>
+			<Where ResourceType="RESOURCE_TEA" YieldType="YIELD_SCIENCE"/>
+			<Set YieldChange="0"/>
+		</Update>
+		<Row ResourceType="RESOURCE_TEA" YieldType="YIELD_CULTURE" YieldChange="1"/>
+		<Row ResourceType="RESOURCE_TEA" YieldType="YIELD_FOOD" YieldChange="1"/>
+		<Row ResourceType="RESOURCE_TOBACCO" YieldType="YIELD_CULTURE" YieldChange="1"/>
+		<Row ResourceType="RESOURCE_WHALES" YieldType="YIELD_FOOD" YieldChange="1"/>
+		<Row ResourceType="RESOURCE_WINE" YieldType="YIELD_CULTURE" YieldChange="1"/>
+		<!--Stratetic-->
+		<Update>
+			<Where ResourceType="RESOURCE_ALUMINUM" YieldType="YIELD_SCIENCE"/>
+			<Set YieldChange="3"/>
+		</Update>
+		<Row ResourceType="RESOURCE_ALUMINUM" YieldType="YIELD_PRODUCTION" YieldChange="2"/>
+		<Update>
+			<Where ResourceType="RESOURCE_COAL" YieldType="YIELD_PRODUCTION"/>
+			<Set YieldChange="3"/>
+		</Update>
+		<Row ResourceType="RESOURCE_COAL" YieldType="YIELD_SCIENCE" YieldChange="2"/>
+		<Row ResourceType="RESOURCE_IRON" YieldType="YIELD_GOLD" YieldChange="2"/>
+		<Update>
+			<Where ResourceType="RESOURCE_NITER" YieldType="YIELD_PRODUCTION"/>
+			<Set YieldChange="2"/>
+		</Update>
+		<Row ResourceType="RESOURCE_NITER" YieldType="YIELD_SCIENCE" YieldChange="1"/>
+		<Row ResourceType="RESOURCE_OIL" YieldType="YIELD_SCIENCE" YieldChange="2"/>
+		<Row ResourceType="RESOURCE_URANIUM" YieldType="YIELD_SCIENCE" YieldChange="3"/>
+	</Resource_YieldChanges>
+	
+</GameData>

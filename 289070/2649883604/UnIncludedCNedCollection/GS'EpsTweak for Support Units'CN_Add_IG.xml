@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- GS'EpsTweak for Support Units'CN_Add_IG -->
+<!-- Author: 牛奶大魔王 , Clear8Sky -->
+<!-- DateCreated: 2021/10/3 0:47:31 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “EpsTweak for Support Units” 。该文件在 InGame 时载入，需 Criteria ：Active_Expansion_2 -->
+	<LocalizedText>
+
+	<!-- GameText.xml文件 -->	
+		<!-- 支援单位 -->
+		
+		<Replace Tag="LOC_EPSTWEAK_SUPPORT_UNIT_SHIELDBEARER_NAME" Language="zh_Hans_CN">
+			<Text>持盾卫队</Text>
+		</Replace>
+		<Replace Tag="LOC_EPSTWEAK_SUPPORT_UNIT_SHIELDBEARER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>古典时代支援单位。与其同处一个单元格上的非骑兵陆地单位防御时+4 [ICON_Strength] 战斗力。[NEWLINE]解锁科技“火药”后会被淘汰，但可晋升为医疗兵。</Text>
+		</Replace>
+		<Replace Tag="LOC_EPSTWEAK_SUPPORT_ABILITY_SHIELDBEARER_STUB_NAME" Language="zh_Hans_CN">
+			<Text>持盾卫队</Text>
+		</Replace>
+		<Replace Tag="LOC_EPSTWEAK_SUPPORT_ABILITY_SHIELDBEARER_STUB_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>与其同处一个单元格上的非骑兵陆地单位防御时+4 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_EPSTWEAK_SUPPORT_ABILITY_SHIELDBEARER_NAME" Language="zh_Hans_CN">
+			<Text>持盾卫队加成</Text>
+		</Replace>
+		<Replace Tag="LOC_EPSTWEAK_SUPPORT_ABILITY_SHIELDBEARER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text></Text>
+		</Replace>
+		<Replace Tag="LOC_EPSTWEAK_SUPPORT_ABILITY_SHIELDBEARER_COMBAT_MODIFIER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>+4 战斗力 来自于持盾卫队</Text>
+		</Replace>
+
+		<Replace Tag="LOC_EPSTWEAK_SUPPORT_UNIT_SNIPER_NAME" Language="zh_Hans_CN">
+			<Text>狙击小队</Text>
+		</Replace>
+		<Replace Tag="LOC_EPSTWEAK_SUPPORT_UNIT_SNIPER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>原子能时代支援单位。可巨幅提升对近战、远程和抗骑兵单位的伤害（+20 [ICON_Strength] 战斗力）。对其他单位的打击效果很差，但能够优先以敌方支援单位为目标。</Text>
+		</Replace>
+		<Replace Tag="LOC_EPSTWEAK_SUPPORT_ABILITY_SNIPER_NAME" Language="zh_Hans_CN">
+			<Text>狙杀</Text>
+		</Replace>
+		<Replace Tag="LOC_EPSTWEAK_SUPPORT_ABILITY_SNIPER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>对近战、远程和抗骑兵单位+20 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_EPSTWEAK_SUPPORT_ABILITY_SNIPER_COMBAT_MODIFIER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>+20 战斗力 来自于对抗近战、远程和抗骑兵单位</Text>
+		</Replace>
+
+		<Replace Tag="LOC_EPSTWEAK_SUPPORT_UNIT_DEMOLITION_CREW_NAME" Language="zh_Hans_CN">
+			<Text>爆破小队</Text>
+		</Replace>
+		<Replace Tag="LOC_EPSTWEAK_SUPPORT_UNIT_DEMOLITION_CREW_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>文艺复兴时期支援单位。可对区域进行有效的近距离爆破（+20 [ICON_Strength] 战斗力）。对其他目标的打击效果很差。</Text>
+		</Replace>
+		<Replace Tag="LOC_EPSTWEAK_SUPPORT_ABILITY_DEMO_MAN_NAME" Language="zh_Hans_CN">
+			<Text>爆破</Text>
+		</Replace>
+		<Replace Tag="LOC_EPSTWEAK_SUPPORT_ABILITY_DEMO_MAN_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>进攻区域时+20 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_EPSTWEAK_SUPPORT_ABILITY_DEMO_MAN_COMBAT_MODIFIER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>+20 战斗力 来自于 爆破区域</Text>
+		</Replace>
+
+		<Replace Tag="LOC_EPSTWEAK_SUPPORT_UNIT_MODERN_DEMO_CREW_NAME" Language="zh_Hans_CN">
+			<Text>现代爆破小队</Text>
+		</Replace>
+		<Replace Tag="LOC_EPSTWEAK_SUPPORT_UNIT_MODERN_DEMO_CREW_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>现代支援单位。可对区域进行有效的近距离爆破（+20 [ICON_Strength] 战斗力）。对其他目标的打击效果很差。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_EPSTWEAK_SUPPORT_UNIT_PATHFINDER_NAME" Language="zh_Hans_CN">
+			<Text>探路者</Text>
+		</Replace>
+		<Replace Tag="LOC_EPSTWEAK_SUPPORT_UNIT_PATHFINDER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>中世纪支援单位。可无视森林、雨林和丘陵的额外 [ICON_Movement] 移动力消耗。进行移动时，与所有相关的陆地单位一起组成护送编队（选择探路者自己进行操作）。</Text>
+		</Replace>
+		<Replace Tag="LOC_EPSTWEAK_SUPPORT_ABILITY_PATHFINDER_NAME" Language="zh_Hans_CN">
+			<Text>探途</Text>
+		</Replace>
+		<Replace Tag="LOC_EPSTWEAK_SUPPORT_ABILITY_PATHFINDER_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>与陆地单位组成编队，使其无视森林、雨林和丘陵的额外 [ICON_Movement] 移动力消耗。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_EPSTWEAK_SUPPORT_POLICY_CITIZEN_SOLDIERS_NAME" Language="zh_Hans_CN">
+			<Text>募军制</Text>
+		</Replace>
+		<Replace Tag="LOC_EPSTWEAK_SUPPORT_POLICY_CITIZEN_SOLDIERS_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>训练远古、古典、中世纪支援单位+50% [ICON_Production] 训练速度。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_EPSTWEAK_SUPPORT_POLICY_MM_SERVICE_NAME" Language="zh_Hans_CN">
+			<Text>义务兵役</Text>
+		</Replace>
+		<Replace Tag="LOC_EPSTWEAK_SUPPORT_POLICY_MM_SERVICE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>训练支援单位+50% [ICON_Production] 训练速度。</Text>
+		</Replace>
+
+	<!-- Civilopedia.xml文件 -->
+		
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_EPSTWEAK_SUPPORT_UNIT_SHIELDBEARER_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>在火药发明之前，人类所有武装冲突都是通过近战、远距离杀伤或两者兼而有之的方式进行的。这意味着，在中世纪时期之前，任何新的军事进步都是以新的阵型或更重的木制和钢制武器的形式出现的，这两种形式都会降低士兵的行动能力和反应能力。一支军队武装的越专业，就越容易受到灵活的部队骚扰攻击。为了解决这一问题，这一时期的各军队都将派出轻武器部队的分遣队来保卫更大的部队，抵抗侧翼和敌军弓箭手。他们通常携带大型盾牌进入战斗，因此被称为“持盾卫队”。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_EPSTWEAK_SUPPORT_UNIT_SHIELDBEARER_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>其中比较知名的持盾卫队是马其顿持盾卫队，亚历山大东征时他们用来守卫伙友骑兵。其他值得注意的例子还包括波斯的波斯步兵方阵，它在盾牌墙队形中使用大型矩形柳条盾牌来保护更脆弱的部队，以及意大利的热那亚弩手，他们携带巨大的护盾，护盾的使用办法可以是一人完成，利用支撑物（比如坚实的木棍）稳定大盾后，躲在盾后进行填装与射击；也可以是由多人完成，由一名弩手专注射击，一名助手负责支撑大盾，还有一人负责填装十字弩的箭矢。这样的小组协同一旦配合默契，便可以形成可怕的连续火力。在胡塞战争中，护盾兵也被认为是保护早期手枪的守护者，以及作为保镖护送高级军官。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_EPSTWEAK_SUPPORT_UNIT_SNIPER_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>狙击手是受过高精度步枪训练的神枪手，与普通步兵一起执行各种支援任务。他们的最早可追溯到美国独立战争双方的神枪手，他们使用一批远距离杀伤的步枪来对付其他装备比较差的士兵。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_EPSTWEAK_SUPPORT_UNIT_SNIPER_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>这个词源于1773年前后驻扎在印度的英国士兵的一种游戏，那里的士兵经常猎杀一种名叫沙锥鸟（Snipe）的敏捷的小鸟。由于这种鸟非常难于击中，因此长于此道的人被英语称为sniper。（德语：Scharfshütze）后来，sniper成为专业狙击手的正式叫法。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_EPSTWEAK_SUPPORT_UNIT_SNIPER_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>真正现代意义的狙击手这一名称最早在第一次世界大战中。当时德军挑选士兵组成自由行动的狙击手，他们大多具有猎人和护林员的背景，对东西两线的英法军队和俄军造成了重大杀伤。为此，在战争末期，英军专门成立了狙击手学校以培养反狙击手人才。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_EPSTWEAK_SUPPORT_UNIT_SNIPER_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>与流行文化展现相反，大多数狙击手不是单独行动的——他们与一名观察员组成一个团队，通常还有一名侧翼。狙击手操作的高精度步枪（往往太重，无法单独携带）要么选择关键目标，压制敌人，从而掩护其他步兵单位移动，或只是监视敌人和重要目标。侦察员协助监视和目标捕获，计算射击弹道系数，并与部队其他人员通信。侧翼通常配备自动武器，并防范来自侧翼和后方的突然袭击，狙击手有一个盲点。在城市作战中，两个或两个以上的狙击手小组为了更好的覆盖范围而同时部署是很常见的。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_EPSTWEAK_SUPPORT_UNIT_DEMOLITION_CREW_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>在战争中使用我们称之为“炸弹”的自给式爆炸装置几乎和使用火药一样古老。早在11世纪，中国的宋朝就使用了竹筒制成的炸弹。经典的铸铁黑色球形炸弹也是中国人的发明。它们因制造出巨大的雷鸣噪音而被称为“震天雷”，13世纪的金、宋两代都曾使用过。入侵的蒙古人采用了这种炸弹计，并在随后入侵日本以及入侵亚洲和欧洲其他地区时使用了这种炸弹。这就是为什么他们经常被认为是将火药技术传播到世界其他地区的功臣，与奥斯曼帝国并驾齐驱。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_EPSTWEAK_SUPPORT_UNIT_DEMOLITION_CREW_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>随着科学的进步和炸药设计的进步，军队越来越需要炸药专家，以防止破坏性炸药因误用而炸伤自己的队伍。随着19世纪化学的进步，新的爆炸性物质（硝化甘油、TNT、炸药和C-4）被引入军事领域，这一需求变得更快了。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_EPSTWEAK_SUPPORT_UNIT_MODERN_DEMO_CREW_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>在战争中使用我们称之为“炸弹”的自给式爆炸装置几乎和使用火药一样古老。早在11世纪，中国的宋朝就使用了竹筒制成的炸弹。经典的铸铁黑色球形炸弹也是中国人的发明。它们因制造出巨大的雷鸣噪音而被称为“震天雷”，13世纪的金、宋两代都曾使用过。入侵的蒙古人采用了这种炸弹计，并在随后入侵日本以及入侵亚洲和欧洲其他地区时使用了这种炸弹。这就是为什么他们经常被认为是将火药技术传播到世界其他地区的功臣，与奥斯曼帝国并驾齐驱。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_EPSTWEAK_SUPPORT_UNIT_MODERN_DEMO_CREW_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>随着科学的进步和炸药设计的进步，军队越来越需要炸药专家，以防止破坏性炸药因误用而炸伤自己的队伍。随着19世纪化学的进步，新的爆炸性物质（硝化甘油、TNT、炸药和C-4）被引入军事领域，这一需求变得更快了。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_EPSTWEAK_SUPPORT_UNIT_PATHFINDER_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>雇佣兵——是一种特殊的职业，指以金钱为目的而参战的武装人员，是为了利益而参加一场武装冲突的团体和个人。雇佣兵参战的目的只是为了金钱卖命，只要对方出价够高，他可以受雇于任何人。——雇佣兵可以追溯到比有记录的历史甚至更古远的时代。已知的最早记录显示，公元前6世纪，古希腊人从其他城邦雇佣战士。大多数雇佣兵直接参与战斗，但也有其他方式从获利。雇佣当地人作为向导穿越陌生或危险地形的做法经常出现在历史上的大量记录中，尤其是在殖民地征服期间。在正确的地理位置，一个熟练的探路者可以赚取可观的财富。</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

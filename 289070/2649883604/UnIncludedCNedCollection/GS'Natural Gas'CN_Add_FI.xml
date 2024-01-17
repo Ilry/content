@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- GS'Natural Gas'CN_Add_FI -->
+<!-- Author: 牛奶大魔王 , Clear8Sky -->
+<!-- DateCreated: 2021/10/7 2:33:42 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “Natural Gas” 。该文件在 FrontEnd 与 InGame 时载入，需 Criteria ：Active_Expansion_2 -->
+	<LocalizedText>
+		<Replace Tag="LOC_RESOURCE_GAS_NAME" Language = "zh_Hans_CN">
+			<Text>天然气</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_RESOURCES_PAGE_RESOURCE_GAS_CHAPTER_HISTORY_PARA_1" Language = "zh_Hans_CN">
+			<Text>在公元前6000年到公元前2000年间，伊朗首先发现了从地表渗出的天然气。许多早期的作家都曾描述过中东有原油从地表渗出的现象，特别是在今日阿塞拜疆的巴库地区。渗出的天然气刚开始可能用作照明，崇拜火的古代波斯人因而有了“永不熄灭的火炬”。中国古人对天然气的利用有十分悠久的历史，特别是通过钻凿油井合并来开采石油和天然气的技术，在世界上也是最早的。天然气是石油的共生物。它的发现时间，在开凿盐井的同时或稍后。2000多年以前的秦代就开始凿井取气煮盐了。在晋朝人常璩写的《华阳国志》里，就有描述秦汉时期应用天然气的一段话：“临邛县有火井，夜时光映上昭。民欲其火，先以家火投之。顷许如雷声，火焰出，通耀数十里。以竹筒盛其火藏之，可拽行终日不灭也……取井火煮之，一斛水得五斗盐。家火煮之，得无几也。”[NEWLINE][NEWLINE]1626年在美洲发现并鉴定了天然气。1821年，威廉·哈特在美国纽约弗雷多尼亚成功地挖到了第一口天然气井，由此组建了弗雷多尼亚轻气公司。费城市于1836年创建了第一个市政府拥有的天然气配送公司。[NEWLINE][NEWLINE]到2009年为止，在850000 km³（200000 cu. Mi.）的估计剩余可采天然气储量中，约有66000 km³（16000 cu. Mi.，或约8%）被消耗掉了。据估计，2015年世界消耗率约为3400 km³（815 cu. Mi.）的天然气。以目前的消耗率计算，天然气的总剩余经济可采储量估计将持续250年。每年增加2%至3%的使用量可能会导致目前可采储量的持续时间大大减少，可能只有80到100年。[NEWLINE][NEWLINE]预计2030年前，天然气将在一次能源消费中与煤和石油并驾齐驱。到2040年天然气的比例将与石油持平，到2050年，世界能源需求将增加60%，但煤炭和石油消费将处于逐步下降趋势，天然气的高峰期持续时间较长，非常规天然气的出现和大发展必将支撑天然气继续快速发展，最终超过石油，成为世界第一大消费能源。</Text>
+			<!-- 此处及以下背景文本部分为笨蛋奶二创，但质量还算不错，故作保留 -->
+		</Replace>
+		<Replace Tag="LOC_BUILDING_NATURAL_GAS_POWER_PLANT_NAME" Language = "zh_Hans_CN">
+			<Text>燃气发电厂</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_BUILDINGS_PAGE_BUILDING_NATURAL_GAS_POWER_PLANT_CHAPTER_HISTORY_PARA_1" Language = "zh_Hans_CN">
+			<Text>在1939 - 1940年间，瑞士纳沙泰尔州的一家工厂首次使用天然气涡轮机发电，供公众使用。涡轮机的总输出功率为4兆瓦。在此之前太阳石油公司曾在费城的化工厂使用燃气轮机发电供私人使用。1945年，一台双轴再热燃气轮机的发电量达到了世界纪录的10兆瓦，1948年，位于瑞士贝兹诺的世界最大天然气厂的发电量总和达到了40兆瓦。[NEWLINE][NEWLINE]1960年，加拿大不列颠哥伦比亚省的一座发电厂成为世界上最大的天然气发电厂，其发电量为100兆瓦。[NEWLINE][NEWLINE]在中国石油和化学工业联合会2015年1月发布的一份题为《我国天然气发展面临的不确定因素》调究研报告显示，2014年我国天然气表观消费量为1800亿立方米，同比增长7.4%，其中进口天然气580亿立方米，对外依存度达32.2%。</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_NATURAL_GAS_POWER_PLANT_DESCRIPTION" Language = "zh_Hans_CN">
+			<Text>自动将任意数量的 [ICON_RESOURCE_GAS] 天然气转换成 [ICON_Power] 电力，为6格范围内需要 [ICON_PowerInsufficient] 电力补充的城市供电，转化比率为：[NEWLINE][ICON_Bullet]1点 [ICON_RESOURCE_GAS] 天然气 [ICON_PowerRight] 5点 [ICON_Power] 电力。[NEWLINE][ICON_Bullet]会向大气排放少量二氧化碳。[NEWLINE]该建筑的 [ICON_Production] 生产力加成将延伸至6格范围内的所有城市（前提是它们没有获得来自其他任何发电厂的加成）。</Text>
+		</Replace>
+		<Replace Tag="LOC_IMPROVEMENT_GAS_WELL_NAME" Language = "zh_Hans_CN">
+			<Text>天然气井</Text>
+		</Replace>
+		<Replace Tag="LOC_IMPROVEMENT_GAS_WELL_DESCRIPTION" Language = "zh_Hans_CN">
+			<Text>解锁建设者修建天然气井的能力。[NEWLINE][NEWLINE]只能在 [ICON_RESOURCE_GAS] 天然气上修建，且此单元格-1魅力值。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_IMPROVEMENTS_PAGE_IMPROVEMENT_GAS_WELL_CHAPTER_HISTORY_PARA_1" Language = "zh_Hans_CN">
+			<Text>在1821年，威廉·哈特在美国纽约弗雷多尼亚成功地挖到了第一口天然气井，由此组建了弗雷多尼亚轻气公司。费城市于1836年创建了第一个市政府拥有的天然气配送公司。今天，美国的公共天然气系统有900多个，费城天然气厂是美国最大、运行时间最长的公共天然气系统。[NEWLINE][NEWLINE]液化石油气灌瓶供民用则是1903年始于德国，1912年美国也开始使用。50年代随着石油和天然气的大量开发,天然气用量激增,液化石油气也大量供应民用,各种油制气技术蓬勃发展,天然气又实现了液化储运，很大程度上推迟了煤制气的发展。1973年以后，由于石油和天然气的价格上涨，才重新促进了煤气化和新能源的研究开发。但80年代以来，用气较多的国家仍以天然气为主，有些城市还采用轻质石油产品改制的代用天然气或液化石油气应付高峰负荷。</Text>
+		</Replace>
+		<Replace Tag="LOC_IMPROVEMENT_OFFSHORE_GAS_RIG_NAME" Language = "zh_Hans_CN">
+			<Text>海上天然气井</Text>
+		</Replace>
+		<Replace Tag="LOC_IMPROVEMENT_OFFSHORE_GAS_RIG_DESCRIPTION" Language = "zh_Hans_CN">
+			<Text>解锁建造者修建海上天然气井的能力。[NEWLINE][NEWLINE]-1魅力值。只能修建在拥有 [ICON_RESOURCE_GAS] 天然气资源的海岸与湖泊上。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_IMPROVEMENTS_PAGE_IMPROVEMENT_OFFSHORE_GAS_RIG_CHAPTER_HISTORY_PARA_1" Language = "zh_Hans_CN">
+			<Text>很久以前，海上平台的主要用途是钓鱼、打捞海带或采集贝壳。但当人类发现了天然气的价值后，海上平台就成为了固定在深水下的大型建筑、目的是从海床下面抽取天然气。人类第一次水下钻孔取油是在1891年，地点是俄亥俄州圣玛丽淡水湖上的一个钻井平台。第一个真正的海上钻机是1896年在圣巴巴拉附近的加州海岸一个叫夏日乐园的地方搭建起来的。20世纪初，海上平台很快扩展到了德克萨斯和路易斯安娜州的海岸线，20世纪20年代，到了阿塞拜疆附近的里海，后来又延伸到了波斯湾、北海、巴西的坎波斯和桑托斯盆地，以及石油公司所有目光所及的地方。海底管道的建成大大降低了把石油带上岸的费用。虽然建一个石油钻塔花费巨大，而且偶尔还会倾斜或泄漏，但利润远超成本……至少短期来看是这样。</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CONVERT_REACTOR_TO_GAS" Language = "zh_Hans_CN">
+			<Text>转换为天然气</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CONVERT_REACTOR_TO_GAS_SHORT_NAME" Language = "zh_Hans_CN">
+			<Text>转换为天然气</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_CONVERT_REACTOR_TO_GAS_DESCRIPTION" Language = "zh_Hans_CN">
+			<Text>将此城的发电站更换为{LOC_BUILDING_NATURAL_GAS_POWER_PLANT_NAME}。[NEWLINE][NEWLINE]{LOC_BUILDING_NATURAL_GAS_POWER_PLANT_NAME}：[NEWLINE]{LOC_BUILDING_NATURAL_GAS_POWER_PLANT_DESCRIPTION}</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_DECOMMISSION_GAS_POWER_PLANT_NAME" Language = "zh_Hans_CN">
+			<Text>关闭燃气发电厂</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_DECOMMISSION_GAS_POWER_PLANT_SHORT_NAME" Language = "zh_Hans_CN">
+			<Text>关闭燃气发电厂</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_DECOMMISSION_GAS_POWER_PLANT_DESCRIPTION" Language = "zh_Hans_CN">
+			<Text>可获得“气候协议”竞赛分数的项目。从此城市中移除燃气发电厂及其全部效果。</Text>
+		</Replace>
+		<Replace Tag="LOC_EMERGENCY_SCORE_DECOMMISSION_GAS_POWER_PLANT_DESC" Language = "zh_Hans_CN">
+			<Text>“关闭燃气发电厂”项目完成»</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

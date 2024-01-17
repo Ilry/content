@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- GS'GS A Mountain Is Fine Too'CN_Add_IG -->
+<!-- Author: 钟离彦 , Clear8Sky -->
+<!-- DateCreated: 2021/10/2 2:21:37 -->
+<GameData>
+	<!-- 该文件对应补译/润色模组 “[GS] A Mountain Is Fine Too” 。该文件在 InGame 时载入，需 Criteria ：Active_Expansion_2 -->
+	<LocalizedText>
+		
+		<!-- 改良设施 -->
+		
+		<Replace Tag="LOC_AMIFT_MOUNTAIN_MINE" Language="zh_Hans_CN">
+			<Text>山脉矿井</Text>
+		</Replace>
+		<Replace Tag="LOC_AMIFT_MOUNTAIN_MINE_DESC" Language="zh_Hans_CN">
+			<Text>解锁建造者修建山脉矿井的能力。[NEWLINE][NEWLINE]+1 [ICON_Production] 生产力。-1魅力值。可修建在山脉或有效资源上。[NEWLINE][NEWLINE]若建在奢侈品资源或战略资源上，则所在城市将获得对资源的利用。[COLOR_RED]只能在山脉单元格上修建。[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_AMIFT_ANCHORITE_HOVEL" Language="zh_Hans_CN">
+			<Text>隐士小屋</Text>
+		</Replace>
+		<Replace Tag="LOC_AMIFT_ANCHORITE_HOVEL_DESC" Language="zh_Hans_CN">
+			<Text>解锁隐士修建隐士小屋的能力。[NEWLINE][NEWLINE]可在荒山上修建。所在城市训练的宗教单位在友方领土上时+1 [ICON_Movement] 移动力，+1视野。每个隐士小屋可使所在城市购买使徒和传教士消耗的 [ICON_Faith] 信仰值减少2%。</Text>
+		</Replace>
+		<Replace Tag="LOC_AMIFT_MOUNTAIN_HAMLET" Language="zh_Hans_CN">
+			<Text>山间村落</Text>
+		</Replace>
+		<Replace Tag="LOC_AMIFT_MOUNTAIN_HAMLET_DESC" Language="zh_Hans_CN">
+			<Text>解锁建造者修建山间村落的能力。[NEWLINE][NEWLINE]+1 [ICON_Culture] 文化值、+0.5 [ICON_Housing] 住房，且所在城市 [ICON_Citizen] 人口增长速度+3%。若修建在拥有绵羊资源的山脉或山涧单元格上，则+1 [ICON_Food] 食物。[COLOR_RED]只能在山脉单元格上修建。[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_AMIFT_VOLCANO_THERMAL_PLANT" Language="zh_Hans_CN">
+			<Text>火山恒温工厂</Text>
+		</Replace>
+		<Replace Tag="LOC_AMIFT_VOLCANO_THERMAL_PLANT_DESC" Language="zh_Hans_CN">
+			<Text>解锁建造者修建火山恒温工厂的能力。[NEWLINE][NEWLINE]+2 [ICON_Production] 生产力、+2 [ICON_Science] 科技值。可修建在火山单元格上。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_AMIFT_RESOURCE_GOLD" Language="zh_Hans_CN">
+			<Text>金矿</Text>
+		</Replace>
+		<Replace Tag="LOC_AMIFT_RESOURCE_AMIFTSHEEP" Language="zh_Hans_CN">
+			<Text>绵羊</Text>
+		</Replace>
+		<Replace Tag="LOC_AMIFT_BLEAK" Language="zh_Hans_CN">
+			<Text>荒山</Text>
+		</Replace>
+		<Replace Tag="LOC_AMIFT_STREAMS" Language="zh_Hans_CN">
+			<Text>山涧</Text>
+		</Replace>
+
+		<Replace Tag="LOC_AMIFT_INDUSTRIAL_ZONE_MOUNTAIN_ADJACENT_MOUNTAIN_MINE_PRODUCTION_DESC" Language="zh_Hans_CN">
+			<Text>+{1_num} [ICON_Production] 生产力 来自相邻 山脉矿井</Text>
+		</Replace>
+		<Replace Tag="LOC_AMIFT_INDUSTRIAL_ZONE_MOUNTAIN_ADJACENT_MOUNTAIN_STREAM_PRODUCTION_DESC" Language="zh_Hans_CN">
+			<Text>+{1_num} [ICON_Production] 生产力 来自相邻 山涧</Text>
+		</Replace>
+		<Replace Tag="LOC_AMIFT_CAMPUS_ADJACENT_BLEAK_SCIENCE_DESC" Language="zh_Hans_CN">
+			<Text>+{1_num} [ICON_Science] 科技值 来自相邻 荒山</Text>
+		</Replace>
+		<Replace Tag="LOC_AMIFT_HOLY_SITE_ADJACENT_ANCHORITE_HOVEL_FAITH_DESC" Language="zh_Hans_CN">
+			<Text>+{1_num} [ICON_Faith] 信仰值 来自相邻 隐士小屋</Text>
+		</Replace>
+		<Replace Tag="LOC_AMIFT_ANCHORITE_VISIT_ABIL_NAME" Language="zh_Hans_CN">
+			<Text>隐士拜访</Text>
+		</Replace>
+		<Replace Tag="LOC_AMIFT_ANCHORITE_VISIT_ABIL_DESC" Language="zh_Hans_CN">
+			<Text>+1 [ICON_Movement] 移动力，+1视野。</Text>
+		</Replace>
+		<Replace Tag="LOC_AMIFT_ADJACENT_MOUNTAIN_COMBAT_BONUS_MOD" Language="zh_Hans_CN">
+			<Text>山地训练：靠近山脉作战时+10 [ICON_Strength] 战斗力。</Text>
+		</Replace>
+		<Replace Tag="LOC_AMIFT_MOUNTAIN_COMBAT_TRAINING_ABILITY" Language="zh_Hans_CN">
+			<Text>山地作战训练</Text>
+		</Replace>
+		<Replace Tag="LOC_AMIFT_MOUNTAIN_COMBAT_TRAINING_ABILITY_DESC" Language="zh_Hans_CN">
+			<Text>靠近山脉作战时+10 [ICON_Strength] 战斗力。无视丘陵的额外 [ICON_Movement] 移动力消耗。</Text>
+		</Replace>
+		<Replace Tag="LOC_AMIFT_MOUNTAIN_STREAM_HEALING_MOD" Language="zh_Hans_CN">
+			<Text>靠近山涧时每回合恢复15点 [ICON_Damaged] 生命值。</Text>
+		</Replace>
+		<Replace Tag="LOC_AMIFT_ADJACENT_RIVER_IGNORES_ZOC_MOD" Language="zh_Hans_CN">
+			<Text>靠近河流时可无视区域控制。</Text>
+		</Replace>
+		<Replace Tag="LOC_AMIFT_ABILITY_MOUNTAIN_SURVIVAL_TRAINING" Language="zh_Hans_CN">
+			<Text>山地生存训练</Text>
+		</Replace>
+		<Replace Tag="LOC_AMIFT_ABILITY_MOUNTAIN_SURVIVAL_TRAINING_DESC" Language="zh_Hans_CN">
+			<Text>靠近河流时可无视区域控制。靠近山涧时每回合恢复15点 [ICON_Damaged] 生命值。无视河流的额外 [ICON_Movement] 移动力消耗。</Text>
+		</Replace>
+		<Replace Tag="LOC_AMIFT_BUILDING_AMIFT_MNT_TRAINING_SITE" Language="zh_Hans_CN">
+			<Text>山地训练场</Text>
+		</Replace>
+		<Replace Tag="LOC_AMIFT_BUILDING_AMIFT_MNT_TRAINING_SITE_DESC" Language="zh_Hans_CN">
+			<Text>所在城市训练的所有侦察、近战、远程、轻骑兵、远程骑兵和抗骑兵单位在靠近山脉作战时+10 [ICON_Strength] 战斗力，且无视丘陵的额外 [ICON_Movement] 移动力消耗。[COLOR_RED]但此城训练的战斗单位的 [ICON_Gold] 维护费用增加。[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_AMIFT_BUILDING_AMIFT_MNT_STREAMS_TRAINING_SITE" Language="zh_Hans_CN">
+			<Text>山地水障碍训练区</Text>
+		</Replace>
+		<Replace Tag="LOC_AMIFT_BUILDING_AMIFT_MNT_STREAMS_TRAINING_SITE_DESC" Language="zh_Hans_CN">
+			<Text>所在城市训练的所有侦察、近战、远程、轻骑兵、远程骑兵和抗骑兵单位靠近河流时可无视区域控制，靠近山涧时每回合恢复15点 [ICON_Damaged] 生命值。无视河流的额外 [ICON_Movement] 移动力消耗。[COLOR_RED]但此城训练的战斗单位的 [ICON_Gold] 维护费用增加。[ENDCOLOR]</Text>
+		</Replace>
+
+		<Replace Tag="LOC_AMIFT_UNIT_AMIFT_ANCHORITE" Language="zh_Hans_CN">
+			<Text>隐士</Text>
+		</Replace>
+		<Replace Tag="LOC_AMIFT_UNIT_AMIFT_ANCHORITE_DESC" Language="zh_Hans_CN">
+			<Text>可修建隐士小屋。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_AMIFT_UNITOPERATION_REMOVE_ADJACENT_IMPROVEMENT" Language="zh_Hans_CN">
+			<Text>移除相邻改良设施</Text>
+		</Replace>
+		<Replace Tag="LOC_AMIFT_UNITOPERATION_REMOVE_ADJACENT_IMPROVEMENT_CONFIRM" Language="zh_Hans_CN">
+			<Text>移除相邻的改良设施将消耗全部 [ICON_Charges] 劳动力，该单位将被移除。是否继续？</Text>
+		</Replace>
+
+		<Replace Tag="LOC_AMIFT_BELIEF_GOD_OF_THE_OPEN_SKY_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>牧场以及拥有绵羊资源的山间村落产出+1 [ICON_Culture] 文化值。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_AMIFT_BELIEF_MISTRESS_OF_THE_COPPER_MOUNTAIN_NAME" Language="zh_Hans_CN">
+			<Text>铜山公主</Text>
+		</Replace>
+		<Replace Tag="LOC_AMIFT_BELIEF_MISTRESS_OF_THE_COPPER_MOUNTAIN_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>已改良的铜资源产出+1 [ICON_Production] 生产力，与战略资源相邻的山间村落产出+1 [ICON_Culture] 文化值。</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>
