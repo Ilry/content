@@ -106,8 +106,15 @@ local function wx78CombatDamage(inst, target, weapon, multiplier, mount)
     if GetModConfigData("吃齿轮强化自身能力") and gear_eaten_num >= 20 then damage_upper = 3 end
     local base = speed_reward_mult * inst.components.locomotor:GetRunSpeed() / 6
     local characterDamage = math.min(math.max(base, 1), damage_upper)
+    local ShadowheartMult = 1
+    if GetModConfigData("能够用暗影心脏改造自身") then
+        ShadowheartMult = 1.3
+    else
+        ShadowheartMult = 1
+    end
     if weapon ~= nil and weapon:HasTag("shadow_item") then
-        characterDamage = characterDamage * 1.3
+        characterDamage = characterDamage * ShadowheartMult
+        
     end
     return characterDamage
 end
