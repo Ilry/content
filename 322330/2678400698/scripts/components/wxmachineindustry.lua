@@ -322,13 +322,16 @@ function WXMachineIndustry:CraftTool()
 
     local amulet = EQUIPSLOTS.NECK ~= nil and inventory:GetEquippedItem(EQUIPSLOTS.NECK) or
         inventory:GetEquippedItem(EQUIPSLOTS.BODY)
-    if amulet ~= nil then
-        if not inventory:IsFull() then
-            if EQUIPSLOTS.NECK ~= nil then
-                inventory:GiveItem(inventory:Unequip(EQUIPSLOTS.NECK))
-            else
-                inventory:GiveItem(inventory:Unequip(EQUIPSLOTS.BODY))
+    if amulet == nil or amulet.prefab ~= "greenamulet" then
+        for k, v in pairs(inventory.equipslots) do
+            if v.prefab == "greenamulet" then
+                amulet = v
             end
+        end
+    end
+    if amulet ~= nil and amulet.prefab == "greenamulet" then
+        if not inventory:IsFull() then
+            inventory:GiveItem(inventory:Unequip(amulet.components.equippable.equipslot))
         else
             return nil
         end
