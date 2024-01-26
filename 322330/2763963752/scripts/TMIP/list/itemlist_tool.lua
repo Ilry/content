@@ -1,4 +1,6 @@
 return {
+    "battlesong_container",--战斗号子罐
+	"beargerfur_sack",--极地熊獾桶
     "antlionhat",--刮地皮头盔
     --钟表人工具
     "pocketwatch_portal",
@@ -70,6 +72,7 @@ return {
     "saddle_race",
     "saddle_war",
     "saddlehorn",
+    "saddle_wathgrithr",--战斗鞍具
     --烹饪工具
     "portablecookpot_item",
     "portableblender_item",

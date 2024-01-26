@@ -1,4 +1,7 @@
 return {
+	"cotl_trinket",--红眼冠
+	"wagpunk_bits",--废铁
+	"voidcloth",--暗影碎布
 	"horrorfuel",--纯粹恐惧
 	"purebrilliance",--纯粹辉煌
 	"lunarplant_husk",--亮茄外壳

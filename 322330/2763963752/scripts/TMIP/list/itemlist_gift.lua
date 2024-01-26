@@ -1,6 +1,5 @@
 return {
-    "redpouch_yot_catcoon",
-    "redpouch_yotb",
+
     --贝壳礼包
     "hermit_bundle",
     "hermit_bundle_shells",
@@ -11,6 +10,9 @@ return {
     "redpouch",
     "redpouch_yotc",
     "redpouch_yotp",
+    "redpouch_yotr",--红包
+    "redpouch_yot_catcoon",
+    "redpouch_yotb",
     "lucky_goldnugget",
     "pig_token",
     --包裹
@@ -44,6 +46,12 @@ return {
     "halloweencandy_12",
     "halloweencandy_13",
     "halloweencandy_14",
+    --餐桌摆件
+    "decor_centerpiece",--艺术？
+    "decor_flowervase",--餐桌花瓶
+    "decor_portraitframe",--愉快画像
+    "decor_pictureframe",--空画框
+    "decor_lamp",--餐桌灯
     --圣诞树挂饰
     "winter_ornament_plain1",
     "winter_ornament_plain2",
@@ -84,11 +92,7 @@ return {
     "winter_ornament_boss_minotaur",
     "winter_ornament_boss_pearl",
     "winter_ornament_boss_toadstool_misery",
-    "winter_ornament_festivalevents1",
-    "winter_ornament_festivalevents2",
-    "winter_ornament_festivalevents3",
-    "winter_ornament_festivalevents4",
-    "winter_ornament_festivalevents5",
+    
     "winter_ornament_boss_celestialchampion4",
     "winter_ornament_boss_eyeofterror1",
     "winter_ornament_boss_celestialchampion1",
@@ -96,6 +100,17 @@ return {
     "winter_ornament_boss_celestialchampion2",
     "winter_ornament_boss_celestialchampion3",
     "winter_ornament_boss_eyeofterror2",
+    "winter_ornament_boss_mutatedwarg",--华丽的装饰
+    "winter_ornament_boss_mutateddeerclops",--华丽的装饰
+    "winter_ornament_boss_daywalker",--华丽的装饰
+    "winter_ornament_boss_mutatedbearger",--华丽的装饰
+    "winter_ornament_shadowthralls",--华丽的装饰
+
+    "winter_ornament_festivalevents1",
+    "winter_ornament_festivalevents2",
+    "winter_ornament_festivalevents3",
+    "winter_ornament_festivalevents4",
+    "winter_ornament_festivalevents5",
     --圣诞树彩灯
     "winter_ornament_light1",
     "winter_ornament_light2",

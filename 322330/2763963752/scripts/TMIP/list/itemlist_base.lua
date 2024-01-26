@@ -6,12 +6,14 @@ return {
     "fence_item",
     "fence_gate_item",
     --墙体
+    "wall_dreadstone_item",--绝望石墙
     "wall_hay_item",
     "wall_wood_item",
     "wall_stone_item",
     "wall_ruins_item",
     "wall_moonrock_item",
     --自然地皮
+
     "turf_beard_rug",--胡须地毯
     "turf_ruinsbrick",--远古地面
     "turf_ruinstiles",--远古瓷砖
@@ -37,6 +39,8 @@ return {
     "turf_fungus_moon",
     "turf_archive",
     --人造地皮
+    "turf_cotl_brick",--砖地板
+    "turf_cotl_gold",--黄金地板
     "turf_carpetfloor2",--茂盛地毯
     "turf_mosaic_red",--红色马赛克地面
     "turf_mosaic_blue",--蓝色马赛克地面

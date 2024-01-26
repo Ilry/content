@@ -1,12 +1,22 @@
 local Image = require "widgets/image"
 local Text = require "widgets/text"
 local Widget = require "widgets/widget"
+local dataset = require("screens/redux/scrapbookdata")
 
 -- local custom_atlas = _G.TOOMANYITEMS.G_TMIP_MOD_ROOT .. "images/customicobyysh.xml"
 local base_atlas_1 = "images/inventoryimages1.xml"
 local base_atlas_2 = "images/inventoryimages2.xml"
 local minimap_atlas = "minimap/minimap_data.xml"
 local atlasarr = require "mods_atlas"
+--打个补丁吧
+atlasarr["all"] = {
+    "images/inventoryimages.xml",
+    "minimap/minimap_data.xml",
+    "images/inventoryimages1.xml",
+    "images/inventoryimages2.xml",
+    "images/inventoryimages3.xml",
+    "images/customicobyysh.xml"
+}
 
 local modsatlas = {}
 
@@ -167,6 +177,14 @@ local function ReassSuffix(str)
         return ""
     end
 end
+--[[
+    "redpouch",
+    "redpouch_yotc",
+    "redpouch_yotp",
+    "redpouch_yotr",--红包
+    "redpouch_yot_catcoon",
+    "redpouch_yotb",
+]]
 --查找指定的后缀并删除，删除后缀之后的代码可直接用于匹配文本字符串，需要删除的后缀尽量是独一无二的，这样不会影响其他代码，比如隐士之家的3个阶段对应_CONSTRUCTION1 2 3
 --或者是批量的，比如海鱼的后缀_INV
 local function DelSuffix(str)
@@ -182,6 +200,9 @@ local function DelSuffix(str)
         "_CONSTRUCTION3",
         "_YOTC",
         "_YOTP",
+        "_YOTR",
+        "_YOTB",
+        "_CATCOON",
         "_WAXED"
     }
     local upperstr = string.upper(str)
@@ -360,7 +381,7 @@ function ItemTile:SetImage()
 end
 
 function ItemTile:SetTextAndImage()
-    local atlas, image, spiceimage = self:GetAsset(true)
+    local atlas, image, spiceimage,flag = self:GetAsset(true)
     if atlas and image then
         self.image = self:AddChild(Image(atlas, image))
         -- 调料都在base_atlas_1,官方又把调料移到了2，搞屁啊
@@ -374,7 +395,11 @@ function ItemTile:SetTextAndImage()
             self.image = nil
             self:SetText()
         else
-            self.image:SetScale(50 / w, 50 / h, 1)
+            if flag then
+                self.image:SetScale(50 / w*1.4, 50 / h*1.4, 1)
+            else
+                self.image:SetScale(50 / w, 50 / h, 1)
+            end
         end
     else
         self:SetText()
@@ -421,13 +446,30 @@ function ItemTile:GetAsset(find)
             prefabsname = TOOMANYITEMS.LIST.prefablist[self.itemname]
         end
 
-        for k,v in pairs(item_list_bm)do
-            if string.find(prefabsname,k) then
-                prefabsname=v(prefabsname)
-                break
+        if prefabsname~="dumbbell_marble" then
+            for k,v in pairs(item_list_bm)do
+                if string.find(prefabsname,k) then
+                    prefabsname=v(prefabsname)
+                    break
+                end
             end
         end
+
         prefabsname=list_to[prefabsname] or prefabsname
+
+        if dataset[prefabsname] then
+            prefabsimage=dataset[prefabsname].tex
+            prefabsatlas=GetScrapbookIconAtlas(prefabsimage)
+            if string.find(prefabsname,"_spice_") then
+                local food, spice, sp = getSpiceFood(prefabsname)
+                prefabsname=food
+                spiceimage=spice .. ".tex"
+            end
+            if prefabsimage and prefabsatlas then
+                return prefabsatlas, prefabsimage, spiceimage,true
+            end
+        end
+
         --如果是调料食物则取后缀得到调料名，取前缀获得食物原名
         --确保是游戏内置的调料词缀而非mod的调料词缀
         if string.find(prefabsname,"_spice_") then
@@ -435,6 +477,7 @@ function ItemTile:GetAsset(find)
             prefabsname=food
             spiceimage=spice .. ".tex"
         end
+        
         --如果是雕像或者渔具的图纸则取后缀
         if string.find(prefabsname, "_sketch") or string.find(prefabsname, "_tacklesketch") then
             prefabsname = GetSuffix(prefabsname, true)
@@ -469,9 +512,9 @@ function ItemTile:GetAsset(find)
             -- print(prefabsname.." 暂未匹配到对应的贴图")
             prefabsimage = nil
         end
-
-        --print(prefabsatlas, prefabsimage, spiceimage)
-        return prefabsatlas, prefabsimage, spiceimage
+        if prefabsatlas and prefabsimage then
+            return prefabsatlas, prefabsimage, spiceimage
+        end
 end
 
 function ItemTile:OnControl(control, down)

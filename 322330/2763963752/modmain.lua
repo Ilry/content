@@ -64,6 +64,9 @@ AddPrefabPostInit("world", function (inst)
             end
         end
         package.loaded["TMIP/debug"] = tmp
+        if controls.TMI.debugshield then
+            controls.TMI.debugshield:Kill()
+        end
         controls.TMI:DebugMenu()
     end)
 end)

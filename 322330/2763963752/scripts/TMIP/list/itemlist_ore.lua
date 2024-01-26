@@ -29,6 +29,8 @@ return {
 	"rock_flintless_low",
 --冰矿
 	"rock_ice",
+	"rock_ice_temperature",--迷你冰川
+	"sharkboi_ice_hazard",--迷你冰川
 --月岩
 	"rock_moon",
 	"rock_moon_shell",

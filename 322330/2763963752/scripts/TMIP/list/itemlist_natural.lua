@@ -1,4 +1,8 @@
 return {
+
+	"sharkboi_icespike",--冰
+
+	"shadowrift_portal",--裂隙
 	"lunarrift_portal",--裂隙
 	"daywalker_pillar",--开裂的柱子
 	"charlie_stage_post",--舞台

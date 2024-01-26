@@ -1,4 +1,6 @@
 return {
+	"ipecacsyrup",--泻根糖浆
+	
 	"yotr_food1",--兔子卷
 	"yotr_food2",--月饼
 	"yotr_food3",--月冻

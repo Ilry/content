@@ -77,6 +77,7 @@ return {
 	"plantregistryhat",
 	"nutrientsgoggleshat",
 	--避雨保暖
+	"voidcloth_umbrella",--暗影伞
 	"trunkvest_summer",
 	"raincoat",
 	--保暖

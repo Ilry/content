@@ -1,7 +1,29 @@
 return {
+	"leif_idol",--树精守卫雕像
+	"wagpunkbits_kit",--自动修理机
+
+	"cotl_trinket",--红眼冠
+	"wolfgang_whistle",--训练哨
+
+	"wagstaff_mutations_note",--研究笔记
+	"scrapbook_page",--丢失的图鉴页面
+	-- "scrapbook_page_special",--不见了图鉴页
+
+	"bootleg",--出逃腿靴
+
+	"record",--唱片
+	"phonograph",--留声机
+
+	"deerclopseyeball_sentryward_kit",--冰眼结晶器套装
+	"voidcloth_kit",--虚空修补套件
+	"lunarplant_kit",--亮茄修补套件
+	"shadow_forge_kit",--暗影术基座套装
 	"lunar_forge_kit",--辉煌铁匠铺套装
 
-	"redpouch_yotr",--红包
+	"security_pulse_cage",--火花柜
+	"security_pulse_cage_full",--火花柜
+
+	
 	"yotr_decor_1_item",--矮兔灯
 	"yotr_decor_2_item",--高兔灯
 	"yotr_fightring_kit",--枕头大战坑套装
@@ -36,16 +58,10 @@ return {
 	"terrarium",
 	--
 	"moonstorm_static_item",
-	-- "moon_device_pillar",
-	
-	-- "moon_device_top",
-	
 	"moonglass_charged",
 	"alterguardianhatshard",
 	"moonstorm_spark",
-	-- "alterguardian_contained",
-	
-	-- "moon_device_construction2",
+
 	--离奇工具
 	"wagstaff_tool_1",
 	"wagstaff_tool_2",
@@ -98,9 +114,7 @@ return {
 	"carnival_prizebooth_kit",
 	--
 	"treegrowthsolution",
-	--气球
-	"balloonparty",
-	"balloon",
+
 	----------------------------
     --战斗道具
     "gunpowder",
@@ -184,8 +198,15 @@ return {
     "battlesong_fireresistance",
     "battlesong_instant_taunt",
     "battlesong_instant_panic",
+	"battlesong_shadowaligned",--黑暗悲歌
+	"battlesong_instant_revive",--战士重奏
+	"battlesong_lunaraligned",--启迪摇篮曲
 
     --雕像草图
+	"chesspiece_warg_mutated_sketch",--附身座狼雕塑草图
+	"chesspiece_deerclops_mutated_sketch",--晶体独眼巨鹿雕塑草图
+	"chesspiece_bearger_mutated_sketch",--装甲熊獾雕塑草图
+	"chesspiece_daywalker_sketch",--噩梦猪人雕像草图
 	"chesspiece_manrabbit_sketch",--兔人雕塑草图
 	"chesspiece_kitcoon_sketch",
 	"chesspiece_twinsofterror_sketch",

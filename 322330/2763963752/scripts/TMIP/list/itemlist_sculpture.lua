@@ -1,8 +1,5 @@
 return {
-	"chesspiece_manrabbit",--兔人雕塑
-	"chesspiece_manrabbit_moonglass",--兔人雕塑
-	"chesspiece_manrabbit_stone",--兔人雕塑
-	"chesspiece_manrabbit_marble",--兔人雕塑
+
 --格罗姆掉线
 	"statueglommer",
 --麦斯威尔雕像
@@ -32,10 +29,33 @@ return {
 	"glassspike_tall",
 	"glassspike",
 	"glassblock",
---卵石
+	--卵石
 	"cavein_boulder",
---雕塑
-	
+	--雕塑
+
+	"chesspiece_bearger_mutated_marble",--装甲熊獾雕塑
+	"chesspiece_bearger_mutated_stone",--装甲熊獾雕塑
+	"chesspiece_bearger_mutated_moonglass",--装甲熊獾雕塑
+
+
+
+	"chesspiece_warg_mutated_marble",--附身座狼雕塑
+	"chesspiece_warg_mutated_stone",--附身座狼雕塑
+	"chesspiece_warg_mutated_moonglass",--附身座狼雕塑
+
+
+	"chesspiece_deerclops_mutated_marble",--晶体独眼巨鹿雕塑
+	"chesspiece_deerclops_mutated_stone",--晶体独眼巨鹿雕塑
+	"chesspiece_deerclops_mutated_moonglass",--晶体独眼巨鹿雕塑
+
+	"chesspiece_daywalker_marble",--噩梦猪人雕像
+	"chesspiece_daywalker_stone",--噩梦猪人雕像
+	"chesspiece_daywalker_moonglass",--噩梦猪人雕像
+
+	"chesspiece_manrabbit_marble",--兔人雕塑
+	"chesspiece_manrabbit_stone",--兔人雕塑
+	"chesspiece_manrabbit_moonglass",--兔人雕塑
+
 	"chesspiece_eyeofterror_marble",
 	"chesspiece_eyeofterror_stone",
 	"chesspiece_eyeofterror_moonglass",
@@ -142,7 +162,12 @@ return {
 	"chesspiece_pipe_marble",
 	"chesspiece_pipe_stone",
 	"chesspiece_pipe_moonglass",
---代码不同但是重复的项目
+	--代码不同但是重复的项目
+	"chesspiece_warg_mutated",--附身座狼雕塑
+	"chesspiece_bearger_mutated",--装甲熊獾雕塑
+	"chesspiece_deerclops_mutated",--晶体独眼巨鹿雕塑
+	"chesspiece_daywalker",--噩梦猪人雕像
+	"chesspiece_manrabbit",--兔人雕塑
 	"chesspiece_eyeofterror",
 	"chesspiece_catcoon",
 	"chesspiece_kitcoon",

@@ -1,10 +1,13 @@
 return {
+    -- "ruins_shadeling",--休憩恐惧
+    "fused_shadeling_bomb",--绝望螨
+    "fused_shadeling",--熔合暗影
     "lunar_grazer",--牧者
-    "lunarthrall_plant_vine_end",--钻地藤蔓
+    -- "lunarthrall_plant_vine_end",--钻地藤蔓
     "lightcrab",--发光蟹
     "polly_rogers",--波莉·罗杰
     --类人生物
-    "shadowdancer",--影子分身
+    -- "shadowdancer",--影子分身
     "powder_monkey",--火药猴
     "prime_mate",--大副
     "pigman",
@@ -24,7 +27,7 @@ return {
     "bishop_nightmare",
     "rook_nightmare",
     --远古生物
-    "bigshadowtentacle",
+    -- "bigshadowtentacle",
     "archive_centipede",
     --蜘蛛
     "spider",
@@ -45,6 +48,7 @@ return {
     "clayhound",
     --小动物
     "rabbit",
+    "lunarfrog",--明眼青蛙
     "frog",
     "perd",
     "catcoon",
@@ -113,14 +117,17 @@ return {
     "fireflies",
     "dustmoth",
     "lightflier",
+    -- "wormwood_lightflier",--球状光虫
     --异化生物
     "eyeofterror_mini",
     "mushgnome",
     "grassgekko",
     "carrat_planted",
     "carrat",
+    -- "wormwood_carrat",--胡萝卜鼠
     "carrat_ghostracer",
     "fruitdragon",
+    -- "wormwood_fruitdragon",--沙拉蝾螈
     "lureplant",
     "eyeplant",
     "mandrake_active",

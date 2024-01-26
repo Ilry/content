@@ -1,7 +1,18 @@
 return {
-	"lunar_forge",--辉煌铁匠铺
-	"yotr_rabbitshrine",--兔人神龛
+	"charlie_hand",--召唤之手
+	"wagstaff_machinery",--被丢弃的垃圾
+	"carpentry_station",--锯马
 
+	"support_pillar_scaffold",--支柱脚手架
+	"support_pillar",--支柱瓦砾
+	"support_pillar_dreadstone_scaffold",--绝望石支柱脚手架
+	"support_pillar_dreadstone",--绝望石支柱瓦砾
+
+	"deerclopseyeball_sentryward",--冰眼结晶器
+
+
+
+	"yotr_rabbitshrine",--兔人神龛
 	"yotr_fightring_bell",--枕头大战钟
 	"yotr_fightring",--枕头大战坑
 	"yotr_fightring_torch",--兔人火炬
@@ -41,6 +52,9 @@ return {
 --月亮实验
 	"moon_device_construction1",
 --墙体
+
+	"wall_dreadstone",--绝望石墙
+	"brokenwall_dreadstone",--铥墙
 	"wall_hay",
 	"brokenwall_hay",
 	"wall_wood",
@@ -57,6 +71,9 @@ return {
 --放牧
 	"saltlick",
 --火堆
+	"cotl_tabernacle_level1",--低微咩咩雕像
+	"cotl_tabernacle_level2",--有所改进咩咩雕像
+	"cotl_tabernacle_level3",--完美无瑕咩咩雕像
 	"campfire",
 	"firepit",
 	"coldfire",
@@ -131,6 +148,8 @@ return {
 --温蒂
 	"sisturn",
 --科技
+	"shadow_forge",--暗影术基座
+	"lunar_forge",--辉煌铁匠铺
 	"researchlab",
 	"researchlab2",
 	"cartographydesk",
@@ -205,6 +224,10 @@ return {
 	"yotb_stage",
 	"beefalo_groomer",
 --装饰
+	"wood_table_square",--木方桌
+	"wood_stool",--木凳
+	"wood_chair",--木椅
+	"wood_table_round",--木圆桌
 	"winter_palmconetree",--冬季盛宴树
 	"endtable",
 	"succulent_potted",
