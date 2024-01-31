@@ -111,6 +111,7 @@ local testfn = function(inst, doer, target, actions, right) -- 设置动作的�
 	or target.prefab == "yuanzi_spear_lv1"
 	or target.prefab == "yuanzi_spear_lv2"--乃木园子的武器
 	or target.prefab == "yuanzi_armor_lv2"
+	or target.prefab == "medal_skin_staff"
 	then
 		return
 	end

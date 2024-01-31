@@ -7,6 +7,26 @@ local hascollectbutton = containercfg ~= -4
 local hasitemscollect = itemscfg ~= -1
 local hasitemsstore = itemscfg ~= -2
 
+-- 给容器添加"dcs2hm"标签或容器.dcs2hm = true可以禁用对容器进行的各种功能
+-- 不会在下列容器的界面上显示收集和整理按钮
+local btnblacklist = {"hh_ui_container"}
+-- 不会从下列容器中收集道具
+local collectblacklist = {"pandoraschest", "minotaurchest", "terrariumchest"}
+-- 不会存放到下列容器
+local storeblacklist = {
+    "dragonflyfurnace",
+    "oceantree_pillar",
+    "researchlab",
+    "researchlab2",
+    "researchlab3",
+    "researchlab4",
+    "plant_nepenthes_l",
+    "iai_rubbishbox",
+    "pandoraschest",
+    "minotaurchest",
+    "terrariumchest"
+}
+
 -- 补丁
 AddComponentPostInit("container", function(self)
     local oldGiveItem = self.GiveItem
@@ -274,6 +294,7 @@ end
 --
 -- 上面部分代码来自[码到成功]
 -- 
+
 local samecontainers = {
     -- {"inventory", "backpack", "piggyback", "icepack", "spicepack", "krampus_sack"},
     {"treasurechest", "dragonflychest"}
@@ -294,7 +315,7 @@ local function issamecontainer(inst, v, incontainer)
 end
 
 -- 跨容器排序
-local GROUND_CONTAINER_CANT_TAGS = {"INLIMBO", "NOCLICK", "_inventoryitem", "FX"}
+local GROUND_CONTAINER_CANT_TAGS = {"INLIMBO", "NOCLICK", "_inventoryitem", "FX", "dcs2hm"}
 local function API_arrangeMultiContainers2(inst, player)
     if not (inst and inst.components and inst.components.container ~= nil) then return end
     local ents = {}
@@ -314,7 +335,7 @@ local function API_arrangeMultiContainers2(inst, player)
         local hasothercontainers = false
         local container = (inst.components.inventoryitem.owner.components.inventory or inst.components.inventoryitem.owner.components.container)
         for k, v in pairs(container.itemslots or container.slots) do
-            if v:IsValid() and v ~= inst and v.components.container and v.components.container.canbeopened and
+            if v:IsValid() and v ~= inst and not v:HasTag("dcs2hm") and not v.dcs2hm and v.components.container and v.components.container.canbeopened and
                 (v.prefab == inst.prefab or issamecontainer(inst, v, true)) then
                 hasothercontainers = true
                 table.insert(ents, v)
@@ -334,7 +355,7 @@ local function API_arrangeMultiContainers2(inst, player)
         local nearents = TheSim:FindEntities(x, y, z, 30, nil, GROUND_CONTAINER_CANT_TAGS)
         local hasothercontainers = false
         for i, v in ipairs(nearents) do
-            if v ~= inst and v.components and v.components.container and v.components.container.canbeopened and not v.components.inventoryitem and
+            if v ~= inst and not v.dcs2hm and v.components and v.components.container and v.components.container.canbeopened and not v.components.inventoryitem and
                 (v.prefab == inst.prefab) and v:GetCurrentPlatform() == platform then
                 hasothercontainers = true
                 if v.Transform then SpawnPrefab("sand_puff").Transform:SetPosition(v.Transform:GetWorldPosition()) end
@@ -617,7 +638,7 @@ end
 local findcontainerincontainers
 findcontainerincontainers = function(inst, containers)
     for k, v in pairs(inst.components.container.slots) do
-        if v:IsValid() and v ~= inst and v.components.container and v.components.container.canbeopened then
+        if v:IsValid() and not v:HasTag("dcs2hm") and not v.dcs2hm and v ~= inst and v.components.container and v.components.container.canbeopened then
             table.insert(containers, v)
             findcontainerincontainers(v, containers)
         end
@@ -741,7 +762,7 @@ local function collectcontainers(inst, player)
         table.insert(ents, owner)
         local container = owner.components.inventory or owner.components.container
         for k, v in pairs(container.itemslots or container.slots) do
-            if v:IsValid() and v ~= inst and v.components.container and v.components.container.canbeopened then
+            if v:IsValid() and not v:HasTag("dcs2hm") and not v.dcs2hm and v ~= inst and v.components.container and v.components.container.canbeopened then
                 table.insert(ents, v)
                 findcontainerincontainers(v, ents)
             end
@@ -767,7 +788,7 @@ local function collectcontainers(inst, player)
         local platform = inst:GetCurrentPlatform()
         local nearents = TheSim:FindEntities(x, y, z, 30, nil, GROUND_CONTAINER_CANT_TAGS)
         for i, v in ipairs(nearents) do
-            if v ~= inst and v.components and v.components.container and v.components.container.canbeopened and not v.components.inventoryitem and
+            if v ~= inst and not v.dcs2hm and v.components and v.components.container and v.components.container.canbeopened and not v.components.inventoryitem and
                 v:GetCurrentPlatform() == platform then
                 table.insert(ents, v)
                 findcontainerincontainers(v, ents)
@@ -824,30 +845,30 @@ local PICKUP_CANT_TAGS = {
     -- Items
     "INLIMBO",
     "NOCLICK",
-    -- "irreplaceable",
-    -- "knockbackdelayinteraction",
-    -- "event_trigger",
-    -- "minesprung",
-    -- "mineactive",
-    -- "catchable",
-    "fire"
-    -- "light",
+    "knockbackdelayinteraction",
+    "event_trigger",
+    "minesprung",
+    "mineactive",
+    "catchable",
+    "fire",
+    "light",
     -- "spider",
-    -- "cursed",
-    -- "paired",
-    -- "bundle",
-    -- "heatrock",
-    -- "deploykititem",
-    -- "boatbuilder",
-    -- "singingshell",
-    -- "archive_lockbox",
-    -- "simplebook",
+    "cursed",
+    "paired",
+    "bundle",
+    "heatrock",
+    "deploykititem",
+    "boatbuilder",
+    "singingshell",
+    "archive_lockbox",
+    "simplebook",
+    "furnituredecor",
     -- Pickables
-    -- "flower",
-    -- "gemsocket",
-    -- "structure",
+    "flower",
+    "gemsocket",
+    "structure",
     -- Either
-    -- "donotautopick"
+    "donotautopick"
 }
 local function pickupgrounditem(inst, container, item, data)
     if item ~= nil and table.contains(data.prefabs, item.prefab) and item ~= inst then
@@ -955,7 +976,7 @@ local function containerpickup(inst, player)
         local v = nearents[i]
         if v:IsValid() and data.onlytheseprefabs[v.prefab] and v.components.inventoryitem and not v.components.inventoryitem.owner and
             v.components.inventoryitem.canbepickedup and (inst.components.inventory or v.components.inventoryitem.cangoincontainer) and
-            not (v:HasTag("catchable") or (v:HasTag("fire") and not v:HasTag("lighter")) or v:HasTag("smolder")) and not v:HasTag("heavy") and
+            not ((v:HasTag("fire") and not v:HasTag("lighter")) or v:HasTag("smolder")) and not v:HasTag("heavy") and
             not (v.components.container ~= nil and v.components.equippable == nil) and
             not (v:IsInLimbo() or (v.components.burnable ~= nil and v.components.burnable:IsBurning() and v.components.lighter == nil) or
                 (v.components.projectile ~= nil and v.components.projectile:IsThrown())) and
@@ -1084,30 +1105,59 @@ local function lockvalidfn(inst) return inst.components.container ~= nil or inst
 -- 容器按钮插入
 if containercfg then
     local function addbuttoninfoforcontainerparams(prefab, container)
-        if container and not container.usespecificslotsforitems and container.acceptsstacks ~= false and container.widget and container.widget.slotpos and
+        if container and container.inst and not container.inst:HasTag("dcs2hm") and not container.inst.dcs2hm and
+            not table.contains(btnblacklist, container.inst.prefab) and not container.usespecificslotsforitems and container.acceptsstacks ~= false and
+            container.widget and not container.widget.sortbtninfo2hm and container.widget.slotpos and
             (#container.widget.slotpos > 5 or (#container.widget.slotpos >= 4 and (prefab == "puffvest" or prefab == "puffvest_big"))) then
             -- x相同说明在一条竖线上，y相同说明在一条横线上
-            local slotpos_1 = container.widget.slotpos[#container.widget.slotpos]
-            local endlinelength = nil
-            if container.widget.buttoninfo then
-                endlinelength = 1
-                local y = slotpos_1.y
-                for i = #container.widget.slotpos - 1, 1, -1 do
-                    if container.widget.slotpos[i].y == y then
-                        endlinelength = endlinelength + 1
+            local finalslot = #container.widget.slotpos
+            local firstlinelength = 1
+            local starty = container.widget.slotpos[1].y
+            for i = 2, finalslot do
+                if container.widget.slotpos[i].y ~= starty then break end
+                firstlinelength = firstlinelength + 1
+            end
+            local slotpos_1 = container.widget.slotpos[finalslot]
+            local endlinelength = 1
+            local endy = slotpos_1.y
+            for i = finalslot - 1, 1, -1 do
+                if container.widget.slotpos[i].y ~= endy then break end
+                endlinelength = endlinelength + 1
+            end
+            -- 一般不可能出现
+            if container.widget.buttoninfo and endlinelength < 3 then return end
+            -- 模组容器,首行末尾行长度不等,怀疑是尾部设置了特殊格子,重新寻找尾部位置
+            if firstlinelength ~= endlinelength then
+                if firstlinelength < 2 then return end
+                local realfinalslot = firstlinelength
+                local finaly = starty
+                local finalx = container.widget.slotpos[firstlinelength].x
+                for i = firstlinelength * 2, finalslot - 1, firstlinelength do
+                    local slotpos = container.widget.slotpos[i]
+                    if slotpos.y < finaly and slotpos.x == finalx then
+                        realfinalslot = i
+                        finaly = slotpos.y
                     else
                         break
                     end
                 end
-                if endlinelength < 3 then return end
+                finalslot = realfinalslot
+                slotpos_1 = container.widget.slotpos[finalslot]
+                endlinelength = 1
+                endy = slotpos_1.y
+                for i = finalslot - 1, 1, -1 do
+                    if container.widget.slotpos[i].y ~= endy then break end
+                    endlinelength = endlinelength + 1
+                end
+                if endlinelength ~= firstlinelength then return end
             end
-            local slotpos_2 = container.widget.slotpos[#container.widget.slotpos - 1]
-            local slotpos_3 = container.widget.slotpos[#container.widget.slotpos - 2]
+            local slotpos_2 = container.widget.slotpos[finalslot - 1]
+            local slotpos_3 = container.widget.slotpos[finalslot - 2]
             local position1, position2, position3
-            if slotpos_2.x ~= slotpos_1.x and (endlinelength == nil or endlinelength >= 5) then
+            if slotpos_2.x ~= slotpos_1.x and (container.widget.buttoninfo == nil or endlinelength >= 5) then
                 position1 = Vector3(slotpos_1.x, slotpos_1.y - 57, slotpos_1.z)
                 position2 = Vector3(slotpos_2.x, slotpos_2.y - 57, slotpos_2.z)
-                if slotpos_3.x ~= slotpos_1.x and (endlinelength == nil or endlinelength >= 7) then
+                if slotpos_3.x ~= slotpos_1.x and (container.widget.buttoninfo == nil or endlinelength >= 7) then
                     position3 = Vector3(slotpos_3.x, slotpos_3.y - 57, slotpos_3.z)
                 else
                     position3 = Vector3(slotpos_1.x, slotpos_1.y - 100, slotpos_1.z)
@@ -1163,7 +1213,7 @@ Use Orange Amulet will Pickup Near Same Items]],
                 validfn = sendscontainerproxyotherworldvalidfn
             }
             if prefab == "wardrobe" then
-                local slotpos_2 = container.widget.slotpos[#container.widget.slotpos - 3]
+                local slotpos_2 = container.widget.slotpos[finalslot - 3]
                 local position4 = Vector3(slotpos_2.x, slotpos_2.y - 57, slotpos_2.z)
                 container.widget.reskinbtninfo2hm = {
                     text = TUNING.isCh2hm and "换装" or "Skin",
@@ -1255,7 +1305,7 @@ Use Orange Amulet will Pickup Near Same Items]],
         self.Open = function(self, container, doer, ...)
             local result = oldOpen(self, container, doer, ...)
             local widget = container.replica.container:GetWidget()
-            if widget.sortbtninfo2hm and widget.collectbtninfo2hm then
+            if container and not container:HasTag("dcs2hm") and not container.dcs2hm and widget.sortbtninfo2hm and widget.collectbtninfo2hm then
                 -- 整理
                 addbutton(self, container, doer, "sortbutton2hm", widget.sortbtninfo2hm)
                 if container.prefab == "wardrobe" and widget.reskinbtninfo2hm and container:HasTag("wardrobecontainer2hm") then
@@ -1278,9 +1328,6 @@ Use Orange Amulet will Pickup Near Same Items]],
                     if hascollectbutton then addbutton(self, container, doer, "collectbutton2hm", widget.collectbtninfo2hm) end
                 end
             end
-            -- if morefar then
-            --     self:MoveToFront()
-            -- end
             return result
         end
         local oldClose = self.Close
@@ -1341,7 +1388,6 @@ end
 if itemscfg then
     if hasitemscollect then
         -- 指定配方收集
-        local blacklistcollectcontainers = {"pandoraschest", "minotaurchest", "terrariumchest"}
         local function collectrecipetype(inst, recipe_type, neednum)
             if not recipe_type or recipe_type == "" then return end
             if not (inst and inst.components and inst.components.inventory and inst.components.inventory.maxslots > 0) then return end
@@ -1385,13 +1431,15 @@ if itemscfg then
             local platform = inst:GetCurrentPlatform()
             local nearents = TheSim:FindEntities(x, y, z, 30, nil, GROUND_CONTAINER_CANT_TAGS)
             for i, v in ipairs(nearents) do
-                if v ~= inst and v.components and v.components.container and v.components.container.canbeopened and not v.components.inventoryitem and
-                    not inst.components.inventory.opencontainers[v] and v:GetCurrentPlatform() == platform and
-                    not table.contains(blacklistcollectcontainers, v.prefab) then
+                if v ~= inst and not v.dcs2hm and v.components and v.components.container and v.components.container.canbeopened and
+                    not v.components.inventoryitem and not inst.components.inventory.opencontainers[v] and v:GetCurrentPlatform() == platform and
+                    not table.contains(collectblacklist, v.prefab) then
                     table.insert(ents, v)
                     findcontainerincontainers(v, ents)
                 end
             end
+            if inst.components.rider and inst.components.rider.mount and inst.components.rider.mount:IsValid() and
+                inst.components.rider.mount.components.container then table.insert(ents, inst.components.rider.mount) end
             if #ents <= 0 then return end
             -- 收纳
             local tmpents = {}
@@ -1401,14 +1449,14 @@ if itemscfg then
             end
             for _, ent in ipairs(tmpents) do
                 if ent ~= inst and ent.components.container then
-                    for i = 1, ent.components.container.numslots do
+                    for i = ent.components.container.numslots, 1, -1 do
                         local item = ent.components.container.slots[i]
                         if item and item:IsValid() and collectcontaineritem(inst, inst.components.inventory, item, ent.components.container, i, data, true) then
                             return
                         end
                     end
                 elseif ent ~= inst and ent.components.inventory then
-                    for i = 1, ent.components.inventory.maxslots do
+                    for i = ent.components.inventory.maxslots, 1, -1 do
                         local item = ent.components.inventory.itemslots[i]
                         if item and item:IsValid() and collectcontaineritem(inst, inst.components.inventory, item, ent.components.inventory, i, data, true) then
                             return
@@ -1742,19 +1790,6 @@ if itemscfg then
                 end
             end
         end
-        local blacklistcontainers = {
-            "dragonflyfurnace",
-            "oceantree_pillar",
-            "researchlab",
-            "researchlab2",
-            "researchlab3",
-            "researchlab4",
-            "plant_nepenthes_l",
-            "iai_rubbishbox",
-            "pandoraschest",
-            "minotaurchest",
-            "terrariumchest"
-        }
         storeaction.fn = function(act)
             local inst = act and act.doer
             if not (inst and act.invobject and act.invobject.components.inventoryitem and inst.components.inventory and inst.components.inventory.opencontainers) then
@@ -1766,12 +1801,14 @@ if itemscfg then
             local platform = inst:GetCurrentPlatform()
             local nearents = TheSim:FindEntities(x, y, z, 30, nil, GROUND_CONTAINER_CANT_TAGS)
             for i, v in ipairs(nearents) do
-                if v and v ~= inst and v ~= prevcontainer and v.components and v.components.container and not v.components.inventoryitem and
+                if v and v ~= inst and not v.dcs2hm and v ~= prevcontainer and v.components and v.components.container and not v.components.inventoryitem and
                     not v.components.health and not v.components.locomotor and not v.components.stewer and v.components.container.canbeopened and
                     not v.components.container.usespecificslotsforitems and v.components.container.acceptsstacks and v.components.container.type == "chest" and
-                    v.components.container.numslots >= 9 and not table.contains(blacklistcontainers, v.prefab) and v:GetCurrentPlatform() == platform and
+                    v.components.container.numslots >= 9 and not table.contains(storeblacklist, v.prefab) and v:GetCurrentPlatform() == platform and
                     v.components.container:CanTakeItemInSlot(act.invobject) then table.insert(ents, v) end
             end
+            if inst.components.rider and inst.components.rider.mount and inst.components.rider.mount:IsValid() and
+                inst.components.rider.mount.components.container then table.insert(ents, inst.components.rider.mount) end
             if #ents <= 0 then return end
             local prevslot = act.invobject.components.inventoryitem:GetSlotNum()
             act.invobject.components.inventoryitem:RemoveFromOwner(true)
@@ -1791,19 +1828,18 @@ if itemscfg then
         -- 添加存放动作
         AddAction(storeaction)
         AddComponentAction("INVENTORY", "inventoryitem", function(inst, doer, actions)
-            local inventoryitem = inst.replica.inventoryitem
-            if inst.prefab ~= "pocketwatch_recall" and inst.prefab ~= "pocketwatch_portal" and inventoryitem ~= nil and not inventoryitem:CanOnlyGoInPocket() and
-                doer and not (doer.replica.inventory and doer.replica.inventory:GetActiveItem() == inst) and
+            if inst.prefab ~= "pocketwatch_recall" and inst.prefab ~= "pocketwatch_portal" and inst.replica.inventoryitem ~= nil and
+                not inst.replica.inventoryitem:CanOnlyGoInPocket() and doer and not (doer.replica.inventory and doer.replica.inventory:GetActiveItem() == inst) and
                 not (inst.replica.equippable and inst.replica.equippable:IsEquipped()) then table.insert(actions, ACTIONS.STORE2HM) end
         end)
         AddComponentPostInit("playeractionpicker", function(self)
             local oldGetInventoryActions = self.GetInventoryActions
             self.GetInventoryActions = function(self, ...)
                 if self.inst and self.inst.components.playercontroller and self.inst.components.playercontroller:IsControlPressed(CONTROL_FORCE_STACK) then
-                    ACTIONS.STORE2HM.priority = 3
+                    ACTIONS.STORE2HM.priority = 11
                 end
                 local res = oldGetInventoryActions(self, ...)
-                if ACTIONS.STORE2HM.priority == 3 then ACTIONS.STORE2HM.priority = ACTIONS.LOOKAT.priority - 0.5 end
+                if ACTIONS.STORE2HM.priority == 11 then ACTIONS.STORE2HM.priority = ACTIONS.LOOKAT.priority - 0.5 end
                 return res
             end
         end)

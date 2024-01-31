@@ -7,7 +7,7 @@ description = Ch and
 "让物品可被他的制作原料修复，同类装备可以合并" or
 "Allow equipment to be repaired by its recipe, or to combine with the same equipment"  --mod描述  --mod描述
 author = "Lilith" --作者
-version = "0.7.5" -- mod版本 上传mod需要两次的版本不一样
+version = "0.7.6" -- mod版本 上传mod需要两次的版本不一样
 
 -- This is the URL name of the mod's thread on the forum; the part after the ? and before the first & in the url
 forumthread = ""

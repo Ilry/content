@@ -1,3 +1,4 @@
+version = "1.0.22.4"
 local isCh = locale == "zh" or locale == "zhr" or locale == "zht"
 author = "繁花丶海棠"
 forumthread = ""
@@ -123,7 +124,6 @@ Uncomporomising Mode Mod wardrobe will not directly change clothes, open the con
 
 It's part of MOD "DST Patch For Happy/Shadow World"]]
 })
-version = "1.0.22.3"
 configuration_options = {
     item("Language In Game", i18n({"本模组游戏内语言", "Mod Language In Game"}), nil, false, -1, -2, -1, {"简体中文", "English"},
          i18n("自动设定", "Auto Setting"), {filldesc(8) .. "简体中文", filldesc(6) .. "English"}, filldesc(4) .. i18n({"自动", "Auto"})),

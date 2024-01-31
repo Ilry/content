@@ -1,24 +1,12 @@
 PrefabFiles = {
 	
 }
----对比老版本 主要是增加了names图片 人物检查图标 还有人物的手臂修复（增加了上臂）
---人物动画里面有个SWAP_ICON 里面的图片是在检查时候人物头像那里显示用的
 GLOBAL.setmetatable(env,{__index=function(t,k) return GLOBAL.rawget(GLOBAL,k) end})
 
-----2019.05.08 修复了 人物大图显示错误和检查图标显示错误
 
 Assets = {
 
---[[---注意事项
-1、目前官方自从熔炉之后人物的界面显示用的都是那个椭圆的图
-2、官方人物目前的图片跟名字是分开的 
-3、names_acerola 和 acerola_none 这两个文件需要特别注意！！！
-这两文件每一次重新转换之后！需要到对应的xml里面改对应的名字 否则游戏里面无法显示
-具体为：
-降names_esctemplatxml 里面的 Element name="acerola.tex" （也就是去掉names——）
-将acerola_none.xml 里面的 Element name="acerola_none_oval" 也就是后面要加  _oval
-（注意看修改的名字！不是两个都需要修改）
-	]]
+
 }
 
 local require = GLOBAL.require
@@ -51,6 +39,7 @@ TUNING.RANDCPERCENTAGEBASE = GetModConfigData('Percentagebase')
 TUNING.RANDCGEMONLY = GetModConfigData('Gemonlymode')
 --TUNING.RANDCNOFINITEUSES = GetModConfigData('Nofiniteuses')
 TUNING.RANGCCOFINITEUSES = GetModConfigData('Cofiniteuses')
+
 local function tagrepair(self)--这是标记能被维修的便签
 	if not self.inst:HasTag("canberepaired") then
 		self.inst:AddTag("canberepaired")
