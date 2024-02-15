@@ -96,7 +96,7 @@ local cmp_act = {
         if right then
             if target.replica.pmupdate and doer:HasTag("player") and inst:HasTag("pm_updatable") then
                 table.insert(actions, act_pmupdate)
-                print("触发动作")
+                -- print("触发动作")
             end 
         end
     end

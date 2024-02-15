@@ -55,7 +55,7 @@ local function OnFindFire(inst, firePos)
     if inst:IsAsleep() then
         inst:DoTaskInTime(1 + math.random(), SpreadProtectionAtPoint, firePos)
     else
-        inst:PushEvent("putoutfire", { firePos = firePos })
+        inst:PushEvent("fkoutfire", { firePos = firePos })
     end
 end
 

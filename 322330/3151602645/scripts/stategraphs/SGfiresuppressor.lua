@@ -9,6 +9,16 @@ local events =
             end
         end
     end),
+
+    EventHandler("fkoutfire", function(inst, data)
+        if inst.components.machine:IsOn() then
+            if inst.sg:HasStateTag("idle") then
+                inst.sg:GoToState("pm_spin_up", { firePos = data.firePos })
+            elseif inst.sg:HasStateTag("shooting") then
+                inst.sg:GoToState("pm_shoot", { firePos = data.firePos })
+            end
+        end
+    end),
 }
 
 local function PlayWarningSound(inst)
@@ -73,7 +83,7 @@ local states =
                 ToggleWarningSound(inst, forceisemergency)
             end
             if not inst.SoundEmitter:PlayingSound("firesuppressor_idle") then
-                inst.SoundEmitter:PlaySound("dontstarve_DLC001/common/firesupressor_idle", "pmfiresuppressor_idle")
+                inst.SoundEmitter:PlaySound("dontstarve_DLC001/common/firesupressor_idle", "firesuppressor_idle")
             end
             inst.AnimState:PlayAnimation("idle_on_loop")
         end,
@@ -146,7 +156,7 @@ local states =
         onenter = function(inst)
             ToggleWarningSound(inst, true)
             if not inst.SoundEmitter:PlayingSound("firesuppressor_idle") then
-                inst.SoundEmitter:PlaySound("dontstarve_DLC001/common/firesupressor_idle", "pmfiresuppressor_idle")
+                inst.SoundEmitter:PlaySound("dontstarve_DLC001/common/firesupressor_idle", "firesuppressor_idle")
             end
             inst.AnimState:PlayAnimation("idle_light_loop", true)
         end,
@@ -227,9 +237,9 @@ local states =
                 inst.SoundEmitter:PlaySound("dontstarve_DLC001/common/firesupressor_shoot")
                 inst:LaunchProjectile(inst.sg.statemem.firePos)
             end),
-            -- TimeEvent(8 * FRAMES, function(inst)
-            --     inst.components.pmfiredetector:DetectFire()
-            -- end),
+            TimeEvent(8 * FRAMES, function(inst)
+                inst.components.firedetector:DetectFire()
+            end),
         },
 
         events =
@@ -296,6 +306,72 @@ local states =
             end),
         },
     },
+    -- ===========================
+    --永动机动画
+    -- ===========================
+
+    State{
+        name = "pm_spin_up",
+        tags = { "busy" },
+
+        onenter = function(inst, data)
+            inst.AnimState:PlayAnimation("launch_pre")
+            inst.sg.statemem.data = data
+        end,
+
+        events =
+        {
+            EventHandler("animover", function(inst)
+                inst.sg:GoToState("pm_shoot", inst.sg.statemem.data)
+            end),
+        },
+    },
+
+    State{
+        name = "pm_shoot",
+        tags = { "busy", "shooting" },
+
+        onenter = function(inst, data)
+            inst.AnimState:PlayAnimation("launch")
+            inst.sg.statemem.firePos = data.firePos
+            inst.SoundEmitter:PlaySound("dontstarve_DLC001/common/firesupressor_spin")
+        end,
+
+        timeline =
+        {
+            TimeEvent(6 * FRAMES, function(inst)
+                inst.SoundEmitter:PlaySound("dontstarve_DLC001/common/firesupressor_shoot")
+                inst:LaunchProjectile(inst.sg.statemem.firePos)
+            end),
+            TimeEvent(8 * FRAMES, function(inst)
+                inst.components.PmFireDetector:DetectFire()
+            end),
+        },
+
+        events =
+        {
+            EventHandler("animover", function(inst)
+                inst.sg:GoToState("pm_spin_down")
+            end),
+        },
+    },
+
+    State{
+        name = "pm_spin_down",
+        tags = { "busy" },
+
+        onenter = function(inst)
+            inst.AnimState:PlayAnimation("launch_pst")
+        end,
+
+        events =
+        {
+            EventHandler("animover", function(inst)
+                inst.sg:GoToState("idle_on")
+            end),
+        },
+    },
+
 }
 
-return StateGraph("pmfiresuppressor", states, events, "idle_off")
+return StateGraph("firesuppressor", states, events, "idle_off")
