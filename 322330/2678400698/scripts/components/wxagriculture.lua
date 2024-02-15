@@ -452,6 +452,7 @@ function WXAgriculture:PlantSeeds()
 end
 
 local TOWORK_MUST_TAGS = { "farm_plant" }
+local OVERLAY_TAGS = { "DECOR", "NOCLICK" }
 local TOFILL_MUST_TAGS = { "watersource" }
 local FINDDOOR_MUST_TAGS = { "door" }
 function WXAgriculture:Water()
@@ -460,13 +461,21 @@ function WXAgriculture:Water()
         return nil
     end
 
-    local thirsty_farm_plant = FindEntity(sentryward, SEE_WORK_DIST, function(ent)
-        local x, y, z = ent.Transform:GetWorldPosition()
-        return ent.components.farmsoildrinker ~= nil and
-            TheWorld.Map:IsFarmableSoilAtPoint(x, y, z) and
-            not TheWorld.components.farming_manager:IsSoilMoistAtPoint(x, y, z)
-    end, TOWORK_MUST_TAGS)
-    if thirsty_farm_plant == nil then
+    local dry_overlay = FindEntity(sentryward, SEE_WORK_DIST, function(ent)
+        if ent.prefab == "nutrients_overlay" and ent.AnimState:GetCurrentAnimationTime() < 0.25 then
+            local x, y, z = ent.Transform:GetWorldPosition()
+            if not TheWorld.Map:IsFarmableSoilAtPoint(x, y, z) then
+                return false
+            end
+            for _, farm_plant in pairs(TheWorld.Map:GetEntitiesOnTileAtPoint(x, y, z)) do
+                if farm_plant.components.farmsoildrinker ~= nil and
+                    farm_plant:HasTag("farm_plant") then
+                    return true
+                end
+            end
+        end
+    end, OVERLAY_TAGS)
+    if dry_overlay == nil then
         local pond = FindEntity(sentryward, SEE_WORK_DIST, function(ent)
             return ent.components.watersource ~= nil and ent.components.watersource.available
         end, TOFILL_MUST_TAGS)
@@ -538,7 +547,7 @@ function WXAgriculture:Water()
         self.inst.components.inventory:Equip(coat)
     end]]
     return (tool ~= nil and tool.components.finiteuses ~= nil and tool.components.finiteuses:GetUses() > 0) and
-        BufferedAction(self.inst, nil, ACTIONS.POUR_WATER_GROUNDTILE, tool, Vector3(thirsty_farm_plant.Transform:GetWorldPosition())) or nil
+        BufferedAction(self.inst, nil, ACTIONS.POUR_WATER_GROUNDTILE, tool, Vector3(dry_overlay.Transform:GetWorldPosition())) or nil
 end
 
 local UNIT_NUTRIENT_ONE = TUNING.GLOMMERFUEL_NUTRIENTS[1]
@@ -570,7 +579,7 @@ function WXAgriculture:Fertilize()
         end
         local x, y, z = ent.Transform:GetWorldPosition()
         local n1, n2, n3 = TheWorld.components.farming_manager:GetTileNutrients(TheWorld.Map:GetTileCoordsAtPoint(x, y, z))
-        return n1 * n2 * n3 == 0 and
+        return math.min(n1, n2, n3) <= UNIT_NUTRIENT_ONE and
             TheWorld.Map:IsFarmableSoilAtPoint(x, y, z) and
             FindFertilizer(self.inst, n1, n2, n3) ~= nil
     end, TOWORK_MUST_TAGS)
@@ -578,7 +587,7 @@ function WXAgriculture:Fertilize()
         hungry_farm_plant = FindEntity(sentryward, SEE_WORK_DIST, function(ent)
             local x, y, z = ent.Transform:GetWorldPosition()
             local n1, n2, n3 = TheWorld.components.farming_manager:GetTileNutrients(TheWorld.Map:GetTileCoordsAtPoint(x, y, z))
-            return n1 * n2 * n3 == 0 and
+            return math.min(n1, n2, n3) <= UNIT_NUTRIENT_ONE and
                 TheWorld.Map:IsFarmableSoilAtPoint(x, y, z) and
                 FindFertilizer(self.inst, n1, n2, n3) ~= nil
         end, TOWORK_MUST_TAGS)

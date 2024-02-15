@@ -329,7 +329,7 @@ function WXMachineIndustry:CraftTool()
             end
         end
     end
-    if amulet ~= nil and amulet.prefab == "greenamulet" then
+    if amulet ~= nil and amulet.prefab == "greenamulet" and amulet.components.equippable ~= nil then
         if not inventory:IsFull() then
             inventory:GiveItem(inventory:Unequip(amulet.components.equippable.equipslot))
         else

@@ -15,7 +15,7 @@ local MODINFO_AUTHOR = {
 author = ChooseTranslationTable(MODINFO_AUTHOR)
 
 -- Mod Version
-version = "3.9.1"
+version = "3.9.2"
 
 description_string_en = 
 "󰀔Description:\n"..
@@ -163,6 +163,9 @@ configuration_options = {
             {description = "20", data = 20},
             {description = "22", data = 22},
             {description = "24", data = 24},
+            {description = "26", data = 26},
+            {description = "28", data = 28},
+            {description = "30", data = 30},
             {description = "32", data = 32},
         },
         default = 16
