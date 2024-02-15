@@ -1,4 +1,9 @@
 DST_CONSOLE_COMMANDS = {}
+-- TheSkillTree.skillxp.wathgrithr = 0; TheSkillTree:UpdateSaveState("wathgrithr")
+DST_CONSOLE_COMMANDS.i_reveal_map = function()
+	-- Thanks to CarlZalph for his permission to include this very useful and mathematically superior map-reveal code!
+	local r=25;local p=math.sqrt(3);local q=.5*p*r;local w,h=TheWorld.Map:GetSize();w=4*w;h=4*h;for _,v in pairs(AllPlayers) do for x=-w,w,3*r do for y=-h,h,2*q do v.player_classified.MapExplorer:RevealArea(x,0,y) end end for x=-w+q*p,w,2*q*p do for y=-h+q,h,2*q do v.player_classified.MapExplorer:RevealArea(x,0,y) end end end
+end
 DST_CONSOLE_COMMANDS.i_accelerate_rift = function(crystals)
 	assert(TheWorld.ismastersim, "need to be mastersim")
 	
@@ -94,7 +99,7 @@ DST_CONSOLE_COMMANDS.i_moon_altar_stuff = function()
 
 	
 	c_setsanity(0.5)
-	c_maintainsanity()
+	c_maintainsanity(nil, 0.5)
 
 	-- Incomplete Experiment (moon_device_construction1)
 	c_give("moonstorm_static_item", 1)
@@ -565,7 +570,17 @@ end
 DS_CONSOLE_COMMANDS.c_reset = function()
 	TheSim:Reset()
 end
-
+DS_CONSOLE_COMMANDS.c_nohounds = function()
+	c_removeall "firehound"
+	c_removeall "icehound"
+	c_removeall "hound"
+	c_removeall "crocodog"
+	c_removeall "watercrocodog"
+	c_removeall "poisoncrocodog"
+end
+DS_CONSOLE_COMMANDS.c_nextphase = function()
+	GetClock():NextPhase()
+end
 DS_CONSOLE_COMMANDS.c_nextday = function()
 	GetClock():MakeNextDay()
 end

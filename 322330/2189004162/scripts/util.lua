@@ -82,8 +82,24 @@ if IS_DS and not UICOLOURS then
 	}
 end
 
+--- Returns the default if the number is not a valid number.
+---@param num number
+---@param default
+---@return number @Returns the sanitized number.
+function SanitizeNumber(num, default)
+	if num ~= num or num == math.inf or num == -math.inf then
+		return default
+	end
+	return num
+end
+
 if IS_DS then
 	function _G.ClickMouseoverSoundReduction() return nil end
+
+	function isnan(x) return x ~= x end
+	math.inf = 1/0 
+	function isinf(x) return x == math.inf or x == -math.inf end
+	function isbadnumber(x) return isinf(x) or isnan(x) end
 	
 	function _G.FunctionOrValue(func_or_val, ...)
 		if type(func_or_val) == "function" then
@@ -194,18 +210,32 @@ function ProcessRichTextPlainly(string)
 	
 	for i = 1, #chunks do
 		local chunk = chunks[i]
+		 
+		local next = nil
 		if chunk:IsObject() then
 			if chunk.object.class == "prefab" then
 				local prefab = chunk.object.value
-				str = str .. GetPrefabNameOrElse(prefab, "[prefab \"%s\"]")
+				next = GetPrefabNameOrElse(prefab, "[prefab \"%s\"]")
 			end
 		else
-			str = str .. chunk.text
+			next = chunk.text
 		end
+
+		str = str .. UnescapeRichText(next)
 	end
 
 	return str
 end
+
+
+function EscapeRichText(str)
+	return str:gsub("<", "&lt;"):gsub(">", "&gt;")
+end
+
+function UnescapeRichText(str)
+	return str:gsub("&lt;", "<"):gsub("&gt;", ">")
+end
+
 
 function GetReduxListItemPrefix(row_width, row_height)
 	local prefix = "listitem_thick" -- 320 / 90 = 3.6
@@ -471,30 +501,11 @@ function GetPrefabNameOrElse(prefab, other)
 	end
 	
 	-- ornament?
-	local ornament_type = string.match(upper, "WINTER_ORNAMENT_(%a+)")
-	if ornament_type then
-		ornament_type = ((ornament_type == "FANCY" or ornament_type=="PLAIN") and "") or ornament_type
-		if ornament_type == "FESTIVALEVENTS" then
-			if tonumber(upper:sub(-1)) <= 3 then
-				ornament_type = "FORGE"
-			else
-				ornament_type = "GORGE"
-			end
-		end
-		
-		local name = STRINGS.NAMES["WINTER_ORNAMENT" .. ornament_type]
-		if name then
-			return name
-		end
+	local ornaments = Insight.prefab_descriptors.winter_ornaments and Insight.prefab_descriptors.winter_ornaments.ORNAMENT_DATA
+	if ornaments and ornaments[prefab] then
+		local override = string.upper(ornaments[prefab].overridename or "?")
+		return STRINGS.NAMES[override] or override
 	end
-
-	--[[
-		table.insert(ornament, MakeOrnament("festivalevents1", "winter_ornamentforge", nil, "winter_ornaments2018", 0.95))
-table.insert(ornament, MakeOrnament("festivalevents2", "winter_ornamentforge", nil, "winter_ornaments2018", 0.95))
-table.insert(ornament, MakeOrnament("festivalevents3", "winter_ornamentforge", nil, "winter_ornaments2018", 1.00))
-table.insert(ornament, MakeOrnament("festivalevents4", "winter_ornamentgorge", nil, "winter_ornaments2018", 0.80))
-table.insert(ornament, MakeOrnament("festivalevents5", "winter_ornamentgorge", nil, "winter_ornaments2018", 0.80))
-	]]
 
 	-- blueprint? (blueprint.lua onload)
 	local blueprint_match = string.match(upper, "([%w_]+)_BLUEPRINT")

@@ -357,7 +357,7 @@ function OnCurrentlySelectedItemChanged(old, new, itemInfo)
 	end
 
 	if old and old.insight_combat_range_indicator and old.insight_combat_range_indicator.state_forced then
-		old.insight_combat_range_indicator:ForceStateChange(combatHelper.NET_STATES.NOTHING)
+		old.insight_combat_range_indicator:ForceStateChange(attackRangeHelper.NET_STATES.NOTHING)
 	end
 
 	if old and GetDeployHelper(old) then
@@ -387,7 +387,7 @@ function OnCurrentlySelectedItemChanged(old, new, itemInfo)
 			return	
 		end
 
-		ind:ForceStateChange(combatHelper.NET_STATES.TARGETTING)
+		ind:ForceStateChange(attackRangeHelper.NET_STATES.TARGETTING)
 		return
 	end
 
@@ -420,8 +420,12 @@ function OnCurrentlySelectedItemChanged(old, new, itemInfo)
 
 	-- should i handle weapon range?
 	if itemInfo.special_data.insight_ranged then
-		local range = itemInfo.special_data.insight_ranged.range-- or (itemInfo.special_data.soul and itemInfo.special_data.soul.soul_heal_range)
-		local color = itemInfo.special_data.insight_ranged.color-- or (itemInfo.special_data.soul and itemInfo.special_data.soul.soul_heal_range_color)
+		local range = itemInfo.special_data.insight_ranged.range -- or (itemInfo.special_data.soul and itemInfo.special_data.soul.soul_heal_range)
+		local color = itemInfo.special_data.insight_ranged.color -- or (itemInfo.special_data.soul and itemInfo.special_data.soul.soul_heal_range_color)
+		
+		if color then
+			color = Insight.COLORS[color:upper()] or color
+		end
 
 		if range then
 			new.insight_hover_range = SpawnPrefab("insight_range_indicator")
@@ -452,11 +456,30 @@ end
 --- Retrives the current selected item, be it from hud or world.
 ---@return EntityScript|nil
 function GetMouseTargetItem()
-	local target = TheInput:GetHUDEntityUnderMouse()
+	-- Winner
+	local target
+
+	local hudTarget = TheInput:GetHUDEntityUnderMouse()
 	-- target.widget.parent is ItemTile
-	
-	-- game prefers inventory items over world items
-	target = (target and target.widget and target.widget:GetParent() ~= nil and target.widget:GetParent().item) or TheInput:GetWorldEntityUnderMouse() or nil
+
+	-- Game prefers inventory items over world items
+	if hudTarget and hudTarget.widget then
+		local parent = hudTarget.widget:GetParent()
+		if parent and parent.item then
+			target = parent.item
+		elseif parent then
+			-- Wigfrid's "Charged Elding Spear" has an Image in the way instead of an ItemTile.
+			-- I think it has something to do with the inventoryitem:ChangeImageName("spear_wathgrithr_lightning") that it does.
+			parent = parent:GetParent()
+			if parent and parent.item then
+				target = parent.item
+			end
+		end
+	end
+
+	if not target then
+		target = TheInput:GetWorldEntityUnderMouse()
+	end
 
 	--mprint('target', target, TheInput:GetWorldEntityUnderMouse())	
 	if target and target == localPlayer then
@@ -767,7 +790,7 @@ end)
 OnLocalPlayerPostInit:AddListener("highlighting_activate", highlighting.Activate)
 OnLocalPlayerRemove:AddListener("highlighting_deactivate", highlighting.Deactivate)
 
-OnLocalPlayerPostInit:AddListener(combatHelper.Activate)
+OnLocalPlayerPostInit:AddListener(attackRangeHelper.Activate)
 
 OnContextUpdate:AddListener("blinkrange_attacher", function(context)
 	if context.config["blink_range"] then
@@ -1098,7 +1121,7 @@ AddPrefabPostInit("deerclops", function(inst)
 end)
 --]]
 
-AddPrefabPostInit("insight_combat_range_indicator", import("helpers/combat").HookClientIndicator)
+AddPrefabPostInit("insight_combat_range_indicator", import("helpers/attack_range").HookClientIndicator)
 AddPrefabPostInit("insight_ghost_klaus_sack", function(inst)
 	OnLocalPlayerPostInit:AddWeakListener(function(insight, context)
 		if not context.config["klaus_sack_markers"] then
@@ -1511,7 +1534,7 @@ end)
 --~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
---AddLocalPlayerPostRemove(combatHelper.Deactivate, true)
+--AddLocalPlayerPostRemove(attackRangeHelper.Deactivate, true)
 
 if IS_DST then
 	--[[

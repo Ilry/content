@@ -98,11 +98,11 @@ return {
 	-- Damage helper
 	damage_types = {
 		-- Normal
-		explosive = "Explosive",
+		explosive = "Explosivo",
 		
 		-- Planar
-		lunar_aligned = "Lunar Aligned",
-		shadow_aligned = "Shadow Aligned",
+		lunar_aligned = "Alinhado à Lua",
+		shadow_aligned = "Alinhado às Sombras",
 	},
 	-------------------------------------------------------------------------------------------------------------------------
 	
@@ -111,6 +111,21 @@ return {
 		minimum_sanity = "Mínimo de <color=SANITY>sanidade</color> para a luz: <color=SANITY>%s</color> (<color=SANITY>%s%%</color>)",
 		current_sanity = "Sua <color=SANITY>sanidade</color> é: <color=SANITY>%s</color> (<color=SANITY>%s%%</color>)",
 		summoned_gestalt_damage = "Os <color=ENLIGHTENMENT>Espíritos da Lua</color> invocados causam <color=HEALTH>%s</color> de dano.",
+	},
+
+	-- aoeweapon_base.lua
+	aoeweapon_base = {
+		--weapon_damage = "AoE %s: <color=HEALTH>{damage}</color>",
+	},
+
+	-- aoeweapon_leap.lua
+	aoeweapon_leap = {
+
+	},
+
+	-- aoeweapon_lunge.lua
+	aoeweapon_lunge = {
+		lunge_damage = "Estocada {damageType}: <color=HEALTH>{damage}</color>",
 	},
 
 	-- appeasement.lua
@@ -130,8 +145,8 @@ return {
 
 	-- armordreadstone.lua
 	armordreadstone = {
-		regen = "Regenerates <color=%s>%.1f</color> <color=#C0C0C0>durability</color>/%ds",
-		regen_complete = "Regenerates <color=%s>%.1f<sub>min</sub></color> / <color=%s>%.1f<sub>current</sub></color> / <color=%s>%.1f<sub>max</sub></color> <color=#C0C0C0>durability</color>/%ds based on insanity"
+		regen = "Regenera <color=%s>%.1f</color>de <color=#C0C0C0>durabilidade</color>/%ds",
+		regen_complete = "Regenera <color=%s>%.1f<sub>min</sub></color> / <color=%s>%.1f<sub>atual</sub></color> / <color=%s>%.1f<sub>max</sub></color> <color=#C0C0C0>de durabilidade</color>/%ds baseado na insanidade"
 	},
 
 	-- atrium_gate.lua [Prefab]
@@ -153,7 +168,7 @@ return {
 	},
 
 	batnosehat = {
-		hunger_gain = "Restores %s hunger every %s second(s)",
+		hunger_gain = "Recupera %s de fome a cada %s segundo(s)",
 
 	},
 
@@ -293,9 +308,9 @@ return {
 		age_damageToYou = " (<color=AGE>%+d</color> em você)",
 		yotr_pillows = {
 			--@@ Weapons
-			knockback = "<color=VEGGIE>Knockback</color>: <color=VEGGIE>%s</color> (<color=VEGGIE>x%.1f%%</color>)",
+			knockback = "<color=VEGGIE>Repulsão</color>: <color=VEGGIE>%s</color> (<color=VEGGIE>x%.1f%%</color>)",
 			--knockback_multiplier = "Knockback Multiplier: %s",
-			laglength = "<color=VEGGIE>Cooldown</color>: %s",
+			laglength = "<color=VEGGIE>Tempo de recarga</color>: %s",
 			
 			--@@ Armor
 			defense_amount = "<color=VEGGIE>Defensa</color>: %s",
@@ -334,12 +349,12 @@ return {
 
 	-- damagetypebonus.lua
 	damagetypebonus = {
-		modifier = "<color=%s>%+.1f%%</color> damage to %s entities",
+		modifier = "<color=%s>%+.1f%%</color> de dano a %s entidades",
 	},
 
 	-- damagetyperesist.lua
 	damagetyperesist = {
-		modifier = "<color=%s>%+.1f%%</color> damage from %s attacks",
+		modifier = "<color=%s>%+.1f%%</color> de dano por %s ataque(s)",
 	},
 
 	-- dapperness.lua
@@ -347,7 +362,7 @@ return {
 
 	-- daywalkerspawner.lua
 	daywalkerspawner = {
-		days_to_respawn = "<prefab=DAYWALKER> will respawn in %s day(s)",
+		days_to_respawn = "<prefab=DAYWALKER> irá ressurgir em %s dia(s)",
 	},
 
 	-- debuffable.lua
@@ -398,7 +413,7 @@ return {
 		},
 		["hungerregenbuff"] = {
 			name = "<color=HUNGER><prefab=batnosehat> Buff</color>",
-			description = "Regenerates <color=HUNGER>{amount} hunger</color> over {duration}(s).",
+			description = "Regenera <color=HUNGER>{amount} de fome</color> durante {duration}(s).",
 		},
 		
 		["halloweenpotion_health_buff"] = {
@@ -506,9 +521,6 @@ return {
 	hunger_drain = "<color=HUNGER>Drenagem de fome</color>: <color=HUNGER>%s%%</color>",
 	insulated = "Protege você contra raios.",
 
-	-- example.lua
-	why = "[Por que estou vazio?]",
-
 	-- explosive.lua
 	explosive_damage = "<color=LIGHT>Dano de Explosão</color>: %s",
 	explosive_range = "<color=LIGHT>Raio de Explosão</color>: %s",
@@ -531,6 +543,15 @@ return {
 			[FARM_PLANT_STRESS.MODERATE] = "Moderado",
 			[FARM_PLANT_STRESS.HIGH] = "Alto",
 		} or {}),
+		categories = {
+			["nutrients"] = "Nutrientes", -- missing nutrients
+			["moisture"] = "Umidade", -- needs water
+			["killjoys"] = "Ervas daninhas", -- weeds nearby
+			["family"] = "Família", -- no similar plants nearby
+			["overcrowding"] = "Superlotaçã", -- too crowded
+			["season"] = "Estação", -- out of season
+			["happiness"] = "Felicidade", -- not tended to
+		},
 	},
 
 	-- farmsoildrinker.lua
@@ -616,21 +637,21 @@ return {
 		fuel_verbose = "<color=LIGHT>%s</color> segundo(s) de <color=LIGHT>%s</color>.",
 		type = "Tipo de combustível: %s",
 		types = {
-			BURNABLE = "Fuel",
-			CAVE = "Light", -- miner hat / lanterns, light bulbs n stuff
-			CHEMICAL = "Fuel",
-			CORK = "Fuel",
-			GASOLINE = "Gasoline", -- DS: not actually used anywhere?
-			MAGIC = "Durability", -- amulets that aren't refuelable (ex. chilled amulet)
-			MECHANICAL = "Durability", -- SW: iron wind
-			MOLEHAT = "Night vision", -- Moggles
-			NIGHTMARE = "Nightmare fuel",
-			NONE = "Time", -- will never be refueled...............................
-			ONEMANBAND = "Durability",
-			PIGTORCH = "Fuel",
-			SPIDERHAT = "Durability", -- Spider Hat
-			TAR = "Tar", -- SW
-			USAGE = "Durability",
+			BURNABLE = "Combustível",
+			CAVE = "Luz", -- miner hat / lanterns, light bulbs n stuff
+			CHEMICAL = "Combustível",
+			CORK = "Combustível",
+			GASOLINE = "Gasolina", -- DS: not actually used anywhere?
+			MAGIC = "Durabilidade", -- amulets that aren't refuelable (ex. chilled amulet)
+			MECHANICAL = "Durabilidade", -- SW: iron wind
+			MOLEHAT = "Visão noturna", -- Moggles
+			NIGHTMARE = "Combustível de pesadelo",
+			NONE = "Tempo", -- will never be refueled...............................
+			ONEMANBAND = "Durabilidade",
+			PIGTORCH = "Combustível",
+			SPIDERHAT = "Durabilidade", -- Spider Hat
+			TAR = "Alcatrão", -- SW
+			USAGE = "Durabilidade",
 		},
 	},
 
@@ -719,7 +740,7 @@ return {
 
 	-- hounded.lua
 	hounded = {
-		time_until_hounds = "Hounds will attack in %s.",
+		time_until_hounds = "Cães de caça irão atacar em %s.",
 	},
 
 	-- hunger.lua
@@ -736,7 +757,7 @@ return {
 
 	-- hutch_fishbowl.lua [Prefab]
 	hutch_respawn = "<color=MOB_SPAWN><prefab=hutch></color> irá reaparecer em: %s",
-	announce_hutch_respawn = "My <prefab=hutch> will respawn in %s.",
+	announce_hutch_respawn = "Meu <prefab=hutch> irá ressurgir em %s.",
 
 	-- inspectable.lua
 	wagstaff_tool = "O nome desta ferramente é: <color=ENLIGHTENMENT><prefab=%s></color>",
@@ -779,18 +800,24 @@ return {
 
 	-- lunarrift_portal.lua [Prefab]
 	lunarrift_portal = {
-		crystals = "<color=#4093B2><prefab=lunarrift_crystal_big></color>: %d<sub>available</sub> / %d<sub>total</sub> / %d<sub>max</sub>", -- I can't think of a way to word 
-		next_crystal = "Next <color=#4093B2><prefab=lunarrift_crystal_big></color> spawns in %s",
-		close = "<prefab=LUNARRIFT_PORTAL> will close in approximately %s",
+		crystals = "<color=#4093B2><prefab=lunarrift_crystal_big></color>: %d<sub>disponível</sub> / %d<sub>total</sub> / %d<sub>max</sub>", -- I can't think of a way to word 
+		next_crystal = "Next <color=#4093B2><prefab=lunarrift_crystal_big></color> surgirá em %s",
+		close = "<prefab=LUNARRIFT_PORTAL> fechará em aproximadamente %s",
 	},
 	
 	-- lunarthrall_plantspawner.lua
 	lunarthrall_plantspawner = {
 		infested_count = "%d",
-		spawn = "Gestalts spawn in %s",
-		next_wave = "Next wave in %s",
-		remain_waves = "%d waves remaining",
+		spawn = "Gestalts surgirão em in %s",
+		next_wave = "Próxima horda em %s",
+		remain_waves = "%d hordas restantes",
 	},
+
+	-- lunarthrall_plant.lua [Prefab]
+	lunarthrall_plant = {
+		time_to_aggro = "A vulnerabilidade termina em: <color=%s>%.1f</color>",
+	},
+
 
 	-- lureplant.lua [Prefab]
 	lureplant = {
@@ -804,7 +831,7 @@ return {
 	malbatrossspawner = {
 		malbatross_spawnsin = "%s",
 		malbatross_waiting = "Esperando que alguém vá para um cardume.",
-		time_to_respawn = "<prefab=malbatross> will respawn in %s.",
+		time_to_respawn = "<prefab=malbatross> irá ressurgir em %s.",
 	},
 
 	-- mast.lua
@@ -841,10 +868,10 @@ return {
 	moisture = "<color=WET>Umidade</color>: <color=WET>%s%%</color>", --moisture = "<color=WET>Wetness</color>: %s / %s (%s%%)",
 
 	-- monkey_smallhat.lua [Prefab]
-	monkey_smallhat = "Mast & Anchor interaction speed: {feature_speed}\nOar durability use: {durability_efficiency}",
+	monkey_smallhat = "Velocidade de interação entre Mastro e Âncora: {feature_speed}\nDurabilidade de uso do Remo: {durability_efficiency}",
 
 	-- monkey_mediumhat.lua [Prefab]
-	monkey_mediumhat = "Boat damage reduction: {reduction}",
+	monkey_mediumhat = "Redução de danos no barco: {reduction}",
 
 	-- mood.lua
 	mood = {
@@ -868,6 +895,12 @@ return {
 		phase_locked = "Bloqueada pela <color=#CE3D45>Chave Anciã</color>.",
 		announce_phase_locked = "The ruins are currently locked in the nightmare phase.",
 		announce_phase = "The ruins are in the %s phase (%s remaining).",
+		phases = {
+			["calm"] = "Calma",
+			["warn"] = "de Aviso",
+			["wild"] = "de Pesadelos",
+			["dawn"] = "de Alvorecer"
+		},
 	},
 
 	-- oar.lua
@@ -876,32 +909,32 @@ return {
 	-- oceanfishingrod.lua
 	oceanfishingrod = {
 		hook = {
-			interest = "Interest: %.2f",
-			num_interested = "Interested fish: %s",
+			interest = "Interesse: %.2f",
+			num_interested = "Peixes interessados: %s",
 		},
 		battle = {
-			tension = "Tension: <color=%s>%.1f</color> / %.1f<sub>line snaps</sub>",
-			slack = "Slack: <color=%s>%.1f</color> / %.1f<sub>fish escapes</sub>",
-			distance = "Distance: %.1f<sub>catch</sub> / <color=%s>%.1f<sub>current</sub></color> / %.1f<sub>flee</sub>",
+			tension = "Tensão: <color=%s>%.1f</color> / %.1f<sub>puxões de linha</sub>",
+			slack = "Folga: <color=%s>%.1f</color> / %.1f<sub>fuga de peixe</sub>",
+			distance = "Distância: %.1f<sub>pega</sub> / <color=%s>%.1f<sub>atual</sub></color> / %.1f<sub>fuga</sub>",
 		},
 	},
 
 	-- oceanfishingtackle.lua
 	oceanfishingtackle = {
 		casting = {
-			bonus_distance = "Bonus distance: %s",
-			bonus_accuracy = "Bonus accuracy: <color=#66CC00>%+.1f%%<sub>min</sub></color> / <color=#5B63D2>%+.1f%%<sub>max</sub></color>",
+			bonus_distance = "Distância bônus: %s",
+			bonus_accuracy = "Precisão bônus: <color=#66CC00>%+.1f%%<sub>min</sub></color> / <color=#5B63D2>%+.1f%%<sub>max</sub></color>",
 		},
 		lure = {
-			charm = "Charm: <color=#66CC00>%.1f<sub>base</sub></color> + <color=#5B63D2>%.1f<sub>reel</sub></color>",
-			stamina_drain = "Bonus stamina drain: %.1f",
-			time_of_day_modifier = "Phase effectiveness: <color=DAY_BRIGHT>%d%%<sub>day</sub></color> / <color=DUSK_BRIGHT>%d%%<sub>dusk</sub></color> / <color=NIGHT_BRIGHT>%d%%<sub>night</sub></color>",
-			weather_modifier = "Weather effectiveness: <color=#bbbbbb>%d%%<sub>clear</sub></color> / <color=#7BA3F2>%d%%<sub>raining</sub></color> / <color=FROZEN>%d%%<sub>snowing</sub></color>",
+			charm = "Charme: <color=#66CC00>%.1f<sub>base</sub></color> + <color=#5B63D2>%.1f<sub>carretel</sub></color>",
+			stamina_drain = "Dreno de resistência bônus: %.1f",
+			time_of_day_modifier = "Eficácia no turno: <color=DAY_BRIGHT>%d%%<sub>dia</sub></color> / <color=DUSK_BRIGHT>%d%%<sub>tarde</sub></color> / <color=NIGHT_BRIGHT>%d%%<sub>noite</sub></color>",
+			weather_modifier = "Eficácia climática: <color=#bbbbbb>%d%%<sub>limpo</sub></color> / <color=#7BA3F2>%d%%<sub>chovendo</sub></color> / <color=FROZEN>%d%%<sub>nevando</sub></color>",
 		},
 	},
 
 	-- oceantree.lua [Prefab]
-	oceantree_supertall_growth_progress = "Supertall growth progress: %s / %s",
+	oceantree_supertall_growth_progress = "Progresso de crescimento superalto: %s / %s",
 	
 	-- oldager.lua
 	oldager = {
@@ -910,8 +943,13 @@ return {
 
 	-- pangolden.lua [Prefab]
 	pangolden = {
-		gold_level_progress = "<color=#E3D740>Gold</color> level: %.1f / %.1f",
-		gold_level = "<color=#E3D740>Gold</color> level: %.1f",
+		gold_level_progress = "Nível de <color=#E3D740>Ouro</color>: %.1f / %.1f",
+		gold_level = "Nível de <color=#E3D740>Ouro</color>: %.1f",
+	},
+
+	-- parryweapon.lua
+	parryweapon = {
+		parry_duration = "Duração do desvio: {duration}",
 	},
 
 	-- periodicthreat.lua
@@ -943,19 +981,19 @@ return {
 
 	-- planardamage.lua
 	planardamage = {
-		planar_damage = "<color=PLANAR>Planar Damage</color>: <color=PLANAR>%s</color>",
+		planar_damage = "<color=PLANAR>Dano Planar</color>: <color=PLANAR>%s</color>",
 		additional_damage = " (<color=PLANAR>+%s<sub>bonus</sub></color>)",
 	},
 
 	-- planardefense.lua
 	planardefense = {
-		planar_defense = "<color=PLANAR>Planar Defense</color>: <color=PLANAR>%s</color>",
+		planar_defense = "<color=PLANAR>Defesa Planar</color>: <color=PLANAR>%s</color>",
 		additional_defense = " (<color=PLANAR>+%s<sub>bonus</sub></color>)",
 	},
 
 	-- poisonable.lua
 	poisonable = {
-		remaining_time = "<color=NATURE>Poison</color> expires in %s",
+		remaining_time = "<color=NATURE>Veneno</color> acabará em %s",
 	},
 
 	-- pollinator.lua
@@ -963,11 +1001,17 @@ return {
 
 	-- polly_rogershat.lua [Prefab]
 	polly_rogershat = {
-		announce_respawn = "My <prefab=polly_rogers> irá ressurgir em %s."
+		announce_respawn = "Meu <prefab=polly_rogers> irá ressurgir em %s."
 	},
 
 	-- preservative.lua
 	preservative = "Restaura %s%% de frescor.",
+
+	-- preserver.lua
+	preserver = {
+		spoilage_rate = "<color=#ad5db3>Taxa de deterioração</color>: <color=#ad5db3>%.1f%%</color>",
+		freshness_rate = "<color=FROZEN>Taxa de frescor</color>: <color=FROZEN>%.1f%%</color>",
+	},
 
 	-- quaker.lua
 	quaker = {
@@ -995,8 +1039,8 @@ return {
 
 	-- rechargeable.lua
 	rechargeable = {
-		charged_in = "Charged in: %s",
-		charge = "Charge: %s / %s"
+		charged_in = "Carregado em: %s",
+		charge = "Carga: %s / %s"
 	},
 
 	-- repairer.lua
@@ -1031,10 +1075,10 @@ return {
 
 	-- riftspawner.lua
 	riftspawner = {
-		next_spawn = "<prefab=LUNARRIFT_PORTAL> spawns in %s",
-		announce_spawn = "A <prefab=LUNARRIFT_PORTAL> will spawn in %s",
+		next_spawn = "<prefab=LUNARRIFT_PORTAL> surge em %s",
+		announce_spawn = "Um <prefab=LUNARRIFT_PORTAL> irá surgir em %s",
 
-		stage = "Stage: %d / %d", -- augmented by growable
+		stage = "Fase: %d / %d", -- augmented by growable
 	},
 
 	-- rocmanager.lua
@@ -1045,6 +1089,7 @@ return {
 	-- saddler.lua
 	saddler = {
 		bonus_damage = "<color=HEALTH>Bônus de dano</color>: <color=HEALTH>%s</color>",
+		absorption = "<color=HEALTH>Absorção de danos</color>: <color=HEALTH>%s%%</color>",
 		bonus_speed = "<color=DAIRY>Bônus de velocidade</color>: %s%%",
 	},
 
@@ -1052,7 +1097,7 @@ return {
 	sanity = {
 		current_sanity = "<color=SANITY>Sanidade</color>: <color=SANITY>%s</color> / <color=SANITY>%s</color> (<color=SANITY>%s%%</color>)",
 		current_enlightenment = "<color=ENLIGHTENMENT>Iluminação</color>: <color=ENLIGHTENMENT>%s</color> / <color=ENLIGHTENMENT>%s</color> (<color=ENLIGHTENMENT>%s%%</color>)",
-		interaction = "<color=SANITY>Sanity</color>: <color=SANITY>%+.1f</color>",
+		interaction = "<color=SANITY>Sanidade</color>: <color=SANITY>%+.1f</color>",
 	},
 
 	-- sanityaura.lua
@@ -1080,7 +1125,7 @@ return {
 
 	-- shadowrift_portal.lua [Prefab]
 	shadowrift_portal = {
-		close = "<prefab=SHADOWRIFT_PORTAL> will close in %s",
+		close = "<prefab=SHADOWRIFT_PORTAL> vai fechar em %s",
 	},
 
 	-- shadowsubmissive.lua
@@ -1094,10 +1139,15 @@ return {
 
 	-- shadowthrallmanager.lua
 	shadowthrallmanager = {
-		fissure_cooldown = "Next fissure will be ready for takeover in %s",
-		waiting_for_players = "Waiting for a player to come near",
+		fissure_cooldown = "A próxima fissura estará pronta para ser tomada em %s",
+		waiting_for_players = "Esperando que um jogador se aproxime",
 		thrall_count = "<color=MOB_SPAWN><prefab=SHADOWTHRALL_HANDS></color>: %d",
-		dreadstone_regen = "<color=#942429><prefab=DREADSTONE></color> will regenerate in %s",
+		dreadstone_regen = "<color=#942429><prefab=DREADSTONE></color> irá se regenerar em %s",
+	},
+
+	-- sharkboi.lua [Prefab]
+	sharkboi = {
+		trades_remaining = "Trocas restantes: %d",
 	},
 
 	-- sheltered.lua
@@ -1114,10 +1164,15 @@ return {
 			battlesong_sanitygain = "Atingir inimigos restaura  <color=SANITY>%s de sanidade</color>.",
 			battlesong_sanityaura = "As <color=SANITY>auras de sanidade</color> negativas são <color=SANITY>%s%%</color> menos eficazes.",
 			battlesong_fireresistance = "Recebe <color=HEALTH>%s%% menos dano</color> de <color=LIGHT>fogo</color>.",
+			battlesong_lunaraligned = "Receba <color=HEALTH>%s%% menos dano</color> de <color=LUNAR_ALIGNED>inimigos lunares</color>.\nCause <color=HEALTH>%s%% mais dano</color> a <color= SHADOW_ALIGNED>inimigos das sombras</color>.",
+			battlesong_shadowaligned = "Receba <color=HEALTH>%s%% menos dano</color> de <color=SHADOW_ALIGNED>inimigos das sombras</color>.\nCause <color=HEALTH>%s%% mais dano</color> a <color= LUNAR_ALIGNED>inimigos lunares</color>.",
+
 			battlesong_instant_taunt = "Provoca todos os inimigos próximos dentro do raio da música.",
 			battlesong_instant_panic = "Apavora inimigos assombráveis próximos durante %s segundo(s).",
+			battlesong_instant_revive = "Revive até %d aliados próximos.",
 		},
-		cost = "Custa %s de inspiração para usar.",
+		cost = "Custa <color=INSPIRATION>%s de inspiração</color> para usar.",
+		cooldown = "Tempo de espera da música: %s",
 	},
 
 	-- sinkholespawner.lua
@@ -1139,6 +1194,7 @@ return {
 	spawner = {
 		next = "Irá surgir um(a) <color=MOB_SPAWN><prefab={child_name}></color> em {respawn_time}.",
 		child = "Surgiu um(a) <color=MOB_SPAWN><prefab=%s></color>",
+		occupied = "Ocupado: %s",
 	},
 
 	-- spider_healer.lua [Prefab]
@@ -1174,7 +1230,7 @@ return {
 		eot_health = "<prefab=eyeofterror> <color=HEALTH>Vida</color> no retorno: <<color=HEALTH>%s</color> / <color=HEALTH>%s</color>>",
 		retinazor_health = "<prefab=TWINOFTERROR1> <color=HEALTH>Vida</color>: <<color=HEALTH>%s</color> / <color=HEALTH>%s</color>>",
 		spazmatism_health = "<prefab=TWINOFTERROR2> <color=HEALTH>Vida</color>: <<color=HEALTH>%s</color> / <color=HEALTH>%s</color>>",
-		announce_cooldown = "<prefab=terrarium> will be ready in %s.",
+		announce_cooldown = "<prefab=terrarium> estará pronto em %s.",
 	},
 
 	-- tigersharker.lua
@@ -1190,7 +1246,7 @@ return {
 
 	-- toadstoolspawner.lua
 	toadstoolspawner = {
-		time_to_respawn = "<prefab=toadstool> will respawn in %s.",
+		time_to_respawn = "<prefab=toadstool> irá reaparecer em %s.",
 	},
 
 	-- tool.lua
@@ -1242,6 +1298,11 @@ return {
 		wetness = "Aumenta a umidade em <color=WET>%s</color>."
 	},
 
+	-- wathgrithr_shield.lua [Prefab]
+	wathgrithr_shield = {
+		parry_duration_complex = "Duração do desvio: <color=%s>%.1f<sub>normal</sub></color> | <color=%s>%.1f<sub>skill</sub></color>",
+	},
+
 	-- weapon.lua
 	weapon_damage_type = {
 		normal = "<color=HEALTH>Dano</color>",
@@ -1254,8 +1315,14 @@ return {
 
 	-- weather.lua
 	weather = {
-		progress_to_rain = "Progresso para chover: %s / %s",
-		remaining_rain = "Chuva restante: %s",
+		progress_to_rain = "Progresso para <color=WET>chover</color>", -- [Colors may be inaccurate for this translation] Numbers appended by code
+		remaining_rain = "<color=WET>Chuva</color> restante", -- [Colors may be inaccurate for this translation] Numbers appended by code
+
+		progress_to_hail = "Progresso para <color=LUNAR_ALIGNED>granizo</color>", -- Numbers appended by code
+		remaining_hail = "<color=LUNAR_ALIGNED>Granizo restante</color>", -- Numbers appended by code
+
+		progress_to_acid_rain = "Progresso para <color=SHADOW_ALIGNED>chuva <color=WET>ácida</color></color>", -- Numbers appended by code
+		remaining_acid_rain = "<color=SHADOW_ALIGNED>Resto de <color=WET>chuva ácida</color></color>", -- Numbers appended by code
 	},
 
 	-- weighable.lua

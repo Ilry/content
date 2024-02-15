@@ -112,6 +112,22 @@ return {
 		summoned_gestalt_damage = "Summoned <color=ENLIGHTENMENT>gestalts</color> deal <color=HEALTH>%s</color> damage.",
 	},
 
+	-- aoeweapon_base.lua
+	aoeweapon_base = {
+		--weapon_damage = "AoE %s: <color=HEALTH>{damage}</color>",
+	},
+
+	-- aoeweapon_leap.lua
+	aoeweapon_leap = {
+
+	},
+
+	-- aoeweapon_lunge.lua
+	aoeweapon_lunge = {
+		lunge_damage = "Lunge {damageType}: <color=HEALTH>{damage}</color>",
+	},
+	
+
 	-- appeasement.lua
 	appease_good = "Delays eruption by %s segment(s).",
 	appease_bad = "Hastens eruption by %s segment(s).",
@@ -501,9 +517,6 @@ return {
 	hunger_drain = "<color=HUNGER>Hunger drain</color>: <color=HUNGER>%s%%</color>",
 	insulated = "Protects you from lightning.",
 
-	-- example.lua
-	why = "[why am i empty]",
-
 	-- explosive.lua
 	explosive_damage = "<color=LIGHT>Explosion Damage</color>: %s",
 	explosive_range = "<color=LIGHT>Explosion Range</color>: %s",
@@ -526,6 +539,15 @@ return {
 			[FARM_PLANT_STRESS.MODERATE] = "Moderate",
 			[FARM_PLANT_STRESS.HIGH] = "High",
 		} or {}),
+		categories = {
+			["nutrients"] = "Nutrients", -- missing nutrients
+			["moisture"] = "Moisture", -- needs water
+			["killjoys"] = "Weeds", -- weeds nearby
+			["family"] = "Family", -- no similar plants nearby
+			["overcrowding"] = "Overcrowding", -- too crowded
+			["season"] = "Season", -- out of season
+			["happiness"] = "Happiness", -- not tended to
+		},
 	},
 
 	-- farmsoildrinker.lua
@@ -573,9 +595,9 @@ return {
 		SPY = "Investigate", -- hamlet
 		THROW = "Throw", -- sw -- Action string is "Throw At"
 		ROW_FAIL = "Row Fail",
-		ATTACK = "<string=ACTIONS.ATTACK.GENERIC>", --STRINGS.ACTIONS.ATTACK.GENERIC,
-		POUR_WATER = "<string=ACTIONS.POUR_WATER.GENERIC>", --STRINGS.ACTIONS.POUR_WATER.GENERIC,
-		BLINK = "<string=ACTIONS.BLINK.GENERIC>",
+		--ATTACK = "<string=ACTIONS.ATTACK.GENERIC>", --STRINGS.ACTIONS.ATTACK.GENERIC,
+		--POUR_WATER = "<string=ACTIONS.POUR_WATER.GENERIC>", --STRINGS.ACTIONS.POUR_WATER.GENERIC,
+		--BLINK = "<string=ACTIONS.BLINK.GENERIC>",
 	},
 
 	-- fishable.lua
@@ -790,6 +812,11 @@ return {
 		remain_waves = "%d waves remaining",
 	},
 
+	-- lunarthrall_plant.lua [Prefab]
+	lunarthrall_plant = {
+		time_to_aggro = "Vulnerability ends in: <color=%s>%.1f</color>",
+	},
+
 	-- lureplant.lua [Prefab]
 	lureplant = {
 		become_active = "Will become active in: %s",
@@ -866,6 +893,12 @@ return {
 		phase_locked = "Locked by the <color=#CE3D45>Ancient Key</color>.",
 		announce_phase_locked = "The ruins are currently locked in the nightmare phase.",
 		announce_phase = "The ruins are in the %s phase (%s remaining).",
+		phases = {
+			["calm"] = "Calm",
+			["warn"] = "Warning",
+			["wild"] = "Nightmare",
+			["dawn"] = "Dawn"
+		},
 	},
 
 	-- oar.lua
@@ -910,6 +943,11 @@ return {
 	pangolden = {
 		gold_level_progress = "<color=#E3D740>Gold</color> level: %.1f / %.1f",
 		gold_level = "<color=#E3D740>Gold</color> level: %.1f",
+	},
+
+	-- parryweapon.lua
+	parryweapon = {
+		parry_duration = "Parry duration: {duration}",
 	},
 
 	-- periodicthreat.lua
@@ -966,6 +1004,12 @@ return {
 
 	-- preservative.lua
 	preservative = "Restores %s%% of freshness.",
+
+	-- preserver.lua
+	preserver = {
+		spoilage_rate = "<color=#ad5db3>Spoilage rate</color>: <color=#ad5db3>%.1f%%</color>",
+		freshness_rate = "<color=FROZEN>Freshness rate</color>: <color=FROZEN>%.1f%%</color>",
+	},
 
 	-- quaker.lua
 	quaker = {
@@ -1043,6 +1087,7 @@ return {
 	-- saddler.lua
 	saddler = {
 		bonus_damage = "<color=HEALTH>Bonus damage</color>: <color=HEALTH>%s</color>",
+		absorption = "<color=HEALTH>Damage absorption</color>: <color=HEALTH>%s%%</color>",
 		bonus_speed = "<color=DAIRY>Bonus speed</color>: %s%%",
 	},
 
@@ -1098,6 +1143,11 @@ return {
 		dreadstone_regen = "<color=#942429><prefab=DREADSTONE></color> will regenerate in %s",
 	},
 
+	-- sharkboi.lua [Prefab]
+	sharkboi = {
+		trades_remaining = "Trades left: %d",
+	},
+
 	-- sheltered.lua
 	sheltered = {
 		range = "Shelter range: %s wall units",
@@ -1112,10 +1162,15 @@ return {
 			battlesong_sanitygain = "Hitting enemies restores <color=SANITY>%s sanity</color>.",
 			battlesong_sanityaura = "Negative <color=SANITY>sanity auras</color> are <color=SANITY>%s%%</color> less effective.",
 			battlesong_fireresistance = "Take <color=HEALTH>%s%% less damage</color> from <color=LIGHT>fire</color>.",
+			battlesong_lunaraligned = "Take <color=HEALTH>%s%% less damage</color> from <color=LUNAR_ALIGNED>lunar enemies</color>.\nDeal <color=HEALTH>%s%% more damage</color> to <color=SHADOW_ALIGNED>shadow enemies</color>.",
+			battlesong_shadowaligned = "Take <color=HEALTH>%s%% less damage</color> from <color=SHADOW_ALIGNED>shadow enemies</color>.\nDeal <color=HEALTH>%s%% more damage</color> to <color=LUNAR_ALIGNED>lunar enemies</color>.",
+
 			battlesong_instant_taunt = "Taunts all nearby enemies within song radius.",
 			battlesong_instant_panic = "Panics nearby hauntable enemies for %s second(s).",
+			battlesong_instant_revive = "Revives up to %d nearby allies.",
 		},
-		cost = "Costs %s inspiration to use.",
+		cost = "Costs <color=INSPIRATION>%s inspiration</color> to use.",
+		cooldown = "Song cooldown: %s",
 	},
 
 	-- sinkholespawner.lua
@@ -1137,6 +1192,7 @@ return {
 	spawner = {
 		next = "Will spawn a <color=MOB_SPAWN><prefab={child_name}></color> in {respawn_time}.",
 		child = "Spawns a <color=MOB_SPAWN><prefab=%s></color>",
+		occupied = "Occupied: %s",
 	},
 
 	-- spider_healer.lua [Prefab]
@@ -1240,6 +1296,11 @@ return {
 		wetness = "Increases moisture by <color=WET>%s</color>."
 	},
 
+	-- wathgrithr_shield.lua [Prefab]
+	wathgrithr_shield = {
+		parry_duration_complex = "Parry duration: <color=%s>%.1f<sub>normal</sub></color> | <color=%s>%.1f<sub>skill</sub></color>",
+	},
+	
 	-- weapon.lua
 	weapon_damage_type = {
 		normal = "<color=HEALTH>Damage</color>",
@@ -1252,8 +1313,14 @@ return {
 
 	-- weather.lua
 	weather = {
-		progress_to_rain = "Progress to rain: %s / %s",
-		remaining_rain = "Remaining rain: %s",
+		progress_to_rain = "Progress to <color=WET>rain</color>", -- Numbers appended by code
+		remaining_rain = "<color=WET>Remaining rain</color>", -- Numbers appended by code
+
+		progress_to_hail = "Progress to <color=LUNAR_ALIGNED>hail</color>", -- Numbers appended by code
+		remaining_hail = "<color=LUNAR_ALIGNED>Remaining hail</color>", -- Numbers appended by code
+	
+		progress_to_acid_rain = "Progress to <color=SHADOW_ALIGNED>acid <color=WET>rain</color></color>", -- Numbers appended by code
+		remaining_acid_rain = "<color=SHADOW_ALIGNED>Remaining acid <color=WET>rain</color></color>", -- Numbers appended by code
 	},
 
 	-- weighable.lua

@@ -19,25 +19,12 @@ directory. If not, please refer to
 ]]
 
 -- weapon.lua
-local damageHelper = import("helpers/damage")
+local combatHelper = import("helpers/combat")
 
 local world_type = GetWorldType()
-local SLINGSHOT_AMMO_DATA = {}
-local POISONOUS_WEAPONS = {"blowdart_poison", "spear_poison", }
 local WEAPON_CACHE = {
-	-- ["prefab"] = true/false (safe or not)
+	
 }
-
--- load slingshot ammo damages from prefab upvalues
-for i,v in pairs(_G.Prefabs) do
-	-- skins (glomling_winter) are missing .fn i think
-	if v.fn and debug.getinfo(v.fn, "S").source == "scripts/prefabs/slingshotammo.lua" then
-		if v.name:sub(-5) == "_proj" then
-			local ammo_data = util.getupvalue(v.fn, "v")
-			SLINGSHOT_AMMO_DATA[ammo_data.name] = ammo_data
-		end
-	end
-end
 
 local function DescribeYOTRPillowWeapon(self, context)
 	local description, alt_description
@@ -50,7 +37,7 @@ local function DescribeYOTRPillowWeapon(self, context)
 
 	return {
 		name = "weapon_yotr",
-		priority = damageHelper.DAMAGE_PRIORITY + 1,
+		priority = combatHelper.DAMAGE_PRIORITY + 1,
 		description = description,
 		alt_description = alt_description,
 	}
@@ -80,55 +67,6 @@ local function WandaCustomCombatDamage(inst, target, weapon, multiplier, mount)
 
     return 1
 end
-
-
-local function GetSlingshotAmmoData(inst)
-	--mprint(require("/prefabs/slingshotammo"))
-	-- prefabs/slingshotammo.lua
-
-	--[[
-	local damage = "?"
-
-	if SLINGSHOT_AMMO_DATA[inst.prefab] then
-		damage = SLINGSHOT_AMMO_DATA[inst.prefab].damage or 0
-	end
-	--]]
-
-	--[[
-	if inst.prefab == "slingshotammo_rock" then
-		damage = TUNING.SLINGSHOT_AMMO_DAMAGE_ROCKS or damage
-	elseif inst.prefab == "slingshotammo_gold" then
-		damage = TUNING.SLINGSHOT_AMMO_DAMAGE_GOLD or damage
-	elseif inst.prefab == "slingshotammo_marble" then
-		damage = TUNING.SLINGSHOT_AMMO_DAMAGE_MARBLE or damage
-	elseif inst.prefab == "slingshotammo_thulecite" then
-		damage = TUNING.SLINGSHOT_AMMO_DAMAGE_THULECITE or damage
-	elseif inst.prefab == "slingshotammo_slow" then
-		damage = TUNING.SLINGSHOT_AMMO_DAMAGE_SLOW or damage
-	elseif inst.prefab == "trinket_1" then
-		damage = TUNING.SLINGSHOT_AMMO_DAMAGE_TRINKET_1 or damage
-	end
-	--]]
-
-	return SLINGSHOT_AMMO_DATA[inst.prefab]
-end
-
-local function GetDamageModifier(combat, context)
-	if not combat or context.config["account_combat_modifiers"] == false then
-		return 1
-	end
-
-	if world_type == -1 then
-		--cprint((combat.damagemultiplier or 1), combat.externaldamagemultipliers:Get(), (combat.damagemultiplier or 1) * combat.externaldamagemultipliers:Get())
-		return (combat.damagemultiplier or 1) * combat.externaldamagemultipliers:Get()
-		--return combat.externaldamagemultipliers:Get()
-	elseif world_type == 0 or world_type == 1 then
-		return combat.damagemultiplier or 1
-	else
-		return combat:GetDamageModifier()
-	end
-end
-
 
 -- also used by combat descriptor
 local function GetDamage(self, attacker, target)
@@ -174,7 +112,7 @@ local function Describe(self, context)
 		return
 	end
 
-	local multiplier = GetDamageModifier(owner.components.combat, context)
+	local multiplier = combatHelper.GetOutgoingDamageModifier(owner.components.combat)
 
 	-- Add obsidian power to multiplier
 	if inst.components.obsidiantool then -- only have to worry about it in sw or hamlet, which already agrees with the number formatting
@@ -191,23 +129,26 @@ local function Describe(self, context)
 		damage = damage * WandaCustomCombatDamage(context.player, nil, self.inst, nil, context.player.components.rider and context.player.components.rider.mount or nil)
 	end
 
-	local _stimuli = self.stimuli
-	-- Weapon type
-	if _stimuli == "electric" then
-		
-		damage = damage * TUNING.ELECTRIC_DAMAGE_MULT
+	local stimuli_type = combatHelper.IsPrefabPoisonous(self.inst.prefab) and "poisonous" or self.stimuli
+	local stimuli_data = combatHelper.GetStimuliData(stimuli_type)
 
-	elseif self.stimuli == "poisonous" or util.table_find(POISONOUS_WEAPONS, inst.prefab) then -- turns out the game doesn't set the .stimuli
-		_stimuli = "poisonous"
-	elseif self.stimuli == "thorns" then
-		
+	if stimuli_data == combatHelper.WEAPON_STIMULI_DEFS.electric then
+		-- Check if weapon has custom damage mults for electric.
+		local electric_damage_mult = self.electric_damage_mult or TUNING.ELECTRIC_DAMAGE_MULT
+		local electric_wet_damage_mult = self.electric_wet_damage_mult or TUNING.ELECTRIC_WET_DAMAGE_MULT
+
+		damage = damage * electric_damage_mult
+	else
+		if stimuli_data.default_damage_modifier then
+			damage = damage * stimuli_data.default_damage_modifier
+		end
 	end
 
 	-- Walter's slingshot
 	if inst.components.container and inst:HasTag("slingshot") then -- walter's slingshot
 		local ammo = inst.components.container:GetItemInSlot(1)
 		if ammo then
-			local ammo_data = GetSlingshotAmmoData(ammo)
+			local ammo_data = combatHelper.GetSlingshotAmmoData(ammo.prefab)
 
 			if ammo_data then
 				damage = ammo_data.damage or damage
@@ -221,8 +162,7 @@ local function Describe(self, context)
 		attack_range = string.format(context.lstr.attack_range, attack_range)
 	end
 
-	_stimuli = _stimuli or "normal"
-	local damage_string = string.format(context.lstr.weapon_damage, context.lstr.weapon_damage_type[_stimuli] or context.lstr.weapon_damage_type.normal, Round(damage * multiplier, 1) or "?")
+	local damage_string = string.format(context.lstr.weapon_damage, context.lstr.weapon_damage_type[stimuli_data.name] or context.lstr.weapon_damage_type.normal, Round(damage * multiplier, 1) or "?")
 
 	
 
@@ -237,7 +177,7 @@ local function Describe(self, context)
 
 	return {
 		name = "weapon",
-		priority = damageHelper.DAMAGE_PRIORITY,
+		priority = combatHelper.DAMAGE_PRIORITY,
 		description = description,
 		attack_range = self.attackrange
 	}, pillow_info
@@ -246,7 +186,6 @@ end
 
 
 return {
-	GetSlingshotAmmoData = GetSlingshotAmmoData,
 	GetDamage = GetDamage,
 
 	Describe = Describe,

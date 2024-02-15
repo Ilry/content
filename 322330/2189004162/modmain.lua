@@ -92,6 +92,7 @@ local Insight = {
 		ENLIGHTENMENT = "#ACC5C3",
 		AGE = "#714E85", -- age meter
 		MIGHTINESS = "#0B704A",
+		INSPIRATION = "#6F3483", -- from the inspiration meter
 
 		-- mechanic
 		LIGHT = "#CCBC78", -- light tab icon
@@ -144,7 +145,8 @@ local Insight = {
 		BLACK = "#2f3e49", -- #1b2a35 was the original intent, but needed to be lighter. so I bumped it up by 20 on r,g,b.
 	
 		PLANAR = "#b079e8", -- -- darker #b079e8, lighter #c99cf7
-		SHADOW_ALIGNED = "#9C2C31",
+		LUNAR_ALIGNED = "#5ADFAD", -- Got from the bright edge of the lunar rift icon
+		SHADOW_ALIGNED = "#DD2C31", -- This was originally "#9C2C31", but I made it more intense because it looked too similar to HEALTH on wigfrid's lunar/shadow songs.
 	},
 
 	ENTITY_INFORMATION_FLAGS = {
@@ -198,7 +200,7 @@ import = kleiloadlua(MODROOT .. "scripts/import.lua")()
 Time = import("time")
 Color = import("helpers/color")
 rpcNetwork = import("rpcnetwork")
-combatHelper = import("helpers/combat")
+attackRangeHelper = import("helpers/attack_range")
 entity_tracker = import("helpers/entitytracker")
 
 TRACK_INFORMATION_REQUESTS = DEBUG_ENABLED and false
@@ -234,7 +236,7 @@ local descriptors_ignore = {
 	
 
 	"inventoryitem", "moisturelistener", "stackable", "cookable", "bait", "blowinwind", "blowinwindgust", "floatable", "selfstacker", -- don't care
-	"dryable", "highlight", "cooker", "lighter", "instrument", "poisonhealer", "trader", "smotherer", "knownlocations", "homeseeker", "occupier", "talker", -- don't care
+	"dryable", "highlight", "cooker", "lighter", "instrument", "poisonhealer", "trader", "smotherer", "knownlocations", "occupier", "talker", -- don't care
 	"named", "activatable", "transformer", "deployable", "upgrader", "playerprox", "flotsamspawner", "rowboatwakespawner", "plantable", "waveobstacle", -- don't care
 	"fader", "lighttweener", "sleepingbag", "machine", "floodable", "firedetector", "heater", "tiletracker", "payable", "useableitem", "drawable", "shaver", -- don't care
 	"gridnudger", "entitytracker", "appeasable", "currency", "mateable", "sizetweener", "saltlicker", "sinkable", "sticker", "projectile", "hiddendanger", "deciduoustreeupdater", -- don't care
@@ -251,7 +253,7 @@ local descriptors_ignore = {
 	
 	-- now for DST stuff
 	"wardrobe", "plantregrowth", "bloomer", "drownable", "embarker", "inventoryitemmoisture", "constructionsite", "playeravatardata", "petleash", "giftreceiver", -- may be interesting looking into
-	"grogginess", "workmultiplier", "aura", "writeable", "preserver", "shaveable", "spidermutator", -- may be interesting looking into
+	"grogginess", "workmultiplier", "aura", "writeable", "shaveable", "spidermutator", -- may be interesting looking into
 	"resistance", -- for the armor blocking of bone armor
 
 	"playerinspectable", "playeractionpicker", "playervision", "pinnable", "playercontroller", "playervoter", "singingshelltrigger", "tackler", "sleepingbaguser", "skinner", "playermetrics",-- from mousing over player
@@ -265,7 +267,7 @@ local descriptors_ignore = {
 	"markable_proxy", "saved_scale", "gingerbreadhunter", "bedazzlement", "bedazzler", "anchor", "distancefade", "pocketwatch_dismantler", "carnivalevent", "heavyobstacleusetarget", -- don't care
 	"cattoy", "updatelooper", "upgrademoduleremover", "hudindicatablemanager", "moonstormlightningmanager", "playerhearing", "walkableplatformplayer", "hudindicatorwatcher", "seamlessplayerswapper", -- don't care
 	"boatcannonuser", "stageactor", "boatdrifter", "boatphysics", "boatring", "boatringdata", "healthsyncer", "hull", "hullhealth", "walkableplatform", "teleportedoverride", -- don't care
-	"npc_talker", "simplemagicgrower", "moonaltarlink", "farmtiller",
+	"npc_talker", "simplemagicgrower", "moonaltarlink", "farmtiller", "aoespell", "aoetargeting",
 
 	-- NEW:
 	"farmplanttendable", "plantresearchable", "fertilizerresearchable", "yotb_stagemanager",
@@ -1131,7 +1133,7 @@ local function GetEntityInformation(entity, player, params)
 		elseif player_context.config["DEBUG_SHOW_DISABLED"] and table.contains(descriptors_ignore, name) then
 			chunks[#chunks+1] = {priority = -20, name = name, description = "Disabled descriptor: " .. name};
 
-		elseif player_context.config["DEBUG_SHOW_NOTIMPLEMENTED"] and not table.contains(descriptors_ignore, name) then
+		elseif not descriptor and player_context.config["DEBUG_SHOW_NOTIMPLEMENTED"] and not table.contains(descriptors_ignore, name) then
 			local description = "No information for: " .. name
 			local origin = GetComponentOrigin(name)
 
@@ -2001,7 +2003,7 @@ end)
 
 AddComponentPostInit("combat", function(self)
 	if IS_DS or (TheWorld.ismastersim) then
-		combatHelper.HookCombat(self)
+		attackRangeHelper.HookCombat(self)
 	else
 		dprint("oh no")
 	end
@@ -2106,7 +2108,7 @@ if true then
 				return
 			end
 
-			combatHelper.RegisterFalseCombat(inst, data)
+			attackRangeHelper.RegisterFalseCombat(inst, data)
 		end)
 	end
 end
@@ -3457,7 +3459,7 @@ if IS_DST then -- not in UI overrides because server needs access too
 
 	local triggered = false
 	AddClassPostConstruct("widgets/scripterrorwidget", function(self)
-		mprint("A crash has occured.")
+		mprint("A crash has occured (THIS DOES NOT MEAN IT WAS INSIGHT, THIS IS JUST HERE FOR DEBUGGING PURPOSES)")
 		if self.title then
 			mprint("Title:", self.title:GetString())
 		end

@@ -19,7 +19,7 @@ directory. If not, please refer to
 ]]
 
 -- planardefense.lua
-local damageHelper = import("helpers/damage")
+local combatHelper = import("helpers/combat")
 
 -- darker #b079e8
 -- lighter #c99cf7
@@ -35,7 +35,9 @@ local function Describe(self, context)
 	
 	local bonus_defense = current_defense - base_defense
 
-	description = string.format(context.lstr.planardefense.planar_defense, Round(current_defense, 1))
+	if current_defense ~= 0 then
+		description = string.format(context.lstr.planardefense.planar_defense, Round(current_defense, 1))
+	end
 
 	alt_description = string.format(context.lstr.planardefense.planar_defense, Round(base_defense, 1))
 	if bonus_defense ~= 0 then
@@ -43,7 +45,7 @@ local function Describe(self, context)
 	end
 	
 	return {
-		priority = damageHelper.DAMAGE_PRIORITY - 2,
+		priority = combatHelper.DAMAGE_PRIORITY - 200,
 		description = description,
 		alt_description = alt_description
 	}

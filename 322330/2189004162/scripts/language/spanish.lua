@@ -113,6 +113,21 @@ return {
 		summoned_gestalt_damage = "Invoca <color=ENLIGHTENMENT>Gestalts</color> con <color=HEALTH>%s</color> de <color=HEALTH>daño</color>",
 	},
 
+	-- aoeweapon_base.lua
+	aoeweapon_base = {
+		--weapon_damage = "AoE %s: <color=HEALTH>{damage}</color>",
+	},
+
+	-- aoeweapon_leap.lua
+	aoeweapon_leap = {
+
+	},
+
+	-- aoeweapon_lunge.lua
+	aoeweapon_lunge = {
+		lunge_damage = "Lunge {damageType}: <color=HEALTH>{damage}</color>",
+	},
+
 	-- appeasement.lua
 	appease_good = "Retrasa la erupción en %s segmento(s).",
 	appease_bad = "Acelera la erupción en %s segmento(s).",
@@ -501,9 +516,6 @@ return {
 	hunger_drain = "Drena el <color=HUNGER>hambre</color>: <color=HUNGER>%s%%</color>",
 	insulated = "Te protege de los rayos.",
 
-	-- example.lua
-	why = "[¿por qué estoy vacío?]",
-
 	-- explosive.lua
 	explosive_damage = "<color=LIGHT>Daño por explosión</color>: %s",
 	explosive_range = "<color=LIGHT>Rango de explosión</color>: %s",
@@ -526,6 +538,15 @@ return {
 			[FARM_PLANT_STRESS.MODERATE] = "Moderado",
 			[FARM_PLANT_STRESS.HIGH] = "Alto",
 		} or {}),
+		categories = {
+			["nutrients"] = "Nutrients", -- missing nutrients
+			["moisture"] = "Moisture", -- needs water
+			["killjoys"] = "Weeds", -- weeds nearby
+			["family"] = "Family", -- no similar plants nearby
+			["overcrowding"] = "Overcrowding", -- too crowded
+			["season"] = "Season", -- out of season
+			["happiness"] = "Happiness", -- not tended to
+		},
 	},
 
 	-- farmsoildrinker.lua
@@ -787,6 +808,11 @@ return {
 		remain_waves = "%d waves remaining",
 	},
 
+	-- lunarthrall_plant.lua [Prefab]
+	lunarthrall_plant = {
+		time_to_aggro = "Vulnerability ends in: <color=%s>%.1f</color>",
+	},
+
 	-- lureplant.lua [Prefab]
 	lureplant = {
 		become_active = "Se activa en: %s",
@@ -863,6 +889,12 @@ return {
 		phase_locked = "Cerrado por la <color=#CE3D45>Llave antigua</color>.",
 		announce_phase_locked = "The ruins are currently locked in the nightmare phase.",
 		announce_phase = "The ruins are in the %s phase (%s remaining).",
+		phases = {
+			["calm"] = "Calm",
+			["warn"] = "Warning",
+			["wild"] = "Nightmare",
+			["dawn"] = "Dawn"
+		},
 	},
 
 	-- oar.lua
@@ -907,6 +939,11 @@ return {
 	pangolden = {
 		gold_level_progress = "<color=#E3D740>Gold</color> level: %.1f / %.1f",
 		gold_level = "<color=#E3D740>Gold</color> level: %.1f",
+	},
+	
+	-- parryweapon.lua
+	parryweapon = {
+		parry_duration = "Parry duration: {duration}",
 	},
 
 	-- periodicthreat.lua
@@ -963,6 +1000,12 @@ return {
 
 	-- preservative.lua
 	preservative = "Restaura %s%% de frescura",
+
+	-- preserver.lua
+	preserver = {
+		spoilage_rate = "<color=#ad5db3>Spoilage rate</color>: <color=#ad5db3>%.1f%%</color>",
+		freshness_rate = "<color=FROZEN>Freshness rate</color>: <color=FROZEN>%.1f%%</color>",
+	},
 
 	-- quaker.lua
 	quaker = {
@@ -1040,6 +1083,7 @@ return {
 	-- saddler.lua
 	saddler = {
 		bonus_damage = "<color=HEALTH>Daño adicional</color>: <color=HEALTH>%s</color>",
+		absorption = "<color=HEALTH>Damage absorption</color>: <color=HEALTH>%s%%</color>",
 		bonus_speed = "<color=DAIRY>Velocidad extra</color>: %s%%",
 	},
 
@@ -1095,6 +1139,11 @@ return {
 		dreadstone_regen = "<color=#942429><prefab=DREADSTONE></color> will regenerate in %s",
 	},
 
+	-- sharkboi.lua [Prefab]
+	sharkboi = {
+		--trades_remaining = "Trades left: %d",
+	},
+
 	-- sheltered.lua
 	sheltered = {
 		range = "Alcance del refugio: %s unidades",
@@ -1109,10 +1158,15 @@ return {
 			battlesong_sanitygain = "Golpear enemigos restaura <color=SANITY>%s</color> de <color=SANITY>sanity</color>",
 			battlesong_sanityaura = "Las <color=SANITY>auras de cordura</color> son <color=SANITY>%s%%</color> menos efectivas",
 			battlesong_fireresistance = "Mitiga <color=HEALTH>%s%%</color> el <color=HEALTH>daño</color> por <color=LIGHT>fuego</color>",
+			battlesong_lunaraligned = "Take <color=HEALTH>%s%% less damage</color> from <color=LUNAR_ALIGNED>lunar enemies</color>.\nDeal <color=HEALTH>%s%% more damage</color> to <color=SHADOW_ALIGNED>shadow enemies</color>.",
+			battlesong_shadowaligned = "Take <color=HEALTH>%s%% less damage</color> from <color=SHADOW_ALIGNED>shadow enemies</color>.\nDeal <color=HEALTH>%s%% more damage</color> to <color=LUNAR_ALIGNED>lunar enemies</color>.",
+
 			battlesong_instant_taunt = "Provoca a todos los enemigos cercanos",
 			battlesong_instant_panic = "Asusta a todos enemigos menores por %s segundo(s)",
+			battlesong_instant_revive = "Revives up to %d nearby allies.",
 		},
-		cost = "Cuesta %s de inspiración",
+		cost = "Cuesta <color=INSPIRATION>%s de inspiración</color>",
+		cooldown = "Song cooldown: %s",
 	},
 
 	-- sinkholespawner.lua
@@ -1134,6 +1188,7 @@ return {
 	spawner = {
 		next = "Generará <color=MOB_SPAWN><prefab={child_name}></color> en {respawn_time}.",
 		child = "Genera <color=MOB_SPAWN><prefab=%s></color>",
+		occupied = "Occupied: %s",
 	},
 
 	-- spider_healer.lua [Prefab]
@@ -1237,6 +1292,11 @@ return {
 		wetness = "Aumenta la humedad en <color=WET>%s</color>."
 	},
 
+	-- wathgrithr_shield.lua [Prefab]
+	wathgrithr_shield = {
+		parry_duration_complex = "Parry duration: <color=%s>%.1f<sub>normal</sub></color> | <color=%s>%.1f<sub>skill</sub></color>",
+	},
+
 	-- weapon.lua
 	weapon_damage_type = {
 		normal = "<color=HEALTH>Daño</color>",
@@ -1249,8 +1309,14 @@ return {
 
 	-- weather.lua
 	weather = {
-		progress_to_rain = "Progress to rain: %s / %s",
-		remaining_rain = "Remaining rain: %s",
+		progress_to_rain = "Progress to <color=WET>rain</color>", -- Numbers appended by code
+		remaining_rain = "<color=WET>Remaining rain</color>", -- Numbers appended by code
+
+		progress_to_hail = "Progress to <color=LUNAR_ALIGNED>hail</color>", -- Numbers appended by code
+		remaining_hail = "<color=LUNAR_ALIGNED>Remaining hail</color>", -- Numbers appended by code
+
+		progress_to_acid_rain = "Progress to <color=SHADOW_ALIGNED>acid <color=WET>rain</color></color>", -- Numbers appended by code
+		remaining_acid_rain = "<color=SHADOW_ALIGNED>Remaining acid <color=WET>rain</color></color>", -- Numbers appended by code
 	},
 
 	-- weighable.lua
