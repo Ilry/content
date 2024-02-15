@@ -1,1 +1,0 @@
-TUNING.SHADE_CANOPY_RANGE_SMALL=GetModConfigData("范围")
