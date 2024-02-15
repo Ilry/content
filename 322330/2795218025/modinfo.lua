@@ -1,0 +1,446 @@
+name = "农作物+"
+author = "铭之所名"
+version = "1.0.9.1"
+description = [[
+
+14种农作物：【芦笋、胡萝卜、玉米、火龙果、榴莲、茄子、大蒜、洋葱、辣椒、石榴、土豆、南瓜、西瓜、番茄】
+
+]]
+
+forumthread = ""
+api_version = 10
+
+dst_compatible = true
+server_only_mod = true
+client_only_mod = false
+
+icon_atlas = "modicon.xml"
+icon = "modicon.tex"
+
+local function AddTitle(title) return { name = "null",label = title,options = {{ description = "", data = 0 },},default = 0,} end
+
+configuration_options = 
+{
+	AddTitle("通用 (不含野草)"),
+	{
+		name = "zujian_nongzuowu",
+		label = "对14农作物的选项",
+		hover = "通用下的选项与14农作物的选项功能相同时的优先级",
+		options ={
+			{description = "不涉及14农作物", data = 3, hover = "通用下的所有选项不会对14农作物修改(若14农作物选项关闭则模组不会对14农作物修改)"},
+			{description = "优先14农作物", data = 1, hover = "14农作物选项启用时优先14农作物，关闭则启用通用选项的修改"},
+			{description = "覆盖14农作物", data = 2, hover = "14农作物的选项会被通用下的选项覆盖"},
+		},
+		default = 1,
+	},
+	{
+		name = "zujian_juxinghua",
+		label = "农作物通用-巨型化",
+		hover = "农作物类型的生长为巨型植株\n不排除特殊模组的设定与原游戏不同，因此特殊设定的模组农作物可能会不生效",
+		options ={
+			{description = "关闭", data = false, hover = "不启用"},
+			{description = "全巨型化", data = true, hover = "农作物类型的产物为巨型化"},
+		},
+		default = true,
+	},
+	{
+		name = "zujian_juxingshu",
+		label = "农作物通用-巨型数",
+		hover = "农作物类型的巨型果菜数量\n不排除特殊模组的设定与原游戏不同，因此特殊设定的模组农作物可能会不生效",
+		options ={
+			{description = "无巨型", data = 99, hover = "巨型植株采集为空"},
+			{description = "几率化", data = 0.5, hover = "50%几率采集得1个巨型产物，50%采集为空"},
+			{description = "关闭", data = false, hover = "不启用"},
+			{description = "巨型+1", data = 1, hover = "农作物类型的巨型产物采集数量+1"},
+			{description = "巨型+2", data = 2, hover = "农作物类型的巨型产物采集数量+2"},
+			{description = "巨型+3", data = 3, hover = "农作物类型的巨型产物采集数量+3"},
+			{description = "巨型+4", data = 4, hover = "农作物类型的巨型产物采集数量+4"},
+			{description = "巨型+5", data = 5, hover = "农作物类型的巨型产物采集数量+5"},
+			{description = "巨型+6", data = 6, hover = "农作物类型的巨型产物采集数量+6"},
+		},
+		default = 2,
+	},
+	{
+		name = "zujian_guocaishu",
+		label = "农作物通用-果菜数",
+		hover = "农作物类型的植株的果菜数量\n非巨型植株的农作物采集一律为1个数量的果菜(特殊模组除外，或特殊模组不生效)",
+		options ={
+			{description = "无果菜", data = 99, hover = "非巨型植株采集无果菜"},
+			{description = "几率化", data = 0.5, hover = "50%几率采集得1个果菜，50%采集无果菜"},
+			{description = "关闭", data = false, hover = "不启用"},
+			{description = "果菜+1", data = 1, hover = "农作物类型的采集果菜数量+1"},
+			{description = "果菜+2", data = 2, hover = "农作物类型的采集果菜数量+2"},
+			{description = "果菜+3", data = 3, hover = "农作物类型的采集果菜数量+3"},
+			{description = "果菜+4", data = 4, hover = "农作物类型的采集果菜数量+4"},
+			{description = "果菜+5", data = 5, hover = "农作物类型的采集果菜数量+5"},
+			{description = "果菜+6", data = 6, hover = "农作物类型的采集果菜数量+6"},
+		},
+		default = 2,
+	},
+	{
+		name = "zujian_zhongzishu",
+		label = "农作物通用-种子数",
+		hover = "农作物类型的植株的种子数量\n不排除特殊模组的设定与原游戏不同，因此特殊设定的模组农作物可能会不生效",
+		options ={
+			{description = "无种子", data = 99, hover = "非巨型植株采集无种子"},
+			{description = "几率化", data = 0.5, hover = "50%几率采集得1个种子，50%采集无种子"},
+			{description = "关闭", data = false, hover = "不启用"},
+			{description = "种子+1", data = 1, hover = "农作物类型的采集种子数量+1"},
+			{description = "种子+2", data = 2, hover = "农作物类型的采集种子数量+2"},
+			{description = "种子+3", data = 3, hover = "农作物类型的采集种子数量+3"},
+			{description = "种子+4", data = 4, hover = "农作物类型的采集种子数量+4"},
+			{description = "种子+5", data = 5, hover = "农作物类型的采集种子数量+5"},
+			{description = "种子+6", data = 6, hover = "农作物类型的采集种子数量+6"},
+		},
+		default = 1,
+	},
+	{
+		name = "zujian_wufulan",
+		label = "农作物通用-不腐烂",
+		hover = "农作物类型的植株不会腐烂\n不排除特殊模组的设定与原游戏不同，因此特殊设定的模组农作物可能会不生效",
+		options ={
+			{description = "关闭", data = false, hover = "不启用"},
+			{description = "植株不腐烂", data = true, hover = "农作物类型的植株为不腐烂"},
+		},
+		default = true,
+	},
+	{
+		name = "zujian_kuaizhai",
+		label = "农作物通用-快速采",
+		hover = "农作物类型的植株可快速采集\n不排除特殊模组的设定与原游戏不同，因此特殊设定的模组农作物可能会不生效",
+		options ={
+			{description = "关闭", data = false, hover = "不启用"},
+			{description = "快速采集", data = true, hover = "可直接快速采集"},
+		},
+		default = true,
+	},
+	{
+		name = "zujian_juxingfulan",
+		label = "巨型果菜-不腐烂",
+		hover = "农作物类型的产物巨型果菜不腐烂\n不排除特殊模组的设定与原游戏不同，因此特殊设定的模组农作物可能会不生效",
+		options ={
+			{description = "关闭", data = false, hover = "不启用"},
+			{description = "巨型果菜不腐烂", data = true, hover = "采集后的巨型果菜不会腐烂"},
+		},
+		default = true,
+	},
+	{
+		name = "zujian_suidizhong",
+		label = "农作物种子-随地种植",
+		hover = "可种植的种子可随地种植\n不排除特殊模组的设定与原游戏不同，因此特殊设定的模组种子可能会不生效",
+		options ={
+			{description = "关闭", data = false, hover = "不启用"},
+			{description = "种子随地种植", data = true, hover = "可种植的种子无需耕地种植"},
+		},
+		default = true,
+	},
+	AddTitle("农作物"),
+	{
+		name = "nzw_juxing",
+		label = "14种农作物-巨型化",
+		hover = "14种农作物成长结果\n只种不理会，能成长便巨型化",
+		options ={
+			{description = "关闭", data = false, hover = "不启用"},
+			{description = "开启巨型", data = true, hover = "14种农作物只要能成长，成熟即巨型化"},
+		},
+		default = true,
+	},
+	{
+		name = "nzw_juxingshu",
+		label = "14种巨型作物-数量",
+		hover = "14种巨型农作物采集数量",
+		options ={
+			{description = "关闭", data = false, hover = "不启用"},
+			{description = "巨型+1", data = 1, hover = "14种农作物多收获1个巨型果菜"},
+			{description = "巨型+2", data = 2, hover = "14种农作物多收获2个巨型果菜"},
+			{description = "巨型+3", data = 3, hover = "14种农作物多收获3个巨型果菜"},
+			{description = "巨型+4", data = 4, hover = "14种农作物多收获4个巨型果菜"},
+		},
+		default = 3,
+	},
+	{
+		name = "nzw_juxingguo",
+		label = "14种巨型作物-果菜",
+		hover = "14种巨型农作物掉落物",
+		options ={
+			{description = "无果菜", data = -1, hover = "14种巨型果菜不会掉落果菜"},
+			{description = "几率化", data = 0, hover = "14种巨型果菜50%几率掉落1个果菜，50%无果菜"},
+			{description = "关闭", data = false, hover = "不启用"},
+			{description = "果菜+1", data = 1, hover = "14种巨型果菜多掉落1个果菜"},
+			{description = "果菜+2", data = 2, hover = "14种巨型果菜多掉落2个果菜"},
+			{description = "果菜+3", data = 3, hover = "14种巨型果菜多掉落3个果菜"},
+			{description = "果菜+4", data = 4, hover = "14种巨型果菜多掉落4个果菜"},
+			{description = "果菜+5", data = 5, hover = "14种巨型果菜多掉落5个果菜"},
+			{description = "果菜+6", data = 6, hover = "14种巨型果菜多掉落6个果菜"},
+		},
+		default = 4,
+	},
+	{
+		name = "nzw_juxingzhong",
+		label = "14种巨型作物-种子",
+		hover = "14种巨型农作物掉落物",
+		options ={
+			{description = "无种子", data = -1, hover = "14种巨型果菜不会掉落种子"},
+			{description = "几率化", data = 0, hover = "14种巨型果菜50%几率掉落1个种子，50%无种子"},
+			{description = "关闭", data = false, hover = "不启用"},
+			{description = "种子+1", data = 1, hover = "14种巨型果菜多掉落1个种子"},
+			{description = "种子+2", data = 2, hover = "14种巨型果菜多掉落2个种子"},
+			{description = "种子+3", data = 3, hover = "14种巨型果菜多掉落3个种子"},
+			{description = "种子+4", data = 4, hover = "14种巨型果菜多掉落4个种子"},
+			{description = "种子+5", data = 5, hover = "14种巨型果菜多掉落5个种子"},
+			{description = "种子+6", data = 6, hover = "14种巨型果菜多掉落6个种子"},
+		},
+		default = 4,
+	},
+	{
+		name = "nzw_guocaishu",
+		label = "14种普通作物-果菜",
+		hover = "14种普通农作物采集物\n非巨型植株的农作物采集一律为1个数量的果菜",
+		options ={
+			{description = "无果菜", data = -1, hover = "14种农作物成熟没有果菜"},
+			{description = "几率化", data = 0, hover = "14种农作物50%几率采集得1个果菜，50%无果菜"},
+			{description = "关闭", data = false, hover = "不启用"},
+			{description = "果菜+1", data = 1, hover = "14种农作物多收获1个果菜"},
+			{description = "果菜+2", data = 2, hover = "14种农作物多收获2个果菜"},
+			{description = "果菜+3", data = 3, hover = "14种农作物多收获3个果菜"},
+			{description = "果菜+4", data = 4, hover = "14种农作物多收获4个果菜"},
+			{description = "果菜+5", data = 5, hover = "14种农作物多收获5个果菜"},
+			{description = "果菜+6", data = 6, hover = "14种农作物多收获6个果菜"},
+		},
+		default = 4,
+	},
+	{
+		name = "nzw_zhongzishu",
+		label = "14种普通作物-种子",
+		hover = "14种普通农作物采集物",
+		options ={
+			{description = "无种子", data = -1, hover = "14种农作物成熟没有种子"},
+			{description = "几率化", data = 0, hover = "14种农作物50%几率采集得1个种子，50%无种子"},
+			{description = "关闭", data = false, hover = "不启用"},
+			{description = "种子+1", data = 1, hover = "14种农作物多收获1个种子"},
+			{description = "种子+2", data = 2, hover = "14种农作物多收获2个种子"},
+			{description = "种子+3", data = 3, hover = "14种农作物多收获3个种子"},
+			{description = "种子+4", data = 4, hover = "14种农作物多收获4个种子"},
+			{description = "种子+5", data = 5, hover = "14种农作物多收获5个种子"},
+			{description = "种子+6", data = 6, hover = "14种农作物多收获6个种子"},
+		},
+		default = 4,
+	},
+	{
+		name = "nzw_fulanguocai",
+		label = "14种普通腐烂植株-果菜",
+		hover = "14种普通腐烂植株摘采增加果菜数量\n普通作物腐烂采集无果蝇(不友好)",
+		options ={
+			{description = "关闭", data = false, hover = "不启用"},
+			{description = "果菜+1", data = 1, hover = "14种农作物多收获1个果菜"},
+			{description = "果菜+2", data = 2, hover = "14种农作物多收获2个果菜"},
+			{description = "果菜+3", data = 3, hover = "14种农作物多收获3个果菜"},
+			{description = "果菜+4", data = 4, hover = "14种农作物多收获4个果菜"},
+		},
+		default = 1,
+	},
+	{
+		name = "nzw_fulanzhongzi",
+		label = "14种普通腐烂植株-种子",
+		hover = "14种普通腐烂植株摘采增加种子数量\n普通作物腐烂采集无果蝇(不友好)",
+		options ={
+			{description = "关闭", data = false, hover = "不启用"},
+			{description = "种子+1", data = 1, hover = "14种农作物多收获1个种子"},
+			{description = "种子+2", data = 2, hover = "14种农作物多收获2个种子"},
+			{description = "种子+3", data = 3, hover = "14种农作物多收获3个种子"},
+			{description = "种子+4", data = 4, hover = "14种农作物多收获4个种子"},
+		},
+		default = 1,
+	},
+	{
+		name = "nzw_jxfulanwu",
+		label = "14种巨型腐烂作物-产物",
+		hover = "14种巨型的腐烂植株、巨型的腐烂果菜采收物\n腐烂作物采收无果蝇(不友好)",
+		options ={
+			{description = "3腐物", data = -1, hover = "14种巨型作物腐烂摘采仅3个腐烂食物"},
+			{description = "3腐物+几率化", data = 0, hover = "14种巨型作物腐烂摘采为3个腐烂食物+50%几率得1个种子50%无种子"},
+			{description = "关闭", data = false, hover = "不启用"},
+			{description = "3腐物1种子", data = 1, hover = "移除小果蝇后的原物品"},
+			{description = "1种子1果菜", data = 2, hover = "作物腐烂摘采为1个种子1个果菜"},
+			{description = "1种子2果菜", data = 3, hover = "作物腐烂摘采为1个种子2个果菜"},
+			{description = "1种子4果菜", data = 4, hover = "作物腐烂摘采为1个种子4个果菜"},
+			{description = "2种子6果菜", data = 5, hover = "作物腐烂摘采为2个种子6个果菜"},
+		},
+		default = 1,
+	},
+	{
+		name = "nongzuowu10",
+		label = "14种打蜡作物-果菜",
+		hover = "14种打蜡作物砸落增加果菜数量",
+		options ={
+			{description = "关闭", data = false, hover = "不启用"},
+			{description = "果菜+1", data = 1, hover = "14种打蜡作物砸落增加1个果菜"},
+			{description = "果菜+2", data = 2, hover = "14种打蜡作物砸落增加2个果菜"},
+			{description = "果菜+3", data = 3, hover = "14种打蜡作物砸落增加3个果菜"},
+			{description = "果菜+4", data = 4, hover = "14种打蜡作物砸落增加4个果菜"},
+			{description = "果菜+5", data = 5, hover = "14种打蜡作物砸落增加5个果菜"},
+			{description = "果菜+6", data = 6, hover = "14种打蜡作物砸落增加6个果菜"},
+		},
+		default = 1,
+	},
+	{
+		name = "nongzuowu11",
+		label = "14种打蜡作物-种子",
+		hover = "14种打蜡作物砸落增加种子数量",
+		options ={
+			{description = "关闭", data = false, hover = "不启用"},
+			{description = "种子+1", data = 1, hover = "14种打蜡作物砸落增加1个种子"},
+			{description = "种子+2", data = 2, hover = "14种打蜡作物砸落增加2个种子"},
+			{description = "种子+3", data = 3, hover = "14种打蜡作物砸落增加3个种子"},
+			{description = "种子+4", data = 4, hover = "14种打蜡作物砸落增加4个种子"},
+			{description = "种子+5", data = 5, hover = "14种打蜡作物砸落增加5个种子"},
+			{description = "种子+6", data = 6, hover = "14种打蜡作物砸落增加6个种子"},
+		},
+		default = 1,
+	},
+	{
+		name = "nzw_wufulan",
+		label = "14种农作物植株-不腐烂",
+		hover = "14种普通农作物、巨型农作物成熟植株停止进入下阶段计时",
+		options ={
+			{description = "关闭", data = false, hover = "不启用"},
+			{description = "不腐烂", data = true, hover = "14种未摘下的农作物不会腐烂，停止进入下阶段"},
+		},
+		default = true,
+	},
+	{
+		name = "nzw_wufulancw",
+		label = "14种农作物产物-不腐烂",
+		hover = "14种普通农作物、巨型农作物摘下后不会腐烂",
+		options ={
+			{description = "关闭", data = false, hover = "不启用"},
+			{description = "巨型不腐烂", data = 1, hover = "14种农作物巨型摘下后不会腐烂"},
+			{description = "种子不腐烂", data = 2, hover = "14种农作物的种子不会腐烂"},
+			{description = "所有不腐烂", data = 3, hover = "14种农作物摘下的产物(包括巨型、非巨型、种子、普通种子)不会腐烂"},
+		},
+		default = 1,
+	},
+	{
+		name = "nongzuowu14",
+		label = "14种农作物植株-无腐烂",
+		hover = "14种普通农作物、巨型农作物植株没有腐烂阶段",
+		options ={
+			{description = "关闭", data = false, hover = "不启用"},
+			{description = "无腐烂阶段", data = 1, hover = "14种农作物植株没有腐烂阶段，成熟之后下阶段为发芽阶段"},
+		},
+		default = false,
+	},
+	{
+		name = "nongzuowu8",
+		label = "14种巨型作物-物品栏",
+		hover = "14种巨型农作物、打蜡巨型作物可拾起捡入物品栏",
+		options ={
+			{description = "关闭", data = false, hover = "不启用"},
+			{description = "可拾起", data = 1, hover = "14种巨型农作物、打蜡巨型作物可拾起捡入物品栏"},
+			{description = "叠加", data = 2, hover = "巨型农作物、打蜡作物的叠加数量为40"},
+			{description = "搬运", data = 3, hover = "相当于右键拾起(正常的物品为左键拾起),右键搬运拾起可避免空格拾起"},
+			{description = "搬运+叠加", data = 4, hover = "巨型农作物、打蜡作物的叠加数量为40,右键搬运拾起可避免空格拾起"},
+		},
+		default = false,
+	},
+	{
+		name = "nzw_suidizhong",
+		label = "14+1种农作物种子-随地种植",
+		hover = "14种农作物种子、未知的普通种子可随地种植",
+		options ={
+			{description = "关闭", data = false, hover = "不启用"},
+			{description = "普通种子", data = 1, hover = "未知的普通种子无人物限制可随地种植"},
+			{description = "14种种子", data = 2, hover = "14种农作物种子无人物限制可随地种植"},
+			{description = "14种+普通", data = 3, hover = "14种农作物种子、未知的普通种子无限制可随地种植"},
+		},
+		default = 1,
+	},
+	{
+		name = "nzw_kuaizhai",
+		label = "14种农作物采集-快速采集",
+		hover = "14种农作物成熟后可快速采集",
+		options ={
+			{description = "关闭", data = false, hover = "不启用"},
+			{description = "开启快速", data = true, hover = "可以快速采集"},
+		},
+		default = true,
+	},
+	AddTitle("野草"),
+	{
+		name = "biwangwo",
+		label = "必忘我",
+		hover = "必忘我收获设置",
+		options ={
+			{description = "无必忘我", data = -1, hover = "采集不会获得必忘我"},
+			{description = "几率化", data = 0, hover = "50%几率采集得1个必忘我，50%为空"},
+			{description = "关闭", data = false, hover = "不启用"},
+			{description = "必忘我+1", data = 1, hover = "野草必忘我收获多1个必忘我"},
+			{description = "必忘我+2", data = 2, hover = "野草必忘我收获多2个必忘我"},
+			{description = "必忘我+3", data = 3, hover = "野草必忘我收获多3个必忘我"},
+			{description = "必忘我+4", data = 4, hover = "野草必忘我收获多4个必忘我"},
+			{description = "必忘我+5", data = 5, hover = "野草必忘我收获多5个必忘我"},
+			{description = "必忘我+6", data = 6, hover = "野草必忘我收获多6个必忘我"},
+		},
+		default = 4,
+	},
+	{
+		name = "biwangwo1",
+		label = "必忘我-不腐烂",
+		hover = "必忘我植株与摘下的产物不会腐烂",
+		options ={
+			{description = "关闭", data = false, hover = "不启用"},
+			{description = "植株不腐烂", data = 1, hover = "必忘我植株不会腐烂，不会进入下阶段"},
+			{description = "两种不腐烂", data = 2, hover = "必忘我摘下、未摘下的产物不会腐烂，植株停止进入下阶段"},
+		},
+		default = 1,
+	},
+	{
+		name = "yecao_shouhuo",
+		label = "野草-收获",
+		hover = "2种野草：犁地草、火荨麻",
+		options ={
+			{description = "无收获", data = -1, hover = "采集不会获得对应产物"},
+			{description = "几率化", data = 0, hover = "50%几率采集得1个对应产物，50%为空"},
+			{description = "关闭", data = false, hover = "不启用"},
+			{description = "收获+1", data = 1, hover = "野草犁地草、火荨麻收获多1个对应产物"},
+			{description = "收获+2", data = 2, hover = "野草犁地草、火荨麻收获多2个对应产物"},
+			{description = "收获+3", data = 3, hover = "野草犁地草、火荨麻收获多3个对应产物"},
+			{description = "收获+4", data = 4, hover = "野草犁地草、火荨麻收获多4个对应产物"},
+			{description = "收获+5", data = 5, hover = "野草犁地草、火荨麻收获多5个对应产物"},
+			{description = "收获+6", data = 6, hover = "野草犁地草、火荨麻收获多6个对应产物"},
+		},
+		default = 4,
+	},
+	{
+		name = "yecao_chanwu",
+		label = "野草种植-产物",
+		hover = "摘下的产物可种植成对应野草，现版本有3种可收获",
+		options ={
+			{description = "关闭", data = false, hover = "不启用"},
+			{description = "需耕地种植", data = 1, hover = "3种野草需开垦耕地后才能种植，产物种出对应野草"},
+			{description = "可随地种植", data = 2, hover = "3种野草可随便在空地上种植，产物种出对应野草"},
+		},
+		default = 1,
+	},
+	{
+		name = "yecao_hua",
+		label = "野草种植-花瓣",
+		hover = "已摘下的花（花瓣）可种植成野草，野草现版本有4种\n种植必忘我几率40%，其余平均几率",
+		options ={
+			{description = "关闭", data = false, hover = "不启用"},
+			{description = "需耕地种植", data = 1, hover = "需开垦耕地后才能种植，将随机种出4种野草中的一种"},
+			{description = "可随地种植", data = 2, hover = "可随便在空地上种植，将随机种出4种野草中的一种"},
+		},
+		default = false,
+	},
+	{
+		name = "yecao_kuaisu",
+		label = "必忘我采集-快速",
+		hover = "",
+		options ={
+			{description = "关闭", data = false, hover = "不启用"},
+			{description = "快速采集", data = true, hover = "必忘我可以快速采集"},
+		},
+		default = true,
+	},
+}
