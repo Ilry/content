@@ -7,7 +7,7 @@ description = Ch and
 "让物品可被他的制作原料修复，同类装备可以合并" or
 "Allow equipment to be repaired by its recipe, or to combine with the same equipment"  --mod描述  --mod描述
 author = "Lilith" --作者
-version = "0.7.6" -- mod版本 上传mod需要两次的版本不一样
+version = "0.7.9" -- mod版本 上传mod需要两次的版本不一样
 
 -- This is the URL name of the mod's thread on the forum; the part after the ? and before the first & in the url
 forumthread = ""
@@ -195,7 +195,7 @@ configuration_options =
 	{
 		name = "Cofiniteuses",
 		label = "总计物品数",
-		hover = "单个装备上含有的物品数达到总计次数后物品无限耐久",
+		hover = "单个装备上含有的物品数达到总计次数后物品无限耐久(如果您在存档或打包时发生崩溃，请关闭此选项)",
 		options =   {
 						{description = "禁用", data = 0},
 						{description = "总是无限耐久", data = 1},
@@ -368,7 +368,7 @@ configuration_options =
 	{
 		name = "Cofiniteuses",
 		label = "Combine times",
-		hover = "calculate the equipment you've combined, if it reaches a limit, make it infinite",
+		hover = "calculate the equipment you've combined, if it reaches a limit, make it infinite.(if you meet a crash on saving or wrapping,pls turn this off)",
 		options =   {
 						{description = "Disable", data = 0},
 						{description = "Always", data = 1},

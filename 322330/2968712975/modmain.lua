@@ -213,6 +213,8 @@ local function usecombinetime(self)
 			return { uses = self.current, 
 					combinetime = self.combinetime
 					}
+		else
+			return { uses = self.current, combinetime = self.combinetime }
 		end
 	end
 	self.OnLoad = function(self,data)
@@ -244,9 +246,9 @@ end
 local function armorcombinetime(self)
 	self.combinetime = 1
 	self.OnSave = function(self)
-		return self.condition ~= self.maxcondition 
-		and { condition = self.condition, combinetime = self.combinetime
-		} or {combinetime = self.combinetime}
+		return self.condition ~= self.maxcondition and { condition = self.condition, 
+				combinetime = self.combinetime
+				} or { combinetime = self.combinetime }
 	end
 	self.OnLoad = function(self,data)
 		if data.condition ~= nil then
@@ -276,11 +278,9 @@ end
 local function fuelcombinetime(self)
 	self.combinetime = 1
 	self.OnSave = function(self)
-		if self.currentfuel ~= self.maxfuel then
-			return {fuel = self.currentfuel,combinetime = self.combinetime}
-		else
-			return{combinetime = self.combinetime}
-		end
+		return self.currentfuel ~= self.maxfuel 
+		and {fuel = self.currentfuel,combinetime = self.combinetime}
+		or { combinetime = self.combinetime }
 	end
 	self.OnLoad = function(self,data)
 		if data.fuel then
