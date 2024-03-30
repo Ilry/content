@@ -67,6 +67,7 @@ TUNING.EPICHEALTHBAR =
 		TWINOFTERROR1 = 				RGB(159, 75, 30),
 		TWINOFTERROR2 = 				RGB(39, 87, 109),
 		DAYWALKER =						RGB(170, 37, 33),
+		DAYWALKER2 =					RGB(170, 112, 48),
 		SHARKBOI =						RGB(140, 158, 176),
 
 		DEERCLOPS =
@@ -134,6 +135,7 @@ TUNING.EPICHEALTHBAR =
 		EYEOFTERROR =					{ 0.65 },
 		MINOTAUR =						{ 0.6 },
 		DAYWALKER =						{ 0.5, 0.3 },
+		DAYWALKER2 =					{ 0.75 },
 
 		KLAUS = function(inst)
 			if not inst._unchained:value() and inst.Physics:GetMass() <= 1000 then
@@ -196,25 +198,6 @@ if not TheNet:IsDedicated() then
 			ThePlayer.HUD.controls.epichealthbar:OutOfDateAnnouncement()
 		end
 	end)
-
-	function AddEpicPrefabAlias(prefab, ...)
-		for i, v in ipairs(arg) do
-			AddPrefabPostInit(v, function(inst) inst.epicprefab = prefab end)
-		end
-	end
-
-	function AddEpicTestFn(prefab, fn)
-		AddPrefabPostInit(prefab, function(inst) inst.IsEpic = fn end)
-	end
-
-	AddEpicPrefabAlias("deerclops", "mutateddeerclops")
-	AddEpicPrefabAlias("bearger", "mutatedbearger")
-	AddEpicPrefabAlias("warg", "claywarg", "gingerbreadwarg", "mutatedwarg")
-	AddEpicPrefabAlias("toadstool", "toadstool_dark")
-
-	AddEpicTestFn("tigershark", Tykvesh.True)
-	AddEpicTestFn("daywalker", function(inst) return inst:HasTag("hostile") end)
-	AddEpicTestFn("sharkboi", function(inst) return inst:HasTag("hostile") end)
 end
 
 AddUserCommand("epic",

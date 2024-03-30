@@ -1434,7 +1434,8 @@ function WXBrain:OnStart()
                 -- The key of opencontainers is an entity.
                 for k, v in pairs(self.inst.components.inventory.opencontainers) do
                     local boat = self.inst.components.sailor ~= nil and self.inst.components.sailor:GetBoat() or nil
-                    if k ~= boat and k.components.container ~= nil and
+                    if k ~= boat and k.components.equippable == nil and
+                        k.components.container ~= nil and
                         k.components.container.opencount ~= nil and
                         k.components.container.opencount < 2 then
                         self.inst.components.wxtype.lastvisitedcontainer = k

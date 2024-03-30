@@ -3,16 +3,20 @@
   <Properties>
     <Name>More Maritime: Seaside Sectors</Name>
     <Description>Expands upon water infrastructure with two new additional water based districts!</Description>
-    <Created>1647040076</Created>
+    <Created>1710699230</Created>
     <Teaser>More Maritime: Seaside Sectors</Teaser>
     <Authors>Albro</Authors>
+    <SpecialThanks>GrayPockets</SpecialThanks>
     <CompatibleVersions>1.2,2.0</CompatibleVersions>
   </Properties>
   <Dependencies>
-    <Mod id="4873eb62-8ccc-4574-b784-dda455e74e68" title="Expansion: Gathering Storm" />
     <Mod id="1B28771A-C749-434B-9053-D1380C553DE9" title="Expansion: Rise and Fall" />
+    <Mod id="4873eb62-8ccc-4574-b784-dda455e74e68" title="Expansion: Gathering Storm" />
   </Dependencies>
   <References>
+    <Mod id="1B394FE9-23DC-4868-8F0A-5220CB8FB427" title="Ethiopia Pack" />
+    <Mod id="A1100FC4-70F2-4129-AC27-2A65A685ED08" title="Byzantium and Gaul Pack" />
+    <Mod id="A3F42CD4-6C3E-4F5A-BC81-BE29E0C0B87C" title="Vietnam and Kublai Khan Pack" />
     <Mod id="95b955fc-2dd1-41c5-989e-0265d98a28bd" title="CIVILIZATION VI: [COLOR:ResGoldLabelCS]CITY LIGHTS[ENDCOLOR]" />
     <Mod id="4922ba47-61e1-4b15-9281-db996b14522d" title="Sukritact_s_Oceans" />
   </References>
@@ -30,6 +34,26 @@
     </Criteria>
     <Criteria id="DLC8" any="1">
       <LeaderPlayable>Players:StandardPlayers::LEADER_MENELIK,StandardPlayers::LEADER_MENELIK,Players:Expansion1_Players::LEADER_MENELIK,Players:Expansion2_Players::LEADER_MENELIK</LeaderPlayable>
+    </Criteria>
+    <Criteria id="DLC9" any="1">
+      <LeaderPlayable>Players:StandardPlayers::LEADER_BASIL,Players:StandardPlayers::LEADER_AMBIORIX,StandardPlayers::LEADER_BASIL,StandardPlayers::LEADER_AMBIORIX,Players:Expansion1_Players::LEADER_BASIL,Players:Expansion2_Players::LEADER_AMBIORIX,Players:Expansion2_Players::LEADER_BASIL,Players:Expansion2_Players::LEADER_AMBIORIX</LeaderPlayable>
+    </Criteria>
+    <Criteria id="CL_Civ_Changes_Minimal">
+      <ConfigurationValueMatches>
+        <ConfigurationId>CL_INCLUDE_CIV_CHANGES</ConfigurationId>
+        <Group>Game</Group>
+        <Value>Minimal</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
+    <Criteria id="CL_Civ_Changes_Full">
+      <ConfigurationValueMatches>
+        <ConfigurationId>CL_INCLUDE_CIV_CHANGES</ConfigurationId>
+        <Group>Game</Group>
+        <Value>Full Integration</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
+    <Criteria id="DLC11" any="1">
+      <LeaderPlayable>Players:StandardPlayers::LEADER_LADY_TRIEU,Players:Expansion1_Players::LEADER_LADY_TRIEU,Players:Expansion2_Players::LEADER_LADY_TRIEU</LeaderPlayable>
     </Criteria>
   </ActionCriteria>
   <InGameActions>
@@ -55,6 +79,7 @@
     </UpdateDatabase>
     <UpdateDatabase id="WTR_CityLights_UpdateDatabase">
       <Criteria>CityLights</Criteria>
+      <File>Gameplay/Arsenal_EXP_CityLights_PATCH.sql</File>
       <File>Gameplay/Waterfront_EXP_CityLights_PATCH.sql</File>
     </UpdateDatabase>
     <UpdateDatabase id="WTR_UC_UpdateDatabase">
@@ -67,11 +92,13 @@
     <UpdateDatabase id="WTR_CityLightsCivs_UpdateDatabase">
       <Criteria>CityLights</Criteria>
       <Criteria>CL_Civ_Changes_Minimal</Criteria>
+      <File>Gameplay/Arsenal_EXP_CityLights-Civs_PATCH.sql</File>
       <File>Gameplay/Waterfront_EXP_CityLights-Civs_PATCH.sql</File>
     </UpdateDatabase>
     <UpdateDatabase id="WTR_CityLightsCivs2_UpdateDatabase">
       <Criteria>CityLights</Criteria>
       <Criteria>CL_Civ_Changes_Full</Criteria>
+      <File>Gameplay/Arsenal_EXP_CityLights-Civs_PATCH.sql</File>
       <File>Gameplay/Waterfront_EXP_CityLights-Civs_PATCH.sql</File>
     </UpdateDatabase>
     <UpdateDatabase id="WTR_UpdateDatabase_DLC8">
@@ -81,16 +108,39 @@
       <Criteria>DLC8</Criteria>
       <File>Gameplay/Vanilla_Changes_EXP_DLC8.sql</File>
     </UpdateDatabase>
+    <UpdateDatabase id="WTR_UpdateDatabase_DLC11">
+      <Properties>
+        <LoadOrder>1</LoadOrder>
+      </Properties>
+      <Criteria>DLC11</Criteria>
+      <File>Gameplay/Vanilla_Changes_EXP_DLC11.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="WTR_CityLightsCivs_UpdateDatabase_DLC9">
+      <Criteria>CL_Civ_Changes_Minimal</Criteria>
+      <Criteria>DLC9</Criteria>
+      <Criteria>CityLights</Criteria>
+      <File>Gameplay/Waterfront_EXP_CityLights-Civs_PATCH_DLC9.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="WTR_CityLightsCivs2_UpdateDatabase_DLC9">
+      <Criteria>CityLights</Criteria>
+      <Criteria>DLC9</Criteria>
+      <Criteria>CL_Civ_Changes_Full</Criteria>
+      <File>Gameplay/Waterfront_EXP_CityLights-Civs_PATCH_DLC9.sql</File>
+    </UpdateDatabase>
   </InGameActions>
   <Files>
     <File>ArtDefs/Buildings.artdef</File>
     <File>ArtDefs/Districts.artdef</File>
     <File>ArtDefs/Landmarks.artdef</File>
     <File>Art/WTR_Art.xml</File>
+    <File>Gameplay/Arsenal_EXP_CityLights-Civs_PATCH.sql</File>
+    <File>Gameplay/Arsenal_EXP_CityLights_PATCH.sql</File>
     <File>Gameplay/Arsenal_EXP_Core.sql</File>
     <File>Gameplay/Vanilla_Changes_EXP.sql</File>
+    <File>Gameplay/Vanilla_Changes_EXP_DLC11.sql</File>
     <File>Gameplay/Vanilla_Changes_EXP_DLC8.sql</File>
     <File>Gameplay/Waterfront_EXP_CityLights-Civs_PATCH.sql</File>
+    <File>Gameplay/Waterfront_EXP_CityLights-Civs_PATCH_DLC9.sql</File>
     <File>Gameplay/Waterfront_EXP_CityLights_PATCH.sql</File>
     <File>Gameplay/Waterfront_EXP_Core.sql</File>
     <File>Gameplay/Waterfront_EXP_SukOceans_PATCH.sql</File>

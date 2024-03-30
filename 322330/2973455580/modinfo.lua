@@ -1,4 +1,4 @@
-version = "1.0.22.4"
+version = "1.0.38"
 local isCh = locale == "zh" or locale == "zhr" or locale == "zht"
 author = "繁花丶海棠"
 forumthread = ""
@@ -128,12 +128,13 @@ configuration_options = {
     item("Language In Game", i18n({"本模组游戏内语言", "Mod Language In Game"}), nil, false, -1, -2, -1, {"简体中文", "English"},
          i18n("自动设定", "Auto Setting"), {filldesc(8) .. "简体中文", filldesc(6) .. "English"}, filldesc(4) .. i18n({"自动", "Auto"})),
     item("Container Sort", i18n({"容器整理收集按钮", "Containers Buttons"}),
-         i18n({"额外末影箱穿越按钮,衣柜换装按钮", "Sort/Collect Button,Special Exchange Button"}), -1, -1, -4, -1, {
-        "",
-        i18n({"额外跨容器整理按钮", "Extra Multi Sort Button"}),
-        i18n({"额外锁定道具按钮,与跨整互斥", "Extra Lock/Unlock Button"}),
-        i18n({"禁用收集按钮", "Disable Collect Button"})
-    }),
+         i18n({"容器整理收集/末影箱穿越/衣柜换装按钮", "Sort and Collect/Shadow Container Exchange Button"}), -5, -1, -5, -1, {
+        i18n({"无额外跨整和锁定按钮", "No Extra Multi Sort/Lock Button"}),
+        i18n({"额外跨容器整理按钮(同类容器批量整理)", "Extra Multi Sort Button(Same Container Sort Together)"}),
+        i18n({"额外锁定道具按钮(与跨整互斥)", "Extra Lock/Unlock Button(No Multi Sort Button)"}),
+        i18n({"无额外按钮且禁用收集按钮", "No Extra Button and Disable Collect Button"}),
+        i18n({"无额外按钮且禁用整理按钮", "No Extra Button and Disable Sort Button"})
+    }, nil, enabletext),
     item("Items collect", i18n({"道具快捷收集存放", "Items Collect/Store"}),
          i18n({"按住Ctrl存放道具,制作栏快捷收集道具", "Press Ctrl+Mouse Right Store Items;Craft menu Collcect Items"}), -3, -1, -3, -1,
          {i18n({"禁用收集", "Disable Collect"}), i18n({"禁用存放", "Disable Store"}), ""})

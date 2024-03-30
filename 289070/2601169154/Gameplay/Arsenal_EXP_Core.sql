@@ -153,6 +153,17 @@ INSERT INTO Types
 --===========================================================================================================================================================================--
 /* SECTION 4: REQUIRMENTS */
 --===========================================================================================================================================================================--									
+
+		INSERT INTO Requirements
+			(	RequirementId,									RequirementType					)	VALUES
+			(	'REQUIRES_CITY_HAS_ARSENAL',					'REQUIREMENT_CITY_HAS_DISTRICT'	);
+
+--===========================================================================================================================================================================--
+		INSERT INTO RequirementArguments
+			(	RequirementId,									Name,						Value				)	VALUES
+			(	'REQUIRES_CITY_HAS_ARSENAL',					'DistrictType',				'DISTRICT_ARSENAL'	);
+
+--===========================================================================================================================================================================--				
 		INSERT INTO RequirementSets 
 			(	RequirementSetId,								RequirementSetType			)	VALUES
 
@@ -164,8 +175,7 @@ INSERT INTO Types
 
 			(	'ARS_DRYDOCK_ADJACENT_CONDITIONS',					'ADJACENT_TO_OWNER'							),
 			(	'ARS_DRYDOCK_ADJACENT_CONDITIONS',					'REQUIRES_PLOT_HAS_COAST'					),
-			(	'ARS_DRYDOCK_ADJACENT_CONDITIONS',					'REQUIRES_PLOT_HAS_NO_IMPROVEMENT'			);			
- 
+			(	'ARS_DRYDOCK_ADJACENT_CONDITIONS',					'REQUIRES_PLOT_HAS_NO_IMPROVEMENT'			);
 
  --===========================================================================================================================================================================--	
 

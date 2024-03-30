@@ -18,7 +18,13 @@ directory. If not, please refer to
 <https://raw.githubusercontent.com/Recex/Licenses/master/SharedSourceLicense/LICENSE.txt>
 ]]
 
+local CRAFTINGHUD = "craftinghud"
+local PINSLOT = "pinslot"
+local SUBINGREDIENT = "subingredient"
+
 local IngredientUI = require("widgets/ingredientui")
+
+local crafting_menu_open = false
 
 --sub ingredient hover
 local is_subcraft_ingredients = nil
@@ -43,12 +49,7 @@ function IngredientUI._ctor(self, ...)
         self.onlosefocus = function(...)
             if self.ingredients == visible_subingredients then
                 visible_subingredients = nil
-                self.owner:PushEvent("gemdict_hideoverlay")
-                if self.owner.HUD:IsCraftingOpen() then
-                    self.owner:PushEvent("gemdict_craftinghud_showoverlay")
-                else
-                    self.owner:PushEvent("gemdict_pinslot_showoverlay")
-                end
+                self.owner:PushEvent("gemdict_subingredient_hideoverlay")
             end
             return _onlosefocus(...)
         end
@@ -92,15 +93,20 @@ local SetRecipeEnv = setmetatable({
         if not localdata then return ipairs(t, ...) end
         local self = localdata.self
         local recipe = localdata.recipe
+        local call_index = localdata.call_index
 
-        if t == recipe.tech_ingredients then
+        if call_index == 1 and t == recipe.tech_ingredients then
+            localdata.call_index = 2
             --if t is ever == to my modified tech ingredients table, replace it with the proper value before iterating
             t = localdata._tech_ingredients
             recipe.tech_ingredients = localdata._tech_ingredients
-        elseif t == recipe.ingredients then
+        elseif call_index == 2 and t == recipe.ingredients then
+            localdata.call_index = 3
             --obtain the index where recipe.ingredients start.
             startidx = #self.ingredient_widgets + 1
-        elseif t == recipe.character_ingredients then
+        elseif call_index == 3 and t == recipe.character_ingredients then
+            localdata.call_index = 4
+
             local owner = localdata.owner
             local builder = owner.replica.builder
 
@@ -130,15 +136,15 @@ local SetRecipeEnv = setmetatable({
 
                 if self.is_sub_ingredients then
                     for item, count in pairs(_ingredientdata.items) do
-                        item:PushEvent("gemdict_setstate", count)
+                        item:PushEvent("gemdict_setcount", {count = count, state = SUBINGREDIENT})
                     end
                 elseif self.is_pin_ingredients then
                     for item, count in pairs(_ingredientdata.items) do
-                        item:PushEvent("gemdict_pinslot_setstate", count)
+                        item:PushEvent("gemdict_setcount", {count = count, state = PINSLOT})
                     end
                 else
                     for item, count in pairs(_ingredientdata.items) do
-                        item:PushEvent("gemdict_craftinghud_setstate", count)
+                        item:PushEvent("gemdict_setcount", {count = count, state = CRAFTINGHUD})
                     end
                 end
             end
@@ -161,11 +167,11 @@ local SetRecipeEnv = setmetatable({
                             end
 
                             if self.is_sub_ingredients then
-                                item:PushEvent("gemdict_setstate", count)
+                                item:PushEvent("gemdict_setcount", {count = count, state = SUBINGREDIENT})
                             elseif self.is_pin_ingredients then
-                                item:PushEvent("gemdict_pinslot_setstate", count)
+                                item:PushEvent("gemdict_setcount", {count = count, state = PINSLOT})
                             else
-                                item:PushEvent("gemdict_craftinghud_setstate", count)
+                                item:PushEvent("gemdict_setcount", {count = count, state = CRAFTINGHUD})
                             end
                         end
                     end
@@ -180,11 +186,11 @@ local SetRecipeEnv = setmetatable({
                         end
 
                         if self.is_sub_ingredients then
-                            item:PushEvent("gemdict_setstate", count)
+                            item:PushEvent("gemdict_setcount", {count = count, state = SUBINGREDIENT})
                         elseif self.is_pin_ingredients then
-                            item:PushEvent("gemdict_pinslot_setstate", count)
+                            item:PushEvent("gemdict_setcount", {count = count, state = PINSLOT})
                         else
-                            item:PushEvent("gemdict_craftinghud_setstate", count)
+                            item:PushEvent("gemdict_setcount", {count = count, state = CRAFTINGHUD})
                         end
                     end
                 end
@@ -230,76 +236,91 @@ function CraftingMenuIngredients:SetRecipe(recipe, ...)
         is_pinslot_ingredients = nil
     end
 
+    if self.is_sub_ingredients then
+        owner:PushEvent("gemdict_subingredient_hideoverlay")
+    elseif self.is_pin_ingredients then
+        owner:PushEvent("gemdict_pinslot_hideoverlay")
+    else
+        owner:PushEvent("gemdict_craftinghud_hideoverlay")
+    end
+
+    local retvals
+
     if not craftinghighlight and not recipe:HasGemDictIngredients() then
         if self.is_sub_ingredients then
-            owner:PushEvent("gemdict_hideoverlay")
+            owner:PushEvent("gemdict_subingredient_disablecount")
         elseif self.is_pin_ingredients then
-            owner:PushEvent("gemdict_pinslot_hideoverlay")
+            owner:PushEvent("gemdict_pinslot_disablecount")
         else
-            owner:PushEvent("gemdict_craftinghud_hideoverlay")
+            owner:PushEvent("gemdict_craftinghud_disablecount")
         end
-        return _SetRecipe(self, recipe, ...)
+
+        retvals = {_SetRecipe(self, recipe, ...)}
+    else
+        if self.is_sub_ingredients then
+            owner:PushEvent("gemdict_subingredient_resetcount")
+        elseif self.is_pin_ingredients then
+            owner:PushEvent("gemdict_pinslot_resetcount")
+        else
+            owner:PushEvent("gemdict_craftinghud_resetcount")
+        end
+
+        localdata = {self = self, recipe = recipe, owner = owner, call_index = 1}
+        --increase the size of the tech ingredients table so the ui spaces the ingredients properly.
+        localdata._tech_ingredients = recipe.tech_ingredients
+        recipe.tech_ingredients = ExtendedArray({}, {true}, #recipe.tech_ingredients + #recipe.gemdict_ingredients)
+        --this will get reset back properly in the ipairs metatable function replacement above
+        retvals = {_SetRecipe(self, recipe, ...)}
+        localdata = nil
     end
 
     if self.is_sub_ingredients then
-        owner:PushEvent("gemdict_setoverlay")
+        owner:PushEvent("gemdict_subingredient_showoverlay")
     elseif self.is_pin_ingredients then
-        owner:PushEvent("gemdict_pinslot_setoverlay")
-    else
-        owner:PushEvent("gemdict_craftinghud_setoverlay")
-        if owner.HUD:IsCraftingOpen() then
-            owner:PushEvent("gemdict_craftinghud_showoverlay")
-        end
+        owner:PushEvent("gemdict_pinslot_showoverlay")
+    elseif crafting_menu_open then
+        owner:PushEvent("gemdict_craftinghud_showoverlay")
     end
 
-    localdata = {self = self, recipe = recipe, owner = owner}
-
-    --increase the size of the tech ingredients table so the ui spaces the ingredients properly.
-    localdata._tech_ingredients = recipe.tech_ingredients
-    recipe.tech_ingredients = ExtendedArray({}, {true}, #recipe.tech_ingredients + #recipe.gemdict_ingredients)
-    --this will get reset back properly in the ipairs metatable function replacement above
-
-    return _SetRecipe(self, recipe, ...)
+    return unpack(retvals)
 end
 
---on open, show for current recipe
---on hover, show sub recipe
---stop hover, show for current recipe
---on click, show recipe
+local function SetGemDictCount(self, count)
+    if count == nil or count == 0 then
+        self.gemdict_ingredientoverlay:Hide()
+        self.gemdict_consumecount:Hide()
+    elseif count == false then
+        self.gemdict_ingredientoverlay:Show()
+        self.gemdict_consumecount:Hide()
 
---3 states:
---state > 0, show consumecount, and hide overlay
---state == false, hide consumecount, show overlay
---state == nil or state == 0, hide consumecount, hide overlay
-local function SetGemDictState(self, state)
-    self.gemdict_ingredientoverlay:Hide()
-    self.gemdict_consumecount:Hide()
-    if state ~= nil then
-        if not state then
-            self.gemdict_ingredientoverlay:Show()
-            self.gemdict_ingredientoverlay:MoveToFront()
+        self.gemdict_ingredientoverlay:MoveToFront()
 
-            if self.quantity ~= nil then
-                self.quantity:MoveToFront()
-            end
-        elseif state > 0 then
-            self.gemdict_consumecount:Show()
-            self.gemdict_consumecount:MoveToFront()
-            self.gemdict_consumecount:SetString(tostring(state))
+        if self.quantity then
+            self.quantity:MoveToFront()
         end
+    elseif count > 0 then
+        self.gemdict_ingredientoverlay:Hide()
+        self.gemdict_consumecount:Show()
+
+        self.gemdict_consumecount:MoveToFront()
+        self.gemdict_consumecount:SetString(tostring(count))
     end
 end
 
-local function Refresh(self, ...)
-    local state
-    if self.showing_craftinghud_state then
-        state = self.item._gemdict_craftinghud_state
-    elseif self.item._gemdict_state ~= nil then
-        state = self.item._gemdict_state
-    else
-        state = self.item._gemdict_pinslot_state
+local function GetGemDictState(self)
+    if self._gemdict_state[SUBINGREDIENT] then
+        return SUBINGREDIENT
     end
-    self:SetGemDictState(state)
+    if self._gemdict_state[PINSLOT] then
+        return PINSLOT
+    end
+    if self._gemdict_state[CRAFTINGHUD] then
+        return CRAFTINGHUD
+    end
+end
+
+local function Refresh(self)
+    self:SetGemDictCount(self._gemdict_count[self:GetGemDictState()])
 end
 
 local Text = require("widgets/text")
@@ -316,71 +337,104 @@ GEMENV.AddClassPostConstruct("widgets/itemtile", function(self)
     self.gemdict_consumecount:SetClickable(false)
     self.gemdict_consumecount:Hide()
 
-    self.inst:ListenForEvent("gemdict_setstate", function(invitem, state)
-        self.showing_craftinghud_state = false
-        invitem._gemdict_state = state and ((invitem._gemdict_state or 0) + state) or state
-        self:SetGemDictState(invitem._gemdict_state)
-    end, self.item)
+    self.SetGemDictCount = SetGemDictCount
+    self.GetGemDictState = GetGemDictState
 
-    self.inst:ListenForEvent("gemdict_pinslot_setstate", function(invitem, state)
-        invitem._gemdict_pinslot_state = state and ((invitem._gemdict_pinslot_state or 0) + state) or state
-        self:SetGemDictState(invitem._gemdict_pinslot_state)
-    end, self.item)
+    self._gemdict_count = {
+        [SUBINGREDIENT] = false,
+        [PINSLOT] = false,
+        [CRAFTINGHUD] = false,
+    }
+    self._gemdict_state = {
+        [SUBINGREDIENT] = false,
+        [PINSLOT] = false,
+        [CRAFTINGHUD] = false,
+    }
 
-    self.inst:ListenForEvent("gemdict_pinslot_showstate", function(invitem)
-        self:SetGemDictState(invitem._gemdict_pinslot_state)
-    end, self.item)
-
-    self.inst:ListenForEvent("gemdict_craftinghud_setstate", function(invitem, state)
-        invitem._gemdict_craftinghud_state = state and ((invitem._gemdict_craftinghud_state or 0) + state) or state
-        if self.showing_craftinghud_state then
-            self:SetGemDictState(invitem._gemdict_craftinghud_state)
+    self.inst:ListenForEvent("gemdict_setcount", function(_, data)
+        self._gemdict_count[data.state] = data.count and ((self._gemdict_count[data.state] or 0) + data.count) or data.count
+        if self:GetGemDictState() == data.state then
+            self:SetGemDictCount(self._gemdict_count[data.state])
         end
     end, self.item)
 
-    self.inst:ListenForEvent("gemdict_craftinghud_showstate", function(invitem)
-        self.showing_craftinghud_state = true
-        self:SetGemDictState(invitem._gemdict_craftinghud_state)
-    end, self.item)
-
-    self.inst:ListenForEvent("gemdict_craftinghud_hidestate", function(invitem)
-        self.showing_craftinghud_state = false
-        self:SetGemDictState(nil)
+    self.inst:ListenForEvent("gemdict_setstate", function(_, data)
+        local prev_state = self:GetGemDictState()
+        self._gemdict_state[data.state] = data.active
+        local new_state = self:GetGemDictState()
+        if prev_state ~= new_state then
+            self:SetGemDictCount(self._gemdict_count[new_state])
+        end
     end, self.item)
 
     local _Refresh = self.Refresh
     function self:Refresh(...)
         _Refresh(self, ...)
-        Refresh(self, ...)
+        Refresh(self)
     end
 
     local _StartDrag = self.StartDrag
     function self:StartDrag(...)
         _StartDrag(self, ...)
-        self:SetGemDictState(nil)
+        self:SetGemDictCount(nil)
     end
-
-    self.SetGemDictState = SetGemDictState
 
     Refresh(self)
 end)
 
-local function SetItemlessGemDictState(self, state)
-    if state == false then
+local function SetItemlessGemDictState(self, state, active)
+    local prev_state = self:GetItemlessGemDictState()
+    self._gemdict_state[state] = active
+    local new_state = self:GetItemlessGemDictState()
+    if prev_state ~= new_state and not self.tile then
+        self:UpdateItemlessGemDictCount(self._gemdict_count[new_state])
+    end
+end
+
+local function SetItemlessGemDictCount(self, state, count)
+    self._gemdict_count[state] = count
+    if self:GetItemlessGemDictState() == state and not self.tile then
+        self:UpdateItemlessGemDictCount(count)
+    end
+end
+
+local function GetItemlessGemDictState(self)
+    if self._gemdict_state[SUBINGREDIENT] then
+        return SUBINGREDIENT
+    end
+    if self._gemdict_state[PINSLOT] then
+        return PINSLOT
+    end
+    if self._gemdict_state[CRAFTINGHUD] then
+        return CRAFTINGHUD
+    end
+end
+
+local function UpdateItemlessGemDictCount(self, count)
+    if count == false then
         self.gemdict_ingredientoverlay:Show()
         self.gemdict_ingredientoverlay:MoveToFront()
-    elseif state == nil then
+    else
         self.gemdict_ingredientoverlay:Hide()
     end
 end
 
-local function ForwardEventToItem(self, listen_event, send_event, itemless_state, send_state)
+local function ForwardSetStateToItem(self, listen_event, send_event, state, active)
     self.inst:ListenForEvent(listen_event, function()
+        self:SetItemlessGemDictState(state, active)
         local item = self.tile and self.tile.item
         if type(item) == "table" then
-            item:PushEvent(send_event, send_state)
-        else
-            self:SetItemlessGemDictState(FunctionOrValue(itemless_state))
+            item:PushEvent(send_event, {state = state, active = active})
+        end
+    end, self.owner)
+end
+
+local function ForwardSetCountToItem(self, listen_event, send_event, state, count)
+    self.inst:ListenForEvent(listen_event, function()
+        self:SetItemlessGemDictCount(state, count)
+        local item = self.tile and self.tile.item
+        if type(item) == "table" then
+            item:PushEvent(send_event, {count = count, state = state})
         end
     end, self.owner)
 end
@@ -391,40 +445,61 @@ GEMENV.AddClassPostConstruct("widgets/itemslot", function(self)
     self.gemdict_ingredientoverlay:SetClickable(false)
     self.gemdict_ingredientoverlay:Hide()
 
-    ForwardEventToItem(self, "gemdict_craftinghud_setoverlay", "gemdict_craftinghud_setstate", function() if self.owner.HUD:IsCraftingOpen() then return false end return nil end, false)
-    ForwardEventToItem(self, "gemdict_craftinghud_showoverlay", "gemdict_craftinghud_showstate", false)
-    ForwardEventToItem(self, "gemdict_craftinghud_hideoverlay", "gemdict_craftinghud_hidestate", nil)
+    ForwardSetStateToItem(self, "gemdict_craftinghud_showoverlay", "gemdict_setstate", CRAFTINGHUD, true)
+    ForwardSetStateToItem(self, "gemdict_craftinghud_hideoverlay", "gemdict_setstate", CRAFTINGHUD, false)
 
-    ForwardEventToItem(self, "gemdict_pinslot_setoverlay", "gemdict_pinslot_setstate", false, false)
-    ForwardEventToItem(self, "gemdict_pinslot_showoverlay", "gemdict_pinslot_showstate", false)
-    ForwardEventToItem(self, "gemdict_pinslot_hideoverlay", "gemdict_pinslot_setstate", nil, nil)
+    ForwardSetStateToItem(self, "gemdict_pinslot_showoverlay", "gemdict_setstate", PINSLOT, true)
+    ForwardSetStateToItem(self, "gemdict_pinslot_hideoverlay", "gemdict_setstate", PINSLOT, false)
 
-    ForwardEventToItem(self, "gemdict_setoverlay", "gemdict_setstate", false, false)
-    ForwardEventToItem(self, "gemdict_hideoverlay", "gemdict_setstate", nil, nil)
+    ForwardSetStateToItem(self, "gemdict_subingredient_showoverlay", "gemdict_setstate", SUBINGREDIENT, true)
+    ForwardSetStateToItem(self, "gemdict_subingredient_hideoverlay", "gemdict_setstate", SUBINGREDIENT, false)
+
+    ForwardSetCountToItem(self, "gemdict_craftinghud_resetcount", "gemdict_setcount", CRAFTINGHUD, false)
+    ForwardSetCountToItem(self, "gemdict_craftinghud_disablecount", "gemdict_setcount", CRAFTINGHUD, nil)
+
+    ForwardSetCountToItem(self, "gemdict_pinslot_resetcount", "gemdict_setcount", PINSLOT, false)
+    ForwardSetCountToItem(self, "gemdict_pinslot_disablecount", "gemdict_setcount", PINSLOT, nil)
+
+    ForwardSetCountToItem(self, "gemdict_subingredient_resetcount", "gemdict_setcount", SUBINGREDIENT, false)
+    ForwardSetCountToItem(self, "gemdict_subingredient_disablecount", "gemdict_setcount", SUBINGREDIENT, nil)
 
     local _SetTile = self.SetTile
     function self:SetTile(tile, ...)
         if tile then
-            self:SetItemlessGemDictState()
+            self:UpdateItemlessGemDictCount(nil)
+        else
+            self:UpdateItemlessGemDictCount(self._gemdict_count[self:GetItemlessGemDictState()])
         end
         return _SetTile(self, tile, ...)
     end
 
     self.SetItemlessGemDictState = SetItemlessGemDictState
+    self.GetItemlessGemDictState = GetItemlessGemDictState
+    self.SetItemlessGemDictCount = SetItemlessGemDictCount
+    self.UpdateItemlessGemDictCount = UpdateItemlessGemDictCount
+
+    self._gemdict_count = {
+        [SUBINGREDIENT] = false,
+        [PINSLOT] = false,
+        [CRAFTINGHUD] = false,
+    }
+    self._gemdict_state = {
+        [SUBINGREDIENT] = false,
+        [PINSLOT] = false,
+        [CRAFTINGHUD] = false,
+    }
 end)
 
 local CraftingMenuHUD = require("widgets/redux/craftingmenu_hud")
 local _Open = CraftingMenuHUD.Open
 function CraftingMenuHUD:Open(search, ...)
-    if self:IsCraftingOpen() then
-        return _Open(self, search, ...)
-    end
-    self.owner:PushEvent("gemdict_craftinghud_showoverlay")
+    crafting_menu_open = true
     return _Open(self, search, ...)
 end
 
 local _Close = CraftingMenuHUD.Close
 function CraftingMenuHUD:Close(...)
+    crafting_menu_open = false
     self.owner:PushEvent("gemdict_craftinghud_hideoverlay")
     return _Close(self, ...)
 end
@@ -445,7 +520,7 @@ function PinSlot:MakeRecipePopup(...)
 
         local _HidePopup = root.HidePopup
         root.HidePopup = function(popup_self, ...)
-            if popup_self.ingredients == visible_pinslot then
+            if popup_self.ingredients and popup_self.ingredients == visible_pinslot then
                 visible_pinslot = nil
                 self.owner:PushEvent("gemdict_pinslot_hideoverlay")
             end

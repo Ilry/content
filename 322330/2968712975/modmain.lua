@@ -37,6 +37,8 @@ TUNING.RANDCAMULET = GetModConfigData('Amulet')
 TUNING.RANDCEFFICIENCY = GetModConfigData('Efficiency')
 TUNING.RANDCPERCENTAGEBASE = GetModConfigData('Percentagebase')
 TUNING.RANDCGEMONLY = GetModConfigData('Gemonlymode')
+--TUNING.RANDCLIMITDH = GetModConfigData('NumlimitH')
+--TUNING.RANDCLIMITDL = GetModConfigData('NumlimitL')
 --TUNING.RANDCNOFINITEUSES = GetModConfigData('Nofiniteuses')
 TUNING.RANGCCOFINITEUSES = GetModConfigData('Cofiniteuses')
 
@@ -93,6 +95,7 @@ local function changefuel(self) -- 这是重写燃料值变化...要重写的好
 		end
 		self.inst:PushEvent("percentusedchange", { percent = self:GetPercent() })
 	end
+	
 	--self.DoDelta(self, amount, doer) = function
 end
 
@@ -197,7 +200,8 @@ end
 local function notuse(self)
 	local olduse = self.Use
 	self.Use = function(self,num)
-		if self.combinetime >= TUNING.RANGCCOFINITEUSES
+		if TUNING.RANGCCOFINITEUSES ~=0 
+		and self.combinetime >= TUNING.RANGCCOFINITEUSES
 		then
 			return
 		else
@@ -219,11 +223,12 @@ local function usecombinetime(self)
 	end
 	self.OnLoad = function(self,data)
 		if data.uses ~= nil then
-			self:SetUses(data.uses)
+			self.current = data.uses
 		end
 		if data.combinetime ~= nil then
 			self.combinetime = data.combinetime
-			if self.combinetime >= TUNING.RANGCCOFINITEUSES
+			if TUNING.RANGCCOFINITEUSES ~=0 
+			and self.combinetime >= TUNING.RANGCCOFINITEUSES
 			then
 				self.inst:AddTag("hide_percentage")
 			end
@@ -234,7 +239,8 @@ end
 local function notarmor(self)
 	local oldsetcondition = self.SetCondition
 	self.SetCondition = function(self,amount)
-		if self.combinetime >= TUNING.RANGCCOFINITEUSES
+		if TUNING.RANGCCOFINITEUSES ~=0 
+		and self.combinetime >= TUNING.RANGCCOFINITEUSES
 		then
 			return
 		else
@@ -256,7 +262,8 @@ local function armorcombinetime(self)
 		end
 		if data.combinetime ~= nil then
 			self.combinetime = data.combinetime
-			if self.combinetime >= TUNING.RANGCCOFINITEUSES
+			if TUNING.RANGCCOFINITEUSES ~=0 
+			and self.combinetime >= TUNING.RANGCCOFINITEUSES
 			then
 				self.inst:AddTag("hide_percentage")
 			end
@@ -266,7 +273,8 @@ end
 local function notfuel(self)
 	local olddodelta = self.DoDelta
 	self.DoDelta = function(self,amount,doer)
-		if self.combinetime >= TUNING.RANGCCOFINITEUSES
+		if TUNING.RANGCCOFINITEUSES ~=0 
+		and self.combinetime >= TUNING.RANGCCOFINITEUSES
 		then
 			return
 		else
@@ -278,9 +286,9 @@ end
 local function fuelcombinetime(self)
 	self.combinetime = 1
 	self.OnSave = function(self)
-		return self.currentfuel ~= self.maxfuel 
-		and {fuel = self.currentfuel,combinetime = self.combinetime}
-		or { combinetime = self.combinetime }
+		return --self.currentfuel ~= self.maxfuel 
+		--and {fuel = self.currentfuel,combinetime = self.combinetime}
+		{ fuel = self.currentfuel,combinetime = self.combinetime }
 	end
 	self.OnLoad = function(self,data)
 		if data.fuel then
@@ -288,12 +296,14 @@ local function fuelcombinetime(self)
 		end
 		if data.combinetime ~= nil then
 			self.combinetime = data.combinetime
-			if self.combinetime >= TUNING.RANGCCOFINITEUSES
+			if TUNING.RANGCCOFINITEUSES ~=0 
+			and self.combinetime >= TUNING.RANGCCOFINITEUSES
 			then
 				self.inst:AddTag("hide_percentage")
 			end
 		end
 	end
+	
 end
 			
 local function freshcombinetime(self)
@@ -319,7 +329,8 @@ local function freshcombinetime(self)
 			end
 			if data.combinetime ~= nil then
 				self.combinetime = data.combinetime
-				if self.combinetime >= TUNING.RANGCCOFINITEUSES
+				if TUNING.RANGCCOFINITEUSES ~=0 
+				and self.combinetime >= TUNING.RANGCCOFINITEUSES
 				then
 					self.inst:AddTag("hide_percentage")
 					self.inst:RemoveTag("show_spoilage")
@@ -330,7 +341,7 @@ local function freshcombinetime(self)
 	end
 end
 
-if TUNING.RANGCCOFINITEUSES ~= 0 then
+--if TUNING.RANGCCOFINITEUSES ~= 0 then
 	AddComponentPostInit("finiteuses", notuse)
 	AddComponentPostInit("finiteuses", usecombinetime)
 	AddComponentPostInit("armor", notarmor)
@@ -338,7 +349,7 @@ if TUNING.RANGCCOFINITEUSES ~= 0 then
 	AddComponentPostInit("fueled", notfuel)
 	AddComponentPostInit("fueled", fuelcombinetime)
 	AddComponentPostInit("perishable", freshcombinetime)
-end
+--end
 --local queueractlist={ "allclick
 
 --}--可兼容排队论的动作

@@ -71,7 +71,7 @@ function WXAquaculture:OceanFish()
     if rod == nil or rod.components.oceanfishingrod == nil then
         return nil
     elseif rod.components.oceanfishingrod.target ~= nil and rod.components.oceanfishingrod.target:HasTag("oceanfishable") then
-        if rod.components.oceanfishingrod.target:HasTag("oceachfishing_catchable") then
+        if rod.components.oceanfishingrod.target:HasTag("oceanfishing_catchable") then
             return BufferedAction(self.inst, nil, ACTIONS.OCEAN_FISHING_CATCH)
         elseif not rod.components.oceanfishingrod:IsLineTensionHigh() then
             return BufferedAction(self.inst, nil, ACTIONS.OCEAN_FISHING_REEL)

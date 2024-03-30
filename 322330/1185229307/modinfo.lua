@@ -1,7 +1,7 @@
 all_clients_require_mod = true
 dst_compatible = true
 
-version = "85"
+version = "87"
 version_compatible = "57"
 priority = 2 ^ 1023
 api_version = 10
@@ -13,7 +13,10 @@ icon = "modicon.tex"
 server_filter_tags = { name, author }
 version_description =
 [[
-Added theme for Soul Infused HUD.
+– Added support for the Scrappy Werepig.
+– Spectator camera now includes /sit and /squat.
+– Combos no longer refresh from hits that deal no damage.
+– Speech bubbles no longer obstruct global damage numbers.
 ]]
 
 local LOCALE =
@@ -28,7 +31,7 @@ local LOCALE =
 		ENABLED = "Enabled",
 
 		GLOBAL = "Mob Health",
-		GLOBAL_HOVER = "Enables clients to see health for all entities.",
+		GLOBAL_HOVER = "Enables clients to see health for all entities.\nClients must opt-in below.",
 		GLOBAL_DISABLED = "Show giants only",
 		GLOBAL_ENABLED = "Show mob health",
 
@@ -78,7 +81,7 @@ local LOCALE =
 		HORIZONTAL_OFFSET_RIGHT = "%s units to the right",
 
 		CAMERA = "Combat Camera",
-		CAMERA_HOVER = "Allows the camera to focus on giants while in combat.\nUsing the Bush Hat grants spectator view.",
+		CAMERA_HOVER = "Allows the camera to focus on giants while in combat.\nSitting or hiding grants spectator view.",
 		CAMERA_OPTION = "Button",
 		CAMERA_OPTION_HOVER = "Hover over the health bar to toggle",
 		CAMERA_BUTTON = "Toggle Combat Camera",
@@ -146,7 +149,7 @@ local LOCALE =
 		HORIZONTAL_OFFSET_RIGHT = "%s de unidades para a direita",
 
 		CAMERA = "Câmera de Combate",
-		CAMERA_HOVER = "Permite que a câmera foque nos chefes durante o combate.\nUsar o Chapéu de Arbusto concede visão de espectador.",
+		CAMERA_HOVER = "Permite que a câmera foque nos chefes durante o combate.\nSentar ou se esconder concede a visão do espectador.",
 		CAMERA_OPTION = "Botão",
 		CAMERA_OPTION_HOVER = "Passe o mouse sobre a barra de saúde para alternar",
 		CAMERA_BUTTON = "Alternar Câmera de Combate",
@@ -213,7 +216,7 @@ local LOCALE =
 		HORIZONTAL_OFFSET_RIGHT = "%s единиц направо",
 
 		CAMERA = "Боевая камера",
-		CAMERA_HOVER = "Позволяет камере фокусироваться на боссах во время боя.\nКустошляпа позволяет наблюдать за сражением.",
+		CAMERA_HOVER = "Позволяет камере фокусироваться на боссах во время боя.\nЗа сражением можно наблюдать сидя или спрятавшись.",
 		CAMERA_OPTION = "Кнопка",
 		CAMERA_OPTION_HOVER = "Чтобы переключить, наведите курсор на полосу здоровья",
 		CAMERA_BUTTON = "Переключить боевую камеру",
@@ -282,7 +285,7 @@ local LOCALE =
 		HORIZONTAL_OFFSET_RIGHT = "往右调整 %s",
 
 		CAMERA = "战斗相机",
-		CAMERA_HOVER = "允许镜头在战斗中聚焦于巨兽\n装备灌木丛帽可以进入观战模式",
+		CAMERA_HOVER = "允许镜头在战斗中聚焦于巨兽\n坐着或隐藏可以让观众看到",
 		CAMERA_OPTION = "按钮",
 		CAMERA_OPTION_HOVER = "将鼠标悬停在健康栏上进行切换",
 		CAMERA_BUTTON = "切换战斗摄像机",

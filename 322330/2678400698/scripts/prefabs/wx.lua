@@ -38,38 +38,46 @@ end
 
 local function OnGetItemFromPlayer(inst, giver, item)
     if item.components.equippable then
+        local inventory = inst.components.inventory
+        if inventory ~= nil then
+            for k, v in pairs(inventory.opencontainers) do
+                k.components.container:Close(inst)
+            end
+        end
+        inst.components.container:Close()
+
         local newslot = item.components.equippable.equipslot
-        local current = inst.components.inventory:GetEquippedItem(newslot)
+        local current = inventory:GetEquippedItem(newslot)
 
         if current == nil then
             inst.components.talker:Say(GetString(inst, "ANNOUNCE_EQUIP", "ACCEPT"))
         elseif current.prefab == item.prefab then
             if item.components.stackable == nil then
-                inst.components.inventory:DropItem(current, true, true)
+                inventory:DropItem(current, true, true)
             end
         elseif newslot == EQUIPSLOTS.HEAD then
-            inst.components.inventory:DropItem(current, true, true)
-            local tool = inst.components.inventory:GetEquippedItem(EQUIPSLOTS.HANDS)
-            local coat = inst.components.inventory:GetEquippedItem(EQUIPSLOTS.BODY)
+            inventory:DropItem(current, true, true)
+            local tool = inventory:GetEquippedItem(EQUIPSLOTS.HANDS)
+            local coat = inventory:GetEquippedItem(EQUIPSLOTS.BODY)
             if item.prefab ~= "deserthat" then
-                inst.components.inventory:DropItem(tool, true, true)
-                inst.components.inventory:DropItem(coat, true, true)
-                inst.components.inventory:DropEverything(false, true)
+                inventory:DropItem(tool, true, true)
+                inventory:DropItem(coat, true, true)
+                inventory:DropEverything(false, true)
             else
                 if tool ~= nil and tool.prefab ~= "compass" then
-                    inst.components.inventory:DropItem(tool, true, true)
+                    inventory:DropItem(tool, true, true)
                 end
                 if coat ~= nil and coat.components.container == nil then
-                    inst.components.inventory:DropItem(coat, true, true)
+                    inventory:DropItem(coat, true, true)
                 end
                 inst.components.entitytracker:ForgetEntity("sentryward")
                 inst.components.entitytracker:ForgetEntity("shipyard")
             end
         else
-            inst.components.inventory:DropItem(current, true, true)
+            inventory:DropItem(current, true, true)
         end
 
-        inst.components.inventory:Equip(item)
+        inventory:Equip(item)
         inst.components.wxnavigation.engaged = false
         inst.components.locomotor:Stop()
     end
@@ -115,10 +123,35 @@ end
 
 local function OnOpen(inst, data)
     inst.SoundEmitter:PlaySound("dontstarve/common/icebox_open")
+    if data == nil or data.doer == nil or not data.doer:HasTag("player") then
+        return
+    end
+
     local backpack = inst.components.inventory:GetEquippedItem(EQUIPSLOTS.BODY)
-    if backpack ~= nil and backpack.components.container ~= nil and
-        not backpack.components.container:IsOpenedBy(data.doer) then
-        backpack.components.container:Open(data.doer)
+    if backpack ~= nil and backpack.components.container ~= nil then
+        local playerbackpack = data.doer.components.inventory:GetEquippedItem(EQUIPSLOTS.BODY)
+        if playerbackpack ~= nil and playerbackpack.components.container ~= nil and
+            playerbackpack.components.container:IsOpenedBy(data.doer) then
+            playerbackpack.components.container:Close(data.doer)
+            data.doer:PushEvent("closecontainer", { container = playerbackpack })
+        end
+        if backpack.components.container:IsOpenedByOthers(data.doer) then
+            for _, opener in pairs(backpack.components.container:GetOpeners()) do
+                if opener ~= data.doer then
+                    backpack.components.container:Close(opener)
+                    opener:PushEvent("closecontainer", { container = backpack })
+                end
+            end
+        end
+        backpack.Network:SetClassifiedTarget(data.doer)
+        if backpack.components.container:IsOpenedBy(inst) then
+            backpack.components.container:Close(inst)
+            inst:PushEvent("closecontainer", { container = backpack })
+        end
+        if not backpack.components.container:IsOpenedBy(data.doer) then
+            backpack.components.container:Open(data.doer)
+            data.doer:PushEvent("opencontainer", { container = backpack })
+        end
     end
 
     inst.components.wxnavigation.noreceiver = false
@@ -126,15 +159,26 @@ end
 
 local function OnClose(inst, doer)
     inst.SoundEmitter:PlaySound("dontstarve/common/icebox_close")
-    local backpack = doer.components.inventory:GetEquippedItem(EQUIPSLOTS.BODY)
-    if backpack ~= nil and backpack.components.container ~= nil and
-        not backpack.components.container:IsOpenedBy(doer) then
-        backpack.components.container:Open(doer)
-    else
-        backpack = inst.components.inventory:GetEquippedItem(EQUIPSLOTS.BODY)
-        if backpack ~= nil and backpack.components.container ~= nil and
-            backpack.components.container:IsOpenedBy(doer) then
+    if doer == nil or not doer:HasTag("player") then
+        return
+    end
+
+    local backpack = inst.components.inventory:GetEquippedItem(EQUIPSLOTS.BODY)
+    if backpack ~= nil and backpack.components.container ~= nil then
+        if backpack.components.container:IsOpenedBy(doer) then
             backpack.components.container:Close(doer)
+            doer:PushEvent("closecontainer", { container = backpack })
+        end
+        if not backpack.components.container:IsOpenedBy(inst) then
+            backpack.components.container:Open(inst)
+            inst:PushEvent("opencontainer", { container = backpack })
+        end
+        backpack.Network:SetClassifiedTarget(nil)
+        local playerbackpack = doer.components.inventory:GetEquippedItem(EQUIPSLOTS.BODY)
+        if playerbackpack ~= nil and playerbackpack.components.container ~= nil and
+            not playerbackpack.components.container:IsOpenedBy(doer) then
+            playerbackpack.components.container:Open(doer)
+            doer:PushEvent("opencontainer", { container = playerbackpack })
         end
     end
 
@@ -687,11 +731,12 @@ local function OnHammeredFinished(inst, worker)
             k.components.container:Close(inst)
         end
     end
+    inst.components.container:Close()
 
     inst.components.upgrademoduleowner:PopAllModules()
     inst.components.upgrademoduleowner:SetChargeLevel(0)
     inst.components.lootdropper:DropLoot()
-    inst.components.inventory:DropEverything(true)
+    inst.components.inventory:DropEverything(false, false)
 
     stop_moisturetracking(inst)
     inst.components.timer:StopTimer(CHARGEREGEN_TIMERNAME)
@@ -740,7 +785,10 @@ local function OnHaunt(inst, haunter)
         local rotation = inst.Transform:GetRotation()
         haunter.Transform:SetRotation(rotation)
         if haunter.components.skinner ~= nil then
-            local skins = inst.components.skinner:GetClothing()
+            local skins = { base = "wx78_none", body = "", hand = "", legs = "", feet = "" }
+            if inst.components.skinner ~= nil then
+                skins = inst.components.skinner:GetClothing()
+            end
             haunter.components.skinner:ClearAllClothing()
             if string.find(skins.base, "wx78") then
                 haunter.components.skinner:SetSkinName(skins.base)
@@ -758,16 +806,33 @@ local function OnHaunt(inst, haunter)
         
         inst.components.talker:Say(GetString(inst, "ANNOUNCE_RESURRECTION_START"))
         inst.components.health:SetInvincible(true)
+
+        if inst.components.rider:IsRiding() then
+            inst.components.rider:ActualDismount()
+        end
+
+        local inventory = inst.components.inventory
+        if inventory ~= nil then
+            for k, v in pairs(inventory.opencontainers) do
+                k.components.container:Close(inst)
+            end
+        end
+        inst.components.container:Close()
+
+        inst.components.upgrademoduleowner:PopAllModules()
+        inst.components.upgrademoduleowner:SetChargeLevel(0)
         inst.components.inventory:DropEverything(false, false)
+
+        stop_moisturetracking(inst)
+        inst.components.timer:StopTimer(CHARGEREGEN_TIMERNAME)
 
         inst.Physics:Stop()
         inst.Physics:ClearCollisionMask()
-        inst.Physics:CollidesWith(COLLISION.WORLD)
-        inst.Physics:CollidesWith(COLLISION.OBSTACLES)
-        inst.Physics:CollidesWith(COLLISION.SMALLOBSTACLES)
-        inst.Physics:CollidesWith(COLLISION.CHARACTERS)
-        inst.Physics:CollidesWith(COLLISION.GIANTS)
+        inst.Physics:ClearCollidesWith(COLLISION.CHARACTERS)
+        inst.Physics:SetActive(false)
         inst.DynamicShadow:Enable(false)
+
+        haunter.Physics:Stop()
 
         inst:ListenForEvent("rez_player", function(inst)
             if inst.components.talker ~= nil then
@@ -799,11 +864,12 @@ local function OnDeath(inst)
             k.components.container:Close(inst)
         end
     end
+    inst.components.container:Close()
 
     inst.components.upgrademoduleowner:PopAllModules()
     inst.components.upgrademoduleowner:SetChargeLevel(0)
     inst.components.lootdropper:DropLoot()
-    inst.components.inventory:DropEverything(true)
+    inst.components.inventory:DropEverything(false, false)
 
     stop_moisturetracking(inst)
     inst.components.timer:StopTimer(CHARGEREGEN_TIMERNAME)

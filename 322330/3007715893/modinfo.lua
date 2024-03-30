@@ -17,7 +17,7 @@ Tip: Close the stack of tall birds when you need to hatch their eggs
 
 author = "天涯共此时、小花朵"
 
-version = "2.0.2"
+version = "2.1.3"
 
 forumthread = ""
 
@@ -71,11 +71,14 @@ configuration_options =
 		{	
 			{description = L and "original date" or "原始数值", data = 20},
 			{description = "40", data = 40},
+			{description = "60", data = 60},
+			{description = "80", data = 80},
 			{description = "99", data = 99},
 			{description = "100", data = 100},
 			{description = "200", data = 200},
 			{description = "500", data = 500},
 			{description = "999", data = 999},
+			{description = "5000", data = 5000},
 			{description = "10000", data = 10000},
 		},
 		default = 100,
@@ -88,6 +91,8 @@ configuration_options =
 		{	
 			{description = L and "original data" or "原始数值", data = 20},
 			{description = "40", data = 40},
+			{description = "60", data = 60},
+			{description = "80", data = 80},
 			{description = "99", data = 99},
 			{description = "100", data = 100},
 			{description = "500", data = 500},
@@ -117,6 +122,7 @@ configuration_options =
 	},
 	-- 分别为：配置名（modmain中配置用）,中文显示名,英文显示名,默认是否开启,中文备注提示,英文备注提示
 	-- 若没有备注提示，则后两项可以不用写。也可以只写中文备注，不写英文备注。但是若是需要写英文备注，则中文备注必填
+	--原版物品
 	addConfig("rabbit", "兔子","Rabbit",  true),
 	addConfig("mole", "鼹鼠", "Mole", true),
 	addConfig("bird", "鸟类", "Bird", true),
@@ -125,13 +131,22 @@ configuration_options =
 	addConfig("eyeturret", "眼球炮塔", "Eyeturret", true),
 	addConfig("tallbirdegg", "高脚鸟蛋", "Tallbirdegg", true, "如果需要孵化高鸟蛋，需要关闭堆叠","If you need to hatch tall eggs, you need to close the stack"),
 	addConfig("lavae_egg", "岩浆虫卵", "Lavae egg", true, "如果需要孵化岩浆虫卵，需要关闭堆叠","If you need to hatch lavae eggs, you need to close the stack"),
-	addConfig("shadowheart", "暗影心房", "Shadowheart", true),
-	addConfig("minotaurhorn", "犀牛角", "Minotaurhorn", true),
-	addConfig("aip_leaf_note", "树叶笔记", "Aip_leaf_note", true),
-	addConfig("miao_packbox", "超级打包盒", "Miao_packbox", true),
+	addConfig("shadowheart", "暗影心房", "Shadow heart", true),
 	addConfig("glommerwings", "格罗姆翅膀", "Glommerwings", true),
-	addConfig("moonrockidol", "月岩雕像", "Moonrockidol", true),
-	addConfig("horn", "牛角", "Horn", false, "注意：使用时处于多个堆叠状态牛角时会有bug","Note: There are bugs when using horns in multiple stacked states"),
-	addConfig("myth_lotusleaf", "荷叶(神话书说)", "Myth_lotusleaf", true),
+	addConfig("moonrockidol", "月岩雕像,告密的心", "Moonrockidol and Reviver", true),
+	addConfig("horn", "牛角和独角鲸角", "Horn", false, "注意：只能作为材料堆叠，如需作为工具，请关闭选项","Note: TURN OFF WHEN USE IT AS TOOL"),
+	addConfig("deer_antler","鹿角和克劳斯钥匙","Deer Antler and Klaussackkey",true),
+	addConfig("security_pulse_cage", "火花柜", "Security Pulse Cage and Full Cage",true),
+	addConfig("chestupgrade_stacksize", "箱子升级组件", "Chest Up Grade Set",true),
+	--addConfig("sketch1", "常用草图","Sketch", true),
+	--模组物品
+	addConfig("myth_lotusleaf", "荷叶和月饼(神话书说)", "Lotusleaf and Mooncake", true),
 	addConfig("blank_certificate", "空白勋章(能力勋章)", "Blank certificate", true),
+	addConfig("lg_choufish_inv", "小丑鱼(海洋传说)", "Uglyfish", true),
+	addConfig("aip_leaf_note", "树叶笔记(额外物品包)", "Aip leaf note", true),
+	addConfig("foliageath", "青枝绿叶（棱镜）", "Foliageath", true),
+	addConfig("miao_packbox", "超级打包盒（超级打包盒）", "Miao packbox", true,"需单个使用，整组使用会整组消耗"),
+	addConfig("reskin_tool", "作者自用", "For self use",false),
+	
+	
 }

@@ -4,16 +4,17 @@ name = L and "Modify Items Stack" or "修改堆叠上限"
 description = L and "Now you can modify the stack limit value." or "现在你可以修改堆叠上限值。"
 
 author = "去码头整点薯条"
-version = "2023.10.17"
+version = "2024.3.28"
 
 forumthread = ""
 
-api_version = 6
-dont_starve_compatible = true
-reign_of_giants_compatible = true
-all_clients_require_mod = true
-client_only_mod = false
+api_version = 10
+
 dst_compatible = true
+dont_starve_compatible = false
+reign_of_giants_compatible = false
+all_clients_require_mod = false
+client_only_mod = true
 
 icon = "modicon.tex"
 icon_atlas = "modicon.xml"

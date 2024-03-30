@@ -1,3 +1,9 @@
+AddPrefabPostInit("tigershark", function(inst)
+	inst.IsEpic = Tykvesh.True
+end)
+
+--\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
 if not TheNet:GetIsServer() then
 	local function PushMusicEX(PushMusic, inst, ...)
 		if not inst:HasTag("epic") then --ಠ_ಠ

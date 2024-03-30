@@ -9,6 +9,9 @@
 --===============================================================================================================================================================================--
 /* SECTION 1: DISTRICT */
 --===============================================================================================================================================================================--
+
+-- Waterfronts give adjacency bonuses to Urban Districts
+
 		INSERT INTO Adjacency_YieldChanges
 			(	ID,								Description,									YieldType,				YieldChange,	OtherDistrictAdjacent,			TilesRequired,	AdjacentNaturalWonder,	AdjacentSeaResource,	AdjacentImprovement,			AdjacentFeature,				PrereqCivic,			PrereqTech,							AdjacentDistrict						)	VALUES
 

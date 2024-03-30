@@ -33,12 +33,30 @@ if stack_size1 ~= 20 then
 	GLOBAL.TUNING.WORTOX_MAX_SOULS = stack_size1
 end
 
+
 if stack_size ~= 20 or stack_size1 ~= 20 then
+	local function OnStackSizeDirty(inst)
+		local self = inst.replica.stackable
+		if not self then
+			return --stackable removed?
+		end
+
+		self:ClearPreviewStackSize()
+		inst:PushEvent("inventoryitem_stacksizedirty")
+	end
+
 	local mod_stackable_replica = GLOBAL.require("components/stackable_replica")
 	mod_stackable_replica._ctor = function(self, inst)
 		self.inst = inst
+		-- self._stacksize = GLOBAL.net_shortint(inst.GUID, "stackable._stacksize", "stacksizedirty")
+		-- self._maxsize = GLOBAL.net_shortint(inst.GUID, "stackable._maxsize")
 		self._stacksize = GLOBAL.net_shortint(inst.GUID, "stackable._stacksize", "stacksizedirty")
+		self._stacksizeupper = GLOBAL.net_shortint(inst.GUID, "stackable._stacksizeupper", "stacksizedirty")
+		self._ignoremaxsize = GLOBAL.net_bool(inst.GUID, "stackable._ignoremaxsize")
 		self._maxsize = GLOBAL.net_shortint(inst.GUID, "stackable._maxsize")
+		if not GLOBAL.TheWorld.ismastersim then
+			inst:ListenForEvent("stacksizedirty", OnStackSizeDirty)
+		end
 	end
 end
 
@@ -131,16 +149,10 @@ if Stack_other_objects then
 		--暗影心房
 		AddItemStackables({"shadowheart"})
 	end
-	if GetModConfigData("minotaurhorn") then
-		--犀牛角
-		AddItemStackables({"minotaurhorn"})
-	end
+
 	
 	-------- Thanks For 小花朵 ---------
-	if GetModConfigData("aip_leaf_note") then
-		--树叶笔记【额外物品包】
-		AddItemStackables({"aip_leaf_note"})
-	end
+	
 	if GetModConfigData("miao_packbox") then
 		--超级打包盒
 		AddItemStackables({"miao_packbox"})
@@ -150,17 +162,17 @@ if Stack_other_objects then
 		AddItemStackables({"glommerwings"})
 	end
 	if GetModConfigData("moonrockidol") then
-		--月岩雕像
-		AddItemStackables({"moonrockidol"})
+		--月岩雕像破碎的心
+		AddItemStackables({"moonrockidol","reviver"})
 	end
 	if GetModConfigData("horn") then
 		--牛角
-		AddItemStackables({"horn"})
+		AddItemStackables({"horn","gnarwail_horn"})
 	end
 	-- 2023-12-01 记
 	if GetModConfigData("myth_lotusleaf") then
-		--荷叶【神话书说】
-		AddItemStackables({"myth_lotusleaf"})
+		--荷叶,月饼【神话书说】
+		AddItemStackables({"myth_lotusleaf","myth_mooncake_ice","myth_mooncake_lotus","myth_mooncake_nuts"})
 	end
 	-- 2023、12、20（各种蜘蛛）
 	-- if GetModConfigData("spider") then
@@ -191,9 +203,46 @@ if Stack_other_objects then
 		--蜘蛛类
 		AddAnimalStackables({"spider","spider_healer","spider_hider","spider_moon","spider_spitter","spider_warrior",})
 	end
+	--2024-3-5日
 	if GetModConfigData("blank_certificate") then
 		--空白勋章【能力勋章】
-		AddItemStackables({"blank_certificate","copy_blank_certificate"})
+		AddItemStackables({"blank_certificate"})
 	end
-	
+	if GetModConfigData("lg_choufish_inv") then
+		--小丑鱼【海洋传说】
+		AddItemStackables({"lg_choufish_inv"})
+	end
+	if GetModConfigData("aip_leaf_note") then
+		--树叶笔记【额外物品包】
+		AddItemStackables({"aip_leaf_note"})
+	end
+	-- if GetModConfigData("sketch1") then
+		--常用草图
+		-- AddItemStackables({"chesspiece_anchor_sketch","chesspiece_butterfly_sketch","chesspiece_moon_sketch","chesspiece_clayhound_sketch","chesspiece_claywarg_sketch","chesspiece_carrat_sketch","chesspiece_beefalo_sketch","chesspiece_catcoon_sketch","chesspiece_kitcoon_sketch","chesspiece_manrabbit_sketch","chesspiece_pawn_sketch","chesspiece_rook_sketch","chesspiece_knight_sketch","chesspiece_bishop_sketch","chesspiece_muse_sketch","chesspiece_formal_sketch","chesspiece_deerclops_sketch","chesspiece_bearger_sketch","chesspiece_moosegoose_sketch","chesspiece_dragonfly_sketch","chesspiece_minotaur_sketch","chesspiece_toadstool_sketch","chesspiece_beequeen_sketch","chesspiece_klaus_sketch","chesspiece_antlion_sketch","chesspiece_stalker_sketch","chesspiece_malbatross_sketch","chesspiece_crabking_sketch","chesspiece_guardianphase3_sketch","chesspiece_eyeofterror_sketch","chesspiece_twinsofterror_sketch","chesspiece_daywalker_sketch","chesspiece_deerclops_mutated_sketch","chesspiece_bearger_mutated_sketch","chesspiece_warg_mutated_sketch"})
+	-- end
+	--2024-3-14
+	if GetModConfigData("foliageath") then
+		--青枝绿叶【棱镜】
+		AddItemStackables({"foliageath"})
+	end
+	if GetModConfigData("security_pulse_cage") then
+		--火花柜
+		AddItemStackables({"security_pulse_cage","security_pulse_cage_full"})
+	end
+	if GetModConfigData("deer_antler") then
+		--鹿角和麋鹿茸
+		AddItemStackables({"deer_antler","deer_antler1","deer_antler2","deer_antler3","klaussackkey"})
+	end
+	-- if GetModConfigData("alterguardianhatshard") then
+		--启迪碎片
+		-- AddItemStackables({"alterguardianhatshard"})
+	-- end
+	if GetModConfigData("chestupgrade_stacksize") then
+		--箱子升级组件
+		AddItemStackables({"chestupgrade_stacksize"})
+	end
+	if GetModConfigData("reskin_tool") then
+		--清洁扫把和提灯和陷阱【娜娜很需要】
+		AddItemStackables({"reskin_tool","lantern","trap_teeth"})
+	end
 end

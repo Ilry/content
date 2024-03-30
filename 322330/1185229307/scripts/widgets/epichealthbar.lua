@@ -213,7 +213,10 @@ function MeterDamage:SetTint(r, g, b)
 end
 
 function MeterDamage:ShowBurst(start, dest, reset)
-	reset = reset or not self.shown
+	if not reset then
+		reset = not self.shown
+		self.lastwasdamagedtime = GetTime()
+	end
 	if reset then
 		self.start = start
 	end
@@ -252,14 +255,18 @@ function MeterDamage:GetPlayerCount()
 			count = count + 1
 		end
 	end
+	local act = self.widget.owner.bufferedaction
+	if act ~= nil and act.ispreviewing and act.target == self.widget.target and act.action == ACTIONS.ATTACK then
+		count = math.max(1, count)
+	end
 	return count
 end
 
 function MeterDamage:IsSuspended()
 	return self.time <= 0
 		and self.percent ~= 0
-		and self.widget.lastwasdamagedtime ~= nil
-		and GetTime() - self.widget.lastwasdamagedtime <= ATTACK_TIMEOUT
+		and self.lastwasdamagedtime ~= nil
+		and GetTime() - self.lastwasdamagedtime <= ATTACK_TIMEOUT
 		and self:GetPlayerCount() == 1
 end
 
@@ -855,7 +862,7 @@ local function OnGlobalPopupNumber(self, data)
 		data.colour = self.GetEffectTint(data, data.damaged)
 		data.wet = data.target:GetIsWet()
 		data.pos = self:AlignToTarget(data.target, data.afflicter)
-		self.owner.HUD.popupstats_root:AddChild(PopupNumber(data.value, data.damaged, data))
+		self.owner.HUD:AddChild(PopupNumber(data.value, data.damaged, data)) --popupstats_root
 	end
 end
 
@@ -1332,6 +1339,11 @@ function EpicHealthbar:PushMusic(target, force)
 end
 
 function EpicHealthbar:GetIsSpectator()
+	for i = 1, 4 do
+		if self.owner.AnimState:IsCurrentAnimation("emote_loop_sit" .. i) then
+			return true
+		end
+	end
 	return self.owner:HasOneOfTags(SPECTATOR_TAGS)
 		and (self.spectator or not self.owner:HasTag("busy"))
 end
@@ -1364,7 +1376,7 @@ end
 
 function EpicHealthbar:FocusCamera(enable)
 	if enable and self:IsEpic() then
-		TheFocalPoint.components.focalpoint:StartFocusSource(self.inst, "FIXED", self.owner, TUNING.EPICHEALTHBAR.CAMERA_FOCUS_MIN, TUNING.EPICHEALTHBAR.CAMERA_FOCUS_MAX, TUNING.EPICHEALTHBAR.CAMERA_PRIORITY, { ActiveFn = function(params) self.camerafocus = setmetatable({}, { __mode = "k" }); params.nofocus, params.count = 0, 0 end, UpdateFn = function(dt, params) pcall(self.UpdateFocus, self, dt, params) end })
+		TheFocalPoint.components.focalpoint:StartFocusSource(self.inst, "FIXED", self.owner, TUNING.EPICHEALTHBAR.CAMERA_FOCUS_MIN, TUNING.EPICHEALTHBAR.CAMERA_FOCUS_MAX, TUNING.EPICHEALTHBAR.CAMERA_PRIORITY, { ActiveFn = function(params) self.camerafocus = setmetatable({}, { __mode = "k" }); params.nofocus, params.count = 0, 0 end, UpdateFn = function(...) self:UpdateFocus(...) end })
 	else
 		TheFocalPoint.components.focalpoint:StopFocusSource(self.inst)
 	end
@@ -1549,8 +1561,17 @@ function EpicHealthbar:AlignToTarget(target, other)
 end
 
 function EpicHealthbar:GetTuningValue(type, target)
-	local key = string.upper(type ~= "PHASES" and target.epicprefab or target.prefab)
-	return FunctionOrValue(TUNING.EPICHEALTHBAR[type][key], target)
+	local key = string.upper(target.prefab)
+	local value = FunctionOrValue(TUNING.EPICHEALTHBAR[type][key], target)
+	if value ~= nil then
+		return value
+	elseif type ~= "PHASES" then
+		for key, value in pairs(TUNING.EPICHEALTHBAR[type]) do
+			if target:HasTag(key) then
+				return value
+			end
+		end
+	end
 end
 
 function EpicHealthbar:GetLocalizedString(type, default)
@@ -1569,6 +1590,8 @@ end
 function EpicHealthbar:IsBusy(target)
 	if target.IsEpic ~= nil then
 		return not target:IsEpic()
+	elseif target.epichealth:HasTag("nonlethal") then
+		return not target:HasTag("hostile")
 	elseif target:HasTag("attack") then
 		return false
 	elseif target:HasTag("flight") then

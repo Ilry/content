@@ -167,11 +167,12 @@ GEMENV.AddSimPostInit(function()
 
         setfenv(_destroystructure, _destroystructureEnv)
         local function destroystructure(staff, target, ...)
-            localdata = nil
             if AllRecipes[target.prefab] ~= nil then
                 localdata = {DESTSOUNDSMAP = DESTSOUNDSMAP, SpawnLootPrefab = SpawnLootPrefab, target = target}
             end
-            return _destroystructure(staff, target, ...)
+            local retvals = {_destroystructure(staff, target, ...)}
+            localdata = nil
+            return unpack(retvals)
         end
         UpvalueHacker.SetUpvalue(Prefabs.greenstaff.fn, destroystructure, "destroystructure")
         UpvalueHacker.SetUpvalue(Prefabs.greenstaff.fn, destroystructure, "onhauntgreen", "destroystructure")

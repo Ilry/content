@@ -46,15 +46,39 @@
 
 					<Replace Tag="LOC_WTR_Borough_A_Food_Description" Language="en_US">
 						<Text>+{1_num} [ICON_FOOD] Food from the adjacent Classical Era Borough {1_Num : plural 1?district; other?districts;}.</Text>
-					</Replace>	
+					</Replace>
 
+						<Replace Tag="LOC_WTR_Borough_A2_Food_Description" Language="en_US">
+							<Text>+{1_num} [ICON_FOOD] Food from the adjacent Ling Yi {1_Num : plural 1?district; other?districts;}.</Text>
+						</Replace>
+
+						<Replace Tag="LOC_WTR_Borough_A3_Food_Description" Language="en_US">
+							<Text>+{1_num} [ICON_FOOD] Food from the adjacent Classical Era Sestiere {1_Num : plural 1?district; other?districts;}.</Text>
+						</Replace>
+
+						<Replace Tag="LOC_WTR_Borough_A4_Food_Description" Language="en_US">
+							<Text>+{1_num} [ICON_FOOD] Food from the adjacent Mandala {1_Num : plural 1?district; other?districts;}.</Text>
+						</Replace>
+		
 					<Replace Tag="LOC_WTR_Borough_B_Food_Description" Language="en_US">
 						<Text>+{1_num} [ICON_FOOD] Food from the adjacent Renaissance Era Borough {1_Num : plural 1?district; other?districts;}.</Text>
-					</Replace>	
+					</Replace>
+
+						<Replace Tag="LOC_WTR_Borough_B2_Food_Description" Language="en_US">
+							<Text>+{1_num} [ICON_FOOD] Food from the adjacent Fuerte Colonial {1_Num : plural 1?district; other?districts;}.</Text>
+						</Replace>
+
+						<Replace Tag="LOC_WTR_Borough_B3_Food_Description" Language="en_US">
+							<Text>+{1_num} [ICON_FOOD] Food from the adjacent Renaissance Era Sestiere {1_Num : plural 1?district; other?districts;}.</Text>
+						</Replace>
 
 					<Replace Tag="LOC_WTR_Borough_C_Food_Description" Language="en_US">
 						<Text>+{1_num} [ICON_FOOD] Food from the adjacent Modern Era Borough {1_Num : plural 1?district; other?districts;}.</Text>
-					</Replace>	
+					</Replace>
+
+						<Replace Tag="LOC_WTR_Borough_C2_Food_Description" Language="en_US">
+							<Text>+{1_num} [ICON_FOOD] Food from the adjacent Arrondissement {1_Num : plural 1?district; other?districts;}.</Text>
+						</Replace>
 
 		<!-- WATERFRONT DISTRICT - BUILDINGS -->
 
@@ -94,7 +118,11 @@
 
 				<Replace Tag="LOC_PEDIA_DISTRICT_ARSENAL_1" Language="en_US">
 					<Text>In the original sense of the term, an arsenal is a military establishment where warships are built, maintained, repaired and preserved alongside their provided equipment and supplies. From the XVIIth century forwards the term arsenal lost its exclusive reference to the maritime world and became associated with the deposit and manufacture of military equipment.</Text>
-				</Replace>	
+				</Replace>
+
+					<Replace Tag="LOC_DISTRICT_RURALCOMMUNITYA_ARSENAL" Language="en_US">
+						<Text>+{1_num} [ICON_PRODUCTION] Production from the adjacent Arsenal {1_Num : plural 1?district; other?districts;}.</Text>
+					</Replace>
 
 		<!-- ARSENAL DISTRICT - BUILDINGS -->
 
@@ -115,7 +143,7 @@
 		</Replace>	
 
 			<Replace Tag="LOC_BUILDING_ARS_DRYDOCK_DESCRIPTION" Language="en_US">
-				<Text>+25% combat experience for all naval units trained in this city. +1 [ICON_PRODUCTION] Produciton for all unimproved Coast tiles in this city. Additional +1 [ICON_PRODUCTION] Production if adjacent to the Arsenal. [NEWLINE]Strategic Resource Stockpiles increased +10 (on Standard Speed). [NEWLINE]Allows the Military Engineer unit to be trained in this city.</Text>
+				<Text>+25% combat experience for all naval units trained in this city. +1 [ICON_PRODUCTION] Production for all unimproved Coast tiles in this city. Additional +1 [ICON_PRODUCTION] Production if adjacent to the Arsenal. [NEWLINE]Strategic Resource Stockpiles increased +10 (on Standard Speed). [NEWLINE]Allows the Military Engineer unit to be trained in this city.</Text>
 			</Replace>	
 
 				<Replace Tag="LOC_PEDIA_BUILDING_ARS_DRYDOCK_1" Language="en_US">
@@ -160,7 +188,12 @@
 
 		<Replace Tag="LOC_BUILDING_SEAPORT_DESCRIPTION" Language="en_US">
 			<Text> +1 [ICON_GOLD] Gold on all Coast tiles for this city. Additional +2 [ICON_GOLD] Gold on all Coast tiles with an improved resource for this city.</Text>
-		</Replace>	
+		</Replace>
+
+		<!-- DLC8 -->
+		<Replace Tag="LOC_BUILDING_CONSULATE_DESCRIPTION" Language="en_US">
+			<Text>+2 Influence Points per turn. Enemy Spy's level is reduced by 1 when targeting this city or cities with Arsenals or Encampments.</Text>
+		</Replace>
 
 		<!-- VANILLA WONDERS -->
 
@@ -172,7 +205,7 @@
 			<Text>Must be built on the Coast, adjacent to land and a Waterfront district.</Text>
 		</Replace>	
 
-		<!-- VANILLA POICIES -->
+		<!-- VANILLA POLICIES -->
 
 		<Replace Tag="LOC_POLICY_MILITARY_RESEARCH_EXPANSION1_DESCRIPTION" Language="en_US">
 			<Text>Military Academies, Naval Academies, and Renaissance Walls generate +2 [ICON_Science] Science.</Text>
@@ -184,7 +217,17 @@
 
 		<Replace Tag="LOC_POLICY_THIRD_ALTERNATIVE_DESCRIPTION_XP2" Language="en_US">
 			<Text>+2 [ICON_Culture] Culture and +4 [ICON_Gold] Gold from each Research Lab, Military Academy, Naval Academy, Coal Power Plant, Oil Power Plant, and Nuclear Power Plant.</Text>
-		</Replace>	
+		</Replace>
+
+		<Replace Tag="LOC_POLICY_INTEGRATED_SPACE_CELL_DESCRIPTION" Language="en_US">
+			<Text>+15% [ICON_Production] Production toward Space Race projects if a city has either a Military Academy or a Naval Academy.</Text>
+		</Replace>
+		
+		<!-- ROCK BANDS -->
+
+		<Replace Tag="LOC_PROMOTION_SURF_ROCK_DESCRIPTION" Language="en_US">
+			<Text>Performs at Seaside Resorts and Waterfronts for +500 [ICON_TOURISM] Tourism (+1000 [ICON_TOURISM] Tourism if Waterfront has a Boardwalk) and 1 level more experienced.</Text>
+		</Replace>
 
 	</LocalizedText>
 </GameData>

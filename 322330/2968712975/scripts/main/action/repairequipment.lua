@@ -98,6 +98,7 @@ REPAIREQUIPMENT.canqueuer = "allclick"
 --REPAIREQUIPMENT.canforce=true
 --REPAIREQUIPMENT.instant = true
 local gemtab ={"redgem","bluegem","purplegem","yellowgem","orangegem","greengem","opalpreciousgem"}
+local numlimittab = {}
 local type = "USEITEM" -- 设置动作绑定的类型
 local component = "inventoryitem" -- 设置动作绑定的组件
 local testfn = function(inst, doer, target, actions, right) -- 设置动作的检测函数，如果满足条件，就向人物的动作可执行表中加入某个动作。right表示是否是右键动作。
@@ -128,6 +129,39 @@ local testfn = function(inst, doer, target, actions, right) -- 设置动作的�
 			end
 		end
 	end
+	--num limited
+--[[	if TUNING.RANDCLIMITDH ~= 0 then
+		for i, v in ipairs(recipe.ingredients) do
+			if v
+			and v.amount >= TUNING.RANDCLIMITDH 
+			then
+				table.insert(numlimittab, v)
+			end
+		end
+	end
+	if TUNING.RANDCLIMITDL ~= 0 then
+		for i, v in ipairs(recipe.ingredients) do
+			if v
+			and v.amount <= TUNING.RANDCLIMITDH 
+			then
+				table.insert(numlimittab, v)
+			end
+		end
+	end
+	if target:HasTag("canberepaired") 
+	and (TUNING.RANDCLIMITDH ~= 0 or TUNING.RANDCLIMITDL ~= 0)
+	--or target.replica.finiteuses ~= nil
+	--or target.replica.armor ~= nil
+	then
+		for i, v in ipairs(numlimittab) do
+			if v == inst.prefab 
+			then
+				table.insert(actions, ACTIONS.REPAIREQUIPMENT)
+				return
+			end
+		end
+		return
+	end]]--
 	if target:HasTag("canberepaired") 
 	--or target.replica.finiteuses ~= nil
 	--or target.replica.armor ~= nil

@@ -10,20 +10,43 @@ GLOBAL.TUNING.STACK_SIZE_SMALLITEM = GetModConfigData("stack_size")
 GLOBAL.TUNING.WORTOX_MAX_SOULS = GetModConfigData("soul_stack")
 GLOBAL.TUNING.STACK_SIZE_TINYITEM = GetModConfigData("walter_shoter_stack")
 
+-- self._stacksize = net_smallbyte(inst.GUID, "stackable._stacksize", "stacksizedirty")
+-- self._stacksizeupper = net_smallbyte(inst.GUID, "stackable._stacksizeupper", "stacksizedirty")
+-- self._ignoremaxsize = net_bool(inst.GUID, "stackable._ignoremaxsize")
+-- self._maxsize = net_tinybyte(inst.GUID, "stackable._maxsize")
+
+-- if not TheWorld.ismastersim then
+--     --self._previewstacksize = nil
+--     --self._previewtimeouttask = nil
+--     inst:ListenForEvent("stacksizedirty", OnStackSizeDirty)
+-- end
+local function OnStackSizeDirty(inst)
+	local self = inst.replica.stackable
+	if not self then
+		return --stackable removed?
+	end
+
+	self:ClearPreviewStackSize()
+
+	--instead of inventoryitem_classified listening for "stacksizedirty" as well
+	--forward a new event to guarantee order
+	inst:PushEvent("inventoryitem_stacksizedirty")
+end
+
 local r_s = GLOBAL.require("components/stackable_replica")
 r_s._ctor = function(self, inst)
 	self.inst = inst
-	self._stacksize = GLOBAL.net_shortint(inst.GUID, "stackable._stacksize", "stacksizedirty")
+	self._stacksize = GLOBAL.net_smallbyte(inst.GUID, "stackable._stacksize", "stacksizedirty")
+    self._stacksizeupper = GLOBAL.net_smallbyte(inst.GUID, "stackable._stacksizeupper", "stacksizedirty")
+    self._ignoremaxsize = GLOBAL.net_bool(inst.GUID, "stackable._ignoremaxsize")
 	self._maxsize = GLOBAL.net_tinybyte(inst.GUID, "stackable._maxsize")
-end
 
-local stackable_replica = GLOBAL.require("components/stackable_replica")
-stackable_replica._ctor = function(self, inst)
-	self.inst = inst
-	self._stacksize = GLOBAL.net_shortint(inst.GUID, "stackable._stacksize", "stacksizedirty")
-	self._maxsize = GLOBAL.net_tinybyte(inst.GUID, "stackable._maxsize")
+    if not TheWorld.ismastersim then
+        --self._previewstacksize = nil
+        --self._previewtimeouttask = nil
+        inst:ListenForEvent("stacksizedirty", OnStackSizeDirty)
+    end
 end
-
 
 local function newStackable(self)
     local _Put = self.Put

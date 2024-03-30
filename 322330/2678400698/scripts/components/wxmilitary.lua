@@ -184,7 +184,7 @@ function WXMilitary:DeployTrap()
         if self.inst.components.builder:HasIngredients(GetValidRecipe("trap_teeth")) then
             return BufferedAction(self.inst, nil, ACTIONS.BUILD, nil, nil, "trap_teeth")
         elseif self.inst.components.inventory:Has("log", 1) and
-            self.inst.components.inventory:Has("houndtooth", 1) and
+            self.inst.components.inventory:Has("houndstooth", 1) and
             not self.inst.components.inventory:Has("rope", 1) and
             self.inst.components.builder:HasIngredients(GetValidRecipe("rope")) then
             return BufferedAction(self.inst, nil, ACTIONS.BUILD, nil, nil, "rope")

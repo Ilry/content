@@ -37,7 +37,7 @@ function Container:FindCraftingItems(fn, reverse_search_order)
     local items = {}
     for i = 1, self.numslots do
         local v = self.slots[i]
-        if v ~= nil and fn(v) then
+        if v ~= nil and v:IsValid() and fn(v) then
             table.insert(items, {
                 item = v,
                 stacksize = GetStackSize(v),
@@ -71,7 +71,7 @@ local function FindCraftingItems_Container(inst, fn, reverse_search_order)
     local numslots = #inst._items
     for i, v in ipairs(inst._items) do
         local item = (inst._itemspreview and inst._itemspreview[i]) or (not inst._itemspreview and v:value()) or nil
-        if item ~= nil and fn(item) then
+        if item ~= nil and item:IsValid() and fn(item) then
             table.insert(items, {
                 item = item,
                 stacksize = GetStackSize(item),
@@ -136,7 +136,7 @@ function Inventory:FindCraftingItems(fn)
     local items = {}
     for i = 1, self.maxslots do
         local v = self.itemslots[i]
-        if v and fn(v) then
+        if v and v:IsValid() and fn(v) then
             table.insert(items, {
                 item = v,
                 stacksize = GetStackSize(v),
@@ -196,7 +196,7 @@ local function FindCraftingItems_Inventory(inst, fn)
     local items = {}
     for i, v in ipairs(inst._items) do
         local item = (inst._itemspreview and inst._itemspreview[i]) or (not inst._itemspreview and v:value()) or nil
-        if item ~= nil and (inst._itemspreview ~= nil or item ~= inst._activeitem) and fn(item) then
+        if item ~= nil and (inst._itemspreview ~= nil or item ~= inst._activeitem) and item:IsValid() and fn(item) then
             table.insert(items, {
                 item = item,
                 stacksize = GetStackSize(item),

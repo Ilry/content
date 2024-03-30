@@ -7,7 +7,7 @@ description = Ch and
 "让物品可被他的制作原料修复，同类装备可以合并" or
 "Allow equipment to be repaired by its recipe, or to combine with the same equipment"  --mod描述  --mod描述
 author = "Lilith" --作者
-version = "0.7.9" -- mod版本 上传mod需要两次的版本不一样
+version = "0.8.2" -- mod版本 上传mod需要两次的版本不一样
 
 -- This is the URL name of the mod's thread on the forum; the part after the ? and before the first & in the url
 forumthread = ""
@@ -79,6 +79,44 @@ configuration_options =
 						{description = "是", data = true},
 					},
 			default = false,
+	},
+	{
+		name = "NumlimitH",
+		label = "高于数量可修复",
+		hover = "开启后装备含有高于一定数量的制作材料时仅能用该材料修复",
+		options =   {	
+						{description = "禁用", data = 0},
+						{description = "1", data = 1},
+						{description = "2", data = 2},
+						{description = "3", data = 3},
+						{description = "4", data = 4},
+						{description = "5", data = 5},
+						{description = "6", data = 6},
+						{description = "7", data = 7},
+						{description = "8", data = 8},
+						{description = "9", data = 9},
+						{description = "10", data = 10},
+					},
+			default = 0,
+	},
+	{
+		name = "NumlimitL",
+		label = "低于数量可修复",
+		hover = "开启后装备含有低于一定数量的制作材料时仅能用该材料修复",
+		options =   {	
+						{description = "禁用", data = 0},
+						{description = "1", data = 1},
+						{description = "2", data = 2},
+						{description = "3", data = 3},
+						{description = "4", data = 4},
+						{description = "5", data = 5},
+						{description = "6", data = 6},
+						{description = "7", data = 7},
+						{description = "8", data = 8},
+						{description = "9", data = 9},
+						{description = "10", data = 10},
+					},
+			default = 0,
 	},
 	{
 		name = "Nightstick",
@@ -252,6 +290,44 @@ configuration_options =
 					},
 			default = false,
 	},
+--[[	{
+		name = "NumlimitH",
+		label = "Limited repair num(more than)",
+		hover = "if a material is more than the num you set, you can use it to repair only",
+		options =   {	
+						{description = "Disable", data = 0},
+						{description = "1", data = 1},
+						{description = "2", data = 2},
+						{description = "3", data = 3},
+						{description = "4", data = 4},
+						{description = "5", data = 5},
+						{description = "6", data = 6},
+						{description = "7", data = 7},
+						{description = "8", data = 8},
+						{description = "9", data = 9},
+						{description = "10", data = 10},
+					},
+			default = 0,
+	},
+	{
+		name = "NumlimitL",
+		label = "Limited repair num(less than)",
+		hover = "if a material is less than the num you set, you can use it to repair only",
+		options =   {	
+						{description = "Disable", data = 0},
+						{description = "1", data = 1},
+						{description = "2", data = 2},
+						{description = "3", data = 3},
+						{description = "4", data = 4},
+						{description = "5", data = 5},
+						{description = "6", data = 6},
+						{description = "7", data = 7},
+						{description = "8", data = 8},
+						{description = "9", data = 9},
+						{description = "10", data = 10},
+					},
+			default = 0,
+	},]]--
 	{
 		name = "Nightstick",
 		label = "repairable nightstick",

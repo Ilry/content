@@ -1,11 +1,26 @@
 local containers = require("containers")
+local ImageButton = require "widgets/imagebutton"
+local CraftingMenuIngredients = require "widgets/redux/craftingmenu_ingredients"
+local Widget = require "widgets/widget"
+local ThreeSlice = require "widgets/threeslice"
+local Image = require "widgets/image"
+
 local containercfg = GetModConfigData("Container Sort")
 local itemscfg = GetModConfigData("Items collect")
-local hasmultisort = containercfg == -2 or containercfg == true
+local hasmultisortbtn = containercfg == -2 or containercfg == true
 local haslockbutton = containercfg == -3
+local hassortbutton = containercfg ~= -5
 local hascollectbutton = containercfg ~= -4
-local hasitemscollect = itemscfg ~= -1
+local craftmenucollectsupport = itemscfg ~= -1
+local hasitemscollect = craftmenucollectsupport
 local hasitemsstore = itemscfg ~= -2
+-- local hidemoveimage = false
+
+-- 客户端专属配置,仅适用于整理,其他按钮都影响太大了
+if TheNet:GetIsClient() and TUNING.TEMP2HM then
+    if TUNING.TEMP2HM.opensort ~= nil then hassortbutton = TUNING.TEMP2HM.opensort end
+    -- if TUNING.TEMP2HM.hidemoveimage ~= nil then hidemoveimage = TUNING.TEMP2HM.hidemoveimage end
+end
 
 -- 给容器添加"dcs2hm"标签或容器.dcs2hm = true可以禁用对容器进行的各种功能
 -- 不会在下列容器的界面上显示收集和整理按钮
@@ -26,16 +41,85 @@ local storeblacklist = {
     "minotaurchest",
     "terrariumchest"
 }
+-- 禁止存放拾取的道具,溯源表
+local itemsblacklist = {"pocketwatch_portal", "pocketwatch_recall"}
+if ACTIONS.BEIZHU and ACTIONS.BEIZHU.str == STRINGS.SIGNS.MENU.ACCEPT then itemsblacklist = {} end
+-- 优先存放容器
+local prioritystoreents = {saltbox = 1, icebox = 2}
+-- 道具存取特效,以及持续高亮展示
+local function stopthighlightcontainer(inst)
+    inst.cshighlight2hm = nil
+    inst.AnimState:SetMultColour(1, 1, 1, 1)
+end
+local function starthighlightcontainer(inst)
+    if inst.AnimState then inst.AnimState:SetMultColour(1, 0.6, 0, 1) end
+    if inst.cshighlight2hm then inst.cshighlight2hm:Cancel() end
+    inst.cshighlight2hm = inst:DoTaskInTime(60, stopthighlightcontainer)
+end
+local function showmovefx(inst, needparent)
+    if inst.disablecsfxtask2hm then return end
+    if needparent then
+        -- 存放到骑乘的牛里时给骑乘者加特效
+        local owner = inst.parent and inst.parent:IsValid() and inst.parent or inst
+        if owner.Transform then
+            SpawnPrefab("sand_puff").Transform:SetPosition(owner.Transform:GetWorldPosition())
+            return
+        end
+    end
+    if inst.Transform then SpawnPrefab("sand_puff").Transform:SetPosition(inst.Transform:GetWorldPosition()) end
+end
+local function delayshowmovefx(inst)
+    if inst:IsInLimbo() then
+        showmovefx(inst, true)
+        return
+    end
+    if inst.disablecsfxtask2hm then return end
+    inst:DoTaskInTime(0.32, showmovefx)
+    starthighlightcontainer(inst)
+end
+-- 地面容器反向过滤检测标签列表
+local GROUND_CONTAINER_CANT_TAGS = {"INLIMBO", "NOCLICK", "FX", "dcs2hm"}
+local GROUND_NOTITEM_CONTAINER_CANT_TAGS = {"INLIMBO", "NOCLICK", "_inventoryitem", "FX", "dcs2hm"}
+-- 拾取道具过滤用标签
+local PICKUP_MUST_ONEOF_TAGS = {"_inventoryitem", "pickable"}
+local PICKUP_CANT_TAGS = {
+    -- Items
+    "INLIMBO",
+    "NOCLICK",
+    "knockbackdelayinteraction",
+    "event_trigger",
+    "minesprung",
+    "mineactive",
+    "catchable",
+    "fire",
+    "light",
+    -- "spider",
+    "cursed",
+    "paired",
+    "bundle",
+    "heatrock",
+    "deploykititem",
+    "boatbuilder",
+    "singingshell",
+    "archive_lockbox",
+    "simplebook",
+    "furnituredecor",
+    -- Pickables
+    "flower",
+    "gemsocket",
+    "structure",
+    -- Either
+    "donotautopick"
+}
 
--- 补丁
+-- 容器无效道具拦截补丁
 AddComponentPostInit("container", function(self)
     local oldGiveItem = self.GiveItem
-    self.GiveItem = function(self, item, ...) return item ~= nil and item:IsValid() and oldGiveItem(self, item, ...) end
+    self.GiveItem = function(self, item, ...) return item ~= nil and item:IsValid() and oldGiveItem(self, item, ...) or false end
 end)
 
 --
--- 下面部分代码来自[码到成功]
--- 
+-- 单容器排序算法,下面代码来自[码到成功]
 local ac_fns = {
     cmp = function(p1, p2)
         if not (p1 and p2) then return end
@@ -253,136 +337,111 @@ local function preciseClassification(slots)
                                 stackable_perishable.edible_meat, stackable.perishable, -- rest
     stackable_perishable.preparedfood.edible_veggie, stackable_perishable.preparedfood.edible_meat, stackable_perishable.preparedfood.rest)
 end
--- 优化一下整理算法。不只是按字母首字母排序。
-local function API_arrangeContainer2(inst)
-    if not (inst and inst.components and (inst.components.container ~= nil or inst.components.inventory ~= nil)) then return end
-    -- 首先先把里面的空洞给处理掉
-    local container = inst.components.inventory or inst.components.container
-    local slots = container.itemslots or container.slots
-
-    local keys = {}
-    for k, _ in pairs(slots) do keys[#keys + 1] = k end
-    table.sort(keys)
-
-    -- 这里很强！
-    for k, v in ipairs(keys) do
-        if k ~= v then
-            local item = container:RemoveItemBySlot(v)
-            container:GiveItem(item, k) -- Q: 如果超过堆叠上限会发生什么？ A: 会掉落
-        end
-    end
-
-    -- 新的 slots
-    slots = container.itemslots or container.slots
-
-    -- 空洞已经处理完毕，开始排序了
-    if inst.components.inventory then
-        container.itemslots = preciseClassification(slots)
-    else
-        container.slots = preciseClassification(slots)
-    end
-
-    -- 更 新的 slots
-    slots = container.itemslots or container.slots
-
-    -- 此时，已经完全排序好了，开始整理
-    for i, _ in ipairs(slots) do
-        local item = container:RemoveItemBySlot(i)
-        container:GiveItem(item) -- slot == nil，会遍历每一个格子把 item 塞进去，item == nil，返回 true
-    end
-end
---
--- 上面部分代码来自[码到成功]
+-- 上面代码来自[码到成功]
 -- 
 
-local samecontainers = {
-    -- {"inventory", "backpack", "piggyback", "icepack", "spicepack", "krampus_sack"},
-    {"treasurechest", "dragonflychest"}
-    -- {"tacklecontainer", "supertacklecontainer"}
-}
-
-local function issamecontainer(inst, v, incontainer)
-    if incontainer then
-        if inst.components.inventory and v.components.container and v.components.container.itemtestfn == nil then return true end
-        if v.components.inventory and inst.components.container and inst.components.container.itemtestfn == nil then return true end
-        if inst.components.container and v.components.container and inst.components.container.itemtestfn == v.components.container.itemtestfn then
-            return true
+-- 容器整理
+local function dosort(inst)
+    if not (inst.components.container and inst.components.container.acceptsstacks and not inst.components.container.usespecificslotsforitems or
+        inst.components.inventory) then return end
+    local container = inst.components.inventory or inst.components.container
+    container.ignoresound = true
+    container.ignoreoverstacked = true
+    local totalslots = {}
+    for k, v in pairs(container.itemslots or container.slots) do
+        if v then
+            local item = container:RemoveItemBySlot(k)
+            if item ~= nil and item:IsValid() then
+                item.prevslot = nil
+                table.insert(totalslots, item)
+            end
         end
     end
-    for _, containerstmp in ipairs(samecontainers) do
-        if table.contains(containerstmp, inst.prefab) and table.contains(containerstmp, v.prefab) then return true end
+    totalslots = preciseClassification(totalslots)
+    for i, item in ipairs(totalslots) do container:GiveItem(item) end
+    container.ignoresound = false
+    container.ignoreoverstacked = false
+end
+local function sortfn(player, inst)
+    if inst.components.container ~= nil then
+        dosort(inst)
+        if inst.components.equippable and inst.components.equippable:IsEquipped() then dosort(player) end
     end
 end
-
--- 跨容器排序
-local GROUND_CONTAINER_CANT_TAGS = {"INLIMBO", "NOCLICK", "_inventoryitem", "FX", "dcs2hm"}
-local function API_arrangeMultiContainers2(inst, player)
-    if not (inst and inst.components and inst.components.container ~= nil) then return end
+-- 容器跨整
+local function domultisort(inst, player)
+    if not (player.components.inventory and inst.components.container and inst.components.container.acceptsstacks and
+        not inst.components.container.usespecificslotsforitems) then return end
+    -- ents是除inst外其他要一起处理的容器,inst不需要放在里面
     local ents = {}
-    if player and player.components and player.components.inventory and inst.components.equippable and inst.components.equippable:IsEquipped() then
-        -- 糖果袋类背包单独处理
-        if inst.components.container.itemtestfn ~= nil then
-            API_arrangeContainer2(inst)
-            API_arrangeContainer2(player)
+    if inst.components.equippable and inst.components.equippable:IsEquipped() then
+        -- 糖果袋类和无限类的背包单独处理
+        if inst.components.container.itemtestfn ~= nil or inst.components.container.infinitestacksize then
+            dosort(inst)
+            dosort(player)
             return
         end
-        -- 背包则只处理自己和物品栏
+        -- 装备的背包则一起处理自己和物品栏
         table.insert(ents, inst)
         inst = player
-    elseif inst.components.inventoryitem and inst.components.inventoryitem.owner and inst.components.inventoryitem.owner.components and
+    elseif inst.components.inventoryitem and inst.components.inventoryitem.owner and
         (inst.components.inventoryitem.owner.components.inventory or inst.components.inventoryitem.owner.components.container) then
-        -- 钓具箱类只处理自己和所处容器内的同类容器
+        -- 携带的或存在容器内的钓具箱类容器只处理自己和自己所处容器内的同类容器
         local hasothercontainers = false
         local container = (inst.components.inventoryitem.owner.components.inventory or inst.components.inventoryitem.owner.components.container)
         for k, v in pairs(container.itemslots or container.slots) do
             if v:IsValid() and v ~= inst and not v:HasTag("dcs2hm") and not v.dcs2hm and v.components.container and v.components.container.canbeopened and
-                (v.prefab == inst.prefab or issamecontainer(inst, v, true)) then
+                v.components.container.acceptsstacks and not v.components.container.usespecificslotsforitems and v.components.container.itemtestfn ==
+                inst.components.container.itemtestfn and v.components.container.infinitestacksize == inst.components.container.infinitestacksize then
                 hasothercontainers = true
                 table.insert(ents, v)
             end
         end
         if not hasothercontainers then
-            API_arrangeContainer2(inst)
+            dosort(inst)
             return
         end
-    elseif inst.components.inventoryitem then
-        API_arrangeContainer2(inst)
+    elseif inst.components.inventoryitem and not inst:HasTag("heavy") then
+        -- 地面背包或地面钓具箱则只处理自己,支持带有heavy标签的装备容器
+        dosort(inst)
         return
     else
-        -- 地面同名容器检测
+        -- 地面容器则只处理同类且同名的容器
         local x, y, z = inst.Transform:GetWorldPosition()
         local platform = inst:GetCurrentPlatform()
-        local nearents = TheSim:FindEntities(x, y, z, 30, nil, GROUND_CONTAINER_CANT_TAGS)
+        local nearents = TheSim:FindEntities(x, y, z, 36, nil, GROUND_CONTAINER_CANT_TAGS)
         local hasothercontainers = false
         for i, v in ipairs(nearents) do
-            if v ~= inst and not v.dcs2hm and v.components and v.components.container and v.components.container.canbeopened and not v.components.inventoryitem and
-                (v.prefab == inst.prefab) and v:GetCurrentPlatform() == platform then
+            if v ~= inst and v:IsValid() and v.prefab == inst.prefab and not v.dcs2hm and v.components.container and v.components.container.canbeopened and
+                v.components.container.acceptsstacks and not v.components.container.usespecificslotsforitems and v.components.container.itemtestfn ==
+                inst.components.container.itemtestfn and v.components.container.infinitestacksize == inst.components.container.infinitestacksize and
+                v:GetCurrentPlatform() == platform then
                 hasothercontainers = true
-                if v.Transform then SpawnPrefab("sand_puff").Transform:SetPosition(v.Transform:GetWorldPosition()) end
+                showmovefx(v)
                 table.insert(ents, v)
             end
         end
         if not hasothercontainers then
-            API_arrangeContainer2(inst)
+            dosort(inst)
             return
         end
     end
+    local totalslots = {}
     -- 首先主容器物品收集
     local container = inst.components.inventory or inst.components.container
+    container.ignoresound = true
+    container.ignoreoverstacked = true
     local slots = container.itemslots or container.slots
     local keys = {}
     for k, _ in pairs(slots) do keys[#keys + 1] = k end
     table.sort(keys)
-    -- 这里很强！
     for k, v in ipairs(keys) do
         if k ~= v then
             local item = container:RemoveItemBySlot(v)
             container:GiveItem(item, k)
         end
     end
-    -- 新的 slots
     slots = container.itemslots or container.slots
-    local totalslots = {}
     for key, value in ipairs(slots) do
         if value ~= nil then
             local item = container:RemoveItemBySlot(key)
@@ -399,17 +458,17 @@ local function API_arrangeMultiContainers2(inst, player)
     for i, v in ipairs(tmpents) do
         local container = v.components.container
         local slots = container.slots
+        container.ignoresound = true
+        container.ignoreoverstacked = true
         local keys = {}
         for k, _ in pairs(slots) do keys[#keys + 1] = k end
         table.sort(keys)
-        -- 这里很强！
         for k, v in ipairs(keys) do
             if k ~= v then
                 local item = container:RemoveItemBySlot(v)
                 container:GiveItem(item, k)
             end
         end
-        -- 新的 slots
         slots = container.slots
         for key, value in ipairs(slots) do
             if value ~= nil then
@@ -418,17 +477,23 @@ local function API_arrangeMultiContainers2(inst, player)
             end
         end
     end
-    -- 用一个大容器来整理,但是火女的余烬存放进去后会用到主人的skilltree,因此余烬要特殊处理
+    -- 用一个大容器容纳上面所有道具一起整理
     local tmp = CreateEntity()
     tmp:AddComponent("container")
+    -- 火女的余烬存放进去后会读取主人的skilltree
     if inst == player then tmp:AddComponent("skilltreeupdater") end
     tmp.components.container.ShouldPrioritizeContainer = truefn
     tmp.components.container.CanTakeItemInSlot = truefn
     tmp.components.container:SetNumSlots(#totalslots)
+    if inst.components.container and inst.components.container.infinitestacksize then inst.components.container:EnableInfiniteStackSize() end
+    tmp.components.container.ignoresound = true
     for _, item in ipairs(totalslots) do tmp.components.container:GiveItem(item) end
-    API_arrangeContainer2(tmp)
+    dosort(tmp)
+    tmp.components.container.ignoresound = true
+    tmp.components.container.ignoreoverstacked = true
     -- 分配到各个容器
     local finalslots = tmp.components.container.slots
+    -- 第一个容器准备放入
     local entindex = 1
     local entsnumslots = ents[1].components.container.numslots + (container.maxslots or container.numslots)
     for index, item in ipairs(finalslots) do
@@ -436,12 +501,15 @@ local function API_arrangeMultiContainers2(inst, player)
         if not ents[entindex] then
             ents[1].components.container:GiveItem(item)
         elseif index <= (container.maxslots or container.numslots) then
+            -- 在放入第一个容器前,优先分配给inst容器
             container:GiveItem(item)
         elseif index <= entsnumslots then
+            -- 准备放入的容器还未放满
             ents[entindex].components.container:GiveItem(item)
         else
             entindex = entindex + 1
             if ents[entindex] then
+                -- 准备放入的容器已放满,下一个容器准备放入
                 entsnumslots = entsnumslots + ents[entindex].components.container.numslots
                 ents[entindex].components.container:GiveItem(item)
             else
@@ -450,50 +518,161 @@ local function API_arrangeMultiContainers2(inst, player)
         end
     end
     tmp:Remove()
+    container.ignoresound = false
+    container.ignoreoverstacked = false
+    for i, v in ipairs(tmpents) do
+        v.components.container.ignoresound = false
+        v.components.container.ignoreoverstacked = false
+    end
 end
-
--- 跨容器排序
-local function sortmulticontainer2hm(player, inst)
-    if inst and inst.components and inst.components.container ~= nil then API_arrangeMultiContainers2(inst, player) end
-end
-
-AddModRPCHandler("MOD_HARDMODE", "sortmulticontainer2hm", sortmulticontainer2hm)
-
-local function sortcontainerbuttonmultiinfofn(inst, doer)
+local function multisortfn(player, inst) if hasmultisortbtn and inst.components.container ~= nil then domultisort(inst, player) end end
+-- 整理按钮和跨整按钮
+AddModRPCHandler("MOD_HARDMODE", "sortbtn2hm", sortfn)
+local function sortbtnfn(inst, doer)
     if inst.components.container ~= nil then
-        sortmulticontainer2hm(doer, inst)
+        sortfn(doer, inst)
     elseif inst.replica.container ~= nil then
-        SendModRPCToServer(GetModRPC("MOD_HARDMODE", "sortmulticontainer2hm"), inst)
+        SendModRPCToServer(GetModRPC("MOD_HARDMODE", "sortbtn2hm"), inst)
     end
 end
-
--- 单容器排序
-local function sortcontainer2hm(player, inst)
-    if inst and inst.components and inst.components.container ~= nil then
-        API_arrangeContainer2(inst)
-        if inst.components.equippable and inst.components.equippable:IsEquipped() then API_arrangeContainer2(player) end
-    end
-end
-
-AddModRPCHandler("MOD_HARDMODE", "sortcontainer2hm", sortcontainer2hm)
-
-local function sortcontainerbuttoninfofn(inst, doer)
+AddModRPCHandler("MOD_HARDMODE", "multisortbtn2hm", multisortfn)
+local function multisortbtnfn(inst, doer)
     if inst.components.container ~= nil then
-        sortcontainer2hm(doer, inst)
+        multisortfn(doer, inst)
     elseif inst.replica.container ~= nil then
-        SendModRPCToServer(GetModRPC("MOD_HARDMODE", "sortcontainer2hm"), inst)
+        SendModRPCToServer(GetModRPC("MOD_HARDMODE", "multisortbtn2hm"), inst)
     end
 end
+local function doublesortbtnfn(inst, doer)
+    inst.doubleclicktask2hm = nil
+    if inst.doubleclicktrue2hm then
+        multisortbtnfn(inst, doer)
+        inst.doubleclicktrue2hm = nil
+    end
+end
+local function realsortbtnfn(inst, doer)
+    if (inst.components.equippable and inst.components.equippable:IsEquipped()) or (inst.replica.equippable and inst.replica.equippable:IsEquipped()) then
+        if not inst.doubleclicktask2hm then
+            inst.doubleclicktask2hm = inst:DoTaskInTime(0.25, doublesortbtnfn, doer)
+            sortbtnfn(inst, doer)
+        else
+            inst.doubleclicktrue2hm = not inst.doubleclicktrue2hm
+            inst.doubleclicktask2hm:Cancel()
+            inst.doubleclicktask2hm = inst:DoTaskInTime(0.25, doublesortbtnfn, doer)
+        end
+    else
+        sortbtnfn(inst, doer)
+    end
+end
+local function defaultbtnvalidfn(inst)
+    return (inst.components.container ~= nil or inst.replica.container ~= nil) and not inst:HasTag("dcs2hm") and not inst.dcs2hm
+end
 
-local function sortcontainerbuttoninfovalidfn(inst) return inst.components.container ~= nil or inst.replica.container ~= nil end
-
--- 跨世界传送按钮
+-- 末影箱穿越
+local function exchangedestroydata(inst)
+    if inst.components.container then
+        local container = inst.components.container
+        for i = 1, container.numslots do
+            local item = container.slots[i]
+            if item ~= nil and item:IsValid() then item:PushEvent("player_despawn") end
+        end
+        container:DestroyContents()
+    end
+end
+local function exchangesenddata(inst, rpcname, world_id, name, confirm)
+    if inst.components.container and world_id and name then
+        local rpc = GetShardModRPC("MOD_HARDMODE", rpcname)
+        if confirm then
+            SendModRPCToShard(rpc, nil, world_id, name)
+        else
+            local containerdata = inst.components.container:OnSave()
+            containerdata.time2hm = os.time()
+            inst.exchangetmpdata2hm = containerdata
+            exchangedestroydata(inst)
+            SendModRPCToShard(rpc, nil, world_id, name, DataDumper(containerdata, nil, true))
+        end
+    end
+end
+local function exchangeapplydata(inst, containerdata)
+    if inst.components.container and containerdata then
+        exchangedestroydata(inst)
+        inst.components.container:OnLoad(containerdata)
+    end
+end
+local function exchangetaskend(inst)
+    if inst.containersendtask2hm then inst.containersendtask2hm = nil end
+    if inst.sendcontainerproxyplayer2hm then
+        local player = inst.sendcontainerproxyplayer2hm
+        if player and player:IsValid() and player.components.talker then
+            player.components.talker:Say((TUNING.isCh2hm and ("穿越世界超时中止(可暂停穿越=25秒)") or
+                                             ("Exchange timeout invalid~(Pause game then exchange wait 25s)")))
+        end
+        inst.sendcontainerproxyplayer2hm = nil
+    end
+    if inst.containerreceivetask2hm then inst.containerreceivetask2hm = nil end
+    if inst.sendcontainerproxydata2hm then inst.sendcontainerproxydata2hm = nil end
+    if inst.exchangetmpdata2hm then
+        exchangeapplydata(inst, inst.exchangetmpdata2hm)
+        inst.exchangetmpdata2hm = nil
+    end
+end
+-- 另一世界的确认请求被确认
+AddShardModRPCHandler("MOD_HARDMODE", "exchangeconfirm2hm", function(shard_id, world_id, name)
+    if TheShard and tostring(TheShard:GetShardId()) ~= tostring(shard_id) and tostring(TheShard:GetShardId()) == tostring(world_id) then
+        local container = TheWorld:GetPocketDimensionContainer(name)
+        if container and container:IsValid() and container.components.container and container.exchangetmpdata2hm and not container.containersendtask2hm and
+            container.containerreceivetask2hm and container.sendcontainerproxydata2hm then
+            container.exchangetmpdata2hm = nil
+            container.containerreceivetask2hm:Cancel()
+            container.containerreceivetask2hm = nil
+            exchangeapplydata(container, container.sendcontainerproxydata2hm)
+            container.sendcontainerproxydata2hm = nil
+        end
+    end
+end)
+-- 所在世界的穿越请求被确认,更新数据,且确认对方的确认请求
+AddShardModRPCHandler("MOD_HARDMODE", "exchangeconfirmdata2hm", function(shard_id, world_id, name, containerdata)
+    if TheShard and tostring(TheShard:GetShardId()) ~= tostring(shard_id) and tostring(TheShard:GetShardId()) == tostring(world_id) then
+        local container = TheWorld:GetPocketDimensionContainer(name)
+        if container and container:IsValid() and container.components.container and container.exchangetmpdata2hm and container.containersendtask2hm and
+            not container.containerreceivetask2hm and container.sendcontainerproxyplayer2hm and containerdata then
+            local success, data = RunInSandboxSafe(containerdata)
+            if success and data and data.time2hm and os.time() - data.time2hm < 400 then
+                container:DoTaskInTime(FRAMES * 1.5, exchangesenddata, "exchangeconfirm2hm", shard_id, name, true)
+                container.exchangetmpdata2hm = nil
+                container.containersendtask2hm:Cancel()
+                container.containersendtask2hm = nil
+                exchangeapplydata(container, data)
+                local player = container.sendcontainerproxyplayer2hm
+                if player and player:IsValid() and player.components.talker then
+                    player.components.talker:Say((TUNING.isCh2hm and ("成功穿越世界" .. world_id .. "啦") or
+                                                     ("SUCCESS to exchange with world " .. world_id .. "~")))
+                end
+                container.sendcontainerproxyplayer2hm = nil
+            end
+        end
+    end
+end)
+-- 另一世界收到穿越请求,确认请求
+AddShardModRPCHandler("MOD_HARDMODE", "exchangesenddata2hm", function(shard_id, world_id, name, containerdata)
+    if TheShard and tostring(TheShard:GetShardId()) ~= tostring(shard_id) and tostring(TheShard:GetShardId()) == tostring(world_id) then
+        local container = TheWorld:GetPocketDimensionContainer(name)
+        if container and container:IsValid() and container.components.container and container.virtchest == nil and not container.containersendtask2hm and
+            not container.containerreceivetask2hm and containerdata then
+            local success, data = RunInSandboxSafe(containerdata)
+            if success and data and data.time2hm and os.time() - data.time2hm < 350 then
+                container.containerreceivetask2hm = container:DoTaskInTime(3, exchangetaskend)
+                container.sendcontainerproxydata2hm = data
+                container:DoTaskInTime(FRAMES * 1.5, exchangesenddata, "exchangeconfirmdata2hm", shard_id, name)
+            end
+        end
+    end
+end)
 local function findcontainerproxyname(inst)
     if TheWorld.PocketDimensionContainers then
         for name, container in pairs(TheWorld.PocketDimensionContainers) do if container == inst then return name end end
     end
 end
-
 local function findanotherworldid()
     if ShardList then
         local shardids = {}
@@ -503,268 +682,305 @@ local function findanotherworldid()
         if #shardids > 0 then return shardids[math.random(#shardids)] end
     end
 end
-
-local function processcontainerproxymastersend(inst, player, second, worldid, name)
-    if inst and inst.components and inst.components.container ~= nil then
-        local containername = name or findcontainerproxyname(inst)
-        local world_id = worldid or findanotherworldid()
-        local container = inst.components.container
-        if containername and world_id then
-            if second then
-                for i = 1, container.numslots do
-                    local item = container.slots[i]
-                    if item ~= nil and item:IsValid() then item:PushEvent("player_despawn") end
-                end
-            end
-            local containerdata = container:OnSave()
-            if second then
-                for i = 1, container.numslots do
-                    local item = container.slots[i]
-                    if item ~= nil and item:IsValid() then item:Remove() end
-                end
-            end
-            SendModRPCToShard(GetShardModRPC("MOD_HARDMODE", second and "sendcontainerproxyworldsecond2hm" or "sendcontainerproxyworldfirst2hm"), nil, world_id,
-                              containername, DataDumper(containerdata, nil, true))
-            if player and player.components.talker then
-                player.components.talker:Say((TUNING.isCh2hm and ("正在穿越到世界" .. world_id .. "啦") or
-                                                 ("Passing through to world " .. world_id .. " ~")))
-            end
-        elseif player and player.components.talker then
-            player.components.talker:Say((TUNING.isCh2hm and "找不到世界和容器穿越哎" or "Pass through can't find another world or container"))
+-- 所在世界进行穿越请求
+local function exchangefn(player, inst)
+    if TheWorld.ismastersim and inst.components.container and not inst.containersendtask2hm and not inst.containerreceivetask2hm and inst.virtchest == nil then
+        inst.sendcontainerproxyplayer2hm = player
+        inst.containersendtask2hm = inst:DoTaskInTime(1.5, exchangetaskend)
+        local name = findcontainerproxyname(inst)
+        local world_id = findanotherworldid()
+        if world_id and name then
+            exchangesenddata(inst, "exchangesenddata2hm", world_id, name)
+        elseif player and player:IsValid() and player.components.talker then
+            player.components.talker:Say((TUNING.isCh2hm and "找不到世界和容器穿越哎" or "Can't find another world's container to exchange."))
         end
     end
 end
-
-local function processcontainerproxymasterreceive(inst, containerdata)
-    if inst and inst.components and inst.components.container ~= nil and containerdata then
-        local container = inst.components.container
-        for i = 1, container.numslots do
-            local item = container.slots[i]
-            if item ~= nil and item:IsValid() then item:PushEvent("player_despawn") end
-        end
-        for i = 1, container.numslots do
-            local item = container.slots[i]
-            if item ~= nil and item:IsValid() then item:Remove() end
-        end
-        container:OnLoad(containerdata)
-    end
-end
-
--- 本世界穿越数据给其他世界,其他世界又穿越数据回来,进行处理
-AddShardModRPCHandler("MOD_HARDMODE", "sendcontainerproxyworldsecond2hm", function(shard_id, world_id, name, containerdata)
-    if TheShard and tostring(TheShard:GetShardId()) ~= tostring(shard_id) and tostring(TheShard:GetShardId()) == tostring(world_id) then
-        local container = TheWorld:GetPocketDimensionContainer(name)
-        if container and containerdata then
-            local success, data = RunInSandboxSafe(containerdata)
-            if success then
-                processcontainerproxymasterreceive(container, data)
-                if container and container.containerprocesstask2hm then
-                    container.containerprocesstask2hm:Cancel()
-                    container.containerprocesstask2hm = nil
-                end
-            end
-        end
-    end
-end)
-
--- 收到其他世界穿越来的数据,把自己的数据穿越给对方
-AddShardModRPCHandler("MOD_HARDMODE", "sendcontainerproxyworldfirst2hm", function(shard_id, world_id, name, containerdata)
-    if TheShard and TheShard:GetShardId() ~= shard_id and TheShard:GetShardId() == world_id then
-        local container = TheWorld:GetPocketDimensionContainer(name)
-        if container and containerdata then
-            local success, data = RunInSandboxSafe(containerdata)
-            if success then
-                processcontainerproxymastersend(container, nil, true, shard_id, name)
-                processcontainerproxymasterreceive(container, data)
-            end
-        end
-    end
-end)
-
-local function sendscontainerproxyotherworld(player, inst)
-    if TheWorld.ismastersim and inst.components ~= nil and inst.components.container ~= nil and not inst.containerprocesstask2hm then
-        inst.containerprocesstask2hm = inst:DoTaskInTime(3, function() inst.containerprocesstask2hm = nil end)
-        processcontainerproxymastersend(inst, player)
-    end
-end
-
-AddModRPCHandler("MOD_HARDMODE", "sendcontainerproxyworld2hm", sendscontainerproxyotherworld)
-
-local function sendscontainerproxyotherworldfn(inst, doer)
+-- 穿越按钮
+AddModRPCHandler("MOD_HARDMODE", "exchangebtn2hm", exchangefn)
+local function exchangebtnfn(inst, doer)
     if inst.components.container and TheWorld.ismastersim then
-        sendscontainerproxyotherworld(doer, inst)
+        exchangefn(doer, inst)
     elseif inst.replica.container ~= nil then
-        SendModRPCToServer(GetModRPC("MOD_HARDMODE", "sendcontainerproxyworld2hm"), inst)
+        SendModRPCToServer(GetModRPC("MOD_HARDMODE", "exchangebtn2hm"), inst)
     end
 end
+local function exchangevalidfn(inst) return defaultbtnvalidfn(inst) and inst:HasTag("pocketdimension_container") end
 
-local function sendscontainerproxyotherworldvalidfn(inst) return inst.components.container ~= nil or inst.replica.container ~= nil end
-
--- 换装按钮
-local function reskininwardrobe2hm(player, inst)
-    if inst and inst.components.wardrobe ~= nil and inst:HasTag("wardrobe") then BufferedAction(player, inst, ACTIONS.CHANGEIN):Do() end
+-- 容器收集
+local function getfinalowner(inst)
+    return inst.components.inventoryitem and inst.components.inventoryitem.owner and getfinalowner(inst.components.inventoryitem.owner) or inst
 end
-
-AddModRPCHandler("MOD_HARDMODE", "reskininwardrobe2hm", reskininwardrobe2hm)
-
-local function reskinfn(inst, doer)
-    if inst.components.wardrobe ~= nil and inst:HasTag("wardrobe") then
-        BufferedAction(doer, inst, ACTIONS.CHANGEIN):Do()
-    elseif inst.replica.container ~= nil and inst:HasTag("wardrobe") then
-        SendModRPCToServer(GetModRPC("MOD_HARDMODE", "reskininwardrobe2hm"), inst)
-    end
-end
-
-local function reskinvalidfn(inst) return (inst.components.container ~= nil or inst.replica.container ~= nil) and inst:HasTag("wardrobe") end
-
--- 跨容器收纳
-local getfinalowner
-getfinalowner = function(inst)
-    return inst.components and inst.components.inventoryitem and inst.components.inventoryitem.owner and getfinalowner(inst.components.inventoryitem.owner) or
-               inst
-end
-
-local iscontainerowner
-iscontainerowner = function(inst, item)
-    if not (item.components and item.components.container) then return false end
+local function iscontainerchild(inst, container)
+    if not container.components.container then return false end
     local owner = inst.components.inventoryitem and inst.components.inventoryitem.owner
-    if owner == item then
+    if owner == container then
         return true
     elseif owner ~= nil then
-        return iscontainerowner(owner, item)
+        return iscontainerchild(owner, container)
     end
 end
-
-local findcontainerincontainers
-findcontainerincontainers = function(inst, containers)
+local function findcontainersincontainer(inst, result)
     for k, v in pairs(inst.components.container.slots) do
-        if v:IsValid() and not v:HasTag("dcs2hm") and not v.dcs2hm and v ~= inst and v.components.container and v.components.container.canbeopened then
-            table.insert(containers, v)
-            findcontainerincontainers(v, containers)
+        if v and v:IsValid() and not v:HasTag("dcs2hm") and not v.dcs2hm and v.components.container and v.components.container.canbeopened then
+            table.insert(result, v)
+            findcontainersincontainer(v, result)
         end
     end
 end
-
-local function collectcontaineritem(inst, container, item, entcontainer, i, data, onlyone)
-    if item ~= nil and item:IsValid() and table.contains(data.prefabs, item.prefab) and item ~= inst and not iscontainerowner(inst, item) and
-        container:CanTakeItemInSlot(item) then
-        if item.components and item.components.stackable and data.itemlackstackables[item.prefab] then
-            -- 是所需堆叠,处理需求与供给数目关系
-            if data.itemlackstackables[item.prefab] >= item.components.stackable.stacksize then
-                -- 需求比供给多,直接给
-                local giveitem
-                if data.onlyneed and data.onlyneed > 0 then
-                    giveitem = item.components.stackable:Get(math.min(item.components.stackable.stacksize, data.onlyneed))
-                    data.onlyneed = data.onlyneed - giveitem.components.stackable.stacksize
-                else
-                    giveitem = entcontainer:RemoveItemBySlot(i)
-                end
-                data.itemlackstackables[giveitem.prefab] = data.itemlackstackables[giveitem.prefab] - giveitem.components.stackable.stacksize
-                if data.itemlackstackables[giveitem.prefab] == 0 and data.extranumslots == 0 then data.itemlackstackables[giveitem.prefab] = nil end
-                container:GiveItem(giveitem, nil, onlyone and entcontainer.inst:GetPosition())
-                if entcontainer.inst.Transform and not entcontainer.inst.components.inventoryitem then
-                    SpawnPrefab("sand_puff").Transform:SetPosition(entcontainer.inst.Transform:GetWorldPosition())
-                end
-                if onlyone then
-                    if data.onlyneed then
-                        if data.onlyneed <= 0 then return true end
-                    elseif data.itemlackstackables[item.prefab] == 0 then
-                        return true
-                    end
-                end
-            elseif data.extranumslots > 0 then
-                -- 需求比供给少,但有空间,直接给
-                data.extranumslots = data.extranumslots - 1
-                local giveitem
-                if data.onlyneed and data.onlyneed > 0 then
-                    giveitem = item.components.stackable:Get(math.min(item.components.stackable.stacksize, data.onlyneed))
-                    data.onlyneed = data.onlyneed - giveitem.components.stackable.stacksize
-                elseif onlyone then
-                    giveitem = item.components.stackable:Get(data.itemlackstackables[item.prefab])
-                else
-                    giveitem = entcontainer:RemoveItemBySlot(i)
-                end
-                data.itemlackstackables[giveitem.prefab] = data.itemlackstackables[giveitem.prefab] + giveitem.components.stackable.maxsize -
-                                                               giveitem.components.stackable.stacksize
-                if data.itemlackstackables[giveitem.prefab] == 0 and data.extranumslots == 0 then data.itemlackstackables[giveitem.prefab] = nil end
-                container:GiveItem(giveitem, nil, onlyone and entcontainer.inst:GetPosition())
-                if entcontainer.inst.Transform and not entcontainer.inst.components.inventoryitem then
-                    SpawnPrefab("sand_puff").Transform:SetPosition(entcontainer.inst.Transform:GetWorldPosition())
-                end
-                if onlyone then if not data.onlyneed or data.onlyneed <= 0 then return true end end
-            elseif data.itemlackstackables[item.prefab] > 0 then
-                -- 需求比供给少且没有新空间
-                local giveitem
-                if data.onlyneed and data.onlyneed > 0 then
-                    giveitem = item.components.stackable:Get(math.min(item.components.stackable.stacksize, data.onlyneed))
-                    data.onlyneed = data.onlyneed - giveitem.components.stackable.stacksize
-                else
-                    giveitem = item.components.stackable:Get(data.itemlackstackables[item.prefab])
-                end
-                data.itemlackstackables[giveitem.prefab] = nil
-                container:GiveItem(giveitem, nil, onlyone and entcontainer.inst:GetPosition())
-                if entcontainer.inst.Transform and not entcontainer.inst.components.inventoryitem then
-                    SpawnPrefab("sand_puff").Transform:SetPosition(entcontainer.inst.Transform:GetWorldPosition())
-                end
-                if onlyone then if not data.onlyneed or data.onlyneed <= 0 then return true end end
+local function givecontaineritem(container, item, src_pos)
+    if item.components.stackable then
+        local slotsize = item.components.stackable.originalmaxsize or item.components.stackable.maxsize
+        if slotsize and item.components.stackable.stacksize > slotsize then
+            local size = item.components.stackable.stacksize
+            local totalsize = size + slotsize
+            for i = slotsize, totalsize, slotsize do
+                local giveitem = item.components.stackable:Get(slotsize)
+                giveitem.currplayer2hm = item.currplayer2hm
+                container:GiveItem(giveitem, nil, i > size and src_pos or nil)
+                if giveitem and giveitem:IsValid() then giveitem.currplayer2hm = nil end
             end
-        elseif data.extranumslots > 0 then
-            data.extranumslots = data.extranumslots - 1
-            local giveitem
-            if data.onlyneed and data.onlyneed > 0 and item.components.stackable then
-                giveitem = item.components.stackable:Get(math.min(item.components.stackable.stacksize, data.onlyneed))
-                data.onlyneed = data.onlyneed - giveitem.components.stackable.stacksize
+            return
+        end
+    end
+    container:GiveItem(item, nil, src_pos)
+    if item and item:IsValid() then item.currplayer2hm = nil end
+end
+-- data必选参数:prefabs,leftnumslots,lacksize
+-- data可选参数:infiniteprefabs,neednum,fastresult,currplayer2hm --返回时data参数:entfx
+-- infiniteprefabs 代表contaienr组件可以无限收集某些实体
+-- neednum 代表只收集固定数额后就结束收集,返回true
+-- fastresult 代表只收集一次实体后就结束收集,返回true
+-- prefabfn是container组件要收集的特定实体
+-- prefabs是container组件要收集的实体表
+-- leftnumslots是container组件的空白格子数目
+-- lacksize是container组件每个要收集的堆叠实体的重叠格子的剩余空间
+local function collectentcontaineritem(inst, container, item, ent, entcontainer, i, data)
+    if (data.prefabfn and data.prefabfn(item) or (data.prefabs and table.contains(data.prefabs, item.prefab))) and item ~= inst and
+        not iscontainerchild(inst, item) and container:CanTakeItemInSlot(item) then
+        if data.infiniteprefabs then
+            if data.infiniteprefabs[item.prefab] then
+                -- 无限需求堆叠道具,所以可以无限给予
+                container:GiveItem(entcontainer:RemoveItemBySlot(i), nil, data.entpos)
+                if not data.entfx then data.entfx = true end
+            elseif data.leftnumslots > 0 then
+                -- 非堆叠道具或新加道具则只能放到有限的空格
+                data.leftnumslots = data.leftnumslots - 1
+                local item = entcontainer:RemoveItemBySlot(i)
+                if container:GiveItem(item, nil, data.entpos) and item:IsValid() and item.components.stackable and item.components.stackable.maxsize ==
+                    math.huge then data.infiniteprefabs[item.prefab] = true end
+                if not data.entfx then data.entfx = true end
+            end
+        elseif data.neednum then
+            -- 收集配方时的收集固定数目需求,则获得固定数目道具后结束
+            if item.components.stackable then
+                if not data.realneednum then
+                    data.realneednum = true
+                    local slotsize = item.components.stackable.originalmaxsize or item.components.stackable.maxsize
+                    local leftsize = (data.lacksize[item.prefab] or 0) + slotsize * data.leftnumslots
+                    data.neednum = math.min(data.neednum, leftsize)
+                end
+                local givenum = math.min(item.components.stackable.stacksize, data.neednum)
+                data.neednum = data.neednum - givenum
+                local giveitem = item.components.stackable:Get(givenum)
+                giveitem.currplayer2hm = data.currplayer2hm
+                givecontaineritem(container, giveitem, data.entpos)
             else
-                giveitem = entcontainer:RemoveItemBySlot(i)
-                if data.onlyneed and data.onlyneed > 0 then data.onlyneed = data.onlyneed - 1 end
+                if not data.realneednum then
+                    data.realneednum = true
+                    data.neednum = math.min(data.neednum, data.leftnumslots)
+                end
+                data.neednum = data.neednum - 1
+                local giveitem = entcontainer:RemoveItemBySlot(i)
+                giveitem.currplayer2hm = data.currplayer2hm
+                container:GiveItem(giveitem, nil, data.entpos)
+                if giveitem and giveitem:IsValid() then giveitem.currplayer2hm = nil end
             end
-            if giveitem.components and giveitem.components.stackable and giveitem.components.stackable.stacksize < giveitem.components.stackable.maxsize then
-                data.itemlackstackables[giveitem.prefab] = (data.itemlackstackables[giveitem.prefab] or 0) + giveitem.components.stackable.maxsize -
-                                                               giveitem.components.stackable.stacksize
+            if not data.entfx then data.entfx = true end
+            if data.neednum <= 0 then return true end
+        elseif data.fastresult then
+            -- 收集配方时的收集更多需求,则拿到本道具后就结束
+            if item.components.stackable then
+                local slotsize = item.components.stackable.originalmaxsize or item.components.stackable.maxsize
+                local giveitem = item.components.stackable:Get(slotsize)
+                giveitem.currplayer2hm = data.currplayer2hm
+                container:GiveItem(giveitem, nil, data.entpos)
+            else
+                local giveitem = entcontainer:RemoveItemBySlot(i)
+                giveitem.currplayer2hm = data.currplayer2hm
+                container:GiveItem(giveitem, nil, data.entpos)
             end
-            container:GiveItem(giveitem, nil, onlyone and entcontainer.inst:GetPosition())
-            if entcontainer.inst.Transform and not entcontainer.inst.components.inventoryitem then
-                SpawnPrefab("sand_puff").Transform:SetPosition(entcontainer.inst.Transform:GetWorldPosition())
+            if giveitem and giveitem:IsValid() then giveitem.currplayer2hm = nil end
+            if not data.entfx then data.entfx = true end
+            return true
+        elseif data.lacksize[item.prefab] and item.components.stackable then -- 有限需求
+            -- 有限需求,处理需求与供给数目关系
+            if data.lacksize[item.prefab] >= item.components.stackable.stacksize then
+                -- 重叠格子用不完,直接给
+                data.lacksize[item.prefab] = data.lacksize[item.prefab] - item.components.stackable.stacksize
+                if data.lacksize[item.prefab] <= 0 then data.lacksize[item.prefab] = nil end
+                local giveitem = entcontainer:RemoveItemBySlot(i)
+                container:GiveItem(giveitem, nil, data.entpos)
+                if not data.entfx then data.entfx = true end
+            elseif data.leftnumslots > 0 then
+                -- 重叠格子会用完,但还有空白格子
+                local slotsize = item.components.stackable.originalmaxsize or item.components.stackable.maxsize
+                local leftsize = data.lacksize[item.prefab] + slotsize * data.leftnumslots
+                if leftsize <= item.components.stackable.stacksize then
+                    -- 重叠和空白格子都会被该道具堆满,(额要收集的容器有问题,堆叠数目似乎太高了吧)
+                    data.leftnumslots = 0
+                    data.lacksize[item.prefab] = nil
+                    local giveitem = item.components.stackable:Get(leftsize)
+                    givecontaineritem(container, giveitem, data.entpos)
+                    if not data.entfx then data.entfx = true end
+                    -- 全部堆满,则结束收集
+                    if IsTableEmpty(data.lacksize) then return true end
+                else
+                    -- 还能残留空间
+                    local useleftslotsize = item.components.stackable.stacksize - data.lacksize[item.prefab]
+                    data.leftnumslots = data.leftnumslots - math.ceil(useleftslotsize / slotsize)
+                    data.lacksize[item.prefab] = data.leftnumslots * slotsize - useleftslotsize - data.leftnumslots * slotsize
+                    if data.lacksize[item.prefab] <= 0 then data.lacksize[item.prefab] = nil end
+                    local giveitem = entcontainer:RemoveItemBySlot(i)
+                    givecontaineritem(container, giveitem, data.entpos)
+                    if not data.entfx then data.entfx = true end
+                end
+            elseif data.lacksize[item.prefab] > 0 then
+                -- 重叠格子会用完,且没有空白格子
+                local giveitem = item.components.stackable:Get(data.lacksize[item.prefab])
+                data.lacksize[giveitem.prefab] = nil
+                container:GiveItem(giveitem, nil, data.entpos)
+                if not data.entfx then data.entfx = true end
+                -- 全部堆满,则结束收集
+                if IsTableEmpty(data.lacksize) then return true end
             end
-            if onlyone then if not data.onlyneed or data.onlyneed <= 0 then return true end end
-        elseif IsTableEmpty(data.itemlackstackables) then
-            -- 全部堆满,结束收纳
+        elseif data.leftnumslots > 0 then
+            -- 没有重叠格子但有空白格子
+            if item.components.stackable then
+                local slotsize = item.components.stackable.originalmaxsize or item.components.stackable.maxsize
+                local leftsize = slotsize * data.leftnumslots
+                if leftsize <= item.components.stackable.stacksize then
+                    -- 空白格子都会被该道具堆满
+                    data.leftnumslots = 0
+                    local giveitem = item.components.stackable:Get(leftsize)
+                    givecontaineritem(container, giveitem, data.entpos)
+                    if not data.entfx then data.entfx = true end
+                    -- 全部堆满,则结束收集
+                    if IsTableEmpty(data.lacksize) then return true end
+                else
+                    -- 还能残留空间
+                    data.leftnumslots = data.leftnumslots - math.ceil(item.components.stackable.stacksize / slotsize)
+                    data.lacksize[item.prefab] = leftsize - item.components.stackable.stacksize - data.leftnumslots * slotsize
+                    if data.lacksize[item.prefab] <= 0 then data.lacksize[item.prefab] = nil end
+                    local giveitem = entcontainer:RemoveItemBySlot(i)
+                    givecontaineritem(container, giveitem, data.entpos)
+                    if not data.entfx then data.entfx = true end
+                end
+            else
+                data.leftnumslots = data.leftnumslots - 1
+                container:GiveItem(entcontainer:RemoveItemBySlot(i), nil, data.entpos)
+            end
+            if not data.entfx then data.entfx = true end
+            if data.leftnumslots <= 0 and IsTableEmpty(data.lacksize) then return true end
+        elseif IsTableEmpty(data.lacksize) then
             return true
         end
     end
 end
-
-local function collectcontainers(inst, player)
-    if not (inst and inst.components and inst.components.container and inst.components.container.numslots > 0 and #inst.components.container.slots > 0) then
-        return
+local function collectcontainers(inst, container, data, ents)
+    local result
+    local fxents = {}
+    container.ignoresound = true
+    for _, ent in ipairs(ents) do
+        if ent ~= inst and ent.components.container then
+            local entcontainer = ent.components.container
+            local finalent = getfinalowner(ent.virtfrom2hm or ent)
+            if data.proxyents and data.proxyents[finalent] then finalent = data.proxyents[finalent] end
+            data.entpos = finalent:GetPosition()
+            entcontainer.ignoreoverstacked = true
+            for i = entcontainer.numslots, 1, -1 do
+                local item = entcontainer.slots[i]
+                if item and item:IsValid() and collectentcontaineritem(inst, container, item, ent, entcontainer, i, data) then
+                    result = true
+                    break
+                end
+            end
+            entcontainer.ignoreoverstacked = false
+            if data.entfx then
+                data.entfx = nil
+                if not table.contains(fxents, finalent) then table.insert(fxents, finalent) end
+            end
+            if result then break end
+        elseif ent ~= inst and ent.components.inventory then
+            data.entpos = ent:GetPosition()
+            for i = ent.components.inventory.maxslots, 1, -1 do
+                local item = ent.components.inventory.itemslots[i]
+                if item and item:IsValid() and collectentcontaineritem(inst, container, item, ent, ent.components.inventory, i, data) then
+                    result = true
+                    break
+                end
+            end
+            if data.entfx then
+                data.entfx = nil
+                if not table.contains(fxents, finalent) then table.insert(fxents, finalent) end
+            end
+            if result then break end
+        end
     end
-    local data = {}
-    data.itemlackstackables = {}
-    data.prefabs = {}
-    local hasnumslots = 0
-    for i = 1, inst.components.container.numslots do
-        local item = inst.components.container.slots[i]
+    container.ignoresound = false
+    for index, ent in ipairs(fxents) do showmovefx(ent) end
+    return result
+end
+local function getcontainerspace(inst, container, data, addprefab)
+    local slots = container.slots or container.itemslots
+    local numslots = container.numslots or container.maxslots
+    -- 没有剩余空间时返回true
+    if data.prefabfn == nil then data.prefabs = data.prefabs or {} end
+    data.infiniteprefabs = data.infiniteprefabs or {}
+    data.lacksize = data.lacksize or {}
+    data.leftnumslots = (data.leftnumslots or 0) + numslots
+    for i = 1, numslots do
+        local item = slots[i]
         if item ~= nil and item:IsValid() then
-            hasnumslots = hasnumslots + 1
-            table.insert(data.prefabs, item.prefab)
-            if item.components and item.components.stackable and item.components.stackable.stacksize < item.components.stackable.maxsize then
-                data.itemlackstackables[item.prefab] = (data.itemlackstackables[item.prefab] or 0) + item.components.stackable.maxsize -
-                                                           item.components.stackable.stacksize
+            data.leftnumslots = data.leftnumslots - 1
+            local hasprefab = (data.prefabfn and data.prefabfn(item) or (data.prefabs and table.contains(data.prefabs, item.prefab)))
+            if not hasprefab and addprefab ~= false and data.prefabs and not table.contains(itemsblacklist, item.prefab) then
+                table.insert(data.prefabs, item.prefab)
+                hasprefab = true
+            end
+            if hasprefab and item.components.stackable then
+                if container.infinitestacksize or item.components.stackable.maxsize == math.huge then
+                    data.infiniteprefabs[item.prefab] = true
+                    if data.lacksize[item.prefab] then data.lacksize[item.prefab] = nil end
+                elseif not data.infiniteprefabs[item.prefab] and item.components.stackable.stacksize < item.components.stackable.maxsize then
+                    data.lacksize[item.prefab] = (data.lacksize[item.prefab] or 0) + item.components.stackable.maxsize - item.components.stackable.stacksize
+                end
             end
         end
     end
-    data.extranumslots = inst.components.container.numslots - hasnumslots
-    if #data.prefabs == 0 or (data.extranumslots == 0 and IsTableEmpty(data.itemlackstackables)) then return end
-    -- 识别要收纳的容器,不会收纳自己和自己的父容器
+    if (data.prefabs and #data.prefabs == 0) or (data.leftnumslots == 0 and IsTableEmpty(data.infiniteprefabs) and IsTableEmpty(data.lacksize)) then
+        return true
+    end
+    if IsTableEmpty(data.infiniteprefabs) then data.infiniteprefabs = nil end
+end
+local function docollect(inst, player)
+    if not (inst.components.container and inst.components.container.numslots > 0 and #inst.components.container.slots > 0) then return end
+    local container = inst.components.container
+    local data = {}
+    if getcontainerspace(inst, container, data) then return end
+    -- 记录要收集道具的来源容器列表
     local ents = {}
     if inst.components.inventoryitem and inst.components.inventoryitem.owner then
+        -- 携带容器->自己所在根容器
         local owner = getfinalowner(inst)
-        table.insert(ents, owner)
-        local container = owner.components.inventory or owner.components.container
-        for k, v in pairs(container.itemslots or container.slots) do
-            if v:IsValid() and not v:HasTag("dcs2hm") and not v.dcs2hm and v ~= inst and v.components.container and v.components.container.canbeopened then
-                table.insert(ents, v)
-                findcontainerincontainers(v, ents)
+        local ownercontainer = owner.components.inventory or owner.components.container
+        if not owner:HasTag("dcs2hm") and not owner.dcs2hm and ownercontainer then table.insert(ents, owner) end
+        if ownercontainer then
+            for k, v in pairs(ownercontainer.itemslots or ownercontainer.slots) do
+                if v and v:IsValid() and not v:HasTag("dcs2hm") and not v.dcs2hm and v.components.container and v.components.container.canbeopened then
+                    table.insert(ents, v)
+                    findcontainersincontainer(v, ents)
+                end
             end
         end
         if owner.components.inventory then
@@ -772,213 +988,93 @@ local function collectcontainers(inst, player)
                 local equip = owner.components.inventory:GetEquippedItem(v)
                 if equip ~= nil and equip.components.container ~= nil then
                     table.insert(ents, equip)
-                    findcontainerincontainers(equip, ents)
+                    findcontainersincontainer(equip, ents)
                 end
             end
         end
-        for i = #ents, 1, -1 do
-            if ents[i] == inst then
-                table.remove(ents, i)
-                break
+    else
+        -- 地面容器->内部容器和周围的地面容器
+        findcontainersincontainer(inst, ents)
+        if not inst.components.inventoryitem or inst:HasTag("heavy") then
+            local x, y, z = inst.Transform:GetWorldPosition()
+            local platform = inst:GetCurrentPlatform()
+            local nearents = TheSim:FindEntities(x, y, z, 30, nil, GROUND_CONTAINER_CANT_TAGS)
+            for i, v in ipairs(nearents) do
+                if v ~= inst and v:IsValid() and not v.dcs2hm and v.components.container and v.components.container.canbeopened and
+                    (not inst.components.inventoryitem or inst:HasTag("heavy")) and v:GetCurrentPlatform() == platform then
+                    table.insert(ents, v)
+                    findcontainersincontainer(v, ents)
+                end
             end
         end
-    else
-        findcontainerincontainers(inst, ents)
-        local x, y, z = inst.Transform:GetWorldPosition()
-        local platform = inst:GetCurrentPlatform()
-        local nearents = TheSim:FindEntities(x, y, z, 30, nil, GROUND_CONTAINER_CANT_TAGS)
-        for i, v in ipairs(nearents) do
-            if v ~= inst and not v.dcs2hm and v.components and v.components.container and v.components.container.canbeopened and not v.components.inventoryitem and
-                v:GetCurrentPlatform() == platform then
-                table.insert(ents, v)
-                findcontainerincontainers(v, ents)
-            end
+    end
+    for i = #ents, 1, -1 do
+        if ents[i] == inst then
+            table.remove(ents, i)
+            break
         end
     end
     if #ents <= 0 then return end
     local tmpents = {}
-    if inst.virtchest and inst.virtchest:IsValid() and inst.virtchest.components.container then table.insert(tmpents, inst.virtchest) end
+    -- if inst.virtchest and inst.virtchest:IsValid() and inst.virtchest.components.container then table.insert(tmpents, inst.virtchest) end
     for i, v in ipairs(ents) do
         table.insert(tmpents, v)
         if v.virtchest and v.virtchest:IsValid() and v.virtchest.components.container then table.insert(tmpents, v.virtchest) end
     end
-    -- 收纳
-    for _, ent in ipairs(tmpents) do
-        if ent ~= inst and ent.components.container then
-            for i = 1, ent.components.container.numslots do
-                local item = ent.components.container.slots[i]
-                if item and item:IsValid() and collectcontaineritem(inst, inst.components.container, item, ent.components.container, i, data) then
-                    return
-                end
-            end
-        elseif ent ~= inst and ent.components.inventory then
-            for i = 1, ent.components.inventory.maxslots do
-                local item = ent.components.inventory.itemslots[i]
-                if item and item:IsValid() and collectcontaineritem(inst, inst.components.container, item, ent.components.inventory, i, data) then
-                    return
-                end
-            end
-        end
-    end
+    -- 进行收集道具操作
+    data.currplayer2hm = inst
+    collectcontainers(inst, container, data, tmpents)
 end
-
-local function collectcontainerready(player, inst)
+local function collectfn(player, inst)
     -- 混合拾取和收纳时,拾取后短暂时间内不会进行收纳
-    if inst and inst.components.container ~= nil and not inst.pickuptask2hm then collectcontainers(inst, player) end
+    if hascollectbutton and inst and inst.components.container ~= nil and not inst.pickuptask2hm then docollect(inst, player) end
 end
-
-AddModRPCHandler("MOD_HARDMODE", "collectbtn2hm", collectcontainerready)
-
-local function collectfn(inst, doer)
-    if inst.components.container ~= nil then
-        collectcontainerready(doer, inst)
-    elseif inst.replica.container ~= nil then
-        SendModRPCToServer(GetModRPC("MOD_HARDMODE", "collectbtn2hm"), inst)
-    end
-end
-
-local function collectvalidfn(inst) return inst.components.container ~= nil or inst.replica.container ~= nil end
-
--- 地面范围拾取
-local PICKUP_MUST_ONEOF_TAGS = {"_inventoryitem", "pickable"}
-local PICKUP_CANT_TAGS = {
-    -- Items
-    "INLIMBO",
-    "NOCLICK",
-    "knockbackdelayinteraction",
-    "event_trigger",
-    "minesprung",
-    "mineactive",
-    "catchable",
-    "fire",
-    "light",
-    -- "spider",
-    "cursed",
-    "paired",
-    "bundle",
-    "heatrock",
-    "deploykititem",
-    "boatbuilder",
-    "singingshell",
-    "archive_lockbox",
-    "simplebook",
-    "furnituredecor",
-    -- Pickables
-    "flower",
-    "gemsocket",
-    "structure",
-    -- Either
-    "donotautopick"
-}
-local function pickupgrounditem(inst, container, item, data)
-    if item ~= nil and table.contains(data.prefabs, item.prefab) and item ~= inst then
-        if item.components and item.components.stackable and data.itemlackstackables[item.prefab] then
-            -- 是所需堆叠,处理需求与供给数目关系
-            if data.itemlackstackables[item.prefab] >= item.components.stackable.stacksize then
-                -- 需求比供给多,直接给
-                if item.Transform then SpawnPrefab("sand_puff").Transform:SetPosition(item.Transform:GetWorldPosition()) end
-                data.finiteuses = data.finiteuses - item.components.stackable.stacksize / 4
-                data.itemlackstackables[item.prefab] = data.itemlackstackables[item.prefab] - item.components.stackable.stacksize
-                if data.itemlackstackables[item.prefab] == 0 and data.extranumslots == 0 then data.itemlackstackables[item.prefab] = nil end
-                container:GiveItem(item)
-            elseif data.extranumslots > 0 then
-                -- 需求比供给少,但有空间,直接给
-                if item.Transform then SpawnPrefab("sand_puff").Transform:SetPosition(item.Transform:GetWorldPosition()) end
-                data.finiteuses = data.finiteuses - item.components.stackable.stacksize / 4
-                data.extranumslots = data.extranumslots - 1
-                data.itemlackstackables[item.prefab] = data.itemlackstackables[item.prefab] + item.components.stackable.maxsize -
-                                                           item.components.stackable.stacksize
-                if data.itemlackstackables[item.prefab] == 0 and data.extranumslots == 0 then data.itemlackstackables[item.prefab] = nil end
-                container:GiveItem(item)
-            elseif data.itemlackstackables[item.prefab] > 0 then
-                -- 需求比供给少且没有新空间
-                if item.Transform then SpawnPrefab("sand_puff").Transform:SetPosition(item.Transform:GetWorldPosition()) end
-                local giveitem = item.components.stackable:Get(data.itemlackstackables[item.prefab])
-                data.finiteuses = data.finiteuses - giveitem.components.stackable.stacksize / 4
-                data.itemlackstackables[giveitem.prefab] = nil
-                container:GiveItem(giveitem)
-            end
-        elseif data.extranumslots > 0 then
-            if item.Transform then SpawnPrefab("sand_puff").Transform:SetPosition(item.Transform:GetWorldPosition()) end
-            data.extranumslots = data.extranumslots - 1
-            if item.components and item.components.stackable and item.components.stackable.stacksize < item.components.stackable.maxsize then
-                data.itemlackstackables[item.prefab] = (data.itemlackstackables[item.prefab] or 0) + item.components.stackable.maxsize -
-                                                           item.components.stackable.stacksize
-                data.finiteuses = data.finiteuses - item.components.stackable.stacksize / 4
-            else
-                data.finiteuses = data.finiteuses - 1
-            end
-            container:GiveItem(item)
-        elseif IsTableEmpty(data.itemlackstackables) then
-            -- 全部堆满,结束收纳
-            return true
-        end
-    end
-    if data.finiteuses <= 0 then return true end
-end
-local function containerpickup(inst, player)
-    if not (player and player:HasTag("player") and not player:HasTag("playerghost") and player.components.inventory) then return end
+local function pickuploading(inst) inst.pickuptask2hm = nil end
+local function dopickup(inst, player)
+    if not (player.components.inventory and (inst.components.inventory or inst.components.container)) then return end
+    -- 检测是否装备懒人护符
     local hasorangeamulet = false
     local data = {}
     for k, v in pairs(player.components.inventory.equipslots) do
         if v and v.prefab == "orangeamulet" and v:IsValid() and
-            ((v.components.finiteuses and v.components.finiteuses.current > 1) or (v.components.fueled and v.components.fueled.currentfuel > 0)) then
+            ((v.components.finiteuses and v.components.finiteuses.current > 1) or (v.components.fueled and v.components.fueled.currentfuel > 1)) then
             data.orangeamulet = v
-            data.beforefiniteuses = v.components.finiteuses and v.components.finiteuses.current - 1 or (v.components.fueled and v.components.fueled.currentfuel)
+            data.beforefiniteuses = v.components.finiteuses and v.components.finiteuses.current - 1 or
+                                        (v.components.fueled and v.components.fueled.currentfuel - 1)
             data.finiteuses = data.beforefiniteuses
             hasorangeamulet = true
             break
         end
     end
-    local activeitem = player.components.inventory.activeitem
-    if activeitem and activeitem.prefab == "orangeamulet" and activeitem:IsValid() and
-        ((activeitem.components.finiteuses and activeitem.components.finiteuses.current > 1) or
-            (activeitem.components.fueled and activeitem.components.fueled.currentfuel > 0)) then
-        data.orangeamulet = activeitem
-        data.beforefiniteuses = activeitem.components.finiteuses and activeitem.components.finiteuses.current - 1 or
-                                    (activeitem.components.fueled and activeitem.components.fueled.currentfuel)
-        data.finiteuses = data.beforefiniteuses
-        hasorangeamulet = true
-    end
-    if hasorangeamulet and not inst.pickuptask2hm then inst.pickuptask2hm = inst:DoTaskInTime(0.25, function() inst.pickuptask2hm = nil end) end
-    if not (hasorangeamulet and inst:IsValid() and inst.components and
-        ((inst.components.container and inst.components.container.numslots > 0 and #inst.components.container.slots > 0) or
-            (inst.components.inventory and inst.components.inventory.maxslots > 0 and #inst.components.inventory.itemslots > 0))) then return end
-    data.itemlackstackables = {}
-    data.prefabs = {}
-    data.onlytheseprefabs = {}
-    local hasnumslots = 0
-    for i = 1, inst.components.inventory and inst.components.inventory.maxslots or inst.components.container.numslots do
-        local item = inst.components.inventory and inst.components.inventory.itemslots[i] or (inst.components.container and inst.components.container.slots[i])
-        if item ~= nil and item:IsValid() then
-            hasnumslots = hasnumslots + 1
-            table.insert(data.prefabs, item.prefab)
-            data.onlytheseprefabs[item.prefab] = true
-            if item.components and item.components.stackable and item.components.stackable.stacksize < item.components.stackable.maxsize then
-                data.itemlackstackables[item.prefab] = (data.itemlackstackables[item.prefab] or 0) + item.components.stackable.maxsize -
-                                                           item.components.stackable.stacksize
-            end
+    if not hasorangeamulet then
+        local activeitem = player.components.inventory.activeitem
+        if activeitem and activeitem.prefab == "orangeamulet" and activeitem:IsValid() and
+            ((activeitem.components.finiteuses and activeitem.components.finiteuses.current > 1) or
+                (activeitem.components.fueled and activeitem.components.fueled.currentfuel > 1)) then
+            data.orangeamulet = activeitem
+            data.beforefiniteuses = activeitem.components.finiteuses and activeitem.components.finiteuses.current - 1 or
+                                        (activeitem.components.fueled and activeitem.components.fueled.currentfuel - 1)
+            data.finiteuses = data.beforefiniteuses
+            hasorangeamulet = true
         end
     end
-    data.extranumslots = (inst.components.inventory and inst.components.inventory.maxslots or inst.components.container.numslots) - hasnumslots
-    if #data.prefabs == 0 or (data.extranumslots == 0 and IsTableEmpty(data.itemlackstackables)) then return end
+    if not hasorangeamulet then return end
+    if inst.pickuptask2hm then inst.pickuptask2hm:Cancel() end
+    inst.pickuptask2hm = inst:DoTaskInTime(0.3, pickuploading)
+    local container = inst.components.inventory or inst.components.container
+    if getcontainerspace(inst, container, data) then return end
     if data.orangeamulet and data.orangeamulet.skin_equip_sound and player.SoundEmitter then
         player.SoundEmitter:PlaySound(data.orangeamulet.skin_equip_sound)
     end
     local x, y, z = player.Transform:GetWorldPosition()
-    local nearents = TheSim:FindEntities(x, y, z, 30, nil, PICKUP_CANT_TAGS, PICKUP_MUST_ONEOF_TAGS)
-    -- local ents = {}
-    local istart, iend, idiff = 1, #nearents, 1
-    -- -- 优先收集最远的
-    -- local furthestfirst = true
-    -- if furthestfirst then istart, iend, idiff = iend, istart, -1 end
-    for i = istart, iend, idiff do
+    local nearents = TheSim:FindEntities(x, y, z, 36, nil, PICKUP_CANT_TAGS, PICKUP_MUST_ONEOF_TAGS)
+    for i = #nearents, 1, -1 do
         local v = nearents[i]
-        if v:IsValid() and data.onlytheseprefabs[v.prefab] and v.components.inventoryitem and not v.components.inventoryitem.owner and
-            v.components.inventoryitem.canbepickedup and (inst.components.inventory or v.components.inventoryitem.cangoincontainer) and
+        if v:IsValid() and table.contains(data.prefabs, v.prefab) and v ~= inst and not v:IsInLimbo() and not iscontainerchild(inst, v) and
+            container:CanTakeItemInSlot(v) and not v.components.inventoryitem.owner and v.components.inventoryitem.canbepickedup and
             not ((v:HasTag("fire") and not v:HasTag("lighter")) or v:HasTag("smolder")) and not v:HasTag("heavy") and
             not (v.components.container ~= nil and v.components.equippable == nil) and
-            not (v:IsInLimbo() or (v.components.burnable ~= nil and v.components.burnable:IsBurning() and v.components.lighter == nil) or
+            not ((v.components.burnable ~= nil and v.components.burnable:IsBurning() and v.components.lighter == nil) or
                 (v.components.projectile ~= nil and v.components.projectile:IsThrown())) and
             not (inst.components.itemtyperestrictions ~= nil and not inst.components.itemtyperestrictions:IsAllowed(v)) and
             not (v.components.container ~= nil and v.components.container:IsOpen()) and
@@ -987,7 +1083,92 @@ local function containerpickup(inst, player)
             not ((v:HasTag("spider") and player:HasTag("spiderwhisperer")) and (v.components.follower.leader ~= nil and v.components.follower.leader ~= player)) and
             not (v.components.curseditem and not v.components.curseditem:checkplayersinventoryforspace(player)) and
             not (v.components.inventory ~= nil and v:HasTag("drop_inventory_onpickup")) then
-            if pickupgrounditem(inst, inst.components.inventory or inst.components.container, v, data) then return end
+            if data.infiniteprefabs then
+                if data.infiniteprefabs[v.prefab] then
+                    -- 无限需求堆叠道具,所以可以无限给予
+                    showmovefx(v)
+                    container:GiveItem(v)
+                    data.finiteuses = data.finiteuses - math.max(v.components.stackable and v.components.stackable.stacksize / 4 or 1, 1)
+                elseif data.leftnumslots > 0 then
+                    -- 非堆叠道具则只能放到有限的空格
+                    data.leftnumslots = data.leftnumslots - 1
+                    showmovefx(v)
+                    container:GiveItem(v)
+                    data.finiteuses = data.finiteuses - 1
+                end
+            elseif data.lacksize[v.prefab] and v.components.stackable then -- 有限需求
+                -- 有限需求,处理需求与供给数目关系
+                if data.lacksize[v.prefab] >= v.components.stackable.stacksize then
+                    -- 重叠格子用不完,直接给
+                    data.finiteuses = data.finiteuses - math.max(v.components.stackable.stacksize / 4, 1)
+                    data.lacksize[v.prefab] = data.lacksize[v.prefab] - v.components.stackable.stacksize
+                    if data.lacksize[v.prefab] <= 0 then data.lacksize[v.prefab] = nil end
+                    showmovefx(v)
+                    container:GiveItem(v)
+                elseif data.leftnumslots > 0 then
+                    -- 重叠格子会用完,但还有空白格子
+                    local slotsize = v.components.stackable.originalmaxsize or v.components.stackable.maxsize
+                    local leftsize = data.lacksize[v.prefab] + slotsize * data.leftnumslots
+                    if leftsize <= v.components.stackable.stacksize then
+                        -- 重叠和空白格子都会被该道具堆满
+                        data.finiteuses = data.finiteuses - math.max(leftsize / 4, 1)
+                        data.leftnumslots = 0
+                        data.lacksize[v.prefab] = nil
+                        showmovefx(v)
+                        container:GiveItem(v.components.stackable:Get(leftsize), nil, data.entpos)
+                        -- 全部堆满,则结束收集
+                        if IsTableEmpty(data.lacksize) then break end
+                    else
+                        -- 还能残留空间
+                        data.finiteuses = data.finiteuses - math.max(v.components.stackable.stacksize / 4, 1)
+                        leftsize = leftsize - v.components.stackable.stacksize
+                        data.leftnumslots = math.floor(leftsize / slotsize)
+                        data.lacksize[v.prefab] = math.floor(leftsize % slotsize)
+                        if data.lacksize[v.prefab] <= 0 then data.lacksize[v.prefab] = nil end
+                        showmovefx(v)
+                        container:GiveItem(v, nil, data.entpos)
+                    end
+                elseif data.lacksize[v.prefab] > 0 then
+                    -- 重叠格子会用完,且没有空白格子
+                    data.finiteuses = data.finiteuses - math.max(data.lacksize[v.prefab] / 4, 1)
+                    showmovefx(v)
+                    local giveitem = v.components.stackable:Get(data.lacksize[v.prefab])
+                    data.lacksize[giveitem.prefab] = nil
+                    container:GiveItem(giveitem, nil, data.entpos)
+                    -- 全部堆满,则结束收集
+                    if IsTableEmpty(data.lacksize) then break end
+                end
+            elseif data.leftnumslots > 0 then
+                -- 没有重叠格子但有空白格子
+                showmovefx(v)
+                data.leftnumslots = data.leftnumslots - 1
+                if v.components.stackable then
+                    local slotsize = v.components.stackable.originalmaxsize or v.components.stackable.maxsize
+                    local leftsize = slotsize * data.leftnumslots
+                    if leftsize <= v.components.stackable.stacksize then
+                        -- 空白格子都会被该道具堆满
+                        data.finiteuses = data.finiteuses - math.max(leftsize / 4, 1)
+                        data.leftnumslots = 0
+                        local giveitem = v.components.stackable:Get(leftsize)
+                        container:GiveItem(giveitem, nil, data.entpos)
+                        -- 全部堆满,则结束收集
+                        if IsTableEmpty(data.lacksize) then return true end
+                    else
+                        -- 还能残留空间
+                        data.finiteuses = data.finiteuses - math.max(v.components.stackable.stacksize / 4, 1)
+                        leftsize = leftsize - v.components.stackable.stacksize
+                        data.leftnumslots = math.floor(leftsize / slotsize)
+                        data.lacksize[v.prefab] = math.floor(leftsize % slotsize)
+                        if data.lacksize[v.prefab] <= 0 then data.lacksize[v.prefab] = nil end
+                        container:GiveItem(v, nil, data.entpos)
+                    end
+                else
+                    data.finiteuses = data.finiteuses - 1
+                    container:GiveItem(v, nil, data.entpos)
+                end
+                if data.leftnumslots <= 0 and IsTableEmpty(data.lacksize) then break end
+            end
+            if data.finiteuses <= 0 then break end
         end
     end
     data.finiteuses = math.max(data.finiteuses, 0)
@@ -999,53 +1180,28 @@ local function containerpickup(inst, player)
         end
     end
 end
-
-local function containerpickupready(player, inst)
-    if inst and inst.components.container ~= nil then containerpickup(inst, player) end
-    if inst.components.equippable and inst.components.equippable:IsEquipped() and player and player.components and player.components.inventory then
-        containerpickup(player, player)
+local function pickupfn(player, inst)
+    if hascollectbutton then
+        if inst.components.container ~= nil then dopickup(inst, player) end
+        if inst.components.equippable and inst.components.equippable:IsEquipped() and player.components.inventory then dopickup(player, player) end
     end
 end
-
-AddModRPCHandler("MOD_HARDMODE", "pickupbtn2hm", containerpickupready)
-
-local function pickupfn(inst, doer)
+local function realcollectfn(doer, inst)
+    pickupfn(doer, inst)
+    collectfn(doer, inst)
+end
+-- 收集/拾取按钮
+AddModRPCHandler("MOD_HARDMODE", "collectbtn2hm", realcollectfn)
+local function collectbtnfn(inst, doer)
+    if not hascollectbutton then return end
     if inst.components.container ~= nil then
-        containerpickupready(doer, inst)
+        realcollectfn(doer, inst)
     elseif inst.replica.container ~= nil then
-        SendModRPCToServer(GetModRPC("MOD_HARDMODE", "pickupbtn2hm"), inst)
+        SendModRPCToServer(GetModRPC("MOD_HARDMODE", "collectbtn2hm"), inst)
     end
 end
 
-local function pickupvalidfn(inst) return inst.components.container ~= nil or inst.replica.container ~= nil end
-
--- 混合功能,背包双击排序,收拾按钮同时收纳和整理
-local function ondoubleclickend(inst, doer)
-    inst.doubleclicktask2hm = nil
-    if inst.doubleclicktrue2hm then sortcontainerbuttonmultiinfofn(inst, doer) end
-    inst.doubleclicktrue2hm = nil
-end
-local function newsortcontainerbuttoninfofn(inst, doer)
-    if (inst.components.equippable and inst.components.equippable:IsEquipped()) or (inst.replica.equippable and inst.replica.equippable:IsEquipped()) then
-        if not inst.doubleclicktask2hm then
-            inst.doubleclicktask2hm = inst:DoTaskInTime(0.25, ondoubleclickend, doer)
-            sortcontainerbuttoninfofn(inst, doer)
-        else
-            inst.doubleclicktrue2hm = not inst.doubleclicktrue2hm
-            inst.doubleclicktask2hm:Cancel()
-            inst.doubleclicktask2hm = inst:DoTaskInTime(0.25, ondoubleclickend, doer)
-        end
-    else
-        sortcontainerbuttoninfofn(inst, doer)
-    end
-end
-
-local function specialCollect(inst, doer)
-    pickupfn(inst, doer)
-    collectfn(inst, doer)
-end
-
--- 锁定/解锁容器
+-- 容器锁定/解锁
 if haslockbutton then
     AddComponentPostInit("container", function(self)
         local oldOnSave = self.OnSave
@@ -1066,8 +1222,8 @@ if haslockbutton then
         end
     end)
 end
-local function lockcontainer(inst, doer, typelock)
-    if not (haslockbutton and inst and inst.components and inst.components.container and not inst.components.container.usespecificslotsforitems) then return end
+local function dolock(inst, doer, typelock)
+    if not (haslockbutton and inst.components.container and not inst.components.container.usespecificslotsforitems) then return end
     local self = inst.components.container
     -- 解锁
     -- if not typelock and self.itemtestfnargs2hm then
@@ -1085,25 +1241,35 @@ local function lockcontainer(inst, doer, typelock)
     end
     inst:AddTag("lockcontainer2hm")
 end
-
-local function lockready(player, inst) if inst and inst.components.container ~= nil then lockcontainer(inst, player) end end
-
-AddModRPCHandler("MOD_HARDMODE", "lockbtn2hm", lockready)
-
-local function lockfn(inst, doer, btn)
+local function lockfn(player, inst) if haslockbutton and inst and inst.components.container ~= nil then dolock(inst, player) end end
+AddModRPCHandler("MOD_HARDMODE", "lockbtn2hm", lockfn)
+-- 锁定/解锁按钮
+local function lockbtnfn(inst, doer, btn)
     if not haslockbutton then return end
     btn:SetText(inst:HasTag("lockcontainer2hm") and (TUNING.isCh2hm and "锁定" or "Lock") or (TUNING.isCh2hm and "解锁" or "Unlock"))
     if inst.components.container ~= nil then
-        lockready(doer, inst)
+        lockfn(doer, inst)
     elseif inst.replica.container ~= nil then
         SendModRPCToServer(GetModRPC("MOD_HARDMODE", "lockbtn2hm"), inst)
     end
 end
 
-local function lockvalidfn(inst) return inst.components.container ~= nil or inst.replica.container ~= nil end
+-- 衣柜换装
+local function reskinfn(player, inst) if inst:HasTag("wardrobe") and inst.components.wardrobe then BufferedAction(player, inst, ACTIONS.CHANGEIN):Do() end end
+-- 换装按钮
+AddModRPCHandler("MOD_HARDMODE", "reskinbtn2hm", reskinfn)
+local function reskinbtnfn(inst, doer)
+    if inst.components.wardrobe ~= nil and inst:HasTag("wardrobe") then
+        BufferedAction(doer, inst, ACTIONS.CHANGEIN):Do()
+    elseif inst.replica.container ~= nil and inst:HasTag("wardrobe") then
+        SendModRPCToServer(GetModRPC("MOD_HARDMODE", "reskinbtn2hm"), inst)
+    end
+end
+local function reskinvalidfn(inst) return defaultbtnvalidfn(inst) and inst:HasTag("wardrobe") end
 
--- 容器按钮插入
+-- [[[[[容器按钮]]]]
 if containercfg then
+    -- 按钮参数
     local function addbuttoninfoforcontainerparams(prefab, container)
         if container and container.inst and not container.inst:HasTag("dcs2hm") and not container.inst.dcs2hm and
             not table.contains(btnblacklist, container.inst.prefab) and not container.usespecificslotsforitems and container.acceptsstacks ~= false and
@@ -1167,58 +1333,68 @@ if containercfg then
                 position2 = Vector3(slotpos_1.x, slotpos_1.y - 100, slotpos_1.z)
                 position3 = Vector3(slotpos_1.x, slotpos_1.y - 143, slotpos_1.z)
             end
-            container.widget.sortbtninfo2hm = {
-                text = TUNING.isCh2hm and "整理" or "Sort",
-                helptext = TUNING.isCh2hm and [[排序该容器内道具
+            -- 可选整理按钮,默认第1个
+            if hassortbutton then
+                container.widget.sortbtninfo2hm = {
+                    text = TUNING.isCh2hm and "整理" or "Sort",
+                    helptext = TUNING.isCh2hm and [[排序该容器内道具
 背包双击会混合排序物品栏和背包内道具]] or [[Sort Your Items
 Backpack Double Click Will Pass Through Inventory]],
-                position = position1,
-                fn = newsortcontainerbuttoninfofn,
-                validfn = sortcontainerbuttoninfovalidfn
-            }
+                    position = position1,
+                    fn = realsortbtnfn,
+                    validfn = defaultbtnvalidfn
+                }
+            end
+            -- 可选按钮,默认第2个位置
             if haslockbutton then
                 container.widget.lockbtninfo2hm = {
                     text = TUNING.isCh2hm and "锁定" or "Lock",
                     helptext = TUNING.isCh2hm and [[锁定该容器只能放置当前已有的道具]] or [[Lock the container to limit store current items]],
                     position = position2,
-                    fn = lockfn,
-                    validfn = lockvalidfn
+                    fn = lockbtnfn,
+                    validfn = defaultbtnvalidfn
                 }
-            elseif hasmultisort then
+            elseif hasmultisortbtn then
                 container.widget.multisortbtninfo2hm = {
                     text = TUNING.isCh2hm and "跨整" or "MSort",
                     helptext = TUNING.isCh2hm and [[背包会混合排序物品栏和背包内道具
-    携带容器混合排序所在容器内的所有同类容器内道具
-    地面容器会混合排序周围同名容器内道具,不会跨船]] or "Sort Your Items Pass Through Containers",
+携带容器混合排序所在容器内的所有同类容器内道具
+地面容器会混合排序周围同名容器内道具,不会跨船]] or "Sort Your Items Pass Through Containers",
                     position = position2,
-                    fn = sortcontainerbuttonmultiinfofn,
-                    validfn = sortcontainerbuttoninfovalidfn
+                    fn = multisortbtnfn,
+                    validfn = defaultbtnvalidfn
                 }
             end
-            container.widget.collectbtninfo2hm = {
-                text = TUNING.isCh2hm and "收集" or "Collect",
-                helptext = TUNING.isCh2hm and [[携带容器收集携带的容器内同名道具
+            -- 可选收集按钮,默认第3个位置
+            if hascollectbutton then
+                container.widget.collectbtninfo2hm = {
+                    text = TUNING.isCh2hm and "收集" or "Collect",
+                    helptext = TUNING.isCh2hm and [[携带容器收集携带的容器内同名道具
 地面容器收集周围容器内的同名道具,不会跨船
 佩戴或手持懒人护符,则拾取周围地上同名道具]] or [[Collect Same Items From Containers
 Use Orange Amulet will Pickup Near Same Items]],
-                position = (hasmultisort or haslockbutton) and position3 or position2,
-                fn = specialCollect,
-                validfn = collectvalidfn
-            }
+                    position = (hasmultisortbtn or haslockbutton) and position3 or (hassortbutton and position2 or position1),
+                    fn = collectbtnfn,
+                    validfn = defaultbtnvalidfn
+                }
+            end
+            -- 特殊容器才有的交换按钮,但在这里无法区分是否用用,因此直接全员设置
             container.widget.exchangebtninfo2hm = {
                 text = TUNING.isCh2hm and "穿越" or "PassW",
-                helptext = TUNING.isCh2hm and [[与随机其他世界的该容器交换道具]],
-                position = haslockbutton and position3 or position2,
-                fn = sendscontainerproxyotherworldfn,
-                validfn = sendscontainerproxyotherworldvalidfn
+                helptext = TUNING.isCh2hm and [[与随机其他世界的该容器交换道具]] or
+                    [[exchange container data with another world's the container]],
+                position = haslockbutton and position3 or (hassortbutton and position2 or position1),
+                fn = exchangebtnfn,
+                validfn = exchangevalidfn
             }
+            -- 妥协衣柜才有的换装按钮
             if prefab == "wardrobe" then
                 local slotpos_2 = container.widget.slotpos[finalslot - 3]
                 local position4 = Vector3(slotpos_2.x, slotpos_2.y - 57, slotpos_2.z)
                 container.widget.reskinbtninfo2hm = {
                     text = TUNING.isCh2hm and "换装" or "Skin",
-                    position = (haslockbutton or hasmultisort) and position4 or (hascollectbutton and position3 or position2),
-                    fn = reskinfn,
+                    position = (haslockbutton or hasmultisortbtn) and position4 or (hassortbutton and hascollectbutton and position3 or position2),
+                    fn = reskinbtnfn,
                     validfn = reskinvalidfn
                 }
             end
@@ -1247,8 +1423,7 @@ Use Orange Amulet will Pickup Near Same Items]],
             end
         end)
     end
-
-    local ImageButton = require "widgets/imagebutton"
+    -- 按钮添加
     local function addbutton(self, container, doer, btnname, btninfo, position)
         local btn = self:AddChild(ImageButton("images/ui.xml", "button_small.tex", "button_small_over.tex", "button_small_disabled.tex", nil, nil, {1, 1},
                                               {0, 0}))
@@ -1265,7 +1440,6 @@ Use Orange Amulet will Pickup Near Same Items]],
         btn.text:SetColour(0, 0, 0, 1)
         self[btnname] = btn
     end
-
     AddClassPostConstruct("widgets/inventorybar", function(self)
         local oldRebuild = self.Rebuild
         self.Rebuild = function(self, ...)
@@ -1277,21 +1451,23 @@ Use Orange Amulet will Pickup Near Same Items]],
             if do_integrated_backpack and self.bottomrow and overflow and overflow.inst then
                 local widget = overflow:GetWidget()
                 local num = overflow:GetNumSlots()
-                if self.backpackinv and self.backpackinv[num] and not widget.buttoninfo and widget.sortbtninfo2hm and widget.collectbtninfo2hm then
+                if self.backpackinv and self.backpackinv[num] and not widget.buttoninfo then
                     local pos = self.backpackinv[num]:GetPosition()
-                    if hascollectbutton then
-                        addbutton(self.bottomrow, overflow.inst, self.owner, "collectbutton2hm", widget.collectbtninfo2hm,
-                                  ((haslockbutton and widget.lockbtninfo2hm) or (hasmultisort and widget.multisortbtninfo2hm)) and
-                                      Vector3(pos.x + 238, pos.y, pos.z) or Vector3(pos.x + 168, pos.y, pos.z))
+                    if hassortbutton and widget.sortbtninfo2hm then
+                        addbutton(self.bottomrow, overflow.inst, self.owner, "sortbutton2hm", widget.sortbtninfo2hm, Vector3(pos.x + 98, pos.y, pos.z))
                     end
-                    addbutton(self.bottomrow, overflow.inst, self.owner, "sortbutton2hm", widget.sortbtninfo2hm, Vector3(pos.x + 98, pos.y, pos.z))
-                    -- todo
+                    if hascollectbutton and widget.collectbtninfo2hm then
+                        addbutton(self.bottomrow, overflow.inst, self.owner, "collectbutton2hm", widget.collectbtninfo2hm,
+                                  ((haslockbutton and widget.lockbtninfo2hm) or (hasmultisortbtn and widget.multisortbtninfo2hm)) and
+                                      Vector3(pos.x + 238, pos.y, pos.z) or (hassortbutton and Vector3(pos.x + 168, pos.y, pos.z)) or
+                                      Vector3(pos.x + 98, pos.y, pos.z))
+                    end
                     if haslockbutton and widget.lockbtninfo2hm then
                         widget.lockbtninfo2hm.text = overflow.inst:HasTag("lockcontainer2hm") and (TUNING.isCh2hm and "解锁" or "Unlock") or
                                                          (TUNING.isCh2hm and "锁定" or "Lock")
                         addbutton(self.bottomrow, overflow.inst, self.owner, "lockbutton2hm", widget.lockbtninfo2hm, Vector3(pos.x + 168, pos.y, pos.z))
                     end
-                    if hasmultisort and widget.multisortbtninfo2hm then
+                    if hasmultisortbtn and widget.multisortbtninfo2hm then
                         addbutton(self.bottomrow, overflow.inst, self.owner, "multisortbutton2hm", widget.multisortbtninfo2hm,
                                   Vector3(pos.x + 168, pos.y, pos.z))
                     end
@@ -1299,17 +1475,14 @@ Use Orange Amulet will Pickup Near Same Items]],
             end
         end
     end)
-
     AddClassPostConstruct("widgets/containerwidget", function(self)
         local oldOpen = self.Open
         self.Open = function(self, container, doer, ...)
             local result = oldOpen(self, container, doer, ...)
             local widget = container.replica.container:GetWidget()
-            if container and not container:HasTag("dcs2hm") and not container.dcs2hm and widget.sortbtninfo2hm and widget.collectbtninfo2hm then
-                -- 整理
-                addbutton(self, container, doer, "sortbutton2hm", widget.sortbtninfo2hm)
+            if container and not container:HasTag("dcs2hm") and not container.dcs2hm then
+                if hassortbutton and widget.sortbtninfo2hm then addbutton(self, container, doer, "sortbutton2hm", widget.sortbtninfo2hm) end
                 if container.prefab == "wardrobe" and widget.reskinbtninfo2hm and container:HasTag("wardrobecontainer2hm") then
-                    -- 换装
                     addbutton(self, container, doer, "reskinbutton2hm", widget.reskinbtninfo2hm)
                 end
                 if haslockbutton and widget.lockbtninfo2hm then
@@ -1318,14 +1491,14 @@ Use Orange Amulet will Pickup Near Same Items]],
                     addbutton(self, container, doer, "lockbutton2hm", widget.lockbtninfo2hm)
                 end
                 if container:HasTag("pocketdimension_container") and widget.exchangebtninfo2hm then
-                    -- 穿越
                     if not TUNING.DSA_ONE_PLAYER_MODE then addbutton(self, container, doer, "exchangebutton2hm", widget.exchangebtninfo2hm) end
                 else
-                    -- 跨整和收集
-                    if hasmultisort and widget.multisortbtninfo2hm then
+                    if hasmultisortbtn and widget.multisortbtninfo2hm then
                         addbutton(self, container, doer, "multisortbutton2hm", widget.multisortbtninfo2hm)
                     end
-                    if hascollectbutton then addbutton(self, container, doer, "collectbutton2hm", widget.collectbtninfo2hm) end
+                    if hascollectbutton and widget.collectbtninfo2hm then
+                        addbutton(self, container, doer, "collectbutton2hm", widget.collectbtninfo2hm)
+                    end
                 end
             end
             return result
@@ -1361,7 +1534,6 @@ Use Orange Amulet will Pickup Near Same Items]],
             return oldClose(self, ...)
         end
     end)
-
     -- 妥协衣柜处理
     local function onopenwardrobe(inst) if inst.components.wardrobe then inst.components.wardrobe:SetCanUseAction(true) end end
     local function onclosewardrobe(inst) if inst.components.wardrobe then inst.components.wardrobe:SetCanUseAction(false) end end
@@ -1385,103 +1557,165 @@ Use Orange Amulet will Pickup Near Same Items]],
     end)
 end
 
+-- [[[[[道具/制作栏快捷存取]]]]
 if itemscfg then
-    if hasitemscollect then
-        -- 指定配方收集
-        local function collectrecipetype(inst, recipe_type, neednum)
-            if not recipe_type or recipe_type == "" then return end
-            if not (inst and inst.components and inst.components.inventory and inst.components.inventory.maxslots > 0) then return end
+    local collectrecipefn
+    if craftmenucollectsupport or hasitemscollect then
+        -- 后面的doer和item都是可选的,主要用于ctrl alt右键道具收集道具
+        collectrecipefn = function(inst, recipe_type, neednum, doer, item)
+            if not recipe_type or recipe_type == "" or
+                not ((inst.components.inventory and inst.components.inventory.maxslots > 0) or
+                    (inst.components.container and inst.components.container.numslots > 0)) then return end
+            local inventory = inst.components.inventory
+            if doer and doer:IsValid() and doer.components.inventory then inventory = doer.components.inventory end
+            if inventory == nil then return end
+            -- 记录要收集的实体名和目标数目,各实体堆叠时欠缺的数目(也可能是无限),剩余格子数目
             local data = {}
-            data.itemlackstackables = {}
-            data.itemlackstackables[recipe_type] = 0
+            data.neednum = neednum
+            if data.neednum == false then data.neednum = nil end
             data.prefabs = {recipe_type}
-            local hasnumslots = 0
-            for i = 1, inst.components.inventory.maxslots do
-                local item = inst.components.inventory.itemslots[i]
-                if item ~= nil and item:IsValid() then
-                    hasnumslots = hasnumslots + 1
-                    if item.prefab == recipe_type and item.components and item.components.stackable and item.components.stackable.stacksize <
-                        item.components.stackable.maxsize then
-                        data.itemlackstackables[item.prefab] = (data.itemlackstackables[item.prefab] or 0) + item.components.stackable.maxsize -
-                                                                   item.components.stackable.stacksize
+            if item and item:IsValid() and item.prefab then
+                if item.dryseeds2hm then -- 干种子
+                    data.prefabs = nil
+                    data.prefabfn = function(v) return v.dryseeds2hm ~= nil end
+                elseif item.components.yotb_skinunlocker ~= nil then -- 宠物皮肤蓝图
+                    data.prefabs = nil
+                    data.prefabfn = function(v) return v.components.yotb_skinunlocker ~= nil end
+                elseif item.nameoverride == "redpouch" then -- 红包
+                    data.prefabs = nil
+                    data.prefabfn = function(v) return v.prefab == "redpouch" or v.nameoverride == "redpouch" end
+                elseif item:HasTag("halloween_ornament") then -- 万圣节装饰
+                    data.prefabs = nil
+                    data.prefabfn = function(v) return v:HasTag("halloween_ornament") end
+                elseif item:HasTag("wintersfeastfood") then -- 圣诞零食
+                    data.prefabs = nil
+                    data.prefabfn = function(v) return v:HasTag("wintersfeastfood") end
+                elseif item:HasTag("winter_ornament") then
+                    if item.nameoverride == "winter_ornament" then -- 圣诞小玩意
+                        data.prefabs = nil
+                        data.prefabfn = function(v) return v.nameoverride == "winter_ornament" and v:HasTag("winter_ornament") end
+                    elseif item:HasTag("lightbattery") then -- 圣诞灯
+                        data.prefabs = nil
+                        data.prefabfn = function(v) return v:HasTag("winter_ornament") and v:HasTag("lightbattery") end
+                    elseif item.nameoverride ~= nil then -- 圣诞装饰
+                        data.prefabs = nil
+                        data.prefabfn = function(v)
+                            return v.nameoverride ~= nil and v.nameoverride ~= "winter_ornament" and v:HasTag("winter_ornament") and
+                                       not v:HasTag("lightbattery")
+                        end
+                    end
+                elseif string.find(item.prefab, "trinket") then -- 玩具
+                    data.prefabs = nil
+                    data.prefabfn = function(v) return v.prefab ~= nil and string.find(v.prefab, "trinket") end
+                end
+            end
+            -- 物品栏或容器空间检测
+            if inst.components.inventory then
+                local isfull = getcontainerspace(inst, inst.components.inventory, data, false)
+                if isfull then
+                    local overflow = inst.components.inventory:GetOverflowContainer()
+                    if overflow and overflow.itemtestfn == nil then
+                        isfull = getcontainerspace(inst, overflow, data, false)
+                        if isfull then
+                            data.leftnumslots = data.leftnumslots + 1
+                            local activeitem = inventory.activeitem
+                            if activeitem ~= nil and activeitem:IsValid() then
+                                data.leftnumslots = data.leftnumslots - 1
+                                if (data.prefabfn and data.prefabfn(activeitem) or (data.prefabs and table.contains(data.prefabs, activeitem.prefab))) and
+                                    activeitem.components.stackable then
+                                    if activeitem.components.stackable.maxsize == math.huge then
+                                        data.infiniteprefabs[activeitem.prefab] = true
+                                        if data.lacksize[activeitem.prefab] then data.lacksize[activeitem.prefab] = nil end
+                                        isfull = nil
+                                    elseif activeitem.components.stackable.stacksize < activeitem.components.stackable.maxsize then
+                                        data.lacksize[activeitem.prefab] = (data.lacksize[activeitem.prefab] or 0) + activeitem.components.stackable.maxsize -
+                                                                               activeitem.components.stackable.stacksize
+                                        isfull = nil
+                                    end
+                                end
+                            end
+                        end
                     end
                 end
-            end
-            local item = inst.components.inventory.activeitem
-            if item ~= nil then
-                hasnumslots = hasnumslots + 1
-                if item.prefab == recipe_type and item.components and item.components.stackable and item.components.stackable.stacksize <
-                    item.components.stackable.maxsize then
-                    data.itemlackstackables[item.prefab] = (data.itemlackstackables[item.prefab] or 0) + item.components.stackable.maxsize -
-                                                               item.components.stackable.stacksize
+                if isfull then
+                    if inst.components.talker then
+                        inst.components.talker:Say(GetActionFailString(inst, "STORE") or (TUNING.isCh2hm and ("已经拿不下了") or ("Inventory full.")))
+                    end
+                    return
+                end
+            elseif inst.components.container then
+                if getcontainerspace(inst, inst.components.container, data, false) then
+                    if doer and doer:IsValid() and doer.components.talker then
+                        doer.components.talker:Say(GetActionFailString(inst, "STORE") or (TUNING.isCh2hm and ("已经放不下了") or ("Inventory full.")))
+                    end
+                    return
                 end
             end
-            data.extranumslots = inst.components.inventory.maxslots - hasnumslots + 1
-            if data.extranumslots == 0 and data.itemlackstackables[recipe_type] == 0 then
-                if inst and inst.components.talker then
-                    inst.components.talker:Say((TUNING.isCh2hm and ("物品栏和手持已经满了") or ("Inventory and hand is full.")))
-                end
-                return
+            data.fastresult = data.prefabs ~= nil
+            if data.prefabs == nil then
+                data.neednum = nil
+            elseif data.infiniteprefabs ~= nil then
+                data.lacksize[recipe_type] = data.neednum
+                data.infiniteprefabs = nil
+            elseif data.lacksize[recipe_type] == 0 then
+                data.lacksize[recipe_type] = nil
+            elseif not data.neednum then
+                data.neednum = data.lacksize[recipe_type]
             end
-            if data.itemlackstackables[recipe_type] == 0 then data.itemlackstackables[recipe_type] = nil end
-            data.onlyneed = neednum
-            -- 识别要收纳的容器
+            -- 记录要收集道具的来源容器列表
             local ents = {}
+            data.proxyents = {}
             local x, y, z = inst.Transform:GetWorldPosition()
             local platform = inst:GetCurrentPlatform()
             local nearents = TheSim:FindEntities(x, y, z, 30, nil, GROUND_CONTAINER_CANT_TAGS)
             for i, v in ipairs(nearents) do
-                if v ~= inst and not v.dcs2hm and v.components and v.components.container and v.components.container.canbeopened and
-                    not v.components.inventoryitem and not inst.components.inventory.opencontainers[v] and v:GetCurrentPlatform() == platform and
-                    not table.contains(collectblacklist, v.prefab) then
-                    table.insert(ents, v)
-                    findcontainerincontainers(v, ents)
+                if v ~= inst and v:IsValid() and not v.dcs2hm then
+                    if v.components.container_proxy and v.components.container_proxy:CanBeOpened() and not v.components.container and
+                        not table.contains(collectblacklist, v.prefab) and v:GetCurrentPlatform() == platform then
+                        local master = v.components.container_proxy.master
+                        if master and master:IsValid() and not data.proxyents[master] and master.components.container and
+                            master.components.container.canbeopened then
+                            master.currentpocket2hm = v
+                            data.proxyents[master] = v
+                            table.insert(ents, master)
+                            findcontainersincontainer(master, ents)
+                        end
+                    elseif v.components.container and v.components.container.canbeopened and v.components.container.acceptsstacks and
+                        (not v.components.inventoryitem or v:HasTag("heavy")) and not inventory.opencontainers[v] and
+                        not table.contains(collectblacklist, v.prefab) and v:GetCurrentPlatform() == platform then
+                        table.insert(ents, v)
+                        findcontainersincontainer(v, ents)
+                    end
                 end
             end
             if inst.components.rider and inst.components.rider.mount and inst.components.rider.mount:IsValid() and
                 inst.components.rider.mount.components.container then table.insert(ents, inst.components.rider.mount) end
             if #ents <= 0 then return end
-            -- 收纳
             local tmpents = {}
             for i, v in ipairs(ents) do
                 table.insert(tmpents, v)
-                if v.virtchest and v.virtchest:IsValid() and v.virtchest.components.container then table.insert(tmpents, v.virtchest) end
-            end
-            for _, ent in ipairs(tmpents) do
-                if ent ~= inst and ent.components.container then
-                    for i = ent.components.container.numslots, 1, -1 do
-                        local item = ent.components.container.slots[i]
-                        if item and item:IsValid() and collectcontaineritem(inst, inst.components.inventory, item, ent.components.container, i, data, true) then
-                            return
-                        end
-                    end
-                elseif ent ~= inst and ent.components.inventory then
-                    for i = ent.components.inventory.maxslots, 1, -1 do
-                        local item = ent.components.inventory.itemslots[i]
-                        if item and item:IsValid() and collectcontaineritem(inst, inst.components.inventory, item, ent.components.inventory, i, data, true) then
-                            return
-                        end
-                    end
+                if v.virtchest and v.virtchest:IsValid() and v.virtchest.components.container then
+                    if not v.virtchest.virtfrom2hm then v.virtchest.virtfrom2hm = v end
+                    table.insert(tmpents, v.virtchest)
                 end
             end
+            -- 进行收集道具操作
+            data.currplayer2hm = doer or inst
+            collectcontainers(inst, inst.components.inventory or inst.components.container, data, tmpents)
+            -- 实际可以反馈结果
         end
-
-        local function collectrecipetypeready(inst, recipe_type, neednum)
-            if not recipe_type or recipe_type == "" then return end
-            if inst and inst.components.inventory ~= nil then collectrecipetype(inst, recipe_type, neednum) end
-        end
-
-        AddModRPCHandler("MOD_HARDMODE", "collectrecipetypebtn2hm", collectrecipetypeready)
-
-        local function collectrecipetypefn(doer, recipe_type, neednum)
+    end
+    -- 制作栏快速收集
+    if craftmenucollectsupport then
+        AddModRPCHandler("MOD_HARDMODE", "collectrecipetypebtn2hm", collectrecipefn)
+        local function collectrecipeclientfn(doer, recipe_type, neednum)
             if not recipe_type or recipe_type == "" or type(recipe_type) ~= "string" then return end
             if doer.components.inventory ~= nil and not doer:HasTag("playerghost") and doer.components.inventory.isvisible then
-                collectrecipetypeready(doer or ThePlayer, recipe_type, neednum)
+                collectrecipefn(doer or ThePlayer, recipe_type, neednum)
             elseif doer.replica.inventory ~= nil and not doer:HasTag("playerghost") then
                 SendModRPCToServer(GetModRPC("MOD_HARDMODE", "collectrecipetypebtn2hm"), recipe_type, neednum)
             end
         end
-
         local function SetImageButtonRightControl(self)
             if self.SetImageButtonRightControl2hm then return end
             self.SetImageButtonRightControl2hm = true
@@ -1517,17 +1751,14 @@ if itemscfg then
                 return result
             end
         end
-        -- local function collect_recipe_type(recipe_type) if ThePlayer and recipe_type and recipe_type ~= "" then collectrecipetypefn(ThePlayer, recipe_type) end end
+        -- local function collect_recipe_type(recipe_type) if ThePlayer and recipe_type and recipe_type ~= "" then collectrecipeclientfn(ThePlayer, recipe_type) end end
         -- 收集指定素材，且至多收集一组
-        local CraftingMenuIngredients = require "widgets/redux/craftingmenu_ingredients"
-        local Widget = require "widgets/widget"
-        local ThreeSlice = require "widgets/threeslice"
         AddClassPostConstruct("widgets/ingredientui",
                               function(self, atlas, image, num_need, num_found, has_enough, name, owner, recipe_type, quant_text_scale, ingredient_recipe, ...)
             if self.recipe_type and num_need and num_found and not IsCharacterIngredient(self.recipe_type) then
                 self.onrightclick2hm = function()
-                    collectrecipetypefn(self.owner or ThePlayer, self.recipe_type,
-                                        not has_enough and ((num_need * (self.parent and self.parent.parent and self.parent.parent.quantity or 1) - num_found)))
+                    collectrecipeclientfn(self.owner or ThePlayer, self.recipe_type, not has_enough and
+                                              ((num_need * (self.parent and self.parent.parent and self.parent.parent.quantity or 1) - num_found)))
                 end
                 SetImageButtonRightControl(self)
                 local meta = ingredient_recipe ~= nil and ingredient_recipe.meta or nil
@@ -1601,7 +1832,7 @@ if itemscfg then
                         not TheInput:IsControlPressed(CONTROL_FORCE_TRADE) and control == CONTROL_SECONDARY and down and self.recipe_name then
                         local data = self.craftingmenu:GetRecipeState(self.recipe_name)
                         local prefab = data ~= nil and data.recipe ~= nil and data.recipe.product or self.recipe_name
-                        collectrecipetypefn(self.owner or ThePlayer, prefab)
+                        collectrecipeclientfn(self.owner or ThePlayer, prefab)
                     end
                     return oldOnControl(_self, control, down, ...)
                 end
@@ -1629,7 +1860,7 @@ if itemscfg then
                         if index and items and items[index] then
                             local recipe = items[index].recipe
                             if recipe and (recipe.name or recipe.product) then
-                                collectrecipetypefn(self.owner or ThePlayer, recipe.product or recipe.name)
+                                collectrecipeclientfn(self.owner or ThePlayer, recipe.product or recipe.name)
                             end
                         end
                     end
@@ -1656,6 +1887,37 @@ if itemscfg then
             end
         end)
     end
+    -- 快速收集道具(需要支持收集相同类型的道具)
+    if hasitemscollect then
+        local collectaction = Action({})
+        collectaction.priority = ACTIONS.LOOKAT.priority - 0.5
+        collectaction.id = "COLLECT2HM"
+        collectaction.str = TUNING.isCh2hm and "收集" or "Collect"
+        collectaction.rmb = true
+        collectaction.instant = true
+        collectaction.mount_valid = true
+        collectaction.fn = function(act)
+            if not (act.invobject and act.invobject:IsValid() and act.invobject.prefab and act.invobject.components.inventoryitem and
+                act.invobject.components.inventoryitem.owner) then return end
+            local owner = act.invobject.components.inventoryitem.owner
+            if owner and owner:IsValid() and (owner.components.container or owner.components.inventory) then
+                local neednum = 1
+                if act.invobject.components.stackable then
+                    local slotsize = act.invobject.components.stackable.originalmaxsize or act.invobject.components.stackable.maxsize
+                    if slotsize and act.invobject.components.stackable.stacksize < slotsize then
+                        neednum = slotsize - act.invobject.components.stackable.stacksize
+                    else
+                        neednum = slotsize or 1
+                    end
+                end
+                collectrecipefn(owner, act.invobject.prefab, neednum, act.doer, act.invobject)
+                -- 实际可以反馈收集结果
+                return true
+            end
+        end
+        AddAction(collectaction)
+    end
+    -- 快速存放道具
     if hasitemsstore then
         local storeaction = Action({})
         storeaction.priority = ACTIONS.LOOKAT.priority - 0.5
@@ -1664,127 +1926,108 @@ if itemscfg then
         storeaction.rmb = true
         storeaction.instant = true
         storeaction.mount_valid = true
-        local function processstoreincontainers(act, ents, inst)
-            for _, ent in ipairs(ents) do
-                if ent ~= inst and ent.components.container and inst.components.inventory.opencontainers[ent] then
-                    if ent.components.container:GiveItem(act.invobject, nil, nil, false) then
-                        if ent.Transform then SpawnPrefab("sand_puff").Transform:SetPosition(ent.Transform:GetWorldPosition()) end
-                        return true
-                    end
+        local function openvirtchest(ent, inst)
+            if ent.virtchest and ent.virtchest:IsValid() and ent.virtchest.components.container and ent.components.container.opencount == 0 then
+                local self = ent.virtchest.components.container
+                self.ignoreoverstacked = true
+                ent.components.container.ignoresound = true
+                for slot, _ in pairs(self.slots) do
+                    local item = self:RemoveItemBySlot(slot)
+                    if item ~= nil then ent.components.container:GiveItem(item, slot) end
                 end
+                ent.components.container.ignoresound = false
+                self.ignoreoverstacked = false
             end
-            for _, ent in ipairs(ents) do
-                if ent ~= inst and ent.components.container and not ent.virtchest then
-                    for i = 1, ent.components.container.numslots do
-                        local item = ent.components.container.slots[i]
-                        if item and item:IsValid() and item.prefab == act.invobject.prefab then
-                            if ent.components.container:GiveItem(act.invobject, nil, nil, false) then
-                                if ent.Transform then
-                                    SpawnPrefab("sand_puff").Transform:SetPosition(ent.Transform:GetWorldPosition())
-                                end
-                                return true
-                            end
-                        end
-                    end
-                elseif ent ~= inst and ent.components.container and ent.virtchest and ent.virtchest:IsValid() and ent.virtchest.components.container and
-                    (ent.components.container:Has(act.invobject.prefab, 1) or ent.virtchest.components.container:Has(act.invobject.prefab, 1)) then
-                    -- 判断是否溢出
-                    if act.invobject.components.stackable then
-                        local lacksize = 0
-                        local itemsnum = 0
-                        for i = 1, ent.components.container.numslots do
-                            local item = ent.components.container.slots[i]
-                            if item and item:IsValid() then
-                                itemsnum = itemsnum + 1
-                                if item.prefab == act.invobject.prefab and item.components.stackable then
-                                    lacksize = item.components.stackable.maxsize - item.components.stackable.stacksize
-                                end
-                            end
-                        end
-                        for i = 1, ent.virtchest.components.container.numslots do
-                            local item = ent.virtchest.components.container.slots[i]
-                            if item and item:IsValid() then
-                                itemsnum = itemsnum + 1
-                                if item.prefab == act.invobject.prefab and item.components.stackable then
-                                    lacksize = item.components.stackable.maxsize - item.components.stackable.stacksize
-                                end
-                            end
-                        end
-                        if itemsnum < ent.components.container.numslots then
-                            if ent.components.container:GiveItem(act.invobject, nil, nil, false) then
-                                if ent.Transform then
-                                    SpawnPrefab("sand_puff").Transform:SetPosition(ent.Transform:GetWorldPosition())
-                                end
-                                return true
-                            end
-                        elseif lacksize >= act.invobject.components.stackable.stacksize then
-                            ent.components.container:Open(act.doer)
-                            if ent.components.container:GiveItem(act.invobject, nil, nil, false) then
-                                if ent.Transform then
-                                    SpawnPrefab("sand_puff").Transform:SetPosition(ent.Transform:GetWorldPosition())
-                                end
-                                return true
-                            end
-                        elseif lacksize > 0 and lacksize < act.invobject.components.stackable.stacksize then
-                            ent.components.container:Open(act.doer)
-                            local giveitem = act.invobject.components.stackable:Get(lacksize)
-                            if ent.components.container:GiveItem(giveitem, nil, nil, false) and ent.Transform then
-                                SpawnPrefab("sand_puff").Transform:SetPosition(ent.Transform:GetWorldPosition())
-                            end
-                        end
+        end
+        local function processstoreincontainers(invobject, ents, proxyents, inst, src_pos, isstackable)
+            -- 优先存放在当前打开的容器
+            local toremove = {}
+            for i, ent in ipairs(ents) do
+                if inst.components.inventory.opencontainers[ent] then
+                    if ent.components.container:GiveItem(invobject, nil, src_pos, false) then
+                        delayshowmovefx(ent)
+                        return true
                     else
-                        local itemsnum = 0
-                        for i = 1, ent.components.container.numslots do
-                            local item = ent.components.container.slots[i]
-                            if item and item:IsValid() then itemsnum = itemsnum + 1 end
-                        end
-                        for i = 1, ent.virtchest.components.container.numslots do
-                            local item = ent.virtchest.components.container.slots[i]
-                            if item and item:IsValid() then itemsnum = itemsnum + 1 end
-                        end
-                        if itemsnum < ent.components.container.numslots and ent.components.container:GiveItem(act.invobject, nil, nil, false) then
-                            if ent.Transform then SpawnPrefab("sand_puff").Transform:SetPosition(ent.Transform:GetWorldPosition()) end
-                            return true
-                        end
+                        table.insert(toremove, i)
                     end
                 end
             end
-            for _, ent in ipairs(ents) do
-                if ent ~= inst and ent.components.container and ent.components.container.itemtestfn then
-                    if ent.virtchest and ent.virtchest:IsValid() and ent.virtchest.components.container then
-                        local itemsnum = 0
-                        for i = 1, ent.components.container.numslots do
-                            local item = ent.components.container.slots[i]
-                            if item and item:IsValid() then itemsnum = itemsnum + 1 end
-                        end
-                        for i = 1, ent.virtchest.components.container.numslots do
-                            local item = ent.virtchest.components.container.slots[i]
-                            if item and item:IsValid() then itemsnum = itemsnum + 1 end
-                        end
-                        if itemsnum >= ent.components.container.numslots then break end
+            for _, i in ipairs(toremove) do table.remove(ents, i) end
+            toremove = {}
+            -- 优先存放在已有此道具的容器,全图唯一容器更加优先
+            for master, v in pairs(proxyents) do
+                local hasitem, oldnum = master.components.container:Has(invobject.prefab, 1)
+                if hasitem then
+                    if master.components.container:GiveItem(invobject, nil, src_pos, false) then
+                        delayshowmovefx(v)
+                        return true
+                    elseif invobject and invobject:IsValid() then
+                        local nowhas, newnum = master.components.container:Has(invobject.prefab, 1)
+                        if newnum > oldnum then delayshowmovefx(v) end
                     end
-                    if ent.components.container:GiveItem(act.invobject, nil, nil, false) then
-                        if ent.Transform then SpawnPrefab("sand_puff").Transform:SetPosition(ent.Transform:GetWorldPosition()) end
+                end
+            end
+            for i, ent in ipairs(ents) do
+                local oldhas, oldnum = ent.components.container:Has(invobject.prefab, 1)
+                if not oldhas and ent.virtchest and ent.virtchest:IsValid() and ent.virtchest.components.container then
+                    local virthas, virtnum = ent.virtchest.components.container:Has(invobject.prefab, 1)
+                    oldhas = virthas
+                    oldnum = oldnum + virtnum
+                end
+                if oldhas then
+                    openvirtchest(ent, inst)
+                    if isstackable then
+                        if ent.components.container:GiveItem(invobject, nil, src_pos, false) then
+                            delayshowmovefx(ent)
+                            return true
+                        else
+                            if invobject and invobject:IsValid() then
+                                local newhas, newnum = ent.components.container:Has(invobject.prefab, 1)
+                                if newnum > oldnum then delayshowmovefx(ent) end
+                            end
+                        end
+                    elseif ent.components.container:GiveItem(invobject, nil, src_pos, false) then
+                        delayshowmovefx(ent)
                         return true
                     end
+                    table.insert(toremove, i)
                 end
             end
-            for _, ent in ipairs(ents) do
-                if ent ~= inst and ent.components.container then
-                    if ent.virtchest and ent.virtchest:IsValid() and ent.virtchest.components.container then
-                        local itemsnum = 0
-                        for i = 1, ent.components.container.numslots do
-                            local item = ent.components.container.slots[i]
-                            if item and item:IsValid() then itemsnum = itemsnum + 1 end
-                        end
-                        for i = 1, ent.virtchest.components.container.numslots do
-                            local item = ent.virtchest.components.container.slots[i]
-                            if item and item:IsValid() then itemsnum = itemsnum + 1 end
-                        end
-                        if itemsnum >= ent.components.container.numslots then break end
+            for _, i in ipairs(toremove) do table.remove(ents, i) end
+            -- 优先存放在有存放道具限制的容器
+            local tmpentsindex = {}
+            local itemtestfnents = {}
+            for i, ent in ipairs(ents) do
+                if ent.components.container.itemtestfn ~= nil then
+                    table.insert(itemtestfnents, ent)
+                    tmpentsindex[ent] = i
+                end
+            end
+            if #itemtestfnents > 0 then
+                table.sort(itemtestfnents, function(a, b)
+                    if not (a and b and a.prefab and b.prefab and tmpentsindex[a] and tmpentsindex[b]) then return false end
+                    if prioritystoreents[a.prefab] and prioritystoreents[b.prefab] then
+                        if prioritystoreents[a.prefab] == prioritystoreents[b.prefab] then return tmpentsindex[a] < tmpentsindex[b] end
+                        return prioritystoreents[a.prefab] < prioritystoreents[b.prefab]
                     end
-                    if ent.components.container:GiveItem(act.invobject, nil, nil, false) then
-                        if ent.Transform then SpawnPrefab("sand_puff").Transform:SetPosition(ent.Transform:GetWorldPosition()) end
+                    return tmpentsindex[a] < tmpentsindex[b]
+                end)
+                for _, ent in ipairs(itemtestfnents) do
+                    openvirtchest(ent, inst)
+                    if ent.components.container:GiveItem(invobject, nil, src_pos, false) then
+                        delayshowmovefx(ent)
+                        return true
+                    else
+                        table.remove(ents, i)
+                    end
+                end
+            end
+            -- 普通容器
+            for _, ent in ipairs(ents) do
+                if ent.components.container.itemtestfn == nil then
+                    openvirtchest(ent, inst)
+                    if ent.components.container:GiveItem(invobject, nil, src_pos, false) then
+                        delayshowmovefx(ent)
                         return true
                     end
                 end
@@ -1795,67 +2038,244 @@ if itemscfg then
             if not (inst and act.invobject and act.invobject.components.inventoryitem and inst.components.inventory and inst.components.inventory.opencontainers) then
                 return
             end
-            local prevcontainer = act.invobject.components.inventoryitem.owner
+            local owner = act.invobject.components.inventoryitem.owner
+            local prevcontainer = owner and (owner.components.container or owner.components.inventory)
+            if not prevcontainer then return end
+            -- 记录要存放道具的目的容器列表
+            local isstackable = act.invobject.components.stackable ~= nil
+            local isbigsize = isstackable and
+                                  (act.invobject.components.stackable.stacksize >
+                                      (act.invobject.components.stackable.originalmaxsize or act.invobject.components.stackable.maxsize))
+            local src_pos = inst:GetPosition()
             local ents = {}
+            local proxyents = {}
+            if inst.components.rider and inst.components.rider.mount and inst.components.rider.mount:IsValid() and
+                inst.components.rider.mount.components.container and inst.components.rider.mount ~= owner and
+                inst.components.rider.mount.components.container.canbeopened then table.insert(ents, inst.components.rider.mount) end
             local x, y, z = inst.Transform:GetWorldPosition()
             local platform = inst:GetCurrentPlatform()
             local nearents = TheSim:FindEntities(x, y, z, 30, nil, GROUND_CONTAINER_CANT_TAGS)
             for i, v in ipairs(nearents) do
-                if v and v ~= inst and not v.dcs2hm and v ~= prevcontainer and v.components and v.components.container and not v.components.inventoryitem and
-                    not v.components.health and not v.components.locomotor and not v.components.stewer and v.components.container.canbeopened and
-                    not v.components.container.usespecificslotsforitems and v.components.container.acceptsstacks and v.components.container.type == "chest" and
-                    v.components.container.numslots >= 9 and not table.contains(storeblacklist, v.prefab) and v:GetCurrentPlatform() == platform and
-                    v.components.container:CanTakeItemInSlot(act.invobject) then table.insert(ents, v) end
-            end
-            if inst.components.rider and inst.components.rider.mount and inst.components.rider.mount:IsValid() and
-                inst.components.rider.mount.components.container then table.insert(ents, inst.components.rider.mount) end
-            if #ents <= 0 then return end
-            local prevslot = act.invobject.components.inventoryitem:GetSlotNum()
-            act.invobject.components.inventoryitem:RemoveFromOwner(true)
-            -- 存放
-            local result = processstoreincontainers(act, ents, inst)
-            -- 存放失败检查和修正
-            if act.invobject:IsValid() and act.invobject.components.inventoryitem and act.invobject.components.inventoryitem.owner == nil then
-                prevcontainer = prevcontainer and (prevcontainer.components.container or prevcontainer.components.inventory)
-                if prevcontainer then
-                    prevcontainer:GiveItem(act.invobject, prevslot)
-                else
-                    inst.components.inventory:GiveItem(act.invobject, prevslot)
+                if v:IsValid() and v ~= owner and not v.dcs2hm then
+                    if isstackable and v.components.container_proxy and v.components.container_proxy:CanBeOpened() and not v.components.container and
+                        not v.components.locomotor and not table.contains(storeblacklist, v.prefab) and v:GetCurrentPlatform() == platform then
+                        local master = v.components.container_proxy.master
+                        if master and master:IsValid() and master ~= owner and not proxyents[master] and master.components.container and
+                            master.components.container.canbeopened and not master.components.container.usespecificslotsforitems and
+                            master.components.container.acceptsstacks and (not isbigsize or master.components.container.infinitestacksize) and
+                            master.components.container:CanTakeItemInSlot(act.invobject) then
+                            proxyents[master] = v
+                            master.currentpocket2hm = v
+                        end
+                    elseif v.components.container and (isstackable or not v.components.container.infinitestacksize) and
+                        (not isbigsize or v.components.container.infinitestacksize) and (not v.components.inventoryitem or v:HasTag("heavy")) and
+                        not v.components.health and not v.components.locomotor and not v.components.stewer and v.components.container.canbeopened and
+                        not v.components.container.usespecificslotsforitems and v.components.container.acceptsstacks and v.components.container.type == "chest" and
+                        v.components.container.numslots >= 9 and not table.contains(storeblacklist, v.prefab) and v:GetCurrentPlatform() == platform and
+                        v.components.container:CanTakeItemInSlot(act.invobject) then
+                        table.insert(ents, v)
+                    end
                 end
+            end
+            if #ents <= 0 and IsTableEmpty(proxyents) then return end
+            local prevslot = act.invobject.components.inventoryitem:GetSlotNum()
+            -- 进行存放道具操作
+            act.invobject.components.inventoryitem:RemoveFromOwner(true)
+            act.invobject.prevplayer2hm = inst
+            local result = processstoreincontainers(act.invobject, ents, proxyents, inst, src_pos, isstackable)
+            -- 存放完成数据修正,和失败检查
+            if act.invobject:IsValid() then
+                act.invobject.prevplayer2hm = nil
+                if act.invobject.components.inventoryitem.owner == nil then prevcontainer:GiveItem(act.invobject, prevslot) end
             end
             return result
         end
-        -- 添加存放动作
         AddAction(storeaction)
+    end
+    if hasitemscollect or hasitemsstore then
         AddComponentAction("INVENTORY", "inventoryitem", function(inst, doer, actions)
-            if inst.prefab ~= "pocketwatch_recall" and inst.prefab ~= "pocketwatch_portal" and inst.replica.inventoryitem ~= nil and
+            if inst.prefab and not table.contains(itemsblacklist, inst.prefab) and inst.replica.inventoryitem ~= nil and
                 not inst.replica.inventoryitem:CanOnlyGoInPocket() and doer and not (doer.replica.inventory and doer.replica.inventory:GetActiveItem() == inst) and
-                not (inst.replica.equippable and inst.replica.equippable:IsEquipped()) then table.insert(actions, ACTIONS.STORE2HM) end
+                not (inst.replica.equippable and inst.replica.equippable:IsEquipped()) then
+                if hasitemscollect then table.insert(actions, ACTIONS.COLLECT2HM) end
+                if hasitemsstore then table.insert(actions, ACTIONS.STORE2HM) end
+            end
         end)
         AddComponentPostInit("playeractionpicker", function(self)
             local oldGetInventoryActions = self.GetInventoryActions
             self.GetInventoryActions = function(self, ...)
                 if self.inst and self.inst.components.playercontroller and self.inst.components.playercontroller:IsControlPressed(CONTROL_FORCE_STACK) then
-                    ACTIONS.STORE2HM.priority = 11
+                    if self.inst.components.playercontroller:IsControlPressed(CONTROL_FORCE_INSPECT) then
+                        if hasitemscollect then ACTIONS.COLLECT2HM.priority = 11 end
+                    elseif hasitemsstore then
+                        ACTIONS.STORE2HM.priority = 11
+                    end
                 end
                 local res = oldGetInventoryActions(self, ...)
-                if ACTIONS.STORE2HM.priority == 11 then ACTIONS.STORE2HM.priority = ACTIONS.LOOKAT.priority - 0.5 end
+                if hasitemscollect and ACTIONS.COLLECT2HM.priority == 11 then ACTIONS.COLLECT2HM.priority = ACTIONS.LOOKAT.priority - 0.5 end
+                if hasitemsstore and ACTIONS.STORE2HM.priority == 11 then ACTIONS.STORE2HM.priority = ACTIONS.LOOKAT.priority - 0.5 end
                 return res
-            end
-        end)
-        -- 智能小木牌模组补丁
-        AddPrefabPostInit("world", function()
-            if TUNING.SMART_SIGN_DRAW_ENABLE then
-                local function refreshcontainerminisign(inst) if inst.components.smart_minisign then inst.components.smart_minisign:OnClose() end end
-                AddComponentPostInit("container", function(self)
-                    self.inst:DoTaskInTime(0.5, function()
-                        if self.inst.components.smart_minisign then
-                            self.inst:ListenForEvent("itemget", refreshcontainerminisign)
-                            self.inst:ListenForEvent("itemlose", refreshcontainerminisign)
-                        end
-                    end)
-                end)
             end
         end)
     end
 end
+
+-- 智能小木牌模组补丁
+AddPrefabPostInit("world", function()
+    if TUNING.SMART_SIGN_DRAW_ENABLE then
+        local function refreshcontainerminisign(inst) if inst.components.smart_minisign then inst.components.smart_minisign:OnClose() end end
+        AddComponentPostInit("container", function(self)
+            self.inst:DoTaskInTime(0.5, function()
+                if self.inst.components.smart_minisign then
+                    self.inst:ListenForEvent("itemget", refreshcontainerminisign)
+                    self.inst:ListenForEvent("itemlose", refreshcontainerminisign)
+                end
+            end)
+        end)
+    end
+end)
+
+-- 容器存取轨迹补丁
+local clientitemtransferimage2hmdist = 36 * 36
+local function clientitemtransferimage2hm(img, atlas, x, y, z, prevcontainer, prevslot, _x, _y, _z, currcontainer, currslot, userid, iscollectact)
+    if ThePlayer and ThePlayer.userid and ThePlayer.HUD and TheFrontEnd and ThePlayer.HUD == TheFrontEnd:GetActiveScreen() and ThePlayer.HUD.controls and
+        ThePlayer.HUD.controls.inv and ThePlayer.HUD.controls.containers then
+        local controls = ThePlayer.HUD.controls
+        -- 自己取出道具,官方已有路径
+        -- 自己存放道具,未存放到己已打开容器时,需要添加路径,已添加
+        -- 他人取出道具,未从其已打开容器取出时,需要添加路径,已添加
+        -- 他人存放道具,未存放到其已打开容器时,需要添加路径,已添加
+        local isself = userid == ThePlayer.userid
+        local toopen
+        local destpos
+        if currcontainer then
+            if isself and currcontainer == userid then
+                toopen = true
+                if currslot and controls.inv.inv and controls.inv.inv[currslot] then destpos = controls.inv.inv[currslot]:GetWorldPosition() end
+            elseif isself and controls.inv.backpack and controls.inv.backpack:IsValid() and controls.inv.backpack:HasTag(currcontainer) then
+                toopen = true
+                if currslot and controls.inv.backpackinv and controls.inv.backpackinv[currslot] then
+                    destpos = controls.inv.backpackinv[currslot]:GetWorldPosition()
+                end
+            else
+                for container, containerwidget in pairs(controls.containers) do
+                    if container and container:IsValid() and container:HasTag(currcontainer) then
+                        toopen = true
+                        if containerwidget and containerwidget.inv and containerwidget.inv[currslot] then
+                            destpos = containerwidget.inv[currslot]:GetWorldPosition()
+                        end
+                        break
+                    end
+                end
+            end
+        end
+        -- toopen说明已存在官方路径
+        if toopen then return end
+        local fromopen
+        local startpos
+        if prevcontainer then
+            if isself and prevcontainer == userid then
+                fromopen = true
+                if prevslot and controls.inv.inv and controls.inv.inv[prevslot] then startpos = controls.inv.inv[prevslot]:GetWorldPosition() end
+            elseif isself and controls.inv.backpack and controls.inv.backpack:IsValid() and controls.inv.backpack:HasTag(prevcontainer) then
+                fromopen = true
+                if prevslot and controls.inv.backpackinv and controls.inv.backpackinv[prevslot] then
+                    startpos = controls.inv.backpackinv[prevslot]:GetWorldPosition()
+                end
+            else
+                for container, containerwidget in pairs(controls.containers) do
+                    if container and container:IsValid() and container:HasTag(prevcontainer) then
+                        fromopen = true
+                        if containerwidget and containerwidget.inv and containerwidget.inv[prevslot] then
+                            startpos = containerwidget.inv[prevslot]:GetWorldPosition()
+                        end
+                        break
+                    end
+                end
+            end
+        end
+        startpos = startpos or Vector3(TheSim:GetScreenPos(x, y, z))
+        destpos = destpos or Vector3(TheSim:GetScreenPos(_x, _y, _z))
+        local im = Image(atlas, img)
+        im:MoveTo(startpos, destpos, .3, function() im:Kill() end)
+    end
+end
+AddClientModRPCHandler("MOD_HARDMODE", "itemtransferimage2hm", clientitemtransferimage2hm)
+local function cancelitemtransferimagetask2hm(inst) inst.itemtransferimagetask2hm = nil end
+local function canceldisablefxtask2hm(inst) inst.disablecsfxtask2hm = nil end
+local function onitemget(inst, data)
+    -- inst是目的容器,src是来源容器,仅在快捷存取时额外显示路径
+    if not POPULATING and data and data.src_pos and data.item and data.item:IsValid() and data.item.replica and data.item.replica.inventoryitem and
+        (data.item.prevplayer2hm or data.item.currplayer2hm) and not inst.itemtransferimagetask2hm then
+        -- 同一容器同时进行多次存放,说明是拆分存放,只需要显示第一次存放的路径
+        inst.itemtransferimagetask2hm = inst:DoTaskInTime(0, cancelitemtransferimagetask2hm)
+        local actplayer = data.item.prevplayer2hm or data.item.currplayer2hm
+        if not (actplayer:IsValid() and actplayer.userid) then return end
+        local src = data.item.prevcontainer and data.item.prevcontainer.inst or data.item.prevplayer2hm
+        if not src then return end -- 理论上不可能出现src为空的情况
+        local iscollectact = data.item.currplayer2hm ~= nil
+        local atlas = data.item.replica.inventoryitem:GetAtlas()
+        local img = data.item.replica.inventoryitem:GetImage()
+        if not (img and atlas) then return end
+        local x, y, z = data.src_pos:Get()
+        if x == 0 and z == 0 then
+            local prevfinalowner = getfinalowner(src)
+            if prevfinalowner.currentpocket2hm and prevfinalowner.currentpocket2hm:IsValid() and prevfinalowner:HasTag("pocketdimension_container") then
+                prevfinalowner = prevfinalowner.currentpocket2hm
+            end
+            x, y, z = prevfinalowner.Transform:GetWorldPosition()
+        end
+        local _x, _y, _z = inst.Transform:GetWorldPosition()
+        if _x == 0 and _z == 0 then
+            local currfinalowner = getfinalowner(inst)
+            if currfinalowner.currentpocket2hm and currfinalowner.currentpocket2hm:IsValid() and currfinalowner:HasTag("pocketdimension_container") then
+                currfinalowner = currfinalowner.currentpocket2hm
+            end
+            _x, _y, _z = currfinalowner.Transform:GetWorldPosition()
+        end
+        -- 来源容器ID,目标容器ID,取放操作的玩家ID
+        local prevcontainer = src.userid or src.GUID
+        local currcontainer = inst.userid or inst.GUID
+        local userid = actplayer.userid
+        local rpc = GetClientModRPC("MOD_HARDMODE", "itemtransferimage2hm")
+        -- 尝试通知符合条件的所有玩家显示该路径
+        for index, player in ipairs(AllPlayers) do
+            if player and player:IsValid() and player.userid then
+                local isself = player.userid == userid
+                -- 进行快捷取出操作的玩家不需要显示该路径
+                -- 已打开目的容器的玩家不需要显示该路径
+                -- 一定距离外的他人不需要显示该路径
+                if not (iscollectact and isself) and not (inst.components.container and inst.components.container.openlist[player]) and
+                    (isself or player:GetDistanceSqToPoint(x, y, z) < clientitemtransferimage2hmdist or player:GetDistanceSqToPoint(_x, _y, _z) <
+                        clientitemtransferimage2hmdist) then
+                    -- 客户端玩家不需要发rpc
+                    if TheNet:GetIsClient() and ThePlayer == player then
+                        clientitemtransferimage2hm(img, atlas, x, y, z, prevcontainer, data.item.prevslot, _x, _y, _z, currcontainer, data and data.slot,
+                                                   userid, iscollectact)
+                    else
+                        SendModRPCToClient(rpc, player.userid, img, atlas, x, y, z, prevcontainer, data.item.prevslot, _x, _y, _z, currcontainer,
+                                           data and data.slot, userid, iscollectact)
+                    end
+                end
+            end
+        end
+    end
+end
+-- 每个容器都加了一个自己的GUID标签,以方便本模组找到服务器容器对应的客户端容器;道具存放信号
+AddComponentPostInit("container", function(self)
+    if not self.inst.ctfi2hm and self.inst.GUID then
+        self.inst.ctfi2hm = true
+        self.inst:AddTag(self.inst.GUID)
+        self.inst:ListenForEvent("itemget", onitemget)
+    end
+end)
+AddComponentPostInit("inventory", function(self) if self.inst:HasTag("player") then self.inst:ListenForEvent("itemget", onitemget) end end)
+AddComponentPostInit("stackable", function(self)
+    local Put = self.Put
+    self.Put = function(self, item, src_pos, ...)
+        if item ~= self and src_pos and self.inst and self.inst.components.inventoryitem and self.inst.components.inventoryitem.owner then
+            onitemget(self.inst.components.inventoryitem.owner, {item = item, src_pos = src_pos})
+        end
+        return Put(self, item, src_pos, ...)
+    end
+end)

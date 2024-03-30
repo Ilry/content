@@ -792,15 +792,16 @@ local LOAD = AddAction("LOAD", "Aquire Cargo", function(act)
 end)
 
 local AUGMENT = AddAction("AUGMENT", "Install Backpack", function(act)
-    if act.doer.components.inventory ~= nil then
-        if act.target ~= nil and act.target.components.equippable ~= nil and
-            act.target.components.container ~= nil then
-            act.doer.components.inventory:Equip(act.target)
-            if act.doer.components.container ~= nil then
-                for opener, _ in pairs(act.doer.components.container.openlist) do
-                    act.target.components.container:Open(opener)
-                end
-            end
+    if act.doer ~= nil and act.doer.components.inventory ~= nil and
+        act.target ~= nil and act.target.components.equippable ~= nil then
+        act.doer.components.inventory:Equip(act.target)
+        if act.target.components.container ~= nil then
+            act.target.components.container:Open(act.doer)
+            act.doer:PushEvent("opencontainer", { container = act.target })
+            return true
+        elseif act.target.replica.container ~= nil then
+            act.target.replica.container:Open(act.doer)
+            act.doer:PushEvent("opencontainer", { container = act.target })
             return true
         end
     end
@@ -863,6 +864,7 @@ local TOGGLEAUGMENT = AddAction("TOGGLEAUGMENT", "", function(act)
                 end
                 if backpack ~= nil and backpack.components.container ~= nil then
                     backpack.components.container:Close()
+                    backpack.Network:SetClassifiedTarget(nil)
                     act.target.components.inventory:DropItem(backpack, true, true)
                 end
             end

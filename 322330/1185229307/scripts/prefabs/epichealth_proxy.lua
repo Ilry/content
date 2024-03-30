@@ -43,7 +43,7 @@ local function OnCurrentHealthDirty(inst)
 end
 
 local function OnMaxHealthDirty(inst)
-    inst.maxhealth = inst._maxhealth:value() / PRECISION
+	inst.maxhealth = inst._maxhealth:value() / PRECISION
 end
 
 local function OnInvincibleDirty(inst)
@@ -75,7 +75,7 @@ local function OnHealthDelta(parent, data)
 			netset(parent.epichealth._maxhealth, math.ceil(parent.components.health.maxhealth * PRECISION))
 			netset(parent.epichealth._stimuli, 0)
 		end
-   	end
+	end
 end
 
 local function OnInvincible(parent, data)
@@ -90,8 +90,12 @@ local function OnFireDamage(parent)
 end
 
 local function OnMinHealth(parent, data)
-	if parent.components.health ~= nil and not parent.components.health:IsDead() then
-		netset(parent.epichealth._resist, RESIST_MAX, true)
+	if parent.components.health ~= nil then
+		if parent.components.health.minhealth == 1 then
+			parent.epichealth:AddTag("nonlethal")
+		elseif data ~= nil and not parent.components.health:IsDead() then
+			netset(parent.epichealth._resist, RESIST_MAX, true)
+		end
 	end
 end
 
@@ -124,6 +128,7 @@ local function OnEntityReplicated(inst)
 			inst:ListenForEvent("attacked", OnAttacked, inst._parent)
 			OnHealthDelta(inst._parent)
 			OnInvincible(inst._parent)
+			OnMinHealth(inst._parent)
 		end
 
 		if not TheNet:IsDedicated() then
@@ -148,7 +153,7 @@ local function fn()
 	inst:Hide()
 
 	inst._currenthealth = net_int(inst.GUID, "epichealth.currenthealth", "currenthealthdirty")
-    inst._maxhealth = net_int(inst.GUID, "epichealth.maxhealth", "maxhealthdirty")
+	inst._maxhealth = net_int(inst.GUID, "epichealth.maxhealth", "maxhealthdirty")
 	inst._invincible = net_bool(inst.GUID, "epichealth.invincible", "invincibledirty")
 	inst._resist = net_tinybyte(inst.GUID, "epichealth.resist", "resistdirty")
 	inst._stimuli = net_tinybyte(inst.GUID, "epichealth.stimuli", "stimulidirty")
@@ -156,7 +161,7 @@ local function fn()
 
 	if not TheNet:IsDedicated() then
 		inst:ListenForEvent("currenthealthdirty", OnCurrentHealthDirty)
-       	inst:ListenForEvent("maxhealthdirty", OnMaxHealthDirty)
+		inst:ListenForEvent("maxhealthdirty", OnMaxHealthDirty)
 		inst:ListenForEvent("invincibledirty", OnInvincibleDirty)
 		inst:ListenForEvent("resistdirty", OnResistDirty)
 		inst:ListenForEvent("stimulidirty", OnStimuliDirty)
