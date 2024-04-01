@@ -8,6 +8,8 @@ AddPrefabPostInit("world", function(inst)
 	inst:AddComponent("dsa_deerclops_proxy")
 	inst:AddComponent("dsa_antlion_proxy")
 	inst:AddComponent("dsa_daywalker_proxy")
+
+	inst:AddComponent("dsa_shard_proxy")
 end)
 
 -- 需要切换到```TheWorld.ismastershard == false```的状态的组件列表
@@ -98,10 +100,39 @@ if not ONE_PLAYER_MODE then
 		return
 	end
 end
-	
+
 -------------- * ONE_PlAYER_MOD * --------------
 
--- `loadingplayer` is a flag to reflact whether LUA is deserializing player's savedata.
+-- override this api
+-- on call from caves, push a message to server
+local old_Shard_SyncBossDefeated = Shard_SyncBossDefeated
+function GLOBAL.Shard_SyncBossDefeated(bossprefab, shardid)
+	if bossprefab == "daywalker" then
+		print("[DSA] SyncBossDefeated: daywalker", shardid)
+		if TheWorld then
+			TheWorld.components.dsa_shard_proxy:OnDaywalkerDefeated()
+		end
+	else
+		return old_Shard_SyncBossDefeated(bossprefab, shardid)
+	end
+end
+
+function GLOBAL.d_spawndw()
+	local spawner = TheWorld.components.daywalkerspawner or TheWorld.components.forestdaywalkerspawner
+	for i = 1, 100 do
+		spawner:OnDayChange()
+	end
+end
+
+function GLOBAL.d_killdw()
+	local inst = c_findnext("daywalker") or c_findnext("daywalker2")
+	if inst then
+		inst.defeated = true
+		inst:Remove()
+	end
+end
+
+-- `loadingplayer` is a flag to check whether LUA is deserializing player's savedata.
 -- When `loadingplayer` is true, time sync (Like LongUpdate) should be **skipped**, as the instance is held by player. 
 env.loadingplayer = false
 

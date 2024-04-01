@@ -377,6 +377,30 @@ AddPrefabPostInit("sewing_tape", function(inst)
     inst.components.repairer.healthrepairvalue = GLOBAL.TUNING.HEALING_MEDSMALL
 end)
 
+AddPrefabPostInit("wagpunk_bits", function(inst)
+    if not GLOBAL.TheWorld.ismastersim then
+        return inst
+    end
+
+    if inst.components.repairer == nil then
+        inst:AddComponent("repairer")
+        inst.components.repairer.repairmaterial = GLOBAL.MATERIALS.GEARS
+    end
+    inst.components.repairer.healthrepairvalue = GLOBAL.TUNING.HEALING_HUGE
+end)
+
+AddPrefabPostInit("wagpunkbits_kit", function(inst)
+    if not GLOBAL.TheWorld.ismastersim then
+        return inst
+    end
+
+    if inst.components.repairer == nil then
+        inst:AddComponent("repairer")
+        inst.components.repairer.repairmaterial = GLOBAL.MATERIALS.GEARS
+    end
+    inst.components.repairer.healthrepairvalue = GLOBAL.TUNING.HEALING_SUPERHUGE
+end)
+
 AddPrefabPostInit("wateringcan", function(inst)
     if not GLOBAL.TheWorld.ismastersim then
         return inst

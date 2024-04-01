@@ -270,7 +270,7 @@ function WXMilitary:StoreLoot()
         return nil
     end
 
-    for k, loot in pairs(self.inst.components.inventory.itemslots) do
+    for _, loot in pairs(self.inst.components.inventory.itemslots) do
         if table.contains(lootList, loot.prefab) and not (loot.components.edible ~= nil and loot.components.perishable ~= nil) then
             -- Smart Signed Chest
             local smartchest = FindEntity(sentryward, SEE_WORK_DIST, function(ent)
@@ -442,6 +442,33 @@ function WXMilitary:FindEntityToPickUpAction()
 end
 
 function WXMilitary:FindEquipmentToEquipAction()
+    for _, equipment in pairs(self.inst.components.inventory.equipslots) do
+        if equipment.components.forgerepairable ~= nil and equipment.components.forgerepairable.repairable == true and
+            ((equipment.components.armor ~= nil and equipment.components.armor:GetPercent() < 0.1) or
+            (equipment.components.finiteuses ~= nil and equipment.components.finiteuses:GetPercent() < 0.1)) then
+            local repair_kit = self.inst.components.inventory:FindItem(function(item)
+                return item.components.forgerepair ~= nil and
+                    item.components.forgerepair.repairmaterial == equipment.components.forgerepairable.repairmaterial
+            end)
+            if repair_kit ~= nil then
+                return BufferedAction(self.inst, equipment, ACTIONS.REPAIR, repair_kit)
+            end
+        end
+    end
+    for _, equipment in pairs(self.inst.components.inventory.itemslots) do
+        if equipment.components.forgerepairable ~= nil and equipment.components.forgerepairable.repairable == true and
+            ((equipment.components.armor ~= nil and equipment.components.armor:GetPercent() < 0.1) or
+            (equipment.components.finiteuses ~= nil and equipment.components.finiteuses:GetPercent() < 0.1)) then
+            local repair_kit = self.inst.components.inventory:FindItem(function(item)
+                return item.components.forgerepair ~= nil and
+                    item.components.forgerepair.repairmaterial == equipment.components.forgerepairable.repairmaterial
+            end)
+            if repair_kit ~= nil then
+                return BufferedAction(self.inst, equipment, ACTIONS.REPAIR, repair_kit)
+            end
+        end
+    end
+
     local helmet = self.inst.components.inventory:GetEquippedItem(EQUIPSLOTS.HEAD)
     if helmet == nil or helmet.components.armor == nil then
         self.inst.components.inventory:Equip(FindEquipment(self.inst, EQUIPSLOTS.HEAD))

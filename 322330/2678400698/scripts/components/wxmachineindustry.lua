@@ -45,19 +45,20 @@ local secondaryfuelList = {
 }
 
 local WX_TAG = { "wx", "chess" }
+local STORAGE_ROBOT_TAG = { "storagerobot" }
 function WXMachineIndustry:Repair()
     local leader = self.inst.components.follower.leader or self.inst.components.entitytracker:GetEntity("sentryward")
     if leader == nil then
         return nil
     end
 
-    -- WX Target
+    -- Search for WX target
     local wx = FindEntity(leader, SEE_WORK_DIST, function(ent)
         return (ent.prefab == "wx" and ent.components.health ~= nil and ent.components.moisture ~= nil and
             (ent.components.moisture:GetMoisture() <= TUNING.WX78_MINACCEPTABLEMOISTURE and
             ent.components.health:GetPercent() < 1 or ent.components.health:GetPercent() < .72)) or
-            (ent:HasTag("chess") and ent.components.follower ~= nil and ent.components.follower.leader ~= nil and
-            ent.components.follower.leader:HasTag("player") and
+            (ent:HasTag("chess") and (ent:HasTag("guarding") or (ent.components.follower ~= nil and
+            ent.components.follower.leader ~= nil and ent.components.follower.leader:HasTag("player"))) and
             ent.components.health ~= nil and ent.components.health:GetPercent() < 1)
     end, nil, nil, WX_TAG)
     if wx == nil and self.inst.components.health ~= nil and self.inst.components.moisture ~= nil and
@@ -66,12 +67,12 @@ function WXMachineIndustry:Repair()
         wx = self.inst
     end
 
-    -- Repairing Kit
+    -- Search for the repair kit
     local kit = self.inst.components.inventory:FindItem(function(item)
         return item.prefab == "wx78_moduleremover" or item.prefab == "pocketwatch_dismantler"
     end)
 
-    -- Construction Amulet
+    -- Search for the construction amulet
     local amulet = EQUIPSLOTS.NECK ~= nil and self.inst.components.inventory:GetEquippedItem(EQUIPSLOTS.NECK) or
         self.inst.components.inventory:GetEquippedItem(EQUIPSLOTS.BODY)
     if amulet == nil or amulet.prefab ~= "greenamulet" then
@@ -104,18 +105,43 @@ function WXMachineIndustry:Repair()
         return BufferedAction(self.inst, wx, ACTIONS.ADVANCEDREPAIR, kit)
     end
 
-    -- Consumables
-    local consumable = self.inst.components.inventory:FindItem(function(item)
-        if wx ~= nil and wx.components.health ~= nil then
-            if wx.components.health.maxhealth - wx.components.health.currenthealth >= TUNING.HEALING_HUGE then
-                return item.prefab == "gears"
-            else
-                return item.prefab == "sewing_tape" or item.prefab == "transistor"
-            end
+    -- Search for consumables
+    if wx ~= nil and wx.components.health ~= nil then
+        local consumable = nil
+        if wx.components.health.maxhealth - wx.components.health.currenthealth >= TUNING.HEALING_SUPERHUGE then
+            consumable = self.inst.components.inventory:FindItem(function(item)
+                return item.prefab == "wagpunkbits_kit"
+            end)
         end
-    end)
-    if wx ~= nil and consumable ~= nil then
-        return BufferedAction(self.inst, wx, ACTIONS.REPAIR, consumable)
+        if consumable == nil and wx.components.health.maxhealth - wx.components.health.currenthealth >= TUNING.HEALING_HUGE then
+            consumable = self.inst.components.inventory:FindItem(function(item)
+                return item.prefab == "gears" or item.prefab == "wagpunk_bits"
+            end)
+        end
+        if consumable == nil then
+            consumable = self.inst.components.inventory:FindItem(function(item)
+                return table.contains(consumableList, item.prefab)
+            end)
+        end
+        if consumable ~= nil then
+            return BufferedAction(self.inst, wx, ACTIONS.REPAIR, consumable)
+        end
+    end
+
+    -- Search for storage robot target
+    local wobot = FindEntity(leader, SEE_WORK_DIST, function(ent)
+        return ent.components.fueled ~= nil and ent.components.fueled:IsEmpty()
+    end, STORAGE_ROBOT_TAG)
+    -- Search for the repair kit
+    kit = nil
+    if wobot ~= nil and wobot.components.forgerepairable ~= nil then
+        kit = self.inst.components.inventory:FindItem(function(item)
+            return item.components.forgerepair ~= nil and
+                item.components.forgerepair.repairmaterial == wobot.components.forgerepairable.repairmaterial
+        end)
+    end
+    if wobot ~= nil and kit ~= nil then
+        return BufferedAction(self.inst, wobot, ACTIONS.REPAIR, kit)
     end
 end
 

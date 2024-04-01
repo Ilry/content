@@ -4,7 +4,7 @@ local CraftingMenuIngredients = require "widgets/redux/craftingmenu_ingredients"
 local Widget = require "widgets/widget"
 local ThreeSlice = require "widgets/threeslice"
 local Image = require "widgets/image"
-
+local cooking = require("cooking")
 local containercfg = GetModConfigData("Container Sort")
 local itemscfg = GetModConfigData("Items collect")
 local hasmultisortbtn = containercfg == -2 or containercfg == true
@@ -13,23 +13,20 @@ local hassortbutton = containercfg ~= -5
 local hascollectbutton = containercfg ~= -4
 local craftmenucollectsupport = itemscfg ~= -1
 local hasitemscollect = craftmenucollectsupport
+local foodingredientcollectsupport = craftmenucollectsupport
 local hasitemsstore = itemscfg ~= -2
--- local hidemoveimage = false
-
--- 客户端专属配置,仅适用于整理,其他按钮都影响太大了
-if TheNet:GetIsClient() and TUNING.TEMP2HM then
-    if TUNING.TEMP2HM.opensort ~= nil then hassortbutton = TUNING.TEMP2HM.opensort end
-    -- if TUNING.TEMP2HM.hidemoveimage ~= nil then hidemoveimage = TUNING.TEMP2HM.hidemoveimage end
-end
-
--- 给容器添加"dcs2hm"标签或容器.dcs2hm = true可以禁用对容器进行的各种功能
--- 不会在下列容器的界面上显示收集和整理按钮
-local btnblacklist = {"hh_ui_container"}
+TUNING.TEMP2HM = TUNING.TEMP2HM or {}
+local isclient = TheNet:GetIsClient() or TUNING.DSA_ONE_PLAYER_MODE or (TheNet:GetServerIsClientHosted() and TheNet:GetIsServerAdmin())
+-- 强制显示整理
+if TUNING.TEMP2HM.opensort ~= nil and not (hasmultisortbtn or haslockbutton) and isclient then hassortbutton = TUNING.TEMP2HM.opensort end
+-- 按钮位置可调整
+TUNING.TEMP2HM.btnotherdir = TUNING.TEMP2HM.btnotherdir or {}
+-- 给容器添加tag"dcs2hm"或容器inst.dcs2hm = true可以禁用对容器进行的各种功能,且不显示各类按钮
 -- 不会从下列容器中收集道具
 local collectblacklist = {"pandoraschest", "minotaurchest", "terrariumchest"}
--- 不会存放到下列容器
+-- 条件存放容器和黑名单存放容器
+local conditionstorelist = {dragonflyfurnace = function(v) return TheWorld.state.iswinter and v:HasTag("heatrock") end}
 local storeblacklist = {
-    "dragonflyfurnace",
     "oceantree_pillar",
     "researchlab",
     "researchlab2",
@@ -45,7 +42,9 @@ local storeblacklist = {
 local itemsblacklist = {"pocketwatch_portal", "pocketwatch_recall"}
 if ACTIONS.BEIZHU and ACTIONS.BEIZHU.str == STRINGS.SIGNS.MENU.ACCEPT then itemsblacklist = {} end
 -- 优先存放容器
-local prioritystoreents = {saltbox = 1, icebox = 2}
+local prioritystorelist = {"dragonflyfurnace", "saltbox", "icebox"}
+local prioritystoreents = {}
+for i, v in ipairs(prioritystorelist) do prioritystoreents[v] = i end
 -- 道具存取特效,以及持续高亮展示
 local function stopthighlightcontainer(inst)
     inst.cshighlight2hm = nil
@@ -368,7 +367,7 @@ local function sortfn(player, inst)
         if inst.components.equippable and inst.components.equippable:IsEquipped() then dosort(player) end
     end
 end
--- 容器跨整
+-- 容器跨整,和容器锁定互斥，所以不需要检测itemtestfnprefabs2hm
 local function domultisort(inst, player)
     if not (player.components.inventory and inst.components.container and inst.components.container.acceptsstacks and
         not inst.components.container.usespecificslotsforitems) then return end
@@ -431,21 +430,13 @@ local function domultisort(inst, player)
     local container = inst.components.inventory or inst.components.container
     container.ignoresound = true
     container.ignoreoverstacked = true
-    local slots = container.itemslots or container.slots
-    local keys = {}
-    for k, _ in pairs(slots) do keys[#keys + 1] = k end
-    table.sort(keys)
-    for k, v in ipairs(keys) do
-        if k ~= v then
-            local item = container:RemoveItemBySlot(v)
-            container:GiveItem(item, k)
-        end
-    end
-    slots = container.itemslots or container.slots
-    for key, value in ipairs(slots) do
-        if value ~= nil then
-            local item = container:RemoveItemBySlot(key)
-            table.insert(totalslots, item)
+    for k, v in pairs(container.itemslots or container.slots) do
+        if v then
+            local item = container:RemoveItemBySlot(k)
+            if item ~= nil and item:IsValid() then
+                item.prevslot = nil
+                table.insert(totalslots, item)
+            end
         end
     end
     -- 其次额外的容器物品收集
@@ -456,24 +447,16 @@ local function domultisort(inst, player)
         if v.virtchest and v.virtchest:IsValid() and v.virtchest.components.container then table.insert(tmpents, v.virtchest) end
     end
     for i, v in ipairs(tmpents) do
-        local container = v.components.container
-        local slots = container.slots
-        container.ignoresound = true
-        container.ignoreoverstacked = true
-        local keys = {}
-        for k, _ in pairs(slots) do keys[#keys + 1] = k end
-        table.sort(keys)
-        for k, v in ipairs(keys) do
-            if k ~= v then
-                local item = container:RemoveItemBySlot(v)
-                container:GiveItem(item, k)
-            end
-        end
-        slots = container.slots
-        for key, value in ipairs(slots) do
-            if value ~= nil then
-                local item = container:RemoveItemBySlot(key)
-                table.insert(totalslots, item)
+        local tmpcontainer = v.components.container
+        tmpcontainer.ignoresound = true
+        tmpcontainer.ignoreoverstacked = true
+        for k, v in pairs(tmpcontainer.slots) do
+            if v then
+                local item = tmpcontainer:RemoveItemBySlot(k)
+                if item ~= nil and item:IsValid() then
+                    item.prevslot = nil
+                    table.insert(totalslots, item)
+                end
             end
         end
     end
@@ -485,7 +468,7 @@ local function domultisort(inst, player)
     tmp.components.container.ShouldPrioritizeContainer = truefn
     tmp.components.container.CanTakeItemInSlot = truefn
     tmp.components.container:SetNumSlots(#totalslots)
-    if inst.components.container and inst.components.container.infinitestacksize then inst.components.container:EnableInfiniteStackSize() end
+    if container.infinitestacksize then tmp.components.container:EnableInfiniteStackSize() end
     tmp.components.container.ignoresound = true
     for _, item in ipairs(totalslots) do tmp.components.container:GiveItem(item) end
     dosort(tmp)
@@ -729,7 +712,7 @@ local function findcontainersincontainer(inst, result)
     end
 end
 local function givecontaineritem(container, item, src_pos)
-    if item.components.stackable then
+    if item.components.stackable and not container.infinitestacksize then
         local slotsize = item.components.stackable.originalmaxsize or item.components.stackable.maxsize
         if slotsize and item.components.stackable.stacksize > slotsize then
             local size = item.components.stackable.stacksize
@@ -746,7 +729,7 @@ local function givecontaineritem(container, item, src_pos)
     container:GiveItem(item, nil, src_pos)
     if item and item:IsValid() then item.currplayer2hm = nil end
 end
--- data必选参数:prefabs,leftnumslots,lacksize
+-- data必选参数:prefabfn,prefabs,leftnumslots,lacksize,exchangeitem,exchangeitemfn
 -- data可选参数:infiniteprefabs,neednum,fastresult,currplayer2hm --返回时data参数:entfx
 -- infiniteprefabs 代表contaienr组件可以无限收集某些实体
 -- neednum 代表只收集固定数额后就结束收集,返回true
@@ -755,6 +738,8 @@ end
 -- prefabs是container组件要收集的实体表
 -- leftnumslots是container组件的空白格子数目
 -- lacksize是container组件每个要收集的堆叠实体的重叠格子的剩余空间
+-- exchangeitem,在fastresult启用时和收集实体交换
+-- exchangeitemfn,交换后触发一个信号
 local function collectentcontaineritem(inst, container, item, ent, entcontainer, i, data)
     if (data.prefabfn and data.prefabfn(item) or (data.prefabs and table.contains(data.prefabs, item.prefab))) and item ~= inst and
         not iscontainerchild(inst, item) and container:CanTakeItemInSlot(item) then
@@ -800,17 +785,36 @@ local function collectentcontaineritem(inst, container, item, ent, entcontainer,
             if data.neednum <= 0 then return true end
         elseif data.fastresult then
             -- 收集配方时的收集更多需求,则拿到本道具后就结束
+            local giveitem
             if item.components.stackable then
                 local slotsize = item.components.stackable.originalmaxsize or item.components.stackable.maxsize
-                local giveitem = item.components.stackable:Get(slotsize)
+                giveitem = item.components.stackable:Get(slotsize)
                 giveitem.currplayer2hm = data.currplayer2hm
-                container:GiveItem(giveitem, nil, data.entpos)
             else
-                local giveitem = entcontainer:RemoveItemBySlot(i)
+                giveitem = entcontainer:RemoveItemBySlot(i)
                 giveitem.currplayer2hm = data.currplayer2hm
+            end
+            if data.exchangeitem and data.exchangeitem:IsValid() and data.exchangeitem.components.inventoryitem and
+                data.exchangeitem.components.inventoryitem.owner then
+                local owner = data.exchangeitem.components.inventoryitem.owner
+                local ownercontainer = owner.components.inventory or owner.components.container
+                if ownercontainer then
+                    for key, value in pairs(ownercontainer.slots or ownercontainer.itemslots) do
+                        if value == data.exchangeitem then
+                            local exchangeitem = ownercontainer:RemoveItemBySlot(key)
+                            entcontainer:GiveItem(exchangeitem, i, getfinalowner(owner):GetPosition())
+                            container:GiveItem(giveitem, key, data.entpos)
+                            if data.exchangeitemfn and exchangeitem:IsValid() and giveitem:IsValid() then
+                                data.exchangeitemfn(exchangeitem, giveitem)
+                            end
+                            break
+                        end
+                    end
+                end
+            else
                 container:GiveItem(giveitem, nil, data.entpos)
             end
-            if giveitem and giveitem:IsValid() then giveitem.currplayer2hm = nil end
+            if giveitem:IsValid() then giveitem.currplayer2hm = nil end
             if not data.entfx then data.entfx = true end
             return true
         elseif data.lacksize[item.prefab] and item.components.stackable then -- 有限需求
@@ -963,8 +967,10 @@ local function getcontainerspace(inst, container, data, addprefab)
     end
     if IsTableEmpty(data.infiniteprefabs) then data.infiniteprefabs = nil end
 end
+local function endcollectloading(inst) inst.collectloadingtask2hm = nil end
 local function docollect(inst, player)
     if not (inst.components.container and inst.components.container.numslots > 0 and #inst.components.container.slots > 0) then return end
+    inst.collectloadingtask2hm = inst:DoTaskInTime(0.3, endcollectloading)
     local container = inst.components.container
     local data = {}
     if getcontainerspace(inst, container, data) then return end
@@ -1027,9 +1033,8 @@ local function docollect(inst, player)
 end
 local function collectfn(player, inst)
     -- 混合拾取和收纳时,拾取后短暂时间内不会进行收纳
-    if hascollectbutton and inst and inst.components.container ~= nil and not inst.pickuptask2hm then docollect(inst, player) end
+    if hascollectbutton and inst and inst.components.container ~= nil and not inst.collectloadingtask2hm then docollect(inst, player) end
 end
-local function pickuploading(inst) inst.pickuptask2hm = nil end
 local function dopickup(inst, player)
     if not (player.components.inventory and (inst.components.inventory or inst.components.container)) then return end
     -- 检测是否装备懒人护符
@@ -1059,8 +1064,7 @@ local function dopickup(inst, player)
         end
     end
     if not hasorangeamulet then return end
-    if inst.pickuptask2hm then inst.pickuptask2hm:Cancel() end
-    inst.pickuptask2hm = inst:DoTaskInTime(0.3, pickuploading)
+    inst.collectloadingtask2hm = inst:DoTaskInTime(0.3, endcollectloading)
     local container = inst.components.inventory or inst.components.container
     if getcontainerspace(inst, container, data) then return end
     if data.orangeamulet and data.orangeamulet.skin_equip_sound and player.SoundEmitter then
@@ -1182,8 +1186,10 @@ local function dopickup(inst, player)
 end
 local function pickupfn(player, inst)
     if hascollectbutton then
-        if inst.components.container ~= nil then dopickup(inst, player) end
-        if inst.components.equippable and inst.components.equippable:IsEquipped() and player.components.inventory then dopickup(player, player) end
+        if inst.components.container ~= nil and not inst.collectloadingtask2hm then dopickup(inst, player) end
+        if inst.components.equippable and inst.components.equippable:IsEquipped() and player.components.inventory and not player.collectloadingtask2hm then
+            dopickup(player, player)
+        end
     end
 end
 local function realcollectfn(doer, inst)
@@ -1196,7 +1202,8 @@ local function collectbtnfn(inst, doer)
     if not hascollectbutton then return end
     if inst.components.container ~= nil then
         realcollectfn(doer, inst)
-    elseif inst.replica.container ~= nil then
+    elseif inst.replica.container ~= nil and not inst.collectloadingtask2hm then
+        inst.collectloadingtask2hm = inst:DoTaskInTime(0.5, endcollectloading)
         SendModRPCToServer(GetModRPC("MOD_HARDMODE", "collectbtn2hm"), inst)
     end
 end
@@ -1267,71 +1274,115 @@ local function reskinbtnfn(inst, doer)
 end
 local function reskinvalidfn(inst) return defaultbtnvalidfn(inst) and inst:HasTag("wardrobe") end
 
--- [[[[[容器按钮]]]]
-if containercfg then
-    -- 按钮参数
-    local function addbuttoninfoforcontainerparams(prefab, container)
-        if container and container.inst and not container.inst:HasTag("dcs2hm") and not container.inst.dcs2hm and
-            not table.contains(btnblacklist, container.inst.prefab) and not container.usespecificslotsforitems and container.acceptsstacks ~= false and
-            container.widget and not container.widget.sortbtninfo2hm and container.widget.slotpos and
-            (#container.widget.slotpos > 5 or (#container.widget.slotpos >= 4 and (prefab == "puffvest" or prefab == "puffvest_big"))) then
-            -- x相同说明在一条竖线上，y相同说明在一条横线上
-            local finalslot = #container.widget.slotpos
-            local firstlinelength = 1
-            local starty = container.widget.slotpos[1].y
-            for i = 2, finalslot do
-                if container.widget.slotpos[i].y ~= starty then break end
-                firstlinelength = firstlinelength + 1
-            end
-            local slotpos_1 = container.widget.slotpos[finalslot]
-            local endlinelength = 1
-            local endy = slotpos_1.y
-            for i = finalslot - 1, 1, -1 do
-                if container.widget.slotpos[i].y ~= endy then break end
-                endlinelength = endlinelength + 1
-            end
-            -- 一般不可能出现
-            if container.widget.buttoninfo and endlinelength < 3 then return end
-            -- 模组容器,首行末尾行长度不等,怀疑是尾部设置了特殊格子,重新寻找尾部位置
-            if firstlinelength ~= endlinelength then
-                if firstlinelength < 2 then return end
-                local realfinalslot = firstlinelength
-                local finaly = starty
-                local finalx = container.widget.slotpos[firstlinelength].x
-                for i = firstlinelength * 2, finalslot - 1, firstlinelength do
-                    local slotpos = container.widget.slotpos[i]
-                    if slotpos.y < finaly and slotpos.x == finalx then
-                        realfinalslot = i
-                        finaly = slotpos.y
-                    else
-                        break
+-- 按钮右键操作支持
+local function SetButtonRightControl(self)
+    if self.SetButtonRightControl2hm then return end
+    self.SetButtonRightControl2hm = true
+    local oldOnControl = self.OnControl
+    self.OnControl = function(self, control, down, ...)
+        local result = oldOnControl(self, control, down, ...)
+        if not self:IsEnabled() or not self.focus then return result end
+        if self:IsSelected() and not self.AllowOnControlWhenSelected then return result end
+        if control == CONTROL_SECONDARY then
+            if down then
+                if not self.down2hm and not self.down then
+                    if self.has_image_down and self.image then
+                        self.image:SetTexture(self.atlas, self.image_down)
+                        if self.size_x and self.size_y then self.image:ScaleToSize(self.size_x, self.size_y) end
                     end
-                end
-                finalslot = realfinalslot
-                slotpos_1 = container.widget.slotpos[finalslot]
-                endlinelength = 1
-                endy = slotpos_1.y
-                for i = finalslot - 1, 1, -1 do
-                    if container.widget.slotpos[i].y ~= endy then break end
-                    endlinelength = endlinelength + 1
-                end
-                if endlinelength ~= firstlinelength then return end
-            end
-            local slotpos_2 = container.widget.slotpos[finalslot - 1]
-            local slotpos_3 = container.widget.slotpos[finalslot - 2]
-            local position1, position2, position3
-            if slotpos_2.x ~= slotpos_1.x and (container.widget.buttoninfo == nil or endlinelength >= 5) then
-                position1 = Vector3(slotpos_1.x, slotpos_1.y - 57, slotpos_1.z)
-                position2 = Vector3(slotpos_2.x, slotpos_2.y - 57, slotpos_2.z)
-                if slotpos_3.x ~= slotpos_1.x and (container.widget.buttoninfo == nil or endlinelength >= 7) then
-                    position3 = Vector3(slotpos_3.x, slotpos_3.y - 57, slotpos_3.z)
-                else
-                    position3 = Vector3(slotpos_1.x, slotpos_1.y - 100, slotpos_1.z)
+                    TheFrontEnd:GetSound():PlaySound("dontstarve/HUD/click_move")
+                    self.o_pos = self:GetLocalPosition()
+                    if self.move_on_click then self:SetPosition(self.o_pos + self.clickoffset) end
+                    self.down2hm = true
                 end
             else
-                position1 = Vector3(slotpos_1.x, slotpos_1.y - 57, slotpos_1.z)
-                position2 = Vector3(slotpos_1.x, slotpos_1.y - 100, slotpos_1.z)
-                position3 = Vector3(slotpos_1.x, slotpos_1.y - 143, slotpos_1.z)
+                if self.down2hm then
+                    if self.has_image_down and self.image then
+                        self.image:SetTexture(self.atlas, self.image_focus)
+                        if self.size_x and self.size_y then self.image:ScaleToSize(self.size_x, self.size_y) end
+                    end
+                    self.down2hm = false
+                    self:ResetPreClickPosition()
+                    if self.onrightclick2hm then self.onrightclick2hm() end
+                end
+            end
+        end
+        return result
+    end
+    self.AllowOnControlWhenSelected = true
+end
+
+-- [[[[[容器按钮]]]]
+if containercfg and isclient then
+    local function addbuttoninfoforcontainerparams(prefab, container)
+        if container and container.inst and not container.inst:HasTag("dcs2hm") and not container.inst.dcs2hm and not container.usespecificslotsforitems and
+            container.acceptsstacks ~= false and container.widget and not container.widget.sortbtninfo2hm and container.widget.slotpos and
+            (#container.widget.slotpos > 5 or (#container.widget.slotpos >= 4 and (prefab == "puffvest" or prefab == "puffvest_big"))) then
+            -- x相同说明在一条竖线上，y相同说明在一条横线上
+            local allslotpos = container.widget.slotpos
+            local finalslot = #allslotpos
+            -- 计算顶部位置
+            local linelength = 1
+            local starty = allslotpos[1].y
+            for i = 2, finalslot do
+                if allslotpos[i].y ~= starty then break end
+                linelength = linelength + 1
+            end
+            local firstlineendslotpos1 = allslotpos[linelength]
+            local topposition1 = Vector3(firstlineendslotpos1.x, firstlineendslotpos1.y + 57, firstlineendslotpos1.z)
+            local topposition2, topposition3
+            if linelength > 1 then
+                local firstlineendslotpos2 = allslotpos[linelength - 1]
+                topposition2 = Vector3(firstlineendslotpos2.x, firstlineendslotpos2.y + 57, firstlineendslotpos2.z)
+                if linelength > 2 then
+                    local firstlineendslotpos3 = allslotpos[linelength - 2]
+                    topposition3 = Vector3(firstlineendslotpos3.x, firstlineendslotpos3.y + 57, firstlineendslotpos3.z)
+                else
+                    topposition3 = Vector3(firstlineendslotpos1.x, firstlineendslotpos1.y + 94, firstlineendslotpos1.z)
+                end
+            else
+                topposition2 = Vector3(firstlineendslotpos1.x, firstlineendslotpos1.y + 94, firstlineendslotpos1.z)
+                topposition3 = Vector3(firstlineendslotpos1.x, firstlineendslotpos1.y + 131, firstlineendslotpos1.z)
+            end
+            -- 计算左侧位置
+            local firstcolumnlength = 1
+            local startx = allslotpos[1].x
+            for i = linelength + 1, finalslot, linelength do
+                if allslotpos[i].x ~= startx then break end
+                firstcolumnlength = firstcolumnlength + 1
+            end
+            local firstcolumnnendslotpos1 = allslotpos[(firstcolumnlength - 1) * linelength + 1]
+            local leftposition1 = Vector3(firstcolumnnendslotpos1.x - 74, firstcolumnnendslotpos1.y - 15, firstcolumnnendslotpos1.z)
+            local leftposition2 = Vector3(firstcolumnnendslotpos1.x - 74, firstcolumnnendslotpos1.y + 22, firstcolumnnendslotpos1.z)
+            local leftposition3 = Vector3(firstcolumnnendslotpos1.x - 74, firstcolumnnendslotpos1.y + 59, firstcolumnnendslotpos1.z)
+            -- 计算右侧位置
+            local endcolumnlength = 1
+            local endx = allslotpos[linelength].x
+            for i = linelength * 2, finalslot, linelength do
+                if allslotpos[i].x ~= endx then break end
+                endcolumnlength = endcolumnlength + 1
+            end
+            finalslot = linelength * endcolumnlength
+            local finalslotpos1 = allslotpos[finalslot]
+            local rightposition1 = Vector3(finalslotpos1.x + 74, finalslotpos1.y - 15, finalslotpos1.z)
+            local rightposition2 = Vector3(finalslotpos1.x + 74, finalslotpos1.y + 22, finalslotpos1.z)
+            local rightposition3 = Vector3(finalslotpos1.x + 74, finalslotpos1.y + 59, finalslotpos1.z)
+            -- 计算底部位置，默认位置
+            local finalslotpos1 = allslotpos[finalslot]
+            local position1 = Vector3(finalslotpos1.x, finalslotpos1.y - 57, finalslotpos1.z)
+            local position2, position3
+            local finalslotpos2 = allslotpos[finalslot - 1]
+            if finalslotpos2 and finalslotpos2.x ~= finalslotpos1.x and (container.widget.buttoninfo == nil or linelength >= 5) then
+                position2 = Vector3(finalslotpos2.x, finalslotpos2.y - 57, finalslotpos2.z)
+                local finalslotpos3 = allslotpos[finalslot - 2]
+                if finalslotpos3 and finalslotpos3.x ~= finalslotpos1.x and (container.widget.buttoninfo == nil or linelength >= 7) then
+                    position3 = Vector3(finalslotpos3.x, finalslotpos3.y - 57, finalslotpos3.z)
+                else
+                    position3 = Vector3(finalslotpos1.x, finalslotpos1.y - 100, finalslotpos1.z)
+                end
+            else
+                position2 = Vector3(finalslotpos1.x, finalslotpos1.y - 100, finalslotpos1.z)
+                position3 = Vector3(finalslotpos1.x, finalslotpos1.y - 143, finalslotpos1.z)
             end
             -- 可选整理按钮,默认第1个
             if hassortbutton then
@@ -1341,6 +1392,9 @@ if containercfg then
 背包双击会混合排序物品栏和背包内道具]] or [[Sort Your Items
 Backpack Double Click Will Pass Through Inventory]],
                     position = position1,
+                    topposition = topposition1,
+                    leftposition = leftposition1,
+                    rightposition = rightposition1,
                     fn = realsortbtnfn,
                     validfn = defaultbtnvalidfn
                 }
@@ -1351,6 +1405,9 @@ Backpack Double Click Will Pass Through Inventory]],
                     text = TUNING.isCh2hm and "锁定" or "Lock",
                     helptext = TUNING.isCh2hm and [[锁定该容器只能放置当前已有的道具]] or [[Lock the container to limit store current items]],
                     position = position2,
+                    topposition = topposition2,
+                    leftposition = leftposition2,
+                    rightposition = rightposition2,
                     fn = lockbtnfn,
                     validfn = defaultbtnvalidfn
                 }
@@ -1361,50 +1418,74 @@ Backpack Double Click Will Pass Through Inventory]],
 携带容器混合排序所在容器内的所有同类容器内道具
 地面容器会混合排序周围同名容器内道具,不会跨船]] or "Sort Your Items Pass Through Containers",
                     position = position2,
+                    topposition = topposition2,
+                    leftposition = leftposition2,
+                    rightposition = rightposition2,
                     fn = multisortbtnfn,
                     validfn = defaultbtnvalidfn
                 }
             end
             -- 可选收集按钮,默认第3个位置
+            local positions = {position1, position2, position3}
+            local toppositions = {topposition1, topposition2, topposition3}
+            local leftpositions = {leftposition1, leftposition2, leftposition3}
+            local rightpositions = {rightposition1, rightposition2, rightposition3}
             if hascollectbutton then
+                local idx = (hasmultisortbtn or haslockbutton) and 3 or (hassortbutton and 2 or 1)
                 container.widget.collectbtninfo2hm = {
                     text = TUNING.isCh2hm and "收集" or "Collect",
                     helptext = TUNING.isCh2hm and [[携带容器收集携带的容器内同名道具
 地面容器收集周围容器内的同名道具,不会跨船
 佩戴或手持懒人护符,则拾取周围地上同名道具]] or [[Collect Same Items From Containers
-Use Orange Amulet will Pickup Near Same Items]],
-                    position = (hasmultisortbtn or haslockbutton) and position3 or (hassortbutton and position2 or position1),
+Use Orange Amulet will Picktop Near Same Items]],
+                    position = positions[idx],
+                    topposition = toppositions[idx],
+                    leftposition = leftpositions[idx],
+                    rightposition = rightpositions[idx],
                     fn = collectbtnfn,
                     validfn = defaultbtnvalidfn
                 }
             end
             -- 特殊容器才有的交换按钮,但在这里无法区分是否用用,因此直接全员设置
+            local idx = haslockbutton and 3 or (hassortbutton and 2 or 1)
             container.widget.exchangebtninfo2hm = {
                 text = TUNING.isCh2hm and "穿越" or "PassW",
                 helptext = TUNING.isCh2hm and [[与随机其他世界的该容器交换道具]] or
                     [[exchange container data with another world's the container]],
-                position = haslockbutton and position3 or (hassortbutton and position2 or position1),
+                position = positions[idx],
+                topposition = toppositions[idx],
+                leftposition = leftpositions[idx],
+                rightposition = rightpositions[idx],
                 fn = exchangebtnfn,
                 validfn = exchangevalidfn
             }
             -- 妥协衣柜才有的换装按钮
             if prefab == "wardrobe" then
-                local slotpos_2 = container.widget.slotpos[finalslot - 3]
-                local position4 = Vector3(slotpos_2.x, slotpos_2.y - 57, slotpos_2.z)
+                idx = (hasmultisortbtn or haslockbutton) and 4 or (hassortbutton and hascollectbutton and 3 or 2)
+                if idx == 4 then
+                    local finalslotpos4 = allslotpos[finalslot - 3]
+                    local firstlineendslotpos3 = allslotpos[linelength - 3]
+                    positions[4] = Vector3(finalslotpos4.x, finalslotpos4.y - 57, finalslotpos4.z)
+                    toppositions[4] = Vector3(firstlineendslotpos3.x, firstlineendslotpos3.y + 57, firstlineendslotpos3.z)
+                    leftpositions[4] = Vector3(firstcolumnnendslotpos1.x - 74, firstcolumnnendslotpos1.y + 96, firstcolumnnendslotpos1.z)
+                    rightpositions[4] = Vector3(finalslotpos1.x + 74, finalslotpos1.y + 96, finalslotpos1.z)
+                end
                 container.widget.reskinbtninfo2hm = {
                     text = TUNING.isCh2hm and "换装" or "Skin",
-                    position = (haslockbutton or hasmultisortbtn) and position4 or (hassortbutton and hascollectbutton and position3 or position2),
+                    position = positions[idx],
+                    topposition = toppositions[idx],
+                    leftposition = leftpositions[idx],
+                    rightposition = rightpositions[idx],
                     fn = reskinbtnfn,
                     validfn = reskinvalidfn
                 }
             end
         end
     end
-    if containers and containers.params then for name, data in pairs(containers.params) do addbuttoninfoforcontainerparams(name, data) end end
     local old_wsetup = containers.widgetsetup
     function containers.widgetsetup(container, prefab, data, ...)
         local result = old_wsetup(container, prefab, data, ...)
-        addbuttoninfoforcontainerparams(prefab, container)
+        addbuttoninfoforcontainerparams(prefab or container.inst.prefab, container)
         return result
     end
     if TUNING.CHESTUPGRADE then
@@ -1424,12 +1505,15 @@ Use Orange Amulet will Pickup Near Same Items]],
         end)
     end
     -- 按钮添加
+    local allbtnnewdir = {left = "top", top = "right", right = "down", down = "left"}
     local function addbutton(self, container, doer, btnname, btninfo, position)
         local btn = self:AddChild(ImageButton("images/ui.xml", "button_small.tex", "button_small_over.tex", "button_small_disabled.tex", nil, nil, {1, 1},
                                               {0, 0}))
         btn.image:SetScale(0.77, 1.07, 1.07)
         btn.text:SetPosition(2, -2)
-        btn:SetPosition(position or btninfo.position)
+        local dirpos = (TUNING.TEMP2HM.btnotherdir[container.prefab] or "") .. "position"
+        btn:SetPosition(position or btninfo[dirpos] or btninfo.position)
+        btn.btninfo2hm = btninfo
         btn:SetText(btninfo.text)
         if btninfo.helptext then btn:SetTooltip(btninfo.helptext) end
         if btninfo.fn ~= nil then btn:SetOnClick(function() btninfo.fn(container, doer, btn) end) end
@@ -1439,6 +1523,31 @@ Use Orange Amulet will Pickup Near Same Items]],
         btn.text:SetVAlign(ANCHOR_MIDDLE)
         btn.text:SetColour(0, 0, 0, 1)
         self[btnname] = btn
+        return btn
+    end
+    -- 按钮转向
+    local btnnames = {"reskinbutton2hm", "exchangebutton2hm", "lockbutton2hm", "sortbutton2hm", "multisortbutton2hm", "collectbutton2hm"}
+    local changebtndirtip
+    local function supportchangebtnpos(self, btn, container)
+        if not changebtndirtip then
+            changebtndirtip = "\n" .. TheInput:GetLocalizedControl(TheInput:GetControllerID(), CONTROL_SECONDARY) .. ": " ..
+                                  (TUNING.isCh2hm and "转变按钮所在方向" or "Change Buttons' Dir")
+        end
+        btn.onrightclick2hm = function()
+            local old = TUNING.TEMP2HM.btnotherdir[container.prefab] or "down"
+            local new = allbtnnewdir[old]
+            if new == "down" then new = nil end
+            TUNING.TEMP2HM.btnotherdir[container.prefab] = new
+            SaveTemp2hm()
+            local newdirpos = (new or "") .. "position"
+            for _, name in ipairs(btnnames) do
+                if self[name] ~= nil and self[name].btninfo2hm then
+                    self[name]:SetPosition(self[name].btninfo2hm[newdirpos] or self[name].btninfo2hm.position)
+                end
+            end
+        end
+        if btn.btninfo2hm and btn.btninfo2hm.helptext then btn:SetTooltip(btn.btninfo2hm.helptext .. changebtndirtip) end
+        SetButtonRightControl(btn)
     end
     AddClassPostConstruct("widgets/inventorybar", function(self)
         local oldRebuild = self.Rebuild
@@ -1456,20 +1565,28 @@ Use Orange Amulet will Pickup Near Same Items]],
                     if hassortbutton and widget.sortbtninfo2hm then
                         addbutton(self.bottomrow, overflow.inst, self.owner, "sortbutton2hm", widget.sortbtninfo2hm, Vector3(pos.x + 98, pos.y, pos.z))
                     end
-                    if hascollectbutton and widget.collectbtninfo2hm then
-                        addbutton(self.bottomrow, overflow.inst, self.owner, "collectbutton2hm", widget.collectbtninfo2hm,
-                                  ((haslockbutton and widget.lockbtninfo2hm) or (hasmultisortbtn and widget.multisortbtninfo2hm)) and
-                                      Vector3(pos.x + 238, pos.y, pos.z) or (hassortbutton and Vector3(pos.x + 168, pos.y, pos.z)) or
-                                      Vector3(pos.x + 98, pos.y, pos.z))
-                    end
                     if haslockbutton and widget.lockbtninfo2hm then
                         widget.lockbtninfo2hm.text = overflow.inst:HasTag("lockcontainer2hm") and (TUNING.isCh2hm and "解锁" or "Unlock") or
                                                          (TUNING.isCh2hm and "锁定" or "Lock")
                         addbutton(self.bottomrow, overflow.inst, self.owner, "lockbutton2hm", widget.lockbtninfo2hm, Vector3(pos.x + 168, pos.y, pos.z))
                     end
-                    if hasmultisortbtn and widget.multisortbtninfo2hm then
-                        addbutton(self.bottomrow, overflow.inst, self.owner, "multisortbutton2hm", widget.multisortbtninfo2hm,
-                                  Vector3(pos.x + 168, pos.y, pos.z))
+                    if overflow.inst:HasTag("pocketdimension_container") and widget.exchangebtninfo2hm then
+                        if not TUNING.DSA_ONE_PLAYER_MODE then
+                            addbutton(self.bottomrow, overflow.inst, self.owner, "exchangebutton2hm", widget.exchangebtninfo2hm,
+                                      (haslockbutton and widget.lockbtninfo2hm) and Vector3(pos.x + 238, pos.y, pos.z) or
+                                          (hassortbutton and widget.sortbtninfo2hm and Vector3(pos.x + 168, pos.y, pos.z) or Vector3(pos.x + 98, pos.y, pos.z)))
+                        end
+                    else
+                        if hasmultisortbtn and widget.multisortbtninfo2hm then
+                            addbutton(self.bottomrow, overflow.inst, self.owner, "multisortbutton2hm", widget.multisortbtninfo2hm,
+                                      Vector3(pos.x + 168, pos.y, pos.z))
+                        end
+                        if hascollectbutton and widget.collectbtninfo2hm then
+                            addbutton(self.bottomrow, overflow.inst, self.owner, "collectbutton2hm", widget.collectbtninfo2hm,
+                                      ((haslockbutton and widget.lockbtninfo2hm) or (hasmultisortbtn and widget.multisortbtninfo2hm)) and
+                                          Vector3(pos.x + 238, pos.y, pos.z) or
+                                          (hassortbutton and widget.sortbtninfo2hm and Vector3(pos.x + 168, pos.y, pos.z) or Vector3(pos.x + 98, pos.y, pos.z)))
+                        end
                     end
                 end
             end
@@ -1479,11 +1596,10 @@ Use Orange Amulet will Pickup Near Same Items]],
         local oldOpen = self.Open
         self.Open = function(self, container, doer, ...)
             local result = oldOpen(self, container, doer, ...)
-            local widget = container.replica.container:GetWidget()
-            if container and not container:HasTag("dcs2hm") and not container.dcs2hm then
-                if hassortbutton and widget.sortbtninfo2hm then addbutton(self, container, doer, "sortbutton2hm", widget.sortbtninfo2hm) end
-                if container.prefab == "wardrobe" and widget.reskinbtninfo2hm and container:HasTag("wardrobecontainer2hm") then
-                    addbutton(self, container, doer, "reskinbutton2hm", widget.reskinbtninfo2hm)
+            local widget = container.replica.container and container.replica.container:GetWidget()
+            if container and widget and not container:HasTag("dcs2hm") and not container.dcs2hm then
+                if hassortbutton and widget.sortbtninfo2hm then
+                    supportchangebtnpos(self, addbutton(self, container, doer, "sortbutton2hm", widget.sortbtninfo2hm), container)
                 end
                 if haslockbutton and widget.lockbtninfo2hm then
                     widget.lockbtninfo2hm.text = container:HasTag("lockcontainer2hm") and (TUNING.isCh2hm and "解锁" or "Unlock") or
@@ -1497,8 +1613,11 @@ Use Orange Amulet will Pickup Near Same Items]],
                         addbutton(self, container, doer, "multisortbutton2hm", widget.multisortbtninfo2hm)
                     end
                     if hascollectbutton and widget.collectbtninfo2hm then
-                        addbutton(self, container, doer, "collectbutton2hm", widget.collectbtninfo2hm)
+                        supportchangebtnpos(self, addbutton(self, container, doer, "collectbutton2hm", widget.collectbtninfo2hm), container)
                     end
+                end
+                if container.prefab == "wardrobe" and widget.reskinbtninfo2hm then
+                    addbutton(self, container, doer, "reskinbutton2hm", widget.reskinbtninfo2hm)
                 end
             end
             return result
@@ -1506,29 +1625,11 @@ Use Orange Amulet will Pickup Near Same Items]],
         local oldClose = self.Close
         self.Close = function(self, ...)
             if self.isopen then
-                if self.reskinbutton2hm ~= nil then
-                    self.reskinbutton2hm:Kill()
-                    self.reskinbutton2hm = nil
-                end
-                if self.exchangebutton2hm ~= nil then
-                    self.exchangebutton2hm:Kill()
-                    self.exchangebutton2hm = nil
-                end
-                if self.lockbutton2hm ~= nil then
-                    self.lockbutton2hm:Kill()
-                    self.lockbutton2hm = nil
-                end
-                if self.sortbutton2hm ~= nil then
-                    self.sortbutton2hm:Kill()
-                    self.sortbutton2hm = nil
-                end
-                if self.multisortbutton2hm ~= nil then
-                    self.multisortbutton2hm:Kill()
-                    self.multisortbutton2hm = nil
-                end
-                if self.collectbutton2hm ~= nil then
-                    self.collectbutton2hm:Kill()
-                    self.collectbutton2hm = nil
+                for _, name in ipairs(btnnames) do
+                    if self[name] ~= nil then
+                        self[name]:Kill()
+                        self[name] = nil
+                    end
                 end
             end
             return oldClose(self, ...)
@@ -1540,7 +1641,6 @@ Use Orange Amulet will Pickup Near Same Items]],
     AddPrefabPostInit("wardrobe", function(inst)
         if not TheWorld.ismastersim then return end
         if inst.components.container and inst.components.wardrobe then
-            inst:AddTag("wardrobecontainer2hm")
             inst.components.wardrobe:SetCanUseAction(false)
             if inst.components.channelable then inst.components.channelable:SetEnabled(false) end
             local oldonopen = inst.components.container.onopenfn
@@ -1559,10 +1659,11 @@ end
 
 -- [[[[[道具/制作栏快捷存取]]]]
 if itemscfg then
-    local collectrecipefn
-    if craftmenucollectsupport or hasitemscollect then
+    -- 收集指定类型或名称的道具
+    local collectrecipefn = nilfn
+    if craftmenucollectsupport or hasitemscollect or foodingredientcollectsupport then
         -- 后面的doer和item都是可选的,主要用于ctrl alt右键道具收集道具
-        collectrecipefn = function(inst, recipe_type, neednum, doer, item)
+        collectrecipefn = function(inst, recipe_type, neednum, doer, item, forceitemtestfn)
             if not recipe_type or recipe_type == "" or
                 not ((inst.components.inventory and inst.components.inventory.maxslots > 0) or
                     (inst.components.container and inst.components.container.numslots > 0)) then return end
@@ -1572,44 +1673,80 @@ if itemscfg then
             -- 记录要收集的实体名和目标数目,各实体堆叠时欠缺的数目(也可能是无限),剩余格子数目
             local data = {}
             data.neednum = neednum
-            if data.neednum == false then data.neednum = nil end
-            data.prefabs = {recipe_type}
-            if item and item:IsValid() and item.prefab then
-                if item.dryseeds2hm then -- 干种子
-                    data.prefabs = nil
+            if neednum == false then data.neednum = nil end
+            -- 判断道具的类型或名称，决定要收集的数目
+            if forceitemtestfn then
+                data.fastresult = true
+                data.prefabfn = forceitemtestfn
+            elseif item and item:IsValid() and item.prefab then
+                if item:HasTag("heatrock") and item.components.temperature and item.components.heater and not item.components.stackable and
+                    (TheWorld.state.issummer or TheWorld.state.iswinter) and not item.heatrockfindtask2hm then
+                    -- 收集暖石时可以与目标暖石进行交换
+                    item.heatrockfindtask2hm = item:DoTaskInTime(3, function()
+                        item.heatrockfindtask2hm = nil
+                        item.prevplayer2hm = nil
+                    end)
+                    item.prevplayer2hm = inventory and inventory.inst
+                    local current = item.components.temperature.current
+                    data.fastresult = true
+                    data.exchangeitem = item
+                    data.exchangeitemfn = function(olditem, newitem)
+                        if olditem.heatrockfindtask2hm then
+                            olditem.heatrockfindtask2hm:Cancel()
+                            olditem.heatrockfindtask2hm = nil
+                            olditem.prevplayer2hm = nil
+                        end
+                    end
+                    if TheWorld.state.issummer then
+                        data.prefabfn = function(v)
+                            return v:HasTag("heatrock") and v.components.temperature and v.components.heater and v.components.temperature.current < current and
+                                       not v.components.stackable
+                        end
+                    elseif TheWorld.state.iswinter then
+                        data.prefabfn = function(v)
+                            return v:HasTag("heatrock") and v.components.temperature and v.components.heater and v.components.temperature.current > current and
+                                       not v.components.stackable
+                        end
+                    end
+                elseif item.dryseeds2hm then -- 干种子
+                    data.fastresult = false
                     data.prefabfn = function(v) return v.dryseeds2hm ~= nil end
                 elseif item.components.yotb_skinunlocker ~= nil then -- 宠物皮肤蓝图
-                    data.prefabs = nil
+                    data.fastresult = false
                     data.prefabfn = function(v) return v.components.yotb_skinunlocker ~= nil end
                 elseif item.nameoverride == "redpouch" then -- 红包
-                    data.prefabs = nil
+                    data.fastresult = false
                     data.prefabfn = function(v) return v.prefab == "redpouch" or v.nameoverride == "redpouch" end
                 elseif item:HasTag("halloween_ornament") then -- 万圣节装饰
-                    data.prefabs = nil
+                    data.fastresult = false
                     data.prefabfn = function(v) return v:HasTag("halloween_ornament") end
                 elseif item:HasTag("wintersfeastfood") then -- 圣诞零食
-                    data.prefabs = nil
+                    data.fastresult = false
                     data.prefabfn = function(v) return v:HasTag("wintersfeastfood") end
                 elseif item:HasTag("winter_ornament") then
                     if item.nameoverride == "winter_ornament" then -- 圣诞小玩意
-                        data.prefabs = nil
+                        data.fastresult = false
                         data.prefabfn = function(v) return v.nameoverride == "winter_ornament" and v:HasTag("winter_ornament") end
                     elseif item:HasTag("lightbattery") then -- 圣诞灯
-                        data.prefabs = nil
+                        data.fastresult = false
                         data.prefabfn = function(v) return v:HasTag("winter_ornament") and v:HasTag("lightbattery") end
                     elseif item.nameoverride ~= nil then -- 圣诞装饰
-                        data.prefabs = nil
+                        data.fastresult = false
                         data.prefabfn = function(v)
                             return v.nameoverride ~= nil and v.nameoverride ~= "winter_ornament" and v:HasTag("winter_ornament") and
                                        not v:HasTag("lightbattery")
                         end
                     end
                 elseif string.find(item.prefab, "trinket") then -- 玩具
-                    data.prefabs = nil
+                    data.fastresult = false
                     data.prefabfn = function(v) return v.prefab ~= nil and string.find(v.prefab, "trinket") end
+                else
+                    data.prefabs = {recipe_type}
                 end
+            else
+                data.prefabs = {recipe_type}
             end
-            -- 物品栏或容器空间检测
+            -- 物品栏或容器空间进行额外检测
             if inst.components.inventory then
                 local isfull = getcontainerspace(inst, inst.components.inventory, data, false)
                 if isfull then
@@ -1651,11 +1788,12 @@ if itemscfg then
                     return
                 end
             end
-            data.fastresult = data.prefabs ~= nil
-            if data.prefabs == nil then
+            if data.fastresult == nil then data.fastresult = true end
+            if data.fastresult == false then
+                data.fastresult = nil
                 data.neednum = nil
             elseif data.infiniteprefabs ~= nil then
-                data.lacksize[recipe_type] = data.neednum
+                data.lacksize[recipe_type] = data.neednum or data.lacksize[recipe_type]
                 data.infiniteprefabs = nil
             elseif data.lacksize[recipe_type] == 0 then
                 data.lacksize[recipe_type] = nil
@@ -1711,44 +1849,9 @@ if itemscfg then
         local function collectrecipeclientfn(doer, recipe_type, neednum)
             if not recipe_type or recipe_type == "" or type(recipe_type) ~= "string" then return end
             if doer.components.inventory ~= nil and not doer:HasTag("playerghost") and doer.components.inventory.isvisible then
-                collectrecipefn(doer or ThePlayer, recipe_type, neednum)
+                collectrecipefn(doer, recipe_type, neednum)
             elseif doer.replica.inventory ~= nil and not doer:HasTag("playerghost") then
                 SendModRPCToServer(GetModRPC("MOD_HARDMODE", "collectrecipetypebtn2hm"), recipe_type, neednum)
-            end
-        end
-        local function SetImageButtonRightControl(self)
-            if self.SetImageButtonRightControl2hm then return end
-            self.SetImageButtonRightControl2hm = true
-            local oldOnControl = self.OnControl
-            self.OnControl = function(self, control, down, ...)
-                local result = oldOnControl(self, control, down, ...)
-                if not self:IsEnabled() or not self.focus then return result end
-                if self:IsSelected() and not self.AllowOnControlWhenSelected then return result end
-                if control == CONTROL_SECONDARY then
-                    if down then
-                        if not self.down2hm and not self.down then
-                            if self.has_image_down then
-                                self.image:SetTexture(self.atlas, self.image_down)
-                                if self.size_x and self.size_y then self.image:ScaleToSize(self.size_x, self.size_y) end
-                            end
-                            TheFrontEnd:GetSound():PlaySound("dontstarve/HUD/click_move")
-                            self.o_pos = self:GetLocalPosition()
-                            if self.move_on_click then self:SetPosition(self.o_pos + self.clickoffset) end
-                            self.down2hm = true
-                        end
-                    else
-                        if self.down2hm then
-                            if self.has_image_down then
-                                self.image:SetTexture(self.atlas, self.image_focus)
-                                if self.size_x and self.size_y then self.image:ScaleToSize(self.size_x, self.size_y) end
-                            end
-                            self.down2hm = false
-                            self:ResetPreClickPosition()
-                            if self.onrightclick2hm then self.onrightclick2hm() end
-                        end
-                    end
-                end
-                return result
             end
         end
         -- local function collect_recipe_type(recipe_type) if ThePlayer and recipe_type and recipe_type ~= "" then collectrecipeclientfn(ThePlayer, recipe_type) end end
@@ -1760,7 +1863,7 @@ if itemscfg then
                     collectrecipeclientfn(self.owner or ThePlayer, self.recipe_type, not has_enough and
                                               ((num_need * (self.parent and self.parent.parent and self.parent.parent.quantity or 1) - num_found)))
                 end
-                SetImageButtonRightControl(self)
+                SetButtonRightControl(self)
                 local meta = ingredient_recipe ~= nil and ingredient_recipe.meta or nil
                 if (meta and not has_enough and meta.can_build) or self.onclick then
                     self:SetTooltip((self.tooltip or "") .. "\n" .. TheInput:GetLocalizedControl(TheInput:GetControllerID(), CONTROL_SECONDARY) .. ": " ..
@@ -1825,7 +1928,7 @@ if itemscfg then
         AddClassPostConstruct("widgets/redux/craftingmenu_pinslot", function(self, ...)
             if self.craft_button then
                 resetpinslottooltip(self)
-                SetImageButtonRightControl(self.craft_button)
+                SetButtonRightControl(self.craft_button)
                 local oldOnControl = self.craft_button.OnControl
                 self.craft_button.OnControl = function(_self, control, down, ...)
                     if not TheInput:IsControlPressed(CONTROL_FORCE_INSPECT) and not TheInput:IsControlPressed(CONTROL_FORCE_STACK) and
@@ -1878,7 +1981,7 @@ if itemscfg then
                                                         (recipe.placer and "" or
                                                             (TheInput:GetLocalizedControl(TheInput:GetControllerID(), CONTROL_SECONDARY) .. ": " ..
                                                                 (TUNING.isCh2hm and "收集" or "Collect"))))
-                        SetImageButtonRightControl(widget.cell_root)
+                        SetButtonRightControl(widget.cell_root)
                     elseif widget and widget.cell_root then
                         widget.cell_root:SetTooltip(nil)
                     end
@@ -1887,7 +1990,7 @@ if itemscfg then
             end
         end)
     end
-    -- 快速收集道具(需要支持收集相同类型的道具)
+    -- ctrl alt右键道具快速收集道具
     if hasitemscollect then
         local collectaction = Action({})
         collectaction.priority = ACTIONS.LOOKAT.priority - 0.5
@@ -1917,7 +2020,146 @@ if itemscfg then
         end
         AddAction(collectaction)
     end
-    -- 快速存放道具
+    -- 智能锅快捷收集及相关补丁
+    if foodingredientcollectsupport then
+        local foodaliases = {cookedsmallmeat = "smallmeat_cooked", cookedmonstermeat = "monstermeat_cooked", cookedmeat = "meat_cooked"}
+        local function collectfoodingredientfn(doer, food, istag, neednum, toplayer, disabledatastr)
+            if doer and doer:IsValid() and doer.components.inventory and not doer:HasTag("playerghost") and doer.components.inventory.isvisible then
+                if toplayer then
+                    if istag then
+                        collectrecipefn(doer, food, nil, doer, nil, function(v)
+                            local data = cooking.ingredients[foodaliases[v.prefab] or v.prefab]
+                            return data ~= nil and data.tags[food] ~= nil and (food == "monster" or data.tags.monster == nil)
+                        end)
+                    else
+                        collectrecipefn(doer, food, nil, doer)
+                    end
+                    return
+                end
+                for container_inst in pairs(doer.components.inventory.opencontainers) do
+                    if container_inst:IsValid() and container_inst:HasTag("stewer") then
+                        if container_inst.components.container.acceptsstacks then neednum = nil end
+                        if istag then
+                            local limittags = {}
+                            local limitnames = {}
+                            if disabledatastr and string.len(disabledatastr) > 0 then
+                                local success, savedata = RunInSandboxSafe(disabledatastr)
+                                if success and savedata ~= nil and not IsTableEmpty(savedata) then
+                                    for index, element in pairs(savedata) do
+                                        if element.name then
+                                            limitnames[element.name] = (limitnames[element.name] or 0) + (element.amt or 0)
+                                        elseif element.tag then
+                                            limittags[element.tag] = (limittags[element.tag] or 0) + (element.amt or 0)
+                                        end
+                                    end
+                                end
+                            end
+                            local mintag = 0
+                            if neednum then
+                                local leftslots = container_inst.components.container.numslots
+                                for k, v in pairs(container_inst.components.container.slots) do
+                                    if v and v:IsValid() and v.prefab then
+                                        leftslots = leftslots - 1
+                                        if limitnames[v.prefab] then limitnames[v.prefab] = limitnames[v.prefab] - 1 end
+                                        local data = cooking.ingredients[foodaliases[v.prefab] or v.prefab]
+                                        if data and data.tags then
+                                            for tag, value in pairs(data.tags) do
+                                                if limittags[tag] and value then
+                                                    limittags[tag] = limittags[tag] - value
+                                                end
+                                            end
+                                        end
+                                    end
+                                end
+                                -- 剩余格子需要满足多少食物度，所以单个至少满足mintag,3.5/4
+                                mintag = neednum / leftslots
+                                -- 剩余格子需要低于多少怪物度，所以单个至少低于剩余怪物度
+                            end
+                            collectrecipefn(container_inst, food, neednum, doer, nil, function(v)
+                                local data = cooking.ingredients[foodaliases[v.prefab] or v.prefab]
+                                if data and data.tags and (mintag == 0 or data.tags[food] and data.tags[food] >= mintag) then
+                                    if limitnames[v.prefab] and limitnames[v.prefab] < 1 then return end
+                                    for tag, value in pairs(limittags) do
+                                        if data.tags[tag] and value and data.tags[tag] > value then return end
+                                    end
+                                    return true
+                                end
+                            end)
+                        else
+                            collectrecipefn(container_inst, food, neednum, doer)
+                        end
+                        return
+                    end
+                end
+            end
+        end
+        AddModRPCHandler("MOD_HARDMODE", "collectfoodingredient2hm", collectfoodingredientfn)
+        local function collectfoodingredientclientfn(doer, food, istag, neednum, toplayer, disabledatastr)
+            if not food or food == "" or type(food) ~= "string" then return end
+            if doer.components.inventory ~= nil then
+                collectfoodingredientfn(doer, food, istag, neednum, toplayer, disabledatastr)
+            elseif doer.replica.inventory ~= nil and not doer:HasTag("playerghost") and doer == ThePlayer then
+                SendModRPCToServer(GetModRPC("MOD_HARDMODE", "collectfoodingredient2hm"), food, istag, neednum, toplayer, disabledatastr)
+            end
+        end
+        -- is_min代表需要的素材,is_name代表需要指定食物还是指定属性食物,alias代表食物的名字或属性名字，quantity代表数目
+        if isModuleAvailable("widgets/foodingredientui") then
+            local function buildSequence(mix, arr)
+                for cid, conj in ipairs(mix) do
+                    if conj.amt then
+                        table.insert(arr, conj)
+                    else
+                        buildSequence(conj, arr)
+                    end
+                end
+                return arr
+            end
+            local function initdisabledata(self)
+                if not self.is_name and not self.disabledata and self.parent and self.parent.parent and self.parent.parent.parent and
+                    self.parent.parent.parent.recipe and self.parent.parent.parent.recipe.maxmix then
+                    self.disabledata = buildSequence(self.parent.parent.parent.recipe.maxmix, {})
+                end
+            end
+            local function refreshtooltip(self)
+                self.imgbtn2hm:SetTooltip((self.localized_name or "") .. (self.localized_name and "\n" or "") ..
+                                              TheInput:GetLocalizedControl(TheInput:GetControllerID(), CONTROL_PRIMARY) .. ": " ..
+                                              (self.quantity > self.on_hand and (TUNING.isCh2hm and "收集" or "Collect") or
+                                                  (TUNING.isCh2hm and "填充" or "Filling")) .. "\n" ..
+                                              TheInput:GetLocalizedControl(TheInput:GetControllerID(), CONTROL_SECONDARY) .. ": " ..
+                                              (TUNING.isCh2hm and "收集更多" or "Collect More"))
+            end
+            AddClassPostConstruct("widgets/foodingredientui", function(self, ...)
+                if self.is_min and self.owner and self.prefab and self.is_name ~= nil and self.quantity and self.atlas and self.item_tex and self.img then
+                    self.on_hand = 0
+                    local Update = self.Update
+                    self.Update = function(self, on_hand, ...)
+                        self.on_hand = on_hand
+                        Update(self, on_hand, ...)
+                        refreshtooltip(self)
+                    end
+                    self.imgbtn2hm = self:AddChild(ImageButton(self.atlas, self.item_tex))
+                    self.imgbtn2hm.image:Kill()
+                    self.imgbtn2hm.image = self.img
+                    self.imgbtn2hm:AddChild(self.img)
+                    self.img:MoveToBack()
+                    refreshtooltip(self)
+                    self.imgbtn2hm:SetOnClick(function()
+                        initdisabledata(self)
+                        collectfoodingredientclientfn(self.owner, self.prefab, not self.is_name, math.max(self.quantity - self.on_hand, 0), nil,
+                                                      not self.is_name and self.disabledata and not IsTableEmpty(self.disabledata) and
+                                                          DataDumper(self.disabledata, nil, true))
+                    end)
+                    self.imgbtn2hm.onrightclick2hm = function()
+                        collectfoodingredientclientfn(self.owner, self.prefab, not self.is_name, nil, true)
+                    end
+                    SetButtonRightControl(self.imgbtn2hm)
+                    self.imgbtn2hm.AllowOnControlWhenSelected = true
+                    if self.quant then self.quant:MoveToFront() end
+                end
+            end)
+        end
+    end
+    -- ctrl右键道具快速存放道具
     if hasitemsstore then
         local storeaction = Action({})
         storeaction.priority = ACTIONS.LOOKAT.priority - 0.5
@@ -1994,6 +2236,20 @@ if itemscfg then
                 end
             end
             for _, i in ipairs(toremove) do table.remove(ents, i) end
+            if haslockbutton then
+                toremove = {}
+                for i, ent in ipairs(ents) do
+                    if ent.components.container.itemtestfnprefabs2hm ~= nil then
+                        if ent.components.container:GiveItem(invobject, nil, src_pos, false) then
+                            delayshowmovefx(ent)
+                            return true
+                        else
+                            table.insert(toremove, i)
+                        end
+                    end
+                end
+                for _, i in ipairs(toremove) do table.remove(ents, i) end
+            end
             -- 优先存放在有存放道具限制的容器
             local tmpentsindex = {}
             local itemtestfnents = {}
@@ -2006,9 +2262,13 @@ if itemscfg then
             if #itemtestfnents > 0 then
                 table.sort(itemtestfnents, function(a, b)
                     if not (a and b and a.prefab and b.prefab and tmpentsindex[a] and tmpentsindex[b]) then return false end
-                    if prioritystoreents[a.prefab] and prioritystoreents[b.prefab] then
-                        if prioritystoreents[a.prefab] == prioritystoreents[b.prefab] then return tmpentsindex[a] < tmpentsindex[b] end
-                        return prioritystoreents[a.prefab] < prioritystoreents[b.prefab]
+                    local aidx = prioritystoreents[a.prefab]
+                    local bidx = prioritystoreents[b.prefab]
+                    if aidx and bidx then
+                        if aidx == bidx then return tmpentsindex[a] < tmpentsindex[b] end
+                        return aidx < bidx
+                    elseif aidx or bidx then
+                        return aidx ~= nil
                     end
                     return tmpentsindex[a] < tmpentsindex[b]
                 end)
@@ -2058,7 +2318,8 @@ if itemscfg then
             for i, v in ipairs(nearents) do
                 if v:IsValid() and v ~= owner and not v.dcs2hm then
                     if isstackable and v.components.container_proxy and v.components.container_proxy:CanBeOpened() and not v.components.container and
-                        not v.components.locomotor and not table.contains(storeblacklist, v.prefab) and v:GetCurrentPlatform() == platform then
+                        not v.components.locomotor and not table.contains(storeblacklist, v.prefab) and
+                        (conditionstorelist[v.prefab] == nil or conditionstorelist[v.prefab](act.invobject)) and v:GetCurrentPlatform() == platform then
                         local master = v.components.container_proxy.master
                         if master and master:IsValid() and master ~= owner and not proxyents[master] and master.components.container and
                             master.components.container.canbeopened and not master.components.container.usespecificslotsforitems and
@@ -2070,8 +2331,10 @@ if itemscfg then
                     elseif v.components.container and (isstackable or not v.components.container.infinitestacksize) and
                         (not isbigsize or v.components.container.infinitestacksize) and (not v.components.inventoryitem or v:HasTag("heavy")) and
                         not v.components.health and not v.components.locomotor and not v.components.stewer and v.components.container.canbeopened and
-                        not v.components.container.usespecificslotsforitems and v.components.container.acceptsstacks and v.components.container.type == "chest" and
-                        v.components.container.numslots >= 9 and not table.contains(storeblacklist, v.prefab) and v:GetCurrentPlatform() == platform and
+                        not v.components.container.usespecificslotsforitems and v.components.container.acceptsstacks and
+                        not table.contains(storeblacklist, v.prefab) and
+                        (conditionstorelist[v.prefab] == nil and v.components.container.type == "chest" and v.components.container.numslots >= 9 or
+                            (conditionstorelist[v.prefab] and conditionstorelist[v.prefab](act.invobject))) and v:GetCurrentPlatform() == platform and
                         v.components.container:CanTakeItemInSlot(act.invobject) then
                         table.insert(ents, v)
                     end
@@ -2134,6 +2397,32 @@ AddPrefabPostInit("world", function()
         end)
     end
 end)
+
+-- 智能锅补丁,智能锅可以锁定指定食谱
+if isModuleAvailable("widgets/foodcrafting") then
+    AddClassPostConstruct("widgets/foodcrafting", function(self, ...)
+        local SortFoods = self.SortFoods
+        self.SortFoods = function(self, ...)
+            local recipe
+            if self.focusItem and self.focusItem.focus then recipe = self.focusItem.recipe end
+            SortFoods(self, ...)
+            if recipe and self.focusIdx and self.idx and self.selfoods and self.num_slots and self._overflow then
+                for index, tmpfood in ipairs(self.selfoods) do
+                    if tmpfood and tmpfood.recipe == recipe then
+                        self.idx = index - self.focusIdx
+                        if self.idx > #self.selfoods - (self.num_slots) + self._overflow then
+                            self.idx = #self.selfoods - (self.num_slots) + self._overflow
+                        end
+                        if self.idx < -self._overflow then self.idx = -self._overflow end
+                        self.focusIdx = index - self.idx
+                        self:UpdateFoodSlots()
+                        return
+                    end
+                end
+            end
+        end
+    end)
+end
 
 -- 容器存取轨迹补丁
 local clientitemtransferimage2hmdist = 36 * 36
@@ -2249,7 +2538,7 @@ local function onitemget(inst, data)
                     (isself or player:GetDistanceSqToPoint(x, y, z) < clientitemtransferimage2hmdist or player:GetDistanceSqToPoint(_x, _y, _z) <
                         clientitemtransferimage2hmdist) then
                     -- 客户端玩家不需要发rpc
-                    if TheNet:GetIsClient() and ThePlayer == player then
+                    if isclient and ThePlayer == player then
                         clientitemtransferimage2hm(img, atlas, x, y, z, prevcontainer, data.item.prevslot, _x, _y, _z, currcontainer, data and data.slot,
                                                    userid, iscollectact)
                     else

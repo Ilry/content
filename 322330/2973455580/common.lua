@@ -7,3 +7,20 @@ TUNING.isCh2hm = lang_id == LANGUAGE.CHINESE_T or lang_id == LANGUAGE.CHINESE_S 
 if GetModConfigData("Language In Game") then TUNING.isCh2hm = GetModConfigData("Language In Game") == -1 end
 
 function truefn() return true end
+function nilfn() end
+
+-- 模组动态加载，主要用来识别模组UI的widet定义文件
+function isModuleAvailable(name)
+    if package.loaded[name] then
+        return true
+    else
+        for _, searcher in ipairs(package.searchers or package.loaders) do
+            local loader = searcher(name)
+            if type(loader) == "function" then
+                package.preload[name] = loader
+                return true
+            end
+        end
+        return false
+    end
+end
