@@ -39,6 +39,18 @@ configuration_options = isCh and
         default = 1,
     },
     {
+        name = "rlkg",
+        label = "灭火器无限燃料",
+        hover = "关闭燃料消耗",
+        options =
+        {
+            {description = "开启", data = 1, hover = "燃料停止消耗，燃料无限使用无需添加"},
+            {description = "关闭", data = 2, hover = "原版灭火器正常消耗燃料"},
+            
+        },
+        default = 1,
+    },
+    {
         name = "turn_on_time",
         label = "开启速度",
         hover = "控制灭火器开启的速度",
@@ -91,6 +103,18 @@ configuration_options = isCh and
                         {description = "25 day", data = 5, hover = "amounts for 25 days"},
                         {description = "5000 day", data = 1000, hover = "amounts for 25 days"},
                     },
+        default = 1,
+    },
+    {
+        name = "rlkg",
+        label = "灭火器无限燃料",
+        hover = "关闭燃料消耗",
+        options =
+        {
+            {description = "开启", data = 1, hover = "燃料停止消耗，燃料无限使用无需添加"},
+            {description = "关闭", data = 2, hover = "原版灭火器正常消耗燃料"},
+            
+        },
         default = 1,
     },
     {

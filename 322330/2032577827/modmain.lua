@@ -1,10 +1,16 @@
+PrefabFiles = 
+{
+	"firesuppressor",
+	
+}
+
 _G = GLOBAL
 
 _G.TUNING.EMERGENCY_BURNT_NUMBER = 1
 _G.TUNING.EMERGENCY_BURNING_NUMBER = 1 -- number of fires to maintain warning level one automatically
 _G.TUNING.EMERGENCY_RESPONSE_TIME = 3 -- BURNT_NUMBER structures must burn within this time period to trigger flingomatic emergency response
 -- _G.TUNING.FIRE_DETECTOR_RANGE = 15
-
+TUNING.MHQRLKG = GetModConfigData("rlkg")
 if GetModConfigData("turn_on_time") == 1 then
     _G.TUNING.EMERGENCY_WARNING_TIME = 0.1   -- minimum length of warning period
 elseif GetModConfigData("turn_on_time") == 2 then
@@ -18,14 +24,18 @@ end
 if GetModConfigData("fuel_time") ~= 1 then
 	_G.TUNING.FIRESUPPRESSOR_MAX_FUEL_TIME = 480*5*GetModConfigData("fuel_time")
 end
-----------------------------------------------------------------------
-----------------------------------------------------------------------
-----------------------------------------------------------------------
----------------------compatiblize other mods--------------------------
-----------------------------------------------------------------------
-----------------------------------------------------------------------
-----------------------------------------------------------------------
-whitelist_for_ice_flingomatic = {}
+
+
+-- whitelist_for_ice_flingomatic = {}
+
+local whitelist_for_ice_flingomatic = {
+	"campfire",
+	"firepit",
+	"coldfire",
+	"coldfirepit",
+	"nightlight",
+	"pigtorch",
+}
 
 --For the mod of [DST]Musha
 local Musha_list = {

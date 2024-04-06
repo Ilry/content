@@ -804,7 +804,7 @@ if GetModConfigData("config_render") then
 
 end
 
---修复假人互动bug
+--修复假人互动bug、修复拳击袋不能给装备bug
 local function new_has_any_equipment(inst)
     return inst.components.inventory:GetEquippedItem(GLOBAL.EQUIPSLOTS.HANDS) ~= nil
         or inst.components.inventory:GetEquippedItem(GLOBAL.EQUIPSLOTS.HEAD) ~= nil
@@ -881,6 +881,10 @@ if GLOBAL.TheNet:GetIsServer() then --这段代码只能在服务端运行，所
             end
         end
         inst.components.activatable.OnActivate = newOnActivate
+        inst.components.trader:SetAbleToAcceptTest(new_should_accept_item)
+    end)
+    -- 替换拳击袋给予物品判断
+    AddPrefabPostInit("punchingbag",function(inst)
         inst.components.trader:SetAbleToAcceptTest(new_should_accept_item)
     end)
 end

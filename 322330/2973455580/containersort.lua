@@ -15,12 +15,16 @@ local craftmenucollectsupport = itemscfg ~= -1
 local hasitemscollect = craftmenucollectsupport
 local foodingredientcollectsupport = craftmenucollectsupport
 local hasitemsstore = itemscfg ~= -2
-TUNING.TEMP2HM = TUNING.TEMP2HM or {}
+
 local isclient = TheNet:GetIsClient() or TUNING.DSA_ONE_PLAYER_MODE or (TheNet:GetServerIsClientHosted() and TheNet:GetIsServerAdmin())
--- 强制显示整理
-if TUNING.TEMP2HM.opensort ~= nil and not (hasmultisortbtn or haslockbutton) and isclient then hassortbutton = TUNING.TEMP2HM.opensort end
 -- 按钮位置可调整
+TUNING.TEMP2HM = TUNING.TEMP2HM or {}
 TUNING.TEMP2HM.btnotherdir = TUNING.TEMP2HM.btnotherdir or {}
+-- 强制显示整理
+TUNING.DATA2HM = TUNING.DATA2HM or {}
+TUNING.DATA2HM.opensort = hassortbutton
+if isclient and TUNING.TEMP2HM.opensort ~= nil then TUNING.DATA2HM.opensort = TUNING.TEMP2HM.opensort end
+
 -- 给容器添加tag"dcs2hm"或容器inst.dcs2hm = true可以禁用对容器进行的各种功能,且不显示各类按钮
 -- 不会从下列容器中收集道具
 local collectblacklist = {"pandoraschest", "minotaurchest", "terrariumchest"}
@@ -362,15 +366,15 @@ local function dosort(inst)
     container.ignoreoverstacked = false
 end
 local function sortfn(player, inst)
-    if inst.components.container ~= nil then
+    if inst.components.container and not inst:HasTag("dcs2hm") and not inst.dcs2hm and not inst.components.container.usespecificslotsforitems and
+        inst.components.container.acceptsstacks then
         dosort(inst)
         if inst.components.equippable and inst.components.equippable:IsEquipped() then dosort(player) end
     end
 end
 -- 容器跨整,和容器锁定互斥，所以不需要检测itemtestfnprefabs2hm
 local function domultisort(inst, player)
-    if not (player.components.inventory and inst.components.container and inst.components.container.acceptsstacks and
-        not inst.components.container.usespecificslotsforitems) then return end
+    if not (player.components.inventory and inst.components.container) then return end
     -- ents是除inst外其他要一起处理的容器,inst不需要放在里面
     local ents = {}
     if inst.components.equippable and inst.components.equippable:IsEquipped() then
@@ -508,7 +512,10 @@ local function domultisort(inst, player)
         v.components.container.ignoreoverstacked = false
     end
 end
-local function multisortfn(player, inst) if hasmultisortbtn and inst.components.container ~= nil then domultisort(inst, player) end end
+local function multisortfn(player, inst)
+    if (hasmultisortbtn or (inst.components.equippable and inst.components.equippable:IsEquipped())) and inst.components.container and not inst:HasTag("dcs2hm") and
+        not inst.dcs2hm and not inst.components.container.usespecificslotsforitems and inst.components.container.acceptsstacks then domultisort(inst, player) end
+end
 -- 整理按钮和跨整按钮
 AddModRPCHandler("MOD_HARDMODE", "sortbtn2hm", sortfn)
 local function sortbtnfn(inst, doer)
@@ -621,7 +628,7 @@ AddShardModRPCHandler("MOD_HARDMODE", "exchangeconfirmdata2hm", function(shard_i
             not container.containerreceivetask2hm and container.sendcontainerproxyplayer2hm and containerdata then
             local success, data = RunInSandboxSafe(containerdata)
             if success and data and data.time2hm and os.time() - data.time2hm < 400 then
-                container:DoTaskInTime(FRAMES * 1.5, exchangesenddata, "exchangeconfirm2hm", shard_id, name, true)
+                container:DoStaticTaskInTime(FRAMES * 1.5, exchangesenddata, "exchangeconfirm2hm", shard_id, name, true)
                 container.exchangetmpdata2hm = nil
                 container.containersendtask2hm:Cancel()
                 container.containersendtask2hm = nil
@@ -646,7 +653,7 @@ AddShardModRPCHandler("MOD_HARDMODE", "exchangesenddata2hm", function(shard_id, 
             if success and data and data.time2hm and os.time() - data.time2hm < 350 then
                 container.containerreceivetask2hm = container:DoTaskInTime(3, exchangetaskend)
                 container.sendcontainerproxydata2hm = data
-                container:DoTaskInTime(FRAMES * 1.5, exchangesenddata, "exchangeconfirmdata2hm", shard_id, name)
+                container:DoStaticTaskInTime(FRAMES * 1.5, exchangesenddata, "exchangeconfirmdata2hm", shard_id, name)
             end
         end
     end
@@ -1033,10 +1040,11 @@ local function docollect(inst, player)
 end
 local function collectfn(player, inst)
     -- 混合拾取和收纳时,拾取后短暂时间内不会进行收纳
-    if hascollectbutton and inst and inst.components.container ~= nil and not inst.collectloadingtask2hm then docollect(inst, player) end
+    if hascollectbutton and inst.components.container ~= nil and not inst.collectloadingtask2hm and not inst:HasTag("dcs2hm") and not inst.dcs2hm and
+        not inst.components.container.usespecificslotsforitems and inst.components.container.acceptsstacks then docollect(inst, player) end
 end
 local function dopickup(inst, player)
-    if not (player.components.inventory and (inst.components.inventory or inst.components.container)) then return end
+    if not (player.components.inventory and (inst.components.inventory or (inst.components.container))) then return end
     -- 检测是否装备懒人护符
     local hasorangeamulet = false
     local data = {}
@@ -1186,7 +1194,8 @@ local function dopickup(inst, player)
 end
 local function pickupfn(player, inst)
     if hascollectbutton then
-        if inst.components.container ~= nil and not inst.collectloadingtask2hm then dopickup(inst, player) end
+        if inst.components.container ~= nil and not inst.collectloadingtask2hm and not inst:HasTag("dcs2hm") and not inst.dcs2hm and
+            not inst.components.container.usespecificslotsforitems and inst.components.container.acceptsstacks then dopickup(inst, player) end
         if inst.components.equippable and inst.components.equippable:IsEquipped() and player.components.inventory and not player.collectloadingtask2hm then
             dopickup(player, player)
         end
@@ -1250,29 +1259,39 @@ local function dolock(inst, doer, typelock)
 end
 local function lockfn(player, inst) if haslockbutton and inst and inst.components.container ~= nil then dolock(inst, player) end end
 AddModRPCHandler("MOD_HARDMODE", "lockbtn2hm", lockfn)
+local lockbtninfo = {
+    text1 = TUNING.isCh2hm and "锁定" or "Lock",
+    text2 = TUNING.isCh2hm and "解锁" or "Unlock",
+    helptext1 = TUNING.isCh2hm and [[限制该容器仅可放置此时已存道具且记忆]] or [[Make container limit store current items and remember limit]],
+    helptext2 = TUNING.isCh2hm and [[移除该容器的特定道具存放限制记忆]] or [[Remove container's items limit remember]],
+    validfn = defaultbtnvalidfn
+}
 -- 锁定/解锁按钮
 local function lockbtnfn(inst, doer, btn)
     if not haslockbutton then return end
-    btn:SetText(inst:HasTag("lockcontainer2hm") and (TUNING.isCh2hm and "锁定" or "Lock") or (TUNING.isCh2hm and "解锁" or "Unlock"))
+    btn:SetText(inst:HasTag("lockcontainer2hm") and lockbtninfo.text1 or lockbtninfo.text2)
+    btn:SetTooltip(inst:HasTag("lockcontainer2hm") and lockbtninfo.helptext1 or lockbtninfo.helptext2)
     if inst.components.container ~= nil then
         lockfn(doer, inst)
     elseif inst.replica.container ~= nil then
         SendModRPCToServer(GetModRPC("MOD_HARDMODE", "lockbtn2hm"), inst)
     end
 end
+lockbtninfo.fn = lockbtnfn
 
 -- 衣柜换装
-local function reskinfn(player, inst) if inst:HasTag("wardrobe") and inst.components.wardrobe then BufferedAction(player, inst, ACTIONS.CHANGEIN):Do() end end
+local function reskinfn(player, inst) if inst.components.wardrobe then inst.components.wardrobe:BeginChanging(player) end end
 -- 换装按钮
 AddModRPCHandler("MOD_HARDMODE", "reskinbtn2hm", reskinfn)
 local function reskinbtnfn(inst, doer)
-    if inst.components.wardrobe ~= nil and inst:HasTag("wardrobe") then
-        BufferedAction(doer, inst, ACTIONS.CHANGEIN):Do()
-    elseif inst.replica.container ~= nil and inst:HasTag("wardrobe") then
+    if inst.components.wardrobe ~= nil then
+        reskinfn(doer, inst)
+    elseif inst.replica.container ~= nil then
         SendModRPCToServer(GetModRPC("MOD_HARDMODE", "reskinbtn2hm"), inst)
     end
 end
-local function reskinvalidfn(inst) return defaultbtnvalidfn(inst) and inst:HasTag("wardrobe") end
+-- local function reskinvalidfn(inst) return defaultbtnvalidfn(inst) and inst:HasTag("wardrobe") end
+local reskinvalidfn = truefn
 
 -- 按钮右键操作支持
 local function SetButtonRightControl(self)
@@ -1314,9 +1333,44 @@ end
 
 -- [[[[[容器按钮]]]]
 if containercfg and isclient then
+    local btnlist = {
+        sortbtn = {
+            text = TUNING.isCh2hm and "整理" or "Sort",
+            helptext = TUNING.isCh2hm and [[排序该容器内道具
+背包双击会混合排序物品栏和背包内道具]] or [[Sort Your Items
+Backpack Double Click Will Pass Through Inventory]],
+            fn = realsortbtnfn,
+            validfn = defaultbtnvalidfn
+        },
+        lockbtn = lockbtninfo,
+        multisortbtn = {
+            text = TUNING.isCh2hm and "跨整" or "MSort",
+            helptext = TUNING.isCh2hm and [[背包会混合排序物品栏和背包内道具
+携带容器混合排序所在容器内的所有同类容器内道具
+地面容器会混合排序周围同名容器内道具,不会跨船]] or "Sort Your Items Pass Through Containers",
+            fn = multisortbtnfn,
+            validfn = defaultbtnvalidfn
+        },
+        collectbtn = {
+            text = TUNING.isCh2hm and "收集" or "Collect",
+            helptext = TUNING.isCh2hm and [[携带容器收集携带的容器内同名道具
+地面容器收集周围容器内的同名道具,不会跨船
+佩戴或手持懒人护符,则拾取周围地上同名道具]] or [[Collect Same Items From Containers
+Use Orange Amulet will Picktop Near Same Items]],
+            fn = collectbtnfn,
+            validfn = defaultbtnvalidfn
+        },
+        exchangebtn = {
+            text = TUNING.isCh2hm and "穿越" or "PassW",
+            helptext = TUNING.isCh2hm and [[与随机其他世界的该容器交换道具]] or [[exchange container data with another world's the container]],
+            fn = exchangebtnfn,
+            validfn = exchangevalidfn
+        },
+        reskinbtn = {text = TUNING.isCh2hm and "换装" or "Skin", poslist = poslist, fn = reskinbtnfn, validfn = reskinvalidfn}
+    }
     local function addbuttoninfoforcontainerparams(prefab, container)
         if container and container.inst and not container.inst:HasTag("dcs2hm") and not container.inst.dcs2hm and not container.usespecificslotsforitems and
-            container.acceptsstacks ~= false and container.widget and not container.widget.sortbtninfo2hm and container.widget.slotpos and
+            container.acceptsstacks and container.widget and not container.widget.sortbtninfo2hm and container.widget.slotpos and
             (#container.widget.slotpos > 5 or (#container.widget.slotpos >= 4 and (prefab == "puffvest" or prefab == "puffvest_big"))) then
             -- x相同说明在一条竖线上，y相同说明在一条横线上
             local allslotpos = container.widget.slotpos
@@ -1384,102 +1438,23 @@ if containercfg and isclient then
                 position2 = Vector3(finalslotpos1.x, finalslotpos1.y - 100, finalslotpos1.z)
                 position3 = Vector3(finalslotpos1.x, finalslotpos1.y - 143, finalslotpos1.z)
             end
-            -- 可选整理按钮,默认第1个
-            if hassortbutton then
-                container.widget.sortbtninfo2hm = {
-                    text = TUNING.isCh2hm and "整理" or "Sort",
-                    helptext = TUNING.isCh2hm and [[排序该容器内道具
-背包双击会混合排序物品栏和背包内道具]] or [[Sort Your Items
-Backpack Double Click Will Pass Through Inventory]],
-                    position = position1,
-                    topposition = topposition1,
-                    leftposition = leftposition1,
-                    rightposition = rightposition1,
-                    fn = realsortbtnfn,
-                    validfn = defaultbtnvalidfn
-                }
-            end
-            -- 可选按钮,默认第2个位置
-            if haslockbutton then
-                container.widget.lockbtninfo2hm = {
-                    text = TUNING.isCh2hm and "锁定" or "Lock",
-                    helptext = TUNING.isCh2hm and [[锁定该容器只能放置当前已有的道具]] or [[Lock the container to limit store current items]],
-                    position = position2,
-                    topposition = topposition2,
-                    leftposition = leftposition2,
-                    rightposition = rightposition2,
-                    fn = lockbtnfn,
-                    validfn = defaultbtnvalidfn
-                }
-            elseif hasmultisortbtn then
-                container.widget.multisortbtninfo2hm = {
-                    text = TUNING.isCh2hm and "跨整" or "MSort",
-                    helptext = TUNING.isCh2hm and [[背包会混合排序物品栏和背包内道具
-携带容器混合排序所在容器内的所有同类容器内道具
-地面容器会混合排序周围同名容器内道具,不会跨船]] or "Sort Your Items Pass Through Containers",
-                    position = position2,
-                    topposition = topposition2,
-                    leftposition = leftposition2,
-                    rightposition = rightposition2,
-                    fn = multisortbtnfn,
-                    validfn = defaultbtnvalidfn
-                }
-            end
-            -- 可选收集按钮,默认第3个位置
+            -- 存储位置信息
             local positions = {position1, position2, position3}
             local toppositions = {topposition1, topposition2, topposition3}
             local leftpositions = {leftposition1, leftposition2, leftposition3}
             local rightpositions = {rightposition1, rightposition2, rightposition3}
-            if hascollectbutton then
-                local idx = (hasmultisortbtn or haslockbutton) and 3 or (hassortbutton and 2 or 1)
-                container.widget.collectbtninfo2hm = {
-                    text = TUNING.isCh2hm and "收集" or "Collect",
-                    helptext = TUNING.isCh2hm and [[携带容器收集携带的容器内同名道具
-地面容器收集周围容器内的同名道具,不会跨船
-佩戴或手持懒人护符,则拾取周围地上同名道具]] or [[Collect Same Items From Containers
-Use Orange Amulet will Picktop Near Same Items]],
-                    position = positions[idx],
-                    topposition = toppositions[idx],
-                    leftposition = leftpositions[idx],
-                    rightposition = rightpositions[idx],
-                    fn = collectbtnfn,
-                    validfn = defaultbtnvalidfn
-                }
+            local poslist = {positions = positions, toppositions = toppositions, leftpositions = leftpositions, rightpositions = rightpositions}
+            -- 衣柜多一个按钮的位置信息
+            if prefab == "wardrobe" and (hasmultisortbtn or haslockbutton) then
+                local finalslotpos4 = allslotpos[finalslot - 3]
+                local firstlineendslotpos3 = allslotpos[linelength - 3]
+                positions[4] = Vector3(finalslotpos4.x, finalslotpos4.y - 57, finalslotpos4.z)
+                toppositions[4] = Vector3(firstlineendslotpos3.x, firstlineendslotpos3.y + 57, firstlineendslotpos3.z)
+                leftpositions[4] = Vector3(firstcolumnnendslotpos1.x - 74, firstcolumnnendslotpos1.y + 96, firstcolumnnendslotpos1.z)
+                rightpositions[4] = Vector3(finalslotpos1.x + 74, finalslotpos1.y + 96, finalslotpos1.z)
             end
-            -- 特殊容器才有的交换按钮,但在这里无法区分是否用用,因此直接全员设置
-            local idx = haslockbutton and 3 or (hassortbutton and 2 or 1)
-            container.widget.exchangebtninfo2hm = {
-                text = TUNING.isCh2hm and "穿越" or "PassW",
-                helptext = TUNING.isCh2hm and [[与随机其他世界的该容器交换道具]] or
-                    [[exchange container data with another world's the container]],
-                position = positions[idx],
-                topposition = toppositions[idx],
-                leftposition = leftpositions[idx],
-                rightposition = rightpositions[idx],
-                fn = exchangebtnfn,
-                validfn = exchangevalidfn
-            }
-            -- 妥协衣柜才有的换装按钮
-            if prefab == "wardrobe" then
-                idx = (hasmultisortbtn or haslockbutton) and 4 or (hassortbutton and hascollectbutton and 3 or 2)
-                if idx == 4 then
-                    local finalslotpos4 = allslotpos[finalslot - 3]
-                    local firstlineendslotpos3 = allslotpos[linelength - 3]
-                    positions[4] = Vector3(finalslotpos4.x, finalslotpos4.y - 57, finalslotpos4.z)
-                    toppositions[4] = Vector3(firstlineendslotpos3.x, firstlineendslotpos3.y + 57, firstlineendslotpos3.z)
-                    leftpositions[4] = Vector3(firstcolumnnendslotpos1.x - 74, firstcolumnnendslotpos1.y + 96, firstcolumnnendslotpos1.z)
-                    rightpositions[4] = Vector3(finalslotpos1.x + 74, finalslotpos1.y + 96, finalslotpos1.z)
-                end
-                container.widget.reskinbtninfo2hm = {
-                    text = TUNING.isCh2hm and "换装" or "Skin",
-                    position = positions[idx],
-                    topposition = toppositions[idx],
-                    leftposition = leftpositions[idx],
-                    rightposition = rightpositions[idx],
-                    fn = reskinbtnfn,
-                    validfn = reskinvalidfn
-                }
-            end
+            -- 记录到容器上
+            container.widget.poslist2hm = poslist
         end
     end
     local old_wsetup = containers.widgetsetup
@@ -1506,23 +1481,34 @@ Use Orange Amulet will Picktop Near Same Items]],
     end
     -- 按钮添加
     local allbtnnewdir = {left = "top", top = "right", right = "down", down = "left"}
-    local function addbutton(self, container, doer, btnname, btninfo, position)
+    local function addbutton(self, container, widget, doer, btnname, btninfo, idx, position)
         local btn = self:AddChild(ImageButton("images/ui.xml", "button_small.tex", "button_small_over.tex", "button_small_disabled.tex", nil, nil, {1, 1},
                                               {0, 0}))
+        if position then
+            btn:SetPosition(position)
+        elseif idx and widget.poslist2hm then
+            local dirpos = (TUNING.TEMP2HM.btnotherdir[container.prefab] or "") .. "positions"
+            btn.idx2hm = idx
+            if widget.poslist2hm[dirpos] and widget.poslist2hm[dirpos][idx] then
+                btn:SetPosition(widget.poslist2hm[dirpos][idx])
+                btn.poslist2hm = widget.poslist2hm
+            else
+                btn:Kill()
+                return
+            end
+        end
         btn.image:SetScale(0.77, 1.07, 1.07)
         btn.text:SetPosition(2, -2)
-        local dirpos = (TUNING.TEMP2HM.btnotherdir[container.prefab] or "") .. "position"
-        btn:SetPosition(position or btninfo[dirpos] or btninfo.position)
-        btn.btninfo2hm = btninfo
-        btn:SetText(btninfo.text)
-        if btninfo.helptext then btn:SetTooltip(btninfo.helptext) end
-        if btninfo.fn ~= nil then btn:SetOnClick(function() btninfo.fn(container, doer, btn) end) end
         btn:SetFont(BUTTONFONT)
         btn:SetDisabledFont(BUTTONFONT)
         btn:SetTextSize(33)
         btn.text:SetVAlign(ANCHOR_MIDDLE)
         btn.text:SetColour(0, 0, 0, 1)
         self[btnname] = btn
+        btn:SetText(btninfo.text)
+        btn.btninfo2hm = btninfo
+        if btninfo.helptext then btn:SetTooltip(btninfo.helptext) end
+        if btninfo.fn ~= nil then btn:SetOnClick(function() btninfo.fn(container, doer, btn) end) end
         return btn
     end
     -- 按钮转向
@@ -1533,20 +1519,22 @@ Use Orange Amulet will Picktop Near Same Items]],
             changebtndirtip = "\n" .. TheInput:GetLocalizedControl(TheInput:GetControllerID(), CONTROL_SECONDARY) .. ": " ..
                                   (TUNING.isCh2hm and "转变按钮所在方向" or "Change Buttons' Dir")
         end
+        if btn.btninfo2hm and btn.btninfo2hm.helptext then btn:SetTooltip(btn.btninfo2hm.helptext .. changebtndirtip) end
         btn.onrightclick2hm = function()
+            if not btn.idx2hm or not btn.poslist2hm then return end
             local old = TUNING.TEMP2HM.btnotherdir[container.prefab] or "down"
             local new = allbtnnewdir[old]
             if new == "down" then new = nil end
             TUNING.TEMP2HM.btnotherdir[container.prefab] = new
             SaveTemp2hm()
-            local newdirpos = (new or "") .. "position"
+            local newdirpos = (new or "") .. "positions"
             for _, name in ipairs(btnnames) do
-                if self[name] ~= nil and self[name].btninfo2hm then
-                    self[name]:SetPosition(self[name].btninfo2hm[newdirpos] or self[name].btninfo2hm.position)
+                if self[name] ~= nil and self[name].poslist2hm and self[name].idx2hm and self[name].poslist2hm[newdirpos] and
+                    self[name].poslist2hm[newdirpos][self[name].idx2hm] then
+                    self[name]:SetPosition(self[name].poslist2hm[newdirpos][self[name].idx2hm])
                 end
             end
         end
-        if btn.btninfo2hm and btn.btninfo2hm.helptext then btn:SetTooltip(btn.btninfo2hm.helptext .. changebtndirtip) end
         SetButtonRightControl(btn)
     end
     AddClassPostConstruct("widgets/inventorybar", function(self)
@@ -1560,32 +1548,34 @@ Use Orange Amulet will Picktop Near Same Items]],
             if do_integrated_backpack and self.bottomrow and overflow and overflow.inst then
                 local widget = overflow:GetWidget()
                 local num = overflow:GetNumSlots()
-                if self.backpackinv and self.backpackinv[num] and not widget.buttoninfo then
+                if self.backpackinv and self.backpackinv[num] and not widget.buttoninfo and widget.poslist2hm then
                     local pos = self.backpackinv[num]:GetPosition()
-                    if hassortbutton and widget.sortbtninfo2hm then
-                        addbutton(self.bottomrow, overflow.inst, self.owner, "sortbutton2hm", widget.sortbtninfo2hm, Vector3(pos.x + 98, pos.y, pos.z))
+                    local pos1 = Vector3(pos.x + 98, pos.y, pos.z)
+                    local pos2 = Vector3(pos.x + 168, pos.y, pos.z)
+                    local pos3 = Vector3(pos.x + 238, pos.y, pos.z)
+                    if TUNING.DATA2HM.opensort then
+                        addbutton(self.bottomrow, overflow.inst, widget, self.owner, "sortbutton2hm", btnlist.sortbtn, nil, pos1)
                     end
-                    if haslockbutton and widget.lockbtninfo2hm then
-                        widget.lockbtninfo2hm.text = overflow.inst:HasTag("lockcontainer2hm") and (TUNING.isCh2hm and "解锁" or "Unlock") or
-                                                         (TUNING.isCh2hm and "锁定" or "Lock")
-                        addbutton(self.bottomrow, overflow.inst, self.owner, "lockbutton2hm", widget.lockbtninfo2hm, Vector3(pos.x + 168, pos.y, pos.z))
+                    if haslockbutton then
+                        btnlist.lockbtn.text = overflow.inst:HasTag("lockcontainer2hm") and btnlist.lockbtn.text2 or btnlist.lockbtn.text1
+                        btnlist.lockbtn.helptext = overflow.inst:HasTag("lockcontainer2hm") and btnlist.lockbtn.helptext2 or btnlist.lockbtn.helptext1
+                        addbutton(self.bottomrow, overflow.inst, widget, self.owner, "lockbutton2hm", btnlist.lockbtn, nil,
+                                  TUNING.DATA2HM.opensort and pos2 or pos1)
                     end
-                    if overflow.inst:HasTag("pocketdimension_container") and widget.exchangebtninfo2hm then
+                    if overflow.inst:HasTag("pocketdimension_container") then
                         if not TUNING.DSA_ONE_PLAYER_MODE then
-                            addbutton(self.bottomrow, overflow.inst, self.owner, "exchangebutton2hm", widget.exchangebtninfo2hm,
-                                      (haslockbutton and widget.lockbtninfo2hm) and Vector3(pos.x + 238, pos.y, pos.z) or
-                                          (hassortbutton and widget.sortbtninfo2hm and Vector3(pos.x + 168, pos.y, pos.z) or Vector3(pos.x + 98, pos.y, pos.z)))
+                            addbutton(self.bottomrow, overflow.inst, widget, self.owner, "exchangebutton2hm", btnlist.exchangebtn, nil,
+                                      haslockbutton and TUNING.DATA2HM.opensort and pos3 or ((haslockbutton or TUNING.DATA2HM.opensort) and pos2 or pos1))
                         end
                     else
-                        if hasmultisortbtn and widget.multisortbtninfo2hm then
-                            addbutton(self.bottomrow, overflow.inst, self.owner, "multisortbutton2hm", widget.multisortbtninfo2hm,
-                                      Vector3(pos.x + 168, pos.y, pos.z))
+                        if hasmultisortbtn then
+                            addbutton(self.bottomrow, overflow.inst, widget, self.owner, "multisortbutton2hm", btnlist.multisortbtn, nil,
+                                      TUNING.DATA2HM.opensort and pos2 or pos1)
                         end
-                        if hascollectbutton and widget.collectbtninfo2hm then
-                            addbutton(self.bottomrow, overflow.inst, self.owner, "collectbutton2hm", widget.collectbtninfo2hm,
-                                      ((haslockbutton and widget.lockbtninfo2hm) or (hasmultisortbtn and widget.multisortbtninfo2hm)) and
-                                          Vector3(pos.x + 238, pos.y, pos.z) or
-                                          (hassortbutton and widget.sortbtninfo2hm and Vector3(pos.x + 168, pos.y, pos.z) or Vector3(pos.x + 98, pos.y, pos.z)))
+                        if hascollectbutton then
+                            addbutton(self.bottomrow, overflow.inst, widget, self.owner, "collectbutton2hm", btnlist.collectbtn, nil, (haslockbutton or
+                                          hasmultisortbtn) and TUNING.DATA2HM.opensort and pos3 or
+                                          ((haslockbutton or hasmultisortbtn or TUNING.DATA2HM.opensort) and pos2 or pos1))
                         end
                     end
                 end
@@ -1597,27 +1587,36 @@ Use Orange Amulet will Picktop Near Same Items]],
         self.Open = function(self, container, doer, ...)
             local result = oldOpen(self, container, doer, ...)
             local widget = container.replica.container and container.replica.container:GetWidget()
-            if container and widget and not container:HasTag("dcs2hm") and not container.dcs2hm then
-                if hassortbutton and widget.sortbtninfo2hm then
-                    supportchangebtnpos(self, addbutton(self, container, doer, "sortbutton2hm", widget.sortbtninfo2hm), container)
+            if container and widget and not container:HasTag("dcs2hm") and not container.dcs2hm and btnlist and widget.poslist2hm then
+                if TUNING.DATA2HM.opensort then
+                    supportchangebtnpos(self, addbutton(self, container, widget, doer, "sortbutton2hm", btnlist.sortbtn, 1), container)
                 end
-                if haslockbutton and widget.lockbtninfo2hm then
-                    widget.lockbtninfo2hm.text = container:HasTag("lockcontainer2hm") and (TUNING.isCh2hm and "解锁" or "Unlock") or
-                                                     (TUNING.isCh2hm and "锁定" or "Lock")
-                    addbutton(self, container, doer, "lockbutton2hm", widget.lockbtninfo2hm)
+                if haslockbutton then
+                    btnlist.lockbtn.text = container:HasTag("lockcontainer2hm") and btnlist.lockbtn.text2 or btnlist.lockbtn.text1
+                    btnlist.lockbtn.helptext = container:HasTag("lockcontainer2hm") and btnlist.lockbtn.helptext2 or btnlist.lockbtn.helptext1
+                    addbutton(self, container, widget, doer, "lockbutton2hm", btnlist.lockbtn, TUNING.DATA2HM.opensort and 2 or 1)
                 end
-                if container:HasTag("pocketdimension_container") and widget.exchangebtninfo2hm then
-                    if not TUNING.DSA_ONE_PLAYER_MODE then addbutton(self, container, doer, "exchangebutton2hm", widget.exchangebtninfo2hm) end
+                if container:HasTag("pocketdimension_container") then
+                    if not TUNING.DSA_ONE_PLAYER_MODE then
+                        addbutton(self, container, widget, doer, "exchangebutton2hm", btnlist.exchangebtn,
+                                  haslockbutton and TUNING.DATA2HM.opensort and 3 or ((haslockbutton or TUNING.DATA2HM.opensort) and 2 or 1))
+                    end
                 else
-                    if hasmultisortbtn and widget.multisortbtninfo2hm then
-                        addbutton(self, container, doer, "multisortbutton2hm", widget.multisortbtninfo2hm)
+                    if hasmultisortbtn then
+                        addbutton(self, container, widget, doer, "multisortbutton2hm", btnlist.multisortbtn, TUNING.DATA2HM.opensort and 2 or 1)
                     end
-                    if hascollectbutton and widget.collectbtninfo2hm then
-                        supportchangebtnpos(self, addbutton(self, container, doer, "collectbutton2hm", widget.collectbtninfo2hm), container)
+                    if hascollectbutton then
+                        supportchangebtnpos(self, addbutton(self, container, widget, doer, "collectbutton2hm", btnlist.collectbtn, (haslockbutton or
+                                                                hasmultisortbtn) and TUNING.DATA2HM.opensort and 3 or
+                                                                ((haslockbutton or hasmultisortbtn or TUNING.DATA2HM.opensort) and 2 or 1)), container)
                     end
                 end
-                if container.prefab == "wardrobe" and widget.reskinbtninfo2hm then
-                    addbutton(self, container, doer, "reskinbutton2hm", widget.reskinbtninfo2hm)
+                if container.prefab == "wardrobe" then
+                    local idx = 1
+                    if hascollectbutton then idx = idx + 1 end
+                    if haslockbutton or hasmultisortbtn then idx = idx + 1 end
+                    if TUNING.DATA2HM.opensort then idx = idx + 1 end
+                    addbutton(self, container, widget, doer, "reskinbutton2hm", btnlist.reskinbtn, idx)
                 end
             end
             return result
@@ -1636,23 +1635,11 @@ Use Orange Amulet will Picktop Near Same Items]],
         end
     end)
     -- 妥协衣柜处理
-    local function onopenwardrobe(inst) if inst.components.wardrobe then inst.components.wardrobe:SetCanUseAction(true) end end
-    local function onclosewardrobe(inst) if inst.components.wardrobe then inst.components.wardrobe:SetCanUseAction(false) end end
     AddPrefabPostInit("wardrobe", function(inst)
         if not TheWorld.ismastersim then return end
         if inst.components.container and inst.components.wardrobe then
             inst.components.wardrobe:SetCanUseAction(false)
             if inst.components.channelable then inst.components.channelable:SetEnabled(false) end
-            local oldonopen = inst.components.container.onopenfn
-            inst.components.container.onopenfn = function(inst, ...)
-                if oldonopen then oldonopen(inst, ...) end
-                onopenwardrobe(inst)
-            end
-            local oldonclose = inst.components.container.onclosefn
-            inst.components.container.onclosefn = function(inst, ...)
-                if oldonclose then oldonclose(inst, ...) end
-                onclosewardrobe(inst)
-            end
         end
     end)
 end
@@ -1800,6 +1787,7 @@ if itemscfg then
             elseif not data.neednum then
                 data.neednum = data.lacksize[recipe_type]
             end
+            if inst.components.container and not inst.components.container.acceptsstacks then data.neednum = 1 end
             -- 记录要收集道具的来源容器列表
             local ents = {}
             data.proxyents = {}
@@ -2013,6 +2001,7 @@ if itemscfg then
                         neednum = slotsize or 1
                     end
                 end
+                if owner.components.container and not owner.components.container.acceptsstacks then neednum = 1 end
                 collectrecipefn(owner, act.invobject.prefab, neednum, act.doer, act.invobject)
                 -- 实际可以反馈收集结果
                 return true
@@ -2038,7 +2027,11 @@ if itemscfg then
                 end
                 for container_inst in pairs(doer.components.inventory.opencontainers) do
                     if container_inst:IsValid() and container_inst:HasTag("stewer") then
-                        if container_inst.components.container.acceptsstacks then neednum = nil end
+                        if container_inst.components.container.acceptsstacks then
+                            neednum = nil
+                        else
+                            neednum = 1
+                        end
                         if istag then
                             local limittags = {}
                             local limitnames = {}
