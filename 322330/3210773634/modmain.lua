@@ -42,7 +42,6 @@ for k,v in pairs(plantregrowth_evergreen_list) do
 		if TheWorld.ismastersim then
 			if inst.components and inst.components.growable then
 				inst.components.growable.loopstages = false
-				-- print("============loopstages"..k)打印日志天涯说不用了
 			end
 		end
 	end)
@@ -51,23 +50,19 @@ end
 -- ①-3：常青树、多枝树只生长到第三级（第四级为枯萎状态）
 AddComponentPostInit("growable",
 	function(self)
-		-- 获取作物的下一阶段
-		function self:GetNextStage()
-			local stage = self.stage + 1
-			if stage > #self.stages then
-				if self.loopstages then
-					stage = self.loopstages_start or 1
-				else
-					stage = #self.stages
-				end
+		local old_StartGrowing = self.StartGrowing
+		function self:StartGrowing(time)
+		    self.usetimemultiplier = false
+			if #self.stages == 0 then
+				print "Growable component: Trying to grow without setting the stages table"
+				return
 			end
 			-- 若为常青树、多枝树等树，则最高阶段为第三阶段
-			if table_key_exists(plantregrowth_evergreen_list, self.inst.prefab) then
-				if #self.stages > 3 then 
-					table.remove(self.stages)
-				end
+			if table_key_exists(plantregrowth_evergreen_list, self.inst.prefab) and self.stage >= (#self.stages-1) then
+				self:StopGrowing()
+			else 
+				old_StartGrowing(self,time)
 			end
-			return stage
 		end
 	end
 )

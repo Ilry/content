@@ -7,7 +7,7 @@ Trees will stop regrowth at their 3rd stage.
 Not only for better looks, but also lower your pine and fix some lag for your game. 
 ]]
 author = "天涯, 小花朵"
-version = "1.0.1"
+version = "1.0.2"
 
 forumthread = ""
 

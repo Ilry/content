@@ -17,7 +17,7 @@ Tip: Close the stack of tall birds when you need to hatch their eggs
 
 author = "天涯共此时、小花朵"
 
-version = "2.1.3"
+version = "2.1.4"
 
 forumthread = ""
 
@@ -126,7 +126,7 @@ configuration_options =
 	addConfig("rabbit", "兔子","Rabbit",  true),
 	addConfig("mole", "鼹鼠", "Mole", true),
 	addConfig("bird", "鸟类", "Bird", true),
-	addConfig("fish", "鱼类", "Fish", true),
+	addConfig("fish", "鱼类和发光蟹", "Fish and LightCrab", true),
 	addConfig("spider", "各类蜘蛛", "Spider", true),
 	addConfig("eyeturret", "眼球炮塔", "Eyeturret", true),
 	addConfig("tallbirdegg", "高脚鸟蛋", "Tallbirdegg", true, "如果需要孵化高鸟蛋，需要关闭堆叠","If you need to hatch tall eggs, you need to close the stack"),
@@ -138,6 +138,7 @@ configuration_options =
 	addConfig("deer_antler","鹿角和克劳斯钥匙","Deer Antler and Klaussackkey",true),
 	addConfig("security_pulse_cage", "火花柜", "Security Pulse Cage and Full Cage",true),
 	addConfig("chestupgrade_stacksize", "箱子升级组件", "Chest Up Grade Set",true),
+	addConfig("shell", "贝壳钟", "Singing Shell",false),
 	--addConfig("sketch1", "常用草图","Sketch", true),
 	--模组物品
 	addConfig("myth_lotusleaf", "荷叶和月饼(神话书说)", "Lotusleaf and Mooncake", true),

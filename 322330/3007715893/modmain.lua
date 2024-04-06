@@ -130,7 +130,7 @@ if Stack_other_objects then
 	end
 	if GetModConfigData("fish") then
 		--鱼类
-		local STACKABLE_OBJECTS_BASE = {"pondfish","pondeel","oceanfish_medium_1_inv","oceanfish_medium_2_inv","oceanfish_medium_3_inv","oceanfish_medium_4_inv","oceanfish_medium_5_inv","oceanfish_medium_6_inv","oceanfish_medium_7_inv","oceanfish_medium_8_inv","oceanfish_small_1_inv","oceanfish_small_2_inv","oceanfish_small_3_inv","oceanfish_small_4_inv","oceanfish_small_5_inv","oceanfish_small_6_inv","oceanfish_small_7_inv","oceanfish_small_8_inv","oceanfish_small_9_inv","wobster_sheller_land","wobster_moonglass_land","oceanfish_medium_9_inv"}
+		local STACKABLE_OBJECTS_BASE = {"pondfish","pondeel","oceanfish_medium_1_inv","oceanfish_medium_2_inv","oceanfish_medium_3_inv","oceanfish_medium_4_inv","oceanfish_medium_5_inv","oceanfish_medium_6_inv","oceanfish_medium_7_inv","oceanfish_medium_8_inv","oceanfish_small_1_inv","oceanfish_small_2_inv","oceanfish_small_3_inv","oceanfish_small_4_inv","oceanfish_small_5_inv","oceanfish_small_6_inv","oceanfish_small_7_inv","oceanfish_small_8_inv","oceanfish_small_9_inv","wobster_sheller_land","wobster_moonglass_land","oceanfish_medium_9_inv","lightcrab"}
 		AddAnimalStackables(STACKABLE_OBJECTS_BASE)
 	end
 	if GetModConfigData("eyeturret") then
@@ -241,8 +241,31 @@ if Stack_other_objects then
 		--箱子升级组件
 		AddItemStackables({"chestupgrade_stacksize"})
 	end
+	if GetModConfigData("shell") then
+		--箱子升级组件
+		AddItemStackables({"singingshell_octave3","singingshell_octave4","singingshell_octave5"})
+	end
 	if GetModConfigData("reskin_tool") then
 		--清洁扫把和提灯和陷阱【娜娜很需要】
 		AddItemStackables({"reskin_tool","lantern","trap_teeth"})
 	end
+	-- if GetModConfigData("blueprint")then
+		--蓝图
+		-- AddPrefabPostInit("blueprint", function(inst)
+			-- if not IsServer then return inst end 
+			-- inst:DoTaskInTime(0, function(inst)
+				-- inst.skinname=inst.components.teacher.recipe
+			-- end)
+			-- if inst.components.stackable == nil then
+				-- inst:AddComponent("stackable")
+			-- end
+			-- if inst.components.teacher and inst.components.teacher.recipe then
+				-- local old_stack_get = inst.components.stackable.Get
+				-- function inst.components.stackable:Get(num)
+					-- old_stack_get(self, num):Remove()
+					-- return SpawnPrefab(self.inst.components.teacher.recipe .. "_blueprint")
+				-- end
+			-- end
+		-- end)
+	-- end
 end
