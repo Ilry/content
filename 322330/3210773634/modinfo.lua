@@ -7,7 +7,7 @@ Trees will stop regrowth at their 3rd stage.
 Not only for better looks, but also lower your pine and fix some lag for your game. 
 ]]
 author = "天涯, 小花朵"
-version = "1.0.2"
+version = "1.0.3"
 
 forumthread = ""
 
@@ -107,6 +107,16 @@ Ch and
 		},
 		default = true,
 	},
+	{
+		name = "PALMCONETREE",
+		label = "棕榈树树停止循环生长",
+		options = 
+		{	
+			{description = "开启", data = true},
+			{description = "禁用", data = false},
+		},
+		default = true,
+	},
 }or
 {
 	{
@@ -159,5 +169,14 @@ Ch and
 		},
 		default = true,
 	},
-
+	{
+		name = "PALMCONETREE",
+		label = "Palmcone trees stop regrowth",
+		options = 
+		{	
+			{description = "ON", data = true},
+			{description = "OFF", data = false},
+		},
+		default = true,
+	},
 }

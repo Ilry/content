@@ -31,25 +31,45 @@ local plantregrowth_list={}
 	if GetModConfigData("MARBLE") then
 		table.insert(plantregrowth_list,"marbleshrub")
 	end
+	if GetModConfigData("PALMCONETREE") then
+		table.insert(plantregrowth_list,"palmconetree")
+	end
 
 function table_key_exists(tables, key)
     return tables[key] ~= nil
 end
 
 -- ①-2：常青树、多枝树去除循环
-for k,v in pairs(plantregrowth_evergreen_list) do
-	AddPrefabPostInit(k, function(inst)
-		if TheWorld.ismastersim then
-			if inst.components and inst.components.growable then
-				inst.components.growable.loopstages = false
-			end
-		end
-	end)
-end
+-- for k,v in pairs(plantregrowth_evergreen_list) do
+	-- AddPrefabPostInit(k, function(inst)
+		-- if TheWorld.ismastersim then
+			-- if inst.components and inst.components.growable then
+				-- -- inst.components.growable.loopstages = false
+				-- print("#inst.components.growable.stages:"..#inst.components.growable.stages)
+				-- print("inst.components.growable.stage:"..inst.components.growable.stage)
+				-- if inst.components.growable.stage > (#inst.components.growable.stages - 1) then 
+					-- inst:Remove()
+				-- end
+			-- end
+		-- end
+	-- end)
+-- end
 
 -- ①-3：常青树、多枝树只生长到第三级（第四级为枯萎状态）
 AddComponentPostInit("growable",
 	function(self)
+		-- -- 获取作物的下一阶段
+		-- local old_GetNextStage = self.GetNextStage
+		-- function self:GetNextStage()
+			-- local stage = old_GetNextStage(self)
+			-- -- 若为常青树、多枝树等树，则最高阶段为第三阶段
+			-- if table_key_exists(plantregrowth_evergreen_list, self.inst.prefab) and self.stage > (#self.stages-1) then
+				-- print "satage===============4"
+				-- satage = #self.stages - 1
+			-- end
+			-- return stage
+		-- end
+		
 		local old_StartGrowing = self.StartGrowing
 		function self:StartGrowing(time)
 		    self.usetimemultiplier = false
@@ -57,8 +77,8 @@ AddComponentPostInit("growable",
 				print "Growable component: Trying to grow without setting the stages table"
 				return
 			end
-			-- 若为常青树、多枝树等树，则最高阶段为第三阶段
-			if table_key_exists(plantregrowth_evergreen_list, self.inst.prefab) and self.stage >= (#self.stages-1) then
+			-- 若为常青树、多枝树等树，到第三阶段后立即停止生长
+			if table_key_exists(plantregrowth_evergreen_list, self.inst.prefab) and self.stage == (#self.stages-1) then
 				self:StopGrowing()
 			else 
 				old_StartGrowing(self,time)

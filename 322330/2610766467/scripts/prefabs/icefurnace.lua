@@ -105,7 +105,7 @@ local function add_ice(inst)
 				return
 			elseif item.prefab == "ice" then
 				local stack_size = item.components.stackable:StackSize()
-				if stack_size < 40 then
+				if stack_size < ice_quantity then
 					local fx = SpawnPrefab("crab_king_icefx")
 					fx.entity:SetParent(inst.entity)
 					fx.Transform:SetPosition(0, 0.9, 0)

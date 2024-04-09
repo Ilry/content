@@ -1,4 +1,4 @@
-version = "1.0.46"
+version = "1.0.50"
 local isCh = locale == "zh" or locale == "zhr" or locale == "zht"
 author = "繁花丶海棠"
 forumthread = ""
@@ -128,10 +128,13 @@ configuration_options = {
     item("Language In Game", i18n({"本模组游戏内语言", "Mod Language In Game"}), nil, false, -1, -2, -1, {"简体中文", "English"},
          i18n("自动设定", "Auto Setting"), {filldesc(8) .. "简体中文", filldesc(6) .. "English"}, filldesc(4) .. i18n({"自动", "Auto"})),
     item("Container Sort", i18n({"容器整理收集按钮", "Containers Buttons"}),
-         i18n({"容器整理收集/末影箱穿越/衣柜换装按钮", "Sort and Collect/Shadow Container Exchange Button"}), -5, -1, -5, -1, {
+         i18n({"容器整理收集/末影箱穿越/衣柜换装按钮", "Sort and Collect/Shadow Container Exchange Button"}), -3, -1, -5, -1, {
         i18n({"无额外跨整和锁定按钮", "No Extra Multi Sort/Lock Button"}),
         i18n({"额外跨容器整理按钮(同类容器批量整理)", "Extra Multi Sort Button(Same Container Sort Together)"}),
-        i18n({"额外锁定道具按钮(与跨整互斥)", "Extra Lock/Unlock Button(No Multi Sort Button)"}),
+        i18n({
+            "额外锁定道具按钮(与跨整互斥),客户端预测放入暂未优化",
+            "Extra Lock/Unlock Button(No Multi Sort Button),client prediction not upgrade"
+        }),
         i18n({"无额外按钮且禁用收集按钮", "No Extra Button and Disable Collect Button"}),
         i18n({"无额外按钮且禁用整理按钮", "No Extra Button and Disable Sort Button"})
     }, nil, enabletext),

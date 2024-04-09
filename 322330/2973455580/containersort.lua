@@ -27,8 +27,8 @@ if isclient and TUNING.TEMP2HM.opensort ~= nil then TUNING.DATA2HM.opensort = TU
 
 -- 给容器添加tag"dcs2hm"或容器inst.dcs2hm = true可以禁用对容器进行的各种功能,且不显示各类按钮
 -- 不会从下列容器中收集道具
-local collectblacklist = {"pandoraschest", "minotaurchest", "terrariumchest"}
--- 条件存放容器和黑名单存放容器
+local collectblacklist = {"pandoraschest", "minotaurchest", "terrariumchest", "sisturn"}
+-- 条件存放容器和黑名单白名单存放容器
 local conditionstorelist = {dragonflyfurnace = function(v) return TheWorld.state.iswinter and v:HasTag("heatrock") end}
 local storeblacklist = {
     "oceantree_pillar",
@@ -42,7 +42,8 @@ local storeblacklist = {
     "minotaurchest",
     "terrariumchest"
 }
--- 禁止存放拾取的道具,溯源表
+local storewhitelist = {"seedpouch", "candybag"}
+-- 禁止收集存放的道具,溯源表
 local itemsblacklist = {"pocketwatch_portal", "pocketwatch_recall"}
 if ACTIONS.BEIZHU and ACTIONS.BEIZHU.str == STRINGS.SIGNS.MENU.ACCEPT then itemsblacklist = {} end
 -- 优先存放容器
@@ -82,7 +83,6 @@ local function delayshowmovefx(inst)
 end
 -- 地面容器反向过滤检测标签列表
 local GROUND_CONTAINER_CANT_TAGS = {"INLIMBO", "NOCLICK", "FX", "dcs2hm"}
-local GROUND_NOTITEM_CONTAINER_CANT_TAGS = {"INLIMBO", "NOCLICK", "_inventoryitem", "FX", "dcs2hm"}
 -- 拾取道具过滤用标签
 local PICKUP_MUST_ONEOF_TAGS = {"_inventoryitem", "pickable"}
 local PICKUP_CANT_TAGS = {
@@ -121,7 +121,14 @@ AddComponentPostInit("container", function(self)
     self.GiveItem = function(self, item, ...) return item ~= nil and item:IsValid() and oldGiveItem(self, item, ...) or false end
 end)
 
---
+-- 自定义排序
+-- No.1 实体名称 prefab nameoverride 名称优先级
+-- No.2 实体组件 组件优先级
+-- No.3 实体标签 标签优先级
+-- No.4 实体分组 分组优先级
+-- No.5 特定属性
+-- 仅物品栏内道具
+-- 装备，堆叠，新鲜度，食物，燃料，耐久，护甲，角色配方，材料配方，治疗配方，
 -- 单容器排序算法,下面代码来自[码到成功]
 local ac_fns = {
     cmp = function(p1, p2)
@@ -976,7 +983,9 @@ local function getcontainerspace(inst, container, data, addprefab)
 end
 local function endcollectloading(inst) inst.collectloadingtask2hm = nil end
 local function docollect(inst, player)
-    if not (inst.components.container and inst.components.container.numslots > 0 and #inst.components.container.slots > 0) then return end
+    if not (inst.components.container and inst.components.container.numslots > 0 and #inst.components.container.slots > 0 and player.components.inventory) then
+        return
+    end
     inst.collectloadingtask2hm = inst:DoTaskInTime(0.3, endcollectloading)
     local container = inst.components.container
     local data = {}
@@ -990,7 +999,7 @@ local function docollect(inst, player)
         if not owner:HasTag("dcs2hm") and not owner.dcs2hm and ownercontainer then table.insert(ents, owner) end
         if ownercontainer then
             for k, v in pairs(ownercontainer.itemslots or ownercontainer.slots) do
-                if v and v:IsValid() and not v:HasTag("dcs2hm") and not v.dcs2hm and v.components.container and v.components.container.canbeopened then
+                if v and v:IsValid() and v.components.container and not v:HasTag("dcs2hm") and not v.dcs2hm and v.components.container.canbeopened then
                     table.insert(ents, v)
                     findcontainersincontainer(v, ents)
                 end
@@ -999,24 +1008,43 @@ local function docollect(inst, player)
         if owner.components.inventory then
             for k, v in pairs(EQUIPSLOTS) do
                 local equip = owner.components.inventory:GetEquippedItem(v)
-                if equip ~= nil and equip.components.container ~= nil then
+                if equip ~= nil and equip.components.container ~= nil and not equip:HasTag("dcs2hm") and not equip.dcs2hm then
                     table.insert(ents, equip)
                     findcontainersincontainer(equip, ents)
                 end
             end
+            local mount = owner.components.rider and owner.components.rider.mount
+            if mount and mount:IsValid() and mount.components.container and not mount:HasTag("dcs2hm") and not mount.dcs2hm then
+                table.insert(ents, mount)
+                findcontainersincontainer(mount, ents)
+            end
         end
     else
         -- 地面容器->内部容器和周围的地面容器
+        data.proxyents = {}
         findcontainersincontainer(inst, ents)
         if not inst.components.inventoryitem or inst:HasTag("heavy") then
             local x, y, z = inst.Transform:GetWorldPosition()
             local platform = inst:GetCurrentPlatform()
             local nearents = TheSim:FindEntities(x, y, z, 30, nil, GROUND_CONTAINER_CANT_TAGS)
             for i, v in ipairs(nearents) do
-                if v ~= inst and v:IsValid() and not v.dcs2hm and v.components.container and v.components.container.canbeopened and
-                    (not inst.components.inventoryitem or inst:HasTag("heavy")) and v:GetCurrentPlatform() == platform then
-                    table.insert(ents, v)
-                    findcontainersincontainer(v, ents)
+                if v ~= inst and v:IsValid() then
+                    if v.components.container_proxy and not v.dcs2hm and v.components.container_proxy:CanBeOpened() and not v.components.container and
+                        not table.contains(collectblacklist, v.prefab) and v:GetCurrentPlatform() == platform then
+                        local master = v.components.container_proxy.master
+                        if master and master:IsValid() and not data.proxyents[master] and master.components.container and
+                            master.components.container.canbeopened then
+                            master.currentpocket2hm = v
+                            data.proxyents[master] = v
+                            table.insert(ents, master)
+                            findcontainersincontainer(master, ents)
+                        end
+                    elseif v.components.container and not v.dcs2hm and v.components.container.canbeopened and
+                        (not v.components.inventoryitem or v:HasTag("heavy")) and not player.components.inventory.opencontainers[v] and
+                        not table.contains(collectblacklist, v.prefab) and v:GetCurrentPlatform() == platform then
+                        table.insert(ents, v)
+                        findcontainersincontainer(v, ents)
+                    end
                 end
             end
         end
@@ -1235,6 +1263,117 @@ if haslockbutton then
         local oldCanTakeItemInSlot = self.CanTakeItemInSlot
         self.CanTakeItemInSlot = function(self, item, slot, ...)
             return oldCanTakeItemInSlot(self, item, slot, ...) and (self.itemtestfnprefabs2hm == nil or table.contains(self.itemtestfnprefabs2hm, item.prefab))
+        end
+    end)
+    local function IsBusy(inst) return inst._busy or inst._parent == nil end
+    AddPrefabPostInit("inventory_classified", function(inst)
+        if not TheWorld.ismastersim then
+            local MoveItemFromAllOfSlot = inst.MoveItemFromAllOfSlot
+            inst.MoveItemFromAllOfSlot = function(inst, slot, container, ...)
+                -- TheNet:Say("测试inventory_classified MoveItemFromAllOfSlot")
+                if container and container:HasTag("lockcontainer2hm") and not IsBusy(inst) then
+                    return SendRPCToServer(RPC.MoveInvItemFromAllOfSlot, slot, container)
+                end
+                return MoveItemFromAllOfSlot(inst, slot, container, ...)
+            end
+            local MoveItemFromHalfOfSlot = inst.MoveItemFromHalfOfSlot
+            inst.MoveItemFromHalfOfSlot = function(inst, slot, container, ...)
+                -- TheNet:Say("测试inventory_classified MoveItemFromHalfOfSlot")
+                if container and container:HasTag("lockcontainer2hm") and not IsBusy(inst) then
+                    return SendRPCToServer(RPC.MoveInvItemFromHalfOfSlot, slot, container)
+                end
+                return MoveItemFromHalfOfSlot(inst, slot, container, ...)
+            end
+        end
+    end)
+    AddPrefabPostInit("container_classified", function(inst)
+        if not TheWorld.ismastersim then
+            local ReturnActiveItemToSlot = inst.ReturnActiveItemToSlot
+            inst.ReturnActiveItemToSlot = function(inst, slot, ...)
+                -- TheNet:Say("测试container_classified ReturnActiveItemToSlot")
+                if inst._parent and inst._parent:HasTag("lockcontainer2hm") and not IsBusy(inst) then return end
+                return ReturnActiveItemToSlot(inst, slot, ...)
+            end
+            local PutOneOfActiveItemInSlot = inst.PutOneOfActiveItemInSlot
+            inst.PutOneOfActiveItemInSlot = function(inst, slot, ...)
+                -- TheNet:Say("测试container_classified PutOneOfActiveItemInSlot")
+                if inst._parent and inst._parent:HasTag("lockcontainer2hm") and not IsBusy(inst) then
+                    return SendRPCToServer(RPC.PutOneOfActiveItemInSlot, slot, inst._parent)
+                end
+                return PutOneOfActiveItemInSlot(inst, slot, ...)
+            end
+            local PutAllOfActiveItemInSlot = inst.PutAllOfActiveItemInSlot
+            inst.PutAllOfActiveItemInSlot = function(inst, slot, ...)
+                -- TheNet:Say("测试container_classified PutAllOfActiveItemInSlot")
+                if inst._parent and inst._parent:HasTag("lockcontainer2hm") and not IsBusy(inst) then
+                    return SendRPCToServer(RPC.PutAllOfActiveItemInSlot, slot, inst._parent)
+                end
+                return PutAllOfActiveItemInSlot(inst, slot, ...)
+            end
+            -- local TakeActiveItemFromHalfOfSlot = inst.TakeActiveItemFromHalfOfSlot
+            -- inst.TakeActiveItemFromHalfOfSlot = function(inst, slot, ...)
+            --     TheNet:Say("测试container_classified TakeActiveItemFromHalfOfSlot")
+            --     if inst._parent and inst._parent:HasTag("lockcontainer2hm") and not IsBusy(inst) then
+            --         return SendRPCToServer(RPC.TakeActiveItemFromHalfOfSlot, slot, inst._parent)
+            --     end
+            --     return TakeActiveItemFromHalfOfSlot(inst, slot, ...)
+            -- end
+            -- local TakeActiveItemFromAllOfSlot = inst.TakeActiveItemFromAllOfSlot
+            -- inst.TakeActiveItemFromAllOfSlot = function(inst, slot, ...)
+            --     TheNet:Say("测试container_classified TakeActiveItemFromAllOfSlot")
+            --     if inst._parent and inst._parent:HasTag("lockcontainer2hm") and not IsBusy(inst) then
+            --         return SendRPCToServer(RPC.TakeActiveItemFromAllOfSlot, slot, inst._parent)
+            --     end
+            --     return TakeActiveItemFromAllOfSlot(inst, slot, ...)
+            -- end
+            -- local AddOneOfActiveItemToSlot = inst.AddOneOfActiveItemToSlot
+            -- inst.AddOneOfActiveItemToSlot = function(inst, slot, ...)
+            --     TheNet:Say("测试container_classified AddOneOfActiveItemToSlot")
+            --     if inst._parent and inst._parent:HasTag("lockcontainer2hm") and not IsBusy(inst) then
+            --         return SendRPCToServer(RPC.AddOneOfActiveItemToSlot, slot, inst._parent)
+            --     end
+            --     return AddOneOfActiveItemToSlot(inst, slot, ...)
+            -- end
+            -- local AddAllOfActiveItemToSlot = inst.AddAllOfActiveItemToSlot
+            -- inst.AddAllOfActiveItemToSlot = function(inst, slot, ...)
+            --     TheNet:Say("测试container_classified AddAllOfActiveItemToSlot")
+            --     if inst._parent and inst._parent:HasTag("lockcontainer2hm") and not IsBusy(inst) then
+            --         return SendRPCToServer(RPC.AddAllOfActiveItemToSlot, slot, inst._parent)
+            --     end
+            --     return AddAllOfActiveItemToSlot(inst, slot, ...)
+            -- end
+            local SwapActiveItemWithSlot = inst.SwapActiveItemWithSlot
+            inst.SwapActiveItemWithSlot = function(inst, slot, ...)
+                -- TheNet:Say("测试container_classified SwapActiveItemWithSlot")
+                if inst._parent and inst._parent:HasTag("lockcontainer2hm") and not IsBusy(inst) then
+                    return SendRPCToServer(RPC.SwapActiveItemWithSlot, slot, inst._parent)
+                end
+                return SwapActiveItemWithSlot(inst, slot, ...)
+            end
+            local SwapOneOfActiveItemWithSlot = inst.SwapOneOfActiveItemWithSlot
+            inst.SwapOneOfActiveItemWithSlot = function(inst, slot, ...)
+                -- TheNet:Say("测试container_classified SwapOneOfActiveItemWithSlot")
+                if inst._parent and inst._parent:HasTag("lockcontainer2hm") and not IsBusy(inst) then
+                    return SendRPCToServer(RPC.SwapOneOfActiveItemWithSlot, slot, inst._parent)
+                end
+                return SwapOneOfActiveItemWithSlot(inst, slot, ...)
+            end
+            local MoveItemFromAllOfSlot = inst.MoveItemFromAllOfSlot
+            inst.MoveItemFromAllOfSlot = function(inst, slot, container, ...)
+                -- TheNet:Say("测试container_classified MoveItemFromAllOfSlot")
+                if container and container:HasTag("lockcontainer2hm") and not IsBusy(inst) then
+                    return SendRPCToServer(RPC.MoveItemFromAllOfSlot, slot, inst._parent, container.replica.container ~= nil and container or nil)
+                end
+                return MoveItemFromAllOfSlot(inst, slot, container, ...)
+            end
+            local MoveItemFromHalfOfSlot = inst.MoveItemFromHalfOfSlot
+            inst.MoveItemFromHalfOfSlot = function(inst, slot, container, ...)
+                -- TheNet:Say("测试container_classified MoveItemFromHalfOfSlot")
+                if container and container:HasTag("lockcontainer2hm") and not IsBusy(inst) then
+                    return SendRPCToServer(RPC.MoveItemFromHalfOfSlot, slot, inst._parent, container.replica.container ~= nil and container or nil)
+                end
+                return MoveItemFromHalfOfSlot(inst, slot, container, ...)
+            end
         end
     end)
 end
@@ -1636,11 +1775,10 @@ Use Orange Amulet will Picktop Near Same Items]],
     end)
     -- 妥协衣柜处理
     AddPrefabPostInit("wardrobe", function(inst)
-        if not TheWorld.ismastersim then return end
-        if inst.components.container and inst.components.wardrobe then
-            inst.components.wardrobe:SetCanUseAction(false)
-            if inst.components.channelable then inst.components.channelable:SetEnabled(false) end
-        end
+        if not TheWorld.ismastersim or not inst.components.container then return end
+        if inst.components.wardrobe then inst.components.wardrobe:SetCanUseAction(false) end
+        if inst.components.channelable then inst.components.channelable:SetEnabled(false) end
+        inst:RemoveTag("wardrobe")
     end)
 end
 
@@ -1795,8 +1933,8 @@ if itemscfg then
             local platform = inst:GetCurrentPlatform()
             local nearents = TheSim:FindEntities(x, y, z, 30, nil, GROUND_CONTAINER_CANT_TAGS)
             for i, v in ipairs(nearents) do
-                if v ~= inst and v:IsValid() and not v.dcs2hm then
-                    if v.components.container_proxy and v.components.container_proxy:CanBeOpened() and not v.components.container and
+                if v ~= inst and v:IsValid() then
+                    if v.components.container_proxy and not v.dcs2hm and v.components.container_proxy:CanBeOpened() and not v.components.container and
                         not table.contains(collectblacklist, v.prefab) and v:GetCurrentPlatform() == platform then
                         local master = v.components.container_proxy.master
                         if master and master:IsValid() and not data.proxyents[master] and master.components.container and
@@ -1806,7 +1944,7 @@ if itemscfg then
                             table.insert(ents, master)
                             findcontainersincontainer(master, ents)
                         end
-                    elseif v.components.container and v.components.container.canbeopened and v.components.container.acceptsstacks and
+                    elseif v.components.container and not v.dcs2hm and v.components.container.canbeopened and
                         (not v.components.inventoryitem or v:HasTag("heavy")) and not inventory.opencontainers[v] and
                         not table.contains(collectblacklist, v.prefab) and v:GetCurrentPlatform() == platform then
                         table.insert(ents, v)
@@ -1814,8 +1952,18 @@ if itemscfg then
                     end
                 end
             end
-            if inst.components.rider and inst.components.rider.mount and inst.components.rider.mount:IsValid() and
-                inst.components.rider.mount.components.container then table.insert(ents, inst.components.rider.mount) end
+            local mount = inst.components.rider and inst.components.rider.mount
+            if mount == nil and doer then mount = doer.components.rider and doer.components.rider.mount end
+            if mount and mount:IsValid() and mount.components.container and not mount:HasTag("dcs2hm") and not mount.dcs2hm then
+                table.insert(ents, mount)
+                findcontainersincontainer(mount, ents)
+            end
+            for i = #ents, 1, -1 do
+                if ents[i] == inst then
+                    table.remove(ents, i)
+                    break
+                end
+            end
             if #ents <= 0 then return end
             local tmpents = {}
             for i, v in ipairs(ents) do
@@ -2309,9 +2457,9 @@ if itemscfg then
             local platform = inst:GetCurrentPlatform()
             local nearents = TheSim:FindEntities(x, y, z, 30, nil, GROUND_CONTAINER_CANT_TAGS)
             for i, v in ipairs(nearents) do
-                if v:IsValid() and v ~= owner and not v.dcs2hm then
-                    if isstackable and v.components.container_proxy and v.components.container_proxy:CanBeOpened() and not v.components.container and
-                        not v.components.locomotor and not table.contains(storeblacklist, v.prefab) and
+                if v:IsValid() and v ~= owner then
+                    if v.components.container_proxy and isstackable and not v.dcs2hm and v.components.container_proxy:CanBeOpened() and
+                        not v.components.container and not v.components.locomotor and not table.contains(storeblacklist, v.prefab) and
                         (conditionstorelist[v.prefab] == nil or conditionstorelist[v.prefab](act.invobject)) and v:GetCurrentPlatform() == platform then
                         local master = v.components.container_proxy.master
                         if master and master:IsValid() and master ~= owner and not proxyents[master] and master.components.container and
@@ -2321,14 +2469,14 @@ if itemscfg then
                             proxyents[master] = v
                             master.currentpocket2hm = v
                         end
-                    elseif v.components.container and (isstackable or not v.components.container.infinitestacksize) and
-                        (not isbigsize or v.components.container.infinitestacksize) and (not v.components.inventoryitem or v:HasTag("heavy")) and
-                        not v.components.health and not v.components.locomotor and not v.components.stewer and v.components.container.canbeopened and
-                        not v.components.container.usespecificslotsforitems and v.components.container.acceptsstacks and
-                        not table.contains(storeblacklist, v.prefab) and
-                        (conditionstorelist[v.prefab] == nil and v.components.container.type == "chest" and v.components.container.numslots >= 9 or
-                            (conditionstorelist[v.prefab] and conditionstorelist[v.prefab](act.invobject))) and v:GetCurrentPlatform() == platform and
-                        v.components.container:CanTakeItemInSlot(act.invobject) then
+                    elseif v.components.container and not v.dcs2hm and (table.contains(storewhitelist, v.prefab) or
+                        ((isstackable or not v.components.container.infinitestacksize) and (not isbigsize or v.components.container.infinitestacksize) and
+                            (not v.components.inventoryitem or v:HasTag("heavy")) and not v.components.health and not v.components.locomotor and
+                            not v.components.stewer and v.components.container.canbeopened and not v.components.container.usespecificslotsforitems and
+                            v.components.container.acceptsstacks and not table.contains(storeblacklist, v.prefab) and
+                            (conditionstorelist[v.prefab] == nil and v.components.container.type == "chest" and v.components.container.numslots >= 9 or
+                                (conditionstorelist[v.prefab] and conditionstorelist[v.prefab](act.invobject))) and v:GetCurrentPlatform() == platform and
+                            v.components.container:CanTakeItemInSlot(act.invobject))) then
                         table.insert(ents, v)
                     end
                 end
@@ -2350,8 +2498,9 @@ if itemscfg then
     end
     if hasitemscollect or hasitemsstore then
         AddComponentAction("INVENTORY", "inventoryitem", function(inst, doer, actions)
-            if inst.prefab and not table.contains(itemsblacklist, inst.prefab) and inst.replica.inventoryitem ~= nil and
-                not inst.replica.inventoryitem:CanOnlyGoInPocket() and doer and not (doer.replica.inventory and doer.replica.inventory:GetActiveItem() == inst) and
+            if inst.prefab and not inst:HasTag("dcs2hm") and not inst.dcs2hm and not table.contains(itemsblacklist, inst.prefab) and inst.replica.inventoryitem ~=
+                nil and not inst.replica.inventoryitem:CanOnlyGoInPocket() and doer and
+                not (doer.replica.inventory and doer.replica.inventory:GetActiveItem() == inst) and
                 not (inst.replica.equippable and inst.replica.equippable:IsEquipped()) then
                 if hasitemscollect then table.insert(actions, ACTIONS.COLLECT2HM) end
                 if hasitemsstore then table.insert(actions, ACTIONS.STORE2HM) end

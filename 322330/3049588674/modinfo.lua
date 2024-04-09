@@ -173,7 +173,7 @@ configuration_options = {
         options = {
             {
                 description = "0%",
-                data = 0
+                data = 1
             },
             {
                 description = "5%",
@@ -190,6 +190,10 @@ configuration_options = {
             {
                 description = "20%",
                 data = 0.8
+            },
+            {
+                description = "100%",
+                data = 0
             },
         },
         default = 0.85

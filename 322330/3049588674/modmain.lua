@@ -64,7 +64,7 @@ local function OnDoingWork(inst, data)
     if data ~= nil and data.target ~= nil then
         local workable = data.target.components.workable
         if workable ~= nil then
-            if workable.workleft > 0 and inst.components.ascent_mode:GetMode() == 1 and math.random() >= 0.85 then
+            if workable.workleft > 0 and inst.components.ascent_mode:GetMode() == 1 and math.random() >= GetModConfigData("工作模式直接完成工作的几率") then
                 inst.SoundEmitter:PlaySound("meta2/wolfgang/critical_work")
                 workable.workleft = 0
             end

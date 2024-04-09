@@ -104,6 +104,22 @@ configuration_options =
         default = 240,
 	},
     {
+        name = "ice_quantity",
+        label = "冰堆叠数量",
+		hover = "冰堆叠数量",
+        options =
+        {
+			{description = "40", 		data = 40, 	    hover = "冰堆叠上限40"},
+			{description = "99", 		data = 99, 	    hover = "冰堆叠上限99"},
+			{description = "100", 	    data = 100, 	hover = "冰堆叠上限100"},
+            {description = "200", 		data = 200, 	hover = "冰堆叠上限200"},
+			{description = "500", 		data = 500, 	hover = "冰堆叠上限500"},
+			{description = "999", 	    data = 999, 	hover = "冰堆叠上限99"},
+			
+        },
+        default = 40,
+    },
+    {
         name = "way_to_obtain",
         label = "Way to Obtain/获得途径",
 		hover = "The way to obtain Ice Furnaces".."\n获得龙鳞冰炉的途径",

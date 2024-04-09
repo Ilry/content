@@ -29,7 +29,9 @@ GLOBAL.light_range_icefurnace = GetModConfigData("light_range") or 1
 GLOBAL.num_slots_icefurnace = GetModConfigData("container_slot") or 3
 GLOBAL.fresh_rate_icefurnace = GetModConfigData("fresh_rate") or 0
 GLOBAL.ice_production_icefurnace = GetModConfigData("produce_ice") or 240
+GLOBAL.ice_quantity = GetModConfigData("ice_quantity")
 GLOBAL.way_to_obtain_icefurnace = GetModConfigData("way_to_obtain") or 1
+
 
 AddMinimapAtlas("images/minimap/icefurnace.xml")
 
