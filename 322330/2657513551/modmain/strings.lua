@@ -59,6 +59,11 @@ env.S = {
 		PRESERVE = L and "Preserve" or "保留存档",
 	},
 	RECOVERY_RUN = L and "Start processing" or "开始转换",
+
+	MOD_OUT_OF_DATE = L and "Mod \"%s\" is out of date. The server needs to get the latest version from the Steam Workshop so other users cannot join."
+		or "\"%s\"模组 已过期。服务器需要从 Steam 创意工坊获得最新版本，这样其他的用户还是不能加入。",
+	MOD_OUT_OF_DATE_RAIL = L and "Mod \"%s\" is out of date. The server needs to get the latest version so other users can join."
+		or "\"%s\"MOD过时了。服务器需要从创客空间下载最新版本以让其他玩家不加入。"
 }
 
 if ONE_PLAYER_MODE then

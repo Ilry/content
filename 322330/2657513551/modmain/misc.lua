@@ -76,3 +76,23 @@ AddComponentPostInit("targettracker", function(self)
 		end
 	end
 end)
+
+-- fix client acid smoke fx ruin cave fps
+-- scripts/prefabs/acidraindrop.lua
+AddPrefabPostInit("acidsmoke_endless", function(inst)
+	inst.AnimState:PlayAnimation("")
+end)
+
+-- change mod update hint text
+local old_Networking_ModOutOfDateAnnouncement = Networking_ModOutOfDateAnnouncement
+function GLOBAL.Networking_ModOutOfDateAnnouncement(mod)
+	if mod == modinfo.name then
+		if IsRail() then
+	        Networking_Announcement(string.format(S.MOD_OUT_OF_DATE_RAIL, mod), nil, "mod")
+	    else
+	        Networking_Announcement(string.format(S.MOD_OUT_OF_DATE, mod), nil, "mod")
+	    end
+	else
+		return old_Networking_ModOutOfDateAnnouncement(mod)
+	end
+end

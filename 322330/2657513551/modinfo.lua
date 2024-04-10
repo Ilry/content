@@ -1,18 +1,18 @@
 local L = locale ~= "zh" and locale ~= "zhr"
 name = L and "Don't Starve Alone" or "独行长路 - Don't Starve Alone"
 forumthread = ""
-version = "1.2.12"
+version = "1.2.13"
 description = L and 
 [[
 This mod can completely eliminate the lag of a server with cave.
 It only works in single player world.
 
-* Fix scrappy werepig failed to spawn on surface.
+* Fix the problem of fps drop when entering the cave.
 
 ]] or [[
 辅助mod，完全消除单人联机洞穴档的延迟。
 
-* 修复地面不刷新废墟猪的问题。
+* 修复进入洞穴的几秒内游戏帧率下降的问题。
 
 ]]
 -- * 修复了洞穴重置倒计时异常的bug。
