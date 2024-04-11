@@ -80,6 +80,7 @@ end)
 -- fix client acid smoke fx ruin cave fps
 -- scripts/prefabs/acidraindrop.lua
 AddPrefabPostInit("acidsmoke_endless", function(inst)
+	inst.entity:SetCanSleep(true)
 	inst.AnimState:PlayAnimation("")
 end)
 

@@ -1,7 +1,7 @@
 local L = locale ~= "zh" and locale ~= "zhr"
 name = L and "Don't Starve Alone" or "独行长路 - Don't Starve Alone"
 forumthread = ""
-version = "1.2.13"
+version = "1.2.14"
 description = L and 
 [[
 This mod can completely eliminate the lag of a server with cave.
