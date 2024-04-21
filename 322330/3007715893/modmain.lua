@@ -126,8 +126,13 @@ if Stack_other_objects then
 	end
 	if GetModConfigData("bird") then
 		--鸟类
-		AddAnimalStackables({"robin","robin_winter","crow","puffin","canary","canary_poisoned","bird_mutant","bird_mutant_spitter",})
+		AddAnimalStackables({"robin","robin_winter","crow","puffin","canary","canary_poisoned","bird_mutant_spitter",})
 	end
+	if GetModConfigData("crow") then
+		--月盲乌鸦
+		AddAnimalStackables({"bird_mutant"})
+	end
+	
 	if GetModConfigData("fish") then
 		--鱼类
 		local STACKABLE_OBJECTS_BASE = {"pondfish","pondeel","oceanfish_medium_1_inv","oceanfish_medium_2_inv","oceanfish_medium_3_inv","oceanfish_medium_4_inv","oceanfish_medium_5_inv","oceanfish_medium_6_inv","oceanfish_medium_7_inv","oceanfish_medium_8_inv","oceanfish_small_1_inv","oceanfish_small_2_inv","oceanfish_small_3_inv","oceanfish_small_4_inv","oceanfish_small_5_inv","oceanfish_small_6_inv","oceanfish_small_7_inv","oceanfish_small_8_inv","oceanfish_small_9_inv","wobster_sheller_land","wobster_moonglass_land","oceanfish_medium_9_inv","lightcrab"}

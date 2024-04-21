@@ -17,7 +17,7 @@ Tip: Close the stack of tall birds when you need to hatch their eggs
 
 author = "天涯共此时、小花朵"
 
-version = "2.1.4"
+version = "2.1.5"
 
 forumthread = ""
 
@@ -126,6 +126,7 @@ configuration_options =
 	addConfig("rabbit", "兔子","Rabbit",  true),
 	addConfig("mole", "鼹鼠", "Mole", true),
 	addConfig("bird", "鸟类", "Bird", true),
+	addConfig("crow","月盲乌鸦","Moonblind Crow", true),
 	addConfig("fish", "鱼类和发光蟹", "Fish and LightCrab", true),
 	addConfig("spider", "各类蜘蛛", "Spider", true),
 	addConfig("eyeturret", "眼球炮塔", "Eyeturret", true),
@@ -136,7 +137,7 @@ configuration_options =
 	addConfig("moonrockidol", "月岩雕像,告密的心", "Moonrockidol and Reviver", true),
 	addConfig("horn", "牛角和独角鲸角", "Horn", false, "注意：只能作为材料堆叠，如需作为工具，请关闭选项","Note: TURN OFF WHEN USE IT AS TOOL"),
 	addConfig("deer_antler","鹿角和克劳斯钥匙","Deer Antler and Klaussackkey",true),
-	addConfig("security_pulse_cage", "火花柜", "Security Pulse Cage and Full Cage",true),
+	addConfig("security_pulse_cage", "火花柜", "Security Pulse Cage and Full Cage",true,"注能之前请分开一个， 一整组注能会导致整组物品数量变1","PLZ fill it 1 by 1, otherwise you will lose whole set of it."),
 	addConfig("chestupgrade_stacksize", "箱子升级组件", "Chest Up Grade Set",true),
 	addConfig("shell", "贝壳钟", "Singing Shell",false),
 	--addConfig("sketch1", "常用草图","Sketch", true),
