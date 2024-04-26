@@ -17,7 +17,7 @@ Tip: Close the stack of tall birds when you need to hatch their eggs
 
 author = "天涯共此时、小花朵"
 
-version = "2.1.5"
+version = "2.1.6"
 
 forumthread = ""
 
@@ -148,7 +148,9 @@ configuration_options =
 	addConfig("aip_leaf_note", "树叶笔记(额外物品包)", "Aip leaf note", true),
 	addConfig("foliageath", "青枝绿叶（棱镜）", "Foliageath", true),
 	addConfig("miao_packbox", "超级打包盒（超级打包盒）", "Miao packbox", true,"需单个使用，整组使用会整组消耗"),
+	addConfig("heap_of_foods", "Heap Of Food 更多料理", "Heap Of Foods", true),
 	addConfig("reskin_tool", "作者自用", "For self use",false),
+	
 	
 	
 }

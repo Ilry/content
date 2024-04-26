@@ -5,6 +5,7 @@ local Widget = require "widgets/widget"
 local ThreeSlice = require "widgets/threeslice"
 local Image = require "widgets/image"
 local cooking = require("cooking")
+require "widgets/widgetutil"
 local containercfg = GetModConfigData("Container Sort")
 local itemscfg = GetModConfigData("Items collect")
 local hasmultisortbtn = containercfg == -2 or containercfg == true
@@ -615,7 +616,7 @@ local function exchangetaskend(inst)
 end
 -- 另一世界的确认请求被确认
 AddShardModRPCHandler("MOD_HARDMODE", "exchangeconfirm2hm", function(shard_id, world_id, name)
-    if TheShard and TheShard:GetShardId() ~= shard_id and TheShard:GetShardId() == world_id then
+    if TheShard and tostring(TheShard:GetShardId()) ~= tostring(shard_id) and tostring(TheShard:GetShardId()) == tostring(world_id) then
         local container = TheWorld:GetPocketDimensionContainer(name)
         if container and container:IsValid() and container.components.container and container.exchangetmpdata2hm and not container.containersendtask2hm and
             container.containerreceivetask2hm and container.sendcontainerproxydata2hm then
@@ -629,7 +630,7 @@ AddShardModRPCHandler("MOD_HARDMODE", "exchangeconfirm2hm", function(shard_id, w
 end)
 -- 所在世界的穿越请求被确认,更新数据,且确认对方的确认请求
 AddShardModRPCHandler("MOD_HARDMODE", "exchangeconfirmdata2hm", function(shard_id, world_id, name, containerdata)
-    if TheShard and TheShard:GetShardId() ~= shard_id and TheShard:GetShardId() == world_id then
+    if TheShard and tostring(TheShard:GetShardId()) ~= tostring(shard_id) and tostring(TheShard:GetShardId()) == tostring(world_id) then
         local container = TheWorld:GetPocketDimensionContainer(name)
         if container and container:IsValid() and container.components.container and container.exchangetmpdata2hm and container.containersendtask2hm and
             not container.containerreceivetask2hm and container.sendcontainerproxyplayer2hm and containerdata then
@@ -652,7 +653,7 @@ AddShardModRPCHandler("MOD_HARDMODE", "exchangeconfirmdata2hm", function(shard_i
 end)
 -- 另一世界收到穿越请求,确认请求
 AddShardModRPCHandler("MOD_HARDMODE", "exchangesenddata2hm", function(shard_id, world_id, name, containerdata)
-    if TheShard and TheShard:GetShardId() ~= shard_id and TheShard:GetShardId() == world_id then
+    if TheShard and tostring(TheShard:GetShardId()) ~= tostring(shard_id) and tostring(TheShard:GetShardId()) == tostring(world_id) then
         local container = TheWorld:GetPocketDimensionContainer(name)
         if container and container:IsValid() and container.components.container and container.virtchest == nil and not container.containersendtask2hm and
             not container.containerreceivetask2hm and containerdata then
@@ -674,7 +675,7 @@ local function findanotherworldid(inst)
     if ShardList then
         local shardids = {}
         for world_id, v in pairs(ShardList) do
-            if world_id ~= TheShard:GetShardId() and Shard_IsWorldAvailable(world_id) then table.insert(shardids, world_id) end
+            if TheShard and world_id ~= TheShard:GetShardId() and Shard_IsWorldAvailable(world_id) then table.insert(shardids, world_id) end
         end
         local total = #shardids
         if total == 1 then
@@ -2072,45 +2073,48 @@ if itemscfg then
                     collectrecipeclientfn(self.owner or ThePlayer, self.recipe_type, not has_enough and
                                               ((num_need * (self.parent and self.parent.parent and self.parent.parent.quantity or 1) - num_found)))
                 end
+                self:SetTooltip((self.tooltip or "") .. "\n" .. TheInput:GetLocalizedControl(TheInput:GetControllerID(), CONTROL_SECONDARY) .. ": " ..
+                                    (has_enough and (TUNING.isCh2hm and "收集更多" or "Collect More") or (TUNING.isCh2hm and "收集" or "Collect")))
                 SetButtonRightControl(self)
-                local meta = ingredient_recipe ~= nil and ingredient_recipe.meta or nil
-                if (meta and not has_enough and meta.can_build) or self.onclick then
-                    self:SetTooltip((self.tooltip or "") .. "\n" .. TheInput:GetLocalizedControl(TheInput:GetControllerID(), CONTROL_SECONDARY) .. ": " ..
-                                        (has_enough and (TUNING.isCh2hm and "收集更多" or "Collect More") or (TUNING.isCh2hm and "收集" or "Collect")))
-                else
-                    self:SetTooltip((self.tooltip or "") .. "\n" .. TheInput:GetLocalizedControl(TheInput:GetControllerID(), CONTROL_SECONDARY) .. ": " ..
-                                        (has_enough and (TUNING.isCh2hm and "收集更多" or "Collect More") or (TUNING.isCh2hm and "收集" or "Collect")))
-                    self.onclick = self.onrightclick2hm
-                end
-                local recipe = AllRecipes[recipe_type]
-                -- and owner and owner.HUD and owner.HUD.controls and owner.HUD.controls.craftingmenu and owner.HUD.controls.craftingmenu:GetRecipeState(recipe_type)
+                local recipe = ingredient_recipe ~= nil and ingredient_recipe.recipe or AllRecipes[recipe_type]
+                -- if not self.onclick and recipe then
+                --     local meta = ingredient_recipe ~= nil and ingredient_recipe.meta or nil
+                --     if meta and meta.can_build then
+                --         self.onclick = function()
+                --             if recipe ~= nil and meta and meta.can_build then
+                --                 DoRecipeClick(self.owner, recipe, nil)
+                --             end
+                --         end
+                --     end
+                -- end
                 if not has_enough and recipe then
                     local selffocus, widgetfocus
                     local oldongainfocus = self.ongainfocus
                     self.ongainfocus = function()
                         selffocus = true
                         widgetfocus = true
-                        if oldongainfocus then
-                            local oldrecipe = self.ingredient_recipe.recipe
-                            self.ingredient_recipe.recipe = recipe
-                            oldongainfocus()
-                            self.ingredient_recipe.recipe = oldrecipe
-                            if self.sub_ingredients ~= nil then
-                                self.sub_ingredients.ongainfocus = function() widgetfocus = true end
-                                self.sub_ingredients.onlosefocus = function() widgetfocus = not selffocus end
-                                local pos = self:GetLocalPosition()
-                                self.sub_ingredients:SetPosition(pos.x, pos.y - 64)
-                            end
-                        elseif self.sub_ingredients == nil then
+                        if oldongainfocus then oldongainfocus() end
+                        -- if oldongainfocus and self.ingredient_recipe then
+                        --     local oldrecipe
+                        --     if self.ingredient_recipe.recipe == nil then
+                        --         oldrecipe = self.ingredient_recipe.recipe
+                        --         self.ingredient_recipe.recipe = recipe
+                        --     end
+                        --     oldongainfocus()
+                        --     if oldrecipe then self.ingredient_recipe.recipe = oldrecipe end
+                        -- end
+                        if self.sub_ingredients == nil then
                             self.sub_ingredients = self.parent:AddChild(Widget("sub_ingredients"))
-                            self.sub_ingredients.ongainfocus = function() widgetfocus = true end
-                            self.sub_ingredients.onlosefocus = function() widgetfocus = not selffocus end
                             self.sub_ingredients:MoveToBack()
                             self.background = self.sub_ingredients:AddChild(ThreeSlice(resolvefilepath("images/crafting_menu.xml"), "popup_end.tex",
                                                                                        "popup_short.tex"))
                             self.ingredients = self.sub_ingredients:AddChild(CraftingMenuIngredients(self.owner, 4, recipe, 1.5))
                             self.ingredients.quantity = num_need
                             self.background:ManualFlow(math.min(5, self.ingredients.num_items), true)
+                        end
+                        if self.sub_ingredients ~= nil then
+                            self.sub_ingredients.ongainfocus = function() widgetfocus = true end
+                            self.sub_ingredients.onlosefocus = function() widgetfocus = not selffocus end
                             local pos = self:GetLocalPosition()
                             self.sub_ingredients:SetPosition(pos.x, pos.y - 64)
                         end
@@ -2175,6 +2179,18 @@ if itemscfg then
                 resetpinslottooltip(self)
             end
         end)
+        -- AddClassPostConstruct("widgets/redux/craftingmenu_details", function(self, ...)
+        --     local PopulateRecipeDetailPanel = self.PopulateRecipeDetailPanel
+        --     self.PopulateRecipeDetailPanel = function(self, ...)
+        --         PopulateRecipeDetailPanel(self, ...)
+        --         if self.build_button_root and self.ingredients and not self.build_button_root.changepos2hm then
+        --             self.build_button_root.changepos2hm = true
+        --             local pos = self.ingredients:GetLocalPosition()
+        --             self.build_button_root:SetPosition(pos.x, pos.y + 12.5)
+        --             self.ingredients:SetPosition(pos.x, pos.y - 35)
+        --         end
+        --     end
+        -- end)
         AddClassPostConstruct("widgets/redux/craftingmenu_widget", function(self, ...)
             local oldOnControl = self.OnControl
             self.OnControl = function(self, control, down, ...)

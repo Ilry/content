@@ -1,4 +1,4 @@
-version = "1.0.52"
+version = "1.0.54"
 local isCh = locale == "zh" or locale == "zhr" or locale == "zht"
 author = "繁花丶海棠"
 forumthread = ""

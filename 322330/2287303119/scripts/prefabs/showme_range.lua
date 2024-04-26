@@ -18,13 +18,13 @@ function OnEnableHelper_lhr(inst, enabled)
             inst.helper:AddTag("NOCLICK")
             inst.helper:AddTag("placer")
 
-            local rval = 1.063      --40范围，老铁！圈似乎有点不圆...
+            local rval = 1.063      --40范围，圈似乎有点不圆...
             local p_s_r = string.format("%0.3f", PLACER_SCALE * rval)
 
             inst.helper.Transform:SetScale(p_s_r, p_s_r, p_s_r)
             inst.helper.AnimState:SetBank("winona_spotlight_placement")
             inst.helper.AnimState:SetBuild("winona_spotlight_placement")
-            inst.helper.AnimState:SetAddColour(.3, .3, .1, 0)       --橙黄
+            inst.helper.AnimState:SetAddColour(.3, .3, .1, 0)       --光叠加，RGBA橙黄
             inst.helper.AnimState:PlayAnimation("idle")
             inst.helper.AnimState:SetLightOverride(1)
             inst.helper.AnimState:SetOrientation(ANIM_ORIENTATION.OnGround)

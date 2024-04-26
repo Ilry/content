@@ -229,6 +229,7 @@ function WXArboriculture:PlantSeeds()
     end
 end
 
+local ICEBOX_TAG = { "_container", "fridge" }
 local FIND_CONTAINER_MUST_TAGS = { "_container" }
 local FIND_SIGN_MUST_TAGS = { "sign" }
 function WXArboriculture:StoreWood()
@@ -237,7 +238,15 @@ function WXArboriculture:StoreWood()
         return nil
     end
 
-    local seedpouch = self.inst.components.inventory:GetEquippedItem(EQUIPSLOTS.BODY)
+    local icebox = FindEntity(sentryward, SEE_WORK_DIST, function(ent)
+        return ent.prefab == "icebox" and ent.components.container ~= nil and not ent.components.container:IsFull()
+    end, ICEBOX_TAG)
+    local moon_tree_blossom = self.inst.components.inventory:FindItem(function(item)
+        return item.prefab == "moon_tree_blossom"
+    end)
+    if icebox ~= nil and moon_tree_blossom ~= nil then
+        return BufferedAction(self.inst, icebox, ACTIONS.STORE, moon_tree_blossom)
+    end
 
     for k, xylogen in pairs(self.inst.components.inventory.itemslots) do
         if table.contains(xylogenList, xylogen.prefab) then

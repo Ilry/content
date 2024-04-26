@@ -37,6 +37,7 @@ function WXApiculture:HarvestBeeBox()
 end
 
 local ICEBOX_TAG = { "_container", "fridge" }
+local WX_TAG = { "wx" }
 function WXApiculture:StoreHoney()
     local sentryward = self.inst.components.entitytracker:GetEntity("sentryward")
     if sentryward == nil then
@@ -58,6 +59,20 @@ function WXApiculture:StoreHoney()
         end
         if icebox ~= nil then
             return BufferedAction(self.inst, icebox, ACTIONS.STORE, any_food)
+        end
+    end
+
+    local moonbutterfly = self.inst.components.inventory:FindItem(function(item)
+        return item.prefab == "moonbutterfly" and item.components.deployable ~= nil and
+            item.components.deployable.mode == DEPLOYMODE.PLANT
+    end)
+    if moonbutterfly ~= nil then
+        local wx = FindEntity(sentryward, SEE_WORK_DIST, function(ent)
+            return ent.prefab == "wx" and ent.components.container ~= nil and
+                ent.components.wxtype ~= nil and ent.components.wxtype:IsArbori()
+        end, WX_TAG)
+        if wx ~= nil then
+            return BufferedAction(self.inst, wx, ACTIONS.STORE, moonbutterfly)
         end
     end
 end

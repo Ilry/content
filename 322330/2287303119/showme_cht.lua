@@ -284,7 +284,6 @@ STRESS_TAGS = { --https://dontstarve.fandom.com/wiki/Farm_Plant
 }
 
 OTHER_TAGS = {	--拿不到的数值先写死吧
-	spice_salt = "食物加血量 +25%",
 	onemanband = "照顧農作物\n演奏可使豬人/兔人跟隨",
 	amulet = "作祟可復活",
 	book_birds = "召喚鳥類",
@@ -295,19 +294,13 @@ OTHER_TAGS = {	--拿不到的数值先写死吧
 	wx78_music = "照顧附近農作物",
 	wx78_movespeed2 = "之後每個增幅約 60%",
 	wx78_heat = "提供增溫及增溫光環",
-	wx78_heat2 = "食物腐爛加快: 25%",
 	wx78_moisture = "乾燥加快: 10%",
 	wx78_cold = "提供降溫及降溫光環",
-	wx78_cold2 = "食物腐爛減慢: 25%",
-	wx78_cold3 = "潮濕高於95%產生冰塊",
 	wx78module_taser = "提供防雷保護\n提供感電攻擊BUFF",
 	wx78module_nightvision = "提供夜視能力",
 	wx78module_light = "提供發光光環",
-	ghost_atkf = "護盾傷害: 20",
 	
 	--万圣节
-	halloweenpotion_bravery_small = "抵抗砍樹和開寶箱產生蝙蝠, 持續 0.5 天",
-	halloweenpotion_bravery_large = "抵抗砍樹和開寶箱產生蝙蝠, 持續 0.6 天",
 	halloweenpotion_health = "生命恢復 +1/秒, 持續 30 秒",
 	halloweenpotion_sanity = "精神恢復 +1/秒, 持續 30 秒",
 	--大力士
@@ -315,7 +308,6 @@ OTHER_TAGS = {	--拿不到的数值先写死吧
 	--弹珠
 	slingshotammo_freeze = "凍結目標",
 	slingshotammo_poop = "讓目標失去仇恨",
-	slingshotammo_slow = "目標移速 -33%, 持續 30 秒",
 	slingshotammo_thulecite = "暗影觸手召喚概率 50%",
 	--棱镜
 	lileaves = "-30% 對方攻擊力",
@@ -328,9 +320,13 @@ OTHER_TAGS = {	--拿不到的数值先写死吧
 }
 
 OTHER_TITLES = {
+	spice_salt = "食物血量 +%s",
 	maxhealth = "最大生命值 +%s",
 	maxsanity = "最大精神值 +%s",
 	maxhunger = "最大饑餓值 +%s",
+	wx78_hot_cold = "食物腐爛速度: %s",
+	wx78_cold3 = "潮濕高於 %s 產生冰塊",
+	ghost_atkf = "護盾傷害: %s",
 	hungerslow = "饑餓減緩: %s",
 	healthpertick = "生命恢復: +%s",
 	ghost_atk = "獲得夜間傷害, 持續 %s 天",
@@ -347,6 +343,12 @@ OTHER_TITLES = {
 	bs_fire = "受火焰傷害減 -%s",
 	bs_it = "嘲諷範圍內敵人",
 	bs_ip = "範圍內敵人恐慌 %s 秒",
+	bs_shadow = "對月亮陣營生物傷害 +%s",
+	bs_shadow2 = "受到暗影陣營生物傷害 %s",
+	bs_lunar = "對暗影陣營生物傷害 +%s",
+	bs_lunar2 = "受到月亮陣營生物傷害 %s",
+	hpotion_bravery = "抵抗砍樹和開寶箱產生蝙蝠, 持續 %s 天",
+	sammo_slow = "目標移速 %s, 持續 %s 秒",
 	resist = "位抗: ",
 	dmgresist = "擁有位面抵抗",
 	point = " 點", 

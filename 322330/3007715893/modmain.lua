@@ -254,6 +254,21 @@ if Stack_other_objects then
 		--清洁扫把和提灯和陷阱【娜娜很需要】
 		AddItemStackables({"reskin_tool","lantern","trap_teeth"})
 	end
+	--2024/4/22
+	if GetModConfigData("heap_of_foods") then
+		AddItemStackables({
+		--松鼠
+		"kyno_piko_orange", "kyno_piko",
+		--罐头
+		"kyno_beancan", "kyno_tomatocan", "kyno_tunacan", "kyno_meatcan", "kyno_beancan_open", "kyno_tomatocan_open","kyno_tunacan_open", "kyno_meatcan_open", "kyno_cokecan","kyno_sodacan", "kyno_energycan",
+		--鸡
+		"kyno_chicken2",
+		--鱼
+		"kyno_grouper", "kyno_salmonfish", "kyno_tropicalfish", "kyno_koi", "kyno_neonfish", "kyno_pierrotfish",
+		--鸟
+		"toucan","kingfisher",})
+	end
+
 	-- if GetModConfigData("blueprint")then
 		--蓝图
 		-- AddPrefabPostInit("blueprint", function(inst)

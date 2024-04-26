@@ -482,7 +482,6 @@ function WXBrain:OnStart()
                         -- Stores veggies
                         IfNode(
                             function()
-                                local seedpouch = self.inst.components.inventory:GetEquippedItem(EQUIPSLOTS.BODY)
                                 return self.inst.components.inventory:FindItem(function(item)
                                     return (item.components.edible ~= nil and item.components.perishable ~= nil) or
                                         item.prefab == "messagebottleempty"

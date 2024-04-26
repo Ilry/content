@@ -350,7 +350,7 @@ function WXNavigation:UnloadCargo()
                 -- Smart Signed Chest
                 local smartchest = FindEntity(wxdiviningrodbase, SEE_WORK_DIST, function(ent)
                     local _, firstitem = next(ent.components.container.slots)
-                    return ent.prefab == "treasurechest" and
+                    return (ent.prefab == "treasurechest" or ent.prefab == "treasurechest_upgraded") and
                         ent.components.smart_minisign ~= nil and ent.components.smart_minisign.sign ~= nil and
                         ent.components.container ~= nil and not ent.components.container:IsFull() and
                         firstitem ~= nil and firstitem.prefab == item.prefab
@@ -362,13 +362,13 @@ function WXNavigation:UnloadCargo()
                 -- Allocated Smart Signed Chest
                 local allocatedsmartchest = FindEntity(wxdiviningrodbase, SEE_WORK_DIST, function(ent)
                     local _, firstitem = next(ent.components.container.slots)
-                    return ent.prefab == "treasurechest" and
+                    return (ent.prefab == "treasurechest" or ent.prefab == "treasurechest_upgraded") and
                         ent.components.smart_minisign ~= nil and ent.components.smart_minisign.sign ~= nil and
                         firstitem ~= nil and firstitem.prefab == item.prefab
                 end, FIND_CONTAINER_MUST_TAGS)
                 -- Empty Smart Signed Chest
                 local emptysmartchest = FindEntity(wxdiviningrodbase, SEE_WORK_DIST, function(ent)
-                    return ent.prefab == "treasurechest" and
+                    return (ent.prefab == "treasurechest" or ent.prefab == "treasurechest_upgraded") and
                         ent.components.smart_minisign ~= nil and ent.components.smart_minisign.sign ~= nil and
                         ent.components.container ~= nil and next(ent.components.container.slots) == nil
                 end, FIND_CONTAINER_MUST_TAGS)
@@ -378,7 +378,8 @@ function WXNavigation:UnloadCargo()
                 end
                 -- Signed Chest
                 local signedchest = FindEntity(wxdiviningrodbase, SEE_WORK_DIST, function(ent)
-                    return ent.prefab == "treasurechest" and ent.components.container ~= nil and not ent.components.container:IsFull() and
+                    return (ent.prefab == "treasurechest" or ent.prefab == "treasurechest_upgraded") and
+                        ent.components.container ~= nil and not ent.components.container:IsFull() and
                         FindEntity(ent, .5, function(sign)
                             return sign.components.drawable ~= nil and (sign.components.drawable:GetImage() == item.prefab or
                                 (sign.components.drawable:GetImage() == "rock_avocado_fruit_rockhard" and item.prefab == "rock_avocado_fruit"))
@@ -390,8 +391,8 @@ function WXNavigation:UnloadCargo()
                 end
                 -- Unsigned Chest
                 local unsignedchest = FindEntity(wxdiviningrodbase, SEE_WORK_DIST, function(ent)
-                    return ent.prefab == "treasurechest" and ent.components.container ~= nil and
-                        ent.components.container:Has(item.prefab, 1) and
+                    return (ent.prefab == "treasurechest" or ent.prefab == "treasurechest_upgraded") and
+                        ent.components.container ~= nil and ent.components.container:Has(item.prefab, 1) and
                         FindEntity(ent, .5, function(sign) return sign.components.drawable ~= nil end, FIND_SIGN_MUST_TAGS) == nil
                 end, FIND_CONTAINER_MUST_TAGS)
                 if unsignedchest ~= nil and not unsignedchest.components.container:IsFull() then
@@ -400,7 +401,8 @@ function WXNavigation:UnloadCargo()
                 end
                 -- Any Signed Chest
                 local anysignedchest = FindEntity(wxdiviningrodbase, SEE_WORK_DIST, function(ent)
-                    return ent.prefab == "treasurechest" and ent.components.container ~= nil and
+                    return (ent.prefab == "treasurechest" or ent.prefab == "treasurechest_upgraded") and
+                        ent.components.container ~= nil and
                         FindEntity(ent, .5, function(sign)
                             return sign.components.drawable ~= nil and (sign.components.drawable:GetImage() == item.prefab or
                                 (sign.components.drawable:GetImage() == "rock_avocado_fruit_rockhard" and item.prefab == "rock_avocado_fruit"))
@@ -408,7 +410,8 @@ function WXNavigation:UnloadCargo()
                 end, FIND_CONTAINER_MUST_TAGS)
                 -- Empty Chest
                 local emptychest = FindEntity(wxdiviningrodbase, SEE_WORK_DIST, function(ent)
-                    return ent.prefab == "treasurechest" and ent.components.container ~= nil and ent.components.container:IsEmpty() and
+                    return (ent.prefab == "treasurechest" or ent.prefab == "treasurechest_upgraded") and
+                        ent.components.container ~= nil and ent.components.container:IsEmpty() and
                         FindEntity(ent, .5, function(sign) return sign.components.drawable ~= nil end, FIND_SIGN_MUST_TAGS) == nil
                 end, FIND_CONTAINER_MUST_TAGS)
                 if unsignedchest == nil and anysignedchest == nil and emptychest ~= nil then
@@ -570,7 +573,7 @@ function WXNavigation:UnloadCargo()
                 -- Smart Signed Chest
                 local smartchest = FindEntity(wxdiviningrodbase, SEE_WORK_DIST, function(ent)
                     local _, firstitem = next(ent.components.container.slots)
-                    return ent.prefab == "treasurechest" and
+                    return (ent.prefab == "treasurechest" or ent.prefab == "treasurechest_upgraded") and
                         ent.components.smart_minisign ~= nil and ent.components.smart_minisign.sign ~= nil and
                         ent.components.container ~= nil and not ent.components.container:IsFull() and
                         firstitem ~= nil and firstitem.prefab == item.prefab
@@ -582,13 +585,13 @@ function WXNavigation:UnloadCargo()
                 -- Allocated Smart Signed Chest
                 local allocatedsmartchest = FindEntity(wxdiviningrodbase, SEE_WORK_DIST, function(ent)
                     local _, firstitem = next(ent.components.container.slots)
-                    return ent.prefab == "treasurechest" and
+                    return (ent.prefab == "treasurechest" or ent.prefab == "treasurechest_upgraded") and
                         ent.components.smart_minisign ~= nil and ent.components.smart_minisign.sign ~= nil and
                         firstitem ~= nil and firstitem.prefab == item.prefab
                 end, FIND_CONTAINER_MUST_TAGS)
                 -- Empty Smart Signed Chest
                 local emptysmartchest = FindEntity(wxdiviningrodbase, SEE_WORK_DIST, function(ent)
-                    return ent.prefab == "treasurechest" and
+                    return (ent.prefab == "treasurechest" or ent.prefab == "treasurechest_upgraded") and
                         ent.components.smart_minisign ~= nil and ent.components.smart_minisign.sign ~= nil and
                         ent.components.container ~= nil and next(ent.components.container.slots) == nil
                 end, FIND_CONTAINER_MUST_TAGS)
@@ -598,7 +601,8 @@ function WXNavigation:UnloadCargo()
                 end
                 -- Signed Chest
                 local signedchest = FindEntity(wxdiviningrodbase, SEE_WORK_DIST, function(ent)
-                    return ent.prefab == "treasurechest" and ent.components.container ~= nil and not ent.components.container:IsFull() and
+                    return (ent.prefab == "treasurechest" or ent.prefab == "treasurechest_upgraded") and
+                        ent.components.container ~= nil and not ent.components.container:IsFull() and
                         FindEntity(ent, .5, function(sign)
                             return sign.components.drawable ~= nil and (sign.components.drawable:GetImage() == item.prefab or
                                 (sign.components.drawable:GetImage() == "rock_avocado_fruit_rockhard" and item.prefab == "rock_avocado_fruit"))
@@ -610,7 +614,8 @@ function WXNavigation:UnloadCargo()
                 end
                 -- Unsigned Chest
                 local unsignedchest = FindEntity(wxdiviningrodbase, SEE_WORK_DIST, function(ent)
-                    return ent.prefab == "treasurechest" and ent.components.container ~= nil and
+                    return (ent.prefab == "treasurechest" or ent.prefab == "treasurechest_upgraded") and
+                        ent.components.container ~= nil and
                         ent.components.container:Has(item.prefab, 1) and
                         FindEntity(ent, .5, function(sign) return sign.components.drawable ~= nil end, FIND_SIGN_MUST_TAGS) == nil
                 end, FIND_CONTAINER_MUST_TAGS)
@@ -620,7 +625,8 @@ function WXNavigation:UnloadCargo()
                 end
                 -- Any Signed Chest
                 local anysignedchest = FindEntity(wxdiviningrodbase, SEE_WORK_DIST, function(ent)
-                    return ent.prefab == "treasurechest" and ent.components.container ~= nil and
+                    return (ent.prefab == "treasurechest" or ent.prefab == "treasurechest_upgraded") and
+                        ent.components.container ~= nil and
                         FindEntity(ent, .5, function(sign)
                             return sign.components.drawable ~= nil and (sign.components.drawable:GetImage() == item.prefab or
                                 (sign.components.drawable:GetImage() == "rock_avocado_fruit_rockhard" and item.prefab == "rock_avocado_fruit"))
@@ -628,7 +634,8 @@ function WXNavigation:UnloadCargo()
                 end, FIND_CONTAINER_MUST_TAGS)
                 -- Empty Chest
                 local emptychest = FindEntity(wxdiviningrodbase, SEE_WORK_DIST, function(ent)
-                    return ent.prefab == "treasurechest" and ent.components.container ~= nil and ent.components.container:IsEmpty() and
+                    return (ent.prefab == "treasurechest" or ent.prefab == "treasurechest_upgraded") and
+                        ent.components.container ~= nil and ent.components.container:IsEmpty() and
                         FindEntity(ent, .5, function(sign) return sign.components.drawable ~= nil end, FIND_SIGN_MUST_TAGS) == nil
                 end, FIND_CONTAINER_MUST_TAGS)
                 if unsignedchest == nil and anysignedchest == nil and emptychest ~= nil then
@@ -1083,7 +1090,8 @@ local function FindItemToTakeAction(inst)
     local container_list = TheSim:FindEntities(x, y, z, SEE_WORK_DIST, FIND_CONTAINER_MUST_TAGS)
     for _, container in pairs(container_list) do
         item = ((container.prefab == "wx" and container.components.wxtype ~= nil and
-            container.components.wxtype:IsMachineInd()) or container.prefab == "treasurechest") and
+            container.components.wxtype:IsMachineInd()) or
+            container.prefab == "treasurechest" or container.prefab == "treasurechest_upgraded") and
             container.components.container ~= nil and
             container.components.container:FindItem(function(item)
             -- Gardenhoe
