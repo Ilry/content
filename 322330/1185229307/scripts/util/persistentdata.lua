@@ -15,11 +15,7 @@ end
 function PersistentData:Get(key)
 	if self.data == nil then
 		TheSim:GetPersistentString(self.file, function(success, string)
-			if success then
-				self.data = json.decode(string)
-			elseif key ~= nil then
-				self.data = {}
-			end
+			self.data = success and json.decode(string) or {}
 		end)
 	end
 	if key ~= nil then

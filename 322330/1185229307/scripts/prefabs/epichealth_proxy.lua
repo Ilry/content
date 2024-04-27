@@ -92,7 +92,7 @@ end
 local function OnMinHealth(parent, data)
 	if parent.components.health ~= nil then
 		if parent.components.health.minhealth == 1 then
-			parent.epichealth:AddTag("nonlethal")
+			parent:AddTag("nonlethal")
 		elseif data ~= nil and not parent.components.health:IsDead() then
 			netset(parent.epichealth._resist, RESIST_MAX, true)
 		end

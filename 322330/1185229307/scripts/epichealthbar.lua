@@ -17,8 +17,8 @@ TUNING.EPICHEALTHBAR =
 	CAMERA_PRIORITY = -10,
 
 	HUE_THRESH = 12 / 360,
-	MIN_BRIGHTNESS = 20 / 100,
-	MAX_BRIGHTNESS = 60 / 100,
+	DARK_THRESH = 20 / 100,
+	POPUP_BRIGHTNESS = 80 / 100,
 
 	BACKGROUND_COLOUR1 =				RGB(46, 28, 30),
 	BACKGROUND_COLOUR2 =				RGB(96, 71, 74),
@@ -42,9 +42,7 @@ TUNING.EPICHEALTHBAR =
 		TIGERSHARK =					RGB(189, 109, 24),
 		TWISTER =						RGB(99, 107, 139),
 		KRAKEN =						RGB(173, 130, 140),
-		SHADOW_ROOK =					RGB(0, 0, 0),
-		SHADOW_KNIGHT =					RGB(0, 0, 0),
-		SHADOW_BISHOP =					RGB(0, 0, 0),
+		SHADOWCHESSPIECE =				RGB(0, 0, 0),
 		BEEQUEEN =						{ 0.80, 0.47, 0.13 },
 		KLAUS =							RGB(191, 36, 36),
 		ANTLION =						RGB(154, 80, 52),
@@ -135,7 +133,7 @@ TUNING.EPICHEALTHBAR =
 		EYEOFTERROR =					{ 0.65 },
 		MINOTAUR =						{ 0.6 },
 		DAYWALKER =						{ 0.5, 0.3 },
-		DAYWALKER2 =					{ 0.75 },
+		DAYWALKER2 =					{ 0.75, 0.5 },
 
 		KLAUS = function(inst)
 			if not inst._unchained:value() and inst.Physics:GetMass() <= 1000 then
@@ -269,14 +267,14 @@ local function OnRemoveFromEntity(self)
 end
 
 AddComponentPostInit("combat", function(self, inst)
-	if TUNING.EPICHEALTHBAR.GLOBAL_NUMBERS then
+	if TUNING.EPICHEALTHBAR.GLOBAL_NUMBERS and not inst.isplayer then
 		inst:ListenForEvent("attacked", OnAttacked)
 		Tykvesh.Parallel(self, "OnRemoveFromEntity", OnRemoveFromEntity)
 	end
 end)
 
 AddComponentPostInit("health", function(self, inst)
-	if TUNING.EPICHEALTHBAR.GLOBAL and not inst:HasTag("player") then
+	if TUNING.EPICHEALTHBAR.GLOBAL and not inst.isplayer then
 		AddHealthProxy(inst)
 	end
 end)

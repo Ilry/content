@@ -151,12 +151,12 @@ local MeterResist = Class(Widget, function(self)
 
 	self:SetScissor(GetScissor())
 
-	self.alpha = 0.6
+	self.alpha = 0.65
 	self.time = 0
 	self.delay = 0.5
 	self.intensity = 1
 	self.frequency = 750
-	self.minspeed = 0
+	self.minspeed = 5
 	self.maxspeed = 30
 	self.speed = 0
 	self._speed = 1
@@ -264,7 +264,7 @@ end
 
 function MeterDamage:IsSuspended()
 	return self.time <= 0
-		and self.percent ~= 0
+		and self.widget:IsValid()
 		and self.lastwasdamagedtime ~= nil
 		and GetTime() - self.lastwasdamagedtime <= ATTACK_TIMEOUT
 		and self:GetPlayerCount() == 1
@@ -375,7 +375,7 @@ local PopupNumber = Class(Widget, function(self, value, damaged, data)
 	if data.pos then
 		self:SetScaleMode(SCALEMODE_PROPORTIONAL)
 	elseif data.level then
-		self.colour = self:MixColour(0.03)
+		self.colour = self:MixColour(0.01 * data.level)
 		self.speed = GetRandomMinMax(self.speed, 1.25 ^ data.level * self.speed)
 	elseif self.huge then
 		self.speed = GetRandomMinMax(self.speed, 1.5 * self.speed)
@@ -408,6 +408,9 @@ end
 
 function PopupNumber:RoundDown(value)
 	local mult = 10 ^ (value < 1 and 1 or 0)
+	if not self.pos then
+		value = value + 0.001
+	end
 	return math.max(0.1, math.floor(value * mult) / mult)
 end
 
@@ -692,14 +695,14 @@ local function onbuild(self, build, oldbuild)
 		self.metertint = theme
 
 		local brightness = math.max(theme[1], theme[2], theme[3])
-		if brightness >= TUNING.EPICHEALTHBAR.MIN_BRIGHTNESS then
+		if brightness > TUNING.EPICHEALTHBAR.DARK_THRESH then
 			self.bgtint = TUNING.EPICHEALTHBAR.BACKGROUND_COLOUR1
 			self.resisttint = theme
 
-			if brightness >= TUNING.EPICHEALTHBAR.MAX_BRIGHTNESS then
+			if brightness >= TUNING.EPICHEALTHBAR.POPUP_BRIGHTNESS then
 				self.popuptint = theme
 			else
-				local mult = TUNING.EPICHEALTHBAR.MAX_BRIGHTNESS / brightness
+				local mult = TUNING.EPICHEALTHBAR.POPUP_BRIGHTNESS / brightness
 				self.popuptint = {}
 				for i, v in ipairs(theme) do
 					self.popuptint[i] = v * mult
@@ -1005,7 +1008,7 @@ end
 
 function EpicHealthbar:OnGainFocus()
 	if not self:IsTimeout() then
-		if self.owner.HUD.controls.craftingandinventoryshown and self:IsEpic() then
+		if self:CanFocusCamera() then
 			self.camera:Show()
 		end
 		if self.modinfo.configuration_options ~= nil then
@@ -1070,7 +1073,7 @@ function EpicHealthbar:RebuildPhases()
 		if phases ~= nil then
 			for i, v in ipairs(phases) do
 				local phase = self.frame_phases:AddChild(Image(self.frame.atlas, "phase.tex"))
-				phase:SetPosition(METER_WIDTH / -2 - 1.5 + (METER_WIDTH + 1) * v, 0)
+				phase:SetPosition(METER_WIDTH / -2 + METER_WIDTH * v, 0)
 				phase:SetTint(unpack(self.frame.tint))
 			end
 		end
@@ -1171,6 +1174,10 @@ function EpicHealthbar:IsPriorityTarget(target)
 	return self.target == target or self.target == nil
 end
 
+function EpicHealthbar:IsValid()
+	return self:IsValidTarget(self.target)
+end
+
 function EpicHealthbar:Appear()
 	if not self.active then
 		self.active = true
@@ -1179,7 +1186,7 @@ function EpicHealthbar:Appear()
 	end
 
 	if self.focus then
-		self:RefreshCamera()
+		self:RefreshMenu()
 	end
 end
 
@@ -1348,7 +1355,7 @@ function EpicHealthbar:GetIsSpectator()
 		and (self.spectator or not self.owner:HasTag("busy"))
 end
 
-function EpicHealthbar:RefreshCamera()
+function EpicHealthbar:RefreshMenu()
 	if not self.camera.shown or self.owner:HasTag("busy") then
 		return
 	elseif TheFocalPoint.components.focalpoint:IsFocusBlocked(self.inst) or TheFocalPoint ~= TheCamera.target then
@@ -1421,11 +1428,29 @@ function EpicHealthbar:CanFocusPlayer(player, dist, targets)
 	return self:HasFocus(player)
 end
 
+function EpicHealthbar:HasDebuff(target, name)
+	if target.components.debuffable ~= nil then
+		return target.components.debuffable:HasDebuff(name)
+	end
+	local pos = target:GetPosition()
+	for i, v in ipairs(TheSim:FindEntities(pos.x, 0, pos.z, 5)) do
+		if v.prefab == name and v.entity:GetParent() == target then
+			return true
+		end
+	end
+	return false
+end
+
+function EpicHealthbar:CanFocusCamera()
+	return self:IsValidPlayer(self.owner)
+		and self.owner.HUD.controls.craftingandinventoryshown
+		and not self:HasDebuff(self.owner, "sporebomb")
+		and self:IsEpic()
+end
+
 function EpicHealthbar:UpdateFocus(dt, params)
 	if self.owner.components.playercontroller ~= nil then
-		if not self:IsValidPlayer(self.owner) then
-			params.nofocus = 0
-		elseif not self.owner.HUD.controls.craftingandinventoryshown then
+		if not self:CanFocusCamera() then
 			params.nofocus = 0.1
 		elseif params.nofocus and not self.owner:HasTag("busy") then
 			self.UpdateTimer(params, "nofocus", dt)
@@ -1590,7 +1615,7 @@ end
 function EpicHealthbar:IsBusy(target)
 	if target.IsEpic ~= nil then
 		return not target:IsEpic()
-	elseif target.epichealth:HasTag("nonlethal") then
+	elseif target:HasTag("nonlethal") then
 		return not target:HasTag("hostile")
 	elseif target:HasTag("attack") then
 		return false
@@ -1754,7 +1779,7 @@ function EpicHealthbar:OnUpdate(dt)
 
 		local target = self:GetNextTarget()
 		if target ~= nil then
-			if self:IsPriorityTarget(target) or self:IsValidTarget(self.target) then
+			if self:IsPriorityTarget(target) or self:IsValid() then
 				self.target = target
 				self.refresh = true
 			end
@@ -1779,7 +1804,7 @@ function EpicHealthbar:OnUpdate(dt)
 		self:Appear()
 	elseif self:IsTimeout() then
 		self:Disappear()
-	elseif self:IsValidTarget(self.target) then
+	elseif self:IsValid() then
 		self:Appear()
 	elseif self.meter_damage.shown and self:IsEpic() then
 		self:Appear()

@@ -1,5 +1,13 @@
 local PRESETS =
 {
+	LAVAARENA =
+	{
+		BACKGROUND_COLOUR1 =	RGB(51, 42, 36),
+		BACKGROUND_COLOUR2 =	RGB(82, 68, 58),
+		FRAME_COLOUR =  		RGB(110, 64, 31),
+		BUTTON_COLOUR = 		RGB(166, 62, 37),
+	},
+
 	QUAGMIRE =
 	{
 		BACKGROUND_COLOUR1 =	RGB(38, 34, 35),
@@ -24,6 +32,7 @@ local PRESETS =
 
 local MODS =
 {
+	["workshop-1824509831"] =	PRESETS.LAVAARENA,
 	["workshop-1583765151"] =   PRESETS.QUAGMIRE,
 	["workshop-2250176974"] =   PRESETS.QUAGMIRE,
 	["workshop-2854270129"] =   PRESETS.EQUINOX,
@@ -40,7 +49,7 @@ local function ApplyOverrides(data)
 end
 
 ApplyOverrides(modconfig)
---ApplyOverrides(PRESETS.WORTOX)
+--ApplyOverrides(PRESETS.LAVAARENA)
 
 for mod, overrides in pairs(MODS) do
 	if KnownModIndex:IsModEnabled(mod) then

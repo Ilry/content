@@ -20,11 +20,7 @@ function AddPrefabPreInit(name, fn)
 	table.insert(postinitfns.PrefabPreInit[name], fn)
 end
 
-function AddSimPreInit(fn)
-	AddPrefabPostInit("world", fn)
-end
-
-AddSimPreInit(function()
+AddPrefabPostInit("world", function()
 	for name, fns in pairs(postinitfns.PrefabPreInit) do
 		local prefab = _G.Prefabs[name]
 		if prefab ~= nil then
@@ -35,7 +31,6 @@ AddSimPreInit(function()
 			end)
 		end
 	end
-	postinitfns.PrefabPreInit = {}
 end)
 
 if not TheNet:IsDedicated() then

@@ -1,7 +1,7 @@
 all_clients_require_mod = true
 dst_compatible = true
 
-version = "87"
+version = "88"
 version_compatible = "57"
 priority = 2 ^ 1023
 api_version = 10
@@ -11,12 +11,12 @@ author = "Tykvesh"
 icon_atlas = "images/modicon.xml"
 icon = "modicon.tex"
 server_filter_tags = { name, author }
-version_description =
+version_description = --•
 [[
-– Added support for the Scrappy Werepig.
-– Spectator camera now includes /sit and /squat.
-– Combos no longer refresh from hits that deal no damage.
-– Speech bubbles no longer obstruct global damage numbers.
+• Added German translation by Bxucher.
+• Added preset for The Battle Arena HUD.
+• Increased brightness for darker damage numbers.
+• Fixed a crash with Epic Healthbar Show Me Compat mod.
 ]]
 
 local LOCALE =
@@ -48,11 +48,6 @@ local LOCALE =
 		TAG_EPIC_HOVER = "The standard experience",
 		TAG_HEALTH = "All",
 		TAG_HEALTH_HOVER = "If supported by the server",
-
-		--GLOBAL_FRAME = "Secondary Bar",
-		--GLOBAL_FRAME_HOVER = "Displays mob health with a separate widget.",
-		--GLOBAL_FRAME_DISABLED = "If supported by the server",
-		--GLOBAL_FRAME_ENABLED = "If supported by the server",
 
 		FRAME_PHASES = "Combat Phases",
 		FRAME_PHASES_HOVER = "Separates bars of applicable giants by phases.",
@@ -88,9 +83,71 @@ local LOCALE =
 		CAMERA_BUTTON_ALT = "Toggle Spectator Camera",
 		CAMERA_BUTTON_FAR = "Too Far!",
 		CAMERA_BUTTON_BLOCKED = "Not Available!",
-		CAMERA_FOCUS_MIN = "Camera Range",
-		CAMERA_FOCUS_MIN_HOVER = "Range within which the camera locks onto targets.",
-		CAMERA_FOCUS_MIN_FMT = "%s wall units",
+	},
+
+	DE =
+	{
+		TRANSLATOR = "Übersetzt von Bxucher",
+		NAME = "Epischelebensleiste",
+		DESCRIPTION_FMT = "Update %s:\n\n%s",
+		HEADER_SERVER = "Server",
+		HEADER_CLIENT = "Client",
+		DISABLED = "Deaktiviert",
+		ENABLED = "Aktiviert",
+
+		GLOBAL = "Monsterleben",
+		GLOBAL_HOVER = "Aktiviert das Clienten das Leben aller Monster sehen.\nClienten müssen beitreten hier drunter.",
+		GLOBAL_DISABLED = "Zeige nur Riesen",
+		GLOBAL_ENABLED = "Zeige alle Monster",
+
+		GLOBAL_NUMBERS = "Globale Schadenszahlen",
+		GLOBAL_NUMBERS_HOVER = "Zeigt Schadenszahlen in der Welt stat dem Widget.\nWirksam in jedem Kampf, nicht nur Riesen.",
+		GLOBAL_NUMBERS_DISABLED = "Zeige Schaden in der Anzeige",
+		GLOBAL_NUMBERS_ENABLED = "Zeige Schaden in der Welt",
+
+		TAG = "Lebensleiste für",
+		TAG_HOVER = "Zeigt Lebensleiste für ausgewählte Moster.",
+		TAG_NONE = "Aus",
+		TAG_NONE_HOVER = "Schreibe /epic in den chat wenn du deine Meinung änderst!",
+		TAG_EPIC = "Riesen",
+		TAG_EPIC_HOVER = "Die Standard Erfahrung",
+		TAG_HEALTH = "Alle",
+		TAG_HEALTH_HOVER = "Wenn unterstützt vom Server",
+
+		FRAME_PHASES = "Kampfphasen",
+		FRAME_PHASES_HOVER = "Teil die Lebensleiste in Phasen auf bei zutreffenden Riesen.",
+		FRAME_PHASES_DISABLED = "Keine Phasen",
+		FRAME_PHASES_ENABLED = "Zeige Phasen",
+
+		DAMAGE_NUMBERS = "Schadenszahlen",
+		DAMAGE_NUMBERS_HOVER = "Zeigt bekommenen Schaden oder Heilung mit auftauchenden Zahlen.",
+		DAMAGE_NUMBERS_DISABLED = "Keine Zahlen",
+		DAMAGE_NUMBERS_ENABLED = "Zeige Zahlen",
+
+		DAMAGE_RESISTANCE = "Schadensresistenz",
+		DAMAGE_RESISTANCE_HOVER = "Zeigt einen Spezialeffekt wen das Ziel weniger\nSchaden bekommt durch desen Verteidigung.",
+		DAMAGE_RESISTANCE_DISABLED = "Kein Effekt",
+		DAMAGE_RESISTANCE_ENABLED = "Zeige Effekt",
+
+		WETNESS_METER = "Nässe",
+		WETNESS_METER_HOVER = "Zeigt einen Spezialeffekt wen das Ziel nass wird.",
+		WETNESS_METER_DISABLED = "Kein Effekt",
+		WETNESS_METER_ENABLED = "Zeige Effekt",
+
+		HORIZONTAL_OFFSET = "Horizontale Verschiebung",
+		HORIZONTAL_OFFSET_HOVER = "Verschiebt die Anzeige von der Mitte weg.",
+		HORIZONTAL_OFFSET_LEFT = "%s units nach Links",
+		HORIZONTAL_OFFSET_NONE = "Keine verschiebung",
+		HORIZONTAL_OFFSET_RIGHT = "%s units nach Rechts",
+
+		CAMERA = "Kampfkamera",
+		CAMERA_HOVER = "Erlaubt der Kamera auf Riesen zu fokussieren.\nSitzen oder verstecken gibt eine Zuschaueransicht.",
+		CAMERA_OPTION = "Knopf",
+		CAMERA_OPTION_HOVER = "Hover über die Lebensanzeige zum ändern",
+		CAMERA_BUTTON = "Aktiviere Kampfkamera",
+		CAMERA_BUTTON_ALT = "Aktiviere Zuschaueransicht",
+		CAMERA_BUTTON_FAR = "Zu weit weg!",
+		CAMERA_BUTTON_BLOCKED = "Nicht verfügbar!",
 	},
 
 	PT =
@@ -156,9 +213,6 @@ local LOCALE =
 		CAMERA_BUTTON_ALT = "Alternar Câmera do Espectador",
 		CAMERA_BUTTON_FAR = "Muito Longe!",
 		CAMERA_BUTTON_BLOCKED = "Não Disponível!",
-		CAMERA_FOCUS_MIN = "Alcance da Câmera",
-		CAMERA_FOCUS_MIN_HOVER = "Alcance dentro do qual a câmera trava no alvo.",
-		CAMERA_FOCUS_MIN_FMT = "%s unidades de parede",
 	},
 
 	RU =
@@ -223,9 +277,6 @@ local LOCALE =
 		CAMERA_BUTTON_ALT = "Переключить камеру наблюдателя",
 		CAMERA_BUTTON_FAR = "Слишком далеко!",
 		CAMERA_BUTTON_BLOCKED = "Сейчас не доступно!",
-		CAMERA_FOCUS_MIN = "Диапазон камеры",
-		CAMERA_FOCUS_MIN_HOVER = "Диапазон в пределах которого камера фокусируется на целях.",
-		CAMERA_FOCUS_MIN_FMT = "%s единиц стен",
 	},
 
 	ZH =
@@ -292,9 +343,6 @@ local LOCALE =
 		CAMERA_BUTTON_ALT = "切换观察者相机",
 		CAMERA_BUTTON_FAR = "太远",
 		CAMERA_BUTTON_BLOCKED = "无法使用",
-		CAMERA_FOCUS_MIN = "相机范围",
-		CAMERA_FOCUS_MIN_HOVER = "摄像头锁定目标的范围",
-		CAMERA_FOCUS_MIN_FMT = "单位 %s",
 	},
 }
 
@@ -349,10 +397,6 @@ function SetLocale(locale, modinfo)
 	end
 
 	local camera = { { description = STRINGS.CAMERA_OPTION, data = true, hover = STRINGS.CAMERA_OPTION_HOVER } }
-	local camera_focus_min = {}
-	for i = 20, 30, 5 do
-		camera_focus_min[#camera_focus_min + 1] = { description = "" .. i, data = i, hover = STRINGS.CAMERA_FOCUS_MIN_FMT:format(i) }
-	end
 
 	configuration_options =
 	{
@@ -367,7 +411,6 @@ function SetLocale(locale, modinfo)
 		MakeOption("WETNESS_METER", nil, false, true),
 		MakeOption("HORIZONTAL_OFFSET", horizontal_offset, 0, true),
 		MakeOption("CAMERA", camera, true, true),
-		--MakeOption("CAMERA_FOCUS_MIN", camera_focus_min, 20, true),
 		STRINGS.TRANSLATOR and MakeHeader("TRANSLATOR"),
 	}
 

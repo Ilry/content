@@ -7,7 +7,7 @@ Trees will stop regrowth at their 3rd stage.
 Not only for better looks, but also lower your pine and fix some lag for your game. 
 ]]
 author = "天涯, 小花朵"
-version = "1.0.3"
+version = "1.1.0"
 
 forumthread = ""
 
@@ -21,7 +21,8 @@ client_only_mod = false
 api_version = 6
 
 api_version_dst = 10  
-
+--mod加载的优先级，不写就默认为0，越大越优先加载
+priority = -999999999999999
 icon_atlas = "modicon.xml"
 icon = "modicon.tex"
 
