@@ -71,25 +71,44 @@ local function AddAnimalStackables(value)
 			if(inst.components.stackable == nil) then
 				inst:AddComponent("stackable")
 			end
-			inst.components.inventoryitem:SetOnDroppedFn(function(inst)
-				-- if(inst.components.perishable ~= nil) then
-					-- inst.components.perishable:StopPerishing()
-				-- end
-				if(inst.sg ~= nil) then
-					inst.sg:GoToState("stunned")
-				end
-				if inst.components.stackable then
-					while inst.components.stackable:StackSize() > 1 do
-						local item = inst.components.stackable:Get()
-						if item then
-							if item.components.inventoryitem then
-								item.components.inventoryitem:OnDropped()
-							end
-							item.Physics:Teleport(inst.Transform:GetWorldPosition())
-						end
+			if inst.components.follower then
+				local old_stack_get = inst.components.stackable.Get
+				function inst.components.stackable:Get(num)
+					local stack_get = old_stack_get(self, num)
+					if inst.components.follower then
+						stack_get.components.follower:SetLeader(inst.components.follower.leader)
 					end
-				 end
-			end)
+					return stack_get
+				end
+			end
+			if inst.components.inventoryitem then
+				inst.components.inventoryitem:SetOnDroppedFn(function(inst)
+					-- if(inst.components.perishable ~= nil) then
+						-- inst.components.perishable:StopPerishing()
+					-- end
+					if(inst.sg ~= nil) then
+						inst.sg:GoToState("stunned")
+					end
+					local leader = nil
+					if inst.components.follower then
+						leader = inst.components.follower.leader
+					end
+					if inst.components.stackable then
+						while inst.components.stackable:StackSize() > 1 do
+							local item = inst.components.stackable:Get()
+							if item then
+								if item.components.inventoryitem then
+									if item.components.follower and leader then
+										item.components.follower:SetLeader(leader)
+									end
+									item.components.inventoryitem:OnDropped()
+								end
+								item.Physics:Teleport(inst.Transform:GetWorldPosition())
+							end
+						end
+					 end
+				end)
+			end
 		end)
 	end
 end

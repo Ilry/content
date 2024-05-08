@@ -82,7 +82,7 @@ AddComponentPostInit("growable",
 		function self:StartGrowing(time)
 			-- 若为常青树、多枝树等树，到第三阶段后立即停止生长
 			if (table_key_exists(plantregrowth_evergreen_list, self.inst.prefab) and self.stage >= (#self.stages-1)) 
-				or (self.stage == #self.stages)
+				or (self.inst.prefab == "lg_litchi_tree" and self.stage == #self.stages)
 			then
 				self:StopGrowing()
 			else

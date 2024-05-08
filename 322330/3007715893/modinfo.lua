@@ -17,7 +17,7 @@ Tip: Close the stack of tall birds when you need to hatch their eggs
 
 author = "天涯共此时、小花朵"
 
-version = "2.1.6"
+version = "2.1.8"
 
 forumthread = ""
 

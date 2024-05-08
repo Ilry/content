@@ -64,6 +64,21 @@ function WXType:IsMili()
     return reinforced or armed
 end
 
+function WXType:IsFull(container, itemtobestored)
+    print(container.components.container:FindItem(function(item)
+        return item.prefab == itemtobestored.prefab and
+            item.components.stackable ~= nil and
+            not item.components.stackable:IsFull()
+    end) == nil)
+    return container.components.container == nil or
+        (container.components.container:IsFull() and
+        container.components.container:FindItem(function(item)
+            return item.prefab == itemtobestored.prefab and
+                item.components.stackable ~= nil and
+                not item.components.stackable:IsFull()
+        end) == nil)
+end
+
 function WXType:NeedsFill()
     return self.inst.components.inventory:FindItem(function(item)
         return item:HasTag("wateringcan") and
@@ -73,7 +88,15 @@ function WXType:NeedsFill()
 end
 
 function WXType:IsConveyerEmpty()
-    local backpack = self.inst.components.inventory and self.inst.components.inventory:GetEquippedItem(EQUIPSLOTS.BODY) or nil
+    local backpack = EQUIPSLOTS.BACK ~= nil and self.inst.components.inventory:GetEquippedItem(EQUIPSLOTS.BACK) or
+        self.inst.components.inventory:GetEquippedItem(EQUIPSLOTS.BODY)
+    if backpack == nil then
+        for k, v in pairs(self.inst.components.inventory.equipslots) do
+            if v:HasTag("backpack") and v.prefab ~= "seedpouch" and v.prefab ~= "candybag" then
+                backpack = v
+            end
+        end
+    end
     return self.inst.components.inventory:FindItem(function(item)
             return item.components.tool == nil and
                 item.components.farmtiller == nil and

@@ -17,7 +17,7 @@ local function OnExtended(inst, target, symbol, offset, time)
 end
 
 local function fn()
-    local inst = CreateEntity()
+	local inst = CreateEntity()
 
 	inst.entity:AddTransform()
 

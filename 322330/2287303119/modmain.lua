@@ -12,7 +12,7 @@
 		TUNING.MONITOR_CHESTS[v] = true
 	end
 
---优先级低于 ShowMe
+--优先级低于 ShowMe		--来自 风铃草 —— 穹妹
 	for k, m in pairs(ModManager.mods) do
 		if m and _G.rawget(m, "SHOWME_STRINGS") then
 			if m.postinitfns and m.postinitfns.PrefabPostInit and m.postinitfns.PrefabPostInit.treasurechest then
@@ -2685,7 +2685,7 @@ function GetTestString(item,viewer) --从这里开始，与Tell Me区分
 				end
 			end ]]--
 			--棱镜农作物 END
-		end
+		end		--农作物 END
 	end
 	--棱镜 子圭育
 	--[[ if c.genetrans then  --他自带刷新机制?? 所有定时器到0依旧无法实时更新状态???
@@ -2714,12 +2714,6 @@ function GetTestString(item,viewer) --从这里开始，与Tell Me区分
 		end
 		if lg_y.timedata.all ~= nil and lg_y.timedata.start ~=nil and lg_y.timedata.pass ~=nil then  -- +1 大约 0:00
 			table.insert(desc_table, "@+1"..o_t._in .. DataTimerFn((lg_y.timedata.all - lg_y.timedata.pass) / lg_upx - (GetTime() - lg_y.timedata.start)).. lg_tup)
-		end
-	end
-	if c.batterylegion then  --batterylegion  电气石
-		local lg_bl = c.batterylegion
-		if lg_bl.time_start ~= nil and lg_bl.charge_period ~=nil then
-			table.insert(desc_table, "@+1% "..o_t._in .. DataTimerFn(lg_bl.charge_period - (GetTime() - lg_bl.time_start)))
 		end
 	end
 	if c.botanycontroller then  --botanycontroller 三个种菜装置
@@ -2756,6 +2750,12 @@ function GetTestString(item,viewer) --从这里开始，与Tell Me区分
 		local lg_numstages = c.upgradeable.numstages - 1
 		table.insert(desc_table, "@"..o_t.lg_moon..item._lvl_l:value().." / "..lg_numstages)
 	end ]]--
+	if c.batterylegion then  --batterylegion  电气石
+		local lg_bl = c.batterylegion
+		if lg_bl.time_start ~= nil and lg_bl.charge_period ~= nil then
+			table.insert(desc_table, "@+1% "..o_t._in .. DataTimerFn(lg_bl.charge_period - (GetTime() - lg_bl.time_start)))
+		end
+	end
 	--棱镜END
 	--buling
 	if c.beerpower then
@@ -2977,7 +2977,7 @@ do
 			return ""
 		end
 		local guid = _G.tonumber(c.showme_hint2:sub(1,i-1))
-		if type(inst) ~= "number" and guid ~= inst.GUID then --guid不匹配 (或nil情况下)
+		if guid ~= inst.GUID then --guid不匹配 (或nil情况下)
 			return ""
 		end
 		return c.showme_hint2:sub(i+1)
@@ -3053,17 +3053,17 @@ do
 					--target.widget.parent -- 这是项目图层
 					--target = target.widget ~= nil and target.widget.parent ~= nil and target.widget.parent.item --实体物品（在客户端）
 					
-					--[[local tar = target.widget ~= nil and target.widget.parent ~= nil and target.widget.parent.item
+					local tar = target.widget ~= nil and target.widget.parent ~= nil and target.widget.parent.item
 					if tar ~= nil then	--多加一层判断
 						target = tar
 					else	--获取深一层的图层，奔雷矛多了一层parent
 						target = target.widget ~= nil and target.widget.parent ~= nil and target.widget.parent.parent ~= nil and target.widget.parent.parent.item
-					end]]--
-					--使用递归以免以后有N层parent，感谢群里的靓仔提供递归案例
-					local function par(w)
-						return w.parent and (w.parent.item or par(w.parent)) or nil
 					end
-					target = target.widget ~= nil and par(target.widget)
+					--使用递归以免以后有N层parent，目前官方只有2层parent，至于模组多层的先不兼，因为会引发target=1导致崩溃
+					-- local function par(w)
+						-- return w.parent and (w.parent.item or par(w.parent)) or nil
+					-- end
+					-- target = target.widget ~= nil and par(target.widget)
 				else
 					target = _G.TheInput:GetWorldEntityUnderMouse()
 				end
@@ -3237,7 +3237,7 @@ do
 		end
 		if item ~= nil and item.components ~= nil then
 			local s = GetTestString(item,player) --在服务器上形成一个字符串。
-			if s ~= "" and guid ~= nil then	--guid不为nil，不考虑表了
+			if s ~= "" then
 				player.player_classified.net_showme_hint2:set(tostring(guid)..";"..s) --将其打包成一行并将其发送回同一玩家
 			end
 		end
@@ -3395,7 +3395,7 @@ do
 					inst.ShowMeColor(true)
 				else
 					if inst.AnimState ~= nil then
-						inst.AnimState:SetMultColour(1,1,1,1) --默认颜色
+						inst.AnimState:SetMultColour(1,1,1,1) --默认颜色RGBA
 						inst.AnimState:SetLightOverride(0)
 					end
 					inst.b_ShowMe_changed_color = nil
@@ -3454,7 +3454,7 @@ do
 		end)
 	end
 	
-	for k in pairs(MONITOR_CHESTS) do
+	for k in pairs(MONITOR_CHESTS) do	--添加API
 		AddPrefabPostInit(k,InitChest)
 	end
 	--Фиксим игрока, чтобы мониторить действия курсора.

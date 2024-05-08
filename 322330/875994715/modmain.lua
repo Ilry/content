@@ -25,7 +25,7 @@ local function memset(value, ...) mem[argtohash(...)] = value end
 
 Tykvesh =
 {
-	Dummy = function() end,
+	Error = print,
 
 	Parallel = function(root, key, fn, lowprio)
 		if type(root) == "table" then
@@ -40,55 +40,6 @@ Tykvesh =
 					root[key] = function(...) fn(...) return oldfn(...) end
 				end
 				memset(root[key], "PARALLEL", oldfn, fn)
-			end
-		end
-	end,
-
-	Sequence = function(root, key, fn, noselect)
-		if type(root) == "table" then
-			local oldfn = root[key] or Tykvesh.Dummy
-			local newfn = memget("SEQUENCE", oldfn, fn)
-			if newfn then
-				root[key] = newfn
-			else
-				if noselect then
-					root[key] = function(...)
-						local ret = { oldfn(...) }
-						for i, v in pairs({ fn(ret, ...) }) do
-							ret[i] = v
-						end
-						return unpack(ret)
-					end
-				else
-					root[key] = function(...)
-						local ret = { oldfn(...) }
-						for i, v in pairs({ fn(ret[1], ...) }) do
-							ret[i] = v
-						end
-						return unpack(ret)
-					end
-				end
-				memset(root[key], "SEQUENCE", oldfn, fn)
-			end
-		end
-	end,
-
-	Browse = function(table, ...)
-		for i, v in ipairs(arg) do
-			if type(table) ~= "table" then
-				return
-			end
-			table = table[v]
-		end
-		return table
-	end,
-
-	Merge = function(to, from)
-		for k, v in pairs(from) do
-			if type(v) == "table" and type(to[k]) == "table" then
-				Tykvesh.Merge(to[k], v)
-			else
-				to[k] = v
 			end
 		end
 	end,
@@ -107,11 +58,5 @@ for index, module in ipairs(Modules) do
 	local result = kleiloadlua(MODROOT .. "scripts/" .. module .. ".lua")
 	if type(result) == "function" then
 		RunInEnvironment(result, env)
-	elseif IsInFrontEnd() then
-		print("XXX", result or "Error in " .. module .. " module!")
-	elseif AddLocalPlayerPostInit ~= nil then
-		AddLocalPlayerPostInit(function(inst)
-			inst:DoTaskInTime(1, function() Networking_SystemMessage(result or "Error in " .. module .. " module!") end)
-		end)
 	end
 end

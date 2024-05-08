@@ -1127,7 +1127,7 @@ end
 
 local TOPICKUP_CANT_TAGS = { "fire", "smolder", "INLIMBO", "NOCLICK", "event_trigger", "catchable", "irreplaceable", "heavy", "outofreach" }
 function WXNavigation:FindEntityToPickUpAction()
-    local backpack = GetEquippedBackpack(self.inst)
+    --local backpack = GetEquippedBackpack(self.inst)
     local target = FindEntity(self.inst, SEE_WORK_DIST, function(item)
         return item ~= nil and
         item:IsValid() and
@@ -1144,8 +1144,10 @@ function WXNavigation:FindEntityToPickUpAction()
         -- Target item is backpack
         (not self.inst.components.wxtype.augmentlock and --backpack == nil and
         not self.inst.components.inventory:EquipHasTag("backpack") and
-        item.components.equippable ~= nil and item.components.container ~= nil and
-        item.prefab ~= "seedpouch" and item.prefab ~= "candybag")
+        item.components.equippable ~= nil and
+        (EQUIPSLOTS.BACK ~= nil and item.components.equippable.equipslot == EQUIPSLOTS.BACK or
+        item.components.equippable.equipslot == EQUIPSLOTS.BODY) and
+        item.components.container ~= nil and item.prefab ~= "seedpouch" and item.prefab ~= "candybag")
     end, nil, TOPICKUP_CANT_TAGS)
 
     return target ~= nil and BufferedAction(self.inst, target, ACTIONS.AUGMENT) or

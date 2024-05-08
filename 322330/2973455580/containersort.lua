@@ -28,6 +28,7 @@ if isclient and TUNING.TEMP2HM.opensort ~= nil then TUNING.DATA2HM.opensort = TU
 
 -- 给容器添加tag"dcs2hm"或容器inst.dcs2hm = true可以禁用对容器进行的各种功能,且不显示各类按钮
 -- 不会从下列容器中收集道具
+local collectwhitelist = {"seedpouch", "candybag"}
 local collectblacklist = {"pandoraschest", "minotaurchest", "terrariumchest", "sisturn"}
 -- 条件存放容器和黑名单白名单存放容器
 local conditionstorelist = {dragonflyfurnace = function(v) return TheWorld.state.iswinter and v:HasTag("heatrock") end}
@@ -598,7 +599,10 @@ local function exchangeapplydata(inst, containerdata)
     end
 end
 local function exchangetaskend(inst)
+    if inst:HasTag("exchangeloading2hm") then inst:RemoveTag("exchangeloading2hm") end
     if inst.containersendtask2hm then inst.containersendtask2hm = nil end
+    if inst.containerreceivetask2hm then inst.containerreceivetask2hm = nil end
+    if inst.exchangeconfirmtask2hm then inst.exchangeconfirmtask2hm = nil end
     if inst.sendcontainerproxyplayer2hm then
         local player = inst.sendcontainerproxyplayer2hm
         if player and player:IsValid() and player.components.talker then
@@ -607,7 +611,6 @@ local function exchangetaskend(inst)
         end
         inst.sendcontainerproxyplayer2hm = nil
     end
-    if inst.containerreceivetask2hm then inst.containerreceivetask2hm = nil end
     if inst.sendcontainerproxydata2hm then inst.sendcontainerproxydata2hm = nil end
     if inst.exchangetmpdata2hm then
         exchangeapplydata(inst, inst.exchangetmpdata2hm)
@@ -619,27 +622,30 @@ AddShardModRPCHandler("MOD_HARDMODE", "exchangeconfirm2hm", function(shard_id, w
     if TheShard and tostring(TheShard:GetShardId()) ~= tostring(shard_id) and tostring(TheShard:GetShardId()) == tostring(world_id) then
         local container = TheWorld:GetPocketDimensionContainer(name)
         if container and container:IsValid() and container.components.container and container.exchangetmpdata2hm and not container.containersendtask2hm and
-            container.containerreceivetask2hm and container.sendcontainerproxydata2hm then
+            not container.exchangeconfirmtask2hm and container.containerreceivetask2hm and container.sendcontainerproxydata2hm then
             container.exchangetmpdata2hm = nil
             container.containerreceivetask2hm:Cancel()
             container.containerreceivetask2hm = nil
             exchangeapplydata(container, container.sendcontainerproxydata2hm)
             container.sendcontainerproxydata2hm = nil
+            if container:HasTag("exchangeloading2hm") then container:RemoveTag("exchangeloading2hm") end
         end
     end
 end)
 -- 所在世界的穿越请求被确认,更新数据,且确认对方的确认请求
 AddShardModRPCHandler("MOD_HARDMODE", "exchangeconfirmdata2hm", function(shard_id, world_id, name, containerdata)
     if TheShard and tostring(TheShard:GetShardId()) ~= tostring(shard_id) and tostring(TheShard:GetShardId()) == tostring(world_id) then
+        if TheNet:IsServerPaused() then TheNet:SetServerPaused(false) end
         local container = TheWorld:GetPocketDimensionContainer(name)
         if container and container:IsValid() and container.components.container and container.exchangetmpdata2hm and container.containersendtask2hm and
-            not container.containerreceivetask2hm and container.sendcontainerproxyplayer2hm and containerdata then
+            not container.containerreceivetask2hm and not container.exchangeconfirmtask2hm and container.sendcontainerproxyplayer2hm and containerdata then
             local success, data = RunInSandboxSafe(containerdata)
             if success and data and data.time2hm and os.time() - data.time2hm < 400 then
                 container:DoStaticTaskInTime(FRAMES * 1.5, exchangesenddata, "exchangeconfirm2hm", shard_id, name, true)
                 container.exchangetmpdata2hm = nil
                 container.containersendtask2hm:Cancel()
                 container.containersendtask2hm = nil
+                container.exchangeconfirmtask2hm = container:DoTaskInTime(0.25, exchangetaskend)
                 exchangeapplydata(container, data)
                 local player = container.sendcontainerproxyplayer2hm
                 if player and player:IsValid() and player.components.talker then
@@ -656,9 +662,10 @@ AddShardModRPCHandler("MOD_HARDMODE", "exchangesenddata2hm", function(shard_id, 
     if TheShard and tostring(TheShard:GetShardId()) ~= tostring(shard_id) and tostring(TheShard:GetShardId()) == tostring(world_id) then
         local container = TheWorld:GetPocketDimensionContainer(name)
         if container and container:IsValid() and container.components.container and container.virtchest == nil and not container.containersendtask2hm and
-            not container.containerreceivetask2hm and containerdata then
+            not container.containerreceivetask2hm and not container.exchangeconfirmtask2hm and containerdata then
             local success, data = RunInSandboxSafe(containerdata)
             if success and data and data.time2hm and os.time() - data.time2hm < 350 then
+                if not container:HasTag("exchangeloading2hm") then container:AddTag("exchangeloading2hm") end
                 container.containerreceivetask2hm = container:DoTaskInTime(3, exchangetaskend)
                 container.sendcontainerproxydata2hm = data
                 container:DoStaticTaskInTime(FRAMES * 1.5, exchangesenddata, "exchangeconfirmdata2hm", shard_id, name)
@@ -689,12 +696,14 @@ local function findanotherworldid(inst)
 end
 -- 所在世界进行穿越请求
 local function exchangefn(player, inst)
-    if TheWorld.ismastersim and inst.components.container and not inst.containersendtask2hm and not inst.containerreceivetask2hm and inst.virtchest == nil then
+    if TheWorld.ismastersim and inst.components.container and not inst.containersendtask2hm and not inst.containerreceivetask2hm and
+        not inst.exchangeconfirmtask2hm and inst.virtchest == nil then
         inst.sendcontainerproxyplayer2hm = player
         inst.containersendtask2hm = inst:DoTaskInTime(1.5, exchangetaskend)
         local name = findcontainerproxyname(inst)
         local world_id = findanotherworldid(inst)
         if world_id and name then
+            if not inst:HasTag("exchangeloading2hm") then inst:AddTag("exchangeloading2hm") end
             exchangesenddata(inst, "exchangesenddata2hm", world_id, name)
         elseif player and player:IsValid() and player.components.talker then
             player.components.talker:Say((TUNING.isCh2hm and "找不到世界和容器穿越哎" or "Can't find another world's container to exchange."))
@@ -710,7 +719,7 @@ local function exchangebtnfn(inst, doer)
         SendModRPCToServer(GetModRPC("MOD_HARDMODE", "exchangebtn2hm"), inst)
     end
 end
-local function exchangevalidfn(inst) return defaultbtnvalidfn(inst) and inst:HasTag("pocketdimension_container") end
+local function exchangevalidfn(inst) return defaultbtnvalidfn(inst) and inst:HasTag("pocketdimension_container") and not inst:HasTag("exchangeloading2hm") end
 
 -- 容器收集
 local function getfinalowner(inst)
@@ -1048,8 +1057,9 @@ local function docollect(inst, player)
                             findcontainersincontainer(master, ents)
                         end
                     elseif v.components.container and not v.dcs2hm and v.components.container.canbeopened and
-                        (not v.components.inventoryitem or v:HasTag("heavy")) and not player.components.inventory.opencontainers[v] and
-                        not table.contains(collectblacklist, v.prefab) and v:GetCurrentPlatform() == platform then
+                        (table.contains(collectwhitelist, v.prefab) or not v.components.inventoryitem or v:HasTag("heavy")) and
+                        not player.components.inventory.opencontainers[v] and not table.contains(collectblacklist, v.prefab) and v:GetCurrentPlatform() ==
+                        platform then
                         table.insert(ents, v)
                         findcontainersincontainer(v, ents)
                     end
@@ -1546,11 +1556,11 @@ Use Orange Amulet will Picktop Near Same Items]],
         },
         exchangebtn = {
             text = TUNING.isCh2hm and "穿越" or "PassW",
-            helptext = TUNING.isCh2hm and [[与随机其他世界的该容器交换道具]] or [[exchange container data with another world's the container]],
+            helptext = TUNING.isCh2hm and [[与其他世界的该容器交换道具]] or [[exchange container data with another world's the container]],
             fn = exchangebtnfn,
             validfn = exchangevalidfn
         },
-        reskinbtn = {text = TUNING.isCh2hm and "换装" or "Skin", poslist = poslist, fn = reskinbtnfn, validfn = reskinvalidfn}
+        reskinbtn = {text = TUNING.isCh2hm and "换装" or "Skin", fn = reskinbtnfn, validfn = reskinvalidfn}
     }
     local function addbuttoninfoforcontainerparams(prefab, container)
         if container and container.inst and not container.inst:HasTag("dcs2hm") and not container.inst.dcs2hm and not container.usespecificslotsforitems and
@@ -2002,7 +2012,7 @@ if itemscfg then
                             findcontainersincontainer(master, ents)
                         end
                     elseif v.components.container and not v.dcs2hm and v.components.container.canbeopened and
-                        (not v.components.inventoryitem or v:HasTag("heavy")) and not inventory.opencontainers[v] and
+                        (table.contains(collectwhitelist, v.prefab) or not v.components.inventoryitem or v:HasTag("heavy")) and not inventory.opencontainers[v] and
                         not table.contains(collectblacklist, v.prefab) and v:GetCurrentPlatform() == platform then
                         table.insert(ents, v)
                         findcontainersincontainer(v, ents)
@@ -2700,8 +2710,8 @@ end
 -- 容器存取轨迹补丁
 local clientitemtransferimage2hmdist = 36 * 36
 local function clientitemtransferimage2hm(img, atlas, x, y, z, prevcontainer, prevslot, _x, _y, _z, currcontainer, currslot, userid, iscollectact)
-    if ThePlayer and ThePlayer.userid and ThePlayer.HUD and TheFrontEnd and ThePlayer.HUD == TheFrontEnd:GetActiveScreen() and ThePlayer.HUD.controls and
-        ThePlayer.HUD.controls.inv and ThePlayer.HUD.controls.containers then
+    if img and atlas and x and y and z and -x and _y and _z and userid and ThePlayer and ThePlayer.userid and ThePlayer.HUD and TheFrontEnd and ThePlayer.HUD ==
+        TheFrontEnd:GetActiveScreen() and ThePlayer.HUD.controls and ThePlayer.HUD.controls.inv and ThePlayer.HUD.controls.containers then
         local controls = ThePlayer.HUD.controls
         -- 自己取出道具,官方已有路径
         -- 自己存放道具,未存放到己已打开容器时,需要添加路径,已添加
@@ -2799,24 +2809,26 @@ local function onitemget(inst, data)
         local prevcontainer = src.userid or src.GUID
         local currcontainer = inst.userid or inst.GUID
         local userid = actplayer.userid
-        local rpc = GetClientModRPC("MOD_HARDMODE", "itemtransferimage2hm")
-        -- 尝试通知符合条件的所有玩家显示该路径
-        for index, player in ipairs(AllPlayers) do
-            if player and player:IsValid() and player.userid then
-                local isself = player.userid == userid
-                -- 进行快捷取出操作的玩家不需要显示该路径
-                -- 已打开目的容器的玩家不需要显示该路径
-                -- 一定距离外的他人不需要显示该路径
-                if not (iscollectact and isself) and not (inst.components.container and inst.components.container.openlist[player]) and
-                    (isself or player:GetDistanceSqToPoint(x, y, z) < clientitemtransferimage2hmdist or player:GetDistanceSqToPoint(_x, _y, _z) <
-                        clientitemtransferimage2hmdist) then
-                    -- 客户端玩家不需要发rpc
-                    if isclient and ThePlayer == player then
-                        clientitemtransferimage2hm(img, atlas, x, y, z, prevcontainer, data.item.prevslot, _x, _y, _z, currcontainer, data and data.slot,
-                                                   userid, iscollectact)
-                    else
-                        SendModRPCToClient(rpc, player.userid, img, atlas, x, y, z, prevcontainer, data.item.prevslot, _x, _y, _z, currcontainer,
-                                           data and data.slot, userid, iscollectact)
+        if img and atlas and x and y and z and -x and _y and _z and userid then
+            local rpc = GetClientModRPC("MOD_HARDMODE", "itemtransferimage2hm")
+            -- 尝试通知符合条件的所有玩家显示该路径
+            for index, player in ipairs(AllPlayers) do
+                if player and player:IsValid() and player.userid then
+                    local isself = player.userid == userid
+                    -- 进行快捷取出操作的玩家不需要显示该路径
+                    -- 已打开目的容器的玩家不需要显示该路径
+                    -- 一定距离外的他人不需要显示该路径
+                    if not (iscollectact and isself) and not (inst.components.container and inst.components.container.openlist[player]) and
+                        (isself or player:GetDistanceSqToPoint(x, y, z) < clientitemtransferimage2hmdist or player:GetDistanceSqToPoint(_x, _y, _z) <
+                            clientitemtransferimage2hmdist) then
+                        -- 客户端玩家不需要发rpc
+                        if isclient and ThePlayer == player then
+                            clientitemtransferimage2hm(img, atlas, x, y, z, prevcontainer, data.item.prevslot, _x, _y, _z, currcontainer, data and data.slot,
+                                                       userid, iscollectact)
+                        else
+                            SendModRPCToClient(rpc, player.userid, img, atlas, x, y, z, prevcontainer, data.item.prevslot, _x, _y, _z, currcontainer,
+                                               data and data.slot, userid, iscollectact)
+                        end
                     end
                 end
             end

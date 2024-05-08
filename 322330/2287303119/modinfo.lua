@@ -1,5 +1,5 @@
 -- information about the mod
-version = "0.59.9.2a"
+version = "0.59.9.3"
 name = "Show Me (中文)"
 author = "Star, +Serp, 傳說覺悟"
 forumthread = ""
@@ -35,7 +35,7 @@ api_version = 10
 priority = 0.00666155465 --Priority does not matter.
 --russian_icon = true
 
-server_filter_tags = {"showme", "showme5992", "提示语句",}
+server_filter_tags = {"showme", "showme5993", "提示语句",}
 
 bugtracker_config = {
     upload_client_log = true,  -- 客户端报错日志
