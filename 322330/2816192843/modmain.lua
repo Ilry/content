@@ -1,34 +1,24 @@
-GLOBAL.setmetatable(env, {__index = function(t, k) return GLOBAL.rawget(GLOBAL, k) end})
+GLOBAL.setmetatable(env, {
+  __index = function(t, k) return GLOBAL.rawget(GLOBAL, k) end
+})
 modimport("scripts/apis.lua")
-utils.mod("skinqueue")
 local MYMODNAME = "SEESPOOLS"
 if RegisterMod(MYMODNAME) then
   print("duplicate spool mod detected")
   return
 end
-local spinner = nil
+if GetConfig("skinqueue") == "true" then utils.mod("skinqueue") end
+local spinner1 = nil
 local spinner2 = nil
 local enableprint = GetConfig("enableprint") == "true"
 local translation = {
   chinese = {
-    "金额",
-    "线轴",
-    "拆线性价比",
-    "线轴价值比",
-    "发布时间",
-    "线轴",
-    "线轴价值比",
-    "金额"
+    "金额", "线轴", "拆线性价比", "线轴价值比", "发布时间",
+    "线轴", "线轴价值比", "金额"
   },
   english = {
-    "Currency",
-    "Spools",
-    "Unravelled Per Unit",
-    "Spools Per Unit",
-    "Release",
-    "Spools",
-    "Spools Per Unit",
-    "Currency"
+    "Currency", "Spools", "Unravelled Per Unit", "Spools Per Unit", "Release",
+    "Spools", "Spools Per Unit", "Currency"
   }
 }
 local opt = {}
@@ -131,29 +121,33 @@ local function GetSpoolPrice(name)
   end
   return spools
 end
-local function GetPerSpool(price, spools) return math.floor(spools / price) end
+local function GetPerSpool(price, spools) return
+  math.floor(spools / price + 0.5) end
 local OldBuildPriceStr = BuildPriceStr
 local function NewBuildPrice(value, iap_def, sale_active, ...)
   local ret = OldBuildPriceStr(value, iap_def, sale_active, ...)
-  if spinner then
-    local data = spinner:GetSelectedData()
-    if type(value) ~= "number" then value = iap_def.value or GetPriceFromIAPDef(value, sale_active) end
+  if spinner1 then
+    local data = spinner1:GetSelectedData()
+    if type(value) ~= "number" then
+      value = iap_def.value or GetPriceFromIAPDef(value, sale_active)
+    end
     value = value / 100
     local spools = iap_def.spools or GetSpoolPrice(iap_def.item_type)
     local per_spool = GetPerSpool(value, spools)
     if enableprint then
-      CONSOLE.log(iap_def.item_type, " spools: " .. spools .. " per_spool: " .. per_spool .. " value: " .. value)
+      CONSOLE.log(iap_def.item_type, " spools: " .. spools .. " per_spool: " ..
+                    per_spool .. " value: " .. value)
     end
-    local str_per = string.format("PER %d", per_spool)
-    local str_ravel = string.format("PER %d", per_spool * 3) -- assume 3x
-    local str_spool = string.format("SP %d", spools * 3) -- again assume 3x
     if data == 0 then
       return ret
     elseif data == 1 then
+      local str_spool = string.format("SP %d", spools * 3) -- again assume 3x
       return str_spool
     elseif data == 2 then
+      local str_per = string.format("PER %d", per_spool)
       return str_per
     elseif data == 3 then
+      local str_ravel = string.format("PER %d", per_spool * 3) -- assume 3x
       return str_ravel
     end
   end
@@ -167,26 +161,27 @@ local function ModifyItem(self)
     local spools = GetSpoolPrice(self.iap_def.item_type) or ""
     local perspool = ""
     if type(spools) == "number" then perspool = GetPerSpool(price, spools) end
-    CONSOLE.log(string.format("%s: %s (%s)", self.iap_def.item_type, price, perspool))
+    CONSOLE.log(string.format("%s: %s (%s)", self.iap_def.item_type, price,
+                              perspool))
     self.price:SetString("SPOOL " .. spools .. "/" .. perspool)
   end
 end
 local pc = nil
 local sortfns = {
   function(a, b)
-    if MISC_ITEMS[a.item_type].release_group == MISC_ITEMS[b.item_type].release_group then
-      return MISC_ITEMS[a.item_type].display_order < MISC_ITEMS[b.item_type].display_order
+    if MISC_ITEMS[a.item_type].release_group ==
+      MISC_ITEMS[b.item_type].release_group then
+      return MISC_ITEMS[a.item_type].display_order <
+               MISC_ITEMS[b.item_type].display_order
     else
-      return MISC_ITEMS[a.item_type].release_group > MISC_ITEMS[b.item_type].release_group
+      return MISC_ITEMS[a.item_type].release_group >
+               MISC_ITEMS[b.item_type].release_group
     end
-  end,
-  function(a, b) return a.spools > b.spools end,
-  function(a, b)
+  end, function(a, b) return a.spools > b.spools end, function(a, b)
     if a.value == 0 then return false end
     if b.value == 0 then return true end
     return a.spools / a.value > b.spools / b.value
-  end,
-  function(a, b) return a.value > b.value end
+  end, function(a, b) return a.value > b.value end
 }
 local NewSortFn = function(mode)
   if mode == nil then
@@ -220,17 +215,22 @@ local function fn(self)
   if #self.filters == 0 then return end
   self.filters[#self.filters + 1] = self:_CreateSpinnerFilter("SEE", see, opt)
   local sp = self.filters[#self.filters]
-  spinner = sp.spinner
+  spinner1 = sp.spinner
   local _1, height = UPVALUE.fetch(self._BuildPurchasePanel, "height")
   height = height or 30
   local _2, spacing = UPVALUE.fetch(self._BuildPurchasePanel, "spacing")
   spacing = spacing or 3
-  sp:SetPosition(0, (#self.filters) * -(height + spacing), 0)
-  self.filters[#self.filters + 1] = self:_CreateSpinnerFilter("SORT", sort, opt2)
+  self.filters[#self.filters + 1] =
+    self:_CreateSpinnerFilter("SORT", sort, opt2)
   local st = self.filters[#self.filters]
   spinner2 = st.spinner
-  st:SetPosition(0, (#self.filters) * -(height + spacing), 0)
-  -- spinner:SetOnChangedFn()
+  for i, spinner in pairs(self.filters) do
+    spinner:SetPosition(0, i * -(height + spacing))
+    if i > 1 then spinner:SetFocusChangeDir(MOVE_UP, self.filters[i - 1]) end
+    if i < #self.filters then
+      spinner:SetFocusChangeDir(MOVE_DOWN, self.filters[i + 1])
+    end
+  end
   if self.sales_btn then
     local pos = self.sales_btn:GetPosition()
     local x, y, z = pos.x, pos.y, pos.z
@@ -260,12 +260,18 @@ if GetConfig("showhidden") == "true" then
     return true
   end
 end
-if GetConfig("showall") == "true" then function GLOBAL.IsDefaultSkinOwned() return true end end
-if GetConfig("showhidden") == "true" then MapDict(MISC_ITEMS, function(k, v) v.display_items = v.output_items end) end
+if GetConfig("showall") == "true" then
+  function GLOBAL.IsDefaultSkinOwned() return true end
+end
+if GetConfig("showhidden") == "true" then
+  MapDict(MISC_ITEMS, function(k, v) v.display_items = v.output_items end)
+end
 utils.class("screens/redux/itemboxopenerpopup", function(self)
   function self:CanExit() return true end
+
   if not self.back_button then
     local TEMPLATES = require "widgets/redux/templates"
-    self.back_button = self.center_root:AddChild(TEMPLATES.BackButton(function() self:_TryClose() end))
+    self.back_button = self.center_root:AddChild(
+                         TEMPLATES.BackButton(function() self:_TryClose() end))
   end
 end)

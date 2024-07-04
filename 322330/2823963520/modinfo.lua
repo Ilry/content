@@ -1,5 +1,5 @@
 name = "Where you are?"
-version = "1.2.1"
+version = "1.2.3"
 description = "version: " .. version .. "\n\n你在哪里呀？"
 author = "朋也"
 forumthread = ""

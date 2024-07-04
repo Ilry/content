@@ -15,6 +15,9 @@ return {
     "dock_woodposts_item",--码头桩
     "boat_magnet_beacon",--自动航行灯塔
     "oar_monkey",--战桨
+    
+    "boat_bumper_yotd_kit",--獠牙保险杠套装
+    "boat_bumper_crabking_kit",--帝王蟹保险杠套装
     "boat_bumper_shell_kit",--贝壳保险杠套装
     "boat_bumper_kelp_kit",--海带保险杠套装
     "ocean_trawler_kit",--海洋拖网捕鱼器套装
@@ -33,6 +36,8 @@ return {
     "anchor_item",
     "steeringwheel_item",
     "boatpatch",
+    "boatpatch_kelp",--海带补丁
+    "boat_ancient_item",--古董船套装
     "boat_item",
     --采集工具
     "shovel_lunarplant",--亮茄铲子

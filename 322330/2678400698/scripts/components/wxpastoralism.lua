@@ -1,3 +1,5 @@
+local preparedfoods = require("preparedfoods")
+
 local SEE_WORK_DIST = TUNING.WXAUTOMATION.SEE_WORK_DIST
 local KEEP_WORKING_DIST = SEE_WORK_DIST + 6
 
@@ -5,7 +7,8 @@ local WXPastoralism = Class(function(self, inst)
     self.inst = inst
 end)
 
-local BEEF_TAG = { "beefalo" }
+local DOMESTICATABLE_TAG = { "domesticatable" }
+local BEEF_TAG = { "beefalo", "koalefant" }
 local SALTLICK_TAG = { "saltlick" }
 function WXPastoralism:Feed()
     local leader = self.inst.components.follower.leader or self.inst.components.entitytracker:GetEntity("sentryward")
@@ -13,40 +16,49 @@ function WXPastoralism:Feed()
         return nil
     end
 
-    local beef = FindEntity(leader, SEE_WORK_DIST, function(ent)
-        return ent.components.domesticatable ~= nil
-    end, BEEF_TAG)
-    if beef == nil or beef.components.trader == nil then
-        return nil
-    end
+    local hungrybeef = FindEntity(leader, SEE_WORK_DIST, function(ent)
+        return ent.components.domesticatable ~= nil and ent.components.trader ~= nil and
+            ent.components.hunger ~= nil and ent.components.hunger:GetPercent() <= TUNING.BEEFALO_BEG_HUNGER_PERCENT
+    end, DOMESTICATABLE_TAG, nil, BEEF_TAG)
 
-    if beef.components.hunger:GetPercent() <= (beef.components.domesticatable.domesticated and 0.5 or TUNING.BEEFALO_BEG_HUNGER_PERCENT) then
+    if hungrybeef ~= nil then
         local saltlick = FindEntity(leader, SEE_WORK_DIST, function(ent)
             return ent.prefab == "saltlick" and ent.components.finiteuses ~= nil and ent.components.finiteuses:GetUses() > 0
         end, SALTLICK_TAG)
         local food = self.inst.components.inventory:FindItem(function(item)
-            return item.prefab == "beefalofeed" or item.prefab == "beefalotreat"
+            --return item.prefab == "beefalofeed" or item.prefab == "beefalotreat"
+            return preparedfoods[item.prefab] ~= nil and
+                hungrybeef.components.trader:AbleToAccept(item, self.inst)
         end)
         if food == nil then
             food = self.inst.components.inventory:FindItem(function(item)
                 return item.components.edible ~= nil and item.components.edible.hungervalue > 0 and
-                    (item.components.edible.foodtype == FOODTYPE.VEGGIE or
-                    item.components.edible.foodtype == FOODTYPE.ROUGHAGE)
+                    hungrybeef.components.trader:AbleToAccept(item, self.inst)
             end)
         end
-        if saltlick == nil and food ~= nil and beef.components.trader:AbleToAccept(food, self.inst) then
-            return BufferedAction(self.inst, beef, ACTIONS.GIVE, food)
+        if saltlick == nil and food ~= nil then
+            return BufferedAction(self.inst, hungrybeef, ACTIONS.GIVE, food)
         end
     end
-    if not beef.components.rideable:TestObedience() then
+
+    local disobedientbeef = FindEntity(leader, SEE_WORK_DIST, function(ent)
+        return ent.components.domesticatable ~= nil and ent.components.trader ~= nil and
+            ent.components.rideable ~= nil and not ent.components.rideable:TestObedience()
+    end, DOMESTICATABLE_TAG, nil, BEEF_TAG)
+
+    if disobedientbeef ~= nil then
         local food = self.inst.components.inventory:FindItem(function(item)
-            return item.prefab ~= "beefalofeed" and item.prefab ~= "beefalotreat" and
-                item.components.edible ~= nil and
-                (item.components.edible.foodtype == FOODTYPE.VEGGIE or
-                item.components.edible.foodtype == FOODTYPE.ROUGHAGE)
+            return item.components.edible ~= nil and item.components.edible.hungervalue == 0 and
+                disobedientbeef.components.trader:AbleToAccept(item, self.inst)
         end)
-        if food ~= nil and beef.components.trader:AbleToAccept(food, self.inst) then
-            return BufferedAction(self.inst, beef, ACTIONS.GIVE, food)
+        if food == nil then
+            food = self.inst.components.inventory:FindItem(function(item)
+                return preparedfoods[item.prefab] == nil and
+                    hungrybeef.components.trader:AbleToAccept(item, self.inst)
+            end)
+        end
+        if food ~= nil then
+            return BufferedAction(self.inst, disobedientbeef, ACTIONS.GIVE, food)
         end
     end
 end
@@ -60,7 +72,7 @@ function WXPastoralism:Brush()
     local beef = FindEntity(leader, SEE_WORK_DIST, function(ent)
         return ent.components.brushable ~= nil and ent.components.brushable:CalculateNumPrizes() > 0 and
             ent.components.domesticatable ~= nil and not ent.components.domesticatable:IsDomesticated()
-    end, BEEF_TAG)
+    end, DOMESTICATABLE_TAG, nil, BEEF_TAG)
     if beef == nil then
         return nil
     end
@@ -79,8 +91,8 @@ function WXPastoralism:Mount()
         return ent.components.rideable ~= nil and
             ent.components.rideable:TestObedience() and
             -- The automatically trained beefalo should consume more food as a cost.
-            ent.components.hunger:GetPercent() > 0.2
-    end, BEEF_TAG)
+            ent.components.hunger:GetPercent() > 0
+    end, DOMESTICATABLE_TAG, nil, BEEF_TAG)
     if beef ~= nil and not beef.components.rideable:IsSaddled() then
         local saddle = self.inst.components.inventory:FindItem(function(item)
             return item.components.saddler ~= nil
@@ -156,7 +168,7 @@ function WXPastoralism:Shave()
             ent.components.domesticatable:GetDomestication() < 0.1) and
             ent.components.beard ~= nil and ent.components.beard.bits > 0 and
             ent.components.beard.canshavetest ~= nil and ent.components.beard.canshavetest(ent, self.inst)
-    end, BEEF_TAG)
+    end, DOMESTICATABLE_TAG, nil, BEEF_TAG)
     local tool = self.inst.components.inventory:FindItem(function(item)
         return item.components.shaver ~= nil
     end)
@@ -172,9 +184,8 @@ function WXPastoralism:Repair()
 
     local beef = FindEntity(leader, SEE_WORK_DIST, function(ent)
         return ent.components.domesticatable ~= nil
-    end, BEEF_TAG)
-    if beef ~= nil and beef.components.hunger > 0 or
-        beef.components.domesticatable.domestication > 0.25 then
+    end, DOMESTICATABLE_TAG, nil, BEEF_TAG)
+    if beef ~= nil and (beef.components.hunger > 0 or beef.components.domesticatable:GetDomestication() > 0.95) then
         return nil
     end
     local saltlick = FindEntity(leader, SEE_WORK_DIST, function(ent)

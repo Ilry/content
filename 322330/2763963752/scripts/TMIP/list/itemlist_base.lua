@@ -6,6 +6,7 @@ return {
     "fence_item",
     "fence_gate_item",
     --墙体
+    "wall_scrap_item",--废料墙
     "wall_dreadstone_item",--绝望石墙
     "wall_hay_item",
     "wall_wood_item",

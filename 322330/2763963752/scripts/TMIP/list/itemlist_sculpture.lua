@@ -32,12 +32,20 @@ return {
 	--卵石
 	"cavein_boulder",
 	--雕塑
+	"chesspiece_sharkboi",--大霜鲨雕塑
+	"chesspiece_sharkboi_marble",--大霜鲨雕塑
+	"chesspiece_sharkboi_stone",--大霜鲨雕塑
+	"chesspiece_sharkboi_moonglass",--大霜鲨雕塑
+
+	"chesspiece_yotd",--起点塔雕塑
+	"chesspiece_yotd_marble",--起点塔雕塑
+	"chesspiece_yotd_stone",--起点塔雕塑
+	"chesspiece_yotd_moonglass",--起点塔雕塑
+
 
 	"chesspiece_bearger_mutated_marble",--装甲熊獾雕塑
 	"chesspiece_bearger_mutated_stone",--装甲熊獾雕塑
 	"chesspiece_bearger_mutated_moonglass",--装甲熊獾雕塑
-
-
 
 	"chesspiece_warg_mutated_marble",--附身座狼雕塑
 	"chesspiece_warg_mutated_stone",--附身座狼雕塑

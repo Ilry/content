@@ -1,205 +1,111 @@
+modimport('keybind') -- refine key binding UI
+modimport('tuning') -- load data and config
 
+local G = GLOBAL
+local T = TUNING.RANGE_INDICATOR
 
-local _G = GLOBAL
-local SHOW_RANGE_TIME = 30
+local function CreateCircle(inst, radius, color) -- Klei's function CreatePlacerRing(), prefabs/winona_catapult.lua:L270
+  local circle = G.CreateEntity()
+  circle.entity:SetParent(inst.entity)
+  local tf = circle.entity:AddTransform()
+  local as = circle.entity:AddAnimState()
 
-local justlist =
-{
-    "dragonflyfurnace",
-    "deerclopseyeball_sentryward",
-    "mushroom_light",
-    "mushroom_light2",
-    "lunarthrall_plant",
-	"eyeturret",
-	"eyeturret_item",
-	"lightning_rod"
-}
+  local x, y, z = inst.Transform:GetScale() -- credit: Huxi, 3161117403/scripts/prefabs/hrange.lua:L19
+  tf:SetScale(1 / x, 1 / y, 1 / z) -- fight against parent's scale, be absolute.
+  as:SetScale(radius / 9.7, radius / 9.7) -- scale by catapult texture size
 
+  -- credit: CarlZalph, https://forums.kleientertainment.com/forums/topic/69594-solved-how-to-make-character-glow-a-certain-color/#comment-804165
+  as:SetMultColour(G.unpack(color)) -- erase original color
+  as:SetAddColour(G.unpack(color))
 
-local LUT =
-{
-    dragonflyfurnace            = { {scale = 1.233  , color = {255,   0,   0}} },   -- Dfly furnace      r=(9.5/6.2435)^0.5			/Red
-    deerclopseyeball_sentryward = { {scale = 1.82127, color = {  0,   0, 255}} },   -- EyeCrystaleyezer  r=[(35/6.2435)^0.5]/1.3	/Blue
-    mushroom_light              = { {scale = 1.2655 , color = {  0, 255, 255}} },   -- Mushlight         r=[(10/6.2435)^0.5]		/Cyan
-    mushroom_light2             = { {scale = 1.2655 , color = {  0, 255, 255}} },   -- Same as Mushlight
-    lunarthrall_plant           = { {scale = 1.3863 , color = {255, 255,   0}},     -- BrightShade       r=(12/6.2435)^0.5 and		/Yellow
-                                    {scale = 2.192  , color = {  0, 255,   0}} },   --                   r=(30/6.2435)^0.5			/Green
-	eyeturret	                = { {scale = 1.698  , color = {255, 0  , 255}} },	-- Houndius Shootius r=(18/6.2435)^0.5 			/Pink
-	eyeturret_item				= { {scale = 1.698  , color = {255, 0  , 255}} },	-- Due to its placer is called eyeturret_item_placer, this is needed
-	lightning_rod				= { {scale = 2.531  , color = {255, 255,   0}} },	-- Lightning 		 r=(40/6.2435)^0.5			/Yellow
-    default                     = { {scale = 1.0    , color = {  0,   0,   0}} },
-}
+  circle.entity:SetCanSleep(false)
+  circle.persists = false
+  circle:AddTag('CLASSIFIED')
+  circle:AddTag('NOCLICK')
+  circle:AddTag('RANGE_INDICATOR')
+  as:SetBank('winona_catapult_placement')
+  as:SetBuild('winona_catapult_placement')
+  as:PlayAnimation('idle')
+  as:Hide('inner')
+  as:SetLightOverride(1)
+  as:SetOrientation(G.ANIM_ORIENTATION.OnGround)
+  as:SetLayer(G.LAYER_BACKGROUND)
+  as:SetSortOrder(1)
 
+  return circle
+end
 
-local function Inlist(sth, thelist)
-    for i,v in ipairs(thelist) do
-        if sth == v then
-            return true
-        end
+local function ShowRangeIndicator(inst, prefab)
+  if inst.circles then return end -- circle(s) already created
+  inst.circles = {}
+  for _, data in pairs(T.DATA[prefab or inst.prefab] or {}) do
+    local radius = type(data) == 'table' and data.radius or data
+    local color = type(data) == 'table' and data.color or T.DEFAULT_COLOR
+    local circle = CreateCircle(inst, radius, color)
+    table.insert(inst.circles, circle)
+  end
+end
+
+local function HideRangeIndicator(inst)
+  if not inst.circles then return end -- circle(s) not created yet
+  for _, v in ipairs(inst.circles) do
+    if v:IsValid() then v:Remove() end
+  end
+  inst.circles = nil
+end
+
+local function ToggleRangeIndicator(inst)
+  local fn = inst.circles and HideRangeIndicator or ShowRangeIndicator
+  fn(inst)
+end
+
+G.TheInput:AddMouseButtonHandler(function(button, down)
+  local modifier = T.CLICK.MODIFIER_KEY
+  if modifier and not G.TheInput:IsKeyDown(modifier) then return end
+  if not (button == T.CLICK.MOUSE_BUTTON and down) then return end
+  local entity = G.TheInput:GetWorldEntityUnderMouse()
+  if entity and T.CLICK.SUPPORT[entity.prefab] then ToggleRangeIndicator(entity) end
+end)
+
+G.TheInput:AddKeyHandler(function(key, down)
+  if not (key == T.BATCH.KEY and down) then return end
+  local x, y, z = G.ThePlayer.Transform:GetWorldPosition()
+  local entities = G.TheSim:FindEntities(x, y, z, 80, { 'CLASSIFIED', 'NOCLICK', 'RANGE_INDICATOR' })
+  local cleared = false
+  for _, e in ipairs(entities) do
+    if e:IsValid() then
+      local parent = e.entity:GetParent()
+      if parent and parent.circles then parent.circles = nil end
+      e:Remove()
+      cleared = true
     end
-    return false
+  end
+  if cleared then return end
+  local entities = G.TheSim:FindEntities(x, y, z, 80, nil, nil, T.BATCH.TAG)
+  for _, e in ipairs(entities) do
+    if T.CLICK.SUPPORT[e.prefab] then ShowRangeIndicator(e) end
+  end
+end)
+
+for _, prefab in ipairs(T.DEPLOY.PLACER) do
+  AddPrefabPostInit(prefab, ShowRangeIndicator)
 end
 
+AddClassPostConstruct('widgets/hoverer', function(self)
+  if not (self.text and T.HOVER.ENABLE) then return end
 
-local function MakeC(sth, radius, color)
-    local C = _G.CreateEntity()
-    local tf = C.entity:AddTransform()
-    local as = C.entity:AddAnimState()
-    as:SetAddColour(color[1], color[2], color[3], 0)
-    tf:SetScale(radius, radius, radius)
+  local OldSetString = self.text.SetString
+  self.text.SetString = function(text, str, ...)
+    HideRangeIndicator(G.ThePlayer)
+    local e = G.TheInput:GetHUDEntityUnderMouse()
+    local prefab = e and e.widget and e.widget.parent and e.widget.parent.item and e.widget.parent.item.prefab or nil
+    if prefab and T.HOVER.SUPPORT[prefab] then ShowRangeIndicator(G.ThePlayer, prefab) end
+    return OldSetString(text, str, ...)
+  end
 
-    as:SetBank("firefighter_placement")
-    as:SetBuild("firefighter_placement")
-    as:PlayAnimation("idle")
-    as:SetOrientation(_G.ANIM_ORIENTATION.OnGround)
-    as:SetLayer(_G.LAYER_BACKGROUND)
-    as:SetSortOrder(3)
-    C.persists = false
-
-    C.entity:SetParent(sth.entity)
-    C:AddTag("NOCLICK")
-    return C
-end
-
-
-local function OnEnableHelper(inst, enabled)
-    if enabled then
-        if inst.helpers == nil then
-            inst.helpers = {}
-
-            local prefab = "default"
-            for _,v in ipairs(justlist) do
-                if inst.prefab == (v .. "_placer") then
-                    prefab = v
-                    break
-                end
-            end
-
-            for i,v in ipairs(LUT[prefab] or {}) do
-                local helper = _G.CreateEntity()
-
-                --[[Non-networked entity]]
-                helper.entity:SetCanSleep(false)
-                helper.persists = false
-
-                helper.entity:AddTransform()
-                helper.entity:AddAnimState()
-
-                helper:AddTag("CLASSIFIED")
-                helper:AddTag("NOCLICK")
-                helper:AddTag("placer")
-
-                local PLACER_SCALE = v.scale
-                helper.Transform:SetScale(PLACER_SCALE, PLACER_SCALE, PLACER_SCALE)
-
-                helper.AnimState:SetBank("firefighter_placement")
-                helper.AnimState:SetBuild("firefighter_placement")
-                helper.AnimState:PlayAnimation("idle")
-                helper.AnimState:SetLightOverride(1)
-                helper.AnimState:SetOrientation(_G.ANIM_ORIENTATION.OnGround)
-                helper.AnimState:SetLayer(_G.LAYER_BACKGROUND)
-                helper.AnimState:SetSortOrder(1)
-                helper.AnimState:SetAddColour(0, v.color[1], v.color[2], v.color[3])
-
-                helper.entity:SetParent(inst.entity)
-                table.insert(inst.helpers, helper)
-            end
-        end
-    elseif inst.helpers ~= nil then
-        for i,v in ipairs(inst.helpers) do
-            v:Remove()
-        end
-        inst.helpers = nil
-    end
-end
-
-
--- https://www.sioe.cn/yingyong/yanse-rgb-16/
-local function ShowRange(sth)
-
-    if not sth.circles then
-        -- Only if circles were not created, we create them.
-        local prefab = Inlist(sth.prefab, justlist) and sth.prefab or "default"
-        local circles = {}
-        local c2 = nil
-        -- TODO: Use prefab scale instead of magic number.
-        -- local prefabScale = sth.Transform:GetScale()
-
-        for i,v in ipairs(LUT[prefab] or {}) do
-            local circle = MakeC(sth, v.scale, v.color)
-            table.insert(circles, circle)
-        end
-
-        if SHOW_RANGE_TIME > 0 then
-            for _,v in ipairs(circles) do
-                v.remove_task = v:DoTaskInTime(SHOW_RANGE_TIME, function() v:Remove() end)
-            end
-        end
-        sth.circles = circles
-    else
-        -- If circles were created, we remove them.
-        for _,v in ipairs(sth.circles) do
-            v.remove_task:Cancel()
-            v:Remove()
-        end
-        sth.circles = nil
-    end
-end
-
-local function Easy(master, num)
-    return MakeC(master, num, {255,255,255})
-end
-
-local controller = _G.require "components/playercontroller"
-local OnLeftClick_old = controller.OnLeftClick
-function controller:OnLeftClick(down, ...)
-    if (not down) and self:UsingMouse() and self:IsEnabled() and not _G.TheInput:GetHUDEntityUnderMouse() then
-        local item = _G.TheInput:GetWorldEntityUnderMouse()
-        if item then
-            if Inlist(item.prefab, justlist) then
-                ShowRange(item)
-            end
-        end
-    end
-    return OnLeftClick_old(self, down, ...)
-end
-
-local function IceFlingOnRemove(inst)
-    local pos = _G.Point(inst.Transform:GetWorldPosition())
-    local range_indicators = _G.TheSim:FindEntities(pos.x,pos.y,pos.z, 2, {"range_indicator"})
-    for i,v in ipairs(range_indicators) do
-        if v:IsValid() then
-            v:Remove()
-        end
-    end
-end
-
-local function IceFlingOnShow(inst)
-    local pos = _G.Point(inst.Transform:GetWorldPosition())
-    local range_indicators_client = TheSim:FindEntities(pos.x,pos.y,pos.z, 2, {"range_indicator"})
-    if #range_indicators_client < 1 then
-        local range = _G.SpawnPrefab("range_indicator")
-        range.Transform:SetPosition(pos.x, pos.y, pos.z)
-    end
-end
-
-local function IceFlingPostInit(inst)
-    inst:ListenForEvent("onremove", IceFlingOnRemove)
-end
-
-local function IceFlingPlacerPostInit(inst)
-    --Dedicated server does not need deployhelper
-    if not _G.TheNet:IsDedicated() then
-        if not inst.components.deployhelper then
-            inst:AddComponent("deployhelper")
-            inst.components.deployhelper.onenablehelper = OnEnableHelper
-        end
-    end
-end
-
-
--- 对这些prefab监听点击
-for i,v in ipairs(justlist) do
-    AddPrefabPostInit(v, IceFlingPostInit)
-    AddPrefabPostInit(v .. "_placer", IceFlingPlacerPostInit)
-end
+  local OldHide = self.text.Hide
+  self.text.Hide = function(...)
+    HideRangeIndicator(G.ThePlayer)
+    return OldHide(...)
+  end
+end)

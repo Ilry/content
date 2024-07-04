@@ -165,6 +165,7 @@ end
 master_setting["far_regions"] = {}
 master_setting["room_number_setting"] = {}
 master_setting["moon_island_connect"] = GetModConfigData("master_moon_island_connect")
+master_setting["ancient_connect"] = "not set"
 
 local cave_setting = {}
 cave_setting["grass_required"] = "not set"
@@ -336,6 +337,7 @@ if GetModConfigData("cave_monkeybarrel_spawner")~="not set" then
     table.insert(cave_setting["entities_less_than"], {name= "monkeybarrel_spawner", number= GetModConfigData("cave_monkeybarrel_spawner")})
 end
 cave_setting["moon_island_connect"] = "not set"
+cave_setting["ancient_connect"] = GetModConfigData("cave_connected_ancient")
 
 GLOBAL.SURVIVAL_TOGETHER = master_setting
 GLOBAL.RELAXED = master_setting

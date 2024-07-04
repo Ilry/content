@@ -168,7 +168,7 @@ end)
 -- Prefabs -------------------------------
 
 AddPrefabPostInit("world", function(inst)
-    if not GLOBAL.TheWorld.ismastersim then
+    if not inst.ismastersim then
         return inst
     end
 
@@ -231,10 +231,14 @@ AddPrefabPostInit("sentryward", function(inst)
     end
 
     -- Schedule System
-    GLOBAL.TheWorld.sentryward[inst] = {}
-    GLOBAL.TheWorld.sentryward[inst].server = nil
-    GLOBAL.TheWorld.sentryward[inst].lasttime = GLOBAL.TheWorld.components.worldstate.data.cycles
-    GLOBAL.TheWorld.sentryward[inst].load = 1
+    if GLOBAL.TheWorld.sentryward == nil then
+        GLOBAL.TheWorld.sentryward = {}
+    end
+    world_sentrywards = GLOBAL.TheWorld.sentryward
+    world_sentrywards[inst] = {}
+    world_sentrywards[inst].server = nil
+    world_sentrywards[inst].lasttime = GLOBAL.TheWorld.components.worldstate.data.cycles
+    world_sentrywards[inst].load = 1
 
     -- Resources Respawn
     local function GrowPlants(inst)
@@ -253,7 +257,7 @@ AddPrefabPostInit("sentryward", function(inst)
         inst.task_growplants:Cancel()
         inst.task_growplants = nil
     end
-    inst.task_growplants = inst:DoPeriodicTask(60, GrowPlants, #GLOBAL.TheWorld.sentryward)
+    inst.task_growplants = inst:DoPeriodicTask(60, GrowPlants, #world_sentrywards)
 
     local onremove_old = inst.OnRemoveEntity
     inst.OnRemoveEntity = function(inst)
@@ -262,7 +266,7 @@ AddPrefabPostInit("sentryward", function(inst)
             inst.task_growplants = nil
         end
 
-        GLOBAL.TheWorld.sentryward[inst] = nil
+        world_sentrywards[inst] = nil
 
         return onremove_old
     end
@@ -321,7 +325,11 @@ AddPrefabPostInit("wxdiviningrodbase", function(inst)
         return inst
     end
 
-    table.insert(GLOBAL.TheWorld.wxdiviningrodbase, inst)
+    if GLOBAL.TheWorld.wxdiviningrodbase == nil then
+        GLOBAL.TheWorld.wxdiviningrodbase = {}
+    end
+    world_wxdiviningrodbases = GLOBAL.TheWorld.wxdiviningrodbase
+    table.insert(world_wxdiviningrodbases, inst)
 
     local onremove_old = inst.OnRemoveEntity
     inst.OnRemoveEntity = function(inst)
@@ -476,10 +484,14 @@ AddPrefabPostInit("sea_yard", function(inst)
     end
 
     -- Schedule System
-    GLOBAL.TheWorld.shipyard[inst] = {}
-    GLOBAL.TheWorld.shipyard[inst].server = nil
-    GLOBAL.TheWorld.shipyard[inst].lasttime = GLOBAL.TheWorld.components.worldstate.data.cycles
-    GLOBAL.TheWorld.shipyard[inst].load = 1
+    if GLOBAL.TheWorld.shipyard == nil then
+        GLOBAL.TheWorld.shipyard = {}
+    end
+    world_shipyards = GLOBAL.TheWorld.shipyard
+    world_shipyards[inst] = {}
+    world_shipyards[inst].server = nil
+    world_shipyards[inst].lasttime = GLOBAL.TheWorld.components.worldstate.data.cycles
+    world_shipyards[inst].load = 1
 
     -- Resources Respawn
     local function GrowPlants(inst)
@@ -498,7 +510,7 @@ AddPrefabPostInit("sea_yard", function(inst)
         inst.task_growplants:Cancel()
         inst.task_growplants = nil
     end
-    inst.task_growplants = inst:DoPeriodicTask(60, GrowPlants, #GLOBAL.TheWorld.shipyard)
+    inst.task_growplants = inst:DoPeriodicTask(60, GrowPlants, #world_shipyards)
 
     local onremove_old = inst.OnRemoveEntity
     inst.OnRemoveEntity = function(inst)
@@ -507,7 +519,7 @@ AddPrefabPostInit("sea_yard", function(inst)
             inst.task_growplants = nil
         end
 
-        GLOBAL.TheWorld.shipyard[inst] = nil
+        world_shipyards[inst] = nil
 
         return onremove_old
     end

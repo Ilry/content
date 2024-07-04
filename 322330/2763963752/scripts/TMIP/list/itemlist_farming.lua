@@ -30,6 +30,7 @@ return {
     "tomato_oversized_waxed",
     "watermelon_oversized_waxed",
     --各种肥料
+    "mosquitofertilizer",--嗡嗡肥料
     "poop",
     "guano",
     "compost",

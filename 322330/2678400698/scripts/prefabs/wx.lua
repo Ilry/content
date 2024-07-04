@@ -1022,6 +1022,9 @@ local function fn()
         inst.spark_time_offset = 3
 
         ----------------------------------------------------------------
+        inst.ShakeCamera = function(inst, mode, duration, speed, scale, source_or_pt, maxDist) end
+
+        ----------------------------------------------------------------
         inst:AddComponent("inspectable")
 
         inst:AddComponent("maprevealable")

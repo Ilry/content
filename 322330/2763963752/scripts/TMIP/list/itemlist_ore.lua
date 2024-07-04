@@ -3,25 +3,27 @@ return {
 	"lunarrift_crystal_small",--裂隙晶体
 	-- "moonstorm_glass_nub",
 	"moonstorm_glass",
---石化树
+	--石化树
 	"rock_petrified_tree_short",
 	"rock_petrified_tree_med",
 	"rock_petrified_tree_tall",
 	"rock_petrified_tree_old",
 	"rock_petrified_tree",
---大理石树
+	--大理石树
+	-- "marbleshrub_waxed",--大理石灌木
 	"marbletree",
 	"marbletree_1",
 	"marbletree_2",
 	"marbletree_3",
 	"marbletree_4",
---大理石灌木
+	--大理石灌木
+	-- "marblebean_sapling_waxed",--大理石芽
 	"marblebean_sapling",
 	"marbleshrub",
 	"marbleshrub_short",
 	"marbleshrub_normal",
 	"marbleshrub_tall",
---卵石
+	--卵石
 	"rock1",
 	"rock2",
 	"rock_flintless",

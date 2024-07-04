@@ -1,5 +1,5 @@
 GLOBAL.setmetatable(env,{__index=function(t,k) return GLOBAL.rawget(GLOBAL,k) end})
-
+local TOOLS_L = require("prefabs/critters")
 
 PrefabFiles = {
    -- "yongdongji",
@@ -25,15 +25,67 @@ Assets = {
 	Asset("ATLAS", "images/pmfiresuppressor.xml"),
     Asset("IMAGE", "images/firesuppressor_item.tex"), 
 	Asset("ATLAS", "images/firesuppressor_item.xml"),
+    -- 小座狼动画
+    Asset("ANIM", "anim/pupington_iron_build.zip"),
+	Asset("ANIM", "anim/pupington_iron_basic.zip"),
+	Asset("ANIM", "anim/pupington_iron_emotes.zip"),
+	Asset("ANIM", "anim/pupington_iron_traits.zip"),
+    -- 小羊动画
+    Asset("ANIM", "anim/sheepington_iron_build.zip"),
+	Asset("ANIM", "anim/sheepington_iron_basic.zip"),
+	Asset("ANIM", "anim/sheepington_iron_emotes.zip"),
+	Asset("ANIM", "anim/sheepington_iron_traits.zip"),
+    Asset("ANIM", "anim/sheepington_iron_jump.zip"),
+    -- 小鸡
+    Asset("ANIM", "anim/perdling_iron_build.zip"),
+	Asset("ANIM", "anim/perdling_iron_basic.zip"),
+	Asset("ANIM", "anim/perdling_iron_emotes.zip"),
+	Asset("ANIM", "anim/perdling_iron_traits.zip"),
+    Asset("ANIM", "anim/perdling_iron_jump.zip"),
+    -- 小龙蝇
+    Asset("ANIM", "anim/dragonling_iron_build.zip"),
+	Asset("ANIM", "anim/dragonling_iron_basic.zip"),
+	Asset("ANIM", "anim/dragonling_iron_emotes.zip"),
+	Asset("ANIM", "anim/dragonling_iron_traits.zip"),
+    -- 小蛾子
+    Asset("ANIM", "anim/lunarmoth_iron_build.zip"),
+	Asset("ANIM", "anim/lunarmoth_iron_basic.zip"),
+	Asset("ANIM", "anim/lunarmoth_iron_emotes.zip"),
+	Asset("ANIM", "anim/lunarmoth_iron_traits.zip"),
+    -- 小浣猫
+    Asset("ANIM", "anim/kittington_iron_build.zip"),
+	Asset("ANIM", "anim/kittington_iron_basic.zip"),
+	Asset("ANIM", "anim/kittington_iron_emotes.zip"),
+	Asset("ANIM", "anim/kittington_iron_traits.zip"),
+    Asset("ANIM", "anim/kittington_iron_jump.zip"),
+    -- 小格罗姆
+    Asset("ANIM", "anim/glomling_iron_build.zip"),
+	Asset("ANIM", "anim/glomling_iron_basic.zip"),
+	Asset("ANIM", "anim/glomling_iron_emotes.zip"),
+	Asset("ANIM", "anim/glomling_iron_traits.zip"),
+    -- 小眼珠子
+    Asset("ANIM", "anim/eyeofterror_mini_iron_actions.zip"),
+	Asset("ANIM", "anim/eyeofterror_mini_iron_basic.zip"),
+    Asset("ANIM", "anim/eyeofterror_mini_iron_mob_build.zip"),
+	Asset("ANIM", "anim/eyeofterror_mini_iron_emotes.zip"),
+	Asset("ANIM", "anim/eyeofterror_mini_iron_traits.zip"),
 }
 
 env.RECIPETABS = GLOBAL.RECIPETABS 
 env.TECH = GLOBAL.TECH
 env.STRINGS = GLOBAL.STRINGS
 
-STRINGS.NAMES.FIRESUPPRESSOR_ITEM = "雪球机升级套件"
+STRINGS.NAMES.FIRESUPPRESSOR_ITEM = "永动组件"
 STRINGS.NAMES.PMFIRESUPPRESSOR = "永动雪球机"
-STRINGS.RECIPE_DESC.FIRESUPPRESSOR_ITEM = "可以升级雪球机，不需要再添加燃料并且不会打灭人工火堆。"
+STRINGS.NAMES.CRITTER_PUPPY_IRON = "钢铁小座狼"
+STRINGS.NAMES.CRITTER_LAMB_IRON = "钢铁小羊"
+STRINGS.NAMES.CRITTER_KITTEN_IRON = "钢铁小浣猫"
+STRINGS.NAMES.CRITTER_PERDLING_IRON = "钢铁小火鸡"
+STRINGS.NAMES.CRITTER_DRAGONLING_IRON = "钢铁小龙蝇"
+STRINGS.NAMES.CRITTER_LUNARMOTHLING_IRON = "钢铁小月蛾"
+STRINGS.NAMES.CRITTER_GLOMLING_IRON = "钢铁小格罗姆"
+STRINGS.NAMES.CRITTER_EYEOFTERROR_IRON = "钢铁小克眼"
+STRINGS.RECIPE_DESC.FIRESUPPRESSOR_ITEM = "充满科学的甜美气息，有许多意想不到的作用，可以为一些装置升级。"
 -- STRINGS.CHARACTERS.GENERIC.DESCRIBE.PMFIRESUPPRESSOR = "它似乎对火……不感兴趣？"
 -- STRINGS.CHARACTERS.WX78.DESCRIBE.PMFIRESUPPRESSOR = "我能感受到它无尽的力量，正如它感受我一样。"
 -- STRINGS.CHARACTERS.WANDA.DESCRIBE.PMFIRESUPPRESSOR = "真羡慕它能够看到千百年后的光景。"
@@ -66,10 +118,140 @@ AddPrefabPostInit("firesuppressor", function(inst)
     end
     inst:AddComponent("pmupdate")
 end)
+-- 给宠物添加tag以帮助判断
+-- 小座狼
+AddPrefabPostInit("critter_puppy", function(inst)
+    if not GLOBAL.TheWorld.ismastersim then
+        return
+    end
+    inst:AddTag("critter_puppy")
+end)
+
+AddPrefabPostInit("critter_puppy_iron", function(inst)
+    if not GLOBAL.TheWorld.ismastersim then
+        return
+    end
+    inst:AddTag("critter_puppy_iron")
+    inst:AddTag("iron_pet")
+end)
+-- 小钢羊
+AddPrefabPostInit("critter_lamb", function(inst)
+    if not GLOBAL.TheWorld.ismastersim then
+        return
+    end
+    inst:AddTag("critter_lamb")
+end)
+
+AddPrefabPostInit("critter_lamb_iron", function(inst)
+    if not GLOBAL.TheWorld.ismastersim then
+        return
+    end
+    inst:AddTag("critter_lamb_iron")
+    inst:AddTag("iron_pet")
+end)
+-- 小浣猫
+AddPrefabPostInit("critter_kitten", function(inst)
+    if not GLOBAL.TheWorld.ismastersim then
+        return
+    end
+    inst:AddTag("critter_kitten")
+end)
+
+AddPrefabPostInit("critter_kitten_iron", function(inst)
+    if not GLOBAL.TheWorld.ismastersim then
+        return
+    end
+    inst:AddTag("critter_kitten_iron")
+    inst:AddTag("iron_pet")
+end)
+-- 小火鸡
+AddPrefabPostInit("critter_perdling", function(inst)
+    if not GLOBAL.TheWorld.ismastersim then
+        return
+    end
+    inst:AddTag("critter_perdling")
+end)
+
+AddPrefabPostInit("critter_perdling_iron", function(inst)
+    if not GLOBAL.TheWorld.ismastersim then
+        return
+    end
+    inst:AddTag("critter_perdling_iron")
+    inst:AddTag("iron_pet")
+end)
+-- 小龙蝇
+AddPrefabPostInit("critter_dragonling", function(inst)
+    if not GLOBAL.TheWorld.ismastersim then
+        return
+    end
+    inst:AddTag("critter_dragonling")
+end)
+
+AddPrefabPostInit("critter_dragonling_iron", function(inst)
+    if not GLOBAL.TheWorld.ismastersim then
+        return
+    end
+    inst:AddTag("critter_dragonling_iron")
+    inst:AddTag("iron_pet")
+end)
+-- 小格罗姆
+AddPrefabPostInit("critter_glomling", function(inst)
+    if not GLOBAL.TheWorld.ismastersim then
+        return
+    end
+    inst:AddTag("critter_glomling")
+end)
+
+AddPrefabPostInit("critter_glomling_iron", function(inst)
+    if not GLOBAL.TheWorld.ismastersim then
+        return
+    end
+    inst:AddTag("critter_glomling_iron")
+    inst:AddTag("iron_pet")
+end)
+--小月蛾
+AddPrefabPostInit("critter_lunarmothling", function(inst)
+    if not GLOBAL.TheWorld.ismastersim then
+        return
+    end
+    inst:AddTag("critter_lunarmothling")
+end)
+
+AddPrefabPostInit("critter_lunarmothling_iron", function(inst)
+    if not GLOBAL.TheWorld.ismastersim then
+        return
+    end
+    inst:AddTag("critter_lunarmothling_iron")
+    inst:AddTag("iron_pet")
+end)
+-- 小克眼
+AddPrefabPostInit("critter_eyeofterror", function(inst)
+    if not GLOBAL.TheWorld.ismastersim then
+        return
+    end
+    inst:AddTag("critter_eyeofterror")
+end)
+
+AddPrefabPostInit("critter_eyeofterror_iron", function(inst)
+    if not GLOBAL.TheWorld.ismastersim then
+        return
+    end
+    inst:AddTag("critter_eyeofterror_iron")
+    inst:AddTag("iron_pet")
+end)
+--==========================================================================
 
 AddPrefabPostInitAny(function(inst)
     if(inst:HasTag("player")) then
         inst:AddComponent("pmupdate")
+        -- inst:AddComponent("pettest")
+    end
+    if(inst:HasTag("critter")) then
+        inst:AddComponent("pettest")
+    end
+    if(inst:HasTag("iron_pet")) then
+        inst:RemoveComponent("eater")
+        inst.components.perishable:SetPerishTime(9999999999999)
     end
 end)
 
@@ -79,15 +261,33 @@ local act = {
     fn = function(act)
         act.doer.components.inventory:RemoveItem(act.invobject):Remove()
         act.doer.components.pmupdate:Work(act.doer,act.target)  
-        print("升级雪球机")       
+        print("升级雪球机")
+        return true       
     end,
     state = "dojostleaction" 
 }
 local act_pmupdate = AddAction(act.id, act.name, act.fn)
 
+local act_pet = {
+    id = "UPUP",
+    name = "进化",
+    fn = function(act)
+        
+        print("进化宠物")     
+        act.doer.components.inventory:RemoveItem(act.invobject):Remove()
+        act.target.components.pettest:Work(act.doer,act.target)
+        return true
+        
+    end,
+    state = "dojostleaction" 
+}
+local act_petupdate = AddAction(act_pet.id, act_pet.name, act_pet.fn)
+
 
 AddStategraphActionHandler("wilson", ActionHandler(act_pmupdate, act.state))
 AddStategraphActionHandler("wilson_client", ActionHandler(act_pmupdate, act.state))
+AddStategraphActionHandler("wilson", ActionHandler(act_petupdate, act.state))
+AddStategraphActionHandler("wilson_client", ActionHandler(act_petupdate, act.state))
 
 local cmp_act = {
     type = "USEITEM",
@@ -97,6 +297,23 @@ local cmp_act = {
             if target.replica.pmupdate and doer:HasTag("player") and inst:HasTag("pm_updatable") then
                 table.insert(actions, act_pmupdate)
                 -- print("触发动作")
+                return true
+            end 
+
+            if target:HasTag("critter") then
+                local pet_name = inst.GetDisplayName(target)
+                print(pet_name)
+                if target.replica.pettest and doer:HasTag("player") and inst:HasTag("pm_updatable") then
+                    if target:HasTag("iron_pet")then
+                        return false
+                    -- elseif target:HasTag("critter_kitten")  then
+                    --     return false
+                    else
+                        table.insert(actions, act_petupdate)
+                        print("触发动作")
+                        return true
+                    end
+                end
             end 
         end
     end
@@ -108,7 +325,7 @@ AddComponentAction(cmp_act.type, cmp_act.component, cmp_act.testfn)
 
 AddReplicableComponent("pmupdate")
 AddReplicableComponent("pm_updatable")
-
+AddReplicableComponent("pettest")
 
 
 local whitelist_for_pmfiresuppressor = {
@@ -148,7 +365,7 @@ local config = {
 
 AddRecipe2(
         "firesuppressor_item",
-        { Ingredient("gears", 10)},
+        { Ingredient("gears", 5 ),Ingredient("wagpunk_bits", 5 )},
         TECH.LOST,
         config,
         {"MOD"}

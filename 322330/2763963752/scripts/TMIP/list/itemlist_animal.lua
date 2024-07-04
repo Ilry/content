@@ -1,4 +1,13 @@
 return {
+    "otter",--水獭掠夺者
+    "merm_lunar",--戈尔普
+    "mermguard_lunar",--格普
+    
+    "mermguard_shadow",--暗影鱼人守卫
+    "merm_shadow",--暗影鱼人
+    "crabking_mob_knight",--蟹骑士
+    "crabking_mob",--蟹卫
+
     -- "ruins_shadeling",--休憩恐惧
     "fused_shadeling_bomb",--绝望螨
     "fused_shadeling",--熔合暗影

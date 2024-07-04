@@ -1,18 +1,18 @@
 local L = locale ~= "zh" and locale ~= "zhr"
 name = L and "Don't Starve Alone" or "独行长路 - Don't Starve Alone"
 forumthread = ""
-version = "1.2.14"
+version = "1.2.15"
 description = L and 
 [[
 This mod can completely eliminate the lag of a server with cave.
 It only works in single player world.
 
-* Fix the problem of fps drop when entering the cave.
+* Fix mermking buff in cave.
 
 ]] or [[
 辅助mod，完全消除单人联机洞穴档的延迟。
 
-* 修复进入洞穴的几秒内游戏帧率下降的问题。
+* 修复鱼人王buff在洞穴不生效的bug。
 
 ]]
 -- * 修复了洞穴重置倒计时异常的bug。

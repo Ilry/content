@@ -2,13 +2,13 @@
 name = "Combined Status"
 
 --A description of the mod.
-description = "󰀏“组合状态”“综合状态”“状态显示”\n\n󰀏原模组链接：\nhttps://steamcommunity.com/sharedfiles/filedetails/?id=376333686\n\n󰀏搬运steam，自用，仅供学习与参考【汉化者：zhonger】\n\n󰀏模组介绍：显示饥饿值，san值，生命值，温度，季节，月相和世界总天数......\n\n󰀏更多介绍请点击右下角【更多信息】\n\n󰀏当地球位于月球和太阳之间时，我们可以看到整个被太阳直射的月球部分，这就是满月。当月球位于地球和太阳之间时，我们只能看到月球不被太阳照射的部分，这就是朔月；而当首度再见到月球明亮的部分时，称为“新月”。当地月联线和日地联线正好成直角时，我们正好可以看到月球被太阳直射的部分的一半，这就是上弦月。\n月相变化的顺序是：新月–蛾眉月–上弦月–盈凸–满月–亏凸–下弦月–残月–新月，就这样循环，月相变化是周期性的，周期大约是一个月。"
+description = "󰀏“组合状态”“综合状态”“状态显示”\n\n󰀏原作者模组传送门：\nhttps://steamcommunity.com/sharedfiles/filedetails/?id=376333686\n\n󰀏自用，仅供学习与参考【汉化者：zhonger】\n\n󰀏模组介绍：显示饥饿值，san值，生命值，温度，季节，月相和世界总天数......\n\n󰀏更多介绍请点击右下角【更多信息】\n\n󰀏当地球位于月球和太阳之间时，我们可以看到整个被太阳直射的月球部分，这就是满月。当月球位于地球和太阳之间时，我们只能看到月球不被太阳照射的部分，这就是朔月；而当首度再见到月球明亮的部分时，称为“新月”。当地月联线和日地联线正好成直角时，我们正好可以看到月球被太阳直射的部分的一半，这就是上弦月。\n月相变化的顺序是：新月–蛾眉月–上弦月–盈凸–满月–亏凸–下弦月–残月–新月，就这样循环，月相变化是周期性的，周期大约是一个月。"
 
 --Who wrote this awesome mod?
 author = "rezecib, Kiopho, Soilworker, hotmatrixx, penguin0616【汉化者：zhonger】"
 
 --A version number so you can ask people if they are running an old version of your mod.
-version = "1.9.2B"
+version = "1.9.2C"
 
 --This lets other players know if your mod is out of date. This typically needs to be updated every time there's a new game update.
 api_version = 6
@@ -84,10 +84,10 @@ configuration_options =
 	},	
 	{
 		name = "UNIT",
-		label = "󰀏温度单位",
+		label = "温度单位",
 		hover = "选择您想要的温度单位。\n（原作者的小吐槽）华氏度：你喜欢但没有意义的温度单位。",
 		options =	{
-						{description = "游戏单位[推荐]", data = "T",
+						{description = "游戏单位", data = "T",
 							hover = "游戏使用的温度单位。"
 								.."0过冷-70过热（每5度警示一次）。"},
 						{description = "摄氏度", data = "C",
@@ -112,11 +112,11 @@ configuration_options =
 	{
 		name = "SHOWMOON",
 		label = "󰀏显示月相",
-		hover = "白天-黄昏-夜晚显示月相的图标。",
+		hover = "白天+黄昏+夜晚显示月相的图标。",
 		options =	{
 						{description = "夜晚", data = 0, hover = "和往常一样，仅在夜晚显示月相图标。"},
-						{description = "黄昏-夜晚", data = 1, hover = "仅在黄昏和夜晚显示月相图标。"},
-						{description = "白天-黄昏-夜晚[推荐]", data = 2, hover = "全天显示月相图标。"},
+						{description = "黄昏+夜晚", data = 1, hover = "仅在黄昏和夜晚显示月相图标。"},
+						{description = "白天+黄昏+夜晚[推荐]", data = 2, hover = "全天显示月相图标。"},
 					},
 		default = 1,
 	},
@@ -133,24 +133,24 @@ configuration_options =
 	},
 	{
 		name = "FLIPMOON",
-		label = "󰀏翻转月相",
+		label = "翻转月相",
 		hover = "镜像翻转月相的图标，让月亮显示为在南半球的样子（确实是恢复了旧版的行为方式）。"
 			.. "\n在南半球的月亮是C形，在北半球的月亮是反C形）。",
 		options =	{
 						{description = "翻转", data = true, hover = "和南半球的月相一致。"},
-						{description =  "默认[推荐]", data = false, hover = "和中国的月相一致。"},
+						{description =  "默认", data = false, hover = "和中国的月相一致。"},
 					},
 		default = false,
 	},
 	{
 		name = "SEASONOPTIONS",
-		label = "󰀏季节时钟",
+		label = "季节时钟",
 		hover = "添加一个显示季节的时钟，并重新排列右上角全部图标，让整体布局更合理。"
 		.."\n或者，添加一个图标，显示进入季节的天数和鼠标悬停时剩余的天数。",
 		options =	{
 						{description = "文字版", data = "Micro"},
 						{description = "图标版", data = "Compact"},
-						{description = "时钟版[推荐]", data = "Clock"},
+						{description = "时钟版", data = "Clock"},
 						{description = "已关闭", data = ""},
 					},
 		default = "Clock",
@@ -187,11 +187,11 @@ configuration_options =
 	},	
 	{
 		name = "SHOWSTATNUMBERS",
-		label = "󰀏状态数值",
+		label = "状态数值",
 		hover = "选择您想显示【饥饿值，san值，生命值】的数字样式。",
 		options =	{
-						{description = "当前-最大", data = "Detailed"},
-						{description = "当前[推荐]", data = true},
+						{description = "当前+最大", data = "Detailed"},
+						{description = "当前", data = true},
 						{description = "已关闭", data = false},
 					},
 		default = true,
@@ -199,7 +199,7 @@ configuration_options =
 	{
 		name = "SHOWMAXONNUMBERS",
 		label = "最大值提示",
-		hover = "在【饥饿值，san值，生命值】到达最大数值时显示“Max:”使其更直观。",
+		hover = "在【饥饿值，san值，生命值】到达最大数值时显示“最大值:”使其更直观。",
 		options =	{
 						{description = "已开启", data = true},
 						{description = "已关闭", data = false},
@@ -218,8 +218,8 @@ configuration_options =
 	},	
 	{
 		name = "HUDSCALEFACTOR",
-		label = "模组HUD图标大小",
-		hover = "让您可以独立于游戏的【HUD】比例调整本模组图标和时钟的大小。",
+		label = "HUD大小",
+		hover = "让您可以独立于游戏的HUD比例调整此模组图标和时钟的大小。\n【官方解释（HUD大小：自定义抬头显示的大小）】",
 		options = hud_scale_options,
 		default = 100,
 	},	

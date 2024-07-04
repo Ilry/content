@@ -244,7 +244,7 @@ function SeasonClock:GetRemainingString()
 	end
 	-- unfortunately no good string to capture translations of "left"
 	local days_str = STRINGS.UI.HUD.CLOCKDAYS or STRINGS.UI.DEATHSCREEN.DAYS
-    return math.floor(days_left+0.5) .. " " .. days_str:lower() .. "\n" .. "left"
+    return math.floor(days_left+0.5) .. " " .. days_str:lower() .. "\n" .. "后结束"
 end
 
 --------------------------------------------------------------------------

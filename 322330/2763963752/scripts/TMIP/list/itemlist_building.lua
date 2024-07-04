@@ -1,4 +1,22 @@
 return {
+	"collapsed_treasurechest",--损坏的箱子
+	"collapsed_dragonflychest",--损坏的箱子
+
+	"crabking_cannontower",--加农炮塔
+
+	"winona_teleport_pad",--传送运输站
+	
+
+	"merm_toolshed",--劣质工具棚
+	"merm_toolshed_upgraded",--不那么劣质的工具棚
+	"offering_pot",--食堂海带盘
+	"offering_pot_upgraded",--高级食堂海带盘
+	"merm_armory",--鱼人军械库
+	"merm_armory_upgraded",--高级鱼人军械库
+
+	"yotd_dragonshrine",--龙蝇神龛
+
+
 	"charlie_hand",--召唤之手
 	"wagstaff_machinery",--被丢弃的垃圾
 	"carpentry_station",--锯马
@@ -27,6 +45,8 @@ return {
 
 	"bookstation",--书架
 	--航海
+	"boat_ancient",--古董船
+	"boat_ancient_container",--货舱
 	"boat_cannon",--大炮
 	"pirate_flag_pole",--月亮码头海盗旗
 	"boat_pirate",--海盗单桅帆船
@@ -70,6 +90,7 @@ return {
 	"fence_gate",
 --放牧
 	"saltlick",
+	"saltlick_improved",--美味舔盐块
 --火堆
 	"cotl_tabernacle_level1",--低微咩咩雕像
 	"cotl_tabernacle_level2",--有所改进咩咩雕像

@@ -1,7 +1,7 @@
 all_clients_require_mod = true
 dst_compatible = true
 
-version = "88"
+version = "89"
 version_compatible = "57"
 priority = 2 ^ 1023
 api_version = 10
@@ -13,10 +13,8 @@ icon = "modicon.tex"
 server_filter_tags = { name, author }
 version_description = --•
 [[
-• Added German translation by Bxucher.
-• Added preset for The Battle Arena HUD.
-• Increased brightness for darker damage numbers.
-• Fixed a crash with Epic Healthbar Show Me Compat mod.
+• Improved visibility of damage resistance effects.
+• Fixed wrong server options sometimes being shown when configuring a world.
 ]]
 
 local LOCALE =
@@ -39,6 +37,9 @@ local LOCALE =
 		GLOBAL_NUMBERS_HOVER = "Displays damage numbers in the world instead of the widget.\nApplicable to any combat, not just giants.",
 		GLOBAL_NUMBERS_DISABLED = "Show damage on the bar",
 		GLOBAL_NUMBERS_ENABLED = "Show damage in the world",
+
+		RESTRICTED = "Speedrun Mode",
+		RESTRICTED_HOVER = "Reduces amount of information and trumps other options.\nNot recommended for regular gameplay.",
 
 		TAG = "Display Health For",
 		TAG_HOVER = "Enables health bars only for selected targets.",
@@ -403,6 +404,7 @@ function SetLocale(locale, modinfo)
 		MakeHeader("HEADER_SERVER"),
 		MakeOption("GLOBAL_NUMBERS", nil, false),
 		MakeOption("GLOBAL", nil, false),
+		--MakeOption("RESTRICTED", nil, false),
 		MakeHeader("HEADER_CLIENT", true),
 		MakeOption("TAG", tag, "EPIC", true),
 		MakeOption("FRAME_PHASES", nil, true, true),

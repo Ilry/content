@@ -1,10 +1,11 @@
 local ShardProxy = Class(function(self, inst)
 	self.inst = inst
 	self.data = {}
+	self.mermkingdata = {} -- mermking buff from other shard
 end)
 
 function ShardProxy:OnDaywalkerDefeated(world)
-	print("Call OnDaywalkerDefeated", tostring(world), self.inst.worldprefab)
+	-- print("Call OnDaywalkerDefeated", tostring(world), self.inst.worldprefab)
 	local world = world or self.inst.worldprefab
 	self.data["msg_daywalkerdefeated"] = world
 
@@ -12,6 +13,20 @@ function ShardProxy:OnDaywalkerDefeated(world)
 	if shard then
 		shard:SetLocation(world == "forest" and "cavejail" or "forestjunkpile")
 	end
+end
+
+function ShardProxy:OnMermKingBuff(type, exists)
+	if type == "exists"
+		or type == "trident"
+		or type == "crown"
+		or type == "pauldron" then
+
+		self.data["msg_mermking"..type] = exists
+	end
+end
+
+function ShardProxy:HasKingShard(type)
+	return self.mermkingdata["msg_mermking"..type]
 end
 
 function ShardProxy:OnSave()
@@ -25,9 +40,14 @@ function ShardProxy:OnLoad(data)
 end
 
 function ShardProxy:OnSaveProxyData()
-	local data = {}
+	local data = { from = self.inst.worldprefab }
 	if self.data["msg_daywalkerdefeated"] == self.inst.worldprefab then
 		data["msg_daywalkerdefeated"] = self.data["msg_daywalkerdefeated"]
+	end
+	for k,v in pairs(self.data)do
+		if k:find("mermking") and v then
+			data[k] = v
+		end
 	end
 	return data
 end
@@ -39,15 +59,31 @@ function ShardProxy:OnPostInit()
 			self.data["msg_daywalkerdefeated"] = data["msg_daywalkerdefeated"]
 			self:OnDaywalkerDefeated(data["msg_daywalkerdefeated"])
 		end
+		if data.from ~= TheWorld.worldprefab then
+			local mermkingdata = {}
+			for k,v in pairs(data)do
+				if k:find("mermking") then
+					mermkingdata[k] = v
+				end
+			end
+			self.mermkingdata = mermkingdata
+		end
 	end
 
-	-- daywalkerspawner polyfill
 	self.inst:DoTaskInTime(0.5, function()
+		-- daywalkerspawner polyfill
 		if self.inst.components.daywalkerspawner 
 			and self.inst.components.daywalkerspawner.daywalker == nil -- defeated or not spawned
 			and self.data["msg_daywalkerdefeated"] ~= self.inst.worldprefab then
 			self:OnDaywalkerDefeated(self.data["msg_daywalkerdefeated"])
 		end
+
+		-- mermking
+		local fake_shard_id = 114514
+		Shard_SyncMermKingExists(self.mermkingdata["exists"], fake_shard_id)
+		Shard_SyncMermKingTrident(self.mermkingdata["trident"], fake_shard_id)
+		Shard_SyncMermKingCrown(self.mermkingdata["crown"], fake_shard_id)
+		Shard_SyncMermKingPauldron(self.mermkingdata["pauldron"], fake_shard_id)
 	end)
 end
 

@@ -59,6 +59,9 @@ return {
 	"skeleton",
 	"skeleton_player",
 	"scorched_skeleton",
+	"skeleton_notplayer",--骷髅
+	-- "skeleton_notplayer_1",--骷髅
+	-- "skeleton_notplayer_2",--骷髅
 --坟墓
 	"mound",
 	"gravestone",

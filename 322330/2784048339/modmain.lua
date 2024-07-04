@@ -23,6 +23,7 @@ TUNING = _G.TUNING
 local Vector3 = GLOBAL.Vector3
 local containers = require("containers")
 local sr_fresh = GetModConfigData("srfresh")
+local FreshnessUp = GetModConfigData("FreshnessUp")
 
 local STOREROOM = {}
 STOREROOM.DEBUG = true
@@ -32,11 +33,6 @@ STOREROOM.LANG = GetModConfigData("Language")
 
 TUNING.STOREROOM_DESTROY = GetModConfigData("Destroyable")
 storeroom_drag = GetModConfigData("sroom_drag")
-
---modimport("scripts/components/storeroomperish.lua")
-if abc then
-	storeroomperish()
-end
 
 local function updaterecipe(slots)
 	if STOREROOM.CRAFT == "Easy" then
@@ -71,6 +67,11 @@ if sr_fresh ~= false then
 			inst:AddComponent("preserver")
 			inst.components.preserver:SetPerishRateMultiplier(sr_freshup);
 		end)
+		--突破返鲜天数
+		if FreshnessUp and type(sr_fresh) == "number" and sr_fresh < 0 
+			and not (KnownModIndex:IsModEnabledAny("workshop-2371484058") or KnownModIndex:IsModEnabledAny("workshop-2199027653598529121")) then
+			modimport("scripts/storeroomperish.lua")
+		end
 	end
 end
 
@@ -160,7 +161,7 @@ local function sroomslotsPXFn(inst, doer)
 end
 --整理按钮亮起规则
 local function sroomslotsPXValidFn(inst)
-    return inst.replica.container ~= nil and not inst.replica.container:IsEmpty()
+    return inst.replica.container ~= nil and not inst.replica.container:IsEmpty() and not inst:HasTag("storeroom_upgraded")
 end
 if STOREROOM.LANG == "Ch" then
 	STRINGS.srbtn = {zhengli = "整理"}
@@ -168,8 +169,8 @@ if STOREROOM.LANG == "Ch" then
 	STRINGS.srfw = {fuwei = "减号复位"}
 else
 	STRINGS.srbtn = {zhengli = "SortOut"}
-	STRINGS.srty = {tuoyi = "Alt+RMouseDrag"}
-	STRINGS.srfw = {fuwei = "Minus Reset"}
+	STRINGS.srty = {tuoyi = "Alt+RMouseDrag UI"}
+	STRINGS.srfw = {fuwei = "Minus Reset UI"}
 end
 
 --------------------- function --------------------
@@ -182,6 +183,8 @@ local function widgetcreation(widgetanimbank, widgetpos, slot_x, slot_y, posslot
 			slotpos = {},
 			animbank = widgetanimbank,
 			animbuild = widgetanimbank,
+			animbank_upgraded = widgetanimbank_upgraded,
+			animbuild_upgraded = widgetanimbank_upgraded,
 			pos = default_pos_sr.widgetpos,
 			side_align_tip = 160,
 			buttoninfo = {	--整理按钮
@@ -235,52 +238,60 @@ end
 ---------------- formation function ---------------
 if STOREROOM.SLOTS == 20 then
 	widgetanimbank = "ui_storeroom_5x5"
+	widgetanimbank_upgraded = "ui_storeroom_5x5_upgraded"
 	slot_x = 4
 	slot_y = 4
 	posslot_x = 0
 	posslot_y = 0
 elseif STOREROOM.SLOTS == 36 then
 	widgetanimbank = "ui_storeroom_6x6"
+	widgetanimbank_upgraded = "ui_storeroom_6x6_upgraded"
 	slot_x = 5
 	slot_y = 5
 	posslot_x = -40
 	posslot_y = -40
 elseif STOREROOM.SLOTS == 40 then
 	widgetanimbank = "ui_storeroom_5x8"
+	widgetanimbank_upgraded = "ui_storeroom_5x8_upgraded"
 	slot_x = 7
 	slot_y = 4
 	posslot_x = -117
 	posslot_y = 0
 elseif STOREROOM.SLOTS == 60 then
 	widgetanimbank = "ui_storeroom_5x12"
+	widgetanimbank_upgraded = "ui_storeroom_5x12_upgraded"
 	slot_x = 11
 	slot_y = 4
 	posslot_x = -280
 	posslot_y = 0
 elseif STOREROOM.SLOTS == 80 then
 	widgetanimbank = "ui_storeroom_5x16"
+	widgetanimbank_upgraded = "ui_storeroom_5x16_upgraded"
 	slot_x = 15
 	slot_y = 4
 	posslot_x = -440
 	posslot_y = 0
 elseif STOREROOM.SLOTS == 120 then
 	widgetanimbank = "ui_storeroom_6x20"
+	widgetanimbank_upgraded = "ui_storeroom_6x20_upgraded"
 	slot_x = 19
 	slot_y = 5
-	posslot_x = -602
+	posslot_x = -600
 	posslot_y = -40
 elseif STOREROOM.SLOTS == 140 then
 	widgetanimbank = "ui_storeroom_7x20"
+	widgetanimbank_upgraded = "ui_storeroom_7x20_upgraded"
 	slot_x = 19
 	slot_y = 6
-	posslot_x = -602
+	posslot_x = -600
 	posslot_y = -80
 else
 	widgetanimbank = "ui_storeroom_8x20"
+	widgetanimbank_upgraded = "ui_storeroom_8x20_upgraded"
 	slot_x = 19
 	slot_y = 7
-	posslot_x = -602
-	posslot_y = -120
+	posslot_x = -600
+	posslot_y = -124
 end
 ------------------- call function -----------------
 widgetcreation(widgetanimbank, widgetpos, slot_x, slot_y, posslot_x, posslot_y)

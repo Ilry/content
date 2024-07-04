@@ -1,9 +1,9 @@
 -- information about the mod
-version = "0.59.9.3"
+version = "0.59.9.5"
 name = "Show Me (中文)"
 author = "Star, +Serp, 傳說覺悟"
 forumthread = ""
-description = "从Show Me (Origin) v0.58模组汉化\n当前版本: "..version.." 更新:1.修复奔雷矛在物品栏不显示属性问题；2.修复包裹、调味站物品不正常显示中文的问题；3.去除棱镜物品显示(模组已做显示)；4.修复RPCguid为空导致崩溃的问题。\n"..[[
+description = "从Show Me (Origin) v0.58模组汉化\n当前版本: "..version.." 更新:1.修复奔雷矛在物品栏不显示属性问题；2.修复包裹、调味站物品不正常显示中文的问题；3.去除棱镜物品显示(棱镜已做显示)；\n"..[[
 
 历史更新：
 1.新增堆肥桶容量显示；
@@ -35,7 +35,7 @@ api_version = 10
 priority = 0.00666155465 --Priority does not matter.
 --russian_icon = true
 
-server_filter_tags = {"showme", "showme5993", "提示语句",}
+server_filter_tags = {"showme", "showme5995", "提示语句",}
 
 bugtracker_config = {
     upload_client_log = true,  -- 客户端报错日志

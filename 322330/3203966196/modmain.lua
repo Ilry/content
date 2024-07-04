@@ -15,7 +15,12 @@ local prefabConfigs = {
     { key = "key7", name = "icebox", config = "是否升级冰箱" },
     { key = "key8", name = "saltbox", config = "是否升级盐盒" },
     { key = "key9", name = "beargerfur_sack", config = "是否升级极地熊獾桶" },
-    { key = "key10", name = "krampus_sack", config = "是否升级坎普斯背包" }
+    { key = "key10", name = "krampus_sack", config = "是否升级坎普斯背包" },
+    { key = "key11", name = "houndstooth_blowpipe", config = "是否升级嚎弹炮" },
+    { key = "key12", name = "merm_armory", config = "是否升级鱼人军械库" },
+    { key = "key13", name = "merm_armory_upgraded", config = "是否升级高级鱼人军械库" },
+    { key = "key14", name = "merm_toolshed", config = "是否升级劣质工具棚" },
+    { key = "key15", name = "merm_toolshed_upgraded", config = "是否升级不那么劣质的工具棚" },
 }
 
 for _, config in ipairs(prefabConfigs) do

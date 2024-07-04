@@ -1,4 +1,5 @@
 return {
+    "ancienttree_seed",--惊喜种子
     --树种
     "marblebean",
     "livingtree_root",

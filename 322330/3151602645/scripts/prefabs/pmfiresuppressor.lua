@@ -345,7 +345,7 @@ local function fn()
     inst.components.fueled.accepting = false
     inst.components.fueled:SetSections(10)
     inst.components.fueled:SetSectionCallback(OnFuelSectionChange)
-    inst.components.fueled:InitializeFuelLevel(require'math'.huge)
+    inst.components.fueled:InitializeFuelLevel(9999999999)
     inst.components.fueled.bonusmult = 5
     inst.components.fueled.secondaryfueltype = FUELTYPE.CHEMICAL
 

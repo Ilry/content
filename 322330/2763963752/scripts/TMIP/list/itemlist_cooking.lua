@@ -44,6 +44,7 @@ return {
 	"guacamole",
 	"monsterlasagna",
 	--蔬菜料理
+	"shroombait",--酿夜帽
 	"figkabab",
 	"figatoni",
 	"koalefig_trunk",
@@ -102,6 +103,7 @@ return {
 
 
 	--辣味料理
+	"shroombait_spice_chili",--辣酿夜帽
 	"talleggs_spice_chili",--辣苏格兰高鸟蛋
 	"justeggs_spice_chili",--辣普通煎蛋
 	"veggieomlet_spice_chili",--辣早餐锅
@@ -185,6 +187,7 @@ return {
 
 
 	--蒜蓉料理
+	"shroombait_spice_garlic",--蒜香酿夜帽
 	"talleggs_spice_garlic",--蒜香苏格兰高鸟蛋
 	"veggieomlet_spice_garlic",--蒜香早餐锅
 	"justeggs_spice_garlic",--蒜香普通煎蛋
@@ -268,6 +271,7 @@ return {
 
 
 	--咸味料理
+	"shroombait_spice_salt",--咸的酿夜帽
 	"veggieomlet_spice_salt",--咸的早餐锅
 	"justeggs_spice_salt",--咸的普通煎蛋
 	"talleggs_spice_salt",--咸的苏格兰高鸟蛋
@@ -351,6 +355,7 @@ return {
 
 
 	--甜味料理
+	"shroombait_spice_sugar",--甜酿夜帽
 	"veggieomlet_spice_sugar",--甜早餐锅
 	"talleggs_spice_sugar",--甜苏格兰高鸟蛋
 	"justeggs_spice_sugar",--甜普通煎蛋

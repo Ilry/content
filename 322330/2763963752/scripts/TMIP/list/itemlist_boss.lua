@@ -1,4 +1,5 @@
 return {
+	"daywalker2",--拾荒疯猪
 	"sharkboi",--芬尼表弟
 	
 	"mutateddeerclops",--晶体独眼巨鹿

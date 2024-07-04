@@ -679,7 +679,7 @@ function WXAgriculture:HarvestCrops()
     end
 end
 
-local TOHAMMER_MUST_TAGS = { ACTIONS.HAMMER.id.."_workable", "oversized_veggie", "waxable", "show_spoilage" }
+local TOHAMMER_MUST_TAGS = { ACTIONS.HAMMER.id.."_workable", "oversized_veggie", "show_spoilage" }
 function WXAgriculture:HammerCrops()
     local sentryward = self.inst.components.entitytracker:GetEntity("sentryward")
     if sentryward == nil then
@@ -687,16 +687,14 @@ function WXAgriculture:HammerCrops()
     end
 
     local farm_plant = FindEntity(self.inst, REPEAT_WORK_DIST, function(ent)
-        return ent.components.waxable ~= nil and
-            ent.components.perishable ~= nil and
+        return ent.components.perishable ~= nil and
             ent.components.workable ~= nil and
             ent.components.workable:GetWorkAction() == ACTIONS.HAMMER and
             ent:IsNear(sentryward, SEE_WORK_DIST)
     end, TOHAMMER_MUST_TAGS)
     if farm_plant == nil then
         farm_plant = FindEntity(sentryward, SEE_WORK_DIST, function(ent)
-            return ent.components.waxable ~= nil and
-                ent.components.perishable ~= nil and
+            return ent.components.perishable ~= nil and
                 ent.components.workable ~= nil and
                 ent.components.workable:GetWorkAction() == ACTIONS.HAMMER
         end, TOHAMMER_MUST_TAGS)

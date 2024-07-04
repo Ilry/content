@@ -23,7 +23,7 @@ But don't be too greedy, or it will take too long!
 ]]
 
 author = "clearlove"
-version = "1.0.5"
+version = "1.0.6"
 
 api_version = 10
 
@@ -88,6 +88,12 @@ local pond_distance_options = {}
 pond_distance_options[1] = { description = CH and "无所谓" or "I don't care", data = "not set" }
 for i = 0, 40 do
     pond_distance_options[i+2] = { description = (i*2)..(CH and "个地皮" or " tiles"), data = i*2 }
+end
+
+local connect_ancient_options = {}
+connect_ancient_options[1] = { description = CH and "无所谓" or "I don't care", data = "not set" }
+for i = 1, 40 do
+    connect_ancient_options[i+1] = { description = (i*10)..(CH and "个地皮" or " tiles"), data = i*10 }
 end
 
 local one_or_two_options = {}
@@ -603,6 +609,14 @@ configuration_options = {
         options = monkey_num_options,
         default = "not set",
         hover = CH and "不要设置的过少，我尝试"
+    },
+    AddSectionTitle(CH and "地下特殊要求" or "Cave Special requirements"),
+    {
+        name = "cave_connected_ancient",
+        label = CH and "远古靠近楼梯" or "Ancient near Sinkhole",
+        options = connect_ancient_options,
+        default = "not set",
+        hover = CH and "楼梯靠近远古，只要有某个雕像/迷宫箱子距离梯子接近，就视为满足要求" or "Ancient near Sinkholes, as long as a statue/maze chest is close to the stairs, it is considered to meet the requirements",
     },
     AddSectionTitle(CH and "定制远古房间" or "Custom rooms"),
     -- ["SacredBarracks"] --圣地军营，五个雕像，4个影灯，1个主教，2个战车

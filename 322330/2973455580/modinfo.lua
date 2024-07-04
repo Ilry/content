@@ -1,4 +1,4 @@
-version = "1.0.57"
+version = "1.0.62"
 local isCh = locale == "zh" or locale == "zhr" or locale == "zht"
 author = "繁花丶海棠"
 forumthread = ""
@@ -140,5 +140,7 @@ configuration_options = {
     }, nil, enabletext),
     item("Items collect", i18n({"道具快捷收集存放", "Items Collect/Store"}),
          i18n({"按住Ctrl存放道具,制作栏快捷收集道具", "Press Ctrl+Mouse Right Store Items;Craft menu Collcect Items"}), -3, -1, -3, -1,
-         {i18n({"禁用收集", "Disable Collect"}), i18n({"禁用存放", "Disable Store"}), ""})
+         {i18n({"禁用收集", "Disable Collect"}), i18n({"禁用存放", "Disable Store"}), ""}),
+    item("replica patch", i18n({"replica错误修复补丁", "Replica Error Fix Patch"}),
+         i18n({"服务器replica始终存在从而修复服务器丢失replica问题", ""}))
 }

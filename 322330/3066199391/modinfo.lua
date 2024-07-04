@@ -1,54 +1,136 @@
-name = "Crystaleyezer/Furnace/Mushlight/Brightshade Range"
-description = [[
-1.Click following Entities for 30sec duration range indicator. Reclick them to cancel the range instantly.
-
-Scaled Furnace:Red
-Ice Crystaleyezer:Blue
-Mushlight:Cyan
-BrightShade Aggro range:Yellow
-BrightShade Parasite Immune range:Green
-Houndius Shootius:Pink
-Lighting Rod:Yellow
-
-This mod is mainly used for making constant temperature base.
-When Ice Crystaleyezer and Scaled Furnace range overlap, the temperature will keep between 1-69.
-
-2.Indicate range while building furnace and mushlight.
-
-Code refer to WorkShopID:2575190872
-Code Original Author:冰汽
-Code Optimization:adai1198
------------------------------------
-
-1、點選下列物件會在30秒內顯示其所涵蓋的範圍。再次點擊取消範圍。
-
-龍鱗爐:紅色
-冰眼塔:藍色
-蘑菇燈:青色
-亮茄仇恨範圍:黃色
-亮茄不寄生範圍:綠色
-眼球塔:粉紅色
-避雷針:黃色
-
-2、建造龍林爐、蘑菇燈時顯示範圍
-
-第二部分程式碼由友人adai1198編寫
-
-本mod主要用於建造恆溫住所，二者互相覆蓋到的範圍會無視季節維持恆溫
-
-
-此Mod程式碼參照工作坊ID:2575190872
-程式碼來源:冰汽
-程式碼優化:adai1198
------------------------------------
-]]
-
-author = "TakaoInari, adai1198"
-version = "0.0.6"
-forumthread = "/"
+version = '2024.07.04.1'
 api_version = 10
-icon_atlas = "modicon.xml"
-icon = "modicon.tex"
-all_clients_require_mod = false
-client_only_mod = true
 dst_compatible = true
+client_only_mod = true
+all_clients_require_mod = false
+icon = 'modicon.tex'
+icon_atlas = 'modicon.xml'
+
+local S = {
+  NAME = { 'Range Indicator', zh = '范围显示', zht = '範圍顯示' },
+  AUTHOR = {
+    'takaoinari, adai1198, (TW)Eric, liolok',
+    zh = 'takaoinari、adai1198、(TW)Eric、李皓奇',
+    zht = 'takaoinari、adai1198、(TW)Eric、李皓奇',
+  },
+  DESCRIPTION = {
+    'Show ranges by clicking, deploying or hovering.',
+    zh = '通过点击、部署、光标覆盖来显示各种范围。',
+    zht = '透過點擊、部署、遊標覆蓋來顯示各種範圍。',
+  },
+  YES = { 'Yes', zh = '是', zht = '是' },
+  NO = { 'No', zh = '否', zht = '否' },
+  CLICK = { 'Click', zh = '点击', zht = '點擊' },
+  MODIFIER_KEY = {
+    'Modifier Key',
+    zh = '组合键',
+    zht = '組合鍵',
+    DETAIL = {
+      "Bind a key to toggle indicator only when it's pressed.",
+      zh = '绑定一个按键，只有按住时才可以点击切换显示。',
+      zht = '綁定一個按鍵，只有按住時才可以點擊切換顯示。',
+    },
+  },
+  MOUSE_BUTTON = {
+    'Mouse Button',
+    zh = '鼠标按键',
+    zht = '滑鼠按鍵',
+    DETAIL = {
+      'Which button do you wanna use to toggle indicator?',
+      zh = '点击哪个按键切换范围显示？',
+      zht = '點擊哪個按鍵切換範圍顯示？',
+    },
+  },
+  QUICK_TOGGLE = {
+    'Quick Toggle',
+    zh = '快速切换',
+    zht = '快速切換',
+    DETAIL = {
+      'Bind a key to toggle most of the indicators?',
+      zh = '绑定切换大部分范围显示的按键',
+      zht = '綁定切換大部分範圍顯示的按鍵',
+    },
+  },
+  HOVER = { 'Hover', zh = '光标覆盖', zht = '遊標覆蓋' },
+  BOOKS = {
+    'Books',
+    zh = '书籍',
+    zht = '書籍',
+    DETAIL = {
+      'Do you wanna show the indicator of Wickerbottom books?',
+      zh = '是否显示薇克巴顿书籍的范围？',
+      zht = '是否顯示阿嬤(圖書館管理員)書籍的範圍',
+    },
+  },
+  OTHER = {
+    'Other',
+    zh = '其它',
+    zht = '其它',
+    DETAIL = {
+      'Do you wanna show the indicator of other items?\nSuch as Gunpowder, Pan Flute, Treeguard Idol...',
+      zh = '是否显示其它物品的范围？\n比如火药、排箫、树精雕像……',
+      zht = '是否顯示其它物品的範圍？ \n如火藥、排簫、樹人雕像…',
+    },
+  },
+}
+local T = ChooseTranslationTable
+
+name = T(S.NAME)
+author = T(S.AUTHOR)
+description = T(S.DESCRIPTION)
+
+-- stylua: ignore
+local keys = { -- from STRINGS.UI.CONTROLSSCREEN.INPUTS[1] of strings.lua, need to match constants.lua too.
+  'Disabled', 'Escape', 'F1', 'F2', 'F3', 'F4', 'F5', 'F6', 'F7', 'F8', 'F9', 'F10', 'F11', 'F12', 'Print', 'ScrolLock', 'Pause',
+  'Disabled', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+  'Disabled', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+  'Disabled', 'Tab', 'CapsLock', 'LShift', 'LCtrl', 'LAlt', 'Space', 'RAlt', 'RCtrl', 'Period', 'Slash', 'RShift',
+  'Disabled', 'Minus', 'Equals', 'Backspace', 'LeftBracket', 'RightBracket', 'Backslash', 'Semicolon', 'Enter',
+  'Disabled', 'Up', 'Down', 'Left', 'Right', 'Insert', 'Delete', 'Home', 'End', 'PageUp', 'PageDown', -- navigation
+  'Disabled', 'Num 0', 'Num 1', 'Num 2', 'Num 3', 'Num 4', 'Num 5', 'Num 6', 'Num 7', 'Num 8', 'Num 9', -- numberic keypad
+  'Num Period', 'Num Divide', 'Num Multiply', 'Num Minus', 'Num Plus', 'Disabled',
+}
+for i = 1, #keys do
+  local key = 'KEY_' .. keys[i]:gsub('Num ', 'KP_'):upper()
+  keys[i] = { description = keys[i], data = (keys[i] ~= 'Disabled') and key or false }
+end
+
+local function h(title) return { name = title, options = { { description = '', data = 0 } }, default = 0 } end -- header
+local booleans = { { description = T(S.YES), data = true }, { description = T(S.NO), data = false } } -- "Yes" or "No"
+
+configuration_options = {
+  h(T(S.CLICK)),
+  {
+    label = T(S.MODIFIER_KEY),
+    hover = T(S.MODIFIER_KEY.DETAIL),
+    options = keys,
+    default = false,
+    name = 'modifier_key',
+    is_keybind = true,
+  },
+  {
+    label = T(S.MOUSE_BUTTON),
+    hover = T(S.MOUSE_BUTTON.DETAIL),
+    options = { -- emoji and keycode from strings.lua
+      { description = '\238\132\128', data = 1000 }, -- Left Mouse Button
+      { description = '\238\132\129', data = 1001 }, -- Right Mouse Button
+      { description = '\238\132\130', data = 1002 }, -- Middle Mouse Button
+      { description = '\238\132\131', data = 1005 }, -- Mouse Button 4
+      { description = '\238\132\132', data = 1006 }, -- Mouse Button 5
+    },
+    default = 1002,
+    name = 'mouse_button',
+  },
+  {
+    label = T(S.QUICK_TOGGLE),
+    hover = T(S.QUICK_TOGGLE.DETAIL),
+    options = keys,
+    default = 'KEY_F5',
+    name = 'batch_key',
+    is_keybind = true,
+  },
+
+  h(T(S.HOVER)),
+  { label = T(S.BOOKS), hover = T(S.BOOKS.DETAIL), options = booleans, default = true, name = 'hover_books' },
+  { label = T(S.OTHER), hover = T(S.OTHER.DETAIL), options = booleans, default = true, name = 'hover_other' },
+}

@@ -1,19 +1,52 @@
 return {
+	"ancienttree_gem_sapling",--种下的惊喜种子
+	"ancienttree_nightvision_sapling",--种下的惊喜种子
+
+	"ancienttree_nightvision_sapling_item",--阴郁之棘苗
+	"ancienttree_nightvision",--阴郁之棘
+	
+	"ancienttree_gem_sapling_item",--萌芽石苗
+	"ancienttree_gem",--萌芽石
+
+
+	
+	
+	--下得一动不动的
+	-- "dug_grass_waxed",--草丛
+	-- "dug_berrybush_juicy_waxed",--多汁浆果丛
+	-- "bananabush_waxed",--香蕉丛
+
+	-- "grass_waxed",--草
+	-- "dug_berrybush2_waxed",--浆果丛
+
+	-- "farm_plant_randomseed_waxed",--种下的种子
+
+	-- "farm_plant_asparagus_waxed",--芦笋蕨
+	-- "farm_plant_onion_waxed",--洋葱植株
+	-- "farm_plant_pepper_waxed",--辣椒植株
+	-- "farm_plant_corn_waxed",--玉米杆
+	-- "farm_plant_durian_waxed",--榴莲藤
+	-- "farm_plant_watermelon_waxed",--西瓜植株
+	-- "farm_plant_dragonfruit_waxed",--火龙果藤
+	-- "farm_plant_garlic_waxed",--大蒜植株
+
+
+	-- "weed_forgetmelots_waxed",--必忘我
 	--猴子岛
 	"bananabush",--香蕉丛
 	"monkeytail",--猴尾草
 	"palmcone_sapling",--棕榈松果树苗
-	"palmconetree",--棕榈松果树
-	"palmconetree_short",--棕榈松果树
-	"palmconetree_normal",--棕榈松果树
+	-- "palmconetree",--棕榈松果树
+	-- "palmconetree_short",--棕榈松果树
+	-- "palmconetree_normal",--棕榈松果树
 	"palmconetree_tall",--棕榈松果树
 	--疙瘩树2022-2-24
 	"oceantree_pillar",
 	"watertree_pillar",
-	"oceantree",
-	"oceantree_short",
+	-- "oceantree",
+	-- "oceantree_short",
 	"oceantree_tall",
-	"oceantree_normal",
+	-- "oceantree_normal",
 	"oceantree_burnt",
 	"oceantree_stump",
 	"watertree_root",

@@ -131,6 +131,14 @@ local TextButton = require "widgets/textbutton"
 local Text = require "widgets/text"
 local TrueScrollArea = require "widgets/truescrollarea"
 
+
+local function MyGetInventoryItemAtlas(atlas, images)
+    if string.find(atlas, 'inventoryimages') then
+        return GetInventoryItemAtlas(images)
+    end
+    return atlas
+end
+
 local KEY_LIST = {
     "NONE", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T",
     "U", "V", "W", "X", "Y", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "F1", "F2", "F3",
@@ -282,7 +290,7 @@ local ImagePicker = Class(NoMuScreen, function(self, nomu_parent, callback)
     self.image_list = self.root:AddChild(NoMuList(function()
         local item = ImageButton()
         item.SetInfo = function(_, data)
-            item:SetTextures(data.atlas, data.image)
+            item:SetTextures(MyGetInventoryItemAtlas(data.atlas, data.image), data.image)
             item:SetHoverText(data.name .. (data.name == data.key and '' or (' (' .. data.key .. ')')), { offset_y = 50 })
             local w, h = item:GetSize()
             item:SetScale((iw - 4) / w, (ih - 4) / h)
@@ -737,7 +745,7 @@ local CommandConfigPanel = Class(NoMuScreen, function(self, nomu_parent, data, c
         TheFrontEnd:PushScreen(ImagePicker(self, function(atlas, image)
             self.data.atlas = atlas
             self.data.image = image
-            self.image:SetTextures(atlas, image)
+            self.image:SetTextures(MyGetInventoryItemAtlas(atlas, image), image)
             local iw, ih = self.image:GetSize()
             self.image:SetScale((self.data.button_size or default_button_size) / iw, (self.data.button_size or default_button_size) / ih)
         end))
@@ -756,7 +764,7 @@ local CommandConfigPanel = Class(NoMuScreen, function(self, nomu_parent, data, c
                 self.data.button_size = 128
             end
             self.button_size:SetText(STRINGS.CMD_MGR.BUTTON_TEXT_BUTTON_SIZE .. STRINGS.CMD_MGR.TITLE_TEXT_LEFT_BRACKET .. tostring(self.data.button_size) .. STRINGS.CMD_MGR.TITLE_TEXT_RIGHT_BRACKET)
-            self.image:SetTextures(self.data.atlas, self.data.image)
+            self.image:SetTextures(MyGetInventoryItemAtlas(self.data.atlas, self.data.image), self.data.image)
             local iw, ih = self.image:GetSize()
             self.image:SetScale(self.data.button_size / iw, self.data.button_size / ih)
         end))
@@ -783,7 +791,7 @@ local CommandConfigPanel = Class(NoMuScreen, function(self, nomu_parent, data, c
         self.data.atlas = 'images/avatars.xml'
         self.data.image = 'avatar_random.tex'
     end
-    self.image = self.root:AddChild(ImageButton(self.data.atlas, self.data.image))
+    self.image = self.root:AddChild(ImageButton(MyGetInventoryItemAtlas(self.data.atlas, self.data.image), self.data.image))
     self.image:SetPosition(-65 + left_dx, sy - row * 40)
     local iw, ih = self.image:GetSize()
     self.image:SetScale((self.data.button_size or default_button_size) / iw, (self.data.button_size or default_button_size) / ih)
@@ -887,7 +895,7 @@ local PinnedButton = Class(Widget, function(self, cmd)
     end
     self.cmd = cmd
 
-    self.image = self.root:AddChild(ImageButton(cmd.atlas, cmd.image))
+    self.image = self.root:AddChild(ImageButton(MyGetInventoryItemAtlas(cmd.atlas, cmd.image), cmd.image))
     self.image:SetTooltip(cmd.name .. '\n' .. STRINGS.CMD_MGR.TIPS_RIGHT_DRAG .. '\n' .. STRINGS.CMD_MGR.TIPS_CTRL_TO_CANCEL_PIN)
     self.image:SetOnClick(function()
         if TheInput:IsKeyDown(KEY_CTRL) then
@@ -1148,7 +1156,7 @@ local CommandManager = Class(Widget, function(self)
 
             item.SetInfo = function(_, cmd)
                 item.image:SetHoverText(cmd.name .. '\n' .. (cmd.pin_on_screen and STRINGS.CMD_MGR.TIPS_CTRL_TO_CANCEL_PIN or STRINGS.CMD_MGR.TIPS_CTRL_TO_PIN), { offset_y = 25 })
-                item.image:SetTextures(cmd.atlas, cmd.image)
+                item.image:SetTextures(MyGetInventoryItemAtlas(cmd.atlas, cmd.image), cmd.image)
                 local w, h = item.image:GetSize()
                 item.image:SetScale(30 / w, 30 / h)
                 item.image:SetOnClick(function()
@@ -1187,7 +1195,7 @@ local CommandManager = Class(Widget, function(self)
             local item = ImageButton()
             item.SetInfo = function(_, cmd)
                 item:SetHoverText(cmd.name .. '\n' .. (cmd.pin_on_screen and STRINGS.CMD_MGR.TIPS_CTRL_TO_CANCEL_PIN or STRINGS.CMD_MGR.TIPS_CTRL_TO_PIN), { offset_y = 50 })
-                item:SetTextures(cmd.atlas, cmd.image)
+                item:SetTextures(MyGetInventoryItemAtlas(cmd.atlas, cmd.image), cmd.image)
                 local w, h = item:GetSize()
                 item:SetScale(60 / w, 60 / h)
                 item:SetOnClick(function()

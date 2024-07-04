@@ -1,4 +1,9 @@
 return {
+	"wall_scrap",--废料墙
+	"junk_pile",--垃圾堆
+	"fence_junk",--垃圾栅栏
+	"junk_pile_big",--摇摇欲坠的垃圾堆
+
 	"ruins_cavein_obstacle",
 --装饰
 	"atrium_fence",

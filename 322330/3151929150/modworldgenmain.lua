@@ -910,6 +910,133 @@ end
 end
 
 
+-- Function to check if the given cell is valid and passable
+-- Utility function to check if a cell is within the grid and passable
+local function isValid_helper_for_BFS(grid, visited, x, y)
+    return x >= 0 and x < #grid and y >= 0 and y < #grid[1] and grid[x][y] == 1 and not visited[x][y]
+end
+
+-- Function to find the shortest distance using BFS
+local function connect_ancient_BFS(grid, starts, targets, threshold)
+    local directions = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}} -- Up, Down, Left, Right
+    local queue = {}
+    local visited = {}
+    for i = 1, #grid do
+        visited[i] = {}
+    end
+
+    -- Initialize the queue with all starting points
+    for _, start in ipairs(starts) do
+        table.insert(queue, {x = start[1], y = start[2], dist = 0})
+        visited[start[1]][start[2]] = true
+    end
+
+    while #queue > 0 do
+        local cell = table.remove(queue, 1)
+        if cell.dist > threshold then
+            return false
+        end
+
+        -- Check if the current cell is a target
+        for _, target in ipairs(targets) do
+            if cell.x == target[1] and cell.y == target[2] then
+                return true
+            end
+        end
+
+        -- Explore the neighbors
+        for _, dir in ipairs(directions) do
+            local newX, newY = cell.x + dir[1], cell.y + dir[2]
+            if isValid_helper_for_BFS(grid, visited, newX, newY) then
+                table.insert(queue, {x = newX, y = newY, dist = cell.dist + 1})
+                visited[newX][newY] = true
+            end
+        end
+    end
+
+    return false
+end
+
+
+local function check_connected_ancient(savedata, world_id, my_log_file)
+    if _G[world_id].ancient_connect == "not set" then
+        print("[Search your map] ancient connection is not set")
+        return true
+    else
+        print("[Search your map] ancient connection is set")
+        _G[world_id].check_statistic["ancient_connect"]["check_times"] = _G[world_id].check_statistic["ancient_connect"]["check_times"] + 1
+    end
+
+    local height = savedata.map.height
+    local width = savedata.map.width
+
+    -- For grid, 0 means obstacle, 1 means land
+    local grid = {}
+    for i = 1, height do
+        grid[i] = {}
+        for j = 1, width do
+            tiles_ij = WorldSim:GetTile(i, j)
+            if TileGroupManager:IsLandTile(tiles_ij) then
+                grid[i][j] = 1
+            else
+                grid[i][j] = 0
+            end
+        end
+    end
+
+    local starting_points = {}
+    -- get the tile that all 'cave_exit' belong to
+    local cave_exit = savedata.ents["cave_exit"]
+    for i, cave_exit_i in ipairs(cave_exit) do
+        local x = cave_exit_i["x"]
+        local z = cave_exit_i["z"]
+        local tile_x = math.floor((x/TILE_SCALE + savedata.map.width/2.0))
+        local tile_z = math.floor((z/TILE_SCALE + savedata.map.height/2.0))
+        -- assert the original value is 1
+        -- assert(grid[tile_x][tile_z] == 1, "cave_exit is not on the land")
+        table.insert(starting_points, {tile_x, tile_z})
+    end
+
+    -- use the tiles that some ancient entities to represent the target points in grid
+    -- 'ruins_statue_head_nogem_spawner', 'ruins_statue_head_spawner', 'ruins_statue_mage_nogem_spawner', 'ruins_statue_mage_spawner', 'pandoraschest'
+    local target_points = {}
+    local target_entities = {"ruins_statue_head_nogem_spawner", "ruins_statue_head_spawner", "ruins_statue_mage_nogem_spawner", "ruins_statue_mage_spawner", "pandoraschest"}
+    for i, target_entity in ipairs(target_entities) do
+        local target_entities_coors = savedata.ents[target_entity]
+        for j, target_point in ipairs(target_entities_coors) do
+            local x = target_point["x"]
+            local z = target_point["z"]
+            local tile_x = math.floor((x/TILE_SCALE + savedata.map.width/2.0))
+            local tile_z = math.floor((z/TILE_SCALE + savedata.map.height/2.0))
+            -- assert the original value is 1
+            -- assert(grid[tile_x][tile_z] == 1, target_entity.." is not on the land")
+            table.insert(target_points, {tile_x, tile_z})
+        end
+    end
+
+    -- print("target")
+    -- dumptable(target_points)
+
+
+    -- table_to_json_file(grid, world_id.."_grid.json")
+    -- table_to_json_file(starting_points, world_id.."_starting_points.json")
+    -- table_to_json_file(target_points, world_id.."_target_points.json")
+
+    local threshold = _G[world_id].ancient_connect
+    if connect_ancient_BFS(grid, starting_points, target_points, threshold) then
+        if _G[world_id].check_statistic["ancient_connect"]["success_times"] == 0 then
+            BEST_SEED_SO_FAR = SEED
+        end
+        _G[world_id].check_statistic["ancient_connect"]["success_times"] = _G[world_id].check_statistic["ancient_connect"]["success_times"] + 1
+        return true
+    else
+        return false
+    end
+
+
+
+end
+
 local function get_wormwhole_pairs(savedata, world_id, my_log_file)
     -- Find the which tiles the wormholes belong to
     local wormholes
@@ -1589,7 +1716,9 @@ local function check_room_number(savedata, world_id, my_log_file)
     local room_number_setting = _G[world_id].room_number_setting
     local tasks_need_custom_room = {}
     for task_need_custom_room, room_requirements in pairs(room_number_setting) do
-        table.insert(tasks_need_custom_room, task_need_custom_room)
+        if next(room_requirements) ~= nil then
+            table.insert(tasks_need_custom_room, task_need_custom_room)
+        end
     end
     local tasks_room_number_record = {}
 
@@ -1611,25 +1740,27 @@ local function check_room_number(savedata, world_id, my_log_file)
     end
     -- compare the tasks need custom room and the tasks_room_number_record
     for task_need_custom_room, room_requirements in pairs(room_number_setting) do
-        if tasks_room_number_record[task_need_custom_room] == nil then
-            print("[Search your map] custom room of ", task_need_custom_room, "but it does not exist")
-            return false
-        else
-            local task_room_real_choice = tasks_room_number_record[task_need_custom_room]
-            for room_name, room_number in pairs(room_requirements) do
-                if task_room_real_choice[room_name] == nil then
-                    _G[world_id].check_statistic["room_number_setting"][task_need_custom_room.."_"..room_name]["check_times"] = _G[world_id].check_statistic["room_number_setting"][task_need_custom_room.."_"..room_name]["check_times"] + 1
-                    return false
-                else
-                    _G[world_id].check_statistic["room_number_setting"][task_need_custom_room.."_"..room_name]["check_times"] = _G[world_id].check_statistic["room_number_setting"][task_need_custom_room.."_"..room_name]["check_times"] + 1
-                    if task_room_real_choice[room_name] ~= room_number then
-                        print("[Search your map] room", room_name, " in "..task_need_custom_room.." requires "..room_number.." but got "..task_room_real_choice[room_name])
+        if next(room_requirements) ~= nil then
+            if tasks_room_number_record[task_need_custom_room] == nil then
+                print("[Search your map] custom room of ", task_need_custom_room, "but it does not exist")
+                return false
+            else
+                local task_room_real_choice = tasks_room_number_record[task_need_custom_room]
+                for room_name, room_number in pairs(room_requirements) do
+                    if task_room_real_choice[room_name] == nil then
+                        _G[world_id].check_statistic["room_number_setting"][task_need_custom_room.."_"..room_name]["check_times"] = _G[world_id].check_statistic["room_number_setting"][task_need_custom_room.."_"..room_name]["check_times"] + 1
                         return false
                     else
-                        if _G[world_id].check_statistic["room_number_setting"][task_need_custom_room.."_"..room_name]["success_times"] == 0 then
-                            BEST_SEED_SO_FAR = SEED
+                        _G[world_id].check_statistic["room_number_setting"][task_need_custom_room.."_"..room_name]["check_times"] = _G[world_id].check_statistic["room_number_setting"][task_need_custom_room.."_"..room_name]["check_times"] + 1
+                        if task_room_real_choice[room_name] ~= room_number then
+                            print("[Search your map] room", room_name, " in "..task_need_custom_room.." requires "..room_number.." but got "..task_room_real_choice[room_name])
+                            return false
+                        else
+                            if _G[world_id].check_statistic["room_number_setting"][task_need_custom_room.."_"..room_name]["success_times"] == 0 then
+                                BEST_SEED_SO_FAR = SEED
+                            end
+                            _G[world_id].check_statistic["room_number_setting"][task_need_custom_room.."_"..room_name]["success_times"] = _G[world_id].check_statistic["room_number_setting"][task_need_custom_room.."_"..room_name]["success_times"] + 1
                         end
-                        _G[world_id].check_statistic["room_number_setting"][task_need_custom_room.."_"..room_name]["success_times"] = _G[world_id].check_statistic["room_number_setting"][task_need_custom_room.."_"..room_name]["success_times"] + 1
                     end
                 end
             end
@@ -1764,6 +1895,18 @@ local function check_save_data(savedata, world_id, my_log_file)
         end_time = os.time()
         time_for_BFS = end_time - start_time
         print("[Search your map] time for check_connected_moon_island:", time_for_BFS)
+    end
+
+    start_time = os.time()
+    if not check_connected_ancient(savedata, world_id, my_log_file) then
+        end_time = os.time()
+        time_for_BFS = end_time - start_time
+        print("[Search your map] time for check_connected_ancient:", time_for_BFS)
+        return false
+    else
+        end_time = os.time()
+        time_for_BFS = end_time - start_time
+        print("[Search your map] time for check_connected_ancient:", time_for_BFS)
     end
     
     -- 附近有足够数量的entity(附近有多个洞穴)
@@ -2010,6 +2153,10 @@ local function set_up_statistic(world_id)
     if _G[world_id].moon_island_connect~="not set" then
         _G[world_id].check_statistic["moon_island_connect"] = {check_times = 0, success_times = 0}
     end
+    -- ancient_connect
+    if _G[world_id].ancient_connect~="not set" then
+        _G[world_id].check_statistic["ancient_connect"] = {check_times = 0, success_times = 0}
+    end
 end
 
 local function print_statistic(my_log_file, world_id)
@@ -2074,6 +2221,12 @@ local function print_statistic(my_log_file, world_id)
         local success_times = _G[world_id].check_statistic["moon_island_connect"]["success_times"]
         local success_rate = success_times / check_times
         my_log_file:write(os.date("%H:%M:%S", os.time()) .. "moon_island_connect: " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
+    end
+    if _G[world_id].ancient_connect~="not set" then
+        local check_times = _G[world_id].check_statistic["ancient_connect"]["check_times"]
+        local success_times = _G[world_id].check_statistic["ancient_connect"]["success_times"]
+        local success_rate = success_times / check_times
+        my_log_file:write(os.date("%H:%M:%S", os.time()) .. "ancient_connect: " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
     end
     if BEST_SEED_SO_FAR ~= nil then
         my_log_file:write(os.date("%H:%M:%S", os.time()) .. "BEST_SEED_SO_FAR: " .. BEST_SEED_SO_FAR .."\n")

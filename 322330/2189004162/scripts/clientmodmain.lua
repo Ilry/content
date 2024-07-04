@@ -323,11 +323,8 @@ local function IsPlayerClientLoaded(player)
 end
 
 local function AddDeployHelper(inst)
-	if IS_DST then
-		inst:AddComponent("deployhelper")
-	else
-		inst:AddComponent("dst_deployhelper")
-	end
+	-- Courtesy of Hornet 🗿
+	inst:AddComponent(IS_DST and "deployhelper" or "dst_deployhelper")
 end
 
 local function GetDeployHelper(inst)
@@ -337,8 +334,6 @@ local function GetDeployHelper(inst)
 		return inst.components.dst_deployhelper
 	end
 end
-
-
 
 function OnCurrentlySelectedItemChanged(old, new, itemInfo)
 	-- Somehow people are hovering something without a prefab that also fails IsPrefab on the server
@@ -447,8 +442,12 @@ function OnCurrentlySelectedItemChanged(old, new, itemInfo)
 			new.insight_hover_range:SetVisible(true)
 		end
 	elseif GetDeployHelper(new) then
+		-- Why have I been forsaken?
+		if localPlayer.TearsInTheRain == nil then
+			localPlayer.TearsInTheRain = SpawnPrefab("insight_prefab_placer")
+		end
 		local cmp = GetDeployHelper(new)
-		cmp:StartHelper(nil, nil)
+		cmp:StartHelper(nil, localPlayer.TearsInTheRain)
 		cmp.delay = math.huge -- Prevent it from disappearing instantly, since it's kept open by (what I assume) is TriggerDeployHelpers running over and over?
 	end
 end
@@ -639,9 +638,15 @@ local function LocalPlayerDeactivated(src)
 	ClientCoreEventer:PushEvent("force_insightui_exit")
 
 	local insight = GetLocalInsight(localPlayer)
-	insight.context = nil
-	insight:Shutdown()
-	localPlayer = nil
+
+	-- I can't think of a case where this would happen normally.
+	-- The few crash reports I saw had DSA enabled though, which could be related.
+	if insight then
+		insight.context = nil
+		insight:Shutdown()
+		localPlayer = nil
+	end
+	
 	--[[
 	local x = 0
 	--mprint(x, #onLocalPlayerRemove)

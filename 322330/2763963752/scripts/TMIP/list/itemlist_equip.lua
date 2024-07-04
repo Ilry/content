@@ -1,4 +1,12 @@
 return {
+	"merm_tool",--劣质工具
+	"merm_tool_upgraded",--不那么劣质的工具
+	"mermarmorhat",--沼泽斗士头盔
+	"mermarmorupgradedhat",--沼泽战士头盔
+	
+	"wurt_swampitem_lunar",--光芒投泥带
+	"wurt_swampitem_shadow",--绝望投泥带
+
 	
 	"staff_lunarplant",--亮茄魔杖
 	"sword_lunarplant",--亮茄剑
@@ -67,6 +75,8 @@ return {
 	"slingshotammo_slow",
 	"slingshotammo_thulecite",
 	--头盔
+	"scraphat",--拾荒尖帽
+
 	"voidclothhat",--虚空风帽
 	"wagpunkhat",--W.A.R.B.I.S.头戴齿轮
 	"woodcarvedhat",--硬木帽
@@ -85,6 +95,7 @@ return {
 	"balloonhat",
 	"eyemaskhat",
 	--护甲
+	"armor_lunarplant_husk",--荆棘茄甲
 	"armorwagpunk",--W.A.R.B.I.S.盔甲
 	"armor_voidcloth",--虚空长袍
 	"armor_lunarplant",--亮茄盔甲

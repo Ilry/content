@@ -19,10 +19,9 @@ if isclient and fastbtn then
         return data
     end
     TUNING.TEMP2HM = LoadData(TEMP_FILE) or {}
+    TUNING.DATA2HM = TUNING.DATA2HM or {}
     function SaveTemp2hm() TheSim:SetPersistentString(TEMP_FILE, DataDumper(TUNING.TEMP2HM)) end
 
-    TUNING.DATA2HM = TUNING.DATA2HM or {}
-    TUNING.chatstringfn2hm = TUNING.chatstringfn2hm or {}
     local configloadtip = TUNING.isCh2hm and "[为爽而虐客户端专属配置已保存,下次进入游戏时生效]" or
                               "[Shadow World Mod Client Config Updated.Enter Game After Will Apply.]"
     local immediatelytip = TUNING.isCh2hm and "[为爽而虐客户端专属配置已保存,该选项可以直接生效]" or
@@ -43,24 +42,7 @@ if isclient and fastbtn then
             TUNING.TEMP2HM.opensort = nil
             SaveTemp2hm()
             chat_string = chat_string .. configloadtip
-            -- elseif chat_string == "显示收集" or chat_string == "show collect" then
-            --     TUNING.TEMP2HM.opencollect = true
-            --     SaveTemp2hm()
-            -- elseif chat_string == "隐藏收集" or chat_string == "hide collect" then
-            --     TUNING.TEMP2HM.opencollect = false
-            --     SaveTemp2hm()
-            -- elseif chat_string == "默认收集" or chat_string == "default collect" then
-            --     TUNING.TEMP2HM.opencollect = nil
-            --     SaveTemp2hm()
-        else
-            -- 插入规则
-            for str, fn in pairs(TUNING.chatstringfn2hm) do
-                if str and str == chat_string and fn then
-                    chat_string = fn(TUNING.TEMP2HM)
-                    SaveTemp2hm()
-                end
-            end
         end
-        return Say(self, chat_string, ...)
+        return Say(self, chat_string, whisper, ...)
     end
 end

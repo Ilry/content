@@ -5,6 +5,8 @@
 
 segment="descriptors"
 
+# ./cli/descriptor.sh offering_pot -p
+
 if [[ $* == *-p* ]]; then
 	segment="prefab_descriptors"
 	echo "Entering prefab descriptor mode."

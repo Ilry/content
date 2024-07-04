@@ -1,4 +1,32 @@
 return {
+	"beeswax_spray",--防腐喷雾
+	"mosquitomusk",--小痒痒
+	
+
+	"mosquitomermsalve",--蚊血注射液
+	"healingsalve_acid",--黏糊糊的药膏
+	"mosquitobomb",--蚊子炸弹
+
+	"charlierose",--脆弱玫瑰
+
+	"storage_robot",--瓦器人
+
+	"winona_remote",--称手遥控器
+	"winona_telebrella",--传送伞
+	"winona_storage_robot",--薇机人
+	"winona_holotelepad",--不稳定传输
+	"winona_catapult_item",--薇诺娜的投石机
+	"winona_battery_low_item",--薇诺娜的发电机
+	"winona_battery_high_item",--薇诺娜的宝石发电机
+	"winona_spotlight_item",--薇诺娜的聚光灯
+	"winona_recipescanner",--校准观察机
+
+	"inspectacleshat",--检查专用镜
+	"chestupgrade_stacksize",--弹性空间制造器
+	"winona_teleport_pad_item",--传送运输站
+	
+	"boatrace_seastack_monkey_throwable_deploykit",
+
 	"leif_idol",--树精守卫雕像
 	"wagpunkbits_kit",--自动修理机
 
@@ -203,6 +231,8 @@ return {
 	"battlesong_lunaraligned",--启迪摇篮曲
 
     --雕像草图
+	"chesspiece_yotd_sketch",--起点塔雕塑草图
+	"chesspiece_sharkboi_sketch",--大霜鲨雕塑草图
 	"chesspiece_warg_mutated_sketch",--附身座狼雕塑草图
 	"chesspiece_deerclops_mutated_sketch",--晶体独眼巨鹿雕塑草图
 	"chesspiece_bearger_mutated_sketch",--装甲熊獾雕塑草图
@@ -251,6 +281,18 @@ return {
     "oceanfishingbobber_canary_tacklesketch",
     "oceanfishingbobber_goose_tacklesketch",
     "oceanfishingbobber_malbatross_tacklesketch",
+	--龙鹰
+	"dragonboat_kit",--龙蝇船套装
+	"boatrace_checkpoint_throwable_deploykit",--比赛检查点套装
+	"mastupgrade_lamp_item_yotd",--龙蝇灯套装
+	"boatrace_seastack_throwable_deploykit",--黄金浮标套装
+	"yotd_anchor_item",--巨爪船锚套装
+	"boatrace_seastack_monkey_throwable_deploykit",--荆棘浮标套装
+	"dragonboat_pack",--豪华龙蝇船套装
+	"mast_yotd_item",--龙翼桅杆套装
+	"boatrace_start_throwable_deploykit",--起点塔套装
+    "boat_bumper_yotd_kit",--獠牙保险杠套装
+    "yotd_steeringwheel_item",--龙蝇船方向舵套装
     --萝卜鼠
     "yotc_carrat_scale_item",
     "yotc_carrat_gym_speed_item",

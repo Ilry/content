@@ -1,4 +1,7 @@
 return {
+	"ancientfruit_nightvision",--夜莓
+	"ancientfruit_nightvision_cooked",--熟夜莓
+
 	"ipecacsyrup",--泻根糖浆
 	
 	"yotr_food1",--兔子卷

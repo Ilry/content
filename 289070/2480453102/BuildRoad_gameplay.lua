@@ -42,25 +42,23 @@ function OnUnitMoved(playerId:number, unitId:number, tileX, tileY)
 			
 			if currentRouteType == -1 or buildingRouteType.PlacementValue > GameInfo.Routes[currentRouteType].PlacementValue then
 				RouteBuilder.SetRouteType(plot, buildingRouteType.Index);
-				print(buildingRouteType.Index);
-				pTreasury:ChangeGoldBalance(-10);
+				-- print(buildingRouteType.Index);
+				pTreasury:ChangeGoldBalance(-2);
 			end
 		end
 	end
-	print(playerResources:GetResourceAmount(CoalId));
-	print(playerResources:GetResourceAmount(IronId));
+	-- print(playerResources:GetResourceAmount(CoalId));
+	-- print(playerResources:GetResourceAmount(IronId));
 	if (unitType.UnitType=='UNIT_MILITARY_ENGINEER' and mBuildable==1 and playerResources:GetResourceAmount(CoalId)>0 and playerResources:GetResourceAmount(IronId)>0) then
 		local plot = Map.GetPlot(tileX, tileY);
-		print('a');
+		-- print('a');
 		if (not plot:IsWater()) then
 			local currentRouteType = plot:GetRouteType();
-			
-			print('b');
+			if GameInfo.Routes[currentRouteType].PlacementValue ~= 5 then
 				RouteBuilder.SetRouteType(plot,4);
-				print('c');
 				playerResources:ChangeResourceAmount(CoalId, -1);
 	  			playerResources:ChangeResourceAmount(IronId, -1);
-	print('d');
+	  		end
 		end
 	end
 end

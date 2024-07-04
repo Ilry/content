@@ -49,7 +49,8 @@ local storewhitelist = {"seedpouch", "candybag"}
 local itemsblacklist = {"pocketwatch_portal", "pocketwatch_recall"}
 if ACTIONS.BEIZHU and ACTIONS.BEIZHU.str == STRINGS.SIGNS.MENU.ACCEPT then itemsblacklist = {} end
 -- 优先存放容器
-local prioritystorelist = {"dragonflyfurnace", "saltbox", "icebox"}
+local prioritystorelist = {"candybag", "dragonflyfurnace"}
+if TUNING.SEEDPOUCH_PRESERVER_RATE <= 0 then table.insert(prioritystorelist, 1, "seedpouch") end
 local prioritystoreents = {}
 for i, v in ipairs(prioritystorelist) do prioritystoreents[v] = i end
 -- 道具存取特效,以及持续高亮展示
@@ -697,12 +698,12 @@ end
 -- 所在世界进行穿越请求
 local function exchangefn(player, inst)
     if TheWorld.ismastersim and inst.components.container and not inst.containersendtask2hm and not inst.containerreceivetask2hm and
-        not inst.exchangeconfirmtask2hm and inst.virtchest == nil then
-        inst.sendcontainerproxyplayer2hm = player
-        inst.containersendtask2hm = inst:DoTaskInTime(1.5, exchangetaskend)
+        not inst.exchangeconfirmtask2hm and inst.virtchest == nil and player then
         local name = findcontainerproxyname(inst)
         local world_id = findanotherworldid(inst)
         if world_id and name then
+            inst.sendcontainerproxyplayer2hm = player
+            inst.containersendtask2hm = inst:DoTaskInTime(1.5, exchangetaskend)
             if not inst:HasTag("exchangeloading2hm") then inst:AddTag("exchangeloading2hm") end
             exchangesenddata(inst, "exchangesenddata2hm", world_id, name)
         elseif player and player:IsValid() and player.components.talker then
@@ -712,14 +713,26 @@ local function exchangefn(player, inst)
 end
 -- 穿越按钮
 AddModRPCHandler("MOD_HARDMODE", "exchangebtn2hm", exchangefn)
-local function exchangebtnfn(inst, doer)
+local function exchangevalidfn(inst) return defaultbtnvalidfn(inst) and inst:HasTag("pocketdimension_container") and not inst:HasTag("exchangeloading2hm") end
+local function checkbtnstatus(_inst, inst, btn)
+    if not (inst and inst:IsValid() and not exchangevalidfn(inst)) then
+        _inst.checkdisabletask2hm:Cancel()
+        _inst.checkdisabletask2hm = nil
+        if btn and btn.Enable then btn:Enable() end
+    end
+end
+local function exchangebtnfn(inst, doer, btn)
+    if btn and btn.Disable and btn.inst and not btn.inst.checkdisabletask2hm then
+        btn:Disable()
+        -- 暂停时不做计算
+        btn.inst.checkdisabletask2hm = btn.inst:DoPeriodicTask(0.1, checkbtnstatus, 0.5, inst, btn)
+    end
     if inst.components.container and TheWorld.ismastersim then
         exchangefn(doer, inst)
     elseif inst.replica.container ~= nil then
         SendModRPCToServer(GetModRPC("MOD_HARDMODE", "exchangebtn2hm"), inst)
     end
 end
-local function exchangevalidfn(inst) return defaultbtnvalidfn(inst) and inst:HasTag("pocketdimension_container") and not inst:HasTag("exchangeloading2hm") end
 
 -- 容器收集
 local function getfinalowner(inst)
@@ -1706,7 +1719,7 @@ Use Orange Amulet will Picktop Near Same Items]],
         return btn
     end
     -- 按钮转向
-    local btnnames = {"reskinbutton2hm", "exchangebutton2hm", "lockbutton2hm", "sortbutton2hm", "multisortbutton2hm", "collectbutton2hm"}
+    local btnnames = {"reskinbutton2hm", "exchangebutton2hm", "lockbutton2hm", "sortbutton2hm", "multisortbutton2hm", "collectbutton2hm", "button"}
     local changebtndirtip
     local function supportchangebtnpos(self, btn, container)
         if not changebtndirtip then
@@ -2461,6 +2474,24 @@ if itemscfg then
                 self.ignoreoverstacked = false
             end
         end
+        local function getperishablerate(owner, inst, self)
+            local modifier = 1
+            if owner.components.preserver ~= nil then
+                modifier = owner.components.preserver:GetPerishRateMultiplier(inst) or modifier
+            elseif owner:HasTag("fridge") then
+                if inst:HasTag("frozen") and not owner:HasTag("nocool") and not owner:HasTag("lowcool") then
+                    modifier = TUNING.PERISH_COLD_FROZEN_MULT
+                else
+                    modifier = TUNING.PERISH_FRIDGE_MULT
+                end
+            elseif owner:HasTag("foodpreserver") then
+                modifier = TUNING.PERISH_FOOD_PRESERVER_MULT
+            elseif owner:HasTag("cage") and inst:HasTag("small_livestock") then
+                modifier = TUNING.PERISH_CAGE_MULT
+            end
+            if owner:HasTag("spoiler") then modifier = modifier * TUNING.PERISH_GROUND_MULT end
+            return modifier * 1
+        end
         local function processstoreincontainers(invobject, ents, proxyents, inst, src_pos, isstackable)
             -- 优先存放在当前打开的容器
             local toremove = {}
@@ -2476,7 +2507,7 @@ if itemscfg then
             -- end
             -- for _, i in ipairs(toremove) do table.remove(ents, i) end
             -- toremove = {}
-            -- 优先存放在已有此道具的容器,全图唯一容器更加优先
+            -- 优先存放在锁定存放此道具或已有此道具的容器(后者中,全图唯一容器更加优先)
             if haslockbutton then
                 for i, ent in ipairs(ents) do
                     if ent.components.container.itemtestfnprefabs2hm ~= nil then
@@ -2532,54 +2563,119 @@ if itemscfg then
                 end
             end
             for _, i in ipairs(toremove) do table.remove(ents, i) end
-            -- 优先存放在有存放道具限制的容器
+            -- 其次，优先存放在有存放道具限制的容器（某些道具特殊处理）
+            -- 暖石特殊处理，非夏天优先存放在冰箱，夏天额根据优先级优先存放在龙鳞火炉
+            if invobject:HasTag("heatrock") and not TheWorld.state.issummer then
+                toremove = {}
+                for i, ent in ipairs(ents) do
+                    if ent:HasTag("fridge") and not ent:HasTag("nocool") then
+                        openvirtchest(ent, inst)
+                        if ent.components.container:GiveItem(invobject, nil, src_pos, false) then
+                            delayshowmovefx(ent)
+                            return true
+                        else
+                            table.insert(toremove, i)
+                        end
+                    end
+                end
+                for _, i in ipairs(toremove) do table.remove(ents, i) end
+            end
+            -- 有新鲜度的道具特殊处理
             local tmpentsindex = {}
             local itemtestfnents = {}
-            for i, ent in ipairs(ents) do
-                if ent.components.container.itemtestfn ~= nil then
+            local rates
+            local perishable = invobject.components.perishable
+            local hasprioritystoreents
+            if perishable ~= nil then
+                -- 按保鲜能力排序，其次按唯一容器/限制容器/普通容器进行排序
+                rates = {}
+                local totalproxyents = GetTableSize(proxyents)
+                local totalents = totalproxyents + #ents
+                local j = 0
+                for master, v in pairs(proxyents) do
+                    local rate = getperishablerate(master, invobject, perishable)
+                    if rate < 1 then
+                        rates[master] = rate
+                        table.insert(itemtestfnents, master)
+                        j = j + 1
+                        tmpentsindex[master] = j
+                    end
+                end
+                for i, ent in ipairs(ents) do
                     table.insert(itemtestfnents, ent)
-                    tmpentsindex[ent] = i
+                    local rate = getperishablerate(ent, invobject, perishable)
+                    if rate < 1 then rates[ent] = rate end
+                    if ent.components.container.itemtestfn ~= nil then
+                        tmpentsindex[ent] = i + totalproxyents
+                    else
+                        tmpentsindex[ent] = i + totalents
+                    end
+                end
+            else
+                -- 无新鲜度的道具
+                for i, ent in ipairs(ents) do
+                    if ent.components.container.itemtestfn ~= nil then
+                        table.insert(itemtestfnents, ent)
+                        tmpentsindex[ent] = i
+                        if not hasprioritystoreents and prioritystoreents[ent.prefab] then hasprioritystoreents = true end
+                    end
                 end
             end
-            if #itemtestfnents > 0 then
-                table.sort(itemtestfnents, function(a, b)
-                    if not (a and b and a.prefab and b.prefab and tmpentsindex[a] and tmpentsindex[b]) then return false end
-                    local aidx = prioritystoreents[a.prefab]
-                    local bidx = prioritystoreents[b.prefab]
-                    if aidx and bidx then
-                        if aidx == bidx then return tmpentsindex[a] < tmpentsindex[b] end
-                        return aidx < bidx
-                    elseif aidx or bidx then
-                        return aidx ~= nil
-                    end
-                    return tmpentsindex[a] < tmpentsindex[b]
-                end)
+            if not IsTableEmpty(itemtestfnents) then
+                if perishable ~= nil or hasprioritystoreents then
+                    table.sort(itemtestfnents, function(a, b)
+                        if not (a and b and a.prefab and b.prefab and tmpentsindex[a] and tmpentsindex[b]) then return false end
+                        -- 先按指定的优先级容器存放
+                        local aidx = prioritystoreents[a.prefab]
+                        local bidx = prioritystoreents[b.prefab]
+                        if aidx or bidx then
+                            if aidx and bidx then
+                                if aidx == bidx then return tmpentsindex[a] < tmpentsindex[b] end
+                                return aidx < bidx
+                            end
+                            return aidx ~= nil
+                        end
+                        if perishable ~= nil then
+                            -- 有新鲜度的道具再按保鲜程度存放
+                            local arate = rates[a]
+                            local brate = rates[b]
+                            if arate or brate then
+                                if arate and brate then
+                                    if arate == brate then return tmpentsindex[a] < tmpentsindex[b] end
+                                    return arate < brate
+                                end
+                                return arate ~= nil
+                            end
+                        end
+                        -- 最后默认排放
+                        return tmpentsindex[a] < tmpentsindex[b]
+                    end)
+                end
                 for _, ent in ipairs(itemtestfnents) do
                     openvirtchest(ent, inst)
                     if ent.components.container:GiveItem(invobject, nil, src_pos, false) then
-                        delayshowmovefx(ent)
+                        delayshowmovefx(ent.currentpocket2hm or ent)
                         return true
-                    else
-                        table.remove(ents, i)
                     end
                 end
             end
-            -- 普通容器
-            for _, ent in ipairs(ents) do
-                if ent.components.container.itemtestfn == nil then
-                    openvirtchest(ent, inst)
-                    if ent.components.container:GiveItem(invobject, nil, src_pos, false) then
-                        delayshowmovefx(ent)
-                        return true
+            -- 最后，存放在普通容器
+            if perishable == nil then
+                for _, ent in ipairs(ents) do
+                    if ent.components.container.itemtestfn == nil then
+                        openvirtchest(ent, inst)
+                        if ent.components.container:GiveItem(invobject, nil, src_pos, false) then
+                            delayshowmovefx(ent)
+                            return true
+                        end
                     end
                 end
             end
         end
         storeaction.fn = function(act)
             local inst = act and act.doer
-            if not (inst and act.invobject and act.invobject.components.inventoryitem and inst.components.inventory and inst.components.inventory.opencontainers) then
-                return
-            end
+            if not (inst and act.invobject and act.invobject:IsValid() and act.invobject.components.inventoryitem and inst.components.inventory and
+                inst.components.inventory.opencontainers) then return end
             local owner = act.invobject.components.inventoryitem.owner
             local prevcontainer = owner and (owner.components.container or owner.components.inventory)
             if not prevcontainer then return end
@@ -2622,7 +2718,7 @@ if itemscfg then
                     end
                 end
             end
-            if #ents <= 0 and IsTableEmpty(proxyents) then return end
+            if IsTableEmpty(ents) and IsTableEmpty(proxyents) then return end
             local prevslot = act.invobject.components.inventoryitem:GetSlotNum()
             -- 进行存放道具操作
             act.invobject.components.inventoryitem:RemoveFromOwner(true)

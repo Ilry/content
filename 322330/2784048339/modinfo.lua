@@ -1,29 +1,35 @@
 local L = locale ~= "zh" and locale ~= "zhr"
 name = L and "Storeroom (New)" or "储藏室 (新地窖)"
-version = "2.6.9"
+version = "2.7.0"
 author = "MrM + 傳說覺悟"
 
 description = L and "Your personal space. The fix no longer affects SaltBox and Tin FishBox.\n\nMod version: "..version.."  update:\n"..[[
-1.Add SortOut.
-2.Add Container Drag, Alt+RMouseDrag, Minus Reset.
+1. Support chestupgrade_stacksize upgrade, after upgrade, the SortOut function will not be used;
+2. When setting only player destruction, the bear badger will no longer be able to slap out items, including other creatures slapping.
+3. Support setting the upper limit of the number of days for returning to freshness.
 
 Historical update:
-1.Add 36, 120, 140, 160 slots.
-2.20 slots changed to 25 slots, 5x5 form.
-3.Compatible with the new tech bar.
-4.Material, marble replaced with pigskin.
-5.remove collision effect
+1.Add SortOut.
+2.Add Container Drag, Alt+RMouseDrag, Minus Reset.
+3.Add 36, 120, 140, 160 slots.
+4.20 slots changed to 25 slots, 5x5 form.
+5.Compatible with the new tech bar.
+6.Material, marble replaced with pigskin.
+7.remove collision effect
 ]]
 		or "建造一个更大的储存空间！修复不再影响盐盒和锡鱼箱。\n当前版本："..version.."  更新：\n"..[[
-1.新增整理功能；
-2.新增容器拖移功能，Alt+鼠标右键拖移，减号复原。
+1.支持弹性空间套件升级，升级后将不能使用整理功能；
+2.设置仅玩家破坏时，熊獾将不能再拍出物品，包括其他生物打击也不掉出物品。
+3.支持设置返鲜突破天数上限。
 
 历史更新：
-1.新增36、120、140、160格；
-2.20格更改为25格，九宫格形式。
-3.适配新版科技栏，可以在建筑、储物栏建造；
-4.材料大理石更换成猪皮，毕竟要防水且还是内卷式的门。
-5.去除碰撞效果，支持建6锅且不影响使用。
+1.新增整理功能；
+2.新增容器拖移功能，Alt+鼠标右键拖移，减号复原。
+3.新增36、120、140、160格；
+4.20格更改为25格，九宫格形式。
+5.适配新版科技栏，可以在建筑、储物栏建造；
+6.材料大理石更换成猪皮，毕竟要防水且还是内卷式的门。
+7.去除碰撞效果，支持建6锅且不影响使用。
 
 Wegame已更新
 ]]
@@ -179,6 +185,28 @@ configuration_options =
 		},
 		default = true,
 	},
+	
+	L and {
+		name = "FreshnessUp",
+		label = "Freshness Up",
+		hover = "Breaking the limit of the number of days to freshness",
+		options =
+		{
+			{description = "OFF", data = false},
+			{description = "ON", data = true},
+		},
+		default = false,
+	} or {
+		name = "FreshnessUp",
+		label = "突破返鲜天数",
+		hover = "有新鲜度的物品达到最新鲜后天数还会继续往上累加",
+		options =
+		{
+			{description = "关闭", data = false},
+			{description = "开启", data = true},
+		},
+		default = false,
+	},
 
 	L and {
 		name = "Language",
@@ -190,14 +218,14 @@ configuration_options =
 		{description = "Francais", data = "Fr"},
 		{description = "Croatian", data = "Cr"},
 		{description = "German", data = "Gr"},
-		{description = "English", data = "en"},
+		{description = "English", data = "En"},
 		{description = "Polish", data = "Pl"},
 		{description = "Portuguese", data = "Pr"},
 		{description = "Spanish", data = "Sp"},
 		{description = "Swedish", data = "Sw"},
 		{description = "Turkish", data = "Tr"},
 	},
-		default = "en",
+		default = "En",
 	} or {
 		name = "Language",
 		label = "语言设置",
@@ -208,7 +236,7 @@ configuration_options =
 		{description = "Francais", data = "Fr"},
 		{description = "Croatian", data = "Cr"},
 		{description = "German", data = "Gr"},
-		{description = "English", data = "en"},
+		{description = "English", data = "En"},
 		{description = "Polish", data = "Pl"},
 		{description = "Portuguese", data = "Pr"},
 		{description = "Spanish", data = "Sp"},

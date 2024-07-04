@@ -1,4 +1,5 @@
 return {
+	"ancientfruit_gem",--晶洞果
 	"dreadstone",--绝望石
 	"redgem",
 	"orangegem",

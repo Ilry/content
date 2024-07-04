@@ -11,6 +11,7 @@ return {
     "redpouch_yotc",
     "redpouch_yotp",
     "redpouch_yotr",--红包
+    "redpouch_yotd",--红包
     "redpouch_yot_catcoon",
     "redpouch_yotb",
     "lucky_goldnugget",

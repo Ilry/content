@@ -117,6 +117,76 @@ function GLOBAL.Shard_SyncBossDefeated(bossprefab, shardid)
 	end
 end
 
+-- override mermking api
+local fake_shard_id = 114514
+local old_Shard_SyncMermKingExists = Shard_SyncMermKingExists
+function GLOBAL.Shard_SyncMermKingExists(exists, shardid)
+	old_Shard_SyncMermKingExists(exists, shardid)
+	print("[DSA] SyncMermKingExists: EXISTS = "..tostring(exists))
+	if TheWorld ~= nil and shardid ~= fake_shard_id then
+		TheWorld.components.dsa_shard_proxy:OnMermKingBuff("exists", exists)
+	end
+end
+
+local old_Shard_SyncMermKingTrident = Shard_SyncMermKingTrident
+function GLOBAL.Shard_SyncMermKingTrident(exists, shardid)
+	old_Shard_SyncMermKingTrident(exists, shardid)
+	print("[DSA] SyncMermKingTrident: EXISTS = "..tostring(exists))
+	if TheWorld ~= nil and shardid ~= fake_shard_id then
+		TheWorld.components.dsa_shard_proxy:OnMermKingBuff("trident", exists)
+	end
+end
+
+local old_Shard_SyncMermKingCrown = Shard_SyncMermKingCrown
+function GLOBAL.Shard_SyncMermKingCrown(exists, shardid)
+	old_Shard_SyncMermKingCrown(exists, shardid)
+	print("[DSA] SyncMermKingCrown: EXISTS = "..tostring(exists))
+	if TheWorld ~= nil and shardid ~= fake_shard_id then
+		TheWorld.components.dsa_shard_proxy:OnMermKingBuff("crown", exists)
+	end
+end
+
+local old_Shard_SyncMermKingPauldron = Shard_SyncMermKingPauldron
+function GLOBAL.Shard_SyncMermKingPauldron(exists, shardid)
+	old_Shard_SyncMermKingPauldron(exists, shardid)
+	print("[DSA] SyncMermKingPauldron: EXISTS = "..tostring(exists))
+	if TheWorld ~= nil and shardid ~= fake_shard_id then
+		TheWorld.components.dsa_shard_proxy:OnMermKingBuff("pauldron", exists)
+	end
+end
+
+AddComponentPostInit("mermkingmanager", function(self)
+	local old_HasKingAnywhere = self.HasKingAnywhere
+	function self:HasKingAnywhere()
+		if old_HasKingAnywhere(self) then return true end
+		
+		return TheWorld.components.dsa_shard_proxy:HasKingShard("exists")
+	end
+
+	local old_HasTridentAnywhere = self.HasTridentAnywhere
+	function self:HasTridentAnywhere()
+		if old_HasTridentAnywhere(self) then return true end
+
+		return TheWorld.components.dsa_shard_proxy:HasKingShard("trident")
+	end
+
+	local old_HasCrownAnywhere = self.HasCrownAnywhere
+	function self:HasCrownAnywhere()
+		if old_HasCrownAnywhere(self) then return true end
+
+		return TheWorld.components.dsa_shard_proxy:HasKingShard("crown")
+	end
+
+	local old_HasPauldronAnywhere = self.HasPauldronAnywhere
+	function self:HasPauldronAnywhere()
+		if old_HasPauldronAnywhere(self) then return true end
+
+		return TheWorld.components.dsa_shard_proxy:HasKingShard("pauldron")
+	end
+end)
+
+-- end of mermking
+
 function GLOBAL.d_spawndw()
 	local spawner = TheWorld.components.daywalkerspawner or TheWorld.components.forestdaywalkerspawner
 	for i = 1, 100 do

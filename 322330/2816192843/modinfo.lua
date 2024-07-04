@@ -1,13 +1,13 @@
 name = "See Spools & Skins & Skin Queue"
 description = ""
 author = "zzzzzzzs"
-version = "20231025"
+version = "20240624"
 server_filter_tags = {}
 icon_atlas = "modicon.xml"
 icon = "modicon.tex"
 api_version = 6
 api_version_dst = 10
-priority = -1 --load later than Skin Queue
+priority = -1 -- load later than Skin Queue
 dont_starve_compatible = false
 reign_of_giants_compatible = false
 shipwrecked_compatible = false
@@ -34,6 +34,13 @@ configuration = {
     hover = "all_hover",
     options = {{description = "Yes", data = "true"}, {description = "No", data = "false"}},
     default = "false"
+  },
+  {
+    name = "skinqueue",
+    label = "Skin Queue",
+    hover = "skinqueue_hover",
+    options = {{description = "Enable", data = "true"}, {description = "Disabled", data = "false"}},
+    default = "true"
   },
   {
     name = "minprice",
@@ -75,6 +82,10 @@ translation = {
 ]],
       No = "否",
       Yes = "是",
+      skinqueue = "皮肤队列",
+      skinqueue_hover = "是否开启皮肤队列",
+      Enable = "开启",
+      Disable = "关闭",
       minprice = "最高可出售价格",
       minprice_hover = "低于或等于此价格的皮肤将会被出售",
       mincount = "最低可保留数量（建议为1）",
@@ -97,6 +108,7 @@ Help you shop and collect and unravel skins.
       enableprint = "Enable Print",
       show_hover = "Show special rarity hidden skins",
       all_hover = "Let you pretend own all skins",
+      skinqueue_hover = "Enable Skin Queue?",
       minprice_hover = "Skins with a price lower than or equal to this price will be sold",
       mincount_hover = "Skins with a count lower than or equal to this count will be preserved"
     },

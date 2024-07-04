@@ -110,9 +110,12 @@ local CreatureWidget = Class(Screen, function(self, owner)
             
             {prefab = "monkeyqueen",                                bank = "monkey_queen",      build = "monkey_queen",             animation = "idle",             scale = 0.02,   loop = true,    offset = {x = 0, y = -32}},
             
-            {prefab = "lunarrift_portal",                           bank = "lunar_rift_portal", build = "lunar_rift_portal",        animation = "stage_3_loop",     scale = 0.05,   loop = true,    offset = {x = 0, y = -28}},
             {prefab = "lunarthrall_plant",      multiple = true,    bank = "lunarthrall_plant", build = "lunarthrall_plant_front",  animation = "idle_med",         scale = 0.08,   loop = true,    offset = {x = 0, y = -24}},
+            {prefab = "lunarrift_portal",                           bank = "lunar_rift_portal", build = "lunar_rift_portal",        animation = "stage_3_loop",     scale = 0.05,   loop = true,    offset = {x = 0, y = -28}},
             {prefab = "shadowrift_portal",                          bank = "shadowrift_portal", build = "shadowrift_portal",        animation = "scrapbook",        scale = 0.08,   loop = false,   offset = {x = 0, y = -4}},
+            {prefab = "wagstaff_machinery",                         bank = "wagstaff_setpieces",build = "wagstaff_setpieces",       animation = "idle1",            scale = 0.10,   loop = true,    offset = {x = 0, y = -22}},
+            {prefab = "junk_pile_big",                              bank = "scrappile",         build = "scrappile",                animation = "big_idle",         scale = 0.07,   loop = true,    offset = {x = 0, y = -24}},
+            {prefab = "daywalker",                                  bank = "daywalker",         build = "daywalker_build",          animation = "idle",             scale = 0.07,   loop = true,    offset = {x = 0, y = -28}},
         },
         {
             context = {},

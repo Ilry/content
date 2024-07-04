@@ -151,7 +151,7 @@ local MeterResist = Class(Widget, function(self)
 
 	self:SetScissor(GetScissor())
 
-	self.alpha = 0.65
+	self.alpha = 0.75
 	self.time = 0
 	self.delay = 0.5
 	self.intensity = 1
@@ -1020,6 +1020,27 @@ end
 function EpicHealthbar:OnLoseFocus()
 	self.camera:Hide()
 	self.config:Hide()
+end
+
+function EpicHealthbar:MakeRestricted()
+	local anim = self.frame:AddChild(UIAnim())
+	anim:SetScale(0.5)
+	anim:SetRotation(0)
+	anim:SetPosition(-5, -60)
+	anim:GetAnimState():SetBank("klaus")
+	anim:GetAnimState():SetBuild("klaus_build")
+	anim:GetAnimState():SetPercent("transform_loop", 0)
+	anim:GetAnimState():AnimateWhilePaused(false)
+	for i, v in ipairs({ "klaus_arm", "klaus_bits", "klaus_body", "klaus_claw", "klaus_eye", "klaus_head", "klaus_leg", "klaus_mouth", "swap_chain_lock", "swap_klaus_antler" }) do
+		anim:GetAnimState():HideSymbol(v)
+	end
+	self.chains = anim
+
+	self.frame_phases:Hide()
+
+	self.currenthealth_text.SetString = function(self)
+		Text.SetString(self, "???")
+	end
 end
 
 function EpicHealthbar:OutOfDateAnnouncement()

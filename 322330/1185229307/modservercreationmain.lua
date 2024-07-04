@@ -75,9 +75,33 @@ if success and not ModConfigurationScreen._epichealthbarpatched then
 		return screen
 	end)
 
+	Tykvesh.Parallel(ModConfigurationScreen, "IsDefaultSettings", function(self)
+		if self._epichealthbardirty then
+			self:LoadConfigurationOptions()
+		end
+	end)
+
 	Tykvesh.Parallel(ModConfigurationScreen, "Apply", function(self)
 		if self._epichealthbardirty then
 			KnownModIndex:SaveConfigurationOptions(Tykvesh.Dummy, self.modname, self:CollectSettings(), false)
 		end
 	end)
+
+	function ModConfigurationScreen:LoadConfigurationOptions()
+		local config = KnownModIndex:LoadModConfigurationOptions(self.modname)
+		for _, option in ipairs(config or {}) do
+			if not option.client and #option.options > 1 then
+				local data = option.saved
+				if data == nil then
+					data = option.default
+				end
+				for i, v in ipairs(self.options) do
+					if v.options == option.options then
+						v.value = data
+						break
+					end
+				end
+			end
+		end
+	end
 end

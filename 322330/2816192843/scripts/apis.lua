@@ -1,11 +1,23 @@
-local version = "20230930"
+local version = "20240106"
 -- get rid of any GLOBAL. prefix
 local GLOBAL = _G or GLOBAL
 local env = GLOBAL and GLOBAL.getfenv and GLOBAL.getfenv() or GLOBAL or {}
 if env == GLOBAL then
   -- disable strict mode so that there is no crash
-  if GLOBAL.getmetatable then GLOBAL.getmetatable(GLOBAL).__index = function(t, k) return GLOBAL.rawget(GLOBAL, k) end end
+  if GLOBAL.getmetatable then
+    GLOBAL.getmetatable(GLOBAL).__index = function(t, k)
+      return GLOBAL.rawget(GLOBAL, k)
+    end
+  end
 end
+-- unpack hack for lua 5.1
+local _unpack = unpack
+local function unpack(t)
+  local len = 0
+  for k, v in pairs(t) do len = math.max(len, k) end
+  return _unpack(t, 1, len)
+end
+safe_unpack = unpack
 -- defined in utils.lua
 if not table.has then table.has = table.contains end
 if not table.removev then table.removev = RemoveByValue end
@@ -50,7 +62,8 @@ local function GetKeyString(key)
   end
 end
 
-local function GetTableString(t, current_depth, max_depth, indent, last_indent_string, blacklist)
+local function GetTableString(t, current_depth, max_depth, indent,
+                              last_indent_string, blacklist)
   if not last_indent_string then last_indent_string = "" end
   local tail = last_indent_string
   for i = 1, indent do last_indent_string = last_indent_string .. "\t" end
@@ -62,10 +75,12 @@ local function GetTableString(t, current_depth, max_depth, indent, last_indent_s
   for k, v in pairs(t) do
     if blacklist and table.has(blacklist, k) then
     elseif type(v) == "table" then
-      str = str .. last_indent_string .. GetKeyString(k) .. "="
-              .. GetTableString(v, current_depth + 1, max_depth, indent, last_indent_string, blacklist) .. "\n"
+      str = str .. last_indent_string .. GetKeyString(k) .. "=" ..
+              GetTableString(v, current_depth + 1, max_depth, indent,
+                             last_indent_string, blacklist) .. "\n"
     else
-      str = str .. last_indent_string .. GetKeyString(k) .. "=" .. GetKeyString(v) .. "\n"
+      str = str .. last_indent_string .. GetKeyString(k) .. "=" ..
+              GetKeyString(v) .. "\n"
     end
   end
   if str == "" then return "{}" end
@@ -99,7 +114,7 @@ function safeget(obj, key, val)
       rawset(obj, key, val)
       res = obj[key]
     end
-  elseif obj ~= nil and type(obj) == "table" then
+  elseif obj ~= nil then
     res = obj[key]
     if res == nil then res = rawget(obj, key) end
     if val ~= nil and res == nil and key ~= nil then
@@ -112,19 +127,15 @@ function safeget(obj, key, val)
 end
 
 function safefetch(obj, key, ...)
+  if not key then return obj end
   local res = nil
   -- use rawget on GLOBAL
   if obj == GLOBAL then
     res = rawget(obj, key)
-  elseif obj ~= nil and type(obj) == "table" then
+  elseif obj ~= nil then
     res = obj[key]
-    if res == nil then res = rawget(obj, key) end
   end
-  if select("#", ...) > 0 then
-    return safefetch(res, ...)
-  else
-    return res
-  end
+  return safefetch(res, ...)
 end
 
 function undotted(text) return unpack(string.split(text, ".")) end
@@ -136,11 +147,16 @@ gettime = {
   time = function() return gettime.tick() * gettime.pertick end,
   timetable = function(time)
     local t = time or gettime.time()
-    return {second = t % 60, minute = math.floor(t / 60) % 60, hour = math.floor(t / 3600) % 24}
+    return {
+      second = t % 60,
+      minute = math.floor(t / 60) % 60,
+      hour = math.floor(t / 3600) % 24
+    }
   end,
   formatted = function(timetable, fmt)
     if not timetable then timetable = gettime.timetable() end
-    return string.format(fmt or "[%02d:%02d:%02d]", timetable.hour, timetable.minute, timetable.second)
+    return string.format(fmt or "[%02d:%02d:%02d]", timetable.hour,
+                         timetable.minute, timetable.second)
   end,
   clock = os.clock,
   realtime = os.time
@@ -192,11 +208,16 @@ modutils = {
       return ret
     end
     local anothername = modutils.workshopprefix .. name
-    if modutils.isworkshop(name) then anothername = string.sub(name, string.len(modutils.workshopprefix)) end
+    if modutils.isworkshop(name) then
+      anothername = string.sub(name, string.len(modutils.workshopprefix))
+    end
     return anothername
   end,
   subscribe = function(name) return TheSim:SubscribeToMod(name) end,
-  has = function(name) return KnownModIndex:GetModInfo(name) or KnownModIndex:GetModInfo(modutils.translate(name)) end,
+  has = function(name)
+    return KnownModIndex:GetModInfo(name) or
+             KnownModIndex:GetModInfo(modutils.translate(name))
+  end,
   hasnames = function(name)
     local actualname = name
     for i, v in ipairs(name) do
@@ -209,8 +230,10 @@ modutils = {
     return modutils.has(actualname)
   end,
   enabled = function(name)
-    return KnownModIndex:IsModEnabledAny(name) or KnownModIndex:IsModEnabled(modutils.translate(name))
-             or KnownModIndex:IsModForceEnabled(modutils.translate(name)) or KnownModIndex:IsModForceEnabled(name)
+    return KnownModIndex:IsModEnabledAny(name) or
+             KnownModIndex:IsModEnabled(modutils.translate(name)) or
+             KnownModIndex:IsModForceEnabled(modutils.translate(name)) or
+             KnownModIndex:IsModForceEnabled(name)
   end
 }
 modutils.exists = modutils.has
@@ -222,7 +245,10 @@ function GetIsWorkshop()
   return isworkshop
 end
 
-function GetIsWegame() return not not (PLATFORM and type(PLATFORM) == "string" and string.gmatch(PLATFORM, "RAIL")) end
+function GetIsWegame()
+  return not not (PLATFORM and type(PLATFORM) == "string" and
+           string.gmatch(PLATFORM, "RAIL"))
+end
 
 -- console function
 debugfile = nil
@@ -230,7 +256,9 @@ CONSOLE = {
   tag = function(type) return "[" .. type .. "]" end,
   prt = function(...)
     if CONSOLE.dumpping then CONSOLE.dump(...) end
-    print(...)
+    local str = catstring(...)
+    if str:len() > 4000 then str = str:sub(1, 4000) end
+    print(str)
     return CONSOLE
   end,
   log = function(...)
@@ -311,9 +339,13 @@ function StaticSetTimeout(fn, t, ...)
   return staticScheduler:ExecutePeriodic(t, fn, 1, t, id, ...)
 end
 
-function SetInterval(fn, t, ...) return FullSetInterval(fn, t, nil, nil, nil, ...) end
+function SetInterval(fn, t, ...)
+  return FullSetInterval(fn, t, nil, nil, nil, ...)
+end
 
-function StaticSetInterval(fn, t, ...) return FullStaticSetInterval(fn, t, nil, nil, nil, ...) end
+function StaticSetInterval(fn, t, ...)
+  return FullStaticSetInterval(fn, t, nil, nil, nil, ...)
+end
 
 function FullSetInterval(fn, t, limit, delay, _id, ...)
   if t == nil then t = 100 end
@@ -363,30 +395,33 @@ function IsDedicated() return TheNet:IsDedicated() end
 
 function IsMain() return not IsDedicated() and IsServer() end
 
-function HasHUD() return IsClient() or not IsDedicated() end
+function HasHUD() return not IsDedicated() end
 
 function IsInGame() return IsServer() or IsClient() end
 
 local memoizedFilePaths = nil
-resolvefilepath_soft = resolvefilepath_soft or function(filepath)
-  if not memoizedFilePaths then
-    _1, memoizedFilePaths, _3 = UPVALUE.get(resolvefilepath, "memoizedFilePaths")
-    if not memoizedFilePaths then return nil end
+if not resolvefilepath_soft then
+  resolvefilepath_soft = function(filepath)
+    if not memoizedFilePaths then
+      _1, memoizedFilePaths, _3 = UPVALUE.get(resolvefilepath,
+                                              "memoizedFilePaths")
+      if not memoizedFilePaths then return nil end
+    end
+    if memoizedFilePaths[filepath] then return memoizedFilePaths[filepath] end
+    local path = softresolvefilepath(filepath)
+    if path then memoizedFilePaths[filepath] = path end
+    return path
   end
-  if memoizedFilePaths[filepath] then return memoizedFilePaths[filepath] end
-  local path = softresolvefilepath(filepath)
-  if path then memoizedFilePaths[filepath] = path end
-  return path
+  rawset(GLOBAL, "resolvefilepath_soft", resolvefilepath_soft)
 end
-rawset(GLOBAL, "resolvefilepath_soft", resolvefilepath_soft)
-
 -- this one determines if world is loaded
 IsReallyInGame = InGamePlay
 
 -- check if the world is different from the Constant.
 function specialGameModeDetector()
   local gameMode = TheNet:GetServerGameMode()
-  return gameMode == "lavaarena" and "forge" or gameMode == "quagmire" and "gorge" or "normal"
+  return gameMode == "lavaarena" and "forge" or gameMode == "quagmire" and
+           "gorge" or "normal"
 end
 
 function GetConfig(key, isClient, modname)
@@ -407,12 +442,15 @@ function MakeAsset(assettype, name, folder, format)
   assettype = string.upper(assettype)
   if not folder then
     folder = ""
-    if assettype == "IMAGE" or assettype == "ATLAS" or assettype == "ATLAS_BUILD" or assettype == "DYNAMIC_ATLAS" then
+    if assettype == "IMAGE" or assettype == "ATLAS" or assettype ==
+      "ATLAS_BUILD" or assettype == "DYNAMIC_ATLAS" then
       folder = "images"
     elseif assettype == "MINIMAP_IMAGE" then
-    elseif assettype == "PKGREF" or assettype == "DYNAMIC_ANIM" or assettype == "DYNAMIC_ATLAS" then
+    elseif assettype == "PKGREF" or assettype == "DYNAMIC_ANIM" or assettype ==
+      "DYNAMIC_ATLAS" then
       folder = "anim/dynamic"
-    elseif assettype == "SOUND" or assettype == "SOUNDPACKAGE" or assettype == "FILE" then
+    elseif assettype == "SOUND" or assettype == "SOUNDPACKAGE" or assettype ==
+      "FILE" then
       folder = "sound"
     elseif assettype == "ANIM" then
       folder = "anim"
@@ -434,7 +472,8 @@ function MakeAsset(assettype, name, folder, format)
     elseif assettype == "IMAGE" then
       format = "tex"
     elseif assettype == "MINIMAP_IMAGE" then
-    elseif assettype == "ATLAS" or assettype == "DYNAMIC_ATLAS" or assettype == "ATLAS_BUILD" then
+    elseif assettype == "ATLAS" or assettype == "DYNAMIC_ATLAS" or assettype ==
+      "ATLAS_BUILD" then
       format = "xml"
     elseif assettype == "PKGREF" then
       format = "dyn"
@@ -444,15 +483,28 @@ function MakeAsset(assettype, name, folder, format)
       format = "ksh"
     end
   end
-  if format then if string.sub(name, -string.len(format) - 1) ~= "." .. format then name = name .. "." .. format end end
-  return Asset(assettype, folder .. name, assettype == "ATLAS_BUILD" and 256 or nil)
+  if format then
+    if string.sub(name, -string.len(format) - 1) ~= "." .. format then
+      name = name .. "." .. format
+    end
+  end
+  return Asset(assettype, folder .. name,
+               assettype == "ATLAS_BUILD" and 256 or nil)
 end
 
-function MakeAssetTable(tbl) return MapDict(tbl, function(k, v) return MakeAsset(unpack(v)) end) end
+function MakeAssetTable(tbl)
+  return MapDict(tbl, function(k, v) return MakeAsset(unpack(v)) end)
+end
 
-function AddPrefab(prefab) table.insert(PrefabFiles, prefab) end
+function AddPrefab(prefab)
+  if not PrefabFiles then PrefabFiles = {} end
+  table.insert(PrefabFiles, prefab)
+end
 
-function AddPrefabs(prefabs) for i, v in ipairs(prefabs) do table.insert(PrefabFiles, v) end end
+function AddPrefabs(prefabs)
+  if not PrefabFiles then PrefabFiles = {} end
+  for i, v in ipairs(prefabs) do table.insert(PrefabFiles, v) end
+end
 
 -- RemapSoundEvent Function
 function ReSound(original, replacement) RemapSoundEvent(original, replacement) end
@@ -460,7 +512,9 @@ function ReSound(original, replacement) RemapSoundEvent(original, replacement) e
 -- modutils, some of them
 utils = {
   prefab = AddPrefabPostInit,
-  prefabs = function(prefabs) for i, v in ipairs(prefabs) do AddPrefabPostInit(v) end end,
+  prefabs = function(prefabs, fn)
+    for i, v in ipairs(prefabs) do AddPrefabPostInit(v, fn) end
+  end,
   -- player = AddPlayerPostInit,
   -- from global positions mod
   _playerinits = {},
@@ -476,7 +530,9 @@ utils = {
       if IsClient() then
         AddPlayerPostInit(utils._playeroninit)
       else
-        AddPrefabPostInit("world", function(inst) inst:ListenForEvent("ms_playerspawn", utils._playeroninit) end)
+        AddPrefabPostInit("world", function(inst)
+          inst:ListenForEvent("ms_playerspawn", utils._playeroninit)
+        end)
       end
     end
   end,
@@ -485,7 +541,9 @@ utils = {
     local param = {...}
     utils.player(function(p)
       if not ThePlayer then
-        p:ListenForEvent("playeractivated", function() fn(p, unpack(param)) end)
+        p:ListenForEvent("playeractivated", function()
+          fn(p, unpack(param))
+        end)
         return
       end
       if p == ThePlayer then fn(p, unpack(param)) end
@@ -494,7 +552,7 @@ utils = {
   end,
   player_raw = AddPlayerPostInit,
   -- these two are very similar, just sim is before world post init
-  -- if you want it client, use sim. if server only ,use game.
+  -- if you want it client/server, use sim. if server only, use game.
   sim = AddSimPostInit,
   -- server only
   game = AddGamePostInit,
@@ -505,7 +563,9 @@ utils = {
   sg = AddStategraphPostInit,
   com = AddComponentPostInit,
   comreplica = AddReplicableComponent,
-  comclass = function(name, fn) AddClassPostConstruct("components/" .. name, fn) end,
+  comclass = function(name, fn)
+    AddClassPostConstruct("components/" .. name, fn)
+  end,
   minimap = AddMinimapAtlas,
   prefabany = AddPrefabPostInitAny,
   recipeany = AddRecipePostInitAny,
@@ -523,9 +583,11 @@ utils = {
   onemod = function(name)
     local realpath = softresolvefilepath(name)
     local name2 = string.find(name, "scripts") and name or "scripts/" .. name
-    realpath = realpath or softresolvefilepath(MODROOT .. name2) or softresolvefilepath(name2)
+    realpath = realpath or softresolvefilepath(MODROOT .. name2) or
+                 softresolvefilepath(name2)
     local name3 = string.find(name2, "lua") and name2 or name2 .. ".lua"
-    realpath = realpath or softresolvefilepath(MODROOT .. name3) or softresolvefilepath(name3)
+    realpath = realpath or softresolvefilepath(MODROOT .. name3) or
+                 softresolvefilepath(name3)
     if realpath then
       return utils.loadmod(realpath)
     else
@@ -542,7 +604,7 @@ utils = {
       local success = rets[1]
       if not success then
         print("error running " .. path)
-        print(rets[2])
+        print(unpack(rets))
         return nil
       else
         table.remove(rets, 1)
@@ -564,7 +626,8 @@ utils = {
     if a and b then
       UPVALUE.inject(a, c, fn, genv or getfenv(2) or env or GLOBAL)
     else
-      CONSOLE.err("utils.up error: upvalue not found.", environment, table.tostring(nodes), fn, genv)
+      CONSOLE.err("utils.up error: upvalue not found.", environment,
+                  table.tostring(nodes), fn, genv)
     end
   end,
   prefabup = function(prefab, path, fn, genv)
@@ -577,7 +640,7 @@ utils = {
     end)
   end,
   require = function(path, fn)
-    if kleifileexists(table.concat({"scripts/", path, ".lua"})) then
+    if kleifileexists(table.concat({"scripts/", path, ".lua"},"")) then
       if fn then
         return fn(require(path))
       else
@@ -588,7 +651,7 @@ utils = {
   end,
   -- safe class
   klass = function(path, fn)
-    if kleifileexists(table.concat({"scripts/", path, ".lua"})) then
+    if kleifileexists(table.concat({"scripts/", path, ".lua"},"")) then
       if fn then
         return utils.class(path, fn)
       else
@@ -603,31 +666,41 @@ utils = {
   -- no cache
   rerequire = function(path, ...)
     package.loaded[path] = nil
-    return utils.require(path, ...)
+    return require(path, ...)
   end,
   addrecipes = function(def, nomod)
     for name, data in pairs(def) do
       local ing = {}
       if not nomod then table.insert(def.filter, "MODS") end
-      for i, v in pairs(data.ingredient) do table.insert(ing, Ingredient(i, v)) end
+      for i, v in pairs(data.ingredient) do
+        table.insert(ing, Ingredient(i, v))
+      end
       AddRecipe2(name, ing, def.tech, def.config, def.filter)
     end
   end
 }
 postinitutils = {
   prefab = function(name, fn)
-    MapDict(GLOBAL.Ents, function(_, inst) if VerifyInst(inst) then if inst.prefab == name then fn(inst) end end end)
+    MapDict(GLOBAL.Ents, function(_, inst)
+      if VerifyInst(inst) then if inst.prefab == name then fn(inst) end end
+    end)
   end,
   tag = function(name, fn)
-    MapDict(GLOBAL.Ents, function(_, inst) if VerifyInst(inst) then if inst:HasTag(name) then fn(inst) end end end)
+    MapDict(GLOBAL.Ents, function(_, inst)
+      if VerifyInst(inst) then if inst:HasTag(name) then fn(inst) end end
+    end)
   end,
   tags = function(names, fn)
-    MapDict(GLOBAL.Ents, function(_, inst) if VerifyInst(inst) then if inst:HasTags(names) then fn(inst) end end end)
+    MapDict(GLOBAL.Ents, function(_, inst)
+      if VerifyInst(inst) then if inst:HasTags(names) then fn(inst) end end
+    end)
   end,
   theplayer = function(fn) if VerifyPlayer() then fn(ThePlayer) end end,
   com = function(name, fn)
     MapDict(GLOBAL.Ents, function(_, inst)
-      if VerifyInst(inst) then if inst.components[name] then fn(inst.components[name]) end end
+      if VerifyInst(inst) then
+        if inst.components[name] then fn(inst.components[name]) end
+      end
     end)
   end
 }
@@ -717,11 +790,12 @@ function MakeWrapperSubstitute(oldfn, fn)
 end
 
 function exposeToGlobal(name, fn, override, force)
-  assert((override ~= nil and force ~= nil) or (override == nil and force == nil),
-    "better not use exposeToGlobal with params")
+  assert((override ~= nil and force ~= nil) or
+           (override == nil and force == nil),
+         "better not use exposeToGlobal with params")
   if not force and GetIsWorkshop() then return end
   -- will fail because not declared
-  if safeget(GLOBAL, name) ~= nil and not override then
+  if safefetch(GLOBAL, name) ~= nil and not override then
     -- CONSOLE.err(CONSOLE.tag("exposeToConsole"), name, "already exists on GLOBAL scope")
     return
   end
@@ -744,7 +818,8 @@ end
 -- get language
 -- there are many ways to get language
 function GetLanguageCode()
-  local loc = env.locale or safefetch(LOC, "CurrentLocale", "code") or LanguageTranslator.defaultlang or ""
+  local loc = env.locale or safefetch(LOC, "CurrentLocale", "code") or
+                LanguageTranslator.defaultlang or ""
   local traditional = loc == "zht"
   -- replace wegame suffix
   if loc == "zhr" then loc = "zh" end
@@ -845,7 +920,9 @@ function GetValueSuccessive(obj, ...)
   local up = 1
   local name, value = nil, obj
   for _, key in ipairs(names) do
-    if type(value) ~= "function" then CONSOLE.err("Upvalue", obj, key, "terminated before", key) end
+    if type(value) ~= "function" then
+      CONSOLE.err("Upvalue", obj, key, "terminated before", key)
+    end
     obj = value
     name, value, up = GetValue(value, key)
     -- print("[upvalue]", name, value, up)
@@ -910,7 +987,9 @@ end
 function catstring(...)
   local args = {...}
   local strs = {}
-  for k, v in pairs(args) do if v ~= nil then table.insert(strs, tostring(v)) end end
+  for k, v in pairs(args) do
+    if v ~= nil then table.insert(strs, tostring(v)) end
+  end
   return table.concat(strs, "")
 end
 
@@ -940,16 +1019,21 @@ UPVALUE = {
       return upperfn, value, up
     else
       local keys = {...}
-      CONSOLE.err(CONSOLE.tag("UPVALUE"), "key", keys[1], "not found", packstring(obj, ...))
+      CONSOLE.err(CONSOLE.tag("UPVALUE"), "key", keys[1], "not found",
+                  packstring(obj, ...))
       return nil, nil, nil
     end
   end,
   set = function(fn, up, value)
-    if type(fn) ~= "function" then CONSOLE.err(CONSOLE.tag("UPVALUE"), "value", value, "is not a function") end
+    if type(fn) ~= "function" then
+      CONSOLE.err(CONSOLE.tag("UPVALUE"), "value", value, "is not a function")
+    end
     debug.setupvalue(fn, up, value)
   end,
   inject = function(fn, up, value, globalenv)
-    if type(value) == "function" or type(value) == "table" then MakeUpvalueEnv(value, globalenv or env, fn) end
+    if type(value) == "function" or type(value) == "table" then
+      MakeUpvalueEnv(value, globalenv or env, fn)
+    end
     debug.setupvalue(fn, up, value)
   end
 }
@@ -1013,13 +1097,16 @@ function DBGPRINT(levelorfunction, ...)
   local type = info.what
   if type ~= lua and type ~= c then type = "LuaBinary" end
   local filename = info.source or defaultvalue
-  if string.find(filename, ismod) then filename = "[mod]" .. string.sub(filename, string.len(ismod)) end
+  if string.find(filename, ismod) then
+    filename = "[mod]" .. string.sub(filename, string.len(ismod))
+  end
   local fnname = info.name or defaultvalue
   local line = info.currentline ~= -1 and info.currentline or info.linedefined
   local from, to = info.linedefined, info.lastlinedefined
   local range = ""
   if from and to then range = catstring("[", from, "-", to, "]") end
-  local str = catstring(filename, ":", line, "\n", type, " Function ", fnname, range, "\n", ...)
+  local str = catstring(filename, ":", line, "\n", type, " Function ", fnname,
+                        range, "\n", ...)
   return str
 end
 
@@ -1053,14 +1140,16 @@ function DBGTRACEBACK(level, fromlevel)
     local from, to = info.linedefined, info.lastlinedefined
     local range = ""
     if from and to then range = catstring("[", from, "~", to, "]") end
-    local display_filename = filename == prev_filename and "" or catstring(filename, ":", "\n")
+    local display_filename = filename == prev_filename and "" or
+                               catstring(filename, ":", "\n")
     prev_filename = filename
     local fnname = info.name or anonymous
     local line = info.currentline ~= -1 and info.currentline or info.linedefined
     local display_line = line and (":" .. line) or ""
     local display_type = ""
     if ttype == c or ttype == bin then display_type = "[x]" end
-    local str1 = catstring(display_filename, display_type, fnname, display_line, range, "\n")
+    local str1 = catstring(display_filename, display_type, fnname, display_line,
+                           range, "\n")
     str = str .. str1
   until cur > level or ttype ~= lua
   return str
@@ -1098,7 +1187,14 @@ function LookUp(level, endlevel)
     local from, to = info.linedefined, info.lastlinedefined
     local fnname = info.name or anonymous
     local line = info.currentline ~= -1 and info.currentline or info.linedefined
-    table.insert(ret, {source = filename, line = line, name = fnname, from = from, to = to, type = ttype})
+    table.insert(ret, {
+      source = filename,
+      line = line,
+      name = fnname,
+      from = from,
+      to = to,
+      type = ttype
+    })
   until cur > endlevel or ttype ~= lua
   return ret
 end
@@ -1181,7 +1277,9 @@ end
 local function SortArray(array, low, high)
   if low >= high then return end
   if low + 1 == high then
-    if array[low] > array[high] then array[low], array[high] = array[high], array[low] end
+    if array[low] > array[high] then
+      array[low], array[high] = array[high], array[low]
+    end
     return
   end
   local mid = math.floor((low + high) / 2)
@@ -1201,7 +1299,9 @@ end
 
 function VerifyInst(inst) return inst and inst.entity and inst.entity:IsValid() end
 
-function IsInteractive(inst) return VerifyInst(inst) and not inst:HasTag("INLIMBO") end
+function IsInteractive(inst)
+  return VerifyInst(inst) and not inst:HasTag("INLIMBO")
+end
 
 _File = {
   resolve = function(self, name)
@@ -1310,7 +1410,9 @@ CONSOLE.dump = function(...)
   local t = gettime.time()
   local header = ""
   if t - debugfile.lastdumped > 1 then header = gettime.formatted() end
-  if debugfile.lastdumped < 0 then debugfile:write("------------------------------------\n") end
+  if debugfile.lastdumped < 0 then
+    debugfile:write("------------------------------------\n")
+  end
   debugfile.lastdumped = t
   local str = header .. packstring(...) .. "\n"
   debugfile:writestr(str)
@@ -1330,7 +1432,9 @@ function FormatString(str, ...)
   return str
 end
 
-function SendModRPC(name, fnname, ...) return SendModRPCToServer(GetModRPC(name or modname, fnname or ""), ...) end
+function SendModRPC(name, fnname, ...)
+  return SendModRPCToServer(GetModRPC(name or modname, fnname or ""), ...)
+end
 
 -- wrap an array so that it looks as if all elements can be seen as a total one.
 -- note that it don't support number keys
@@ -1351,7 +1455,9 @@ function MakeBroadcast(tbl)
       setmetatable(ret, {
         __call = function(t, self, ...)
           if self == tbl then self = nil end
-          for i, v in ipairs(tbl) do if v[k] then v[k](self or v, ...) end end
+          for i, v in ipairs(tbl) do
+            if v[k] then v[k](self or v, ...) end
+          end
         end
       })
       return ret
@@ -1483,7 +1589,19 @@ local dummy = {
   end
 
 }
-
+function DBGPRINTLINE()
+  local last = {"", ""}
+  local function traceHandler(event, line)
+    local info = debug.getinfo(2, "Sl")
+    local str = catstring(info.short_src, ":", info.currentline)
+    if str == last[1] then return end
+    if str == last[2] then return end
+    print(str)
+    last[2] = last[1]
+    last[1] = str
+  end
+  debug.sethook(traceHandler, "c")
+end
 -- prevent from Prefabs being replaced by ModWrangler
 ThePrefab = safefetch(GLOBAL, "Prefabs")
 local GLOBALVARIABLES = {"RegisteredMods", "RegisteredEntry"}

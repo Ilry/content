@@ -1,4 +1,5 @@
 return {
+	"roseglasseshat",--玫瑰色眼镜
 	"nightcaphat",--睡帽
 	
 	"handpillow_beefalowool",--皮弗娄牛毛枕头
@@ -46,6 +47,7 @@ return {
 	"tophat",
 	"walterhat",
 	--风镜
+	"scrap_monoclehat",--视界扩展器
 	"moonstorm_goggleshat",
 	"goggleshat",
 	"deserthat",
@@ -56,6 +58,7 @@ return {
 	"walrushat",
 	"beefalohat",
 	--避雨降温
+	"moon_mushroomhat",--月亮蘑菇帽
 	"red_mushroomhat",
 	"blue_mushroomhat",
 	"green_mushroomhat",

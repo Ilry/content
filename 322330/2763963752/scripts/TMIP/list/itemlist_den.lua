@@ -1,4 +1,7 @@
 return {
+	"otterden",--水獭掠夺者窝点
+	"otterden_dead",--拆毁的水獭掠夺者窝点
+	
 	"monkeyhut",--猴子小屋
 --类人生物小屋
 	"pigtorch",

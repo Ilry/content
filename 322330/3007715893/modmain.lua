@@ -225,12 +225,12 @@ if Stack_other_objects then
 	-- end
 	if GetModConfigData("spider") then
 		--蜘蛛类
-		AddAnimalStackables({"spider","spider_healer","spider_hider","spider_moon","spider_spitter","spider_warrior",})
+		AddAnimalStackables({"spider","spider_healer","spider_hider","spider_moon","spider_spitter","spider_warrior","spider_dropper","spider_water"})
 	end
 	--2024-3-5日
 	if GetModConfigData("blank_certificate") then
 		--空白勋章【能力勋章】
-		AddItemStackables({"blank_certificate"})
+		AddItemStackables({"blank_certificate","lavaeel"})
 	end
 	if GetModConfigData("lg_choufish_inv") then
 		--小丑鱼【海洋传说】
@@ -247,7 +247,7 @@ if Stack_other_objects then
 	--2024-3-14
 	if GetModConfigData("foliageath") then
 		--青枝绿叶【棱镜】
-		AddItemStackables({"foliageath"})
+		AddItemStackables({"foliageath","raindonate"})
 	end
 	if GetModConfigData("security_pulse_cage") then
 		--火花柜
@@ -285,9 +285,53 @@ if Stack_other_objects then
 		--鱼
 		"kyno_grouper", "kyno_salmonfish", "kyno_tropicalfish", "kyno_koi", "kyno_neonfish", "kyno_pierrotfish",
 		--鸟
-		"toucan","kingfisher",})
+		"toucan","toucan_hamlet","kingfisher",})
 	end
-
+	--2024/6/1
+	if GetModConfigData("wally") then
+		--厨师炊具
+		AddItemStackables({"portablecookpot_item","portableblender_item","portablespicer_item"})
+	end
+	if GetModConfigData("tropical") then
+		--热带冒险
+		AddItemStackables({
+		--鸟
+		"parrot", "parrot_blue", "parrot_pirate", "toucan","toucan_hamlet","seagull","quagmire_pigeon", "cormorant","kingfisher", "doydoy",
+	    --蜘蛛类
+		"spiderb", "spiderb1", "spiderb2",
+		--海鲜
+		"crab", "jellyfish", "rainbowjellyfish",
+		--fish
+		"oceanfish_small_1_inv", "oceanfish_small_2_inv", "oceanfish_small_3_inv","oceanfish_small_4_inv","oceanfish_small_5_inv","oceanfish_small_6_inv","oceanfish_small_7_inv","oceanfish_small_8_inv","oceanfish_small_9_inv","oceanfish_small_10_inv","oceanfish_small_11_inv","oceanfish_small_12_inv","oceanfish_small_13_inv","oceanfish_small_14_inv","oceanfish_small_15_inv","oceanfish_small_16_inv","oceanfish_small_17_inv","oceanfish_small_18_inv","oceanfish_small_19_inv","oceanfish_small_20_inv","oceanfish_small_21_inv","oceanfish_small_61_inv","oceanfish_small_71_inv","oceanfish_small_81_inv","oceanfish_small_91_inv",
+		"oceanfish_medium_1_inv","oceanfish_medium_2_inv","oceanfish_medium_3_inv","oceanfish_medium_4_inv","oceanfish_medium_5_inv","oceanfish_medium_6_inv","oceanfish_medium_7_inv","oceanfish_medium_8_inv",
+		--其他生物
+		"glowfly",
+		--船上用品
+		"porto_lograft_old","porto_raft_old","porto_rowboat","porto_cargoboat","porto_armouredboat","porto_encrustedboat","porto_tar_extractor","porto_sea_yard","trawlnet","armor_lifejacket","porto_buoy",
+		
+		})
+	end
+		
+	
+	if GetModConfigData("mooneye") then
+	--月眼
+	AddItemStackables({
+	--"moonrockcrater", 升级时候会整组变一个， 暂时先不加
+	"redmooneye","orangemooneye","yellowmooneye","greenmooneye","purplemooneye","bluemooneye"})
+	end
+	
+	if GetModConfigData("boat_stuff") then
+	--船上用品
+	AddItemStackables({
+	--常规船上用品
+	"boat_grass_item", "boat_item", "anchor_item","steeringwheel_item","boat_rotator_kit","mast_item", "ocean_trawler_kit","boat_cannon_kit","mastupgrade_lightningrod_item","mast_malbatross_item",
+	--龙年限定
+	"dragonboat_pack", "boatrace_seatack_throwable_deploykit","dragonboat_kit","yotd_anchor_item","mast_yotd_item","yotd_steeringwheel_item",
+		})
+	end
+		
+	
+    
 	-- if GetModConfigData("blueprint")then
 		--蓝图
 		-- AddPrefabPostInit("blueprint", function(inst)

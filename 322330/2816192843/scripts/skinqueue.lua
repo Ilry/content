@@ -54,7 +54,8 @@ local strings_en = {
   "ERROR: Failed to contact the item server. status=",
   "SUCCESS: Bought ",
   "ERROR: Failed to buy ",
-  "You don't have any dupes"
+  "You don't have any dupes",
+  " spools..."
 }
 local strings_zh = {
   "过滤可交易物品",
@@ -98,7 +99,8 @@ local strings_zh = {
   "错误：无法连接到服务器。状态码=",
   "成功购买",
   "错误：无法购买",
-  "您没有任何重复物品"
+  "您没有任何重复物品",
+  "线轴..."
 }
 local code = GetLanguageCode()
 local stringlist = strings_en

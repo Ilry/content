@@ -2752,8 +2752,8 @@ function GetTestString(item,viewer) --从这里开始，与Tell Me区分
 	end ]]--
 	if c.batterylegion then  --batterylegion  电气石
 		local lg_bl = c.batterylegion
-		if lg_bl.time_start ~= nil and lg_bl.charge_period ~= nil then
-			table.insert(desc_table, "@+1% "..o_t._in .. DataTimerFn(lg_bl.charge_period - (GetTime() - lg_bl.time_start)))
+		if lg_bl.time_start ~= nil and lg_bl.charge_value ~= nil and lg_bl.charge_period ~= nil then
+			table.insert(desc_table, "@+" .. lg_bl.charge_value .. o_t._in .. DataTimerFn(lg_bl.charge_period - GetTime()))
 		end
 	end
 	--棱镜END
@@ -3053,19 +3053,22 @@ do
 					--target.widget.parent -- 这是项目图层
 					--target = target.widget ~= nil and target.widget.parent ~= nil and target.widget.parent.item --实体物品（在客户端）
 					
-					local tar = target.widget ~= nil and target.widget.parent ~= nil and target.widget.parent.item
-					if tar ~= nil then	--多加一层判断
-						target = tar
-					else	--获取深一层的图层，奔雷矛多了一层parent
-						target = target.widget ~= nil and target.widget.parent ~= nil and target.widget.parent.parent ~= nil and target.widget.parent.parent.item
-					end
-					--使用递归以免以后有N层parent，目前官方只有2层parent，至于模组多层的先不兼，因为会引发target=1导致崩溃
-					-- local function par(w)
-						-- return w.parent and (w.parent.item or par(w.parent)) or nil
+					-- local tar = target.widget ~= nil and target.widget.parent ~= nil and target.widget.parent.item
+					-- if tar ~= nil then	--多加一层判断
+						-- target = tar
+					-- else	--获取深一层的图层，奔雷矛多了一层parent
+						-- target = target.widget ~= nil and target.widget.parent ~= nil and target.widget.parent.parent ~= nil and target.widget.parent.parent.item
 					-- end
-					-- target = target.widget ~= nil and par(target.widget)
+					--使用递归以免以后有N层parent
+					local function par(w)
+						return w.parent and (w.parent.item or par(w.parent)) or nil
+					end
+					target = target.widget ~= nil and par(target.widget)
 				else
 					target = _G.TheInput:GetWorldEntityUnderMouse()
+				end
+				if type(target) ~= "table" or not target.GUID then
+					target = nil
 				end
 				--local lmb = hoverer.owner.components.playercontroller:GetLeftMouseAction()
 				if target ~= nil then
@@ -3297,7 +3300,7 @@ do
 		venus_icebox=1, chesterchest=1, --SL mod 
 		saltbox=1, wobybig=1, wobysmall=1, mushroom_light=1, mushroom_light2=1, fish_box=1, supertacklecontainer=1, tacklecontainer=1, archive_cookpot=1,
 		portablecookpot=1, sacred_chest=1,  --new
-		storeroom=1, alchmy_fur=1, myth_granary=1, hiddenmoonlight=1, coffin=1, grave=1, musha_rpice=1, musha_tallrrrrrice=1, musha_tallrrrrice=1, musha_tallrrrice=1,--pill_bottle_gourd=1丹药葫芦会崩 神话代码加密 无解,
+		storeroom=1, alchmy_fur=1, myth_granary=1, hiddenmoonlight=1, coffin=1, grave=1, musha_rpice=1, musha_tallrrrrrice=1, musha_tallrrrrice=1, musha_tallrrrice=1, hiddenmoonlight_inf=1, chest_whitewood_inf=1, chest_whitewood_big_inf=1, --pill_bottle_gourd=1, --丹药葫芦会崩 神话代码加密 无解
 		ro_bin=1, roottrunk_child=1, corkchest=1, smelter=1, --Hamlet
 		thatchpack=1, packim=1, cargoboat=1, piratepack=1, --SW
 	}

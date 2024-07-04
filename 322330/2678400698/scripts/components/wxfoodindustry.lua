@@ -15,6 +15,7 @@ local KEEP_WORKING_DIST = SEE_WORK_DIST + 6
 local WXFoodIndustry = Class(function(self, inst)
     self.inst = inst
     self.dish = nil
+    self.recipemask = 0
     self.cookpot = nil
     self.halt = false
 end)
@@ -23,6 +24,22 @@ local function HasRecipes(inst, recipe, num)
     local raw_enough, raw_found = inst.components.inventory:Has(recipe, 1)
     local cooked_enough, cooked_found = inst.components.inventory:Has(recipe.."_cooked", 1)
     return raw_found + cooked_found >= num, raw_found + cooked_found
+end
+
+local function GetEquippedIcepack(inst)
+    local icepack = EQUIPSLOTS.BACK ~= nil and inst.components.inventory:GetEquippedItem(EQUIPSLOTS.BACK) or
+        inst.components.inventory:GetEquippedItem(EQUIPSLOTS.BODY)
+    if icepack ~= nil and icepack.prefab ~= "icepack" then
+        icepack = nil
+    end
+    if icepack == nil then
+        for k, v in pairs(inst.components.inventory.equipslots) do
+            if v.prefab == "icepack" then
+                icepack = v
+            end
+        end
+    end
+    return icepack
 end
 
 -- Function table for cooking check
@@ -536,7 +553,43 @@ CanCookDishFnTable["beefalotreat"] = function(inst)
 end
 -- Manually configured table
 CanCookDishFnTable["manualconfig"] = function(inst)
-    return #inst.components.inventory:FindItems(function(item) return cooking.ingredients[item.prefab] ~= nil end) >=4
+    --return #inst.components.inventory:FindItems(function(item) return cooking.ingredients[item.prefab] ~= nil end) >=4
+    inst.components.wxfoodindustry.recipemask = 0
+    local icepack = GetEquippedIcepack(inst)
+    if icepack ~= nil and icepack.components.container ~= nil and not icepack.components.container:IsEmpty() then
+        if icepack.components.container:GetNumSlots() >= 4 then
+            local mask = 1
+            for i = 1, 4 do
+                local recipe = icepack.components.container:GetItemInSlot(i)
+                if recipe ~= nil and cooking.ingredients[recipe.prefab] ~= nil then
+                    inst.components.wxfoodindustry.recipemask = inst.components.wxfoodindustry.recipemask + mask
+                    mask = mask * 2
+                else
+                    inst.components.wxfoodindustry.recipemask = 0
+                    break
+                end
+            end
+        end
+        if inst.components.wxfoodindustry.recipemask > 0 then
+            return true
+        end
+        if icepack.components.container:GetNumSlots() >= 8 then
+            local mask = 16
+            for i = 5, 8 do
+                local recipe = icepack.components.container:GetItemInSlot(i)
+                if recipe ~= nil and cooking.ingredients[recipe.prefab] ~= nil then
+                    inst.components.wxfoodindustry.recipemask = inst.components.wxfoodindustry.recipemask + mask
+                    mask = mask * 2
+                else
+                    inst.components.wxfoodindustry.recipemask = 0
+                    break
+                end
+            end
+        end
+        if inst.components.wxfoodindustry.recipemask > 0 then
+            return true
+        end
+    end
 end
 --CanCookDishFnTable[""] = function(inst)end
 local function CanCookDish(inst, dish)
@@ -1487,9 +1540,18 @@ FindRecipeFnTable["beefalotreat"] = function(inst, cookpot)
 end
 -- Manually configured table
 FindRecipeFnTable["manualconfig"] = function(inst, cookpot)
-    local step = #cookpot.components.container:FindItems(function(item) return true end) + 1
-    local items = table.reverse(inst.components.inventory:FindItems(function(item) return cooking.ingredients[item.prefab] ~= nil end))
-    return items[#items + step - 4]
+    --local step = #cookpot.components.container:NumItems() + 1
+    --local items = table.reverse(inst.components.inventory:FindItems(function(item) return cooking.ingredients[item.prefab] ~= nil end))
+    --return items[#items + step - 4]
+    local icepack = GetEquippedIcepack(inst)
+    if icepack ~= nil and icepack.components.container ~= nil and not icepack.components.container:IsEmpty() then
+        local recipegroup = inst.components.wxfoodindustry.recipegroup
+        if inst.components.wxfoodindustry.recipemask % 16 == 15 then
+            return icepack.components.container:GetItemInSlot(cookpot.components.container:NumItems() + 1)
+        elseif inst.components.wxfoodindustry.recipemask / 16 % 16 == 15 then
+            return icepack.components.container:GetItemInSlot(cookpot.components.container:NumItems() + 5)
+        end
+    end
 end
 --FindRecipeFnTable[""] = function(inst, cookpot)end
 local function FindRecipe(inst, cookpot, dish)
@@ -1577,6 +1639,7 @@ local function _IsValidCookpot(inst)
     return inst.components.container ~= nil and not inst.components.container:IsFull() and
         inst.components.stewer ~= nil and not inst.components.stewer:IsCooking() and not inst.components.stewer:IsDone()
 end
+
 local COOKPOT_TAG = { "stewer" }
 function WXFoodIndustry:Cook()
     local leader = self.inst.components.follower.leader or self.inst.components.entitytracker:GetEntity("sentryward")
@@ -1600,7 +1663,7 @@ function WXFoodIndustry:Cook()
             end
         elseif self.inst.components.inventory:Has("cookbook", 1) then
             dishesList = dishesList_cook
-        else
+        elseif GetEquippedIcepack(self.inst) ~= nil then
             dishesList = dishesList_manual_configuration
         end
     elseif self.inst.components.wxtype:IsBasicFoodInd() then
@@ -1632,7 +1695,8 @@ function WXFoodIndustry:Cook()
         end, COOKPOT_TAG)
         self.cookpot = cookpot
     end
-    if cookpot ~= nil then
+
+    if cookpot ~= nil and not cookpot.components.container:IsFull() then
         -- Clear dish in memory
         if cookpot.components.container:IsEmpty() then
             self.dish = nil
@@ -1979,7 +2043,7 @@ end
 local TOPICKUP_MUST_TAGS = { "_inventoryitem" }
 local TOPICKUP_CANT_TAGS = { "fire", "smolder", "INLIMBO", "NOCLICK", "event_trigger", "catchable", "irreplaceable", "heavy", "outofreach" }
 function WXFoodIndustry:FindEntityToPickUpAction()
-    --[[local leader = self.inst.components.follower.leader or self.inst.components.entitytracker:GetEntity("sentryward") or self.inst
+    local leader = self.inst.components.follower.leader or self.inst.components.entitytracker:GetEntity("sentryward") or self.inst
 
     local target = FindEntity(leader, SEE_WORK_DIST, function(item)
         return item ~= nil and
@@ -1993,14 +2057,22 @@ function WXFoodIndustry:FindEntityToPickUpAction()
             --(item.components.burnable:IsBurning() or
             --item.components.burnable:IsSmoldering())) and
         -- Target item is recipe
-        cooking.IsCookingIngredient(item.prefab) and
+        --[[cooking.IsCookingIngredient(item.prefab) and
         cooking.ingredients[item.prefab].tags["inedible"] == nil and
-        item.prefab ~= "mandrake"
+        item.prefab ~= "mandrake"]]
+        -- Target item is icepack
+        item.prefab == "icepack" and not self.inst.components.wxtype.augmentlock and
+        not self.inst.components.inventory:EquipHasTag("backpack")
     end, TOPICKUP_MUST_TAGS, TOPICKUP_CANT_TAGS)
 
+    local icepack = GetEquippedIcepack(self.inst)
+    if not self.inst.components.wxtype.augmentlock and
+        icepack == nil and target ~= nil and target.prefab == "icepack" then
+        return BufferedAction(self.inst, target, ACTIONS.AUGMENT)
+    end
+
     return target ~= nil and BufferedAction(self.inst, target, ACTIONS.PICKUP) or
-        FindItemToTakeAction(self.inst) or nil]]
-    return FindItemToTakeAction(self.inst)
+        FindItemToTakeAction(self.inst) or nil
 end
 
 return WXFoodIndustry
