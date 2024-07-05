@@ -17,7 +17,7 @@ Tip: Close the stack of tall birds when you need to hatch their eggs
 
 author = "天涯共此时、小花朵"
 
-version = "2.2.0"
+version = "2.2.1"
 
 forumthread = ""
 
@@ -123,6 +123,7 @@ configuration_options =
 	-- 分别为：配置名（modmain中配置用）,中文显示名,英文显示名,默认是否开启,中文备注提示,英文备注提示
 	-- 若没有备注提示，则后两项可以不用写。也可以只写中文备注，不写英文备注。但是若是需要写英文备注，则中文备注必填
 	--原版物品
+	addConfig("ancienttree_stuff", "神奇种子和树苗","Ancienttree Related stuff",  true),
 	addConfig("rabbit", "兔子","Rabbit",  true),
 	addConfig("mole", "鼹鼠", "Mole", true),
 	addConfig("bird", "鸟类", "Bird", true),
@@ -140,15 +141,15 @@ configuration_options =
 	addConfig("security_pulse_cage", "火花柜", "Security Pulse Cage and Full Cage",true,"注能之前请分开一个， 一整组注能会导致整组物品数量变1","PLZ fill it 1 by 1, otherwise you will lose whole set of it."),
 	addConfig("chestupgrade_stacksize", "箱子升级组件", "Chest Up Grade Set",true),
 	addConfig("shell", "贝壳钟", "Singing Shell",false),
-	addConfig("wally", "厨师炊具", "Wally's stuff",false),
+	addConfig("wally", "厨师炊具", "Wally's stuff",true),
 	addConfig("mooneye", "月眼", "Mooneye",true),
 	addConfig("boat_stuff","船上用品及龙蝇船相关物品（无耐久）","Boat related stuff", true, "只加入了没有耐久的物品堆叠"),
 	--addConfig("sketch1", "常用草图","Sketch", true),
 	--模组物品
 	addConfig("myth_lotusleaf", "神话书说：荷叶和月饼", "Lotusleaf and Mooncake", false),
-	addConfig("blank_certificate", "能力勋章：空白勋章和熔岩鳗鱼", "Blank certificate and LavaEel", true),
+	addConfig("blank_certificate", "能力勋章：空白勋章和熔岩鳗鱼", "Blank certificate and LavaEel", false),
 	addConfig("lg_choufish_inv", "海洋传说：小丑鱼", "Uglyfish", false),
-	addConfig("aip_leaf_note", "额外物品包：树叶笔记", "Aip leaf note", false),
+	addConfig("aip_leaf_note", "额外物品包：树叶笔记,繁荣树种", "Aip leaf note", false),
 	addConfig("foliageath", "棱镜：青枝绿叶，雨蝇", "Foliageath", false),
 	addConfig("miao_packbox", "超级打包盒：超级打包盒", "Miao packbox", false,"需单个使用，整组使用会整组消耗"),
 	addConfig("heap_of_foods", "Heap Of Food 更多料理", "Heap Of Foods", false),

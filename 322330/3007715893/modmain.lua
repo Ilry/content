@@ -238,7 +238,7 @@ if Stack_other_objects then
 	end
 	if GetModConfigData("aip_leaf_note") then
 		--树叶笔记【额外物品包】
-		AddItemStackables({"aip_leaf_note"})
+		AddItemStackables({"aip_leaf_note","aip_prosperity_seed"})
 	end
 	-- if GetModConfigData("sketch1") then
 		--常用草图
@@ -298,14 +298,14 @@ if Stack_other_objects then
 		--鸟
 		"parrot", "parrot_blue", "parrot_pirate", "toucan","toucan_hamlet","seagull","quagmire_pigeon", "cormorant","kingfisher", "doydoy",
 	    --蜘蛛类
-		"spiderb", "spiderb1", "spiderb2",
+		"spiderb", "spiderb1", "spiderb2","spider_tropical",
 		--海鲜
 		"crab", "jellyfish", "rainbowjellyfish",
 		--fish
 		"oceanfish_small_1_inv", "oceanfish_small_2_inv", "oceanfish_small_3_inv","oceanfish_small_4_inv","oceanfish_small_5_inv","oceanfish_small_6_inv","oceanfish_small_7_inv","oceanfish_small_8_inv","oceanfish_small_9_inv","oceanfish_small_10_inv","oceanfish_small_11_inv","oceanfish_small_12_inv","oceanfish_small_13_inv","oceanfish_small_14_inv","oceanfish_small_15_inv","oceanfish_small_16_inv","oceanfish_small_17_inv","oceanfish_small_18_inv","oceanfish_small_19_inv","oceanfish_small_20_inv","oceanfish_small_21_inv","oceanfish_small_61_inv","oceanfish_small_71_inv","oceanfish_small_81_inv","oceanfish_small_91_inv",
 		"oceanfish_medium_1_inv","oceanfish_medium_2_inv","oceanfish_medium_3_inv","oceanfish_medium_4_inv","oceanfish_medium_5_inv","oceanfish_medium_6_inv","oceanfish_medium_7_inv","oceanfish_medium_8_inv",
 		--其他生物
-		"glowfly",
+		"glowfly","coral_brain", "magic_seal",
 		--船上用品
 		"porto_lograft_old","porto_raft_old","porto_rowboat","porto_cargoboat","porto_armouredboat","porto_encrustedboat","porto_tar_extractor","porto_sea_yard","trawlnet","armor_lifejacket","porto_buoy",
 		
@@ -329,7 +329,11 @@ if Stack_other_objects then
 	"dragonboat_pack", "boatrace_seatack_throwable_deploykit","dragonboat_kit","yotd_anchor_item","mast_yotd_item","yotd_steeringwheel_item",
 		})
 	end
-		
+---6月21饥荒大更新后新物品	
+	if GetModConfigData("ancienttree_stuff") then
+	--惊喜种子
+	AddItemStackables({"ancienttree_seed","ancienttree_nightvision_sapling_item","ancienttree_gem_sapling_item"})
+	end
 	
     
 	-- if GetModConfigData("blueprint")then

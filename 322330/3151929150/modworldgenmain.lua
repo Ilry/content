@@ -1974,6 +1974,16 @@ function GenerateNew(debug, world_gen_data)
             -- TODO: DO I need reset? I am not sure. This can be slow
             -- collectgarbage("collect")
             -- WorldSim:ResetAll()
+            
+            -- remove the loaded "map/layouts" file (check if this is loaded).
+            -- This because Klei introduce a bug in V617969
+            -- You can refer to the bug report https://forums.kleientertainment.com/klei-bug-tracker/dont-starve-together/worldsimresetall-does-not-reset-all-internal-state-as-before-r45374/
+            -- If Klei fix it, the following code can be removed.
+            -- (Perhaps map/layouts will not never be loaded here, but I still keep it here for safety.)
+            if package.loaded["map/layouts"] then
+                -- print("[Search your map]map/layouts is loaded, remove it.")
+                package.loaded["map/layouts"] = nil
+            end
 		end
 	end
 
@@ -2007,6 +2017,15 @@ function GenerateNew(debug, world_gen_data)
             --assert(try <= maxtries, "Maximum world gen retries reached!")
             collectgarbage("collect")
             WorldSim:ResetAll()
+            -- remove the loaded "map/layouts" file (check if this is loaded).
+            -- This because Klei introduce a bug in V617969
+            -- You can refer to the bug report https://forums.kleientertainment.com/klei-bug-tracker/dont-starve-together/worldsimresetall-does-not-reset-all-internal-state-as-before-r45374/
+            -- If Klei fix it, the following code can be removed.
+            if package.loaded["map/layouts"] then
+                -- print("[Search your map]map/layouts is loaded, remove it.")
+                package.loaded["map/layouts"] = nil
+            end
+
         elseif GEN_PARAMETERS == "" or world_gen_data.show_debug == true then
             ShowDebug(savedata)
         end
@@ -2265,6 +2284,14 @@ local function LoadParametersAndGenerate(debug)
 		-- local old_seed = SEED
 		collectgarbage("collect")
         WorldSim:ResetAll()
+        -- remove the loaded "map/layouts" file (check if this is loaded).
+        -- This because Klei introduce a bug in V617969
+        -- You can refer to the bug report https://forums.kleientertainment.com/klei-bug-tracker/dont-starve-together/worldsimresetall-does-not-reset-all-internal-state-as-before-r45374/
+        -- If Klei fix it, the following code can be removed.
+        if package.loaded["map/layouts"] then
+            -- print("[Search your map]map/layouts is loaded, remove it.")
+            package.loaded["map/layouts"] = nil
+        end
         SEED = SetWorldGenSeed(SEED+1)
         generated_data = GenerateNew(debug, world_gen_data)
     end
@@ -2278,6 +2305,14 @@ local function LoadParametersAndGenerate(debug)
     -- I got strange map, so I add this line.
     collectgarbage("collect")
     WorldSim:ResetAll()
+    -- remove the loaded "map/layouts" file (check if this is loaded).
+    -- This because Klei introduce a bug in V617969
+    -- You can refer to the bug report https://forums.kleientertainment.com/klei-bug-tracker/dont-starve-together/worldsimresetall-does-not-reset-all-internal-state-as-before-r45374/
+    -- If Klei fix it, the following code can be removed.
+    if package.loaded["map/layouts"] then
+        -- print("[Search your map]map/layouts is loaded, remove it.")
+        package.loaded["map/layouts"] = nil
+    end
     return generated_data
 end
 

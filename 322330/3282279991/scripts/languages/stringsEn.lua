@@ -1,0 +1,1 @@
+STRINGS.CHARACTERS.GENERIC.RESETSKILLTREE = "I feel a lot of knowledge flooding into my brain!"
