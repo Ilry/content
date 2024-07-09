@@ -528,6 +528,11 @@ function WXBrain:OnStart()
                             function() return true end, "Compost",
                             DoAction(self.inst, function() return self.inst.components.wxagriculture:Compost() end)
                         ),
+                        -- Plays phonographs
+                        IfNode(
+                            function() return true end, "Play",
+                            DoAction(self.inst, function() return self.inst.components.wxagriculture:Operate() end)
+                        ),
                     })
                 ),
                 -- Is Horti

@@ -59,9 +59,8 @@ local function ToggleRangeIndicator(inst)
 end
 
 G.TheInput:AddMouseButtonHandler(function(button, down)
-  local modifier = T.CLICK.MODIFIER_KEY
-  if modifier and not G.TheInput:IsKeyDown(modifier) then return end
-  if not (button == T.CLICK.MOUSE_BUTTON and down) then return end
+  if T.CLICK.KEY and not G.TheInput:IsKeyDown(T.CLICK.KEY) then return end
+  if not (button == T.CLICK.BUTTON and down) then return end
   local entity = G.TheInput:GetWorldEntityUnderMouse()
   if entity and T.CLICK.SUPPORT[entity.prefab] then ToggleRangeIndicator(entity) end
 end)
@@ -82,11 +81,11 @@ G.TheInput:AddKeyHandler(function(key, down)
   if cleared then return end
   local entities = G.TheSim:FindEntities(x, y, z, 80, nil, nil, T.BATCH.TAG)
   for _, e in ipairs(entities) do
-    if T.CLICK.SUPPORT[e.prefab] then ShowRangeIndicator(e) end
+    ShowRangeIndicator(e)
   end
 end)
 
-for _, prefab in ipairs(T.DEPLOY.PLACER) do
+for _, prefab in ipairs(T.DEPLOY) do
   AddPrefabPostInit(prefab, ShowRangeIndicator)
 end
 

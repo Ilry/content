@@ -7,6 +7,7 @@ local WXAgriculture = Class(function(self, inst)
     self.tile_x = nil
     self.tile_y = nil
     self.number_array = {}
+    self.phonograph = nil
 end)
 
 local function GetEquippedSeedpouch(inst)
@@ -643,6 +644,38 @@ function WXAgriculture:Compost()
     return (bin ~= nil and fertilizer ~= nil) and BufferedAction(self.inst, bin, ACTIONS.ADDCOMPOSTABLE, fertilizer) or nil
 end
 
+local FARM_PLANT_TAGS = { "tendable_farmplant" }
+local PHONOGRAPH_TAG = { "recordplayer" }
+function WXAgriculture:Operate()
+    local sentryward = self.inst.components.entitytracker:GetEntity("sentryward")
+    if sentryward == nil then
+        return nil
+    end
+
+    local phonograph = FindEntity(sentryward, SEE_WORK_DIST, function(ent)
+        local x, y, z = ent.Transform:GetWorldPosition()
+        local farm_plant_list = TheSim:FindEntities(x, y, z, TUNING.PHONOGRAPH_TEND_RANGE, FARM_PLANT_TAGS)
+        return next(farm_plant_list) ~= nil and ent.components.machine ~= nil and
+            ent.components.machine.enabled and not ent.components.machine:IsOn()
+    end, PHONOGRAPH_TAG)
+    if phonograph ~= nil then
+        return BufferedAction(self.inst, phonograph, ACTIONS.TURNON)
+    end
+
+    phonograph = FindEntity(sentryward, SEE_WORK_DIST, function(ent)
+        return ent.components.machine ~= nil and not ent.components.machine.enabled
+    end, PHONOGRAPH_TAG)
+    if phonograph ~= nil then
+        self.phonograph = phonograph
+        local record = self.inst.components.inventory:GetItemsWithTag("phonograph_record")[1]
+        if record ~= nil then
+            return BufferedAction(self.inst, phonograph, ACTIONS.GIVE, record)
+        end
+    else
+        self.phonograph = nil
+    end
+end
+
 function WXAgriculture:HarvestCrops()
     local sentryward = self.inst.components.entitytracker:GetEntity("sentryward")
     if sentryward == nil then
@@ -957,7 +990,10 @@ local function FindItemToTakeAction(inst)
                     item.components.fertilizer ~= nil and
                     ((item.components.fertilizer.nutrients[1] > 0 and not FindFertilizer(inst, 0, 100, 100)) or
                     (item.components.fertilizer.nutrients[2] > 0 and not FindFertilizer(inst, 100, 0, 100)) or
-                    (item.components.fertilizer.nutrients[3] > 0 and not FindFertilizer(inst, 100, 100, 0)))
+                    (item.components.fertilizer.nutrients[3] > 0 and not FindFertilizer(inst, 100, 100, 0))) or
+                    -- Record
+                    (inst.components.wxagriculture.phonograph ~= nil and item:HasTag("phonograph_record") and
+                    not inst.components.inventory:HasItemWithTag("phonograph_record", 1))
             end)) or
             (chest.prefab == "icebox" and chest.components.container:FindItem(function(item)
                 return
@@ -995,7 +1031,10 @@ local function FindItemToTakeAction(inst)
                     (item.components.fertilizer ~= nil and
                     ((item.components.fertilizer.nutrients[1] > 0 and not FindFertilizer(inst, 0, 100, 100)) or
                     (item.components.fertilizer.nutrients[2] > 0 and not FindFertilizer(inst, 100, 0, 100)) or
-                    (item.components.fertilizer.nutrients[3] > 0 and not FindFertilizer(inst, 100, 100, 0))))
+                    (item.components.fertilizer.nutrients[3] > 0 and not FindFertilizer(inst, 100, 100, 0)))) or
+                    -- Record
+                    (inst.components.wxagriculture.phonograph ~= nil and item:HasTag("phonograph_record") and
+                    not inst.components.inventory:HasItemWithTag("phonograph_record", 1))
             elseif target.prefab == "icebox" then
                 return
                     -- Fertilizer
@@ -1058,6 +1097,9 @@ function WXAgriculture:FindEntityToPickUpAction()
         ((item.components.fertilizer.nutrients[1] > 0 and not FindFertilizer(self.inst, 0, 100, 100)) or
         (item.components.fertilizer.nutrients[2] > 0 and not FindFertilizer(self.inst, 100, 0, 100)) or
         (item.components.fertilizer.nutrients[3] > 0 and not FindFertilizer(self.inst, 100, 100, 0)))) or
+        -- Record
+        (self.phonograph ~= nil and item:HasTag("phonograph_record") and
+        not self.inst.components.inventory:HasItemWithTag("phonograph_record", 1)) or
         -- Target item is seed or veggie
         (item.components.edible ~= nil and (item.components.edible.foodtype == FOODTYPE.SEEDS or
         (item.components.edible.foodtype == FOODTYPE.VEGGIE and not string.find(item.prefab, "mandrake") and item.prefab ~= "powcake"))))

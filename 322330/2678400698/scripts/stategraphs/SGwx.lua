@@ -330,7 +330,20 @@ local actionhandlers =
         end),
     ActionHandler(ACTIONS.FILL, "dolongaction"),
     ActionHandler(ACTIONS.ADDCOMPOSTABLE, "give"),
-    ActionHandler(ACTIONS.ACTIVATE, "give"),
+    ActionHandler(ACTIONS.ACTIVATE,
+        function(inst, action)
+            return action.target.components.activatable ~= nil
+                and (   (   action.target:HasTag("engineering") and (
+                                (inst:HasTag("scientist") and "dolongaction") or
+                                (not inst:HasTag("handyperson") and "dolongestaction")
+                            )
+                        ) or
+                        (action.target.components.activatable.standingaction and "dostandingaction") or
+                        (action.target.components.activatable.quickaction and "doshortaction") or
+                        "dolongaction"
+                    )
+                or nil
+        end),
     ActionHandler(ACTIONS.DEPLOY, "doshortaction"),
     ActionHandler(ACTIONS.DEPLOY_TILEARRIVE, "doshortaction"),
     ActionHandler(ACTIONS.HAMMER,
@@ -1515,6 +1528,40 @@ local states =
     },
 
     State{
+        name = "dostandingaction",
+        tags = { "doing", "busy" },
+
+        onenter = function(inst)
+            inst.components.locomotor:Stop()
+            inst.AnimState:PlayAnimation("give")
+            inst.AnimState:PushAnimation("give_pst", false)
+
+            inst.sg.statemem.action = inst.bufferedaction
+            inst.sg:SetTimeout(14 * FRAMES)
+        end,
+
+        timeline =
+        {
+            TimeEvent(12 * FRAMES, function(inst)
+				inst.sg:RemoveStateTag("busy")
+                inst:PerformBufferedAction()
+            end),
+        },
+
+        ontimeout = function(inst)
+            --give_pst should still be playing
+            inst.sg:GoToState("idle", true)
+        end,
+
+        onexit = function(inst)
+            if inst.bufferedaction == inst.sg.statemem.action and
+            (inst.components.playercontroller == nil or inst.components.playercontroller.lastheldaction ~= inst.bufferedaction) then
+                inst:ClearBufferedAction()
+            end
+        end,
+    },
+
+    State{
         name = "doequippedaction",
         tags = { "doing", "busy" },
 
@@ -1800,6 +1847,13 @@ local states =
             (inst.components.playercontroller == nil or inst.components.playercontroller.lastheldaction ~= inst.bufferedaction) then
                 inst:ClearBufferedAction()
             end
+        end,
+    },
+
+    State{
+        name = "dolongestaction",
+        onenter = function(inst)
+            inst.sg:GoToState("dolongaction", TUNING.LONGEST_ACTION_TIMEOUT)
         end,
     },
 

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?><Atlas>
+<Texture filename="ancientdreams_preparedfoods.tex" />
+	<Elements>
+		<Element name="ancientdreams_gegg.tex" u1="0" u2="0.25" v2="1" v1="0" />
+		<Element name="ancientdreams_candy.tex" u1="0.25" u2="0.5" v2="1" v1="0" />
+        <Element name="ancientdreams_cube.tex" u1="0.5" u2="0.75" v2="1" v1="0" />
+		<Element name="ancientdreams_geocake.tex" u1="0.75" u2="1" v2="1" v1="0" />
+	</Elements>
+</Atlas>

@@ -3,7 +3,7 @@ local function en_zh(en, zh)
 end
 
 name = en_zh("Insight Re-gainer", "便捷技能树")
-version ="1.0.0_O74"
+version ="1.2.0_O79"
 
 descen = [[
 
@@ -32,10 +32,10 @@ api_version_dst = 10
 
 dst_compatible = true
 dont_starve_compatible = false
-reign_of_giants_compatible = false
-server_only_mod = false
+reign_of_giants_compatible = dont_starve_compatible
+-- server_only_mod = true
 all_clients_require_mod = true
-client_only_mod = false
+-- client_only_mod = true
 
 icon_atlas = "modicon.xml"
 icon = "modicon.tex"
@@ -61,7 +61,8 @@ configuration_options =
 	-- 			hover = "English",
 	-- 			data = "English",
 	-- 		},
-	-- 	}
+	-- 	},
+	-- 	default = en_zh("English", "Chinese_s"),
 	-- },
 	{
 		name = "stringency",
@@ -70,7 +71,7 @@ configuration_options =
 		options =
 		{
 			{
-				description = en_zh("convenient", "便捷"),
+				description = en_zh("Convenient", "便捷"),
 				hover = en_zh("Right-click the Moon Rock Idol to reset Insights immediately", "右键月岩雕像立即重置技能树"),
 				data = "low",
 			},
@@ -91,12 +92,12 @@ configuration_options =
 		{
 			{
 				description = en_zh("Yes", "是"),
-				hover = en_zh("No inventory drop", "只是免去了爆一地装备"),
+				hover = en_zh("Reset Skill Tree without inventory drop", "只是免去了爆一地装备"),
 				data = true,
 			},
 			{
 				description = en_zh("No", "否"),
-				hover = en_zh("Abled to use it anytime", "测试技能树时更有优势"),
+				hover = en_zh("Abled to do it anywhere", "测试技能树时更有优势"),
 				data = false,
 			},
 		},

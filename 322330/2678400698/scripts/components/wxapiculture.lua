@@ -140,8 +140,10 @@ function WXApiculture:FindEntityToPickUpAction()
                 (item.components.burnable:IsBurning() or
                 item.components.burnable:IsSmoldering())) and]]
             -- Target item is bugnet
-            (item.components.tool ~= nil and item.components.tool:CanDoAction(ACTIONS.NET) and
-            not self.inst.components.wxtype:CanDoAction(ACTIONS.NET, true))
+            ((item.components.tool ~= nil and item.components.tool:CanDoAction(ACTIONS.NET) and
+            not self.inst.components.wxtype:CanDoAction(ACTIONS.NET, true)) or
+            -- Target item is butterfly wings
+            (item.prefab == "butterflywings" or item.prefab == "moonbutterflywings"))
         end, TOPICKUP_MUST_TAGS, TOPICKUP_CANT_TAGS)
     end
 

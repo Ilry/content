@@ -17,6 +17,7 @@ local structureList = {
     "firesuppressor",
     "winona_battery_low",
     "winona_battery_high",
+    "winona_catapult",
     "icemaker",
     "tar_extractor",
     "sea_yard",
@@ -82,26 +83,18 @@ function WXMachineIndustry:Repair()
             end
         end
     end
-
-    if wx ~= nil and kit ~= nil and not self.inst.components.timer:TimerExists("WXREAPIRCOOLDOWN") and
-        (amulet == nil or amulet.prefab ~= "greenamulet") then
-        self.inst.components.inventory:Equip(self.inst.components.inventory:FindItem(function(item)
-            return item.prefab == "greenamulet"
-        end))
-    end
-    amulet = EQUIPSLOTS.NECK ~= nil and self.inst.components.inventory:GetEquippedItem(EQUIPSLOTS.NECK) or
-        self.inst.components.inventory:GetEquippedItem(EQUIPSLOTS.BODY)
     if amulet == nil or amulet.prefab ~= "greenamulet" then
-        for k, v in pairs(self.inst.components.inventory.equipslots) do
-            if v.prefab == "greenamulet" then
-                amulet = v
-            end
-        end
+        amulet = self.inst.components.inventory:FindItem(function(item)
+            return item.prefab == "greenamulet"
+        end)
     end
 
     if wx ~= nil and kit ~= nil and amulet ~= nil and amulet.prefab == "greenamulet" and
         not self.inst.components.timer:TimerExists("WXREAPIRCOOLDOWN") then
         self.inst.components.timer:StartTimer("WXREAPIRCOOLDOWN", 10)
+        if amulet.components.equippable ~= nil and not amulet.components.equippable:IsEquipped() then
+            self.inst.components.inventory:Equip(amulet)
+        end
         return BufferedAction(self.inst, wx, ACTIONS.ADVANCEDREPAIR, kit)
     end
 
@@ -288,26 +281,52 @@ function WXMachineIndustry:Operate()
         return nil
     end
 
-    local machine = FindEntity(beacon, SEE_WORK_DIST, function(ent)
-        return table.contains(structureList, ent.prefab) and
-            (ent.components.machine ~= nil and ent.components.machine:CanInteract()) and
-            (ent.components.floodable == nil or not ent.components.floodable.flooded)
-    end, STRUCTURE_TAG)
-    if machine ~= nil and machine.prefab == "firesuppressor" and machine.components.machine ~= nil and
-        (self.inst.components.sailor == nil or not self.inst.components.sailor:IsSailing()) then
-        local x, y, z = machine.Transform:GetWorldPosition()
-        local ents = TheSim:FindEntities(x, y, z, TUNING.FIRE_DETECTOR_RANGE, nil, NOTAGS, NONEMERGENCY_FIREONLY_TAGS)
-        if next(ents) ~= nil and not machine.components.machine:IsOn() then
-            return BufferedAction(self.inst, machine, ACTIONS.TURNON)
-        elseif next(ents) == nil and machine.components.machine:IsOn() and not TheWorld.state.issummer then
-            return BufferedAction(self.inst, machine, ACTIONS.TURNOFF)
+    if self.inst.components.sailor ~= nil and self.inst.components.sailor:IsSailing() then
+        if self.inst.components.inventory:IsFull() then
+            local machine = FindEntity(beacon, SEE_WORK_DIST, function(ent)
+                return ent.prefab == "tar_extractor" and not ent:HasTag("burnt") and
+                    ent.components.machine ~= nil and ent.components.machine:CanInteract() and
+                    ent.components.machine:IsOn()
+            end, STRUCTURE_TAG)
+            if machine ~= nil then
+                return BufferedAction(self.inst, machine, ACTIONS.TURNOFF)
+            end
+        else
+            local machine = FindEntity(beacon, SEE_WORK_DIST, function(ent)
+                return ent.prefab == "tar_extractor" and not ent:HasTag("burnt") and
+                    ent.components.machine ~= nil and ent.components.machine:CanInteract() and
+                    not ent.components.machine:IsOn()
+            end, STRUCTURE_TAG)
+            if machine ~= nil then
+                return BufferedAction(self.inst, machine, ACTIONS.TURNON)
+            end
         end
-    elseif machine ~= nil and machine.prefab == "tar_extractor" and machine.components.machine ~= nil and
-        (self.inst.components.sailor ~= nil and self.inst.components.sailor:IsSailing()) then
-        if not self.inst.components.inventory:IsFull() and not machine.components.machine:IsOn() then
-            return BufferedAction(self.inst, machine, ACTIONS.TURNON)
-        elseif self.inst.components.inventory:IsFull() and machine.components.machine:IsOn() then
-            return BufferedAction(self.inst, machine, ACTIONS.TURNOFF)
+    else
+        local machine = FindEntity(beacon, SEE_WORK_DIST, function(ent)
+            local x, y, z = ent.Transform:GetWorldPosition()
+            local ents = TheSim:FindEntities(x, y, z, TUNING.FIRE_DETECTOR_RANGE, nil, NOTAGS, NONEMERGENCY_FIREONLY_TAGS)
+            return ent.prefab == "firesuppressor" and not ent:HasTag("burnt") and
+                (ent.components.floodable == nil or not ent.components.floodable.flooded) and
+                (ent.components.machine ~= nil and ent.components.machine:CanInteract() and
+                ((next(ents) ~= nil and not ent.components.machine:IsOn()) or
+                (next(ents) == nil and ent.components.machine:IsOn())))
+        end, STRUCTURE_TAG)
+        if machine ~= nil then
+            if not machine.components.machine:IsOn() then
+                return BufferedAction(self.inst, machine, ACTIONS.TURNON)
+            elseif machine.components.machine:IsOn() and not TheWorld.state.issummer then
+                return BufferedAction(self.inst, machine, ACTIONS.TURNOFF)
+            end
+        end
+
+        machine = nil
+        machine = FindEntity(beacon, SEE_WORK_DIST, function(ent)
+            return ent.prefab == "winona_catapult" and not ent:HasTag("burnt") and not ent:IsActiveMode() and
+                (ent.components.activatable ~= nil and ent.components.activatable.inactive) and
+                (ent.components.floodable == nil or not ent.components.floodable.flooded)
+        end, STRUCTURE_TAG)
+        if machine ~= nil then
+            return BufferedAction(self.inst, machine, ACTIONS.ACTIVATE)
         end
     end
 end

@@ -1,0 +1,1 @@
+AddReplicableComponent("mym_mate")
