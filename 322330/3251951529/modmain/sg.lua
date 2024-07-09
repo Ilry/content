@@ -2,7 +2,7 @@ require("stategraphs/commonstates")
 
 local Utils = require("mym_utils/utils")
 local GetPrefab = require("mym_utils/getprefab")
-local ModUtils = require("mym_modutils")
+local ModDefs = require("mym_moddefs")
 
 AddStategraphEvent("wilson", EventHandler("doattack", function(inst, data)
     local target = data.target
@@ -183,7 +183,7 @@ AddStategraphPostInit("wilson", function(sg)
     -- mod适配
 
     -- 弹奏吉他
-    if ModUtils.IsModEnableById(ModUtils.MODNAMES.Legion) or ModUtils.IsModEnableById(ModUtils.MODNAMES.Zhijiang) then
+    if Utils.IsModEnable(ModDefs.Legion) or Utils.IsModEnable(ModDefs.Zhijiang) then
         --当leader远离时不再弹奏
         if sg.states["playguitar_loop"] then
             Utils.FnDecorator(sg.states["playguitar_loop"], "onupdate", function(inst)

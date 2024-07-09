@@ -29,6 +29,7 @@ GLOBAL.global("print")
 old_print = print
 -- As all game mode share the same setting, only use SURVIVAL_TOGETHER is fine.
 local setpieces_required_0 = GLOBAL.SURVIVAL_TOGETHER.setpieces_required[1]
+local traps_required_0 = GLOBAL.SURVIVAL_TOGETHER.traps_required[1]
 local function do_not_print(...)
     -- Do not print from original codes
     local args = {...}
@@ -49,15 +50,24 @@ local function do_not_print(...)
     else
         required_setpiece = setpieces_required_0
     end
+    local required_trap
+    if traps_required_0 == nil then
+        required_trap = "NO TRAP REQUIRED"
+    else
+        required_trap = traps_required_0
+    end
     local setpiece_debug_str = "Warning! Could not find a spot for "..required_setpiece
+    local trap_debug_str = "Warning! Could not find a spot for "..required_trap
     -- local setpiece_debug_str = "Warning! Could not find a spot for ".."tenticle_reeds"
     local args = {...}
     local targetString = setpiece_debug_str
-    if #args == 1 and type(args[1]) == "string" and string.find(args[1], targetString) then
+    local targetString_trap = trap_debug_str
+    if #args == 1 and type(args[1]) == "string" and (string.find(args[1], targetString) or string.find(args[1], targetString_trap)) then
         _G.SET_PIECE_BUGS = true
         old_print("WARING FROM hijacked print function: "..setpiece_debug_str)
     else
         -- old_print("not the setpiece_debug_str")
+        -- old_print(...)
     end
 end
 print = do_not_print
@@ -86,6 +96,7 @@ _G.print = do_not_print
 -- 	return seed
 -- end
 BEST_SEED_SO_FAR = nil
+local map_layout_loaded_before_generate = false
 
 -- --local BAD_CONNECT = 219000 --
 -- --SEED = 1568654163 -- Force roads test level 3
@@ -1102,6 +1113,10 @@ local function check_for_tasks_wanted(choose_tasks, world_id)
     local tasks_required = _G[world_id].tasks_required
     local tasks_disliked = _G[world_id].tasks_disliked
     local setpieces_required = _G[world_id].setpieces_required
+    local traps_required = _G[world_id].traps_required
+    for _, value in ipairs(traps_required) do
+        table.insert(setpieces_required, value)
+    end
     local setpieces_disliked = _G[world_id].setpieces_disliked  -- only one set piece will be choosen, kept if mod is used
 
     -- Check if all the tasks and the setpieces required are in the tasks_selected and setpieces_selected, if not, return false
@@ -1373,7 +1388,7 @@ local function tiles_near_entities(savedata, world_id, my_log_file, grid, extra_
         -- table_to_json_file(extra_edges, "extra_edges.json")
         -- local dist = BFS(grid, entity_tiles, extra_edges)
         print("[Search your map] checking near entities "..entity_name)
-        if entity_name == "saltstack" or entity_name == "wobster_den"then
+        if entity_name == "saltstack" or entity_name == "wobster_den" or entity_name == "seastack" then
             local dist = BFS(grid, entity_tiles, extra_edges)
             for i = 1, height do
                 for j = 1, width do
@@ -1980,7 +1995,7 @@ function GenerateNew(debug, world_gen_data)
             -- You can refer to the bug report https://forums.kleientertainment.com/klei-bug-tracker/dont-starve-together/worldsimresetall-does-not-reset-all-internal-state-as-before-r45374/
             -- If Klei fix it, the following code can be removed.
             -- (Perhaps map/layouts will not never be loaded here, but I still keep it here for safety.)
-            if package.loaded["map/layouts"] then
+            if package.loaded["map/layouts"] and map_layout_loaded_before_generate==false then
                 -- print("[Search your map]map/layouts is loaded, remove it.")
                 package.loaded["map/layouts"] = nil
             end
@@ -2021,7 +2036,7 @@ function GenerateNew(debug, world_gen_data)
             -- This because Klei introduce a bug in V617969
             -- You can refer to the bug report https://forums.kleientertainment.com/klei-bug-tracker/dont-starve-together/worldsimresetall-does-not-reset-all-internal-state-as-before-r45374/
             -- If Klei fix it, the following code can be removed.
-            if package.loaded["map/layouts"] then
+            if package.loaded["map/layouts"] and map_layout_loaded_before_generate==false then
                 -- print("[Search your map]map/layouts is loaded, remove it.")
                 package.loaded["map/layouts"] = nil
             end
@@ -2288,7 +2303,7 @@ local function LoadParametersAndGenerate(debug)
         -- This because Klei introduce a bug in V617969
         -- You can refer to the bug report https://forums.kleientertainment.com/klei-bug-tracker/dont-starve-together/worldsimresetall-does-not-reset-all-internal-state-as-before-r45374/
         -- If Klei fix it, the following code can be removed.
-        if package.loaded["map/layouts"] then
+        if package.loaded["map/layouts"] and map_layout_loaded_before_generate==false then
             -- print("[Search your map]map/layouts is loaded, remove it.")
             package.loaded["map/layouts"] = nil
         end
@@ -2309,7 +2324,7 @@ local function LoadParametersAndGenerate(debug)
     -- This because Klei introduce a bug in V617969
     -- You can refer to the bug report https://forums.kleientertainment.com/klei-bug-tracker/dont-starve-together/worldsimresetall-does-not-reset-all-internal-state-as-before-r45374/
     -- If Klei fix it, the following code can be removed.
-    if package.loaded["map/layouts"] then
+    if package.loaded["map/layouts"] and map_layout_loaded_before_generate==false then
         -- print("[Search your map]map/layouts is loaded, remove it.")
         package.loaded["map/layouts"] = nil
     end
@@ -2321,5 +2336,12 @@ end
 -- print = old_print
 -- GLOBAL.print = old_print
 -- _G.print = old_print
+
+
+-- check if map/layouts is loaded
+if package.loaded["map/layouts"] then
+    map_layout_loaded_before_generate = true
+    print("[Search your map] map/layouts is loaded before generate")
+end
 
 return LoadParametersAndGenerate(false)

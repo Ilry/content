@@ -1,7 +1,7 @@
 local Utils = require("mym_utils/utils")
 local MateUtils = require("mym_mateutils")
 local GetPrefab = require("mym_utils/getprefab")
-local ModUtils = require("mym_modutils")
+local ModDefs = require("mym_moddefs")
 
 local RETARGET_MUST_TAGS = { "_combat", "_health" }
 local RETARGET_CANT_TAGS = { "INLIMBO", "plantkin", "eyeplant_friend", "player" } --### 拷贝一份，加一个player
@@ -111,10 +111,10 @@ local function DoAttackBefore(self, targ)
         and targ.components.carneystatus.missactioning == 0
         and not targ.sg:HasStateTag("busy") and not targ.components.rider:IsRiding()
     then
-        local Dodge = GetPrefab.GetModRPCFn(ModUtils.MODNAMES.carney, "Dodge")
-            or GetPrefab.GetModRPCFn(ModUtils.MODNAMES.carney2, "Dodge")
-            or GetPrefab.GetModRPCFn(ModUtils.MODNAMES.carney3, "Dodge")
-            or GetPrefab.GetModRPCFn(ModUtils.MODNAMES.carney4, "Dodge")
+        local Dodge = GetPrefab.GetModRPCFn(ModDefs.MODNAMES.carney, "Dodge")
+            or GetPrefab.GetModRPCFn(ModDefs.MODNAMES.carney2, "Dodge")
+            or GetPrefab.GetModRPCFn(ModDefs.MODNAMES.carney3, "Dodge")
+            or GetPrefab.GetModRPCFn(ModDefs.MODNAMES.carney4, "Dodge")
         if Dodge then
             isSuccess = true
             Dodge(targ)
@@ -126,14 +126,14 @@ local function DoAttackBefore(self, targ)
         and weapon
         and weapon.components.shieldlegion
         and weapon.components.shieldlegion.delta
-        and (not inst.mym_shieldCd or (cur - inst.mym_shieldCd) > 0.5) --加一个0.5的cd平衡一下强度，因为太超模了
+        and (not targ.mym_shieldCd or (cur - targ.mym_shieldCd) > 0.5) --加一个0.5的cd平衡一下强度，因为太超模了
         and weapon:HasTag("canshieldatk")
         -- and not TheWorld.Map:IsGroundTargetBlocked(pos) --先不加这个判断看看
         and not targ:HasTag("steeringboat")
         and targ.sg
         and not targ.sg:HasStateTag("atk_shield")
     then
-        inst.mym_shieldCd = cur
+        targ.mym_shieldCd = cur
         isSuccess = true
         targ:PushBufferedAction(BufferedAction(targ, nil, ACTIONS.ATTACK_SHIELD_L, weapon, targ:GetPosition()))
     end
@@ -185,7 +185,7 @@ local function SetLeader(self, leader)
     end
 end
 
-if ModUtils.IsModEnableById(ModUtils.MODNAMES.wimble) then
+if Utils.IsModEnable(ModDefs.wimble) then
     AddBrainPostInit("thumperbigbrain", function(self)
         local cond = self.bt.root.children[1]
         cond = cond and cond.children and cond.children[1]

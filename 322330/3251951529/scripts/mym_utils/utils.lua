@@ -197,31 +197,26 @@ function FN.MergeFn(...)
 end
 
 local enablemods
---- 检测是否开启指定MOD，来自风铃草
-function FN.IsModEnable(name)
+--- 检测是否开启指定MOD，id和name任填一个，来自风铃草
+---@param id string|nil mod对应编号，例如"workshop-2334209327"
+---@param name string|nil modinfo中的name，例如“猪人部落”
+function FN.IsModEnable(id, name)
     if not enablemods then
         enablemods = {}
-        local moddir = KnownModIndex:GetModsToLoad(true)
-        for k, dir in pairs(moddir) do
+        for _, dir in pairs(KnownModIndex:GetModsToLoad(true)) do
             local info = KnownModIndex:GetModInfo(dir)
-            local name = info and info.name or "unknow"
-            enablemods[dir] = name
+            enablemods[dir] = info and info.name or "unknow"
         end
     end
 
-    for k, v in pairs(enablemods) do
-        if v and (k:match(name) or v:match(name)) then return true end
-    end
-    return false
-end
-
---- 检测是否开启指定MOD，参数为id，例如"workshop-2334209327"
-function FN.IsModEnableById(id)
-    for k, mod_id in ipairs(KnownModIndex:GetModsToLoad()) do
-        if mod_id == id then
-            return true
+    if id then
+        return enablemods[id] ~= nil
+    else
+        for _, n in pairs(enablemods) do
+            if n:match(name) then return true end
         end
     end
+
     return false
 end
 

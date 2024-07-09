@@ -16,7 +16,7 @@ local Utils = require("mym_utils/utils")
 local GetPrefab = require("mym_utils/getprefab")
 local MateUtils = require("mym_mateutils")
 local SkillUtils = require("mym_skillutils")
-local ModUtils = require("mym_modutils")
+local ModDefs = require("mym_moddefs")
 local CombatUtils = require("mym_combatutils")
 
 local MIN_FOLLOW_DIST = TUNING.MYM_FOLLOW_MIN_DISTANCE
@@ -654,7 +654,7 @@ local function Interact(inst)
     -- mod的适配
 
     --棱镜
-    if ModUtils.IsModEnableById(ModUtils.MODNAMES.Legion) then
+    if Utils.IsModEnable(ModDefs.Legion) then
         -- 两个吉他
         if not inst.components.timer:TimerExists("mym_legion_guiter") and ACTIONS.PLAYGUITAR then
             inst.components.timer:StartTimer("mym_legion_guiter", 5)
@@ -667,7 +667,7 @@ local function Interact(inst)
     end
 
     -- 枝江往事
-    if ModUtils.IsModEnableById(ModUtils.MODNAMES.Zhijiang) then
+    if Utils.IsModEnable(ModDefs.Zhijiang) then
         -- 尤克里里
         if not inst.components.timer:TimerExists("mym_legion_guiter") and ACTIONS.PLAYGUITAR then
             inst.components.timer:StartTimer("mym_legion_guiter", 5)
@@ -803,7 +803,7 @@ local function GetTargetAction(inst, target)
     end
 
     -- 樱花林mod甲虫风暴活动优先捕虫
-    if ModUtils.IsModEnableById(ModUtils.MODNAMES.CherryForest) then
+    if Utils.IsModEnable(ModDefs.CherryForest) then
         if target:HasTags(CHERRY_FOREST_BUGS_MUST_TAGS) then
             local act = comp.workable and comp.workable:CanBeWorked() and comp.workable:GetWorkAction()
             if act and act == ACTIONS.NET then

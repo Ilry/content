@@ -4,7 +4,7 @@ local GetPrefab = require("mym_utils/getprefab")
 local MateUtils = require("mym_mateutils")
 local skilltreedefs = require "prefabs/skilltree_defs"
 local SkillUtils = require("mym_skillutils")
-local ModUtils = require("mym_modutils")
+local ModDefs = require("mym_moddefs")
 local CombatUtils = require("mym_combatutils")
 local Shapes = require("mym_utils/shapes")
 
@@ -630,7 +630,6 @@ local function SetTargetAfter(retTab, self, target)
     end
 end
 
-
 --- 禁止攻击名单
 local ATTACK_CANT_PREFABS = {
     spiderden = true,   --一级蜘蛛巢
@@ -940,7 +939,7 @@ function Mate:Init(leader)
     -- 一些mod处理
 
     -- 晓美焰mod
-    if ModUtils.IsModEnableById(ModUtils.MODNAMES.homura_1) then
+    if Utils.IsModEnable(ModDefs.homura_1) then
         inst:AddTag("homuraTag_ignoretimemagic") --队友免疫时停
     end
 end

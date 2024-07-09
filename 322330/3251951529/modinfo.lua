@@ -10,34 +10,25 @@ Players can summon teammates in the production bar, hoping that their presence c
 4. The unlocking of the right skill requires a certain number of survival days to unlock. For specific skills and their unlocking days, please refer to
 https://n77a3mjegs.feishu.cn/docx/GUgUdU2UBoiyo0x20H0cjizPn7b?from=from_copylink
 
-1.0.40 Changes:
-1. 队友死亡有概率崩溃的问题
-2. 修复小恶魔崩溃的问题
-3. 修复小恶魔尝试给旺达回血的问题
-4. 道诡异仙的舞狮、独眼魔不刷队友的份
-5. 修复女工遥控器没电卡动作的问题，女工不会给发电机添加燃料的问题
-6. 女工的机器无法回收
-7. 缓解伍迪标签溢出的问题
+1.0.42 改动：
+1. 修复女工使用遥控器指向自己的问题
+2. 修复队友使用棱镜盾牌盾反崩溃的问题
+3. 大力士召唤的猪人和沃特召唤的鱼人被打也不会反水
 
 Feel free to leave feedback in the comment section if you have any questions or suggestions.
 
 ]] or [[
 感谢千羽提供了队友的台词。
 
-1.0.40 改动：
-1. 队友死亡有概率崩溃的问题
-2. 修复小恶魔崩溃的问题
-3. 修复小恶魔尝试给旺达回血的问题
-4. 道诡异仙的舞狮、独眼魔不刷队友的份
-5. 修复女工遥控器没电卡动作的问题，女工不会给发电机添加燃料的问题
-6. 女工的机器无法回收
-7. 缓解伍迪标签溢出的问题
-
+1.0.42 改动：
+1. 修复女工使用遥控器指向自己的问题
+2. 修复队友使用棱镜盾牌盾反崩溃的问题
+3. 大力士召唤的猪人和沃特召唤的鱼人被打也不会反水
 
 有问题和建议欢迎加群或留言区反馈，QQ讨论群：667987439
 ]]
 author = "绯世行"
-version = "1.0.40"
+version = "1.0.42"
 
 forumthread = ""
 

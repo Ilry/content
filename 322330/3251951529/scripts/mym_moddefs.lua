@@ -1,9 +1,4 @@
-local Utils = require("mym_utils/utils")
-
-local FN = {}
-
--- 其他mod的modname
-FN.MODNAMES = {
+return {
     mudrock = "workshop-2968760008",    --泥岩
     xxx3 = "workshop-2589174774",       --芮塔
     eyjafjalla = "workshop-2978292229", --艾雅法拉
@@ -24,18 +19,3 @@ FN.MODNAMES = {
     FunctionalMedal = "workshop-1909182187", --能力勋章
     CherryForest = "workshop-1289779251",    --樱花林
 }
-
----mod是否启用，结果缓存一下，不然日志文件会一直打印
-local ENABLE_MODS = {}
-
-function FN.IsModEnableById(id)
-    local res = ENABLE_MODS[id]
-    if res == nil then
-        res = Utils.IsModEnableById(id)
-        ENABLE_MODS[id] = res
-    end
-
-    return res
-end
-
-return FN

@@ -3,7 +3,7 @@ Constructor.SetEnv(env)
 local GetPrefab = require("mym_utils/getprefab")
 local Utils = require("mym_utils/utils")
 local SkillUtils = require("mym_skillutils")
-local ModUtils = require("mym_modutils")
+local ModDefs = require("mym_moddefs")
 
 Utils.FnDecorator(ACTIONS.PICKUP, "fn", function(act)
     if act.doer and act.doer:HasTag("mym_mate") and act.doer.components.mym_mate then
@@ -174,7 +174,7 @@ Constructor.AddAction(nil,
                 -- 便携香料站
 
                 -- 适配能力勋章调味粉
-                if not medal_spice_defs and ModUtils.IsModEnableById(ModUtils.MODNAMES.FunctionalMedal) then
+                if not medal_spice_defs and Utils.IsModEnable(ModDefs.FunctionalMedal) then
                     medal_spice_defs = {}
                     for k, _ in pairs(require("medal_defs/medal_spice_defs")) do
                         table.insert(medal_spice_defs, k)

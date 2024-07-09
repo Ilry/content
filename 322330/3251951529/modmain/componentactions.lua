@@ -1,5 +1,3 @@
-local ModUtils = require("mym_modutils")
-
 AddComponentAction("SCENE", "mym_mate", function(inst, doer, actions, right)
     if inst:HasTag("mym_mate") then
         table.insert(actions, ACTIONS.MYM_RUMMAGE)
@@ -23,7 +21,7 @@ end)
 
 
 -- 给队友选择职业，先放一放，等修复了选择职业的bug再说
--- if ModUtils.IsModEnableById(ModUtils.MODNAMES.LegendOfSea) then
+-- if Utils.IsModEnable(ModDefs.LegendOfSea) then
 --     AddComponentAction("USEITEM", "lg_consumable", function(inst, doer, target, actions, right)
 --         if ACTIONS.LG_USE_ITEM
 --             and inst.prefab == "lg_career_enter"

@@ -23,7 +23,7 @@ But don't be too greedy, or it will take too long!
 ]]
 
 author = "clearlove"
-version = "1.0.7"
+version = "1.0.8"
 
 api_version = 10
 
@@ -321,6 +321,21 @@ configuration_options = {
         default = "not set",
         hover = CH and "确保刷新该受保护的资源点" or "Make sure this protected resource is spawned.",
     },
+    {
+        name = "master_traps",
+        label = CH and "陷阱" or "Traps",
+        options = {
+            {description = CH and "开发者墓园" or "Dev Graveyard", data = "Dev Graveyard", hover = CH and "一群墓地，温蒂玩家可能会喜欢"},
+            {description = CH and "沉睡蜘蛛陷阱" or "Sleeping Spider", data = "Sleeping Spider", hover = CH and ""},
+            {description = CH and "腐烂陷阱" or "Rotted Base", data = "Rotted Base", hover = CH and ""},
+            {description = CH and "皮弗娄牛农场" or "Beefalo Farm", data = "Beefalo Farm", hover = CH and ""},
+            {description = CH and "冰猎犬陷阱" or "Ice Hounds", data = "Ice Hounds", hover = CH and ""},
+            {description = CH and "火猎犬陷阱" or "Fire Hounds", data = "Fire Hounds", hover = CH and ""},
+            {description = CH and "无所谓" or "I don't care", data = "not set", hover = CH and ""}
+            },
+        default = "not set",
+        hover = CH and "确保刷新该受保护的资源点" or "Make sure this protected resource is spawned.",
+    },
     -- 基地选址
     {
 		name = "master base location",
@@ -391,6 +406,13 @@ configuration_options = {
         label = CH and "盐堆" or "Salt Stack",
         options = distance_options,
         default = "not set",
+    },
+    {
+        name = "master_seastack",
+        label = CH and "海蚀柱" or "Sea Stack",
+        options = distance_options,
+        default = "not set",
+        hover = CH and "不要设置的太小，我认为可能至少需要设置为30" or "Don't set it too small, I think it may need to be set to at least 30",
     },
     {
         name = "master_pond",

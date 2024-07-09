@@ -103,6 +103,10 @@ if GetModConfigData("master_protected_resources")~="not set" then
     table.insert(master_setting["setpieces_required"], GetModConfigData("master_protected_resources"))
 end
 -- TODO: 或许加入一些有益的陷阱或者bone，比如墓园？（都当做setpieces_required）
+master_setting["traps_required"] = {}
+if GetModConfigData("master_traps")~="not set" then
+    table.insert(master_setting["traps_required"], GetModConfigData("master_traps"))
+end
 master_setting["setpieces_disliked"] = {}
 
 -- near entity setting
@@ -137,6 +141,9 @@ if GetModConfigData("master_wobster_den")~="not set" then
 end
 if GetModConfigData("master_saltstack")~="not set" then
     table.insert(master_setting["near_entities"], {name= "saltstack", distance= GetModConfigData("master_saltstack")})
+end
+if GetModConfigData("master_seastack")~="not set" then
+    table.insert(master_setting["near_entities"], {name= "seastack", distance= GetModConfigData("master_seastack")})
 end
 master_setting["far_entities"] = {}
 -- pond
@@ -286,6 +293,7 @@ end
 
 cave_setting["required_entities"] = {}
 cave_setting["setpieces_required"] = {}
+cave_setting["traps_required"] = {}
 cave_setting["setpieces_disliked"] = {}
 cave_setting["near_entities"] = {}
 cave_setting["far_entities"] = {}

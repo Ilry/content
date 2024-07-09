@@ -1,7 +1,7 @@
 local GetPrefab = require("mym_utils/getprefab")
 local Shapes = require("mym_utils/shapes")
 local Utils = require("mym_utils/utils")
-local ModUtils = require("mym_modutils")
+local ModDefs = require("mym_moddefs")
 
 local FN = {}
 
@@ -1039,6 +1039,7 @@ local function CoachSuccess(inst)
             local pig = SpawnPrefab("pigman")
             pig.Transform:SetPosition(Shapes.GetRandomLocation(pos, 0, 4):Get())
             pig.components.follower:SetLeader(inst)
+            pig.components.follower:KeepLeaderOnAttacked()
             if inst.components.combat.target then
                 pig.components.combat:SetTarget(inst.components.combat.target)
             end
@@ -1216,7 +1217,7 @@ AddMateSkill("wendy", {
                     local flower = SpawnPrefab("abigail_flower")
                     return FN.InitBufItem(BufferedAction(inst, nil, ACTIONS.CASTSUMMON, flower))
                 end
-            elseif ModUtils.IsModEnableById(ModUtils.MODNAMES.VoidRealm)
+            elseif Utils.IsModEnable(ModDefs.VoidRealm)
                 and inst:IsNear(ghost, 30) --这个法杖还有个距离限制
                 and inst.components.dog_petleash
                 and inst.components.dog_petleash.numpets < inst.components.dog_petleash.maxpets
@@ -1482,7 +1483,7 @@ local function UseRemote(inst)
                 item = SpawnPrefab("winona_remote")
             end
             item.components.spellbook:SelectSpell(id)
-            return FN.InitBufItem(BufferedAction(inst, nil, ACTIONS.CASTAOE, item, inst:GetPosition()))
+            return FN.InitBufItem(BufferedAction(inst, nil, ACTIONS.CASTAOE, item, target:GetPosition()))
         end
     end
 end
@@ -2191,7 +2192,7 @@ AddMateSkill("mudrock", {
                 and not mudrockskill.enabled
                 and not inst.components.rider:IsRiding()
             then
-                local fn = GetPrefab.GetModRPCFn(ModUtils.MODNAMES.mudrock, "K_SKILL")
+                local fn = GetPrefab.GetModRPCFn(ModDefs.MODNAMES.mudrock, "K_SKILL")
                 if fn then
                     fn(inst)
                     return true
@@ -2248,7 +2249,7 @@ AddMateSkill("mudrock", {
 
 local Xxx3GrowFn
 local function Xxx3Grow(inst)
-    Xxx3GrowFn = Xxx3GrowFn or GetPrefab.GetModRPCFn(ModUtils.MODNAMES.xxx3, "GROW")
+    Xxx3GrowFn = Xxx3GrowFn or GetPrefab.GetModRPCFn(ModDefs.MODNAMES.xxx3, "GROW")
     if Xxx3GrowFn then
         Xxx3GrowFn(inst)
     end
@@ -2335,7 +2336,7 @@ AddMateSkill("xxx3", {
 local function SetEyjafjallaIgnite(inst, enable)
     local self = inst.components.eyjafjallaskill
     if self and self.skill1 and (self.skill1.enabled ~= enable) then
-        local fn = GetPrefab.GetModRPCFn(ModUtils.MODNAMES.eyjafjalla, "J_SKILL")
+        local fn = GetPrefab.GetModRPCFn(ModDefs.MODNAMES.eyjafjalla, "J_SKILL")
         if fn then
             fn(inst, inst.Transform:GetWorldPosition())
         end
@@ -2401,7 +2402,7 @@ AddMateSkill("eyjafjalla", {
                 return
             end
 
-            local fn = GetPrefab.GetModRPCFn(ModUtils.MODNAMES.eyjafjalla, "K_SKILL")
+            local fn = GetPrefab.GetModRPCFn(ModDefs.MODNAMES.eyjafjalla, "K_SKILL")
             if fn then
                 fn(inst, inst.Transform:GetWorldPosition())
             end
@@ -4304,7 +4305,7 @@ local function OnMCWStartDay(inst)
     local day = inst.components.age:GetAgeInDays()
 
     -- 每天升一级,[1,30]
-    local maxLevel = GetModConfigData("mcw_max_level", ModUtils.MODNAMES.mcw) or 30
+    local maxLevel = GetModConfigData("mcw_max_level", ModDefs.MODNAMES.mcw) or 30
     local isSay = false
     local expectLevel = math.min(day, maxLevel)
     if inst.mcwlevel:value() < expectLevel then
@@ -4717,6 +4718,7 @@ AddMateSkill("wurt", {
             merm:DoTaskInTime(TUNING.TOTAL_DAY_TIME / 2, merm.Remove) --持续半天
             merm.components.follower.keepdeadleader = true
             merm.components.follower:SetLeader(inst)
+            merm.components.follower:KeepLeaderOnAttacked()
             -- merm.components.combat:SetTarget(target)
 
             -- 帽子
