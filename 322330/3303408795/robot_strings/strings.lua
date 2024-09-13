@@ -1,0 +1,36 @@
+STRINGS.NAMES.WATSON_BOT = "新手無人機" --物品名稱
+STRINGS.RECIPE_DESC.WATSON_BOT = "新手用，當你不再使用時，恭喜你" --物品在合成欄的描述
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.WATSON_BOT = "對新手很友善的無人機" --角色檢視物品的台詞
+
+--STRINGS.NAMES.WATSON_BOT_ITEM = "ROBOT"
+--STRINGS.RECIPE_DESC.WATSON_BOT_ITEM = "ROBOT DESCRIPTION"
+--STRINGS.CHARACTERS.GENERIC.DESCRIBE.WATSON_BOT_ITEM = "ROBOT INSPECTION"
+
+STRINGS.NAMES.WATSON_REMOTE = "新手無人機的遙控器"
+STRINGS.RECIPE_DESC.WATSON_REMOTE = "召喚新手無人機\n當你不再需要它時，恭喜你"
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.WATSON_REMOTE = "新手無人機，他會跟著我"
+
+--[[
+STRINGS.WATSON_REMOTE_CONTROL = {
+    LIGHT = "Toggle Light",
+    HEATER = "SWITCH HEATER MODE",
+    SNOWBALL = "Toggle SNOWBALL",
+}
+]]
+
+
+STRINGS.WATSON_REMOTE_CONTROL = {
+    LIGHT = {
+        TURN_ON = "開燈",
+        TURN_OFF = "關燈",
+    },
+    HEATER = {
+        HOT = "轉換至暖氣",
+        COLD = "轉換至冷氣",
+        NEUTRAL = "關閉冷暖氣",
+    },
+    SNOWBALL = {
+        TURN_ON = "打開自動滅火器",
+        TURN_OFF = "關閉自動滅火器",
+    },
+}

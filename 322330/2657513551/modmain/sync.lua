@@ -329,7 +329,7 @@ do
 	env.RIFTPORTAL_DEFS = RIFTPORTAL_DEFS
 end
 
--- grower longupdate
+-- growable longupdate
 local function GrowableLongupdate(inst, dt)
 	local growable = inst.components.growable
 	if growable == nil or dt == nil or dt <= 0 then

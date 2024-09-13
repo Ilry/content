@@ -84,6 +84,38 @@ AddPrefabPostInit("acidsmoke_endless", function(inst)
 	inst.AnimState:PlayAnimation("")
 end)
 
+-- fix itemmimic
+--[[
+-- @components/itemmimic.lua
+-- Update reaction
+function ItemMimic:LongUpdate(dt)
+    if self._auto_reveal_task then
+        local remaining = GetTaskRemaining(self._auto_reveal_task) - dt
+        self._auto_reveal_task:Cancel()
+        if remaining > 0 then
+            self._auto_reveal_task = self.inst:DoTaskInTime(remaining, on_timed_out)
+        else
+            self._auto_reveal_task = nil
+            on_timed_out(inst)
+        end
+    end
+end
+-- ]]
+AddComponentPostInit("itemmimic", function(self)
+	local old_longupdate = self.LongUpdate
+	function self:LongUpdate(dt)
+		if self._auto_reveal_task and dt then
+			dt = math.min(GetTaskRemaining(self._auto_reveal_task) - 0.01, dt)
+			if dt > 0 then
+				old_longupdate(self, dt)
+			end
+			return
+		end
+
+		old_longupdate(self, dt)
+    end
+end)
+
 -- change mod update hint text
 local old_Networking_ModOutOfDateAnnouncement = Networking_ModOutOfDateAnnouncement
 function GLOBAL.Networking_ModOutOfDateAnnouncement(mod)

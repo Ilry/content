@@ -1,7 +1,11 @@
 local Ch = (locale == 'zh' or locale == 'zhr')
 name = Ch and "防卡好多招" or "Lag Remover"
 author = "大大果汁、凉时白开、小瑾、天涯共此时、小花朵"
-version = "2.6.4"
+version = "2.6.8"
+-- 可通过命令自定义任何需清理物品和数量。
+-- 单个物品：#keep_item@物品代码:数量，如#keep_item@hivehat:2
+-- 多个物品：#keep_item@物品1代码:数量;物品2代码:数量，可输入多个，中间用;分隔。
+--         如#keep_item@spiderhat:2;hivehat:2;monkey_smallhat:2;cutless:2;monkey_mediumhat
 description1 = Ch and [[
 特别感谢：大大果汁、凉时白开、小瑾
 功能包括：
@@ -9,12 +13,12 @@ description1 = Ch and [[
  ・ 2.设置物品最大堆叠数量(40-999)；
  ・ 3.更多原本不可堆叠物品可进行堆叠；
  ・ 4.定期清理服务器垃圾物品(可配置。超过配置数量部分会被清理);
- ・ 5.按U私聊框，输入命令#clean_world可立即清理；
+ ・ 5.按U私聊框，输入命令可立即清理:#clean或#清理;
  ・ 6.鱼人王、猪王、鸟笼、蚁狮可以批量交互；
  ・ 7.禁止树木重生；
  ・ 8.普通小树枝替换多枝树；
  ・ 9.砍树不留根；
- ・ 10.更多内容查看创意工坊介绍页；
+ ・ 10.现在，任何物品都可添加到清理队列，详情查看创意工坊介绍页或modinfo.lua文件；
  
  ・ 只清理【自动清理细项】中的内容，其余物品不会被清理。
  ・ 有用物品记得放宝箱，超过配置数量部分会被清理！
@@ -703,6 +707,7 @@ Ch and
 			default = 1,	
 			hover = "",
 		},
+		addTitle("其他需要清理的物品，查看工坊介绍"),
 } or
 {
 	addTitle("Basic Function Configurations"),

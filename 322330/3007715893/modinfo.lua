@@ -17,7 +17,7 @@ Tip: Close the stack of tall birds when you need to hatch their eggs
 
 author = "天涯共此时、小花朵"
 
-version = "2.2.6"
+version = "2.2.7"
 
 forumthread = ""
 
@@ -125,6 +125,8 @@ configuration_options =
 	--原版物品
 	addConfig("blueprint", "常用蓝图","blueprint", false),
 	addConfig("sketch", "常用草图","sketch", false),
+	addConfig("wally", "厨师炊具", "Wally's stuff",true),
+	addConfig("winona", "女工投石机和聚光灯", "Winona's stuff",true),
 	addConfig("ancienttree_stuff", "神奇种子和树苗","Ancienttree Related stuff",  true),
 	addConfig("rabbit", "兔子","Rabbit",  true),
 	addConfig("mole", "鼹鼠", "Mole", true),
@@ -138,16 +140,26 @@ configuration_options =
 	addConfig("shadowheart", "暗影心房", "Shadow heart", true),
 	addConfig("glommerwings", "格罗姆翅膀", "Glommerwings", true),
 	addConfig("moonrockidol", "月岩雕像,告密的心", "Moonrockidol and Reviver", true),
-	addConfig("horn", "牛角和独角鲸角", "Horn", false, "注意：只能作为材料堆叠，如需作为工具，请关闭选项","Note: TURN OFF WHEN USE IT AS TOOL"),
+	addConfig("horn", "牛角和独角鲸角", "Horn", true, "注意：只能作为材料堆叠，如需作为工具，请关闭选项","Note: TURN OFF WHEN USE IT AS TOOL"),
 	addConfig("deer_antler","鹿角和克劳斯钥匙","Deer Antler and Klaussackkey",true),
-	addConfig("security_pulse_cage", "火花柜", "Security Pulse Cage and Full Cage",true,"注能之前请分开一个， 一整组注能会导致整组物品数量变1","PLZ fill it 1 by 1, otherwise you will lose whole set of it."),
+	addConfig("security_pulse_cage", "火花柜和约束静电", "Security Pulse Cage and Full Cage",true,"注能之前请分开一个， 一整组注能会导致整组物品数量变1","PLZ fill it 1 by 1, otherwise you will lose whole set of it."),
 	addConfig("chestupgrade_stacksize", "箱子升级组件", "Chest Up Grade Set",true),
-	addConfig("shell", "贝壳钟", "Singing Shell",false),
-	addConfig("wally", "厨师炊具", "Wally's stuff",true),
+	addConfig("shell", "贝壳钟", "Singing Shell",true),
 	addConfig("mooneye", "月眼", "Mooneye",true),
 	addConfig("boat_stuff","船上用品及龙蝇船相关物品（无耐久）","Boat related stuff", true, "只加入了没有耐久的物品堆叠"),
 	
 	--模组物品
+	{
+		name = "",
+		label = L and "Mod items stack details" or "模组物品堆叠",
+		hover = "",
+		options = {
+				{ description = "", data = 0 }
+		},
+		default = 0,
+	},
+	
+	addConfig("dengxian", "登仙：暗影玫瑰，上品，极品灵石", "Dengxian： shadow rose and stones", false),
 	addConfig("myth_lotusleaf", "神话书说：荷叶和月饼", "Lotusleaf and Mooncake", false),
 	addConfig("blank_certificate", "能力勋章：空白勋章和熔岩鳗鱼", "Blank certificate and LavaEel", false),
 	addConfig("lg_choufish_inv", "海洋传说：小丑鱼", "Uglyfish", false),

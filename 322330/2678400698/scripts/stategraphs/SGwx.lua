@@ -5705,7 +5705,7 @@ local states =
 
     State{
         name = "bucked_post",
-        tags = { "busy", "pausepredict", "nomorph", "nodangle" },
+        tags = { "busy", "pausepredict", "nomorph", "nodangle", "dismounting" },
 
         onenter = function(inst)
             inst.AnimState:PlayAnimation("bucked")

@@ -180,8 +180,8 @@ if Stack_other_objects then
 	end
 	
 	if GetModConfigData("security_pulse_cage") then
-		--火花柜
-		AddItemStackables({"security_pulse_cage","security_pulse_cage_full"})
+		--火花柜和约束静电
+		AddItemStackables({"security_pulse_cage","security_pulse_cage_full","moonstorm_static_item"})
 	end
 	if GetModConfigData("deer_antler") then
 		--鹿角和麋鹿茸
@@ -196,13 +196,18 @@ if Stack_other_objects then
 		AddItemStackables({"chestupgrade_stacksize"})
 	end
 	if GetModConfigData("shell") then
-		--箱子升级组件
+		--贝壳钟
 		AddItemStackables({"singingshell_octave3","singingshell_octave4","singingshell_octave5"})
 	end
 	
 	if GetModConfigData("wally") then
 		--厨师炊具
 		AddItemStackables({"portablecookpot_item","portableblender_item","portablespicer_item"})
+	end
+	
+	if GetModConfigData("winona") then
+		--女工得投石机和聚光灯
+		AddItemStackables({"winona_catapult_item","winona_spotlight_item"})
 	end
 	
 	if GetModConfigData("mooneye") then
@@ -345,6 +350,10 @@ if Stack_other_objects then
 	
 	
 	--模组物品
+	if GetModConfigData("dengxian") then
+		--【登仙】暗影玫瑰， 上品灵石， 仙品灵石
+		AddItemStackables({"xd_aymg","xd_lingshi3","xd_lingshi4"})
+	end
 	
 	if GetModConfigData("myth_lotusleaf") then
 		--荷叶,月饼【神话书说】
@@ -429,11 +438,12 @@ if Stack_other_objects then
 		})
 	end
 	
+	
 	if GetModConfigData("reskin_tool") then
 		--清洁扫把和提灯和陷阱【娜娜自用】
 		AddItemStackables({"reskin_tool","lantern","trap_teeth"})
 	end
 end
 
---蓝图、草图、广告bug修复
+--蓝图、草图、广告bug修复事件
 modimport("main/lantu")

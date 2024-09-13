@@ -813,7 +813,9 @@ function WXBrain:OnStart()
                 ),
                 -- Is Pastoral
                 IfNode(
-                    function() return self.inst.components.wxtype:IsPast() end, "Raise Herds",
+                    function() return self.inst.components.wxtype:IsPast() and
+                        not (self.inst.sg:HasStateTag("busy") and self.inst.sg:HasStateTag("dismounting"))
+                    end, "Raise Herds",
                     SelectorNode({
                         -- Picks up materials
                         IfNode(
@@ -1294,7 +1296,9 @@ function WXBrain:OnStart()
                 ),
                 -- Is Pastoral
                 IfNode(
-                    function() return self.inst.components.wxtype:IsPast() end, "Raise Herds",
+                    function() return self.inst.components.wxtype:IsPast() and
+                        not (self.inst.sg:HasStateTag("busy") and self.inst.sg:HasStateTag("dismounting"))
+                    end, "Raise Herds",
                     SelectorNode({
                         -- Picks up materials
                         IfNode(
@@ -1303,7 +1307,9 @@ function WXBrain:OnStart()
                         ),
                         -- Shaves
                         IfNode(
-                            function() return self.inst.components.inventory:Has("razor", 1) end, "Shave",
+                            function() return self.inst.components.inventory:Has("razor", 1) and
+                                not self.inst.components.rider:IsRiding()
+                            end, "Shave",
                             DoAction(self.inst, function() return self.inst.components.wxpastoralism:Shave() end)
                         ),
                     })

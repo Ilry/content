@@ -79,12 +79,29 @@ local Unit_oceanfishingrod = GetModConfigData("oceanfishingrod")
 local Unit_sketch = GetModConfigData("sketch")
 local Unit_tacklesketch = GetModConfigData("tacklesketch")
 
+-- 分隔字符串
+local function split(str, separator)
+    local results = {}
+    local pattern = "([^" .. separator .. "]+)"
+    local last_end = 1
+
+    for start, stop in function() return string.find(str, pattern, last_end) end do
+        table.insert(results, string.sub(str, last_end, start - 1))
+        last_end = stop + 1
+    end
+
+    -- Add the last segment
+    table.insert(results, string.sub(str, last_end))
+    
+    return results
+end
+
 if IsServer then
     -- 需要清理的物品
     -- @max        地图上存在的最大数量
     -- @stack      标识为true时表示仅清理无堆叠的物品
     -- @reclean    标识为数字,表示超过第n次清理时物品还存在则强制清理(第一次找到物品并未清理的计数为1):超过次数后即使堆叠的物品也会清理
-    local function GetLevelPrefabs()
+    --local function GetLevelPrefabs()
         local levelPrefabs = {
             ------------------------  生物  ------------------------
             hound           = { max = Unit_hound },			-- 狗
@@ -262,8 +279,8 @@ if IsServer then
 			
         }
 
-        return levelPrefabs
-    end
+        -- return levelPrefabs
+    -- end
 
     local function RemoveItem(inst)
         if inst.components.health ~= nil and not inst:HasTag("wall") then
@@ -277,7 +294,7 @@ if IsServer then
     end
 
     local function Clean(inst, level)
-        local this_max_prefabs = GetLevelPrefabs()
+        local this_max_prefabs = levelPrefabs
         local countList = {}
 
         for _,v in pairs(GLOBAL.Ents) do
@@ -365,15 +382,42 @@ if IsServer then
 		return nil
 	end
 	
-	-- 按U输入#clean_world 手动清理
+	-- 按U输入#clean_world手动清理
 	-- 有问题，有TheNet:Announce方法就会执行失败，不知所以。
 	-- 2024-01-13 问题已解决
 	local Old_Networking_Say = GLOBAL.Networking_Say
 	GLOBAL.Networking_Say = function(guid, userid, name, prefab, message, colour, whisper, isemote, ...)
 		Old_Networking_Say(guid, userid, name, prefab, message, colour, whisper, isemote, ...)
-		if whisper and string.lower(message) == "#clean_world" then
+		-- 自动
+		-- #keep_item@hivehat:2
+		-- #keep_item@spiderhat:2;hivehat:2
+		local player = GetPlayerById(userid)
+		local  keep_item = "#keep_item@"
+		if #message > #keep_item and string.sub(message, 1, #keep_item) == keep_item then
+			if not (TheNet:GetIsServerAdmin() and player.components and player.Network:IsServerAdmin()) then
+                player:DoTaskInTime(0.5, function() if player.components.talker then player.components.talker:Say(player:GetDisplayName() .. ", " .. "管理员才能清理世界") end end)
+                return
+            end
+			message = string.sub(message, #keep_item + 1)
+			message = (string.gsub(message,"：",":"))
+			message = (string.gsub(message,"；",";"))
+			message = (string.gsub(message," ",""))
+			-- message = (string.gsub(message,"'",""))
+			-- message = (string.gsub(message,""",""))
+			local item_cnts = string.split(string.lower(message),";")
+			for k, v in ipairs(item_cnts) do
+				local item_cnt = string.split(string.lower(v),":")
+				levelPrefabs[item_cnt[1]] = { max = tonumber(item_cnt[2]) }
+				player:DoTaskInTime(0.5, function() if player.components.talker then player.components.talker:Say("加入清理："..item_cnt[1].."数量为："..item_cnt[2]) end end)
+			end
+			message = "#clean_world"
+		end
+		
+		if whisper and (string.lower(message) == "#clean_world" or
+			string.lower(message) == "#clean" or
+			string.lower(message) == "#清理"
+		) then
 			--GLOBAL.TheWorld:DoPeriodicTask( 5 , CleanDelay)
-		    local player = GetPlayerById(userid)
 			if not (TheNet:GetIsServerAdmin() and player.components and player.Network:IsServerAdmin()) then
                 player:DoTaskInTime(0.5, function() if player.components.talker then player.components.talker:Say(player:GetDisplayName() .. ", " .. "管理员才能清理世界") end end)
                 return
@@ -381,8 +425,8 @@ if IsServer then
             if player then
                 local charactername = STRINGS.CHARACTER_NAMES[prefab] or prefab
                 player.components.talker:Say(player:GetDisplayName() .. " (" .. charactername .. ") " .. "清理手动清理世界！")
-			    player:DoTaskInTime(0.5, CleanDelay)
-			end
+                player:DoTaskInTime(0.5, CleanDelay)
+            end
 		end
 	end
 end
