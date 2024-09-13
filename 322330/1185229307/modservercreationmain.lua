@@ -7,9 +7,6 @@ setmetatable(env,
 	__index = function(table, key) return rawget(_G, key) end
 })
 
-modpath = package.path:match("([^;]+)")
-package.path = package.path:sub(#modpath + 2) .. ";" .. modpath
-
 pcall(modinfo.SetLocaleMod, env)
 
 --\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -18,6 +15,7 @@ local mem = setmetatable({}, { __mode = "v" })
 local function argtohash(...) local str = ""; for i, v in ipairs(arg) do str = str .. tostring(v) end; return hash(str) end
 local function memget(...) return mem[argtohash(...)] end
 local function memset(value, ...) mem[argtohash(...)] = value end
+local time_units = { { 86400, "d"}, { 3600, "h" }, { 60, "m" }, { 1, "s" }  }
 
 Tykvesh =
 {
@@ -54,7 +52,31 @@ Tykvesh =
 			end
 		end
 	end,
+
+	Timer = function(time)
+		local bits = {}
+		for index, data in pairs(time_units) do
+			local range, suffix = unpack(data)
+			if time > range then
+				table.insert(bits, math.floor(time / range) .. suffix)
+				time = time % range
+				if #bits == 2 then
+					break
+				end
+			end
+		end
+		return table.concat(bits, " ")
+	end,
 }
+
+if rawget(_G, "Tykvesh") == nil then
+	rawset(_G, "Tykvesh", Tykvesh)
+else
+	for name, data in pairs(Tykvesh) do
+		_G["Tykvesh"][name] = data
+	end
+	Tykvesh = _G["Tykvesh"]
+end
 
 --\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
@@ -83,7 +105,15 @@ if success and not ModConfigurationScreen._epichealthbarpatched then
 
 	Tykvesh.Parallel(ModConfigurationScreen, "Apply", function(self)
 		if self._epichealthbardirty then
-			KnownModIndex:SaveConfigurationOptions(Tykvesh.Dummy, self.modname, self:CollectSettings(), false)
+			local settings = self:CollectSettings()
+			if TUNING.EPICHEALTHBAR ~= nil then
+				for i, v in ipairs(settings) do
+					if TUNING.EPICHEALTHBAR[v.name] ~= nil then
+						TUNING.EPICHEALTHBAR[v.name] = v.saved
+					end
+				end
+			end
+			KnownModIndex:SaveConfigurationOptions(Tykvesh.Dummy, self.modname, settings, false)
 		end
 	end)
 
@@ -103,5 +133,66 @@ if success and not ModConfigurationScreen._epichealthbarpatched then
 				end
 			end
 		end
+	end
+end
+
+--\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+local PersistentData = require "util/persistentdata"
+local SavedCaptures = PersistentData("epichealthbar_captures")
+
+local function PatchModsTab()
+	local TEMPLATES = require "widgets/redux/templates"
+	local CaptureBrowser = require "screens/epiccapturebrowser"
+
+	local screen = TheFrontEnd:GetActiveScreen()
+	local mods_tab = screen and screen.mods_tab
+	if mods_tab ~= nil and not mods_tab._epichealthbarpatched then
+		mods_tab._epichealthbarpatched = true
+
+		local menu = mods_tab.selectedmodmenu
+		local offset = Vector3(-menu.offset * (#menu.items + 1), 0)
+		local hovertext_top = { offset_x = 2, offset_y = 45 }
+
+		Tykvesh.Parallel(mods_tab, "ShowModDetails", function(self)
+			if self.currentmodname == modname and SavedCaptures:Exists() then
+				if mods_tab.modextrasbutton ~= nil then
+					return
+				end
+				mods_tab.modextrasbutton = TEMPLATES.IconButton("images/button_icons.xml", "movie.tex", "Captures", false, false, function()
+					TheFrontEnd:PushScreen(CaptureBrowser(SavedCaptures, mods_tab.slotnum))
+				end, hovertext_top)
+				menu:AddCustomItem(mods_tab.modextrasbutton, offset)
+			elseif mods_tab.modextrasbutton ~= nil then
+				for index, item in ipairs(menu.items) do
+					if item == mods_tab.modextrasbutton then
+						table.remove(menu.items, index)
+						break
+					end
+				end
+				mods_tab.modextrasbutton = mods_tab.modextrasbutton:Kill()
+			end
+		end, true)
+
+		return true
+	end
+end
+
+if SavedCaptures:Exists() then
+	if TUNING.EPICHEALTHBAR == nil then
+		ModManager:InitializeModMain(modname, env, "modmain.lua", true)
+
+		local prefab = Prefab("MOD_" .. modname, nil, Assets, {}, true)
+		prefab.search_asset_first_path = MODS_ROOT .. modname .. "/"
+		RegisterSinglePrefab(prefab)
+		TheSim:LoadPrefabs({ prefab.name })
+
+		TUNING.EPICHEALTHBAR.GLOBAL_NUMBERS = false
+		TUNING.EPICHEALTHBAR.CAPTURE = false
+		TUNING.EPICHEALTHBAR.PHASES.KLAUS = nil
+	end
+
+	if not PatchModsTab() then
+		TheGlobalInstance:DoTaskInTime(0, PatchModsTab)
 	end
 end

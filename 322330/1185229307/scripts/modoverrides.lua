@@ -2,8 +2,8 @@ local PRESETS =
 {
 	LAVAARENA =
 	{
-		BACKGROUND_COLOUR1 =	RGB(51, 42, 36),
-		BACKGROUND_COLOUR2 =	RGB(82, 68, 58),
+		BACKGROUND_COLOUR1 =	RGB(41, 34, 28),
+		BACKGROUND_COLOUR2 =	RGB(74, 61, 52),
 		FRAME_COLOUR =  		RGB(110, 64, 31),
 		BUTTON_COLOUR = 		RGB(166, 62, 37),
 	},
@@ -45,6 +45,7 @@ local function ApplyOverrides(data)
 	end
 	for type, value in pairs(data) do
 		TUNING.EPICHEALTHBAR[type] = value
+		--print("ApplyOverrides", type, value)
 	end
 end
 

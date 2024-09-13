@@ -29,7 +29,6 @@ local DANGER_DURATION = 10
 local DANGER_FADEOUT = 0.2
 local DANGER_COOLDOWN = 1.5
 local FOCUS_DURATION = 6
-local SPECTATOR_TAGS = { "hiding", "sitting_on_chair", "debugnoattack" }
 
 local ATTACK_RANGE = 12
 local ATTACK_TIMEOUT = 2
@@ -362,7 +361,6 @@ local PopupNumber = Class(Widget, function(self, value, damaged, data)
 	self.huge = value >= self.thresh
 	self.burst = data.level ~= nil or not damaged
 	self.colour = data.colour
-	self.pos = data.pos
 
 	self.xoffs = GetRandomWithVariance(0, self.burst and 12 or 4)
 	self.yoffs = GetRandomWithVariance(data.pos and 40 or 0, 10)
@@ -373,9 +371,10 @@ local PopupNumber = Class(Widget, function(self, value, damaged, data)
 	self.dtmod = Clamp(self.thresh / value, 0.3, 1)
 
 	if data.pos then
+		self.pos = data.pos
 		self:SetScaleMode(SCALEMODE_PROPORTIONAL)
 	elseif data.level then
-		self.colour = self:MixColour(0.01 * data.level)
+		self.colour = self:MixColour(0.015 * data.level)
 		self.speed = GetRandomMinMax(self.speed, 1.25 ^ data.level * self.speed)
 	elseif self.huge then
 		self.speed = GetRandomMinMax(self.speed, 1.5 * self.speed)
@@ -399,11 +398,10 @@ end)
 
 function PopupNumber:GetSize(value)
 	if self.pos then
-		local min, max = 100, 400
-		value = Clamp(value, min, max)
-		return Remap(value, min, max, 32, 48)
+		return Tykvesh.ClampRemap(value, 100, 400, 32, 40)
+	else
+		return self.burst and not self.huge and 42 or 44
 	end
-	return self.burst and not self.huge and 42 or 44
 end
 
 function PopupNumber:RoundDown(value)
@@ -480,11 +478,11 @@ function PopupNumber:OnUpdate(dt)
 		return self:Kill()
 	end
 
-	self.xoffs2 = self.xoffs2 + dt * self.dir * self.speed
-	self.text:SetPosition(self.xoffs + self.xoffs2, self.yoffs + self.yoffs2)
 	if self.pos ~= nil then
 		self:SetPosition(TheSim:GetScreenPos(self.pos:Get()))
 	end
+	self.xoffs2 = self.xoffs2 + self.dir * self.speed * dt
+	self.text:SetPosition(self.xoffs + self.xoffs2, self.yoffs + self.yoffs2)
 end
 
 --\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -524,7 +522,7 @@ end
 
 function MiniButton:Hide()
 	self.shown = false
-	self:SetScale(0)
+	self:SetScale(self.forced and self.scale or 0)
 end
 
 function MiniButton:Enable(enabled)
@@ -534,6 +532,35 @@ function MiniButton:Enable(enabled)
 		else
 			self:Select()
 		end
+	end
+end
+
+function MiniButton:SetForced(forced)
+	self.forced = forced or nil
+	if self.shown then
+		self:Show()
+	else
+		self:Hide()
+	end
+end
+
+function MiniButton:MakeFlash(flash)
+	if flash then
+		if self.flash == nil then
+			self.flash = self:AddChild(UIAnim())
+			self.flash:GetAnimState():SetBank("cookbook_newrecipe")
+			self.flash:GetAnimState():SetBuild("cookbook_newrecipe")
+			self.flash:GetAnimState():PlayAnimation("anim", true)
+			self.flash:SetPosition(12, 12)
+			self.flash:SetScale(0.75)
+			self.flash:SetClickable(false)
+			self:SetOnGainFocus(function() self.flash:SetScale(0) end)
+		end
+		self:SetForced(true)
+		self.flash:Show()
+	elseif self.flash ~= nil then
+		self:SetForced(false)
+		self.flash:Hide()
 	end
 end
 
@@ -651,6 +678,14 @@ local function ondanger(self, danger, olddanger)
 		else
 			self:StopTimer("nodanger")
 		end
+	end
+end
+
+local function onspectator(self, spectator, oldspectator)
+	if spectator ~= oldspectator then
+		ondanger(self, spectator, oldspectator)
+		self.camera:MakeFlash(spectator and self.data:Get("camera") == nil)
+		self:RefreshMenu()
 	end
 end
 
@@ -864,7 +899,6 @@ local function OnGlobalPopupNumber(self, data)
 	elseif data.target.entity:FrustumCheck() and CanEntitySeeTarget(self.owner, data.target) then
 		data.colour = self.GetEffectTint(data, data.damaged)
 		data.wet = data.target:GetIsWet()
-		data.pos = self:AlignToTarget(data.target, data.afflicter)
 		self.owner.HUD:AddChild(PopupNumber(data.value, data.damaged, data)) --popupstats_root
 	end
 end
@@ -958,12 +992,6 @@ local EpicHealthbar = Class(Widget, function(self, owner, modinfo, modname)
 	self.popuproot = self:AddChild(Widget("popuproot"))
 	self.popuproot:SetScale(SCALE)
 	self.popuproot:SetClickable(false)
-	if TUNING.EPICHEALTHBAR.GLOBAL_NUMBERS then
-		self.popuproot:Hide()
-		self.inst:ListenForEvent("epicpopupnumber", function(owner, data)
-			OnGlobalPopupNumber(self, data)
-		end, owner)
-	end
 
 	self.damageroot = self.popuproot:AddChild(Widget("damageroot"))
 	self.healroot = self.popuproot:AddChild(Widget("healroot"))
@@ -975,13 +1003,21 @@ local EpicHealthbar = Class(Widget, function(self, owner, modinfo, modname)
 	self.inst:ListenForEvent("epictargetresisted", function(owner, data) OnEpicTargetResisted(self, data) end, owner)
 	self.inst:ListenForEvent("enabledynamicmusic", function(world, enable) OnEnableDynamicMusic(self, enable) end, TheWorld)
 
+	if TUNING.EPICHEALTHBAR.CAPTURE then
+		self:MakeCaptureMode()
+	elseif TUNING.EPICHEALTHBAR.GLOBAL_NUMBERS then
+		self.popuproot:Hide()
+		self.inst:ListenForEvent("epicpopupnumber", function(owner, data)
+			OnGlobalPopupNumber(self, data)
+		end, owner)
+	end
 	if self:HasTargets() then
 		self:StartUpdating()
 	end
 end,
 {
 	danger = ondanger,
-	spectator = ondanger,
+	spectator = onspectator,
 	target = ontarget,
 	_name = onname,
 	build = onbuild,
@@ -1022,24 +1058,104 @@ function EpicHealthbar:OnLoseFocus()
 	self.config:Hide()
 end
 
-function EpicHealthbar:MakeRestricted()
-	local anim = self.frame:AddChild(UIAnim())
-	anim:SetScale(0.5)
-	anim:SetRotation(0)
-	anim:SetPosition(-5, -60)
-	anim:GetAnimState():SetBank("klaus")
-	anim:GetAnimState():SetBuild("klaus_build")
-	anim:GetAnimState():SetPercent("transform_loop", 0)
-	anim:GetAnimState():AnimateWhilePaused(false)
-	for i, v in ipairs({ "klaus_arm", "klaus_bits", "klaus_body", "klaus_claw", "klaus_eye", "klaus_head", "klaus_leg", "klaus_mouth", "swap_chain_lock", "swap_klaus_antler" }) do
-		anim:GetAnimState():HideSymbol(v)
+function EpicHealthbar:MakeCaptureMode()
+	self:SetScale(0)
+
+	if not TheNet:GetIsServerAdmin() then return end
+
+	local SavedCaptures = PersistentData("epichealthbar_captures", true)
+
+	local function addsetter(t, k, fn)
+		local _ = rawget(t, "_")
+		local p = _[k]
+		if p == nil then
+			_[k] = { t[k], fn }
+			rawset(t, k, nil)
+		else
+			Tykvesh.Parallel(p, 2, fn)
+		end
 	end
-	self.chains = anim
 
-	self.frame_phases:Hide()
+	local capture = nil
+	local lastupdate = nil
 
-	self.currenthealth_text.SetString = function(self)
-		Text.SetString(self, "???")
+	addsetter(self, "timeleft", function(self, timeleft)
+		if timeleft ~= nil then
+			if capture == nil then
+				capture = { session = TheWorld.meta.session_identifier, day = math.ceil(TheWorld.state.cycles + TheWorld.state.time), start = GetTime(), timeline = {} }
+				lastupdate = capture.start
+
+				if self.captureicon == nil then
+					self.captureicon = self.owner.HUD.controls.bottomright_root:AddChild(Image("images/button_icons.xml", "movie.tex"))
+					self.captureicon:SetScale(0.15)
+					self.captureicon:SetPosition(-60, 60)
+					self.captureicon:SetClickable(false)
+				end
+				self.captureicon:TintTo(RGBA(WHITE, 5), RGBA(WHITE, 0), 3, function() self.captureicon:Hide() end)
+				self.captureicon:Show()
+			end
+		elseif capture ~= nil then
+			local names = {}
+			for index, event in ipairs(capture.timeline) do
+				if type(event) == "table" and event[1] == "_name" and not table.contains(names, event[2]) then
+					table.insert(names, event[2])
+				end
+			end
+			capture.name = table.concat(names, ", ")
+			capture.length = lastupdate - capture.start
+			capture.start = nil
+
+			local captures = SavedCaptures:Get()
+			table.insert(captures, capture)
+			SavedCaptures:Set(captures)
+
+			capture = nil
+		end
+	end)
+
+	self.inst:ListenForEvent("onremove", function() self:StopTimer("timeleft") end)
+
+	local function addevent(key, value)
+		if capture ~= nil then
+			local time = GetTime()
+			if lastupdate ~= time then
+				table.insert(capture.timeline, time - lastupdate)
+				lastupdate = time
+			end
+			table.insert(capture.timeline, { key, value })
+		end
+	end
+
+	addsetter(self, "target", function(self, target, oldtarget)
+		if target ~= nil and target ~= oldtarget then
+			addevent("target", target.prefab)
+		end
+	end)
+
+	Tykvesh.Sequence(self.meter_damage, "IsSuspended", function(suspended)
+		self.suspended = suspended
+	end)
+
+	local setters =
+	{
+		"_name",
+		"build",
+		"wet",
+		"stimuli",
+		"burst",
+		"percent",
+		"maxhealth",
+		"currenthealth",
+		"active",
+		"suspended",
+	}
+
+	for _, key in ipairs(setters) do
+		addsetter(self, key, function(self, value, oldvalue)
+			if value ~= oldvalue then
+				addevent(key, value)
+			end
+		end)
 	end
 end
 
@@ -1372,7 +1488,7 @@ function EpicHealthbar:GetIsSpectator()
 			return true
 		end
 	end
-	return self.owner:HasOneOfTags(SPECTATOR_TAGS)
+	return self.owner:HasAnyTag("hiding", "sitting_on_chair", "debugnoattack")
 		and (self.spectator or not self.owner:HasTag("busy"))
 end
 
@@ -1381,7 +1497,7 @@ function EpicHealthbar:RefreshMenu()
 		return
 	elseif TheFocalPoint.components.focalpoint:IsFocusBlocked(self.inst) or TheFocalPoint ~= TheCamera.target then
 		self.camera:Enable(false)
-		self.camera:SetTooltip(self:GetLocalizedString("CAMERA_BUTTON_BLOCKED", "Not Available!"))
+		self.camera:SetTooltip(self:GetLocalizedString("CAMERA_BUTTON_BUSY", "Not Available!"))
 	elseif self.spectator then
 		self.camera:Enable(true)
 		self.camera:SetTooltip(self:GetLocalizedString("CAMERA_BUTTON_ALT", "Toggle Spectator Camera"))
@@ -1403,7 +1519,7 @@ function EpicHealthbar:ToggleCamera(enable)
 end
 
 function EpicHealthbar:FocusCamera(enable)
-	if enable and self:IsEpic() then
+	if enable and self:IsEpic() and not TUNING.EPICHEALTHBAR.CAPTURE then
 		TheFocalPoint.components.focalpoint:StartFocusSource(self.inst, "FIXED", self.owner, TUNING.EPICHEALTHBAR.CAMERA_FOCUS_MIN, TUNING.EPICHEALTHBAR.CAMERA_FOCUS_MAX, TUNING.EPICHEALTHBAR.CAMERA_PRIORITY, { ActiveFn = function(params) self.camerafocus = setmetatable({}, { __mode = "k" }); params.nofocus, params.count = 0, 0 end, UpdateFn = function(...) self:UpdateFocus(...) end })
 	else
 		TheFocalPoint.components.focalpoint:StopFocusSource(self.inst)
@@ -1573,6 +1689,16 @@ function EpicHealthbar:IsAttackedBy(target, attacker)
 		and attacker.replica.combat:GetTarget() == target
 end
 
+function EpicHealthbar:IsAttackedByGroup(target)
+	local count = 0
+	for other in pairs(self.targets) do
+		if self:IsAttackedBy(target, other) then
+			count = count + 1
+		end
+	end
+	return count > 1
+end
+
 function EpicHealthbar:NearAttacker(target)
 	for i, v in ipairs(AllPlayers) do
 		if self:IsAttackedBy(target, v) then
@@ -1591,19 +1717,6 @@ function EpicHealthbar:NearAttacker(target)
 		end
 	end
 	return false
-end
-
-function EpicHealthbar:AlignToTarget(target, other)
-	local pos = target:GetPosition()
-	if other ~= nil then
-		local pos2 = other:GetPosition()
-		local dist = math.min(target:GetPhysicsRadius(0.5), pos:Dist(pos2))
-		local offset = pos2 - pos
-		offset:Normalize()
-		pos.x = pos.x + offset.x * dist
-		pos.z = pos.z + offset.z * dist
-	end
-	return pos
 end
 
 function EpicHealthbar:GetTuningValue(type, target)
@@ -1739,7 +1852,9 @@ function EpicHealthbar:GetNextTarget()
 		if next ~= nil then
 			local target = next.replica.combat:GetTarget()
 			if self:IsEngagedTarget(target) then
-				if target:HasTag("attack") ~= next:HasTag("attack") then
+				if self:IsAttackedByGroup(target) then
+					next = target
+				elseif target:HasTag("attack") ~= next:HasTag("attack") then
 					next = target:HasTag("attack") and next or target
 				elseif self:GetPercent(target) < self:GetPercent(next) then
 					next = target
@@ -1800,12 +1915,12 @@ function EpicHealthbar:OnUpdate(dt)
 
 		local target = self:GetNextTarget()
 		if target ~= nil then
+			self:PushMusic(target)
+			self:StartTimer("timeleft", (self:GetMusicTimeLeft(target) or DANGER_DURATION) + DANGER_FADEOUT)
 			if self:IsPriorityTarget(target) or self:IsValid() then
 				self.target = target
 				self.refresh = true
 			end
-			self:PushMusic(target)
-			self:StartTimer("timeleft", (self:GetMusicTimeLeft(target) or DANGER_DURATION) + DANGER_FADEOUT)
 		end
 		target = self.target
 		if target ~= nil and target:IsValid() then

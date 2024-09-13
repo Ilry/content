@@ -1,7 +1,7 @@
 all_clients_require_mod = true
 dst_compatible = true
 
-version = "89"
+version = "93"
 version_compatible = "57"
 priority = 2 ^ 1023
 api_version = 10
@@ -11,10 +11,10 @@ author = "Tykvesh"
 icon_atlas = "images/modicon.xml"
 icon = "modicon.tex"
 server_filter_tags = { name, author }
-version_description = --•
+version_description = --•◦
 [[
-• Improved visibility of damage resistance effects.
-• Fixed wrong server options sometimes being shown when configuring a world.
+• Added silent capture mode.
+• Improved priority when multiple bosses attack another.
 ]]
 
 local LOCALE =
@@ -38,13 +38,13 @@ local LOCALE =
 		GLOBAL_NUMBERS_DISABLED = "Show damage on the bar",
 		GLOBAL_NUMBERS_ENABLED = "Show damage in the world",
 
-		RESTRICTED = "Speedrun Mode",
-		RESTRICTED_HOVER = "Reduces amount of information and trumps other options.\nNot recommended for regular gameplay.",
+		CAPTURE = "Silent Capture Mode",
+		CAPTURE_HOVER = "Instead of displaying the bar, records all fights into a file.\nCaptures can be replayed from the Host Game screen.",
 
 		TAG = "Display Health For",
 		TAG_HOVER = "Enables health bars only for selected targets.",
 		TAG_NONE = "None",
-		TAG_NONE_HOVER = "Type /epic in chat if you change your mind!",
+		TAG_NONE_HOVER = "Type /epic in the chat if you change your mind!",
 		TAG_EPIC = "Giants",
 		TAG_EPIC_HOVER = "The standard experience",
 		TAG_HEALTH = "All",
@@ -78,12 +78,22 @@ local LOCALE =
 
 		CAMERA = "Combat Camera",
 		CAMERA_HOVER = "Allows the camera to focus on giants while in combat.\nSitting or hiding grants spectator view.",
-		CAMERA_OPTION = "Button",
+		CAMERA_OPTION = "Toggle",
 		CAMERA_OPTION_HOVER = "Hover over the health bar to toggle",
 		CAMERA_BUTTON = "Toggle Combat Camera",
 		CAMERA_BUTTON_ALT = "Toggle Spectator Camera",
 		CAMERA_BUTTON_FAR = "Too Far!",
-		CAMERA_BUTTON_BLOCKED = "Not Available!",
+		CAMERA_BUTTON_BUSY = "Not Available!",
+
+		LOADING_TIPS =
+		{
+			SURVIVAL = [["Hi {username}! I hope your boss rush goes well." -T]],
+			LORE = "Epic Healthbar has built-in stuff for some mods, but any mod is able to define custom themes, phases or even textures.",
+			CONTROL1 = "Type /epic in the chat to configure the health bar.\nYou can also hover over it to access its menu.",
+			CONTROL2 = "If health bars draw too much of your attention, set Display Health For to None in the configuration to get rid of them.",
+			CONTROL3 = "Bring damage numbers straight to the battlefield with Global Damage Numbers! You can find it in Epic Healthbar's configuration.",
+			OTHER = "You can help translate Epic Healthbar to your language! It already features German, Brazilian Portuguese, Russian, and Simplified Chinese translations submitted by fellow players.",
+		},
 	},
 
 	DE =
@@ -148,7 +158,7 @@ local LOCALE =
 		CAMERA_BUTTON = "Aktiviere Kampfkamera",
 		CAMERA_BUTTON_ALT = "Aktiviere Zuschaueransicht",
 		CAMERA_BUTTON_FAR = "Zu weit weg!",
-		CAMERA_BUTTON_BLOCKED = "Nicht verfügbar!",
+		CAMERA_BUTTON_BUSY = "Nicht verfügbar!",
 	},
 
 	PT =
@@ -213,7 +223,7 @@ local LOCALE =
 		CAMERA_BUTTON = "Alternar Câmera de Combate",
 		CAMERA_BUTTON_ALT = "Alternar Câmera do Espectador",
 		CAMERA_BUTTON_FAR = "Muito Longe!",
-		CAMERA_BUTTON_BLOCKED = "Não Disponível!",
+		CAMERA_BUTTON_BUSY = "Não Disponível!",
 	},
 
 	RU =
@@ -277,7 +287,7 @@ local LOCALE =
 		CAMERA_BUTTON = "Переключить боевую камеру",
 		CAMERA_BUTTON_ALT = "Переключить камеру наблюдателя",
 		CAMERA_BUTTON_FAR = "Слишком далеко!",
-		CAMERA_BUTTON_BLOCKED = "Сейчас не доступно!",
+		CAMERA_BUTTON_BUSY = "Сейчас не доступно!",
 	},
 
 	ZH =
@@ -343,7 +353,7 @@ local LOCALE =
 		CAMERA_BUTTON = "切换战斗摄像机",
 		CAMERA_BUTTON_ALT = "切换观察者相机",
 		CAMERA_BUTTON_FAR = "太远",
-		CAMERA_BUTTON_BLOCKED = "无法使用",
+		CAMERA_BUTTON_BUSY = "无法使用",
 	},
 }
 
@@ -374,7 +384,7 @@ local function MakeOption(name, options, default, client)
 	}
 end
 
-function SetLocale(locale, modinfo)
+local function SetLocale(locale, env)
 	STRINGS = locale ~= nil and LOCALE[locale:upper():sub(0, 2)] or LOCALE.EN
 
 	name = STRINGS.NAME
@@ -399,12 +409,12 @@ function SetLocale(locale, modinfo)
 
 	local camera = { { description = STRINGS.CAMERA_OPTION, data = true, hover = STRINGS.CAMERA_OPTION_HOVER } }
 
-	configuration_options =
+	local options =
 	{
 		MakeHeader("HEADER_SERVER"),
 		MakeOption("GLOBAL_NUMBERS", nil, false),
 		MakeOption("GLOBAL", nil, false),
-		--MakeOption("RESTRICTED", nil, false),
+		MakeOption("CAPTURE", nil, false),
 		MakeHeader("HEADER_CLIENT", true),
 		MakeOption("TAG", tag, "EPIC", true),
 		MakeOption("FRAME_PHASES", nil, true, true),
@@ -416,19 +426,30 @@ function SetLocale(locale, modinfo)
 		STRINGS.TRANSLATOR and MakeHeader("TRANSLATOR"),
 	}
 
-	if modinfo ~= nil then
-		modinfo.name = name
-		modinfo.description = description
-		modinfo.configuration_options = configuration_options
+	if configuration_options == nil then
+		configuration_options = options
+	elseif env ~= nil then
+		configuration_options = env.MergeMapsDeep(configuration_options, options)
 	end
 end
 
+SetLocale(locale)
+
 function SetLocaleMod(env)
+	if env.TheNet:IsDedicated() then
+		return
+	end
+
 	local locale = env.LanguageTranslator.defaultlang or env.TheNet:GetLanguageCode()
 	if env.type(locale) == "string" then
-		SetLocale(locale, env.modinfo)
+		SetLocale(locale, env)
 	end
-	if STRINGS.COMMANDS and not env.IsInFrontEnd() then
+
+	if env.IsInFrontEnd() then
+		return
+	end
+
+	if STRINGS.COMMANDS then
 		for name, alias in env.pairs(STRINGS.COMMANDS) do
 			local data = env.require("usercommands").GetCommandFromName(name)
 			data.displayname = alias
@@ -436,6 +457,12 @@ function SetLocaleMod(env)
 			env.AddUserCommand(name, data)
 		end
 	end
+	if STRINGS.LOADING_TIPS then
+		local tab = { username = env.TheNet:GetLocalUserName() }
+		for id, tip in env.pairs(STRINGS.LOADING_TIPS) do
+			local category = "LOADING_SCREEN_" .. id:match("%a+") .. "_TIPS"
+			local key = "EPICHEALTHBAR" .. (id:match("%d+") or "")
+			env.AddLoadingTip(env.STRINGS.UI[category], key, env.subfmt(tip, tab))
+		end
+	end
 end
-
-SetLocale(locale)

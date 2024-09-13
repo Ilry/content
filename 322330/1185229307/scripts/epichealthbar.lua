@@ -4,6 +4,7 @@ TUNING.EPICHEALTHBAR =
 {
 	GLOBAL = false,
 	GLOBAL_NUMBERS = false,
+	CAPTURE = false,
 
 	TAG = "EPIC",
 	FRAME_PHASES = true,
@@ -129,7 +130,7 @@ TUNING.EPICHEALTHBAR =
 		ANTQUEEN =						{ 0.75, 0.5, 0.25 },
 		ANCIENT_HULK =					{ 0.5, 0.3 },
 		MALBATROSS =					{ 0.66, 0.33 },
-		CRABKING =						{ 0.85 },
+		CRABKING =						{ 0.875, 0.35 },
 		EYEOFTERROR =					{ 0.65 },
 		MINOTAUR =						{ 0.6 },
 		DAYWALKER =						{ 0.5, 0.3 },
@@ -211,10 +212,8 @@ AddUserCommand("epic",
 	end,
 })
 
-AddClientModRPCHandler("ShowPopupNumber", function(target, value, damaged, stimuli, afflicter)
-	if target ~= nil and value ~= nil then
-		ThePlayer:PushEvent("epicpopupnumber", { target = target, value = value, damaged = damaged, stimuli = stimuli, afflicter = afflicter })
-	end
+AddClientModRPCHandler("ShowPopupNumber", function(target, value, stimuli, x, y, z)
+	ThePlayer:PushEvent("epicpopupnumber", { target = target, value = value, damaged = true, stimuli = stimuli, pos = Point(x, y, z) })
 end)
 
 --\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -222,7 +221,7 @@ if not TheNet:GetIsServer() then return end --\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 --\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 local function AddHealthProxy(inst)
-	if inst.epichealth == nil then
+	if inst.epichealth == nil and not inst.isplayer then
 		inst.epichealth = inst:SpawnChild("epichealth_proxy")
 	end
 end
@@ -234,9 +233,13 @@ local function OnAddTag(inst, tag)
 end
 
 AddComponentPostInit("health", function(self, inst)
-	if inst:HasTag("epic") then
+	if TUNING.EPICHEALTHBAR.GLOBAL then
+		if not inst:HasTag("wall") then
+			AddHealthProxy(inst)
+		end
+	elseif inst:HasTag("epic") then
 		AddHealthProxy(inst)
-	elseif inst:HasTag("largecreature") or inst:HasTag("hostile") then
+	elseif inst:HasAnyTag("largecreature", "hostile") then
 		Tykvesh.Parallel(inst, "AddTag", OnAddTag)
 	end
 end)
@@ -253,28 +256,86 @@ end)
 
 --\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
+local function ResolveSource(attacker)
+	if attacker == nil or attacker.isplayer then
+		return attacker
+	elseif attacker.components.follower ~= nil then
+		local leader = attacker.components.follower:GetLeader()
+		while leader and leader.parent ~= nil do leader = leader.parent end
+		return leader
+	elseif attacker.components.complexprojectile ~= nil then
+		return ResolveSource(attacker.components.complexprojectile.attacker)
+	end
+
+	if attacker.sourceplayer ~= nil then
+		return attacker.sourceplayer
+	elseif attacker.sourceplayerlookup ~= nil then
+		return attacker[attacker.sourceplayerlookup]
+	elseif attacker:HasTag("hostile") then
+		return nil
+	end
+	for k, v in pairs(attacker) do
+		if checkentity(v) and v.isplayer then
+			attacker.sourceplayerlookup = k
+			return v
+		end
+	end
+end
+
+local function GetDamagePosition(attacker, target)
+	local pos1 = target:GetPosition()
+	local pos2 = attacker:GetPosition()
+	local dist = math.min(target:GetPhysicsRadius(0.5), pos1:Dist(pos2))
+	local offset = (pos2 - pos1):Normalize()
+	return pos1.x + offset.x * dist, pos1.y, pos1.z + offset.z * dist
+end
+
 local function OnAttacked(inst, data)
 	if data ~= nil and data.damageresolved ~= nil and data.damageresolved > 0 then
-		local target = inst.parent or inst
-		local value = math.min(999999, data.damageresolved)
-		local stimuli = data.stimuli or Tykvesh.Browse(data.weapon, "components", "weapon", "stimuli")
-		SendModRPCFromEntity("ShowPopupNumber", target, value, true, stimuli, data.attacker)
+		local success, source = pcall(ResolveSource, data.attacker)
+		if checkentity(source) and source.isplayer and source ~= inst then
+			SendModRPCToClient("ShowPopupNumber",
+				source.userid,
+				inst.parent or inst,
+				math.min(999999, data.damageresolved),
+				data.stimuli or Tykvesh.Browse(data.weapon, "components", "weapon", "stimuli"),
+				GetDamagePosition(data.attacker, inst)
+			)
+		end
+	end
+end
+
+local function OnNewTarget(inst, data)
+	local other = Tykvesh.Browse(data, "target", "components", "combat", "target")
+	if other ~= nil and other.isplayer then
+		inst.sourceplayer = other
 	end
 end
 
 local function OnRemoveFromEntity(self)
 	self.inst:RemoveEventCallback("attacked", OnAttacked)
+	self.inst:RemoveEventCallback("newcombattarget", OnNewTarget)
 end
 
 AddComponentPostInit("combat", function(self, inst)
-	if TUNING.EPICHEALTHBAR.GLOBAL_NUMBERS and not inst.isplayer then
+	if TUNING.EPICHEALTHBAR.GLOBAL_NUMBERS then
 		inst:ListenForEvent("attacked", OnAttacked)
+		if inst:HasTag("companion") then
+			inst:ListenForEvent("newcombattarget", OnNewTarget)
+		end
 		Tykvesh.Parallel(self, "OnRemoveFromEntity", OnRemoveFromEntity)
 	end
 end)
 
-AddComponentPostInit("health", function(self, inst)
-	if TUNING.EPICHEALTHBAR.GLOBAL and not inst.isplayer then
-		AddHealthProxy(inst)
+local function OnIgnite(inst, data)
+	if data ~= nil then
+		inst.sourceplayer = data.doer or data.attacker
+	end
+end
+
+AddComponentPostInit("explosive", function(self, inst)
+	if TUNING.EPICHEALTHBAR.GLOBAL_NUMBERS then
+		inst:ListenForEvent("onignite", OnIgnite)
+		inst:ListenForEvent("attacked", OnIgnite)
 	end
 end)

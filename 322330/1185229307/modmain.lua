@@ -10,8 +10,6 @@ setmetatable(env,
 modpath = package.path:match("([^;]+)")
 package.path = package.path:sub(#modpath + 2) .. ";" .. modpath
 
-AddSimPostInit(function() pcall(modinfo.SetLocaleMod, env) end)
-
 --\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 PrefabFiles = {}
@@ -29,7 +27,7 @@ Tykvesh =
 {
 	Dummy = function() end,
 	True = function() return true end,
-	InLimbo = { "INLIMBO" },
+	ClampRemap = function(v, ...) return Remap(Clamp(v, ...), ...) end,
 
 	Parallel = function(root, key, fn, lowprio)
 		if type(root) == "table" then
@@ -44,6 +42,25 @@ Tykvesh =
 					root[key] = function(...) fn(...) return oldfn(...) end
 				end
 				memset(root[key], "PARALLEL", oldfn, fn)
+			end
+		end
+	end,
+
+	Sequence = function(root, key, fn, noselect)
+		if type(root) == "table" then
+			local oldfn = root[key] or Tykvesh.Dummy
+			local newfn = memget("SEQUENCE", oldfn, fn)
+			if newfn then
+				root[key] = newfn
+			else
+				root[key] = function(...)
+					local ret = { oldfn(...) }
+					for i, v in pairs({ fn(ret[1], ...) }) do
+						ret[i] = v
+					end
+					return unpack(ret)
+				end
+				memset(root[key], "SEQUENCE", oldfn, fn)
 			end
 		end
 	end,
@@ -123,3 +140,7 @@ for index, module in ipairs(Modules) do
 		RunInEnvironment(result, env)
 	end
 end
+
+Tykvesh.Parallel(_G, "TranslateStringTable", function()
+	pcall(modinfo.SetLocaleMod, env)
+end)

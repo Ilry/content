@@ -1,6 +1,7 @@
-local PersistentData = Class(function(self, file)
+local PersistentData = Class(function(self, file, compress)
 	self.file = file:lower()
 	self.data = nil
+	self.compress = compress
 end)
 
 function PersistentData:Set(data_or_key, value)
@@ -9,7 +10,7 @@ function PersistentData:Set(data_or_key, value)
 	else
 		self.data = data_or_key
 	end
-	TheSim:SetPersistentString(self.file, json.encode(self.data))
+	TheSim:SetPersistentString(self.file, json.encode(self.data), self.compress)
 end
 
 function PersistentData:Get(key)
@@ -27,6 +28,12 @@ end
 function PersistentData:Erase()
 	self.data = nil
 	TheSim:ErasePersistentString(self.file)
+end
+
+function PersistentData:Exists()
+	self.exists = false
+	TheSim:CheckPersistentStringExists(self.file, function(exists) self.exists = exists end)
+	return self.exists
 end
 
 function PersistentData:GetDebugString()
