@@ -28,7 +28,7 @@ AddRecipe("book_petrifyingtome",
 		Ingredient("fossil_piece", 2), 
 	}, 
 	RECIPETABS.ANCIENT, 
-	TECH.ANCIENT_FOUR, nil, nil, nil, nil, 
+	TECH.ANCIENT_FOUR, nil, nil, true, nil, 
 	"bookbuilder", 
 	"images/inventoryimages.xml", 
 	"book_fossil.tex", nil, nil)

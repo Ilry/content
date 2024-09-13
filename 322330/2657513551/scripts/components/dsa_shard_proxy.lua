@@ -30,12 +30,18 @@ function ShardProxy:HasKingShard(type)
 end
 
 function ShardProxy:OnSave()
-	return self.data
+	local data = { mermkingdata = self.mermkingdata }
+	for k,v in pairs(self.data)do
+		data[k] = v
+	end
+	return data
 end
 
 function ShardProxy:OnLoad(data)
-	if data then
+	if type(data) == "table" then
+		self.mermkingdata = data.mermkingdata or {}
 		self.data = data
+		self.data.mermkingdata = nil
 	end
 end
 
@@ -80,10 +86,11 @@ function ShardProxy:OnPostInit()
 
 		-- mermking
 		local fake_shard_id = 114514
-		Shard_SyncMermKingExists(self.mermkingdata["exists"], fake_shard_id)
-		Shard_SyncMermKingTrident(self.mermkingdata["trident"], fake_shard_id)
-		Shard_SyncMermKingCrown(self.mermkingdata["crown"], fake_shard_id)
-		Shard_SyncMermKingPauldron(self.mermkingdata["pauldron"], fake_shard_id)
+		local prefix = "msg_mermking"
+		Shard_SyncMermKingExists(self.mermkingdata[prefix.."exists"], fake_shard_id)
+		Shard_SyncMermKingTrident(self.mermkingdata[prefix.."trident"], fake_shard_id)
+		Shard_SyncMermKingCrown(self.mermkingdata[prefix.."crown"], fake_shard_id)
+		Shard_SyncMermKingPauldron(self.mermkingdata[prefix.."pauldron"], fake_shard_id)
 	end)
 end
 

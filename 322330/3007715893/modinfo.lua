@@ -17,7 +17,7 @@ Tip: Close the stack of tall birds when you need to hatch their eggs
 
 author = "天涯共此时、小花朵"
 
-version = "2.2.1"
+version = "2.2.6"
 
 forumthread = ""
 
@@ -123,6 +123,8 @@ configuration_options =
 	-- 分别为：配置名（modmain中配置用）,中文显示名,英文显示名,默认是否开启,中文备注提示,英文备注提示
 	-- 若没有备注提示，则后两项可以不用写。也可以只写中文备注，不写英文备注。但是若是需要写英文备注，则中文备注必填
 	--原版物品
+	addConfig("blueprint", "常用蓝图","blueprint", false),
+	addConfig("sketch", "常用草图","sketch", false),
 	addConfig("ancienttree_stuff", "神奇种子和树苗","Ancienttree Related stuff",  true),
 	addConfig("rabbit", "兔子","Rabbit",  true),
 	addConfig("mole", "鼹鼠", "Mole", true),
@@ -144,7 +146,7 @@ configuration_options =
 	addConfig("wally", "厨师炊具", "Wally's stuff",true),
 	addConfig("mooneye", "月眼", "Mooneye",true),
 	addConfig("boat_stuff","船上用品及龙蝇船相关物品（无耐久）","Boat related stuff", true, "只加入了没有耐久的物品堆叠"),
-	--addConfig("sketch1", "常用草图","Sketch", true),
+	
 	--模组物品
 	addConfig("myth_lotusleaf", "神话书说：荷叶和月饼", "Lotusleaf and Mooncake", false),
 	addConfig("blank_certificate", "能力勋章：空白勋章和熔岩鳗鱼", "Blank certificate and LavaEel", false),

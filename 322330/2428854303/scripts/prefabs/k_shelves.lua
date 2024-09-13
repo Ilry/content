@@ -13,6 +13,11 @@ local assets =
 	
 	Asset("IMAGE", "images/inventoryimages/tap_inventoryimages.tex"),
 	Asset("ATLAS", "images/inventoryimages/tap_inventoryimages.xml"),
+	
+	Asset("ATLAS_BUILD", "images/inventoryimages.xml",  256),
+	Asset("ATLAS_BUILD", "images/inventoryimages1.xml", 256),
+    Asset("ATLAS_BUILD", "images/inventoryimages2.xml", 256),
+    Asset("ATLAS_BUILD", "images/inventoryimages3.xml", 256),	
 	Asset("ATLAS_BUILD", "images/inventoryimages/tap_inventoryimages.xml", 256),
     
 	Asset("SOUNDPACKAGE", "sound/dontstarve_DLC003.fev"),
@@ -52,6 +57,8 @@ local function OnHammered(inst)
 	end)
 	
     inst.shelves = nil
+	inst.childrenspawned = nil
+	
     inst:Remove()
 end    
 
@@ -120,8 +127,10 @@ local function SetImage(inst, ent, slot)
 		end
 
 		if ent.path then atlas = ent.path
+			elseif atlas and atlas == "images/inventoryimages.xml"  then atlas = "images/inventoryimages.xml"
 			elseif atlas and atlas == "images/inventoryimages1.xml" then atlas = "images/inventoryimages1.xml"
 			elseif atlas and atlas == "images/inventoryimages2.xml" then atlas = "images/inventoryimages2.xml"
+			elseif atlas and atlas == "images/inventoryimages3.xml" then atlas = "images/inventoryimages3.xml"
 			else atlas = "images/inventoryimages/tap_inventoryimages.xml" 
 		end
 	
@@ -163,8 +172,8 @@ local function SpawnChildren(inst)
                 object.components.shelfer:SetShelf(inst, inst.swp_img_list[i])            
             else 
                 if object.components.inventoryitem and object.components.shelfer then
-                object.components.inventoryitem:PutOnShelf(inst, "SWAP_img"..i)
-                object.components.shelfer:SetShelf(inst, "SWAP_img"..i)  
+					object.components.inventoryitem:PutOnShelf(inst, "SWAP_img"..i)
+					object.components.shelfer:SetShelf(inst, "SWAP_img"..i)  
                 end
             end
 			
@@ -211,7 +220,9 @@ local function OnSave(inst, data)
 end
 
 local function OnLoad(inst, data)
-    if data == nil then return end
+    if data == nil then 
+		return 
+	end
 	
     if data.rotation then
         inst.Transform:SetRotation(data.rotation)

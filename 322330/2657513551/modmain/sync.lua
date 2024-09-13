@@ -122,7 +122,7 @@ local fake_shard_id = 114514
 local old_Shard_SyncMermKingExists = Shard_SyncMermKingExists
 function GLOBAL.Shard_SyncMermKingExists(exists, shardid)
 	old_Shard_SyncMermKingExists(exists, shardid)
-	print("[DSA] SyncMermKingExists: EXISTS = "..tostring(exists))
+	print("[DSA] SyncMermKingExists: "..tostring(exists))
 	if TheWorld ~= nil and shardid ~= fake_shard_id then
 		TheWorld.components.dsa_shard_proxy:OnMermKingBuff("exists", exists)
 	end
@@ -131,7 +131,7 @@ end
 local old_Shard_SyncMermKingTrident = Shard_SyncMermKingTrident
 function GLOBAL.Shard_SyncMermKingTrident(exists, shardid)
 	old_Shard_SyncMermKingTrident(exists, shardid)
-	print("[DSA] SyncMermKingTrident: EXISTS = "..tostring(exists))
+	print("[DSA] SyncMermKingTrident: "..tostring(exists))
 	if TheWorld ~= nil and shardid ~= fake_shard_id then
 		TheWorld.components.dsa_shard_proxy:OnMermKingBuff("trident", exists)
 	end
@@ -140,7 +140,7 @@ end
 local old_Shard_SyncMermKingCrown = Shard_SyncMermKingCrown
 function GLOBAL.Shard_SyncMermKingCrown(exists, shardid)
 	old_Shard_SyncMermKingCrown(exists, shardid)
-	print("[DSA] SyncMermKingCrown: EXISTS = "..tostring(exists))
+	print("[DSA] SyncMermKingCrown: "..tostring(exists))
 	if TheWorld ~= nil and shardid ~= fake_shard_id then
 		TheWorld.components.dsa_shard_proxy:OnMermKingBuff("crown", exists)
 	end
@@ -149,7 +149,7 @@ end
 local old_Shard_SyncMermKingPauldron = Shard_SyncMermKingPauldron
 function GLOBAL.Shard_SyncMermKingPauldron(exists, shardid)
 	old_Shard_SyncMermKingPauldron(exists, shardid)
-	print("[DSA] SyncMermKingPauldron: EXISTS = "..tostring(exists))
+	print("[DSA] SyncMermKingPauldron: "..tostring(exists))
 	if TheWorld ~= nil and shardid ~= fake_shard_id then
 		TheWorld.components.dsa_shard_proxy:OnMermKingBuff("pauldron", exists)
 	end
@@ -329,6 +329,63 @@ do
 	env.RIFTPORTAL_DEFS = RIFTPORTAL_DEFS
 end
 
+-- grower longupdate
+local function GrowableLongupdate(inst, dt)
+	local growable = inst.components.growable
+	if growable == nil or dt == nil or dt <= 0 then
+		if inst.dsa_growable_task then
+			inst.dsa_growable_task:Cancel()
+			inst.dsa_growable_task = nil
+			return
+		end
+	end
+
+	for i = 1, 10 do
+		if growable.targettime ~= nil then
+			if growable.targettime < GetTime() + dt then
+				growable:DoGrowth()
+				dt = dt - (growable.targettime - GetTime())
+			else
+				growable:LongUpdate(dt)
+			end
+		end
+	end
+end
+AddComponentPostInit("growable", function(self)
+	-- self.inst.dsa_growable_longupdate = GrowableLongupdate
+	-- self.inst.dsa_growable_task = self.inst:DoTaskInTime(0, self.dsa_growable_longupdate,
+	-- 	TheWorld.components.dsa_clocksync.elapsedtime)
+end)
+
+-- harvestable longupdate
+AddComponentPostInit("harvestable", function(self)
+	local old_onload = self.OnLoad
+	function self:OnLoad(data)
+		local dt = TheWorld.components.dsa_clocksync.elapsedtime
+		if dt ~= nil and dt > 0 then
+			self.dsa_advanced_time = dt
+		end
+		old_onload(self, data)
+	end
+
+	local old_startgrowing = self.StartGrowing
+	function self:StartGrowing(time, ...)
+		time = time or self.pausetime or self.growtime
+		if self.dsa_advanced_time and GetTime() < 5 and time ~= nil then
+			if self.dsa_advanced_time > time then
+				self.dsa_advanced_time = self.dsa_advanced_time - time
+				time = 0
+			else
+				time = time - self.dsa_advanced_time
+				self.dsa_advanced_time = nil
+			end
+			self.dsa_advanced_flag = true -- for other mods
+		end
+		old_startgrowing(self, time, ...)
+		self.dsa_recovery_flag = false
+	end
+end)
+
 -- 修复金丝雀中毒过程不响应长更新的问题
 local function CanaryLongUpdate(inst, dt)
 	if dt ~= nil and dt > 0 then
@@ -336,7 +393,7 @@ local function CanaryLongUpdate(inst, dt)
 		local count = math.floor(dt / TUNING.SEG_TIME)
 		if emitting then
 			inst._gaslevel = (inst._gaslevel or 0) + count
-			-- 如果高于24, 立刻触发中毒
+			-- finish gas task if reach max level
 			if inst._gaslevel > 24 then
 				local timeleft = GetTaskRemaining(inst._gasuptask)
 				if timeleft > 0 then

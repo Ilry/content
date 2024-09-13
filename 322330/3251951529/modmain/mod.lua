@@ -111,10 +111,10 @@ local function DoAttackBefore(self, targ)
         and targ.components.carneystatus.missactioning == 0
         and not targ.sg:HasStateTag("busy") and not targ.components.rider:IsRiding()
     then
-        local Dodge = GetPrefab.GetModRPCFn(ModDefs.MODNAMES.carney, "Dodge")
-            or GetPrefab.GetModRPCFn(ModDefs.MODNAMES.carney2, "Dodge")
-            or GetPrefab.GetModRPCFn(ModDefs.MODNAMES.carney3, "Dodge")
-            or GetPrefab.GetModRPCFn(ModDefs.MODNAMES.carney4, "Dodge")
+        local Dodge = GetPrefab.GetModRPCFn(ModDefs.carney, "Dodge")
+            or GetPrefab.GetModRPCFn(ModDefs.carney2, "Dodge")
+            or GetPrefab.GetModRPCFn(ModDefs.carney3, "Dodge")
+            or GetPrefab.GetModRPCFn(ModDefs.carney4, "Dodge")
         if Dodge then
             isSuccess = true
             Dodge(targ)

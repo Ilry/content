@@ -115,26 +115,17 @@ function FN.SelectSkillAndUse(inst, start, target, dis)
     for i = 1, skillCount do
         local index = start + i
         local name = SKILLS_LIST[index > SKILL_COUNT and (index % SKILL_COUNT + 1) or index]
-        skills[name] = SKILLS_WEIGHT[name]
+        table.insert(skills, name)
     end
+    -- TODO 技能权重这里暂时没用到
+    for _, name in ipairs(shuffleArray(skills)) do
+        local d = SKILLS[name]
+        local buf = Use(inst, d, target, dis)
 
-
-    local count = math.min(5, skillCount)
-    for _ = 1, 5 do
-        for _, name in ipairs(Utils.WeightedRandomChoices(skills, count, true)) do
-            local d = SKILLS[name]
-            local buf = Use(inst, d, target, dis)
-
-            if buf then
-                -- 可以释放
-                return d, buf
-            end
+        if buf then
+            -- 可以释放
+            return d, buf
         end
-        if count >= skillCount then
-            return --没有满足条件的
-        end
-
-        count = math.min(count * 2, skillCount)
     end
 end
 

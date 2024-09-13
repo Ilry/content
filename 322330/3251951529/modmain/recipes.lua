@@ -45,17 +45,50 @@ local function AddMate(name)
         }, { "MYM_MATE" })
 end
 
-AddGamePostInit(function()
-    for _, name in ipairs(DST_CHARACTERLIST) do
-        AddMate(name)
-    end
+for _, name in ipairs(DST_CHARACTERLIST) do
+    AddMate(name)
+end
 
-    if not TUNING.MYM_FORBID_SELECT_MODCHARACTER then
-        for _, name in ipairs(MODCHARACTERLIST) do
-            AddMate(name)
+-- 对于专服我无法在AddGamePostInit里添加配方，只能让mod尽量的晚加载，然后判断其他启用的mod里有什么角色
+if not TUNING.MYM_FORBID_SELECT_MODCHARACTER then
+    if GetModConfigData("is_dedicated") then
+        local characters = {}
+        for _, name in ipairs(DST_CHARACTERLIST) do
+            characters[name] = true
         end
+
+        local modCharacters = {}
+        for name, _ in pairs(STRINGS.CHARACTER_TITLES) do
+            name = string.lower(name)
+            modCharacters[name] = true
+        end
+        for name, _ in pairs(STRINGS.CHARACTER_SURVIVABILITY) do
+            name = string.lower(name)
+            modCharacters[name] = true
+        end
+        for name, _ in pairs(STRINGS.CHARACTER_QUOTES) do
+            name = string.lower(name)
+            modCharacters[name] = true
+        end
+
+        modCharacters["default"] = nil
+        modCharacters["random"] = nil
+        for name, _ in pairs(modCharacters) do
+            if not characters[name] then
+                AddMate(name)
+            end
+        end
+    else
+        AddGamePostInit(function()
+            for _, name in ipairs(MODCHARACTERLIST) do
+                AddMate(name)
+            end
+        end)
     end
-end)
+end
+
+
+
 
 ----------------------------------------------------------------------------------------------------
 
@@ -151,4 +184,3 @@ AddMateRecipe("portablecookpot")
 AddMateRecipe("portablespicer")
 -- AddMateRecipe("cookpot")
 -- AddMateRecipe("winona_catapult")
-

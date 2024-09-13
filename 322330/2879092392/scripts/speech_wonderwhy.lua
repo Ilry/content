@@ -1201,8 +1201,8 @@ return {
         LAVA_POND_ROCK = "Oh my, a pebble.",
 
 		WEBBERSKULL = "Throw this in a grave.",
-		WORMLIGHT = "Yummy little fruit.",
-		WORMLIGHT_LESSER = "Not juicy enough.",
+		WORMLIGHT = "The snazziest snack.",
+		WORMLIGHT_LESSER = "Needs a bit more juice but that can do.",
 		WORM =
 		{
 		    PLANT = "Why not after all.",
@@ -1705,7 +1705,7 @@ return {
 			PICKED = "I'll come back for more.",
 		},
 		CACTUS_MEAT_COOKED = "Why did we remove the spikes?",
-		CACTUS_MEAT = "The spikes are just for adding flavour.",
+		CACTUS_MEAT = "The spikes are like free toothpicks.",
 		CACTUS_FLOWER = "I used to have a bouquet in my chamber.",
 
 		COLDFIRE =
@@ -5040,6 +5040,136 @@ return {
 
         ARMOR_LUNARPLANT_HUSK = "Great way to improve on one's design!",
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        -- Meta 4 / Ocean QoL
+		--v3 Winona
+		
+		WINONA_REMOTE =
+		{
+			GENERIC = "Long ranged remote control.",
+			OFF = "It needs power.",
+			CHARGING = "Long ranged remote control.",
+			CHARGED = "Long ranged remote control.",
+		},
+		WINONA_TELEBRELLA =
+		{
+			GENERIC = "Helps move things and yourself around.",
+            MISSINGSKILL = "only_used_by_winona",
+			OFF = "It needs some electricity.",
+			CHARGING = "Helps move things and yourself around.",
+			CHARGED = "Helps move things and yourself around.",
+		},
+		WINONA_TELEPORT_PAD_ITEM =
+		{
+			GENERIC = "The place where they'll appear.",
+            MISSINGSKILL = "only_used_by_winona",
+			OFF = "It needs power.",
+			BURNING = "I doubt that's meant to happen.",
+			BURNT = "I suppose they need to remake that.",
+		},
+		WINONA_STORAGE_ROBOT =
+		{
+			GENERIC = "Is it sentient or simply slaving away at tasks?",
+			OFF = "They aren't needed as of now.",
+			SLEEP = "I suppose everyone needs a rest sometimes.",
+			CHARGING = "They are powering up.",
+			CHARGED = "Seems like they're ready for action.",
+		},
+		INSPECTACLESBOX = "only_used_by_winona",
+		INSPECTACLESBOX2 = "only_used_by_winona",
+		INSPECTACLESHAT = 
+        {
+            GENERIC = "Investigate.",
+            MISSINGSKILL = "only_used_by_winona",
+        },
+		ROSEGLASSESHAT =
+        {
+            GENERIC = "This meddles closely with the shadows, yet doesn't need to be bent to a will.",
+            MISSINGSKILL = "only_used_by_winona",
+        },
+		CHARLIERESIDUE = "only_used_by_winona",
+		CHARLIEROSE = "only_used_by_winona",
+        WINONA_MACHINEPARTS_1 = "only_used_by_winona",
+        WINONA_MACHINEPARTS_2 = "only_used_by_winona",
+		WINONA_RECIPESCANNER = "only_used_by_winona",
+		WINONA_HOLOTELEPAD = "only_used_by_winona",
+		WINONA_HOLOTELEBRELLA = "only_used_by_winona",
+
+        OTTER = "I don't suppose you're acquainted with the other sirs of the seas?",
+        OTTERDEN = {
+            GENERIC = "Everyone needs a place to call home.",
+            HAS_LOOT = "They have a stash within.",
+        },
+        OTTERDEN_DEAD = "The home has been ruptured.",
+
+        BOAT_ANCIENT_ITEM = "I don't quite recall this design...",
+        BOAT_ANCIENT_CONTAINER = "A place for supplies.",
+        WALKINGPLANK_ANCIENT = "We all need a way out.",
+
+        ANCIENTTREE_SEED = "The technique doesn't rival with mine, but it is more beginner friendly!",
+
+        ANCIENTTREE_GEM = {
+            GENERIC = "A gem farm for the non ancients.",
+            STUMP = "Down it went.",
+        },
+
+        ANCIENTTREE_SAPLING_ITEM = "A field of these could be viable.",
+
+        ANCIENTTREE_SAPLING = {
+            GENERIC = "It'll grow in time.",
+            WRONG_TILE = "This is not a sustainable environment for it.",
+            WRONG_SEASON = "Hibernating.",
+        },
+ 
+        ANCIENTTREE_NIGHTVISION = {
+            GENERIC = "See in the dark.",
+            STUMP = "Destroyed.",
+        },
+
+        ANCIENTFRUIT_GEM = "This bears a gemmy surprise!",
+        ANCIENTFRUIT_NIGHTVISION = "One would feel weird eating it like this.",
+        ANCIENTFRUIT_NIGHTVISION_COOKED = "Perhaps more enticing this way.",
+
+        BOATPATCH_KELP = "Temporary solution.",
+
+        CRABKING_MOB = "The congregation is here!",
+        CRABKING_MOB_KNIGHT = "They must be the warriors of the crew.",
+        CRABKING_CANNONTOWER = "Ranged appliances.",
+        CRABKING_ICEWALL = "Shield of ice.",
+
+        SALTLICK_IMPROVED = "Well now... let's keep this a secret between you and I.",
+
+        OFFERING_POT =
+        {
+            GENERIC = "A place for the King's offerings.",
+            SOME_KELP = "It could take more.",
+            LOTS_OF_KELP = "It's full.",
+        },
+
+        OFFERING_POT_UPGRADED =
+        {
+            GENERIC = "A place for the King's offerings",
+            SOME_KELP = "It could take more.",
+            LOTS_OF_KELP = "It's full.",
+        },
+
+        MERM_ARMORY = "It says \"Mermfolk Ownlee.\"",
+        MERM_ARMORY_UPGRADED = "It says \"Mermfolk Ownlee.\"",
+        MERM_TOOLSHED = "Tools of the people.",
+        MERM_TOOLSHED_UPGRADED = "Tools of the people.",
+        MERMARMORHAT = "They're finally protecting themselves.",
+        MERMARMORUPGRADEDHAT = "They're finally protecting themselves.",
+        MERM_TOOL = "Pretty primitive.",
+        MERM_TOOL_UPGRADED = "Must be the second attempt at it.",
+
+        WURT_SWAMPITEM_SHADOW = "I don't think it's very safe to use shadows as such.",
+        WURT_SWAMPITEM_LUNAR = "Well, I doubt the moon can control them due to their... intellect. Should be fine.",
+
+        MERM_SHADOW = "They appear stronger.",
+        MERMGUARD_SHADOW = "They appear stronger",
+
+        MERM_LUNAR = "They took it pretty well.",
+        MERMGUARD_LUNAR = "They took it pretty well.",
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 		LIQUID_MIRROR = "Shifting gas, rotating solid, liquid mirror.",
 		WHY_REDGEM_SEED = "Shards of a heart, warming embrace.",
 		WHY_REDGEM_FORMATION = "Its heart skips resonate with mine.",
@@ -5134,7 +5264,19 @@ return {
         TURF_WHY_CHURCH_TURF_PURPLE = "Floor of the maddening whine.",
         TURF_WHY_CHURCH_TURF_GREEN = "Maybe we didn't use gems as well back then.",
         WHYEHAT_DREADSTONE_GREEN = "You have to make do sometimes." ,
-
+        --1.8.9
+        ANCIENTDREAMS_HYUBSIP = "Don't fret, for once the shards aren't really *in* the food",
+        ANCIENTDREAMS_KOZISIP = "Cactus and watermelon, mixed to perfection!",
+        ANCIENTDREAMS_TART = "Side effects might include glowing.",
+		WHYSPEAR = "It will get the job done.",
+        ANCIENTDREAMS_EVILBRED = "I hope you like this one, I gave it my all.",
+        ANCIENTDREAMS_GELL = "The pompous royalty loved this one due to the light feeling.",
+		ANCIENTDREAMS_FHISH = "That's how we used to prepare the firmest meat we had.",
+        ANCIENTDREAMS_QUASO = "A prefered meal after a large harvest.",
+		ANCIENTDREAMS_PIZZA = "The crystallization is taken very seriously.",
+        ANCIENTDREAMS_LOMBTER = "We crushed the lobster very much into the breading.",
+        ANCIENTDREAMS_SER = "Her majesty would probably approve of this one.",
+    
 		BEDROLL_GNARCOON = "Rest for the townsfolk.",
 		BEDROLL_GNARCOON_WINTER = "Delightful sleep for kings.",
 		COONTAIL_SHADOW = "Catnip, or maybe worse...",

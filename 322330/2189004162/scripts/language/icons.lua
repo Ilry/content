@@ -20,6 +20,8 @@ directory. If not, please refer to
 
 -- me
 
+-- TheNet:GetLanguageCode() == "?" & LOC.GetLocaleCode() == "?"
+
 return {
 	-- insightservercrash.lua
 	--server_crash = "This server has crashed. ",
@@ -110,6 +112,13 @@ return {
 		--minimum_sanity = "Minimum <color=SANITY>sanity</color> for light: <color=SANITY>%s</color> (<color=SANITY>%s%%</color>)",
 		--current_sanity = "Your <color=SANITY>sanity</color> is: <color=SANITY>%s</color> (<color=SANITY>%s%%</color>)",
 		--summoned_gestalt_damage = "Summoned <color=ENLIGHTENMENT>gestalts</color> deal <color=HEALTH>%s</color> damage.",
+	},
+
+	-- ancienttree_seed.lua [Prefab]
+	ancienttree_seed = {
+		--type = "Type: <color=%s><prefab=%s></color>",
+		--fruit_regen_time = "Fruit time: %s",
+		--fruit_regen_time_bounded = "Fruit time: %s <= %s <= %s",
 	},
 
 	-- aoeweapon_base.lua
@@ -403,6 +412,13 @@ return {
 			description = "Regenerates <color=SANITY>{amount} sanity</color> over {duration}(s).",
 		},
 
+		["wormlight_light"] = {
+			name = "<color=#6AD1EF><prefab=wormlight> light</color>",
+			--description = "Provides light for {duration}(s).",
+		},
+		["wormlight_light_lesser"] = function(parent) return deepcopy(parent.wormlight_light) end,
+		["wormlight_light_greater"] = function(parent) return deepcopy(parent.wormlight_light) end,
+
 		["wintersfeastbuff"] = {
 			name = "<color=FROZEN>Winter's Feast Buff</color>",
 			description = nil
@@ -625,6 +641,11 @@ return {
 	fishingrod_waittimes = "<icon=pocket_scale> <color=SHALLOWS>%s</color> - <color=SHALLOWS>%s</color>",
 	--fishingrod_loserodtime = "Max wrangle time: <color=SHALLOWS>%s</color>",
 
+	-- flotsamgenerator.lua
+	flotsamgenerator = {
+		--messagebottle_cooldown = "Next <prefab=messagebottle> spawn: %s",
+	},
+
 	-- follower.lua
 	leader = "<icon=pigcrownhat> %s",
 	loyalty_duration = "<icon=pigcrownhat><icon=pocket_scale> %s",
@@ -780,6 +801,11 @@ return {
 	--wagstaff_tool = "The name of this tool is: <color=ENLIGHTENMENT><prefab=%s></color>",
 	--gym_weight_value = "Gym weight value: %s",
 	--ruins_statue_gem = "Contains a <color=%s><prefab=%s></color>.",
+
+	-- inspectacleshat.lua [Prefab]
+	inspectacleshat = {
+		ready_to_use = "Ready to inspect",
+	},
 
 	-- insulator.lua
 	insulation_winter = "<icon=beargervest> <color=FROZEN>%s</color>",
@@ -1091,6 +1117,11 @@ return {
 	-- rocmanager.lua
 	rocmanager = {
 		--cant_spawn = "Unable to spawn."
+	},
+
+	-- roseglasseshat.lua [Prefab]
+	roseglasseshat = {
+		--ready_to_use = "Ready to inspect",
 	},
 
 	-- saddler.lua

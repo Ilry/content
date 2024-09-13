@@ -1951,7 +1951,7 @@ function FN.DefaultKill(inst, isContainFollower)
 end
 
 function FN.SetPosition(inst, x, y, z)
-    if x.IsVector3 then
+    if type(x) == "table" then
         x, y, z = x:Get()
     end
 

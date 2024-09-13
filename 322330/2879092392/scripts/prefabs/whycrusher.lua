@@ -89,10 +89,148 @@ local function ForestOnEntitySleep(inst)
         inst._trailtask = nil
     end
 end
+
+------------------------------------------------------------------------------------------------
+
+local function MaximizePlant(inst)
+    if inst.components.farmplantstress ~= nil then
+        if inst.components.farmplanttendable then
+			inst.components.farmplanttendable:TendTo()
+		end
+
+        inst.magic_tending = true
+        local _x, _y, _z = inst.Transform:GetWorldPosition()
+        local x, y = TheWorld.Map:GetTileCoordsAtPoint(_x, _y, _z)
+
+        local nutrient_consumption = inst.plant_def.nutrient_consumption
+        TheWorld.components.farming_manager:AddTileNutrients(x, y, nutrient_consumption[1]*6, nutrient_consumption[2]*6, nutrient_consumption[3]*6)
+    end
+end
+
+local function trygrowth(inst, maximize)
+    if not inst:IsValid()
+		or inst:IsInLimbo()
+        or (inst.components.witherable ~= nil and inst.components.witherable:IsWithered()) then
+
+        return false
+    end
+
+    if inst:HasTag("leif") then
+        inst.components.sleeper:GoToSleep(1000)
+        return true
+    end
+
+    if maximize then
+        MaximizePlant(inst)
+    end
+
+    if inst.components.growable ~= nil then
+        if inst.components.growable.magicgrowable or ((inst:HasTag("tree") or inst:HasTag("winter_tree")) and not inst:HasTag("stump")) then
+            if inst.components.simplemagicgrower ~= nil then
+                inst.components.simplemagicgrower:StartGrowing()
+                return true
+            elseif inst.components.growable.domagicgrowthfn ~= nil then
+                inst.magic_growth_delay = maximize and 2 or nil
+                inst.components.growable:DoMagicGrowth()
+            else
+                return inst.components.growable:DoGrowth()
+            end
+        end
+    end
+
+    if inst.components.pickable ~= nil then
+        if inst.components.pickable:FinishGrowing() then
+			inst.components.pickable:ConsumeCycles(1) -- magic grow is hard on plants
+		end
+    end
+
+    if inst.components.harvestable ~= nil and inst.components.harvestable:CanBeHarvested() and inst:HasTag("mushroom_farm") then
+        if inst.components.harvestable:IsMagicGrowable() then
+            inst.components.harvestable:DoMagicGrowth()
+        end
+    end
+end
+
+local function GrowNext(spell)
+	while #spell._targets > 0 do
+		local target = table.remove(spell._targets, 1)
+		if target:IsValid() and trygrowth(target, spell._maximize) then
+			if spell._count > 1 then
+				spell._count = spell._count - 1
+				spell:DoTaskInTime(0.1 + 0.3 * math.random(), GrowNext)
+				return
+			end
+			break
+		end
+	end
+	spell:Remove()
+end
+
+local SILVICULTURE_ONEOF_TAGS = { "leif", "silviculture", "tree", "winter_tree" }
+local SILVICULTURE_CANT_TAGS = { "magicgrowth", "player", "FX", "pickable", "stump", "withered", "barren", "INLIMBO", "ancienttree" }
+
+local function GrowTrees(inst)
+
+    local x, y, z = inst.Transform:GetWorldPosition()
+    local range = 30
+    local _ents = TheSim:FindEntities(x, y, z, range, nil, SILVICULTURE_CANT_TAGS, SILVICULTURE_ONEOF_TAGS)
+    local ents = {}
+
+    for k,v in pairs(_ents) do
+        if v.components.pickable ~= nil or v.components.crop ~= nil 
+           or v.components.growable ~= nil or v.components.harvestable ~= nil or v:HasTag("leif") then
+            table.insert (ents, v)
+        end
+    end
+
+    if #ents > 0 then
+        trygrowth(table.remove(ents, math.random(#ents)))
+        if #ents > 0 then
+            local timevar = 1 - 1 / (#ents + 1)
+            for i, v in ipairs(ents) do
+                v:DoTaskInTime(timevar * math.random(), trygrowth)
+            end
+        end
+    end
+end
+
+local HORTICULTURE_ONEOF_TAGS = { "plant", "lichen", "oceanvine", "mushroom_farm", "kelp" }
+local HORTICULTURE_CANT_TAGS = { "magicgrowth", "player", "FX", "leif", "pickable", "stump", "withered", "barren", "INLIMBO", "silviculture", "tree", "winter_tree" }
+
+local function GrowCrops(x, z, max_targets, maximize)
+	local ents = TheSim:FindEntities(x, 0, z, 30, nil, HORTICULTURE_CANT_TAGS, HORTICULTURE_ONEOF_TAGS)
+	local targets = {}
+	for i, v in ipairs(ents) do
+		if v.components.pickable ~= nil or v.components.crop ~= nil or v.components.growable ~= nil or v.components.harvestable ~= nil then
+			table.insert(targets, v)
+		end
+	end
+
+	if #targets == 0 then
+		return
+	end
+
+	local spell = SpawnPrefab("book_horticulture_spell")
+	spell.Transform:SetPosition(x, 0, z)
+	spell._targets = targets
+	spell._count = max_targets
+	spell._maximize = maximize
+
+	GrowNext(spell)
+end
+
+------------------------------------------------------------------------------------------------
+
 local function StartBlooming(inst)
+    local x, y, z = inst.Transform:GetWorldPosition()
+    local count = 25
+    local shouldtendtoplants = false
+
     if not inst._blooming then
         inst._blooming = true
         if not inst:IsAsleep() then
+            GrowTrees(inst)
+            GrowCrops(x, z, count, shouldtendtoplants)
             _StartBlooming(inst)
         end
     end
@@ -104,6 +242,18 @@ local function StopBlooming(inst)
     end
 end
 --------------------------------------------------------------------------------------------------------green
+--------------------------------------------------------------------------------------------------------orange; Ilaskus edit
+
+local function getrevealtargetpos(inst, doer)
+	if TheWorld.components.messagebottlemanager == nil then
+		return false
+	end
+
+	local pos, reason = TheWorld.components.messagebottlemanager:UseMessageBottle(inst, doer, true)
+	return pos, reason
+end
+
+--------------------------------------------------------------------------------------------------------orange; Ilaskus edit
 -------------------------------------------------------------------------------accept
 local function ItemTradeTest(inst, item)
     if item == nil then
@@ -217,6 +367,7 @@ local function refinedgemgiven(inst, giver, item)
                 inst.SoundEmitter:PlaySound("wickerbottom_rework/book_spells/researchstation")
             end)
         end)
+        inst.components.mapspotrevealer:RevealMap(giver) --Ilaskus edit.
     end
     ---------------------------------------------------------------------------orange
     ---------------------------------------------------------------------------yellow
@@ -392,6 +543,10 @@ local function fn_empty()
     inst:ListenForEvent("onbuilt", onbuilt)
     MakeSmallPropagator(inst)
     MakeHauntableWork(inst)
+
+    --Ilaskus edit.
+    inst:AddComponent("mapspotrevealer")
+    inst.components.mapspotrevealer:SetGetTargetFn(getrevealtargetpos)
 
     return inst
 end

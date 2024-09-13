@@ -20,6 +20,8 @@ directory. If not, please refer to
 
 -- Translated by: https://steamcommunity.com/id/lehasex/
 
+-- TheNet:GetLanguageCode() == "probably russian" & LOC.GetLocaleCode() == "ru"
+
 return {
 	-- insightservercrash.lua
 	server_crash = "Этот сервер упал.",
@@ -110,6 +112,13 @@ return {
 		minimum_sanity = "Минимум <color=SANITY>рассудка</color> для света: <color=SANITY>%s</color> (<color=SANITY>%s%%</color>)",
 		current_sanity = "Ваш <color=SANITY>рассудок</color>: <color=SANITY>%s</color> (<color=SANITY>%s%%</color>)",
 		summoned_gestalt_damage = "Призванные <color=ENLIGHTENMENT>гештальты</color> наносят <color=HEALTH>%s</color> урона.",
+	},
+
+	-- ancienttree_seed.lua [Prefab]
+	ancienttree_seed = {
+		type = "Type: <color=%s><prefab=%s></color>",
+		fruit_regen_time = "Fruit time: %s",
+		fruit_regen_time_bounded = "Fruit time: %s <= %s <= %s",
 	},
 
 	-- aoeweapon_base.lua
@@ -406,6 +415,13 @@ return {
 			name = "<color=SANITY>Регенерация рассудка</color>",
 			description = "Восстанавливает <color=SANITY>{amount} рассудка</color> за {duration}(с).",
 		},
+		["wormlight_light"] = {
+			name = "<color=#6AD1EF><prefab=wormlight> light</color>",
+			--description = "Provides light for {duration}(s).",
+		},
+		["wormlight_light_lesser"] = function(parent) return deepcopy(parent.wormlight_light) end,
+		["wormlight_light_greater"] = function(parent) return deepcopy(parent.wormlight_light) end,
+
 
 		["wintersfeastbuff"] = {
 			name = "<color=FROZEN>Бонус Зимнего Праздника</color>",
@@ -612,7 +628,11 @@ return {
 
 	-- fishingrod.lua
 	fishingrod_waittimes = "Время ожидания: <color=SHALLOWS>%s</color> - <color=SHALLOWS>%s</color>",
-	fishingrod_loserodtime = "Максимальное время ловли: <color=SHALLOWS>%s</color>",	
+
+	-- flotsamgenerator.lua
+	flotsamgenerator = {
+		messagebottle_cooldown = "Next <prefab=messagebottle> spawn: %s",
+	},
 
 	-- follower.lua
 	leader = "Лидер: %s",
@@ -766,6 +786,11 @@ return {
 	gym_weight_value = "Ценность гантели: %s",
 	ruins_statue_gem = "Содержит <color=%s><prefab=%s></color>.",
 
+	-- inspectacleshat.lua [Prefab]
+	inspectacleshat = {
+		ready_to_use = "Ready to inspect",
+	},
+
 	-- insulator.lua
 	insulation_winter = "<color=FROZEN>Теплоизоляция (Зима)</color>: <color=FROZEN>%s</color>",
 	insulation_summer = "<color=FROZEN>Теплоизоляция (Лето)</color>: <color=FROZEN>%s</color>",
@@ -844,6 +869,9 @@ return {
 
 	-- mermcandidate.lua
 	mermcandidate = "Калории: %s / %s",
+
+	-- messagebottlemanager.lua
+	messagebottlemanager = "Treasures to grab: %d / %d",
 
 	-- mightiness.lua
 	mightiness = "<color=MIGHTINESS>Мощь</color>: <color=MIGHTINESS>%s</color> / <color=MIGHTINESS>%s</color> - <color=MIGHTINESS>%s</color>",
@@ -1088,6 +1116,11 @@ return {
 	-- rocmanager.lua
 	rocmanager = {
 		cant_spawn = "Невозможно вызвать."
+	},
+
+	-- roseglasseshat.lua [Prefab]
+	roseglasseshat = {
+		ready_to_use = "Ready to inspect",
 	},
 
 	-- saddler.lua

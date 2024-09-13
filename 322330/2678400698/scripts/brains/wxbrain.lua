@@ -56,10 +56,10 @@ local function FindOpenSpace(inst, sentryward)
             end
             if inst.components.sailor == nil or not inst.components.sailor:IsSailing() then
                 return not next(containers) and not blocked and
-                    TheWorld.Map:IsPassableAtPoint(pos:Get())
+                    TheWorld.Map:IsLandTileAtPoint(pos:Get())
             else
                 return not next(containers) and not blocked and
-                    IsWaterTile(TheWorld.Map:GetTile(TheWorld.Map:GetTileCoordsAtPoint(pos:Get())))
+                    TheWorld.Map:IsActualOceanTileAtPoint(pos:Get())
             end
         end)
         if result_offset ~= nil then
@@ -1030,12 +1030,16 @@ function WXBrain:OnStart()
                 -- Walk to a place near the sentryward and avoid overlaping with containers.
                 IfNode(
                     function()
+                        if self.inst.components.rider:IsRiding() then
+                            return false
+                        end
+
                         local lastvisitedcontainer = self.inst.components.wxtype.lastvisitedcontainer
                         if lastvisitedcontainer ~= nil and lastvisitedcontainer:IsValid() and not lastvisitedcontainer:IsInLimbo() and
                             lastvisitedcontainer.components.container ~= nil and not lastvisitedcontainer.components.container:IsOpen() then
-                            return not self.inst.components.wxnavigation.engaged and
-                                self.inst:IsNear(lastvisitedcontainer, 1) and
-                                not self.inst.components.rider:IsRiding()
+                            if not self.inst.components.wxnavigation.engaged and self.inst:IsNear(lastvisitedcontainer, 1) then
+                                return true
+                            end
                         end
 
                         if self.inst.components.wxtype:IsConv() or self.inst.components.wxtype:IsSeaConv() then
@@ -1043,7 +1047,13 @@ function WXBrain:OnStart()
                                 self.inst.sentryward_task:Cancel()
                                 self.inst.sentryward_task = nil
                             end
-                            return
+                            if self.inst.components.wxnavigation.navtarget ~= nil and
+                                self.inst:IsNear(self.inst.components.wxnavigation.navtarget, SEE_WORK_DIST) and
+                                self.inst.components.wxnavigation.engaged and next(self.inst.components.wxnavigation.pointqueue) ~= nil then
+                                self.inst.components.wxnavigation.pointqueue = {}
+                                return true
+                            end
+                            return false
                         end
 
                         local sentryward = nil
@@ -1064,14 +1074,10 @@ function WXBrain:OnStart()
 
                         if sentryward ~= nil and sentryward:IsValid() and not sentryward:IsInLimbo() then
                             local x, y, z = sentryward.Transform:GetWorldPosition()
-                            if y and y ~= -100 then
-                                return not self.inst:IsNear(sentryward, KEEP_WORKING_DIST) and
-                                    not self.inst.components.rider:IsRiding()
+                            if y and y ~= -100 and not self.inst:IsNear(sentryward, KEEP_WORKING_DIST) then
+                                return true
                             end
                         end
-
-                        self.inst.components.entitytracker:ForgetEntity("sentryward")
-                        self.inst.components.entitytracker:ForgetEntity("shipyard")
                     end, "Stand By",
                     DoAction(self.inst, function()
                         local sentryward = nil
@@ -1079,6 +1085,9 @@ function WXBrain:OnStart()
                             sentryward = self.inst.components.entitytracker:GetEntity("sentryward")
                         else
                             sentryward = self.inst.components.entitytracker:GetEntity("shipyard")
+                        end
+                        if sentryward == nil then
+                            sentryward = self.inst.components.entitytracker:GetEntity("wxdiviningrodbase")
                         end
 
                         local pos = nil

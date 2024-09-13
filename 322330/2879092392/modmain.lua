@@ -32,6 +32,7 @@ PrefabFiles = {
 	--
 	"whycrank",
 	"whytorch",
+    "whyspear",
 	"whypiercer",
 	"whylifepeeler",
 	"whytepadlo",
@@ -881,6 +882,7 @@ local minisign_show_list = {
 	--
 	"whycrank",
 	"whytorch",
+    "whyspear",
 	"whypiercer",
 	"whylifepeeler",
 	"whytepadlo",
@@ -891,6 +893,16 @@ local minisign_show_list = {
 	--
 	"ancientdreams_gemshard",
 	"ancientdreams_preparedfoods",
+    "ancientdreams_hyubsip",
+    "ancientdreams_kozisip",
+    "ancientdreams_tart",
+    "ancientdreams_evilbred",
+    "ancientdreams_gell",
+    "ancientdreams_quaso",
+    "ancientdreams_fhish",
+    "ancientdreams_lombter",
+    "ancientdreams_pizza",
+    "ancientdreams_ser",
 	--
 	"why_redgem_seed",
 	"why_bluegem_seed",
@@ -1069,5 +1081,42 @@ AddPrefabPostInit("turfcraftingstation", function(inst)
 				oldonaccept(inst, giver, item, count)
 			end
 		end)
+	end
+end)
+
+AddPrefabPostInit("reskin_tool", function(inst)
+	if inst.components.spellcaster then
+		local oldcancastfn = inst.components.spellcaster.can_cast_fn
+		inst.components.spellcaster.can_cast_fn = function(doer, target, pos)
+			if target.prefab == "why_crystal_flowers" then
+				return true
+			else
+				return oldcancastfn(doer, target, pos)
+			end
+		end
+		local oldspell = inst.components.spellcaster.spell
+		inst.components.spellcaster.spell = function(tool, target, pos, caster)
+			if target.prefab == "why_crystal_flowers" then
+				local fx = SpawnPrefab("explode_reskin")
+				local fx_pos_x, fx_pos_y, fx_pos_z = target.Transform:GetWorldPosition()
+				fx.Transform:SetPosition(fx_pos_x, fx_pos_y, fx_pos_z)
+				if target.animname then
+					local flower_num  = tonumber(string.sub(target.animname,7))
+					if flower_num == 64 then
+						return
+					else
+						flower_num = flower_num + 1
+						if flower_num > 22 then
+							flower_num = 1
+						end
+						local animname = "cryflo"..tostring(flower_num)
+						target.animname = animname
+						target.AnimState:PlayAnimation(target.animname)
+					end
+				end
+			else
+				return oldspell(tool, target, pos, caster)
+			end
+		end
 	end
 end)

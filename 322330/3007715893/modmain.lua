@@ -1,36 +1,22 @@
-local TheNet = GLOBAL.TheNet
-local TheSim = GLOBAL.TheSim
+GLOBAL.setmetatable(env,{__index = function(t, k)return GLOBAL.rawget(GLOBAL,k)end,})
+
 local IsServer = TheNet:GetIsServer() or TheNet:IsDedicated()
 
 local stack_size = GetModConfigData("STACK_SIZE")
 local stack_size1 = GetModConfigData("STACK_SIZE1")
 local Stack_other_objects = GetModConfigData("STACK_OTHER_OBJECTS")
 
---旧版
--- GLOBAL.TUNING.STACK_SIZE_LARGEITEM = stack_size
--- GLOBAL.TUNING.STACK_SIZE_MEDITEM = stack_size
--- GLOBAL.TUNING.STACK_SIZE_SMALLITEM = stack_size
--- GLOBAL.TUNING.STACK_SIZE_TINYITEM = stack_size
--- GLOBAL.TUNING.WORTOX_MAX_SOULS = stack_size1
-
--- local mod_stackable_replica = GLOBAL.require("components/stackable_replica")
--- mod_stackable_replica._ctor = function(self, inst)
-	-- self.inst = inst
-	-- self._stacksize = GLOBAL.net_shortint(inst.GUID, "stackable._stacksize", "stacksizedirty")
-	-- self._maxsize = GLOBAL.net_shortint(inst.GUID, "stackable._maxsize")
--- end
-
 
 --增加了原始数据选项
 if stack_size ~= 20 then
-	GLOBAL.TUNING.STACK_SIZE_LARGEITEM = stack_size
-	GLOBAL.TUNING.STACK_SIZE_MEDITEM = stack_size
-	GLOBAL.TUNING.STACK_SIZE_SMALLITEM = stack_size
-	GLOBAL.TUNING.STACK_SIZE_TINYITEM = stack_size
+	TUNING.STACK_SIZE_LARGEITEM = stack_size
+	TUNING.STACK_SIZE_MEDITEM = stack_size
+	TUNING.STACK_SIZE_SMALLITEM = stack_size
+	TUNING.STACK_SIZE_TINYITEM = stack_size
 end
 
 if stack_size1 ~= 20 then
-	GLOBAL.TUNING.WORTOX_MAX_SOULS = stack_size1
+	TUNING.WORTOX_MAX_SOULS = stack_size1
 end
 
 
@@ -45,19 +31,18 @@ if stack_size ~= 20 or stack_size1 ~= 20 then
 		inst:PushEvent("inventoryitem_stacksizedirty")
 	end
 
-	local mod_stackable_replica = GLOBAL.require("components/stackable_replica")
+	local mod_stackable_replica = require("components/stackable_replica")
 	mod_stackable_replica._ctor = function(self, inst)
 		self.inst = inst
-		-- self._stacksize = GLOBAL.net_shortint(inst.GUID, "stackable._stacksize", "stacksizedirty")
-		-- self._maxsize = GLOBAL.net_shortint(inst.GUID, "stackable._maxsize")
-		self._stacksize = GLOBAL.net_shortint(inst.GUID, "stackable._stacksize", "stacksizedirty")
-		self._stacksizeupper = GLOBAL.net_shortint(inst.GUID, "stackable._stacksizeupper", "stacksizedirty")
-		self._ignoremaxsize = GLOBAL.net_bool(inst.GUID, "stackable._ignoremaxsize")
-		self._maxsize = GLOBAL.net_shortint(inst.GUID, "stackable._maxsize")
-		if not GLOBAL.TheWorld.ismastersim then
+		self._stacksize = net_shortint(inst.GUID, "stackable._stacksize", "stacksizedirty")
+		self._stacksizeupper = net_shortint(inst.GUID, "stackable._stacksizeupper", "stacksizedirty")
+		self._ignoremaxsize = net_bool(inst.GUID, "stackable._ignoremaxsize")
+		self._maxsize = net_shortint(inst.GUID, "stackable._maxsize")
+		if not TheWorld.ismastersim then
 			inst:ListenForEvent("stacksizedirty", OnStackSizeDirty)
 		end
 	end
+	
 end
 
 
@@ -135,6 +120,8 @@ local function AddItemStackables(value)
 end
 
 if Stack_other_objects then 
+
+	
 	if GetModConfigData("rabbit") then
 		--小兔子
 		AddAnimalStackables({"rabbit",})
@@ -173,14 +160,7 @@ if Stack_other_objects then
 		--暗影心房
 		AddItemStackables({"shadowheart"})
 	end
-
 	
-	-------- Thanks For 小花朵 ---------
-	
-	if GetModConfigData("miao_packbox") then
-		--超级打包盒
-		AddItemStackables({"miao_packbox"})
-	end
 	if GetModConfigData("glommerwings") then
 		--格罗姆翅膀
 		AddItemStackables({"glommerwings"})
@@ -193,62 +173,12 @@ if Stack_other_objects then
 		--牛角
 		AddItemStackables({"horn","gnarwail_horn"})
 	end
-	-- 2023-12-01 记
-	if GetModConfigData("myth_lotusleaf") then
-		--荷叶,月饼【神话书说】
-		AddItemStackables({"myth_lotusleaf","myth_mooncake_ice","myth_mooncake_lotus","myth_mooncake_nuts"})
-	end
-	-- 2023、12、20（各种蜘蛛）
-	-- if GetModConfigData("spider") then
-		--普通蜘蛛
-		-- AddItemStackables({"spider"})
-	-- end
-	-- if GetModConfigData("spider_healer") then
-		--护士蜘蛛
-		-- AddItemStackables({"spider_healer"})
-	-- end
-	-- if GetModConfigData("spider_hider") then
-		--洞穴蜘蛛
-		-- AddItemStackables({"spider_hider"})
-	-- end
-	-- if GetModConfigData("spider_moon") then
-		--破碎蜘蛛
-		-- AddItemStackables({"spider_moon"})
-	-- end
-	-- if GetModConfigData("spider_spitter") then
-		--喷射蜘蛛
-		-- AddItemStackables({"spider_spitter"})
-	-- end
-	-- if GetModConfigData("spider_warrior") then
-		--蜘蛛战士
-		-- AddItemStackables({"spider_warrior"})
-	-- end
+	
 	if GetModConfigData("spider") then
 		--蜘蛛类
 		AddAnimalStackables({"spider","spider_healer","spider_hider","spider_moon","spider_spitter","spider_warrior","spider_dropper","spider_water"})
 	end
-	--2024-3-5日
-	if GetModConfigData("blank_certificate") then
-		--空白勋章【能力勋章】
-		AddItemStackables({"blank_certificate","lavaeel"})
-	end
-	if GetModConfigData("lg_choufish_inv") then
-		--小丑鱼【海洋传说】
-		AddItemStackables({"lg_choufish_inv"})
-	end
-	if GetModConfigData("aip_leaf_note") then
-		--树叶笔记【额外物品包】
-		AddItemStackables({"aip_leaf_note","aip_prosperity_seed"})
-	end
-	-- if GetModConfigData("sketch1") then
-		--常用草图
-		-- AddItemStackables({"chesspiece_anchor_sketch","chesspiece_butterfly_sketch","chesspiece_moon_sketch","chesspiece_clayhound_sketch","chesspiece_claywarg_sketch","chesspiece_carrat_sketch","chesspiece_beefalo_sketch","chesspiece_catcoon_sketch","chesspiece_kitcoon_sketch","chesspiece_manrabbit_sketch","chesspiece_pawn_sketch","chesspiece_rook_sketch","chesspiece_knight_sketch","chesspiece_bishop_sketch","chesspiece_muse_sketch","chesspiece_formal_sketch","chesspiece_deerclops_sketch","chesspiece_bearger_sketch","chesspiece_moosegoose_sketch","chesspiece_dragonfly_sketch","chesspiece_minotaur_sketch","chesspiece_toadstool_sketch","chesspiece_beequeen_sketch","chesspiece_klaus_sketch","chesspiece_antlion_sketch","chesspiece_stalker_sketch","chesspiece_malbatross_sketch","chesspiece_crabking_sketch","chesspiece_guardianphase3_sketch","chesspiece_eyeofterror_sketch","chesspiece_twinsofterror_sketch","chesspiece_daywalker_sketch","chesspiece_deerclops_mutated_sketch","chesspiece_bearger_mutated_sketch","chesspiece_warg_mutated_sketch"})
-	-- end
-	--2024-3-14
-	if GetModConfigData("foliageath") then
-		--青枝绿叶【棱镜】
-		AddItemStackables({"foliageath","raindonate"})
-	end
+	
 	if GetModConfigData("security_pulse_cage") then
 		--火花柜
 		AddItemStackables({"security_pulse_cage","security_pulse_cage_full"})
@@ -269,49 +199,11 @@ if Stack_other_objects then
 		--箱子升级组件
 		AddItemStackables({"singingshell_octave3","singingshell_octave4","singingshell_octave5"})
 	end
-	if GetModConfigData("reskin_tool") then
-		--清洁扫把和提灯和陷阱【娜娜很需要】
-		AddItemStackables({"reskin_tool","lantern","trap_teeth"})
-	end
-	--2024/4/22
-	if GetModConfigData("heap_of_foods") then
-		AddItemStackables({
-		--松鼠
-		"kyno_piko_orange", "kyno_piko",
-		--罐头
-		"kyno_beancan", "kyno_tomatocan", "kyno_tunacan", "kyno_meatcan", "kyno_beancan_open", "kyno_tomatocan_open","kyno_tunacan_open", "kyno_meatcan_open", "kyno_cokecan","kyno_sodacan", "kyno_energycan",
-		--鸡
-		"kyno_chicken2",
-		--鱼
-		"kyno_grouper", "kyno_salmonfish", "kyno_tropicalfish", "kyno_koi", "kyno_neonfish", "kyno_pierrotfish",
-		--鸟
-		"toucan","toucan_hamlet","kingfisher",})
-	end
-	--2024/6/1
+	
 	if GetModConfigData("wally") then
 		--厨师炊具
 		AddItemStackables({"portablecookpot_item","portableblender_item","portablespicer_item"})
 	end
-	if GetModConfigData("tropical") then
-		--热带冒险
-		AddItemStackables({
-		--鸟
-		"parrot", "parrot_blue", "parrot_pirate", "toucan","toucan_hamlet","seagull","quagmire_pigeon", "cormorant","kingfisher", "doydoy",
-	    --蜘蛛类
-		"spiderb", "spiderb1", "spiderb2","spider_tropical",
-		--海鲜
-		"crab", "jellyfish", "rainbowjellyfish",
-		--fish
-		"oceanfish_small_1_inv", "oceanfish_small_2_inv", "oceanfish_small_3_inv","oceanfish_small_4_inv","oceanfish_small_5_inv","oceanfish_small_6_inv","oceanfish_small_7_inv","oceanfish_small_8_inv","oceanfish_small_9_inv","oceanfish_small_10_inv","oceanfish_small_11_inv","oceanfish_small_12_inv","oceanfish_small_13_inv","oceanfish_small_14_inv","oceanfish_small_15_inv","oceanfish_small_16_inv","oceanfish_small_17_inv","oceanfish_small_18_inv","oceanfish_small_19_inv","oceanfish_small_20_inv","oceanfish_small_21_inv","oceanfish_small_61_inv","oceanfish_small_71_inv","oceanfish_small_81_inv","oceanfish_small_91_inv",
-		"oceanfish_medium_1_inv","oceanfish_medium_2_inv","oceanfish_medium_3_inv","oceanfish_medium_4_inv","oceanfish_medium_5_inv","oceanfish_medium_6_inv","oceanfish_medium_7_inv","oceanfish_medium_8_inv",
-		--其他生物
-		"glowfly","coral_brain", "magic_seal",
-		--船上用品
-		"porto_lograft_old","porto_raft_old","porto_rowboat","porto_cargoboat","porto_armouredboat","porto_encrustedboat","porto_tar_extractor","porto_sea_yard","trawlnet","armor_lifejacket","porto_buoy",
-		
-		})
-	end
-		
 	
 	if GetModConfigData("mooneye") then
 	--月眼
@@ -329,30 +221,219 @@ if Stack_other_objects then
 	"dragonboat_pack", "boatrace_seatack_throwable_deploykit","dragonboat_kit","yotd_anchor_item","mast_yotd_item","yotd_steeringwheel_item",
 		})
 	end
----6月21饥荒大更新后新物品	
+
 	if GetModConfigData("ancienttree_stuff") then
 	--惊喜种子
 	AddItemStackables({"ancienttree_seed","ancienttree_nightvision_sapling_item","ancienttree_gem_sapling_item"})
 	end
 	
-    
-	-- if GetModConfigData("blueprint")then
-		--蓝图
-		-- AddPrefabPostInit("blueprint", function(inst)
-			-- if not IsServer then return inst end 
-			-- inst:DoTaskInTime(0, function(inst)
-				-- inst.skinname=inst.components.teacher.recipe
-			-- end)
-			-- if inst.components.stackable == nil then
-				-- inst:AddComponent("stackable")
+	
+	-- 这里草图和蓝图都需要
+    if GetModConfigData("blueprint") or GetModConfigData("sketch") then 
+		-- 蓝图、草图擦除修复
+		AddComponentPostInit("stackable", function(self)
+		--	if not IsServer then return inst end 
+			-- local oldOnSave = self.OnSave
+			
+			-- function self:OnSave(sz)
+				-- local data = oldOnSave(self) or {}
+				-- data.stack = self.stacksize
+				-- return data
 			-- end
-			-- if inst.components.teacher and inst.components.teacher.recipe then
-				-- local old_stack_get = inst.components.stackable.Get
-				-- function inst.components.stackable:Get(num)
-					-- old_stack_get(self, num):Remove()
-					-- return SpawnPrefab(self.inst.components.teacher.recipe .. "_blueprint")
-				-- end
-			-- end
-		-- end)
-	-- end
+			
+			function self:SetStackSize(sz)
+				sz = sz or 1
+				local old_size = self.stacksize
+				self.stacksize = math.min(sz, MAXUINT)
+				self.inst:PushEvent("stacksizechange", {stacksize = sz, oldstacksize=old_size})
+			end
+		end)
+		
+
+	end
+	
+	-- 蓝图部分
+	 if GetModConfigData("blueprint") then
+		-- 学习蓝图全组消耗修复
+		AddComponentPostInit("teacher", function(self)
+		--	if not IsServer then return inst end 
+			function self:Teach(target)
+				if self.recipe == nil then
+					self.inst:Remove()
+					return false
+				elseif target.components.builder == nil then
+					return false
+				elseif target.components.builder:KnowsRecipe(self.recipe) then
+					return false, "KNOWN"
+				elseif not target.components.builder:CanLearn(self.recipe) then
+					return false, "CANTLEARN"
+				else target.components.builder:UnlockRecipe(self.recipe)
+					if self.onteach then
+						self.onteach(self.inst, target)
+					end
+					--学习蓝图时不会一次全消耗
+					--self.inst:Remove()
+					if self.inst.components.stackable then
+						self.inst.components.stackable:Get():Remove()
+					else
+						self.inst:Remove()
+					end
+					return true
+				end
+			end
+		end)
+		
+		AddPrefabPostInit("blueprint", function(inst)
+			if not IsServer then return inst end 
+			inst:DoTaskInTime(0, function(inst)
+				inst.skinname=inst.components.teacher.recipe
+			end)
+			if inst.components.stackable == nil then
+				inst:AddComponent("stackable")
+			end
+			if inst.components.teacher and inst.components.teacher.recipe then
+				local old_stack_get = inst.components.stackable.Get
+				function inst.components.stackable:Get(num)
+					old_stack_get(self, num):Remove()
+					local inst = SpawnPrefab(self.inst.components.teacher.recipe .. "_blueprint")
+					inst.components.stackable:SetStackSize(num)
+					return inst
+				end
+			end
+		end)
+		
+		--广告部分
+		AddPrefabPostInit("tacklesketch", function(inst)
+			if not IsServer then return inst end 
+			inst:DoTaskInTime(0, function(inst)
+				inst.skinname=inst.components.teacher.recipe
+			end)
+			if inst.components.stackable == nil then
+				inst:AddComponent("stackable")
+			end
+			if inst.components.teacher and inst.components.teacher.recipe then
+				local old_stack_get = inst.components.stackable.Get
+				function inst.components.stackable:Get(num)
+					old_stack_get(self, num):Remove()
+					local inst = SpawnPrefab(self.inst.components.teacher.recipe .. "_tacklesketch")
+					inst.components.stackable:SetStackSize(num)
+					return inst
+				end
+			end
+		end)
+	 end
+	
+	-- 草图部分
+	if GetModConfigData("sketch") then
+		AddPrefabPostInit("sketch", function(inst)
+			if not IsServer then return inst end 
+			inst:DoTaskInTime(0, function(inst)
+				inst.skinname=inst:GetSpecificSketchPrefab()
+			end)
+			if inst.components.stackable == nil then
+				inst:AddComponent("stackable")
+			end
+			local old_stack_get = inst.components.stackable.Get
+			function inst.components.stackable:Get(num)
+				old_stack_get(self, num):Remove()
+				local inst = SpawnPrefab(inst:GetSpecificSketchPrefab())
+				inst.components.stackable:SetStackSize(num)
+				return inst
+			end
+		end)
+	end
+	
+	
+	--模组物品
+	
+	if GetModConfigData("myth_lotusleaf") then
+		--荷叶,月饼【神话书说】
+		AddItemStackables({"myth_lotusleaf",
+		"myth_mooncake_ice",
+		"myth_mooncake_lotus",
+		"myth_mooncake_nuts",
+		"myth_rhino_blueheart",
+		"myth_rhino_yellowheart",
+		"myth_rhino_redheart",
+		"mk_huoyuan",
+		"myth_redlantern"})
+	end
+	if GetModConfigData("blank_certificate") then
+		--空白勋章【能力勋章】
+		AddItemStackables({"blank_certificate","lavaeel"})
+	end
+	if GetModConfigData("lg_choufish_inv") then
+		--小丑鱼【海洋传说】
+		AddItemStackables({"lg_choufish_inv"})
+	end
+	if GetModConfigData("aip_leaf_note") then
+		--树叶笔记【额外物品包】
+		AddItemStackables({"aip_leaf_note","aip_prosperity_seed"})
+	end
+	
+	if GetModConfigData("foliageath") then
+		--青枝绿叶【棱镜】
+		AddItemStackables({"foliageath","raindonate"})
+	end
+	
+	if GetModConfigData("miao_packbox") then
+		--【超级打包盒】
+		AddItemStackables({"miao_packbox"})
+	end
+	
+	if GetModConfigData("myth_lotusleaf") then
+		--荷叶,月饼【神话书说】
+		AddItemStackables({"myth_lotusleaf",
+		"myth_mooncake_ice",
+		"myth_mooncake_lotus",
+		"myth_mooncake_nuts",
+		"myth_rhino_blueheart",
+		"myth_rhino_yellowheart",
+		"myth_rhino_redheart",
+		"mk_huoyuan",
+		"myth_redlantern"})
+	end
+	
+	if GetModConfigData("heap_of_foods") then
+		--HOF【更多料理】
+		AddItemStackables({
+		--松鼠
+		"kyno_piko_orange", "kyno_piko",
+		--罐头
+		"kyno_beancan", "kyno_tomatocan", "kyno_tunacan", "kyno_meatcan", "kyno_beancan_open", "kyno_tomatocan_open","kyno_tunacan_open", "kyno_meatcan_open", "kyno_cokecan","kyno_sodacan", "kyno_energycan",
+		--鸡
+		"kyno_chicken2",
+		--鱼
+		"kyno_grouper", "kyno_salmonfish", "kyno_tropicalfish", "kyno_koi", "kyno_neonfish", "kyno_pierrotfish",
+		--鸟
+		"toucan","toucan_hamlet","kingfisher",})
+	end
+	
+	if GetModConfigData("tropical") then
+		--【热带冒险】
+		AddItemStackables({
+		--鸟
+		"parrot", "parrot_blue", "parrot_pirate", "toucan","toucan_hamlet","seagull","quagmire_pigeon", "cormorant","kingfisher", "doydoy",
+	    --蜘蛛类
+		"spiderb", "spiderb1", "spiderb2","spider_tropical",
+		--海鲜
+		"crab", "jellyfish", "rainbowjellyfish",
+		--fish
+		"oceanfish_small_1_inv", "oceanfish_small_2_inv", "oceanfish_small_3_inv","oceanfish_small_4_inv","oceanfish_small_5_inv","oceanfish_small_6_inv","oceanfish_small_7_inv","oceanfish_small_8_inv","oceanfish_small_9_inv","oceanfish_small_10_inv","oceanfish_small_11_inv","oceanfish_small_12_inv","oceanfish_small_13_inv","oceanfish_small_14_inv","oceanfish_small_15_inv","oceanfish_small_16_inv","oceanfish_small_17_inv","oceanfish_small_18_inv","oceanfish_small_19_inv","oceanfish_small_20_inv","oceanfish_small_21_inv","oceanfish_small_61_inv","oceanfish_small_71_inv","oceanfish_small_81_inv","oceanfish_small_91_inv",
+		"oceanfish_medium_1_inv","oceanfish_medium_2_inv","oceanfish_medium_3_inv","oceanfish_medium_4_inv","oceanfish_medium_5_inv","oceanfish_medium_6_inv","oceanfish_medium_7_inv","oceanfish_medium_8_inv",
+		--其他生物
+		"glowfly","coral_brain", "magic_seal",
+		--船上用品
+		"porto_lograft_old","porto_raft_old","porto_rowboat","porto_cargoboat","porto_armouredboat","porto_encrustedboat","porto_tar_extractor","porto_sea_yard","trawlnet","armor_lifejacket","porto_buoy",
+		
+		})
+	end
+	
+	if GetModConfigData("reskin_tool") then
+		--清洁扫把和提灯和陷阱【娜娜自用】
+		AddItemStackables({"reskin_tool","lantern","trap_teeth"})
+	end
 end
+
+--蓝图、草图、广告bug修复
+modimport("main/lantu")

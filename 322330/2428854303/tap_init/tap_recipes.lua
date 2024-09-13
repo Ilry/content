@@ -436,7 +436,7 @@ local KynStand 			= AddRecipe2("kyno_birdstand", {Ingredient("log", 6), Ingredie
 )
 SortAfter("kyno_birdstand", "birdcage", "GARDENING")
 
-local KynSprinkler 		= AddRecipe2("kyno_garden_sprinkler", {Ingredient("gears", 2), Ingredient("ice", 10), Ingredient("trinket_6", 3)}, TECH.SCIENCE_TWO,
+local KynSprinkler 		= AddRecipe2("kyno_garden_sprinkler", {Ingredient("gears", 3), Ingredient("ice", 15), Ingredient("trinket_6", 3)}, TECH.LOST,
 	{
 		placer			= "kyno_garden_sprinkler_placer",
 		min_spacing 	= 0,
@@ -446,6 +446,7 @@ local KynSprinkler 		= AddRecipe2("kyno_garden_sprinkler", {Ingredient("gears", 
 	{"GARDENING", "STRUCTURES"}
 )
 SortAfter("kyno_garden_sprinkler", "firesuppressor", "STRUCTURES")
+SortAfter("kyno_garden_sprinkler", "compostwrap", "GARDENING")
 
 local OldFarm1 			= AddRecipe2("slow_farmplot", {Ingredient("cutgrass", 8), Ingredient("poop", 4), Ingredient("log", 4)}, TECH.SCIENCE_ONE,
 	{

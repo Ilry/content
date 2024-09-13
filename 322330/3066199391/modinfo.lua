@@ -1,4 +1,4 @@
-version = '2024.07.08.1'
+version = '2024.08.12'
 api_version = 10
 dst_compatible = true
 client_only_mod = true
@@ -13,9 +13,12 @@ local S = { -- localized strings
     zht = 'takaoinari、adai1198、(TW)Eric、李皓奇',
   },
   DESCRIPTION = {
-    'Show ranges by clicking, deploying or hovering.',
-    zh = '通过点击、部署、光标覆盖来显示各种范围。',
-    zht = '透過點擊、部署、遊標覆蓋來顯示各種範圍。',
+    'Show ranges by clicking, deploying or hovering.\n'
+      .. 'Also support binding Batch Toggle key at bottom of Settings > Controls page.',
+    zh = '通过点击、部署、光标覆盖来显示各种范围。\n'
+      .. '也支持在设置 > 控制页面底部实时调整「批量切换」的键位绑定。',
+    zht = '透過點擊、部署、遊標覆蓋來顯示各種範圍。\n'
+      .. '也支援在設定 > 控制頁面底部即時調整「大量切換」的鍵位綁定。',
   },
   YES = { 'Yes', zh = '是', zht = '是' },
   NO = { 'No', zh = '否', zht = '否' },
@@ -34,12 +37,21 @@ local S = { -- localized strings
       },
     },
     MOUSE_BUTTON = { 'Mouse Button', zh = '鼠标按键', zht = '滑鼠按鍵' },
+    AUTO_HIDE = {
+      'Auto Hide',
+      zh = '自动隐藏',
+      zht = '自動隱藏',
+      MINUTE = {
+        HALF = { 'Half a Minute', zh = '半分钟', zht = '半分鐘' },
+        ONE = { 'One Minute', zh = '一分钟', zht = '一分鐘' },
+        TWO = { 'Two Minutes', zh = '两分钟', zht = '兩分鐘' },
+      },
+    },
   },
   BATCH = {
     'Batch Toggle',
     zh = '批量切换',
     zht = '大量切換',
-    KEY = { 'Key', zh = '按键', zht = '按鍵' },
     DETAIL = {
       'Hide all ranges / Show many ranges',
       zh = '隐藏所有范围 / 显示很多范围',
@@ -78,19 +90,26 @@ name = T(S.NAME)
 author = T(S.AUTHOR)
 description = T(S.DESCRIPTION)
 
--- stylua: ignore
-local keys = { -- from STRINGS.UI.CONTROLSSCREEN.INPUTS[1] of strings.lua, need to match constants.lua too.
-  'Disabled', 'Escape', 'F1', 'F2', 'F3', 'F4', 'F5', 'F6', 'F7', 'F8', 'F9', 'F10', 'F11', 'F12', 'Print', 'ScrolLock', 'Pause',
-  'Disabled', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
-  'Disabled', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
-  'Disabled', 'Tab', 'CapsLock', 'LShift', 'LCtrl', 'LAlt', 'Space', 'RAlt', 'RCtrl', 'Period', 'Slash', 'RShift',
-  'Disabled', 'Minus', 'Equals', 'Backspace', 'LeftBracket', 'RightBracket', 'Backslash', 'Semicolon', 'Enter',
-  'Disabled', 'Up', 'Down', 'Left', 'Right', 'Insert', 'Delete', 'Home', 'End', 'PageUp', 'PageDown', -- navigation
-  'Disabled', 'Num 0', 'Num 1', 'Num 2', 'Num 3', 'Num 4', 'Num 5', 'Num 6', 'Num 7', 'Num 8', 'Num 9', -- numberic keypad
-  'Num Period', 'Num Divide', 'Num Multiply', 'Num Minus', 'Num Plus', 'Disabled',
+local keyboard = { -- from STRINGS.UI.CONTROLSSCREEN.INPUTS[1] of strings.lua, need to match constants.lua too.
+  { 'F1', 'F2', 'F3', 'F4', 'F5', 'F6', 'F7', 'F8', 'F9', 'F10', 'F11', 'F12', 'Print', 'ScrolLock', 'Pause' },
+  { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0' },
+  { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M' },
+  { 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' },
+  { 'Escape', 'Tab', 'CapsLock', 'LShift', 'LCtrl', 'LSuper', 'LAlt' },
+  { 'Space', 'RAlt', 'RSuper', 'RCtrl', 'RShift', 'Enter', 'Backspace' },
+  { 'Tilde', 'Minus', 'Equals', 'LeftBracket', 'RightBracket', 'Backslash', 'Semicolon', 'Period', 'Slash' }, -- punctuation
+  { 'Up', 'Down', 'Left', 'Right', 'Insert', 'Delete', 'Home', 'End', 'PageUp', 'PageDown' }, -- navigation
+  { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'Period', 'Divide', 'Multiply', 'Minus', 'Plus' }, -- numberic keypad
 }
-for i = 1, #keys do
-  keys[i] = { description = keys[i], data = 'KEY_' .. keys[i]:gsub('^Num ', 'KP_'):upper() }
+local key_disabled = { description = 'Disabled', data = 'KEY_DISABLED' }
+keys = { key_disabled }
+for i = 1, #keyboard do
+  for j = 1, #keyboard[i] do
+    local str = keyboard[i][j]
+    local desc = i == #keyboard and 'NumPad ' .. str or str
+    keys[#keys + 1] = { description = desc, data = 'KEY_' .. str:upper() }
+  end
+  keys[#keys + 1] = key_disabled
 end
 
 local function H(title) return { name = T(title), options = { { description = '', data = 0 } }, default = 0 } end -- header
@@ -101,10 +120,14 @@ configuration_options = {
   {
     label = T(S.CLICK.MODIFIER_KEY),
     hover = T(S.CLICK.MODIFIER_KEY.DETAIL),
-    options = keys,
-    is_keybind = true,
-    default = 'KEY_DISABLED',
-    name = 'modifier_key',
+    options = {
+      { data = false, description = T(S.NO) },
+      { data = 308, description = 'LAlt' },
+      { data = 306, description = 'LCtrl' },
+      { data = 304, description = 'LShift' },
+    },
+    default = false,
+    name = 'click_modifier',
   },
   {
     label = T(S.CLICK.MOUSE_BUTTON),
@@ -118,12 +141,21 @@ configuration_options = {
     default = 1002,
     name = 'mouse_button',
   },
-  H(S.BATCH),
   {
-    label = T(S.BATCH.KEY),
+    label = T(S.CLICK.AUTO_HIDE),
+    options = {
+      { data = false, description = T(S.NO) },
+      { data = 30, description = T(S.CLICK.AUTO_HIDE.MINUTE.HALF) },
+      { data = 60, description = T(S.CLICK.AUTO_HIDE.MINUTE.ONE) },
+      { data = 120, description = T(S.CLICK.AUTO_HIDE.MINUTE.TWO) },
+    },
+    default = false,
+    name = 'auto_hide',
+  },
+  {
+    label = T(S.BATCH),
     hover = T(S.BATCH.DETAIL),
     options = keys,
-    is_keybind = true,
     default = 'KEY_F5',
     name = 'batch_key',
   },

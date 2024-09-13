@@ -1858,3 +1858,10 @@ AddGlobalClassPostConstruct("prefabs", "Prefab", function(self, name, fn, assets
         end)
     end
 end)
+
+-- Lord of the Fruit Flies drops Garden Sprinkler blueprint.
+AddPrefabPostInit("lordfruitfly", function(inst)
+	if _G.LootTables and _G.LootTables.lordfruitfly then
+		table.insert(_G.LootTables.lordfruitfly, {"kyno_garden_sprinkler_blueprint", 1.00})
+	end
+end)

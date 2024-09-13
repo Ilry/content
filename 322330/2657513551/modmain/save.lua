@@ -521,7 +521,6 @@ if DEVFLAG.BYPASS_CHARACTER_CHECK then
                         playerdata.prefab = "dsa_dummy_player"
 
                         local player = SpawnPrefab(playerdata.prefab)
-                        print("* spawn player", tostring(player))
                         if player ~= nil then
                             player.userid = userid
                             player.is_snapshot_user_session = true
@@ -530,13 +529,10 @@ if DEVFLAG.BYPASS_CHARACTER_CHECK then
                             local metadataStr = DataDumper({character = playerdata.prefab}, nil, BRANCH ~= "dev")
                             -- 定义回调函数
                             function restorefn()
-                                print("* save dummy player")
                                 -- TheNet:IncrementSnapshot()
                                 TheNet:SerializeUserSession(userid, data, false, player.player_classified ~= nil and player.player_classified.entity or nil, metadataStr)
                                 player:Remove()
-                                print("* done")
                             end
-                            -- 注: 返回值非常重要, 用于接收地图信息
                             return player.player_classified ~= nil and player.player_classified.entity or nil 
                         end
                     end
@@ -626,15 +622,3 @@ if DEVFLAG.BYPASS_CHARACTER_CHECK then
         end
     end)
 end
-
--- AddPlayerPostInit(function()
---     if DEBUG then
---         print("[DEBUG] AddPlayerPostInit()")
---     end
--- end)
--- AddPrefabPostInit("wanda", function()
---     if DEBUG then
---         print("[DEBUG] Wanda PostInit")
---     end
--- end)
-

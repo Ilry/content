@@ -81,6 +81,28 @@ end
 local function changefuel(self) -- 这是重写燃料值变化...要重写的好多，还是算了
 	local olddodelta = self.DoDelta
 	self.DoDelta = function(self, amount, doer)
+		if self.inst.prefab == "winona_battery_low_item" 
+		or self.inst.prefab == "winona_battery_low"
+		then
+			local oldsection = self:GetCurrentSection()
+
+			self.currentfuel = math.max(0, math.min(self.maxfuel, self.currentfuel + amount))
+
+			local newsection = self:GetCurrentSection()
+
+			if oldsection ~= newsection then
+				if self.sectionfn then
+					self.sectionfn(newsection, oldsection, self.inst, doer)
+				end
+				self.inst:PushEvent("onfueldsectionchanged", { newsection = newsection, oldsection = oldsection, doer = doer })
+				if self.currentfuel <= 0 and self.depleted then
+					self.depleted(self.inst)
+				end
+			end
+	
+			self.inst:PushEvent("percentusedchange", { percent = self:GetPercent() })
+			return
+		end--这里单独排除女工的发电机
 		local oldsection = self:GetCurrentSection()
 		self.currentfuel = math.max(0, self.currentfuel + amount)
 		local newsection = self:GetCurrentSection()

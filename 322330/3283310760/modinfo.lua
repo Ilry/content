@@ -1,7 +1,7 @@
 name = "Petrifying Tome"
 description = "Wickerbottom can now craft the Petrifying Tome at the Ancient Pseudoscience Station with 2 Papyrus and 2 Fossil Fragments and petrify trees within 7.5 tiles (same as Sleepytime Stories). " 
 author = "Willow"
-version = "0.4"
+version = "0.5"
 version_compatible = "0.0"
 
 forumthread = ""

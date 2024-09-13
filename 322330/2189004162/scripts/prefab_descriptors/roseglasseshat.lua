@@ -18,20 +18,36 @@ directory. If not, please refer to
 <https://raw.githubusercontent.com/Recex/Licenses/master/SharedSourceLicense/LICENSE.txt>
 ]]
 
--- inventoryitem.lua
+-- roseglasseshat.lua [Prefab]
 local function Describe(self, context)
-	local description = nil
+	local player = context.player
+	if not player or
+		player.prefab ~= "winona" or
+		not player.components.skilltreeupdater or
+		not player.components.skilltreeupdater:IsActivated("winona_charlie_1") or
+		not player.components.roseinspectableuser
+	then
+		return nil
+	end
 
+	local description
 	
+	if not player.components.roseinspectableuser.cooldowntask then
+		-- Thinking on this now, we know it's ready by lack of cooldown.
+		--description = context.lstr.roseglasseshat.ready_to_use
+	else
+		description = string.format(context.lstr.cooldown,
+			context.time:SimpleProcess(GetTaskRemaining(player.components.roseinspectableuser.cooldowntask)))
+	end
 
 	return {
+		--name = "roseglasseshat",
 		priority = 0,
-		description = description
+		description = description,
+		prefably = true,
 	}
 end
 
-
-
-return {
+return { 
 	Describe = Describe
 }

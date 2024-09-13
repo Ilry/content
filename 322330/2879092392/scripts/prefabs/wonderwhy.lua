@@ -408,7 +408,7 @@ local master_postinit = function(inst)
     inst.components.builder:UnlockRecipe("refined_dust")
     inst.components.builder:UnlockRecipe("turfcraftingstation")
     inst:DoPeriodicTask(2, checkexo)
-    inst.components.foodaffinity:AddPrefabAffinity("cactus_meat", TUNING.AFFINITY_15_CALORIES_SMALL)
+    inst.components.foodaffinity:AddPrefabAffinity("wormlight", TUNING.AFFINITY_15_CALORIES_SMALL)
     --inst.components.eater:SetDiet({ FOODGROUP.ANCIENTGOODIES }, { FOODGROUP.ANCIENTGOODIES }) --nope
     --inst.OnSave = onsave
     --inst.OnPreLoad = onpreload

@@ -14,6 +14,8 @@ local function fn()
 	inst.AnimState:PlayAnimation("anim")
 	
 	inst:AddTag("FX")
+	inst:AddTag("NOCLICK")
+	inst:AddTag("NOBLOCKER")
     
 	inst.entity:SetCanSleep(false)
     inst.persists = false

@@ -230,7 +230,7 @@ function WXNavigation:UnloadCargo()
                         firstitem ~= nil and firstitem.prefab == item.prefab
                 end, SALTBOX_TAG)
                 if smartsaltbox ~= nil then
-                    if next(self.pointqueue) ~= nil then self.pointqueue = {} end
+                    --if next(self.pointqueue) ~= nil then self.pointqueue = {} end
                     return BufferedAction(self.inst, smartsaltbox, ACTIONS.STORE, item)
                 end
                 -- Empty Smart Signed SaltBox
@@ -241,7 +241,7 @@ function WXNavigation:UnloadCargo()
                         next(ent.components.container.slots) == nil
                 end, SALTBOX_TAG)
                 if smartsaltbox == nil and emptysmartsaltbox ~= nil then
-                    if next(self.pointqueue) ~= nil then self.pointqueue = {} end
+                    --if next(self.pointqueue) ~= nil then self.pointqueue = {} end
                     return BufferedAction(self.inst, emptysmartsaltbox, ACTIONS.STORE, item)
                 end
                 -- Signed Saltbox
@@ -252,7 +252,7 @@ function WXNavigation:UnloadCargo()
                         end, FIND_SIGN_MUST_TAGS)
                 end, SALTBOX_TAG)
                 if signedsaltbox ~= nil then
-                    if next(self.pointqueue) ~= nil then self.pointqueue = {} end
+                    --if next(self.pointqueue) ~= nil then self.pointqueue = {} end
                     return BufferedAction(self.inst, signedsaltbox, ACTIONS.STORE, item)
                 end
                 -- Unsigned Saltbox
@@ -262,7 +262,7 @@ function WXNavigation:UnloadCargo()
                         FindEntity(ent, .5, function(sign) return sign.components.drawable ~= nil end, FIND_SIGN_MUST_TAGS) == nil
                 end, SALTBOX_TAG)
                 if unsignedsaltbox ~= nil then
-                    if next(self.pointqueue) ~= nil then self.pointqueue = {} end
+                    --if next(self.pointqueue) ~= nil then self.pointqueue = {} end
                     return BufferedAction(self.inst, unsignedsaltbox, ACTIONS.STORE, item)
                 end
                 -- Empty Saltbox
@@ -271,7 +271,7 @@ function WXNavigation:UnloadCargo()
                         FindEntity(ent, .5, function(sign) return sign.components.drawable ~= nil end, FIND_SIGN_MUST_TAGS) == nil
                 end, SALTBOX_TAG)
                 if emptysaltbox ~= nil then
-                    if next(self.pointqueue) ~= nil then self.pointqueue = {} end
+                    --if next(self.pointqueue) ~= nil then self.pointqueue = {} end
                     return BufferedAction(self.inst, emptysaltbox, ACTIONS.STORE, item)
                 end
                 -- Any Saltbox
@@ -279,7 +279,7 @@ function WXNavigation:UnloadCargo()
                     return ent.prefab == "saltbox" and ent.components.container ~= nil and not ent.components.container:IsFull()
                 end, SALTBOX_TAG)
                 if anysaltbox ~= nil then
-                    if next(self.pointqueue) ~= nil then self.pointqueue = {} end
+                    --if next(self.pointqueue) ~= nil then self.pointqueue = {} end
                     return BufferedAction(self.inst, anysaltbox, ACTIONS.STORE, item)
                 end
             end
@@ -294,7 +294,7 @@ function WXNavigation:UnloadCargo()
                         firstitem ~= nil and firstitem.prefab == item.prefab
                 end, ICEBOX_TAG)
                 if smarticebox ~= nil then
-                    if next(self.pointqueue) ~= nil then self.pointqueue = {} end
+                    --if next(self.pointqueue) ~= nil then self.pointqueue = {} end
                     return BufferedAction(self.inst, smarticebox, ACTIONS.STORE, item)
                 end
                 -- Empty Smart Signed Icebox
@@ -305,7 +305,7 @@ function WXNavigation:UnloadCargo()
                         next(ent.components.container.slots) == nil
                 end, ICEBOX_TAG)
                 if smarticebox == nil and emptysmarticebox ~= nil then
-                    if next(self.pointqueue) ~= nil then self.pointqueue = {} end
+                    --if next(self.pointqueue) ~= nil then self.pointqueue = {} end
                     return BufferedAction(self.inst, emptysmarticebox, ACTIONS.STORE, item)
                 end
                 -- Signed Icebox
@@ -316,7 +316,7 @@ function WXNavigation:UnloadCargo()
                         end, FIND_SIGN_MUST_TAGS)
                 end, ICEBOX_TAG)
                 if signedicebox ~= nil then
-                    if next(self.pointqueue) ~= nil then self.pointqueue = {} end
+                    --if next(self.pointqueue) ~= nil then self.pointqueue = {} end
                     return BufferedAction(self.inst, signedicebox, ACTIONS.STORE, item)
                 end
                 -- Unsigned Icebox
@@ -326,7 +326,7 @@ function WXNavigation:UnloadCargo()
                         FindEntity(ent, .5, function(sign) return sign.components.drawable ~= nil end, FIND_SIGN_MUST_TAGS) == nil
                 end, ICEBOX_TAG)
                 if unsignedicebox ~= nil then
-                    if next(self.pointqueue) ~= nil then self.pointqueue = {} end
+                    --if next(self.pointqueue) ~= nil then self.pointqueue = {} end
                     return BufferedAction(self.inst, unsignedicebox, ACTIONS.STORE, item)
                 end
                 -- Empty Icebox
@@ -335,7 +335,7 @@ function WXNavigation:UnloadCargo()
                         FindEntity(ent, .5, function(sign) return sign.components.drawable ~= nil end, FIND_SIGN_MUST_TAGS) == nil
                 end, ICEBOX_TAG)
                 if emptyicebox ~= nil then
-                    if next(self.pointqueue) ~= nil then self.pointqueue = {} end
+                    --if next(self.pointqueue) ~= nil then self.pointqueue = {} end
                     return BufferedAction(self.inst, emptyicebox, ACTIONS.STORE, item)
                 end
                 -- Any Icebox
@@ -343,7 +343,7 @@ function WXNavigation:UnloadCargo()
                     return ent.prefab == "icebox" and ent.components.container ~= nil and not ent.components.container:IsFull()
                 end, ICEBOX_TAG)
                 if anyicebox ~= nil then
-                    if next(self.pointqueue) ~= nil then self.pointqueue = {} end
+                    --if next(self.pointqueue) ~= nil then self.pointqueue = {} end
                     return BufferedAction(self.inst, anyicebox, ACTIONS.STORE, item)
                 end
             else
@@ -356,7 +356,7 @@ function WXNavigation:UnloadCargo()
                         firstitem ~= nil and firstitem.prefab == item.prefab
                 end, FIND_CONTAINER_MUST_TAGS)
                 if smartchest ~= nil then
-                    if next(self.pointqueue) ~= nil then self.pointqueue = {} end
+                    --if next(self.pointqueue) ~= nil then self.pointqueue = {} end
                     return BufferedAction(self.inst, smartchest, ACTIONS.STORE, item)
                 end
                 -- Allocated Smart Signed Chest
@@ -373,7 +373,7 @@ function WXNavigation:UnloadCargo()
                         ent.components.container ~= nil and next(ent.components.container.slots) == nil
                 end, FIND_CONTAINER_MUST_TAGS)
                 if allocatedsmartchest == nil and emptysmartchest ~= nil then
-                    if next(self.pointqueue) ~= nil then self.pointqueue = {} end
+                    --if next(self.pointqueue) ~= nil then self.pointqueue = {} end
                     return BufferedAction(self.inst, emptysmartchest, ACTIONS.STORE, item)
                 end
                 -- Signed Chest
@@ -386,7 +386,7 @@ function WXNavigation:UnloadCargo()
                         end, FIND_SIGN_MUST_TAGS)
                 end, FIND_CONTAINER_MUST_TAGS)
                 if signedchest ~= nil then
-                    if next(self.pointqueue) ~= nil then self.pointqueue = {} end
+                    --if next(self.pointqueue) ~= nil then self.pointqueue = {} end
                     return BufferedAction(self.inst, signedchest, ACTIONS.STORE, item)
                 end
                 -- Unsigned Chest
@@ -396,7 +396,7 @@ function WXNavigation:UnloadCargo()
                         FindEntity(ent, .5, function(sign) return sign.components.drawable ~= nil end, FIND_SIGN_MUST_TAGS) == nil
                 end, FIND_CONTAINER_MUST_TAGS)
                 if unsignedchest ~= nil and not unsignedchest.components.container:IsFull() then
-                    if next(self.pointqueue) ~= nil then self.pointqueue = {} end
+                    --if next(self.pointqueue) ~= nil then self.pointqueue = {} end
                     return BufferedAction(self.inst, unsignedchest, ACTIONS.STORE, item)
                 end
                 -- Any Signed Chest
@@ -415,7 +415,7 @@ function WXNavigation:UnloadCargo()
                         FindEntity(ent, .5, function(sign) return sign.components.drawable ~= nil end, FIND_SIGN_MUST_TAGS) == nil
                 end, FIND_CONTAINER_MUST_TAGS)
                 if unsignedchest == nil and anysignedchest == nil and emptychest ~= nil then
-                    if next(self.pointqueue) ~= nil then self.pointqueue = {} end
+                    --if next(self.pointqueue) ~= nil then self.pointqueue = {} end
                     return BufferedAction(self.inst, emptychest, ACTIONS.STORE, item)
                 elseif unsignedchest == nil and anysignedchest == nil and emptychest == nil then
                     if self.inst.container_task == nil then
@@ -446,7 +446,7 @@ function WXNavigation:UnloadCargo()
                         firstitem ~= nil and firstitem.prefab == item.prefab
                 end, SALTBOX_TAG)
                 if smartsaltbox ~= nil then
-                    if next(self.pointqueue) ~= nil then self.pointqueue = {} end
+                    --if next(self.pointqueue) ~= nil then self.pointqueue = {} end
                     return BufferedAction(self.inst, smartsaltbox, ACTIONS.STORE, item)
                 end
                 -- Empty Smart Signed SaltBox
@@ -457,7 +457,7 @@ function WXNavigation:UnloadCargo()
                         next(ent.components.container.slots) == nil
                 end, SALTBOX_TAG)
                 if smartsaltbox == nil and emptysmartsaltbox ~= nil then
-                    if next(self.pointqueue) ~= nil then self.pointqueue = {} end
+                    --if next(self.pointqueue) ~= nil then self.pointqueue = {} end
                     return BufferedAction(self.inst, emptysmartsaltbox, ACTIONS.STORE, item)
                 end
                 -- Signed Saltbox
@@ -468,7 +468,7 @@ function WXNavigation:UnloadCargo()
                         end, FIND_SIGN_MUST_TAGS)
                 end, SALTBOX_TAG)
                 if signedsaltbox ~= nil then
-                    if next(self.pointqueue) ~= nil then self.pointqueue = {} end
+                    --if next(self.pointqueue) ~= nil then self.pointqueue = {} end
                     return BufferedAction(self.inst, signedsaltbox, ACTIONS.STORE, item)
                 end
                 -- Unsigned Saltbox
@@ -478,7 +478,7 @@ function WXNavigation:UnloadCargo()
                         FindEntity(ent, .5, function(sign) return sign.components.drawable ~= nil end, FIND_SIGN_MUST_TAGS) == nil
                 end, SALTBOX_TAG)
                 if unsignedsaltbox ~= nil then
-                    if next(self.pointqueue) ~= nil then self.pointqueue = {} end
+                    --if next(self.pointqueue) ~= nil then self.pointqueue = {} end
                     return BufferedAction(self.inst, unsignedsaltbox, ACTIONS.STORE, item)
                 end
                 -- Empty Saltbox
@@ -487,7 +487,7 @@ function WXNavigation:UnloadCargo()
                         FindEntity(ent, .5, function(sign) return sign.components.drawable ~= nil end, FIND_SIGN_MUST_TAGS) == nil
                 end, SALTBOX_TAG)
                 if emptysaltbox ~= nil then
-                    if next(self.pointqueue) ~= nil then self.pointqueue = {} end
+                    --if next(self.pointqueue) ~= nil then self.pointqueue = {} end
                     return BufferedAction(self.inst, emptysaltbox, ACTIONS.STORE, item)
                 end
                 -- Any Saltbox
@@ -495,7 +495,7 @@ function WXNavigation:UnloadCargo()
                     return ent.prefab == "saltbox" and ent.components.container ~= nil and not ent.components.container:IsFull()
                 end, SALTBOX_TAG)
                 if anysaltbox ~= nil then
-                    if next(self.pointqueue) ~= nil then self.pointqueue = {} end
+                    --if next(self.pointqueue) ~= nil then self.pointqueue = {} end
                     return BufferedAction(self.inst, anysaltbox, ACTIONS.STORE, item)
                 end
             end
@@ -510,7 +510,7 @@ function WXNavigation:UnloadCargo()
                         firstitem ~= nil and firstitem.prefab == item.prefab
                 end, ICEBOX_TAG)
                 if smarticebox ~= nil then
-                    if next(self.pointqueue) ~= nil then self.pointqueue = {} end
+                    --if next(self.pointqueue) ~= nil then self.pointqueue = {} end
                     return BufferedAction(self.inst, smarticebox, ACTIONS.STORE, item)
                 end
                 -- Empty Smart Signed Icebox
@@ -521,7 +521,7 @@ function WXNavigation:UnloadCargo()
                         next(ent.components.container.slots) == nil
                 end, ICEBOX_TAG)
                 if smarticebox == nil and emptysmarticebox ~= nil then
-                    if next(self.pointqueue) ~= nil then self.pointqueue = {} end
+                    --if next(self.pointqueue) ~= nil then self.pointqueue = {} end
                     return BufferedAction(self.inst, emptysmarticebox, ACTIONS.STORE, item)
                 end
                 -- Signed Icebox
@@ -532,7 +532,7 @@ function WXNavigation:UnloadCargo()
                         end, FIND_SIGN_MUST_TAGS)
                 end, ICEBOX_TAG)
                 if signedicebox ~= nil then
-                    if next(self.pointqueue) ~= nil then self.pointqueue = {} end
+                    --if next(self.pointqueue) ~= nil then self.pointqueue = {} end
                     return BufferedAction(self.inst, signedicebox, ACTIONS.STORE, item)
                 end
                 -- Unsigned Icebox
@@ -542,7 +542,7 @@ function WXNavigation:UnloadCargo()
                         FindEntity(ent, .5, function(sign) return sign.components.drawable ~= nil end, FIND_SIGN_MUST_TAGS) == nil
                 end, ICEBOX_TAG)
                 if unsignedicebox ~= nil then
-                    if next(self.pointqueue) ~= nil then self.pointqueue = {} end
+                    --if next(self.pointqueue) ~= nil then self.pointqueue = {} end
                     return BufferedAction(self.inst, unsignedicebox, ACTIONS.STORE, item)
                 end
                 -- Empty Icebox
@@ -551,7 +551,7 @@ function WXNavigation:UnloadCargo()
                         FindEntity(ent, .5, function(sign) return sign.components.drawable ~= nil end, FIND_SIGN_MUST_TAGS) == nil
                 end, ICEBOX_TAG)
                 if emptyicebox ~= nil then
-                    if next(self.pointqueue) ~= nil then self.pointqueue = {} end
+                    --if next(self.pointqueue) ~= nil then self.pointqueue = {} end
                     return BufferedAction(self.inst, emptyicebox, ACTIONS.STORE, item)
                 end
                 -- Any Icebox
@@ -559,7 +559,7 @@ function WXNavigation:UnloadCargo()
                     return ent.prefab == "icebox" and ent.components.container ~= nil and not ent.components.container:IsFull()
                 end, ICEBOX_TAG)
                 if anyicebox ~= nil then
-                    if next(self.pointqueue) ~= nil then self.pointqueue = {} end
+                    --if next(self.pointqueue) ~= nil then self.pointqueue = {} end
                     return BufferedAction(self.inst, anyicebox, ACTIONS.STORE, item)
                 end
             elseif (#self.inst.components.inventory:FindItems(function(secondaryitem)
@@ -579,7 +579,7 @@ function WXNavigation:UnloadCargo()
                         firstitem ~= nil and firstitem.prefab == item.prefab
                 end, FIND_CONTAINER_MUST_TAGS)
                 if smartchest ~= nil then
-                    if next(self.pointqueue) ~= nil then self.pointqueue = {} end
+                    --if next(self.pointqueue) ~= nil then self.pointqueue = {} end
                     return BufferedAction(self.inst, smartchest, ACTIONS.STORE, item)
                 end
                 -- Allocated Smart Signed Chest
@@ -596,7 +596,7 @@ function WXNavigation:UnloadCargo()
                         ent.components.container ~= nil and next(ent.components.container.slots) == nil
                 end, FIND_CONTAINER_MUST_TAGS)
                 if allocatedsmartchest == nil and emptysmartchest ~= nil then
-                    if next(self.pointqueue) ~= nil then self.pointqueue = {} end
+                    --if next(self.pointqueue) ~= nil then self.pointqueue = {} end
                     return BufferedAction(self.inst, emptysmartchest, ACTIONS.STORE, item)
                 end
                 -- Signed Chest
@@ -609,7 +609,7 @@ function WXNavigation:UnloadCargo()
                         end, FIND_SIGN_MUST_TAGS)
                 end, FIND_CONTAINER_MUST_TAGS)
                 if signedchest ~= nil then
-                    if next(self.pointqueue) ~= nil then self.pointqueue = {} end
+                    --if next(self.pointqueue) ~= nil then self.pointqueue = {} end
                     return BufferedAction(self.inst, signedchest, ACTIONS.STORE, item)
                 end
                 -- Unsigned Chest
@@ -620,7 +620,7 @@ function WXNavigation:UnloadCargo()
                         FindEntity(ent, .5, function(sign) return sign.components.drawable ~= nil end, FIND_SIGN_MUST_TAGS) == nil
                 end, FIND_CONTAINER_MUST_TAGS)
                 if unsignedchest ~= nil and not unsignedchest.components.container:IsFull() then
-                    if next(self.pointqueue) ~= nil then self.pointqueue = {} end
+                    --if next(self.pointqueue) ~= nil then self.pointqueue = {} end
                     return BufferedAction(self.inst, unsignedchest, ACTIONS.STORE, item)
                 end
                 -- Any Signed Chest
@@ -639,7 +639,7 @@ function WXNavigation:UnloadCargo()
                         FindEntity(ent, .5, function(sign) return sign.components.drawable ~= nil end, FIND_SIGN_MUST_TAGS) == nil
                 end, FIND_CONTAINER_MUST_TAGS)
                 if unsignedchest == nil and anysignedchest == nil and emptychest ~= nil then
-                    if next(self.pointqueue) ~= nil then self.pointqueue = {} end
+                    --if next(self.pointqueue) ~= nil then self.pointqueue = {} end
                     return BufferedAction(self.inst, emptychest, ACTIONS.STORE, item)
                 elseif unsignedchest == nil and anysignedchest == nil and emptychest == nil then
                     if self.inst.container_task == nil then
@@ -681,7 +681,7 @@ function WXNavigation:UnloadShip()
                     ent.components.container:Has(item.prefab, 1)
             end)
             if unsignedchest ~= nil and not unsignedchest.components.container:IsFull() then
-                if next(self.pointqueue) ~= nil then self.pointqueue = {} end
+                --if next(self.pointqueue) ~= nil then self.pointqueue = {} end
                 return BufferedAction(self.inst, unsignedchest, ACTIONS.STORE, item)
             end
             -- Empty Chest
@@ -689,7 +689,7 @@ function WXNavigation:UnloadShip()
                 return ent.prefab == "waterchest" and ent.components.container ~= nil and ent.components.container:IsEmpty()
             end)
             if unsignedchest == nil and emptychest ~= nil then
-                if next(self.pointqueue) ~= nil then self.pointqueue = {} end
+                --if next(self.pointqueue) ~= nil then self.pointqueue = {} end
                 return BufferedAction(self.inst, emptychest, ACTIONS.STORE, item)
             elseif unsignedchest == nil and emptychest == nil then
                 if self.inst.container_task == nil then
@@ -713,7 +713,7 @@ function WXNavigation:UnloadShip()
                     ent.components.container:Has(item.prefab, 1)
             end)
             if unsignedchest ~= nil and not unsignedchest.components.container:IsFull() then
-                if next(self.pointqueue) ~= nil then self.pointqueue = {} end
+                --if next(self.pointqueue) ~= nil then self.pointqueue = {} end
                 return BufferedAction(self.inst, unsignedchest, ACTIONS.STORE, item)
             end
             -- Empty Chest
@@ -721,7 +721,7 @@ function WXNavigation:UnloadShip()
                 return ent.prefab == "waterchest" and ent.components.container ~= nil and ent.components.container:IsEmpty()
             end)
             if unsignedchest == nil and emptychest ~= nil then
-                if next(self.pointqueue) ~= nil then self.pointqueue = {} end
+                --if next(self.pointqueue) ~= nil then self.pointqueue = {} end
                 return BufferedAction(self.inst, emptychest, ACTIONS.STORE, item)
             elseif unsignedchest == nil and emptychest == nil then
                 if self.inst.container_task == nil then
@@ -815,33 +815,43 @@ FindNavTargetFn["wxdiviningrodbase"] = function(self)
             table.insert(wxdiviningrodbase_active, v)
         end
     end
-    return GetClosest(self.inst, wxdiviningrodbase_active)
+    local wxdiviningrodbase = GetClosest(self.inst, wxdiviningrodbase_active)
+    if wxdiviningrodbase ~= nil then
+        self.inst.components.entitytracker:ForgetEntity("sentryward")
+        self.inst.components.entitytracker:ForgetEntity("shipyard")
+        self.inst.components.entitytracker:TrackEntity("wxdiviningrodbase", wxdiviningrodbase)
+    end
+    return wxdiviningrodbase
 end
 FindNavTargetFn["sentryward"] = function(self)
     local currentAP = GetScheduled(self.inst, TheWorld.sentryward)
     -- Release previous AP
-    if self.previousAP ~= nil and TheWorld.sentryward[self.previousAP] ~= nil and
-        currentAP ~= nil and self.previousAP ~= currentAP and
+    if self.previousAP ~= currentAP and self.previousAP ~= nil and
+        TheWorld.sentryward[self.previousAP] ~= nil and
         TheWorld.sentryward[self.previousAP].server == self.inst then
         TheWorld.sentryward[self.previousAP].server = nil
     end
 
     if currentAP ~= nil then
         self.previousAP = currentAP
+        self.inst.components.entitytracker:ForgetEntity("wxdiviningrodbase")
+        self.inst.components.entitytracker:TrackEntity("sentryward", currentAP)
     end
     return currentAP
 end
 FindNavTargetFn["shipyard"] = function(self)
     local currentAP = GetScheduled(self.inst, TheWorld.shipyard)
     -- Release previous AP
-    if self.previousAP ~= nil and TheWorld.shipyard[self.previousAP] ~= nil and
-        currentAP ~= nil and self.previousAP ~= currentAP and
+    if self.previousAP ~= currentAP and self.previousAP ~= nil and
+        TheWorld.shipyard[self.previousAP] ~= nil and
         TheWorld.shipyard[self.previousAP].server == self.inst then
         TheWorld.shipyard[self.previousAP].server = nil
     end
 
     if currentAP ~= nil then
         self.previousAP = currentAP
+        self.inst.components.entitytracker:ForgetEntity("wxdiviningrodbase")
+        self.inst.components.entitytracker:TrackEntity("shipyard", currentAP)
     end
     return currentAP
 end
@@ -874,9 +884,9 @@ function WXNavigation:FindNavPosition(navtarget)
             local pos = pt + offset
             local ents = TheSim:FindEntities(pos.x, 0, pos.z, 1)
             if self.inst.components.sailor == nil or not self.inst.components.sailor:IsSailing() then
-                return not next(ents) and TheWorld.Map:IsPassableAtPoint(pos:Get())
+                return not next(ents) and TheWorld.Map:IsLandTileAtPoint(pos:Get())
             else
-                return not next(ents) and IsWaterTile(TheWorld.Map:GetTile(TheWorld.Map:GetTileCoordsAtPoint(pos:Get())))
+                return not next(ents) and TheWorld.Map:IsActualOceanTileAtPoint(pos:Get())
             end
         end)
         if result_offset ~= nil then
@@ -911,10 +921,12 @@ function WXNavigation:NavigateTo(prefab)
             return
         -- No way point found or no remaining way points, release now.
         else
-            if self.navtarget ~= nil and TheWorld.sentryward[self.navtarget] ~= nil and
-                TheWorld.sentryward[self.navtarget].server == self.inst then
-                TheWorld.sentryward[self.navtarget].server = nil
+            -- Release sentryward after arriving wxdiviningrodbase
+            if self.navtarget ~= nil and self.navtarget.prefab == "wxdiviningrodbase" and
+                self.previousAP ~= nil and TheWorld.sentryward[self.previousAP].server == self.inst then
+                TheWorld.sentryward[self.previousAP].server = nil
             end
+            -- Release engagement
             self.engaged = false
         end
     end
@@ -1013,10 +1025,12 @@ function WXNavigation:SailTo(prefab)
             return
         -- No way point found or no remaining way points, release now.
         else
-            if self.navtarget ~= nil and TheWorld.shipyard[self.navtarget] ~= nil and
-                TheWorld.shipyard[self.navtarget].server == self.inst then
-                TheWorld.shipyard[self.navtarget].server = nil
+            -- Release shipyard after arriving wxdiviningrodbase
+            if self.navtarget ~= nil and self.navtarget.prefab == "wxdiviningrodbase" and
+                self.previousAP ~= nil and TheWorld.shipyard[self.previousAP].server == self.inst then
+                TheWorld.shipyard[self.previousAP].server = nil
             end
+            -- Release engagement
             self.engaged = false
         end
     end
@@ -1165,10 +1179,10 @@ function WXNavigation:OnSave()
     data.isshardtraveler = self.isshardtraveler
     data.noreceiver = self.noreceiver
     if self.navtarget ~= nil and self.navtarget:IsValid() then
-        data.navtargetid = self.navtarget.GUID
+        data.navtarget_GUID = self.navtarget.GUID
     end
     if self.previousAP ~= nil and self.previousAP:IsValid() then
-        data.previousAPid = self.previousAP.GUID
+        data.previousAP_GUID = self.previousAP.GUID
     end
 
     return data
@@ -1181,14 +1195,14 @@ function WXNavigation:OnLoad(savedata)
 end
 
 function WXNavigation:LoadPostPass(newents, savedata)
-    if savedata and savedata.navtargetid ~= nil then
-        local navtarget = newents[savedata.navtargetid]
+    if savedata and savedata.navtarget_GUID ~= nil then
+        local navtarget = newents[savedata.navtarget_GUID]
         if navtarget ~= nil then
             self.navtarget = navtarget.entity
         end
     end
-    if savedata and savedata.previousAPid ~= nil then
-        local previousAP = newents[savedata.previousAPid]
+    if savedata and savedata.previousAP_GUID ~= nil then
+        local previousAP = newents[savedata.previousAP_GUID]
         if previousAP ~= nil then
             self.previousAP = previousAP.entity
         end

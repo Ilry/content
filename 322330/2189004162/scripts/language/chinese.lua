@@ -20,6 +20,8 @@ directory. If not, please refer to
 
 -- Translated by: https://steamcommunity.com/id/interesting28/ and https://steamcommunity.com/id/cloudyyoung and (Placeholder) https://github.com/penguin0616/Insight/pull/29
 
+-- TheNet:GetLanguageCode() == "chinese" & LOC.GetLocaleCode() == "zh" -- maybe?
+
 return {
 	-- insightservercrash.lua
 	server_crash = "服务器崩溃",
@@ -110,6 +112,13 @@ return {
 		minimum_sanity = "照明最低<color=SANITY>理智</color>: <color=SANITY>%s</color> (<color=SANITY>%s%%</color>)",
 		current_sanity = "你的<color=SANITY>理智</color>: <color=SANITY>%s</color> (<color=SANITY>%s%%</color>)",
 		summoned_gestalt_damage = "召唤<color=ENLIGHTENMENT>月灵</color>造成<color=HEALTH>%s</color>伤害",
+	},
+
+	-- ancienttree_seed.lua [Prefab]
+	ancienttree_seed = {
+		type = "Type: <color=%s><prefab=%s></color>",
+		fruit_regen_time = "Fruit time: %s",
+		fruit_regen_time_bounded = "Fruit time: %s <= %s <= %s",
 	},
 
 	-- aoeweapon_base.lua
@@ -405,6 +414,13 @@ return {
 			name = "<color=SANITY>理智回复</color>",
 			description = "{duration} 秒内回复 <color=SANITY>{amount} 理智</color>",
 		},
+		["wormlight_light"] = {
+			name = "<color=#6AD1EF><prefab=wormlight> light</color>",
+			--description = "Provides light for {duration}(s).",
+		},
+		["wormlight_light_lesser"] = function(parent) return deepcopy(parent.wormlight_light) end,
+		["wormlight_light_greater"] = function(parent) return deepcopy(parent.wormlight_light) end,
+
 
 		["wintersfeastbuff"] = {
 			name = "<color=FROZEN>冬季盛宴加成</color>",
@@ -612,6 +628,11 @@ return {
 	fishingrod_waittimes = "等待时间: <color=SHALLOWS>%s</color> - <color=SHALLOWS>%s</color>",
 	fishingrod_loserodtime = "最大缠绕时间: <color=SHALLOWS>%s</color>",
 
+	-- flotsamgenerator.lua
+	flotsamgenerator = {
+		messagebottle_cooldown = "下一个 <prefab=messagebottle> 将于 %s 后刷新",
+	},
+
 	-- follower.lua
 	leader = "主人: %s", -- "主人" should mean "master" here by free translation, "领导者" is literal translation and not precise?
 	loyalty_duration = "忠诚持续时间: %s",
@@ -764,6 +785,11 @@ return {
 	gym_weight_value = "健身房重量数值: %s",
 	ruins_statue_gem = "包含一个<color=%s><prefab=%s></color>",
 
+	-- inspectacleshat.lua [Prefab]
+	inspectacleshat = {
+		ready_to_use = "寻宝冷却完毕",
+	},
+
 	-- insulator.lua
 	insulation_winter = "<color=FROZEN>保暖效果</color>: <color=FROZEN>%s</color>",
 	insulation_summer = "<color=FROZEN>隔热效果</color>: <color=FROZEN>%s</color>",
@@ -842,6 +868,9 @@ return {
 
 	-- mermcandidate.lua
 	mermcandidate = "卡路里: %s / %s",
+
+	-- messagebottlemanager.lua
+	messagebottlemanager = "待打捞宝藏数量: %d / %d",
 
 	-- mightiness.lua
 	mightiness = "<color=MIGHTINESS>力量值</color>: <color=MIGHTINESS>%s</color> / <color=MIGHTINESS>%s</color>",
@@ -1085,6 +1114,11 @@ return {
 	-- rocmanager.lua
 	rocmanager = {
 		cant_spawn = "无法生成",
+	},
+
+	-- roseglasseshat.lua [Prefab]
+	roseglasseshat = {
+		ready_to_use = "寻觅冷却完毕",
 	},
 
 	-- saddler.lua

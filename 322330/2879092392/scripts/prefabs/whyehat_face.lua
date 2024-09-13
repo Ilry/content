@@ -474,8 +474,8 @@ local function placeeye(inst)
                         if not inst:HasTag("bluegem_fx") then
                             inst:AddTag("bluegem_fx")
                         end
-                        if not owner:HasTag("hasblueeye") then
-                            owner:AddTag("hasblueeye")
+                        if not owner:HasTag("haseyecoldimmune") then
+                            owner:AddTag("haseyecoldimmune")
                         end
                         if not inst:HasTag("acidrainimmune") then
                             inst:AddTag("acidrainimmune")
@@ -696,8 +696,11 @@ local function placeeye(inst)
                         else
                             owner.AnimState:OverrideSymbol("swap_hat", "whyehat_face", "swap_hat_perfection")
                         end
-                        if not owner:HasTag("hasperfectioneye") then
-                            owner:AddTag("hasperfectioneye")
+                        if not owner:HasTag("haseyehotimmune") then
+                            owner:AddTag("haseyehotimmune")
+                        end
+                        if not owner:HasTag("haseyecoldimmune") then
+                            owner:AddTag("haseyecoldimmune")
                         end
                         -- dmg,speed,work speed buff
                         if owner.components.combat ~= nil then
@@ -735,6 +738,12 @@ local function placeeye(inst)
                     if item.prefab == "why_nothingnessgem" then
                         if not inst:HasTag("nothingnessgem_fx") then
                             inst:AddTag("nothingnessgem_fx")
+                        end
+                        if not owner:HasTag("haseyecoldimmune") then
+                            owner:AddTag("haseyecoldimmune")
+                        end
+                        if not owner:HasTag("haseyehotimmune") then
+                            owner:AddTag("haseyehotimmune")
                         end
                         if skin_build ~= nil then
                             owner.AnimState:OverrideItemSkinSymbol("headbase_hat", skin_build, "swap_hat_nothingness", inst.GUID, "swap_hat_nothingness")
@@ -1202,8 +1211,8 @@ local function removeeye(inst, owner)
         --------------------------------------------------bluegemeye
         if inst:HasTag("bluegem_fx") then
             inst:RemoveTag("bluegem_fx")
-            if owner:HasTag("hasblueeye") then
-                owner:RemoveTag("hasblueeye")
+            if owner:HasTag("haseyecoldimmune") then
+                owner:RemoveTag("haseyecoldimmune")
             end
             if inst:HasTag("acidrainimmune") then
                 inst:RemoveTag("acidrainimmune")
@@ -1315,8 +1324,11 @@ local function removeeye(inst, owner)
         if inst:HasTag("perfectiongem_fx") then
             inst:RemoveTag("perfectiongem_fx")
 
-            if owner:HasTag("hasperfectioneye") then
-                owner:RemoveTag("hasperfectioneye")
+            if owner:HasTag("haseyehotimmune") then
+                owner:RemoveTag("haseyehotimmune")
+            end
+            if owner:HasTag("haseyecoldimmune") then
+                owner:RemoveTag("haseyecoldimmune")
             end
 
             -- remove carry heavy thing
@@ -1348,6 +1360,12 @@ local function removeeye(inst, owner)
         --------------------------------------------------nothinggemeye
         if inst:HasTag("nothingnessgem_fx") then
             inst:RemoveTag("nothingnessgem_fx")
+            if owner:HasTag("haseyecoldimmune") then
+                owner:RemoveTag("haseyecoldimmune")
+            end
+            if owner:HasTag("haseyehotimmune") then
+                owner:RemoveTag("haseyehotimmune")
+            end
             if owner.components.combat ~= nil then
                 if TUNING.WHY_NOTHINGNESS_DMGMULT == "0" then
                     owner.components.combat.externaldamagemultipliers:RemoveModifier(inst)

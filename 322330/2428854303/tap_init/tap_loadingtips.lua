@@ -27,7 +27,6 @@ AddLoadingTip(TIPS_TAP, "TIPS_TAP_BIRTHDAY",  	"The Architect Pack's birthday is
 AddLoadingTip(TIPS_TAP, "TIPS_TAP_LAUNCH", 		"The Architect Pack was officially launched to the public in NexusMods on November 3rd, 2020.")
 AddLoadingTip(TIPS_TAP, "TIPS_TAP_LAUNCH2",		"The Architect Pack was officially launched to the public in Steam Workshop on March 18th, 2021.")
 AddLoadingTip(TIPS_TAP, "TIPS_TAP_SPRINKLER", 	"Tired of watering crops manually? Build yourself a Garden Sprinkler!")
-AddLoadingTip(TIPS_TAP, "TIPS_TAP_TELIPAD",  	"You can create a teleport network using Telipads and a Telebrella!")
 AddLoadingTip(TIPS_TAP, "TIPS_TAP_THUMPER",		"The Thumper can be used to farm an enormous amount of resources in a single shot!")
 AddLoadingTip(TIPS_TAP, "TIPS_TAP_DOYDOY", 		"\"Doydoys eats almost everything! Yesterday I left some food in the Crock Pot, and when I returned, the food was gone!\" -W")
 AddLoadingTip(TIPS_TAP, "TIPS_TAP_ELEPHANT",	"Elephant Cactus can be a great defense against Hound Waves, even with some Giants!")

@@ -825,6 +825,8 @@ AddMateSkill("willow", {
     mym_auto_extinguish = {
         cd = 0,
         GetAction = function(inst)
+            if not inst.components.skilltreeupdater:IsActivated("willow_attuned_lighter") then return end
+
             local target = FindEntity(inst, 20, nil, nil, EXTINGUISH_CANT_TAGS, EXTINGUISH_ONEOF_TAGS)
             if target then
                 local item = FN.TempEquip(inst, "lighter", EQUIPSLOTS.HANDS)
@@ -832,7 +834,7 @@ AddMateSkill("willow", {
             else
                 -- 关掉打火机
                 local item = inst.components.inventory:GetEquippedItem(EQUIPSLOTS.HANDS)
-                if item and item.prefab == "lighter" and item.components.channelcastable:IsUserChanneling(inst) then
+                if item and item.prefab == "lighter" and item.components.channelcastable and item.components.channelcastable:IsUserChanneling(inst) then
                     return BufferedAction(inst, nil, ACTIONS.STOP_CHANNELCAST, item)
                 end
             end
@@ -2192,7 +2194,7 @@ AddMateSkill("mudrock", {
                 and not mudrockskill.enabled
                 and not inst.components.rider:IsRiding()
             then
-                local fn = GetPrefab.GetModRPCFn(ModDefs.MODNAMES.mudrock, "K_SKILL")
+                local fn = GetPrefab.GetModRPCFn(ModDefs.mudrock, "K_SKILL")
                 if fn then
                     fn(inst)
                     return true
@@ -2249,7 +2251,7 @@ AddMateSkill("mudrock", {
 
 local Xxx3GrowFn
 local function Xxx3Grow(inst)
-    Xxx3GrowFn = Xxx3GrowFn or GetPrefab.GetModRPCFn(ModDefs.MODNAMES.xxx3, "GROW")
+    Xxx3GrowFn = Xxx3GrowFn or GetPrefab.GetModRPCFn(ModDefs.xxx3, "GROW")
     if Xxx3GrowFn then
         Xxx3GrowFn(inst)
     end
@@ -2336,7 +2338,7 @@ AddMateSkill("xxx3", {
 local function SetEyjafjallaIgnite(inst, enable)
     local self = inst.components.eyjafjallaskill
     if self and self.skill1 and (self.skill1.enabled ~= enable) then
-        local fn = GetPrefab.GetModRPCFn(ModDefs.MODNAMES.eyjafjalla, "J_SKILL")
+        local fn = GetPrefab.GetModRPCFn(ModDefs.eyjafjalla, "J_SKILL")
         if fn then
             fn(inst, inst.Transform:GetWorldPosition())
         end
@@ -2402,7 +2404,7 @@ AddMateSkill("eyjafjalla", {
                 return
             end
 
-            local fn = GetPrefab.GetModRPCFn(ModDefs.MODNAMES.eyjafjalla, "K_SKILL")
+            local fn = GetPrefab.GetModRPCFn(ModDefs.eyjafjalla, "K_SKILL")
             if fn then
                 fn(inst, inst.Transform:GetWorldPosition())
             end
@@ -4305,7 +4307,7 @@ local function OnMCWStartDay(inst)
     local day = inst.components.age:GetAgeInDays()
 
     -- 每天升一级,[1,30]
-    local maxLevel = GetModConfigData("mcw_max_level", ModDefs.MODNAMES.mcw) or 30
+    local maxLevel = GetModConfigData("mcw_max_level", ModDefs.mcw) or 30
     local isSay = false
     local expectLevel = math.min(day, maxLevel)
     if inst.mcwlevel:value() < expectLevel then

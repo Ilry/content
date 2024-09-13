@@ -15,20 +15,22 @@ local function ItemTradeTest(inst, item)
         return true
     elseif item.prefab == "thulecite_pieces" then
         return true
+    elseif item.prefab == "nitre" then
+        return true
     elseif item.prefab == "ancientdreams_gemshard" then
         return true
     end
 end
 local function OnTHFGGiven(inst, giver, item)
     if item.prefab == "thulecite" then
-        inst.components.armor:Repair(180)
+        inst.components.armor:Repair(640)
         inst.current_endurance_bonus = math.min(inst.current_endurance_bonus + 1, inst.endurance_bonus)
         local owner = inst.components.inventoryitem:GetGrandOwner() or nil
         if owner and owner.components.why_endurance then
             owner.components.why_endurance:EquipmentEnduranceChangeByOtherWay(1, inst, "thulecite")
         end
     elseif item.prefab == "thulecite_pieces" then
-        inst.components.armor:Repair(30)
+        inst.components.armor:Repair(100)
         inst._thulecite_pieces_count = (inst._thulecite_pieces_count or 0) + 1
         if inst._thulecite_pieces_count == 6 then
             inst.current_endurance_bonus = math.min(inst.current_endurance_bonus + 1, inst.endurance_bonus)
@@ -38,9 +40,16 @@ local function OnTHFGGiven(inst, giver, item)
             end
             inst._thulecite_pieces_count = 0
         end
+    elseif item.prefab == "nitre" then
+        inst.components.armor:Repair(15)
+        inst.current_endurance_bonus = math.min(inst.current_endurance_bonus + 1, inst.endurance_bonus)
+        local owner = inst.components.inventoryitem:GetGrandOwner() or nil
+        if owner and owner.components.why_endurance then
+            owner.components.why_endurance:EquipmentEnduranceChangeByOtherWay(1, inst, "nitre")
+        end
     elseif item.prefab == "ancientdreams_gemshard" then
         if inst.current_endurance_bonus < inst.endurance_bonus or inst.components.armor:GetPercent() < 1 then
-            inst.components.armor:Repair(64)
+            inst.components.armor:Repair(256)
             inst.current_endurance_bonus = math.min(inst.current_endurance_bonus + 1, inst.endurance_bonus)
             local owner = inst.components.inventoryitem:GetGrandOwner() or nil
             if owner and owner.components.why_endurance then
@@ -224,8 +233,8 @@ local function placeeye(inst, item, owner)
                         else
                             owner.AnimState:OverrideSymbol("swap_hat", "whyehat", "swap_hat_blue")
                         end
-                        if not owner:HasTag("hasblueeye") then
-                            owner:AddTag("hasblueeye")
+                        if not owner:HasTag("haseyecoldimmune") then
+                            owner:AddTag("haseyecoldimmune")
                         end
                         if owner.components.temperature ~= nil then
                             owner.components.temperature.inherentinsulation = 240
@@ -354,8 +363,11 @@ local function placeeye(inst, item, owner)
                         if not inst:HasTag("perfectiongem_fx") then
                             inst:AddTag("perfectiongem_fx")
                         end
-                        if not owner:HasTag("hasperfectioneye") then
-                            owner:AddTag("hasperfectioneye")
+                        if not owner:HasTag("haseyecoldimmune") then
+                            owner:AddTag("haseyecoldimmune")
+                        end
+                        if not owner:HasTag("haseyehotimmune") then
+                            owner:AddTag("haseyehotimmune")
                         end
                         if skin_build ~= nil then
                             owner.AnimState:OverrideItemSkinSymbol("swap_hat", skin_build, "swap_hat_perfection", inst.GUID, "swap_hat_perfection")
@@ -400,6 +412,12 @@ local function placeeye(inst, item, owner)
                     if item.prefab == "why_nothingnessgem" then
                         if not inst:HasTag("nothingnessgem_fx") then
                             inst:AddTag("nothingnessgem_fx")
+                        end
+                        if not owner:HasTag("haseyecoldimmune") then
+                            owner:AddTag("haseyecoldimmune")
+                        end
+                        if not owner:HasTag("haseyehotimmune") then
+                            owner:AddTag("haseyehotimmune")
                         end
                         if skin_build ~= nil then
                             owner.AnimState:OverrideItemSkinSymbol("swap_hat", skin_build, "swap_hat_nothingness", inst.GUID, "swap_hat_nothingness")
@@ -808,8 +826,8 @@ local function removeeye(inst, owner)
         --------------------------------------------------blue
         if inst:HasTag("bluegem_fx") then
             inst:RemoveTag("bluegem_fx")
-            if owner:HasTag("hasblueeye") then
-                owner:RemoveTag("hasblueeye")
+            if owner:HasTag("haseyecoldimmune") then
+                owner:RemoveTag("haseyecoldimmune")
             end
             if owner.components.temperature ~= nil then
                 owner.components.temperature.inherentinsulation = 0
@@ -896,11 +914,13 @@ local function removeeye(inst, owner)
         --------------------------------------------------perfect
         if inst:HasTag("perfectiongem_fx") then
             inst:RemoveTag("perfectiongem_fx")
-
-            -- remove carry heavy thing
-            if owner:HasTag("hasperfectioneye") then
-                owner:RemoveTag("hasperfectioneye")
+            if owner:HasTag("haseyecoldimmune") then
+                owner:RemoveTag("haseyecoldimmune")
             end
+            if owner:HasTag("haseyehotimmune") then
+                owner:RemoveTag("haseyehotimmune")
+            end
+            -- remove carry heavy thing
             owner:RemoveEventCallback("equip", PickHeavy)
             owner:RemoveEventCallback("unequip", DropHeavy)
             if inst.components.equippable then
@@ -932,6 +952,12 @@ local function removeeye(inst, owner)
         --------------------------------------------------nothing
         if inst:HasTag("nothingnessgem_fx") then
             inst:RemoveTag("nothingnessgem_fx")
+            if owner:HasTag("haseyecoldimmune") then
+                owner:RemoveTag("haseyecoldimmune")
+            end
+            if owner:HasTag("haseyehotimmune") then
+                owner:RemoveTag("haseyehotimmune")
+            end
             if owner.components.combat ~= nil then
                 if TUNING.WHY_NOTHINGNESS_DMGMULT == "0" then
                     owner.components.combat.externaldamagemultipliers:RemoveModifier(inst)
@@ -1232,7 +1258,7 @@ local function OnHaunt(inst, haunter)
         if haunter:HasTag("playerghost") and haunter:HasTag("wonderwhy") then
             haunter:PushEvent("respawnfromghost", { source = inst })
             if TUNING.WHY_DIFFICULTY ~= "-1" then
-                inst.components.armor:TakeDamage(160)
+                inst.components.armor:TakeDamage(256)
             end
         end
     end)

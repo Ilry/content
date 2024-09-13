@@ -75,13 +75,12 @@ local function OnDetached(inst, target)
             target.components.combat.externaldamagemultipliers:RemoveModifier(inst)
         end
         if target.components.temperature ~= nil then
-            if not target:HasTag("hasblueeye") then
+            if not target:HasTag("haseyecoldimmune") then
                 target.components.temperature.inherentinsulation = 0
                 target.components.temperature.mintemp = (-20)
             end
-            if not target:HasTag("hasperfectioneye") then
+            if not target:HasTag("haseyehotimmune") then
                 target.components.temperature.maxtemp = (90)
-                target.components.temperature.mintemp = (-20)
             end
         end
     end

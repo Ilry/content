@@ -178,6 +178,10 @@ DEBUG_ENABLED = (
 	)
 	or GetModConfigData("DEBUG_ENABLED", true) or false 
 
+DEBUG_OPTIONS = {
+	INSIGHT_MENU_DATA_ORIGIN = false,
+}
+
 ALLOW_SERVER_DEBUGGING = DEBUG_ENABLED -- todo make a more accessible for standard users with mod compatibility issues?
 if DEBUG_ENABLED then
 	_G.ENCODE_SAVES = false
@@ -237,7 +241,7 @@ local descriptors_ignore = {
 
 	"inventoryitem", "moisturelistener", "stackable", "cookable", "bait", "blowinwind", "blowinwindgust", "floatable", "selfstacker", -- don't care
 	"dryable", "highlight", "cooker", "lighter", "instrument", "poisonhealer", "trader", "smotherer", "knownlocations", "occupier", "talker", -- don't care
-	"named", "activatable", "transformer", "deployable", "upgrader", "playerprox", "flotsamspawner", "rowboatwakespawner", "plantable", "waveobstacle", -- don't care
+	"named", "activatable", "transformer", "deployable", "upgrader", "playerprox", "rowboatwakespawner", "plantable", "waveobstacle", -- don't care
 	"fader", "lighttweener", "sleepingbag", "machine", "floodable", "firedetector", "heater", "tiletracker", "payable", "useableitem", "drawable", "shaver", -- don't care
 	"gridnudger", "entitytracker", "appeasable", "currency", "mateable", "sizetweener", "saltlicker", "sinkable", "sticker", "projectile", "hiddendanger", "deciduoustreeupdater", -- don't care
 	"geyserfx", "blinkstaff", -- don't care,
@@ -267,7 +271,7 @@ local descriptors_ignore = {
 	"markable_proxy", "saved_scale", "gingerbreadhunter", "bedazzlement", "bedazzler", "anchor", "distancefade", "pocketwatch_dismantler", "carnivalevent", "heavyobstacleusetarget", -- don't care
 	"cattoy", "updatelooper", "upgrademoduleremover", "hudindicatablemanager", "moonstormlightningmanager", "playerhearing", "walkableplatformplayer", "hudindicatorwatcher", "seamlessplayerswapper", -- don't care
 	"boatcannonuser", "stageactor", "boatdrifter", "boatphysics", "boatring", "boatringdata", "healthsyncer", "hull", "hullhealth", "walkableplatform", "teleportedoverride", -- don't care
-	"npc_talker", "simplemagicgrower", "moonaltarlink", "farmtiller", "aoespell", "aoetargeting",
+	"npc_talker", "simplemagicgrower", "moonaltarlink", "farmtiller", "aoespell", "aoetargeting", "closeinspector", "waxable", 
 
 	-- NEW:
 	"farmplanttendable", "plantresearchable", "fertilizerresearchable", "yotb_stagemanager",
@@ -280,8 +284,8 @@ local descriptors_ignore = {
 	"regrowthmanager", "townportalregistry", "hallucinations", "dsp", "dynamicmusic",
 
 	-- Forest
-	"squidspawner", "moosespawner", "birdspawner", "worldwind", "retrofitforestmap_anr", "deerherdspawner", "deerherding", "wildfires", "flotsamgenerator", "brightmarespawner", 
-	"sandstorms", "messagebottlemanager", "forestpetrification", "penguinspawner", "sharklistener", "frograin", "waterphysics", "butterflyspawner", "worldmeteorshower",
+	"squidspawner", "moosespawner", "birdspawner", "worldwind", "retrofitforestmap_anr", "deerherdspawner", "deerherding", "wildfires", "brightmarespawner", 
+	"sandstorms", "forestpetrification", "penguinspawner", "sharklistener", "frograin", "waterphysics", "butterflyspawner", "worldmeteorshower",
 	"worlddeciduoustreeupdater", "schoolspawner", "specialeventsetup", "playerspawner", "walkableplatformmanager", "lureplantspawner", "wavemanager",
 
 	-- Caves
@@ -1014,7 +1018,7 @@ end
 local function GetSpecialData(describe_data)
 	local special_data = {}
 	for j, k in pairs(describe_data) do
-		if j ~= 'name' and j ~= 'description' and j ~= 'priority' then
+		if j ~= 'name' and j ~= 'description' then
 			special_data[j] = k
 		end
 	end
@@ -1027,10 +1031,6 @@ local function ValidateDescribeResponse(chunks, name, datas, params)
 	--for i = 1, #datas do -- doesn't account for nils
 		--local d = datas[i]
 		if d and ((not params.IGNORE_WORLDLY) or (params.IGNORE_WORLDLY == true and not d.worldly)) then
-			if type(d.priority) ~= "number" then
-				error("Invalid priority for:" .. name)
-			end
-
 			if d.name ~= nil and type(d.name) ~= "string" then
 				error(string.format("Invalid name '%s' (%s) for component descriptor '%s'.", d.name, type(d.name), name))
 			elseif d.name == nil and #datas > 1 then
@@ -1038,8 +1038,12 @@ local function ValidateDescribeResponse(chunks, name, datas, params)
 			end
 
 			d.name = d.name or name -- chosen name or default component name
-			if d.name ~= name and d.real_component == nil then
-				d.real_component = name
+			if d.name ~= name and d.source_descriptor == nil then
+				d.source_descriptor = name
+			end
+
+			if type(d.priority) ~= "number" then
+				errorf("Invalid priority for component descriptor '%s'; value=[%s], type=[%s]", name, d.priority, type(d.priority))
 			end
 
 			if d.description ~= nil and type(d.description) ~= "string" then
@@ -1107,12 +1111,6 @@ local function GetEntityInformation(entity, player, params)
 	player_context.params = params
 
 	local chunks = {}
-
-	local prefab_descriptor = Insight.prefab_descriptors[entity.prefab]
-	if prefab_descriptor and prefab_descriptor.Describe then
-		local datas = {prefab_descriptor.Describe(entity, player_context)}
-		ValidateDescribeResponse(chunks, entity.prefab, datas, params)
-	end
 	
 	for name, component in pairs(entity.components) do		
 		local descriptor = Insight.descriptors[name]
@@ -1149,6 +1147,12 @@ local function GetEntityInformation(entity, player, params)
 				chunks[#chunks+1] = {priority = -10, name = name, description = description};
 			end
 		end
+	end
+
+	local prefab_descriptor = Insight.prefab_descriptors[entity.prefab]
+	if prefab_descriptor and prefab_descriptor.Describe then
+		local datas = {prefab_descriptor.Describe(entity, player_context)}
+		ValidateDescribeResponse(chunks, entity.prefab, datas, params)
 	end
 
 	-- sort by priority
@@ -1889,7 +1893,23 @@ if IS_DST and false then
 	debugging.StartNetvarDebugging()
 end
 
+if IS_DST and KnownModIndex:IsModEnabled("workshop-1378549454") then
+	mprint("Gemcore active")
+	-- gemcore replaces in tools/dynamictilemanager.lua
+	local real_error = util.getupvalue(error, "_error")
+	if not real_error then
+		error("[insight]: failed to get real error from gemcore [1]")
+		return
+	end
 
+	if pcall(string.dump, real_error) then
+		error("[insight]: failed to get real error from gemcore [2]")
+		return
+	end
+
+	Insight.env.error = real_error
+	mprint("Got real error from Gemcore")
+end
 
 if IS_DST then 
 	local image = { atlas="images/Insight_Announcement.xml", texture="Insight_Announcement.tex" }
@@ -3749,25 +3769,6 @@ if KnownModIndex:IsModEnabled("workshop-842702425") then
 	else
 		mprint("RunInEnvironment has not been modified")
 	end
-end
-
-
-if KnownModIndex:IsModEnabled("workshop-1378549454") then
-	mprint("Gemcore active")
-	-- gemcore replaces in tools/dynamictilemanager.lua
-	local real_error = util.getupvalue(error, "_error")
-	if not real_error then
-		error("[insight]: failed to get real error from gemcore [1]")
-		return
-	end
-
-	if pcall(string.dump, real_error) then
-		error("[insight]: failed to get real error from gemcore [2]")
-		return
-	end
-
-	error = real_error
-	mprint("Got real error from Gemcore")
 end
 
 

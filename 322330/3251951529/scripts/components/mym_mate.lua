@@ -362,7 +362,7 @@ local function ontimedone(inst, data)
     end
 end
 
-local MATE_MUST_TAGS = { "mym_mate" }
+local MATE_MUST_TAGS = { "mym_mate", "_combat" } --ShareTarget设置标签必须有_combat标签
 local SHARE_TARGET_DIST = 30
 local MAX_TARGET_SHARES = 5
 local function OnAttacked(inst, data)
@@ -904,6 +904,17 @@ function Mate:Init(leader)
 
     if TUNING.MYM_WEAPON_NOT_DISARM then
         inst:AddTag("stronggrip")
+    end
+
+    -- 装备耐久消耗，因为不能指定key，可能会与其他mod冲突
+    if TUNING.MYM_DURABILITY_CONSUME > 0 then
+        if not inst.components.efficientuser then
+            inst:AddComponent("efficientuser")
+        end
+        inst.components.efficientuser:AddMultiplier(ACTIONS.CHOP, 0, inst)
+        inst.components.efficientuser:AddMultiplier(ACTIONS.MINE, 0, inst)
+        inst.components.efficientuser:AddMultiplier(ACTIONS.HAMMER, 0, inst)
+        inst.components.efficientuser:AddMultiplier(ACTIONS.ATTACK, 0, inst)
     end
 
     Utils.FnDecorator(inst.components.skilltreeupdater, "IsActivated", IsActivatedBefore)

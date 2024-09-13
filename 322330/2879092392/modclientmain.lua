@@ -31,7 +31,7 @@ STRINGS.CHARACTER_DESCRIPTIONS.wonderwhy = "*Mind is their core\n*Discovers Anci
 STRINGS.CHARACTER_ABOUTME.wonderwhy = "Wonder Why was the main engineer of the ancients, living once among the forgotten civilization, now a husk seeking an answer."
 STRINGS.CHARACTER_BIOS.wonderwhy = {
 		{ title = "Birthday", desc = "August 16" },
-		{ title = "Favorite Food", desc = "Cactus Flesh" },
+		{ title = "Favorite Food", desc = "Glow Berry" },
 		{ title = "Decayed Guardian", desc = "Wonder or Why, the ancient memory. They were the main engineer of the ancients, living among the forgotten civilization. The ancients fled to the moon, while they remained hoping for the ancient emperor to return someday. Using an ancient mask, Wonder put themselves to sleep while their body decayed away. Awaken now by a strange shockwave of lunar energy, Wonder needs to rebuild themselves, go find the relics of their past and most important - survive."}}
 --
 TUNING.WONDERWHY_SANITY = 80

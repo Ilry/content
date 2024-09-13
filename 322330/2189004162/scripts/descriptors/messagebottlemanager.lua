@@ -18,21 +18,31 @@ directory. If not, please refer to
 <https://raw.githubusercontent.com/Recex/Licenses/master/SharedSourceLicense/LICENSE.txt>
 ]]
 
--- offering_pot.lua [Prefab]
-local function Describe(inst, context)
-	local description = nil
+-- messagebottlemanager.lua
+local function Describe(self, context)
+	local count = 0
 
-	-- TODO: This
+	for key, value in pairs(self.active_treasure_hunt_markers) do
+		count = count + 1
+	end
+
+	local description
 	
+	if count > 0 then
+		description = string.format(context.lstr.messagebottlemanager, count, TUNING.MAX_ACTIVE_TREASURE_HUNTS)
+	end
+
 	return {
 		priority = 0,
 		description = description,
-		prefably = true
+		worldly = true,
+		icon = {
+			atlas = "minimap/minimap_data.xml",
+			tex = "messagebottletreasure_marker.png"
+		},
 	}
 end
 
-
-
-return {
-	Describe = Describe
+return { 
+	Describe = Describe 
 }

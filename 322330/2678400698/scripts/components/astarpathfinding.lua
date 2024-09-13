@@ -1,5 +1,6 @@
 local MINSIZE = 1
 local MAXWIDTH, MAXHEIGHT = TheWorld.Map:GetSize()
+local TileGroupManager = TileGroupManager
 
 local AStarPathfinding = Class(function(self, inst)
     self.inst = inst
@@ -34,10 +35,7 @@ function AStarPathfinding:AddAdjacencyToOpen(current_x, current_y, dest_x, dest_
                 MINSIZE <= current_y + j and current_y + j <= MAXHEIGHT then
                 local node = self:GetNode(current_x + i, current_y + j)
                 local tile = TheWorld.Map:GetTile(current_x + i, current_y + j)
-                if tile ~= GROUND.IMPASSABLE and tile ~= GROUND.INVALID and
-                    not (tile >= GROUND.OCEAN_START and tile <= GROUND.OCEAN_END) and
-                    --TheWorld.Map:IsPassableAtPoint(x, y, z, allow_water, exclude_boats) and
-                    not (i == 0 and j == 0) then
+                if TileGroupManager:IsLandTile(tile) and not (i == 0 and j == 0) then
                     -- Node is not in openlist and closedlist
                     if node.list == nil then
                         -- Define precedent
@@ -115,8 +113,7 @@ function AStarPathfinding:AddSeaAdjacencyToOpen(current_x, current_y, dest_x, de
                 MINSIZE <= current_y + j and current_y + j <= MAXHEIGHT then
                 local node = self:GetNode(current_x + i, current_y + j)
                 local tile = TheWorld.Map:GetTile(current_x + i, current_y + j)
-                if IsWaterTile(tile) and
-                    not (i == 0 and j == 0) then
+                if TileGroupManager:IsOceanTile(tile) and not (i == 0 and j == 0) then
                     -- Node is not in openlist and closedlist
                     if node.list == nil then
                         -- Define precedent

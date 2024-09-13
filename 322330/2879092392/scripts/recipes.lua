@@ -89,6 +89,140 @@ local ancientdreams_geocake_recipe = {
 	cooktime = 1,
     overridebuild = "ancientdreams_geocake",}
 
+local ancientdreams_hyubsip_recipe = {	
+	name = "ancientdreams_hyubsip",
+	test = function(cooker, names, tags) return names.ancientdreams_gemshard  and names.ancientdreams_gemshard == 1 and names.ice and names.ice ==1 and (names.berries or names.berries_cooked or names.berries_juicy or names.berries_juicy_cooked) and tags.dairy and tags.dairy >= 0.5 end,
+	priority = 110,
+	weight = 1,
+	foodtype = FOODTYPE.GOODIES,
+	health = 20,
+	hunger = 13,
+	sanity = 100,
+	perishtime = 5600,
+	cooktime = 1,
+    overridebuild = "ancientdreams_hyubsip",}
+
+local ancientdreams_kozisip_recipe = {	
+	name = "ancientdreams_kozisip",
+	test = function(cooker, names, tags) return names.ancientdreams_gemshard and names.ancientdreams_gemshard == 1 and names.watermelon and names.watermelon == 1 and names.cactus_flower and names.cactus_flower == 1 end,
+	priority = 120,
+	weight = 1,
+	foodtype = FOODTYPE.GOODIES,
+	health = 21,
+	hunger = 16,
+	sanity = 80,
+	perishtime = 5600,
+	cooktime = 1,
+    overridebuild = "ancientdreams_kozisip",}
+    
+    local ancientdreams_tart_recipe = {	
+	name = "ancientdreams_tart",
+	test = function(cooker, names, tags) return names.ancientdreams_gemshard and names.ancientdreams_gemshard == 1 and names.ice and names.ice == 2 and (names.wormlight or (names.wormlight_lesser and names.wormlight_lesser ==1)) end,
+	priority = 130,
+	weight = 1,
+	foodtype = FOODTYPE.GOODIES,
+	health = 40,
+	hunger = 37.5,
+	sanity = -10,
+	perishtime = nil,
+	cooktime = 1,
+    overridebuild = "ancientdreams_tart",}
+
+local ancientdreams_evilbred_recipe = {	
+	name = "ancientdreams_evilbred",
+	test = function(cooker, names, tags) return tags.monster and tags.monster >= 2 and names.ancientdreams_gemshard  and names.ancientdreams_gemshard == 1 and (names.pepper or pepper_cooked) end,
+	priority = 120,
+	weight = 1,
+	foodtype = FOODTYPE.MEAT,
+    temperature = TUNING.HOT_FOOD_BONUS_TEMP,
+    temperatureduration = TUNING.FOOD_TEMP_LONG,
+	health = -10,
+	hunger = 75,
+	sanity = -5,
+	perishtime = 5600,
+	cooktime = 1.5,
+    overridebuild = "ancientdreams_evilbred",}
+
+local ancientdreams_gell_recipe = {	
+	name = "ancientdreams_gell",
+	test = function(cooker, names, tags) return names.ancientdreams_gemshard and names.ancientdreams_gemshard == 2 and names.ice and names.forgetmelots end,
+	priority = 120,
+	weight = 1,
+	foodtype = FOODTYPE.GOODIES,
+    temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+    temperatureduration = TUNING.FOOD_TEMP_LONG,
+	hunger = 25,
+    health = 3,
+	sanity = 33,
+	perishtime = 5600,
+	cooktime = 1.5,
+    overridebuild = "ancientdreams_gell",}
+
+local ancientdreams_quaso_recipe = {	
+	name = "ancientdreams_quaso",
+	test = function(cooker, names, tags) return names.ancientdreams_gemshard and names.ancientdreams_gemshard == 1 and names.eggplant and names.potato and names.potato == 2 end,
+	priority = 120,
+	weight = 1,
+    foodtype = FOODTYPE.GOODIES,
+	hunger = 62.5,
+    health = 10,
+	sanity = 33,
+	perishtime = 5600,
+	cooktime = 1.5,
+    overridebuild = "ancientdreams_quaso",}
+
+local ancientdreams_fhish_recipe = {	
+	name = "ancientdreams_fhish",
+	test = function(cooker, names, tags) return names.ancientdreams_gemshard and names.ancientdreams_gemshard == 1 and names.fishmeat and names.kelp and names.fig end,
+	priority = 120,
+	weight = 1,
+    foodtype = FOODTYPE.MEAT,
+	hunger = 75,
+    health = -10,
+	sanity = 33,
+	perishtime = 5600,
+	cooktime = 1.5,
+    overridebuild = "ancientdreams_fhish",}
+
+local ancientdreams_lombter_recipe = {	
+	name = "ancientdreams_lombter",
+	test = function(cooker, names, tags) return names.ancientdreams_gemshard and names.ancientdreams_gemshard == 1 and names.wobster_sheller_land and names.corn and (names.plantmeat_cooked or names.plantmeat) end,
+	priority = 120,
+	weight = 1,
+    foodtype = FOODTYPE.MEAT,
+	hunger = 112.5,
+    health = 60,
+	sanity = 15,
+	perishtime = 5600,
+	cooktime = 1.5,
+    overridebuild = "ancientdreams_lombter",}
+
+local ancientdreams_pizza_recipe = {	
+	name = "ancientdreams_pizza",
+	test = function(cooker, names, tags) return names.ancientdreams_gemshard and names.ancientdreams_gemshard == 1 and (names.barnacle or names.barnacle_cooked) and (names.cave_banana or names.cave_banana_cooked) end,
+	priority = 120,
+	weight = 1,
+    foodtype = FOODTYPE.MEAT,
+	hunger = 37.5,
+    health = 80,
+	sanity = -20,
+	perishtime = 5600,
+	cooktime = 1.5,
+    overridebuild = "ancientdreams_pizza",}
+
+local ancientdreams_ser_recipe = {	
+	name = "ancientdreams_ser",
+	test = function(cooker, names, tags) return names.ancientdreams_gemshard and names.ancientdreams_gemshard == 3 and names.royal_jelly end,
+	priority = 120,
+	weight = 1,
+    foodtype = FOODTYPE.GOODIES,
+	hunger = 37.5,
+    health = 1,
+	sanity = 100,
+	perishtime = 5600,
+	cooktime = 1.5,
+    overridebuild = "ancientdreams_ser",}
+
 AddCookerRecipe("cookpot", ancientdreams_gegg_recipe)
 AddCookerRecipe("portablecookpot", ancientdreams_gegg_recipe)
 AddCookerRecipe("cookpot", ancientdreams_candy_recipe)
@@ -97,6 +231,26 @@ AddCookerRecipe("cookpot", ancientdreams_cube_recipe)
 AddCookerRecipe("portablecookpot", ancientdreams_cube_recipe)
 AddCookerRecipe("cookpot", ancientdreams_geocake_recipe)
 AddCookerRecipe("portablecookpot", ancientdreams_geocake_recipe)
+AddCookerRecipe("cookpot", ancientdreams_hyubsip_recipe)
+AddCookerRecipe("portablecookpot", ancientdreams_hyubsip_recipe)
+AddCookerRecipe("cookpot", ancientdreams_kozisip_recipe)
+AddCookerRecipe("portablecookpot", ancientdreams_kozisip_recipe)
+AddCookerRecipe("cookpot", ancientdreams_tart_recipe)
+AddCookerRecipe("portablecookpot", ancientdreams_tart_recipe)
+AddCookerRecipe("cookpot", ancientdreams_evilbred_recipe)
+AddCookerRecipe("portablecookpot", ancientdreams_evilbred_recipe)
+AddCookerRecipe("cookpot", ancientdreams_gell_recipe)
+AddCookerRecipe("portablecookpot", ancientdreams_gell_recipe)
+AddCookerRecipe("cookpot", ancientdreams_quaso_recipe)
+AddCookerRecipe("portablecookpot", ancientdreams_quaso_recipe)
+AddCookerRecipe("cookpot", ancientdreams_fhish_recipe)
+AddCookerRecipe("portablecookpot", ancientdreams_fhish_recipe)
+AddCookerRecipe("cookpot", ancientdreams_lombter_recipe)
+AddCookerRecipe("portablecookpot", ancientdreams_lombter_recipe)
+AddCookerRecipe("cookpot", ancientdreams_pizza_recipe)
+AddCookerRecipe("portablecookpot", ancientdreams_pizza_recipe)
+AddCookerRecipe("cookpot", ancientdreams_ser_recipe)
+AddCookerRecipe("portablecookpot", ancientdreams_ser_recipe)
 AddIngredientValues({"ancientdreams_gemshard"},{inedible = 1, magic = 1})
 
 
@@ -180,19 +334,11 @@ AddRecipe2("whyehat_dreadstone_green",
 		{builder_tag = "ancientdreamer", nounlock = false, no_deconstruction = false, numtogive = 1, atlas = "images/inventoryimages/whyehat_prothesis.xml", image = "whyehat_prothesis.tex"},
 		{"CHARACTER", "ARMOUR"})
 --
-if TUNING.WHY_CAVELESS_RECIPE == "0" then
 AddRecipe2("whyehat",
-{Ingredient("thulecite", 2), Ingredient("thulecite_pieces", 3), Ingredient("nightmarefuel", 1)},
-TECH.GLOBEDREAM_ONE,
-{builder_tag = "ancientdreamer", nounlock = true, no_deconstruction = false, numtogive = 1, atlas = "images/inventoryimages/whyehat.xml", image = "whyehat.tex"},
+{Ingredient("nitre", 6), Ingredient("thulecite_pieces", 3), Ingredient("nightmarefuel", 2)},
+TECH.MAGIC_THREE,
+{builder_tag = "ancientdreamer", nounlock = false, no_deconstruction = false, numtogive = 1, atlas = "images/inventoryimages/whyehat.xml", image = "whyehat.tex"},
 {"CHARACTER", "ARMOUR"})
-else
-AddRecipe2("whyehat",
-{Ingredient("dustmeringue", 4), Ingredient("thulecite_pieces", 3), Ingredient("nightmarefuel", 1)},
-TECH.GLOBEDREAM_ONE,
-{builder_tag = "ancientdreamer", nounlock = true, no_deconstruction = false, numtogive = 1, atlas = "images/inventoryimages/whyehat.xml", image = "whyehat.tex"},
-{"CHARACTER", "ARMOUR"})
-end
 --
 if TUNING.WHY_CAVELESS_RECIPE == "0" then
 AddRecipe2("whyehat_face",
@@ -263,22 +409,14 @@ TECH.GLOBEDREAM_ONE,
 
 
 --
-if TUNING.WHY_CAVELESS_RECIPE == "0" then
 AddRecipe2("whyearmor_pile",
-{Ingredient("thulecite_pieces", 2), Ingredient("fossil_piece", 1)},
+{Ingredient("thulecite_pieces", 2), Ingredient("boneshard", 2)},
 TECH.SCIENCE_TWO,
 {builder_tag = "ancientdreamer", nounlock = false, no_deconstruction = false, numtogive = 1, atlas = "images/inventoryimages/whyearmor_pile.xml", image = "whyearmor_pile.tex"},
 {"CHARACTER", "REFINE"})
-else
-AddRecipe2("whyearmor_pile",
-{Ingredient("thulecite_pieces", 2), Ingredient("dustmeringue", 2)},
-TECH.SCIENCE_TWO,
-{builder_tag = "ancientdreamer", nounlock = false, no_deconstruction = false, numtogive = 1, atlas = "images/inventoryimages/whyearmor_pile.xml", image = "whyearmor_pile.tex"},
-{"CHARACTER", "REFINE"})
-end
 --
 AddRecipe2("whyearmor_incomplete",
-{Ingredient("whyearmor_pile", 1, "images/inventoryimages/whyearmor_pile.xml"), Ingredient("thulecite_pieces", 3), Ingredient("boneshard", 3)},
+{Ingredient("whyearmor_pile", 1, "images/inventoryimages/whyearmor_pile.xml"), Ingredient("thulecite_pieces", 2), Ingredient("boneshard", 3)},
 TECH.NONE,
 {builder_tag = "ancientdreamer", nounlock = false, no_deconstruction = false, numtogive = 1, atlas = "images/inventoryimages/whyearmor_incomplete.xml", image = "whyearmor_incomplete.tex"},
 {"CHARACTER", "ARMOUR"})
@@ -299,13 +437,13 @@ end
 --
 if TUNING.WHY_CAVELESS_RECIPE == "0" then
 AddRecipe2("whyearmor_backpack",
-{Ingredient("whyearmor_incomplete", 1, "images/inventoryimages/whyearmor_incomplete.xml"), Ingredient("why_refined_yellowgem", 1, "images/inventoryimages/why_refined_yellowgem.xml"), Ingredient("moonrocknugget", 6), Ingredient("thulecite", 4), Ingredient("why_klaus_sack_piece", 1, "images/inventoryimages/why_klaus_sack_piece.xml")},
+{Ingredient("whyearmor_incomplete", 1, "images/inventoryimages/whyearmor_incomplete.xml"), Ingredient("why_refined_yellowgem", 1, "images/inventoryimages/why_refined_yellowgem.xml"), Ingredient("moonrocknugget", 6), Ingredient("thulecite", 2), Ingredient("why_klaus_sack_piece", 1, "images/inventoryimages/why_klaus_sack_piece.xml")},
 TECH.GLOBEDREAM_ONE,
 {builder_tag = "ancientdreamer", nounlock = false, no_deconstruction = false, numtogive = 1, atlas = "images/inventoryimages/whyearmor_backpack.xml", image = "whyearmor_backpack.tex"},
 {"CHARACTER", "CONTAINERS", "LIGHT"})
 else
 AddRecipe2("whyearmor_backpack",
-{Ingredient("whyearmor_incomplete", 1, "images/inventoryimages/whyearmor_incomplete.xml"), Ingredient("why_refined_yellowgem", 1, "images/inventoryimages/why_refined_yellowgem.xml"), Ingredient("moonrocknugget", 6), Ingredient("dustmeringue", 8)},
+{Ingredient("whyearmor_incomplete", 1, "images/inventoryimages/whyearmor_incomplete.xml"), Ingredient("why_refined_yellowgem", 1, "images/inventoryimages/why_refined_yellowgem.xml"), Ingredient("moonrocknugget", 6), Ingredient("dustmeringue", 4)},
 TECH.GLOBEDREAM_ONE,
 {builder_tag = "ancientdreamer", nounlock = false, no_deconstruction = false, numtogive = 1, atlas = "images/inventoryimages/whyearmor_backpack.xml", image = "whyearmor_backpack.tex"},
 {"CHARACTER", "CONTAINERS", "LIGHT"})
@@ -370,6 +508,12 @@ TECH.GLOBEDREAM_ONE,
 -------------------------------------------------------------------------------------------------------------------------------------
 --
 --
+AddRecipe2("whyspear",
+{Ingredient("nitre", 2), Ingredient("ancientdreams_gemshard", 8, "images/inventoryimages/ancientdreams_gemshard.xml")},
+TECH.SCIENCE_TWO,
+{builder_tag = "ancientdreamer", nounlock = false, no_deconstruction = false, numtogive = 1, atlas = "images/inventoryimages/whyspear.xml", image = "whyspear.tex"},
+{"CHARACTER", "WEAPONS"})
+
 AddRecipe2("whytorch",
 {Ingredient("whycrank", 1, "images/inventoryimages/whycrank.xml"), Ingredient("why_perfectiongem", 1, "images/inventoryimages/why_perfectiongem.xml"), Ingredient("voidcloth", 5), Ingredient("dreadstone", 3)},
 TECH.GLOBEDREAM_ONE,

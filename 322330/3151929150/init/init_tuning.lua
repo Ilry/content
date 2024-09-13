@@ -1,4 +1,19 @@
-
+local function safeStringToInt(str)
+    local num = GLOBAL.tonumber(str)
+    if num and num == math.floor(num) then
+        return num
+    else
+        return 1 -- or any fallback value you prefer
+    end
+end
+local function safeStringToInt2(str)
+    local num = GLOBAL.tonumber(str)
+    if num and num == math.floor(num) then
+        return num
+    else
+        return -1 -- or any fallback value you prefer
+    end
+end
 local master_setting = {}
 master_setting["grass_required"] = GetModConfigData("master_grass_required")
 master_setting["twigs_required"] = GetModConfigData("master_twigs_required")
@@ -95,6 +110,19 @@ end
 if GetModConfigData("master_trap_starfish")~="not set" then
     table.insert(master_setting["required_entities"], {name= "trap_starfish", number= GetModConfigData("master_trap_starfish")})
 end
+-- custom input
+if GetModConfigData("master_custom_entity_num")~="" then
+    local master_custom_entity_num_str = GetModConfigData("master_custom_entity_num")
+    --The input is the form entity_name:number;entity_name:number;...
+    -- parse it
+    for entity_num in string.gmatch(master_custom_entity_num_str, "([^;]+)") do
+        local entity_name, entity_number = string.match(entity_num, "([%w_]+):(%d+)")
+        entity_number = safeStringToInt2(entity_number)
+        if entity_number > 0 then
+            table.insert(master_setting["required_entities"], {name= entity_name, number= entity_number})
+        end
+    end
+end
 -- entity disliked number
 master_setting["entities_less_than"] = {}
 
@@ -145,6 +173,19 @@ end
 if GetModConfigData("master_seastack")~="not set" then
     table.insert(master_setting["near_entities"], {name= "seastack", distance= GetModConfigData("master_seastack")})
 end
+if GetModConfigData("master_custom_entity_near")~="" then
+    local master_custom_entity_near_str = GetModConfigData("master_custom_entity_near")
+    --The input is the form entity_name:number;entity_name:number;...
+    -- parse it
+    for entity_near in string.gmatch(master_custom_entity_near_str, "([^;]+)") do
+        print(entity_near)
+        local entity_name, entity_distance = string.match(entity_near, "([%w_]+):(%d+)")
+        entity_distance = safeStringToInt2(entity_distance)
+        if entity_distance >= 0 then
+            table.insert(master_setting["near_entities"], {name= entity_name, distance= entity_distance})
+        end
+    end
+end
 master_setting["far_entities"] = {}
 -- pond
 if GetModConfigData("master_pond")~="not set" then
@@ -168,6 +209,67 @@ if GetModConfigData("master_the_hunters")~="not set" then
 end
 -- master_setting["ocean_request"] = {distance= GetModConfigData("master_ocean")}
 -- TODO: 地中海的有关设置
+master_setting["repeat_times"] = safeStringToInt(GetModConfigData("master_repeat_times"))
+
+master_setting["near_entities_soft"] = {}
+if GetModConfigData("master_pigking_soft")~="not set" then
+    table.insert(master_setting["near_entities_soft"], {name= "pigking", weight= safeStringToInt(GetModConfigData("master_pigking_soft"))})
+end
+if GetModConfigData("master_dragonfly_spawner_soft")~="not set" then
+    table.insert(master_setting["near_entities_soft"], {name= "dragonfly_spawner", weight= safeStringToInt(GetModConfigData("master_dragonfly_spawner_soft"))})
+end
+if GetModConfigData("master_oasislake_soft")~="not set" then
+    table.insert(master_setting["near_entities_soft"], {name= "oasislake", weight= safeStringToInt(GetModConfigData("master_oasislake_soft"))})
+end
+if GetModConfigData("master_moonbase_soft")~="not set" then
+    table.insert(master_setting["near_entities_soft"], {name= "moonbase", weight= safeStringToInt(GetModConfigData("master_moonbase_soft"))})
+end
+if GetModConfigData("master_beequeenhive_soft")~="not set" then
+    table.insert(master_setting["near_entities_soft"], {name= "beequeenhive", weight= safeStringToInt(GetModConfigData("master_beequeenhive_soft"))})
+end
+if GetModConfigData("master_multiplayer_portal_soft")~="not set" then
+    table.insert(master_setting["near_entities_soft"], {name= "multiplayer_portal", weight= safeStringToInt(GetModConfigData("master_multiplayer_portal_soft"))})
+end
+if GetModConfigData("master_monkeyqueen_soft")~="not set" then
+    table.insert(master_setting["near_entities_soft"], {name= "monkeyqueen", weight= safeStringToInt(GetModConfigData("master_monkeyqueen_soft"))})
+end
+if GetModConfigData("master_hermithouse_construction1_soft")~="not set" then
+    table.insert(master_setting["near_entities_soft"], {name= "hermithouse_construction1", weight= safeStringToInt(GetModConfigData("master_hermithouse_construction1_soft"))})
+end
+if GetModConfigData("master_wobster_den_soft")~="not set" then
+    table.insert(master_setting["near_entities_soft"], {name= "wobster_den", weight= safeStringToInt(GetModConfigData("master_wobster_den_soft"))})
+end
+if GetModConfigData("master_saltstack_soft")~="not set" then
+    table.insert(master_setting["near_entities_soft"], {name= "saltstack", weight= safeStringToInt(GetModConfigData("master_saltstack_soft"))})
+end
+if GetModConfigData("master_seastack_soft")~="not set" then
+    table.insert(master_setting["near_entities_soft"], {name= "seastack", weight= safeStringToInt(GetModConfigData("master_seastack_soft"))})
+end
+if GetModConfigData("master_custom_entity_near_soft")~="" then
+    local master_custom_entity_near_soft_str = GetModConfigData("master_custom_entity_near_soft")
+    --The input is the form entity_name:number;entity_name:number;...
+    -- parse it
+    for entity_near_soft in string.gmatch(master_custom_entity_near_soft_str, "([^;]+)") do
+        local entity_name, entity_weight = string.match(entity_near_soft, "([%w_]+):(%d+)")
+        entity_weight = safeStringToInt2(entity_weight)
+        if entity_weight > 0 then
+            table.insert(master_setting["near_entities_soft"], {name= entity_name, weight= entity_weight})
+        end
+    end
+end
+master_setting["near_regions_soft"] = {}
+if GetModConfigData("master_squeltch_soft")~="not set" then
+    table.insert(master_setting["near_regions_soft"], {name= "Squeltch", weight= safeStringToInt(GetModConfigData("master_squeltch_soft"))})
+end
+if GetModConfigData("master_moon_island_soft")~="not set" then
+    table.insert(master_setting["near_regions_soft"], {name= "Moon Island", weight= safeStringToInt(GetModConfigData("master_moon_island_soft"))})
+end
+if GetModConfigData("master_killer_bees_soft")~="not set" then
+    table.insert(master_setting["near_regions_soft"], {name= "Killer bees!", weight= safeStringToInt(GetModConfigData("master_killer_bees_soft"))})
+end
+if GetModConfigData("master_the_hunters_soft")~="not set" then
+    table.insert(master_setting["near_regions_soft"], {name= "The hunters", weight= safeStringToInt(GetModConfigData("master_the_hunters_soft"))})
+end
 -- TODO: 远离区域
 master_setting["far_regions"] = {}
 master_setting["room_number_setting"] = {}
@@ -300,6 +402,9 @@ cave_setting["far_entities"] = {}
 cave_setting["near_regions"] = {}
 -- cave_setting["ocean_request"] = {distance= "not set"}
 cave_setting["far_regions"] = {}
+cave_setting["repeat_times"] = 1
+cave_setting["near_entities_soft"] = {}
+cave_setting["near_regions_soft"] = {}
 
 cave_setting["room_number_setting"] = {}
 local scared_room_number = {}

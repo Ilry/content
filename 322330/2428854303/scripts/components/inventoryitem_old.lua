@@ -300,7 +300,7 @@ function InventoryItem:DoDropPhysics(x, y, z, randomdir, speedmult)
         -- convert x, y, z to velocity
         if randomdir then
             local speed = ((heavy and 1 or 2) + math.random()) * (speedmult or 1)
-            local angle = math.random() * 2 * PI
+            local angle = math.random() * TWOPI
 			local cos_angle = math.cos(angle)
 			local sin_angle = math.sin(angle)
 			self.inst.Physics:Teleport(x + .01 * cos_angle, y, z - .01 * sin_angle)
@@ -359,18 +359,29 @@ function InventoryItem:ChangeImageName(newname)
     self.inst:PushEvent("imagechange")
 end
 
-function InventoryItem:RemoveFromOwner(wholestack)
+function InventoryItem:RemoveFromOwner(wholestack, keepoverstacked)
     if self.owner == nil then
         return
     elseif self.owner.components.inventory ~= nil then
-        return self.owner.components.inventory:RemoveItem(self.inst, wholestack)
+		return self.owner.components.inventory:RemoveItem(self.inst, wholestack, nil, keepoverstacked)
     elseif self.owner.components.container ~= nil then
-        return self.owner.components.container:RemoveItem(self.inst, wholestack)
+		return self.owner.components.container:RemoveItem(self.inst, wholestack, nil, keepoverstacked)
     end
 end
 
 function InventoryItem:OnRemoveEntity()
-    self:RemoveFromOwner(true)
+	if self.owner then
+		if self.owner.components.inventory then
+			self.owner.components.inventory:RemoveItem(self.inst, true)
+		else
+			local container = self.owner.components.container
+			if container then
+				container.ignoreoverstacked = true
+				container:RemoveItem(self.inst, true)
+				container.ignoreoverstacked = false
+			end
+		end
+	end
     TheWorld:PushEvent("forgetinventoryitem", self.inst)
 end
 
@@ -385,9 +396,9 @@ function InventoryItem:GetGrandOwner()
 end
 
 function InventoryItem:TakeOffShelf()
-    local shelf_slot = SpawnPrefab("kyno_shelves_slot")
-    shelf_slot.components.inventoryitem:PutOnShelf(self.inst.bookshelf, self.inst.bookshelfslot)
-    shelf_slot.components.shelfer:SetShelf(self.inst.bookshelf, self.inst.bookshelfslot )
+    -- local shelf_slot = SpawnPrefab("kyno_shelves_slot")
+    -- shelf_slot.components.inventoryitem:PutOnShelf(self.inst.bookshelf, self.inst.bookshelfslot)
+    -- shelf_slot.components.shelfer:SetShelf(self.inst.bookshelf, self.inst.bookshelfslot )
 
     self.inst:RemoveTag("bookshelfed")
 	
@@ -450,19 +461,20 @@ function InventoryItem:LoadPostPass(newents, data)
             self:PutOnShelf(bookshelf,data.bookshelfslot)
         end
     end
+	
     if data and data.onshelf then
         if newents[data.onshelf] and newents[data.onshelf].entity:IsValid() then
             self.inst.onshelf = newents[data.onshelf].entity
 			-- fixup for items that misremembered they were on a shelf.
-				self.inst:DoTaskInTime(1, function()
-					if self.inst.onshelf then
-						local shelfitem = self.inst.onshelf and self.inst.onshelf.components and self.inst.onshelf.components.shelfer and self.inst.onshelf.components.shelfer:GetGift()
-						if self.inst ~= shelfitem then
-							-- we thought we were on a shelf. Alas, we were not
-							self.inst.onshelf = nil
-						end
+			self.inst:DoTaskInTime(1, function()
+				if self.inst.onshelf then
+					local shelfitem = self.inst.onshelf and self.inst.onshelf.components and self.inst.onshelf.components.shelfer and self.inst.onshelf.components.shelfer:GetGift()
+					if self.inst ~= shelfitem then
+						-- we thought we were on a shelf. Alas, we were not
+						self.inst.onshelf = nil
 					end
-				end)
+				end
+			end)
         end
     end
 end

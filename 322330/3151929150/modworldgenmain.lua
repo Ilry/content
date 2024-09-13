@@ -482,6 +482,10 @@ end
 -- table.insert(_G.far_regions, {name = "Dig that rock", distance = 10})
 
 _G.merge_tiles = 2
+_G.num_of_good_seeds_found = 0
+_G.min_distance_so_far = math.huge
+-- _G.min_distance_seed = nil
+_G.best_xz_for_best_seed = nil
 
 local function table_to_json_string(tbl)
 	local result = "{"
@@ -685,6 +689,221 @@ euclidean_distance = function(sources, extra_edges, current_good_tiles, require_
     --     print("[Search your map] returned with non-empty good_tiles")
     -- end
     return new_good_tiles, num_new_good_tiles
+end
+
+
+QuadTreeNode = {}
+QuadTreeNode.__index = QuadTreeNode
+
+function QuadTreeNode:new(x_min, x_max, y_min, y_max)
+    local self = setmetatable({}, QuadTreeNode)
+    self.x_min, self.x_max, self.y_min, self.y_max = x_min, x_max, y_min, y_max
+    self.points = {}
+    self.children = {}
+    return self
+end
+
+function QuadTreeNode:isLeaf()
+    return #self.children == 0
+end
+
+function QuadTreeNode:insert(x, y)
+    if #self.points < 1 or self:isLeaf() then
+        table.insert(self.points, {x, y})
+    else
+        if not self:isLeaf() then
+            self:subdivide()
+        end
+        for _, child in ipairs(self.children) do
+            if x >= child.x_min and x <= child.x_max and y >= child.y_min and y <= child.y_max then
+                child:insert(x, y)
+                return
+            end
+        end
+    end
+end
+
+function QuadTreeNode:subdivide()
+    local x_mid = (self.x_min + self.x_max) / 2
+    local y_mid = (self.y_min + self.y_max) / 2
+    self.children[1] = QuadTreeNode:new(self.x_min, x_mid, self.y_min, y_mid)
+    self.children[2] = QuadTreeNode:new(x_mid, self.x_max, self.y_min, y_mid)
+    self.children[3] = QuadTreeNode:new(self.x_min, x_mid, y_mid, self.y_max)
+    self.children[4] = QuadTreeNode:new(x_mid, self.x_max, y_mid, self.y_max)
+    for _, point in ipairs(self.points) do
+        self:insert(point[1], point[2])
+    end
+    self.points = {} -- 清空当前节点的点，因为它们已经被分配到子节点中
+end
+
+-- 计算两点之间的距离
+function sqrt_distance(x1, y1, x2, y2)
+    return math.sqrt((x1 - x2)^2 + (y1 - y2)^2)
+end
+
+-- 在四叉树中查找最近的点
+function QuadTreeNode:findNearest(x, y)
+    local nearest = nil
+    local nearestDist = math.huge
+    if self:isLeaf() then
+        for _, point in ipairs(self.points) do
+            local dist = sqrt_distance(x, y, point[1], point[2])
+            if dist < nearestDist then
+                nearest = point
+                nearestDist = dist
+            end
+        end
+    else
+        for _, child in ipairs(self.children) do
+            if x >= child.x_min and x <= child.x_max and y >= child.y_min and y <= child.y_max then
+                nearest = child:findNearest(x, y)
+                nearestDist = sqrt_distance(x, y, nearest[1], nearest[2])
+                break
+            end
+        end
+    end
+    return nearest, nearestDist
+end
+
+
+local function calculate_distance(target_tiles, extra_edges, current_good_tiles, height, width)
+    -- for each wormwholes, calculate their distance to the target_tiles
+
+    local start_time = os.clock()
+    local wormhole_infos = {}
+    local final_wormhole_infos = {}
+    for _, edges in ipairs(extra_edges) do
+        -- print("[Search your map] extending to extra edge")
+        local x1 = edges[1][1]
+        local y1 = edges[1][2]
+        local x2 = edges[2][1]
+        local y2 = edges[2][2]
+        
+        local min_distance1 = math.huge
+        local min_distance2 = math.huge
+        for _, source in ipairs(target_tiles) do
+            local x = source[1]
+            local y = source[2]
+            local distance1 = math.sqrt((x1 - x)^2 + (y1 - y)^2)
+            local distance2 = math.sqrt((x2 - x)^2 + (y2 - y)^2)
+            min_distance1 = math.min(min_distance1, distance1)
+            min_distance2 = math.min(min_distance2, distance2)
+        end
+        local min_distance_of_pair = math.min(min_distance1, min_distance2)
+        table.insert(wormhole_infos, {edges, min_distance_of_pair, min_distance1, min_distance2})
+    end
+
+    -- find the edges with the minimal "min_distance_of_pair", then the node in that edges with larger distance will work as a new target_tiles
+    -- delete that edges from the table, for other edges, compute the minimal distance to this new target_tiles
+    -- compute the distance again
+    while #wormhole_infos > 0 do
+        -- find the edges with the minimal "min_distance_of_pair"
+        local min_distance = math.huge
+        local best_index = nil
+        for i, wormhole_info in ipairs(wormhole_infos) do
+            if wormhole_info[2] < min_distance then
+                min_distance = wormhole_info[2]
+                best_index = i
+            end
+        end
+        table.insert(final_wormhole_infos, {wormhole_infos[best_index][1], wormhole_infos[best_index][2]})
+
+        local extra_sources = nil
+        local shortcut_cost = min_distance
+        if wormhole_infos[best_index][3] < wormhole_infos[best_index][4] then
+            extra_sources = {wormhole_infos[best_index][1][2]}
+        else
+            extra_sources = {wormhole_infos[best_index][1][1]}
+        end
+        -- remove the one with the best_index, a
+        table.remove(wormhole_infos, best_index)
+        -- for other edges, check if their distance can be improved using the extra_sources
+        for i, wormhole_info in ipairs(wormhole_infos) do
+            local edges = wormhole_info[1]
+            local x1 = edges[1][1]
+            local y1 = edges[1][2]
+            local x2 = edges[2][1]
+            local y2 = edges[2][2]
+
+            local distance1 = math.sqrt((x1 - extra_sources[1][1])^2 + (y1 - extra_sources[1][2])^2)
+            local distance2 = math.sqrt((x2 - extra_sources[1][1])^2 + (y2 - extra_sources[1][2])^2)
+            local new_distance = math.min(wormhole_info[2], shortcut_cost + math.min(distance1, distance2))
+            wormhole_infos[i][2] = new_distance
+            wormhole_infos[i][3] = math.min(wormhole_infos[i][3], shortcut_cost + distance1)
+            wormhole_infos[i][4] = math.min(wormhole_infos[i][4], shortcut_cost + distance2)
+        end
+    end
+
+    local finish_time = os.clock()
+    print("Time used for calculating distance of wormholes: ", (finish_time - start_time)*1000)
+
+
+    -- The graph is a grid graph of shape (width, height)
+    local distance_record = {}
+    if #target_tiles == 1 then
+        -- only one target, do not need to construct the quad tree
+        for i = 1, height do
+            for j = 1, width do
+                if current_good_tiles[i] and current_good_tiles[i][j] then
+                    local distance2souce = math.sqrt((i - target_tiles[1][1])^2 + (j - target_tiles[1][2])^2)
+                    local distance_via_wormhole = math.huge
+                    for _, wormhole_info in ipairs(final_wormhole_infos) do
+                        local edges = wormhole_info[1]
+                        local x1 = edges[1][1]
+                        local y1 = edges[1][2]
+                        local x2 = edges[2][1]
+                        local y2 = edges[2][2]
+                        local distance1 = math.sqrt((x1 - i)^2 + (y1 - j)^2)
+                        local distance2 = math.sqrt((x2 - i)^2 + (y2 - j)^2)
+                        distance_via_wormhole = math.min(distance_via_wormhole, wormhole_info[2] + math.min(distance1, distance2))
+                    end
+                    distance_record[i] = distance_record[i] or {}
+                    distance_record[i][j] = math.min(distance2souce, distance_via_wormhole)
+                end
+            end
+        end
+    else
+        -- build up a quad tree for the target_tiles, this may be useful for regions and entities with large amount
+        local time_befer_quad_tree = os.clock()
+        local quad_tree = QuadTreeNode:new(1, height, 1, width)
+        for _, target in ipairs(target_tiles) do
+            quad_tree:insert(target[1], target[2])
+        end
+        local time_after_quad_tree = os.clock()
+        print("Time used for building quad tree: ", (time_after_quad_tree - time_befer_quad_tree)*1000)
+        for i = 1, height do
+            for j = 1, width do
+                if current_good_tiles[i] and current_good_tiles[i][j] then
+                    local nearest, nearestDist = quad_tree:findNearest(i, j)
+                    local distance2souce = nearestDist
+                    local distance_via_wormhole = math.huge
+                    for _, wormhole_info in ipairs(final_wormhole_infos) do
+                        local edges = wormhole_info[1]
+                        local x1 = edges[1][1]
+                        local y1 = edges[1][2]
+                        local x2 = edges[2][1]
+                        local y2 = edges[2][2]
+                        local distance1 = math.sqrt((x1 - i)^2 + (y1 - j)^2)
+                        local distance2 = math.sqrt((x2 - i)^2 + (y2 - j)^2)
+                        distance_via_wormhole = math.min(distance_via_wormhole, wormhole_info[2] + math.min(distance1, distance2))
+                    end
+                    distance_record[i] = distance_record[i] or {}
+                    distance_record[i][j] = math.min(distance2souce, distance_via_wormhole)
+                end
+            end
+        end
+    
+    end
+
+    return distance_record
+
+end
+
+local function convertSecondsToHMS(seconds)
+    local hours = math.floor(seconds / 3600)
+    local mins = math.floor(seconds % 3600 / 60)
+    local secs = math.floor(seconds % 60)
+    return string.format("%02d:%02d:%02d", hours, mins, secs)
 end
 
 local function next_divisible_by_4_remainder_2(k)
@@ -1784,6 +2003,157 @@ local function check_room_number(savedata, world_id, my_log_file)
     return true
 end
 
+
+local function get_save_data_score(savedata, world_id, my_log_file, grid, extra_edges, current_good_tiles, current_good_tiles_num)
+    local large_merge_tiles
+    if current_good_tiles_num > 1000 then
+        large_merge_tiles = _G.merge_tiles*2
+    else
+        large_merge_tiles = _G.merge_tiles
+    end
+    
+    local width = math.floor(savedata.map.width /large_merge_tiles) + 1
+    local height = math.floor(savedata.map.height /large_merge_tiles) + 1
+    -- The graph is a grid graph of shape (width, height)
+    local total_distance_record = {}
+    -- only one target, do not need to construct the quad tree
+    for i = 1, height do
+        total_distance_record[i] = {}
+        for j = 1, width do
+            total_distance_record[i][j] = 0
+        end
+    end
+
+    -- downsample the extra_edgers and current_good_tiles
+    if current_good_tiles_num > 1000 then
+        local extra_edges_new = {}
+        for i, edge in ipairs(extra_edges) do
+            local x1 = edge[1][1]
+            local z1 = edge[1][2]
+            local x2 = edge[2][1]
+            local z2 = edge[2][2]
+            local tile_x1 = math.floor((x1+1)/2)
+            local tile_z1 = math.floor((z1+1)/2)
+            local tile_x2 = math.floor((x2+1)/2)
+            local tile_z2 = math.floor((z2+1)/2)
+            table.insert(extra_edges_new, {{tile_x1, tile_z1}, {tile_x2, tile_z2}})
+        end
+        local current_good_tiles_new = {}
+        for i = 1, height do
+            for j = 1, width do
+                if current_good_tiles[i] and current_good_tiles[i][j] then
+                    local new_i = math.floor((i+1)/2)
+                    local new_j = math.floor((j+1)/2)
+                    if current_good_tiles_new[new_i] == nil then
+                        current_good_tiles_new[new_i] = {}
+                    end
+                    current_good_tiles_new[new_i][new_j] = true
+                end
+            end
+        end
+        current_good_tiles = current_good_tiles_new
+        extra_edges = extra_edges_new
+    end
+
+
+    local near_entities_soft = _G[world_id].near_entities_soft
+    local source_infos = {}
+    for i, entity in ipairs(near_entities_soft) do
+        local entity_name = entity["name"]
+        local entity_tiles = {}
+        local entity_weight= entity["weight"]
+        if savedata.ents[entity_name] == nil then
+            -- print("entity", entity_name, "is not in savedata.ents")
+            local log_str = "entity ".. entity_name .. "is not in savedata.ents but want to be near"
+            -- my_log_file:write(os.date("%H:%M:%S", os.time()) .. log_str .."\n")
+            print("[Search your map] "..log_str)
+            -- _G[world_id].check_statistic["near_entities"][entity_name]["check_times"] = _G[world_id].check_statistic["near_entities"][entity_name]["check_times"] + 1
+            return math.huge, nil, false
+        end
+
+        for j, entity_instance in ipairs(savedata.ents[entity_name]) do
+            local x = entity_instance["x"]
+            local z = entity_instance["z"]
+            local tile_x = math.floor((x/TILE_SCALE + savedata.map.width/2.0)/large_merge_tiles)
+            local tile_z = math.floor((z/TILE_SCALE + savedata.map.height/2.0)/large_merge_tiles)
+            table.insert(entity_tiles, {tile_x, tile_z})
+        end
+        table.insert(source_infos, {entity_name, entity_tiles, entity_weight})
+    end
+
+    local near_regions_soft = _G[world_id].near_regions_soft
+    -- find the corresponding tiles of each near regions (now only to the task level)
+    local num_of_voronoi_nodes = #savedata.map.topology.nodes
+    for i, node in ipairs(near_regions_soft) do
+        local node_name = node["name"]
+        local node_weight= node["weight"]
+        local node_tiles = {}
+
+        -- my_log_file:write(os.date("%H:%M:%S", os.time()) .. "node_name: ".. node_name .."\n")
+
+        for j = 1, num_of_voronoi_nodes do
+            local area_type = savedata.map.topology.ids[j]:split(":")[1]
+            local ismoon_land = node_name == "Moon Island" and string.find(area_type, "MoonIsland") ~= nil
+            if area_type == node_name or ismoon_land then
+                local x = savedata.map.topology.nodes[j].x
+                local z = savedata.map.topology.nodes[j].y
+                local tile_x = math.floor((x/TILE_SCALE + savedata.map.width/2.0)/large_merge_tiles)
+                local tile_z = math.floor((z/TILE_SCALE + savedata.map.height/2.0)/large_merge_tiles)
+                table.insert(node_tiles, {tile_x, tile_z})
+            end
+        end
+        if #node_tiles == 0 then
+            local log_str = "region ".. node_name .. "is not in current map but want to be near"
+            print("[Search your map] "..log_str)
+            return math.huge, nil, false
+        end
+        table.insert(source_infos, {node_name, node_tiles, node_weight})
+    end
+
+    -- local near_entities_results = {}
+    -- check the near entities
+    for _, target in ipairs(source_infos) do
+        local target_name = target[1]
+        local target_tiles = target[2]
+        local target_weight = target[3]
+        
+        local start_time = os.clock()
+        local distance_record = calculate_distance(target_tiles, extra_edges, current_good_tiles, height, width)
+        local end_time = os.clock()
+        print("[Search your map] calculate_distance time for"..target_name.."is: ", (end_time - start_time) * 1000)
+        for i = 1, height do
+            for j = 1, width do
+                if current_good_tiles[i] and current_good_tiles[i][j] then
+                    total_distance_record[i][j] = total_distance_record[i][j] + target_weight * distance_record[i][j]
+                end
+            end
+        end
+    end
+
+    -- return the minimum distance in the total_distance_record
+    local final_distance = math.huge
+    local best_ij = nil
+    for i = 1, height do
+        for j = 1, width do
+            if current_good_tiles[i] and current_good_tiles[i][j] then
+                if total_distance_record[i][j] <= final_distance then
+                    final_distance = total_distance_record[i][j]
+                    best_ij = {i, j}
+                end
+            end
+        end
+    end
+    if best_ij == nil then
+        print("[Search your map] why best_ij is nil?")
+        return math.huge, nil, false
+    else
+        local best_x = (best_ij[1]*large_merge_tiles - savedata.map.width/2.0)*TILE_SCALE
+        local best_z = (best_ij[2]*large_merge_tiles - savedata.map.height/2.0)*TILE_SCALE
+        return final_distance, {best_x, best_z}, true
+    end
+end
+
+
 local function check_save_data(savedata, world_id, my_log_file)
     -- if true then
     --     table_to_json_file(savedata, "worldsavedata.json")
@@ -1933,8 +2303,31 @@ local function check_save_data(savedata, world_id, my_log_file)
     -- table_to_json_file(good_tiles, world_id.."_good_tiles.json")
     -- write the seed to file
     -- my_log_file:write(os.date("%H:%M:%S", os.time()) .. "SEED:" .. SEED .."\n")
-    return true
+
+    start_time = os.time()
+    local map_score
+    local entity_and_region_exist
+    local best_xz
+    map_score, best_xz, entity_and_region_exist = get_save_data_score(savedata, world_id, my_log_file, grid, extra_edges, current_good_tiles, current_good_tiles_num)
+    end_time = os.time()
+    local time_for_get_save_data_score = end_time - start_time
+    print("[Search your map] time for get_save_data_score:", time_for_get_save_data_score)
+    if entity_and_region_exist then
+        _G.num_of_good_seeds_found = _G.num_of_good_seeds_found + 1
+        print("[Search your map] get a possible seed")
+        print(_G.min_distance_so_far)
+        print(map_score)
+        if _G.min_distance_so_far > map_score then
+            _G.min_distance_so_far = map_score
+            BEST_SEED_SO_FAR = SEED
+            _G.best_xz_for_best_seed = best_xz
+        end
+        return true
+    else
+        return false
+    end
 end
+
 
 function GenerateNew(debug, world_gen_data)
     -- Open my custom file to record the log
@@ -2265,6 +2658,21 @@ local function print_statistic(my_log_file, world_id)
     if BEST_SEED_SO_FAR ~= nil then
         my_log_file:write(os.date("%H:%M:%S", os.time()) .. "BEST_SEED_SO_FAR: " .. BEST_SEED_SO_FAR .."\n")
     end
+    if _G.best_xz_for_best_seed ~= nil then
+        my_log_file:write(os.date("%H:%M:%S", os.time()) .. "best location for your home: " .. _G.best_xz_for_best_seed[1] .. " " .. _G.best_xz_for_best_seed[2] .."\n")
+        my_log_file:write(os.date("%H:%M:%S", os.time()) .. "you can use: c_teleport( ".. _G.best_xz_for_best_seed[1] .. ", 0, " .. _G.best_xz_for_best_seed[2] ..") to go to the best place for your base\n")
+    end
+
+    
+    local current_time = os.time()
+    local total_time_cost = current_time - _G.generation_start_time
+
+    local time_cost_per_seed = total_time_cost / _G.num_of_good_seeds_found
+    local time_left = time_cost_per_seed * (_G[world_id]["repeat_times"] - _G.num_of_good_seeds_found)
+    my_log_file:write(os.date("%H:%M:%S", os.time()) .. "total time cost: " .. convertSecondsToHMS(total_time_cost) .. "s\n")
+    my_log_file:write(os.date("%H:%M:%S", os.time()) .. "time cost per seed: " .. convertSecondsToHMS(time_cost_per_seed) .. "s\n")
+    my_log_file:write(os.date("%H:%M:%S", os.time()) .. "time left: " .. convertSecondsToHMS(time_left) .. "s\n")
+    my_log_file:write(os.date("%H:%M:%S", os.time()) .. "num_of_good_seeds_found: " .. _G.num_of_good_seeds_found .."\n")
 end
 
 -- Clearlove modify this function (add a while loop)
@@ -2282,15 +2690,20 @@ local function LoadParametersAndGenerate(debug)
     my_log_file:close()
     set_up_statistic(world_id)
 
-    local failed_time = 0
+    local total_trial_time = 0
+    _G.generation_start_time = os.time()
 
     local generated_data = nil
     generated_data = GenerateNew(debug, world_gen_data)
-    while generated_data == nil do
-        print("[Search your map] Worldgen failed, retrying.")
-        failed_time = failed_time + 1
+    while generated_data == nil or _G.num_of_good_seeds_found < _G[world_id]["repeat_times"] do
+        if generated_data == nil then
+            print("[Search your map] Worldgen failed, retrying.")
+        else
+            print("[Search your map] Not enough good seeds found, retrying.")
+        end
+        total_trial_time = total_trial_time + 1
         -- save to log every 15 times
-        if failed_time % 15 == 0 then
+        if total_trial_time % 15 == 0 then
             my_log_file = io.open("worldgen_log_"..world_id..".txt", "w")
             print_statistic(my_log_file, world_id)
             my_log_file:close()
@@ -2315,8 +2728,8 @@ local function LoadParametersAndGenerate(debug)
     print_statistic(my_log_file, world_id)
     my_log_file:close()
 
-    GLOBAL.SEED = SEED --Write back
-    print("[Search your map] SEED:", SEED)
+    GLOBAL.SEED = BEST_SEED_SO_FAR --Write back
+    print("[Search your map] SEED:", BEST_SEED_SO_FAR)
     -- I got strange map, so I add this line.
     collectgarbage("collect")
     WorldSim:ResetAll()

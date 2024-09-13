@@ -23,7 +23,7 @@ But don't be too greedy, or it will take too long!
 ]]
 
 author = "clearlove"
-version = "1.0.8"
+version = "1.1.0"
 
 api_version = 10
 
@@ -59,6 +59,13 @@ distance_options[1] = { description = CH and "无所谓" or "I don't care", data
 for i = 0, 40 do
     distance_options[i+2] = { description = (i*10)..(CH and "个地皮" or " tiles"), data = i*10 }
 end
+
+local weight_options = {}
+weight_options[1] = { description = CH and "无所谓" or "I don't care", data = "not set" }
+for i = 1, 40 do
+    weight_options[i+1] = { description = i*0.5, data = i*0.5 }
+end
+
 
 local num_options = {}
 num_options[1] = { description = CH and "无所谓" or "I don't care", data = "not set" }
@@ -268,6 +275,15 @@ configuration_options = {
         hover = CH and "请不要设置过多" or "Please do not set too many",
         default = "not set",
     },
+    {
+        name = "master_custom_entity_num",
+        label = CH and "自定义实体" or "Custom entity",
+        options = {{description = CH and "无" or "None", data = ""}},
+        hover = CH and "输入你任意感兴趣的实体名称及个数，用“实体:数目”表示你的某个要求，用分号分隔不同的要求。例如为：beefalo:15;livingtree:2;\n你可以订阅我发布的另一个模组“文本模组配置”，来直接在配置界面输入" or 
+        "Enter the name and number of any entity you are interested in, use 'entity:number' to represent your requirements, and use semicolons to separate different requirements. For example: beefalo:15;livingtree:2;\nYou can subscribe to another mod I released, 'Mod Config By Text', to enter directly in the configuration interface",
+        default = "",
+        is_text_config = true
+    },
     -- 棋子的个数
     -- sculpture_rooknose, sculpture_knighthead, sculpture_bishophead, total Suspicious Marble
     -- 可疑的大理石（战车的鼻子），可疑的大理石（骑士的头），可疑的大理石（主教的头），可疑的大理石总数
@@ -415,6 +431,15 @@ configuration_options = {
         hover = CH and "不要设置的太小，我认为可能至少需要设置为30" or "Don't set it too small, I think it may need to be set to at least 30",
     },
     {
+        name = "master_custom_entity_near",
+        label = CH and "自定义邻近实体" or "Custom nearby entity",
+        options = {{description = CH and "无" or "None", data = ""}},
+        hover = CH and "输入你感兴趣的实体，以及想约束基地距离它的最小距离，用“实体:距离”表示你的某个要求，用分号分隔不同的要求。\n这里的距离仍然以地皮为单位。例如为：beefalo:15;moose_nesting_ground:10;\n你可以订阅我发布的另一个模组“文本模组配置”，来直接在配置界面输入" or 
+        "Enter the name of the entity you are interested in, and the minimum distance you want to constrain the base from it, use 'entity:distance' to represent your requirements, and use semicolons to separate different requirements.\nHere the distance is still in tiles. For example: beefalo:15;moose_nesting_ground:10;\nYou can subscribe to another mod I released, 'Mod Config By Text', to enter directly in the configuration interface",
+        default = "",
+        is_text_config = true
+    },
+    {
         name = "master_pond",
         label = CH and "(远离)池塘" or "(Far away)Pond",
         options = pond_distance_options,
@@ -457,6 +482,152 @@ configuration_options = {
     --     options = distance_options,
     --     default = "not set",
     -- },-- 这个需要知道哪里是海洋
+    {
+		name = "master base location(soft constraint)",
+		label = CH and "基地选址（软约束）" or "Base Location(Soft constraint)",
+		options = {{description = "", data = 0}},
+		default = 0,
+        hover = CH and "设置地点的重要程度，对于建家位置，将计算基地到这些地点的距离的加权求和。重复若干次，保留其中加权距离求和最小的地图" or "Set the importance of the location, for the base location, the weighted sum of the distance from the base to these locations will be calculated. Repeat several times and keep the map with the smallest weighted distance sum.",
+		tags = {"ignore"},
+	},
+    -- entites
+    -- pigking, dragonfly_spawner, oasislake, moonbase, beequeenhive, multiplayer_portal, monkeyqueen, hermithouse_construction1, wobster_den, saltstack
+    {
+        name = "master_repeat_times",
+        label = CH and "重复次数" or "Repeat times",
+        -- options = repeat_options,
+        options = {
+            {description = CH and "1次" or "1 times", data = 1},
+            {description = CH and "10次" or "10 times", data = 10},
+            {description = CH and "50次" or "50 times", data = 50},
+            {description = CH and "100次" or "100 times", data = 100},
+            {description = CH and "200次" or "200 times", data = 200},
+            {description = CH and "500次" or "500 times", data = 500},
+            {description = CH and "1000次" or "1000 times", data = 1000},
+        },
+        default = 1,
+    },
+    {
+        name = "master_pigking_soft",
+        label = CH and "猪王" or "Pig King",
+        options = weight_options,
+        default = "not set",
+        is_text_config = true
+    },
+    {
+        name = "master_dragonfly_spawner_soft",
+        label = CH and "龙蝇" or "Dragonfly",
+        options = weight_options,
+        default = "not set",
+        is_text_config = true
+    },
+    {
+        name = "master_oasislake_soft",
+        label = CH and "绿洲池塘" or "Oasis Lake",
+        options = weight_options,
+        default = "not set",
+        is_text_config = true
+    },
+    {
+        name = "master_moonbase_soft",
+        label = CH and "月台" or "Moonbase",
+        options = weight_options,
+        default = "not set",
+        is_text_config = true
+    },
+    {
+        name = "master_beequeenhive_soft",
+        label = CH and "蜂后" or "Bee Queen",
+        options = weight_options,
+        default = "not set",
+        is_text_config = true
+    },
+    {
+        name = "master_multiplayer_portal_soft",
+        label = CH and "绚丽之门" or "Multiplayer Portal",
+        options = weight_options,
+        default = "not set",
+        is_text_config = true
+    },
+    {
+        name = "master_monkeyqueen_soft",
+        label = CH and "猴子女王" or "Monkey Queen",
+        options = weight_options,
+        default = "not set",
+        is_text_config = true
+    },
+    {
+        name = "master_hermithouse_construction1_soft",
+        label = CH and "寄居蟹隐士" or "Hermit Crab",
+        options = weight_options,
+        default = "not set",
+        is_text_config = true
+    },
+    {
+        name = "master_wobster_den_soft",
+        label = CH and "龙虾窝" or "Wobster Den",
+        options = weight_options,
+        default = "not set",
+        is_text_config = true
+    },
+    {
+        name = "master_saltstack_soft",
+        label = CH and "盐堆" or "Salt Stack",
+        options = weight_options,
+        default = "not set",
+        is_text_config = true
+    },
+    {
+        name = "master_seastack_soft",
+        label = CH and "海蚀柱" or "Sea Stack",
+        options = weight_options,
+        default = "not set",
+        hover = CH and "不要设置的太小，我认为可能至少需要设置为30" or "Don't set it too small, I think it may need to be set to at least 30",
+        is_text_config = true
+    },
+    {
+        name = "master_custom_entity_near_soft",
+        label = CH and "自定义邻近实体" or "Custom nearby entity",
+        options = {{description = CH and "无" or "None", data = ""}},
+        hover = CH and "输入你感兴趣的实体，以及它的权重，用“实体:权重”表示你的某个要求，用分号分隔不同的要求。\n例如为：beefalo:1.1;moose_nesting_ground:2.0;\n你可以订阅我发布的另一个模组“文本模组配置”，来直接在配置界面输入" or 
+        "Enter the name of the entity you are interested in, and its weight, use 'entity:weight' to represent your requirements, and use semicolons to separate different requirements.\nFor example: beefalo:1.1;moose_nesting_ground:2.0;\nYou can subscribe to another mod I released, 'Mod Config By Text', to enter directly in the configuration interface",
+        default = "",
+        is_text_config = true
+    },
+    -- regions
+    -- Squeltch, Moon island, Ocean
+    {
+        name = "master_squeltch_soft",
+        label = CH and "沼泽" or "Squeltch",
+        options = weight_options,
+        default = "not set",
+        is_text_config = true
+    },
+    {
+        name = "master_moon_island_soft",
+        label = CH and "月岛" or "Moon Island",
+        options = weight_options,
+        default = "not set",
+        is_text_config = true
+    },
+    -- Killer bees!
+    {
+        name = "master_killer_bees_soft",
+        label = CH and "杀人蜂走廊" or "Killer bees!",
+        options = weight_options,
+        default = "not set",
+        hover = CH and "要使用这个选项，请保证在地上可选地形中将杀人蜂走廊设置为必须有" or "To use this option, make sure that the Killer bees! is set to must have in the Master Optional Biomes",
+        is_text_config = true
+    },
+    -- The hunters
+    {
+        name = "master_the_hunters_soft",
+        label = CH and "海象平原" or "The hunters",
+        options = weight_options,
+        default = "not set",
+        hover = CH and "要使用这个选项，请保证在地上可选地形中将海象平原设置为必须有" or "To use this option, make sure that the The hunters is set to must have in the Master Optional Biomes",
+        is_text_config = true
+    },
     AddSectionTitle(CH and "特殊要求" or "Special requirements"),
     -- TODO: 月岛连大陆，需要知道月岛精确的地方（或者用现在的来近似吧）
     -- TODO: 地中海可能需要保证能放下船才行吧。

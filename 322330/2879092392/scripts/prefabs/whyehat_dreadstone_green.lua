@@ -145,8 +145,8 @@ local function placeeye(inst, item, owner)
                         else
                             owner.AnimState:OverrideSymbol("swap_hat", "whyehat_prothesis", "swap_hat_blue")
                         end
-                        if not owner:HasTag("hasblueeye") then
-                            owner:AddTag("hasblueeye")
+                        if not owner:HasTag("haseyecoldimmune") then
+                            owner:AddTag("haseyecoldimmune")
                         end
                         if owner.components.temperature ~= nil then
                             owner.components.temperature.inherentinsulation = 240
@@ -275,8 +275,11 @@ local function placeeye(inst, item, owner)
                         if not inst:HasTag("perfectiongem_fx") then
                             inst:AddTag("perfectiongem_fx")
                         end
-                        if not owner:HasTag("hasperfectioneye") then
-                            owner:AddTag("hasperfectioneye")
+                        if not owner:HasTag("haseyecoldimmune") then
+                            owner:AddTag("haseyecoldimmune")
+                        end
+                        if not owner:HasTag("haseyehotimmune") then
+                            owner:AddTag("haseyehotimmune")
                         end
                         if skin_build ~= nil then
                             owner.AnimState:OverrideItemSkinSymbol("swap_hat", skin_build, "swap_hat_perfection", inst.GUID, "swap_hat_perfection")
@@ -321,6 +324,12 @@ local function placeeye(inst, item, owner)
                     if item.prefab == "why_nothingnessgem" then
                         if not inst:HasTag("nothingnessgem_fx") then
                             inst:AddTag("nothingnessgem_fx")
+                        end
+                        if not owner:HasTag("haseyecoldimmune") then
+                            owner:AddTag("haseyecoldimmune")
+                        end
+                        if not owner:HasTag("haseyehotimmune") then
+                            owner:AddTag("haseyehotimmune")
                         end
                         if skin_build ~= nil then
                             owner.AnimState:OverrideItemSkinSymbol("swap_hat", skin_build, "swap_hat_nothingness", inst.GUID, "swap_hat_nothingness")
@@ -413,8 +422,8 @@ local function removeeye(inst, owner)
     --------------------------------------------------blue
     if inst:HasTag("bluegem_fx") then
         inst:RemoveTag("bluegem_fx")
-        if owner:HasTag("hasblueeye") then
-            owner:RemoveTag("hasblueeye")
+        if owner:HasTag("haseyecoldimmune") then
+            owner:RemoveTag("haseyecoldimmune")
         end
         if owner.components.temperature ~= nil then
             owner.components.temperature.inherentinsulation = 0
@@ -502,10 +511,13 @@ local function removeeye(inst, owner)
     if inst:HasTag("perfectiongem_fx") then
         inst:RemoveTag("perfectiongem_fx")
 
-        -- remove carry heavy thing
-        if owner:HasTag("hasperfectioneye") then
-            owner:RemoveTag("hasperfectioneye")
+        if not owner:HasTag("haseyecoldimmune") then
+            owner:RemoveTag("haseyecoldimmune")
         end
+        if owner:HasTag("haseyehotimmune") then
+            owner:RemoveTag("haseyehotimmune")
+        end
+        -- remove carry heavy thing
         owner:RemoveEventCallback("equip", PickHeavy)
         owner:RemoveEventCallback("unequip", DropHeavy)
         if inst.components.equippable then
@@ -537,6 +549,12 @@ local function removeeye(inst, owner)
     --------------------------------------------------nothing
     if inst:HasTag("nothingnessgem_fx") then
         inst:RemoveTag("nothingnessgem_fx")
+        if owner:HasTag("haseyecoldimmune") then
+            owner:RemoveTag("haseyecoldimmune")
+        end
+        if owner:HasTag("haseyehotimmune") then
+            owner:RemoveTag("haseyehotimmune")
+        end
         if owner.components.combat ~= nil then
             if TUNING.WHY_NOTHINGNESS_DMGMULT == "0" then
                 owner.components.combat.externaldamagemultipliers:RemoveModifier(inst)

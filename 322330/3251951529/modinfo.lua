@@ -2,39 +2,31 @@ local L = locale ~= "zh" and locale ~= "zhr" -- true 英文  false 中文
 
 name = L and "My Mate" or "我的队友"
 description = L and [[
-Players can summon teammates in the production bar, hoping that their presence can alleviate a bit of loneliness in the game.
+感谢千羽提供了队友的台词。
 
-1. Spend two whistleblower hearts in the manufacturing column to summon a teammate
-2. In addition to the original characters, mod characters are also supported. As long as mods with characters are enabled, they can be summoned in the production bar
-3. Teammates come with a container, and the button on the left is universal to all characters and can be freely switched on and off. The button on the right is for the character's skills, and if not, it means there is none
-4. The unlocking of the right skill requires a certain number of survival days to unlock. For specific skills and their unlocking days, please refer to
-https://n77a3mjegs.feishu.cn/docx/GUgUdU2UBoiyo0x20H0cjizPn7b?from=from_copylink
-
-1.0.42 改动：
-1. 修复女工使用遥控器指向自己的问题
-2. 修复队友使用棱镜盾牌盾反崩溃的问题
-3. 大力士召唤的猪人和沃特召唤的鱼人被打也不会反水
+1.0.49 改动：
+1. 修复队友释放技能有概率崩溃的问题
+2. 修复队友被攻击时有概率崩溃的问题
 
 Feel free to leave feedback in the comment section if you have any questions or suggestions.
 
 ]] or [[
 感谢千羽提供了队友的台词。
 
-1.0.42 改动：
-1. 修复女工使用遥控器指向自己的问题
-2. 修复队友使用棱镜盾牌盾反崩溃的问题
-3. 大力士召唤的猪人和沃特召唤的鱼人被打也不会反水
+1.0.49 改动：
+1. 修复队友释放技能有概率崩溃的问题
+2. 修复队友被攻击时有概率崩溃的问题
 
 有问题和建议欢迎加群或留言区反馈，QQ讨论群：667987439
 ]]
 author = "绯世行"
-version = "1.0.42"
+version = "1.0.49"
 
 forumthread = ""
 
 api_version = 10
 
-priority = -2029316030 - 209631439
+priority = -99999999999 --要解决专用服务器下的bug，我需要晚于其他角色mod加载
 
 dst_compatible = true
 all_clients_require_mod = true
@@ -99,6 +91,16 @@ configuration_options = {
             { description = "中文", data = "CHI" },
         },
         default = "AUTO",
+    },
+    {
+        name = "is_dedicated",
+        hover = L and "If you are using a dedicated server, you should enable this option" or "如果是专用服务器，应该启用这个选项",
+        label = L and "Dedicated server or not" or "是否是专用服务器",
+        options = {
+            { description = L and "True" or "是", data = true },
+            { description = L and "False" or "否", data = false },
+        },
+        default = false,
     },
     {
         name = "attack_taken_mult",

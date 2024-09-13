@@ -4741,6 +4741,8 @@ return {
         ANCIENTDREAMS_CUBE = "我造物的副产物的有效利用方式!",
         ANCIENTDREAMS_GEOCAKE = "有时候你应该犒劳一下自己.",
 
+        
+        
         WHYLUNARWHIP = "我确实说过我要把那顶皇冠用起来的!",
         WHY_CHURCHSTATUE_RED = "展示我们的力量.",
         WHY_CHURCHSTATUE_BLUE = "以痛苦猛烈还击.",
@@ -4749,6 +4751,19 @@ return {
         WHY_CHURCHSTATUE_ORANGE = "永不放弃.",
         WHY_CHURCHSTATUE_YELLOW = "急促是效率的证明.",
         WHY_CHURCHSTATUE_OPAL = "爱让我们最终走到一起.",
+        
+          --1.8.9
+        ANCIENTDREAMS_HYUBSIP = "XXX",
+        ANCIENTDREAMS_KOZISIP = "XXX",
+        ANCIENTDREAMS_TART = "XXX",
+        ANCIENTDREAMS_SPEAR = "XXX",
+        ANCIENTDREAMS_EVILBRED = "XXX",
+        ANCIENTDREAMS_GELL = "XXX",
+        ANCIENTDREAMS_QUASO = "XXX",
+        ANCIENTDREAMS_FHISH = "XXX",
+        ANCIENTDREAMS_LOMBTER = "XXX",
+        ANCIENTDREAMS_PIZZA = "XXX",
+        ANCIENTDREAMS_SER = "XXX",
 --
 --		BEDROLL_GNARCOON = "Rest for the townsfolk.",
 --		BEDROLL_GNARCOON_WINTER = "Delightful sleep for kings.",

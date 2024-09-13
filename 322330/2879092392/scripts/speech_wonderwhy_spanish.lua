@@ -4738,6 +4738,31 @@ return {
 		WHYJEWELLAB = "Justo como en mi taller.",
 		WHYGLOBELAB = "Para maneras ancestrales.",
 
+        WHY_KLAUS_SACK_PIECE = "XXX",
+        ANCIENTDREAMS_GEGG = "XXX",
+        ANCIENTDREAMS_CANDY = "XXX",
+        --1.8
+        WHY_CRYSTAL_FLOWERS = "XXX",
+        ANCIENTDREAMS_CUBE = "XXX",
+        ANCIENTDREAMS_GEOCAKE = "XXX",
+
+        
+        
+        WHYLUNARWHIP = "XXX",
+        WHY_CHURCHSTATUE_RED = "XXX",
+        WHY_CHURCHSTATUE_BLUE = "XXX",
+        WHY_CHURCHSTATUE_PURPLE = "XXX",
+        WHY_CHURCHSTATUE_GREEN = "XXX",
+        WHY_CHURCHSTATUE_ORANGE = "XXX",
+        WHY_CHURCHSTATUE_YELLOW = "XXX",
+        WHY_CHURCHSTATUE_OPAL = "XXX",
+        
+            --1.8.9
+        ANCIENTDREAMS_HYUBSIP = "XXX",
+        ANCIENTDREAMS_KOZISIP = "XXX",
+        ANCIENTDREAMS_TART = "XXX",
+        ANCIENTDREAMS_SPEAR = "XXX",
+        
 		BEDROLL_GNARCOON = "Descanso para la gente del pueblo.",
 		BEDROLL_GNARCOON_WINTER = "Deleitoso sueño para reyes.",
 		COONTAIL_SHADOW = "Hierba gatera, o tal vez peor...",

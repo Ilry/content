@@ -168,9 +168,17 @@ AddPlayerPostInit(function(inst)
     inst:ListenForEvent("onbuilt", OnBuilt)
 end)
 
+----------------------------------------------------------------------------------------------------
+
+local function OnAttackOther(inst, data)
+    CombatUtils.RecoreAttack(data.target, inst)
+end
+
 AddPrefabPostInitAny(function(inst)
     if not TheWorld.ismastersim then return end
     inst:AddComponent("mym_playerproperty")
+
+    inst:ListenForEvent("onattackother", OnAttackOther)
 end)
 
 local function OnTransplantBefore(self)
@@ -415,9 +423,9 @@ local _activeplayers1
 AddComponentPostInit("hounded", function(self)
     if not _activeplayers1 then
         _activeplayers1 = Utils.ChainFindUpvalue(self.OnUpdate, "_activeplayers")
-            or Utils.ChainFindUpvalue(self.SpawnModeNever, "PlanNextAttack", "CalcEscalationLevel",
+            or self.SpawnModeNever and Utils.ChainFindUpvalue(self.SpawnModeNever, "PlanNextAttack", "CalcEscalationLevel",
                 "GetAveragePlayerAgeInDays", "_activeplayers")
-            or Utils.ChainFindUpvalue(self.SummonSpawn, "SummonSpawn", "GetSpawnPrefab", "GetSpecialSpawnChance",
+            or self.SummonSpawn and Utils.ChainFindUpvalue(self.SummonSpawn, "SummonSpawn", "GetSpawnPrefab", "GetSpecialSpawnChance",
                 "GetAveragePlayerAgeInDays", "_activeplayers")
         if _activeplayers1 then
             Utils.FnDecorator(self, "OnUpdate", function() RemoveMate(_activeplayers1) end)
@@ -429,7 +437,7 @@ end)
 local _activeplayers2
 AddComponentPostInit("beargerspawner", function(self)
     if not _activeplayers2 then
-        _activeplayers2 = Utils.ChainFindUpvalue(self.DoWarningSpeech, "_activeplayers")
+        _activeplayers2 =self.DoWarningSpeech and Utils.ChainFindUpvalue(self.DoWarningSpeech, "_activeplayers")
             or Utils.ChainFindUpvalue(self.OnUpdate, "PickPlayer", "_activeplayers")
         if _activeplayers2 then
             Utils.FnDecorator(self, "OnUpdate", function() RemoveMate(_activeplayers2) end)
@@ -441,7 +449,7 @@ end)
 local _activeplayers3
 AddComponentPostInit("deerclopsspawner", function(self)
     if not _activeplayers3 then
-        _activeplayers3 = Utils.ChainFindUpvalue(self.DoWarningSpeech, "_activeplayers")
+        _activeplayers3 =self.DoWarningSpeech and Utils.ChainFindUpvalue(self.DoWarningSpeech, "_activeplayers")
             or Utils.ChainFindUpvalue(self.OnUpdate, "PickAttackTarget", "_activeplayers")
         if _activeplayers3 then
             Utils.FnDecorator(self, "OnUpdate", function() RemoveMate(_activeplayers3) end)
@@ -457,8 +465,8 @@ local function HunterOnPlayerJoined(src, player)
 end
 
 AddComponentPostInit("hunter", function(self, inst)
-    if not _activeplayers4 then
-        _activeplayers4 = Utils.ChainFindUpvalue(self.DebugForceHunt, "GetMaxHunts", "_activeplayers")
+    if not _activeplayers4  then
+        _activeplayers4 = self.DebugForceHunt and Utils.ChainFindUpvalue(self.DebugForceHunt, "GetMaxHunts", "_activeplayers")
         if _activeplayers4 then
             inst:ListenForEvent("ms_playerjoined", HunterOnPlayerJoined, TheWorld)
         end
@@ -490,14 +498,6 @@ AddComponentPostInit("slipperyfeet", function(self)
     Utils.FnDecorator(self, "OnRemoveFromEntity", SPFOnRemoveFromEntityBefore)
 end)
 
-----------------------------------------------------------------------------------------------------
-local function OnAttackOther(inst, data)
-    CombatUtils.RecoreAttack(data.target, inst)
-end
-
-AddPrefabPostInitAny(function(inst)
-    inst:ListenForEvent("onattackother", OnAttackOther)
-end)
 
 ----------------------------------------------------------------------------------------------------
 -- 恶魔人队友也会收集灵魂
@@ -670,4 +670,3 @@ Utils.FnDecorator(BufferedAction, "IsValid", function(self)
 end)
 
 ----------------------------------------------------------------------------------------------------
-

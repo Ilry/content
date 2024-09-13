@@ -70,14 +70,20 @@ local function OnGetItemFromPlayer(inst, giver, item)
                 if coat ~= nil and coat.components.container == nil then
                     inventory:DropItem(coat, true, true)
                 end
-                inst.components.entitytracker:ForgetEntity("sentryward")
-                inst.components.entitytracker:ForgetEntity("shipyard")
             end
         else
             inventory:DropItem(current, true, true)
         end
 
         inventory:Equip(item)
+        if inst.brain ~= nil and inst.brain.bt ~= nil then
+            inst.brain.bt:Reset()
+        end
+        if inst.components.wxtype:IsConv() then
+            inst.components.entitytracker:ForgetEntity("sentryward")
+        elseif inst.components.wxtype:IsSeaConv() then
+            inst.components.entitytracker:ForgetEntity("shipyard")
+        end
         inst.components.wxnavigation.engaged = false
         inst.components.locomotor:Stop()
     end

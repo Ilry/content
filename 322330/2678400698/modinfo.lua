@@ -15,12 +15,13 @@ local MODINFO_AUTHOR = {
 author = ChooseTranslationTable(MODINFO_AUTHOR)
 
 -- Mod Version
-version = "3.10.7"
+version = "3.11.0"
 
 description_string_en = 
 "󰀔Description:\n"..
-"This mod allows players to construct WX automatons. They will work for players pretty automatically.\n"..
-"\n"..
+"This mod allows players to construct WX automatons. "..
+"They will work for players pretty automatically. "..
+"\n\n"..
 "󰀏Tips:\n"..
 "- WX-78 shares hardware with WX automatons.\n"..
 "- WX automatons can work and use boats in Island Adventure.\n"..

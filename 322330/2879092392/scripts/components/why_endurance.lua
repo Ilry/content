@@ -362,11 +362,11 @@ function EnduranceBody:OnTakeDamage(amount, overtime, cause, ignore_invincible, 
             self.inst:DoTaskInTime(20, function(inst)
                 -- immune time is little more than then time normal character loses 20 health, but more dangerous fighting Klaus.
                 if inst.components.temperature ~= nil then
-                    if not inst:HasTag("hasblueeye") and not inst:HasTag("hasperfectioneye") then
+                    if not inst:HasTag("haseyecoldimmune") then
                         inst.components.temperature.inherentinsulation = 0
                         inst.components.temperature.mintemp = (-20)
                     end
-                    if not inst:HasTag("hasperfectioneye") then
+                    if not inst:HasTag("haseyehotimmune") then
                         inst.components.temperature.maxtemp = (90)
                     end
                 end

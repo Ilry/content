@@ -113,6 +113,13 @@ return {
 		summoned_gestalt_damage = "Os <color=ENLIGHTENMENT>Espíritos da Lua</color> invocados causam <color=HEALTH>%s</color> de dano.",
 	},
 
+	-- ancienttree_seed.lua [Prefab]
+	ancienttree_seed = {
+		type = "Type: <color=%s><prefab=%s></color>",
+		fruit_regen_time = "Fruit time: %s",
+		fruit_regen_time_bounded = "Fruit time: %s <= %s <= %s",
+	},
+
 	-- aoeweapon_base.lua
 	aoeweapon_base = {
 		--weapon_damage = "AoE %s: <color=HEALTH>{damage}</color>",
@@ -411,6 +418,13 @@ return {
 			name = nil,
 			description = "Regenera <color=SANITY>{amount} sanidade</color> durante {duration}(s).",
 		},
+		["wormlight_light"] = {
+			name = "<color=#6AD1EF><prefab=wormlight> light</color>",
+			--description = "Provides light for {duration}(s).",
+		},
+		["wormlight_light_lesser"] = function(parent) return deepcopy(parent.wormlight_light) end,
+		["wormlight_light_greater"] = function(parent) return deepcopy(parent.wormlight_light) end,
+
 
 		["wintersfeastbuff"] = {
 			name = "<color=FROZEN>Buff do Festival de Inverno</color>",
@@ -618,6 +632,11 @@ return {
 	fishingrod_waittimes = "Tempo de espera: <color=SHALLOWS>%s</color> - <color=SHALLOWS>%s</color>",
 	fishingrod_loserodtime = "Tempo máximo de disputa: <color=SHALLOWS>%s</color>",
 
+	-- flotsamgenerator.lua
+	flotsamgenerator = {
+		messagebottle_cooldown = "Next <prefab=messagebottle> spawn: %s",
+	},
+
 	-- follower.lua
 	leader = "Líder: %s",
 	loyalty_duration = "Duração de lealdade: %s",
@@ -769,6 +788,11 @@ return {
 	gym_weight_value = "Valor de peso da academia: %s",
 	ruins_statue_gem = "Contains a <color=%s><prefab=%s></color>.",
 
+	-- inspectacleshat.lua [Prefab]
+	inspectacleshat = {
+		ready_to_use = "Ready to inspect",
+	},
+
 	-- insulator.lua
 	insulation_winter = "<color=FROZEN>Proteção (Inverno)</color>: <color=FROZEN>%s</color>",
 	insulation_summer = "<color=FROZEN>Proteção (Verão)</color>: <color=FROZEN>%s</color>",
@@ -846,6 +870,9 @@ return {
 
 	-- mermcandidate.lua
 	mermcandidate = "Calorias: %s / %s",
+
+	-- messagebottlemanager.lua
+	messagebottlemanager = "Treasures to grab: %d / %d",
 
 	-- mightiness.lua
 	mightiness = "<color=MIGHTINESS>Potência</color>: <color=MIGHTINESS>%s</color> / <color=MIGHTINESS>%s</color> - <color=MIGHTINESS>%s</color>",
@@ -1090,6 +1117,11 @@ return {
 	-- rocmanager.lua
 	rocmanager = {
 		cant_spawn = "Não foi possível gerar."
+	},
+
+	-- roseglasseshat.lua [Prefab]
+	roseglasseshat = {
+		ready_to_use = "Ready to inspect",
 	},
 
 	-- saddler.lua
