@@ -50,6 +50,7 @@ local function ConfigureRunState(inst)
         inst.sg.statemem.groggy = true
     elseif inst.components.carefulwalker:IsCarefulWalking() then
         inst.sg.statemem.careful = true
+        inst.sg:AddStateTag("noslip")
     else
         inst.sg.statemem.normal = true
     end
@@ -521,10 +522,7 @@ local actionhandlers =
     ActionHandler(ACTIONS.PICKUP,
         function(inst, action)
             return (action.target ~= nil and action.target:HasTag("minigameitem") and "dosilentshortaction")
-                or (inst.components.rider ~= nil and inst.components.rider:IsRiding()
-                    and (action.target ~= nil and action.target:HasTag("heavy") and "dodismountaction"
-                        or "domediumaction")
-                    )
+                or (inst.components.rider ~= nil and inst.components.rider:IsRiding() and "domediumaction")
                 or "doshortaction"
         end),
     ActionHandler(ACTIONS.DROP, "doshortaction"),
@@ -631,7 +629,7 @@ local events =
                 -- don't interrupt transform or when bucked in the air
                 inst.SoundEmitter:PlaySound("dontstarve/creatures/knight/hurt")
                 DoHurtSound(inst)
-            elseif inst.sg:HasStateTag("devoured") then
+            elseif inst.sg:HasStateTag("devoured") or inst.sg:HasStateTag("suspended") then
                 return --Do nothing
             elseif data.attacker ~= nil
                 and data.attacker:HasTag("groundspike")
@@ -682,6 +680,12 @@ local events =
         end
     end),
 
+    EventHandler("startled", function(inst)
+        if not inst.components.health:IsDead() then
+            inst.sg:GoToState("startle", false)
+        end
+    end),
+
     EventHandler("repelled", function(inst, data)
         if not inst.components.health:IsDead() then
             inst.sg:GoToState("repelled", data)
@@ -698,6 +702,7 @@ local events =
                         (inst.sg.statemem.timeleft ~= nil and math.max(0, inst.sg.statemem.timeleft + inst.sg.statemem.timeleft0 - GetTime())) or
                         inst.sg.statemem.parrytime,
                     knockbackdata = data,
+                    isshield = inst.sg.statemem.isshield,
                 })
             else
                 inst.sg:GoToState((data.forcelanded or inst.components.inventory:EquipHasTag("heavyarmor") or inst:HasTag("heavybody")) and "knockbacklanded" or "knockback", data)
@@ -707,7 +712,17 @@ local events =
 
     EventHandler("devoured", function(inst, data)
         if not inst.components.health:IsDead() and data ~= nil and data.attacker ~= nil and data.attacker:IsValid() then
-            inst.sg:GoToState("devoured", data.attacker)
+            inst.sg:GoToState("devoured", data)
+        end
+    end),
+
+    EventHandler("suspended", function(inst, attacker)
+        if not inst.components.health:IsDead() and
+            not inst.components.rider:IsRiding() and
+            attacker and attacker:IsValid() and
+            not (attacker.components.health and attacker.components.health:IsDead())
+        then
+            inst.sg:GoToState("suspended", attacker)
         end
     end),
 
@@ -773,19 +788,26 @@ local events =
         end
     end),
 
-    EventHandler("toolbroke", function(inst, data)
-        inst.sg:GoToState("toolbroke", data.tool)
-    end),
+    EventHandler("toolbroke",
+        function(inst, data)
+            if not inst.sg:HasStateTag("nointerrupt") then
+                inst.sg:GoToState("toolbroke", data.tool)
+            end
+        end),
 
-    EventHandler("armorbroke", function(inst, data)
-        inst.sg:GoToState("armorbroke", data.armor)
-    end),
-
-    EventHandler("fishingcancel", function(inst)
-        if inst.sg:HasStateTag("fishing") and not inst:HasTag("busy") then
-            inst.sg:GoToState("fishing_pst")
+    EventHandler("armorbroke",
+    function(inst)
+        if not inst.sg:HasStateTag("nointerrupt") then
+            inst.sg:GoToState("armorbroke")
         end
     end),
+
+    EventHandler("fishingcancel",
+        function(inst)
+            if inst.sg:HasStateTag("fishing") and not inst:HasTag("busy") then
+                inst.sg:GoToState("fishing_pst")
+            end
+        end),
 
     EventHandler("oceanfishing_stoppedfishing", function(inst, data)
         if inst.sg:HasStateTag("fishing") and (inst.components.health == nil or not inst.components.health:IsDead()) then
@@ -3215,12 +3237,14 @@ local states =
         name = "devoured",
         tags = { "devoured", "invisible", "noattack", "notalking", "nointerrupt", "busy", "nopredict", "silentmorph" },
 
-        onenter = function(inst, attacker)
+        onenter = function(inst, data)
+            local attacker = data.attacker
             ClearStatusAilments(inst)
             local mount = inst.components.rider:ActualDismount()
             inst.components.locomotor:Stop()
             inst:ClearBufferedAction()
             inst.AnimState:PlayAnimation("empty")
+
             inst:Hide()
             inst.DynamicShadow:Enable(false)
             ToggleOffPhysics(inst)
@@ -3257,7 +3281,7 @@ local states =
 
         onupdate = function(inst)
             local attacker = inst.sg.statemem.attacker
-            if attacker:IsValid() then
+            if attacker ~= nil and attacker:IsValid() then
                 inst.Transform:SetPosition(attacker.Transform:GetWorldPosition())
                 inst.Transform:SetRotation(attacker.Transform:GetRotation() + 180)
             else
@@ -3270,8 +3294,8 @@ local states =
             EventHandler("spitout", function(inst, data)
                 local attacker = data ~= nil and data.spitter or inst.sg.statemem.attacker
                 if attacker ~= nil and attacker:IsValid() then
-                    local rot = attacker.Transform:GetRotation()
-                    inst.Transform:SetRotation(rot + 180)
+                    local rot = data.rot or attacker.Transform:GetRotation() + 180
+                    inst.Transform:SetRotation(rot)
                     local physradius = attacker:GetPhysicsRadius(0)
                     if physradius > 0 then
                         local x, y, z = inst.Transform:GetWorldPosition()
@@ -3311,7 +3335,7 @@ local states =
                         end
                     end
                 end
-            end
+            end            
             inst:Show()
             inst.DynamicShadow:Enable(true)
             if inst.sg.statemem.isphysicstoggle then
@@ -3323,6 +3347,131 @@ local states =
             end
             if inst.components.talker ~= nil then
                 inst.components.talker:StopIgnoringAll("devoured")
+            end
+        end,
+    },
+
+    State{
+        name = "suspended",
+        tags = { "suspended", "noattack", "notalking", "nointerrupt", "busy", "nopredict", "nomorph", "nodangle" },
+
+        onenter = function(inst, attacker)
+            ClearStatusAilments(inst)
+            local mount = inst.components.rider:ActualDismount()
+            inst.components.locomotor:Stop()
+            inst:ClearBufferedAction()
+            ToggleOffPhysics(inst)
+            inst.Transform:SetNoFaced()
+            inst.AnimState:PlayAnimation("suspended_pre")
+            inst.AnimState:PushAnimation("suspended")
+            inst.components.inventory:Hide()
+            inst:PushEvent("ms_closepopups")
+            if inst.components.playercontroller then
+                inst.components.playercontroller:EnableMapControls(false)
+                inst.components.playercontroller:Enable(false)
+            end
+            StopTalkSound(inst, true)
+            if inst.components.talker then
+                inst.components.talker:ShutUp()
+                inst.components.talker:IgnoreAll("suspended")
+            end
+            if attacker and attacker:IsValid() then
+                inst.sg.statemem.attacker = attacker
+                if mount then
+                    --use true physics radius if available
+                    local radius = attacker.Physics and attacker.Physics:GetRadius() or attacker:GetPhysicsRadius(0)
+                    if radius > 0 then
+                        local dir = attacker:GetAngleToPoint(inst.Transform:GetWorldPosition()) * DEGREES
+                        local x, y, z = attacker.Transform:GetWorldPosition()
+                        x = x + radius * math.cos(dir)
+                        z = z - radius * math.sin(dir)
+                        if TheWorld.Map:IsPassableAtPoint(x, 0, z) then
+                            if mount.Physics ~= nil then
+                                mount.Physics:Teleport(x, 0, z)
+                            else
+                                mount.Transform:SetPosition(x, 0, z)
+                            end
+                        end
+                    end
+                end
+                attacker:PushEvent("playersuspended", inst)
+            end
+        end,
+
+        onupdate = function(inst)
+            local attacker = inst.sg.statemem.attacker
+            if attacker and attacker:IsValid() then
+                inst.Transform:SetPosition(attacker.Transform:GetWorldPosition())
+            else
+                inst.sg:GoToState("idle")
+            end
+        end,
+
+        events =
+        {
+            EventHandler("attacked", function(inst)
+                inst.AnimState:PlayAnimation("suspended_hit")
+                inst.AnimState:PushAnimation("suspended")
+                DoHurtSound(inst)
+                return true
+            end),
+            EventHandler("abouttospit", function(inst)
+                inst.AnimState:PlayAnimation("suspended_spit")
+                inst.AnimState:PushAnimation("suspended")
+                DoHurtSound(inst)
+            end),
+            EventHandler("spitout", function(inst, data)
+                local attacker = data ~= nil and data.spitter or inst.sg.statemem.attacker
+                if attacker and attacker:IsValid() then
+                    local rot = data.rot or attacker.Transform:GetRotation() + 180
+                    inst.Transform:SetRotation(rot)
+                    local x, y, z = inst.Transform:GetWorldPosition()
+                    rot = rot * DEGREES
+                    x = x + math.cos(rot) * 0.1
+                    z = z - math.sin(rot) * 0.1
+                    inst.Physics:Teleport(x, 0, z)
+                    DoHurtSound(inst)
+                    inst.sg:HandleEvent("knockback", {
+                        knocker = attacker,
+                        radius = data ~= nil and data.radius or physradius + 1,
+                        strengthmult = data ~= nil and data.strengthmult or nil,
+                    })
+                else
+                    inst.sg:HandleEvent("knockback")
+                end
+                --NOTE: ignores heavy armor/body
+            end),
+        },
+
+        onexit = function(inst)
+            if inst.sg.statemem.isphysicstoggle then
+                ToggleOnPhysics(inst)
+            end
+            if inst.components.health:IsDead() then
+                local attacker = inst.sg.statemem.attacker
+                if attacker and attacker:IsValid() then
+                    --use true physics radius if available
+                    local radius = attacker.Physics and attacker.Physics:GetRadius() or attacker:GetPhysicsRadius(0)
+                    if radius > 0 then
+                        local x, y, z = inst.Transform:GetWorldPosition()
+                        local theta = attacker.Transform:GetRotation() * DEGREES
+                        x = x + math.cos(theta) * radius
+                        z = z - math.sin(theta) * radius
+                        if TheWorld.Map:IsPassableAtPoint(x, 0, z, true) then
+                            inst.Physics:Teleport(x, 0, z)
+                        end
+                    end
+                end
+                attacker:PushEvent("suspendedplayerdied", inst)
+            end
+            inst.Transform:SetFourFaced()
+            inst.components.inventory:Show()
+            if inst.components.playercontroller ~= nil then
+                inst.components.playercontroller:EnableMapControls(true)
+                inst.components.playercontroller:Enable(true)
+            end
+            if inst.components.talker then
+                inst.components.talker:StopIgnoringAll("suspended")
             end
         end,
     },
@@ -3577,7 +3726,7 @@ local states =
             inst.SoundEmitter:PlaySound("dontstarve/creatures/spat/spit_playerunstuck")
 
             --inst.components.inventory:Hide()
-            inst:PushEvent("ms_closepopups")
+            --inst:PushEvent("ms_closepopups")
             if inst.components.playercontroller ~= nil then
                 inst.components.playercontroller:EnableMapControls(false)
                 inst.components.playercontroller:Enable(false)
@@ -5356,7 +5505,7 @@ local states =
     ------------------------
     State{
         name = "mount",
-        tags = { "doing", "busy", "nomorph", "nopredict" },
+        tags = { "doing", "busy", "nomorph", "nopredict", "mounting" },
 
         onenter = function(inst)
             inst.sg.statemem.heavy = inst.components.inventory:IsHeavyLifting()
@@ -5415,57 +5564,6 @@ local states =
         onexit = function(inst)
             if inst.components.playercontroller ~= nil then
                 inst.components.playercontroller:Enable(true)
-            end
-        end,
-    },
-
-    State{
-        name = "dodismountaction",
-        tags = { "doing", "busy", "nodangle" },
-
-        onenter = function(inst)
-            inst.components.locomotor:Stop()
-
-            inst.AnimState:PlayAnimation("dismount")
-            if inst.bufferedaction ~= nil then
-                inst.sg.statemem.action = inst.bufferedaction
-                if inst.bufferedaction.action.actionmeter then
-                    inst.sg.statemem.actionmeter = true
-                    StartActionMeter(inst, 43*FRAMES)
-                end
-                if inst.bufferedaction.target ~= nil and inst.bufferedaction.target:IsValid() then
-                    inst.bufferedaction.target:PushEvent("startlongaction")
-                end
-            end
-        end,
-
-        timeline =
-        {
-            TimeEvent(4*FRAMES, function(inst)
-                inst.sg:RemoveStateTag("busy")
-            end),
-            TimeEvent(15*FRAMES, function(inst)
-                inst.SoundEmitter:PlaySound("dontstarve/beefalo/saddle/dismount")
-            end),
-        },
-
-        events =
-        {
-            EventHandler("animqueueover", function(inst)
-                if inst.sg.statemem.actionmeter then
-                    inst.sg.statemem.actionmeter = nil
-                    StopActionMeter(inst, true)
-                end
-                inst:PerformBufferedAction()
-            end),
-        },
-
-        onexit = function(inst)
-            if inst.sg.statemem.actionmeter then
-                StopActionMeter(inst, false)
-            end
-            if inst.bufferedaction == inst.sg.statemem.action then
-                inst:ClearBufferedAction()
             end
         end,
     },

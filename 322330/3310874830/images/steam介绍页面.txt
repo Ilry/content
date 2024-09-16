@@ -1,0 +1,37 @@
+[h1]Item Description:[/h1] You can put items into it for dismantling, just like a Deconstruction Staff, but only half of the items are returned.
+[IMG]https://steamuserimages-a.akamaihd.net/ugc/2429215282091022360/D9DEE323E9638D7EEBF2354BA484FBD04A575533/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false[/IMG]
+[h1]Recipe[/h1]
+Science_Two - PROTOTYPERS or STRUCTURES
+
+[hr][/hr]
+
+[h1]BUG feedback/Suggestion? [/h1]
+If you unfortunately encounter game errors, crashes, exceptions, etc., please contact me in the comment area or through other methods. BUG error feedback, please attach a log [Applicable to all Mods]
+
+Local archive file storage location:
+C:\Users\***\Documents\Klei\DoNotStarveTogether\master_server_log.txt
+C:\Users\***\Documents\Klei\DoNotStarveTogether\caves_server_log.txt
+C:\Users\***\Documents\Klei\DoNotStarveTogether\client_log.txt
+Server file storage location:
+C:\Users\***\Documents\Klei\DoNotStarveTogetherBetaBranch\master_server_log.txt
+C:\Users\***\Documents\Klei\DoNotStarveTogetherBetaBranch\caves_server_log.txt
+C:\Users\***\Documents\Klei\DoNotStarveTogetherBetaBranch\client_log.txtea
+
+CN/
+[h1]物品描述：[/h1]可以将物品放入其中拆解，功能与拆解魔杖一样，但是只有一半返还。
+[IMG]https://steamuserimages-a.akamaihd.net/ugc/2429215282091022360/D9DEE323E9638D7EEBF2354BA484FBD04A575533/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false[/IMG]
+[h1]配方[/h1]
+二本科学-建筑/科学
+
+[hr][/hr]
+
+[h1]BUG反馈/建议？[/h1]
+如果您不幸遇到游戏错误、崩溃、异常等，请在评论区或通过其他方式与我联系。BUG错误反馈，请附上日志[适用于所有模组]
+Local archive file storage location:
+C:\Users\***\Documents\Klei\DoNotStarveTogether\master_server_log.txt
+C:\Users\***\Documents\Klei\DoNotStarveTogether\caves_server_log.txt
+C:\Users\***\Documents\Klei\DoNotStarveTogether\client_log.txt
+Server file storage location:
+C:\Users\***\Documents\Klei\DoNotStarveTogetherBetaBranch\master_server_log.txt
+C:\Users\***\Documents\Klei\DoNotStarveTogetherBetaBranch\caves_server_log.txt
+C:\Users\***\Documents\Klei\DoNotStarveTogetherBetaBranch\client_log.txtea

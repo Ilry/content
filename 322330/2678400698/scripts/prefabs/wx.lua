@@ -989,6 +989,8 @@ local function fn()
 
         MakeCharacterPhysics(inst, 75, .5)
 
+        inst.isplayer = true
+
         inst:AddTag("character")
         inst:AddTag("wx")
         inst:AddTag("companion")
@@ -997,6 +999,7 @@ local function fn()
         inst:AddTag("soulless")
         inst:AddTag("notraptrigger")
         inst:AddTag("scarytoprey")
+        inst:AddTag("devourable")
         inst:AddTag("NOBLOCK")
         inst:AddTag("multiplayer_portal")
 
@@ -1029,6 +1032,8 @@ local function fn()
 
         ----------------------------------------------------------------
         inst.ShakeCamera = function(inst, mode, duration, speed, scale, source_or_pt, maxDist) end
+        inst.AddCameraExtraDistance = function(inst, source, distance, key) end
+        inst.RemoveCameraExtraDistance = function(inst, source, key) end
 
         ----------------------------------------------------------------
         inst:AddComponent("inspectable")

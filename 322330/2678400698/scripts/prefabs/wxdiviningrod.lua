@@ -74,7 +74,7 @@ local function CheckTargetPiece(inst, SCALE_COUNTER)
         if closeness ~= inst.closeness then
             inst.closeness = closeness
             local desc = inst.components.inspectable:GetDescription(inst.components.inventoryitem.owner)
-            if desc then
+            if desc and inst.components.inventoryitem.owner.components.talker then
                 inst.components.inventoryitem.owner.components.talker:Say(desc)
             end
         end

@@ -26,6 +26,16 @@ local RUN_AWAY_DIST = 6
 local STOP_RUN_AWAY_DIST = 8
 
 local AVOID_EXPLOSIVE_DIST = 6
+
+local function ShouldNotWork(inst)
+    return inst.sg:HasStateTag("nointerrupt") or
+        inst.sg:HasStateTag("knockback") or
+        inst.sg:HasStateTag("devoured") or
+        inst.sg:HasStateTag("suspended") or
+        inst.sg:HasStateTag("mounting") or
+        inst.sg:HasStateTag("dismounting")
+end
+
 local function ShouldAvoidExplosive(target)
     return target.components.explosive == nil
         or target.components.burnable == nil
@@ -34,7 +44,6 @@ end
 
 local FIND_BLOCKER_MUST_TAG = { "blocker" }
 local FIND_CONTAINER_ONE_OF_TAGS = { "_container", "wx" }
--- Make room for players to click containers.
 local function FindOpenSpace(inst, sentryward)
     local pt = sentryward:GetPosition()
     local result_offset = nil
@@ -135,6 +144,8 @@ end
 function WXBrain:OnStart()
     local root = PriorityNode(
     {
+        -- Controller Malfunction
+        StandStill(self.inst, ShouldNotWork, ShouldNotWork),
         -- Evades Explosives
         RunAway(self.inst, { fn = ShouldAvoidExplosive, tags = { "explosive" }, notags = { "INLIMBO" } }, AVOID_EXPLOSIVE_DIST, AVOID_EXPLOSIVE_DIST),
         -- Evades Hostile
@@ -813,9 +824,7 @@ function WXBrain:OnStart()
                 ),
                 -- Is Pastoral
                 IfNode(
-                    function() return self.inst.components.wxtype:IsPast() and
-                        not (self.inst.sg:HasStateTag("busy") and self.inst.sg:HasStateTag("dismounting"))
-                    end, "Raise Herds",
+                    function() return self.inst.components.wxtype:IsPast() end, "Raise Herds",
                     SelectorNode({
                         -- Picks up materials
                         IfNode(
@@ -1296,9 +1305,7 @@ function WXBrain:OnStart()
                 ),
                 -- Is Pastoral
                 IfNode(
-                    function() return self.inst.components.wxtype:IsPast() and
-                        not (self.inst.sg:HasStateTag("busy") and self.inst.sg:HasStateTag("dismounting"))
-                    end, "Raise Herds",
+                    function() return self.inst.components.wxtype:IsPast() end, "Raise Herds",
                     SelectorNode({
                         -- Picks up materials
                         IfNode(
