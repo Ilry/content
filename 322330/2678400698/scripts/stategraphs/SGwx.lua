@@ -44,7 +44,7 @@ local function ConfigureRunState(inst)
         local mount = inst.components.rider:GetMount()
         inst.sg.statemem.ridingwoby = mount and mount:HasTag("woby")
 
-    elseif inst:GetStormLevel() >= TUNING.SANDSTORM_FULL_LEVEL and not inst.components.inventory:EquipHasTag("goggles") then
+    elseif inst:IsInAnyStormOrCloud() and not inst.components.inventory:EquipHasTag("goggles") then
         inst.sg.statemem.sandstorm = true
     elseif inst:HasTag("groggy") then
         inst.sg.statemem.groggy = true
@@ -845,6 +845,13 @@ local events =
         end
     end),
 
+    EventHandler("onfallinvoid", function(inst, data)
+        if not inst.components.health:IsDead() and not inst.sg:HasStateTag("falling") and
+            (inst.components.drownable ~= nil and inst.components.drownable:ShouldFallInVoid()) then
+            inst.sg:GoToState("abyss_fall", data and data.teleport_pt or nil)
+        end
+    end),
+
     EventHandler("dismount",
         function(inst)
             if not inst.sg:HasStateTag("dismounting") and inst.components.rider:IsRiding() then
@@ -1096,15 +1103,22 @@ local states =
         tags = {"idle", "canrotate"},
 
         onenter = function(inst, pushanim)
+            --inst.components.locomotor:Stop()
             inst.Physics:Stop()
 
+            local drownable = inst.components.drownable
+            if drownable then
+                local fallingreason = drownable:GetFallingReason()
+                if fallingreason == FALLINGREASON.OCEAN then
+                    inst.sg:GoToState("sink_fast")
+                    return
+                elseif fallingreason == FALLINGREASON.VOID then
+                    inst.sg:GoToState("abyss_fall")
+                    return
+                end
+            end
             if inst.components.drydrownable ~= nil and inst.components.drydrownable:ShouldDrown() then
                 inst:PushEvent("onhitcoastline")
-            end
-
-            if inst.components.drownable ~= nil and inst.components.drownable:ShouldDrown() then
-                inst.sg:GoToState("sink_fast")
-                return
             end
 
             inst.sg.statemem.ignoresandstorm = true
@@ -1120,11 +1134,21 @@ local states =
                 return
             end
 
+            if inst.sg.mem.queuetalk_timeout ~= nil then
+                local remaining_talk_time = inst.sg.mem.queuetalk_timeout - GetTime()
+                inst.sg.mem.queuetalk_timeout = nil
+                if not (pushanim or inst:HasTag("ignoretalking")) then
+                    if remaining_talk_time > 1 then
+                        inst.sg:GoToState("talk")
+                        return
+                    end
+                end
+            end
+
             local anims = {}
 
             inst.sg.statemem.ignoresandstorm = false
-            if inst:GetStormLevel() >= TUNING.SANDSTORM_FULL_LEVEL
-                and not inst.components.inventory:EquipHasTag("goggles") then
+            if inst:IsInAnyStormOrCloud() and not inst.components.inventory:EquipHasTag("goggles") then
                 if not (inst.AnimState:IsCurrentAnimation("sand_walk_pst") or
                         inst.AnimState:IsCurrentAnimation("sand_walk") or
                         inst.AnimState:IsCurrentAnimation("sand_walk_pre")) then
@@ -1172,6 +1196,17 @@ local states =
             EventHandler("sandstormlevel", function(inst, data)
                 if not inst.sg.statemem.ignoresandstorm then
                     if data.level < TUNING.SANDSTORM_FULL_LEVEL then
+                        if inst.sg.statemem.sandstorm then
+                            inst.sg:GoToState("idle")
+                        end
+                    elseif not (inst.sg.statemem.sandstorm or inst.components.inventory:EquipHasTag("goggles")) then
+                        inst.sg:GoToState("idle")
+                    end
+                end
+            end),
+            EventHandler("miasmalevel", function(inst, data)
+                if not inst.sg.statemem.ignoresandstorm then
+                    if data.level < 1 then
                         if inst.sg.statemem.sandstorm then
                             inst.sg:GoToState("idle")
                         end
@@ -1486,12 +1521,25 @@ local states =
                             inst.sg.statemem.heavy or
                             inst.sg.statemem.iswere or
                             inst.sg.statemem.sandstorm or
-                            inst:GetStormLevel() < TUNING.SANDSTORM_FULL_LEVEL) then
+                            inst:IsInAnyStormOrCloud()) then
                     inst.sg:GoToState("run")
                 end
             end),
             EventHandler("sandstormlevel", function(inst, data)
                 if data.level < TUNING.SANDSTORM_FULL_LEVEL then
+                    if inst.sg.statemem.sandstorm then
+                        inst.sg:GoToState("run")
+                    end
+                elseif not (inst.sg.statemem.riding or
+                            inst.sg.statemem.heavy or
+                            inst.sg.statemem.iswere or
+                            inst.sg.statemem.sandstorm or
+                            inst.components.inventory:EquipHasTag("goggles")) then
+                    inst.sg:GoToState("run")
+                end
+            end),
+            EventHandler("miasmalevel", function(inst, data)
+                if data.level < 1 then
                     if inst.sg.statemem.sandstorm then
                         inst.sg:GoToState("run")
                     end
@@ -4789,6 +4837,158 @@ local states =
         },
     },
 
+    State{
+        name = "abyss_fall",
+        tags = { "busy", "nopredict", "nomorph", "noattack", "nointerrupt", "nodangle", "falling" },
+        onenter = function(inst, teleport_pt)
+            inst.components.rider:ActualDismount()
+            inst.components.locomotor:Stop()
+            inst.components.locomotor:Clear()
+            inst:ClearBufferedAction()
+
+            inst.AnimState:PlayAnimation("abyss_fall")
+            if inst.components.drownable then
+                local teleport_x, teleport_y, teleport_z
+                if teleport_pt then
+                    teleport_x, teleport_y, teleport_z = teleport_pt:Get()
+                end
+                inst.components.drownable:OnFallInVoid(teleport_x, teleport_y, teleport_z)
+            end
+            inst.DynamicShadow:Enable(false)
+            ToggleOffPhysics(inst)
+            if inst.components.playercontroller then
+                inst.components.playercontroller:Enable(false)
+            end
+            inst.components.health:SetInvincible(true)
+        end,
+
+        timeline =
+        {
+            FrameEvent(22, function(inst)
+                inst.AnimState:SetLayer(LAYER_BELOW_GROUND)
+            end),
+            FrameEvent(30, function(inst)
+                inst.sg:AddStateTag("invisible")
+                inst:Hide()
+            end),
+            TimeEvent(2.5, function(inst)
+                inst.sg.statemem.falling = true
+                if inst.components.drownable ~= nil then
+                    inst.components.drownable:Teleport()
+                else
+                    inst:PutBackOnGround()
+                end
+                inst.sg:GoToState("abyss_drop")
+            end),
+        },
+
+        onexit = function(inst)
+            inst.AnimState:SetLayer(LAYER_WORLD)
+            inst.DynamicShadow:Enable(true)
+            inst:Show()
+            if not inst.sg.statemem.falling then
+                ToggleOnPhysics(inst)
+                inst.components.health:SetInvincible(false)
+            end
+            if inst.components.playercontroller then
+                inst.components.playercontroller:Enable(true)
+            end
+        end,
+    },
+
+    State{
+        name = "abyss_drop",
+        tags = { "busy", "nopredict", "nomorph", "noattack", "nointerrupt", "nodangle", "overridelocomote", "falling" },
+
+        onenter = function(inst)
+            inst.components.rider:ActualDismount()
+            inst.components.locomotor:Stop()
+            inst.components.locomotor:Clear()
+            inst:ClearBufferedAction()
+
+            inst.AnimState:PlayAnimation("fall_high")
+
+            ToggleOffPhysics(inst)
+            inst.components.health:SetInvincible(true)
+
+            inst.sg:SetTimeout(2)
+        end,
+
+        timeline =
+        {
+            FrameEvent(12, function(inst)
+                inst.SoundEmitter:PlaySound("dontstarve/movement/bodyfall_dirt")
+            end),
+            FrameEvent(14, function(inst)
+                inst.sg:RemoveStateTag("noattack")
+                inst.sg:RemoveStateTag("nointerrupt")
+                ToggleOnPhysics(inst)
+                inst.components.health:SetInvincible(false)
+            end),
+            FrameEvent(15, function(inst)
+                inst.sg.statemem.trackcontrol = true
+            end),
+        },
+
+        ontimeout = function(inst)
+            inst.sg:GoToState("abyss_drop_pst")
+        end,
+
+        events =
+        {
+            EventHandler("locomote", function(inst, data)
+                if data and data.remoteoverridelocomote or inst.components.locomotor:WantsToMoveForward() then
+                    if inst.AnimState:AnimDone() then
+                        inst.sg:GoToState("abyss_drop_pst")
+                    elseif inst.sg.statemem.trackcontrol then
+                        inst.sg.statemem.getup = true
+                    end
+                end
+                return true
+            end),
+            EventHandler("animover", function(inst)
+                if inst.AnimState:AnimDone() then
+                    if inst.sg.statemem.getup then
+                        inst.sg:GoToState("abyss_drop_pst")
+                    end
+                end
+            end),
+        },
+
+        onexit = function(inst)
+            if inst.sg.statemem.isphysicstoggle then
+                ToggleOnPhysics(inst)
+            end
+            inst.components.health:SetInvincible(false)
+        end,
+    },
+
+    State{
+        name = "abyss_drop_pst",
+        tags = { "busy", "nomorph", "nodangle", "falling" },
+
+        onenter = function(inst)
+            inst.AnimState:PlayAnimation("buck_pst")
+        end,
+
+        timeline =
+        {
+            TimeEvent(27 * FRAMES, function(inst)
+                inst.sg:RemoveStateTag("busy")
+                inst.sg:RemoveStateTag("nomorph")
+            end),
+        },
+
+        events =
+        {
+            EventHandler("animover", function(inst)
+                if inst.AnimState:AnimDone() then
+                    inst.sg:GoToState("idle")
+                end
+            end),
+        },
+    },
+
     ------------------------
     -- Mariculture States --
     ------------------------
@@ -5612,7 +5812,7 @@ local states =
                 return
             end
 
-            if inst:GetStormLevel() >= TUNING.SANDSTORM_FULL_LEVEL and not inst.components.inventory:EquipHasTag("goggles") then
+            if inst:IsInAnyStormOrCloud() and not inst.components.inventory:EquipHasTag("goggles") then
                 if pushanim then
                     inst.AnimState:PushAnimation("sand_idle_pre")
                 else
@@ -5634,6 +5834,15 @@ local states =
         {
             EventHandler("sandstormlevel", function(inst, data)
                 if data.level < TUNING.SANDSTORM_FULL_LEVEL then
+                    if inst.sg.statemem.sandstorm then
+                        inst.sg:GoToState("mounted_idle")
+                    end
+                elseif not (inst.sg.statemem.sandstorm or inst.components.inventory:EquipHasTag("goggles")) then
+                    inst.sg:GoToState("mounted_idle")
+                end
+            end),
+            EventHandler("miasmalevel", function(inst, data)
+                if data.level < 1 then
                     if inst.sg.statemem.sandstorm then
                         inst.sg:GoToState("mounted_idle")
                     end
@@ -6925,7 +7134,6 @@ local states =
 
         timeline=
         {
-
             TimeEvent(12*FRAMES, function(inst)
                 inst:PerformBufferedAction()
                 inst.components.combat:DoAttack(inst.sg.statemem.target)
@@ -7086,12 +7294,28 @@ local hop_timelines =
     },
 }
 
-local function landed_in_water_state(inst)
-    return (inst.components.drownable ~= nil and inst.components.drownable:ShouldDrown() and "sink") or nil
+local function landed_in_falling_state(inst)
+    if inst.components.drownable == nil then
+        return nil
+    end
+
+    local fallingreason = inst.components.drownable:GetFallingReason()
+    if fallingreason == nil then
+        return nil
+    end
+
+    if fallingreason == FALLINGREASON.OCEAN then
+        return "sink"
+    elseif fallingreason == FALLINGREASON.VOID then
+        return "abyss_fall"
+    end
+
+    return nil -- TODO(JBK): Fallback for unknown falling reason?
 end
 
 local hop_anims = { pre = "boat_jump_pre", loop = "boat_jump_loop", pst = "boat_jump_pst" }
 
-CommonStates.AddHopStates(states, true, hop_anims, hop_timelines, "turnoftides/common/together/boat/jump_on", landed_in_water_state, {start_embarking_pre_frame = 4*FRAMES})
+CommonStates.AddRowStates(states, false)
+CommonStates.AddHopStates(states, true, hop_anims, hop_timelines, "turnoftides/common/together/boat/jump_on", landed_in_falling_state, {start_embarking_pre_frame = 4*FRAMES})
 
 return StateGraph("wx", states, events, "idle", actionhandlers)

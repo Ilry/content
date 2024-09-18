@@ -69,7 +69,7 @@ local function GetNextPlantPoint(tile_x, tile_y, number, marblebean)
 end
 
 local ICEBOX_TAG = { "_container", "fridge" }
-local TOWORK_CANT_TAGS = { "fire", "smolder", "INLIMBO", "NOCLICK", "event_trigger" }
+local TOWORK_CANT_TAGS = { "fire", "smolder", "INLIMBO", "NOCLICK", "event_trigger", "ancienttree" }
 function WXMiningIndustry:Mine()
     local action = ACTIONS.MINE
     local leader = self.inst.components.follower.leader or self.inst.components.entitytracker:GetEntity("sentryward")

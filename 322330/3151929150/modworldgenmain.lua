@@ -520,6 +520,15 @@ local function table_to_json_file(tbl, filename)
 	end
 end
 
+-- Function to insert a new seed into the top_seeds table
+local function insert_seed(seed, score, xz)
+    table.insert(_G.top_seeds, {seed = seed, score = score, xz = xz})
+    table.sort(_G.top_seeds, function(a, b) return a.score < b.score end)
+    if #_G.top_seeds > 10 then
+        table.remove(_G.top_seeds, 11)
+    end
+end
+
 function BFS(grid, sources, extra_edges)
     local queue = {}
     local visited = {}
@@ -1281,6 +1290,11 @@ local function get_wormwhole_pairs(savedata, world_id, my_log_file)
     if wormholes == nil then
         print("[Search your map] wormholes is nil")
         return nil
+    end
+
+    if _G[world_id].allow_wormwhole == false then
+        print("[Search your map] wormhole pairs is not allowed to use")
+        return {}
     end
     
     local collected_wormholes = {}
@@ -2313,10 +2327,15 @@ local function check_save_data(savedata, world_id, my_log_file)
     local time_for_get_save_data_score = end_time - start_time
     print("[Search your map] time for get_save_data_score:", time_for_get_save_data_score)
     if entity_and_region_exist then
+        if not _G.top_seeds then
+            _G.top_seeds = {}
+        end
+
         _G.num_of_good_seeds_found = _G.num_of_good_seeds_found + 1
         print("[Search your map] get a possible seed")
-        print(_G.min_distance_so_far)
-        print(map_score)
+        print("[Search your map]", _G.min_distance_so_far)
+        print("[Search your map]", map_score)
+        insert_seed(SEED, map_score, best_xz)
         if _G.min_distance_so_far > map_score then
             _G.min_distance_so_far = map_score
             BEST_SEED_SO_FAR = SEED
@@ -2589,17 +2608,23 @@ end
 local function print_statistic(my_log_file, world_id)
     -- save to the file, record in the format [data] success_rate together with with original data [success_times/check_times]
     -- Insert setpieces
+    local CH = _G.locale_search_your_map
     local check_times = _G[world_id].check_statistic["insert_setpieces"]["check_times"]
     local success_times = _G[world_id].check_statistic["insert_setpieces"]["success_times"]
     local success_rate = success_times / check_times
-    my_log_file:write(os.date("%H:%M:%S", os.time()) .. "Insert setpieces: " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
+    my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "Insert setpieces: " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
     -- required_entities
     for i, entity in ipairs(_G[world_id].required_entities) do
         local entity_name = entity["name"]
         local check_times = _G[world_id].check_statistic["required_entities"][entity_name]["check_times"]
         local success_times = _G[world_id].check_statistic["required_entities"][entity_name]["success_times"]
         local success_rate = success_times / check_times
-        my_log_file:write(os.date("%H:%M:%S", os.time()) .. "required_entities: " .. entity_name .. " " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
+        if not CH then
+            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "required_entities: " .. entity_name .. " success_rate " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
+        else
+            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "实体个数: " .. entity_name .. " 成功率 " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
+        end
+        -- my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "required_entities: " .. entity_name .. " " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
     end
     -- entities_less_than
     for i, entity in ipairs(_G[world_id].entities_less_than) do
@@ -2607,7 +2632,12 @@ local function print_statistic(my_log_file, world_id)
         local check_times = _G[world_id].check_statistic["entities_less_than"][entity_name]["check_times"]
         local success_times = _G[world_id].check_statistic["entities_less_than"][entity_name]["success_times"]
         local success_rate = success_times / check_times
-        my_log_file:write(os.date("%H:%M:%S", os.time()) .. "entities_less_than: " .. entity_name .. " " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
+        if not CH then
+            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "entities_less_than: " .. entity_name .. " success_rate " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
+        else
+            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "实体个数: " .. entity_name .. " 成功率 " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
+        end
+        -- my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "entities_less_than: " .. entity_name .. " " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
     end
     -- room_number_setting
     for task_need_custom_room, room_requirements in pairs(_G[world_id].room_number_setting) do
@@ -2615,7 +2645,12 @@ local function print_statistic(my_log_file, world_id)
             local check_times = _G[world_id].check_statistic["room_number_setting"][task_need_custom_room.."_"..room_name]["check_times"]
             local success_times = _G[world_id].check_statistic["room_number_setting"][task_need_custom_room.."_"..room_name]["success_times"]
             local success_rate = success_times / check_times
-            my_log_file:write(os.date("%H:%M:%S", os.time()) .. "room_number_setting: " .. task_need_custom_room.."_"..room_name .. " " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
+            if not CH then
+                my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "room_number_setting: " .. task_need_custom_room.."_"..room_name .. " success_rate " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
+            else
+                my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "远古房间个数: " .. task_need_custom_room.."_"..room_name .. " 成功率 " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
+            end
+            -- my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "room_number_setting: " .. task_need_custom_room.."_"..room_name .. " " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
         end
     end
     -- near_entities
@@ -2624,7 +2659,12 @@ local function print_statistic(my_log_file, world_id)
         local check_times = _G[world_id].check_statistic["near_entities"][entity_name]["check_times"]
         local success_times = _G[world_id].check_statistic["near_entities"][entity_name]["success_times"]
         local success_rate = success_times / check_times
-        my_log_file:write(os.date("%H:%M:%S", os.time()) .. "near_entities: " .. entity_name .. " " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
+        if not CH then
+            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "near_entities: " .. entity_name .. " success_rate " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
+        else
+            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "靠近实体: " .. entity_name .. " 成功率 " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
+        end
+        -- my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "near_entities: " .. entity_name .. " " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
     end
     -- far_entities
     for i, entity in ipairs(_G[world_id].far_entities) do
@@ -2632,7 +2672,12 @@ local function print_statistic(my_log_file, world_id)
         local check_times = _G[world_id].check_statistic["far_entities"][entity_name]["check_times"]
         local success_times = _G[world_id].check_statistic["far_entities"][entity_name]["success_times"]
         local success_rate = success_times / check_times
-        my_log_file:write(os.date("%H:%M:%S", os.time()) .. "far_entities: " .. entity_name .. " " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
+        if not CH then
+            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "far_entities: " .. entity_name .. " success_rate " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
+        else
+            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "远离实体: " .. entity_name .. " 成功率 " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
+        end
+        -- my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "far_entities: " .. entity_name .. " " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
     end
     -- near_regions
     for i, node in ipairs(_G[world_id].near_regions) do
@@ -2640,27 +2685,54 @@ local function print_statistic(my_log_file, world_id)
         local check_times = _G[world_id].check_statistic["near_regions"][node_name]["check_times"]
         local success_times = _G[world_id].check_statistic["near_regions"][node_name]["success_times"]
         local success_rate = success_times / check_times
-        my_log_file:write(os.date("%H:%M:%S", os.time()) .. "near_regions: " .. node_name .. " " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
+        if not CH then
+            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "near_regions: " .. node_name .. " success_rate " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
+        else
+            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "靠近区域: " .. node_name .. " 成功率 " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
+        end
+        -- my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "near_regions: " .. node_name .. " " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
     end
     -- master_moon_island_connect
     if _G[world_id].moon_island_connect~="not set" then
         local check_times = _G[world_id].check_statistic["moon_island_connect"]["check_times"]
         local success_times = _G[world_id].check_statistic["moon_island_connect"]["success_times"]
         local success_rate = success_times / check_times
-        my_log_file:write(os.date("%H:%M:%S", os.time()) .. "moon_island_connect: " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
+        if not CH then
+            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "moon_island_connect success_rate: " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
+        else
+            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "月岛连大陆成功率: " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
+        end
+        -- my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "moon_island_connect: " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
     end
     if _G[world_id].ancient_connect~="not set" then
         local check_times = _G[world_id].check_statistic["ancient_connect"]["check_times"]
         local success_times = _G[world_id].check_statistic["ancient_connect"]["success_times"]
         local success_rate = success_times / check_times
-        my_log_file:write(os.date("%H:%M:%S", os.time()) .. "ancient_connect: " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
+        if not CH then
+            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "ancient_connect success_rate: " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
+        else
+            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "远古连大陆成功率: " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
+        end
+        -- my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "ancient_connect: " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
     end
     if BEST_SEED_SO_FAR ~= nil then
-        my_log_file:write(os.date("%H:%M:%S", os.time()) .. "BEST_SEED_SO_FAR: " .. BEST_SEED_SO_FAR .."\n")
+        if not CH then
+            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "BEST_SEED_SO_FAR: " .. BEST_SEED_SO_FAR .."\n")
+        else
+            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "当前最佳种子: " .. BEST_SEED_SO_FAR .."\n")
+        end
+        -- my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "BEST_SEED_SO_FAR: " .. BEST_SEED_SO_FAR .."\n")
     end
     if _G.best_xz_for_best_seed ~= nil then
-        my_log_file:write(os.date("%H:%M:%S", os.time()) .. "best location for your home: " .. _G.best_xz_for_best_seed[1] .. " " .. _G.best_xz_for_best_seed[2] .."\n")
-        my_log_file:write(os.date("%H:%M:%S", os.time()) .. "you can use: c_teleport( ".. _G.best_xz_for_best_seed[1] .. ", 0, " .. _G.best_xz_for_best_seed[2] ..") to go to the best place for your base\n")
+        if not CH then
+            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "best location for your home: " .. _G.best_xz_for_best_seed[1] .. " " .. _G.best_xz_for_best_seed[2] .."\n")
+            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "you can use: c_teleport( ".. _G.best_xz_for_best_seed[1] .. ", 0, " .. _G.best_xz_for_best_seed[2] ..") to go to the best place for your base\n")
+        else
+            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "最佳建家位置: " .. _G.best_xz_for_best_seed[1] .. " " .. _G.best_xz_for_best_seed[2] .."\n")
+            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "你可以在控制台使用: c_teleport( ".. _G.best_xz_for_best_seed[1] .. ", 0, " .. _G.best_xz_for_best_seed[2] ..") 命令去到最佳建家位置\n")
+        end
+        -- my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "best location for your home: " .. _G.best_xz_for_best_seed[1] .. " " .. _G.best_xz_for_best_seed[2] .."\n")
+        -- my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "you can use: c_teleport( ".. _G.best_xz_for_best_seed[1] .. ", 0, " .. _G.best_xz_for_best_seed[2] ..") to go to the best place for your base\n")
     end
 
     
@@ -2669,10 +2741,46 @@ local function print_statistic(my_log_file, world_id)
 
     local time_cost_per_seed = total_time_cost / _G.num_of_good_seeds_found
     local time_left = time_cost_per_seed * (_G[world_id]["repeat_times"] - _G.num_of_good_seeds_found)
-    my_log_file:write(os.date("%H:%M:%S", os.time()) .. "total time cost: " .. convertSecondsToHMS(total_time_cost) .. "s\n")
-    my_log_file:write(os.date("%H:%M:%S", os.time()) .. "time cost per seed: " .. convertSecondsToHMS(time_cost_per_seed) .. "s\n")
-    my_log_file:write(os.date("%H:%M:%S", os.time()) .. "time left: " .. convertSecondsToHMS(time_left) .. "s\n")
-    my_log_file:write(os.date("%H:%M:%S", os.time()) .. "num_of_good_seeds_found: " .. _G.num_of_good_seeds_found .."\n")
+    if not CH then
+        my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "total time cost: " .. convertSecondsToHMS(total_time_cost) .. "s\n")
+        my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "time cost per seed: " .. convertSecondsToHMS(time_cost_per_seed) .. "s\n")
+        my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "time left: " .. convertSecondsToHMS(time_left) .. "s\n")
+        my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "num_of_good_seeds_found: " .. _G.num_of_good_seeds_found .."\n")
+    else
+        my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "总耗时: " .. convertSecondsToHMS(total_time_cost) .. "s\n")
+        my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "每个种子耗时: " .. convertSecondsToHMS(time_cost_per_seed) .. "s\n")
+        my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "剩余时间: " .. convertSecondsToHMS(time_left) .. "s\n")
+        my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "已找到的满足约束的种子数量: " .. _G.num_of_good_seeds_found .."\n")
+    end
+    -- my_log_file:write(os.date("%H:%M:%S", os.time()) .. "total time cost: " .. convertSecondsToHMS(total_time_cost) .. "s\n")
+    -- my_log_file:write(os.date("%H:%M:%S", os.time()) .. "time cost per seed: " .. convertSecondsToHMS(time_cost_per_seed) .. "s\n")
+    -- my_log_file:write(os.date("%H:%M:%S", os.time()) .. "time left: " .. convertSecondsToHMS(time_left) .. "s\n")
+    -- my_log_file:write(os.date("%H:%M:%S", os.time()) .. "num_of_good_seeds_found: " .. _G.num_of_good_seeds_found .."\n")
+
+    local top_seeds = _G.top_seeds or {}
+    if #top_seeds > 1 then
+        if not CH then
+            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "top 10 seeds (if your weight parameters are not good enough, it may cause the map not as expected, consider reset the parameters, or you can try the following):\n")
+        else
+            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "前10个种子（如果你的权重参数设置不够好，可能会导致地图不及预期，考虑重新设置参数，或者你也可以试试下面的怎么样）:\n")
+        end
+    end
+    for i, seed in ipairs(top_seeds) do
+        if not CH then
+            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "seed: " ..seed.seed.. " score: " .. seed.score .. " location: c_teleport(" .. seed.xz[1] .. ", 0, " .. seed.xz[2] ..")\n")
+        else
+            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "种子: " ..seed.seed.. " 得分: " .. seed.score .. " 位置: c_teleport(" .. seed.xz[1] .. ", 0, " .. seed.xz[2] ..")\n")
+        end
+    end
+end
+
+
+local function insert_seed(seed, score, xz)
+    table.insert(_G.top_seeds, {seed = seed, score = score, xz = xz})
+    table.sort(_G.top_seeds, function(a, b) return a.score < b.score end)
+    if #_G.top_seeds > 10 then
+        table.remove(_G.top_seeds, 11)
+    end
 end
 
 -- Clearlove modify this function (add a while loop)
@@ -2721,6 +2829,7 @@ local function LoadParametersAndGenerate(debug)
             package.loaded["map/layouts"] = nil
         end
         SEED = SetWorldGenSeed(SEED+1)
+        print("[Search your map] **************SEED***********************: "..SEED)
         generated_data = GenerateNew(debug, world_gen_data)
     end
 

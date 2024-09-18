@@ -63,10 +63,10 @@ function lol_heartsteel_num:FindMob()
     local x,y,z = self.inst:GetPosition():Get()
     if x and y and z then 
         -- print('---------------------------')
-        local ents = TheSim:FindEntities(x,y,z,5,{'locomotor','_combat'}, {'INLIMBO','player','fx'})
+        local ents = TheSim:FindEntities(x,y,z,5,{'_combat'}, {'INLIMBO','player','fx'})
         for _,v in pairs(ents) do 
             -- print(v)
-            if v:IsValid() and v.components and v.components.health and not v.components.health:IsDead() and v.components.health.maxhealth >= 2500 then 
+            if v:IsValid() and v.components and v.components.health and not v.components.health:IsDead() and v:HasTag('epic') then 
                 -- local allow_to_continue = true
                 if v.lol_heartsteel_hited == nil then 
                     v.lol_heartsteel_hited = false 
@@ -130,10 +130,21 @@ function lol_heartsteel_num:UpdateHP(player,back)
 end
 
 function lol_heartsteel_num:ChangeScale(player)
+    -- 自身缩放
+    self:ChangeScaleSelf()
+
+    -- 玩家缩放
+    local config = TUNING.CONFIG_LIMIT_LOL_HEARTSTEEL_TRANSFORM_SCALE
+    if config == 0 then 
+        return 
+    end
+
     local size = math.floor(self.num/per_hp)*.1 + 1
+    if config == 1 then
+        size = math.min(size, 1.4)
+    end
     player.Transform:SetScale(size,size,size)
 
-    self:ChangeScaleSelf()
 end
 
 

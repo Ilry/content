@@ -1084,10 +1084,8 @@ local function fn()
         inst.components.locomotor.fasteronroad = true
         inst.components.locomotor:SetTriggersCreep(true)
         inst.components.locomotor:SetAllowPlatformHopping(true)
-        if TheWorld.has_ocean then
-            inst:AddComponent("embarker")
-            inst:AddComponent("drownable")
-        end
+        inst:AddComponent("embarker")
+        inst:AddComponent("drownable")
 
         inst:AddComponent("follower")
         inst.components.follower.leader = nil
@@ -1153,16 +1151,18 @@ local function fn()
         inst:AddComponent("moisture")
         inst:AddComponent("sheltered")
         inst:AddComponent("stormwatcher")
-        inst.GetStormLevel = function(inst)
-            local stormwatcher = inst.components.stormwatcher
-            return stormwatcher and stormwatcher.stormlevel or 0
-        end
+        inst.GetStormLevel = function(inst) return inst.components.stormwatcher:GetStormLevel() end
         inst:AddComponent("sandstormwatcher")
         inst.components.sandstormwatcher.UpdateSandstormWalkSpeed_Internal = UpdateSandstormWalkSpeed_Internal
         inst:AddComponent("moonstormwatcher")
         inst.components.moonstormwatcher.UpdateMoonstormWalkSpeed_Internal = UpdateMoonstormWalkSpeed_Internal
         inst:AddComponent("miasmawatcher")
         inst.components.miasmawatcher.UpdateMiasmaWalkSpeed = UpdateMiasmaWalkSpeed
+        inst.IsInMiasma = function(inst) return inst.components.miasmawatcher:IsInMiasma() end
+        inst.IsInAnyStormOrCloud = function(inst)
+            return inst.components.stormwatcher:GetStormLevel() >= TUNING.SANDSTORM_FULL_LEVEL or
+                inst.components.miasmawatcher:IsInMiasma()
+        end
         inst:AddComponent("acidlevel")
         inst:AddComponent("carefulwalker")
 

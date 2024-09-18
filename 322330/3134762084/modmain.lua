@@ -3,44 +3,40 @@ GLOBAL.setmetatable(env,{__index=function(t,k) return GLOBAL.rawget(GLOBAL,k) en
 
 local UIAnim = require "widgets/uianim"
 
-TUNING.WX78_MAXELECTRICCHARGE=24
+-- local SLOT_COUNT = GetModConfigData("slot_count")
+local SLOT_COUNT = 24 
+TUNING.WX78_MAXELECTRICCHARGE= SLOT_COUNT
 
 TUNING.WX78_MOVESPEED_CHIPBOOSTS={0.00, 0.25, 0.40, 0.50, 0.60, 0.70, 0.80, 0.90, 1, 1.10, 1.20, 1.30, 1.40}
-
 local OnUpgradeModulesListDirty = function(inst)
     if inst._parent ~= nil then
-        local module1 = inst.upgrademodules[1]:value()
-        local module2 = inst.upgrademodules[2]:value()
-        local module3 = inst.upgrademodules[3]:value()
-        local module4 = inst.upgrademodules[4]:value()
-        local module5 = inst.upgrademodules[5]:value()
-        local module6 = inst.upgrademodules[6]:value()
-        local module7 = inst.upgrademodules[7]:value()
-        local module8 = inst.upgrademodules[8]:value()
-        local module9 = inst.upgrademodules[9]:value()
-        local module10 = inst.upgrademodules[10]:value()
-        local module11 = inst.upgrademodules[11]:value()
-        local module12 = inst.upgrademodules[12]:value()
-        local module13 = inst.upgrademodules[13]:value()
-        local module14 = inst.upgrademodules[14]:value()
-        local module15 = inst.upgrademodules[15]:value()
-        local module16 = inst.upgrademodules[16]:value()
-        local module17 = inst.upgrademodules[17]:value()
-        local module18 = inst.upgrademodules[18]:value()
-        local module19 = inst.upgrademodules[19]:value()
-        local module20 = inst.upgrademodules[21]:value()
-        local module21 = inst.upgrademodules[22]:value()
-        local module23 = inst.upgrademodules[23]:value()
-        local module24 = inst.upgrademodules[24]:value()
-       
-        if module1 == 0 and module2 == 0 and module3 == 0 and module4 == 0 and module5 == 0 and module6 == 0 and module7 == 0 and module8 == 0 and module9 == 0 and module10 == 0 and module11 == 0 and module12 == 0 and module13 == 0 and module14 == 0 and module15 == 0 and module16 == 0 and module17 == 0 and module18 == 0 and module19 == 0 and module20 == 0 and module21 == 0 and module22 == 0 and module23 == 0 and module24 == 0 then
+        -- 定义一个表来存储所有模块的值
+        local modules = {}
+
+        -- 遍历模块编号1到24，并检查每个模块的值
+        for i = 1, SLOT_COUNT do
+            -- 获取模块的值
+            local module_value = inst.upgrademodules[i] and inst.upgrademodules[i]:value() or 0
+            table.insert(modules, module_value)  -- 将模块值存入表
+        end
+
+        -- 检查所有模块是否都为0
+        local all_zero = true
+        for _, module_value in ipairs(modules) do
+            if module_value ~= 0 then
+                all_zero = false
+                break
+            end
+        end
+
+        -- 触发相应事件
+        if all_zero then
             inst._parent:PushEvent("upgrademoduleowner_popallmodules")
         else
-            inst._parent:PushEvent("upgrademodulesdirty", {module1, module2, module3, module4, module5, module6, module7, module8, module9, module10, module11, module12, module13, module14, module15, module16, module17, module18, module19, module20, module21, module22, module23, module24})
+            inst._parent:PushEvent("upgrademodulesdirty", modules)
         end
     end
 end
-
 AddPrefabPostInit("player_classified",function(inst)
 	for i=7,24,1 do
 		table.insert(inst.upgrademodules,net_smallbyte(inst.GUID, "upgrademodules.mods"..i, "upgrademoduleslistdirty"))
@@ -54,7 +50,7 @@ AddPrefabPostInit("player_classified",function(inst)
 end)
 
 AddClassPostConstruct("widgets/upgrademodulesdisplay",function(self, ...)
-    for i = 1, 6 do
+    for i = 7, 24 do
 	    local chip_object = self:AddChild(UIAnim())
 	    chip_object:GetAnimState():SetBank("status_wx")
 	    chip_object:GetAnimState():SetBuild("status_wx")
@@ -80,7 +76,7 @@ end)
 
  AddClassPostConstruct("widgets/secondarystatusdisplays",function(self, ...)     
  	if self.upgrademodulesdisplay then
- 		self.upgrademodulesdisplay:SetPosition(self.column1,-200)
+ 		self.upgrademodulesdisplay:SetPosition(self.column1,-210)
  	end
 
  end)
@@ -104,7 +100,6 @@ end
 	 	end)
  	end
  end)
-
 
 
 

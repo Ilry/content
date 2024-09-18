@@ -41,7 +41,10 @@ end
 
 -- 
 TUNING.CONFIG_LIMIT_LOL_HEARTSTEEL = GetModConfigData('limit_lol_heartsteel')
-
+TUNING.CONFIG_LIMIT_LOL_HEARTSTEEL_TRANSFORM_SCALE = GetModConfigData('limit_lol_heartsteel_transform_scale')
+TUNING.CONFIG_LIMIT_LOL_HEARTSTEEL_EQUIPSLOT = GetModConfigData('limit_lol_heartsteel_equipslot')
+TUNING.CONFIG_LIMIT_LOL_HEARTSTEEL_BLUEPRINT_DROPBY = GetModConfigData('limit_lol_heartsteel_blueprint_dropby')
+                                                        
 --
 
 modimport('scripts/util/lol_heartsteel_recipes.lua')
@@ -64,9 +67,14 @@ AddPrefabPostInit('klaus',function(inst)
         return inst
     end
     inst:ListenForEvent("death",function(inst)
-        if inst:IsUnchained() and inst.enraged then
-            local x,y,z = inst:GetPosition():Get()
-            spawnprefabs(x,y,z,'lol_heartsteel_blueprint',1)
+        if inst:IsUnchained() then 
+            if TUNING.CONFIG_LIMIT_LOL_HEARTSTEEL_BLUEPRINT_DROPBY == 1 then 
+                local x, y, z = inst:GetPosition():Get()
+                spawnprefabs(x, y, z, 'lol_heartsteel_blueprint', 1) 
+            elseif inst.enraged then
+                local x, y, z = inst:GetPosition():Get()
+                spawnprefabs(x, y, z, 'lol_heartsteel_blueprint', 1)
+            end
         end
     end)
 end)
@@ -125,3 +133,25 @@ AddClassPostConstruct("widgets/itemtile", function(self,invitem)
 
  
 end)
+
+-- 
+local function PhysicsPaddedRangeCheck(doer, target, space)
+    if target == nil then return end
+    local target_x, target_y, target_z = target.Transform:GetWorldPosition()
+    local doer_x, doer_y, doer_z = doer.Transform:GetWorldPosition()
+    local target_r = target:GetPhysicsRadius(0) + space
+    local dst = distsq(target_x, target_z, doer_x, doer_z)
+
+    return dst <= target_r * target_r
+end
+local oldrangecheckfn = ACTIONS.PICK.rangecheckfn
+ACTIONS.PICK.rangecheckfn = function(doer, target)
+
+    local mindist = 4
+    local cur_scale = doer.Transform:GetScale()
+
+    if cur_scale > 1 then
+        return PhysicsPaddedRangeCheck(doer, target, cur_scale * mindist * 1.5)
+    end
+    return oldrangecheckfn(doer, target)
+end

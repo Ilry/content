@@ -153,9 +153,11 @@ function WXHorticulture:Hack()
 end
 
 local TOPICK_MUST_TAGS = { "pickable" }
+local TOPICK_ANCIENTTREE_NO_TAGS = { "fire", "smolder", "INLIMBO", "NOCLICK" }
+local ANCIENTTREE_TAG = { "ancienttree" }
+local TOPICK_CANT_TAGS = { "fire", "smolder", "INLIMBO", "NOCLICK", "event_trigger", "farm_plant", "flower" }
 local TOHARVEST_MUST_TAGS = { "harvestable" }
 local LUREPLANT_TAG = { "lureplant" }
-local TOPICK_CANT_TAGS = { "fire", "smolder", "INLIMBO", "NOCLICK", "event_trigger", "farm_plant", "flower" }
 function WXHorticulture:HarvestFruits()
     local leader = self.inst.components.follower.leader or self.inst.components.entitytracker:GetEntity("sentryward")
     if leader == nil then
@@ -163,21 +165,37 @@ function WXHorticulture:HarvestFruits()
     end
 
     local plant = FindEntity(self.inst, REPEAT_WORK_DIST, function(ent)
-        if ent.prefab == "bullkelp_plant" then
-            local x, y, z = ent.Transform:GetWorldPosition()
-            if not (TheWorld.Map:IsOceanAtPoint(x, y, z) and
-                (TheWorld.Map:IsAboveGroundAtPoint(x + 2.75, y, z + 2.75) or
-                TheWorld.Map:IsAboveGroundAtPoint(x + 2.75, y, z - 2.75) or
-                TheWorld.Map:IsAboveGroundAtPoint(x - 2.75, y, z + 2.75) or
-                TheWorld.Map:IsAboveGroundAtPoint(x - 2.75, y, z - 2.75))) then
-                return
-            end
-        end
-        return ent.prefab ~= "mandrake_planted" and ent.components.compostingbin == nil and
+        return string.find(ent.prefab, "ancienttree") and
             ent.components.pickable ~= nil and ent.components.pickable:CanBePicked() and
             ent.components.pickable.caninteractwith ~= false and ent:IsNear(leader, SEE_WORK_DIST) and
             self.inst.components.wxtype:ShouldHarvest(ent)
-    end, TOPICK_MUST_TAGS, TOPICK_CANT_TAGS)
+    end, TOPICK_MUST_TAGS, TOPICK_ANCIENTTREE_NO_TAGS, ANCIENTTREE_TAG)
+    if plant == nil then
+        plant = FindEntity(leader, SEE_WORK_DIST, function(ent)
+            return string.find(ent.prefab, "ancienttree") and
+                ent.components.pickable ~= nil and ent.components.pickable:CanBePicked() and
+                ent.components.pickable.caninteractwith ~= false and
+                self.inst.components.wxtype:ShouldHarvest(ent)
+        end, TOPICK_MUST_TAGS, TOPICK_ANCIENTTREE_NO_TAGS, ANCIENTTREE_TAG)
+    end
+    if plant == nil then
+        plant = FindEntity(self.inst, REPEAT_WORK_DIST, function(ent)
+            if ent.prefab == "bullkelp_plant" then
+                local x, y, z = ent.Transform:GetWorldPosition()
+                if not (TheWorld.Map:IsOceanAtPoint(x, y, z) and
+                    (TheWorld.Map:IsAboveGroundAtPoint(x + 2.75, y, z + 2.75) or
+                    TheWorld.Map:IsAboveGroundAtPoint(x + 2.75, y, z - 2.75) or
+                    TheWorld.Map:IsAboveGroundAtPoint(x - 2.75, y, z + 2.75) or
+                    TheWorld.Map:IsAboveGroundAtPoint(x - 2.75, y, z - 2.75))) then
+                    return
+                end
+            end
+            return ent.prefab ~= "mandrake_planted" and ent.components.compostingbin == nil and
+                ent.components.pickable ~= nil and ent.components.pickable:CanBePicked() and
+                ent.components.pickable.caninteractwith ~= false and ent:IsNear(leader, SEE_WORK_DIST) and
+                self.inst.components.wxtype:ShouldHarvest(ent)
+        end, TOPICK_MUST_TAGS, TOPICK_CANT_TAGS)
+    end
     if plant == nil then
         plant = FindEntity(leader, SEE_WORK_DIST, function(ent)
             if ent.prefab == "bullkelp_plant" then

@@ -8,8 +8,14 @@ local assets =
 local DETECT_INTERVAL = 1
 local CD,max_num,per_hp = 120,40,10
 
+-- 设置装备栏位,注意如果没有开启五格装备栏,但是设置中设置了项链栏位,那么要确保在身体栏位
+local HEARTSTEEL_EQIPSLOT = EQUIPSLOTS.BODY
+if TUNING.CONFIG_LIMIT_LOL_HEARTSTEEL_EQUIPSLOT == 1 then 
+    HEARTSTEEL_EQIPSLOT = EQUIPSLOTS.NECK or EQUIPSLOTS.BODY
+end
+
 local function owner_onhitother(inst, data)
-    local itm = inst.components.inventory:GetEquippedItem(EQUIPSLOTS.NECK or EQUIPSLOTS.BODY)
+    local itm = inst.components.inventory:GetEquippedItem(HEARTSTEEL_EQIPSLOT)
     if itm and itm.components and itm.components.lol_heartsteel_num then
         -- if itm.task_period_lol_heartsteel_findmob then 
         --     itm.task_period_lol_heartsteel_findmob:Cancel()
@@ -152,7 +158,7 @@ local function fn()
     inst:AddComponent("inspectable")
 
     inst:AddComponent("equippable")
-    inst.components.equippable.equipslot = EQUIPSLOTS.NECK or EQUIPSLOTS.BODY -- 适配五格
+    inst.components.equippable.equipslot = HEARTSTEEL_EQIPSLOT -- 适配五格
     inst.components.equippable:SetOnEquip(onequip)
     inst.components.equippable:SetOnUnequip(onunequip)
 
