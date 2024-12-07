@@ -54,7 +54,7 @@ function WXPastoralism:Feed()
         if food == nil then
             food = self.inst.components.inventory:FindItem(function(item)
                 return preparedfoods[item.prefab] == nil and
-                    hungrybeef.components.trader:AbleToAccept(item, self.inst)
+                    disobedientbeef.components.trader:AbleToAccept(item, self.inst)
             end)
         end
         if food ~= nil then
@@ -88,18 +88,18 @@ function WXPastoralism:Mount()
     end
 
     local beef = FindEntity(leader, SEE_WORK_DIST, function(ent)
-        return ent.components.rideable ~= nil and
-            ent.components.rideable:TestObedience() and
+        return ent.components.rideable ~= nil and ent.components.rideable:TestObedience() and
             -- The automatically trained beefalo should consume more food as a cost.
-            ent.components.hunger:GetPercent() > 0
+            ent.components.hunger ~= nil and ent.components.hunger:GetPercent() > 0
     end, DOMESTICATABLE_TAG, nil, BEEF_TAG)
     if beef ~= nil and not beef.components.rideable:IsSaddled() then
         local saddle = self.inst.components.inventory:FindItem(function(item)
             return item.components.saddler ~= nil
         end)
         return saddle ~= nil and BufferedAction(self.inst, beef, ACTIONS.SADDLE, saddle) or nil
-    elseif beef ~= nil then
-        local closestPlayer, rangesq = FindClosestPlayerToInst(self.inst, 6, true)
+    end
+    if beef ~= nil and beef.components.rideable:IsSaddled() then
+        local closestPlayer, rangesq = FindClosestPlayerToInst(beef, 6, true)
         return (closestPlayer == nil and beef.components.rideable.canride) and BufferedAction(self.inst, beef, ACTIONS.MOUNT) or nil
     end
 end

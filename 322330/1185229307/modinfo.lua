@@ -1,7 +1,7 @@
 all_clients_require_mod = true
 dst_compatible = true
 
-version = "93"
+version = "94"
 version_compatible = "57"
 priority = 2 ^ 1023
 api_version = 10
@@ -13,8 +13,9 @@ icon = "modicon.tex"
 server_filter_tags = { name, author }
 version_description = --•◦
 [[
-• Added silent capture mode.
-• Improved priority when multiple bosses attack another.
+• Added support for the Great Depths Worm.
+• Fixed capture replay error when combat camera is enabled.
+• Fixed missing translations for capture settings.
 ]]
 
 local LOCALE =
@@ -116,6 +117,9 @@ local LOCALE =
 		GLOBAL_NUMBERS_DISABLED = "Zeige Schaden in der Anzeige",
 		GLOBAL_NUMBERS_ENABLED = "Zeige Schaden in der Welt",
 
+		CAPTURE = "Stiller Aufnahmemodus",
+		CAPTURE_HOVER = "Anstatt das Widget anzuzeigen, werden alle Kämpfe in einer Datei aufgezeichnet. Aufnahmen können über das Hauptmenü wiedergegeben werden.",
+
 		TAG = "Lebensleiste für",
 		TAG_HOVER = "Zeigt Lebensleiste für ausgewählte Moster.",
 		TAG_NONE = "Aus",
@@ -181,6 +185,9 @@ local LOCALE =
 		GLOBAL_NUMBERS_DISABLED = "Mostrar danos na barra",
 		GLOBAL_NUMBERS_ENABLED = "Mostrar danos no mundo",
 
+		CAPTURE = "Modo de Captura Silenciosa",
+		CAPTURE_HOVER = "Em vez de exibir o widget, registra todas as lutas em um arquivo.\nAs capturas podem ser reproduzidas no menu principal.",
+
 		TAG = "Exibir Saúde Para",
 		TAG_HOVER = "Habilita barras de saúde somente para alvos selecionados.",
 		TAG_NONE = "Nada",
@@ -244,6 +251,9 @@ local LOCALE =
 		GLOBAL_NUMBERS_HOVER = "Показывает значения урона в самом мире вместо полоски.\nПрименимо к любому бою, а не только к боссам.",
 		GLOBAL_NUMBERS_DISABLED = "Показывать урон на полоске",
 		GLOBAL_NUMBERS_ENABLED = "Показывать урон в мире",
+
+		CAPTURE = "Режим тихой записи",
+		CAPTURE_HOVER = "Вместо отображения полоски, записывает все сражения в файл.\nЗаписи можно проиграть из меню создания мира.",
 
 		TAG = "Отображать здоровье для",
 		TAG_HOVER = "Включает полоску здоровья только для выбранных целей.",
@@ -310,6 +320,9 @@ local LOCALE =
 		GLOBAL_NUMBERS_HOVER = "显示世界中的伤害数字而不是小部件\n适用于任何战斗情况",
 		GLOBAL_NUMBERS_DISABLED = "在小部件上显示损坏情况",
 		GLOBAL_NUMBERS_ENABLED = "在游戏世界中显示伤害",
+
+		CAPTURE = "静默拍摄模式",
+		CAPTURE_HOVER = "不是显示小部件，而是将所有战斗记录到一个文件中\n可以从主菜单重播捕获",
 
 		TAG = "显示健康状况用于",
 		TAG_HOVER = "仅对选定目标启用生命条",

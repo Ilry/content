@@ -77,6 +77,8 @@ for _, prefab in ipairs({ 'oceantree', 'oceantreenut', 'winch' }) do
 end
 -- Winona's Catapult: min and max attack range
 data.winona_catapult = { { radius = 6, color = PINK }, { radius = 15, color = PINK } }
+-- simplified model of honey production range
+data.beebox = {{ radius = 42, color = YELLOW }}
 
 -- Feature: Click --------------------------------------------------------------
 
@@ -114,6 +116,7 @@ local prefab_placer = {
   'mushroom_light', -- Mushlight
   'mushroom_light2', -- Glowcap
   'winch', -- Pinchin' Winch
+  'beebox' -- beebox
 }
 for index, prefab in ipairs(prefab_placer) do
   local original_prefab = prefab:gsub('^dug_', ''):gsub('_item$', ''):gsub('_kit$', '_station')

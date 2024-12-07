@@ -112,6 +112,11 @@ end
 
  local T = GLOBAL.TUNING
 
+ local BEE_TICKPERIOD = GetModConfigData("BEE_TICKPERIOD")
+ local BEE_HEALTHPERTICK = GetModConfigData("BEE_HEALTHPERTICK")
+ local MAXHUNGER_SLOWPERCENT = GetModConfigData("MAXHUNGER_SLOWPERCENT")
+--  local BEE_TICKPERIOD = GetModConfigData("slot_count")
+
  T.WX78_HEALTH = 150
  T.WX78_HUNGER = 150
  T.WX78_SANITY = 200
@@ -122,8 +127,10 @@ end
  T.WX78_MAXHEALTH2_MULT = 4.0  --二级倍率
 
 
- T.WX78_BEE_TICKPERIOD = 2.0
- T.WX78_BEE_HEALTHPERTICK = 4.0
+--  T.WX78_BEE_TICKPERIOD = 2.0
+--  T.WX78_BEE_HEALTHPERTICK = 4.0
+T.WX78_BEE_TICKPERIOD = BEE_TICKPERIOD
+T.WX78_BEE_HEALTHPERTICK = BEE_HEALTHPERTICK
 
 --  T.WX78_MAXSANITY1_BOOST = 75 --一级理智电路
 --  T.WX78_MAXSANITY_BOOST = 150--二级理智电路
@@ -131,7 +138,7 @@ end
          
  T.WX78_MAXHUNGER1_BOOST = 100--一级饱食电路
  T.WX78_MAXHUNGER_BOOST = 200--二级饱食电路
- T.WX78_MAXHUNGER_SLOWPERCENT = 0.5--饱食减缓效果
+ T.WX78_MAXHUNGER_SLOWPERCENT = MAXHUNGER_SLOWPERCENT--饱食减缓效果
  
 --  T.WX78_MOVESPEED_CHIPBOOSTS = {0.00, 0.50, 0.70, 0.85, 0.95} -- 速度电路
  
@@ -139,7 +146,9 @@ end
           
 --  T.WX78_LIGHT_BASERADIUS = 8.5--初始光照电路效果
 --  T.WX78_LIGHT_EXTRARADIUS = 2.5--光照叠加效果
- 
+
+
+
  if GLOBAL.TheNet:GetIsServer() ~= true then
    return
  end
@@ -297,3 +306,9 @@ end
          inst:RemoveComponent("finiteuses")
      end
  end)
+
+
+
+
+
+

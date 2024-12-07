@@ -18,6 +18,16 @@ if not TheNet:GetIsServer() then
 	end)
 end
 
+--\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+local function MakeLureBloom(inst)
+	inst.AnimState:SetSymbolBloom("wormlure", "shaders/anim.ksh")
+end
+
+AddPrefabPostInit("worm", MakeLureBloom)
+AddPrefabPostInit("worm_boss_head", MakeLureBloom)
+AddPrefabPostInit("worm_boss_segment", MakeLureBloom)
+
 --\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 if not TheNet:GetIsServer() then return end --\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 --\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\

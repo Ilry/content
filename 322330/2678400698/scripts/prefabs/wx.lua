@@ -623,12 +623,23 @@ local function ApplyWXSkins(target, doer, skins)
     if skins ~= nil and skins.base ~= nil and target.components.skinner ~= nil then
         target.AnimState:AssignItemSkins(doer.userid, skins.base or "", skins.body or "", skins.hand or "", skins.legs or "", skins.feet or "")
         target.components.skinner:ClearAllClothing()
-        target.components.skinner:SetSkinName(skins.base)
-        target.components.skinner:SetClothing(skins.body)
-        target.components.skinner:SetClothing(skins.hand)
-        target.components.skinner:SetClothing(skins.legs)
-        target.components.skinner:SetClothing(skins.feet)
         target.AnimState:SetBuild(doer.AnimState:GetBuild())
+        local skin_data = {}
+        if skins.base ~= "" then
+            local skin_prefab = Prefabs[skins.base] or nil
+            if skin_prefab and skin_prefab.skins then
+                for k, v in pairs(skin_prefab.skins) do
+                    skin_data[k] = v
+                end
+            end
+        end
+        if skin_data.normal_skin ~= nil then
+            target.components.skinner:SetSkinName(skins.base)
+            target.components.skinner:SetClothing(skins.body)
+            target.components.skinner:SetClothing(skins.hand)
+            target.components.skinner:SetClothing(skins.legs)
+            target.components.skinner:SetClothing(skins.feet)
+        end
 
         local charactername = string.gmatch(skins.base, "[^_]+")()
         if charactername == nil then
@@ -1200,6 +1211,7 @@ local function fn()
         inst:AddComponent("wxminingindustry")
         inst:AddComponent("wxpastoralism")
         inst:AddComponent("wxfoodindustry")
+        inst:AddComponent("wxmoonindustry")
 
         inst:AddComponent("hauntable")
         inst.components.hauntable:SetHauntValue(TUNING.HAUNT_INSTANT_REZ)

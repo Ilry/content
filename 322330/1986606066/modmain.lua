@@ -87,6 +87,7 @@ Hook('Season Wave Sound', {
   'dontstarve_DLC001/AMB/waves_summer',
 })
 Hook('Shell Beach Turf', 'hookline_2/amb/hermit_island')
+Hook('Sproutrock', 'meta4/ancienttree/gemfruit/sway_lp')
 Hook({ 'Thunder', old = 'thunder' }, {
   'dontstarve/rain/thunder_close',
   'dontstarve/rain/thunder_far',
@@ -97,6 +98,7 @@ Hook('Worm Hole', 'dontstarve/common/teleportworm/idle')
 
 Hook('Abigail', 'dontstarve/characters/wendy/abigail/howl')
 Hook('Battle Saddle Music', 'dontstarve/music/music_wigfrid_valkyrie')
+Hook('Charged Elding Spear', 'meta3/wigfrid/spear_wathrithr_lightning_charged')
 Hook('Chorusbox Circuit', 'WX_rework/module/musicmodule_lp')
 Hook({ 'Lucy the Axe', old = 'lucy' }, 'dontstarve/characters/woodie/lucytalk_LP')
 Hook('Mourning Glory', 'dontstarve/characters/wendy/small_ghost/wisp')
@@ -120,6 +122,11 @@ Hook("Winona's Generator & G.E.M.erator", {
 
 -- Creatures -------------------------------------------------------------------
 
+Hook('Batilisk', {
+  'dontstarve/creatures/bat/flap',
+  'dontstarve/creatures/bat/sleep',
+  'dontstarve/creatures/bat/taunt',
+})
 Hook({ 'Bee', old = 'bee' }, {
   'dontstarve/bee/bee_takeoff',
   'dontstarve/bee/bee_fly_LP',
@@ -146,6 +153,14 @@ Hook({ 'Birds', old = 'bird' }, {
 })
 Hook('Bulbous Lightbug', 'grotto/creatures/light_bug/fly_LP')
 Hook({ 'Buzzard', old = 'buzzard' }, 'dontstarve_DLC001/creatures/buzzard/hurt')
+Hook('Carrat', {
+  'turnoftides/creatures/together/carrat/idle',
+  'turnoftides/creatures/together/carrat/sleep',
+  'turnoftides/creatures/together/carrat/emerge',
+  'turnoftides/creatures/together/carrat/submerge',
+  'turnoftides/creatures/together/carrat/stunned',
+  'turnoftides/creatures/together/carrat/reaction',
+})
 Hook({ 'Catcoon', old = 'catcoon' }, {
   'dontstarve_DLC001/creatures/catcoon/swipe_tail',
   'dontstarve_DLC001/creatures/catcoon/hiss_pre',
@@ -234,10 +249,12 @@ Hook({ 'Spiders', old = 'spider' }, {
   'waterlogged1/creatures/spider_water/walk_spider',
   'waterlogged1/creatures/spider_water/walk_water',
 })
+Hook('Tentacle', 'dontstarve/tentacle/tentacle_rumble_LP')
 
 -- Equipment -------------------------------------------------------------------
 
 Hook('Bone Armor', 'dontstarve/movement/foley/bone')
+Hook('Brightshade Armor', 'dontstarve/movement/foley/lunarplantarmour_foley')
 Hook('Krampus Sack', 'dontstarve/movement/foley/krampuspack')
 Hook('Morning Star', 'dontstarve_DLC001/common/morningstar')
 Hook('Night Armor', 'dontstarve/movement/foley/nightarmour')
@@ -247,7 +264,7 @@ Hook('Thulecite Suit & W.A.R.B.I.S. Armor', 'dontstarve/movement/foley/metalarmo
 
 Hook('Alchemy Engine', 'dontstarve/common/researchmachine_lvl2_idle_LP')
 Hook('Bee Box', 'dontstarve/bee/bee_box_LP')
-Hook({ 'Florid Postern / Celestial Portal', old = 'spawnportal' }, {
+Hook({ 'Florid Postern & Celestial Portal', old = 'spawnportal' }, {
   'dontstarve/common/together/spawn_vines/spawnportal_idle_LP',
   'dontstarve/common/together/spawn_vines/spawnportal_jacob',
   'dontstarve/common/together/spawn_vines/spawnportal_blink',
@@ -258,6 +275,7 @@ Hook({ 'Ice Flingomatic', old = 'SilentFiresuppressor' }, {
   'dontstarve_DLC001/common/firesupressor_idle',
   'dontstarve_DLC001/common/firesupressor_chuff',
 })
+Hook('Night Light', 'dontstarve/common/nightlight')
 Hook({ 'Scaled Furnace', old = 'dragonflyfurnace' }, 'dontstarve/common/together/dragonfly_furnace/fire_LP')
 Hook('Shadow Manipulator', 'dontstarve/common/researchmachine_lvl3_idle_LP')
 Hook('Tackle Receptacle', 'hookline/common/tackle_station/proximity_LP')

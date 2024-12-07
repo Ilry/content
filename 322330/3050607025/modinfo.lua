@@ -1,7 +1,7 @@
 local Ch = (locale == 'zh' or locale == 'zhr')
 name = Ch and "防卡好多招" or "Lag Remover"
 author = "大大果汁、凉时白开、小瑾、天涯共此时、小花朵"
-version = "2.6.8"
+version = "2.7.0"
 -- 可通过命令自定义任何需清理物品和数量。
 -- 单个物品：#keep_item@物品代码:数量，如#keep_item@hivehat:2
 -- 多个物品：#keep_item@物品1代码:数量;物品2代码:数量，可输入多个，中间用;分隔。
@@ -50,7 +50,7 @@ dst_compatible = true
 client_only_mod = false
 all_clients_require_mod = true
 server_filter_tags = {"stack", "clean"}
-
+priority = -11
 
 local cleancycle = {}
 cleancycle[1] = {description=""..(1).."", data=1}

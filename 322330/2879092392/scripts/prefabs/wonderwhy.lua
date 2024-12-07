@@ -233,6 +233,13 @@ local function CanWearHeadGears(inst)
     end
 end
 
+--local function RewardPrototype(inst)
+--    if inst.components.builder.freebuildmode ~= true then
+--        inst.components.inventory:GiveItem(SpawnPrefab("ancientdreams_gemshard"))
+--        inst.components.talker:Say("I've got a sharp idea!")
+--    end
+--end
+
 local function FindFirstCrank(self, data)
     local has_crank = false -- if the recipe contains crank
 
@@ -310,6 +317,7 @@ end
 local master_postinit = function(inst)
     inst.starting_inventory = start_inv[TheNet:GetServerGameMode()] or start_inv.default
     inst.soundsname = "wonderwhy"
+  --  inst:ListenForEvent("unlockrecipe", RewardPrototype, inst)
     --
     local _Equip = inst.components.inventory.Equip
     inst.components.inventory.Equip = function(self, item, old_to_active)
@@ -355,7 +363,6 @@ local master_postinit = function(inst)
         end
         return _Unequip(self, equipslot, slip)
     end
-
     inst.components.hunger:SetRate(0.15625 * 1)
     inst.components.combat:SetAttackPeriod(0.555)
     inst.components.locomotor.runspeed = 6
@@ -424,7 +431,7 @@ WonderAPI.MakeCharacterSkin("wonderwhy","wonderwhy_none",{
     des = STRINGS.SKIN_DESCRIPTIONS.wonderwhy_none,        --选人界面的皮肤描述
     quotes = STRINGS.SKIN_QUOTES.wonderwhy_none,
     rarity = "Character",
-    rarityorder = 1,
+    rarityorder = 0,
     skins = {normal_skin = "wonderwhy",ghost_skin = "ghost_wonderwhy_build"},
     build_name_override = "wonderwhy",
     share_bigportrait_name = "wonderwhy_none",
@@ -440,7 +447,7 @@ WonderAPI.MakeCharacterSkin("wonderwhy","wonderwhy_elder",{
     des = STRINGS.SKIN_DESCRIPTIONS.wonderwhy_elder,        --skin description
     quotes = STRINGS.SKIN_QUOTES.wonderwhy_elder,
     rarity = "Reward",
-    rarityorder = 2,
+    rarityorder = 1,
     skins = {normal_skin = "wonderwhy_elder",ghost_skin = "ghost_wonderwhy_elder_build"},
     build_name_override = "wonderwhy_elder",
     share_bigportrait_name = "wonderwhy_elder",
@@ -449,6 +456,24 @@ WonderAPI.MakeCharacterSkin("wonderwhy","wonderwhy_elder",{
         Asset("ANIM", "anim/wonderwhy_elder.zip"),
         Asset("ANIM", "anim/wonderwhy_exo_elder.zip"),
         Asset("ANIM", "anim/ghost_wonderwhy_elder_build.zip"),},
+})
+
+WonderAPI.MakeCharacterSkin("wonderwhy","wonderwhy_abyss",{
+    name = STRINGS.SKIN_NAMES.wonderwhy_abyss,      
+    des = STRINGS.SKIN_DESCRIPTIONS.wonderwhy_abyss,        
+    quotes = STRINGS.SKIN_QUOTES.wonderwhy_abyss,
+    rarity = "Spiffy",
+    rarityorder = 2,
+    skins = {normal_skin = "wonderwhy_abyss",ghost_skin = "ghost_wonderwhy_abyss_build"},
+    build_name_override = "wonderwhy_abyss",
+    share_bigportrait_name = "wonderwhy_abyss",
+	skin_tags = { "FALLENGOATS", "wonderwhy", "CHARACTER" },
+    assets = {
+        Asset("ANIM", "anim/wonderwhy_abyss.zip"),
+        Asset("ANIM", "anim/wonderwhy_exo_abyss.zip"),
+        Asset("ANIM", "anim/ghost_wonderwhy_abyss_build.zip"),
+        Asset( "IMAGE", "bigportraits/wonderwhy_abyss.tex" ),
+        Asset( "ATLAS", "bigportraits/wonderwhy_abyss.xml" ),},
 })
 
 WonderAPI.MakeCharacterSkin("wonderwhy","wonderwhy_demon",{

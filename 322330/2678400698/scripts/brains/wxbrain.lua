@@ -908,6 +908,31 @@ function WXBrain:OnStart()
                         ),
                     })
                 ),
+                -- Is MoonInd
+                IfNode(
+                    function() return self.inst.components.wxtype:IsMoonInd() end, "Extract",
+                    SelectorNode({
+                        -- Picks up materials
+                        IfNode(
+                            function() return not self.inst.components.inventory:IsFull() end, "Pick Up",
+                            DoAction(self.inst, function() return self.inst.components.wxmoonindustry:FindEntityToPickUpAction() end)
+                        ),
+                        -- Catches moongleams
+                        IfNode(
+                            function()
+                                return self.inst.components.wxtype:CanDoAction(ACTIONS.NET, true) and not self.inst.components.inventory:IsFull()
+                            end, "Catch",
+                            DoAction(self.inst, function() return self.inst.components.wxmoonindustry:Catch() end)
+                        ),
+                        -- Mines rocks
+                        IfNode(
+                            function()
+                                return self.inst.components.wxtype:CanDoAction(ACTIONS.MINE, true) and not self.inst.components.inventory:IsFull()
+                            end, "Mine",
+                            DoAction(self.inst, function() return self.inst.components.wxmoonindustry:Mine() end)
+                        ),
+                    })
+                ),
                 -- Is Mari
                 IfNode(
                     function()
@@ -1318,6 +1343,36 @@ function WXBrain:OnStart()
                                 not self.inst.components.rider:IsRiding()
                             end, "Shave",
                             DoAction(self.inst, function() return self.inst.components.wxpastoralism:Shave() end)
+                        ),
+                    })
+                ),
+                -- Is MoonInd
+                IfNode(
+                    function() return self.inst.components.wxtype:IsMoonInd() end, "Extract",
+                    SelectorNode({
+                        -- Picks up materials
+                        IfNode(
+                            function() return not self.inst.components.inventory:IsFull() end, "Pick Up",
+                            DoAction(self.inst, function() return self.inst.components.wxmoonindustry:FindEntityToPickUpAction() end)
+                        ),
+                        -- Assists operations
+                        IfNode(
+                            function() return true end, "Assist",
+                            DoAction(self.inst, function() return self.inst.components.wxmoonindustry:Transfer() end)
+                        ),
+                        -- Catches moongleams
+                        IfNode(
+                            function()
+                                return self.inst.components.wxtype:CanDoAction(ACTIONS.NET, true) and not self.inst.components.inventory:IsFull()
+                            end, "Catch",
+                            DoAction(self.inst, function() return self.inst.components.wxmoonindustry:Catch() end)
+                        ),
+                        -- Mines rocks
+                        IfNode(
+                            function()
+                                return self.inst.components.wxtype:CanDoAction(ACTIONS.MINE, true) and not self.inst.components.inventory:IsFull()
+                            end, "Mine",
+                            DoAction(self.inst, function() return self.inst.components.wxmoonindustry:Mine() end)
                         ),
                     })
                 ),

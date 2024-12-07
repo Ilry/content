@@ -227,4 +227,9 @@ function WXType:IsMachineInd()
     return hat ~= nil and hat.prefab == "goggleshat" or nil
 end
 
+function WXType:IsMoonInd()
+    local hat = self.inst.components.inventory:GetEquippedItem(EQUIPSLOTS.HEAD)
+    return hat ~= nil and hat.prefab == "moonstorm_goggleshat" or nil
+end
+
 return WXType

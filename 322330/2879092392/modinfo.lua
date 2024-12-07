@@ -1,10 +1,11 @@
 local isCh = locale == "zh" or locale == "zhr"--是否为中文
 name = isCh and "远古梦境 - Endurance" or "Ancient Dreams - Endurance"
-description = "We are thou, thou art I\nThou hast acquired a new vow\nAncient dreams bestowed upon thy,\nWith the awakening of the ancient dreamer\nShall the world sucummb to darkness\nor shall it bask in flames of theirs?\n\nSpiral into horror with ancient knowledge\n\n-Adds a character\n-Structures\n-Items\n-Decorations\n-New mechanics\n-Egg\n\nVer. 1.8.9.1"
-author = "Koziciel, ForxeNN, DH & Hyuyu"
-version = "1.8.9.1"
+description = "We are thou, thou art I\nThou hast acquired a new vow\nAncient dreams bestowed upon thy,\nWith the awakening of the ancient dreamer\nShall the world sucummb to darkness\nor shall it bask in flames of theirs?\n\nSpiral into horror with ancient knowledge\n\n-Adds a character\n-Structures\n-Items\n-Decorations\n-New mechanics\n-Egg\n\nVer. 1.8.9.8"
+author = "Koziciel, DH, Hyuyu, Ilaskus & ForxeNN"
+version = "1.8.9.8"
 --id = "ancient_horrors"
 forumthread = ""
+wiki_link = "https://ancientdreams.wiki.gg/"
 api_version = 10
 api_version_dst = 10
 priority = -11  

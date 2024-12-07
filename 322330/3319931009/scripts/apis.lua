@@ -1,4 +1,4 @@
-local version = "20240106"
+local version = "20241006"
 -- get rid of any GLOBAL. prefix
 local GLOBAL = _G or GLOBAL
 local env = GLOBAL and GLOBAL.getfenv and GLOBAL.getfenv() or GLOBAL or {}
@@ -127,7 +127,7 @@ function safeget(obj, key, val)
 end
 
 function safefetch(obj, key, ...)
-  if not key then return obj end
+  if key == nil then return obj end
   local res = nil
   -- use rawget on GLOBAL
   if obj == GLOBAL then
@@ -230,7 +230,8 @@ modutils = {
     return modutils.has(actualname)
   end,
   enabled = function(name)
-    return KnownModIndex:IsModEnabledAny(name) or KnownModIndex:IsModEnabledAny(modutils.translate(name))
+    return KnownModIndex:IsModEnabledAny(name) or
+             KnownModIndex:IsModEnabledAny(modutils.translate(name))
   end
 }
 modutils.exists = modutils.has
@@ -421,72 +422,66 @@ function specialGameModeDetector()
            "gorge" or "normal"
 end
 
-function GetConfig(key, isClient, modname)
-  -- remove annoying ch
+function GetConfig(key, isClient, _modname)
   local ret = {}
   if type(key) == "table" then
-    FilterArray(key, function(k) ret[k] = GetModConfigData(k, isClient) end)
+    FilterArray(key, function(k)
+      ret[k] = modname and GetModConfigData(k, isClient) or
+                 GetModConfigData(k, _modname, isClient)
+    end)
     return ret
   end
   ret = GetModConfigData(key, isClient)
-  if key == "language" and ret == "ch" then ret = "zh" end
   return ret
 end
 
-function GetClientConfig(key) return GetConfig(key, true) end
+function GetClientConfig(key, _modname) return GetConfig(key, true, _modname) end
 
+local assettype_map = {
+  IMAGE = "images",
+  SOUND = "sound",
+  SOUNDPACKAGE = "sound",
+  FILE = "sound",
+  ANIM = "anim",
+  DYNAMIC_ANIM = "anim/dynamic",
+  PKGREF = "anim/dynamic",
+  SCRIPT = "scripts",
+  SHADER = "shaders",
+  ATLAS = "images",
+  ATLAS_BUILD = "images",
+  MINIMAP_IMAGE = "images",
+  DYNAMIC_ATLAS = "images"
+}
+local format_map = {
+  IMAGE = "tex",
+  SOUND = "fsb",
+  SOUNDPACKAGE = "fev",
+  FILE = "fev",
+  ANIM = "zip",
+  DYNAMIC_ANIM = "zip",
+  PKGREF = "dyn",
+  SCRIPT = "lua",
+  SHADER = "ksh",
+  ATLAS = "xml",
+  ATLAS_BUILD = "xml",
+  MINIMAP_IMAGE = "tex",
+  DYNAMIC_ATLAS = "xml"
+}
 function MakeAsset(assettype, name, folder, format)
   assettype = string.upper(assettype)
-  if not folder then
-    folder = ""
-    if assettype == "IMAGE" or assettype == "ATLAS" or assettype ==
-      "ATLAS_BUILD" or assettype == "DYNAMIC_ATLAS" then
-      folder = "images"
-    elseif assettype == "MINIMAP_IMAGE" then
-    elseif assettype == "PKGREF" or assettype == "DYNAMIC_ANIM" or assettype ==
-      "DYNAMIC_ATLAS" then
-      folder = "anim/dynamic"
-    elseif assettype == "SOUND" or assettype == "SOUNDPACKAGE" or assettype ==
-      "FILE" then
-      folder = "sound"
-    elseif assettype == "ANIM" then
-      folder = "anim"
-    elseif assettype == "SCRIPT" then
-      folder = "scripts"
-    elseif assettype == "SHADER" then
-      folder = "shaders"
-    end
-  end
-  if folder ~= "" and string.sub(folder, -1) ~= "/" then folder = folder .. "/" end
-  if not format then
-    format = nil
-    if assettype == "SOUND" then
-      format = "fsb"
-    elseif assettype == "SOUNDPACKAGE" or assettype == "FILE" then
-      format = "fev"
-    elseif assettype == "ANIM" or assettype == "DYNAMIC_ANIM" then
-      format = "zip"
-    elseif assettype == "IMAGE" then
-      format = "tex"
-    elseif assettype == "MINIMAP_IMAGE" then
-    elseif assettype == "ATLAS" or assettype == "DYNAMIC_ATLAS" or assettype ==
-      "ATLAS_BUILD" then
-      format = "xml"
-    elseif assettype == "PKGREF" then
-      format = "dyn"
-    elseif assettype == "SCRIPT" then
-      format = "lua"
-    elseif assettype == "SHADER" then
-      format = "ksh"
-    end
-  end
+  if not folder then folder = assettype_map[assettype] end
+  if folder and string.sub(folder, -1) ~= "/" then folder = folder .. "/" end
+  if not format then format = format_map[assettype] end
   if format then
     if string.sub(name, -string.len(format) - 1) ~= "." .. format then
       name = name .. "." .. format
     end
   end
-  return Asset(assettype, folder .. name,
-               assettype == "ATLAS_BUILD" and 256 or nil)
+  local param = nil
+  if assettype == "ATLAS_BUILD" then param = 256 end
+  local path = folder .. name
+  if assettype == "SHADER" then path = resolvefilepath(path) end
+  return Asset(assettype, path, param)
 end
 
 function MakeAssetTable(tbl)
@@ -531,6 +526,7 @@ utils = {
           inst:ListenForEvent("ms_playerspawn", utils._playeroninit)
         end)
       end
+      for i, v in ipairs(AllPlayers) do utils._playeroninit(v) end
     end
   end,
   theplayer = function(fn, ...)
@@ -539,7 +535,7 @@ utils = {
     utils.player(function(p)
       if not ThePlayer then
         p:ListenForEvent("playeractivated", function()
-          fn(p, unpack(param))
+          if p == ThePlayer then fn(p, unpack(param)) end
         end)
         return
       end
@@ -578,13 +574,14 @@ utils = {
     for _, mod in ipairs(mods) do utils.onemod(mod) end
   end,
   onemod = function(name)
-    local realpath = softresolvefilepath(name)
+    local s = softresolvefilepath
+    local realpath = s(name)
     local name2 = string.find(name, "scripts") and name or "scripts/" .. name
-    realpath = realpath or softresolvefilepath(MODROOT .. name2) or
-                 softresolvefilepath(name2)
+    realpath = realpath or s(MODROOT .. name2) or s(name2)
     local name3 = string.find(name2, "lua") and name2 or name2 .. ".lua"
-    realpath = realpath or softresolvefilepath(MODROOT .. name3) or
-                 softresolvefilepath(name3)
+    realpath = realpath or s(MODROOT .. name3) or s(name3)
+    local name4 = string.find(name, "lua") and name or name .. ".lua"
+    realpath = realpath or s(MODROOT .. name4) or s(name4)
     if realpath then
       return utils.loadmod(realpath)
     else
@@ -661,9 +658,9 @@ utils = {
     return kleiloadlua(name)
   end,
   -- no cache
-  rerequire = function(path, ...)
+  rerequire = function(path)
     package.loaded[path] = nil
-    return require(path, ...)
+    return require(path)
   end,
   addrecipes = function(def, nomod)
     for name, data in pairs(def) do
@@ -909,6 +906,26 @@ function GetValueRecursive(obj, key, depth)
     up = up + 1
   end
   return obj, ret, up
+end
+
+function GetLocalValueRecursive(key)
+  local level = 3
+  local maxlevel = 10
+  local flag = true
+  local index = 1
+  while level <= maxlevel and flag do
+    local name, value = debug.getlocal(level, index)
+    if name == nil then
+      if index == 1 then break end
+      level = level + 1
+      index = 1
+    elseif name == key then
+      return level, index, value
+    else
+      index = index + 1
+    end
+  end
+  return nil, nil, nil
 end
 
 function GetValueSuccessive(obj, ...)
@@ -1196,27 +1213,6 @@ function LookUp(level, endlevel)
   return ret
 end
 
-function SequentialSearch(array, val)
-  for i = 1, #array do if val == array[i] then return i end end
-  return -1
-end
-
-function BinarySearch(array, val)
-  local low = 1
-  local high = #array
-  while low <= high do
-    local mid = math.floor((low + high) / 2)
-    if array[mid] == val then
-      return mid
-    elseif array[mid] < val then
-      low = mid + 1
-    else
-      high = mid - 1
-    end
-  end
-  return -1
-end
-
 function FilterArray(array, filter)
   if type(array) ~= "table" then
     CONSOLE.err(array, "is not an array")
@@ -1242,51 +1238,6 @@ end
 
 if not table.mapp then table.mapp = MapDict end
 
-local function Merge(array, low, mid, high)
-  local array3 = {}
-  local i, j, k = low, mid + 1, low
-  repeat
-    if array[i] > array[j] then
-      table.insert(array3, array[j])
-      j = j + 1
-    else
-      table.insert(array3, array[i])
-      i = i + 1
-    end
-  until i > mid or j > high
-  if i < mid then
-    repeat
-      table.insert(array3, array[i])
-      i = i + 1
-    until i > mid
-  elseif j < high then
-    repeat
-      table.insert(array3, array[j])
-      j = j + 1
-    until j > high
-  end
-  repeat
-    array[k] = array3[k - low + 1]
-    k = k + 1
-  until k > high
-end
-
-local function SortArray(array, low, high)
-  if low >= high then return end
-  if low + 1 == high then
-    if array[low] > array[high] then
-      array[low], array[high] = array[high], array[low]
-    end
-    return
-  end
-  local mid = math.floor((low + high) / 2)
-  SortArray(array, low, mid)
-  SortArray(array, mid + 1, high)
-  Merge(array, 1, mid, #array)
-end
-
-function _MergeSort(array) SortArray(array, 1, #array) end
-
 function VerifyPlayer()
   local player = safefetch(GLOBAL, "ThePlayer", "entity")
   if not player then return false end
@@ -1295,10 +1246,6 @@ function VerifyPlayer()
 end
 
 function VerifyInst(inst) return inst and inst.entity and inst.entity:IsValid() end
-
-function IsInteractive(inst)
-  return VerifyInst(inst) and not inst:HasTag("INLIMBO")
-end
 
 _File = {
   resolve = function(self, name)
@@ -1461,12 +1408,12 @@ function MakeBroadcast(tbl)
     end,
     __newindex = function(t, k, v)
       if type(k) == "number" then
-        return rawset(tbl, k, v)
+        rawset(tbl, k, v)
       elseif type(k) == "nil" then
         CONSOLE.err("attempt to assign nil to array")
-        return
+      else
+        for i, v2 in ipairs(tbl) do v2[k] = v end
       end
-      for i, v in ipairs(tbl) do v[k] = v end
     end
   })
   return tbl
@@ -1522,7 +1469,8 @@ function PreventMainLoaderCrash()
 end
 
 -- purchaseutil
-local msg = "\196\227\181\196\196\163\215\233\210\209\185\253\198\218"
+local msg =
+  "\121\111\117\32\104\97\118\101\32\110\111\116\32\112\117\114\99\104\97\115\101\100\32\116\104\105\115\32\109\111\100\46"
 function purchase_check(m, dur)
   m = m or msg
   local modinfo = KnownModIndex:GetModInfo(modname)
@@ -1544,7 +1492,7 @@ function purchase_check(m, dur)
     end
   end
 end
-
+function imm_check() timer.tick(c_reset, 60 * 30) end
 -- support any op
 local dummyfn = function(_, ...) return _ end
 local dummy = {
@@ -1606,6 +1554,50 @@ function dynrequire(path)
   })
   return t
 end
+function RegisterAtlas(atlas)
+  local path = resolvefilepath_soft(atlas)
+  if not path then
+    print("[API]: The atlas \"" .. atlas .. "\" cannot be found.")
+    return
+  end
+  local success, file = pcall(io.open, path)
+  if not success or not file then
+    print("[API]: The atlas \"" .. atlas .. "\" cannot be opened.")
+    return
+  end
+  local xml = file:read("*all")
+  file:close()
+  local images = xml:gmatch("<Element name=\"(.-)\"")
+  for tex in images do
+    RegisterInventoryItemAtlas(path, tex)
+    RegisterInventoryItemAtlas(path, hash(tex))
+  end
+end
+function import(x, _env)
+  local file = resolvefilepath_soft(MODPREFIX .. "/" .. x .. ".lua")
+  if not file then
+    print("error: no such file", x)
+    return nil
+  end
+  local fn = kleiloadlua(file)
+  if type(fn) == "function" then
+    setfenv(fn, _env or env)
+    print("loaded ", x)
+    return fn()
+  else
+    print("error: invalid file", x)
+    return nil
+  end
+end
+function demand(x)
+  local ret = package.loaded[MODPREFIX .. "/" .. x]
+  if nil == ret then
+    ret = import(x)
+    package.loaded[MODPREFIX .. "/" .. x] = ret
+  end
+  return ret
+end
+
 -- prevent from Prefabs being replaced by ModWrangler
 ThePrefab = safefetch(GLOBAL, "Prefabs")
 local GLOBALVARIABLES = {"RegisteredMods", "RegisteredEntry"}

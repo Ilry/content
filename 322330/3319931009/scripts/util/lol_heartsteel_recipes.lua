@@ -42,10 +42,10 @@ local recipe_all = {
 			Ingredient("armormarble",1),
 			Ingredient("goldnugget",60),
 			Ingredient("thulecite",10),
-			Ingredient("redgem",20),
+			Ingredient("redgem",10),
 		},
 		tech = TECH.LOST,
-        filters = {"MAGIC"}
+        filters = {"MAGIC",'TAB_LOL_WP','MODS'}
 	},
 ------------------------------------------------------------------
 --ARMOUR-----------------------------------------------------------

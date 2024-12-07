@@ -32,7 +32,7 @@ local function fn()
     --[[inst:AddComponent("stackable")
     inst.components.stackable.maxsize = TUNING.STACK_SIZE_LARGEITEM]]
     inst:AddComponent("perishable")
-    inst.components.perishable:SetPerishTime(480)
+    inst.components.perishable:SetPerishTime(60)
     inst.components.perishable:StartPerishing()
     inst.components.perishable.onperishreplacement = "spoiled_food"
     inst.components.inventoryitem.imagename = "why_refined_butterfly_moon"

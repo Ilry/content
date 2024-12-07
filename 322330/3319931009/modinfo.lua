@@ -1,20 +1,14 @@
+---@diagnostic disable: lowercase-global
 name = "英雄联盟武器"
-description = [[英雄联盟武器
-
-目前更新武器：
-【铁刺鞭】炼金引擎制作，攻击距离1.5，造成AOE伤害。
-
-【提亚马特】炼金引擎制作，可以当作多用斧镐，右键造成AOE伤害。
-
-【巨型九头蛇】击败龙蝇概率掉落蓝图，根据玩家最大生命值百分比造成额外伤害。
-
-【心之钢】击败狂暴克劳斯掉落蓝图，攻击boss生物叠加血上限，增加体型。
-
-【破舰者】远古塔制作，多功能工具，可以为自身和随从提供防御力。
-
-【渴血战斧】暗影术基座制作，攻击距离2.0，攻击消耗生命，攻击多个单位可吸血。
+description = [[目前更新武器：
+前期武器：【多兰之刃】【多兰之盾】【萃取】【黑曜石锋刃】【铁刺鞭】【提亚马特】【耀光】
+战士武器：【黑色切割者】【破败王者之刃】【神圣分离者】【破舰者】【巨型九头蛇】【渴血战斧】
+【挺进破坏者】
+护甲装备：【狂徒铠甲】【霸王血铠】【恶魔之拥】
+法术武器：【无用大棒】【纳什之牙】【瑞莱的冰晶节杖】【巫妖之祸】【峡谷制造者】
+特殊装备：【多兰之戒】【女神之泪】【心之钢】【三相之力】【灭世者的死亡之帽】
 ]]
-author = "艾趣44，zzzzzzzs"
+author = "艾趣44，zzzzzzzs，醨，LAN，HPMY，C"
 forumthread = ""
 priority = 0
 api_version = 6
@@ -28,7 +22,7 @@ all_clients_require_mod = true
 icon_atlas = "modicon.xml"
 icon = "modicon.tex"
 server_filter_tags = {}
-version = "1.0.5"
+version = "4.0.1"
 local configuration = {
     {
         name = "gallopbreakermusic",
@@ -38,6 +32,28 @@ local configuration = {
         options = {
             {description = "Yes", data = true},
             {description = "No", data = false}
+        }
+    }, 
+    {
+        name = "bloodaxe_health",
+        label = "Thirsting Slash Health Delta",
+        default = 3,
+        hover = "bloodaxe_health_hover",
+        options = {
+            {description = "-3", data = -3},
+            {description = "3", data = 3},
+            {description = "5", data = 5},
+            {description = "8", data = 8},
+        }
+    }, 
+    {
+        name = "eyestone_allow_lolamulet_only",
+        label = "Eyestone allow LOL Amulet Only",
+        default = true,
+        hover = "eyestone_allow_lolamulet_only_hover",
+        options = {
+            {description = "Yes", data = true},
+            {description = "No", data = false},
         }
     }, 
     {name = "divide_heartsteel",default = true, hover = "", options = {}}, 
@@ -116,7 +132,10 @@ translation = {
             limit_lol_heartsteel_blueprint_dropby = '蓝图掉落',
             limit_lol_heartsteel_blueprint_dropby_hover = '',
             divide_heartsteel = '心之钢配置',
-
+            bloodaxe_health="渴血战斧吸血",
+            bloodaxe_health_hover="",
+            eyestone_allow_lolamulet_only = '戒备眼石：仅限联盟护符/所有护符',
+            eyestone_allow_lolamulet_only_hover = '默认仅限联盟护符',
         }
     }, {
         matchLanguage = function(lang) return lang == "en" end,
@@ -135,6 +154,9 @@ translation = {
             limit_lol_heartsteel_blueprint_dropby = 'blueprint itemdrop',
             limit_lol_heartsteel_blueprint_dropby_hover = '',
             divide_heartsteel = 'HeartSteel Config',
+            bloodaxe_health_hover="",
+            eyestone_allow_lolamulet_only = 'Eyestone: Allow only lolamulet to be used',
+            eyestone_allow_lolamulet_only_hover = 'Default: only allow lolamulet.'
         },
         translateFunction = function(key)
             return translation[2].dict[key] or key

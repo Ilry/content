@@ -23,7 +23,7 @@ But don't be too greedy, or it will take too long!
 ]]
 
 author = "clearlove"
-version = "1.2.0"
+version = "1.2.3"
 
 api_version = 10
 
@@ -97,6 +97,12 @@ for i = 0, 40 do
     pond_distance_options[i+2] = { description = (i*2)..(CH and "个地皮" or " tiles"), data = i*2 }
 end
 
+local meteor_distance_options = {}
+meteor_distance_options[1] = { description = CH and "无所谓" or "I don't care", data = "not set" }
+for i = 0, 15 do
+    meteor_distance_options[i+2] = { description = (30+i)..(CH and "个地皮" or " tiles"), data = 30+i }
+end
+
 local connect_ancient_options = {}
 connect_ancient_options[1] = { description = CH and "无所谓" or "I don't care", data = "not set" }
 for i = 1, 40 do
@@ -113,10 +119,21 @@ zero_or_one_options[1] = { description = CH and "无所谓" or "I don't care", d
 zero_or_one_options[2] = { description = CH and "0个" or "0", data = 0 }
 zero_or_one_options[3] = { description = CH and "1个" or "1", data = 1 }
 
-local SacredBarracks_hover = CH and "五个雕像，4个梦魇灯座，1个主教，2个战车" or "5 ancient statues, 4 Nightmare Light, 1 Bishop, 2 Rooks"
-local Bishops_hover = CH and "8个雕像，2个主教" or "8 ancient statues, 2 Bishops"
+local shade_threshold_options = {}
+shade_threshold_options[1] = { description = CH and "无所谓" or "I don't care", data = "not set" }
+for i = 1, 20 do
+    shade_threshold_options[i+1] = { description = (i*5).."%", data = i*0.05 }
+end
+
+local base_radius_options = {} -- from 2 to 10
+for i = 2, 10 do
+    base_radius_options[i-1] = { description = i..(CH and "个地皮" or " tiles"), data = i }
+end
+
+local SacredBarracks_hover = CH and "五个雕像（其中4个带宝石），4个梦魇灯座，1个主教，2个战车" or "5 ancient statues (4 with gem), 4 Nightmare Light, 1 Bishop, 2 Rooks"
+local Bishops_hover = CH and "8个雕像（其中4个带宝石），2个主教" or "8 ancient statues (4 with gem), 2 Bishops"
 local Spiral_hover = CH and "破损的家具" or "Broken furniture"
-local BrokenAltar_hover = CH and "1个远古伪科学站，两个雕像，2个梦魇灯座" or "1 Ancient Pseudoscience Station, 2 ancient statues, 2 Nightmare Light"
+local BrokenAltar_hover = CH and "1个远古伪科学站，两个雕像(带宝石)，2个梦魇灯座" or "1 Ancient Pseudoscience Station, 2 ancient statues (with gem), 2 Nightmare Light"
 local Barracks_hover = CH and "没有雕像和影灯，有发条生物" or "No ancient statues and Nightmare Light, have clockwork creatures"
 
 configuration_options = {
@@ -286,7 +303,7 @@ configuration_options = {
         name = "master_custom_entity_num",
         label = CH and "自定义实体" or "Custom entity",
         options = {{description = CH and "无" or "None", data = ""}},
-        hover = CH and "输入你任意感兴趣的实体名称及个数，用“实体:数目”表示你的某个要求，用分号分隔不同的要求。例如为：beefalo:15;livingtree:2;\n你可以订阅我发布的另一个模组“文本模组配置”，来直接在配置界面输入" or 
+        hover = CH and "输入你任意感兴趣的实体名称及个数，用“实体:数目”表示你的某个要求，用分号分隔不同的要求。\n（注意冒号和分号都需要是英文输入法输入）例如为：beefalo:15;livingtree:2;\n你可以订阅我发布的另一个模组“文本模组配置”，来直接在配置界面输入" or 
         "Enter the name and number of any entity you are interested in, use 'entity:number' to represent your requirements, and use semicolons to separate different requirements. For example: beefalo:15;livingtree:2;\nYou can subscribe to another mod I released, 'Mod Config By Text', to enter directly in the configuration interface",
         default = "",
         is_text_config = true
@@ -407,6 +424,13 @@ configuration_options = {
             {description = CH and "200次" or "200 times", data = 200},
             {description = CH and "500次" or "500 times", data = 500},
             {description = CH and "1000次" or "1000 times", data = 1000},
+            {description = CH and "2000次" or "2000 times", data = 2000},
+            {description = CH and "5000次" or "5000 times", data = 5000},
+            {description = CH and "10000次" or "10000 times", data = 10000},
+            {description = CH and "20000次" or "20000 times", data = 20000},
+            {description = CH and "50000次" or "50000 times", data = 50000},
+            {description = CH and "100000次" or "100000 times", data = 100000},
+            {description = CH and "无限次" or "Infinite times", data = 2147483647},
         },
         default = 1,
         is_text_config = true,
@@ -512,10 +536,17 @@ configuration_options = {
         is_text_config = true
     },
     {
+        name = "master_junkpile_soft",
+        label = CH and "摇摇欲坠的垃圾堆" or "Teetering Junk Pile",
+        options = weight_options,
+        default = "not set",
+        is_text_config = true
+    },
+    {
         name = "master_custom_entity_near_soft",
         label = CH and "自定义邻近实体" or "Custom nearby entity",
         options = {{description = CH and "无" or "None", data = ""}},
-        hover = CH and "输入你感兴趣的实体，以及它的权重，用“实体:权重”表示你的某个要求，用分号分隔不同的要求。\n例如为：beefalo:1.1;moose_nesting_ground:2.0;\n你可以订阅我发布的另一个模组“文本模组配置”，来直接在配置界面输入" or 
+        hover = CH and "输入你感兴趣的实体，以及它的权重，用“实体:权重”表示你的某个要求，用分号分隔不同的要求。（注意冒号和分号都需要是英文输入法输入）\n例如为：beefalo:1.1;moose_nesting_ground:2.0;\n你可以订阅我发布的另一个模组“文本模组配置”，来直接在配置界面输入" or 
         "Enter the name of the entity you are interested in, and its weight, use 'entity:weight' to represent your requirements, and use semicolons to separate different requirements.\nFor example: beefalo:1.1;moose_nesting_ground:2.0;\nYou can subscribe to another mod I released, 'Mod Config By Text', to enter directly in the configuration interface",
         default = "",
         is_text_config = true
@@ -632,10 +663,16 @@ configuration_options = {
         hover = CH and "不要设置的太小，我认为可能至少需要设置为30" or "Don't set it too small, I think it may need to be set to at least 30",
     },
     {
+        name = "master_junkpile",
+        label = CH and "摇摇欲坠的垃圾堆" or "Teetering Junk Pile",
+        options = distance_options,
+        default = "not set",
+    },
+    {
         name = "master_custom_entity_near",
         label = CH and "自定义邻近实体" or "Custom nearby entity",
         options = {{description = CH and "无" or "None", data = ""}},
-        hover = CH and "输入你感兴趣的实体，以及想约束基地距离它的最小距离，用“实体:距离”表示你的某个要求，用分号分隔不同的要求。\n这里的距离仍然以地皮为单位。例如为：beefalo:15;moose_nesting_ground:10;\n你可以订阅我发布的另一个模组“文本模组配置”，来直接在配置界面输入" or 
+        hover = CH and "输入你感兴趣的实体，以及想约束基地距离它的最小距离，用“实体:距离”表示你的某个要求，用分号分隔不同的要求。（注意冒号和分号都需要是英文输入法输入）\n这里的距离仍然以地皮为单位。例如为：beefalo:15;moose_nesting_ground:10;\n你可以订阅我发布的另一个模组“文本模组配置”，来直接在配置界面输入" or 
         "Enter the name of the entity you are interested in, and the minimum distance you want to constrain the base from it, use 'entity:distance' to represent your requirements, and use semicolons to separate different requirements.\nHere the distance is still in tiles. For example: beefalo:15;moose_nesting_ground:10;\nYou can subscribe to another mod I released, 'Mod Config By Text', to enter directly in the configuration interface",
         default = "",
         is_text_config = true
@@ -646,6 +683,22 @@ configuration_options = {
         options = pond_distance_options,
         default = "not set",
         hover = CH and "如果你想要一个池塘，但是不想让它太靠近基地，可以使用这个选项" or "If you want a pond, but don't want it too close to your base, you can use this option"
+    },
+    {
+        name = "master_meteorspawner",
+        label = CH and "(远离)陨石区" or "(Far away)Meteor Fields",
+        options = meteor_distance_options,
+        default = "not set",
+        hover = CH and "设置基地与陨石区中心点的最小距离，陨石的范围是30个地皮" or "Set the minimum distance between the base and the center of the meteor field, the range of the meteor is 30 tiles"
+    },
+    {
+        name = "master_custom_entity_far",
+        label = CH and "自定义远离实体" or "Custom far away entity",
+        options = {{description = CH and "无" or "None", data = ""}},
+        hover = CH and "输入你感兴趣的实体，以及想约束基地距离它的最小距离，用“实体:距离”表示你的某个要求，用分号分隔不同的要求。（注意冒号和分号都需要是英文输入法输入）\n这里的距离仍然以地皮为单位。例如为：beefalo:15;moose_nesting_ground:10;\n你可以订阅我发布的另一个模组“文本模组配置”，来直接在配置界面输入" or
+        "Enter the name of the entity you are interested in, and the minimum distance you want to constrain the base from it, use 'entity:distance' to represent your requirements, and use semicolons to separate different requirements.\nHere the distance is still in tiles. For example: beefalo:15;moose_nesting_ground:10;\nYou can subscribe to another mod I released, 'Mod Config By Text', to enter directly in the configuration interface",
+        default = "",
+        is_text_config = true
     },
     -- regions
     -- Squeltch, Moon island, Ocean
@@ -676,6 +729,28 @@ configuration_options = {
         options = distance_options,
         default = "not set",
         hover = CH and "要使用这个选项，请保证在地上可选地形中将海象平原设置为必须有" or "To use this option, make sure that the The hunters is set to must have in the Master Optional Biomes",
+    },
+    {
+		name = "master_under_tree",
+		label = CH and "大树下好乘凉" or "Under the KnobblyTree",
+		options = {{description = "", data = 0}},
+		default = 0,
+        hover = CH and "这个选项是为了筛选那些可以在旁边种植疙瘩树的基地， 你需要先假定一个基地的尺寸，然后设置这个基地被遮蔽的阈值" or "This option is to filter out the base where the Knobbly Tree can be planted next to. You need to set a size of the base first, and then set the threshold for the base to be shaded",
+		tags = {"ignore"},
+	},
+    {
+        name = "master_under_tree_threshold",
+        label = CH and "遮蔽阈值" or "Shade threshold",
+        options = shade_threshold_options,
+        default = "not set",
+        hover = CH and "设置基地被遮蔽的阈值，这个值越大，基地被遮蔽的地方越多。设置为“无所谓”则不会进行相关检查。\n我仅仅测试了30%的设置，谨慎设置太高的值，毕竟基地的形状只是粗糙的圆形估计" or "Set the threshold for the base to be shaded. The larger this value, the more the base will be shaded. Set to 'I don't care' will not perform related checks.\nI only tested 30% of the settings, be careful not to set too high values, after all, the shape of the base is just a rough circular estimate",
+    },
+    {
+        name = "master_base_radius",
+        label = CH and "基地半径" or "Base radius",
+        options = base_radius_options,
+        default = 3,
+        hover = CH and "设置一个假象的基地半径。这个值只是用来衡量在某个地方建家的时候，基地会有多大部分处于树荫之中。\n计算时，假定基地是圆形" or "Set an imaginary base radius. This value is only used to measure how much of the base will be shaded when building a base in a certain place. \n When calculating, assume that the base is circular",
     },
     -- {
     --     name = "master_ocean",
@@ -852,11 +927,35 @@ configuration_options = {
         default = "not set",
         hover = CH and "不要设置的过少" or "Don't set it too small",
     },
+    {
+        name = "cave_ruins_statue_all",
+        label = CH and "远古雕像" or "Ruins Statue Mage",
+        options = eighty_num_options,
+        default = "not set",
+        hover = CH and "这里是带宝石，不带宝石的两种雕像个数的总和。实际上这是由房间个数决定的，你也可以通过“定制远古房间”实现类似的效果" or "Here is the sum of the number of statues (with and without gems). In fact, this is determined by the number of rooms, you can also achieve similar effects through 'Custom rooms'",
+    },
+    {
+        name = "cave_ruins_statue_gem",
+        label = CH and "远古雕像（带宝石）.实际上这是由房间个数决定的，你也可以通过“定制远古房间”实现类似的效果" or "Ruins Statue Mage(w/ gem). In fact, this is determined by the number of rooms, you can also achieve similar effects through 'Custom rooms'",
+        options = eighty_num_options,
+        default = "not set",
+    },
+    -- custom entity num
+    {
+        name = "cave_custom_entity_num",
+        label = CH and "自定义实体数量" or "Custom entity number",
+        options = {{description = CH and "无" or "None", data = ""}},
+        hover = CH and "输入你感兴趣的实体，以及它的最小数量，用“实体:数量”表示你的某个要求，用分号分隔不同的要求。（注意冒号和分号都需要是英文输入法输入）\n例如为：beefalo:1;moose_nesting_ground:2;\n你可以订阅我发布的另一个模组“文本模组配置”，来直接在配置界面输入" or 
+        "Enter the name of the entity you are interested in, and its minimal number, use 'entity:number' to represent your requirements, and use semicolons to separate different requirements.\nFor example: beefalo:1;moose_nesting_ground:2;\nYou can subscribe to another mod I released, 'Mod Config By Text', to enter directly in the configuration interface",
+        default = "",
+        is_text_config = true
+    },
     AddSectionTitle(CH and "定制远古房间" or "Custom rooms"),
-    -- ["SacredBarracks"] --圣地军营，五个雕像，4个影灯，1个主教，2个战车
-    -- ["Bishops"] --8个雕像，2个主教
+    -- ["SacredBarracks"] --圣地军营，五个雕像(4个带宝石)，4个影灯，1个主教，2个战车
+    -- ["Bishops"] --8个雕像(4个带宝石)，2个主教
     -- ["Spiral"] --破损的家具
-    -- ["BrokenAltar"] --1个破塔，两个雕像，2个影灯
+    -- ["BrokenAltar"] --1个破塔，两个雕像(2个带宝石)，2个影灯
+    -- ["Barracks"] --没有雕像和影灯，有发条生物
     AddSectionTitle(CH and "定制圣地" or "Custom Sacred"),
     {
         name = "Sacred_SacredBarracks",
@@ -934,10 +1033,60 @@ configuration_options = {
     },
     AddSectionTitle(CH and "地下特殊要求" or "Cave Special requirements"),
     {
+        name = "cave_connected_ancient_title",
+        label = CH and "远古靠近楼梯" or "",
+        options = {{description = "", data = 0}},
+        tags = {"ignore"},
+        hover = CH and "楼梯靠近远古，这里靠近远古是通过检查楼梯附近是否有雕像/迷宫箱子/远古守护者来判断。在下面的选项中设置你的倾向。\n如果设置多个，例如雕像与箱子设置为真，则靠近二者之一即视为满足条件" or "Ancient near the stairs, here near the ancient is judged by checking whether there are statues/maze boxes/ancient guardians near the stairs. Set your preference in the options below.\nIf set to multiple, such as statues and boxes set to true, near either is considered to meet the conditions",
+        default = "",
+    },
+    {
         name = "cave_connected_ancient",
-        label = CH and "远古靠近楼梯" or "Ancient near Sinkhole",
+        label = CH and "楼梯与的远古距离" or "stairs & ancient distance",
         options = connect_ancient_options,
         default = "not set",
-        hover = CH and "楼梯靠近远古，只要有某个雕像/迷宫箱子距离梯子接近，就视为满足要求\n设置20个地皮时，大约需500个地图才能找到1张符合要求（因此会把时间增加500倍）" or "Ancient near the stairs, as long as a statue/maze box is close to the stairs, it is considered to meet the requirements\nWhen set to 20 tiles, it takes about 500 maps to find one that meets the requirements (so it will increase the time by 500 times)",
+        hover = CH and "设置你期望的楼梯与远古的最小距离， 当设置为20地皮时，(远古用雕像和迷宫箱子表示时)需要花费500倍的时间。\n这里远古的含义由下面的选项指定，彼此之间是“或”的关系" or "Set the minimum distance you expect between the stairs and the ancients, when set to 20 tiles, (when the ancients are represented by statues and maze boxes) it takes 500 times longer.\nThe meaning of the ancient is specified by the options below, and they are 'or' to each other",
     },
+    {
+
+        name = "cave_accelerated_ancient",
+        label = CH and "加速检查" or "Accelerated check",
+        options = {
+            {description = CH and "否" or "no", data = false, hover = CH and "不加速检查，会花费更多的时间" or "Do not accelerate the check, it will take more time"},
+            {description = CH and "是" or "yes", data = true, hover = CH and "加速检查，会花费更少的时间" or "Accelerate the check, it will take less time"},
+        },
+        default = true,
+        hover = CH and "通过限制可选地形的组成来加速远古直连楼梯的检测。开启本选项将不会刷新地下森林、怡人陷洞、混合蘑菇森林、混合蘑菇草地、兔镇、兔城。（将覆盖前面“洞穴可选地形的设置”）" or
+        "Accelerate the detection of the ancients directly connected to the stairs by restricting the composition of the optional terrain. Enabling this option will not refresh the UndergroundForest, PleasantSinkhole, FungalNoiseForest, FungalNoiseMeadow, RabbitTown, RabbitCity. (Will override the previous 'Cave Optional Biomes' settings)",
+    },
+    {
+        name = "cave_close_to_statues",
+        label = CH and "将雕像视作远古？" or "Statues as Ancient?",
+        options = {
+            {description = CH and "否" or "no", data = false, hover = CH and "靠近雕像不算靠近远古" or "Close to the statues is not considered as 'Ancient near Sinkhole'"},
+            {description = CH and "是" or "yes", data = true, hover = CH and "靠近雕像被视作靠近远古" or "Close to the statues is considered as 'Ancient near Sinkhole'"},
+        },
+        default = true,
+        hover = CH and "设定为是，则如果有雕像靠近楼梯，即视为“远古靠近楼梯”。\n如果你还设置了迷宫箱子/远古守卫者，那么靠近其中之一即视作条件满足" or "If set to yes, if there is a statue near the stairs, it is considered as 'Ancient near Sinkhole'\nIf you also set the maze box/ancient guardian, then near one of them is considered to meet the conditions",
+    },
+    {
+        name = "cave_close_to_maze_boxes",
+        label = CH and "将迷宫箱子视作远古？" or "Maze Boxes as Ancient?",
+        options = {
+            {description = CH and "否" or "no", data = false, hover = CH and "靠近迷宫箱子不算靠近远古" or "Close to the maze boxes is not considered as 'Ancient near Sinkhole'"},
+            {description = CH and "是" or "yes", data = true, hover = CH and "靠近迷宫箱子被视作靠近远古" or "Close to the maze boxes is considered as 'Ancient near Sinkhole'"},
+        },
+        default = true,
+        hover = CH and "设定为是，则如果有迷宫箱子靠近楼梯，即视为“远古靠近楼梯”。\n如果你还设置了雕像/远古守卫者，那么靠近其中之一即视作条件满足" or "If set to yes, if there is a maze box near the stairs, it is considered as 'Ancient near Sinkhole'\nIf you also set the statues/ancient guardian, then near one of them is considered to meet the conditions",
+    },
+    {
+        name = "cave_close_to_minotaur_spawner",
+        label = CH and "将远古守护者视作远古？" or "Minotaur as Ancient?",
+        options = {
+            {description = CH and "否" or "no", data = false, hover = CH and "靠近远古守护者不算靠近远古" or "Close to the Minotaur is not considered as 'Ancient near Sinkhole'"},
+            {description = CH and "是" or "yes", data = true, hover = CH and "靠近远古守护者被视作靠近远古" or "Close to the Minotaur is considered as 'Ancient near Sinkhole'"},
+        },
+        default = false,
+        hover = CH and "设定为是，则如果有远古守护者靠近楼梯，即视为“远古靠近楼梯”。\n如果你还设置了雕像/迷宫箱子，那么靠近其中之一即视作条件满足" or "If set to yes, if there is a Minotaur near the stairs, it is considered as 'Ancient near Sinkhole'\nIf you also set the statues/maze boxes, then near one of them is considered to meet the conditions",
+    }
 }

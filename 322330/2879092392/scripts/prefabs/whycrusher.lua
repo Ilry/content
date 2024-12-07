@@ -319,15 +319,17 @@ local function refinedgemgiven(inst, giver, item)
     ---------------------------------------------------------------------------blue
     ---------------------------------------------------------------------------purple
     if item.prefab == "why_refined_purplegem" then
-        inst.components.rechargeable:Discharge(1.5)
+        inst.components.rechargeable:Discharge(960)
         inst:DoTaskInTime(0.6, function()
             inst.SoundEmitter:PlaySound("dontstarve/common/gem_shatter")
             LaunchAt(SpawnPrefab("ancientdreams_gemshard"), inst, giver, .8, 1, 1)
-            local sanpos = inst:GetPosition()
-            local burple = SpawnPrefab("sanity_lower")
-            burple.Transform:SetPosition(sanpos:Get())
-            giver:AddDebuff("refined_purple_gem_buff", "refined_purple_gem_buff")
-
+            TheWorld:PushEvent("ms_setclocksegs", { day = 0, dusk = 0, night = 16 })
+            inst:DoTaskInTime(8, function()
+                TheWorld:PushEvent("ms_setmoonphase", { moonphase = "new" , iswaxing = true })
+            end)
+            if giver.components.sanity then
+                giver.components.sanity:DoDelta(-20)
+            end
         end)
     end
     ---------------------------------------------------------------------------purple

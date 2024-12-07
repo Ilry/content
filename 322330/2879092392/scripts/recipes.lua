@@ -37,7 +37,7 @@ end
 
 local ancientdreams_gegg_recipe = {	
 	name = "ancientdreams_gegg",
-	test = function(cooker, names, tags) return names.ancientdreams_gemshard and names.ancientdreams_gemshard == 1 and names.bird_egg and names.bird_egg == 2 and tags.meat and tags.meat >= 0.5 end,
+	test = function(cooker, names, tags) return names.ancientdreams_gemshard and names.ancientdreams_gemshard == 1 and ((names.bird_egg and names.bird_egg > 1) or (names.bird_egg_cooked and names.bird_egg_cooked > 1)) and tags.meat and tags.meat >= 0.5 end,
 	priority = 10,
 	weight = 1,
 	foodtype = FOODTYPE.MEAT,
@@ -48,6 +48,7 @@ local ancientdreams_gegg_recipe = {
 	cooktime = 1,
     overridebuild = "ancientdreams_gegg",
 	--[[tags = {"honeyed"},]]}
+
 
 local ancientdreams_candy_recipe = {	
 	name = "ancientdreams_candy",
@@ -91,7 +92,7 @@ local ancientdreams_geocake_recipe = {
 
 local ancientdreams_hyubsip_recipe = {	
 	name = "ancientdreams_hyubsip",
-	test = function(cooker, names, tags) return names.ancientdreams_gemshard  and names.ancientdreams_gemshard == 1 and names.ice and names.ice ==1 and (names.berries or names.berries_cooked or names.berries_juicy or names.berries_juicy_cooked) and tags.dairy and tags.dairy >= 0.5 end,
+	test = function(cooker, names, tags) return names.ancientdreams_gemshard  and names.ancientdreams_gemshard == 1 and (names.berries or names.berries_cooked or names.berries_juicy or names.berries_juicy_cooked) and tags.dairy and tags.dairy >= 0.5 and tags.frozen end,
 	priority = 110,
 	weight = 1,
 	foodtype = FOODTYPE.GOODIES,
@@ -104,7 +105,7 @@ local ancientdreams_hyubsip_recipe = {
 
 local ancientdreams_kozisip_recipe = {	
 	name = "ancientdreams_kozisip",
-	test = function(cooker, names, tags) return names.ancientdreams_gemshard and names.ancientdreams_gemshard == 1 and names.watermelon and names.watermelon == 1 and names.cactus_flower and names.cactus_flower == 1 end,
+	test = function(cooker, names, tags) return names.ancientdreams_gemshard and names.ancientdreams_gemshard == 1 and (names.watermelon or names.watermelon_cooked) and names.cactus_flower and names.cactus_flower == 1 end,
 	priority = 120,
 	weight = 1,
 	foodtype = FOODTYPE.GOODIES,
@@ -117,7 +118,7 @@ local ancientdreams_kozisip_recipe = {
     
     local ancientdreams_tart_recipe = {	
 	name = "ancientdreams_tart",
-	test = function(cooker, names, tags) return names.ancientdreams_gemshard and names.ancientdreams_gemshard == 1 and names.ice and names.ice == 2 and (names.wormlight or (names.wormlight_lesser and names.wormlight_lesser ==1)) end,
+	test = function(cooker, names, tags) return names.ancientdreams_gemshard and names.ancientdreams_gemshard == 1 and (names.wormlight or (names.wormlight_lesser and names.wormlight_lesser ==1)) and tags.frozen end,
 	priority = 130,
 	weight = 1,
 	foodtype = FOODTYPE.GOODIES,
@@ -145,7 +146,7 @@ local ancientdreams_evilbred_recipe = {
 
 local ancientdreams_gell_recipe = {	
 	name = "ancientdreams_gell",
-	test = function(cooker, names, tags) return names.ancientdreams_gemshard and names.ancientdreams_gemshard == 2 and names.ice and names.forgetmelots end,
+	test = function(cooker, names, tags) return names.ancientdreams_gemshard and names.ancientdreams_gemshard == 2 and names.forgetmelots and tags.frozen end,
 	priority = 120,
 	weight = 1,
 	foodtype = FOODTYPE.GOODIES,
@@ -291,13 +292,13 @@ end
 --
 if TUNING.WHY_CAVELESS_RECIPE == "0" then
 AddRecipe2("whycrusher",
-{Ingredient("horn", 1), Ingredient("multitool_axe_pickaxe", 1), Ingredient("thulecite", 6), Ingredient("wall_moonrock_item", 4)},
+{Ingredient("horn", 1), Ingredient("boneshard", 4), Ingredient("thulecite", 3)},
 TECH.GLOBEDREAM_ONE,
 {builder_tag = "ancientdreamer", nounlock = false, no_deconstruction = false, atlas = "images/inventoryimages/whycrusher.xml", image = "whycrusher.tex", placer = "whycrusher_placer"},
 {"CHARACTER", "STRUCTURES", "MAGIC"})
 else
 AddRecipe2("whycrusher",
-{Ingredient("horn", 1), Ingredient("goldenpickaxe", 1), Ingredient("refined_dust", 12), Ingredient("wall_moonrock_item", 4)},
+{Ingredient("horn", 1), Ingredient("boneshard", 4), Ingredient("refined_dust", 6)},
 TECH.GLOBEDREAM_ONE,
 {builder_tag = "ancientdreamer", nounlock = false, no_deconstruction = false, atlas = "images/inventoryimages/whycrusher.xml", image = "whycrusher.tex", placer = "whycrusher_placer"},
 {"CHARACTER", "STRUCTURES", "MAGIC"})
@@ -437,7 +438,7 @@ end
 --
 if TUNING.WHY_CAVELESS_RECIPE == "0" then
 AddRecipe2("whyearmor_backpack",
-{Ingredient("whyearmor_incomplete", 1, "images/inventoryimages/whyearmor_incomplete.xml"), Ingredient("why_refined_yellowgem", 1, "images/inventoryimages/why_refined_yellowgem.xml"), Ingredient("moonrocknugget", 6), Ingredient("thulecite", 2), Ingredient("why_klaus_sack_piece", 1, "images/inventoryimages/why_klaus_sack_piece.xml")},
+{Ingredient("whyearmor_incomplete", 1, "images/inventoryimages/whyearmor_incomplete.xml"), Ingredient("why_refined_yellowgem", 1, "images/inventoryimages/why_refined_yellowgem.xml"), Ingredient("moonrocknugget", 2), Ingredient("why_klaus_sack_piece", 1, "images/inventoryimages/why_klaus_sack_piece.xml")},
 TECH.GLOBEDREAM_ONE,
 {builder_tag = "ancientdreamer", nounlock = false, no_deconstruction = false, numtogive = 1, atlas = "images/inventoryimages/whyearmor_backpack.xml", image = "whyearmor_backpack.tex"},
 {"CHARACTER", "CONTAINERS", "LIGHT"})
@@ -456,19 +457,19 @@ TECH.SCIENCE_ONE,
 {"CHARACTER", "ARMOUR"})
 --
 AddRecipe2("whycrank",
-{Ingredient("thulecite_pieces", 2), Ingredient("livinglog", 1)},
+{Ingredient("thulecite_pieces", 1), Ingredient("livinglog", 1)},
 TECH.SCIENCE_TWO,
 {builder_tag = "ancientdreamer", nounlock = false, no_deconstruction = false, numtogive = 1, atlas = "images/inventoryimages/whycrank.xml", image = "whycrank.tex"},
 {"CHARACTER", "TOOLS"})
 --
 AddRecipe2("whykrampussack",
-{Ingredient("sewing_kit", 1), Ingredient("why_klaus_sack_piece", 10, "images/inventoryimages/why_klaus_sack_piece.xml")},
+{Ingredient("sewing_kit", 1), Ingredient("why_klaus_sack_piece", 25, "images/inventoryimages/why_klaus_sack_piece.xml")},
 TECH.SCIENCE_TWO,
 {builder_tag = "ancientdreamer", nounlock = false, no_deconstruction = true, numtogive = 1, product = "krampus_sack"},
 {"CONTAINERS"})
 --
 AddRecipe2("whylifepeeler",
-{Ingredient("whycrank", 1, "images/inventoryimages/whycrank.xml"), Ingredient("why_refined_redgem", 1, "images/inventoryimages/why_refined_redgem.xml"), Ingredient("refined_dust", 2), Ingredient("moonrocknugget", 2)},
+{Ingredient("whycrank", 1, "images/inventoryimages/whycrank.xml"), Ingredient("why_refined_redgem", 1, "images/inventoryimages/why_refined_redgem.xml"), Ingredient("refined_dust", 1), Ingredient("moonrocknugget", 2)},
 TECH.GLOBEDREAM_ONE,
 {builder_tag = "ancientdreamer", nounlock = false, no_deconstruction = true, numtogive = 1, atlas = "images/inventoryimages/whylifepeeler.xml", image = "whylifepeeler.tex"},
 {"CHARACTER", "RESTORATION", "MAGIC"})
@@ -488,13 +489,13 @@ TECH.GLOBEDREAM_ONE,
 end
 --
 AddRecipe2("whybrella",
-{Ingredient("umbrella", 1), Ingredient("why_refined_bluegem", 1, "images/inventoryimages/why_refined_bluegem.xml"), Ingredient("whyearmor_pile", 1, "images/inventoryimages/whyearmor_pile.xml"), Ingredient("waxpaper", 2)},
+{Ingredient("umbrella", 1), Ingredient("why_refined_bluegem", 1, "images/inventoryimages/why_refined_bluegem.xml"), Ingredient("whyearmor_pile", 1, "images/inventoryimages/whyearmor_pile.xml"), Ingredient("waxpaper", 1)},
 TECH.GLOBEDREAM_ONE,
 {builder_tag = "ancientdreamer", nounlock = false, no_deconstruction = false, numtogive = 1, atlas = "images/inventoryimages/whybrella.xml", image = "whybrella.tex"},
 {"CHARACTER", "RAIN"})
 -----------------------------------------------------------------------------------------------------------------------------------
 AddRecipe2("whyflutoscope",
-{Ingredient("walrus_tusk", 1), Ingredient("why_refined_purplegem", 1, "images/inventoryimages/why_refined_purplegem.xml"), Ingredient("thulecite", 1), Ingredient("glommerwings", 1)},
+{Ingredient("why_refined_purplegem", 1, "images/inventoryimages/why_refined_purplegem.xml"), Ingredient("thulecite", 1), Ingredient("glommerwings", 1)},
 TECH.GLOBEDREAM_ONE,
 {builder_tag = "ancientdreamer", nounlock = false, no_deconstruction = false, numtogive = 1, atlas = "images/inventoryimages/whyflutoscope.xml", image = "whyflutoscope.tex"},
 {"CHARACTER", "MAGIC", "WEAPONS"})
@@ -509,7 +510,7 @@ TECH.GLOBEDREAM_ONE,
 --
 --
 AddRecipe2("whyspear",
-{Ingredient("nitre", 2), Ingredient("ancientdreams_gemshard", 8, "images/inventoryimages/ancientdreams_gemshard.xml")},
+{Ingredient("nitre", 2), Ingredient("ancientdreams_gemshard", 5, "images/inventoryimages/ancientdreams_gemshard.xml")},
 TECH.SCIENCE_TWO,
 {builder_tag = "ancientdreamer", nounlock = false, no_deconstruction = false, numtogive = 1, atlas = "images/inventoryimages/whyspear.xml", image = "whyspear.tex"},
 {"CHARACTER", "WEAPONS"})
@@ -869,6 +870,78 @@ AddRecipe2("blueprint_craftingset_ruins_builder_greeneye",
 		{Ingredient("papyrus", 3)},
 		TECH.GLOBEDREAM_ONE,{builder_tag = "whyancientmaker", nounlock=true, product = "blueprint_craftingset_ruins_builder"},
 		{"CHARACTER"})
+
+AddRecipe2("why_purple_seeds",
+    {Ingredient(CHARACTER_INGREDIENT.SANITY, 20)},
+    TECH.NONE,
+    {builder_tag = "whyinsanecraft1", nounlock = false, no_deconstruction = true, numtogive = 1, atlas = "images/inventoryimages/why_purple_seeds.xml", image = "why_purple_seeds.tex", product = ("seeds") },
+    {"CHARACTER", "REFINE"})
+
+AddRecipe2("why_purple_packet",
+    {Ingredient("ancientdreams_gemshard", 1, "images/inventoryimages/ancientdreams_gemshard.xml"), Ingredient(CHARACTER_INGREDIENT.SANITY, 20)},
+    TECH.NONE,
+    {builder_tag = "whyinsanecraft2", nounlock = false, no_deconstruction = true, numtogive = 1, atlas = "images/inventoryimages/why_purple_packet.xml", image = "why_purple_packet.tex", product = ("yotc_seedpacket_rare") },
+    {"CHARACTER", "REFINE"})
+
+AddRecipe2("why_purple_cutgrass",
+    {Ingredient("ancientdreams_gemshard", 1, "images/inventoryimages/ancientdreams_gemshard.xml"), Ingredient(CHARACTER_INGREDIENT.SANITY, 20)},
+    TECH.NONE,
+    {builder_tag = "whyinsanecraft1", nounlock = false, no_deconstruction = true, numtogive = 5, atlas = "images/inventoryimages/why_purple_cutgrass.xml", image = "why_purple_cutgrass.tex", product = ("cutgrass") },
+    {"CHARACTER", "REFINE"})
+
+AddRecipe2("why_purple_twigs",
+    {Ingredient("ancientdreams_gemshard", 1, "images/inventoryimages/ancientdreams_gemshard.xml"), Ingredient(CHARACTER_INGREDIENT.SANITY, 20)},
+    TECH.NONE,
+    {builder_tag = "whyinsanecraft1", nounlock = false, no_deconstruction = true, numtogive = 5, atlas = "images/inventoryimages/why_purple_twigs.xml", image = "why_purple_twigs.tex", product = ("twigs") },
+    {"CHARACTER", "REFINE"})
+
+AddRecipe2("why_purple_flint",
+    {Ingredient("ancientdreams_gemshard", 1, "images/inventoryimages/ancientdreams_gemshard.xml"), Ingredient(CHARACTER_INGREDIENT.SANITY, 20)},
+    TECH.NONE,
+    {builder_tag = "whyinsanecraft1", nounlock = false, no_deconstruction = true, numtogive = 5, atlas = "images/inventoryimages/why_purple_flint.xml", image = "why_purple_flint.tex", product = ("flint") },
+    {"CHARACTER", "REFINE"})
+
+AddRecipe2("why_purple_rocks",
+    {Ingredient("ancientdreams_gemshard", 1, "images/inventoryimages/ancientdreams_gemshard.xml"), Ingredient(CHARACTER_INGREDIENT.SANITY, 20)},
+    TECH.NONE,
+    {builder_tag = "whyinsanecraft1", nounlock = false, no_deconstruction = true, numtogive = 5, atlas = "images/inventoryimages/why_purple_rocks.xml", image = "why_purple_rocks.tex", product = ("rocks") },
+    {"CHARACTER", "REFINE"})
+
+AddRecipe2("why_purple_log",
+    {Ingredient("ancientdreams_gemshard", 1, "images/inventoryimages/ancientdreams_gemshard.xml"), Ingredient(CHARACTER_INGREDIENT.SANITY, 20)},
+    TECH.NONE,
+    {builder_tag = "whyinsanecraft1", nounlock = false, no_deconstruction = true, numtogive = 5, atlas = "images/inventoryimages/why_purple_log.xml", image = "why_purple_log.tex", product = ("log") },
+    {"CHARACTER", "REFINE"})
+
+AddRecipe2("why_purple_nitre",
+    {Ingredient(CHARACTER_INGREDIENT.SANITY, 20)},
+    TECH.NONE,
+    {builder_tag = "whyinsanecraft1", nounlock = false, no_deconstruction = true, numtogive = 2, atlas = "images/inventoryimages/why_purple_nitre.xml", image = "why_purple_nitre.tex", product = ("nitre") },
+    {"CHARACTER", "REFINE"})
+
+AddRecipe2("why_purple_gold",
+    {Ingredient("ancientdreams_gemshard", 1, "images/inventoryimages/ancientdreams_gemshard.xml"), Ingredient(CHARACTER_INGREDIENT.SANITY, 20)},
+    TECH.NONE,
+    {builder_tag = "whyinsanecraft2", nounlock = false, no_deconstruction = true, numtogive = 5,  atlas = "images/inventoryimages/why_purple_gold.xml", image = "why_purple_gold.tex", product = ("goldnugget") },
+    {"CHARACTER", "REFINE"})
+
+AddRecipe2("why_purple_moonrock",
+    {Ingredient("ancientdreams_gemshard", 2, "images/inventoryimages/ancientdreams_gemshard.xml"), Ingredient(CHARACTER_INGREDIENT.SANITY, 40)},
+    TECH.NONE,
+    {builder_tag = "whyinsanecraft2", nounlock = false, no_deconstruction = true, numtogive = 1, atlas = "images/inventoryimages/why_purple_moonrock.xml", image = "why_purple_moonrock.tex", product = ("moonrocknugget") },
+    {"CHARACTER", "REFINE"})
+
+AddRecipe2("why_purple_nf",
+    {Ingredient("ancientdreams_gemshard", 1, "images/inventoryimages/ancientdreams_gemshard.xml"), Ingredient(CHARACTER_INGREDIENT.SANITY, 20)},
+    TECH.NONE,
+    {builder_tag = "whyinsanecraft2", nounlock = false, no_deconstruction = true, numtogive = 3, atlas = "images/inventoryimages/why_purple_nf.xml", image = "why_purple_nf.tex", product = ("nightmarefuel") },
+    {"CHARACTER", "REFINE"})
+
+AddRecipe2("why_wonderbox",
+    {Ingredient("ancientdreams_gemshard", 10, "images/inventoryimages/ancientdreams_gemshard.xml"), Ingredient(CHARACTER_INGREDIENT.SANITY, 80)},
+    TECH.NONE,
+    {builder_tag = "whyinsanecraft1", nounlock = false, no_deconstruction = true, numtogive = 1, atlas = "images/inventoryimages/why_wonderbox.xml", image = "why_wonderbox.tex", product = ("why_wonderbox") },
+    {"CHARACTER", "REFINE", "CONTAINERS" })
 
 AddRecipe2("why_crystal_flowers",
     {Ingredient("ancientdreams_gemshard", 1, "images/inventoryimages/ancientdreams_gemshard.xml"), Ingredient("petals", 1)},

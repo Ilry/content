@@ -3,6 +3,7 @@ local assets = {
     Asset("ANIM", "anim/wonderwhy_exo_none.zip"),
     Asset("ANIM", "anim/wonderwhy_exo_elder.zip"),
 	Asset("ANIM", "anim/wonderwhy_exo_demon.zip"),
+	Asset("ANIM", "anim/wonderwhy_exo_abyss.zip"),
     Asset("ATLAS", "images/inventoryimages/whyearmor.xml"),
     Asset("IMAGE", "images/inventoryimages/whyearmor.tex"),
     Asset("ATLAS_BUILD", "images/inventoryimages/whyearmor.xml",256), }
@@ -147,6 +148,14 @@ local function onequip(inst, owner)
             owner.AnimState:OverrideSymbol("tail", "wonderwhy_exo_demon", "tail")
             owner.AnimState:OverrideSymbol("leg", "wonderwhy_exo_demon", "leg")
             owner.AnimState:OverrideSymbol("foot", "wonderwhy_exo_demon", "foot")
+			elseif owner:HasTag("exo_wonderwhy_abyss") then
+            owner.AnimState:OverrideSymbol("hand", "wonderwhy_exo_abyss", "hand")
+            owner.AnimState:OverrideSymbol("arm_upper_skin", "wonderwhy_exo_abyss", "arm_upper_skin")
+            owner.AnimState:OverrideSymbol("arm_upper", "wonderwhy_exo_abyss", "arm_upper")
+            owner.AnimState:OverrideSymbol("arm_lower", "wonderwhy_exo_abyss", "arm_lower")
+            owner.AnimState:OverrideSymbol("tail", "wonderwhy_exo_abyss", "tail")
+            owner.AnimState:OverrideSymbol("leg", "wonderwhy_exo_abyss", "leg")
+            owner.AnimState:OverrideSymbol("foot", "wonderwhy_exo_abyss", "foot")
         end
     end
     if inst.skintask ~= nil then

@@ -1,8 +1,16 @@
 local assets = {
     Asset("ANIM", "anim/whyearmor_backpack.zip"),
+    Asset("ANIM", "anim/whyearmor_backpack_purple.zip"),
+    Asset("ANIM", "anim/whyearmor_backpack_red.zip"),
     Asset("ATLAS", "images/inventoryimages/whyearmor_backpack.xml"),
     Asset("IMAGE", "images/inventoryimages/whyearmor_backpack.tex"),
+    Asset("ATLAS", "images/inventoryimages/whyearmor_backpack_purple.xml"),
+    Asset("IMAGE", "images/inventoryimages/whyearmor_backpack_purple.tex"),
+    Asset("ATLAS", "images/inventoryimages/whyearmor_backpack_red.xml"),
+    Asset("IMAGE", "images/inventoryimages/whyearmor_backpack_red.tex"),
     Asset("ATLAS_BUILD", "images/inventoryimages/whyearmor_backpack.xml",256),
+    Asset("ATLAS_BUILD", "images/inventoryimages/whyearmor_backpack_purple.xml",256),
+    Asset("ATLAS_BUILD", "images/inventoryimages/whyearmor_backpack_red.xml",256),
 }
 
 local function DisallowOpening(inst)
@@ -17,47 +25,74 @@ local function AllowOpening(inst)
     end
 end
 
+local function LightTrigger(inst)
+    local owner = inst.components.inventoryitem:GetGrandOwner()
+
+    if inst.components.equippable:IsEquipped() and not inst.components.fueled:IsEmpty() then
+        if not inst._light or not inst._light:IsValid() then
+            local skin_build = inst:GetSkinBuild()
+            if skin_build == "whyearmor_backpack_purple" then
+                inst._light = SpawnPrefab("shadowlight")
+            elseif skin_build == "whyearmor_backpack_red" then
+                inst._light = SpawnPrefab("redlight")
+            else
+                inst._light = SpawnPrefab("baselight")
+            end
+        end
+
+        inst._light.entity:SetParent(owner.entity)
+    elseif inst._light and inst._light:IsValid() then
+        inst._light:Remove()
+        inst._light = nil
+    end
+end
+
 local function onequip(inst, owner)
+    local swap_data = {bank = "whyearmor_backpack"}
+    local skin_build = inst:GetSkinBuild()
+    owner:PushEvent("equipskinneditem", inst:GetSkinName())
+
+    if skin_build == "whyearmor_backpack_red" then
+        owner.AnimState:OverrideSymbol("swap_body","whyearmor_backpack_red","swap_body")
+    elseif skin_build == "whyearmor_backpack_purple" then
+        owner.AnimState:OverrideSymbol("swap_body", "whyearmor_backpack_purple", "swap_body")
+    end
+
     local owner = inst.components.inventoryitem:GetGrandOwner()
     if owner:HasTag("wonderwhy") then
         --AllowOpening(inst)
         if inst.components.fueled ~= nil then
             inst.components.fueled:StartConsuming()
+            LightTrigger(inst)
         end
+
         if not inst.components.fueled:IsEmpty() then
-            if inst._light == nil or not inst._light:IsValid() then
-                inst._light = SpawnPrefab("yellowamuletlight")
+            --if TUNING.WHY_DIFFICULTY ~= "1" then
+            --    owner:AddTag("haswhyearmor")
+            --end
+            owner:AddTag("wonder_have_ribs")
+            owner.components.combat:SetAttackPeriod(0.333)
+            owner:AddTag("exp_backpack")
+            inst:AddTag("onbody")
+            if inst.components.container ~= nil then
+                inst.components.container:Open(owner)
             end
-            inst._light.entity:SetParent(owner.entity)
-        end
-        --if TUNING.WHY_DIFFICULTY ~= "1" then
-        --    owner:AddTag("haswhyearmor")
-        --end
-        owner:AddTag("wonder_have_ribs")
-        owner.components.combat:SetAttackPeriod(0.333)
-        owner:AddTag("exp_backpack")
-        inst:AddTag("onbody")
-        if inst.components.container ~= nil then
-            inst.components.container:Open(owner)
         end
     end
-
-
-    owner.AnimState:OverrideSymbol("swap_body", "whyearmor_backpack", "swap_body")
 end
 
 local function onunequip(inst, owner)
+    local skin_build = inst:GetSkinBuild()
+    if skin_build ~= nil then
+        owner:PushEvent("unequipskinneditem", inst:GetSkinName())
+    end
+    
     local owner = inst.components.inventoryitem:GetGrandOwner()
     if owner:HasTag("wonderwhy") then
         --DisallowOpening(inst)
         if inst.components.fueled ~= nil then
             inst.components.fueled:StopConsuming()
-        end
-        if inst._light ~= nil then
-            if inst._light:IsValid() then
-                inst._light:Remove()
-            end
-            inst._light = nil
+            LightTrigger(inst)
         end
         --if TUNING.WHY_DIFFICULTY ~= "1" then
         --    owner:RemoveTag("haswhyearmor")
@@ -111,26 +146,14 @@ local function OnDrop(inst, owner)
     end
 end
 local function destroypack(inst)
-    if inst._light ~= nil then
-        if inst._light:IsValid() then
-            inst._light:Remove()
-        end
-        inst._light = nil
-    end
+    LightTrigger(inst)
 end
-local function ontakefuel(inst, owner)
-    local owner = inst.components.inventoryitem:GetGrandOwner() or inst
-    if inst:HasTag("onbody") then
-        if inst.components.fueled ~= nil then
-            if not inst.components.fueled:IsEmpty() then
-                if inst._light == nil or not inst._light:IsValid() then
-                    inst._light = SpawnPrefab("yellowamuletlight")
-                end
-                inst._light.entity:SetParent(owner.entity)
-                inst.components.fueled:StartConsuming()
-            end
-        end
+local function ontakefuel(inst)    
+    LightTrigger(inst)
+    if inst.components.equippable:IsEquipped() then
+        inst.components.fueled:StartConsuming()
     end
+    
     inst.SoundEmitter:PlaySound("dontstarve/common/nightmareAddFuel")
 end
 
@@ -144,6 +167,81 @@ local function onload(inst, data)
     if data and data.current_endurance_bonus then
         inst.current_endurance_bonus = data.current_endurance_bonus
     end
+end
+
+local function BaseLightfn()
+    local inst = CreateEntity()
+
+    inst.entity:AddTransform()
+    inst.entity:AddLight()
+    inst.entity:AddNetwork()
+
+    inst:AddTag("FX")
+
+    inst.Light:SetRadius(3)
+    inst.Light:SetFalloff(.7)
+    inst.Light:SetIntensity(.75)
+    inst.Light:SetColour(223 / 255, 208 / 255, 69 / 255)
+
+    inst.entity:SetPristine()
+
+    if not TheWorld.ismastersim then
+        return inst
+    end
+
+    inst.persists = false
+
+    return inst
+end
+
+local function ShadowLightfn()
+    local inst = CreateEntity()
+
+    inst.entity:AddTransform()
+    inst.entity:AddLight()
+    inst.entity:AddNetwork()
+
+    inst:AddTag("FX")
+
+    inst.Light:SetRadius(3)
+    inst.Light:SetFalloff(.7)
+    inst.Light:SetIntensity(.75)
+    inst.Light:SetColour(255 / 255, 0 / 255, 255 / 255)
+
+    inst.entity:SetPristine()
+
+    if not TheWorld.ismastersim then
+        return inst
+    end
+
+    inst.persists = false
+
+    return inst
+end
+
+local function RedLightfn()
+    local inst = CreateEntity()
+
+    inst.entity:AddTransform()
+    inst.entity:AddLight()
+    inst.entity:AddNetwork()
+
+    inst:AddTag("FX")
+
+    inst.Light:SetRadius(3)
+    inst.Light:SetFalloff(.7)
+    inst.Light:SetIntensity(.75)
+    inst.Light:SetColour(255 / 255, 0 / 255, 0 / 255)
+
+    inst.entity:SetPristine()
+
+    if not TheWorld.ismastersim then
+        return inst
+    end
+
+    inst.persists = false
+
+    return inst
 end
 
 local function fn()
@@ -226,5 +324,49 @@ local function fn()
     inst._light = nil
     return inst
 end
-return
-Prefab("whyearmor_backpack", fn, assets)
+
+local name
+if TUNING.WHY_LANGUAGE == "spanish" then
+    name = "Abismo en una botella"
+elseif TUNING.WHY_LANGUAGE == "chinese" then
+    name = "瓶中深渊"
+else
+    name = "Abyss in a bottle"
+end
+
+local name1
+if TUNING.WHY_LANGUAGE == "spanish" then
+    name1 = "Tótem de atropellos"
+elseif TUNING.WHY_LANGUAGE == "chinese" then
+    name1 = "骨图腾"
+else
+    name1 = "Roadkill totem"
+end
+
+WonderAPI.MakeItemSkin("whyearmor_backpack","whyearmor_backpack_purple",{
+    name = name,
+    atlas = "images/inventoryimages/whyearmor_backpack_purple.xml",
+    image = "whyearmor_backpack_purple",
+    build = "whyearmor_backpack_purple",
+    rarity = "Spiffy",
+    bank =  "whyearmor_backpack_purple",
+    basebuild = "whyearmor_backpack",
+    basebank =  "whyearmor_backpack",
+})
+    
+WonderAPI.MakeItemSkin("whyearmor_backpack","whyearmor_backpack_red",{
+    name = name1,
+    atlas = "images/inventoryimages/whyearmor_backpack_red.xml",
+    image = "whyearmor_backpack_red",
+    build = "whyearmor_backpack_red",
+    rarity = "Elegant",
+    bank =  "whyearmor_backpack_red",
+    basebuild = "whyearmor_backpack",
+    basebank =  "whyearmor_backpack",
+})
+    
+return Prefab("whyearmor_backpack", fn, assets),
+Prefab("shadowlight", ShadowLightfn),
+Prefab("redlight", RedLightfn),
+Prefab("baselight", BaseLightfn)
+

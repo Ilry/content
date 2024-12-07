@@ -539,14 +539,6 @@ function WXAgriculture:Water()
         end
     end
 
-    --[[local coat = self.inst.components.inventory:GetEquippedItem(EQUIPSLOTS.BODY)
-    if coat == nil or coat.components.waterproofer == nil or coat.components.waterproofer:GetEffectiveness() < .7 then
-        coat = self.inst.components.inventory:FindItem(function(item)
-            return item.components.waterproofer ~= nil and item.components.waterproofer:GetEffectiveness() >= .7 and
-                item.components.equippable ~= nil and item.components.equippable.equipslot == EQUIPSLOTS.BODY
-        end)
-        self.inst.components.inventory:Equip(coat)
-    end]]
     return (tool ~= nil and tool.components.finiteuses ~= nil and tool.components.finiteuses:GetUses() > 0) and
         BufferedAction(self.inst, nil, ACTIONS.POUR_WATER_GROUNDTILE, tool, Vector3(dry_overlay.Transform:GetWorldPosition())) or nil
 end
@@ -1082,13 +1074,6 @@ function WXAgriculture:FindEntityToPickUpAction()
         item:HasTag("wateringcan") and
         item.components.finiteuses ~= nil and (item.components.finiteuses:GetUses() > 0 or
         FindEntity(leader, SEE_WORK_DIST, function(ent) return ent.components.watersource ~= nil end, TOFILL_MUST_TAGS))) or
-        -- Waterproofer
-        --[[(item.components.waterproofer ~= nil and item.components.waterproofer:GetEffectiveness() >= .7 and
-        item.components.equippable ~= nil and item.components.equippable.equipslot == EQUIPSLOTS.BODY and
-        self.inst.components.inventory:FindItem(function(item_in_inv)
-            return item_in_inv.components.waterproofer ~= nil and item_in_inv.components.waterproofer:GetEffectiveness() >= .7 and
-                item_in_inv.components.equippable ~= nil and item_in_inv.components.equippable.equipslot == EQUIPSLOTS.BODY
-        end) == nil) or]]
         -- Seedpouch
         (item.prefab == "seedpouch" and not self.inst.components.wxtype.augmentlock and
         not self.inst.components.inventory:EquipHasTag("backpack")) or

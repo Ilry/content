@@ -398,7 +398,7 @@ function WXMiningIndustry:FindEntityToPickUpAction()
         item.components.tool ~= nil and item.components.tool:CanDoAction(ACTIONS.DIG) and
         not self.inst.components.wxtype:CanDoAction(ACTIONS.DIG, true)) or
         -- Target item is mineral
-       ( table.contains(mineralList, item.prefab) or item:HasTag("gem")))
+       (table.contains(mineralList, item.prefab) or item:HasTag("gem")))
     end, TOPICKUP_MUST_TAGS, TOPICKUP_CANT_TAGS)
     if target == nil and leader ~= nil then
         target = FindEntity(leader, SEE_WORK_DIST, function(item)

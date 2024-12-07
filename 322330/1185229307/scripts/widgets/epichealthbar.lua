@@ -896,10 +896,13 @@ end
 local function OnGlobalPopupNumber(self, data)
 	if not TUNING.EPICHEALTHBAR.DAMAGE_NUMBERS then
 		return
+	elseif data.stimuli == "redirected" and self.lastpopupnumber ~= nil then
+		self.lastpopupnumber.pos = data.pos
+		self.lastpopupnumber:OnUpdate(0)
 	elseif data.target.entity:FrustumCheck() and CanEntitySeeTarget(self.owner, data.target) then
 		data.colour = self.GetEffectTint(data, data.damaged)
 		data.wet = data.target:GetIsWet()
-		self.owner.HUD:AddChild(PopupNumber(data.value, data.damaged, data)) --popupstats_root
+		self.lastpopupnumber = self.owner.HUD:AddChild(PopupNumber(data.value, data.damaged, data)) --popupstats_root
 	end
 end
 
@@ -1519,7 +1522,9 @@ function EpicHealthbar:ToggleCamera(enable)
 end
 
 function EpicHealthbar:FocusCamera(enable)
-	if enable and self:IsEpic() and not TUNING.EPICHEALTHBAR.CAPTURE then
+	if TheFocalPoint == nil then
+		return
+	elseif enable and self:IsEpic() and not TUNING.EPICHEALTHBAR.CAPTURE then
 		TheFocalPoint.components.focalpoint:StartFocusSource(self.inst, "FIXED", self.owner, TUNING.EPICHEALTHBAR.CAMERA_FOCUS_MIN, TUNING.EPICHEALTHBAR.CAMERA_FOCUS_MAX, TUNING.EPICHEALTHBAR.CAMERA_PRIORITY, { ActiveFn = function(params) self.camerafocus = setmetatable({}, { __mode = "k" }); params.nofocus, params.count = 0, 0 end, UpdateFn = function(...) self:UpdateFocus(...) end })
 	else
 		TheFocalPoint.components.focalpoint:StopFocusSource(self.inst)
@@ -1760,7 +1765,7 @@ function EpicHealthbar:IsBusy(target)
 			or target:HasTag("NOCLICK")
 			or not target:HasTag("locomotor")
 	end
-	return target:HasTag("INLIMBO")
+	return target:HasTag("INLIMBO") and target:HasTag("locomotor")
 end
 
 function EpicHealthbar:IsValidTarget(target)
@@ -1793,7 +1798,7 @@ function EpicHealthbar:InCombat(target)
 	return target.epichealth.lastwasdamagedtime ~= nil and target.epichealth.lastwasdamagedtime >= GetTime()
 		or target.replica.combat:IsValidTarget(target.replica.combat:GetTarget())
 		or target:HasTag("fire") --and target:HasActionComponent("burnable")
-		or target.AnimState:IsSymbolOverridden("swap_frozen") and target.AnimState:GetAddColour() > 0
+		or target.AnimState ~= nil and target.AnimState:IsSymbolOverridden("swap_frozen") and target.AnimState:GetAddColour() > 0
 		or self:NearAttacker(target)
 end
 
@@ -1926,7 +1931,7 @@ function EpicHealthbar:OnUpdate(dt)
 		if target ~= nil and target:IsValid() then
 			local health = target.epichealth
 			self._name = self:GetDisplayName(target)
-			self.build = target.AnimState:GetBuild()
+			self.build = target.AnimState ~= nil and target.AnimState:GetBuild() or target.prefab
 			self.wet = target:GetIsWet()
 			self.stimuli = health.stimuli
 			self.lastwasdamagedtime = health.lastwasdamagedtime

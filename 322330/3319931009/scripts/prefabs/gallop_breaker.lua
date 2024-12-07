@@ -1,5 +1,6 @@
 local assets = {
-  Asset("ANIM", "anim/gallop_breaker.zip"), Asset("SOUND", "sound/zombie.fsb"),
+  Asset("ANIM", "anim/gallop_breaker.zip"),
+  Asset("SOUND", "sound/zombie.fsb"),
   Asset("SOUNDPACKAGE", "sound/zombie.fev")
 }
 local prefabs = {"gallop_reticuleaoe", "gallop_reticuleaoeping"}
@@ -136,16 +137,22 @@ local function ReticuleTargetFn()
   return pos
 end
 local function SetupPoundAOE(inst)
-  inst.components.aoetargeting:SetAlwaysValid(true)
   inst.components.aoetargeting:SetAllowRiding(true)
+  inst.components.aoetargeting:SetAllowWater(true)
   inst.components.aoetargeting.reticule.reticuleprefab = "gallop_reticuleaoe"
   inst.components.aoetargeting.reticule.pingprefab = "gallop_reticuleaoeping"
   inst.components.aoetargeting.reticule.targetfn = ReticuleTargetFn
   inst.components.aoetargeting.reticule.validcolour = {
-    91 / 255, 172 / 255, 216 / 355, 1
+    91 / 255,
+    172 / 255,
+    216 / 355,
+    1
   }
   inst.components.aoetargeting.reticule.invalidcolour = {
-    91 / 255, 172 / 255, 216 / 355, 0.5
+    91 / 255,
+    172 / 255,
+    216 / 355,
+    0.5
   }
   inst.components.aoetargeting.reticule.ease = true
   inst.components.aoetargeting.reticule.mouseenabled = true
@@ -236,12 +243,25 @@ end
 local SPEED = 8
 local MUST_HAVE_SPELL_TAGS = nil
 local CANT_HAVE_SPELL_TAGS = {
-  "INLIMBO", "outofreach", "DECOR", "structure", 'FX', 'shadowcreature',
-  'invisible', 'spawnprotection', 'noattack'
+  "INLIMBO",
+  "outofreach",
+  "DECOR",
+  "structure",
+  'FX',
+  'shadowcreature',
+  'invisible',
+  'spawnprotection',
+  'noattack'
 }
 local MUST_HAVE_ONE_OF_SPELL_TAGS = {
-  '_combat', '_inventoryitem', '_health', 'locomotor', 'tendable_farmplant',
-  'CHOP_workable', 'MINE_workable', 'oceanfishable'
+  '_combat',
+  '_inventoryitem',
+  '_health',
+  'locomotor',
+  'tendable_farmplant',
+  'CHOP_workable',
+  'MINE_workable',
+  'oceanfishable'
 }
 local launch = require("gallop_aoe").launch_single
 local aoe_actions = {"CHOP", "MINE"}
@@ -332,7 +352,10 @@ local function create_water_explosion(inst, doer, position)
   -- Spawn visual fx.
   local o = 2
   local offset = {
-    Point(0, o, 0), Point(-o, 0, 0), Point(o, 0, 0), Point(0, -o, 0)
+    Point(0, o, 0),
+    Point(-o, 0, 0),
+    Point(o, 0, 0),
+    Point(0, -o, 0)
   }
   -- for _, off in ipairs(offset) do
   --  local fx = SpawnAt("crab_king_waterspout", position + off)
@@ -606,10 +629,8 @@ local function fn()
   inst.components.gallop_playerprox.verifyplayer = function(player)
     return verifyplayer(inst, player)
   end
-
-  inst:AddComponent("shadowlevel")
-  inst.components.shadowlevel:SetDefaultLevel(
-    TUNING.MULTITOOL_AXE_PICKAXE_SHADOW_LEVEL)
+  -- shadowlevel
+  -- in gallop_main.lua
 
   inst:AddComponent("useableitem")
   inst.components.useableitem:SetOnUseFn(onuse)

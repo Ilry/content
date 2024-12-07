@@ -73,6 +73,7 @@ elseif GetModConfigData("the_hunters")=="must not have" then
 end
 
 -- entity number
+-- master_setting["ruins_statue_num"] = {}
 master_setting["required_entities"] = {}
 if GetModConfigData("master_bishop")~="not set" then
     table.insert(master_setting["required_entities"], {name= "bishop", number= GetModConfigData("master_bishop")})
@@ -173,6 +174,9 @@ end
 if GetModConfigData("master_seastack")~="not set" then
     table.insert(master_setting["near_entities"], {name= "seastack", distance= GetModConfigData("master_seastack")})
 end
+if GetModConfigData("master_junkpile")~="not set" then
+    table.insert(master_setting["near_entities"], {name= "junk_pile_big", distance= GetModConfigData("master_junkpile")})
+end
 if GetModConfigData("master_custom_entity_near")~="" then
     local master_custom_entity_near_str = GetModConfigData("master_custom_entity_near")
     --The input is the form entity_name:number;entity_name:number;...
@@ -190,6 +194,21 @@ master_setting["far_entities"] = {}
 -- pond
 if GetModConfigData("master_pond")~="not set" then
     table.insert(master_setting["far_entities"], {name= "pond", distance= GetModConfigData("master_pond")})
+end
+if GetModConfigData("master_meteorspawner")~="not set" then
+    table.insert(master_setting["far_entities"], {name= "meteorspawner", distance= GetModConfigData("master_meteorspawner")})
+end
+if GetModConfigData("master_custom_entity_far")~="" then
+    local master_custom_entity_far_str = GetModConfigData("master_custom_entity_far")
+    --The input is the form entity_name:number;entity_name:number;...
+    -- parse it
+    for entity_far in string.gmatch(master_custom_entity_far_str, "([^;]+)") do
+        local entity_name, entity_distance = string.match(entity_far, "([%w_]+):(%d+)")
+        entity_distance = safeStringToInt2(entity_distance)
+        if entity_distance >= 0 then
+            table.insert(master_setting["far_entities"], {name= entity_name, distance= entity_distance})
+        end
+    end
 end
 -- Regions
 master_setting["near_regions"] = {}
@@ -245,6 +264,9 @@ end
 if GetModConfigData("master_seastack_soft")~="not set" then
     table.insert(master_setting["near_entities_soft"], {name= "seastack", weight= safeStringToInt(GetModConfigData("master_seastack_soft"))})
 end
+if GetModConfigData("master_junkpile_soft")~="not set" then
+    table.insert(master_setting["near_entities_soft"], {name= "junk_pile_big", weight= safeStringToInt(GetModConfigData("master_junkpile_soft"))})
+end
 if GetModConfigData("master_custom_entity_near_soft")~="" then
     local master_custom_entity_near_soft_str = GetModConfigData("master_custom_entity_near_soft")
     --The input is the form entity_name:number;entity_name:number;...
@@ -272,9 +294,13 @@ if GetModConfigData("master_the_hunters_soft")~="not set" then
 end
 -- TODO: 远离区域
 master_setting["far_regions"] = {}
+master_setting["under_huge_trees"] = {}
+master_setting["under_huge_trees"]["cover_rate"] = GetModConfigData("master_under_tree_threshold")
+master_setting["under_huge_trees"]["base_radius"] = GetModConfigData("master_base_radius")
 master_setting["room_number_setting"] = {}
 master_setting["moon_island_connect"] = GetModConfigData("master_moon_island_connect")
 master_setting["ancient_connect"] = "not set"
+master_setting["ancient_representation"] = {}
 master_setting["allow_wormwhole"] = GetModConfigData("master_allow_wormwhole")
 
 local cave_setting = {}
@@ -296,6 +322,18 @@ cave_setting["tasks_disliked"] = {}
 -- "RabbitCity",--兔城
 -- "SpiderLand",--蜘蛛之地
 -- "RabbitSpiderWar",--蜘蛛兔子大战
+local check_task_for_connected_ancient = false
+if GetModConfigData("cave_connected_ancient")~="not set" and GetModConfigData("cave_accelerated_ancient") then
+    check_task_for_connected_ancient = true
+    -- add the following tasks to the disliked list
+    --  UndergroundForest, PleasantSinkhole, FungalNoiseForest, FungalNoiseMeadow, RabbitTown, RabbitCity
+    table.insert(cave_setting["tasks_disliked"], "UndergroundForest")
+    table.insert(cave_setting["tasks_disliked"], "PleasantSinkhole")
+    table.insert(cave_setting["tasks_disliked"], "FungalNoiseForest")
+    table.insert(cave_setting["tasks_disliked"], "FungalNoiseMeadow")
+    table.insert(cave_setting["tasks_disliked"], "RabbitTown")
+    table.insert(cave_setting["tasks_disliked"], "RabbitCity")
+end
 if GetModConfigData("SwampySinkhole")=="must have" then
     table.insert(cave_setting["tasks_required"], "SwampySinkhole")
 elseif GetModConfigData("SwampySinkhole")=="must not have" then
@@ -306,40 +344,42 @@ if GetModConfigData("CaveSwamp")=="must have" then
 elseif GetModConfigData("CaveSwamp")=="must not have" then
     table.insert(cave_setting["tasks_disliked"], "CaveSwamp")
 end
-if GetModConfigData("UndergroundForest")=="must have" then
-    table.insert(cave_setting["tasks_required"], "UndergroundForest")
-elseif GetModConfigData("UndergroundForest")=="must not have" then
-    table.insert(cave_setting["tasks_disliked"], "UndergroundForest")
-end
-if GetModConfigData("PleasantSinkhole")=="must have" then
-    table.insert(cave_setting["tasks_required"], "PleasantSinkhole")
-elseif GetModConfigData("PleasantSinkhole")=="must not have" then
-    table.insert(cave_setting["tasks_disliked"], "PleasantSinkhole")
-end
-if GetModConfigData("FungalNoiseForest")=="must have" then
-    table.insert(cave_setting["tasks_required"], "FungalNoiseForest")
-elseif GetModConfigData("FungalNoiseForest")=="must not have" then
-    table.insert(cave_setting["tasks_disliked"], "FungalNoiseForest")
-end
-if GetModConfigData("FungalNoiseMeadow")=="must have" then
-    table.insert(cave_setting["tasks_required"], "FungalNoiseMeadow")
-elseif GetModConfigData("FungalNoiseMeadow")=="must not have" then
-    table.insert(cave_setting["tasks_disliked"], "FungalNoiseMeadow")
+if not check_task_for_connected_ancient then
+    if GetModConfigData("UndergroundForest")=="must have" then
+        table.insert(cave_setting["tasks_required"], "UndergroundForest")
+    elseif GetModConfigData("UndergroundForest")=="must not have" then
+        table.insert(cave_setting["tasks_disliked"], "UndergroundForest")
+    end
+    if GetModConfigData("PleasantSinkhole")=="must have" then
+        table.insert(cave_setting["tasks_required"], "PleasantSinkhole")
+    elseif GetModConfigData("PleasantSinkhole")=="must not have" then
+        table.insert(cave_setting["tasks_disliked"], "PleasantSinkhole")
+    end
+    if GetModConfigData("FungalNoiseForest")=="must have" then
+        table.insert(cave_setting["tasks_required"], "FungalNoiseForest")
+    elseif GetModConfigData("FungalNoiseForest")=="must not have" then
+        table.insert(cave_setting["tasks_disliked"], "FungalNoiseForest")
+    end
+    if GetModConfigData("FungalNoiseMeadow")=="must have" then
+        table.insert(cave_setting["tasks_required"], "FungalNoiseMeadow")
+    elseif GetModConfigData("FungalNoiseMeadow")=="must not have" then
+        table.insert(cave_setting["tasks_disliked"], "FungalNoiseMeadow")
+    end
+    if GetModConfigData("RabbitTown")=="must have" then
+        table.insert(cave_setting["tasks_required"], "RabbitTown")
+    elseif GetModConfigData("RabbitTown")=="must not have" then
+        table.insert(cave_setting["tasks_disliked"], "RabbitTown")
+    end
+    if GetModConfigData("RabbitCity")=="must have" then
+        table.insert(cave_setting["tasks_required"], "RabbitCity")
+    elseif GetModConfigData("RabbitCity")=="must not have" then
+        table.insert(cave_setting["tasks_disliked"], "RabbitCity")
+    end
 end
 if GetModConfigData("BatCloister")=="must have" then
     table.insert(cave_setting["tasks_required"], "BatCloister")
 elseif GetModConfigData("BatCloister")=="must not have" then
     table.insert(cave_setting["tasks_disliked"], "BatCloister")
-end
-if GetModConfigData("RabbitTown")=="must have" then
-    table.insert(cave_setting["tasks_required"], "RabbitTown")
-elseif GetModConfigData("RabbitTown")=="must not have" then
-    table.insert(cave_setting["tasks_disliked"], "RabbitTown")
-end
-if GetModConfigData("RabbitCity")=="must have" then
-    table.insert(cave_setting["tasks_required"], "RabbitCity")
-elseif GetModConfigData("RabbitCity")=="must not have" then
-    table.insert(cave_setting["tasks_disliked"], "RabbitCity")
 end
 if GetModConfigData("SpiderLand")=="must have" then
     table.insert(cave_setting["tasks_required"], "SpiderLand")
@@ -394,7 +434,32 @@ elseif GetModConfigData("Residential3")=="must not have" then
     table.insert(cave_setting["tasks_disliked"], "Residential3")
 end
 
+-- cave_setting["ruins_statue_num"] = {}
+-- if GetModConfigData("cave_ruins_statue_all")~="not set" then
+--     table.insert(cave_setting["ruins_statue_num"], {name= "ruins_statue_all", number= GetModConfigData("cave_ruins_statue_all")})
+-- end
+-- if GetModConfigData("cave_ruins_statue_gem")~="not set" then
+--     table.insert(cave_setting["ruins_statue_num"], {name= "ruins_statue_gem", number= GetModConfigData("cave_ruins_statue_gem")})
+-- end
 cave_setting["required_entities"] = {}
+if GetModConfigData("cave_ruins_statue_all")~="not set" then
+    table.insert(cave_setting["required_entities"], {name= "ruins_statue_all", number= GetModConfigData("cave_ruins_statue_all")})
+end
+if GetModConfigData("cave_ruins_statue_gem")~="not set" then
+    table.insert(cave_setting["required_entities"], {name= "ruins_statue_gem", number= GetModConfigData("cave_ruins_statue_gem")})
+end
+if GetModConfigData("cave_custom_entity_num")~="" then
+    local cave_custom_entity_num_str = GetModConfigData("cave_custom_entity_num")
+    --The input is the form entity_name:number;entity_name:number;...
+    -- parse it
+    for entity_num in string.gmatch(cave_custom_entity_num_str, "([^;]+)") do
+        local entity_name, entity_number = string.match(entity_num, "([%w_]+):(%d+)")
+        entity_number = safeStringToInt2(entity_number)
+        if entity_number > 0 then
+            table.insert(cave_setting["required_entities"], {name= entity_name, number= entity_number})
+        end
+    end
+end
 cave_setting["setpieces_required"] = {}
 cave_setting["traps_required"] = {}
 cave_setting["setpieces_disliked"] = {}
@@ -403,6 +468,9 @@ cave_setting["far_entities"] = {}
 cave_setting["near_regions"] = {}
 -- cave_setting["ocean_request"] = {distance= "not set"}
 cave_setting["far_regions"] = {}
+cave_setting["under_huge_trees"] = {}
+cave_setting["under_huge_trees"]["cover_rate"] = "not set"
+cave_setting["under_huge_trees"]["base_radius"] = "not set"
 cave_setting["repeat_times"] = 1
 cave_setting["near_entities_soft"] = {}
 cave_setting["near_regions_soft"] = {}
@@ -452,6 +520,22 @@ if GetModConfigData("cave_monkeybarrel_spawner")~="not set" then
 end
 cave_setting["moon_island_connect"] = "not set"
 cave_setting["ancient_connect"] = GetModConfigData("cave_connected_ancient")
+cave_setting["ancient_representation"] = {}
+if GetModConfigData("cave_close_to_statues") then
+    -- add: "ruins_statue_head_nogem_spawner", "ruins_statue_head_spawner", "ruins_statue_mage_nogem_spawner", "ruins_statue_mage_spawner"
+    table.insert(cave_setting["ancient_representation"], "ruins_statue_head_nogem_spawner")
+    table.insert(cave_setting["ancient_representation"], "ruins_statue_head_spawner")
+    table.insert(cave_setting["ancient_representation"], "ruins_statue_mage_nogem_spawner")
+    table.insert(cave_setting["ancient_representation"], "ruins_statue_mage_spawner")
+end
+if GetModConfigData("cave_close_to_maze_boxes") then
+    -- add： pandoraschest
+    table.insert(cave_setting["ancient_representation"], "pandoraschest")
+end
+if GetModConfigData("cave_close_to_minotaur_spawner") then
+    -- add： ancient_altar
+    table.insert(cave_setting["ancient_representation"], "minotaur_spawner")
+end
 cave_setting["allow_wormwhole"] = true
 
 GLOBAL.SURVIVAL_TOGETHER = master_setting

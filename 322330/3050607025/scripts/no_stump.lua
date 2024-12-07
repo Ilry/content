@@ -52,7 +52,7 @@ for i,v in ipairs(NO_STUMP_TREES) do
 		if inst.components.workable then
 			-- 重写树木chop_down_tree方法
 			local old_chop_down_tree = inst.components.workable.onfinish
-			function chop_down_tree(inst, chopper) 
+			local function chop_down_tree(inst, chopper) 
 				old_chop_down_tree(inst,chopper)
 				-- 掉落一个木头
 				if inst.components.lootdropper then
@@ -65,7 +65,8 @@ for i,v in ipairs(NO_STUMP_TREES) do
 				-- end
 				-- ②砍到后立即移除
 				inst:AddTag("NOCLICK")
-				inst:ListenForEvent("animover", inst.Remove)
+				inst:DoTaskInTime(4, inst.Remove)
+				--inst:ListenForEvent("animover", inst.Remove)
 			end
 			inst.components.workable:SetOnFinishCallback(chop_down_tree)
 		end

@@ -6,7 +6,9 @@ local assets =
     Asset("ATLAS", "images/inventoryimages/lol_heartsteel.xml"),
 }
 local DETECT_INTERVAL = 1
-local CD,max_num,per_hp = 120,40,10
+local CD,max_num,per_hp = TUNING.HEARTSTEEL_CD,40,10
+local regen_interval,hp_per_hit = 10,5
+local new_hp_per_hit_percent = .01
 
 -- 设置装备栏位,注意如果没有开启五格装备栏,但是设置中设置了项链栏位,那么要确保在身体栏位
 local HEARTSTEEL_EQIPSLOT = EQUIPSLOTS.BODY
@@ -91,6 +93,17 @@ local function onequip(inst, owner)
             end)
         end
     end
+
+    -- 恢复
+    if owner.taskperiod_lol_heartsteel_regen == nil then 
+        owner.taskperiod_lol_heartsteel_regen = owner:DoPeriodicTask(regen_interval,function()
+            if owner and owner:IsValid() and owner.components and owner.components.health then
+                local maxhealth = owner.components.health.maxhealth
+                local delta = maxhealth * new_hp_per_hit_percent
+                owner.components.health:DoDelta(delta)
+            end
+        end)
+    end
 end
 
 local function onunequip(inst, owner)
@@ -106,11 +119,19 @@ local function onunequip(inst, owner)
             inst.task_period_lol_heartsteel_findmob = nil
         end
     end
+
+    -- cancel 恢复
+    if owner.taskperiod_lol_heartsteel_regen then 
+        owner.taskperiod_lol_heartsteel_regen:Cancel()
+        owner.taskperiod_lol_heartsteel_regen = nil
+    end
 end
 
--- local function onsave(inst, data)
---     data.heartsteel_num = inst.heartsteel_num
--- end
+local function onsave(inst, data)
+    if inst and inst.components and inst.components.health then 
+        data.percent = inst.components.health:GetPercent()
+    end
+end
 local function onpreload( inst,data )
     if inst and inst:IsValid() and inst.components and inst.components.lol_heartsteel_num then
         local owner = inst.components.inventoryitem and inst.components.inventoryitem.owner
@@ -128,6 +149,9 @@ local function onpreload( inst,data )
                     inst.components.lol_heartsteel_num:FindMob()
                 end)
             end 
+            if data and data.percent then
+                inst.components.health:SetPercent(data.percent)
+            end
         end
     end
 end
@@ -146,6 +170,8 @@ local function fn()
 
     inst.entity:SetPristine()
 
+    MakeInventoryFloatable(inst, "med", nil, 0.75)
+
     if not TheWorld.ismastersim then
         return inst
     end
@@ -161,6 +187,7 @@ local function fn()
     inst.components.equippable.equipslot = HEARTSTEEL_EQIPSLOT -- 适配五格
     inst.components.equippable:SetOnEquip(onequip)
     inst.components.equippable:SetOnUnequip(onunequip)
+    -- inst.components.equippable.walkspeedmult = .8
 
     --	inst:AddComponent("dapperness")
     --	inst.components.dapperness.dapperness = TUNING.DAPPERNESS_MED
@@ -197,7 +224,7 @@ local function fn()
     -- inst:AddComponent("oxygensupplier")
     -- inst.components.oxygensupplier:SetSupplyRate(TUNING.lol_heartsteel_RATE)
 
-    -- inst.OnSave = onsave
+    inst.OnSave = onsave
     inst.OnPreLoad = onpreload
 
     return inst

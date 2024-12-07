@@ -7,7 +7,7 @@ local function onplayed(inst, musician, instrument)
     if inst ~= musician and
             (TheNet:GetPVPEnabled() or not inst:HasTag("player")) then
         if not musician:HasTag("wonderwhy") then
-            musician.components.grogginess:AddGrogginess(2.5, 5)
+            musician.components.grogginess:AddGrogginess(1, 2)
         end
     end
 end
@@ -19,14 +19,14 @@ local function HearPanFlute(inst, musician, instrument)
             not (inst.components.fossilizable ~= nil and inst.components.fossilizable:IsFossilized()) then
         local mount = inst.components.rider ~= nil and inst.components.rider:GetMount() or nil
         if mount ~= nil then
-            mount:PushEvent("ridersleep", { sleepiness = 5, sleeptime = 10 })
+            mount:PushEvent("ridersleep", { sleepiness = 10, sleeptime = 20 })
         end
         if inst.components.farmplanttendable ~= nil then
             inst.components.farmplanttendable:TendTo(musician)
         elseif inst.components.sleeper ~= nil then
-            inst.components.sleeper:AddSleepiness(5, 10)
+            inst.components.sleeper:AddSleepiness(10, 20)
         elseif inst.components.grogginess ~= nil then
-            inst.components.grogginess:AddGrogginess(5, 10)
+            inst.components.grogginess:AddGrogginess(10, 20)
         else
             inst:PushEvent("knockedout")
         end
@@ -58,8 +58,8 @@ local function fn()
     inst:AddComponent("tool")
     inst.components.tool:SetAction(ACTIONS.PLAY)
     inst:AddComponent("finiteuses")
-    inst.components.finiteuses:SetMaxUses(20)
-    inst.components.finiteuses:SetUses(20)
+    inst.components.finiteuses:SetMaxUses(30)
+    inst.components.finiteuses:SetUses(30)
     inst.components.finiteuses:SetOnFinished(inst.Remove)
     inst.components.finiteuses:SetConsumption(ACTIONS.PLAY, 1)
     inst:AddComponent("inspectable")

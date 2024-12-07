@@ -180,7 +180,7 @@ local function UpdateSpray(inst)
 	OnFuelSectionChange(inst)
 	
     local x, y, z = inst.Transform:GetWorldPosition()
-	local GARDENING_CANT_TAGS = { "pickable", "stump", "barren", "withered", "INLIMBO" }
+	local GARDENING_CANT_TAGS = { "pickable", "stump", "barren", "INLIMBO" } -- "withered",
 	local ents = TheSim:FindEntities(x, y, z, 8, nil, GARDENING_CANT_TAGS)
 
 	if not inst.moisture_targets then
@@ -196,7 +196,7 @@ local function UpdateSpray(inst)
     inst.moisture_targets = {} 
 
     for k, v in pairs(ents) do
-		if v.components.moisture then
+		if v.components.moisture ~= nil and v.components.inventory ~= nil and not v.components.inventory:IsWaterproof() then
 			v.components.moisture:DoDelta(0.1)		
 		end
 		
@@ -208,9 +208,12 @@ local function UpdateSpray(inst)
 			v.components.crop.growthpercent = v.components.crop.growthpercent + (0.001)
 		end		
 
-		if v.components.growable ~= nil then
+		--[[
+		if not (inst.components.growable.targettime == nil and inst.components.growable.pausedremaining == nil) then 
+		if v.components.growable ~= nil and v.components.growable:IsGrowing() then
 			v.components.growable:ExtendGrowTime(-0.2)
 		end
+		]]--
 	
 		if v then
 			local a, b, c = v.Transform:GetWorldPosition()

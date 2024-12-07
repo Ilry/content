@@ -102,8 +102,8 @@ elseif TUNING.WHY_LANGUAGE == "chinese" then
     eye_put_on_name = "佩戴"
     eye_put_down_name = "卸下"
 else
-    eye_put_on_name = "Put on"
-    eye_put_down_name = "Unequip"
+    eye_put_on_name = "Socket"
+    eye_put_down_name = "Unsocket"
 end
 STRINGS.ACTIONS.EYE_SWAP = {
     GENERIC = eye_put_on_name,

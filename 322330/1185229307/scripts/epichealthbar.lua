@@ -68,6 +68,7 @@ TUNING.EPICHEALTHBAR =
 		DAYWALKER =						RGB(170, 37, 33),
 		DAYWALKER2 =					RGB(170, 112, 48),
 		SHARKBOI =						RGB(140, 158, 176),
+		WORM_BOSS =						RGB(85, 171, 189),
 
 		DEERCLOPS =
 		{
@@ -291,14 +292,14 @@ local function GetDamagePosition(attacker, target)
 end
 
 local function OnAttacked(inst, data)
-	if data ~= nil and data.damageresolved ~= nil and data.damageresolved > 0 then
+	if data ~= nil and data.damageresolved ~= nil and (data.damageresolved > 0 or data.redirected) then
 		local success, source = pcall(ResolveSource, data.attacker)
 		if checkentity(source) and source.isplayer and source ~= inst then
 			SendModRPCToClient("ShowPopupNumber",
 				source.userid,
 				inst.parent or inst,
 				math.min(999999, data.damageresolved),
-				data.stimuli or Tykvesh.Browse(data.weapon, "components", "weapon", "stimuli"),
+				data.redirected and "redirected" or data.stimuli or Tykvesh.Browse(data.weapon, "components", "weapon", "stimuli"),
 				GetDamagePosition(data.attacker, inst)
 			)
 		end

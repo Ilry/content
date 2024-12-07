@@ -109,6 +109,9 @@ local function CanFanAttack(owner, target, angle, maxdeg, neardist)
   end
   return true
 end
+local function CanAbsorb(inst)
+    return inst and inst.components.health and not inst:HasOneOfTags(NON_LIFEFORM_TARGET_TAGS)
+end
 local aoe_cant_tags = {}
 shallowcopy(require("gallop_aoe").aoe_cant_tags, aoe_cant_tags)
 ConcatArrays(aoe_cant_tags, {"flying"})
@@ -116,9 +119,11 @@ local function DoAOEAttack(inst, target, owner, healthgain, healthlose, maxgain,
                            radius, canattack, pos)
   maxgain = maxgain or 10
   healthgain = healthgain or 1
-  healthlose = healthlose or (3 - 1)
+  healthlose = healthlose or (-TUNING.BLOODAXE_HEALTH_DELTA - 1)
+  if not CanAbsorb(target) then healthlose=0 end
   local angle = target and
                   owner:GetAngleToPoint(target.Transform:GetWorldPosition())
+  local count=0
   AOEAttack({
     inst = inst,
     position = pos,
@@ -131,7 +136,10 @@ local function DoAOEAttack(inst, target, owner, healthgain, healthlose, maxgain,
                (not angle or CanFanAttack(owner, v, angle, 90, .2)) and
                (not canattack or canattack(params, v))
     end,
-    postattack = function(params, count)
+    onattack=function(params,v)
+        if CanAbsorb(v) then count=count+1 end
+    end,
+    postattack = function(params, _count)
       if inst.components.gallop_multifeat:IsEnabled("bloodhungry") then
         local health = math.min(count * healthgain, maxgain) - healthlose
         if health ~= 0 and not owner.components.health:IsDead() then
@@ -210,7 +218,7 @@ local function onattack(inst, attacker, target)
       TryReleasePrison(inst, attacker, target)
     end
   end
-   SpawnAt("balloon_pop_head", target)
+  SpawnAt("balloon_pop_head", target)
 end
 local fuelvalue = {flint = 0.2, nightmarefuel = 0.2, horrorfuel = 1}
 local function OnRepaired(inst, doer, repair_item)
@@ -403,15 +411,31 @@ local function StartRegen(inst)
     StopRegen(inst)
   end
 end
+local function Unequip(inst)
+  if inst.components.equippable:IsEquipped() then
+    ---@type Instance
+    local owner = inst.components.inventoryitem.owner
+    if owner then
+      local item = owner.components.inventory:Unequip(
+      inst.components.equippable.equipslot)
+      if item then owner.components.inventory:GiveItem(item) end
+    end
+  end
+  inst.components.equippable.restrictedtag = "xxxxxxxx"
+end
+local function Equip(inst) inst.components.equippable.restrictedtag = nil end
 local function UpdateFunction(inst)
   local use = inst.components.finiteuses and
                 inst.components.finiteuses:GetPercent() or 1
 
+  inst:EnableAOE()
   if use <= 0 then
     inst.components.gallop_multifeat:DisableAllFeatures()
+    Unequip(inst)
     StartRegen(inst)
   else
     inst.components.gallop_multifeat:EnableAllFeatures()
+    Equip(inst)
     if use >= 1 then
       StopRegen(inst)
     else
@@ -564,6 +588,7 @@ local function fn2()
   inst:AddTag("cast_like_pocketwatch")
   -- inst:ListenForEvent("willenternewstate", fixsg)
   inst:AddComponent("aoetargeting")
+  inst.components.aoetargeting:SetAllowRiding(false)
   SetupRingAOE(inst)
   inst.playfuelsound = net_event(inst.GUID, "pocketwatch_weapon.playfuelsound")
   inst.AnimState:SetBuild("gallop_bloodaxe")
@@ -590,6 +615,7 @@ local function fn2()
   inst.components.rechargeable:SetOnDischargedFn(OnDischarged)
   inst.components.rechargeable:SetOnChargedFn(OnCharged)
   inst.components.rechargeable:SetMaxCharge(TUNING.GALLOP_BREAKER_COOLDOWN)
+  OnCharged(inst)
 
   inst:AddComponent("planardamage")
   inst.components.planardamage:SetBaseDamage(
@@ -629,6 +655,8 @@ local function fn2()
   inst:AddComponent("aoespell")
   -- just to mute actionfail speech
   inst.components.aoespell:SetSpellFn(DoRingLaser)
+  
+  inst.EnableAOE=EnableAOE
 
   return inst
 end

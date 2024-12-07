@@ -7,7 +7,7 @@ description = Ch and
 "使弹性空间能做用于更多容器" or
 "Apply infinite stacksize to more containers"  --mod描述  --mod描述
 author = "Lilith" --作者
-version = "0.0.7" -- mod版本 上传mod需要两次的版本不一样
+version = "0.0.8" -- mod版本 上传mod需要两次的版本不一样
 
 -- This is the URL name of the mod's thread on the forum; the part after the ? and before the first & in the url
 forumthread = ""

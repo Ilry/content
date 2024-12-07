@@ -6,16 +6,19 @@ local WXApiculture = Class(function(self, inst)
     self.inst = inst
 end)
 
-local TOCATCH_ONE_OF_TAGS = { "butterfly" }
+local TOWORK_CANT_TAGS = { "fire", "smolder", "INLIMBO", "NOCLICK", "event_trigger" }
+local CATCH_TAGS = { "butterfly" }
 function WXApiculture:Catch()
+    local action = ACTIONS.NET
     local leader = self.inst.components.follower.leader or self.inst.components.entitytracker:GetEntity("sentryward")
     if leader == nil then
         return nil
     end
 
     local insect = FindEntity(leader, SEE_WORK_DIST, function(ent)
-        return ent.prefab == "butterfly" or ent.prefab == "moonbutterfly"
-    end, nil, nil, TOCATCH_ONE_OF_TAGS)
+        return ent.components.workable ~= nil and ent.components.workable:CanBeWorked() and
+            ent.components.workable:GetWorkAction() == action
+    end, { action.id.."_workable" }, TOWORK_CANT_TAGS, CATCH_TAGS)
     if insect ~= nil then
         self.inst.components.wxtype:SwapTool(ACTIONS.NET)
         local tool = self.inst.components.inventory:GetEquippedItem(EQUIPSLOTS.HANDS)

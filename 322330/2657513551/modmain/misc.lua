@@ -77,6 +77,15 @@ AddComponentPostInit("targettracker", function(self)
 	end
 end)
 
+-- fix pet (1108032281)
+AddPrefabPostInit("mihobell", function(inst)
+	if inst.components.petleash ~= nil and inst.OnPetLost == nil then
+		inst.OnPetLost = function()
+			print("[DSA] WhaRang fix: dummy OnPetLost, see modmain/misc.lua")
+		end
+	end
+end)
+
 -- fix client acid smoke fx ruin cave fps
 -- scripts/prefabs/acidraindrop.lua
 AddPrefabPostInit("acidsmoke_endless", function(inst)

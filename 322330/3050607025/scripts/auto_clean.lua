@@ -407,7 +407,11 @@ if IsServer then
 			local item_cnts = string.split(string.lower(message),";")
 			for k, v in ipairs(item_cnts) do
 				local item_cnt = string.split(string.lower(v),":")
-				levelPrefabs[item_cnt[1]] = { max = tonumber(item_cnt[2]) }
+				local max_temp = 2
+				if not tonumber(item_cnt[2]) then
+					max_temp = tonumber(item_cnt[2])
+				end
+				levelPrefabs[item_cnt[1]] = { max = max_temp }
 				player:DoTaskInTime(0.5, function() if player.components.talker then player.components.talker:Say("加入清理："..item_cnt[1].."数量为："..item_cnt[2]) end end)
 			end
 			message = "#clean_world"

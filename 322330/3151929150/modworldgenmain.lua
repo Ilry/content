@@ -486,6 +486,8 @@ _G.num_of_good_seeds_found = 0
 _G.min_distance_so_far = math.huge
 -- _G.min_distance_seed = nil
 _G.best_xz_for_best_seed = nil
+_G.total_retry_by_klei = 0
+_G.total_seed_by_klei = 0
 
 local function table_to_json_string(tbl)
 	local result = "{"
@@ -1239,7 +1241,8 @@ local function check_connected_ancient(savedata, world_id, my_log_file)
     -- use the tiles that some ancient entities to represent the target points in grid
     -- 'ruins_statue_head_nogem_spawner', 'ruins_statue_head_spawner', 'ruins_statue_mage_nogem_spawner', 'ruins_statue_mage_spawner', 'pandoraschest'
     local target_points = {}
-    local target_entities = {"ruins_statue_head_nogem_spawner", "ruins_statue_head_spawner", "ruins_statue_mage_nogem_spawner", "ruins_statue_mage_spawner", "pandoraschest"}
+    -- local target_entities = {"ruins_statue_head_nogem_spawner", "ruins_statue_head_spawner", "ruins_statue_mage_nogem_spawner", "ruins_statue_mage_spawner", "pandoraschest"}
+    local target_entities = _G[world_id].ancient_representation
     for i, target_entity in ipairs(target_entities) do
         local target_entities_coors = savedata.ents[target_entity]
         for j, target_point in ipairs(target_entities_coors) do
@@ -1437,7 +1440,7 @@ local function check_entity_num_criterion(savedata, world_id, my_log_file)
         local entity_name = entity["name"]
         local entity_number = entity["number"]
         _G[world_id].check_statistic["required_entities"][entity_name]["check_times"] = _G[world_id].check_statistic["required_entities"][entity_name]["check_times"] + 1
-        if entity_name ~= "total_clockwork_creatures" and entity_name ~= "total_sculptures" and entity_name ~= "lightninggoat_herd" then
+        if entity_name ~= "total_clockwork_creatures" and entity_name ~= "total_sculptures" and entity_name ~= "lightninggoat_herd" and entity_name~="ruins_statue_all" and entity_name~="ruins_statue_gem" then
             if savedata.ents[entity_name] == nil then
                 local log_str = "entity ".. entity_name .. " is not in savedata.ents"
                 -- my_log_file:write(os.date("%H:%M:%S", os.time()) .. log_str .."\n")
@@ -1524,6 +1527,50 @@ local function check_entity_num_criterion(savedata, world_id, my_log_file)
             if total_sculptures < entity_number then
                 -- print("entity", entity_name, "is not enough, required", entity_number, "but only", total_sculptures)
                 local log_str = "entity ".. entity_name .. " is not enough, required".. entity_number .. "but only".. total_sculptures
+                -- my_log_file:write(os.date("%H:%M:%S", os.time()) .. log_str .."\n")
+                print("[Search your map] "..log_str)
+                return false
+            end
+            if _G[world_id].check_statistic["required_entities"][entity_name]["success_times"] == 0 then
+                BEST_SEED_SO_FAR = SEED
+            end
+            _G[world_id].check_statistic["required_entities"][entity_name]["success_times"] = _G[world_id].check_statistic["required_entities"][entity_name]["success_times"] + 1
+        elseif entity_name == "ruins_statue_all" then
+            local total_ruins_statue = 0
+            if savedata.ents["ruins_statue_mage_spawner"] ~= nil then
+                total_ruins_statue = total_ruins_statue + #savedata.ents["ruins_statue_mage_spawner"]
+            end
+            if savedata.ents["ruins_statue_mage_nogem_spawner"] ~= nil then
+                total_ruins_statue = total_ruins_statue + #savedata.ents["ruins_statue_mage_nogem_spawner"]
+            end
+            if savedata.ents["ruins_statue_head_spawner"] ~= nil then
+                total_ruins_statue = total_ruins_statue + #savedata.ents["ruins_statue_head_spawner"]
+            end
+            if savedata.ents["ruins_statue_head_nogem_spawner"] ~= nil then
+                total_ruins_statue = total_ruins_statue + #savedata.ents["ruins_statue_head_nogem_spawner"]
+            end
+            if total_ruins_statue < entity_number then
+                -- print("entity", entity_name, "is not enough, required", entity_number, "but only", total_ruins_statue)
+                local log_str = "entity ".. entity_name .. " is not enough, required".. entity_number .. "but only".. total_ruins_statue
+                -- my_log_file:write(os.date("%H:%M:%S", os.time()) .. log_str .."\n")
+                print("[Search your map] "..log_str)
+                return false
+            end
+            if _G[world_id].check_statistic["required_entities"][entity_name]["success_times"] == 0 then
+                BEST_SEED_SO_FAR = SEED
+            end
+            _G[world_id].check_statistic["required_entities"][entity_name]["success_times"] = _G[world_id].check_statistic["required_entities"][entity_name]["success_times"] + 1
+        elseif entity_name == "ruins_statue_gem" then
+            local total_ruins_statue_gem = 0
+            if savedata.ents["ruins_statue_mage_spawner"] ~= nil then
+                total_ruins_statue_gem = total_ruins_statue_gem + #savedata.ents["ruins_statue_mage_spawner"]
+            end
+            if savedata.ents["ruins_statue_head_spawner"] ~= nil then
+                total_ruins_statue_gem = total_ruins_statue_gem + #savedata.ents["ruins_statue_head_spawner"]
+            end
+            if total_ruins_statue_gem < entity_number then
+                -- print("entity", entity_name, "is not enough, required", entity_number, "but only", total_ruins_statue_gem)
+                local log_str = "entity ".. entity_name .. " is not enough, required".. entity_number .. "but only".. total_ruins_statue_gem
                 -- my_log_file:write(os.date("%H:%M:%S", os.time()) .. log_str .."\n")
                 print("[Search your map] "..log_str)
                 return false
@@ -1901,6 +1948,300 @@ local function tiles_far_regions(savedata, world_id, my_log_file, grid, extra_ed
 end
 
 
+
+local function tiles_under_huge_trees(savedata, world_id, my_log_file, grid, extra_edges, current_good_tiles, current_good_tiles_num)
+    if _G[world_id].under_huge_trees["cover_rate"] == "not set" then
+        print("[Search your map] under huge trees is not set")
+        return  current_good_tiles, current_good_tiles_num
+    else
+        print("[Search your map] under huge trees is set")
+        _G[world_id].check_statistic["under_huge_trees"]["check_times"] = _G[world_id].check_statistic["under_huge_trees"]["check_times"] + 1
+    end
+
+    -- The boat seems need 3 by 3 tiles
+    -- first, get all the tiles that can plant a huge tree
+    local start_time = os.clock()
+    local height = savedata.map.height
+    local width = savedata.map.width
+    -- For grid, 1 means water, 0 means land
+    local high_res_grid = {}
+    local eroded_grid = {}
+    for i = 1, height do
+        high_res_grid[i] = {}
+        eroded_grid[i] = {}
+        for j = 1, width do
+            tiles_ij = WorldSim:GetTile(i, j)
+            if TileGroupManager:IsLandTile(tiles_ij) then
+                high_res_grid[i][j] = 0
+                eroded_grid[i][j] = 0
+            else
+                high_res_grid[i][j] = 1
+                eroded_grid[i][j] = 1
+            end
+        end
+    end
+    local erode_begin_time = os.clock()
+
+    for i = 1, height do
+        for j = 1, width do
+            if high_res_grid[i][j] == 1 then
+                -- 检查(i,j)的8-邻居，如果有0，当前元素就变为0
+                if i > 1 and j > 1 and high_res_grid[i-1][j-1] == 0 then  -- 左上邻居
+                    eroded_grid[i][j] = 0
+                elseif i > 1 and high_res_grid[i-1][j] == 0 then  -- 上邻居
+                    eroded_grid[i][j] = 0
+                elseif i > 1 and j < width and high_res_grid[i-1][j+1] == 0 then  -- 右上邻居
+                    eroded_grid[i][j] = 0
+                elseif j > 1 and high_res_grid[i][j-1] == 0 then  -- 左邻居
+                    eroded_grid[i][j] = 0
+                elseif j < width and high_res_grid[i][j+1] == 0 then  -- 右邻居
+                    eroded_grid[i][j] = 0
+                elseif i < height and j > 1 and high_res_grid[i+1][j-1] == 0 then  -- 左下邻居
+                    eroded_grid[i][j] = 0
+                elseif i < height and high_res_grid[i+1][j] == 0 then  -- 下邻居
+                    eroded_grid[i][j] = 0
+                elseif i < height and j < width and high_res_grid[i+1][j+1] == 0 then  -- 右下邻居
+                    eroded_grid[i][j] = 0
+                end
+                -- if (i > 1 and high_res_grid[i-1][j] == 0) or  -- 上邻居
+                --    (i < height and high_res_grid[i+1][j] == 0) or  -- 下邻居
+                --    (j > 1 and high_res_grid[i][j-1] == 0) or  -- 左邻居
+                --    (j < width and high_res_grid[i][j+1] == 0) then  -- 右邻居
+                --     eroded_grid[i][j] = 0  -- 腐蚀：当前元素变为0
+                -- end
+            end
+        end
+    end
+    local erode_end_time = os.clock()
+
+    -- detect edges
+    local boundary_ones = {}
+    for i = 1, height do
+        for j = 1, width do
+            -- 当前元素必须是1
+            if eroded_grid[i][j] == 1 then
+                local is_boundary = false
+
+                -- 检查上下左右的邻居
+                if i > 1 and eroded_grid[i-1][j] == 0 then  -- 上邻居
+                    is_boundary = true
+                elseif i < height and eroded_grid[i+1][j] == 0 then  -- 下邻居
+                    is_boundary = true
+                elseif j > 1 and eroded_grid[i][j-1] == 0 then  -- 左邻居
+                    is_boundary = true
+                elseif j < width and eroded_grid[i][j+1] == 0 then  -- 右邻居
+                    is_boundary = true
+                end
+
+                -- 如果是边界元素，将其保存
+                if is_boundary then
+                    table.insert(boundary_ones, {i, j})
+                end
+            end
+        end
+    end
+
+    local get_boundary_ones_time = os.clock()
+
+    -- detect those that can plant huge trees
+    -- for all the boundary ones
+    local can_plant_tiles = {}
+    -- Actually, not veru accurate, should place the boat in the intersection of the four tiles
+    for _, boundary_one in ipairs(boundary_ones) do
+        local i = boundary_one[1]
+        local j = boundary_one[2]
+        -- if i > 1 and j > 1 and high_res_grid[i][j] == 1 and high_res_grid[i-1][j] == 1 and high_res_grid[i][j-1] == 1 and high_res_grid[i-1][j-1] == 1 then
+        --     table.insert(can_plant_tiles, {i, j})
+        -- elseif i > 1 and j < width and high_res_grid[i][j] == 1 and high_res_grid[i-1][j] == 1 and high_res_grid[i][j+1] == 1 and high_res_grid[i-1][j+1] == 1 then
+        --     table.insert(can_plant_tiles, {i, j})
+        -- elseif i < height and j > 1 and high_res_grid[i][j] == 1 and high_res_grid[i+1][j] == 1 and high_res_grid[i][j-1] == 1 and high_res_grid[i+1][j-1] == 1 then
+        --     table.insert(can_plant_tiles, {i, j})
+        -- elseif i < height and j < width and high_res_grid[i][j] == 1 and high_res_grid[i+1][j] == 1 and high_res_grid[i][j+1] == 1 and high_res_grid[i+1][j+1] == 1 then
+        --     table.insert(can_plant_tiles, {i, j})
+        -- end
+        -- check all the 8 neighbors
+        local can_plant = true
+        for dx = -1, 1 do
+            for dy = -1, 1 do
+                if i + dx >= 1 and i + dx <= height and j + dy >= 1 and j + dy <= width then
+                    if high_res_grid[i + dx][j + dy] == 0 then
+                        can_plant = false
+                        break
+                    end
+                end
+            end
+        end
+        if can_plant then
+            table.insert(can_plant_tiles, {i, j})
+        end
+    end
+
+    local get_can_plant_tiles_time = os.clock()
+
+    -- tiles under the shadow of huge trees (distance <= 5)
+    local under_huge_trees_tiles = {}
+    for i = 1, height do
+        under_huge_trees_tiles[i] = {}
+        for j = 1, width do
+            under_huge_trees_tiles[i][j] = 0
+        end
+    end
+    local under_huge_trees_tiles_coords = {}
+    local offsets = {}
+    -- use 6 instead of 5.5, because the seed location is not the center of the boat, can bias 1 tile
+    for dx = -6, 6 do
+        for dy = -6, 6 do
+            if dx * dx + dy * dy <= 42.25 then
+                table.insert(offsets, {dx, dy})
+            end
+        end
+    end
+    for _, point in ipairs(can_plant_tiles) do
+        local x = point[1]
+        local y = point[2]
+        for _, offset in ipairs(offsets) do
+            local dx = offset[1]
+            local dy = offset[2]
+            if under_huge_trees_tiles[x + dx][y + dy] == 0 and x + dx >= 1 and x + dx <= height and y + dy >= 1 and y + dy <= width then
+                -- table.insert(under_huge_trees_tiles, {x + dx, y + dy})
+                under_huge_trees_tiles[x + dx][y + dy] = 1
+                table.insert(under_huge_trees_tiles_coords, {x + dx, y + dy})
+            end
+        end
+    end
+
+    local get_under_huge_trees_tiles_time = os.clock()
+
+    print("[Search your map] erode cost time: "..tostring((erode_begin_time - start_time)*1000).."ms")
+    print("[Search your map] erode cost time: "..tostring((erode_end_time - erode_begin_time)*1000).."ms")
+    print("[Search your map] get boundary ones cost time: "..tostring((get_boundary_ones_time - erode_end_time)*1000).."ms")
+    print("[Search your map] get can plant tiles cost time: "..tostring((get_can_plant_tiles_time - get_boundary_ones_time)*1000).."ms")
+    print("[Search your map] get under huge trees tiles cost time: "..tostring((get_under_huge_trees_tiles_time - get_can_plant_tiles_time)*1000).."ms")
+
+    -- dump for debugging
+    -- table_to_json_file(under_huge_trees_tiles_coords, "under_huge_trees_tiles_coords.json")
+    -- table_to_json_file(under_huge_trees_tiles, "under_huge_trees_tiles.json")
+    -- table_to_json_file(can_plant_tiles, "can_plant_tiles.json")
+    -- table_to_json_file(boundary_ones, "boundary_ones.json")
+    -- table_to_json_file(current_good_tiles, "current_good_tiles.json")
+    -- return current_good_tiles, current_good_tiles_num
+
+    local base_radius = _G[world_id].under_huge_trees["base_radius"]
+    local cover_rate = _G[world_id].under_huge_trees["cover_rate"]
+    local threshold_num = base_radius * base_radius * cover_rate * math.pi
+    -- compare current_good_tiles_num and #under_huge_trees_tiles_coords, choose a more efficient way to check
+    -- Chenck, in a neighborhood of base_radius of a good tiles, if the number of under_huge_trees_tiles_coords is larger than cover_rate * base_radius * base_radius, then keep it
+    -- otherwise, remove its
+    local offsets_base_radius = {}
+    for dx = -base_radius, base_radius do
+        for dy = -base_radius, base_radius do
+            if dx * dx + dy * dy <= base_radius * base_radius then
+                table.insert(offsets_base_radius, {dx, dy})
+            end
+        end
+    end
+    -- Importance notes: the prevous current_good_tiles is downsampled version
+    if current_good_tiles_num < #under_huge_trees_tiles_coords then
+        local start_time = os.clock()
+        -- check the number of under_huge_trees_tiles_coords in the neighborhood of each good tiles
+        local new_good_tiles = {}
+        for i_, row in pairs(current_good_tiles) do
+            new_good_tiles[i_] = {}
+            for j_, value in pairs(row) do
+                local i = i_* _G.merge_tiles
+                local j = j_ * _G.merge_tiles
+                if value then
+                    local count = 0
+                    for _, offset in ipairs(offsets_base_radius) do
+                        local dx = offset[1]
+                        local dy = offset[2]
+                        if i + dx >= 1 and i + dx <= height and j + dy >= 1 and j + dy <= width then
+                            if under_huge_trees_tiles[i + dx] and under_huge_trees_tiles[i + dx][j + dy] == 1 then
+                                count = count + 1
+                            end
+                        end
+                    end
+                    if count >= threshold_num then
+                        new_good_tiles[i_][j_] = true
+                    end
+                end
+            end
+        end
+        current_good_tiles = new_good_tiles
+        current_good_tiles_num = 0
+        for i, row in pairs(current_good_tiles) do
+            for j, value in pairs(row) do
+                if value then
+                    current_good_tiles_num = current_good_tiles_num + 1
+                end
+            end
+        end
+        local end_time = os.clock()
+        print("[Search your map] check under huge trees cost time (by looping through current_good_tiles): "..tostring((end_time - start_time)*1000).."ms")
+    else
+        -- accumulate the number of good tiles in the neighborhood of each under_huge_trees_tiles_coords
+        local start_time = os.clock()
+        local good_tiles_covered_times = {}
+        for _, point in ipairs(under_huge_trees_tiles_coords) do
+            local x = point[1]
+            local y = point[2]
+            for _, offset in ipairs(offsets_base_radius) do
+                local dx = offset[1]
+                local dy = offset[2]
+                if x + dx >= 1 and x + dx <= height and y + dy >= 1 and y + dy <= width then
+                    -- if current_good_tiles[x + dx] and current_good_tiles[x + dx][y + dy] then
+                        if good_tiles_covered_times[x + dx] == nil then
+                            good_tiles_covered_times[x + dx] = {}
+                        end
+                        if good_tiles_covered_times[x + dx][y + dy] == nil then
+                            good_tiles_covered_times[x + dx][y + dy] = 1
+                        else
+                            good_tiles_covered_times[x + dx][y + dy] = good_tiles_covered_times[x + dx][y + dy] + 1
+                        end
+                    -- end
+                end
+            end
+        end
+        -- remove the good tiles that are not covered by enough under_huge_trees_tiles_coords
+        local new_good_tiles = {}
+        for i_, row in pairs(current_good_tiles) do
+            local i = i_* _G.merge_tiles
+            new_good_tiles[i_] = {}
+            for j_, value in pairs(row) do
+                local j = j_ * _G.merge_tiles
+                if value then
+                    if good_tiles_covered_times[i] and good_tiles_covered_times[i][j] and good_tiles_covered_times[i][j] >= threshold_num then
+                        new_good_tiles[i_][j_] = true
+                    end
+                end
+            end
+        end
+        current_good_tiles = new_good_tiles
+        current_good_tiles_num = 0
+        for i, row in pairs(current_good_tiles) do
+            for j, value in pairs(row) do
+                if value then
+                    current_good_tiles_num = current_good_tiles_num + 1
+                end
+            end
+        end
+        local end_time = os.clock()
+        print("[Search your map] check under huge trees cost time (by looping through under_huge_trees_tiles_coords): "..tostring((end_time - start_time)*1000).."ms")
+    end
+
+    if current_good_tiles_num == 0 then
+        print("[Search your map] failed when checking under huge trees")
+        return current_good_tiles, 0
+    else
+        if _G[world_id].check_statistic["under_huge_trees"]["success_times"] == 0 then
+            BEST_SEED_SO_FAR = SEED
+        end
+        _G[world_id].check_statistic["under_huge_trees"]["success_times"] = _G[world_id].check_statistic["under_huge_trees"]["success_times"] + 1
+    end
+
+    return current_good_tiles, current_good_tiles_num
+end
+
 local function get_good_tiles_for_base(height, width, near_entities_results, near_regions_results, far_regions_results, near_inland_ocean_results, near_ocean_reuslts)
     -- loop through all dist, check if there are nodes that statisfy the requirement
     local good_tiles = {}
@@ -2014,6 +2355,57 @@ local function check_room_number(savedata, world_id, my_log_file)
             end
         end
     end
+
+    
+    -- local ruins_statue_num = {}
+    -- for i, entity in ipairs(_G[world_id].required_entities) do
+    --     local entity_name = entity["name"]
+    --     local entity_number = entity["number"]
+    --     if entity_name == "ruins_statue_all" then
+    --         ruins_statue_num["ruins_statue_all"] = entity_number
+    --     elseif entity_name == "ruins_statue_gem" then
+    --         ruins_statue_num["ruins_statue_gem"] = entity_number
+    --     end
+    -- end
+    -- print("[Search your map] checking room number success")
+    -- dumptable(ruins_statue_num)
+    -- if ruins_statue_num["ruins_statue_all"] ~= nil or ruins_statue_num["ruins_statue_gem"] ~= nil then
+    --     local num_of_voronoi_nodes = #savedata.map.topology.nodes
+    --     local current_ruins_statue_all = 0
+    --     local current_ruins_statue_gem = 0
+    --     for i = 1, num_of_voronoi_nodes do
+    --         -- local tasks_name = savedata.map.topology.ids[i]:split(":")[1]
+    --         local room_name = savedata.map.topology.ids[i]:split(":")[3]
+    --         if room_name == "SacredBarracks" then
+    --             current_ruins_statue_all = current_ruins_statue_all + 5
+    --             current_ruins_statue_gem = current_ruins_statue_gem + 4
+    --         elseif room_name == "Bishops" then
+    --             current_ruins_statue_all = current_ruins_statue_all + 8
+    --             current_ruins_statue_gem = current_ruins_statue_gem + 4
+    --         elseif room_name == "BrokenAltar" then
+    --             current_ruins_statue_all = current_ruins_statue_all + 2
+    --             current_ruins_statue_gem = current_ruins_statue_gem + 2
+    --         end
+    --     end
+    --     if ruins_statue_num.ruins_statue_all ~= nil and current_ruins_statue_all < ruins_statue_num.ruins_statue_all then
+    --         print("[Search your map] ruins_statue_all requires ", ruins_statue_num.ruins_statue_all, " but got ", current_ruins_statue_all)
+    --         return false
+    --     end
+    --     if _G[world_id].check_statistic["required_entities"]["ruins_statue_all"]["success_times"] == 0 then
+    --         BEST_SEED_SO_FAR = SEED
+    --     end
+    --     _G[world_id].check_statistic["required_entities"]["ruins_statue_all"]["success_times"] = _G[world_id].check_statistic["required_entities"]["ruins_statue_all"]["success_times"] + 1
+    --     if ruins_statue_num.ruins_statue_gem ~= nil and current_ruins_statue_gem < ruins_statue_num.ruins_statue_gem then
+    --         print("[Search your map] ruins_statue_gem requires ", ruins_statue_num.ruins_statue_gem, " but got ", current_ruins_statue_gem)
+    --         return false
+    --     end
+    --     if _G[world_id].check_statistic["required_entities"]["ruins_statue_gem"]["success_times"] == 0 then
+    --         BEST_SEED_SO_FAR = SEED
+    --     end
+    --     _G[world_id].check_statistic["required_entities"]["ruins_statue_all"]["success_times"] = _G[world_id].check_statistic["required_entities"]["ruins_statue_gem"]["success_times"] + 1
+    --     -- print the current number of ruins statue
+    --     print("[Search your map] current ruins statue number: all ", current_ruins_statue_all, " gem ", current_ruins_statue_gem)
+    -- end
     return true
 end
 
@@ -2134,7 +2526,7 @@ local function get_save_data_score(savedata, world_id, my_log_file, grid, extra_
         local start_time = os.clock()
         local distance_record = calculate_distance(target_tiles, extra_edges, current_good_tiles, height, width)
         local end_time = os.clock()
-        print("[Search your map] calculate_distance time for"..target_name.."is: ", (end_time - start_time) * 1000)
+        print("[Search your map] calculate_distance time for"..target_name.."is (ms): ", (end_time - start_time) * 1000)
         for i = 1, height do
             for j = 1, width do
                 if current_good_tiles[i] and current_good_tiles[i][j] then
@@ -2233,7 +2625,19 @@ local function check_save_data(savedata, world_id, my_log_file)
         print("[Search your map] failed when checking far regions")
         return false
     end
-    print("[Search your map] printing current_good_tiles")
+
+    local under_tree_start_time = os.clock()
+    current_good_tiles, current_good_tiles_num = tiles_under_huge_trees(savedata, world_id, my_log_file, grid, {}, current_good_tiles, current_good_tiles_num)
+    local under_tree_end_time = os.clock()
+    print("[Search your map] time for under huge trees(ms):", (under_tree_end_time - under_tree_start_time)*1000)
+    -- TODO：家附近有3个以上洞穴？ tiles_near_enough_entites? 则上面的是特殊情况。（希望这个节点总数不要太多，否则可能随机选）
+    -- my_log_file:write(os.date("%H:%M:%S", os.time()) .. "checking far ocean" .."\n"))
+    -- collect current good tiles into a list
+    if current_good_tiles_num == 0 then
+        print("[Search your map] failed when checking tiles_under_huge_trees")
+        return false
+    end
+    -- print("[Search your map] printing current_good_tiles")
     -- dumptable(current_good_tiles)
     
     -- TODO: in fact, can break to make it more efficient.
@@ -2284,28 +2688,28 @@ local function check_save_data(savedata, world_id, my_log_file)
     -- 月岛连大陆？（cluster间距离；但这个要求相交，可能用于破碎地形）（可能需要获得每个tile的精确地形）(并且交点接近建家地点)
     -- 某两个地形离的近？（不知道有没有用）
     -- 靠近海洋？（靠近海洋需要精确判断）
-    start_time = os.time()
+    start_time = os.clock()
     if not check_connected_moon_island(savedata, world_id, my_log_file) then
-        end_time = os.time()
+        end_time = os.clock()
         time_for_BFS = end_time - start_time
-        print("[Search your map] time for check_connected_moon_island:", time_for_BFS)
+        print("[Search your map] time for check_connected_moon_island(ms):", time_for_BFS*1000)
         return false
     else
-        end_time = os.time()
+        end_time = os.clock()
         time_for_BFS = end_time - start_time
-        print("[Search your map] time for check_connected_moon_island:", time_for_BFS)
+        print("[Search your map] time for check_connected_moon_island(ms):", time_for_BFS*1000)
     end
 
-    start_time = os.time()
+    start_time = os.clock()
     if not check_connected_ancient(savedata, world_id, my_log_file) then
-        end_time = os.time()
+        end_time = os.clock()
         time_for_BFS = end_time - start_time
-        print("[Search your map] time for check_connected_ancient:", time_for_BFS)
+        print("[Search your map] time for check_connected_ancient(ms):", time_for_BFS*1000)
         return false
     else
-        end_time = os.time()
+        end_time = os.clock()
         time_for_BFS = end_time - start_time
-        print("[Search your map] time for check_connected_ancient:", time_for_BFS)
+        print("[Search your map] time for check_connected_ancient(ms):", time_for_BFS*1000)
     end
     
     -- 附近有足够数量的entity(附近有多个洞穴)
@@ -2318,12 +2722,12 @@ local function check_save_data(savedata, world_id, my_log_file)
     -- write the seed to file
     -- my_log_file:write(os.date("%H:%M:%S", os.time()) .. "SEED:" .. SEED .."\n")
 
-    start_time = os.time()
+    start_time = os.clock()
     local map_score
     local entity_and_region_exist
     local best_xz
     map_score, best_xz, entity_and_region_exist = get_save_data_score(savedata, world_id, my_log_file, grid, extra_edges, current_good_tiles, current_good_tiles_num)
-    end_time = os.time()
+    end_time = os.clock()
     local time_for_get_save_data_score = end_time - start_time
     print("[Search your map] time for get_save_data_score:", time_for_get_save_data_score)
     if entity_and_region_exist then
@@ -2414,7 +2818,7 @@ function GenerateNew(debug, world_gen_data)
 		end
 	end
 
-
+    print("[Search your map] **************SEED***********************: "..SEED)
 	-- my_log_file:write(os.date("%H:%M:%S", os.time()) .. "good tasks" .."\n")
     if debug == true then
         choose_tasks = tasks.oneofeverything
@@ -2435,6 +2839,8 @@ function GenerateNew(debug, world_gen_data)
         if savedata == nil then
             if try >= maxtries then
                 print("An error occured during world and we give up! [was ",try," of ",maxtries,"]")
+                _G.total_retry_by_klei = _G.total_retry_by_klei + try
+                _G.total_seed_by_klei = _G.total_seed_by_klei + 1
                 return nil
             else
                 print("An error occured during world gen we will retry! [was ",try," of ",maxtries,"]")
@@ -2457,6 +2863,9 @@ function GenerateNew(debug, world_gen_data)
             ShowDebug(savedata)
         end
     end
+
+    _G.total_retry_by_klei = _G.total_retry_by_klei + try
+    _G.total_seed_by_klei = _G.total_seed_by_klei + 1
 
 
     savedata.map.prefab = prefab
@@ -2603,6 +3012,9 @@ local function set_up_statistic(world_id)
     if _G[world_id].ancient_connect~="not set" then
         _G[world_id].check_statistic["ancient_connect"] = {check_times = 0, success_times = 0}
     end
+    if _G[world_id].under_huge_trees["cover_rate"] ~= "not set" then
+        _G[world_id].check_statistic["under_huge_trees"] = {check_times = 0, success_times = 0}
+    end
 end
 
 local function print_statistic(my_log_file, world_id)
@@ -2612,7 +3024,14 @@ local function print_statistic(my_log_file, world_id)
     local check_times = _G[world_id].check_statistic["insert_setpieces"]["check_times"]
     local success_times = _G[world_id].check_statistic["insert_setpieces"]["success_times"]
     local success_rate = success_times / check_times
-    my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "Insert setpieces: " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
+    if success_rate < 1 then
+        if not CH then
+            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "Insert setpieces into map: " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
+        else
+            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "将选定彩蛋布景插入地图的成功率: " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
+        end
+        -- my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "Insert setpieces: " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")   
+    end
     -- required_entities
     for i, entity in ipairs(_G[world_id].required_entities) do
         local entity_name = entity["name"]
@@ -2692,6 +3111,18 @@ local function print_statistic(my_log_file, world_id)
         end
         -- my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "near_regions: " .. node_name .. " " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
     end
+    -- under huge trees
+    if _G[world_id].under_huge_trees["cover_rate"] ~= "not set" then
+        local check_times = _G[world_id].check_statistic["under_huge_trees"]["check_times"]
+        local success_times = _G[world_id].check_statistic["under_huge_trees"]["success_times"]
+        local success_rate = success_times / check_times
+        if not CH then
+            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "under_huge_trees success_rate: " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
+        else
+            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "在巨树下成功率: " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
+        end
+        -- my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "under_huge_trees: " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
+    end
     -- master_moon_island_connect
     if _G[world_id].moon_island_connect~="not set" then
         local check_times = _G[world_id].check_statistic["moon_island_connect"]["check_times"]
@@ -2743,13 +3174,23 @@ local function print_statistic(my_log_file, world_id)
     local time_left = time_cost_per_seed * (_G[world_id]["repeat_times"] - _G.num_of_good_seeds_found)
     if not CH then
         my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "total time cost: " .. convertSecondsToHMS(total_time_cost) .. "s\n")
-        my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "time cost per seed: " .. convertSecondsToHMS(time_cost_per_seed) .. "s\n")
-        my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "time left: " .. convertSecondsToHMS(time_left) .. "s\n")
+        if _G.num_of_good_seeds_found > 0 then
+            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "time cost per seed: " .. convertSecondsToHMS(time_cost_per_seed) .. "s\n")
+            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "time left: " .. convertSecondsToHMS(time_left) .. "s\n")
+        else
+            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "time cost per seed: can not estimate now, need at least 1 seed to estimate\n")
+            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "time left: can not estimate now, need at least 1 seed to estimate\n")
+        end
         my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "num_of_good_seeds_found: " .. _G.num_of_good_seeds_found .."\n")
     else
         my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "总耗时: " .. convertSecondsToHMS(total_time_cost) .. "s\n")
-        my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "每个种子耗时: " .. convertSecondsToHMS(time_cost_per_seed) .. "s\n")
-        my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "剩余时间: " .. convertSecondsToHMS(time_left) .. "s\n")
+        if _G.num_of_good_seeds_found > 0 then
+            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "每个种子耗时: " .. convertSecondsToHMS(time_cost_per_seed) .. "s\n")
+            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "剩余时间: " .. convertSecondsToHMS(time_left) .. "s\n")
+        else
+            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "每个种子耗时: 暂时无法估计，需至少找到1个满足约束的种子才可以进行估计\n")
+            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "剩余时间: 暂时无法估计，需至少找到1个满足约束的种子才可以进行估计\n")
+        end
         my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "已找到的满足约束的种子数量: " .. _G.num_of_good_seeds_found .."\n")
     end
     -- my_log_file:write(os.date("%H:%M:%S", os.time()) .. "total time cost: " .. convertSecondsToHMS(total_time_cost) .. "s\n")
@@ -2772,6 +3213,9 @@ local function print_statistic(my_log_file, world_id)
             my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "种子: " ..seed.seed.. " 得分: " .. seed.score .. " 位置: c_teleport(" .. seed.xz[1] .. ", 0, " .. seed.xz[2] ..")\n")
         end
     end
+
+    -- total_retry_by_klei // total_seed_by_klei
+    -- my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "average retry: " .. _G.total_retry_by_klei / _G.total_seed_by_klei .."\n")
 end
 
 
@@ -2829,7 +3273,7 @@ local function LoadParametersAndGenerate(debug)
             package.loaded["map/layouts"] = nil
         end
         SEED = SetWorldGenSeed(SEED+1)
-        print("[Search your map] **************SEED***********************: "..SEED)
+        -- print("[Search your map] **************SEED***********************: "..SEED)
         generated_data = GenerateNew(debug, world_gen_data)
     end
 

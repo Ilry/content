@@ -81,7 +81,7 @@ local function fn()
     inst.hit_fx = hitfx
 
     inst:AddComponent("weapon")
-    inst.components.weapon:SetDamage(51)
+    inst.components.weapon:SetDamage(45)
     inst.components.weapon:SetOnAttack(onattack)
 
     inst:AddComponent("gallop_chop")
@@ -96,8 +96,8 @@ local function fn()
     inst.components.tool:EnableToughWork(true)
     -------
     inst:AddComponent("finiteuses")
-    inst.components.finiteuses:SetMaxUses(400)
-    inst.components.finiteuses:SetUses(400)
+    inst.components.finiteuses:SetMaxUses(800)
+    inst.components.finiteuses:SetUses(800)
     inst.components.finiteuses:SetOnFinished(inst.Remove)
     inst.components.finiteuses:SetConsumption(ACTIONS.CHOP, 1)
     inst.components.finiteuses:SetConsumption(ACTIONS.MINE, 3)

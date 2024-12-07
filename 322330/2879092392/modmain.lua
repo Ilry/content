@@ -20,6 +20,7 @@ PrefabFiles = {
 	"whyglobelab",
 	"whycrusher",
 	"whyfreezer",
+	"why_wonderbox",
 	"liquid_mirror",
     "why_crystal_flowers",
     "why_churchstatue_red",
@@ -167,6 +168,9 @@ Assets = {
     Asset( "ATLAS", "bigportraits/wonderwhy_elder.xml" ),
 	Asset( "IMAGE", "bigportraits/wonderwhy_demon.tex" ),
 	Asset( "ATLAS", "bigportraits/wonderwhy_demon.xml" ),
+	Asset( "IMAGE", "bigportraits/wonderwhy_abyss.tex" ),
+    Asset( "IMAGE", "bigportraits/wonderwhy_abyss.tex" ),
+	Asset( "ATLAS", "bigportraits/wonderwhy_abyss.xml" ),
     Asset( "IMAGE", "images/map_icons/wonderwhy.tex" ),
     Asset( "ATLAS", "images/map_icons/wonderwhy.xml" ),
     Asset( "SOUNDPACKAGE", "sound/wonderwhy.fev"),
@@ -194,6 +198,30 @@ Assets = {
 	Asset("IMAGE", "images/inventoryimages/why_opalgem_seed_greencombo.tex"),
 	Asset("ATLAS", "images/inventoryimages/liquid_mirror_greencombo.xml"),
 	Asset("IMAGE", "images/inventoryimages/liquid_mirror_greencombo.tex"),
+    Asset("ATLAS", "images/inventoryimages/why_purple_cutgrass.xml"),
+	Asset("IMAGE", "images/inventoryimages/why_purple_cutgrass.tex"),
+    Asset("ATLAS", "images/inventoryimages/why_purple_twigs.xml"),
+	Asset("IMAGE", "images/inventoryimages/why_purple_twigs.tex"),
+    Asset("ATLAS", "images/inventoryimages/why_purple_log.xml"),
+	Asset("IMAGE", "images/inventoryimages/why_purple_log.tex"),
+    Asset("ATLAS", "images/inventoryimages/why_purple_flint.xml"),
+	Asset("IMAGE", "images/inventoryimages/why_purple_flint.tex"),
+    Asset("ATLAS", "images/inventoryimages/why_purple_gold.xml"),
+	Asset("IMAGE", "images/inventoryimages/why_purple_gold.tex"),
+    Asset("ATLAS", "images/inventoryimages/why_purple_nf.xml"),
+	Asset("IMAGE", "images/inventoryimages/why_purple_nf.tex"),
+    Asset("ATLAS", "images/inventoryimages/why_purple_nitre.xml"),
+	Asset("IMAGE", "images/inventoryimages/why_purple_nitre.tex"),
+    Asset("ATLAS", "images/inventoryimages/why_purple_rocks.xml"),
+	Asset("IMAGE", "images/inventoryimages/why_purple_rocks.tex"),
+    Asset("ATLAS", "images/inventoryimages/why_purple_moonrock.xml"),
+	Asset("IMAGE", "images/inventoryimages/why_purple_moonrock.tex"),
+    Asset("ATLAS", "images/inventoryimages/why_purple_seeds.xml"),
+	Asset("IMAGE", "images/inventoryimages/why_purple_seeds.tex"),
+    Asset("ATLAS", "images/inventoryimages/why_purple_packet.xml"),
+	Asset("IMAGE", "images/inventoryimages/why_purple_packet.tex"),
+    Asset("ATLAS", "images/inventoryimages/liquid_mirror_greencombo.xml"),
+	Asset("IMAGE", "images/inventoryimages/liquid_mirror_greencombo.tex"),
     Asset("ATLAS", "images/inventoryimages/singingshell_why.xml"),
     Asset("IMAGE", "images/inventoryimages/singingshell_why.tex"),
 -----------------------------------------------turfs
@@ -207,6 +235,23 @@ Assets = {
 	Asset("IMAGES", "images/inventoryimages/why_church_turf_green.tex"),
     Asset("ATLAS", "images/inventoryimages/why_church_turf_purple.xml"),
 	Asset("IMAGES", "images/inventoryimages/why_church_turf_purple.tex"),
+    -----------------------------------------------loading screens
+    Asset("IMAGE", "images/bg_spiral_fill1.tex"),
+    Asset("ATLAS", "images/bg_spiral_fill1.xml"),
+    Asset("IMAGE", "images/bg_spiral_fill2.tex"),
+    Asset("ATLAS", "images/bg_spiral_fill2.xml"),
+    Asset("IMAGE", "images/bg_spiral_fill3.tex"),
+    Asset("ATLAS", "images/bg_spiral_fill3.xml"),
+    Asset("IMAGE", "images/bg_spiral_fill4.tex"),
+    Asset("ATLAS", "images/bg_spiral_fill4.xml"),
+    Asset("IMAGE", "images/bg_spiral_fill5.tex"),
+    Asset("ATLAS", "images/bg_spiral_fill5.xml"),
+    Asset("IMAGE", "images/bg_spiral_fill6.tex"),
+    Asset("ATLAS", "images/bg_spiral_fill6.xml"),
+    Asset("IMAGE", "images/bg_spiral_fill7.tex"),
+    Asset("ATLAS", "images/bg_spiral_fill7.xml"),
+    Asset("IMAGE", "images/bg_spiral_fill8.tex"),
+    Asset("ATLAS", "images/bg_spiral_fill8.xml"),
 }
 
 
@@ -264,7 +309,7 @@ STRINGS.CHARACTERS.WONDERWHY = require "speech_wonderwhy"
 STRINGS.CHARACTER_TITLES.wonderwhy = "The Ancient Memory"
 STRINGS.CHARACTER_NAMES.wonderwhy = "Why"
 STRINGS.NAMES.wonderwhy = "Why"
-STRINGS.CHARACTER_DESCRIPTIONS.wonderwhy = "*Mind is their core\n*Discovers Ancient knowledge\n*Fragile\n*Bad sight"
+STRINGS.CHARACTER_DESCRIPTIONS.wonderwhy = "*Mind sharp like a glass shard\n*Discovers Ancient knowledge\n*Fragile\n*Bad sight"
 STRINGS.CHARACTER_ABOUTME.wonderwhy = "Wonder Why was the main engineer of the ancients, living  once among the forgotten civilization, now a husk seeking an answer."
 STRINGS.CHARACTER_QUOTES.wonderwhy = "\"Why? I wonder why?\""
 STRINGS.CHARACTER_SURVIVABILITY.wonderwhy = "Laughable"
@@ -331,6 +376,9 @@ local RegisterItem =
 	"whyehat_dreadstone",
 	"whyehat_dreadstone_broken",
 	"whyehat_face",
+    "whyspear",
+    "whyearmor_backpack",
+    "why_wonderbox",
 	"why_refined_glasswhites",
 }
 
@@ -386,6 +434,7 @@ end
 modimport("scripts/why_whyearmor_backpack")
 modimport("scripts/why_whyehat")
 modimport("scripts/why_freezer")
+modimport("scripts/why_wonderbox")
 modimport("scripts/recipes.lua")
 AddMinimapAtlas("images/map_icons/wonderwhy.xml")
 AddMinimapAtlas("images/map_icons/whyjewellabmap.xml")
@@ -444,6 +493,13 @@ AddPrefabPostInit("sewing_mannequin", function(inst)
 	inst:AddTag("whyeball") end)
 AddPrefabPostInit("gnarcoon_eye", function(inst)
 	inst:AddTag("whyeball") end)]]
+
+local whybox_accept = {"cutgrass", "goldnugget", "rocks", "flint", "log", "twigs"}
+	for _, v in pairs(whybox_accept) do
+		AddPrefabPostInit(v, function(inst)
+		inst:AddTag("whybox_accept")
+	end)
+end
 AddClassPostConstruct( "widgets/controls", function(self)
 	if self.owner == nil then 
 		return end
@@ -706,6 +762,25 @@ end
 
 AddComponentPostInit("builder", BuilderEnduranceHook)
 
+local function GreenEyeBuilderHook(self)
+	local _DoBuild = self.DoBuild
+
+	function self:DoBuild(recname, pt, rotation, skin, ...)
+		local _recipe = GetValidRecipe(recname) --kinda didn't want to redefine the og local recipe...
+		if _recipe ~= nil and (self:IsBuildBuffered(recname) or self:HasIngredients(_recipe)) and not PREFAB_SKINS_SHOULD_NOT_SELECT[skin] then
+			if self.inst:HasTag("whyancientmaker") and (self.inst.components.sanity and self.inst.components.sanity.current < 7.5) then
+				return false, "GREENEYE_INSANE"
+			else
+				return _DoBuild(self, recname, pt, rotation, skin, ...)
+			end
+		else
+			return _DoBuild(self, recname, pt, rotation, skin, ...)
+		end
+	end
+end
+
+AddComponentPostInit("builder", GreenEyeBuilderHook)
+
 local function BuilderReplicaEnduranceHook(inst)
 	local oldHasCharacterIngredient = inst.HasCharacterIngredient
 	inst.HasCharacterIngredient = function(self, ingredient)
@@ -837,7 +912,7 @@ end)
 
 AddPrefabPostInit("krampus", function(inst)
 	if inst.components.lootdropper then
-		inst.components.lootdropper:AddChanceLoot("why_klaus_sack_piece", .1)
+		inst.components.lootdropper:AddChanceLoot("why_klaus_sack_piece", .5)
 	end
 end)
 
@@ -932,6 +1007,7 @@ local minisign_show_list = {
 	"why_nothingnessgem",
 	"why_perfectiongem",
 	"why_klaus_sack_piece",
+    "why_wonderbox",
 }
 
 local function draw(inst)
@@ -1096,7 +1172,7 @@ AddPrefabPostInit("reskin_tool", function(inst)
 		end
 		local oldspell = inst.components.spellcaster.spell
 		inst.components.spellcaster.spell = function(tool, target, pos, caster)
-			if target.prefab == "why_crystal_flowers" then
+			if target and target.prefab == "why_crystal_flowers" then
 				local fx = SpawnPrefab("explode_reskin")
 				local fx_pos_x, fx_pos_y, fx_pos_z = target.Transform:GetWorldPosition()
 				fx.Transform:SetPosition(fx_pos_x, fx_pos_y, fx_pos_z)

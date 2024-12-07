@@ -13,19 +13,62 @@ end)
 local lootList =
 {
     -- Monster
+    "smallmeat",
+    "drumstick",
+    "meat",
     "monstermeat",
     "spidergland",
     "silk",
     "houndstooth",
+    "pigskin",
+    "froglegs",
+    "pondfish",
     "tentaclespots",
+    "beefalowool",
+    "horn",
+    "trunk_summer",
+    "trunk_winter",
+    "steelwool",
     -- Insect
-    "mosquitosack",
     "stinger",
     "honey",
+    "mosquitosack",
+    "lightbulb",
+    "chitin",
     -- Cave
     "batwing",
+    "slurtleslime",
+    "manrabbit_tail",
+    "slurtle_shellpieces",
     "slurper_pelt",
+    "cave_banana",
     "beardhair",
+    "wormlight",
+    "gears",
+    "nightmarefuel",
+    "batnose",
+    -- Shipwercked
+    "jellyfish_dead",
+    "rainbowjellyfish_dead",
+    "venomgland",
+    "shark_fin",
+    "fish_raw",
+    "fishmeat",
+    "solofish",
+    "swordfish",
+    "blubber",
+    "dragoonheart",
+    -- Hamlet
+    "peagawk",
+    "bat_hide",
+    "weevole_carapace",
+    "froglegs_poison",
+    "bill_quill",
+    "hippo_antler",
+    "plantmeat",
+    "nectar_pod",
+    "venus_stalk",
+    "feather_thunder",
 }
 
 function WXMilitary:SelfRepair()
@@ -470,12 +513,14 @@ function WXMilitary:FindEquipmentToEquipAction()
     end
 
     local helmet = self.inst.components.inventory:GetEquippedItem(EQUIPSLOTS.HEAD)
-    if helmet == nil or helmet.components.armor == nil then
+    --if helmet == nil or helmet.components.armor == nil then
+    if helmet == nil then
         self.inst.components.inventory:Equip(FindEquipment(self.inst, EQUIPSLOTS.HEAD))
     end
 
     local armor = self.inst.components.inventory:GetEquippedItem(EQUIPSLOTS.BODY)
-    if armor == nil or armor.components.armor == nil then
+    --if armor == nil or armor.components.armor == nil then
+    if armor == nil then
         self.inst.components.inventory:Equip(FindEquipment(self.inst, EQUIPSLOTS.BODY))
     end
 

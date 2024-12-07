@@ -155,7 +155,7 @@ end
 local TOPICK_MUST_TAGS = { "pickable" }
 local TOPICK_ANCIENTTREE_NO_TAGS = { "fire", "smolder", "INLIMBO", "NOCLICK" }
 local ANCIENTTREE_TAG = { "ancienttree" }
-local TOPICK_CANT_TAGS = { "fire", "smolder", "INLIMBO", "NOCLICK", "event_trigger", "farm_plant", "flower" }
+local TOPICK_CANT_TAGS = { "fire", "smolder", "INLIMBO", "NOCLICK", "event_trigger", "farm_plant", "flower", "junk_pile", "junk_pile_big" }
 local TOHARVEST_MUST_TAGS = { "harvestable" }
 local LUREPLANT_TAG = { "lureplant" }
 function WXHorticulture:HarvestFruits()

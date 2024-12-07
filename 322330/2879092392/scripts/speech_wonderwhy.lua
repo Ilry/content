@@ -20,11 +20,16 @@ return {
         {
             WRONGPIECE = "The pieces do not fit together...",
         },
+		 GENERIC =
+        {
+            ITEMMIMIC = "Tricked by the authentic Mirror Image spell...",
+        },
         BUILD =
         {
             MOUNTED = "I must get down from my steed first.",
             HASPET = "I've already got a little critter with me.",
 			TICOON = "This goofball wants me to follow them!",
+            GREENEYE_INSANE = "The toll would be too great. I need rest before making more.",
         },
 		SHAVE =
 		{
@@ -134,6 +139,7 @@ return {
             GHOSTHEART = "Anger spirits cannot be willed to live.",
             NOTGEM = "This isn't not a good power source.",
             WRONGGEM = "Not enough energy within this gem.",
+			NOGENERATORSKILL = "I'm not qualified enough for this.",											
             NOTSTAFF = "It needs a rod.",
             MUSHROOMFARM_NEEDSSHROOM = "I need something to grow within it.",
             MUSHROOMFARM_NEEDSLOG = "Mushrooms need to feed off a living log.",
@@ -406,6 +412,7 @@ return {
 	ACTIONFAIL_GENERIC = "Let's try that again.",
 	ANNOUNCE_BOAT_LEAK = "It starts to sink.",
 	ANNOUNCE_BOAT_SINK = "Good thing I don't mind water that much.",
+	ANNOUNCE_PREFALLINVOID = "I doubt falling down there is a good idea.",
 	ANNOUNCE_DIG_DISEASE_WARNING = "The sickness is no more.",
 	ANNOUNCE_PICK_DISEASE_WARNING = "It's rotten.",
 	ANNOUNCE_ADVENTUREFAIL = "Failure.",
@@ -509,6 +516,8 @@ return {
 	ANNOUNCE_HIGHRESEARCH = "Knowledge means all.",
 	ANNOUNCE_HOUNDS = "The pack is approaching.",
 	ANNOUNCE_WORMS = "The slitherers are coming.",
+	ANNOUNCE_WORMS_BOSS = "The slitherest of slitherers is on it's way.",
+    ANNOUNCE_ACIDBATS = "They are after the sweet nitre.",
 	ANNOUNCE_HUNGRY = "WE. HUNGER. Sorry, force of habit.",
 	ANNOUNCE_HUNT_BEAST_NEARBY = "Soon the hunt shall be over.",
 	ANNOUNCE_HUNT_LOST_TRAIL = "Lost in its own stupidity.",
@@ -561,8 +570,8 @@ return {
 
 	ANNOUNCE_DAMP = "Soaking.",
 	ANNOUNCE_WET = "I am one with the water.",
-	ANNOUNCE_WETTER = "This weighs me down.",
-	ANNOUNCE_SOAKED = "I feel like I'm drowning.",
+	ANNOUNCE_WETTER = "This water weighs me down.",
+	ANNOUNCE_SOAKED = "That's a way to stay hydrated.",
 
 	ANNOUNCE_WASHED_ASHORE = "...That could have been prevented.",
 
@@ -690,7 +699,7 @@ return {
     ANNOUNCE_ATTACH_BUFF_ELECTRICATTACK    = "The lightning fills my essence!",
     ANNOUNCE_ATTACH_BUFF_ATTACK            = "POWER, GROWS!",
     ANNOUNCE_ATTACH_BUFF_PLAYERABSORPTION  = "My shell hardens.",
-    ANNOUNCE_ATTACH_BUFF_WORKEFFECTIVENESS = "I feel efficient!",
+    ANNOUNCE_ATTACH_BUFF_WORKEFFECTIVENESS = "Ahem, let's get grinding.",
     ANNOUNCE_ATTACH_BUFF_MOISTUREIMMUNITY  = "The water is no more.",
     ANNOUNCE_ATTACH_BUFF_SLEEPRESISTANCE   = "I refuse to succumb to you, Morpheus.",
 
@@ -710,14 +719,14 @@ return {
 		"Patience.",
 		"There are no fish here.",
 		"Aquatic beasts fear me.",
-		"Any day now.",
+		"Any day now...",
 	},
 
 	ANNOUNCE_WEIGHT = "Weight: {weight}",
 	ANNOUNCE_WEIGHT_HEAVY  = "Weight: {weight}\nWhat a chonker!",
 
-	ANNOUNCE_WINCH_CLAW_MISS = "I think I missed the mark.",
-	ANNOUNCE_WINCH_CLAW_NO_ITEM = "I've come up empty handed.",
+	ANNOUNCE_WINCH_CLAW_MISS = "Let's try that again.",
+	ANNOUNCE_WINCH_CLAW_NO_ITEM = "I've never been good at that sort of thing.",
 
     --Wurt announce strings
     ANNOUNCE_KINGCREATED = "only_used_by_wurt",
@@ -863,7 +872,7 @@ return {
     ANNOUNCE_EYEOFTERROR_FLYAWAY = "FACE ME COWARD!",
 
     -- PIRATES
-    ANNOUNCE_CANT_ESCAPE_CURSE = "Of course it couldn't be that easy.",
+    ANNOUNCE_CANT_ESCAPE_CURSE = "There was an attempt at least.",
     ANNOUNCE_MONKEY_CURSE_1 = "...",
     ANNOUNCE_MONKEY_CURSE_CHANGE = "...?!",
     ANNOUNCE_MONKEY_CURSE_CHANGEBACK = "I'm glad that's over.",
@@ -874,14 +883,27 @@ return {
 
     ANNOUNCE_OFF_SCRIPT = "Let's follow their script now.",
 	
-	ANNOUNCE_TOOL_TOOWEAK = "I need a stronger tool!",
+	ANNOUNCE_TOOL_TOOWEAK = "This tool isn't strong enough!",
 
     ANNOUNCE_LUNAR_RIFT_MAX = "They are out there.",
-    ANNOUNCE_SHADOW_RIFT_MAX = "They are poking out.",
+    ANNOUNCE_SHADOW_RIFT_MAX = "They are peering out from the darkness.",
 
     ANNOUNCE_SCRAPBOOK_FULL = "I already have all these.",
 
     ANNOUNCE_CHAIR_ON_FIRE = "Do you smell something?",
+	
+	ANNOUNCE_HEALINGSALVE_ACIDBUFF_DONE = "Another application is needed.",
+	
+	ANNOUNCE_OTTERBOAT_OUTOFSHALLOWS = "This boat isn't made for deep sea exploration.",
+    ANNOUNCE_OTTERBOAT_DENBROKEN = "They might've deserved that.",
+	
+	 ANNOUNCE_EXIT_GELBLOB = "Urgh. How unsavoury do I have to be to avoid this?",
+	ANNOUNCE_SHADOWTHRALL_STEALTH = "It feels like a mosquito bit me.",
+    ANNOUNCE_RABBITKING_AGGRESSIVE = "Someone's upset.",
+    ANNOUNCE_RABBITKING_PASSIVE = "I think this brings luck.",
+    ANNOUNCE_RABBITKING_LUCKY = "I feel like we ought to catch this one.",
+    ANNOUNCE_RABBITKING_LUCKYCAUGHT = "Mine now.",
+    ANNOUNCE_RABBITKINGHORN_BADSPAWNPOINT = "Let's try elsewhere.",
 
 	BATTLECRY =
 	{
@@ -1486,6 +1508,8 @@ return {
         TURF_MOSAIC_GREY = "Terra maxima.",
         TURF_MOSAIC_RED = "Terra maxima.",
         TURF_MOSAIC_BLUE = "Terra maxima.",
+		
+		TURF_BEARD_RUG = "How undignified...",
 
 		POWCAKE = "It never expires, how I wish.",
         CAVE_ENTRANCE = "Time to go.",
@@ -1608,6 +1632,8 @@ return {
             RIDER = "I too run from my issues.",
             PUDGY = "Good cuddle companion.",
             MYPARTNER = "Beefy boy.",
+			DEAD = "Things don't last forever.",
+            DEAD_MYPARTNER = "Nothing goes to waste.",
 		},
 
 		BEEFALOHAT = "This'll scratch my eye.",
@@ -1797,6 +1823,7 @@ return {
         CHESSPIECE_DEERCLOPS_MUTATED = "Vanquished once again.",
         CHESSPIECE_WARG_MUTATED = "The pack was taken down.",
         CHESSPIECE_BEARGER_MUTATED = "My poor poor fluffy bear...",
+		CHESSPIECE_SHARKBOI = "The clique grows bigger.",
 
         CHESSJUNK1 = "A pile of metal bones.",
         CHESSJUNK2 = "Another pile of metal bones. ",
@@ -1885,7 +1912,11 @@ return {
 		DRAGONFLY = "I want to bite you real bad.",
 		ARMORDRAGONFLY = "The scales could've been something much more useful.",
 		DRAGON_SCALES = "I wonder how they taste like?",
-		DRAGONFLYCHEST = "Precious treasury.",
+		DRAGONFLYCHEST =
+		{
+			GENERIC = "Our treasury.",
+            UPGRADED_STACKSIZE = "Never say no to more storage.",
+		},
 		DRAGONFLYFURNACE = 
 		{
 			HAMMERED = "I don't think it's supposed to look like that.",
@@ -2592,7 +2623,6 @@ return {
 		TALLBIRD = "They live to kill and protect their egg.",
 		TALLBIRDEGG = "Life in a peculiar form.",
 		TALLBIRDEGG_COOKED = "Cooked the life right out of it.",
-		TURF_BEARD_RUG = "Can I make a gem floor myself?",
 		TALLBIRDEGG_CRACKED =
 		{
 			COLD = "It needs heat.",
@@ -2654,6 +2684,8 @@ return {
 			BURNT = "What a waste.",
 		},
 		TREASURECHEST_TRAP = "It leads somewhere.",
+		CHESTUPGRADE_STACKSIZE = "Allows us to cram more things in chests.", -- Describes the kit upgrade item.
+		COLLAPSEDCHEST = "At least this didn't lead to an universal collapse.",
 		SACRED_CHEST = 
 		{
 			GENERIC = "Whispers of the damned.",
@@ -2890,6 +2922,35 @@ return {
             BURNT = "Fashion was too much.",
         },
         BEEFALO_GROOMER_ITEM = "Let's put it somewhere nice.",
+
+
+ YOTR_RABBITSHRINE =
+        {
+            GENERIC = "What to make...",
+            EMPTY = "Let's feed it.",
+            BURNT = "It got roasted.",
+        },
+
+        NIGHTCAPHAT = "Time for a nap.",
+
+        YOTR_FOOD1 = "Ancestral foods.",
+        YOTR_FOOD2 = "I should inspire myself from this.",
+        YOTR_FOOD3 = "Jiggle jiggle.",
+        YOTR_FOOD4 = "Nom.",
+
+        YOTR_TOKEN = "Let's play.",
+
+        COZY_BUNNYMAN = "They look so cozy.",
+
+        HANDPILLOW_BEEFALOWOOL = "Not that soft.",
+        HANDPILLOW_KELP = "I doubt someone would really sleep on this.",
+        HANDPILLOW_PETALS = "Smells nice.",
+        HANDPILLOW_STEELWOOL = "Who would sleep on this?",
+
+        BODYPILLOW_BEEFALOWOOL = "Not that soft.",
+        BODYPILLOW_KELP = "I doubt someone would really sleep on this.",
+        BODYPILLOW_PETALS = "Smells nice.",
+        BODYPILLOW_STEELWOOL = "Who would sleep on this?",
 
 		BISHOP_CHARGE_HIT = "Almost couldn't dodge it.",
 		TRUNKVEST_SUMMER = "So you tell me, they're hunting them to make this?",
@@ -5169,6 +5230,70 @@ return {
 
         MERM_LUNAR = "They took it pretty well.",
         MERMGUARD_LUNAR = "They took it pretty well.",
+		
+		 -- Rifts 4
+
+        SHADOW_BEEF_BELL = "We can summon them back upon death.",
+        SADDLE_SHADOW = "The design is quite... Arrogant.",
+        SHADOW_BATTLEAXE = "Sadly, this doesn't aid me.",
+        VOIDCLOTH_BOOMERANG = "I've got an idea for later...",
+		ROPE_BRIDGE_KIT = "Let us cross the void.",
+		GELBLOB =
+		{
+			GENERIC = "Gooey.",
+			HAS_ITEM = "An item to be reclaimed is within.",
+			HAS_CHARACTER = "Glad that's not me.",
+		},
+        RABBITKING_AGGRESSIVE = "Mad rabbit incoming!",
+        RABBITKING_PASSIVE = "Let's see what you have to offer.",
+        RABBITKING_LUCKY = "A sign of good luck.",
+        RABBITKINGMINION_BUNNYMAN = "Protectors.",
+        ARMOR_CARROTLURE = "I feel like salad dressing.",
+        RABBITKINGHORN = "Let's call upon them.",
+        RABBITKINGHORN_CHEST = "Thanks for the aid.",
+        RABBITKINGSPEAR = "It feels wrong to take this from them. Oh well.",
+        RABBITHAT = "Let's go on an adventure!",
+        WORM_BOSS = "The devourer of worlds.",
+		ANNOUNCE_NOPUMPKINCARVINGONFIRE = "This pumpkin is a bit too hot.",
+
+        STONE_TABLE = -- Shared between the round and square tables.
+        {
+            GENERIC = "Better than wood ones.",
+            HAS_ITEM = "Better than wood ones.",
+        },
+
+        STONE_CHAIR =
+        {
+            GENERIC = "Now that's just less comfortable.",
+            OCCUPIED = "Enjoy your sit.",
+        },
+
+        CARPENTRY_BLADE_MOONGLASS = "Should allow for more efficiency on refining.",
+
+        CHEST_MIMIC_REVEALED = "They've always got a trick up their sleeve, don't they?",
+
+        GELBLOB_STORAGE = { 
+            GENERIC  = "Let's use this to our advantage.",
+            FULL = "Forever fresh, well until we take it out.",
+        },
+        GELBLOB_STORAGE_KIT = "Let's place this down somewhere.",
+        GELBLOB_BOTTLE = "It is contained.",
+		
+		PLAYER_HOSTED =
+        {        
+            GENERIC = "I doubt that body's yours.",
+            ME = "I'd rather if I had one of my masks on.",
+        },
+
+        MASK_SAGEHAT = "The thinker of the group.",
+        MASK_HALFWITHAT = "The directed one.",
+        MASK_TOADYHAT = "The mischievous one.",
+
+        SHADOWTHRALL_PARASITE = "Takeover parasite.",
+
+        PUMPKINCARVER = "Let's gut these pumpkins.",
+		
+    
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 		LIQUID_MIRROR = "Shifting gas, rotating solid, liquid mirror.",
 		WHY_REDGEM_SEED = "Shards of a heart, warming embrace.",
@@ -5210,7 +5335,7 @@ return {
 		WHY_REFINED_GREENGEM = "Look at the time, it's plant o'clock.",
 		WHY_REFINED_ORANGEGEM = "Devour everything.",
 		WHY_REFINED_YELLOWGEM = "Glow.",
-		WHY_REFINED_OPALGEM = "Hibernate.",
+		WHY_REFINED_OPALGEM = "Shatter the moon.",
 		WHY_PERFECTIONGEM = "Never feel weak again.",
 		WHY_NOTHINGNESSGEM = "Work tirelessly through the night.",
 		ANCIENTDREAMS_GEMSHARD = "Food for the soul.",
@@ -5265,18 +5390,19 @@ return {
         TURF_WHY_CHURCH_TURF_GREEN = "Maybe we didn't use gems as well back then.",
         WHYEHAT_DREADSTONE_GREEN = "You have to make do sometimes." ,
         --1.8.9
-        ANCIENTDREAMS_HYUBSIP = "Don't fret, for once the shards aren't really *in* the food",
+        ANCIENTDREAMS_HYUBSIP = "Don't fret, for once the shards aren't really *in* the food.",
         ANCIENTDREAMS_KOZISIP = "Cactus and watermelon, mixed to perfection!",
         ANCIENTDREAMS_TART = "Side effects might include glowing.",
 		WHYSPEAR = "It will get the job done.",
         ANCIENTDREAMS_EVILBRED = "I hope you like this one, I gave it my all.",
-        ANCIENTDREAMS_GELL = "The pompous royalty loved this one due to the light feeling.",
+        ANCIENTDREAMS_GELL = "The pompous royalty loved this one due to the light feel.",
 		ANCIENTDREAMS_FHISH = "That's how we used to prepare the firmest meat we had.",
         ANCIENTDREAMS_QUASO = "A prefered meal after a large harvest.",
 		ANCIENTDREAMS_PIZZA = "The crystallization is taken very seriously.",
         ANCIENTDREAMS_LOMBTER = "We crushed the lobster very much into the breading.",
         ANCIENTDREAMS_SER = "Her majesty would probably approve of this one.",
-    
+        --1.8.9.9
+        WHY_WONDERBOX = "A container for very specific hand-picked materials.",
 		BEDROLL_GNARCOON = "Rest for the townsfolk.",
 		BEDROLL_GNARCOON_WINTER = "Delightful sleep for kings.",
 		COONTAIL_SHADOW = "Catnip, or maybe worse...",

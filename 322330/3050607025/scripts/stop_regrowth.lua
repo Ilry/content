@@ -76,7 +76,7 @@ AddComponentPostInit("growable",
 
 -- 桦树、月树、蘑菇树列表
 local plantregrowth_list={}
--- table.insert(plantregrowth_list,"deciduoustree")
+table.insert(plantregrowth_list,"deciduoustree")
 table.insert(plantregrowth_list,"moon_tree")
 table.insert(plantregrowth_list,"mushtree_tall")
 table.insert(plantregrowth_list,"mushtree_medium")

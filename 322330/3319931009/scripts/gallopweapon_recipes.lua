@@ -35,10 +35,8 @@ local function AddRec(name, def)
   end
   local ingredient_table = {}
   if def.ingredients then
-    for ingredient, num in pairs(def.ingredients) do
-      local ing =
-        type(num) == "table" and Ingredient(ingredient, unpack(num)) or
-          Ingredient(ingredient, num)
+    for i, data in ipairs(def.ingredients) do
+      local ing = Ingredient(unpack(data))
       table.insert(ingredient_table, ing)
     end
   end
@@ -72,37 +70,45 @@ local function AddRec(name, def)
 end
 
 local defs = {
- {
-    gallop_whip = {
-      ingredients = {pickaxe = 1, marble = 2, goldnugget = 4, flint = 6},
-      tech = "SCIENCE_TWO",
-      filters = {"WEAPONS"}
-    }
-  }, {
-    gallop_bloodaxe = {
-      ingredients = {
-        gallop_whip = 1,
-        dreadstone = 8,
-        thulecite = 6,
-        horrorfuel = 4
-      },
-      tech = "SHADOWFORGING_TWO",
-      settings = {nounlock = true, station_tag = "shadow_forge"},
-      filters = {"WEAPONS","MODS"}
-    }
-  }, {
-    gallop_breaker = {
-      ingredients = {
-        singingshell_octave3 = {1, nil, nil, "singingshell_octave3_1.tex"},
-        multitool_axe_pickaxe = 1,
-        trident = 1,
-        minotaurhorn = 1,
-        thulecite = 6
-      },
-      tech = "ANCIENT_THREE",
-      settings = {station_tag = "altar", nounlock = true},
-      filters = {"CRAFTING_STATION", "WEAPONS","MODS"}
-    }
-  }
+  -- {
+  --   gallop_whip = {
+  --     ingredients = {
+  --       {"pickaxe", 1},
+  --       {"marble", 2},
+  --       {"goldnugget", 4},
+  --       {"flint", 6}
+  --     },
+  --     tech = "SCIENCE_TWO",
+  --     filters = {"WEAPONS",'TAB_LOL_WP'}
+  --   }
+  -- },
+  -- {
+  --   gallop_bloodaxe = {
+  --     ingredients = {
+  --       {"gallop_whip", 1},
+  --       {"shadow_battleaxe", 1},
+  --       {"dreadstone", 8},
+  --       {"horrorfuel", 4},
+  --       {"voidcloth", 2}
+  --     },
+  --     tech = "SHADOWFORGING_TWO",
+  --     settings = {nounlock = true, station_tag = "shadow_forge"},
+  --     filters = {"WEAPONS", "MODS",'TAB_LOL_WP'}
+  --   }
+  -- },
+  -- {
+  --   gallop_breaker = {
+  --     ingredients = {
+  --       {"multitool_axe_pickaxe", 1},
+  --       {"gnarwail_horn", 2},
+  --       {"minotaurhorn", 1},
+  --       {"cookiecuttershell", 8},
+  --       {"thulecite", 6}
+  --     },
+  --     tech = "ANCIENT_THREE",
+  --     settings = {station_tag = "altar", nounlock = true},
+  --     filters = {"CRAFTING_STATION", "WEAPONS", "MODS",'TAB_LOL_WP'}
+  --   }
+  -- },
 }
 for i, v in ipairs(defs) do for name, def in pairs(v) do AddRec(name, def) end end

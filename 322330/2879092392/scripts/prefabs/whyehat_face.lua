@@ -46,7 +46,7 @@ local function OnTHFGGiven(inst, giver, item)
             inst._thulecite_pieces_count = 0
         end
     elseif item.prefab == "moonrocknugget" then
-        inst.components.armor:Repair(90)
+        inst.components.armor:Repair(200)
         inst._moonrock_count = (inst._moonrock_count or 0) + 1
         if inst._moonrock_count == 3 then
             inst.current_endurance_bonus = math.min(inst.current_endurance_bonus + 1, inst.endurance_bonus)
@@ -428,6 +428,15 @@ local function onhammered(inst)
     fx:SetMaterial("stone")
     inst:Remove()
 end
+
+local function RecalculatePlanarDamage(owner, data, item)
+    local item = data ~= nil and data.item or nil
+    if item then
+        local inst = owner.components.inventory:GetEquippedItem(EQUIPSLOTS.HAND)
+
+    end
+end
+
 local function placeeye(inst)
     local owner = inst.components.inventoryitem:GetGrandOwner() or nil
     if owner ~= nil then
@@ -527,21 +536,24 @@ local function placeeye(inst)
                         if not inst:HasTag("purplegem_fx") then
                             inst:AddTag("purplegem_fx")
                         end
+                        if not owner:HasTag("whyinsanecraft1") then
+                            owner:AddTag("whyinsanecraft1")
+                        end
+                        if not owner:HasTag("whyinsanecraft2") then
+                            owner:AddTag("whyinsanecraft2")
+                        end 
                         if skin_build ~= nil then
                             owner.AnimState:OverrideItemSkinSymbol("headbase_hat", skin_build, "swap_hat_purple", inst.GUID, "swap_hat_purple")
                         else
                             owner.AnimState:OverrideSymbol("swap_hat", "whyehat_face", "swap_hat_purple")
                         end
-                        if owner.components.sanity ~= nil then
-                            owner.components.sanity:SetInducedInsanity(inst, true)
-                        end
+						if owner.components.hunger ~= nil then
+						owner.components.hunger:SetRate(0.15625 * 1.75)
+						end
                         if TheWorld.state.isnight then
                             inst.night_count = 1
                             if inst.components.equippable then
-                                inst.components.equippable.walkspeedmult = 1.2
-                            end
-                            if owner.components.combat ~= nil then
-                                owner.components.combat.damagemultiplier = 1.3
+                                inst.components.equippable.walkspeedmult = 1.5
                             end
                         else
                             inst.night_count = 0
@@ -551,8 +563,9 @@ local function placeeye(inst)
                         --[[if not inst:HasTag("shadowdominance") then
                         inst:AddTag("shadowdominance") end]]
                     end
+                    
                     -----------------------------------------------purplegemeye
-                    --------------------------------------------------greengemeye ------------------new idea required
+                    --------------------------------------------------greengemeye ------------------
                     if item.prefab == "why_refined_greengem" then
                         if not inst:HasTag("greengem_fx") then
                             inst:AddTag("greengem_fx")
@@ -580,6 +593,9 @@ local function placeeye(inst)
                             end
                         end
                         inst._onitembuild = function(owner, data)
+						if owner.components.sanity ~= nil then
+								owner.components.sanity:DoDelta(-7.5)
+								end
                             if inst._chancetobreak and TUNING.WHY_DIFFICULTY == "1" then
                                 if not (data ~= nil and data.discounted == false) then
                                     if math.random() <= 0.05 then
@@ -593,7 +609,7 @@ local function placeeye(inst)
                                     end
                                 end
                             else
-                                if math.random() <= 0.001 then
+                                if math.random() <= 0.002 then
                                     if owner.components.talker ~= nil then
                                         if TUNING.WHY_LANGUAGE == "spanish" then
                                             owner.components.talker:Say("¡Siento una mirada de BRILLANTEZ PURA!")
@@ -607,6 +623,7 @@ local function placeeye(inst)
                                 end
                             end
                         end
+						
                         inst:ListenForEvent("consumeingredients", inst._onitembuild, owner)
                         owner:ListenForEvent("equip",IsEquipGreenAmulet)
                         owner:ListenForEvent("unequip",IsUnEquipGreenAmulet)
@@ -641,7 +658,7 @@ local function placeeye(inst)
                             owner.AnimState:OverrideSymbol("swap_hat", "whyehat_face", "swap_hat_yellow")
                         end
 
-                        if TheWorld.state.isday then
+                        if (TheWorld.state.isdusk or TheWorld.state.isnight) then
                             if inst.components.equippable then
                                 inst.components.equippable.walkspeedmult = 1.2
                             end
@@ -649,8 +666,8 @@ local function placeeye(inst)
                                 owner.components.combat.damagemultiplier = 1.3
                             end
                         end
-                        owner:WatchWorldState("isday", YellowEyeDmgMultiplier)
-                        owner:WatchWorldState("isdusk", RemoveYellowEyeDmgMultiplier)
+                        owner:WatchWorldState("isday", RemoveYellowEyeDmgMultiplier)
+                        owner:WatchWorldState("isdusk", YellowEyeDmgMultiplier)
                         if inst._light == nil or not inst._light:IsValid() then
                             inst._light = SpawnPrefab("yellowamuletlight")
                         end
@@ -672,8 +689,13 @@ local function placeeye(inst)
                         owner:AddTag("fridge")
 
                         if not owner:HasTag("wonderopalskins") then
-                        owner:AddTag("wonderopalskins")
+                            owner:AddTag("wonderopalskins")
                         end
+
+                        if owner.components.planardamage ~= nil then
+                            owner.components.planardamage:AddBonus(owner,15,"opalgemeye_planar_damage")
+                        end
+
 
                         if owner.components.heater == nil then
                             owner:AddComponent("heater")
@@ -684,7 +706,37 @@ local function placeeye(inst)
                         if owner.components.hunger ~= nil then
                             owner.components.hunger:SetRate(0.15625 * 0.5)
                         end
+						
+						if owner.components.talker ~= nil then
+                                owner.components.talker:Say("Let's shatter this eye by making something.")
+                        end
+                   
+						inst._onitembuilder = function(owner, data)
+                                    inst.components.container:FindItems(function(item, owner, doer)
+                                         if item:HasTag("eyeshard") then
+                                             inst.SoundEmitter:PlaySound("dontstarve/common/gem_shatter")
+                                                LaunchAt(SpawnPrefab("ancientdreams_gemshard"), inst, doer, .2, 1, 1)
+												LaunchAt(SpawnPrefab("ancientdreams_gemshard"), inst, doer, .2, 1, 1)
+												LaunchAt(SpawnPrefab("ancientdreams_gemshard"), inst, doer, .2, 1, 1)
+												LaunchAt(SpawnPrefab("ancientdreams_gemshard"), inst, doer, .2, 1, 1)
+												LaunchAt(SpawnPrefab("ancientdreams_gemshard"), inst, doer, .2, 1, 1)
+												LaunchAt(SpawnPrefab("ancientdreams_gemshard"), inst, doer, .2, 1, 1)
+												LaunchAt(SpawnPrefab("ancientdreams_gemshard"), inst, doer, .2, 1, 1)
+												LaunchAt(SpawnPrefab("ancientdreams_gemshard"), inst, doer, .2, 1, 1)
+												LaunchAt(SpawnPrefab("ancientdreams_gemshard"), inst, doer, .2, 1, 1)
+												LaunchAt(SpawnPrefab("ancientdreams_gemshard"), inst, doer, .2, 1, 1)
+                                                LaunchAt(SpawnPrefab("ancientdreams_gemshard"), inst, doer, .2, 1, 1)
+												LaunchAt(SpawnPrefab("ancientdreams_gemshard"), inst, doer, .2, 1, 1)
+												LaunchAt(SpawnPrefab("ancientdreams_gemshard"), inst, doer, .2, 1, 1)
+												LaunchAt(SpawnPrefab("ancientdreams_gemshard"), inst, doer, .2, 1, 1)
+												LaunchAt(SpawnPrefab("ancientdreams_gemshard"), inst, doer, .2, 1, 1)
+                                            end
+                                            inst.components.container:DestroyContents()
+                                        end)
+									end
+				   inst:ListenForEvent("consumeingredients", inst._onitembuilder, owner)	
                     end
+			
                     -----------------------------------------------opalgemeye
                     --------------------------------------------------perfectgemeye
                     if item.prefab == "why_perfectiongem" then
@@ -972,8 +1024,8 @@ local function placeeye(inst)
                             owner.AnimState:OverrideSymbol("swap_hat", "whyehat_face", "swap_hat_flint")
                         end
                         if owner.components.workmultiplier ~= nil then
-                            owner.components.workmultiplier:AddMultiplier(ACTIONS.CHOP, 1.5, inst)
-                            owner.components.workmultiplier:AddMultiplier(ACTIONS.MINE, 1.5, inst)
+                            owner.components.workmultiplier:AddMultiplier(ACTIONS.CHOP, 1, inst)
+                            owner.components.workmultiplier:AddMultiplier(ACTIONS.MINE, 1, inst)
                         end
                     end
                     -----------------------------------------------flint
@@ -1080,11 +1132,11 @@ local function placeeye(inst)
                             owner.AnimState:OverrideSymbol("swap_hat", "whyehat_face", "swap_hat_butterfly")
                         end
                         if TUNING.WHY_DIFFICULTY == "-1" then
-                            inst.butterflyeye = inst:DoPeriodicTask(15, ButterflyEye, nil, owner)
+                            inst.butterflyeye = inst:DoPeriodicTask(5, ButterflyEye, nil, owner)
                         elseif TUNING.WHY_DIFFICULTY == "0" then
-                            inst.butterflyeye = inst:DoPeriodicTask(30, ButterflyEye, nil, owner)
+                            inst.butterflyeye = inst:DoPeriodicTask(10, ButterflyEye, nil, owner)
                         elseif TUNING.WHY_DIFFICULTY == "1" then
-                            inst.butterflyeye = inst:DoPeriodicTask(45, ButterflyEye, nil, owner)
+                            inst.butterflyeye = inst:DoPeriodicTask(15, ButterflyEye, nil, owner)
                         end
                     end
                     -----------------------------------------------butterfly
@@ -1100,6 +1152,13 @@ local function placeeye(inst)
                         end
                         if not owner:HasTag("hasbutterflymooneye") then
                             owner:AddTag("hasbutterflymooneye")
+                        end
+						if TUNING.WHY_DIFFICULTY == "-1" then
+                            inst.butterflyeye = inst:DoPeriodicTask(1, ButterflyEye, nil, owner)
+                        elseif TUNING.WHY_DIFFICULTY == "0" then
+                            inst.butterflyeye = inst:DoPeriodicTask(3, ButterflyEye, nil, owner)
+                        elseif TUNING.WHY_DIFFICULTY == "1" then
+                            inst.butterflyeye = inst:DoPeriodicTask(6, ButterflyEye, nil, owner)
                         end
                         if owner.components.sanity ~= nil then
                             owner.components.sanity:EnableLunacy(true, "Default")
@@ -1240,9 +1299,15 @@ local function removeeye(inst, owner)
         --------------------------------------------------purplegemeye
         if inst:HasTag("purplegem_fx") then
             inst:RemoveTag("purplegem_fx")
-            if owner.components.sanity ~= nil then
-                owner.components.sanity:SetInducedInsanity(inst, false)
+        if owner:HasTag("whyinsanecraft1") then
+            owner:RemoveTag("whyinsanecraft1")
             end
+        if owner:HasTag("whyinsanecraft2") then
+            owner:RemoveTag("whyinsanecraft2")
+            end
+			if owner.components.hunger ~= nil then
+						owner.components.hunger:SetRate(0.15625 * 1)
+						end
             owner:StopWatchingWorldState("isnight", PurpleEyeDmgMultiplier)
             owner:StopWatchingWorldState("isday", RemovePurpleEyeDmgMultiplier)
             inst.night_count = nil
@@ -1251,6 +1316,7 @@ local function removeeye(inst, owner)
             --[[if inst:HasTag("shadowdominance") then
             inst:RemoveTag("shadowdominance") end]]
         end
+
         -----------------------------------------------purplegemeye
         --------------------------------------------------greengemeye
         if inst:HasTag("greengem_fx") then
@@ -1291,8 +1357,8 @@ local function removeeye(inst, owner)
         --------------------------------------------------yellowgemeye
         if inst:HasTag("yellowgem_fx") then
             inst:RemoveTag("yellowgem_fx")
-            owner:StopWatchingWorldState("isday", YellowEyeDmgMultiplier)
-            owner:StopWatchingWorldState("isdusk", RemoveYellowEyeDmgMultiplier)
+            owner:StopWatchingWorldState("isday", RemoveYellowEyeDmgMultiplier)
+            owner:StopWatchingWorldState("isdusk", YellowEyeDmgMultiplier)
             RemoveYellowEyeDmgMultiplier(owner)
             if inst._light ~= nil then
                 if inst._light:IsValid() then
@@ -1307,17 +1373,22 @@ local function removeeye(inst, owner)
             inst:RemoveTag("opalgem_fx")
 
             owner:RemoveTag("fridge")
-                
+
+            if owner.components.planardamage ~= nil then
+                owner.components.planardamage:RemoveBonus(owner,"opalgemeye_planar_damage")
+            end
+
             if owner:HasTag("wonderopalskins") then
             owner:RemoveTag("wonderopalskins")
             end
             if owner.components.heater ~= nil then
                 owner:RemoveComponent("heater")
             end
-
+			
             if owner.components.hunger ~= nil then
                 owner.components.hunger:SetRate(0.15625 * 1)
             end
+		inst:RemoveEventCallback("consumeingredients", inst._onitembuilder, owner)
         end
         -----------------------------------------------opalgemeye
         --------------------------------------------------perfectgemeye
@@ -1435,6 +1506,10 @@ local function removeeye(inst, owner)
                 owner.components.sanity:EnableLunacy(false, "Default")
                 owner.components.sanity:DoDelta(0)
             end
+			if inst.butterflymooneye ~= nil then
+                inst.butterflymooneye:Cancel()
+                inst.butterflymooneye = nil
+            end
             if owner:HasTag("hasbutterflymooneye") then
                 owner:RemoveTag("hasbutterflymooneyeeye")
             end
@@ -1504,8 +1579,8 @@ local function removeeye(inst, owner)
         if inst:HasTag("flint_fx") then
             inst:RemoveTag("flint_fx")
             if owner.components.workmultiplier ~= nil then
-                owner.components.workmultiplier:AddMultiplier(ACTIONS.CHOP, 1, inst)
-                owner.components.workmultiplier:AddMultiplier(ACTIONS.MINE, 1, inst)
+                owner.components.workmultiplier:AddMultiplier(ACTIONS.CHOP, 2.5, inst)
+                owner.components.workmultiplier:AddMultiplier(ACTIONS.MINE, 2.5, inst)
             end
         end
         -----------------------------------------------flint
@@ -1559,7 +1634,7 @@ local function removeeye(inst, owner)
                 inst.milkyeye = nil
             end
         end-----------------------------------------------milky
-    end
+end
 end
 local function GoForTheEye(inst, owner)
     inst.lose_eyes = (math.random(0, 46))

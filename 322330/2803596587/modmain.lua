@@ -14,15 +14,15 @@ local AddNewModuleDefinition=wx78_moduledefs.AddNewModuleDefinition
 
 
 AddComponentPostInit("combat", function(self)
-local oldGetAttacked=self.GetAttacked
-function self:GetAttacked(attacker,damage,...)
+    local oldGetAttacked=self.GetAttacked
+    function self:GetAttacked(attacker,damage,...)
 
-if self.inst._shield_chips and self.inst._shield_chips ~=0 and attacker~=nil  then--有防御电路的计数，且不为0
-	local shield_chips=math.min(3, self.inst._shield_chips)--不超过3，这样即便是更多电路槽也不会增加，也不容易出bug
-	damage=damage*(0.05-(shield_chips-1)*0)
-end
-return oldGetAttacked(self,attacker,damage,...)
-end
+    if self.inst._shield_chips and self.inst._shield_chips ~=0 and attacker~=nil  then--有防御电路的计数，且不为0
+        local shield_chips=math.min(3, self.inst._shield_chips)--不超过3，这样即便是更多电路槽也不会增加，也不容易出bug
+        damage=damage*(0.05-(shield_chips-1)*0)
+    end
+    return oldGetAttacked(self,attacker,damage,...)
+    end
 end)
 
 

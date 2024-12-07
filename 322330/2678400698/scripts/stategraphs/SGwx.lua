@@ -1706,7 +1706,7 @@ local states =
 
     State{
         name = "item_hat",
-        tags = { "idle" },
+        tags = { "idle", "keepchannelcasting" },
 
         onenter = function(inst)
             inst.components.locomotor:StopMoving()
@@ -1725,7 +1725,7 @@ local states =
 
     State{
         name = "item_in",
-        tags = { "idle", "nodangle" },
+        tags = { "idle", "nodangle", "keepchannelcasting" },
 
         onenter = function(inst)
             inst.components.locomotor:StopMoving()
@@ -1752,7 +1752,7 @@ local states =
 
     State{
         name = "item_out",
-        tags = { "idle", "nodangle" },
+        tags = { "idle", "nodangle", "keepchannelcasting" },
 
         onenter = function(inst)
             inst.components.locomotor:StopMoving()
@@ -1798,7 +1798,7 @@ local states =
 
     State{
         name = "doshortaction",
-        tags = { "doing", "busy" },
+        tags = { "doing", "busy", "keepchannelcasting" },
 
         onenter = function(inst, silent)
             inst.components.locomotor:Stop()
@@ -1841,6 +1841,7 @@ local states =
 
     State{
         name = "dosilentshortaction",
+        tags = { "keepchannelcasting" },
 
         onenter = function(inst)
             inst.sg:GoToState("doshortaction", true)
@@ -1877,7 +1878,7 @@ local states =
                     StartActionMeter(inst, timeout)
                 end
                 if inst.bufferedaction.target ~= nil and inst.bufferedaction.target:IsValid() then
-                    inst.bufferedaction.target:PushEvent("startlongaction")
+                    inst.bufferedaction.target:PushEvent("startlongaction", inst)
                 end
             end
         end,
@@ -1896,6 +1897,7 @@ local states =
                 inst.sg.statemem.actionmeter = nil
                 StopActionMeter(inst, true)
             end
+            inst.sg:RemoveStateTag("busy")
             inst:PerformBufferedAction()
         end,
 
@@ -2683,7 +2685,7 @@ local states =
 
     State{
         name = "hit",
-        tags = { "busy", "pausepredict" },
+        tags = { "busy", "pausepredict", "keepchannelcasting" },
 
         onenter = function(inst, frozen)
             inst.Physics:Stop()
@@ -2699,7 +2701,7 @@ local states =
             end
             DoHurtSound(inst)
 
-            local stun_frames = math.min(math.floor(inst.AnimState:GetCurrentAnimationLength() / FRAMES + .5), frozen and 10 or 6)
+            local stun_frames = math.min(inst.AnimState:GetCurrentAnimationNumFrames(), frozen and 10 or 6)
             if inst.components.playercontroller ~= nil then
                 --Specify min frames of pause since "busy" tag may be
                 --removed too fast for our network update interval.
@@ -2708,19 +2710,21 @@ local states =
             inst.sg:SetTimeout(stun_frames * FRAMES)
         end,
 
+        ontimeout = function(inst)
+            --V2C: -removing the tag now, since this is actually a supported "channeling_item"
+            --      state (i.e. has custom anim)
+            --     -the state enters with the tag though, to cheat having to create a separate
+            --      hit state for channeling items
+            inst.sg:RemoveStateTag("keepchannelcasting")
+            inst.sg:GoToState("idle", true)
+        end,
+
         events =
         {
             EventHandler("animover", function(inst)
                 if inst.AnimState:AnimDone() then
                     inst.sg:GoToState("idle")
                 end
-            end),
-        },
-
-        timeline =
-        {
-            TimeEvent(3*FRAMES, function(inst)
-                inst.sg:RemoveStateTag("busy")
             end),
         },
     },

@@ -45,9 +45,10 @@ local function OnAttached(inst, target)
                 target.components.talker:Say("I can see better now.")
             end
         end
-        if target.components.sanity then
+        --Ilaskus: Moved to the crusher.
+        --[[if target.components.sanity then
             target.components.sanity:DoDelta(-80)
-        end
+        end]]
         target.SetForcedNightVision = SetForcedNightVision
         target._has_purple_gem_buff:set(true)
         if TheWorld ~= nil then

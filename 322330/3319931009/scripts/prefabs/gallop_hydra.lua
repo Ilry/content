@@ -16,7 +16,10 @@ end
 
 local function OnRefreshEquip(inst)
     inst:DoTaskInTime(0, function()
-        local hat = inst.components.inventory and inst.components.inventory:GetEquippedItem(EQUIPSLOTS.HEAD)
+        if inst.components.inventory == nil then
+            return
+        end
+        local hat = inst.components.inventory:GetEquippedItem(EQUIPSLOTS.HEAD)
         local weapon = inst.components.inventory:GetEquippedItem(EQUIPSLOTS.HANDS)
         if hat and hat.prefab == "gallophat2" and weapon and weapon.prefab == "gallop_hydra" then
             local item = hat.components.container and hat.components.container.slots[1]

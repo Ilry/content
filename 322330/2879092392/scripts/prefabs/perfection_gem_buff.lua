@@ -25,7 +25,7 @@ local function OnAttached(inst, target)
             end
         end
 
-        inst.bufftask = inst:DoTaskInTime(BUFF_DURATION, OnKillBuff)
+        --inst.bufftask = inst:DoTaskInTime(BUFF_DURATION, OnKillBuff)
 
         if target.components.workmultiplier == nil then
             target:AddComponent("workmultiplier")
@@ -46,6 +46,10 @@ local function OnAttached(inst, target)
         if target.components.temperature ~= nil then
             target.components.temperature.maxtemp = (64)
             target.components.temperature.mintemp = (6)
+        end
+
+        if inst.components.timer then
+            inst.components.timer:StartTimer("perfectionbuff_timer", BUFF_DURATION)
         end
     end
 end
@@ -88,9 +92,11 @@ local function OnDetached(inst, target)
 end
 
 local function OnExtended(inst)
-    if inst.bufftask ~= nil then
-        inst.bufftask:Cancel()
-        inst.bufftask = inst:DoTaskInTime(BUFF_DURATION, OnKillBuff)
+    if inst.components.timer and
+        inst.components.timer:TimerExists("perfectionbuff_timer") then
+
+        inst.components.timer:SetTimeLeft("perfectionbuff_timer", BUFF_DURATION)
+        
     end
 end
 
@@ -117,6 +123,14 @@ local function fn()
     inst.components.debuff:SetDetachedFn(OnDetached)--设置解除buff时执行的函数
     inst.components.debuff:SetExtendedFn(OnExtended)--设置延长buff时执行的函数
     inst.components.debuff.keepondespawn = true
+
+    inst:AddComponent("timer")
+	
+	inst:ListenForEvent("timerdone", function(inst, data)
+		if data.name == "perfectionbuff_timer" then
+			inst.components.debuff:Stop()
+		end
+	end)
 
     return inst
 end
