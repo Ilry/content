@@ -52,7 +52,7 @@ AddComponentPostInit('combat',function (self)
 
                 weapon.lol_wp_divine_cd = false
                 if weapon.taskintime_lol_wp_divine_cd == nil then
-                    weapon.taskintime_lol_wp_divine_cd = weapon:DoTaskInTime(TUNING.MOD_LOL_WP.SHEEN.CD,function()
+                    weapon.taskintime_lol_wp_divine_cd = weapon:DoTaskInTime(TUNING.MOD_LOL_WP.DIVINE.CD,function()
                         weapon.lol_wp_divine_cd = true
                         if weapon.taskintime_lol_wp_divine_cd ~= nil then weapon.taskintime_lol_wp_divine_cd:Cancel() weapon.taskintime_lol_wp_divine_cd = nil end
                     end)

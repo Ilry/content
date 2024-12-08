@@ -254,7 +254,7 @@ TUNING.MOD_LOL_WP = {
         PLANAR_DMG = 68, -- 位面伤害68，
         WALKSPEEDMULT = 1.1, -- 移速
 
-        LIGHT_RADIUS = 1.5, -- 手持时会发出半径2的金色光照。
+        LIGHT_RADIUS = 2.5, -- 手持时会发出半径3的金色光照。
         LIGHT_FALLOFF = .2,
         LIGHT_INTENSITY = .9,
         LIGHT_COLOR = {250/255, 210/255, 28/255},

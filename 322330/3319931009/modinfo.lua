@@ -22,7 +22,7 @@ all_clients_require_mod = true
 icon_atlas = "modicon.xml"
 icon = "modicon.tex"
 server_filter_tags = {}
-version = "4.0.1"
+version = "4.0.2"
 local configuration = {
     {
         name = "gallopbreakermusic",

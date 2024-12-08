@@ -213,6 +213,11 @@ local data = {
 
                     -- 标记结束
                     wp.lol_wp_divine_isuseingholyskill = false
+
+                    -- wtf
+                    if victim and victim.prefab == "snurtle" and victim.brain then
+                        victim.brain:Start()
+                    end
                     return true
                 end)(act.invobject,act.target,act.doer)
             end

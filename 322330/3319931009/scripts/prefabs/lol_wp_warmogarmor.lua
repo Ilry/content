@@ -24,8 +24,8 @@ end
 local function skillHeart(enable,owner,inst)
     if enable then
         owner.taskintime_lol_wp_warmogarmor_notakedmg = owner:DoTaskInTime(TUNING.MOD_LOL_WP.WARMOGARMOR.SKILL_HEART.NO_TAKE_DMG_IN,function()
-            if owner and owner:IsValid() then
-                local cur_percent = owner.components.health:GetPercent()
+            if owner and owner:IsValid() and owner.components.health then
+                local cur_percent = owner.components.health:GetPercentWithPenalty()
                 if cur_percent < TUNING.MOD_LOL_WP.WARMOGARMOR.SKILL_HEART.HP_PERCENT_BELOW and owner.taskperiod_lol_wp_warmogarmor_regen == nil then
                     -- 并额外增加10%移速
                     if inst.components.equippable then
@@ -33,7 +33,8 @@ local function skillHeart(enable,owner,inst)
                     end
                     owner.taskperiod_lol_wp_warmogarmor_regen = owner:DoPeriodicTask(TUNING.MOD_LOL_WP.WARMOGARMOR.SKILL_HEART.INTERVAL, function()
                         if LANS:checkAlive(owner) then
-                            local cur_percent = owner.components.health:GetPercent()
+                            -- local cur_percent = owner.components.health:GetPercent()
+                            local cur_percent = owner.components.health:GetPercentWithPenalty()
                             if cur_percent >= 1 then
                                 skillHeart(false,owner,inst)
                                 skillHeart(true,owner,inst)
@@ -113,6 +114,10 @@ local function onunequip(inst, owner)
     inst.components.periodicspawner:Stop()
 
     owner:RemoveEventCallback('healthdelta',playerHealthChangeWhenWearWarmogArmor)
+end
+
+local function onequiptomodel(inst, owner, from_ground)
+    
 end
 
 local function unequipItem(inst)
@@ -208,6 +213,7 @@ local function fn()
     inst.components.equippable.equipslot = EQUIPSLOTS.BODY
     inst.components.equippable:SetOnEquip(onequip)
     inst.components.equippable:SetOnUnequip(onunequip)
+    inst.components.equippable:SetOnEquipToModel(onequiptomodel)
     -- inst.components.equippable.is_magic_dapperness = true
     inst.components.equippable.dapperness = TUNING.MOD_LOL_WP.WARMOGARMOR.DARPPERNESS/54
     inst.components.equippable.walkspeedmult = TUNING.MOD_LOL_WP.WARMOGARMOR.WALKSPEEDMULT

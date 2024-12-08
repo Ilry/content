@@ -126,9 +126,6 @@ end
  T.WX78_MAXHEALTH_BOOST = 50--一级健康电路
  T.WX78_MAXHEALTH2_MULT = 4.0  --二级倍率
 
-
---  T.WX78_BEE_TICKPERIOD = 2.0
---  T.WX78_BEE_HEALTHPERTICK = 4.0
 T.WX78_BEE_TICKPERIOD = BEE_TICKPERIOD
 T.WX78_BEE_HEALTHPERTICK = BEE_HEALTHPERTICK
 
@@ -148,167 +145,101 @@ T.WX78_BEE_HEALTHPERTICK = BEE_HEALTHPERTICK
 --  T.WX78_LIGHT_EXTRARADIUS = 2.5--光照叠加效果
 
 
-
  if GLOBAL.TheNet:GetIsServer() ~= true then
    return
  end
  
- local hatList = {
-   ["eyebrella"] = true,
-   ["beefalo"] = true,
-   ["winter"] = true,
-   ["walrus"] = true,
-   ["straw"] = true,
- }
- 
- for key,value in pairs(hatList) do
-   AddPrefabPostInit(key.."hat", function(inst)
-       if inst.components.fueled ~= nil then
-         inst:RemoveComponent("fueled")
-       end
-     end
-   )
- end
- 
- AddPrefabPostInit("raincoat", function(inst)
-   inst.components.equippable:SetOnEquip(function(inst,owner)
-     owner.AnimState:OverrideSymbol("swap_body", "torso_rain", "swap_body")
-   end)
-   inst.components.equippable:SetOnUnequip(function(inst,owner)
-     owner.AnimState:ClearOverrideSymbol("swap_body")
-   end)
-   if inst.components.fueled ~= nil then
-     inst:RemoveComponent("fueled")
-   end
- end
- )
- 
- AddPrefabPostInit("deerclops_eyeball", function(inst)
-   if inst.components.edible ~= nil then
-     inst:RemoveComponent("edible")
-   end
- end
- )
- 
- AddPrefabPostInit("sisturn", function(inst)
-     inst:AddComponent("preserver")
-     inst.components.preserver:SetPerishRateMultiplier(0)
- end
- )
- 
- AddPrefabPostInit("orangestaff", function(inst)
-     if inst.components.finiteuses then
-         inst:RemoveComponent("finiteuses")
-     end
-     inst.components.blinkstaff.onblinkfn = function(staff, pos, caster)
-       if caster then
-           if caster.components.staffsanity then
-               caster.components.staffsanity:DoCastingDelta(-TUNING.SANITY_MED)
-           elseif caster.components.sanity ~= nil then
-               caster.components.sanity:DoDelta(-TUNING.SANITY_MED)
-           end
-       end
-     end
- end
- )
- 
- AddPrefabPostInit("firesuppressor", function(inst)
-   if inst and inst.components and inst.components.fueled and inst.components.fueled.rate then
-     inst.components.fueled.rate = 0
-   end
- end
- )
- 
  TUNING.PERISH_CAGE_MULT = 0
  
- AddPrefabPostInit("wx78module_maxhealth", function(inst)
-     if inst.components.finiteuses then
-         inst:RemoveComponent("finiteuses")
-     end
- end)
- AddPrefabPostInit("wx78module_maxhealth2", function(inst)
-     if inst.components.finiteuses then
-         inst:RemoveComponent("finiteuses")
-     end
- end)
- AddPrefabPostInit("wx78module_maxsanity1", function(inst)
-     if inst.components.finiteuses then
-         inst:RemoveComponent("finiteuses")
-     end
- end)
- AddPrefabPostInit("wx78module_maxsanity", function(inst)
-     if inst.components.finiteuses then
-         inst:RemoveComponent("finiteuses")
-     end
- end)
- AddPrefabPostInit("wx78module_bee", function(inst)
-     if inst.components.finiteuses then
-         inst:RemoveComponent("finiteuses")
-     end
- end)
- AddPrefabPostInit("wx78module_music", function(inst)
-     if inst.components.finiteuses then
-         inst:RemoveComponent("finiteuses")
-     end
- end)
- AddPrefabPostInit("wx78module_maxhunger1", function(inst)
-     if inst.components.finiteuses then
-         inst:RemoveComponent("finiteuses")
-     end
- end)
- AddPrefabPostInit("wx78module_maxhunger", function(inst)
-     if inst.components.finiteuses then
-         inst:RemoveComponent("finiteuses")
-     end
- end)
- AddPrefabPostInit("wx78module_movespeed", function(inst)
-     if inst.components.finiteuses then
-         inst:RemoveComponent("finiteuses")
-     end
- end)
- AddPrefabPostInit("wx78module_movespeed2", function(inst)
-     if inst.components.finiteuses then
-         inst:RemoveComponent("finiteuses")
-     end
- end)
- AddPrefabPostInit("wx78module_heat", function(inst)
-     if inst.components.finiteuses then
-         inst:RemoveComponent("finiteuses")
-     end
- end)
- AddPrefabPostInit("wx78module_cold", function(inst)
-     if inst.components.finiteuses then
-         inst:RemoveComponent("finiteuses")
-     end
- end)
- AddPrefabPostInit("wx78module_taser", function(inst)
-     if inst.components.finiteuses then
-         inst:RemoveComponent("finiteuses")
-     end
- end)
- AddPrefabPostInit("wx78module_nightvision", function(inst)
-     if inst.components.finiteuses then
-         inst:RemoveComponent("finiteuses")
-     end
- end)
- AddPrefabPostInit("wx78module_light", function(inst)
-     if inst.components.finiteuses then
-         inst:RemoveComponent("finiteuses")
-     end
- end)
- AddPrefabPostInit("wx78module_shield", function(inst)
-     if inst.components.finiteuses then
-         inst:RemoveComponent("finiteuses")
-     end
- end)
- AddPrefabPostInit("wx78module_magic_electric", function(inst)
-     if inst.components.finiteuses then
-         inst:RemoveComponent("finiteuses")
-     end
- end)
+-- 芯片无耐久
+
+ local wx78Modules = {
+    "wx78module_maxhealth",
+    "wx78module_maxhealth2",
+    "wx78module_maxsanity1",
+    "wx78module_maxsanity",
+    "wx78module_bee",
+    "wx78module_music",
+    "wx78module_maxhunger1",
+    "wx78module_maxhunger",
+    "wx78module_movespeed",
+    "wx78module_movespeed2",
+    "wx78module_heat",
+    "wx78module_cold",
+    "wx78module_taser",
+    "wx78module_nightvision",
+    "wx78module_light",
+    "wx78module_shield",
+    "wx78module_magic_electric"
+}
+
+local function removeFiniteUses(inst)
+    if inst.components.finiteuses then
+        inst:RemoveComponent("finiteuses")
+    end
+end
+
+for _, module in ipairs(wx78Modules) do
+    AddPrefabPostInit(module, removeFiniteUses)
+end
 
 
+local hatList = {
+    "eyebrella",
+    "beefalo",
+    "winter",
+    "walrus",
+    "straw"
+}
 
+local function removeFueledComponent(inst)
+    if inst.components.fueled ~= nil then
+        inst:RemoveComponent("fueled")
+    end
+end
 
+for _, hat in ipairs(hatList) do
+    AddPrefabPostInit(hat.."hat", removeFueledComponent)
+end
 
+AddPrefabPostInit("raincoat", function(inst)
+    inst.components.equippable:SetOnEquip(function(inst, owner)
+        owner.AnimState:OverrideSymbol("swap_body", "torso_rain", "swap_body")
+    end)
+    inst.components.equippable:SetOnUnequip(function(inst, owner)
+        owner.AnimState:ClearOverrideSymbol("swap_body")
+    end)
+    removeFueledComponent(inst)
+end)
 
+AddPrefabPostInit("deerclops_eyeball", function(inst)
+    if inst.components.edible ~= nil then
+        inst:RemoveComponent("edible")
+    end
+end)
+
+AddPrefabPostInit("sisturn", function(inst)
+    inst:AddComponent("preserver")
+    inst.components.preserver:SetPerishRateMultiplier(0)
+end)
+
+AddPrefabPostInit("orangestaff", function(inst)
+    if inst.components.finiteuses then
+        inst:RemoveComponent("finiteuses")
+    end
+    inst.components.blinkstaff.onblinkfn = function(staff, pos, caster)
+        if caster then
+            if caster.components.staffsanity then
+                caster.components.staffsanity:DoCastingDelta(-TUNING.SANITY_MED)
+            elseif caster.components.sanity ~= nil then
+                caster.components.sanity:DoDelta(-TUNING.SANITY_MED)
+            end
+        end
+    end
+end)
+
+AddPrefabPostInit("firesuppressor", function(inst)
+    if inst and inst.components and inst.components.fueled and inst.components.fueled.rate then
+        inst.components.fueled.rate = 0
+    end
+end)
