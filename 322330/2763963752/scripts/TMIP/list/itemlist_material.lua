@@ -1,4 +1,6 @@
 return {
+	"carpentry_blade_moonglass",--月光玻璃锯片
+	"willow_ember",--"以太余烬"
 	"cotl_trinket",--红眼冠
 	"wagpunk_bits",--废铁
 	"voidcloth",--暗影碎布

@@ -57,7 +57,7 @@ AddComponentPostInit("health", function(self)
                             -- chanceloot
                             
                             for k,v in pairs(victim_lootdrop.chanceloot or {}) do
-                                if filterLootPrefab(v.prefab) then
+                                if v and v.prefab and filterLootPrefab(v.prefab) then
                                     table.insert(rank_loots,{v.prefab,v.chance})
                                     -- 并使所有掉落物概率提高10%。(加算)
                                     v.chance = math.min(1,v.chance+TUNING.MOD_LOL_WP.OBSIDIANBLADE.SKILL_HUNTER.CHANCE_UP)

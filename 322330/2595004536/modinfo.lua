@@ -10,7 +10,7 @@ This is a client mod.When Wagstaff need a tool, its' picture will appear above h
 scripts/Wgtscripts/Wagstaff_tool_strings.lua. Or you can feedback to me in workshop)
 ]]
 author = "WinderBear"
-version = "1.1.2"
+version = "1.1.3"
 
 forumthread = ""
 

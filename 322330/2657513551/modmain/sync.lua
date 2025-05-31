@@ -3,11 +3,11 @@
 AddPrefabPostInit("world", function(inst)
 	inst:AddComponent("dsa_clocksync")
 
-	-- 代理组件
 	inst:AddComponent("dsa_bearger_proxy")
 	inst:AddComponent("dsa_deerclops_proxy")
 	inst:AddComponent("dsa_antlion_proxy")
 	inst:AddComponent("dsa_daywalker_proxy")
+	inst:AddComponent("dsa_klaussack_proxy")
 
 	inst:AddComponent("dsa_shard_proxy")
 end)
@@ -122,7 +122,7 @@ local fake_shard_id = 114514
 local old_Shard_SyncMermKingExists = Shard_SyncMermKingExists
 function GLOBAL.Shard_SyncMermKingExists(exists, shardid)
 	old_Shard_SyncMermKingExists(exists, shardid)
-	print("[DSA] SyncMermKingExists: "..tostring(exists))
+	-- print("[DSA] SyncMermKingExists: "..tostring(exists))
 	if TheWorld ~= nil and shardid ~= fake_shard_id then
 		TheWorld.components.dsa_shard_proxy:OnMermKingBuff("exists", exists)
 	end
@@ -131,7 +131,7 @@ end
 local old_Shard_SyncMermKingTrident = Shard_SyncMermKingTrident
 function GLOBAL.Shard_SyncMermKingTrident(exists, shardid)
 	old_Shard_SyncMermKingTrident(exists, shardid)
-	print("[DSA] SyncMermKingTrident: "..tostring(exists))
+	-- print("[DSA] SyncMermKingTrident: "..tostring(exists))
 	if TheWorld ~= nil and shardid ~= fake_shard_id then
 		TheWorld.components.dsa_shard_proxy:OnMermKingBuff("trident", exists)
 	end
@@ -140,7 +140,7 @@ end
 local old_Shard_SyncMermKingCrown = Shard_SyncMermKingCrown
 function GLOBAL.Shard_SyncMermKingCrown(exists, shardid)
 	old_Shard_SyncMermKingCrown(exists, shardid)
-	print("[DSA] SyncMermKingCrown: "..tostring(exists))
+	-- print("[DSA] SyncMermKingCrown: "..tostring(exists))
 	if TheWorld ~= nil and shardid ~= fake_shard_id then
 		TheWorld.components.dsa_shard_proxy:OnMermKingBuff("crown", exists)
 	end
@@ -149,7 +149,7 @@ end
 local old_Shard_SyncMermKingPauldron = Shard_SyncMermKingPauldron
 function GLOBAL.Shard_SyncMermKingPauldron(exists, shardid)
 	old_Shard_SyncMermKingPauldron(exists, shardid)
-	print("[DSA] SyncMermKingPauldron: "..tostring(exists))
+	-- print("[DSA] SyncMermKingPauldron: "..tostring(exists))
 	if TheWorld ~= nil and shardid ~= fake_shard_id then
 		TheWorld.components.dsa_shard_proxy:OnMermKingBuff("pauldron", exists)
 	end
@@ -305,17 +305,6 @@ AddComponentPostInit("timer", function(self)
 
 		return old_start(self, name, time, paused, initialtime_override, ...)
 	end
-
-	local old_longupdate = self.LongUpdate
-	function self:LongUpdate(dt)
-		if GetTick() == 0 and TheWorld.dsa_longupdate_flag then
-			if env.RIFTPORTAL_DEFS[self.inst.prefab or ""] then
-				local key = "trynextstage"
-				self.dsa_advanced_time[key] = (self.dsa_advanced_time[key] or 0) + dt
-			end
-		end
-		return old_longupdate(self, dt)
-	end
 end)
 
 -- register rift growth timer
@@ -324,10 +313,149 @@ do
 	local RIFTPORTAL_DEFS = rift_portal_defs.RIFTPORTAL_DEFS
 	local RIFTPORTAL_CONST = rift_portal_defs.RIFTPORTAL_CONST
 	for prefab in pairs(RIFTPORTAL_DEFS)do
-		-- AddPrefabPostInit(prefab, function(inst) SetDebugEntity(inst) end)
+		-- if DEBUG then
+		-- 	AddPrefabPostInit(prefab, SetDebugEntity)
+		-- end
 	end
 	env.RIFTPORTAL_DEFS = RIFTPORTAL_DEFS
 end
+
+local function HookRiftLongUpdate(inst)
+	local old_longupdate = inst.OnLongUpdate
+	if old_longupdate ~= nil then
+		inst.OnLongUpdate = function(inst, dt)
+			if GetTick() > 0 then
+				return old_longupdate(inst, dt)
+			end
+		end
+	end
+
+	local old_timer_longupdate = inst.components.timer and inst.components.timer.LongUpdate
+	if old_timer_longupdate ~= nil then
+		inst.components.timer.LongUpdate = function(self, dt)
+			if GetTick() > 0 then
+				return old_timer_longupdate(self, dt)
+			end
+		end
+	end
+end
+
+AddPrefabPostInit("shadowrift_portal", function(inst)
+	local old_onload = inst.OnLoad
+	if old_onload == nil then return end
+
+	-- if DEBUG then
+	-- 	SetDebugEntity(inst)
+	-- end
+
+	-- shadowrift_portal.lua: 76
+	local function GetStageUpTime(_inst)
+	    return TUNING.RIFT_SHADOW1_STAGEUP_BASE_TIME + TUNING.RIFT_SHADOW1_STAGEUP_RANDOM_TIME * math.random()
+	end
+
+	inst.OnLoad = function(inst, data)
+		if data ~= nil 
+			and data.stage ~= nil and data.stage < TUNING.RIFT_SHADOW1_MAXSTAGE 
+			and not data.finished 
+			and inst.components.timer ~= nil and inst.components.timer:TimerExists("trynextstage") then
+			local dt = TheWorld.components.dsa_clocksync.elapsedtime or 0
+			local timeleft = assert(inst.components.timer:GetTimeLeft("trynextstage"))
+			local stage = data.stage
+			local count = 0
+			if dt > 0 then
+				for _ = 1, 3 do
+					if dt > timeleft then
+						dt = dt - timeleft
+						count = count + timeleft
+						stage = stage + 1
+						timeleft = GetStageUpTime()
+						if stage == TUNING.RIFT_SHADOW1_MAXSTAGE then
+							break
+						end
+					else
+						timeleft = timeleft - dt
+						count = count + dt
+						break
+					end
+				end
+			end
+			inst.components.timer.dsa_external_longupdate = true
+			inst.components.timer:SetTimeLeft("trynextstage", math.max(1, timeleft))
+			if count > 0 and inst.components.timer:TimerExists("close") then
+				local timeleft = inst.components.timer:GetTimeLeft("close")
+				inst.components.timer:SetTimeLeft("close", math.max(1.5, timeleft - count))
+			end
+
+			data.stage = stage
+		end
+
+		return old_onload(inst, data)
+	end
+
+	HookRiftLongUpdate(inst)
+end)
+
+AddPrefabPostInit("lunarrift_portal", function(inst)
+	local old_onload = inst.OnLoad
+	if old_onload == nil then return end
+
+	-- SetDebugEntity(inst)
+
+	local function GetStageUpTime(_inst)
+	    return TUNING.RIFT_LUNAR1_STAGEUP_BASE_TIME + TUNING.RIFT_LUNAR1_STAGEUP_RANDOM_TIME * math.random()
+	end
+
+	inst.OnLoad = function(inst, data)
+		if data ~= nil
+			and data.stage ~= nil and data.stage < TUNING.RIFT_LUNAR1_MAXSTAGE
+			and not data.finished
+			and inst.components.timer ~= nil and inst.components.timer:TimerExists("trynextstage") then
+			local dt = TheWorld.components.dsa_clocksync.elapsedtime or 0
+			local timeleft = assert(inst.components.timer:GetTimeLeft("trynextstage"))
+			local stage = data.stage
+			local stage_up = false
+			local count = 0
+			if dt > 0 then
+				for _ = 1, 3 do
+					if dt > timeleft then
+						dt = dt - timeleft
+						count = count + timeleft
+						stage = stage + 1
+						stage_up = true
+						timeleft = GetStageUpTime()
+						if stage == TUNING.RIFT_LUNAR1_MAXSTAGE then
+							break
+						end
+					else
+						timeleft = timeleft - dt
+						count = count + dt
+						break
+					end
+				end
+			end
+			inst.components.timer.dsa_external_longupdate = true
+			inst.components.timer:SetTimeLeft("trynextstage", math.max(1, timeleft))
+			if count > 0 and inst.components.timer:TimerExists("close") then
+				local timeleft = inst.components.timer:GetTimeLeft("close")
+				inst.components.timer:SetTimeLeft("close", math.max(1.5, timeleft - count))
+			end
+			if stage_up and stage == TUNING.RIFT_LUNAR1_MAXSTAGE then
+				inst.dsa_stageup_task = inst:DoTaskInTime(0, function()
+					inst._stage = TUNING.RIFT_LUNAR1_MAXSTAGE - 1
+			        inst.components.timer:StopTimer("do_stageup")
+			        inst.components.timer:StartTimer("do_stageup", 0)
+
+			        inst.dsa_stageup_task = nil
+			    end)
+		    end
+			data.stage = stage
+		end
+
+		return old_onload(inst, data)
+	end
+
+	HookRiftLongUpdate(inst)
+end)
 
 -- growable longupdate
 local function GrowableLongupdate(inst, dt)

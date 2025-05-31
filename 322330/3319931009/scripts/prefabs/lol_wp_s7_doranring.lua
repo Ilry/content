@@ -8,13 +8,22 @@ local assets =
 
     Asset("ATLAS", "images/inventoryimages/"..assest_id..".xml"),
 }
-
+---comment
+---@param inst any
+---@param owner ent
 local function onequip(inst, owner)
     -- owner.AnimState:OverrideSymbol("swap_body", "torso_"..assest_id, assest_id)
+    if owner.components.lol_wp_player_dmg_adder then
+        owner.components.lol_wp_player_dmg_adder:Modifier(inst,TUNING.MOD_LOL_WP.DORANRING.PLANAR_DMG_WHEN_EQUIP,prefab_id,'planar')
+    end
 end
 
 local function onunequip(inst, owner)
     owner.AnimState:ClearOverrideSymbol("swap_body")
+
+    if owner.components.lol_wp_player_dmg_adder then
+        owner.components.lol_wp_player_dmg_adder:RemoveModifier(inst,prefab_id,'planar')
+    end
 end
 
 -- local function onsave(inst, data)
@@ -38,6 +47,7 @@ local function fn()
     inst.entity:SetPristine()
 
     inst:AddTag("nosteal")
+    inst:AddTag('lunar_aligned')
 
     MakeInventoryFloatable(inst, "med", nil, 0.75)
 

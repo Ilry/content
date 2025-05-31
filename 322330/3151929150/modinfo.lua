@@ -23,7 +23,7 @@ But don't be too greedy, or it will take too long!
 ]]
 
 author = "clearlove"
-version = "1.2.3"
+version = "1.2.12"
 
 api_version = 10
 
@@ -75,7 +75,7 @@ end
 
 local monkey_num_options = {}
 monkey_num_options[1] = { description = CH and "无所谓" or "I don't care", data = "not set" }
-for i = 0, 10 do
+for i = 0, 20 do
     monkey_num_options[i+2] = { description = (i+4)..(CH and "个" or ""), data = i+4 }
 end
 
@@ -300,11 +300,17 @@ configuration_options = {
         default = "not set",
     },
     {
+        name = "master_three_sculptures",
+        label = CH and "三雕像" or "Three Sculptures",
+        options = num_options,
+        hover = CH and "请不要设置过多（似乎最多三个）。这是三个暗影棋子的雕像底座" or "Please do not set too many (Perhaps 3 at most), these are the bases of three shadow chess pieces",
+        default = "not set",
+    },
+    {
         name = "master_custom_entity_num",
         label = CH and "自定义实体" or "Custom entity",
         options = {{description = CH and "无" or "None", data = ""}},
-        hover = CH and "输入你任意感兴趣的实体名称及个数，用“实体:数目”表示你的某个要求，用分号分隔不同的要求。\n（注意冒号和分号都需要是英文输入法输入）例如为：beefalo:15;livingtree:2;\n你可以订阅我发布的另一个模组“文本模组配置”，来直接在配置界面输入" or 
-        "Enter the name and number of any entity you are interested in, use 'entity:number' to represent your requirements, and use semicolons to separate different requirements. For example: beefalo:15;livingtree:2;\nYou can subscribe to another mod I released, 'Mod Config By Text', to enter directly in the configuration interface",
+        hover = CH and "输入你任意感兴趣的实体名称及个数，用“实体:数目”表示你的某个要求，用分号分隔不同的要求。\n（注意冒号和分号都需要是英文输入法输入）例如为：beefalo:15;livingtree:2;\n你可以订阅我发布的另一个模组“文本模组配置”，来直接在配置界面输入" or "Enter the name and number of any entity you are interested in, use 'entity:number' to represent your requirements, and use semicolons to separate different requirements. For example: beefalo:15;livingtree:2;\nYou can subscribe to another mod I released, 'Mod Config By Text', to enter directly in the configuration interface",
         default = "",
         is_text_config = true
     },
@@ -396,6 +402,47 @@ configuration_options = {
         default = "not set",
         hover = CH  and "月岛与大陆直接相连(至多相距2个地皮)" or "Moon Island is directly connected to the mainland (up to 2 tiles apart)",
     },
+    {
+        name = "master_moon_island_broken",
+        label = CH and "月岛破碎" or "Broken Moon Island",
+        options = {
+            {description = CH and "是" or "yes", data = "yes"},
+            {description = CH and "无所谓" or "I don't care", data = "not set"},
+        },
+        default = "not set",
+        hover = CH  and "月岛各个区块不连续" or "Moon Island is not continuous",
+    },
+    AddSectionTitle(CH and "特殊环形世界" or "Special World"),
+    {
+        name = "moon_island_surrouned",
+        label = CH and "月岛在环形中" or "MoonIsland inside Ring",
+        options = {
+            {description = CH and "是" or "yes", data = "yes"},
+            {description = CH and "无所谓" or "I don't care", data = "not set"},
+        },
+        default = "not set",
+        hover = CH  and "陆地呈现环形，而月岛位于环形内部" or "The land is ring-shaped, and the Moon Island is inside the ring",
+    },
+    {
+        name = "hermit_island_surrouned",
+        label = CH and "寄居蟹岛在环形中" or "Hermit inside Ring",
+        options = {
+            {description = CH and "是" or "yes", data = "yes"},
+            {description = CH and "无所谓" or "I don't care", data = "not set"},
+        },
+        default = "not set",
+        hover = CH  and "陆地呈现环形，而寄居蟹岛位于环形内部" or "The land is ring-shaped, and the Hermit Island is inside the ring",
+    },
+    {
+        name = "monkey_island_surrouned",
+        label = CH and "猴岛在环形中" or "MonkeyIsland inside Ring",
+        options = {
+            {description = CH and "是" or "yes", data = "yes"},
+            {description = CH and "无所谓" or "I don't care", data = "not set"},
+        },
+        default = "not set",
+        hover = CH  and "陆地呈现环形，而猴岛位于环形内部" or "The land is ring-shaped, and the Monkey Island is inside the ring",
+    },
     -- 基地选址
     {
 		name = "Space1",
@@ -437,6 +484,32 @@ configuration_options = {
         hover = CH and "生成指定个符合其他约束条件的地图，保留其中基地的交通最便利的那张地图" or "Generate the specified number of maps that meet other constraints, and keep the map with the most convenient transportation of the base",
     },
     {
+        name = "ignore_error_master",
+        label = CH and "忽略崩溃" or "Ignore Crashing",
+        options = {
+            {description = CH and "否" or "no", data = false, hower = CH and "在生成失败时停止" or "Stop when generation fails"},
+            {description = CH and "是" or "yes", data = true,  hower = CH and "这可能会掩盖问题，持续出现的问题会导致永远无法生成" or "This may mask the problem, persistent problems will cause generating forever"},
+        },
+        default = false,
+        hover = CH and "有时候游戏本身或其他mod的bug会导致生成失败，这个选项让你可以在失败时继续" or "Sometimes the game itself or bugs in other mods can cause generation to fail, this option allows you to continue",
+    },
+    {
+        name = "master_keep_times",
+        label = CH and "日志记录种子" or "logged seeds",
+        -- options = repeat_options,
+        options = {
+            {description = CH and "最佳1个" or "best 1", data = 1},
+            {description = CH and "最佳10个" or "best 10", data = 10},
+            {description = CH and "最佳20个" or "best 20", data = 20},
+            {description = CH and "最佳30个" or "best 30", data = 30},
+            {description = CH and "最佳40个" or "best 40", data = 40},
+            {description = CH and "最佳50个" or "best 50", data = 50},
+        },
+        default = 10,
+        is_text_config = true,
+        hover = CH and "在日志中记录当前得分最佳的多少个种子" or "Record the number of seeds with the best score in the log",
+    },
+    {
         name = "master_allow_wormwhole",
         label = CH and "虫洞视作捷径?" or "Wormhole as shortcut?",
         -- options = repeat_options,
@@ -446,6 +519,17 @@ configuration_options = {
         },
         default = true,
         hover = CH and "计算距离的时候，是否允许跳虫洞" or "When calculating the distance, is it allowed to jump the wormhole",
+    },
+    {
+        name = "master_must_onlnad",
+        label = CH and "只在陆地建家" or "Exclude sea base",
+        -- options = repeat_options,
+        options = {
+            {description = CH and "是" or "yes", data = true, hover = CH and "在寻找可能的建家位置时，排除海洋地皮" or "When looking for possible base locations, exclude ocean tiles"},
+            {description = CH and "否" or "no", data = false, hover = CH and "在寻找可能的建家位置时，不检查地皮的种类" or "When looking for possible base locations, do not check the type of tile"},
+        },
+        default = true,
+        hover = CH and "是否检查建家位置是否是海洋" or "Whether to check if the base location is ocean",
     },
     {
 		name = "master base location(soft constraint)",
@@ -546,8 +630,7 @@ configuration_options = {
         name = "master_custom_entity_near_soft",
         label = CH and "自定义邻近实体" or "Custom nearby entity",
         options = {{description = CH and "无" or "None", data = ""}},
-        hover = CH and "输入你感兴趣的实体，以及它的权重，用“实体:权重”表示你的某个要求，用分号分隔不同的要求。（注意冒号和分号都需要是英文输入法输入）\n例如为：beefalo:1.1;moose_nesting_ground:2.0;\n你可以订阅我发布的另一个模组“文本模组配置”，来直接在配置界面输入" or 
-        "Enter the name of the entity you are interested in, and its weight, use 'entity:weight' to represent your requirements, and use semicolons to separate different requirements.\nFor example: beefalo:1.1;moose_nesting_ground:2.0;\nYou can subscribe to another mod I released, 'Mod Config By Text', to enter directly in the configuration interface",
+        hover = CH and "输入实体和权重，用“实体:权重”表示单个要求，用分号分隔不同要求(注意为英文冒号和逗号)。\n例如为：beefalo:1.1;moose_nesting_ground:2.0;\n你可以订阅另一个模组“文本模组配置”，来直接在配置界面输入" or "Enter the entity and weight, use 'entity:weight' to represent a single requirement, and use semicolons to separate different requirements. For example: beefalo:1.1;moose_nesting_ground:2.0;\nYou can subscribe to another mod I released, 'Mod Config By Text', to enter directly in the configuration interface",
         default = "",
         is_text_config = true
     },
@@ -672,8 +755,7 @@ configuration_options = {
         name = "master_custom_entity_near",
         label = CH and "自定义邻近实体" or "Custom nearby entity",
         options = {{description = CH and "无" or "None", data = ""}},
-        hover = CH and "输入你感兴趣的实体，以及想约束基地距离它的最小距离，用“实体:距离”表示你的某个要求，用分号分隔不同的要求。（注意冒号和分号都需要是英文输入法输入）\n这里的距离仍然以地皮为单位。例如为：beefalo:15;moose_nesting_ground:10;\n你可以订阅我发布的另一个模组“文本模组配置”，来直接在配置界面输入" or 
-        "Enter the name of the entity you are interested in, and the minimum distance you want to constrain the base from it, use 'entity:distance' to represent your requirements, and use semicolons to separate different requirements.\nHere the distance is still in tiles. For example: beefalo:15;moose_nesting_ground:10;\nYou can subscribe to another mod I released, 'Mod Config By Text', to enter directly in the configuration interface",
+        hover = CH and "输入实体及距离（地皮数），用“实体:距离”表示某个要求，用分号分隔不同要求(逗号、分号均为英文)。\n例如：beefalo:15;pond:10;\n你可以订阅模组“文本模组配置”，来直接在配置界面输入" or "Enter the entity and the distance (in tiles), use 'entity:distance' to represent your requirements, and use semicolons to separate different requirements (both comma and semicolon are in English).\nFor example: beefalo:15;moose_nesting_ground:10;\nYou can subscribe to another mod I released, 'Mod Config By Text', to enter directly in the configuration interface",
         default = "",
         is_text_config = true
     },
@@ -695,8 +777,7 @@ configuration_options = {
         name = "master_custom_entity_far",
         label = CH and "自定义远离实体" or "Custom far away entity",
         options = {{description = CH and "无" or "None", data = ""}},
-        hover = CH and "输入你感兴趣的实体，以及想约束基地距离它的最小距离，用“实体:距离”表示你的某个要求，用分号分隔不同的要求。（注意冒号和分号都需要是英文输入法输入）\n这里的距离仍然以地皮为单位。例如为：beefalo:15;moose_nesting_ground:10;\n你可以订阅我发布的另一个模组“文本模组配置”，来直接在配置界面输入" or
-        "Enter the name of the entity you are interested in, and the minimum distance you want to constrain the base from it, use 'entity:distance' to represent your requirements, and use semicolons to separate different requirements.\nHere the distance is still in tiles. For example: beefalo:15;moose_nesting_ground:10;\nYou can subscribe to another mod I released, 'Mod Config By Text', to enter directly in the configuration interface",
+        hover = CH and "输入实体及距离（地皮数），用“实体:距离”表示某个要求，用分号分隔不同要求(逗号、分号均为英文)。\n例如：beefalo:15;pond:10;\n你可以订阅模组“文本模组配置”，来直接在配置界面输入" or "Enter the entity and the distance (in tiles), use 'entity:distance' to represent your requirements, and use semicolons to separate different requirements (both comma and semicolon are in English).\nFor example: beefalo:15;moose_nesting_ground:10;\nYou can subscribe to another mod I released, 'Mod Config By Text', to enter directly in the configuration interface",
         default = "",
         is_text_config = true
     },
@@ -936,7 +1017,8 @@ configuration_options = {
     },
     {
         name = "cave_ruins_statue_gem",
-        label = CH and "远古雕像（带宝石）.实际上这是由房间个数决定的，你也可以通过“定制远古房间”实现类似的效果" or "Ruins Statue Mage(w/ gem). In fact, this is determined by the number of rooms, you can also achieve similar effects through 'Custom rooms'",
+        label = CH and "远古雕像（带宝石）" or "Ruins Statue Mage(w/ gem)",
+        hover = CH and "带宝石的雕像个数，实际上这是由房间个数决定的，你也可以通过“定制远古房间”实现类似的效果" or "Ruins Statue Mage(w/ gem). In fact, this is determined by the number of rooms, you can also achieve similar effects through 'Custom rooms'",
         options = eighty_num_options,
         default = "not set",
     },
@@ -945,8 +1027,7 @@ configuration_options = {
         name = "cave_custom_entity_num",
         label = CH and "自定义实体数量" or "Custom entity number",
         options = {{description = CH and "无" or "None", data = ""}},
-        hover = CH and "输入你感兴趣的实体，以及它的最小数量，用“实体:数量”表示你的某个要求，用分号分隔不同的要求。（注意冒号和分号都需要是英文输入法输入）\n例如为：beefalo:1;moose_nesting_ground:2;\n你可以订阅我发布的另一个模组“文本模组配置”，来直接在配置界面输入" or 
-        "Enter the name of the entity you are interested in, and its minimal number, use 'entity:number' to represent your requirements, and use semicolons to separate different requirements.\nFor example: beefalo:1;moose_nesting_ground:2;\nYou can subscribe to another mod I released, 'Mod Config By Text', to enter directly in the configuration interface",
+        hover = CH and "输入实体和数量，用“实体:数量”表示单个要求，用分号分隔不同的要求。（注意是英文冒号和分号）\n例如为：beefalo:1;moose_nesting_ground:2;\n你可以订阅另一个模组“文本模组配置”，来直接在配置界面输入" or "Enter the entity and the number, use 'entity:number' to represent a single requirement, and use semicolons to separate different requirements. (Note that it is an English colon and semicolon)\nFor example: beefalo:1;moose_nesting_ground:2;\nYou can subscribe to another mod I released, 'Mod Config By Text', to enter directly in the configuration interface",
         default = "",
         is_text_config = true
     },
@@ -1032,20 +1113,13 @@ configuration_options = {
         hover = Barracks_hover,
     },
     AddSectionTitle(CH and "地下特殊要求" or "Cave Special requirements"),
-    {
-        name = "cave_connected_ancient_title",
-        label = CH and "远古靠近楼梯" or "",
-        options = {{description = "", data = 0}},
-        tags = {"ignore"},
-        hover = CH and "楼梯靠近远古，这里靠近远古是通过检查楼梯附近是否有雕像/迷宫箱子/远古守护者来判断。在下面的选项中设置你的倾向。\n如果设置多个，例如雕像与箱子设置为真，则靠近二者之一即视为满足条件" or "Ancient near the stairs, here near the ancient is judged by checking whether there are statues/maze boxes/ancient guardians near the stairs. Set your preference in the options below.\nIf set to multiple, such as statues and boxes set to true, near either is considered to meet the conditions",
-        default = "",
-    },
+    AddSectionTitle(CH and "远古靠近楼梯" or "Ancient near stair"),
     {
         name = "cave_connected_ancient",
         label = CH and "楼梯与的远古距离" or "stairs & ancient distance",
         options = connect_ancient_options,
         default = "not set",
-        hover = CH and "设置你期望的楼梯与远古的最小距离， 当设置为20地皮时，(远古用雕像和迷宫箱子表示时)需要花费500倍的时间。\n这里远古的含义由下面的选项指定，彼此之间是“或”的关系" or "Set the minimum distance you expect between the stairs and the ancients, when set to 20 tiles, (when the ancients are represented by statues and maze boxes) it takes 500 times longer.\nThe meaning of the ancient is specified by the options below, and they are 'or' to each other",
+        hover = CH and "设置你期望的楼梯与远古的最小距离。\n这里远古的含义由下面的选项指定，彼此之间是“或”的关系" or "Set the minimum distance you expect between the stairs and the ancients,\nThe meaning of the ancient is specified by the options below, and they are 'or' to each other",
     },
     {
 
@@ -1088,5 +1162,46 @@ configuration_options = {
         },
         default = false,
         hover = CH and "设定为是，则如果有远古守护者靠近楼梯，即视为“远古靠近楼梯”。\n如果你还设置了雕像/迷宫箱子，那么靠近其中之一即视作条件满足" or "If set to yes, if there is a Minotaur near the stairs, it is considered as 'Ancient near Sinkhole'\nIf you also set the statues/maze boxes, then near one of them is considered to meet the conditions",
-    }
+    },
+    {
+		name = "cave other setting",
+		label = CH and "其他设置" or "Other Settings",
+		options = {{description = "", data = 0}},
+		default = 0,
+		-- tags = {"ignore"},
+	},
+    {
+        name = "cave_repeat_times",
+        label = CH and "重复次数" or "Repeat times",
+        -- options = repeat_options,
+        options = {
+            {description = CH and "1次" or "1 times", data = 1},
+            {description = CH and "10次" or "10 times", data = 10},
+            {description = CH and "50次" or "50 times", data = 50},
+            {description = CH and "100次" or "100 times", data = 100},
+            {description = CH and "200次" or "200 times", data = 200},
+            {description = CH and "500次" or "500 times", data = 500},
+            {description = CH and "1000次" or "1000 times", data = 1000},
+            {description = CH and "2000次" or "2000 times", data = 2000},
+            {description = CH and "5000次" or "5000 times", data = 5000},
+            {description = CH and "10000次" or "10000 times", data = 10000},
+            {description = CH and "20000次" or "20000 times", data = 20000},
+            {description = CH and "50000次" or "50000 times", data = 50000},
+            {description = CH and "100000次" or "100000 times", data = 100000},
+            {description = CH and "无限次" or "Infinite times", data = 2147483647},
+        },
+        default = 1,
+        is_text_config = true,
+        hover = CH and "生成指定个符合其他约束条件的地图，如果你需要一次性搜索多个洞穴地图，这可能有用" or "Generate the specified number of maps that meet other constraints, if you need to search for multiple cave maps at once, this may be useful",
+    },
+    {
+        name = "ignore_error_cave",
+        label = CH and "忽略崩溃" or "Ignore Crashing",
+        options = {
+            {description = CH and "否" or "no", data = false, hover = CH and "在生成失败时停止" or "Stop when generation fails"},
+            {description = CH and "是" or "yes", data = true,  hover = CH and "这可能会掩盖问题，持续出现的问题会导致永远无法生成" or "This may mask the problem, persistent problems will cause generating forever"},
+        },
+        default = false,
+        hover = CH and "有时候游戏本身或其他mod的bug会导致生成失败，这个选项让你可以在失败时继续" or "Sometimes the game itself or bugs in other mods can cause generation to fail, this option allows you to continue",
+    },
 }

@@ -2,6 +2,10 @@ local assets =
 {
     Asset("ANIM", "anim/crystal_scepter.zip"),
     Asset("ANIM", "anim/swap_crystal_scepter.zip"),
+
+    Asset("ANIM", "anim/crystal_scepter_skin_frost_pain.zip"),
+    Asset("ANIM", "anim/swap_crystal_scepter_skin_frost_pain.zip"),
+    Asset( "ATLAS", "images/inventoryimages/crystal_scepter_skin_frost_pain.xml" ),
 }
 
 local prefabs =
@@ -11,10 +15,28 @@ local prefabs =
 }
 
 local function onequip(inst, owner)
-    owner.AnimState:OverrideSymbol("swap_object", "swap_crystal_scepter", "swap_crystal_scepter")
+    local skin_build = inst:GetSkinBuild()
+	if skin_build ~= nil then
+		owner:PushEvent("equipskinneditem", inst:GetSkinName())
+		owner.AnimState:OverrideItemSkinSymbol("swap_object", "swap_"..skin_build, "swap_"..skin_build, inst.GUID, 'swap_crystal_scepter')
+	else
+		owner.AnimState:OverrideSymbol("swap_object", "swap_crystal_scepter", "swap_crystal_scepter")
+	end
 
     owner.AnimState:Show("ARM_carry")
     owner.AnimState:Hide("ARM_normal")
+
+    if inst._crystal_scepter_fx and inst._crystal_scepter_fx:IsValid() then
+        inst._crystal_scepter_fx:Remove()
+        inst._crystal_scepter_fx = nil
+    end
+
+    if skin_build == 'crystal_scepter_skin_frost_pain' then
+        inst._crystal_scepter_fx = SpawnPrefab('cane_candy_fx')
+        inst._crystal_scepter_fx.entity:SetParent(owner.entity)
+        inst._crystal_scepter_fx.entity:AddFollower()
+        inst._crystal_scepter_fx.Follower:FollowSymbol(owner.GUID,'swap_object',nil, nil, nil, true)
+    end
 
     --[[if inst.components.rechargeable:GetTimeToCharge() < 2 then
         inst.components.rechargeable:Discharge(2)
@@ -24,6 +46,16 @@ end
 local function onunequip(inst, owner)
     owner.AnimState:Hide("ARM_carry")
     owner.AnimState:Show("ARM_normal")
+
+    local skin_build = inst:GetSkinBuild()
+	if skin_build ~= nil then
+		owner:PushEvent("unequipskinneditem", inst:GetSkinName())
+	end
+
+    if inst._crystal_scepter_fx and inst._crystal_scepter_fx:IsValid() then
+        inst._crystal_scepter_fx:Remove()
+        inst._crystal_scepter_fx = nil
+    end
 end
 
 local function OnDischarged(inst)
@@ -146,7 +178,7 @@ local function fn()
         end
 
         if target.sg ~= nil and not target.sg:HasStateTag("frozen") then
-            target:PushEvent("attacked", { attacker = attacker, weapon = inst })
+            target:PushEvent("attacked", { attacker = attacker, weapon = inst ,damage = 0})
         end
 
         if target.components.freezable ~= nil then

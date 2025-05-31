@@ -2,9 +2,9 @@
 
 local modid = 'lol_wp'
 
-local data = _require('core_'..modid..'/data/recipes')
+local data,destruction_recipes = _require('core_'..modid..'/data/recipes')
 
 API.RECIPE:addRecipeFilter('TAB_LOL_WP','images/tab_lol_wp.xml','tab_lol_wp.tex',STRINGS.MOD_LOL_WP.FILTERS.TAB_LOL_WP)
 
-API.RECIPE:main(data)
+API.RECIPE:main(data,destruction_recipes)
 

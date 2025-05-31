@@ -20,6 +20,12 @@ local WXFoodIndustry = Class(function(self, inst)
     self.halt = false
 end)
 
+local containerList =
+{
+    "treasurechest",
+    "treasurechest_upgraded",
+}
+
 local function HasRecipes(inst, recipe, num)
     local raw_enough, raw_found = inst.components.inventory:Has(recipe, 1)
     local cooked_enough, cooked_found = inst.components.inventory:Has(recipe.."_cooked", 1)
@@ -1830,7 +1836,7 @@ function WXFoodIndustry:StoreDishes()
             -- Smart Signed Chest
             local smartchest = FindEntity(sentryward, SEE_WORK_DIST, function(ent)
                 local _, firstitem = next(ent.components.container.slots)
-                return ent.prefab == "treasurechest" and
+                return table.contains(containerList, ent.prefab) and
                     ent.components.smart_minisign ~= nil and ent.components.smart_minisign.sign ~= nil and
                     ent.components.container ~= nil and not ent.components.container:IsFull() and
                     firstitem ~= nil and firstitem.prefab == rot.prefab
@@ -1841,13 +1847,13 @@ function WXFoodIndustry:StoreDishes()
             -- Allocated Smart Signed Chest
             local allocatedsmartchest = FindEntity(sentryward, SEE_WORK_DIST, function(ent)
                 local _, firstitem = next(ent.components.container.slots)
-                return ent.prefab == "treasurechest" and
+                return table.contains(containerList, ent.prefab) and
                     ent.components.smart_minisign ~= nil and ent.components.smart_minisign.sign ~= nil and
                     firstitem ~= nil and firstitem.prefab == rot.prefab
             end, FIND_CONTAINER_MUST_TAGS)
             -- Empty Smart Signed Chest
             local emptysmartchest = FindEntity(sentryward, SEE_WORK_DIST, function(ent)
-                return ent.prefab == "treasurechest" and
+                return table.contains(containerList, ent.prefab) and
                     ent.components.smart_minisign ~= nil and ent.components.smart_minisign.sign ~= nil and
                     ent.components.container ~= nil and next(ent.components.container.slots) == nil
             end, FIND_CONTAINER_MUST_TAGS)
@@ -1856,7 +1862,7 @@ function WXFoodIndustry:StoreDishes()
             end
             -- Signed Chest
             local signedchest = FindEntity(sentryward, SEE_WORK_DIST, function(ent)
-                return ent.prefab == "treasurechest" and ent.components.container ~= nil and not ent.components.container:IsFull() and
+                return table.contains(containerList, ent.prefab) and ent.components.container ~= nil and not ent.components.container:IsFull() and
                     FindEntity(ent, .5, function(sign)
                         return sign.components.drawable ~= nil and sign.components.drawable:GetImage() == rot.prefab
                     end, FIND_SIGN_MUST_TAGS)
@@ -1866,7 +1872,7 @@ function WXFoodIndustry:StoreDishes()
             end
             -- Unsigned Chest
             local unsignedchest = FindEntity(sentryward, SEE_WORK_DIST, function(ent)
-                return ent.prefab == "treasurechest" and ent.components.container ~= nil and
+                return table.contains(containerList, ent.prefab) and ent.components.container ~= nil and
                     ent.components.container:Has(rot.prefab, 1) and
                     FindEntity(ent, .5, function(sign) return sign.components.drawable ~= nil end, FIND_SIGN_MUST_TAGS) == nil
             end, FIND_CONTAINER_MUST_TAGS)
@@ -1875,14 +1881,14 @@ function WXFoodIndustry:StoreDishes()
             end
             -- Any Signed Chest
             local anysignedchest = FindEntity(sentryward, SEE_WORK_DIST, function(ent)
-                return ent.prefab == "treasurechest" and ent.components.container ~= nil and
+                return table.contains(containerList, ent.prefab) and ent.components.container ~= nil and
                     FindEntity(ent, .5, function(sign)
                         return sign.components.drawable ~= nil and sign.components.drawable:GetImage() == rot.prefab
                     end, FIND_SIGN_MUST_TAGS)
             end, FIND_CONTAINER_MUST_TAGS)
             -- Empty Chest
             local emptychest = FindEntity(sentryward, SEE_WORK_DIST, function(ent)
-                return ent.prefab == "treasurechest" and ent.components.container ~= nil and ent.components.container:IsEmpty() and
+                return table.contains(containerList, ent.prefab) and ent.components.container ~= nil and ent.components.container:IsEmpty() and
                     FindEntity(ent, .5, function(sign) return sign.components.drawable ~= nil end, FIND_SIGN_MUST_TAGS) == nil
             end, FIND_CONTAINER_MUST_TAGS)
             if unsignedchest == nil and anysignedchest == nil and emptychest ~= nil then

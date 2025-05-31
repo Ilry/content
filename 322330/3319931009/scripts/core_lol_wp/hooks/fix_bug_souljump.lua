@@ -5,9 +5,12 @@ local WEAPONS_NOT_ALLOW_SOUL_JUMP = {
 	nashor_tooth = true, -- 纳什之牙
 	gallop_brokenking = true, -- 破败王者之刃
 	gallop_ad_destroyer = true, -- 挺进破坏者
+	lol_wp_s12_malignance = true, -- 焚天
 
 	-- 处理优先级
 	lol_wp_s7_doranshield = true, -- 多兰之盾
+	lol_wp_s10_guinsoo = true,
+	lol_wp_s10_sunfireaegis = true,
 }
 
 AddPlayerPostInit(function(inst)

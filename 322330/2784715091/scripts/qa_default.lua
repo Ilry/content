@@ -30,6 +30,7 @@ GLOBAL.STRINGS.NOMU_QA = {
     TITLE_TEXT_SURE_TO_APPLY_SCHEME = '确认启用方案：{NAME}？',
     TITLE_TEXT_SURE_TO_SAVE_APPLY_SCHEME = '确认保存并启用方案：{NAME}？',
     TITLE_TEXT_SCHEME_FILENAME = '请输入方案文件名',
+    JSON_NEEDED = '文件名需以".json"结尾',
 
     BUTTON_TEXT_APPLY = '应用',
     BUTTON_TEXT_CLOSE = '关闭',

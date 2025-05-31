@@ -110,6 +110,11 @@ return {
 
 	-------------------------------------------------------------------------------------------------------------------------
 	
+	-- acidbatwavemanager.lua
+	acidbatwavemanager = {
+		next_wave_spawn = "<prefab=bat> raid (%d) arrives in %s"
+	},
+	
 	-- alterguardianhat.lua [Prefab]
 	alterguardianhat = {
 		minimum_sanity = "빛을 위한 최소 <color=SANITY>정신력</color>: <color=SANITY>%s</color> (<color=SANITY>%s%%</color>)",
@@ -332,6 +337,12 @@ return {
 		},
 	},
 
+	-- compostingbin.lua
+	compostingbin = {
+		contents_amount = "Material: %s / %s",
+		detailed_contents_amount = "Material: <color=NATURE>%s<sub>Green</sub></color> + <color=INEDIBLE>%s<sub>Brown</sub></color> / %s",
+	},
+
 	-- container.lua
 	container = {
 		
@@ -406,6 +417,10 @@ return {
 			description = "수면 <color=MONSTER>내성 증가</color>, {duration}(초) 지속.",
 		},
 		
+		["healingsalve_acidbuff"] = {
+			name = "<color=#ded15e>Acid Resistance</color>",
+			description = "Immune to <color=#ded15e>acid rain</color> for {duration}(s)."
+		},
 		["tillweedsalve_buff"] = {
 			name = "<color=HEALTH>체력 재생</color>",
 			description = "<color=HEALTH>{amount} 체력 재생</color>, {duration}(초) 지속.",
@@ -689,6 +704,11 @@ return {
 		held_refuel = "<color=SWEETENER><prefab=%s></color> 사용 시 <color=LIGHT>%s%%</color> 연료 보충.",
 	},
 
+	-- gelblobspawner.lua
+	gelblobspawner = {
+
+	},
+
 	-- ghostlybond.lua
 	ghostlybond = {
 		abigail = "<color=%s>자매의 유대감</color>: %s / %s",
@@ -767,6 +787,9 @@ return {
 	hounded = {
 		time_until_hounds = "<prefab=hound>이(가) %s 후에 공격합니다.",
 		time_until_worms = "<prefab=worm>이(가) %s 후에 공격합니다.",
+		time_until_worm_boss = "<prefab=worm_boss>이(가) %s 후에 공격합니다.",
+		time_until_crocodog = "<prefab=crocodog>이(가) %s 후에 공격합니다.",
+		worm_boss_chance = "<prefab=worm_boss> chance: %.1f%%",
 	},
 
 	-- hunger.lua
@@ -805,6 +828,11 @@ return {
 		hands_describe = "[도구]: ",
 	},
 
+	-- itemmimic.lua
+	itemmimic = {
+		time_to_reveal = "<prefab=itemmimic_revealed> reveal in: %s",
+	},
+
 	-- kitcoonden.lua
 	kitcoonden = {
 		number_of_kitcoons = "킷쿤 수: %s"
@@ -831,6 +859,11 @@ return {
 
 	-- lightninggoat.lua
 	lightninggoat_charge = "%s 일 후 방전.",
+
+	-- linkeditem.lua
+	linkeditem = {
+		owner = "Owner: %s",
+	},
 
 	-- lunarrift_portal.lua [Prefab]
 	lunarrift_portal = {
@@ -1062,6 +1095,13 @@ return {
 		},
 	},
 
+	-- rabbitkingmanager.lua
+	rabbitkingmanager = {
+		carrots = "<color=VEGGIE>Carrots</color>: <color=VEGGIE>%d</color> / <color=VEGGIE>%d</color>",
+		naughtiness = "Naughtiness: %d / %d",
+		king_status = "%s is alive.", -- Gets a prefab tag inserted with king type.
+	},
+
 	-- rainometer.lua [Prefab]
 	global_wetness = "<color=FROZEN>세계 습도</color>: <color=FROZEN>%s</color>",
 	precipitation_rate = "<color=WET>강수율</color>: <color=WET>%s</color>",
@@ -1164,6 +1204,18 @@ return {
 		total_shadow_level = "<color=BLACK>그림자 레벨 총합</color>: %s",
 	},
 
+	-- shadowparasitemanager.lua
+	shadowparasitemanager = {
+		num_waves = "Waves: %d",
+	}, 
+
+	-- shadow_battleaxe.lua [Prefab]
+	shadow_battleaxe = {
+		level = "Level: %s / %s",
+		boss_progress = "Defeated Bosses: %s / %s",
+		lifesteal = "<color=HEALTH>Life Steal</color>: <color=HEALTH>%.2f</color> (<color=SANITY>%.2f</color>)",
+	},
+
 	-- shadowrift_portal.lua [Prefab]
 	shadowrift_portal = {
 		close = "<prefab=SHADOWRIFT_PORTAL>이(가) %s 후 닫힘.",
@@ -1178,11 +1230,18 @@ return {
 		},
 	},
 
+	-- shadowthrall_mimics.lua
+	shadowthrall_mimics = {
+		mimic_count = "<string=UI.CUSTOMIZATIONSCREEN.ITEMMIMICS>: %s / %s",
+		next_spawn = "<prefab=itemmimic_revealed> will try to spawn in %s",
+	},
+
 	-- shadowthrallmanager.lua
 	shadowthrallmanager = {
 		fissure_cooldown = "다음 균열 활성화 준비까지: %s",
 		waiting_for_players = "플레이어가 근처에 올 때까지 기다리는 중.",
 		thrall_count = "<color=MOB_SPAWN><prefab=SHADOWTHRALL_HANDS></color>: %d",
+		thralls_alive = "<color=MOB_SPAWN>Thralls alive (%d)</color>: %s",
 		dreadstone_regen = "<color=#942429><prefab=DREADSTONE></color> 재생성까지: %s",
 	},
 
@@ -1262,8 +1321,24 @@ return {
 	-- stickable.lua
 	stickable = "<color=FISH>조개 더미</color>: %s",
 
+	-- support_pillar.lua [Prefab]
+	support_pillar = {
+		reinforcement = "Reinforcement: %s / %s",
+		durability = "Durability: %s / %s",
+	},
+
+	-- support_pillar_dreadstone.lua [Prefab]
+	support_pillar_dreadstone = {
+		time_until_reinforcement_regen = "Next regeneration: %s",
+	},
+
 	-- temperature.lua
 	temperature = "온도: <temperature=%s>",
+
+	-- tentacle_pillar_hole.lua [Prefab]
+	tentacle_pillar_hole = {
+		immunity_time = "<prefab=tentacle> immunity time: %s",
+	},
 
 	-- terrarium.lua [Prefab]
 	terrarium = {
@@ -1311,7 +1386,7 @@ return {
 	upgrademodule = {
 		module_describers = {
 			maxhealth = "<color=HEALTH>최대 체력</color> <color=HEALTH>%d</color> 증가.",
-			maxsanity = "color=SANITY>최대 정신력</color> <color=SANITY>%d</color> 증가.",
+			maxsanity = "<color=SANITY>최대 정신력</color> <color=SANITY>%d</color> 증가.",
 			movespeed = "<color=DAIRY>이동 속도</color> %s 증가.",
 			heat = "<color=#cc0000>최저 체온</color> <color=#cc0000>%d</color> 증가 (동결 면역).",
 			heat_drying = "<color=#cc000>건조 속도</color> <color=#cc0000>%.1f</color> 증가.",
@@ -1319,7 +1394,7 @@ return {
 			taser = "피격 시 적에게 <color=WET>%d</color> %s 반사 (쿨타임: %.1f).",
 			light = "<color=LIGHT>발광 반경</color> <color=LIGHT>%.1f</color> 제공, (2개 장착 시 <color=LIGHT>%.1f</color> 반경 추가)",
 			maxhunger = "<color=HUNGER>최대 허기</color> <color=HUNGER>%d</color> 증가.",
-			music = "color=SANITY>정신력 오라</color> <color=SANITY>%+.1f/분</color> 제공, 범위: <color=SANITY>%.1f</color> 타일.",
+			music = "<color=SANITY>정신력 오라</color> <color=SANITY>%+.1f/분</color> 제공, 범위: <color=SANITY>%.1f</color> 타일.",
 			music_tend = "주변 식물에게 말을 걸어줌, <color=NATURE>%.1f</color> 타일.",
 			bee = "<color=HEALTH>%d 체력 재생/%d초</color> (<color=HEALTH>%d/일</color>).",
 		},

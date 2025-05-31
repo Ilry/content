@@ -30,6 +30,7 @@ kinds["beefalo"] =
     menuoffset = Vector3(6, -70, 0),
 	maxcharacters = TUNING.BEEFALO_NAMING_MAX_LENGTH,
 
+
     defaulttext = function(inst, doer)
         return subfmt(STRINGS.NAMES.BEEFALO_BUDDY_NAME, { buddy = doer.name })
     end,
@@ -54,22 +55,24 @@ kinds["beefalo"] =
     },
 }
 
-kinds["bundles"] = {
-    prompt = "Name This Bundle",
+kinds["wendy_recipe_gravestone"] =
+{
+    prompt = STRINGS.SIGNS.MENU.PROMPT_GRAVESTONE,
     animbank = "ui_board_5x3",
     animbuild = "ui_board_5x3",
     menuoffset = Vector3(6, -70, 0),
 
+    defaulttext = function(inst, doer)
+        return STRINGS.WENDY_EPITAPHS[math.random(#STRINGS.WENDY_EPITAPHS)]
+    end,
+
     cancelbtn = { text = STRINGS.SIGNS.MENU.CANCEL, cb = nil, control = CONTROL_CANCEL },
     middlebtn = { text = STRINGS.SIGNS.MENU.RANDOM, cb = function(inst, doer, widget)
-            widget:OverrideText( SignGenerator(inst, doer) )
+            local epitaph_index = math.random(#STRINGS.WENDY_EPITAPHS)
+            widget:OverrideText( STRINGS.WENDY_EPITAPHS[epitaph_index] )
         end, control = CONTROL_MENU_MISC_2 },
     acceptbtn = { text = STRINGS.SIGNS.MENU.ACCEPT, cb = nil, control = CONTROL_ACCEPT },
-
-    --defaulttext = SignGenerator,
 }
-kinds["bundle"] = kinds["bundles"]
-kinds["gift"] = kinds["bundles"]
 
 kinds["driftwood"] = {
     prompt = STRINGS.SIGNS.MENU.PROMPT,

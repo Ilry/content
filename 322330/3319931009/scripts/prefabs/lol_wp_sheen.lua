@@ -66,6 +66,8 @@ local function fn()
 
     inst:AddTag("nosteal")
 
+    inst:AddTag('lunar_aligned')
+
     -- inst.MiniMapEntity:SetIcon(prefab_id..".tex")
 
     if not TheWorld.ismastersim then 

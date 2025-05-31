@@ -1,185 +1,233 @@
-local BLACK = { 0, 0, 0, 1 }
-local BLUE = { 0, 0, 1, 1 } -- cold
-local GREEN = { 0, 1, 0, 1 }
-local CYAN = { 0, 1, 1, 1 } -- light
-local RED = { 1, 0, 0, 1 } -- heat
-local PINK = { 1, 0, 1, 1 } -- attack
-local YELLOW = { 1, 1, 0, 1 }
-local WHITE = { 1, 1, 1, 1 }
+-- stylua: ignore
+local COLOR = {
+  black  = { 0, 0, 0, 1 },
+  blue   = { 0, 0, 1, 1 }, -- cold,
+  green  = { 0, 1, 0, 1 },
+  cyan   = { 0, 1, 1, 1 }, -- light
+  red    = { 1, 0, 0, 1 }, -- heat
+  pink   = { 1, 0, 1, 1 }, -- attack
+  yellow = { 1, 1, 0, 1 },
+  white  = { 1, 1, 1, 1 }, -- default
+}
+function GetColor(name) return GLOBAL.unpack(COLOR[name] or COLOR.white) end
 
-local data = {} -- circle(s) of all possible prefab
+TUNING.RANGE_INDICATOR = { data = { click = {}, place = {}, hover = {} } }
+local data = TUNING.RANGE_INDICATOR.data
+local function Circle(feature, prefabs, radius, color, name)
+  local data = data[feature]
+  local prefab_suffix = feature == 'place' and '_placer' or ''
+  for _, prefab in ipairs(type(prefabs) == 'table' and prefabs or { prefabs }) do
+    local prefab = prefab .. prefab_suffix
+    if not data[prefab] then data[prefab] = {} end
+    local data = data[prefab]
+    for _, r in ipairs(type(radius) == 'table' and radius or { radius }) do
+      data[name or (#data + 1)] = { radius = r, color = color }
+    end
+  end
+end
 
+TUNING.RANGE_INDICATOR.IS_STANDALONE = {}
+local function Standalone(prefab) TUNING.RANGE_INDICATOR.IS_STANDALONE[prefab] = true end
+
+--------------------------------------------------------------------------------
+-- Feature: Click to Toggle
+
+local function Click(...) Circle('click', ...) end
+
+-- Nautopilot and Nautopilot Beacon
+Click({ 'boat_magnet', 'boat_magnet_beacon' }, 24, 'yellow')
+-- Cactus: regrowth
+Click({ 'cactus', 'oasis_cactus' }, 20)
+-- Hollow Stump: regrowth
+Click('catcoonden', 20)
+-- Cave Banana Tree: regrowth
+Click('cave_banana_tree', 20)
 -- Cuckoo Spinwheel: block birds
-data.carnivalgame_wheelspin_station = { { radius = 4, color = YELLOW } }
+Click('carnivalgame_wheelspin_station', 4, 'yellow')
+-- Cannon Tower
+Click('crabking_cannontower', 15, 'pink')
+-- Gem Deer: Cast magical circle
+Click('deer_blue', 15, 'blue')
+Click('deer_red', 15, 'red') -- DEER_GEMMED_CAST_MAX_RANGE rather than 12 from DEER_GEMMED_CAST_RANGE
 -- Ice Crystaleyezer: freeze/light, generate Mini Glacier, cold
-data.deerclopseyeball_sentryward = {
-  { radius = 3.5, color = CYAN },
-  { radius = 5, color = WHITE },
-  { radius = 12, color = WHITE },
-  { radius = 35, color = BLUE },
-}
+Click('deerclopseyeball_sentryward', 3.5, 'cyan')
+Click('deerclopseyeball_sentryward', { 5, 12 })
+Click('deerclopseyeball_sentryward', 35, 'blue')
 -- Scaled Furnace: heat
-data.dragonflyfurnace = { { radius = 9.5, color = RED } }
+Click('dragonflyfurnace', 9.5, 'red')
 -- Houndius Shootius
-data.eyeturret = { { radius = 18, color = PINK } }
+Click('eyeturret', 18, 'pink')
 -- Ice Flingomatic
-data.firesuppressor = { { radius = 15, color = WHITE } }
--- Gunpowder
-data.gunpowder = { { radius = 3, color = PINK } }
+Click('firesuppressor', 15)
+-- Flower, Rose, Evil Flower: simplified model of honey production range
+Click({ 'flower', 'flower_rose', 'flower_evil' }, 42, 'yellow')
+-- Light Flower: regrowth
+Click({ 'flower_cave', 'flower_cave_double', 'flower_cave_triple', 'lightflier_flower' }, 20)
+-- Gunpowder, Slurtle Slime: Explosion
+Click({ 'gunpowder', 'slurtleslime' }, 3, 'pink')
+-- Sign, Directional Sign: block Lunar/Shadow Rift
+Click({ 'homesign', 'arrowsign_post' }, 24)
 -- Magma: heat
-data.lava_pond = { { radius = 10, color = RED } }
+Click('lava_pond', 10, 'red')
 -- Treeguard Idol
-data.leif_idol = { { radius = 10, color = GREEN } }
+Click('leif_idol', 10, 'green')
 -- Lightning Rod
-data.lightning_rod = { { radius = 40, color = YELLOW } }
+Click('lightning_rod', 40, 'yellow')
+Standalone('lightning_rod')
 -- Deadly Brightshade, Grass, (Lunar) Sapling: Brightshade aggro and protect infection
-data.lunarthrall_plant = { { radius = 12, color = PINK }, { radius = 30, color = GREEN } }
-for _, prefab in ipairs({ 'grass', 'sapling', 'sapling_moon' }) do
-  data[prefab] = data.lunarthrall_plant
-end
+Click({ 'lunarthrall_plant', 'grass', 'sapling', 'sapling_moon' }, 12, 'pink')
+Click({ 'lunarthrall_plant', 'grass', 'sapling', 'sapling_moon' }, 30, 'green')
+-- Queen of Moon Quay: Risk of Pirate Raid, Red/Yellow/Green for High/Med/Low.
+Click('monkeyqueen', 300, 'red')
+Click('monkeyqueen', 600, 'yellow')
+Click('monkeyqueen', 800, 'green')
+Standalone('monkeyqueen')
 -- Celestial Altar/Sanctum/Tribute/Fissure: max linking distance between two Lunar Altars
-data.moon_altar = { { radius = 20, color = BLACK } }
-for _, prefab in ipairs({ 'moon_altar_astral', 'moon_altar_cosmic', 'moon_fissure' }) do
-  data[prefab] = data.moon_altar
-end
--- Moon Stone: cold (with a Moon Caller's Staff)
-data.moonbase = { { radius = 8, color = BLUE } }
+Click({ 'moon_altar', 'moon_altar_astral', 'moon_altar_cosmic', 'moon_fissure' }, 20, 'black')
+-- Mysterious Energy, Lunar Siphonator: max range of meteors when spawning Celestial Champion
+Click('moon_altar_link', 19, 'pink')
+Click({ 'moon_device_construction1', 'moon_device_construction2', 'moon_device_construction3' }, 19, 'pink')
+-- Moon Stone: cold (with a Moon Caller's Staff), attract Hounds and Werepigs
+Click('moonbase', 8, 'blue')
+Click('moonbase', 30)
 -- Mushlight, Glowcap: max light range
-data.mushroom_light = { { radius = 11.5, color = CYAN } }
-data.mushroom_light2 = { { radius = 10.7, color = CYAN } }
+Click('mushroom_light', 11.5, 'cyan')
+Click('mushroom_light2', 10.7, 'cyan')
 -- (Superior) Communal Kelp Dish: make Merms respawn faster
-data.offering_pot = { { radius = 7, color = GREEN } }
-data.offering_pot_upgraded = data.offering_pot
+Click({ 'offering_pot', 'offering_pot_upgraded' }, 7, 'green')
 -- Gramophone, Shell Bell: tend Farm Plants
-data.phonograph = { { radius = 8, color = GREEN } }
-data.singingshell_octave3 = { { radius = 2, color = GREEN } }
-data.singingshell_octave4 = data.singingshell_octave3
-data.singingshell_octave5 = data.singingshell_octave3
+Click('phonograph', 8, 'green')
+Click({ 'singingshell_octave3', 'singingshell_octave4', 'singingshell_octave5' }, 2, 'green')
+-- Pig King: The area around must be clear to initiate Wrestling Match
+Click('pigking', 12)
+-- Rabbit Hole: regrowth
+Click('rabbithole', 20)
+-- Red Mushroom, Green Mushroom, Blue Mushroom: regrowth
+Click({ 'red_mushroom', 'green_mushroom', 'blue_mushroom' }, 20)
+-- Reeds: regrowth
+Click('reeds', 20)
 -- Polar Light: cold
-data.staffcoldlight = { { radius = 8, color = BLUE } }
+Click('staffcoldlight', 8, 'blue')
 -- Dwarf Star: heat
-data.stafflight = { { radius = 10, color = RED } }
+Click('stafflight', 10, 'red')
 -- W.O.B.O.T. / W.I.N.bot
-data.storage_robot = { { radius = 15, color = YELLOW } }
-data.winona_storage_robot = data.storage_robot
+Click({ 'storage_robot', 'winona_storage_robot' }, 15, 'yellow')
+Standalone('storage_robot')
+Standalone('winona_storage_robot')
 -- Support Pillar, Dreadstone Pillar
-data.support_pillar = { { radius = 40, color = YELLOW } }
-data.support_pillar_dreadstone = data.support_pillar
+Click({ 'support_pillar', 'support_pillar_dreadstone' }, 40, 'yellow')
+Standalone('support_pillar')
+Standalone('support_pillar_dreadstone')
 -- Anenemy: attack, block birds
-data.trap_starfish = { { radius = 1.5, color = PINK }, { radius = 4, color = YELLOW } }
+Click('trap_starfish', 1.5, 'pink')
+Click('trap_starfish', 4, 'yellow')
 -- Umbralla: protection (while activated on the ground)
-data.voidcloth_umbrella = { { radius = 16, color = GREEN } }
+Click('voidcloth_umbrella', 16, 'green')
+-- Varg: howl and summon hounds
+Click('warg', 30) -- SPAWN_DIST from components/hounded.lua
+-- Killer Bee Hive
+Click('wasphive', 10, 'pink')
 -- Great Tree Trunk, Above-Average Tree Trunk, Knobbly Tree and Nut, Pinchin' Winch: canopy shade
-data.watertree_pillar = { { radius = 28, color = GREEN } }
-data.oceantree_pillar = { { radius = 22, color = GREEN } }
-for _, prefab in ipairs({ 'oceantree', 'oceantreenut', 'winch' }) do
-  data[prefab] = data.oceantree_pillar
-end
+Click('watertree_pillar', 28, 'green')
+Click({ 'oceantree_pillar', 'oceantree', 'oceantreenut', 'winch' }, 22, 'green')
 -- Winona's Catapult: min and max attack range
-data.winona_catapult = { { radius = 6, color = PINK }, { radius = 15, color = PINK } }
--- simplified model of honey production range
-data.beebox = {{ radius = 42, color = YELLOW }}
+Click('winona_catapult', { 6, 15 }, 'pink')
+-- Winona's Spotlight: normal and "spacious" light range
+Click('winona_spotlight', { 31, 37 }, 'cyan')
 
--- Feature: Click --------------------------------------------------------------
+--------------------------------------------------------------------------------
+-- Feature: Place
 
-local modifier_key = GetModConfigData('click_modifier')
-local mouse_button = GetModConfigData('mouse_button')
-if mouse_button == 'MOUSEBUTTON_LEFT' then mouse_button = 1000 end -- to fix backward compatibility
-if mouse_button == 'MOUSEBUTTON_RIGHT' then mouse_button = 1001 end
-if mouse_button == 'MOUSEBUTTON_MIDDLE' then mouse_button = 1002 end
-local can_click = {} -- support for clicked entity prefab
-for prefab, _ in pairs(data) do
-  can_click[prefab] = true
-end
-local auto_hide = GetModConfigData('auto_hide')
+local function Place(...) Circle('place', ...) end
 
--- Feature: Batch Toggle -------------------------------------------------------
+-- Nautopilot Kit
+Place('boat_magnet_kit', 24, 'yellow')
+-- Cuckoo Spinwheel: block birds
+Place('carnivalgame_wheelspin_kit', 4, 'yellow')
+-- Scaled Furnace: heat
+Place('dragonflyfurnace', 9.5, 'red')
+-- Anenemy Trap: attack, block birds
+Place('dug_trap_starfish', 1.5, 'pink')
+Place('dug_trap_starfish', 4, 'yellow')
+-- Houndius Shootius
+Place('eyeturret_item', 18, 'pink')
+-- Sign, Directional Sign: block Lunar/Shadow Rift
+Place({ 'homesign', 'arrowsign_post' }, 24)
+-- Lightning Rod
+Place('lightning_rod', 40, 'yellow')
+-- Incomplete Experiment: max range of meteors when spawning Celestial Champion
+Place('moon_device_construction1', 19, 'pink')
+-- Mushlight, Glowcap: max light range
+Place('mushroom_light', 11.5, 'cyan')
+Place('mushroom_light2', 10.7, 'cyan')
+-- Pinchin' Winch: Above-Average Tree Trunk's canopy shade
+Place('winch', 22, 'green')
 
-local batch_show_tags = { -- for search entities
-  'HASHEATER',
-  'eyeturret',
-  'lunarthrall_plant',
-  'shadecanopy',
-  'shadecanopysmall',
-  'structure',
-  'umbrella',
-}
+--------------------------------------------------------------------------------
+-- Feature: Hover
 
--- Feature: Deploy -------------------------------------------------------------
+local HOVER_BOOKS = GetModConfigData('hover_books')
+local HOVER_SONGS = GetModConfigData('hover_songs')
+local HOVER_OTHER = GetModConfigData('hover_other')
+TUNING.RANGE_INDICATOR.ENABLE_HOVER = HOVER_BOOKS or HOVER_SONGS or HOVER_OTHER
 
-local prefab_placer = {
-  'carnivalgame_wheelspin_kit', -- Cuckoo Spinwheel
-  'dragonflyfurnace', -- Scaled Furnace
-  'dug_trap_starfish', -- Anenemy Trap
-  'eyeturret_item', -- Houndius Shootius
-  'lightning_rod', -- Lightning Rod
-  'mushroom_light', -- Mushlight
-  'mushroom_light2', -- Glowcap
-  'winch', -- Pinchin' Winch
-  'beebox' -- beebox
-}
-for index, prefab in ipairs(prefab_placer) do
-  local original_prefab = prefab:gsub('^dug_', ''):gsub('_item$', ''):gsub('_kit$', '_station')
-  data[prefab .. '_placer'] = data[original_prefab] -- refer to the same circle(s)
-  prefab_placer[index] = prefab .. '_placer'
-end
+local function Hover(...) Circle('hover', ...) end
 
--- Feature: Hover --------------------------------------------------------------
-
-local enable_hover = false
-local can_hover = {} -- support for hovered inventory item prefab
-if GetModConfigData('hover_books') then
-  enable_hover = true
-  for prefab, circles in pairs({
-    book_birds = { { radius = 3, color = WHITE }, { radius = 11.5, color = WHITE } },
-    book_brimstone = { { radius = 3, color = PINK }, { radius = 15, color = PINK } },
-    book_fire = { { radius = 16, color = WHITE } },
-    book_fish = { { radius = 13, color = WHITE } }, -- 10 + 3 from prefabs/books.lua
-    book_gardening = { { radius = 30, color = GREEN } },
-    book_horticulture = { { radius = 30, color = GREEN } },
-    book_horticulture_upgraded = { { radius = 30, color = GREEN } },
-    book_light = { { radius = 3, color = CYAN } },
-    book_light_upgraded = { { radius = 3, color = CYAN } },
-    book_rain = { { radius = 4, color = GREEN } },
-    book_research_station = { { radius = 16, color = WHITE } },
-    book_silviculture = { { radius = 30, color = WHITE } },
-    book_sleep = { { radius = 30, color = GREEN } },
-    book_temperature = { { radius = 16, color = GREEN } },
-    book_tentacles = { { radius = 3, color = PINK }, { radius = 8.6, color = PINK } },
-    book_web = { { radius = 5.5, color = WHITE } },
-  }) do
-    can_hover[prefab] = true
-    data[prefab] = circles
-  end
-end
-if GetModConfigData('hover_other') then
-  enable_hover = true
-  for prefab, circles in pairs({
-    panflute = { { radius = 15, color = GREEN } }, -- Pan Flute
-  }) do
-    can_hover[prefab] = true
-    data[prefab] = circles
-  end
-  for _, prefab in ipairs({
-    'gunpowder', -- Gunpowder
-    'leif_idol', -- Treeguard Idol
-    'phonograph', -- Gramophone
-    'singingshell_octave3', -- Shell Bell (Baritone)
-    'singingshell_octave4', -- Shell Bell (Alto)
-    'singingshell_octave5', -- Shell Bell (Soprano)
-    'storage_robot', -- W.O.B.O.T.
-    'voidcloth_umbrella', -- Umbralla
-  }) do
-    if data[prefab] then can_hover[prefab] = true end
-  end
+if HOVER_BOOKS then
+  Hover('book_birds', { 3, 11.5 })
+  Hover('book_fire', 16, 'green')
+  Hover('book_fish', 13) -- 10 + 3 from prefabs/books.lua
+  Hover({ 'book_gardening', 'book_silviculture', 'book_sleep' }, 30, 'green')
+  Hover({ 'book_horticulture', 'book_horticulture_upgraded' }, 30, 'green')
+  Hover({ 'book_light', 'book_light_upgraded' }, 3, 'cyan')
+  Hover('book_rain', 4, 'green')
+  Hover({ 'book_research_station', 'book_temperature' }, 16, 'green')
+  Hover('book_tentacles', { 3, 8 }, 'pink')
+  Hover('book_web', 6) -- BOOK_WEB_GROUND_RADIUS
 end
 
--- Export ----------------------------------------------------------------------
+if HOVER_SONGS then
+  Hover({
+    'battlesong_durability',
+    'battlesong_healthgain',
+    'battlesong_sanitygain',
+    'battlesong_sanityaura',
+    'battlesong_fireresistance',
+    'battlesong_shadowaligned',
+    'battlesong_lunaraligned',
+    'battlesong_instant_taunt',
+    'battlesong_instant_panic',
+    'battlesong_instant_revive',
+  }, 12, 'green')
+end
 
-GLOBAL.TUNING.RANGE_INDICATOR = { -- create our mod namespace
-  DATA = data,
-  CLICK = { KEY = modifier_key, BUTTON = mouse_button, SUPPORT = can_click, AUTO_HIDE = auto_hide },
-  BATCH = { TAG = batch_show_tags },
-  DEPLOY = prefab_placer,
-  HOVER = { ENABLE = enable_hover, SUPPORT = can_hover },
-}
+if HOVER_OTHER then
+  -- Nautopilot Beacon
+  Hover('boat_magnet_beacon', 24, 'yellow')
+  -- Gunpowder, Slurtle Slime: Explosion
+  Hover({ 'gunpowder', 'slurtleslime' }, 3, 'pink')
+  -- Beefalo Horn: gather Beefalo, tend Farm Plants
+  Hover('horn', 25, 'green')
+  -- Treeguard Idol
+  Hover('leif_idol', 10, 'green')
+  -- One-man Band: befriend Pigs or Bunnymen, tend Farm Plants
+  Hover('onemanband', 12, 'green')
+  -- The Lazy Forager
+  Hover('orangeamulet', 4)
+  -- Pan Flute
+  Hover('panflute', 15, 'green')
+  -- Gramophone, Shell Bell, Strident Trident, Gnarwail Horn: tend Farm Plants
+  Hover('phonograph', 8, 'green')
+  Hover({ 'singingshell_octave3', 'singingshell_octave4', 'singingshell_octave5' }, 2, 'green')
+  Hover({ 'trident', 'gnarwail_horn' }, 20, 'green')
+  -- Polly Roger's Hat
+  Hover('polly_rogershat', 15)
+  -- Webby Whistle
+  Hover('spider_whistle', 16, 'green')
+  -- W.O.B.O.T.
+  Hover('storage_robot', 15, 'yellow')
+  -- Umbralla: protection (while activated on the ground)
+  Hover('voidcloth_umbrella', 16, 'green')
+  -- Soul: heal after release
+  Hover('wortox_soul', 8, 'green', 'heal')
+end

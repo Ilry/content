@@ -7,6 +7,29 @@ local tool = {
 -- GAME
 ----------------------------------
 
+---获取最外层的owner
+---@param invitem ent
+---@return nil|ent
+---@nodiscard
+function tool:GetOwnerReal(invitem)
+    local _player = nil
+    if invitem.components and invitem.components.inventoryitem then
+        local seekowner = invitem.components.inventoryitem.owner
+        while seekowner ~= nil do
+            if seekowner:HasTag("player") then
+                _player = seekowner
+                break
+            elseif seekowner.components and seekowner.components.container and
+            seekowner.components.inventoryitem and seekowner.components.inventoryitem.owner then
+                seekowner = seekowner.components.inventoryitem.owner
+            else
+                break
+            end
+        end
+    end
+    return _player
+end
+
 ---实体是有效并存活的
 ---@param ent any
 ---@return boolean
@@ -46,6 +69,37 @@ function tool:addLootDropAlwaysSuccess(inst,fn)
         fn(...)
         return unpack(res)
     end)
+end
+
+---成组生成物品
+---@param prefa_id PrefabID
+---@param num integer
+---@return ent[] # 生成的物品表
+---@nodiscard
+function tool:spawnPrefabByStack(prefa_id,num)
+    local res = {}
+    local prefab = SpawnPrefab(prefa_id)
+    local maxsize = prefab.components.stackable and prefab.components.stackable.maxsize
+    -- 可堆叠,且堆叠数量大于1
+    if maxsize and maxsize > 1 then
+        local stacks = math.floor(num / maxsize)
+        local left = num - maxsize * stacks
+        if stacks > 0 then
+            for i = 1, stacks do
+                local item = SpawnPrefab(prefa_id)
+                item.components.stackable:SetStackSize(maxsize)
+                table.insert(res,item)
+            end
+        end
+        if left > 0 then
+            local item = SpawnPrefab(prefa_id)
+            item.components.stackable:SetStackSize(left)
+            table.insert(res,item)
+        end
+    else -- 不可堆叠
+        table.insert(res,prefab)
+    end
+    return res
 end
 
 ---抛物品
@@ -90,7 +144,7 @@ end
 ---通过prefabID查找装备栏的所有装备
 ---@param player ent # 玩家
 ---@param equip_prefab string # 装备prefabID
----@return table equips # 所有找到的装备
+---@return ent[] equips # 所有找到的装备
 ---@nodiscard
 ---@return boolean found # 是否找到了至少一个
 function tool:findEquipments(player,equip_prefab)
@@ -103,6 +157,79 @@ function tool:findEquipments(player,equip_prefab)
         end
     end
     return equips,found
+end
+
+---通过关键字查找装备栏的所有装备
+---@param player ent # 玩家
+---@param kw string|string[] # 关键字或者关键字数组
+---@return ent[] equips # 所有找到的装备
+---@nodiscard
+---@return boolean found # 是否找到了至少一个
+function tool:findEquipmentsWithKeywords(player,kw)
+    local equips,found = {},false
+    local equip_slots = player and player.components.inventory and player.components.inventory.equipslots
+    if type(kw) == 'string' then
+        for _, v in pairs(equip_slots or {}) do
+            if v.prefab and string.find(v.prefab,kw) then
+                table.insert(equips,v)
+                found = true
+            end
+        end
+    else
+        for _, v in pairs(equip_slots or {}) do
+            if v.prefab then
+                for _,keyword in ipairs(kw) do
+                    if string.find(v.prefab,keyword) then
+                        table.insert(equips,v)
+                        found = true
+                        break
+                    end
+                end
+            end
+        end
+    end
+    return equips,found
+end
+
+---获取装备栏的所有装备,假定所有装备中的物品没有重复,返回一个键为prefabID,值为装备实体的表
+---@param player ent
+---@return table<string,ent> # 返回一个键为prefabID,值为装备实体的表
+---@nodiscard
+function tool:getAllEquipments(player)
+    local equips = {}
+    local equip_slots = player and player.components.inventory and player.components.inventory.equipslots
+    for _, v in pairs(equip_slots or {}) do
+        if v.prefab then
+            equips[v.prefab] = v
+        end
+    end
+    return equips
+end
+
+---真伤
+---@param dmg number
+---@param victim ent
+function tool:dealTrueDmg(dmg,victim)
+    if victim and victim:IsValid() and victim.components.health and not victim.components.health:IsDead() then
+        local maxhealth = victim.components.health.maxhealth
+        local cur_per = victim.components.health:GetPercent()
+        local should_hp = math.max(0,maxhealth * cur_per - dmg)
+        local should_per = math.min(1,should_hp / maxhealth)
+        victim.components.health:SetPercent(should_per)
+    end
+end
+
+---减少 `rechargeable` 组件的cd(在cd中时)
+---@param item ent
+---@param reduce number # 减少多少秒, 单位: 秒
+function tool:rechargeableReduceCD(item,reduce)
+    if item and item:IsValid() and item.components.rechargeable and not item.components.rechargeable:IsCharged() then
+        local cur_percent = item.components.rechargeable:GetPercent()
+        local chargetime = item.components.rechargeable:GetChargeTime()
+        local total = item.components.rechargeable.total
+        local new_percent = math.min(1,cur_percent + cur_percent/chargetime)
+        item.components.rechargeable:SetCharge(new_percent*total,true)
+    end
 end
 
 ----------------------------------
@@ -166,6 +293,48 @@ function tool:hookFn(parent,field,before_fn,after_fn)
         end
         local res = old_fn ~= nil and {old_fn(...)} or {}
         after_fn(...)
+        return unpack(res)
+    end
+end
+
+---简易装饰器
+---@param parent any # 类
+---@param field string # 需要勾的字段(方法名)
+---@param before_fn nil|fun(self, ...):... # 在原函数前执行，返回值会被处理
+---@param after_fn nil|fun(self, ...):... # 在原函数后执行
+function tool:hookFnHasReturn(parent, field, before_fn, after_fn)
+    local old_fn = parent[field]
+
+    if old_fn == nil then
+        -- 如果原函数不存在，直接返回
+        parent[field] = function(self, ...)
+            if before_fn ~= nil then
+                before_fn(self, ...)
+            end
+            if after_fn ~= nil then
+                after_fn(self, ...)
+            end
+        end
+        return
+    end
+
+    parent[field] = function(self, ...)
+        local before_args = {...}
+        local before_result = nil
+
+        if before_fn ~= nil then
+            before_result = {before_fn(self, unpack(before_args))}
+        end
+
+        -- 如果 before_fn 返回了值，则使用这些值作为新的参数
+        local args_to_pass = before_result or before_args
+
+        local res = {old_fn(self, unpack(args_to_pass))}
+
+        if after_fn ~= nil then
+            after_fn(self, unpack(args_to_pass))
+        end
+
         return unpack(res)
     end
 end
@@ -250,5 +419,84 @@ function tool:fnum(round,...)
     return unpack(res)
 end
 
+---限制多行字符串每行的最大长度,并换到下一行
+---@param str string
+---@param line_maxlen integer
+---@return string
+---@nodiscard
+function tool:limitMultiLineStringSingleLineMaxLen(str,line_maxlen)
+    local res = ''
+    local len = string.utf8len(str)
+    local line_len = line_maxlen
+    local i = 1
+
+    while i <= len do
+        local char = string.utf8sub(str, i, i)
+        local char_len = string.utf8len(char)
+        local byte = string.byte(char)
+
+        if line_len < char_len then
+            res = res .. '\n'
+            line_len = line_maxlen
+        end
+
+        if char == '\n' then
+            res = res .. char
+            line_len = line_maxlen
+        else
+            if byte >= 0x80 then
+                -- line_len = line_len - char_len
+                line_len = line_len - 1
+            else
+                line_len = line_len - .5
+            end
+            res = res .. char
+        end
+
+        i = i + 1
+    end
+
+    return res
+end
+
+---做周期任务并过一会儿取消,或者不取消
+---@param doer ent # 执行者
+---@param taskname string # 任务名
+---@param interval number # 周期间隔
+---@param duration number|nil # 不填时则不主动取消周期任务
+---@param fn function # 周期函数
+---@param fn_when_time_up function|nil # duration到0时执行
+function tool:doTaskPeriodicForAWhile(doer,taskname,interval,duration,fn,fn_when_time_up)
+    if doer[taskname] ~= nil then doer[taskname]:Cancel() doer[taskname] = nil end
+    if doer[taskname..'_cancel'] ~= nil then doer[taskname..'_cancel']:Cancel() doer[taskname..'_cancel'] = nil end
+    doer[taskname] = doer:DoPeriodicTask(interval,fn,0)
+    if duration ~= nil then
+        doer[taskname..'_cancel'] = doer:DoTaskInTime(duration,function()
+            if doer and doer[taskname] ~= nil then doer[taskname]:Cancel() doer[taskname] = nil end
+            if doer and doer[taskname..'_cancel'] ~= nil then doer[taskname..'_cancel']:Cancel() doer[taskname..'_cancel'] = nil end
+            if fn_when_time_up ~= nil then
+                fn_when_time_up()
+            end
+        end)
+    end
+end
+
+---做倒计时任务
+---@param doer ent
+---@param taskname string
+---@param time number
+---@param fn function|nil
+---@param kill_task_first boolean|nil # 是否先取消之前的任务,默认取消
+function tool:doTaskInTime(doer,taskname,time,fn,kill_task_first)
+    if kill_task_first == nil or kill_task_first == true then
+        if doer[taskname] ~= nil then doer[taskname]:Cancel() doer[taskname] = nil end
+    end
+    doer[taskname] = doer:DoTaskInTime(time,function ()
+        if fn ~= nil then
+            fn()
+        end
+        if doer and doer[taskname] ~= nil then doer[taskname]:Cancel() doer[taskname] = nil end
+    end)
+end
 
 return tool

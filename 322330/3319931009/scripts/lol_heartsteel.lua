@@ -1,3 +1,5 @@
+local modid = 'lol_wp'
+
 table.insert(PrefabFiles, "prefab_lol_heartsteel")
 table.insert(PrefabFiles, "fx_lol_heartsteel")
 
@@ -37,11 +39,13 @@ else
 end
 
 --
-TUNING.CONFIG_LIMIT_LOL_HEARTSTEEL = GetModConfigData('limit_lol_heartsteel')
+-- TUNING.CONFIG_LIMIT_LOL_HEARTSTEEL = GetModConfigData('limit_lol_heartsteel')
+TUNING.CONFIG_LIMIT_LOL_HEARTSTEEL = GetModConfigData('limit_lol_heartsteel_new')
+
 TUNING.CONFIG_LIMIT_LOL_HEARTSTEEL_TRANSFORM_SCALE = GetModConfigData('limit_lol_heartsteel_transform_scale')
 TUNING.CONFIG_LIMIT_LOL_HEARTSTEEL_EQUIPSLOT = GetModConfigData('limit_lol_heartsteel_equipslot')
 TUNING.CONFIG_LIMIT_LOL_HEARTSTEEL_BLUEPRINT_DROPBY = GetModConfigData('limit_lol_heartsteel_blueprint_dropby')
-TUNING.HEARTSTEEL_CD = 120
+TUNING.HEARTSTEEL_CD = 120 * TUNING[string.upper('CONFIG_'..modid..'special_settings_nocd')]
 --
 
 modimport('scripts/util/lol_heartsteel_recipes.lua')

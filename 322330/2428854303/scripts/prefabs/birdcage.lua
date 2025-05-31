@@ -20,15 +20,18 @@ local prefabs =
     "robin_winter",
     "canary",
     "guano",
+    "rottenegg",
 }
 
 local invalid_foods =
 {
     -- "bird_egg",
+    -- "bird_egg_cooked",
     "rottenegg",
     -- "monstermeat",
     -- "cookedmonstermeat",
     -- "monstermeat_dried",
+	"woby_treat",
 }
 
 local CAGE_STATES =
@@ -40,6 +43,7 @@ local CAGE_STATES =
     SICK = "_sick",
 }
 
+-- NOTES(JBK): These are for the special cases where the default prefab.."_build" does not apply for anim/bird_cage.
 local BUILD_OVERRIDES =
 {
     canary_poisoned = "canary",
@@ -114,7 +118,7 @@ local function ShouldAcceptItem(inst, item)
     local seed_name = string.lower(item.prefab .. "_seeds")
 
     local can_accept = item.components.edible
-        and (Prefabs[seed_name] 
+        and (Prefabs[seed_name]
         or item.prefab == "seeds"
         or string.match(item.prefab, "_seeds")
         or item.components.edible.foodtype == FOODTYPE.MEAT)
@@ -259,6 +263,7 @@ local function OnOccupied(inst, bird)
 
     --Add the sleeper component & initialize
     -- inst:AddComponent("sleeper")
+    -- inst.components.sleeper.watchlight = true
     -- inst.components.sleeper:SetSleepTest(ShouldSleep)
     -- inst.components.sleeper:SetWakeTest(ShouldWake)
 
@@ -279,8 +284,9 @@ end
 
 local function OnEmptied(inst, bird)
 
-	if inst.bird_type then
+    if inst.bird_type then
         inst.AnimState:ClearOverrideBuild(inst.bird_type.."_build")
+        -- NOTES(JBK): Do not clear inst.bird_type here it is used elsewhere.
     end
 
     SetCageState(inst, CAGE_STATES.EMPTY)
@@ -309,8 +315,8 @@ local function OnWorkFinished(inst, worker)
     end
     inst.components.lootdropper:DropLoot()
     inst.components.inventory:DropEverything(true)
-	
-	local fx = SpawnPrefab("collapse_small")
+
+    local fx = SpawnPrefab("collapse_small")
     fx.Transform:SetPosition(inst.Transform:GetWorldPosition())
     fx:SetMaterial("metal")
     inst:Remove()
@@ -338,8 +344,9 @@ local function OnBirdRot(inst)
     StopAnimationTask(inst)
     SetCageState(inst, CAGE_STATES.SKELETON)
     PlayStateAnim(inst, "idle", false)
-	
-	SetBirdType(inst, "crow")
+
+    -- NOTES(JBK): Mutated birds do not have a skeleton to show so always default back to one that does.
+    SetBirdType(inst, "crow")
 
     inst:DoTaskInTime(0, function()
         local item = inst.components.inventory:GetItemInSlot(1)
@@ -355,8 +362,9 @@ local function OnBirdStarve(inst, bird)
 
     inst.AnimState:PlayAnimation("death")
     PushStateAnim(inst, "idle", false)
-	
-	SetBirdType(inst, inst.bird_type)
+
+    -- NOTES(JBK): Needed here because OnEmptied is called before this callback which clears the build override.
+    SetBirdType(inst, inst.bird_type)
 
     --Put loot on "shelf"
     local loot = SpawnPrefab("smallmeat")
@@ -394,7 +402,7 @@ local function OnBirdPoisoned(inst, data)
         end
         inst.components.inventory:GiveItem(loot)
         inst.components.shelf:PutItemOnShelf(loot)
-		SetBirdType(inst, data.poisoned_prefab) -- NOTES(JBK): Fix up the override because OnEmptied is called when the original bird is removed.
+        SetBirdType(inst, data.poisoned_prefab) -- NOTES(JBK): Fix up the override because OnEmptied is called when the original bird is removed.
     end
 
     StartSickAnimationTask(inst)
@@ -508,7 +516,7 @@ local function fn()
     inst.AnimState:SetBank("birdcage")
     inst.AnimState:SetBuild("bird_cage")
     inst.AnimState:PlayAnimation("idle_empty")
-	inst.scrapbook_anim ="idle_empty"
+    inst.scrapbook_anim ="idle_empty"
 
     inst:AddTag("structure")
     inst:AddTag("cage")

@@ -85,8 +85,8 @@ local function OnEquip(inst, owner)
         owner.AnimState:OverrideSymbol("swap_shield",     "swap_"..prefab_id, "swap_shield")
     end
 
-
-    if inst.components.rechargeable:GetTimeToCharge() < TUNING.WATHGRITHR_SHIELD_COOLDOWN_ONEQUIP then
+    --我不知道下面这个有什么意义，但前人留下来了我就不改了，加个额外判断吧
+    if TUNING.LOL_LEGION_ENABLE ~= true and inst.components.rechargeable and inst.components.rechargeable:GetTimeToCharge() < TUNING.WATHGRITHR_SHIELD_COOLDOWN_ONEQUIP then
         inst.components.rechargeable:Discharge(TUNING.WATHGRITHR_SHIELD_COOLDOWN_ONEQUIP)
     end
 
@@ -167,6 +167,38 @@ local function OnCharged(inst)
     inst.components.aoetargeting:SetEnabled(true)
 end
 
+local function Counterattack(inst, doer, attacker, data, range, atk)
+    if doer.components.skilltreeupdater ~= nil and doer.components.skilltreeupdater:IsActivated("wathgrithr_arsenal_shield_3") then
+        inst._lastparrytime = GetTime()
+
+        local tuning = TUNING.SKILLS.WATHGRITHR.SHIELD_PARRY_BONUS_DAMAGE
+        local scale =  TUNING.SKILLS.WATHGRITHR.SHIELD_PARRY_BONUS_DAMAGE_SCALE
+
+        -- inst._bonusdamage = math.clamp(damage * scale, tuning.min, tuning.max)
+        inst._bonusdamage = math.clamp(1 * scale, tuning.min, tuning.max)
+    end
+
+    if LANS:checkAlive(doer) then
+        doer.components.health:DoDelta(TUNING.MOD_LOL_WP.DORANSHIELD.SKILL_BLOCK.REGEN_WHEN_SUCCESS)
+    end
+
+    local snap = SpawnPrefab('impact')
+    local x, y, z = doer.Transform:GetWorldPosition()
+    snap.Transform:SetScale(2, 2, 2)
+
+    if inst.components.shieldlegion:Counterattack(doer, attacker, data, range, atk) then
+        local x1, y1, z1 = attacker.Transform:GetWorldPosition()
+        local angle = -math.atan2(z1 - z, x1 - x)
+        snap.Transform:SetRotation(angle * RADIANS)
+        snap.Transform:SetPosition(x1, y1, z1)
+        return true
+    else
+        snap.Transform:SetPosition(x, y, z)
+        return false
+    end
+
+end
+
 ------------------------------------------------------------------------------------------------------------------------
 
 local function fn()
@@ -194,10 +226,29 @@ local function fn()
     inst:AddTag("weapon")
 
     --rechargeable (from rechargeable component) added to pristine state for optimization
-    inst:AddTag("rechargeable")
+    --inst:AddTag("rechargeable")
 
     MakeInventoryFloatable(inst, nil, 0.2, {1.1, 0.6, 1.1})
 
+    if TUNING.LOL_LEGION_ENABLE == true then
+        inst:AddTag('allow_action_on_impassable')
+    else
+        inst:AddTag('rechargeable')
+
+        inst:AddComponent('aoetargeting')
+        inst.components.aoetargeting:SetAlwaysValid(true)
+        inst.components.aoetargeting:SetAllowRiding(false)
+        inst.components.aoetargeting.reticule.reticuleprefab = 'reticulearc'
+        inst.components.aoetargeting.reticule.pingprefab = 'reticulearcping'
+        inst.components.aoetargeting.reticule.targetfn = ReticuleTargetFn
+        inst.components.aoetargeting.reticule.mousetargetfn = ReticuleMouseTargetFn
+        inst.components.aoetargeting.reticule.updatepositionfn = ReticuleUpdatePositionFn
+        inst.components.aoetargeting.reticule.validcolour = {1, .75, 0, 1}
+        inst.components.aoetargeting.reticule.invalidcolour = {.5, 0, 0, 1}
+        inst.components.aoetargeting.reticule.ease = true
+        inst.components.aoetargeting.reticule.mouseenabled = true
+    end
+    --[[
     inst:AddComponent("aoetargeting")
     inst.components.aoetargeting:SetAlwaysValid(true)
     inst.components.aoetargeting:SetAllowRiding(false)
@@ -209,7 +260,7 @@ local function fn()
     inst.components.aoetargeting.reticule.validcolour = { 1, .75, 0, 1 }
     inst.components.aoetargeting.reticule.invalidcolour = { .5, 0, 0, 1 }
     inst.components.aoetargeting.reticule.ease = true
-    inst.components.aoetargeting.reticule.mouseenabled = true
+    inst.components.aoetargeting.reticule.mouseenabled = true]]
 
     inst.entity:SetPristine()
 
@@ -236,17 +287,32 @@ local function fn()
     inst.components.equippable:SetOnEquip(OnEquip)
     inst.components.equippable:SetOnUnequip(OnUnequip)
 
-    inst:AddComponent("aoespell")
-    inst.components.aoespell:SetSpellFn(SpellFn)
+    if TUNING.LOL_LEGION_ENABLE == true then
+        inst:AddComponent('shieldlegion')
+        inst.components.shieldlegion.armormult_success = 1
+        inst.components.shieldlegion.atkfn = function(inst, doer, attacker, data)
+            Counterattack(inst, doer, attacker, data, 8, 2)
+        end
+        inst.components.shieldlegion.atkstayingfn = function(inst, doer, attacker, data)
+            inst.components.shieldlegion:Counterattack(doer, attacker, data, 8, 1)
+        end
+    else
+        inst:AddComponent("aoespell")
+        if inst.components.aoespell.SetSpellFn then
+            inst.components.aoespell:SetSpellFn(SpellFn)
+        else
+            inst.components.aoespell.spellfn = SpellFn
+        end
 
-    inst:AddComponent("parryweapon")
-    inst.components.parryweapon:SetParryArc(TUNING.WATHGRITHR_SHIELD_PARRY_ARC)
-    --inst.components.parryweapon:SetOnPreParryFn(OnPreParry)
-    inst.components.parryweapon:SetOnParryFn(OnParry)
+        inst:AddComponent("parryweapon")
+        inst.components.parryweapon:SetParryArc(TUNING.WATHGRITHR_SHIELD_PARRY_ARC)
+        --inst.components.parryweapon:SetOnPreParryFn(OnPreParry)
+        inst.components.parryweapon:SetOnParryFn(OnParry)
 
-    inst:AddComponent("rechargeable")
-    inst.components.rechargeable:SetOnDischargedFn(OnDischarged)
-    inst.components.rechargeable:SetOnChargedFn(OnCharged)
+        inst:AddComponent("rechargeable")
+        inst.components.rechargeable:SetOnDischargedFn(OnDischarged)
+        inst.components.rechargeable:SetOnChargedFn(OnCharged)
+    end 
 
     MakeHauntableLaunch(inst)
 

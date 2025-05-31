@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 4546B_UNITS -->
+<!-- Author: 27136 -->
+<!-- DateCreated: 10/26/2021 1:01:47 PM -->
+<GameData>
+	<Tags>
+		<Row Tag="CLASS_LIWEITAN" Vocabulary="ABILITY_CLASS"/>
+	</Tags>
+	<Types>
+		<Row Type="UNIT_LIWEITAN" Kind="KIND_UNIT" />
+		<Row Type="ABILITY_LIWEITAN" Kind="KIND_ABILITY"/>
+		<Row Type="ABILITY_LIWEITAN_STRENGTH" Kind="KIND_ABILITY"/>
+		<Row Type="ABILITY_KALA_DEBUFF" Kind="KIND_ABILITY"/>
+		<Row Type="ABILITY_PRAWN_WATER" Kind="KIND_ABILITY"/>
+	</Types>
+	<UnitAiInfos>
+		    <Row UnitType="UNIT_LIWEITAN" AiType="UNITAI_LEADER"/>
+		    <Row UnitType="UNIT_LIWEITAN" AiType="UNITAI_BUILD"/>
+			<Row UnitType="UNIT_LIWEITAN" AiType="UNITAI_EXPLORE"/>
+			<Row UnitType="UNIT_LIWEITAN" AiType="UNITTYPE_NAVAL"/>
+	</UnitAiInfos>
+	<TypeTags>
+	<Row Type="UNIT_LIWEITAN" Tag="CLASS_NAVAL_MELEE"/>
+	<Row Type="UNIT_LIWEITAN" Tag="CLASS_LIWEITAN"/>
+	<Row Type="ABILITY_LIWEITAN" Tag="CLASS_LIWEITAN"/>
+	<Row Type="ABILITY_LIWEITAN_STRENGTH" Tag="CLASS_NAVAL_MELEE"/>
+	<Row Type="ABILITY_LIWEITAN_STRENGTH" Tag="CLASS_NAVAL_RANGED"/>
+	<Row Type="ABILITY_LIWEITAN_STRENGTH" Tag="CLASS_NAVAL_RAIDER"/>
+	<Row Type="ABILITY_LIWEITAN_STRENGTH" Tag="CLASS_NAVAL_CARRIER"/>
+	<Row Type="ABILITY_KALA_DEBUFF" Tag="CLASS_NAVAL_MELEE"/>
+	<Row Type="ABILITY_KALA_DEBUFF" Tag="CLASS_NAVAL_RANGED"/>
+	<Row Type="ABILITY_KALA_DEBUFF" Tag="CLASS_NAVAL_RAIDER"/>
+	<Row Type="ABILITY_KALA_DEBUFF" Tag="CLASS_NAVAL_CARRIER"/>
+	<Row Type="ABILITY_KALA_DEBUFF" Tag="CLASS_RECON"/>
+	<Row Type="ABILITY_KALA_DEBUFF" Tag="CLASS_MELEE"/>
+	<Row Type="ABILITY_KALA_DEBUFF" Tag="CLASS_RANGED"/>
+	<Row Type="ABILITY_KALA_DEBUFF" Tag="CLASS_SIEGE"/>
+	<Row Type="ABILITY_KALA_DEBUFF" Tag="CLASS_HEAVY_CAVALRY"/>
+	<Row Type="ABILITY_KALA_DEBUFF" Tag="CLASS_LIGHT_CAVALRY"/>
+	<Row Type="ABILITY_KALA_DEBUFF" Tag="CLASS_RANGED_CAVALRY"/>
+	<Row Type="ABILITY_KALA_DEBUFF" Tag="CLASS_ANTI_CAVALRY"/>
+	<Row Type="ABILITY_KALA_DEBUFF" Tag="CLASS_HEAVY_CHARIOT"/>
+	<Row Type="ABILITY_KALA_DEBUFF" Tag="CLASS_LIGHT_CHARIOT"/>
+	<Row Type="ABILITY_KALA_DEBUFF" Tag="CLASS_WARRIOR_MONK"/>
+	<Row Type="ABILITY_KALA_DEBUFF" Tag="CLASS_GIANT_DEATH_ROBOT"/>
+	<Row Type="ABILITY_KALA_DEBUFF" Tag="CLASS_AIRCRAFT"/>
+	<Row Type="ABILITY_PRAWN_WATER" Tag="CLASS_PRAWN"/>
+	</TypeTags>
+	<Units>
+	<Row UnitType="UNIT_LIWEITAN" Cost="1" BaseMoves="4" BaseSightRange="2" Combat="1" ZoneOfControl="false" Domain="DOMAIN_SEA" FormationClass="FORMATION_CLASS_NAVAL" AdvisorType="ADVISOR_GENERIC" Name="LOC_UNIT_LIWEITAN_NAME" Description="LOC_UNIT_LIWEITAN_DESCRIPTION" CanCapture="False" CostProgressionModel="COST_PROGRESSION_PREVIOUS_COPIES" CostProgressionParam1="4" PurchaseYield="YIELD_GOLD" BuildCharges="2"  TraitType="TRAIT_UNIT_LIWEITAN" />
+	</Units>
+	<UnitAbilities>
+		<Row UnitAbilityType="ABILITY_LIWEITAN" Name="LOC_ABILITY_LIWEITAN_NAME" Description="LOC_ABILITY_LIWEITAN_DESCRIPTION"/>
+		<Row UnitAbilityType="ABILITY_LIWEITAN_STRENGTH" Name="LOC_ABILITY_LIWEITAN_STRENGTH_NAME" Description="LOC_ABILITY_LIWEITAN_STRENGTH_DESCRIPTION" Inactive="true" Permanent="false"/>
+		<Row UnitAbilityType="ABILITY_KALA_DEBUFF" Name="LOC_ABILITY_KALA_DEBUFF_NAME" Description="LOC_ABILITY_KALA_DEBUFF_DESCRIPTION" Inactive="true" Permanent="false"/>
+		<Row UnitAbilityType="ABILITY_PRAWN_WATER" Name="LOC_ABILITY_PRAWN_WATER_NAME" Description="LOC_ABILITY_PRAWN_WATER_DESCRIPTION" Inactive="true" Permanent="false"/>
+	</UnitAbilities>
+	<Improvement_ValidBuildUnits>
+	<Row ImprovementType="IMPROVEMENT_OFFSHORE_OIL_RIG" UnitType="UNIT_LIWEITAN"/>
+	<Row ImprovementType="IMPROVEMENT_FISHING_BOATS" UnitType="UNIT_LIWEITAN"/>
+	<Row ImprovementType="IMPROVEMENT_FISHERY" UnitType="UNIT_LIWEITAN"/>
+	<Row ImprovementType="IMPROVEMENT_CHEMAMULL" UnitType="UNIT_LIWEITAN"/>
+	<Row ImprovementType="IMPROVEMENT_GOLF_COURSE" UnitType="UNIT_LIWEITAN"/>
+	<Row ImprovementType="IMPROVEMENT_MEKEWAP" UnitType="UNIT_LIWEITAN"/>
+	<Row ImprovementType="IMPROVEMENT_POLDER" UnitType="UNIT_LIWEITAN"/>
+	<Row ImprovementType="IMPROVEMENT_OFFSHORE_WIND_FARM" UnitType="UNIT_LIWEITAN"/>
+	<Row ImprovementType="IMPROVEMENT_SEASTEAD" UnitType="UNIT_LIWEITAN"/>
+		
+	</Improvement_ValidBuildUnits>
+	<UnitAbilityModifiers>
+		<Row>
+			<UnitAbilityType>ABILITY_LIWEITAN</UnitAbilityType>
+			<ModifierId>MODIFIER_ABILITY_LIWEITAN1</ModifierId>
+		</Row>
+	</UnitAbilityModifiers>
+	<Modifiers>
+		<Row>
+			<ModifierId>MODIFIER_ABILITY_LIWEITAN1</ModifierId>
+			<ModifierType>MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH</ModifierType>
+			<SubjectRequirementSetId>LIWEITANMATCH2</SubjectRequirementSetId>
+		</Row>
+	</Modifiers>
+	<ModifierArguments>
+		<Row>
+			<ModifierId>MODIFIER_ABILITY_LIWEITAN1</ModifierId>
+			<Name>Amount</Name>
+			<Value>75</Value>
+		</Row>
+	</ModifierArguments>
+	<!-- =============== RequirementSets =============== -->
+	<RequirementSets>
+		<Row>
+			<RequirementSetId>LIWEITANMATCH2</RequirementSetId>
+			<RequirementSetType>REQUIREMENTSET_TEST_ALL</RequirementSetType>
+		</Row>
+	</RequirementSets>
+	<RequirementSetRequirements>
+		<Row>
+			<RequirementSetId>LIWEITANMATCH2</RequirementSetId>
+			<RequirementId>REQ_LIWEITANMATCH</RequirementId>
+		</Row>
+		<Row>
+			<RequirementSetId>LIWEITANMATCH2</RequirementSetId>
+			<RequirementId>REQ_DEFEND_LIWEITAN</RequirementId>
+		</Row>
+	</RequirementSetRequirements>
+	<!-- +++++++++++++++ Requirements +++++++++++++++ -->
+	<Requirements>
+		<Row>
+			<RequirementId>REQ_LIWEITANMATCH</RequirementId>
+			<RequirementType>REQUIREMENT_UNIT_TYPE_MATCHES</RequirementType>
+		</Row>
+		<Row>
+			<RequirementId>REQ_DEFEND_LIWEITAN</RequirementId>
+			<RequirementType>REQUIREMENT_COMBAT_DEFENDER_IS_PLAYER</RequirementType>
+		</Row>
+	</Requirements>
+	<RequirementArguments>
+		<Row>
+			<RequirementId>REQ_LIWEITANMATCH</RequirementId>
+			<Name>UnitType</Name>
+			<Value>UNIT_LIWEITAN</Value>
+		</Row>
+	</RequirementArguments>
+
+	<UnitAbilityModifiers>
+	<Row>
+		<UnitAbilityType>ABILITY_LIWEITAN</UnitAbilityType>
+		<ModifierId>LIWEITAN_STRENGTH</ModifierId>
+		</Row>
+	</UnitAbilityModifiers>
+		<Modifiers>
+			<Row>
+				<ModifierId>LIWEITAN_STRENGTH</ModifierId>
+				<ModifierType>MODIFIER_PLAYER_UNITS_GRANT_ABILITY</ModifierType>
+				<SubjectRequirementSetId>LIWEITAN_REQUIREMENT</SubjectRequirementSetId>
+			</Row>
+	</Modifiers>
+
+	<ModifierArguments>
+		<Row>
+			<ModifierId>LIWEITAN_STRENGTH</ModifierId>
+			<Name>AbilityType</Name>
+			<Value>ABILITY_LIWEITAN_STRENGTH</Value>
+		</Row>
+	</ModifierArguments>
+	<RequirementSets>
+		<Row>
+			<RequirementSetId>LIWEITAN_REQUIREMENT</RequirementSetId>
+			<RequirementSetType>REQUIREMENTSET_TEST_ALL</RequirementSetType>
+		</Row>
+	</RequirementSets>
+
+	<RequirementSetRequirements>
+		<Row>
+			<RequirementSetId>LIWEITAN_REQUIREMENT</RequirementSetId>
+			<RequirementId>AOE_REQUIRES_SEA_DOMAIN</RequirementId>
+		</Row>
+		<Row>
+			<RequirementSetId>LIWEITAN_REQUIREMENT</RequirementSetId>
+			<RequirementId>AOE_REQUIRES_OWNER_ADJACENCY</RequirementId>
+		</Row>
+	</RequirementSetRequirements>
+
+	<UnitAbilityModifiers>
+    <Row>
+		<UnitAbilityType>ABILITY_LIWEITAN_STRENGTH</UnitAbilityType>
+		<ModifierId>LIWEITAN_ADD_STRENGTH</ModifierId>
+	</Row>
+	</UnitAbilityModifiers>
+
+	<Modifiers>
+	<Row>
+		<ModifierId>LIWEITAN_ADD_STRENGTH</ModifierId>
+		<ModifierType>MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH</ModifierType>
+	</Row>
+	</Modifiers>
+
+	<ModifierArguments>
+	<Row>
+		<ModifierId>LIWEITAN_ADD_STRENGTH</ModifierId>
+		<Name>Amount</Name>
+		<Value>5</Value>
+	</Row>
+	</ModifierArguments>
+	<UnitAbilityModifiers>
+		<Row>
+			<UnitAbilityType>ABILITY_KALA_DEBUFF</UnitAbilityType>
+			<ModifierId>KALA_REDUCE_STRENGTH</ModifierId>
+		</Row>
+	</UnitAbilityModifiers>
+
+	<Modifiers>
+		<Row>
+			<ModifierId>KALA_REDUCE_STRENGTH</ModifierId>
+			<ModifierType>MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH</ModifierType>
+		</Row>
+	</Modifiers>
+
+	<ModifierArguments>
+		<Row>
+			<ModifierId>KALA_REDUCE_STRENGTH</ModifierId>
+			<Name>Amount</Name>
+			<Value>-5</Value>
+		</Row>
+	</ModifierArguments>
+
+	<UnitAbilityModifiers>
+		<Row>
+			<UnitAbilityType>ABILITY_PRAWN_WATER</UnitAbilityType>
+			<ModifierId>PRAWN_ADD_STRENGTH</ModifierId>
+		</Row>
+	</UnitAbilityModifiers>
+
+	<Modifiers>
+		<Row>
+			<ModifierId>PRAWN_ADD_STRENGTH</ModifierId>
+			<ModifierType>MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH</ModifierType>
+		</Row>
+	</Modifiers>
+
+	<ModifierArguments>
+		<Row>
+			<ModifierId>PRAWN_ADD_STRENGTH</ModifierId>
+			<Name>Amount</Name>
+			<Value>10</Value>
+		</Row>
+	</ModifierArguments>
+	<ModifierStrings>
+	<Row ModifierId="LIWEITAN_ADD_STRENGTH" Context="Preview" Text="{LOC_LIWEITAN_ADD_STRENGTH}"/>
+	<Row ModifierId="MODIFIER_ABILITY_LIWEITAN1" Context="Preview" Text="{LOC_MODIFIER_ABILITY_LIWEITAN1}"/>
+	<Row ModifierId="KALA_REDUCE_STRENGTH" Context="Preview" Text="{LOC_KALA_REDUCE_STRENGTH}"/>
+	<Row ModifierId="PRAWN_ADD_STRENGTH" Context="Preview" Text="{LOC_PRAWN_ADD_STRENGTH}"/>
+		
+	</ModifierStrings>
+</GameData>

@@ -48,7 +48,7 @@ local function UpdateToolInfo(self, tool)
     if self.toolinfo.tool and self.toolinfo.tool ~= tool or not self.toolinfo.tool then
         self.toolinfo.tool = tool
         local name = tool..".tex"
-        local atlas = "images/inventoryimages2.xml"
+        local atlas = "images/inventoryimages3.xml"
         self.toolinfo.image:SetTexture(atlas, name)
         self.toolinfo.bg:ScaleTo(.2, .75, .2)
         self.toolinfo.image:ScaleTo(.15, .6, .2)
@@ -106,6 +106,12 @@ local function modiwagstaff_npc(inst)
 
         if old_ontalkfn and type(old_ontalkfn) == "function" then
             old_ontalkfn(inst, data)
+        end
+    end
+
+    inst.OnRemoveEntity = function()
+        if inst.components and inst.components.talker and inst.components.wagstaff_tools and inst.components.wagstaff_tools.toolinfo and inst.components.wagstaff_tools.toolinfo.tool then
+            onToolUnwanted(inst.components.talker)
         end
     end
 end
@@ -184,7 +190,7 @@ local function modiwagstaff_tool(inst)
         inst:DoTaskInTime(.1, function()
             inst.wagstaff = _G.FindEntity(inst, 30, nil, {"wagstaff_npc"})
             --print("是否找到发明家：", inst.wagstaff)
-            if inst.wagstaff and inst.wagstaff.components and inst.wagstaff.components.talker then
+            if inst.wagstaff and inst.wagstaff.components and inst.wagstaff.components.talker and inst.wagstaff.components.talker.wagstaff_tools then
                 --print("注册工具")
                 inst.wagstaff.components.talker.wagstaff_tools[inst] = inst
                 if inst.wagstaff.components.talker.toolinfo and inst.prefab == inst.wagstaff.components.talker.toolinfo.tool then

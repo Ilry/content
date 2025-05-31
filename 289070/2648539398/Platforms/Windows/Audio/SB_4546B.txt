@@ -1,0 +1,27 @@
+Event	ID	Name			Wwise Object Path	Notes
+	690752823	Pause_Music_4546B			\Music\Pause_Music_4546B	
+	2101534549	Stop_Leader_Music_4546B			\Music\Stop_Leader_Music_4546B	
+	3178543150	Resume_Music_4546B			\Music\Resume_Music_4546B	
+	3696432335	Stop_Music_4546B			\Music\Stop_Music_4546B	
+	3970645121	Play_Music_4546B			\Music\Play_Music_4546B	
+	4167474443	Play_Leader_Music_4546B			\Music\Play_Leader_Music_4546B	
+	4225549753	Start_Music_4546B			\Music\Start_Music_4546B	
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	373350295	Game_Location			\Default Work Unit\Game_Location	
+
+Streamed Audio	ID	Name	Audio source file	Generated audio file	Wwise Object Path	Notes
+	3599106	PRECIPALE	C:\Users\27136\Documents\WwiseProjects\SUBNAUTICA\.cache\Windows\SFX\PRECIPALE_4B8CC0C5.wem	3599106.wem	\Interactive Music Hierarchy\Default Work Unit\SWITCH MUSIC\MEDIUM\THEME2\PRECIPALE	
+	20665755	WHAT ARE YOU	C:\Users\27136\Documents\WwiseProjects\SUBNAUTICA\.cache\Windows\SFX\WHAT ARE YOU_4B8CC0C5.wem	20665755.wem	\Interactive Music Hierarchy\Default Work Unit\SWITCH MUSIC\INDUSTRY\INDUSTRY1\WHAT ARE YOU	
+	89623112	LEADER 2	C:\Users\27136\Documents\WwiseProjects\SUBNAUTICA\.cache\Windows\SFX\LEADER 2_4B8CC0C5.wem	89623112.wem	\Interactive Music Hierarchy\Default Work Unit\SWITCH MUSIC\MODERN\MODERN2\LEADER 2	
+	120301756	FUTURE ERA2	C:\Users\27136\Documents\WwiseProjects\SUBNAUTICA\.cache\Windows\SFX\FUTURE ERA2_4B8CC0C5.wem	120301756.wem	\Interactive Music Hierarchy\Default Work Unit\SWITCH MUSIC\MODERN\THEME4\FUTURE ERA2	
+	318750836	LEADER	C:\Users\27136\Documents\WwiseProjects\SUBNAUTICA\.cache\Windows\SFX\LEADER_4B8CC0C5.wem	318750836.wem	\Interactive Music Hierarchy\Default Work Unit\LeaderMusic\LeaderPlaylist\SegLeader\LEADER	
+	412393744	ABANDONSHIP	C:\Users\27136\Documents\WwiseProjects\SUBNAUTICA\.cache\Windows\SFX\ABANDON SHIP_4B8CC0C5.wem	412393744.wem	\Interactive Music Hierarchy\Default Work Unit\SWITCH MUSIC\INDUSTRY\THEME3\ABANDONSHIP	
+	425235898	INTO THE UNKNOWN	C:\Users\27136\Documents\WwiseProjects\SUBNAUTICA\.cache\Windows\SFX\INTO THE UNKNOWN_4B8CC0C5.wem	425235898.wem	\Interactive Music Hierarchy\Default Work Unit\SWITCH MUSIC\ANCIENT SUBNAUTICA\THEME1\INTO THE UNKNOWN	
+	435650522	SUN BEAM2	C:\Users\27136\Documents\WwiseProjects\SUBNAUTICA\.cache\Windows\SFX\SUN BEAM2_4B8CC0C5.wem	435650522.wem	\Interactive Music Hierarchy\Default Work Unit\SWITCH MUSIC\MEDIUM\MEDIUM1\SUN BEAM2	
+	653807196	GOD RAYS	C:\Users\27136\Documents\WwiseProjects\SUBNAUTICA\.cache\Windows\SFX\GOD RAYS_4B8CC0C5.wem	653807196.wem	\Interactive Music Hierarchy\Default Work Unit\SWITCH MUSIC\INDUSTRY\INDUSTRY3\GOD RAYS	
+	654409977	SUNMOON	C:\Users\27136\Documents\WwiseProjects\SUBNAUTICA\.cache\Windows\SFX\SUNMOON_4B8CC0C5.wem	654409977.wem	\Interactive Music Hierarchy\Default Work Unit\SWITCH MUSIC\ANCIENT SUBNAUTICA\ANCIENT1\SUNMOON	
+	675421606	SHALLOW	C:\Users\27136\Documents\WwiseProjects\SUBNAUTICA\.cache\Windows\SFX\SHALLOW_4B8CC0C5.wem	675421606.wem	\Interactive Music Hierarchy\Default Work Unit\SWITCH MUSIC\MEDIUM\MEDIUM2\SHALLOW	
+	686806005	LIFT OFF	C:\Users\27136\Documents\WwiseProjects\SUBNAUTICA\.cache\Windows\SFX\LIFT OFF_4B8CC0C5.wem	686806005.wem	\Interactive Music Hierarchy\Default Work Unit\SWITCH MUSIC\MODERN\MODERN1\LIFT OFF	
+	698628762	TROPICAL EDEN	C:\Users\27136\Documents\WwiseProjects\SUBNAUTICA\.cache\Windows\SFX\TROPICAL EDEN_4B8CC0C5.wem	698628762.wem	\Interactive Music Hierarchy\Default Work Unit\SWITCH MUSIC\ANCIENT SUBNAUTICA\ANCIENT2\TROPICAL EDEN	
+

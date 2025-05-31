@@ -1,10 +1,10 @@
 local L = locale ~= "zh" and locale ~= "zhr"
 name = L and "Storeroom (New)" or "储藏室 (新地窖)"
-version = "2.7.0"
+version = "2.7.1"
 author = "MrM + 傳說覺悟"
 
 description = L and "Your personal space. The fix no longer affects SaltBox and Tin FishBox.\n\nMod version: "..version.."  update:\n"..[[
-1. Support chestupgrade_stacksize upgrade, after upgrade, the SortOut function will not be used;
+1. Support chestupgrade_stacksize upgrade;
 2. When setting only player destruction, the bear badger will no longer be able to slap out items, including other creatures slapping.
 3. Support setting the upper limit of the number of days for returning to freshness.
 
@@ -18,7 +18,7 @@ Historical update:
 7.remove collision effect
 ]]
 		or "建造一个更大的储存空间！修复不再影响盐盒和锡鱼箱。\n当前版本："..version.."  更新：\n"..[[
-1.支持弹性空间套件升级，升级后将不能使用整理功能；
+1.支持弹性空间套件升级；
 2.设置仅玩家破坏时，熊獾将不能再拍出物品，包括其他生物打击也不掉出物品。
 3.支持设置返鲜突破天数上限。
 
@@ -47,7 +47,7 @@ client_only_mod = false
 server_only_mod = true
 
 
-server_filter_tags = { "storeroom new", "新储藏室",}
+server_filter_tags = { "storeroom new", "新储藏室", "dj271",}
 
 icon_atlas = "storeroom.xml"
 icon = "storeroom.tex"
@@ -174,14 +174,24 @@ configuration_options =
 		default = "DestroyByPlayer",
 	},
 	
-	{
+	L and {
 		name = "sroom_drag",
-		label = "容器拖移Enable drag",
-		hover = "启用容器拖移Enable container drag",
+		label = "Container UI drag",
+		hover = "Enable Container UI drag",
 		options =
 		{
-			{description = "关闭OFF", data = false},
-			{description = "开启ON", data = true},
+			{description = "OFF", data = false},
+			{description = "ON", data = true},
+		},
+		default = true,
+	} or {
+		name = "sroom_drag",
+		label = "容器拖移",
+		hover = "启用容器拖移",
+		options =
+		{
+			{description = "关闭", data = false},
+			{description = "开启", data = true},
 		},
 		default = true,
 	},

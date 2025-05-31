@@ -4,10 +4,6 @@ local prefabs = {
 
 local BUFF_DURATION = TUNING.TOTAL_DAY_TIME
 
-local function OnKillBuff(inst)
-    inst.components.debuff:Stop()
-end
-
 local function nightvision_onworldstateupdate(target)
     target:SetForcedNightVision(TheWorld.state.isnight and not TheWorld.state.isfullmoon)
     target._has_purple_gem_buff:set(TheWorld.state.isnight and not TheWorld.state.isfullmoon)
@@ -61,7 +57,9 @@ local function OnAttached(inst, target)
             end
         end
 
-        inst.bufftask = inst:DoTaskInTime(BUFF_DURATION, OnKillBuff)
+        if inst.components.timer then
+            inst.components.timer:StartTimer("purplegembuff_timer", BUFF_DURATION)
+        end
     end
 end
 
@@ -92,9 +90,11 @@ local function OnDetached(inst, target)
 end
 
 local function OnExtended(inst)
-    if inst.bufftask ~= nil then
-        inst.bufftask:Cancel()
-        inst.bufftask = inst:DoTaskInTime(BUFF_DURATION, OnKillBuff)
+    if inst.components.timer and
+        inst.components.timer:TimerExists("purplegembuff_timer") then
+
+        inst.components.timer:SetTimeLeft("purplegembuff_timer", BUFF_DURATION)
+        
     end
 end
 
@@ -121,6 +121,14 @@ local function fn()
     inst.components.debuff:SetDetachedFn(OnDetached)--设置解除buff时执行的函数
     inst.components.debuff:SetExtendedFn(OnExtended)--设置延长buff时执行的函数
     inst.components.debuff.keepondespawn = true
+
+    inst:AddComponent("timer")
+	
+	inst:ListenForEvent("timerdone", function(inst, data)
+		if data.name == "purplegembuff_timer" then
+			inst.components.debuff:Stop()
+		end
+	end)
 
     return inst
 end

@@ -1,3 +1,5 @@
+---@diagnostic disable
+
 local s = 2
 local s2 = 1.3 / s
 local doubles = 1 / s2

@@ -23,6 +23,9 @@ VALUES
 ("LOC_YAJ_DISCOVERY_RATE_HIGH_NAME",	"High"),
 ("LOC_YAJ_DISCOVERY_RATE_HIGH_DESCRIPTION",	"A lottery draw of cheat map editor by terraining units."),
 
+("LOC_PARAMETER_YAJ_AVAILABLE_FOR_AI_NAME",	"Available For AI"),
+("LOC_PARAMETER_YAJ_AVAILABLE_FOR_AI_DESCRIPTION",	'Availability of terraining units for AI players.'),
+
 -- Tech Description
 ("LOC_YAJ_TECH_METAL_CASTING_DESCRIPTION", "Your {LOC_UNIT_YUGONG_NAME} gains +1 [ICON_MOVEMENT] Movement."),
 ("LOC_YAJ_TECH_COMBUSTION_DESCRIPTION", "{LOC_TECH_COMBUSTION_DESCRIPTION}[NewLine]Your {LOC_UNIT_YUGONG_NAME} gains +1 [ICON_MOVEMENT] Movement."),

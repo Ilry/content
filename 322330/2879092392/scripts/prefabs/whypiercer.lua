@@ -85,7 +85,7 @@ local function fn()
     end
     inst:AddComponent("fueled")
     inst.components.fueled.fueltype = FUELTYPE.NIGHTMARE
-    inst.components.fueled:InitializeFuelLevel(120)
+    inst.components.fueled:InitializeFuelLevel(80)
     inst.components.fueled:SetFirstPeriod(.5, 1 / 60)
     inst.components.fueled:SetTakeFuelFn(onfuelchanged)
     inst.components.fueled.accepting = true

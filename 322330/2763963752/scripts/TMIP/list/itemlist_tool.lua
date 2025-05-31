@@ -1,4 +1,12 @@
 return {
+    "wortox_nabbag",--强抢袋
+
+
+
+    "pumpkincarver1",--南瓜勺
+    "pumpkincarver2",--南瓜刀
+    "pumpkincarver3",--南瓜锯
+
     "battlesong_container",--战斗号子罐
 	"beargerfur_sack",--极地熊獾桶
     "antlionhat",--刮地皮头盔
@@ -40,6 +48,8 @@ return {
     "boat_ancient_item",--古董船套装
     "boat_item",
     --采集工具
+    "shadow_battleaxe",--暗影槌
+
     "shovel_lunarplant",--亮茄铲子
     "pickaxe_lunarplant",--亮茄粉碎者
     "axe",
@@ -73,6 +83,7 @@ return {
     "featherpencil",
     --训牛工具
     "brush",
+    "saddle_shadow",--梦魇鞍具
     "saddle_basic",
     "saddle_race",
     "saddle_war",
@@ -89,6 +100,8 @@ return {
     "lighter",
     "pumpkin_lantern",
     "redlantern",
+    "yots_redlantern",--红灯笼
+    -- "yots_worm_lantern",--红灯笼
     "lantern",
     "miniboatlantern",
     "minerhat",
@@ -115,18 +128,23 @@ return {
     "bedroll_straw",
     "bedroll_furry",
     "portabletent_item",
+    "portablefirepit_item",--便携营火
     --保温工具
     "heatrock",
     --狩猎工具
     "birdtrap",
     "trap",
     "bugnet",
+    "thulecitebugnet",--铥矿捕虫网
     "fishingnet",
     "fishingrod",
     "oceanfishingrod",
     "chum",
     "tacklecontainer",
     "supertacklecontainer",
+    "elixir_container",--野餐盒
+    "slingshotmodkit",--弹弓野外作业包
+
     "oceanfishinglure_spinner_red",
     "oceanfishinglure_spinner_green",
     "oceanfishinglure_spinner_blue",

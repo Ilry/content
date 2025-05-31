@@ -1,4 +1,8 @@
 return {
+	"snowball_item",--雪球
+	"snowman",--大雪球
+	"shallow_grave_player",--矮坟
+	"shallow_grave",--矮坟
 
 	"sharkboi_icespike",--冰
 
@@ -63,6 +67,7 @@ return {
 	-- "skeleton_notplayer_1",--骷髅
 	-- "skeleton_notplayer_2",--骷髅
 --坟墓
+
 	"mound",
 	"gravestone",
 --装饰

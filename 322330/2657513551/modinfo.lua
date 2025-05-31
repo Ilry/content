@@ -1,22 +1,22 @@
 local L = locale ~= "zh" and locale ~= "zhr"
 name = L and "Don't Starve Alone" or "独行长路 - Don't Starve Alone"
 forumthread = ""
-version = "1.2.20"
+version = "1.2.24"
 description = L and 
 [[
 This mod can completely eliminate the lag of a server with cave.
 It only works in single player world.
 
-* Fix the bug that the mushroom farm in the cave stops growing.
+* Fixed a bug about invalid Antlion Tribute Settings.
+* Fixed a bug where special items (such as eye bones) in Warby's chest could be duplicated.
 
 ]] or [[
 辅助mod，完全消除单人联机洞穴档的延迟。
 
-* 修复洞穴蘑菇农场生长停滞的bug。
+* 修复蚁狮地震设定失效的bug。
+* 修复沃比箱子内的特殊物品（如眼骨）被复制的bug。
 
 ]]
--- * 修复了洞穴重置倒计时异常的bug。
--- ]]
 
 author = "老王天天写bug"
 api_version = 6

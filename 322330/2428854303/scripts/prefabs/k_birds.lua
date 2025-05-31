@@ -281,7 +281,7 @@ local function makebird(name, soundname, no_feather, bank, custom_loot_setup, wa
             flyin = "dontstarve/birds/flyin",
         }
 		
-		if name == "kingfisher" then
+		if name == "kingfisher2" then
 			inst.sounds =
 			{
 				takeoff = "dontstarve_DLC003/creatures/king_fisher/take_off",
@@ -509,7 +509,7 @@ local function parrot_loot_setup(inst, prefab_deps)
 end
 
 return makebird("quagmire_pigeon", "quagmire_pigeon", nil, nil, kingfisher_loot_setup, nil, true),
-makebird("kingfisher", "kingfisher", nil, nil, kingfisher_loot_setup, nil, true),
+makebird("kingfisher2", "kingfisher2", nil, nil, kingfisher_loot_setup, nil, true),
 makebird("parrot_blue", "parrot_blue", nil, nil, kingfisher_loot_setup, nil, true),
 makebird("pigeon", "pigeon", nil, nil, kingfisher_loot_setup, nil, true),
 makebird("toucan_hamlet", "toucan_hamlet", nil, nil, parrot_loot_setup, nil, true),

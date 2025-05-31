@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SOTS_ConfigText - JP -->
+<!-- Author: Ithildin -->
+<!-- DateCreated: 1/29/2023 9:51:07 PM -->
+
+<GameData>
+	<LocalizedText>
+		<!-- 海上建城 -->
+		<Replace Tag="LOC_UNITOPERATION_SOTS_SOTS" Language="ja_JP">
+			<Text>海の上の都市をつくる</Text>
+		</Replace>
+		<Replace Tag="LOC_UNITOPERATION_SOTS_SOTS_DESCRIPTION" Language="ja_JP">
+			<Text>[NEWLINE]海の上の都市を建設，隣接する海洋タイルを沿岸タイルに変換する。</Text>
+		</Replace>
+		<Replace Tag="LOC_UNITOPERATION_SOTS_SOTS_DISABLED_CITY" Language="ja_JP">
+			<Text>[NEWLINE][COLOR:Red]他の都市に近すぎる[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_UNITOPERATION_SOTS_SOTS_DISTRICT" Language="ja_JP">
+			<Text>[NEWLINE][COLOR:Red]区域に都市を建設ことができない[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_UNITOPERATION_SOTS_SOTS_DISABLED_IMPROVEMENT" Language="ja_JP">
+			<Text>[NEWLINE][COLOR:Red]施設に都市を建設ことができない[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_UNITOPERATION_SOTS_SOTS_DISABLED_LAKE" Language="ja_JP">
+			<Text>[NEWLINE][COLOR:Red]湖に都市を建設ことができない[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_UNITOPERATION_SOTS_SOTS_DISABLED_WONDER" Language="ja_JP">
+			<Text>[NEWLINE][COLOR:Red]自然遺産に都市を建設ことができない[ENDCOLOR]</Text>
+		</Replace>
+
+		<Replace Tag="LOC_SOTS_DISTRICT_COAST_SCIENCE" Language="ja_JP">
+			<Text>海の上の都市により [ICON_Science] 科学力+{1_num}。</Text>
+		</Replace>
+		<Replace Tag="LOC_SOTS_DISTRICT_COAST_CULTURE" Language="ja_JP">
+			<Text>海の上の都市により [ICON_Culture] 文化力+{1_num}。</Text>
+		</Replace>
+		<Replace Tag="LOC_SOTS_DISTRICT_COAST_PRODUCTION" Language="ja_JP">
+			<Text>海の上の都市により  [ICON_Production] 生産力+{1_num}。</Text>
+		</Replace>
+		<Replace Tag="LOC_SOTS_DISTRICT_COAST_FAITH" Language="ja_JP">
+			<Text>海の上の都市により [ICON_Faith] 信仰力+{1_num}。</Text>
+		</Replace>
+		<Replace Tag="LOC_SOTS_DISTRICT_COAST_FOOD" Language="ja_JP">
+			<Text>海の上の都市により [ICON_Food] 食料+{1_num}。</Text>
+		</Replace>
+		<Replace Tag="LOC_SOTS_DISTRICT_COAST_GOLD" Language="ja_JP">
+			<Text>海の上の都市により [ICON_Gold] ゴールド+{1_num}。</Text>
+		</Replace>
+
+		<!-- 海濱 -->
+		<Replace Tag="LOC_SOTS_COAST_NAME" Language="ja_JP">
+			<Text>沿岸</Text>
+		</Replace>
+		<Replace Tag="LOC_SOTS_COAST_DESCRIPTION" Language="ja_JP">
+			<Text>沿岸タイルの上に作られた区域，</Text>
+		</Replace>
+		<Replace Tag="LOC_SOTS_COAST_DESC2" Language="ja_JP">
+			<Text></Text>
+		</Replace>
+		<Replace Tag="LOC_SOTS_COAST_DESC3" Language="ja_JP">
+			<Text>がある都市には建設できない。礁には建設できない。</Text>
+		</Replace>
+		<Replace Tag="LOC_SOTS_COAST_DESC4" Language="ja_JP">
+			<Text>における</Text>
+		</Replace>
+
+		<Replace Tag="LOC_SOTS_DISTRICT_CITY_CENTER_SCIENCE" Language="ja_JP">
+			<Text>隣接する都心により [ICON_Science] 科学力+{1_num}。</Text>
+		</Replace>
+		<Replace Tag="LOC_SOTS_DISTRICT_CITY_CENTER_GOLD" Language="ja_JP">
+			<Text>隣接する都心により [ICON_Gold] ゴールド+{1_num}。</Text>
+		</Replace>
+		<Replace Tag="LOC_SOTS_DISTRICT_CITY_CENTER_CULTURE" Language="ja_JP">
+			<Text>隣接する都心により [ICON_Culture] 文化力+{1_num}。</Text>
+		</Replace>
+		<Replace Tag="LOC_SOTS_DISTRICT_CITY_CENTER_PRODUCTION" Language="ja_JP">
+			<Text>隣接する都心により [ICON_Production] 生産力+{1_num}。</Text>
+		</Replace>
+		<Replace Tag="LOC_SOTS_DISTRICT_CITY_CENTER_FAITH" Language="ja_JP">
+			<Text>隣接する都心により [ICON_Faith] 信仰力+{1_num}。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_GAMEMODE_SOTS_NAME" Language="ja_JP">
+			<Text>「海の都市」モード</Text>
+		</Replace>
+		<Replace Tag="LOC_GAMEMODE_SOTS_DESCRIPTION" Language="ja_JP">
+			<Text>すべてのプレイヤーは海の上からゲームを開始。</Text>
+		</Replace>
+
+		<!-- 百慕達 -->
+		<Replace Tag="LOC_ABILITY_SOTS_LOST_AT_SEA_NAME" Language="ja_JP">
+			<Text>ロスト・アット・シー</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_SOTS_LOST_AT_SEA_DESCRIPTION" Language="ja_JP">
+			<Text>すぐにオーシャンタイルに入る可能性があります。</Text>
+		</Replace>
+		<Replace Tag="LOC_FEATURE_BERMUDA_TRIANGLE_DESCRIPTION" Language="ja_JP">
+			<Text>3タイルの自然遺産。隣接するタイルの [ICON_SCiENCE] 科学力+2、 [ICON_Food] 食料+1、 [ICON_Gold] ゴールド+1。このタイルに入った海洋ユニットは遠くの外洋タイルに飛ばされるが、「神秘の海流」( [ICON_Movement] 移動力+1)と「ロスト・アット・シー」（すぐにオーシャンタイルに入る可能性があります）の能力を得る。</Text>
+		</Replace>
+		
+		<!-- 模組說明 -->
+		<Replace Tag="LOC_SOTS_NAME" Language="ja_JP">
+			<Text>海の上の都市をつくる</Text>
+		</Replace>
+		<Replace Tag="LOC_SOTS_DESCRIPTION" Language="ja_JP">
+			<Text>すべての開拓者は海の上で都市を建設する能力を獲得する。</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

@@ -1,4 +1,4 @@
-require "prefabutil"
+require("prefabutil")
 
 local function plant(inst, growtime)
     local sapling = SpawnPrefab(inst._spawn_prefab or "pinecone_sapling")
@@ -85,6 +85,7 @@ local function addcone(name, spawn_prefab, bank, build, anim, winter_tree)
 		inst:AddTag("deployedplant")
         inst:AddTag("cattoy")
 		inst:AddTag("show_spoilage")
+		inst:AddTag("icebox_valid")
 
         inst.entity:SetPristine()
 

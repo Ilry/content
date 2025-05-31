@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 4546B_UNIT5 -->
+<!-- Author: 27136 -->
+<!-- DateCreated: 10/30/2021 6:12:11 PM -->
+<GameData>
+	
+		<Tags>
+			<Row Tag="CLASS_ALIAN_CANON" Vocabulary="ABILITY_CLASS"/>
+		</Tags>
+		<Types>
+			<Row Type="UNIT_ALIAN_CANON" Kind="KIND_UNIT" />
+			<Row Type="ABILITY_ALIAN_CANON" Kind="KIND_ABILITY"/>
+		</Types>
+
+		<UnitAiInfos>
+			<Row UnitType="UNIT_ALIAN_CANON" AiType="UNITTYPE_SIEGE_SUPPORT"/>
+			<Row UnitType="UNIT_ALIAN_CANON" AiType="UNITTYPE_SIEGE_ALL"/>
+		</UnitAiInfos>
+
+		<TypeTags>
+			<Row Type="ABILITY_ALIAN_CANON" Tag="CLASS_ALIAN_CANON"/>
+			<Row Type="UNIT_ALIAN_CANON" Tag="CLASS_ANTI_AIR"/>
+			<Row Type="UNIT_ALIAN_CANON" Tag="CLASS_ALIAN_CANON"/>
+			<Row Type="UNIT_ALIAN_CANON" Tag="CLASS_SUPPORT"/>
+		</TypeTags>
+
+		<Units>
+			<Row UnitType="UNIT_ALIAN_CANON" Cost="1" Maintenance="10"
+				 BaseMoves="0" BaseSightRange="25" ZoneOfControl="true"
+			     Domain="DOMAIN_LAND" Range="2" AntiAirCombat="300"  FormationClass="FORMATION_CLASS_SUPPORT"
+				 PromotionClass="PROMOTION_CLASS_SUPPORT" AdvisorType="ADVISOR_CONQUEST"
+				 Name="LOC_UNIT_ALIAN_CANON_NAME" Description="LOC_UNIT_ALIAN_CANON_DESCRIPTION"
+				 PurchaseYield="YIELD_GOLD"  CanTargetAir="TRUE"
+				 TraitType="TRAIT_UNIT_ALIAN_CANON"/>
+		</Units>
+
+		<UnitAbilities>
+			<Row UnitAbilityType="ABILITY_ALIAN_CANON" Name="LOC_ABILITY_ALIAN_CANON_NAME" Description="LOC_ABILITY_ALIAN_CANON_DESCRIPTION"/>
+		</UnitAbilities>
+
+	<TraitModifiers>
+		<Row>
+			<TraitType>TRAIT_CIVILIZATION_THELEGACY</TraitType>
+			<ModifierId>MODIFIER_CREATE_ALIAN_CANON</ModifierId>
+		</Row>
+	</TraitModifiers>
+	<Modifiers>
+		<Row>
+			<ModifierId>MODIFIER_CREATE_ALIAN_CANON</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_GRANT_UNIT_IN_CAPITAL</ModifierType>
+			<SubjectRequirementSetId>HAVE_ALIAN_CANON</SubjectRequirementSetId>
+		</Row>
+	</Modifiers>
+	<ModifierArguments>
+		<Row>
+			<ModifierId>MODIFIER_CREATE_ALIAN_CANON</ModifierId>
+			<Name>AllowUniqueOverride</Name>
+			<Value>false</Value>
+		</Row>
+		<Row>
+			<ModifierId>MODIFIER_CREATE_ALIAN_CANON</ModifierId>
+			<Name>Amount</Name>
+			<Value>1</Value>
+		</Row>
+		<Row>
+			<ModifierId>MODIFIER_CREATE_ALIAN_CANON</ModifierId>
+			<Name>UnitType</Name>
+			<Value>UNIT_ALIAN_CANON</Value>
+		</Row>
+	</ModifierArguments>
+	<!-- =============== RequirementSets =============== -->
+	<RequirementSets>
+		<Row>
+			<RequirementSetId>HAVE_ALIAN_CANON</RequirementSetId>
+			<RequirementSetType>REQUIREMENTSET_TEST_ALL</RequirementSetType>
+		</Row>
+	</RequirementSets>
+	<RequirementSetRequirements>
+		<Row>
+			<RequirementSetId>HAVE_ALIAN_CANON</RequirementSetId>
+			<RequirementId>REQ_HAS_CANON</RequirementId>
+		</Row>
+	</RequirementSetRequirements>
+	<!-- +++++++++++++++ Requirements +++++++++++++++ -->
+	<Requirements>
+		<Row>
+			<RequirementId>REQ_HAS_CANON</RequirementId>
+			<RequirementType>REQUIREMENT_PLAYER_HAS_TECHNOLOGY</RequirementType>
+		</Row>
+	</Requirements>
+	<RequirementArguments>
+		<Row>
+			<RequirementId>REQ_HAS_CANON</RequirementId>
+			<Name>TechnologyType</Name>
+			<Value>TECH_ADVANCED_BALLISTICS</Value>
+		</Row>
+	</RequirementArguments>
+
+	<UnitAbilityModifiers>
+		<Row>
+			<UnitAbilityType>ABILITY_ALIAN_CANON</UnitAbilityType>
+			<ModifierId>MODIFIER_ALIAN_CAN_SEE</ModifierId>
+		</Row>
+	</UnitAbilityModifiers>
+	<Modifiers>
+		<Row>
+			<ModifierId>MODIFIER_ALIAN_CAN_SEE</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_UNIT_ADJUST_SEE_THROUGH_FEATURES</ModifierType>
+		</Row>
+	</Modifiers>
+	<ModifierArguments>
+		<Row>
+			<ModifierId>MODIFIER_ALIAN_CAN_SEE</ModifierId>
+			<Name>CanSee</Name>
+			<Value>true</Value>
+		</Row>
+	</ModifierArguments>
+
+	<UnitAbilityModifiers>
+		<Row>
+			<UnitAbilityType>ABILITY_ALIAN_CANON</UnitAbilityType>
+			<ModifierId>MODIFIER_ALIAN_CAN_SEE_YOU</ModifierId>
+		</Row>
+	</UnitAbilityModifiers>
+	<Modifiers>
+		<Row>
+			<ModifierId>MODIFIER_ALIAN_CAN_SEE_YOU</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_UNIT_ADJUST_SEE_THROUGH_TERRAIN</ModifierType>
+		</Row>
+	</Modifiers>
+	<ModifierArguments>
+		<Row>
+			<ModifierId>MODIFIER_ALIAN_CAN_SEE_YOU</ModifierId>
+			<Name>CanSee</Name>
+			<Value>true</Value>
+		</Row>
+	</ModifierArguments>
+	
+</GameData>

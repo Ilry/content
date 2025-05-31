@@ -45,6 +45,8 @@ return {
 			NOTALLOWED = "That wouldn't make sense.",
 			INUSE = "The machine is in use.",
             NOTMASTERCHEF = "I do not master this art.",
+			NOTSOULJARHANDLER = "Let's not meddle with it.", -- "I better not use this."
+			RESTRICTED = "I'm not allowed to.",
 		},
         CONSTRUCT =
         {
@@ -58,6 +60,8 @@ return {
 			GENERIC = "I am unable at the time.",
 			INUSE = "They're using it first.",
             NOTMASTERCHEF = "I do not master this art.",
+			NOTSOULJARHANDLER = "I don't partake in the reaping of souls myself.", -- "I better not use this."
+			RESTRICTED = "I'm not allowed to.",
 		},
 		UNLOCK =
         {
@@ -318,6 +322,7 @@ return {
             BEEF_BELL_INVALID_TARGET = "This bell only works on the boofies!",
             BEEF_BELL_ALREADY_USED = "Boofy already taken.",
             BEEF_BELL_HAS_BEEF_ALREADY = "I have my own steed already.",
+			NOT_MINE = "This isn't mine to have.",
         },
         HITCHUP =
         {
@@ -467,7 +472,7 @@ return {
 	ANNOUNCE_EAT =
 	{
 		GENERIC = "I feast!",
-		PAINFUL = "Poison matter doesn't affect us.",
+		PAINFUL = "The 'inedible' aspect of it adds some extra flavour.",
 		SPOILED = "It has lost most nutrition.",
 		STALE = "Time passed by for organic matter.",
 		INVALID = "Not edible.",
@@ -689,11 +694,17 @@ return {
     QUAGMIRE_ANNOUNCE_LOSE = "I smell something fishy. Glorp florp.",
     QUAGMIRE_ANNOUNCE_WIN = "Naura!",
 
-    ANNOUNCE_ROYALTY =
+        ANNOUNCE_ROYALTY =
     {
-        "Bowing to you.",
-        "Best idiot around.",
-        "Don't take that stance.",
+        "Funny crown you have there.",
+        "You did it!",
+        "Not so fancy, huh.",
+    },
+    ANNOUNCE_ROYALTY_JOKER =
+    {
+        "Jimbo!",
+        "You certainly pull it off!",
+        "You look ridiculous.",
     },
 
     ANNOUNCE_ATTACH_BUFF_ELECTRICATTACK    = "The lightning fills my essence!",
@@ -1824,6 +1835,8 @@ return {
         CHESSPIECE_WARG_MUTATED = "The pack was taken down.",
         CHESSPIECE_BEARGER_MUTATED = "My poor poor fluffy bear...",
 		CHESSPIECE_SHARKBOI = "The clique grows bigger.",
+		CHESSPIECE_DAYWALKER2 = "Back to the yard.",
+		CHESSPIECE_WORMBOSS = "Eartheater.",
 
         CHESSJUNK1 = "A pile of metal bones.",
         CHESSJUNK2 = "Another pile of metal bones. ",
@@ -3793,13 +3806,23 @@ return {
         },
 		WALTERHAT = "Looks a little silly, but I appreciate the commitment.",
 		SLINGSHOT = "Quite inventive for how simple it is.",
-		SLINGSHOTAMMO_ROCK = "Don't shoot for the eyes, I'd want them.",
-		SLINGSHOTAMMO_MARBLE = "Don't shoot for the eyes, I'd want them.",
-		SLINGSHOTAMMO_THULECITE = "Don't shoot for the eyes, I'd want them.",
-        SLINGSHOTAMMO_GOLD = "Don't shoot for the eyes, I'd want them.",
-        SLINGSHOTAMMO_SLOW = "Don't shoot for the eyes, I'd want them.",
-        SLINGSHOTAMMO_FREEZE = "Don't shoot for the eyes, I'd want them.",
+		SLINGSHOTAMMO_ROCK = "I'll trust you to not shoot my eyes off.",
+		SLINGSHOTAMMO_MARBLE = "I'll trust you to not shoot my eyes off.",
+		SLINGSHOTAMMO_THULECITE = "I'll trust you to not shoot my eyes off.",
+        SLINGSHOTAMMO_GOLD = "I'll trust you to not shoot my eyes off.",
+        SLINGSHOTAMMO_SLOW = "I'll trust you to not shoot my eyes off.",
+        SLINGSHOTAMMO_FREEZE = "I'll trust you to not shoot my eyes off.",
 		SLINGSHOTAMMO_POOP = "Remains used to distract.",
+		SLINGSHOTAMMO_HONEY = "I'll trust you to not shoot my eyes off.",
+		SLINGSHOTAMMO_STINGER = "I'll trust you to not shoot my eyes off.",
+		SLINGSHOTAMMO_MOONGLASS = "I'll trust you to not shoot my eyes off.",
+		SLINGSHOTAMMO_GELBLOB = "I'll trust you to not shoot my eyes off.",
+		SLINGSHOTAMMO_SCRAPFEATHER = "I'll trust you to not shoot my eyes off.",
+        SLINGSHOTAMMO_DREADSTONE = "I'll trust you to not shoot my eyes off.",
+        SLINGSHOTAMMO_GUNPOWDER = "I'll trust you to not shoot my eyes off.",
+        SLINGSHOTAMMO_LUNARPLANTHUSK = "I'll trust you to not shoot my eyes off.",
+        SLINGSHOTAMMO_PUREBRILLIANCE = "I'll trust you to not shoot my eyes off.",
+        SLINGSHOTAMMO_HORRORFUEL = "I'll trust you to not shoot my eyes off.",
         PORTABLETENT = "A simple but portable solution for the restless.",
         PORTABLETENT_ITEM = "I'm all about portable and functional!",
 
@@ -3837,6 +3860,8 @@ return {
 			GENERIC = "It needs some flowers within.",
 			SOME_FLOWERS = "It is coming to life.",
 			LOTS_OF_FLOWERS = "Her will to survive has manifested itself.",
+			 LOTS_OF_FLOWERS_EVIL = "Evil prevails it.",
+            LOTS_OF_FLOWERS_BLOSSOM = "I suppose there's some use to these.",   
 		},
 
         --Wortox
@@ -5011,6 +5036,7 @@ return {
         RECORD_END = "Music is an art in itself!",
         RECORD_MAIN = "One could feel invested in this.",
         RECORD_WORKTOBEDONE = "Finally a little tune.",
+		RECORD_BALATRO = "Shuffle my jimbos!",
 
         ARCHIVE_ORCHESTRINA_MAIN = "Improved security.",
 
@@ -5293,7 +5319,135 @@ return {
 
         PUMPKINCARVER = "Let's gut these pumpkins.",
 		
+		CARVEPUMPKIN =
+		{
+			INUSE = "One at a time, I get it.",
+			BURNING = "Our king would certainly be upset at this.",
+		},
+		DECORATESNOWMAN =
+		{
+			INUSE = "I must let the others enjoy it.",
+			HASHAT = "It's already been embelished.",
+			STACKEDTOOHIGH = "I haven't found the ability to jump up yet.",
+			MELTING = "And the seasons pass...",
+		},
     
+		-- Winter's Feast 2024
+	ANNOUNCE_SNOWBALL_TOO_BIG = "I can't make it any bigger.",
+	ANNOUNCE_SNOWBALL_NO_SNOW = "The snow has passed on.",
+
+    --rifts 5
+    ANNOUNCE_WENDY_BABYSITTER_SET = "only_used_by_wendy", 
+    ANNOUNCE_WENDY_BABYSITTER_STOP = "only_used_by_wendy",
+
+
+    ANNOUNCE_NO_ABIGAIL_FLOWER = "only_used_by_wendy",
+
+    ANNOUNCE_ELIXIR_BOOSTED = "Ethereal!",
+    ANNOUNCE_ELIXIR_GHOSTVISION = "I suppose that's a solution to being afraid of the dark.",
+    ANNOUNCE_ELIXIR_PLAYER_SPEED = "I feel perfection's effects, but not whole.",
+
+    ANNOUNCE_ABIGAIL_HIDING = "only_used_by_wendy",
+
+    ANNOUNCE_ELIXIR_TOO_SUPER = "This one seems a little strong.",
+	
+	GHOSTLYELIXIR_REVIVE = "Would bring the dead to life, well almost.",
+	
+		
+		SNOWMAN =
+		{
+			GENERIC = "Sculpt all you can until the cold grows away.",
+			SNOWBALL = "Roll it up or pocket it.",
+		},
+        SNOWBALL_ITEM = "It turns my face the wrong way if you throw it too forcefully.",
+
+        -- Meta 5
+        GHOSTLYELIXIR_LUNAR = "Her own magic instruments.",
+        GHOSTLYELIXIR_SHADOW = "Her own magic instruments.",
+        
+		SLINGSHOTMODKIT = "I should come up with my own upgrades...",
+		SLINGSHOT_BAND_PIGSKIN = "I should come up with my own upgrades...",
+		SLINGSHOT_BAND_TENTACLE = "I should come up with my own upgrades...",
+		SLINGSHOT_BAND_MIMIC = "I should come up with my own upgrades...",
+		SLINGSHOT_FRAME_BONE = "I should come up with my own upgrades...",
+		SLINGSHOT_FRAME_GEMS = "I should come up with my own upgrades...",
+		SLINGSHOT_FRAME_WAGPUNK_0 = "I should come up with my own upgrades...",
+		SLINGSHOT_FRAME_WAGPUNK = "I should come up with my own upgrades...",
+		SLINGSHOT_HANDLE_STICKY = "I should come up with my own upgrades...",
+		SLINGSHOT_HANDLE_JELLY = "I should come up with my own upgrades...",
+		SLINGSHOT_HANDLE_SILK = "I should come up with my own upgrades...",
+		SLINGSHOT_HANDLE_VOIDCLOTH = "I should come up with my own upgrades...",
+
+        WOBY_BADGE_STATION = "Companionship is the greatest of teachers.",
+
+        ELIXIR_CONTAINER = "We can really feel the dread within.",
+        GHOSTFLOWERHAT = "I wish I could use it over my face.",
+        WENDY_RESURRECTIONGRAVE = "Unroot yourself.",
+		
+		CHESSPIECE_YOTS = "It writhes no more.",
+		
+		   -- Year of the Snake
+        YOTS_SNAKESHRINE =
+        {
+            GENERIC = "It has been fed.",
+            EMPTY = "Let's give it some fresh meat.",
+            BURNT = "At least it can't feel pain.",
+        },
+        YOTS_WORM = "Quite a festive get-up for a worm!",
+        YOTS_LANTERN_POST = 
+        {
+            GENERIC = "Celebratory lighting.",
+            BURNT = "And it's gone.",
+        },
+        YOTS_LANTERN_POST_ITEM = "Let's adorn our home.",
+        CHESSPIECE_DEPTHWORM  = "The slitherer won't slither.",
+		
+		APPLYELIXIR =
+        {
+            TOO_SUPER = "Something tells me I shouldn't.",
+            NO_ELIXIRABLE = "only_used_by_wendy",
+        },
+		
+		 --rifts 5
+    ANNOUNCE_WENDY_BABYSITTER_SET = "only_used_by_wendy", 
+    ANNOUNCE_WENDY_BABYSITTER_STOP = "only_used_by_wendy",
+
+	ANNOUNCE_WORTOX_REVIVER_FAILTELEPORT = "Seems like I'm not going anywhere right now.",
+
+    ANNOUNCE_NO_ABIGAIL_FLOWER = "only_used_by_wendy",
+
+    ANNOUNCE_ELIXIR_BOOSTED = "Well it feels nice, can't say much about having to remove my head for it.",
+    ANNOUNCE_ELIXIR_GHOSTVISION = "Well, I'd rather my head to be there.",
+    ANNOUNCE_ELIXIR_PLAYER_SPEED = "Mighty strength, but... I'm blind right now.",
+
+    ANNOUNCE_ELIXIR_TOO_SUPER = "Something tells me I shouldn't.",
+	
+	WORTOX_NABBAG = "Sometimes you'll go back to your roots, no matter how dark they were",
+    WORTOX_REVIVER = "They really meant it when they said souls would make us float away.",
+    WORTOX_SOULJAR = "You can guess I'm quite the enjoyer of all storage measures.",
+
+	WOBY_TREAT = "Snack for later.",
+	BANDAGE_BUTTERFLYWINGS = "I appreciate the thought.",
+	PORTABLEFIREPIT_ITEM = "Now we can finally stop casting suns everywhere.",
+    SLINGSHOTAMMO_CONTAINER = "Good. You can stop leaving your pebbles in my laboratory.",
+
+    ELIXIR_CONTAINER = "Very unassuming.",
+    GHOSTFLOWERHAT = "Would fit over my mask, if we thought logically.",
+    WENDY_RESURRECTIONGRAVE = "Claw your way out.",
+	
+	GRAVEURN =
+        {
+            GENERIC = "It needs a soul.",
+            HAS_SPIRIT = "It is within.",
+        },
+
+        SHALLOW_GRAVE = "At least I'm not in there.",
+        THULECITEBUGNET = "Truly knowledge we needed sealed behind technology.",
+
+        -- Deck of Cards
+        DECK_OF_CARDS = "I've never heard of such festivities.",
+        PLAYING_CARD = "Are these tiny slips of art?",
+        BALATRO_MACHINE = "You have quite the personality.",
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 		LIQUID_MIRROR = "Shifting gas, rotating solid, liquid mirror.",
 		WHY_REDGEM_SEED = "Shards of a heart, warming embrace.",
@@ -5354,7 +5508,7 @@ return {
 		WHYEARMOR_INCOMPLETE = "I want to feel whole again.",
 		WHYEARMOR_PROSTHESIS = "I want to feel whole again.",
 		WHYEARMOR_PILE = "I am crushed into bits and pieces.",
-		WHYCRANK = "For holding gems in place while we refine them.",
+		WHYCRANK = "I have great potential for you.",
 		WHYTORCH = "Lighten up your path.",
 		WHYPIERCER = "I'll make the way.",
 		WHYLIFEPEELER = "Soul release, piece by piece.",
@@ -5403,6 +5557,63 @@ return {
         ANCIENTDREAMS_SER = "Her majesty would probably approve of this one.",
         --1.8.9.9
         WHY_WONDERBOX = "A container for very specific hand-picked materials.",
+		--1.9
+		ANCIENTDREAMS_MOSS = "Brings the forest together.",
+		ANCIENTDREAMS_MINERAL_DUST = "Not a proper gem, but I can probably refine it into shards.",
+		ANCIENTDREAMS_ARMOUR_POLISH = "The perfect solution to falling apart!",
+		WHY_GOATSHARD = "Shards, let's get more and make them whole.",
+		--2.0 Arsenal
+		WHY_ARSENAL_BLUE = "For they may not withstand the cold.",
+		WHY_ARSENAL_RED = "So they may burn away.",
+		WHY_ARSENAL_PURPLE = "Until they wither out.",
+		WHY_ARSENAL_ORANGE = "Faced by crushing reality.",
+		WHY_ARSENAL_YELLOW = "Hit insidiously in the back.",
+		WHY_ARSENAL_GREEN = "To be sowed and harvested.",
+		WHY_ARSENAL_OPAL = "Into shared ache and panic.",
+		--Rocks update
+		ANCIENTDREAMS_CHISELTOOL = "Tools of the geologist.",
+		WHY_GEO_FRUIT = "Let's chisel it to shape.",
+		ANCIENTDREAMS_PYRITE = "Stone of irregularity.",
+		ANCIENTDREAMS_LIMESTONE = "Stone of the sea.",
+		ANCIENTDREAMS_BISMUTH = "Mineral of growth.",
+		ANCIENTDREAMS_GRANITE = "Element of grain.",
+		ANCIENTDREAMS_CHALK = "Element of writing.",
+		ANCIENTDREAMS_OPALITE = "Element of glass.",
+		ANCIENTDREAMS_MARBLE = "Element of construction.",
+		ANCIENTDREAMS_FLINT = "Stone of utility.",
+		ANCIENTDREAMS_MOUNTAIN_CRYSTAL = "Crystal of height.",
+		ANCIENTDREAMS_OBSIDIAN = "Gemstone of durability.",
+		ANCIENTDREAMS_EPIDOTE = "Stone of randomness.",
+		ANCIENTDREAMS_HALITE = "Stone of salt.",
+		ANCIENTDREAMS_VARISCITE = "Stone of confidence.",
+		ANCIENTDREAMS_ROSE_QUARTZ = "Crystal of calmness.",
+		ANCIENTDREAMS_BEUDANTIDE = "Mineral of variety.",
+		ANCIENTDREAMS_MOLDAVITE = "Glass of nature.",
+		ANCIENTDREAMS_SELENITE = "Crystal of the sea.",
+		ANCIENTDREAMS_URANITE = "Mineral of energy.",
+		ANCIENTDREAMS_VANADINITE = "Mineral of shattering.",
+		ANCIENTDREAMS_AQUAMARINE = "Mineral of drenching.",
+		ANCIENTDREAMS_FLUORITE = "Mineral of depth.",
+		ANCIENTDREAMS_AMETHYST = "Quartz of damson.",
+		ANCIENTDREAMS_LAPIS_LAZULI = "Stone of sulfur.",
+		ANCIENTDREAMS_AMBER = "Stone of preservation.",
+		ANCIENTDREAMS_AVENTURINE = "Quartz of shimmer.",
+		ANCIENTDREAMS_ORPIMENT = "Mirenal of transmission.",
+		ANCIENTDREAMS_STAR_SAPPHIRE = "Sapphire of the night.",
+		ANCIENTDREAMS_LABRADORITE = "Ingredient of elixirs.",
+		ANCIENTDREAMS_OLIVINE = "Mineral of coldness.",
+		ANCIENTDREAMS_JADE = "Gem of bulwark.",
+		ANCIENTDREAMS_TURMALINE = "Fine stone of incandescence.",
+		ANCIENTDREAMS_EMERALD = "Gemstone of verdant growth.",
+		ANCIENTDREAMS_HELVITE = "Mineral of lava.",
+		ANCIENTDREAMS_RUBY = "Gem of crimson.",
+		ANCIENTDREAMS_FIRE_OPAL = "Gem of lava quenching.",
+		ANCIENTDREAMS_MOONSTONE = "Gem of the sky.",
+		ANCIENTDREAMS_CITRINE = "Quartz of gold.",
+		ANCIENTDREAMS_GARNET = "Stone of scarlet.",
+		ANCIENTDREAMS_TANZANITE = "Prism of azure.",
+		ANCIENTDREAMS_MEMORY_GEM = "Gem of remembrance.",
+		--
 		BEDROLL_GNARCOON = "Rest for the townsfolk.",
 		BEDROLL_GNARCOON_WINTER = "Delightful sleep for kings.",
 		COONTAIL_SHADOW = "Catnip, or maybe worse...",

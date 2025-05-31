@@ -11,21 +11,26 @@ local params = containers.params
 params.medical_box = {
     widget = {
         slotpos = {},
-        animbank = "ui_tacklecontainer_3x2",
-        animbuild = "ui_tacklecontainer_3x2",
+        slotbg  = {},
+        animbank = "ui_chest_3x3",
+        animbuild = "ui_chest_3x3",
         pos = Vector3(0, 200, 0),
         side_align_tip = 160,
     },
     type = "medical_box",
-    itemtestfn = function(inst, item, slot)
-        return item:HasTag("ghostlyelixir")
-    end
 }
 
-for y = 1, 0, -1 do
+local elixir_container_bg = { image = "elixir_slot.tex", atlas = "images/hud2.xml" }
+
+for y = 2, 0, -1 do
     for x = 0, 2 do
-        table.insert(params.medical_box.widget.slotpos, Vector3(80 * x - 80 * 2 + 80, 80 * y - 80 * 2 + 120, 0))
+        table.insert(params.medical_box.widget.slotpos, Vector3(80 * x - 80 * 2 + 80, 80 * y - 80 * 2 + 80, 0))
+        table.insert(params.medical_box.widget.slotbg, elixir_container_bg)
     end
+end
+
+function params.medical_box.itemtestfn(container, item, slot)
+    return item:HasTag("ghostlyelixir") or item:HasTag("ghostflower")
 end
 
 local function fn()
@@ -58,6 +63,7 @@ local function fn()
     inst:AddComponent("container")
     -- 设置容器名
     inst.components.container:WidgetSetup("medical_box")
+    inst.components.container.restrictedtag = "medical_box_user"
     --------------------------------------------------------------------------
 
     inst:AddComponent("inventoryitem") -- 物品组件

@@ -1,3 +1,5 @@
+---@diagnostic disable
+
 local aoe_cant_tags = {
   "playerghost", "INLIMBO", "FX", "NOCLICK", "DECOR", "notarget", "noattack",
   "structure", "wall", "boat", "invincible", "invisible", "spawnprotection"

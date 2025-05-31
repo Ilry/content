@@ -17,7 +17,7 @@ end
 local ondaycomplete
 local function discharge(inst, owner)
     local owner = inst.components.inventoryitem:GetGrandOwner() or nil
-    if owner and not owner:HasTag("wonderwhy") then
+    if owner and not owner:HasTag("wonderwhy") and owner.sg ~= nil then
         owner.sg:GoToState("electrocute")
         owner.components.health:DoDelta(-10)
         if owner and owner.components.inventory ~= nil then
@@ -40,7 +40,7 @@ local function discharge(inst, owner)
 end
 local function ondaycomplete(inst)
     if inst.chargeleft > 1 then
-        inst.chargeleft = inst.chargeleft - 1
+        inst.chargeleft = inst.chargeleft - 0.5
     else
         discharge(inst)
     end
@@ -51,7 +51,7 @@ local function spawntornado(inst, target, pos, caster)
     if caster:HasTag("wonderwhy") then
         if inst.charged == true then
             if inst.components.rechargeable:IsCharged() then
-                inst.components.rechargeable:Discharge(5)
+                inst.components.rechargeable:Discharge(3)
             else
 
                 inst:DoTaskInTime(.1, function()
@@ -68,9 +68,9 @@ local function spawntornado(inst, target, pos, caster)
                 tornado.overridepkpet = true
             end
             if caster.components.staffsanity then
-                caster.components.staffsanity:DoCastingDelta(-10)
+                caster.components.staffsanity:DoCastingDelta(-5)
             elseif caster.components.sanity ~= nil then
-                caster.components.sanity:DoDelta(-10)
+                caster.components.sanity:DoDelta(-5)
             end
         else
             if caster.components.talker ~= nil then

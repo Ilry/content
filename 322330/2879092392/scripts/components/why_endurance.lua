@@ -35,7 +35,7 @@ local function onheadgear_equippable(self, equippable)
             elseif TUNING.WHY_LANGUAGE == "chinese" then
                 self.inst.components.talker:Say("没有头或肋骨，我戴不住帽子.")
             else
-                self.inst.components.talker:Say("I can't wear hats with no head and ribs.")
+                self.inst.components.talker:Say("I'll need some ribs to maintain my head in place!")
             end
         end
         if self.inst.components.sanity then
@@ -170,7 +170,7 @@ function EnduranceBody:OnTakeDamage(amount, overtime, cause, ignore_invincible, 
     print("get in OnTakeDamage")
     print("amount = " .. amount)
     if cause then
-        print("cause = " .. cause)
+        print("cause = " .. tostring(cause)) --ilaskus: this is now tostring since `cause` as tables crash
     end
     -------------------------Valid Healing-------------------------------------------------------
     --------------------------
@@ -211,10 +211,14 @@ function EnduranceBody:OnTakeDamage(amount, overtime, cause, ignore_invincible, 
     end
 
     local isfood = false
+    local mineralfoods = require("mineral_defs")
     if cause ~= "deerclops" then
         local foodPrefab = SpawnPrefab(cause) or nil
         if (foodPrefab and foodPrefab.components and foodPrefab.components.edible and foodPrefab.components.edible.foodtype ~= FOODTYPE.ELEMENTAL)
-                or cause == "ancientdreams_gemshard" then
+                or cause == "ancientdreams_gemshard" or cause == "why_geo_fruit"
+                or table.contains(mineralfoods["tier_1"], string.sub(cause, 15))
+                or table.contains(mineralfoods["tier_2"], string.sub(cause, 15))
+                or table.contains(mineralfoods["tier_3"], string.sub(cause, 15)) then
             isfood = true
         end
         if foodPrefab then
@@ -261,7 +265,7 @@ function EnduranceBody:OnTakeDamage(amount, overtime, cause, ignore_invincible, 
     end
 
     -- on red amulet heal
-    if cause == "redamulet" then
+    if cause == "redamulet" then --nvm I was dum. redamulet is the 'cause', 'amulet' is the prefab
         local endurance_delta = 1
         if self.inst.components.health.currenthealth ~= self.inst.components.health.maxhealth then
             local oldpercent = self.inst.components.health:GetPercent()
@@ -386,6 +390,34 @@ function EnduranceBody:OnTakeDamage(amount, overtime, cause, ignore_invincible, 
             self.inst:DoTaskInTime(20, function(inst)
                 if inst.components.health ~= nil then
                     inst.components.health.externalfiredamagemultipliers:RemoveModifier(inst)
+                end
+            end)
+        end
+        local oldpercent = self.inst.components.health:GetPercent()
+        self.inst.components.health:SetVal(self.inst.components.health.currenthealth + endurance_delta, cause, afflicter) -- only damage Wonder themselves, don't count endurance from armor
+        self.inst:PushEvent("healthdelta", { oldpercent = oldpercent, newpercent = self.inst.components.health:GetPercent(),
+                                             overtime = overtime, cause = cause, afflicter = afflicter, amount = amount })
+        return true
+    end
+
+    --on dehydration
+    --(Dehydrated Mod compat)
+    if cause == "dehydration" then
+        if self.inst.sg and not self.inst.components.health:IsDead() then
+            self.inst.sg:GoToState("hit")
+        end
+        
+        if self.inst.components.talker then
+            self.inst.components.talker:Say("It seems I must abide by the thirst quenching rule this world imposes.")
+            --TODO: Please add other language quotes here...
+        end
+    
+        if self.inst.components.thirst then
+            self.inst.components.thirst:Pause()
+            --Bit of a different approach. You're not biting your finger off with this one.
+            self.inst:DoTaskInTime(20, function(inst)
+                if inst.components.thirst ~= nil then
+                    inst.components.thirst:Resume()
                 end
             end)
         end

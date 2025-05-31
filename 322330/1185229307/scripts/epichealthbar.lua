@@ -13,7 +13,7 @@ TUNING.EPICHEALTHBAR =
 	WETNESS_METER = false,
 	HORIZONTAL_OFFSET = 0,
 
-	CAMERA_FOCUS_MIN = 20,
+	CAMERA_FOCUS_MIN = 30,
 	CAMERA_FOCUS_MAX = 60,
 	CAMERA_PRIORITY = -10,
 
@@ -52,10 +52,10 @@ TUNING.EPICHEALTHBAR =
 		STALKER_ATRIUM =				RGB(233, 85, 107),
 		BOARRIOR =						RGB(150, 46, 46),
 		BEETLETAUR =					RGB(51, 153, 51),
-		PUGALISK =						RGB(79, 78, 101),
+		PUGALISK =						RGB(102, 100, 130),
 		ANTQUEEN =						RGB(181, 122, 159),
-		ANCIENT_HERALD =				RGB(153, 51, 51),
-		ANCIENT_HULK =					RGB(139, 60, 40),
+		ANCIENT_HERALD =				RGB(171, 57, 57),
+		ANCIENT_HULK =					RGB(179, 77, 51),
 		MALBATROSS =					RGB(85, 99, 164),
 		CRABKING =						RGB(239, 237, 140),
 		LORDFRUITFLY =					RGB(253, 206, 119),
@@ -68,12 +68,12 @@ TUNING.EPICHEALTHBAR =
 		DAYWALKER =						RGB(170, 37, 33),
 		DAYWALKER2 =					RGB(170, 112, 48),
 		SHARKBOI =						RGB(140, 158, 176),
-		WORM_BOSS =						RGB(85, 171, 189),
+		WORM_BOSS =						RGB(107, 84, 145),
 
 		DEERCLOPS =
 		{
 			GENERIC =					RGB(140, 158, 176),
-			DEERCLOPS_YULE =			{ 0.69, 0.23, 0.21 },
+			DEERCLOPS_YULE =			RGB(222, 77, 57),
 			DEERCLOPS_MUTATED =			RGB(124, 189, 181),
 		},
 
@@ -135,7 +135,7 @@ TUNING.EPICHEALTHBAR =
 		EYEOFTERROR =					{ 0.65 },
 		MINOTAUR =						{ 0.6 },
 		DAYWALKER =						{ 0.5, 0.3 },
-		DAYWALKER2 =					{ 0.75, 0.5 },
+		DAYWALKER2 =					{ 0.5 },
 
 		KLAUS = function(inst)
 			if not inst._unchained:value() and inst.Physics:GetMass() <= 1000 then
@@ -155,6 +155,19 @@ TUNING.EPICHEALTHBAR =
 		ALTERGUARDIAN_PHASE1 =			{ "phase1_spawn" },
 		ALTERGUARDIAN_PHASE2 =			{ "phase2_spawn" },
 		ALTERGUARDIAN_PHASE3 =			{ "phase3_spawn" },
+	},
+
+	CONDITIONS =
+	{
+		TIGERSHARK = Tykvesh.True,
+
+		WORM_BOSS = function(inst)
+			if inst.engaged == nil then
+				local pos = inst:GetPosition()
+				inst.engaged = TheSim:CountEntities(pos.x, 0, pos.z, 20, { "worm_boss_piece" }) > 2 or nil
+			end
+			return inst.engaged
+		end,
 	},
 }
 
@@ -198,6 +211,10 @@ if not TheNet:IsDedicated() then
 			ThePlayer.HUD.controls.epichealthbar:OutOfDateAnnouncement()
 		end
 	end)
+
+	for prefab, fn in pairs(TUNING.EPICHEALTHBAR.CONDITIONS) do
+		AddPrefabPostInit(prefab:lower(), function(inst) inst.IsEpic = fn end)
+	end
 end
 
 AddUserCommand("epic",

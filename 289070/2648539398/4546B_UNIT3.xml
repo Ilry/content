@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 4546B_UNIT3 -->
+<!-- Author: 27136 -->
+<!-- DateCreated: 10/24/2021 12:05:32 PM -->
+<GameData>
+	<Tags>
+		<Row Tag="CLASS_PRAWN" Vocabulary="ABILITY_CLASS"/>
+	</Tags>
+	<Types>
+		<Row Type="UNIT_PRAWN" Kind="KIND_UNIT" />
+		<Row Type="ABILITY_PRAWN" Kind="KIND_ABILITY"/>
+	</Types>
+
+	<UnitAiInfos>
+		<Row UnitType="UNIT_PRAWN" AiType="UNITAI_COMBAT"/>
+		<Row UnitType="UNIT_PRAWN" AiType="UNITTYPE_MELEE"/>
+		<Row UnitType="UNIT_PRAWN" AiType="UNITTYPE_RANGED"/>
+		<Row UnitType="UNIT_PRAWN" AiType="UNITTYPE_LAND_COMBAT"/>
+		<Row UnitType="UNIT_PRAWN" AiType="UNITTYPE_SIEGE_ALL"/>
+		<Row UnitType="UNIT_PRAWN" AiType="UNITTYPE_MAJOR_CIV_ONLY"/>
+	</UnitAiInfos>
+
+	<UnitReplaces>
+		<Row CivUniqueUnitType="UNIT_PRAWN" ReplacesUnitType="UNIT_GIANT_DEATH_ROBOT"/>
+	</UnitReplaces>
+
+	<TypeTags>
+		<Row Type="UNIT_PRAWN" Tag="CLASS_GIANT_DEATH_ROBOT"/>
+		<Row Type="UNIT_PRAWN" Tag="CLASS_PRAWN"/>
+		<Row Type="ABILITY_PRAWN" Tag="CLASS_PRAWN"/>
+	</TypeTags>
+
+	<Units>
+		<Row UnitType="UNIT_PRAWN" Cost="1500" Maintenance="15"
+			 BaseMoves="5" BaseSightRange="3" ZoneOfControl="true"
+			 Domain="DOMAIN_LAND"  Combat="130" RangedCombat="120" Range="3" AntiAirCombat="60"  StrategicResource="RESOURCE_LON"
+		     FormationClass="FORMATION_CLASS_LAND_COMBAT"
+		     PromotionClass="PROMOTION_CLASS_GIANT_DEATH_ROBOT" AdvisorType="ADVISOR_CONQUEST"
+			 Name="LOC_UNIT_PRAWN_NAME" Description="LOC_UNIT_PRAWN_DESCRIPTION"
+			 PurchaseYield="YIELD_GOLD" PrereqTech="TECH_ROBOTICS" WMDCapable="true"
+			 TraitType="TRAIT_UNIT_PRAWN"/>
+	</Units>
+	<Units_XP2>
+		<Row UnitType="UNIT_PRAWN" ResourceCost="10" ResourceMaintenanceType="RESOURCE_LON" ResourceMaintenanceAmount="2" CanEarnExperience="false" CanFormMilitaryFormation="false" MajorCivOnly="true"/>
+   </Units_XP2>
+	<UnitAbilities>
+		<Row UnitAbilityType="ABILITY_PRAWN" Name="LOC_ABILITY_PRAWN_NAME" Description="LOC_ABILITY_PRAWN_DESCRIPTION"/>
+	</UnitAbilities>
+
+	<UnitAbilityModifiers>
+		<Row>
+			<UnitAbilityType>ABILITY_PRAWN</UnitAbilityType>
+			<ModifierId>MODIFIER_PRAWN_ADD</ModifierId>
+		</Row>
+	</UnitAbilityModifiers>
+	<Modifiers>
+		<Row>
+			<ModifierId>MODIFIER_PRAWN_ADD</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_UNITS_GRANT_ABILITY</ModifierType>
+			<SubjectRequirementSetId>PRAWN_IN_WATER</SubjectRequirementSetId>
+		</Row>
+	</Modifiers>
+	<ModifierArguments>
+		<Row>
+			<ModifierId>MODIFIER_PRAWN_ADD</ModifierId>
+			<Name>AbilityType</Name>
+			<Value>ABILITY_PRAWN_WATER</Value>
+		</Row>
+	</ModifierArguments>
+	<!-- =============== RequirementSets =============== -->
+	<RequirementSets>
+		<Row>
+			<RequirementSetId>PRAWN_IN_WATER</RequirementSetId>
+			<RequirementSetType>REQUIREMENTSET_TEST_ALL</RequirementSetType>
+		</Row>
+	</RequirementSets>
+	<RequirementSetRequirements>
+		<Row>
+			<RequirementSetId>PRAWN_IN_WATER</RequirementSetId>
+			<RequirementId>REQ_PRAWN_IN_WATER</RequirementId>
+		</Row>
+	</RequirementSetRequirements>
+	<!-- +++++++++++++++ Requirements +++++++++++++++ -->
+	<Requirements>
+		<Row>
+			<RequirementId>REQ_PRAWN_IN_WATER</RequirementId>
+			<RequirementType>REQUIREMENT_PLOT_TERRAIN_CLASS_MATCHES</RequirementType>
+		</Row>
+	</Requirements>
+	<RequirementArguments>
+		<Row>
+			<RequirementId>REQ_PRAWN_IN_WATER</RequirementId>
+			<Name>TerrainClass</Name>
+			<Value>TERRAIN_CLASS_WATER</Value>
+		</Row>
+	</RequirementArguments>
+	<ModifierStrings>
+	<Row ModifierId="MODIFIER_PRAWN_ADD" Context="Preview" Text="LOC_MODIFIER_PRAWN_WATER_DESCRIPTION"/>
+	</ModifierStrings>
+
+</GameData>

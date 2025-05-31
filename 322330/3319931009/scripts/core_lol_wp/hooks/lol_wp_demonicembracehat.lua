@@ -3,32 +3,35 @@
 AddComponentPostInit('combat',function (self)
     local old_GetAttacked = self.GetAttacked
     function self:GetAttacked(attacker,damage,weapon,stimuli,spdamage,...)
-        -- 当玩家穿着 恶魔之拥 时
-        if attacker and attacker:HasTag("player") and attacker.components.inventory then
-            local hat = attacker.components.inventory:GetEquippedItem(EQUIPSLOTS.HEAD)
-            if hat and hat:IsValid() and hat.prefab == 'lol_wp_demonicembracehat' then
-                -- 被动：【黑暗契约】将玩家5%的最大生命值转化为额外的位面伤害。
-                local attacker_maxhp = attacker.components.health and attacker.components.health.maxhealth
-                if attacker_maxhp then
-                    local extra_planardmg = attacker_maxhp * TUNING.MOD_LOL_WP.DEMONICEMBRACEHAT.SKILL_DARKCONVENANT.TRANSFER_MAXHP_PERCENT
-                    if spdamage == nil then
-                        spdamage = {}
-                    end
-                    spdamage['planar'] = (spdamage['planar'] or 0) + extra_planardmg
-                end
-                -- 被动：【亚扎卡纳的凝视】对一名敌人造成伤害时，会造成相当于其1%最大生命值的额外位面伤害，冷却10秒。
-                if hat.components.rechargeable and hat.components.rechargeable:IsCharged() then
-                    local victim_maxhp = self.inst.components.health and self.inst.components.health.maxhealth
-                    if victim_maxhp then
-                        local extra_planardmg_2 = victim_maxhp * TUNING.MOD_LOL_WP.DEMONICEMBRACEHAT.SKILL_STARE.MAXHP_PERCENT
+        if stimuli and stimuli == 'lol_wp_trinity_terraprisma' and attacker and attacker.damage_from_lol_wp_trinity_terraprisma_amulet then
+        else
+            -- 当玩家穿着 恶魔之拥 时
+            if attacker and attacker:HasTag("player") and attacker.components.inventory then
+                local hat = attacker.components.inventory:GetEquippedItem(EQUIPSLOTS.HEAD)
+                if hat and hat:IsValid() and hat.prefab == 'lol_wp_demonicembracehat' then
+                    -- 被动：【黑暗契约】将玩家5%的最大生命值转化为额外的位面伤害。
+                    local attacker_maxhp = attacker.components.health and attacker.components.health.maxhealth
+                    if attacker_maxhp then
+                        local extra_planardmg = attacker_maxhp * TUNING.MOD_LOL_WP.DEMONICEMBRACEHAT.SKILL_DARKCONVENANT.TRANSFER_MAXHP_PERCENT
                         if spdamage == nil then
                             spdamage = {}
                         end
-                        spdamage['planar'] = (spdamage['planar'] or 0) + extra_planardmg_2
-
-                        hat.components.rechargeable:Discharge(TUNING.MOD_LOL_WP.DEMONICEMBRACEHAT.SKILL_STARE.CD)
-
+                        spdamage['planar'] = (spdamage['planar'] or 0) + extra_planardmg
                     end
+                    -- 被动：【亚扎卡纳的凝视】对一名敌人造成伤害时，会造成相当于其1%最大生命值的额外位面伤害，冷却10秒。
+                    -- if hat.components.rechargeable and hat.components.rechargeable:IsCharged() then
+                    --     local victim_maxhp = self.inst.components.health and self.inst.components.health.maxhealth
+                    --     if victim_maxhp then
+                    --         local extra_planardmg_2 = victim_maxhp * TUNING.MOD_LOL_WP.DEMONICEMBRACEHAT.SKILL_STARE.MAXHP_PERCENT
+                    --         if spdamage == nil then
+                    --             spdamage = {}
+                    --         end
+                    --         spdamage['planar'] = (spdamage['planar'] or 0) + extra_planardmg_2
+
+                    --         hat.components.rechargeable:Discharge(TUNING.MOD_LOL_WP.DEMONICEMBRACEHAT.SKILL_STARE.CD)
+
+                    --     end
+                    -- end
                 end
             end
         end

@@ -820,8 +820,12 @@ insightSaveData:Load()
 -- Also a good indicator that the file exists.
 if insightSaveData:Get("last_version") then
 	-- Technically both versions should go through TrimString(str):lower()
-	local is_newer = modinfo.version:match("%d+.%d+.%d+") > insightSaveData:Get("last_version")
+	dprintf("Insight version: [%s] | Match: [%s]", modinfo.version, tostring(modinfo.version:match("%d+%.%d+%.%d+")))
+	local is_newer = modinfo.version:match("%d+%.%d+%.%d+") > insightSaveData:Get("last_version")
 	NEW_INSIGHT_VERSION = is_newer
+
+	-- Update saved version
+	--insightSaveData:Set("last_version", modinfo.version)
 
 	-- Retrofitting
 	if insightSaveData:Get("keybinds") == nil then
@@ -1567,7 +1571,7 @@ if IS_DST then
 					slot = slot,
 				}
 			]]
-			if Insight.prefab_descriptors[data.item.prefab] and Insight.prefab_descriptors[data.item.prefab].StatusAnnoucementsDescribe then
+			if Insight.prefab_descriptors[data.item.prefab] and Insight.prefab_descriptors[data.item.prefab].StatusAnnouncementsDescribe then
 				local info = insight_replica:GetInformation(data.item)
 				--table.foreach(info, dprint)
 				--table.foreach(info.special_data, dprint)
@@ -1581,7 +1585,7 @@ if IS_DST then
 						dumptable(info)
 					end
 
-					local data = Insight.prefab_descriptors[data.item.prefab].StatusAnnoucementsDescribe(info.special_data[data.item.prefab], context, data.item)
+					local data = Insight.prefab_descriptors[data.item.prefab].StatusAnnouncementsDescribe(info.special_data[data.item.prefab], context, data.item)
 					if data and data.description then
 						if data.append then
 							return announcement_string .. " " .. data.description

@@ -1,5 +1,7 @@
 return {
 
+    "redpouch_yot_catcoon",
+    "redpouch_yotb",
     --贝壳礼包
     "hermit_bundle",
     "hermit_bundle_shells",
@@ -74,6 +76,11 @@ return {
     "winter_ornament_fancy6",
     "winter_ornament_fancy7",
     "winter_ornament_fancy8",
+    "winter_ornament_boss_daywalker2",--华丽的装饰
+    "winter_ornament_boss_sharkboi",--华丽的装饰
+    "winter_ornament_boss_wormboss",--华丽的装饰
+
+
     "winter_ornament_boss_bearger",
     "winter_ornament_boss_deerclops",
     "winter_ornament_boss_moose",
@@ -93,7 +100,11 @@ return {
     "winter_ornament_boss_minotaur",
     "winter_ornament_boss_pearl",
     "winter_ornament_boss_toadstool_misery",
-    
+    "winter_ornament_festivalevents1",
+    "winter_ornament_festivalevents2",
+    "winter_ornament_festivalevents3",
+    "winter_ornament_festivalevents4",
+    "winter_ornament_festivalevents5",
     "winter_ornament_boss_celestialchampion4",
     "winter_ornament_boss_eyeofterror1",
     "winter_ornament_boss_celestialchampion1",

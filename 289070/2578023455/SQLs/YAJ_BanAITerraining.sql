@@ -1,0 +1,5 @@
+-- YAJ_BanAITerraining
+-- Author: Luximinous
+-- DateCreated: 7/27/2024 3:08:26 PM
+-- Prevent AI players from getting terraining units.
+--------------------------------------------------------------

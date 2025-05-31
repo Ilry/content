@@ -252,6 +252,7 @@ local KynPearl 			= AddRecipe2("hermit_pearl", {Ingredient("opalpreciousgem", 1)
 	{"CRAFTING_STATION"}
 )
 
+--[[
 local KynFridge 		= AddRecipe2("kyno_wigfridge", {Ingredient("cutstone", 1), Ingredient("gears", 1), Ingredient("meat", 2)}, TECH.LOST,
 	{
 		placer 			= "kyno_wigfridge_placer",
@@ -263,6 +264,7 @@ local KynFridge 		= AddRecipe2("kyno_wigfridge", {Ingredient("cutstone", 1), Ing
 )
 SortAfter("kyno_wigfridge", "icebox", "COOKING")
 SortAfter("kyno_wigfridge", "icebox", "CONTAINERS")
+]]--
 
 local KynFurnace 		= AddRecipe2("kyno_frozenfurnace", {Ingredient("bluegem", 2), Ingredient("ice", 10), Ingredient("dragon_scales", 1)}, TECH.LOST,
 	{
@@ -414,6 +416,7 @@ local KynMast9 			= AddRecipe2("kyno_mast_item_09", {Ingredient("driftwood_log",
 )
 SortAfter("kyno_mast_item_09", "kyno_mast_item_08", "SEAFARING")
 
+--[[
 local KynLobster 		= AddRecipe2("kyno_lobster_home", {Ingredient("kyno_lobster_claw", 2, "images/inventoryimages/tap_inventoryimages.xml"), Ingredient("pickaxe", 1), Ingredient("cutstone", 3)}, TECH.SCIENCE_TWO,
 	{
 		placer			= "kyno_lobster_home_placer",
@@ -424,6 +427,7 @@ local KynLobster 		= AddRecipe2("kyno_lobster_home", {Ingredient("kyno_lobster_c
 	{"STRUCTURES"}
 )
 SortAfter("kyno_lobster_home", "rabbithouse", "STRUCTURES")
+]]--
 
 local KynStand 			= AddRecipe2("kyno_birdstand", {Ingredient("log", 6), Ingredient("papyrus", 2), Ingredient("seeds", 2)}, TECH.SCIENCE_TWO,
 	{
@@ -506,7 +510,7 @@ local KynHydroFarm2 	= AddRecipe2("kyno_fast_hydrofarmplot", {Ingredient("kelp",
 	{"GARDENING"}
 )
 
-local KynRod 			= AddRecipe2("kyno_lightninggoatrod", {Ingredient("lightninggoathorn", 1), Ingredient("cutstone", 1)}, TECH.LOST,
+local KynRod 			= AddRecipe2("kyno_lightninggoatrod", {Ingredient("lightninggoathorn", 1), Ingredient("cutstone", 1)}, TECH.SCIENCE_TWO,
 	{
 		placer			= "kyno_lightninggoatrod_placer",
 		min_spacing 	= 0,
@@ -569,7 +573,7 @@ SortAfter("kyno_driftwood_dock_kit", "dock_kit", "SEAFARING")
 SortAfter("kyno_driftwood_dock_kit", "dock_kit", "STRUCTURES")
 ]]--
 
-local KynDockPilling    = AddRecipe2("kyno_driftwood_dockposts_item", {Ingredient("driftwood_log", 2)}, TECH.LOST,
+local KynDockPilling    = AddRecipe2("kyno_driftwood_dockposts_item", {Ingredient("driftwood_log", 2)}, TECH.SCIENCE_TWO,
 	{
 		atlas			= TapInventoryAtlas,
 		image			= "kyno_driftwood_dockposts_item.tex",
@@ -984,7 +988,7 @@ AddRecipe2("kyno_fishermermhut", {Ingredient("boards", 2), Ingredient("cutstone"
 	{"TAP_SHIPWRECKED"}
 )
 
-AddRecipe2("kyno_tidalpool_small", {Ingredient("pondeel", 2), Ingredient("turf_mud", 1)}, TECH.SCIENCE_TWO,
+AddRecipe2("kyno_tidalpool_small", {Ingredient("eel", 2), Ingredient("turf_mud", 1)}, TECH.SCIENCE_TWO,
 	{
 		placer			= "kyno_tidalpool_small_placer",
 		min_spacing     = 0,
@@ -994,7 +998,7 @@ AddRecipe2("kyno_tidalpool_small", {Ingredient("pondeel", 2), Ingredient("turf_m
 	{"TAP_SHIPWRECKED"}
 )
 
-AddRecipe2("kyno_tidalpool_medium", {Ingredient("pondeel", 3), Ingredient("turf_mud", 2)}, TECH.SCIENCE_TWO,
+AddRecipe2("kyno_tidalpool_medium", {Ingredient("eel", 3), Ingredient("turf_mud", 2)}, TECH.SCIENCE_TWO,
 	{
 		placer			= "kyno_tidalpool_medium_placer",
 		min_spacing     = 0,
@@ -1004,7 +1008,7 @@ AddRecipe2("kyno_tidalpool_medium", {Ingredient("pondeel", 3), Ingredient("turf_
 	{"TAP_SHIPWRECKED"}
 )
 
-AddRecipe2("kyno_tidalpool_big", {Ingredient("pondeel", 4), Ingredient("turf_mud", 3)}, TECH.SCIENCE_TWO,
+AddRecipe2("kyno_tidalpool_big", {Ingredient("eel", 4), Ingredient("turf_mud", 3)}, TECH.SCIENCE_TWO,
 	{
 		placer			= "kyno_tidalpool_big_placer",
 		min_spacing     = 0,
@@ -3448,7 +3452,7 @@ AddRecipe2("rainforesttree_rot_short", {Ingredient("burr", 1, TapInventoryAtlas)
 	{"TAP_HAMLET"}
 )
 
-AddRecipe2("cocoonedtree_short", {Ingredient("burr", 1, TapInventoryAtlas), Ingredient("silk", 1)}, TECH.LOST,
+AddRecipe2("cocoonedtree_short", {Ingredient("burr", 1, TapInventoryAtlas), Ingredient("silk", 1)}, TECH.SCIENCE_TWO,
 	{
 		placer			= "cocoonedtree_short_placer",
 		min_spacing		= 0,
@@ -3458,7 +3462,7 @@ AddRecipe2("cocoonedtree_short", {Ingredient("burr", 1, TapInventoryAtlas), Ingr
 	{"TAP_HAMLET"}
 )
 
-AddRecipe2("spidermonkeytree_short", {Ingredient("burr", 1, TapInventoryAtlas), Ingredient("silk", 1), Ingredient("spidergland", 1)}, TECH.LOST,
+AddRecipe2("spidermonkeytree_short", {Ingredient("burr", 1, TapInventoryAtlas), Ingredient("silk", 1), Ingredient("spidergland", 1)}, TECH.SCIENCE_TWO,
 	{
 		placer			= "spidermonkeytree_short_placer",
 		min_spacing		= 0,
@@ -3488,7 +3492,7 @@ AddRecipe2("kyno_rootchest", {Ingredient("boards", 3), Ingredient("nightmarefuel
 	{"TAP_HAMLET"}
 )
 
-AddRecipe2("kyno_truerootchest", {Ingredient("boards", 3), Ingredient("livinglog", 3), Ingredient("nightmarefuel", 3)}, TECH.LOST,
+AddRecipe2("kyno_truerootchest", {Ingredient("boards", 3), Ingredient("livinglog", 3), Ingredient("nightmarefuel", 3)}, TECH.MAGIC_THREE,
 	{
 		placer			= "kyno_rootchest_placer",
 		min_spacing		= 0,
@@ -5571,6 +5575,7 @@ AddRecipe2("kyno_interior_parts", {Ingredient("boards", 1), Ingredient("moonglas
 	{"TAP_INTERIOR"}
 )
 
+--[[
 AddRecipe2("kyno_shelves_wood", {Ingredient("boards", 4)}, TECH.SCIENCE_TWO,
 	{
 		placer			= "kyno_shelves_wood_placer",
@@ -6000,6 +6005,7 @@ AddRecipe2("kyno_shelves_ruins", {Ingredient("cutstone", 1), Ingredient("flint",
 	},
 	{"TAP_INTERIOR"}
 )
+]]--
 
 AddRecipe2("kyno_shoptable", {Ingredient("boards", 4), Ingredient("goldnugget", 2)}, TECH.SCIENCE_TWO,
 	{
@@ -7611,7 +7617,7 @@ AddRecipe2("kyno_goosenest", {Ingredient("cutgrass", 2), Ingredient("twigs", 2)}
 	{"TAP_SURFACE"}
 )
 
-AddRecipe2("kyno_goosenestegg", {Ingredient("bird_egg", 4), Ingredient("cutgrass", 4), Ingredient("twigs", 4)}, TECH.LOST,
+AddRecipe2("kyno_goosenestegg", {Ingredient("bird_egg", 4), Ingredient("cutgrass", 4), Ingredient("twigs", 4)}, TECH.SCIENCE_TWO,
 	{
 		placer			= "kyno_goosenestegg_placer",
 		min_spacing		= 0,
@@ -9085,7 +9091,7 @@ AddRecipe2("kyno_moonfissure_plugged", {Ingredient("moonrocknugget", 2), Ingredi
 	{"TAP_SURFACE"}
 )
 
-AddRecipe2("kyno_meatrack_hermit", {Ingredient("twigs", 3), Ingredient("moon_tree_blossom", 2), Ingredient("rope", 3)}, TECH.LOST,
+AddRecipe2("kyno_meatrack_hermit", {Ingredient("twigs", 3), Ingredient("moon_tree_blossom", 2), Ingredient("rope", 3)}, TECH.SCIENCE_TWO,
 	{
 		placer			= "kyno_meatrack_hermit_placer",
 		min_spacing		= 0,
@@ -9095,7 +9101,7 @@ AddRecipe2("kyno_meatrack_hermit", {Ingredient("twigs", 3), Ingredient("moon_tre
 	{"TAP_SURFACE"}
 )
 
-AddRecipe2("kyno_beebox_hermit", {Ingredient("moon_tree_blossom", 4), Ingredient("honeycomb", 1), Ingredient("bee", 4)}, TECH.LOST,
+AddRecipe2("kyno_beebox_hermit", {Ingredient("moon_tree_blossom", 4), Ingredient("honeycomb", 1), Ingredient("bee", 4)}, TECH.SCIENCE_TWO,
 	{
 		placer			= "kyno_beebox_hermit_placer",
 		min_spacing		= 0,
@@ -9105,7 +9111,7 @@ AddRecipe2("kyno_beebox_hermit", {Ingredient("moon_tree_blossom", 4), Ingredient
 	{"TAP_SURFACE"}
 )
 
-AddRecipe2("kyno_hermithouse1", {Ingredient("rocks", 3), Ingredient("log", 3), Ingredient("slurtle_shellpieces", 3)}, TECH.LOST,
+AddRecipe2("kyno_hermithouse1", {Ingredient("rocks", 3), Ingredient("log", 3), Ingredient("slurtle_shellpieces", 3)}, TECH.SCIENCE_TWO,
 	{
 		placer			= "kyno_hermithouse1_placer",
 		min_spacing		= 0,
@@ -9115,7 +9121,7 @@ AddRecipe2("kyno_hermithouse1", {Ingredient("rocks", 3), Ingredient("log", 3), I
 	{"TAP_SURFACE"}
 )
 
-AddRecipe2("kyno_hermithouse2", {Ingredient("cookiecuttershell", 2), Ingredient("boards", 3)}, TECH.LOST,
+AddRecipe2("kyno_hermithouse2", {Ingredient("cookiecuttershell", 2), Ingredient("boards", 3)}, TECH.SCIENCE_TWO,
 	{
 		placer			= "kyno_hermithouse2_placer",
 		min_spacing		= 0,
@@ -9125,7 +9131,7 @@ AddRecipe2("kyno_hermithouse2", {Ingredient("cookiecuttershell", 2), Ingredient(
 	{"TAP_SURFACE"}
 )
 
-AddRecipe2("kyno_hermithouse3", {Ingredient("marble", 3), Ingredient("rope", 3)}, TECH.LOST,
+AddRecipe2("kyno_hermithouse3", {Ingredient("marble", 3), Ingredient("rope", 3)}, TECH.SCIENCE_TWO,
 	{
 		placer			= "kyno_hermithouse3_placer",
 		min_spacing		= 0,
@@ -9135,7 +9141,7 @@ AddRecipe2("kyno_hermithouse3", {Ingredient("marble", 3), Ingredient("rope", 3)}
 	{"TAP_SURFACE"}
 )
 
-AddRecipe2("kyno_hermithouse4", {Ingredient("moonrocknugget", 3), Ingredient("cactus_flower", 2)}, TECH.LOST,
+AddRecipe2("kyno_hermithouse4", {Ingredient("moonrocknugget", 3), Ingredient("cactus_flower", 2)}, TECH.SCIENCE_TWO,
 	{
 		placer			= "kyno_hermithouse4_placer",
 		min_spacing		= 0,
@@ -9589,7 +9595,7 @@ AddRecipe2("kyno_moonstorm_lightning2", {Ingredient("moonglass_charged", 1)}, TE
 	{"TAP_SURFACE"}
 )
 
-AddRecipe2("kyno_defeated_cc1", {Ingredient("moonrocknugget", 3)}, TECH.SCIENCE_TWO,
+AddRecipe2("kyno_defeated_cc1", {Ingredient("moonrocknugget", 3)}, TECH.MAGIC_THREE,
 	{
 		placer			= "kyno_defeated_cc1_placer",
 		min_spacing		= 0,
@@ -9599,7 +9605,7 @@ AddRecipe2("kyno_defeated_cc1", {Ingredient("moonrocknugget", 3)}, TECH.SCIENCE_
 	{"TAP_SURFACE"}
 )
 
-AddRecipe2("kyno_defeated_cc2", {Ingredient("moonrocknugget", 3)}, TECH.SCIENCE_TWO,
+AddRecipe2("kyno_defeated_cc2", {Ingredient("moonrocknugget", 3)}, TECH.MAGIC_THREE,
 	{
 		placer			= "kyno_defeated_cc2_placer",
 		min_spacing		= 0,
@@ -9609,7 +9615,7 @@ AddRecipe2("kyno_defeated_cc2", {Ingredient("moonrocknugget", 3)}, TECH.SCIENCE_
 	{"TAP_SURFACE"}
 )
 
-AddRecipe2("kyno_defeated_cc4", {Ingredient("moonrocknugget", 2), Ingredient("moonglass", 2), Ingredient("alterguardianhat", 1)}, TECH.LOST,
+AddRecipe2("kyno_defeated_cc4", {Ingredient("moonrocknugget", 2), Ingredient("moonglass", 2), Ingredient("alterguardianhat", 1)}, TECH.MAGIC_THREE,
 	{
 		placer			= "kyno_defeated_cc4_placer",
 		min_spacing		= 0,
@@ -9619,7 +9625,7 @@ AddRecipe2("kyno_defeated_cc4", {Ingredient("moonrocknugget", 2), Ingredient("mo
 	{"TAP_SURFACE"}
 )
 
-AddRecipe2("kyno_defeated_cc3", {Ingredient("moonrocknugget", 2), Ingredient("moonglass", 2)}, TECH.SCIENCE_TWO,
+AddRecipe2("kyno_defeated_cc3", {Ingredient("moonrocknugget", 2), Ingredient("moonglass", 2)}, TECH.MAGIC_THREE,
 	{
 		placer			= "kyno_defeated_cc3_placer",
 		min_spacing		= 0,
@@ -10689,9 +10695,10 @@ AddRecipe2("kyno_molebathill", {Ingredient("cutgrass", 3), Ingredient("poop", 3)
 	{"TAP_CAVES"}
 )
 
-AddRecipe2("cavein_boulder", {Ingredient("rocks", 3)}, TECH.SCIENCE_TWO,
+AddRecipe2("cavein_boulder2", {Ingredient("rocks", 3)}, TECH.SCIENCE_TWO,
 	{
 		numtogive		= 1,
+		product         = "cavein_boulder",
 		atlas			= TapDefaultAtlas,
 		image			= "cavein_boulder.tex",
 	},
@@ -10998,7 +11005,7 @@ AddRecipe2("kyno_ornatechest", {Ingredient("boards", 1), Ingredient("thulecite",
 	{"TAP_CAVES"}
 )
 
-AddRecipe2("kyno_ornatechest_large", {Ingredient("boards", 2), Ingredient("thulecite", 3)}, TECH.LOST,
+AddRecipe2("kyno_ornatechest_large", {Ingredient("boards", 2), Ingredient("thulecite", 3)}, TECH.MAGIC_THREE,
 	{
 		placer			= "kyno_ornatechest_large_placer",
 		min_spacing		= 0,
@@ -11318,7 +11325,7 @@ AddRecipe2("kyno_atriumfence", {Ingredient("cutstone", 1), Ingredient("nightmare
 	{"TAP_CAVES"}
 )
 
-AddRecipe2("kyno_atriumgateway", {Ingredient("thulecite", 5), Ingredient("nightmarefuel", 5), Ingredient("cutstone", 2)}, TECH.LOST,
+AddRecipe2("kyno_atriumgateway", {Ingredient("thulecite", 5), Ingredient("nightmarefuel", 5), Ingredient("cutstone", 2)}, TECH.MAGIC_THREE,
 	{
 		placer			= "kyno_atriumgateway_placer",
 		min_spacing		= 0,
@@ -12087,7 +12094,7 @@ AddRecipe2("kyno_beefalo_vomit", {Ingredient("phlegm", 1)}, TECH.SCIENCE_TWO,
 	{"TAP_LEGACY"}
 )
 
-AddRecipe2("kyno_treeclump", {Ingredient("log", 10), Ingredient("pinecone", 5)}, TECH.LOST,
+AddRecipe2("kyno_treeclump", {Ingredient("log", 10), Ingredient("pinecone", 5)}, TECH.SCIENCE_TWO,
 	{
 		placer			= "kyno_treeclump_placer",
 		min_spacing		= 0,
@@ -12157,7 +12164,7 @@ AddRecipe2("kyno_truffles", {Ingredient("blue_cap", 2), Ingredient("green_cap", 
 	{"TAP_LEGACY"}
 )
 
-AddRecipe2("kyno_shadowportal", {Ingredient("livinglog", 4), Ingredient("nightmarefuel", 4), Ingredient("purplegem", 1)}, TECH.LOST,
+AddRecipe2("kyno_shadowportal", {Ingredient("livinglog", 4), Ingredient("nightmarefuel", 4), Ingredient("purplegem", 1)}, TECH.MAGIC_THREE,
 	{
 		placer			= "kyno_shadowportal_placer",
 		min_spacing		= 0,
@@ -13336,7 +13343,7 @@ AddRecipe2("kyno_clawtree2_sapling", {Ingredient("pinecone", 1)}, TECH.SCIENCE_T
 	{"TAP_LEGACY"}
 )
 
-AddRecipe2("cocoonedtreelegacy_short", {Ingredient("burr", 1, TapInventoryAtlas), Ingredient("silk", 1)}, TECH.LOST,
+AddRecipe2("cocoonedtreelegacy_short", {Ingredient("burr", 1, TapInventoryAtlas), Ingredient("silk", 1)}, TECH.SCIENCE_TWO,
 	{
 		placer			= "cocoonedtreelegacy_short_placer",
 		min_spacing		= 0,
@@ -13386,7 +13393,7 @@ AddRecipe2("rainforesttreelegacy_rot_short", {Ingredient("burr",1 , TapInventory
 	{"TAP_LEGACY"}
 )
 
-AddRecipe2("cocoonedtreelegacy2_short", {Ingredient("burr", 1, TapInventoryAtlas), Ingredient("silk", 1)}, TECH.LOST,
+AddRecipe2("cocoonedtreelegacy2_short", {Ingredient("burr", 1, TapInventoryAtlas), Ingredient("silk", 1)}, TECH.SCIENCE_TWO,
 	{
 		placer			= "cocoonedtreelegacy2_short_placer",
 		min_spacing		= 0,
@@ -14396,8 +14403,9 @@ AddRecipe2("tallbirdegg", {Ingredient("bird_egg", 10)}, TECH.SCIENCE_TWO,
 	{"REFINE"}
 )
 
-AddRecipe2("moonbutterfly", {Ingredient("butterfly", 1)}, TECH.SCIENCE_TWO,
+AddRecipe2("moonbutterfly2", {Ingredient("butterfly", 1)}, TECH.SCIENCE_TWO,
 	{
+		product         = "moonbutterfly",
 		numtogive		= 1,
 		atlas			= TapDefaultAtlas2,
 		image			= "moonbutterfly.tex",
@@ -15095,7 +15103,7 @@ AddRecipe2("trinket_ham_3", {Ingredient("goldnugget", 4)}, TECH.SCIENCE_TWO,
 AddRecipe2("wintersfeastfuel", {Ingredient("nightmarefuel", 1)}, TECH.SCIENCE_TWO,
 	{
 		numtogive		= 1,
-		atlas			= TapDefaultAtlas2,
+		atlas			= TapDefaultAtlas3,
 		image			= "wintersfeastfuel.tex",
 	},
 	{"REFINE"}

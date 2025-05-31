@@ -18,6 +18,7 @@ GLOBAL.STRINGS.BSPJ = {
     BUTTON_TEXT_SPAWN = 'Spawn (Admin Only)',
     TITLE_TEXT_IMPORT_SECRET = 'Please input the base secret',
     TITLE_TEXT_IMPORT_PATH = 'Please input the filename',
+    JSON_NEEDED = 'Filename should be ended with ".json"',
     BUTTON_TEXT_CLOSE = 'Close',
     BUTTON_TEXT_SEARCH = 'Search',
     BUTTON_TEXT_YES = 'Yes',

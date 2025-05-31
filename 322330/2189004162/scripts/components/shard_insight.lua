@@ -107,16 +107,28 @@ end)
 --[[ Class Getters ]]
 --------------------------------------------------------------------------
 function Shard_Insight:UpdateLocalWorldData()
-	local data = {}
+	local local_data = {}
 	--OnWorldDataDirty(TheWorld, nil, data)
+	
+	local shard_data = {
+		shard_id = TheShard:GetShardId(),
+		shard_master = TheShard:IsMaster(),
+		shard_world_prefab = TheWorld.worldprefab,
+	}
 
 	-- print("local_data fetching..")
 	for name, descriptor in pairs(self.shard_data_fetcher) do
-		data[name] = descriptor()
+		local described = descriptor()
+		-- TODO: All these "set" things are returning numbers, typically cooldowns, instead of describeds.
+		if type(described) == "table" then
+			described.shard_data = shard_data
+			local_data[name] = described
+		end
 	end
+
 	-- printwrap("local_data fetched", data)
-	self.local_data = data
-	return data
+	self.local_data = local_data
+	return local_data
 end
 
 function Shard_Insight:GetWorldDescriptors()
@@ -153,7 +165,9 @@ function Shard_Insight:SetAtriumGate(entity)
 	self.atrium_gate = entity
 
 	self:RegisterWorldDataFetcher("atrium_gate", function()
-		return Insight.prefab_descriptors.atrium_gate and Insight.prefab_descriptors.atrium_gate.GetRemainingCooldown and Insight.prefab_descriptors.atrium_gate.GetRemainingCooldown(entity) or nil
+		return Insight.prefab_descriptors.atrium_gate 
+			and Insight.prefab_descriptors.atrium_gate.GetCooldownData 
+			and Insight.prefab_descriptors.atrium_gate.GetCooldownData(entity) or nil
 	end)
 
 
@@ -171,7 +185,9 @@ function Shard_Insight:SetDragonflySpawner(entity)
 	end
 
 	self:RegisterWorldDataFetcher("dragonfly_spawner", function()
-		return Insight.prefab_descriptors.dragonfly_spawner and Insight.prefab_descriptors.dragonfly_spawner.GetRespawnTime and Insight.prefab_descriptors.dragonfly_spawner.GetRespawnTime(entity) or nil
+		return Insight.prefab_descriptors.dragonfly_spawner 
+			and Insight.prefab_descriptors.dragonfly_spawner.GetRespawnData 
+			and Insight.prefab_descriptors.dragonfly_spawner.GetRespawnData(entity) or nil
 	end)
 
 	entity:ListenForEvent("onremove", function()
@@ -187,7 +203,9 @@ function Shard_Insight:SetBeeQueenHive(entity)
 	end
 
 	self:RegisterWorldDataFetcher("beequeenhive", function()
-		return Insight.prefab_descriptors.beequeenhive and Insight.prefab_descriptors.beequeenhive.GetRespawnTime and Insight.prefab_descriptors.beequeenhive.GetRespawnTime(entity) or nil
+		return Insight.prefab_descriptors.beequeenhive 
+			and Insight.prefab_descriptors.beequeenhive.GetRespawnData 
+			and Insight.prefab_descriptors.beequeenhive.GetRespawnData(entity) or nil
 	end)
 
 	entity:ListenForEvent("onremove", function()
@@ -203,7 +221,9 @@ function Shard_Insight:SetTerrarium(entity)
 	end
 
 	self:RegisterWorldDataFetcher("terrarium", function()
-		return Insight.prefab_descriptors.terrarium and Insight.prefab_descriptors.terrarium.GetRemainingCooldown and Insight.prefab_descriptors.terrarium.GetRemainingCooldown(entity) or nil
+		return Insight.prefab_descriptors.terrarium 
+			and Insight.prefab_descriptors.terrarium.GetCooldownData 
+			and Insight.prefab_descriptors.terrarium.GetCooldownData(entity) or nil
 	end)
 
 	entity:ListenForEvent("onremove", function()

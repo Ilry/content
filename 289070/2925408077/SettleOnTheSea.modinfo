@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mod id="66aad3be-0699-4540-b951-accd629e0d74" version="1">
+  <Properties>
+    <Name>LOC_SOTS_NAME</Name>
+    <Description>LOC_SOTS_DESCRIPTION</Description>
+    <CustomProperties xmlns="http://schemas.microsoft.com/developer/msbuild/2003"></CustomProperties>
+    <Created>1701669521</Created>
+    <Teaser>LOC_SOTS_DESCRIPTION</Teaser>
+    <Authors>IthildinX</Authors>
+    <SpecialThanks>LOC_SOTS_SPECIAL_THANK</SpecialThanks>
+    <CompatibleVersions>1.2,2.0</CompatibleVersions>
+  </Properties>
+  <Dependencies>
+    <Mod id="1B28771A-C749-434B-9053-D1380C553DE9" title="Expansion: Rise and Fall" />
+    <Mod id="4873eb62-8ccc-4574-b784-dda455e74e68" title="Expansion: Gathering Storm" />
+  </Dependencies>
+  <References>
+    <Mod id="0fc54588-0cb8-44eb-bad2-3f4f1a53883e" title="LOC_DAL_CORE_NAME" />
+  </References>
+  <ActionCriteria>
+    <Criteria id="SOTS_Mode">
+      <RuleSetInUse>RULESET_EXPANSION_2</RuleSetInUse>
+      <ConfigurationValueMatches>
+        <ConfigurationId>GAMEMODE_SOTS</ConfigurationId>
+        <Group>Game</Group>
+        <Value>1</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
+  </ActionCriteria>
+  <FrontEndActions>
+    <UpdateDatabase id="Config">
+      <File>Core/SOTS_Mode.xml</File>
+    </UpdateDatabase>
+    <UpdateText id="ConfigText">
+      <File>Text/SOTS_ConfigText - CHS.xml</File>
+      <File>Text/SOTS_ConfigText - CHT.xml</File>
+      <File>Text/SOTS_ConfigText.xml</File>
+      <File>Text/SOTS_ConfigText - JP.xml</File>
+    </UpdateText>
+    <UpdateIcons id="ConfigIcons">
+      <File>Core/SOTS_Icons.xml</File>
+    </UpdateIcons>
+    <UpdateArt id="ConfigArt">
+      <File>LOC_SOTS_NAME.dep</File>
+    </UpdateArt>
+  </FrontEndActions>
+  <InGameActions>
+    <UpdateDatabase id="Gameplay">
+      <File>Core/SOTS_Data.xml</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="Modifier">
+      <Properties>
+        <LoadOrder>100000</LoadOrder>
+      </Properties>
+      <File>Core/SOTS_Requirement.sql</File>
+      <File>Core/SOTS_Modifiers.sql</File>
+    </UpdateDatabase>
+    <UpdateText id="Text">
+      <File>Text/SOTS_ConfigText - CHS.xml</File>
+      <File>Text/SOTS_ConfigText - CHT.xml</File>
+      <File>Text/SOTS_ConfigText.xml</File>
+      <File>Text/SOTS_ConfigText - JP.xml</File>
+    </UpdateText>
+    <UpdateIcons id="Icons">
+      <File>Core/SOTS_Icons.xml</File>
+    </UpdateIcons>
+    <UpdateArt id="Art">
+      <ConflictsWith mod_id="ae974162-a925-4e40-99c6-3c1821c58e94" action_id="XXX" />
+      <File>LOC_SOTS_NAME.dep</File>
+    </UpdateArt>
+    <AddGameplayScripts id="GameplayScripts">
+      <Properties>
+        <LoadOrder>99999</LoadOrder>
+      </Properties>
+      <File>Core/SOTS_Modifiers.lua</File>
+    </AddGameplayScripts>
+    <AddUserInterfaces id="UserInterfaces">
+      <Properties>
+        <Context>InGame</Context>
+        <LoadOrder>99999</LoadOrder>
+      </Properties>
+      <File>Core/SOTS_Modifiers_UI.xml</File>
+    </AddUserInterfaces>
+    <UpdateDatabase id="Mode">
+      <Properties>
+        <LoadOrder>999999</LoadOrder>
+      </Properties>
+      <Criteria>SOTS_Mode</Criteria>
+      <File>Core/SOTS_Mode_Modifier.sql</File>
+    </UpdateDatabase>
+  </InGameActions>
+  <Files>
+    <File>ArtDefs/Buildings.artdef</File>
+    <File>ArtDefs/CityGenerators.artdef</File>
+    <File>ArtDefs/Civilizations.artdef</File>
+    <File>ArtDefs/Cultures.artdef</File>
+    <File>ArtDefs/Districts.artdef</File>
+    <File>ArtDefs/FallbackLeaders.artdef</File>
+    <File>ArtDefs/Improvements.artdef</File>
+    <File>ArtDefs/Landmarks.artdef</File>
+    <File>ArtDefs/Leaders.artdef</File>
+    <File>ArtDefs/Overlay.artdef</File>
+    <File>ArtDefs/Resources.artdef</File>
+    <File>ArtDefs/StrategicView.artdef</File>
+    <File>ArtDefs/Units.artdef</File>
+    <File>ArtDefs/Walls.artdef</File>
+    <File>Core/SOTS_Data.xml</File>
+    <File>Core/SOTS_Icons.xml</File>
+    <File>Core/SOTS_Mode.xml</File>
+    <File>Core/SOTS_Mode_Modifier.sql</File>
+    <File>Core/SOTS_Modifiers.lua</File>
+    <File>Core/SOTS_Modifiers.sql</File>
+    <File>Core/SOTS_Modifiers_UI.lua</File>
+    <File>Core/SOTS_Modifiers_UI.xml</File>
+    <File>Core/SOTS_Requirement.sql</File>
+    <File>LOC_SOTS_NAME.dep</File>
+    <File>Platforms/MacOS/BLPs/strategicview/StrategicView.blp</File>
+    <File>Platforms/MacOS/BLPs/UITexture.blp</File>
+    <File>Platforms/MacOS/BLPs/Unit.blp</File>
+    <File>Platforms/Windows/BLPs/strategicview/StrategicView.blp</File>
+    <File>Platforms/Windows/BLPs/UITexture.blp</File>
+    <File>Platforms/Windows/BLPs/Unit.blp</File>
+    <File>QGGSS.sql</File>
+    <File>SettleOnTheSea.Art.xml</File>
+    <File>Text/SOTS_ConfigText - CHS.xml</File>
+    <File>Text/SOTS_ConfigText - CHT.xml</File>
+    <File>Text/SOTS_ConfigText - JP.xml</File>
+    <File>Text/SOTS_ConfigText.xml</File>
+  </Files>
+</Mod>

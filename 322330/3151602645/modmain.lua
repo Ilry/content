@@ -247,7 +247,9 @@ AddPrefabPostInitAny(function(inst)
         -- inst:AddComponent("pettest")
     end
     if(inst:HasTag("critter")) then
-        inst:AddComponent("pettest")
+        if inst.prefab ~= "woby" and inst.prefab ~= "woby_big" and inst.prefab ~= "wobysmall" then
+            inst:AddComponent("pettest")
+        end
     end
     if(inst:HasTag("iron_pet")) then
         inst:RemoveComponent("eater")
@@ -302,16 +304,20 @@ local cmp_act = {
 
             if target:HasTag("critter") then
                 local pet_name = inst.GetDisplayName(target)
-                print(pet_name)
-                if target.replica.pettest and doer:HasTag("player") and inst:HasTag("pm_updatable") then
-                    if target:HasTag("iron_pet")then
-                        return false
-                    -- elseif target:HasTag("critter_kitten")  then
-                    --     return false
-                    else
-                        table.insert(actions, act_petupdate)
-                        print("触发动作")
-                        return true
+                if pet_name ~= "沃比" then
+                    
+
+                    print(pet_name)
+                    if target.replica.pettest and doer:HasTag("player") and inst:HasTag("pm_updatable") then
+                        if target:HasTag("iron_pet")then
+                            return false
+                        -- elseif target:HasTag("critter_kitten")  then
+                        --     return false
+                        else
+                            table.insert(actions, act_petupdate)
+                            print("触发动作")
+                            return true
+                        end
                     end
                 end
             end 

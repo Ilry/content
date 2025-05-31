@@ -4,11 +4,12 @@ require "behaviours/runaway"
 require "behaviours/doaction"
 require "behaviours/panic"
 
-local SEE_BAIT_DIST = 20
+local SEE_BAIT_DIST = 15
 local MAX_LEASH_DIST = 10
-local MAX_WANDER_DIST = 6
+local MAX_WANDER_DIST = 15
 local STOP_RUN_DIST = 7
 local SEE_PLAYER_DIST = 10
+local RUN_TIME_OUT    = 7
 
 local ChickenBrain = Class(Brain, function(self, inst)
     Brain._ctor(self, inst)
@@ -21,7 +22,7 @@ local function EatFoodAction(inst)
             item.components.bait and
             not item:HasTag("planted") and
             not (item.components.inventoryitem and
-                item.components.inventoryitem:IsHeld())
+            item.components.inventoryitem:IsHeld())
         end)
     if target then
         local act = BufferedAction(inst, target, ACTIONS.EAT)
@@ -40,8 +41,12 @@ local RUN_AWAY_PARAMS =
                 guy.components.combat.target:HasTag("chickenfamily"))
     end,
 }
-local function GoHome(inst)
-    if inst.components.homeseeker and inst.components.homeseeker.home and inst.components.homeseeker.home:IsValid() then
+
+local function GoHomeAction(inst)
+    if inst.components.homeseeker and 
+		inst.components.homeseeker.home and 
+		inst.components.homeseeker.home:IsValid() and
+		inst.sg:HasStateTag("trapped") == false then
         return BufferedAction(inst, inst.components.homeseeker.home, ACTIONS.GOHOME)
     end
 end
@@ -50,22 +55,26 @@ function ChickenBrain:OnStart()
     local root = PriorityNode(
     {
         WhileNode(function() return self.inst.components.health.takingfiredamage end, "OnFire", Panic(self.inst)),
-        WhileNode(function() return self.inst.components.health:GetPercent() < .95 end, "LowHealth",
-                    RunAway(self.inst, "scarytoprey", SEE_PLAYER_DIST, STOP_RUN_DIST)),
-		WhileNode(function() return not TheWorld.state.iscaveday end, "IsNight",
-            DoAction(self.inst, GoHome, "Go Home")),					
+        -- WhileNode(function() return self.inst.components.health:GetPercent() < .50 end, "LowHealth",
+			-- RunAway(self.inst, "scarytoprey", SEE_PLAYER_DIST, STOP_RUN_DIST)),	
+		
+		-- WhileNode(function() return not TheWorld.state.iscaveday end, "CaveNightness",
+			-- DoAction(self.inst, GoHomeAction, "GoHome", true)),
+			
+		WhileNode(function() return GetTime() - self.inst.components.combat:GetLastAttackedTime() <= RUN_TIME_OUT end, "Attacked",
+			RunAway(self.inst, "scarytoprey", SEE_PLAYER_DIST, STOP_RUN_DIST)),
+			
         RunAway(self.inst, RUN_AWAY_PARAMS, SEE_PLAYER_DIST, STOP_RUN_DIST),
         RunAway(self.inst, "OnFire", SEE_PLAYER_DIST, STOP_RUN_DIST),
+		
+		EventNode(self.inst, "GoHome",
+			DoAction(self.inst, GoHomeAction, "GoHome", true)),
+		
         DoAction(self.inst, EatFoodAction),
-        Leash(self.inst, function() return self.inst.components.knownlocations:GetLocation("home") end, MAX_LEASH_DIST, MAX_WANDER_DIST),
-        Wander(self.inst, nil, MAX_WANDER_DIST)
-    }, 0.25)
+        Wander(self.inst, function() return self.inst.components.knownlocations:GetLocation("home") end, MAX_WANDER_DIST)
+    }, .25)
 
     self.bt = BT(self.inst, root)
-end
-
-function ChickenBrain:OnInitializationComplete()
-    self.inst.components.knownlocations:RememberLocation("home", Point(self.inst.Transform:GetWorldPosition()))
 end
 
 return ChickenBrain

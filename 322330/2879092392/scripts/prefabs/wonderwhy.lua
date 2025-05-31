@@ -4,6 +4,8 @@ local assets = {
     Asset("SCRIPT", "scripts/prefabs/player_common.lua"),
     Asset( "IMAGE", "bigportraits/wonderwhy_demon.tex" ),
     Asset( "ATLAS", "bigportraits/wonderwhy_demon.xml" ),
+
+    Asset("ANIM", "anim/wonder_idle.zip")
 }
 local start_inv = {}
 for k, v in pairs(TUNING.GAMEMODE_STARTING_ITEMS) do
@@ -43,7 +45,7 @@ local function oneat(inst, food)
                 elseif TUNING.WHY_LANGUAGE == "chinese" then
                     inst.components.talker:Say("我宁愿没尝到味道...")
                 else
-                    inst.components.talker:Say("I'd prefer to not feel the taste...")
+                    inst.components.talker:Say("Feels sharper, yet healthier!")
                 end
             else
                 inst.components.health:DoDelta(4)
@@ -67,7 +69,7 @@ local function oneat(inst, food)
                 elseif TUNING.WHY_LANGUAGE == "chinese" then
                     inst.components.talker:Say("我宁愿没尝到味道...")
                 else
-                    inst.components.talker:Say("I'd prefer to not feel the taste...")
+                    inst.components.talker:Say("Feels sharper, yet healthier!")
                 end
             else
                 if TUNING.WHY_LANGUAGE == "spanish" then
@@ -96,7 +98,7 @@ local function oneat(inst, food)
                 elseif TUNING.WHY_LANGUAGE == "chinese" then
                     inst.components.talker:Say("我宁愿没尝到味道...")
                 else
-                    inst.components.talker:Say("I'd prefer to not feel the taste...")
+                    inst.components.talker:Say("Feels sharper, yet healthier!")
                 end
             else
                 inst.components.health:DoDelta(-16)
@@ -124,7 +126,7 @@ local function oneat(inst, food)
                 elseif TUNING.WHY_LANGUAGE == "chinese" then
                     inst.components.talker:Say("我宁愿没尝到味道...")
                 else
-                    inst.components.talker:Say("I'd prefer to not feel the taste...")
+                    inst.components.talker:Say("Feels sharper, yet healthier!")
                 end
             else
                 if TUNING.WHY_LANGUAGE == "spanish" then
@@ -132,7 +134,7 @@ local function oneat(inst, food)
                 elseif TUNING.WHY_LANGUAGE == "chinese" then
                     inst.components.talker:Say("松脆...")
                 else
-                    inst.components.talker:Say("Crunchy...")
+                    inst.components.talker:Say("You can really feel the crunch...")
                 end
             end
         end
@@ -292,6 +294,12 @@ local function FindFirstCrank(self, data)
     end
 end
 
+local function DisableBeefaloRedirect(inst)
+    if inst.components.combat.redirectdamagefn then
+        inst.components.combat.redirectdamagefn = nil
+    end
+end
+
 local function common_postinit(inst)
     inst:AddTag("oneeyevision")
     --inst:AddTag("outofworldprojected")
@@ -305,6 +313,8 @@ local function common_postinit(inst)
     inst:AddTag("nowormholesanityloss")
     inst:AddTag("health_as_endurance")
     inst.MiniMapEntity:SetIcon("wonderwhy.tex")
+
+    --inst.customidleanim = "wonder_idle"
 
     inst._net_endurance_bonus = inst._net_endurance_bonus or net_smallbyte(inst.GUID, "_net_endurance_bonus")
     inst._net_current_endurance_bonus = inst._net_current_endurance_bonus or net_smallbyte(inst.GUID, "_net_current_endurance_bonus")
@@ -424,6 +434,7 @@ local master_postinit = function(inst)
     --inst:ListenForEvent("clocktick", function() stats(inst) end, TheWorld)
     inst:ListenForEvent("builditem", FindFirstCrank)
     inst:ListenForEvent("healthdelta", CanWearHeadGears)
+    inst:ListenForEvent("mounted", DisableBeefaloRedirect)
 end
 
 WonderAPI.MakeCharacterSkin("wonderwhy","wonderwhy_none",{
@@ -492,6 +503,25 @@ WonderAPI.MakeCharacterSkin("wonderwhy","wonderwhy_demon",{
         Asset("ANIM", "anim/ghost_wonderwhy_demon_build.zip"),
         Asset( "IMAGE", "bigportraits/wonderwhy_demon.tex" ),
         Asset( "ATLAS", "bigportraits/wonderwhy_demon.xml" ),},
+})
+
+
+WonderAPI.MakeCharacterSkin("wonderwhy","wonderwhy_fairy",{
+    name = STRINGS.SKIN_NAMES.wonderwhy_fairy,      
+    des = STRINGS.SKIN_DESCRIPTIONS.wonderwhy_fairy,        
+    quotes = STRINGS.SKIN_QUOTES.wonderwhy_fairy,
+    rarity = "Distinguished",
+    rarityorder = 4,
+    skins = {normal_skin = "wonderwhy_fairy",ghost_skin = "ghost_wonderwhy_fairy_build"},
+    build_name_override = "wonderwhy_fairy",
+    share_bigportrait_name = "wonderwhy_fairy",
+    skin_tags = { "FALLENGOATS", "wonderwhy", "CHARACTER" },
+    assets = {
+        Asset("ANIM", "anim/wonderwhy_fairy.zip"),
+        Asset("ANIM", "anim/wonderwhy_exo_fairy.zip"),
+        Asset("ANIM", "anim/ghost_wonderwhy_fairy_build.zip"),
+        Asset( "IMAGE", "bigportraits/wonderwhy_fairy.tex" ),
+        Asset( "ATLAS", "bigportraits/wonderwhy_fairy.xml" ),},
 })
 
 return MakePlayerCharacter("wonderwhy", prefabs, assets, common_postinit, master_postinit)

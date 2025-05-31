@@ -1,9 +1,3 @@
-AddPrefabPostInit("tigershark", function(inst)
-	inst.IsEpic = Tykvesh.True
-end)
-
---\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-
 if not TheNet:GetIsServer() then
 	local function PushMusicEX(PushMusic, inst, ...)
 		if not inst:HasTag("epic") then --ಠ_ಠ
@@ -22,6 +16,7 @@ end
 
 local function MakeLureBloom(inst)
 	inst.AnimState:SetSymbolBloom("wormlure", "shaders/anim.ksh")
+	inst.AnimState:SetSymbolLightOverride("wormlure", 0.5)
 end
 
 AddPrefabPostInit("worm", MakeLureBloom)

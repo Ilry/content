@@ -1,0 +1,848 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 4546B_Text -->
+<!-- Author: 27136 -->
+<!-- DateCreated: 10/22/2021 3:31:11 PM -->
+<GameData>
+	<LocalizedText>
+		<Replace Tag="LOC_CITY_NAME_1" Language="zh_Hans">
+			<Text>生命之树</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_2" Language="zh_Hans">
+			<Text>熔岩区</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_3" Language="zh_Hans">
+			<Text>极光号</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_4" Language="zh_Hans">
+			<Text>蛇菇洞</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_5" Language="zh_Hans">
+			<Text>蘑菇森林</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_6" Language="zh_Hans">
+			<Text>失落之河</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_7" Language="zh_Hans">
+			<Text>五指山</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_8" Language="zh_Hans">
+			<Text>面包岛</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_9" Language="zh_Hans">
+			<Text>安全区 </Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_10" Language="zh_Hans">
+			<Text>水雷区</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_11" Language="zh_Hans">
+			<Text>库什区</Text>
+		</Replace>
+		<Replace Tag="LOC_CITY_NAME_12" Language="zh_Hans">
+			<Text>暗礁区</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVILIZATION_4546B_DESCRIPTION" Language="zh_Hans">
+			<Text>4546B星球</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVILIZATION_4546B_ADJECTIVE" Language="zh_Hans">
+			<Text>4546B人</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_1" Language="zh_Hans">
+			<Text>大眼仔</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_2" Language="zh_Hans">
+			<Text>泡泡鱼</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_3" Language="zh_Hans">
+			<Text>兔子鱼</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_4" Language="zh_Hans">
+			<Text>圈圈鱼</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_5" Language="zh_Hans">
+			<Text>吸盘鱼</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_6" Language="zh_Hans">
+			<Text>鬼眼鱼</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_7" Language="zh_Hans">
+			<Text>飞镖鱼</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_8" Language="zh_Hans">
+			<Text>咖喱鱼</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_11" Language="zh_Hans">
+			<Text>抱抱鱼</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_12" Language="zh_Hans">
+			<Text>铁锹鱼</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_13" Language="zh_Hans">
+			<Text>潜行者</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_14" Language="zh_Hans">
+			<Text>幽灵鳐</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_15" Language="zh_Hans">
+			<Text>水母鳐</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_16" Language="zh_Hans">
+			<Text>礁背鱼</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_17" Language="zh_Hans">
+			<Text>漂浮者</Text>
+		</Replace>
+		<Replace Tag="LOC_CITIZEN_18" Language="zh_Hans">
+			<Text>燕子鱼</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVILIZATION_4546B_NAME" Language="zh_Hans">
+			<Text>4546B星球</Text>
+		</Replace>
+		<Replace Tag="LOC_LEADER_HAIHUANG_NAME" Language="zh_Hans">
+			<Text>海皇</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_KALA_NAME" Language="zh_Hans">
+			<Text>  卡拉病毒:</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_KALA_DESCRIPTION" Language="zh_Hans">
+			<Text>
+				所有战斗单位-5[ICON_Strength]战斗力；所有城市发展速度-20%,[ICON_Amenities]宜居度-2；研究完“化学”科技后可开展“制作解毒酶”项目，消除该影响。[NEWLINE][NEWLINE]
+
+				美丽水世界：游戏起始将位于海上，未建立城市前每回合获得一定的[ICON_SCIENCE]科技值和[ICON_CULTURE]文化值；所有礁石单元格额外产出+1[ICON_Culture]文化值,+1[ICON_Faith]信仰值,所有建在海岸边的城市+2[ICON_Amenities]宜居度[NEWLINE][NEWLINE]
+
+				阿尔特拉科技：研究完“天文导航”即解锁建造者建造“海洋家园”的能力;每个建成的扫描室将增加2%的[ICON_TechBoosted]“尤里卡”加成;解锁特殊太空竞赛项目“发射海王星号火箭”[NEWLINE][NEWLINE]
+
+				先驱者的遗产：无视科技要求，初始便可见[ICON_RESOURCE_LON]离子晶体资源；研究完“高级弹道学”将在[ICON_Capital]首都生成一个先驱者大炮(支援单位），拥有超大视野，能对一格范围内的空中单位造成毁灭性的打击，但无法[ICON_Production]生产和[ICON_Movement]移动[NEWLINE]</Text>
+		</Replace>
+		<Replace Tag="LOC_LOADING_INFO_LEADER_HAIHUANG" Language="zh_Hans">
+			<Text>海皇，4546B最有灵性的利维坦，面对残暴的先驱者，你以一己之力撑起这个海洋生态系统。你的解毒酶将化解一切威胁，让你的国民永远健康</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_HAIHUANG2_CIVILIZATION_NAME" Language="zh_Hans">
+			<Text>利维坦之主</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_HAIHUANG2_CIVILIZATION_DESCRIPTION" Language="zh_Hans">
+			<Text>所有[ICON_Strength]战斗单位每回合[ICON_Damaged]回复量+5，且行动后可恢复;所有水域单元格[ICON_Production]生产力+1,建造渔船将释放[ICON_Culture]文化炸弹</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_HAIHUANG_QUOTE" Language="zh_Hans">
+			<Text>当你凝视先驱者的时候，利维坦也在凝视你</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_SEAMOTH_NAME" Language="zh_Hans">
+			<Text>海蛾号</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_UNIT_SEAMOTH_DESCRIPTION" Language="zh_Hans">
+			<Text>4546B星球特色单位，取代轻快帆船[NEWLINE]拥有更高的[ICON_Movement]移动力和[ICON_PROMISES_ESPIONAGE]视野,不受控制区影响[NEWLINE]</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_SEAMOTH_DESCRIPTION" Language="zh_Hans">
+			<Text>拥有更高的[ICON_Movement]移动力和[ICON_PROMISES_ESPIONAGE]视野，不受控制区影响[NEWLINE]海蛾号，阿尔特拉科技又一巅峰之作,拥有先进的声呐和电击模块,能在浅海区域灵活作业,非常适合执行各类侦查任务[NEWLINE]</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_SEAMOTH_NAME" Language="zh_Hans">
+			<Text>灵巧自如</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_SEAMOTH_DESCRIPTION" Language="zh_Hans">
+			<Text>拥有更高的[ICON_Movement]移动力和[ICON_PROMISES_ESPIONAGE]视野，不受控制区影响</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_CYCLOPS_NAME" Language="zh_Hans">
+			<Text>独眼巨人号</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_UNIT_CYCLOPS_DESCRIPTION" Language="zh_Hans">
+			<Text>4546B星球特色单位，取代核潜艇[NEWLINE]战斗力更强且拥有三格[ICON_Range]射程；击杀敌军单位后能获得相当于该单位[ICON_Strength]战斗力四倍的[ICON_Science]科技值,但需要[ICON_RESOURCE_URANIUM]铀资源来维护[NEWLINE]</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_CYCLOPS_DESCRIPTION" Language="zh_Hans">
+			<Text>取代核潜艇，战斗力更强且拥有三格[ICON_Range]射程；击杀敌军单位后能获得相当于该单位[ICON_Strength]战斗力四倍的[ICON_Science]科技值[NEWLINE]作为深潜探索必不可少的移动基地，独眼巨人号不仅配备了静音航行模式，使其不易被敌军发现，还能通过舰艇上的鱼类发射器对敌军发动奇袭。而船上自带的科研设备则能对战斗过程进行全方位的分析，有助于研发出更强力的战斗科技,但需要[ICON_RESOURCE_URANIUM]铀资源来维护[NEWLINE]</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_CYCLOPS_NAME" Language="zh_Hans">
+			<Text>全副武装</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_CYCLOPS_DESCRIPTION" Language="zh_Hans">
+			<Text>战斗力更强，拥有3格[ICON_Range]射程；击杀敌军单位后可获得相当于敌军单位战斗力四倍的[ICON_Science]科技值;需要[ICON_RESOURCE_URANIUM]铀资源来维护</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_PRAWN_NAME" Language="zh_Hans">
+			<Text>海虾号</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_UNIT_PRAWN_DESCRIPTION" Language="zh_Hans">
+			<Text>4546B星球特色单位，取代末日机甲[NEWLINE]在水域中作战时+10[ICON_Strength]战斗力,可以携带[ICON_ThermoNuclear]核武器,需要[ICON_RESOURCE_LON]离子晶体提供能量,但[ICON_AntiAir_Large]防空力量较弱[NEWLINE]</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_PRAWN_DESCRIPTION" Language="zh_Hans">
+			<Text>"穿上海虾动力甲，会让你有一种无敌的感觉”[NEWLINE]                     ——阿尔特拉PDA资料库[NEWLINE]海虾号自带的电钻手臂能在水下发挥出巨大的威力,除此之外，海虾号还能利用背后的超大贮藏器携带[ICON_ThermoNuclear]核弹。美中不足的是，专为海陆作战而设计的海虾号在应对空军方面有着较大的缺陷</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_PRAWN_NAME" Language="zh_Hans">
+			<Text>动力甲</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_PRAWN_DESCRIPTION" Language="zh_Hans">
+			<Text>在水域中作战时+10[ICON_Strength]战斗力；可以携带[ICON_ThermoNuclear]核武器,需要[ICON_RESOURCE_LON]离子晶体来维护；[ICON_AntiAir_Large]防空能力较弱</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_SCANNER_NAME" Language="zh_Hans">
+			<Text>扫描室</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_SCANNER_DESCRIPTION" Language="zh_Hans">
+			<Text>运用了阿尔特拉先进探测技术的精密建筑，能提供更多的[ICON_Science]科技值和[ICON_GreatScientist]大科学家点数，建成后能使所在城市所有资源地块（包括加成、战略、奢侈）+2[ICON_Science]科技值，并解锁相关的扫描研究项目。</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_BUILDING_SCANNER_DESCRIPTION" Language="zh_Hans">
+			<Text>4546B星球特色建筑，运用了阿尔特拉先进的探测技术，建成后使所在城市所有含有资源（包括加成、战略、奢侈）的地块+2[ICON_Science]科技值,并解锁相关的扫描研究项目</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_LIFETREE_NAME" Language="zh_Hans">
+			<Text>生命之树</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_DISTRICT_LIFETREE_DESCRIPTION" Language="zh_Hans">
+			<Text>4546B星球特色区域，只能建在水域上。每个相邻的海岸单元格提供+2[ICON_Science]科技值，+2[ICON_Culture]文化值，建成后获得一个幽灵利维坦[NEWLINE]</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_LIFETREE_DESCRIPTION" Language="zh_Hans">
+			<Text>4546B星球特色区域，只能建在水域上。每个相邻的海岸单元格提供+2[ICON_Science]科技值，+2[ICON_Culture]文化值，建成后获得一个幽灵利维坦。[NEWLINE]生命之树，4546B中难得的安详之地，里面包含着不少美丽的生物和奇特的地貌，具有很高的研究和鉴赏价值；这里还是幽灵利维坦的诞生地，对4546B的人民来说具有着非凡的意义</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_Ocean_Science" Language="zh_Hans">
+			<Text>相邻的每个海岸单元格提供2点[ICON_Science]科技值</Text>
+		</Replace>
+		<Replace Tag="LOC_DISTRICT_Ocean_Culture" Language="zh_Hans">
+			<Text>相邻的每个海岸单元格提供2点[ICON_Culture]文化值</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_LIWEITAN_NAME" Language="zh_Hans">
+			<Text>幽灵利维坦</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_UNIT_LIWEITAN_DESCRIPTION" Language="zh_Hans">
+			<Text>4546B特色单位，通过建造“生命之树”获得，无法被生产。[NEWLINE]拥有两次建造次数，能为两格范围内的海军单位+5[ICON_Strength]战斗力；防御时+75[ICON_Strength]战斗力，不可上岸。[NEWLINE]</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_LIWEITAN_DESCRIPTION" Language="zh_Hans">
+			<Text>拥有两次建造次数，能为两格范围内的海军单位+5[ICON_Strength]战斗力；只能通过建造“生命之树”获得，防御时+75[ICON_Strength]战斗力，无法上岸[NEWLINE]作为4546B最具威慑力的利维坦之一，幽灵利维坦并不会滥用它的武力，相反，它会为了维护海洋生态平衡不断努力。</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_LIWEITAN_NAME" Language="zh_Hans">
+			<Text>海洋守护者</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_LIWEITAN_DESCRIPTION" Language="zh_Hans">
+			<Text>拥有两次建造次数；防御时+75[ICON_Strength]战斗力;无法上岸</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_KALAL_NAME" Language="zh_Hans">
+			<Text>卡拉病毒</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_KALAL_DESCRIPTION" Language="zh_Hans">
+			<Text>所有战斗单位-5[ICON_Strength]战斗力；所有城市发展速度-20%,[NEWLINE][ICON_Amenities]宜居度-2；研究完“化学”科技后可开展“制作解毒酶”项目，消除该影响。</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_BEAUTYSEA_NAME" Language="zh_Hans">
+			<Text>美丽水世界</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_BEAUTYSEA_DESCRIPTION" Language="zh_Hans">
+			<Text>游戏起始将位于海上，未建立城市前每回合获得一定的[ICON_SCIENCE]科技值和[ICON_CULTURE]文化值；所有礁石单元格额外产出+1[ICON_Culture]文化值,+1[ICON_Faith]信仰值,所有建在海岸边的城市+2[ICON_Amenities]宜居度</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_AERTELA_NAME" Language="zh_Hans">
+			<Text>阿尔特拉科技</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_AERTELA_DESCRIPTION" Language="zh_Hans">
+			<Text>研究完“天文导航”即解锁建造者建造“海洋家园”的能力。每个建成的扫描室将增加2%的[ICON_TechBoosted]“尤里卡”加成;解锁特殊太空竞赛项目“发射海王星号火箭”</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_THELEGACY_NAME" Language="zh_Hans">
+			<Text>先驱者的遗产</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_CIVILIZATION_THELEGACY_DESCRIPTION" Language="zh_Hans">
+			<Text>无视科技要求，初始便可见[ICON_RESOURCE_LON]离子晶体资源；研究完“高级弹道学”将在[ICON_Capital]首都生成一个先驱者大炮(支援单位），拥有超大视野，能对一格范围内的空中目标造成毁灭性打击，但无法[ICON_Production]生产和[ICON_Movement]移动</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_HAIHUANG_NAME" Language="zh_Hans">
+			<Text>利维坦之主</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_LEADER_HAIHUANG_DESCRIPTION" Language="zh_Hans">
+			<Text>所有[ICON_Strength]战斗单位每回合[ICON_Damaged]回复量+5，且行动后可恢复;所有水域单元格[ICON_Production]生产力+1,建造渔船将释放[ICON_Culture]文化炸弹</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_IMPROVEMENT_SEASTEAD233_NAME" Language="zh_Hans">
+			<Text>海洋家园 【阿尔特拉建造枪专属】</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_IMPROVEMENT_SEASTEAD233_DESCRIPTION" Language="zh_Hans">
+			<Text>阿尔特拉建造枪的存在使得海洋家园得以提前解锁。所有能力和海洋家园一致，研究完“天文导航”后可用[NEWLINE]</Text>
+		</Replace>
+		<Replace Tag="LOC_IMPROVEMENT_SEASTEAD233_DESCRIPTION" Language="zh_Hans">
+			<Text>阿尔特拉建造枪的存在使得海洋家园得以提前解锁。所有能力和海洋家园一致，研究完“天文导航”后可用</Text>
+		</Replace>
+		<Replace Tag="LOC_IMPROVEMENT_SEASTEAD233_NAME" Language="zh_Hans">
+			<Text>海洋家园【建造枪专属】</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_LIWEITAN_STRENGTH_NAME" Language="zh_Hans">
+			<Text>利维坦的祝福</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_LIWEITAN_STRENGTH_DESCRIPTION" Language="zh_Hans">
+			<Text>在友方的幽灵利维坦两格以内时+5[ICON_Strength]战斗力</Text>
+		</Replace>
+		<Replace Tag="LOC_LIWEITAN_ADD_STRENGTH" Language="zh_Hans">
+			<Text>临近的幽灵利维坦[NEWLINE]提供+5[ICON_Strength]战斗力</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_STUDY_HORSE_NAME" Language="zh_Hans">
+			<Text>对【马】进行扫描研究</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_STUDY_IRON_NAME" Language="zh_Hans">
+			<Text>对【铁矿石】进行扫描研究</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_STUDY_NITER_NAME" Language="zh_Hans">
+			<Text>对【硝石】进行扫描研究</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_STUDY_OIL_NAME" Language="zh_Hans">
+			<Text>对【石油】进行扫描研究</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_STUDY_AL_NAME" Language="zh_Hans">
+			<Text>对【铝矿】进行扫描研究</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_STUDY_LON_NAME" Language="zh_Hans">
+			<Text>对【离子晶体】进行扫描研究</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_STUDY_UR_NAME" Language="zh_Hans">
+			<Text>对【铀矿】进行扫描研究</Text>
+		</Replace>
+		<Replace Tag="LOC_MODIFIER_ABILITY_LIWEITAN1" Language="zh_Hans">
+			<Text>幽灵利维坦防御时+75[ICON_Strength]战斗力</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_STUDY_HORSE_SHORT_NAME" Language="zh_Hans">
+			<Text>对【马】进行扫描研究</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_STUDY_IRON_SHORT_NAME" Language="zh_Hans">
+			<Text>对【铁矿】进行扫描研究</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_STUDY_NITER_SHORT_NAME" Language="zh_Hans">
+			<Text>对【硝石】进行扫描研究</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_STUDY_OIL_SHORT_NAME" Language="zh_Hans">
+			<Text>对【石油】进行扫描研究</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_STUDY_AL_SHORT_NAME" Language="zh_Hans">
+			<Text>对【铝矿】进行扫描研究</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_STUDY_LON_SHORT_NAME" Language="zh_Hans">
+			<Text>对【离子晶体】进行扫描研究</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_STUDY_UR_SHORT_NAME" Language="zh_Hans">
+			<Text>对【铀矿】进行扫描研究</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_STUDY_HORSE_DESCRIPTION" Language="zh_Hans">
+			<Text>获得： 80点[ICON_Science]科技值[NEWLINE]扫描室特殊项目，消耗【马】资源，完成后获得[ICON_Science]科技值</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_STUDY_IRON_DESCRIPTION" Language="zh_Hans">
+			<Text>获得： 200点[ICON_Science]科技值[NEWLINE]扫描室特殊项目，消耗【铁】资源，完成后获得[ICON_Science]科技值</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_STUDY_NITER_DESCRIPTION" Language="zh_Hans">
+			<Text>获得： 320点[ICON_Science]科技值[NEWLINE]扫描室特殊项目，消耗【硝石】资源，完成后获得[ICON_Science]科技值</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_STUDY_OIL_DESCRIPTION" Language="zh_Hans">
+			<Text>获得： 450点[ICON_Science]科技值[NEWLINE]扫描室特殊项目，消耗【石油】资源，完成后获得[ICON_Science]科技值</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_STUDY_AL_DESCRIPTION" Language="zh_Hans">
+			<Text>获得： 560点[ICON_Science]科技值[NEWLINE]扫描室特殊项目，消耗【铝】资源，完成后获得[ICON_Science]科技值</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_STUDY_LON_DESCRIPTION" Language="zh_Hans">
+			<Text>获得： 680点[ICON_Science]科技值[NEWLINE]扫描室特殊项目，消耗【离子晶体】资源，完成后获得[ICON_Science]科技值</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_STUDY_UR_DESCRIPTION" Language="zh_Hans">
+			<Text>获得： 750点[ICON_Science]科技值[NEWLINE]扫描室特殊项目，消耗【铀】资源，完成后获得[ICON_Science]科技值</Text>
+		</Replace>
+
+		<Replace Tag="LOC_HAIHUANG_HEAL_ARMY_MODIFIER" Language="zh_Hans">
+			<Text>所有[ICON_Strength]战斗单位每回合回复量+5，且行动后可恢复</Text>
+		</Replace>
+		
+		<Replace Tag="LOC_PROJECT_KALA_CURE_NAME" Language="zh_Hans">
+			<Text>制作解毒酶</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_KALA_CURE_SHORT_NAME" Language="zh_Hans">
+			<Text>制作解毒酶</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_KALA_CURE_DESCRIPTION" Language="zh_Hans">
+			<Text>特殊项目，完成后可消除“卡拉病毒”带来的负面影响</Text>
+		</Replace>
+		<Replace Tag="LOC_KALA_REDUCE_STRENGTH" Language="zh_Hans">
+			<Text>-5[ICON_Strength]卡拉病毒</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_KALA_DEBUFF_DESCRIPTION" Language="zh_Hans">
+			<Text>卡拉病毒-5[ICON_Strength]战斗力</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_KALA_DEBUFF_NAME" Language="zh_Hans">
+			<Text>卡拉病毒</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_PRAWN_WATER_NAME" Language="zh_Hans">
+			<Text>海虾号水域加成</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_PRAWN_WATER_DESCRIPTION" Language="zh_Hans">
+			<Text>海虾号在水域中战斗时+10[ICON_Strength]战斗力</Text>
+		</Replace>
+		<Replace Tag="LOC_PRAWN_ADD_STRENGTH" Language="zh_Hans">
+			<Text>+10[ICON_Strength]处于水域中</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_LAUNCH_NEPTUNE_NAME" Language="zh_Hans">
+			<Text>发射海王星号火箭</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_LAUNCH_NEPTUNE_SHORT_NAME" Language="zh_Hans">
+			<Text>发射海王星号火箭</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_LAUNCH_NEPTUNE_DESCRIPTION" Language="zh_Hans">
+			<Text>4546B星球特色太空竞赛项目，取代激光站项目。耗费[ICON_RESOURCE_LON]离子晶体，建成后直接增加20光年太空探索进度[NEWLINE]阿尔特拉的海王星号火箭，内置超大功率引擎，可以进行超空间跳跃。随着火箭弹出一个时光胶囊，4546B的人民正式踏上了宇宙探索之旅！</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_LAUNCH_NEPTUNE_POPUP" Language="zh_Hans">
+			<Text>阿尔特拉的海王星号火箭，内置超大功率引擎，可以进行超空间跳跃。随着火箭弹出一个时光胶囊，4546B的人民正式踏上了宇宙探索之旅！</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_ALIAN_CANON_NAME" Language="zh_Hans">
+			<Text>先驱者大炮</Text>
+		</Replace>
+
+		<Replace Tag="LOC_TRAIT_UNIT_ALIAN_CANON_DESCRIPTION" Language="zh_Hans">
+			<Text>在关闭炮台后，我们对先驱者大炮进行了改造，使其变得更“听话”</Text>
+		</Replace>
+
+		<Replace Tag="LOC_ABILITY_ALIAN_CANON_NAME" Language="zh_Hans">
+			<Text>阳光号烟花制造者</Text>
+		</Replace>
+
+		<Replace Tag="LOC_ABILITY_ALIAN_CANON_DESCRIPTION" Language="zh_Hans">
+			<Text>拥有超大视野，能对一格范围内的空中目标造成毁灭性打击；无法[ICON_Production]生产和[ICON_Movement]移动</Text>
+		</Replace>
+		<Replace Tag="LOC_UNIT_ALIAN_CANON_DESCRIPTION" Language="zh_Hans">
+			<Text>极光号和阳光号烟花制造者，拥有超大视野，能对一格范围内的空中目标造成毁灭性打击。[NEWLINE]在关闭炮台后，我们对先驱者大炮进行了改造，使其变得更 “ 听话 ”</Text>
+		</Replace>
+		<Replace Tag="LOC_RESOURCE_LON_NAME" Language="zh_Hans">
+			<Text>离子晶体</Text>
+		</Replace>
+		<Replace Tag="LOC_AGENDA_THE_GUARD_OF_THE_OCEAN_NAME" Language="zh_Hans">
+			<Text>4546B守护者</Text>
+		</Replace>
+		<Replace Tag="LOC_AGENDA_THE_GUARD_OF_THE_OCEAN_DESCRIPTION" Language="zh_Hans">
+			<Text>喜欢和他人宣布友好的文明，讨厌向他人宣战的文明</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_KUDO_LEADER_HAIHUANG_REASON_ANY" Language="zh_Hans">
+			<Text>(您向他人宣布了友谊)</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_THE_GUARD_OF_THE_OCEAN_FRIEND" Language="zh_Hans">
+			<Text>您向他人宣布了友谊，海皇十分高兴</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_WARNING_LEADER_HAIHUANG_REASON_ANY" Language="zh_Hans">
+			<Text>(您发动了战争）</Text>
+		</Replace>
+		<Replace Tag="LOC_DIPLO_MODIFIER_THE_GUARD_OF_THE_OCEAN_ENEMY" Language="zh_Hans">
+			<Text>海皇讨厌随意发动战争的文明</Text>
+		</Replace>
+		<Row Tag="LOC_DIPLO_KUDO_EXIT_LEADER_HAIHUANG_ANY"  Language="zh_Hans_CN" >
+			<Text>自古以来，我们饱经先驱者的残害，这让我们更加珍视和平。而你为和平做出的努力，4546B的人们会永远记在心里,海皇向你致意</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_EXIT_LEADER_HAIHUANG_ANY"  Language="zh_Hans_CN" >
+			<Text>不管你的目的好坏与否，发动战争只会让交战双方的人民受罪。先驱者曾经入侵了我们的星球，他们的现状如何，想必会给你们一些警示[NEWLINE]</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_HUMAN_LEADER_HAIHUANG_ANY"  Language="zh_Hans_CN" >
+			<Text>4546B的人民热爱和平,他们会用最高级别的仪式欢迎新朋友</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_HUMAN_LEADER_HAIHUANG_ANY"  Language="zh_Hans_CN" >
+			<Text>我觉得，你在和海洋生物交朋友之前应该再细细斟酌一下</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_HAIHUANG_ANY"  Language="zh_Hans_CN" >
+			<Text>我谨代表4546B所有海洋生物向你发出交友申请</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_HAIHUANG_ANY"  Language="zh_Hans_CN" >
+			<Text>太好了，既收获了和平又收获了友谊，不是吗？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_HAIHUANG_ANY"  Language="zh_Hans_CN" >
+			<Text>或许得等我们进化成了陆地生物，才有机会和你们深入交流吧...</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_HAIHUANG_ANY"  Language="zh_Hans_CN" >
+			<Text>我们靠毅力磨死了实力远高于自身的先驱者，难道还会怕你那混乱懒散的军队？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_HAIHUANG_ANY"  Language="zh_Hans_CN" >
+			<Text>对不起，但为了4546B星球的和平发展，身为利维坦之主的我不得不出手</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_HUMAN_LEADER_HAIHUANG_ANY"  Language="zh_Hans_CN" >
+			<Text>非常好，我们会带他们一览生命之树的壮丽景观的</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_HUMAN_LEADER_HAIHUANG_ANY"  Language="zh_Hans_CN" >
+			<Text>我觉得，在你们派代表团来之前，先学学怎么潜水吧</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DELEGATION_FROM_AI_LEADER_HAIHUANG_ANY"  Language="zh_Hans_CN" >
+			<Text>我们的大眼仔为你们带来了4546B新鲜的土特产库什，放心，里面没有卡拉病毒</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_HAIHUANG_ANY"  Language="zh_Hans_CN" >
+			<Text>你们这些陆地生物在说话前都不会用大脑思考一下吗？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_HAIHUANG_ANY"  Language="zh_Hans_CN" >
+			<Text>先驱者对我们的暴行与你们的所作所为相比都是善举！[NEWLINE]（谴责你）</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_FIRST_MEET_LEADER_HAIHUANG_ANY"  Language="zh_Hans_CN" >
+			<Text>统领4546B的利维坦，海皇，向你致以崇高的敬意。只要你不干扰我的子民的正常生活，我们就是朋友</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_HAIHUANG_ANY"  Language="zh_Hans_CN" >
+			<Text>这么美丽的水世界，不考虑参观参观吗？放心，我会让那些 “吓人” 的利维坦避让的</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_FIRST_MEET_NEAR_INITIATOR_POSITIVE_LEADER_HAIHUANG_ANY"  Language="zh_Hans_CN" >
+			<Text>谢谢你，你让我明白了原来陆地上的世界也是如此的精彩</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_HAIHUANG_ANY"  Language="zh_Hans_CN" >
+			<Text> 我们交换一下首都位置吧。毕竟我很想知道你们的首都是否也有着像生命之树那样的优美环境</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_GREETING_LEADER_HAIHUANG_ANY"  Language="zh_Hans_CN" >
+			<Text>很高兴见到你。</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_ALLIANCE_FROM_AI_LEADER_HAIHUANG_ANY"  Language="zh_Hans_CN" >
+			<Text>说实话，认识你们真是这几千年来最好的事情，如果愿意的话，我觉得我们可以更进一步</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_PEACE_AI_ACCEPT_DEAL_LEADER_HAIHUANG_ANY"  Language="zh_Hans_CN" >
+			<Text>确实该收手了，战争给水世界带来了巨大的破坏，我十分心痛</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_PEACE_FROM_AI_LEADER_HAIHUANG_ANY"  Language="zh_Hans_CN" >
+			<Text>快收手吧！你不会希望那些可爱的抱抱鱼死在你们帝国的炮火中的!</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_MAKE_PEACE_FROM_AI_LEADER_HAIHUANG_ANY"  Language="zh_Hans_CN" >
+			<Text>谈判破裂了，所以我在这得提醒你们一下，不要逼我们使用先驱者的武器对付你们</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_MAKE_PEACE_FROM_AI_LEADER_HAIHUANG_ANY"  Language="zh_Hans_CN" >
+			<Text>这就对了，我希望这场战争能成为历史书上一个沉痛的教训，让我们的后人更加珍视和平</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_HUMAN_LEADER_HAIHUANG_ANY"  Language="zh_Hans_CN" >
+			<Text>先驱者大炮限制已解除，你们可以安全着陆了</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_HUMAN_LEADER_HAIHUANG_ANY"  Language="zh_Hans_CN" >
+			<Text>卡拉病毒仍在蔓延，我们不希望你们因此感染</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_OPEN_BORDERS_FROM_AI_LEADER_HAIHUANG_ANY"  Language="zh_Hans_CN" >
+			<Text>4546B的人民希望能到陆地上看看，所以能为我们开启边境吗</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_LEADER_HAIHUANG_ANY"  Language="zh_Hans_CN" >
+			<Text>给个忠告：一个饱受病毒肆虐的海洋星球不是军队驻扎的好地方</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_HUMAN_RESPONSE_POSITIVE_LEADER_HAIHUANG_ANY"  Language="zh_Hans_CN" >
+			<Text>很好，我们的先驱者大炮会时刻监视着你们军队的行踪的</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_HUMAN_RESPONSE_NEGATIVE_LEADER_HAIHUANG_ANY"  Language="zh_Hans_CN" >
+			<Text>那我们恐怕别无选择。先驱者大炮，准备瞄准！</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_HAIHUANG_ANY"  Language="zh_Hans_CN" >
+			<Text>你或许认为你击败了我们，就如同当年的先驱者那样，但你也因此永远无法得到卡拉病毒的解药，等待你们的只有死亡</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_AI_LEADER_HAIHUANG_ANY"  Language="zh_Hans_CN" >
+			<Text>太好了，你们一定会喜欢上我们星球的土特产的</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_AI_LEADER_HAIHUANG_ANY"  Language="zh_Hans_CN" >
+			<Text>真是太可惜了，这些库什可都是幽灵鳐精心培育出来的佳品...</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_EMBASSY_FROM_AI_LEADER_HAIHUANG_ANY"  Language="zh_Hans_CN" >
+			<Text>我们的大使很快就到，所以请务必帮忙安装一下净水装置和消毒装置</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_EMBASSY_FROM_AI_LEADER_HAIHUANG_ANY"  Language="zh_Hans_CN" >
+			<Text>或许你是对的，我们不适合在陆地上长期生存</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_EMBASSY_FROM_HUMAN_LEADER_HAIHUANG_ANY"  Language="zh_Hans_CN" >
+			<Text>非常抱歉，由于我们目前还没有给陆地生物准备好氧气舱，所以暂时无法接受你的请求</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_EMBASSY_FROM_HUMAN_LEADER_HAIHUANG_ANY"  Language="zh_Hans_CN" >
+			<Text>我们非常欢迎，但也请你们的人提前做好防疫工作，毕竟卡拉病毒可不是好对付的</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_MAKE_ALLIANCE_FROM_HUMAN_LEADER_HAIHUANG_ANY"  Language="zh_Hans_CN" >
+			<Text>看吧，我们会向世界证明，海洋生物也能与人类和谐共处的！</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_MAKE_ALLIANCE_FROM_HUMAN_LEADER_HAIHUANG_ANY"  Language="zh_Hans_CN" >
+			<Text>我们明明已经很要好了，却依旧无法站在同一阵营下。难道，海洋生物与人类的隔阂永远都无法打破吗？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_ALLIANCE_FROM_HUMAN_LEADER_HAIHUANG_ANY"  Language="zh_Hans_CN" >
+			<Text>你们作为4546B最忠实的朋友，只要能开出对我们星球有利的条件，我们必会成为你们最可靠的盟友！</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_MAKE_ALLIANCE_FROM_HUMAN_LEADER_LEADER_HAIHUANG_ANY"  Language="zh_Hans_CN" >
+			<Text>我跟幽灵利维坦他们谈过了，他们对结盟一事表示热烈欢迎。所以，4546B将成为你最可靠的盟友！</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_MAKE_ALLIANCE_FROM_HUMAN_LEADER_LEADER_HAIHUANG_ANY"  Language="zh_Hans_CN" >
+			<Text>不是我不想，但是那些利维坦们似乎不同意你的提议。你也不想被这些 “可怕” 的生物缠着不放，对吧？</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_DEAL_AI_ADJUST_DEAL_LEADER_HAIHUANG_HAPPY"  Language="zh_Hans_CN" >
+			<Text>我们的议员一致认为这项提议犹如会跳舞的圈圈鱼一般完美</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_DEAL_AI_ADJUST_DEAL_LEADER_HAIHUANG_UNHAPPY"  Language="zh_Hans_CN" >
+			<Text>我们的议员一致认为这项提议犹如会跳舞的圈圈鱼一般完美</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_DEAL_AI_ADJUST_DEAL_LEADER_HAIHUANG_NEUTRAL"  Language="zh_Hans_CN" >
+			<Text>我们的议员一致认为这项提议犹如会跳舞的圈圈鱼一般完美</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_DEAL_AI_ACCEPT_DEAL_LEADER_HAIHUANG_ANY"  Language="zh_Hans_CN" >
+			<Text>先驱者大炮已关闭，你们的货运飞船可以进出了</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_DEAL_AI_REFUSE_DEAL_LEADER_HAIHUANG_ANY"  Language="zh_Hans_CN" >
+			<Text>就这点诚意，不值得我的部下冒着生命危险去为你们的货运飞船关闭大炮</Text>
+		</Row>
+		<Row Language="zh_Hans_CN" Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_HAIHUANG_NEUTRAL"
+			Text="很好，我们的大眼仔会全程负责物资的转运工作的，请相信他们的业务能力"
+/>
+		<Row Language="zh_Hans_CN" Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_HAIHUANG_HAPPY"
+			Text="很好，我们的大眼仔会全程负责物资的转运工作的，请相信他们的业务能力"
+/>
+		<Row Language="zh_Hans_CN" Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_HAIHUANG_UNHAPPY"
+			Text="看样子，你们这些两足陆地生物并非毫无理智嘛"
+/>
+		<Row Language="zh_Hans_CN" Tag="LOC_DIPLO_REJECT_MAKE_DEAL_FROM_AI_LEADER_HAIHUANG_NEUTRAL"
+			Text="本来还想多送你们一些我们这边特产的离子晶体的...看样子没机会了"
+/>
+		<Row Language="zh_Hans_CN" Tag="LOC_DIPLO_REJECT_MAKE_DEAL_FROM_AI_LEADER_HAIHUANG_HAPPY"
+			Text="可惜了，我本打算派全国最好看的抱抱鱼为你们服务的"
+/>
+		<Row Language="zh_Hans_CN" Tag="LOC_DIPLO_REJECT_MAKE_DEAL_FROM_AI_LEADER_HAIHUANG_UNHAPPY"
+			Text="你们那卑微的诚意与那些傲慢的先驱者无异，我将率领4546B的人民抗争到底！"
+/>
+		<Replace Tag="LOC_CIVINFO_4546B_LOCATION" Language="zh_Hans_CN">
+			<Text>阿里阿德涅旋臂外围</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVINFO_4546B_SIZE" Language="zh_Hans_CN">
+			<Text>由中心火山口和无人区组成，深度在0~8192米</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVINFO_4546B_POPULATION" Language="zh_Hans_CN">
+			<Text>极光号飞船上的为数不多的幸存者以及无数的海洋生物</Text>
+		</Replace>
+		<Replace Tag="LOC_CIVINFO_4546B_CAPITAL" Language="zh_Hans_CN">
+			<Text>生命之树</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_4546B_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>4546B海洋行星是水星二号,极光号与德加斯号的坠毁地点，也是《深海迷航》游戏的地图，剧情的发生部分。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_4546B_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>4546B同时也是由一个名叫“先驱者”的外星文明设立的前哨基地，旨在研究一种名为“卡拉”的外星病毒。“卡拉”病毒是一种极易传染的外星病毒，由“先驱者”在探索其他星球时发现，并在许多行星上建立前哨基地以找到治该病毒疗方法。行星4546B是这些前哨基地之一。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_4546B_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>行星位于阿里阿德涅旋臂（物竞天择中人类与卡拉虫族第一次相遇的地点）的外围，围绕恒星4546旋转。“B”表示4546B是在4546号恒星周围发现的第一颗行星。已知该行星主要被水覆盖，除了少数在赤道附近水上岛屿和极地冰川以外，还具有各种处于海底的生物群落。极光号坠毁地点位于一个巨大的海底火山口，位于较浅的水域。玩家驾驶海王星逃生火箭逃离4546B时，可以看见在该行星的一侧有一块较大的冰冻的陆地</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_4546B_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>行星拥有一个完整的生态系统，并且具有两个卫星，其中一个非常接近行星，导致星球经常出现日食。我们所熟知的地图只是星球上非常小的一个部分，这一部分位于一个休眠的火山口，直径约2公里。其余部分被称作无人区，深度在0~8192米（实为无限深度，8192米是官方设定的极限下潜深度，超过该深度就会被传送回海平面）之间，几乎没有生命，只支持微生物和利维坦类生物生存。尚不清楚该星球其他地方是否存在类似的生命区域。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_4546B_CHAPTER_HISTORY_PARA_5" Language="zh_Hans_CN">
+			<Text>“先驱者”与玩家的掌上电脑（PDA）记录了该行星地核活跃的地热活动。熔岩堡,低活跃熔岩区,低活跃熔岩区走廊和1400米处的岩浆湖（活跃岩浆区）分别证明了这一点。“先驱者”利用这一特性，在熔岩山洞内建造了地热发电厂，使热能电机能够利用4546B的火山活动进行发电。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_4546B_CHAPTER_HISTORY_PARA_6" Language="zh_Hans_CN">
+			<Text>在22世纪晚期，“极光”号采矿船被地球的阿尔特拉集团发射，前往行星4546B执行采矿与勘探任务。实际上，极光号还携带着一个大多数船员都不知道的使命——救援“德加斯”号的幸存者。然而在极光号在穿越4546B的大气层时遭到不明武器攻击，坠毁在了4546B的海洋中。游戏主角则乘坐逃生舱成功脱险，当主角爬出逃生舱时才发现整个星球都被水覆盖着，于是主角在深海中的生存与探索就由此展开了……</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_CYCLOPS_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>“警告，独眼巨人是设计用于三个乘员才能操纵的。而且只有有经验的舵手才能驾驭这艘载具。”[NEWLINE]                ————相关描述文件</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_CYCLOPS_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>独眼巨人是一艘长54.2米, 宽12.6米，高14.2米的人操潜水艇。最高速度为14.4节或者7.4米/秒（27公里/小时）。玩家可以通过载具舱建造并且可以充当一座移动海底基地。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_CYCLOPS_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>
+				独眼巨人可以收纳海蛾号以及海虾号机甲，功能类似月池。因为独眼巨人尺寸太大，所以转向很困难,尤其是在狭小的空间里， 所以用它来携带海蛾去探索反倒是个好主意。在舰桥的计算机终端允许用户自定义独眼巨人的名字,该自定义名字会显示在船体右舷，但具有14个字母的限制。该终端也同样允许用户更改船体外部颜色以及他们自定义名字的颜色。
+			</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_CYCLOPS_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>
+				独眼巨人同样也有人工智能，当有危险的时候，人工智能会警告玩家。独眼巨人的龙骨部分的内部拥有5个已经建造的储物柜，每个储物柜可容纳12个单位空间。如果独眼巨人受损了，独眼巨人的显示系统会出现在舰桥窗户上，显示哪里受损了。这同样也会在有些东西接近独眼巨人时启动，像生物或者地形，提醒玩家避开危险。
+			</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_CYCLOPS_CHAPTER_HISTORY_PARA_5" Language="zh_Hans_CN">
+			<Text>
+				独眼巨人潜艇有3台摄影机，他们可以（几乎）全方位地让玩家观察四周的情况，而且，控制台上还会有雷达，它会显示出周围有威胁的（红色）单位、无威胁（黄色）的单位。独眼巨人熄灯后能降低攻击性鱼类的注意，遇到危险时，你也可以启动静航（无声航行）模式，这样也可以避免引起攻击性鱼类的注意。
+			</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_CYCLOPS_CHAPTER_HISTORY_PARA_6" Language="zh_Hans_CN">
+			<Text>
+				不要把独眼巨人开得太快，全速航行时（最高档位），它可能会超负荷，极易引发火灾。除此之外，独眼巨人号在遭受撞击、被攻击时会出现船舱漏水的现象，警示灯会亮，独眼巨人也会自动上浮，如果不及时用焊枪修复漏水点，它会上浮地越来越慢直到沉下去，完全损毁的独眼巨人在船身上会出现一个大洞，和海蛾号一样，损毁后它是无法修复的。因此，当船体受到损伤后（尤其是船体耐久度下降后），船员最好出舱，到外面检查独眼巨人的外壳以及玻璃，独眼巨人也有自动恢复功能（即一定时间后不受到任何伤害，独眼巨人就会修复自己）
+			</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_HAIHUANG_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>
+				海皇是个体型庞大的巨人，身体结实，全身覆盖着鳞甲，肤色以浅棕色为主，带着绿色的色调。它的触角上装饰着明亮的青色 “灯泡”。
+			</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_HAIHUANG_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>
+				作为其种族中最后的一个成年体，被先驱者俘获的海皇也是至少七个孩子的母亲。她留下的五个蛋会在主线剧情中的某个时刻孵化出来。海皇大约有2,600岁，大幅超过了其所在物种的自然寿命。先驱者为她修建的水族馆可能有某种形式的生命维持系统，使被俘虏的海皇能够活到如此高龄，因为人们发现到1,600岁对于海皇利维坦这个种族来说已经很老了。
+			</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_HAIHUANG_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>
+				当先驱者带来的卡拉细菌杀死食物来源时，几乎所有的海皇利维坦都死了，只剩下一个被先驱者囚禁的成年体和发现在她体内的的卵子。作为在4546B行星上解毒酶唯一的来源，海皇及其子女是治愈卡拉病毒的关键。
+			</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_HAIHUANG_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>
+				先驱者研究了这最后一位幸存的海皇利维坦，希望利用其分泌的42号解毒酶找到一种治疗方法。然而，由于它的虚弱，可能是过于衰老或疾病导致的，后续的研究表明，她不再是一个可行的42号解毒酶来源，因为她产生的酶太不稳定，只能暂时缓解卡拉病毒的症状。于是先驱者打算从海皇未孵化的孩子入手，他们企图孵化这些蛋，并从海皇的孩子身上提取解毒酶。尽管先驱者对这些蛋精心照料，但他们始终无法成功孵化出海皇幼体，无奈之下，先驱者们将这些蛋中的三个放入初级容器设施的解剖室进行实验，把它们全部切开，并从其中一个蛋中取出胎儿，维持着这位胎儿的生命，但是后来先驱者们发现，强行干预下诞生的海皇幼体无法产生合适的酶。于是先驱者又将其余的蛋带到了一个实验室，并在那里对蛋进行了实验。尽管历经多次实验，他们还是找不到办法使海皇幼体的孵化过程自然触发。稳妥起见，他们只能通过将剩下的蛋附着在孵化器的装置上来维持蛋的存活，以便日后找到孵化方法后使用。然而就在这之后不久，疾病研究设施被破坏，卡拉病毒被释放了出去，导致所有先驱者传送门被关闭，并激活了先驱者们自己建造的行星检疫系统（即先驱者大炮），通过击落空中单位来防止这个星球上的生物离开这个星球，以达到隔离的效果。
+			</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_HAIHUANG_CHAPTER_HISTORY_PARA_5" Language="zh_Hans_CN">
+			<Text>
+				在被囚禁的这段时间里，海皇设法训练了一些大眼仔，让它们使用外星排水口将自己的42号解毒酶传递到地表。在海皇的控制下，少量的42号解毒酶被留在了海洋表面，使得少量的海洋生物得以在4546B星球上生存。
+			</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_HAIHUANG_CHAPTER_HISTORY_PARA_6" Language="zh_Hans_CN">
+			<Text>
+				多年之后，一位极光号的幸存船员来到关押海皇的水族馆并成功孵化了海皇的蛋，在幸存船员的注视下，海皇与她的孩子们一起玩耍，然后引导他们前往检疫执行平台外的先驱者传送门。在得到了海皇幼体的解毒酶后，幸存船员成功关闭了先驱者的检疫执行平台，乘坐着海王星号逃生火箭离开了4546B星球。在火箭升空进入超空间的时候，海皇，这位为了4546B的海洋生物和自己的孩子奋斗一生的利维坦，也走到了她生命的终点。
+			</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_SEAMOTH_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>海蛾号是一款携带独立使用，可替换大型蓄电池和可定制外观的单座单人型潜水艇。大多数长途采矿飞船会携带至少两艘这种级别的潜水艇来协助在表面拥有大量水体行星上进行矿产勘探与开采。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_SEAMOTH_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+		    <Text>海蛾号可以通过更换大型蓄电池来补充能量，亦可单纯将海蛾号停泊于独眼巨人号或月池中充能，后者会消耗停靠单位的电量。100%的电量理论上可以让海蛾号在能量耗尽前航行约10650米（每1%的电量约能航行106.5米）。不过只要是玩家呆在海蛾号里，即使什么都不干，每18秒也会消耗1%的额外能量用于制造氧气。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_SEAMOTH_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>海蛾号的生命值与玩家的生命值分开计算。只要受到敌对生物的攻击，或者撞到地形（包括一些植物），海蛾号的生命值就会降低。玩家可以使用电焊枪对海蛾号进行修复。一旦海蛾号的生命值减少到0，它将会炸成碎片。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_SEAMOTH_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+		    <Text>
+				最高时速：13米/秒[NEWLINE]
+				加速：5米/秒[NEWLINE]
+				电池续航距离：约10公里[NEWLINE]
+				会被水压压碎的深度：海平面下200米[NEWLINE]
+				升级配件插槽数量：4[NEWLINE]
+				大小：3米x1.5米x1米[NEWLINE]
+				乘员：1人
+			</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_DISTRICTS_PAGE_DISTRICT_LIFETREE_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>生命之树由一根大树干组成，树干由多个交织在一起的树枝组成，棕色的树枝被分割成许多较小的枝条，这些枝条会发出紫红色的光芒。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_DISTRICTS_PAGE_DISTRICT_LIFETREE_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>除此之外，这些枝条中的大多数都围绕着幽灵利维坦的蛋。这些蛋是在树还小的时候便被放入其中的，现在树枝将它们保护起来，并和它们一块生长，而蛋则在等待着合适的条件孵化。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_DISTRICTS_PAGE_DISTRICT_LIFETREE_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>生命之树的下部由许多块状的树根组成，它们一直延伸到了生命之树周围发着蓝光的盐水池中</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_PRAWN_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>海虾号是一台电池供电，带有装甲的步行机甲，可同时在深海和陆地使用。机甲在提供使用者保护的同时还拥有4个灵活的液压机械臂（腿）和加固的密封舱门。虽然这款机甲不知疲倦，但工作时长和效率还是坐在椅子上的驾驶员决定的。海虾号机甲能在海床上行走，使用推进喷口（控制论解锁）来实现垂直机动。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_PRAWN_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>海虾号机甲需要两块大型蓄电池来供电，玩家可以像海蛾号一样把机甲停泊在独眼巨人和月池内。机甲可以用于探索深海，因为机甲的默认抗压深度是900米。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_PRAWN_CHAPTER_HISTORY_PARA_5" Language="zh_Hans_CN">
+			<Text>海虾号机甲内部UI可以显示自身的生命值， 如果降为零机甲将会爆炸成残骸。不过，不像娇小的海蛾号，海虾号机甲装有能承受大量重创甚至击沉海蛾级别伤害的重型装甲，比如死神利维坦的咬合。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_PRAWN_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+		    <Text>海虾号机甲拥有一个电钻机械臂，可以用于打碎大块资源块，当资源块被打碎时会掉落小块资源以供拾取，也可以用于残忍的切割伤害动物</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_PRAWN_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>海虾号机甲拥有一个鱼雷发射器，手臂上的发射管一次可以储存4枚鱼雷，在需要时可以打出鱼雷以应对利维坦生物的袭击</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_RESOURCES_PAGE_RESOURCE_LON_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>虽然先驱者离开了4546B星球,但他们也留下了许多有用的科技和资源，离子晶体便是其中之一。这种绿色的方块状晶体蕴含着巨大的能量，不仅可以重启先驱者传送门，还能够满足海虾号以及海王星号火箭的能源需求，而离子晶体精密的结构和生产的过程本身便具有极高的研究价值。一个好消息是：先驱者留下了制造这种离子晶体的机器，也就是说，只要机器没坏，我们可以一直可持续性地获得该资源...</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_LON_ELECTRICITY_NAME" Language="zh_Hans_CN">
+			<Text>离子晶体发电厂</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_LON_ELECTRICITY_DESCRIPTION" Language="zh_Hans_CN">
+				<Text>将任意数额的 [ICON_RESOURCE_LON] 离子晶体自动转换为 [ICON_Power] 电力，每回合可为周围6个单元格内的城市提供所需电力：[NEWLINE][ICON_Bullet] 1点 [ICON_RESOURCE_LON] 离子晶体 [ICON_PowerRight] 8点 [ICON_Power] 电力 [NEWLINE][ICON_Bullet]不会向大气中排放二氧化碳[NEWLINE]此建筑的 [ICON_Production] 生产力加成延伸到6的单元格内的所有市中心（前提是其尚未从其他的“发电厂”建筑获得加成）[NEWLINE][NEWLINE]在研究了先驱者的技术后，我们开发出了一种新的发电厂建筑，通过消耗离子晶体为城市供电，不会向大气中排放二氧化碳。除了一般的工人外，发电厂还常驻着一支科学团队，日夜不停地对离子晶体的能量结构进行着研究</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_SWITCH_TO_LON_NAME" Language="zh_Hans_CN">
+			<Text>转换为离子晶体发电厂</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_SWITCH_TO_LON_SHORT_NAME" Language="zh_Hans_CN">
+			<Text>转换为离子晶体发电厂</Text>
+		</Replace>
+		<Replace Tag="LOC_PROJECT_SWITCH_TO_LON_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>将城市中的发电站更换为离子晶体发电厂[NEWLINE]离子晶体发电厂：[NEWLINE]{LOC_BUILDING_LON_ELECTRICITY_DESCRIPTION}</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_HOT_ELECTRICITY_NAME" Language="zh_Hans_CN">
+			<Text>水下热能发电机</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_HOT_ELECTRICITY_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>生命之树特色建筑，建成后为所在城市提供5点 [ICON_Power] 电力和[ICON_Faith]信仰值，在其中工作的公民可产出[ICON_Culture]文化值。[NEWLINE][NEWLINE]我们的人民充分利用了生命之树周边活跃的火山口以及阿尔特拉先进的科技，在生命之树大力兴建阿尔特拉研发的水下热能发电机，将火山口的热能转化为了清洁环保的城市用电</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_LIWEITAN_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>幽灵利维坦是4546B上一种庞大而强大的生物，它是该星球上第二大的利维坦(最大的是海龙利维坦，第三大是死神利维坦）</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_LIWEITAN_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>生命之树是这种巨型生物的筑巢地(尽管它们并不会生活在树上)，树上巨大的发光球茎便是它们的蛋，能发出蓝色和紫色的光芒。根据PDA的扫描记录，当树很小的时候，幽灵利维坦就在那里产卵，并且让树枝围绕着卵子生长以保护它们，直到条件适合孵化为止。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_LIWEITAN_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>幽灵利维坦的生命从少年时期的失落之河开始。随着这种巨幼生物的成熟，它们会变得十分庞大，难以继续在失落之河生存，于是它们会迁移到更开阔的表面世界，比如暗礁区和血油区，平日里它们以微生物为食。但有时会在暗礁区猎杀踏浪者。最终它们会迁移到火山口边缘（即无人区），在开阔的水中自由漫游，不断变大，直到死去。相比于海皇利维坦，“幽灵利维坦”的蛋要大得多，大到远超成年幽灵利维坦生理上能够产卵的大小，这意味着这些蛋原本并不大，但是会在被下下来之后急剧生长。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_LIWEITAN_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>成年的幽灵利维坦可以推开独眼巨人号，甚至把它翻过来。如果玩家在独眼巨人号周围行走时，幽灵利维坦便会尝试推动独眼巨人号(例如，如果玩家试图扑灭攻击引起的火灾)，而当幽灵利维坦把潜艇翻过来的时候，玩家便会在与墙壁或天花板相撞时立即死亡。当被杀死时，火山口内的幽灵利维坦不会重生，但是居住在火山口边缘（即无人区）的成年体将继续重生。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_LIWEITAN_CHAPTER_HISTORY_PARA_5" Language="zh_Hans_CN">
+			<Text>虽然完全有能力撕裂任何生物，但目前所有的证据表明，成熟的幽灵利维坦仅在居住区域边缘附近的水域以微观的生命形式为食。他们对闯入者的恶毒攻击本质上不是掠夺性的，而是纯粹的领土自卫行为。除此之外，如此庞大的生物还需要大量的水来满足日常的生理消耗。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_ALIAN_CANON_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>检疫执行平台(即先驱者大炮）是一个位于五指山的巨大的外星武器系统。它是能量束的来源，造成了德加西号和极光号的坠毁，并摧毁了尝试营救玩家的阳光号。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_ALIAN_CANON_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>检疫执行平台是在大约一千年前由先驱者建立的，目的是通过摧毁所有经过4546B的飞船来达到控制卡拉病毒的效果。行星4546B整体上只有一个检疫执行平台，因为它的光束可以弯曲到行星周围，打击到行星另一边的船只。[NEWLINE][NEWLINE](PS:迫于文明6谜一般的防空机制，我们无法调整防空单位的防空范围，所以先驱者大炮只能对周边一格的单位进行防空庇护，而这与历史非常不符...无奈之下，我只能尽可能地增加它的视野范围，让它成为一个开视野的工具，不然真成吉祥物了...)</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_UNITS_PAGE_UNIT_ALIAN_CANON_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>在剧情中，玩家在治愈了身上的卡拉病毒后，可以关闭检疫执行平台，从而为成功逃离4546B创造条件</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_IMPROVEMENTS_PAGE_IMPROVEMENT_SEASTEAD233_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>
+				“快速建造庇护所：一个远离家的家。”[NEWLINE]                ————玩家的掌上PDA
+			</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_IMPROVEMENTS_PAGE_IMPROVEMENT_SEASTEAD233_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>
+				50多年来，阿尔特拉建造枪一直是来自11个不同跨政府组织的异种人、殖民者和紧急救援人员必不可少的工具。[NEWLINE][NEWLINE]-通过建造枪建造的庇护所能很好地适应外部的环境，非常坚固[NEWLINE]-建造枪可在陆地、水下或真空中进行建造[NEWLINE]-可以用建造枪对住所进行不断强化，使其成为能长期居住的家园、偏远的研究站或防御前哨
+			</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_IMPROVEMENTS_PAGE_IMPROVEMENT_SEASTEAD233_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>
+				剧情中，玩家可以用建造枪在水下建造属于自己的庇护所。真可谓是一人独享的 “海洋家园”
+			</Text>
+		</Replace>
+		<Replace Tag="LOC_SUBNAUTICA_MOD_NAME" Language="zh_Hans_CN">
+			<Text>
+				[COLOR:ResGoldLabelCS]深海迷航[ENDCOLOR]——海皇领导的4546B星球文明
+			</Text>
+		</Replace>
+		<Replace Tag="LOC_SUBNAUTICA_MOD_Author" Language="zh_Hans_CN">
+			<Text>
+				莫得灵魂的银河审判长（B站号名字）
+			</Text>
+		</Replace>
+		<Replace Tag="LOC_SUBNAUTICA_MOD_Helper" Language="zh_Hans_CN">
+			<Text>
+				H佬的文明mod教程以及优妮提供的音频导入教程
+			</Text>
+		</Replace>
+		<Replace Tag="LOC_SUBNAUTICA_MOD_Description" Language="zh_Hans_CN">
+			<Text>
+				该模组包含以《深海迷航》游戏为主题的一种新战略资源，一个新文明，五种新单位，四种新建筑，一种新区域,以及大量新增项目。[NEWLINE][NEWLINE]【该模组需要《风云变幻》DLC作为基础使用】[NEWLINE][NEWLINE]萌新第一次做模组，有问题还请及时反馈~
+			</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_TRANSLATION_DEVICE_NAME" Language="zh_Hans_CN">
+			<Text>
+				外星翻译器
+			</Text>
+		</Replace>
+		<Replace Tag="LOC_BUILDING_TRANSLATION_DEVICE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>
+				致我们伟大的国人玩家————吃喝不愁的live ！（详情见文明百科）[NEWLINE][NEWLINE]4546B特色政体建筑，建成后对所有其他文明的[ICON_VisLimited]外交能见度+3，使国内所有的[ICON_GreatWork_Writing]文学著作额外产出+3[ICON_Science]科技值，+3[ICON_Culture]文化值，并获得[ICON_Envoy]五名使者。[NEWLINE][NEWLINE]先驱者留下的外星翻译器，内含超过一千种语言，让我们在外交和翻译文学著作方面有了重大突破。
+			</Text>
+		</Replace>
+		<Replace Tag="LOC_TRAIT_BUILDING_TRANSLATION_DEVICE_DESCRIPTION" Language="zh_Hans_CN">
+			<Text>
+				向我们伟大的国人玩家————吃喝不愁的live ，致敬 ! （详情见文明百科）[NEWLINE]4546B特色政体建筑，建成后对所有其他文明的[ICON_VisLimited]外交能见度+3，使国内所有的[ICON_GreatWork_Writing]文学著作额外产出+3[ICON_Science]科技值，+3[ICON_Culture]文化值,并获得五名[ICON_Envoy]使者。
+			</Text>
+		</Replace>
+		<Replace Tag="LOC_VIZSOURCE_ACTION_TRANSLATION_DEVICE" Language="zh_Hans_CN">
+			<Text>建造外星翻译器(4546B星球特色建筑)</Text>
+		</Replace>
+		<Replace Tag="LOC_GOSSIP_SOURCE_TRANSLATION_DEVICE" Language="zh_Hans_CN">
+			<Text>外星翻译器通过翻译语言得知</Text>
+		</Replace>
+		<Replace Tag="LOC_VIZSOURCE_TRANSLATION_DEVICE" Language="zh_Hans_CN">
+			<Text>外星翻译器的功效</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_BUILDINGS_PAGE_BUILDING_TRANSLATION_DEVICE_CHAPTER_HISTORY_PARA_1" Language="zh_Hans_CN">
+			<Text>外星翻译器是一个保存在主要封闭设施中的先驱者文物，目前尚不清楚这个仪器是否是由先驱者种族创造的。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_BUILDINGS_PAGE_BUILDING_TRANSLATION_DEVICE_CHAPTER_HISTORY_PARA_2" Language="zh_Hans_CN">
+			<Text>该设备存储了来自1000多种不同语言的大量数据。该设备的运算核心允许使用者阅读和翻译其他星球语言文本。对内置数据的分析表明其囊括了一些古老的地球语言，同时“吃喝不愁的live"这个名字出现频率很高，原因并不清楚。                      ——游戏PDA</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_BUILDINGS_PAGE_BUILDING_TRANSLATION_DEVICE_CHAPTER_HISTORY_PARA_3" Language="zh_Hans_CN">
+			<Text>事实上，外星翻译器是游戏制作者官方为了纪念一位名叫 “吃喝不愁的live” 的中国B站UP主而专门设计的。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_BUILDINGS_PAGE_BUILDING_TRANSLATION_DEVICE_CHAPTER_HISTORY_PARA_4" Language="zh_Hans_CN">
+			<Text>《深海迷航》刚推出时并没有官方中文，很多中国人对这款游戏十分好奇，但迫于语言障碍无法体验到游戏乐趣。这些，都被吃喝不愁的live看在眼里。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_BUILDINGS_PAGE_BUILDING_TRANSLATION_DEVICE_CHAPTER_HISTORY_PARA_5" Language="zh_Hans_CN">
+			<Text>作为最早一批接触这款游戏的玩家，“吃喝不愁的live”被游戏内的异星风景和游戏剧情吸引，他参加了当时的汉化补丁的制作。也正是他简洁正确的汉化使得越来越多的中国玩家进入了美丽水世界。</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_BUILDINGS_PAGE_BUILDING_TRANSLATION_DEVICE_CHAPTER_HISTORY_PARA_6" Language="zh_Hans_CN">
+			<Text>汉化翻译，一个高压的职业。汉化者可能要承受来着游戏公司，以及一群自诩真君子的诋毁。一时的努力，很多汉化组也做到了，可是有几个可以做到和他一样一连三年，在第一时间将汉化制作出来呢？他做到了，他的汉化甚至比官方更加全名详细，一个个生涩难懂的专业术语，他一个一个的百度，翻译。三年，近千个挥洒汗水的日夜，他也不得任何回报，如果说有，那可能是水友那句切切实实的“dalao。”</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_BUILDINGS_PAGE_BUILDING_TRANSLATION_DEVICE_CHAPTER_HISTORY_PARA_7" Language="zh_Hans_CN">
+			<Text>
+				在他还在为中国玩家奋斗的时候，死神悄然而至: 胃癌。[NEWLINE]但他还在隐瞒，每一期视频的制作，饱受病痛的折磨，他也只是承受。有谁知道他脖子上套着的不是来治疗落枕，有谁知道他的“出差”是去忍受化疗，又有谁发现视频中他沙哑的声音微微颤抖。
+			</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_BUILDINGS_PAGE_BUILDING_TRANSLATION_DEVICE_CHAPTER_HISTORY_PARA_8" Language="zh_Hans_CN">
+			<Text>
+				在2017年3月，他因胃癌永远离开了我们。而他一直坚持更新汉化补丁到2017年2月5日。即使在住院期间也在不停地回答玩家们的问题，把最乐观的一面展现给玩家们。
+			</Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_BUILDINGS_PAGE_BUILDING_TRANSLATION_DEVICE_CHAPTER_HISTORY_PARA_9" Language="zh_Hans_CN">
+			<Text>
+				为了纪念这位为《深海迷航》做出贡献的汉化作者，游戏制作人Michael Schouten在游戏中制作了纪念道具（外星翻译器）。[NEWLINE]（PS：我将外星翻译器这个建筑加入了到模组中，也算是一种纪念了吧~ 愿天堂没有胃癌，吃喝不愁的Live！）
+           </Text>
+		</Replace>
+		<Replace Tag="LOC_PEDIA_BUILDINGS_PAGE_BUILDING_TRANSLATION_DEVICE_CHAPTER_HISTORY_PARA_10" Language="zh_Hans_CN">
+			<Text>
+				当你再次潜入幽深冰冷的海底，当你再一次触摸那棵散发着荧光的生命树，是否能感受到一丝丝温暖？因为在海水的最深处，一颗美丽的灵魂在跳动 。[NEWLINE][NEWLINE]   ——部分介绍引用自 “杰克不太酷” 的B站专栏： https://www.bilibili.com/read/cv3099682/ [NEWLINE][NEWLINE]  吃喝不愁的Live的B站空间 : https://space.bilibili.com/17464395/video?tid=0&page=26&keyword=&order=pubdate
+			</Text>
+		</Replace>
+		
+	</LocalizedText>
+</GameData>

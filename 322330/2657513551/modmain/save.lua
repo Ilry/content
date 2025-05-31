@@ -432,6 +432,21 @@ AddPlayerPostInit(function(inst)
     end
 end)
 
+-- fix woby items
+for _,prefab in ipairs({"wobybig", "wobysmall"})do
+    AddPrefabPostInit(prefab, function(inst)
+        local old_onplayerlinkdespawn = inst.OnPlayerLinkDespawn
+        inst.OnPlayerLinkDespawn = function(inst, forcedrop, ...)
+            if GetTick() == 0 then
+                print("[DSA] Skip woby despawn.")
+                inst:DoTaskInTime(0, inst.Remove) -- delay one frame, otherwise crashes.
+            else
+                return old_onplayerlinkdespawn(inst, forcedrop, ...)
+            end
+        end
+    end)
+end
+
 -- [hook]
 local old_serialize_user = SerializeUserSession
 function GLOBAL.SerializeUserSession(player, isnewspawn, ...)

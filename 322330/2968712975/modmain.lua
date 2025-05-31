@@ -41,7 +41,7 @@ TUNING.RANDCGEMONLY = GetModConfigData('Gemonlymode')
 --TUNING.RANDCLIMITDL = GetModConfigData('NumlimitL')
 --TUNING.RANDCNOFINITEUSES = GetModConfigData('Nofiniteuses')
 TUNING.RANGCCOFINITEUSES = GetModConfigData('Cofiniteuses')
-
+TUNING.RANGCHIGHPRIOR = GetModConfigData('Highprior')
 local function tagrepair(self)--这是标记能被维修的便签
 	if not self.inst:HasTag("canberepaired") then
 		self.inst:AddTag("canberepaired")

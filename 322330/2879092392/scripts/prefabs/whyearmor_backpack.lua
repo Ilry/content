@@ -2,15 +2,19 @@ local assets = {
     Asset("ANIM", "anim/whyearmor_backpack.zip"),
     Asset("ANIM", "anim/whyearmor_backpack_purple.zip"),
     Asset("ANIM", "anim/whyearmor_backpack_red.zip"),
+    Asset("ANIM", "anim/whyearmor_backpack_opal.zip"),
     Asset("ATLAS", "images/inventoryimages/whyearmor_backpack.xml"),
     Asset("IMAGE", "images/inventoryimages/whyearmor_backpack.tex"),
     Asset("ATLAS", "images/inventoryimages/whyearmor_backpack_purple.xml"),
     Asset("IMAGE", "images/inventoryimages/whyearmor_backpack_purple.tex"),
     Asset("ATLAS", "images/inventoryimages/whyearmor_backpack_red.xml"),
     Asset("IMAGE", "images/inventoryimages/whyearmor_backpack_red.tex"),
+    Asset("ATLAS", "images/inventoryimages/whyearmor_backpack_opal.xml"),
+    Asset("IMAGE", "images/inventoryimages/whyearmor_backpack_opal.tex"),
     Asset("ATLAS_BUILD", "images/inventoryimages/whyearmor_backpack.xml",256),
     Asset("ATLAS_BUILD", "images/inventoryimages/whyearmor_backpack_purple.xml",256),
     Asset("ATLAS_BUILD", "images/inventoryimages/whyearmor_backpack_red.xml",256),
+    Asset("ATLAS_BUILD", "images/inventoryimages/whyearmor_backpack_opal.xml",256),
 }
 
 local function DisallowOpening(inst)
@@ -35,6 +39,8 @@ local function LightTrigger(inst)
                 inst._light = SpawnPrefab("shadowlight")
             elseif skin_build == "whyearmor_backpack_red" then
                 inst._light = SpawnPrefab("redlight")
+            elseif skin_build == "whyearmor_backpack_opal" then
+                inst._light = SpawnPrefab("opallight")
             else
                 inst._light = SpawnPrefab("baselight")
             end
@@ -56,6 +62,10 @@ local function onequip(inst, owner)
         owner.AnimState:OverrideSymbol("swap_body","whyearmor_backpack_red","swap_body")
     elseif skin_build == "whyearmor_backpack_purple" then
         owner.AnimState:OverrideSymbol("swap_body", "whyearmor_backpack_purple", "swap_body")
+    elseif skin_build == "whyearmor_backpack_opal" then
+        owner.AnimState:OverrideSymbol("swap_body", "whyearmor_backpack_opal", "swap_body")
+    else
+        owner.AnimState:OverrideSymbol("swap_body", "whyearmor_backpack", "swap_body")
     end
 
     local owner = inst.components.inventoryitem:GetGrandOwner()
@@ -244,6 +254,32 @@ local function RedLightfn()
     return inst
 end
 
+local function OpalLightfn()
+    local inst = CreateEntity()
+
+    inst.entity:AddTransform()
+    inst.entity:AddLight()
+    inst.entity:AddNetwork()
+
+    inst:AddTag("FX")
+
+    inst.Light:SetRadius(3)
+    inst.Light:SetFalloff(.7)
+    inst.Light:SetIntensity(.75)
+    inst.Light:SetColour(170 / 255, 200 / 255, 255 / 255)
+
+    inst.entity:SetPristine()
+
+    if not TheWorld.ismastersim then
+        return inst
+    end
+
+    inst.persists = false
+
+    return inst
+end
+
+
 local function fn()
     local inst = CreateEntity()
     inst.entity:AddTransform()
@@ -343,6 +379,15 @@ else
     name1 = "Roadkill totem"
 end
 
+local name2
+if TUNING.WHY_LANGUAGE == "spanish" then
+    name2 = "Abrazo cariñoso"
+elseif TUNING.WHY_LANGUAGE == "chinese" then
+    name2 = "深情的擁抱"
+else
+    name2 = "Affectionate hug"
+end
+
 WonderAPI.MakeItemSkin("whyearmor_backpack","whyearmor_backpack_purple",{
     name = name,
     atlas = "images/inventoryimages/whyearmor_backpack_purple.xml",
@@ -364,9 +409,21 @@ WonderAPI.MakeItemSkin("whyearmor_backpack","whyearmor_backpack_red",{
     basebuild = "whyearmor_backpack",
     basebank =  "whyearmor_backpack",
 })
+
+WonderAPI.MakeItemSkin("whyearmor_backpack","whyearmor_backpack_opal",{
+    name = name2,
+    atlas = "images/inventoryimages/whyearmor_backpack_opal.xml",
+    image = "whyearmor_backpack_opal",
+    build = "whyearmor_backpack_opal",
+    rarity = "Distinguished",
+    bank =  "whyearmor_backpack_opal",
+    basebuild = "whyearmor_backpack",
+    basebank =  "whyearmor_backpack",
+})
     
 return Prefab("whyearmor_backpack", fn, assets),
 Prefab("shadowlight", ShadowLightfn),
 Prefab("redlight", RedLightfn),
+Prefab("opallight", OpalLightfn),
 Prefab("baselight", BaseLightfn)
 

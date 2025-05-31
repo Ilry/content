@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 4546B_IMPROVEMENT -->
+<!-- Author: 27136 -->
+<!-- DateCreated: 10/27/2021 10:24:29 AM -->
+<GameData>
+	<Types>
+	<Row Type="IMPROVEMENT_SEASTEAD233" Kind="KIND_IMPROVEMENT"/>
+	</Types>
+	<Improvements>
+	<Row ImprovementType="IMPROVEMENT_SEASTEAD233" Name="LOC_IMPROVEMENT_SEASTEAD233_NAME" 
+		 Description="LOC_IMPROVEMENT_SEASTEAD233_DESCRIPTION" Icon="ICON_IMPROVEMENT_SEASTEAD233" 
+		 PlunderType="PLUNDER_HEAL" PlunderAmount="50" PrereqTech="TECH_CELESTIAL_NAVIGATION" 
+		 Housing="4" TilesRequired="2" Domain="DOMAIN_SEA" SameAdjacentValid="false"  
+		 TraitType="TRAIT_IMPROVEMENT_SEASTEAD233"/>
+	</Improvements>
+	<Improvement_Adjacencies>
+	<Row ImprovementType="IMPROVEMENT_SEASTEAD233" YieldChangeId="Seastead_Fishingboats_Production"/>
+	<Row ImprovementType="IMPROVEMENT_SEASTEAD233" YieldChangeId="Seastead_Reef_Culture"/>
+	<Row ImprovementType="IMPROVEMENT_FISHING_BOATS" YieldChangeId="Fishingboats_Seastead233_Production"/>
+	</Improvement_Adjacencies>
+	<Improvement_ValidTerrains>
+		<Row ImprovementType="IMPROVEMENT_SEASTEAD233" TerrainType="TERRAIN_COAST"/>
+		<Row ImprovementType="IMPROVEMENT_SEASTEAD233" TerrainType="TERRAIN_OCEAN"/>
+	</Improvement_ValidTerrains>
+	<Improvement_ValidBuildUnits>
+		<Row ImprovementType="IMPROVEMENT_SEASTEAD233" UnitType="UNIT_BUILDER"/>
+		<Row ImprovementType="IMPROVEMENT_SEASTEAD233" UnitType="UNIT_LIWEITAN"/>
+	</Improvement_ValidBuildUnits>
+	<Improvement_YieldChanges>
+		<Row ImprovementType="IMPROVEMENT_SEASTEAD233" YieldType="YIELD_CULTURE" YieldChange="0"/>
+		<Row ImprovementType="IMPROVEMENT_SEASTEAD233" YieldType="YIELD_FOOD" YieldChange="2"/>
+		<Row ImprovementType="IMPROVEMENT_SEASTEAD233" YieldType="YIELD_PRODUCTION" YieldChange="0"/>
+	</Improvement_YieldChanges>
+	<Improvement_Tourism>
+		<Row ImprovementType="IMPROVEMENT_SEASTEAD233" TourismSource="TOURISMSOURCE_CULTURE" ScalingFactor="100"/>
+	</Improvement_Tourism>
+	<Adjacency_YieldChanges>
+		<Row ID="Fishingboats_Seastead233_Production" Description="Placeholder" YieldType="YIELD_PRODUCTION" YieldChange="1" TilesRequired="1" AdjacentImprovement="IMPROVEMENT_SEASTEAD233"/>
+	</Adjacency_YieldChanges>
+	
+</GameData>

@@ -181,15 +181,14 @@ function WXAquaculture:OceanTrawl()
     end
 
     local oceantrawler_engaged = FindEntity(beacon, SEE_WORK_DIST, function(ent)
-        return ent.components.oceantrawler ~= nil and ent.components.oceantrawler:HasCaughtItem()
+        return ent.components.oceantrawler ~= nil and ent.components.oceantrawler:HasCaughtItem() and
+            ent.components.container ~= nil and ent.components.container:HasItemWithTag("smalloceancreature", 1)
     end, OCEANTRAWLER_TAG)
-    if oceantrawler_engaged ~= nil and oceantrawler_engaged.components.oceantrawler ~= nil then
+    if oceantrawler_engaged ~= nil and oceantrawler_engaged.components.oceantrawler ~= nil and oceantrawler_engaged.components.container ~= nil then
         if oceantrawler_engaged.components.oceantrawler:IsLowered() then
             return BufferedAction(self.inst, oceantrawler_engaged, ACTIONS.OCEAN_TRAWLER_RAISE)
         else
-            local fish = oceantrawler_engaged.components.container:FindItem(function(item)
-                return item:HasTag("smalloceancreature")
-            end)
+            local fish = oceantrawler_engaged.components.container:FindItem(function(item) return item:HasTag("smalloceancreature") end)
             if fish ~= nil then
                 return BufferedAction(self.inst, oceantrawler_engaged, ACTIONS.LOAD, fish)
             end
@@ -205,15 +204,15 @@ function WXAquaculture:SetTrawler()
         return nil
     end
 
-    local oceantrawler_empty = FindEntity(beacon, SEE_WORK_DIST, function(ent)
-        return ent.components.oceantrawler ~= nil and not ent.components.oceantrawler:HasCaughtItem() and
-            not ent.components.oceantrawler:IsLowered()
+    local oceantrawler_idle = FindEntity(beacon, SEE_WORK_DIST, function(ent)
+        return ent.components.oceantrawler ~= nil and not ent.components.oceantrawler:IsLowered() and
+            ent.components.container ~= nil and not ent.components.container:HasItemWithTag("smalloceancreature", 1)
     end, OCEANTRAWLER_TAG)
-    if oceantrawler_empty ~= nil and oceantrawler_empty.components.oceantrawler ~= nil then
-        if oceantrawler_empty.components.oceantrawler:HasFishEscaped() then
-            return BufferedAction(self.inst, oceantrawler_empty, ACTIONS.OCEAN_TRAWLER_FIX)
+    if oceantrawler_idle ~= nil and oceantrawler_idle.components.oceantrawler ~= nil then
+        if oceantrawler_idle.components.oceantrawler:HasFishEscaped() then
+            return BufferedAction(self.inst, oceantrawler_idle, ACTIONS.OCEAN_TRAWLER_FIX)
         else
-            return BufferedAction(self.inst, oceantrawler_empty, ACTIONS.OCEAN_TRAWLER_LOWER)
+            return BufferedAction(self.inst, oceantrawler_idle, ACTIONS.OCEAN_TRAWLER_LOWER)
         end
     end
 end

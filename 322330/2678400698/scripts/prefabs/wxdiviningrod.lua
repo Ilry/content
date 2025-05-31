@@ -224,6 +224,7 @@ local function fn()
     inst.components.spellcaster:SetSpellFn(SetMode)
     inst.components.spellcaster.canuseontargets = true
     inst.components.spellcaster.canonlyuseonlocomotors = true
+    inst.components.spellcaster.quickcast = true
 
     MakeHauntableLaunch(inst)
 

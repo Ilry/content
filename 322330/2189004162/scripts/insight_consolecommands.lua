@@ -1,4 +1,52 @@
 DST_CONSOLE_COMMANDS = {}
+
+DST_CONSOLE_COMMANDS.i_prepcombat = function()
+	c_setabsorption(.95)
+	c_setdamagemultiplier(5)
+	c_speedmult(2)
+	c_give'hambat'
+end
+
+DST_CONSOLE_COMMANDS.i_removecaveflowers = function()
+	c_removeall'flower_cave'
+	c_removeall'flower_cave_double'
+	c_removeall'flower_cave_triple'
+end
+
+DST_CONSOLE_COMMANDS.i_gearup = function()
+	c_give("orangestaff", 1)
+	c_give("multitool_axe_pickaxe", 1)
+	c_give("minerhat", 1)
+end
+
+DST_CONSOLE_COMMANDS.i_setwormboss = function(bool)
+	if not TheWorld.ismastersim then
+		cprint("Must be running as mastersim")
+		return
+	end
+
+	if type(bool) ~= "boolean" then
+		cprint("Must be a boolean")
+		return
+	end
+
+	util.replaceupvalue(TheWorld.components.hounded.GetWarningSoundList, "_wave_pre_upgraded", bool)
+end
+
+DST_CONSOLE_COMMANDS.i_setwormbosschance = function(num)
+	if not TheWorld.ismastersim then
+		cprint("Must be running as mastersim")
+		return
+	end
+
+	if type(num) ~= "number" then
+		cprint("Must be a number")
+		return
+	end
+	
+	util.replaceupvalue(TheWorld.components.hounded.OnSave, "_wave_override_chance", num)
+end
+
 -- TheSkillTree.skillxp.wathgrithr = 0; TheSkillTree:UpdateSaveState("wathgrithr")
 DST_CONSOLE_COMMANDS.i_revealmap = function()
 	-- Thanks to CarlZalph for his permission to include this very useful and mathematically superior map-reveal code!
@@ -198,6 +246,7 @@ DST_CONSOLE_COMMANDS.c_noshadows = function(x)
 	if x then
 		c_removeall "nightmarebeak"
 		c_removeall "crawlingnightmare"
+		c_removeall "ruinsnightmare"
 	end
 end
 DST_CONSOLE_COMMANDS.c_rain = function(bool)

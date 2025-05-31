@@ -97,7 +97,7 @@ end
 
 local function AddFishes(inst, isautumn, iswinter, isspring, issummer)
 	if TheWorld.state.isautumn then
-		inst.components.pickable:ChangeProduct("kyno_tropicalfish")
+		inst.components.pickable:ChangeProduct("kyno_koi")
 	end
 	if TheWorld.state.iswinter then
 		inst.components.pickable:ChangeProduct("kyno_neonfish")
@@ -157,7 +157,7 @@ local function fn()
     inst.components.pickable.onregenfn = onregenfn
     inst.components.pickable.onpickedfn = onpickedfn
     inst.components.pickable.makeemptyfn = makeemptyfn
-	inst.components.pickable:SetUp("kyno_tropicalfish", FISH_BREED_TIME)
+	inst.components.pickable:SetUp("kyno_koi", FISH_BREED_TIME)
 	
 	AddFishes(inst)
 	

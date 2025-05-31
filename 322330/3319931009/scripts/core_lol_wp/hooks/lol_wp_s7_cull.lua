@@ -26,7 +26,7 @@ AddClassPostConstruct("widgets/itemtile", function(self, invitem)
 
             local val_to_show = num or 0
             if self.item.replica.lol_wp_s7_cull_counter then
-                val_to_show = self.item.replica.lol_wp_s7_cull_counter:GetVal()
+                val_to_show = 100 - self.item.replica.lol_wp_s7_cull_counter:GetVal()
             end
             -- self.lol_wp_s7_cull_val:SetColour({1,0,0,1})
             self.lol_wp_s7_cull_val:SetString(val_to_show)

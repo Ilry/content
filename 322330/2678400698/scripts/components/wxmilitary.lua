@@ -71,6 +71,12 @@ local lootList =
     "feather_thunder",
 }
 
+local containerList =
+{
+    "treasurechest",
+    "treasurechest_upgraded",
+}
+
 function WXMilitary:SelfRepair()
     return BufferedAction(self.inst, nil, ACTIONS.ADVANCEDREPAIR)
 end
@@ -318,7 +324,7 @@ function WXMilitary:StoreLoot()
             -- Smart Signed Chest
             local smartchest = FindEntity(sentryward, SEE_WORK_DIST, function(ent)
                 local _, firstitem = next(ent.components.container.slots)
-                return ent.prefab == "treasurechest" and
+                return table.contains(containerList, ent.prefab) and
                     ent.components.smart_minisign ~= nil and ent.components.smart_minisign.sign ~= nil and
                     ent.components.container ~= nil and not ent.components.container:IsFull() and
                     firstitem ~= nil and firstitem.prefab == loot.prefab
@@ -329,13 +335,13 @@ function WXMilitary:StoreLoot()
             -- Allocated Smart Signed Chest
             local allocatedsmartchest = FindEntity(sentryward, SEE_WORK_DIST, function(ent)
                 local _, firstitem = next(ent.components.container.slots)
-                return ent.prefab == "treasurechest" and
+                return table.contains(containerList, ent.prefab) and
                     ent.components.smart_minisign ~= nil and ent.components.smart_minisign.sign ~= nil and
                     firstitem ~= nil and firstitem.prefab == loot.prefab
             end, FIND_CONTAINER_MUST_TAGS)
             -- Empty Smart Signed Chest
             local emptysmartchest = FindEntity(sentryward, SEE_WORK_DIST, function(ent)
-                return ent.prefab == "treasurechest" and
+                return table.contains(containerList, ent.prefab) and
                     ent.components.smart_minisign ~= nil and ent.components.smart_minisign.sign ~= nil and
                     ent.components.container ~= nil and next(ent.components.container.slots) == nil
             end, FIND_CONTAINER_MUST_TAGS)
@@ -344,7 +350,7 @@ function WXMilitary:StoreLoot()
             end
             -- Signed Chest
             local signedchest = FindEntity(sentryward, SEE_WORK_DIST, function(ent)
-                return ent.prefab == "treasurechest" and ent.components.container ~= nil and not ent.components.container:IsFull() and
+                return table.contains(containerList, ent.prefab) and ent.components.container ~= nil and not ent.components.container:IsFull() and
                     FindEntity(ent, .5, function(sign)
                         return sign.components.drawable ~= nil and sign.components.drawable:GetImage() == loot.prefab
                     end, FIND_SIGN_MUST_TAGS)
@@ -354,7 +360,7 @@ function WXMilitary:StoreLoot()
             end
             -- Unsigned Chest
             local unsignedchest = FindEntity(sentryward, SEE_WORK_DIST, function(ent)
-                return ent.prefab == "treasurechest" and ent.components.container ~= nil and
+                return table.contains(containerList, ent.prefab) and ent.components.container ~= nil and
                     ent.components.container:Has(loot.prefab, 1) and
                     FindEntity(ent, .5, function(sign) return sign.components.drawable ~= nil end, FIND_SIGN_MUST_TAGS) == nil
             end, FIND_CONTAINER_MUST_TAGS)
@@ -363,14 +369,14 @@ function WXMilitary:StoreLoot()
             end
             -- Any Signed Chest
             local anysignedchest = FindEntity(sentryward, SEE_WORK_DIST, function(ent)
-                return ent.prefab == "treasurechest" and ent.components.container ~= nil and
+                return table.contains(containerList, ent.prefab) and ent.components.container ~= nil and
                     FindEntity(ent, .5, function(sign)
                         return sign.components.drawable ~= nil and sign.components.drawable:GetImage() == loot.prefab
                     end, FIND_SIGN_MUST_TAGS)
             end, FIND_CONTAINER_MUST_TAGS)
             -- Empty Chest
             local emptychest = FindEntity(sentryward, SEE_WORK_DIST, function(ent)
-                return ent.prefab == "treasurechest" and ent.components.container ~= nil and ent.components.container:IsEmpty() and
+                return table.contains(containerList, ent.prefab) and ent.components.container ~= nil and ent.components.container:IsEmpty() and
                     FindEntity(ent, .5, function(sign) return sign.components.drawable ~= nil end, FIND_SIGN_MUST_TAGS) == nil
             end, FIND_CONTAINER_MUST_TAGS)
             if unsignedchest == nil and anysignedchest == nil and emptychest ~= nil then

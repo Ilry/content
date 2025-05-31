@@ -7,7 +7,7 @@ description = Ch and
 "让物品可被他的制作原料修复，同类装备可以合并" or
 "Allow equipment to be repaired by its recipe, or to combine with the same equipment"  --mod描述  --mod描述
 author = "Lilith" --作者
-version = "0.8.4" -- mod版本 上传mod需要两次的版本不一样
+version = "0.8.5" -- mod版本 上传mod需要两次的版本不一样
 
 -- This is the URL name of the mod's thread on the forum; the part after the ? and before the first & in the url
 forumthread = ""
@@ -48,6 +48,16 @@ configuration_options =
 					},
 			default = true,
 	},
+	{
+		name = "Highprior",
+		label = "高优先级",
+		hover = "开启后各种动作会具有较高的优先级",
+		options =   {
+						{description = "不开启", data = false},
+						{description = "开启", data = true},
+					},
+			default = false,
+	},
 {name = "Title", label = "", options = {{description = "", data = ""}}, default = ""},
 {name = "Title", label = "修复设定", options = {{description = "", data = ""}}, default = ""},
 	{
@@ -80,7 +90,7 @@ configuration_options =
 					},
 			default = false,
 	},
-	{
+--[[	{
 		name = "NumlimitH",
 		label = "高于数量可修复",
 		hover = "开启后装备含有高于一定数量的制作材料时仅能用该材料修复",
@@ -117,7 +127,7 @@ configuration_options =
 						{description = "10", data = 10},
 					},
 			default = 0,
-	},
+	},]]--
 	{
 		name = "Nightstick",
 		label = "晨星可修复",
@@ -257,6 +267,16 @@ configuration_options =
 						{description = "Chinese", data = true},
 					},
 		default = false,
+	},
+	{
+		name = "Highprior",
+		label = "High prior",
+		hover = "Enable for higher action priority",
+		options =   {
+						{description = "disable", data = false},
+						{description = "enable", data = true},
+					},
+			default = false,
 	},
 {name = "Title", label = "", options = {{description = "", data = ""}}, default = ""},
 {name = "Title", label = "Repairable Settings", options = {{description = "", data = ""}}, default = ""},

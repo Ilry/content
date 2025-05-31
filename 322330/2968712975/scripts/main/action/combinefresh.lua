@@ -26,7 +26,9 @@ local fn = function(act) -- 动作触发的函数。传入的是一个BufferedAc
     return true
 end
 local COMBINEFRESH=AddAction(id,name,fn)
---COMBINEFRESH.priority = -1
+if TUNING.RANGCHIGHPRIOR then
+COMBINEFRESH.priority = 11
+end
 COMBINEFRESH.rmb = true
 --COMBINEFRESH.canforce=true
 --COMBINEFRESH.instant = true

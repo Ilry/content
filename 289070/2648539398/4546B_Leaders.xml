@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 4546B_Leaders -->
+<!-- Author: 27136 -->
+<!-- DateCreated: 10/22/2021 3:30:48 PM -->
+<GameData>
+	<Types>
+		<Row Type="LEADER_HAIHUANG" Kind="KIND_LEADER"/>
+		<Row Type="TRAIT_LEADER_HAIHUANG" Kind="KIND_TRAIT"/>
+	</Types>
+	<Traits>
+		<Row TraitType="TRAIT_LEADER_HAIHUANG" Name="LOC_TRAIT_LEADER_HAIHUANG_NAME" Description="LOC_TRAIT_LEADER_HAIHUANG_DESCRIPTION"/>
+	</Traits>
+	<LeaderTraits>
+		<Row LeaderType="LEADER_HAIHUANG" TraitType="TRAIT_LEADER_HAIHUANG"/>
+		<Row LeaderType="LEADER_HAIHUANG" TraitType="TRAIT_LEADER_SCIENCE_MAJOR_CIV"/>
+		<Row LeaderType="LEADER_HAIHUANG" TraitType="TRAIT_LEADER_EXPANSIONIST"/>
+	</LeaderTraits>
+	
+	<Leaders>
+		<Row LeaderType="LEADER_HAIHUANG" Name="LOC_LEADER_HAIHUANG_NAME" InheritFrom="LEADER_DEFAULT" Sex="Female" SceneLayers="4"/>
+	</Leaders>
+	<LeaderQuotes>
+		<Row LeaderType="LEADER_HAIHUANG" Quote="LOC_PEDIA_LEADERS_PAGE_LEADER_HAIHUANG_QUOTE" QuoteAudio="Play_LEADER_HAIHUANG_QUOTES"/>
+	</LeaderQuotes>
+	<Leaders_XP2>
+		<Row LeaderType="LEADER_HAIHUANG" OceanStart="true"/>
+	</Leaders_XP2>
+
+
+	<ModifierStrings>
+	<Row ModifierId="MODIFIER_HAIHUANG_HEAL" Context="Preview" Text="{LOC_HAIHUANG_HEAL_ARMY_MODIFIER}"/>
+	</ModifierStrings>
+</GameData>

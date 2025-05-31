@@ -102,182 +102,193 @@ if IsServer then
     -- @stack      标识为true时表示仅清理无堆叠的物品
     -- @reclean    标识为数字,表示超过第n次清理时物品还存在则强制清理(第一次找到物品并未清理的计数为1):超过次数后即使堆叠的物品也会清理
     --local function GetLevelPrefabs()
-        local levelPrefabs = {
-            ------------------------  生物  ------------------------
-            hound           = { max = Unit_hound },			-- 狗
-            firehound       = { max = Unit_firehound },		-- 火狗
-            spider_warrior  = { max = Unit_spider },		-- 蜘蛛战士
-            spider          = { max = Unit_spider },		-- 蜘蛛
-            flies           = { max = Unit_flies },			-- 苍蝇
-			grassgekko      = { max = Unit_grassgekko },   	-- 草蜥蜴
-            mosquito        = { max = Unit_flies },			-- 蚊子
-            bee             = { max = Unit_bee },			-- 蜜蜂
-            killerbee       = { max = Unit_bee },			-- 杀人蜂
-            frog            = { max = Unit_frog },			-- 青蛙
-            beefalo         = { max = Unit_beefalo },		-- 牛
-            deer            = { max = Unit_deer },			-- 鹿
-            slurtle         = { max = Unit_slurtle },		-- 鼻涕虫
-            snurtle         = { max = Unit_slurtle },		-- 蜗牛
-			rocky			= { max = Unit_rocky },			-- 石虾
-			
-			
+    local levelPrefabs = {
+        ------------------------  生物  ------------------------
+        hound           = { max = Unit_hound },			-- 狗
+        firehound       = { max = Unit_firehound },		-- 火狗
+        spider_warrior  = { max = Unit_spider },		-- 蜘蛛战士
+        spider          = { max = Unit_spider },		-- 蜘蛛
+        flies           = { max = Unit_flies },			-- 苍蝇
+		grassgekko      = { max = Unit_grassgekko },   	-- 草蜥蜴
+        mosquito        = { max = Unit_flies },			-- 蚊子
+        bee             = { max = Unit_bee },			-- 蜜蜂
+        killerbee       = { max = Unit_bee },			-- 杀人蜂
+        frog            = { max = Unit_frog },			-- 青蛙
+        beefalo         = { max = Unit_beefalo },		-- 牛
+        deer            = { max = Unit_deer },			-- 鹿
+        slurtle         = { max = Unit_slurtle },		-- 鼻涕虫
+        snurtle         = { max = Unit_slurtle },		-- 蜗牛
+		rocky			= { max = Unit_rocky },			-- 石虾
+		
+		
 
-            ------------------------  地面物体  ------------------------
-            evergreen_sparse    = { max = Unit_evergreen_sparse },				  -- 常青树
-            twiggytree          = { max = Unit_twiggytree },                      -- 树枝树
-            marsh_tree          = { max = Unit_marsh_tree },                      -- 针刺树
-            rock_petrified_tree = { max = Unit_rock_petrified_tree },             -- 石化树
-            skeleton_player     = { max = Unit_skeleton_player },                 -- 玩家尸体
-            spiderden           = { max = Unit_spiderden },                       -- 蜘蛛巢
-            burntground         = { max = Unit_burntground },                     -- 陨石痕跡
-			
-			
+        ------------------------  地面物体  ------------------------
+        evergreen_sparse    = { max = Unit_evergreen_sparse },				  -- 常青树
+        twiggytree          = { max = Unit_twiggytree },                      -- 树枝树
+        marsh_tree          = { max = Unit_marsh_tree },                      -- 针刺树
+        rock_petrified_tree = { max = Unit_rock_petrified_tree },             -- 石化树
+        skeleton_player     = { max = Unit_skeleton_player },                 -- 玩家尸体
+        spiderden           = { max = Unit_spiderden },                       -- 蜘蛛巢
+        burntground         = { max = Unit_burntground },                     -- 陨石痕跡
+		
+		
 
-            ------------------------  可拾取物品  ------------------------
-            seeds           = { max = Unit_seeds, stack = true, reclean = 3 },        		-- 种子
-            tentaclespike   = { max = Unit_tentaclespike, stack = true, reclean = 3 },      -- 触手尖刺
-            log             = { max = Unit_log, stack = true, reclean = 3 },       			-- 木头
-            pinecone        = { max = Unit_pinecone, stack = true, reclean = 3 },       	-- 松果
-            cutgrass        = { max = Unit_cutgrass, stack = true, reclean = 3 },       	-- 草
-            twigs           = { max = Unit_twigs, stack = true, reclean = 3 },       		-- 树枝
-            rocks           = { max = Unit_rocks, stack = true, reclean = 3 },       		-- 石头
-            nitre           = { max = Unit_nitre, stack = true, reclean = 3 },       		-- 硝石
-            flint           = { max = Unit_flint, stack = true, reclean = 3 },       		-- 燧石
-            poop            = { max = Unit_poop , stack = true, reclean = 3 },       		-- 屎
-            guano           = { max = Unit_guano , stack = true, reclean = 3 },       		-- 鸟屎
-            manrabbit_tail  = { max = Unit_manrabbit_tail , stack = true, reclean = 3 },    -- 兔毛
-            silk            = { max = Unit_silk , stack = true, reclean = 3 },       		-- 蜘蛛丝
-            spidergland     = { max = Unit_spidergland , stack = true, reclean = 3 },       -- 蜘蛛腺体
-            stinger         = { max = Unit_stinger , stack = true, reclean = 3 },       	-- 蜂刺
-            houndstooth     = { max = Unit_houndstooth , stack = true, reclean = 3 },       -- 狗牙
-            mosquitosack    = { max = Unit_mosquitosack , stack = true, reclean = 3 },      -- 蚊子血袋
-            glommerfuel     = { max = Unit_glommerfuel , stack = true, reclean = 3 },       -- 格罗姆粘液
-            slurtleslime    = { max = Unit_slurtleslime , stack = true, reclean = 3 },      -- 鼻涕虫粘液
-            slurtle_shellpieces = { max = Unit_slurtleslime, stack = true, reclean = 3 },   -- 鼻涕虫壳碎片
+        ------------------------  可拾取物品  ------------------------
+        seeds           = { max = Unit_seeds, stack = true, reclean = 3 },        		-- 种子
+        tentaclespike   = { max = Unit_tentaclespike, stack = true, reclean = 3 },      -- 触手尖刺
+        log             = { max = Unit_log, stack = true, reclean = 3 },       			-- 木头
+        pinecone        = { max = Unit_pinecone, stack = true, reclean = 3 },       	-- 松果
+        cutgrass        = { max = Unit_cutgrass, stack = true, reclean = 3 },       	-- 草
+        twigs           = { max = Unit_twigs, stack = true, reclean = 3 },       		-- 树枝
+        rocks           = { max = Unit_rocks, stack = true, reclean = 3 },       		-- 石头
+        nitre           = { max = Unit_nitre, stack = true, reclean = 3 },       		-- 硝石
+        flint           = { max = Unit_flint, stack = true, reclean = 3 },       		-- 燧石
+        poop            = { max = Unit_poop , stack = true, reclean = 3 },       		-- 屎
+        guano           = { max = Unit_guano , stack = true, reclean = 3 },       		-- 鸟屎
+        manrabbit_tail  = { max = Unit_manrabbit_tail , stack = true, reclean = 3 },    -- 兔毛
+        silk            = { max = Unit_silk , stack = true, reclean = 3 },       		-- 蜘蛛丝
+        spidergland     = { max = Unit_spidergland , stack = true, reclean = 3 },       -- 蜘蛛腺体
+        stinger         = { max = Unit_stinger , stack = true, reclean = 3 },       	-- 蜂刺
+        houndstooth     = { max = Unit_houndstooth , stack = true, reclean = 3 },       -- 狗牙
+        mosquitosack    = { max = Unit_mosquitosack , stack = true, reclean = 3 },      -- 蚊子血袋
+        glommerfuel     = { max = Unit_glommerfuel , stack = true, reclean = 3 },       -- 格罗姆粘液
+        slurtleslime    = { max = Unit_slurtleslime , stack = true, reclean = 3 },      -- 鼻涕虫粘液
+        slurtle_shellpieces = { max = Unit_slurtleslime, stack = true, reclean = 3 },   -- 鼻涕虫壳碎片
 
-            spoiled_food    = { max = Unit_spoiled_food },                                  -- 腐烂食物
+        spoiled_food    = { max = Unit_spoiled_food },                                  -- 腐烂食物
 
-            winter_ornament_plain1 = { max = Unit_festival, stack = true, reclean = 3 }, 	-- 节日小饰品
-            winter_ornament_plain2 = { max = Unit_festival, stack = true, reclean = 3 },
-            winter_ornament_plain4 = { max = Unit_festival, stack = true, reclean = 3 },
-            winter_ornament_plain5 = { max = Unit_festival, stack = true, reclean = 3 },
-            winter_ornament_plain6 = { max = Unit_festival, stack = true, reclean = 3 },
-            winter_ornament_plain7 = { max = Unit_festival, stack = true, reclean = 3 },
-            winter_ornament_plain8 = { max = Unit_festival, stack = true, reclean = 3 },
+        winter_ornament_plain1 = { max = Unit_festival, stack = true, reclean = 3 }, 	-- 节日小饰品
+        winter_ornament_plain2 = { max = Unit_festival, stack = true, reclean = 3 },
+        winter_ornament_plain4 = { max = Unit_festival, stack = true, reclean = 3 },
+        winter_ornament_plain5 = { max = Unit_festival, stack = true, reclean = 3 },
+        winter_ornament_plain6 = { max = Unit_festival, stack = true, reclean = 3 },
+        winter_ornament_plain7 = { max = Unit_festival, stack = true, reclean = 3 },
+        winter_ornament_plain8 = { max = Unit_festival, stack = true, reclean = 3 },
 
-            trinket_3   = { max = Unit_festival, stack = true, reclean = 3 },    -- 戈尔迪乌姆之结
-            trinket_4   = { max = Unit_festival, stack = true, reclean = 3 },
-            trinket_6   = { max = Unit_festival, stack = true, reclean = 3 },
-            trinket_8   = { max = Unit_festival, stack = true, reclean = 3 },
+        trinket_3   = { max = Unit_festival, stack = true, reclean = 3 },    -- 戈尔迪乌姆之结
+        trinket_4   = { max = Unit_festival, stack = true, reclean = 3 },
+        trinket_6   = { max = Unit_festival, stack = true, reclean = 3 },
+        trinket_8   = { max = Unit_festival, stack = true, reclean = 3 },
 
-            blueprint   = { max = Unit_blueprint },	 	 -- 蓝图
-            axe         = { max = Unit_axe }, 	 		 -- 斧子
-            torch       = { max = Unit_torch },    		 -- 火炬
-            pickaxe     = { max = Unit_pickaxe },  		 -- 镐子
-            hammer      = { max = Unit_hammer },   		 -- 锤子
-            shovel      = { max = Unit_shovel },   		 -- 铲子
-            razor       = { max = Unit_razor },    		 -- 剃刀
-            pitchfork   = { max = Unit_pitchfork },	     -- 草叉
-            bugnet      = { max = Unit_bugnet },    	 -- 捕虫网
-            fishingrod  = { max = Unit_fishingrod },     -- 鱼竿
-            spear       = { max = Unit_spear },    		 -- 矛
-            earmuffshat = { max = Unit_earmuffshat },    -- 兔耳罩
-            winterhat   = { max = Unit_winterhat },   	 -- 冬帽
-			heatrock    = { max = Unit_heatrock },   	 -- 热能石
-            trap        = { max = Unit_trap },   		 -- 动物陷阱
-            birdtrap    = { max = Unit_birdtrap },  	 -- 鸟陷阱
-            compass     = { max = Unit_compass },   	 -- 指南針
+        blueprint   = { max = Unit_blueprint },	 	 -- 蓝图
+        axe         = { max = Unit_axe }, 	 		 -- 斧子
+        torch       = { max = Unit_torch },    		 -- 火炬
+        pickaxe     = { max = Unit_pickaxe },  		 -- 镐子
+        hammer      = { max = Unit_hammer },   		 -- 锤子
+        shovel      = { max = Unit_shovel },   		 -- 铲子
+        razor       = { max = Unit_razor },    		 -- 剃刀
+        pitchfork   = { max = Unit_pitchfork },	     -- 草叉
+        bugnet      = { max = Unit_bugnet },    	 -- 捕虫网
+        fishingrod  = { max = Unit_fishingrod },     -- 鱼竿
+        spear       = { max = Unit_spear },    		 -- 矛
+        earmuffshat = { max = Unit_earmuffshat },    -- 兔耳罩
+        winterhat   = { max = Unit_winterhat },   	 -- 冬帽
+		heatrock    = { max = Unit_heatrock },   	 -- 热能石
+        trap        = { max = Unit_trap },   		 -- 动物陷阱
+        birdtrap    = { max = Unit_birdtrap },  	 -- 鸟陷阱
+        compass     = { max = Unit_compass },   	 -- 指南針
 
-            --chesspiece_deerclops_sketch     = { max = Unit_festival },    -- 四季 boss 棋子图
-            --chesspiece_bearger_sketch       = { max = Unit_festival },
-            --chesspiece_moosegoose_sketch    = { max = Unit_festival },
-            --chesspiece_dragonfly_sketch     = { max = Unit_festival },
+        --chesspiece_deerclops_sketch     = { max = Unit_festival },    -- 四季 boss 棋子图
+        --chesspiece_bearger_sketch       = { max = Unit_festival },
+        --chesspiece_moosegoose_sketch    = { max = Unit_festival },
+        --chesspiece_dragonfly_sketch     = { max = Unit_festival },
 
-            winter_ornament_boss_bearger    = { max = Unit_festival },    -- 四季 boss 和蛤蟆、蜂后的挂饰
-            winter_ornament_boss_beequeen   = { max = Unit_festival },
-            winter_ornament_boss_deerclops  = { max = Unit_festival },
-            winter_ornament_boss_dragonfly  = { max = Unit_festival },
-            winter_ornament_boss_moose      = { max = Unit_festival },
-            winter_ornament_boss_toadstool  = { max = Unit_festival },
+        winter_ornament_boss_bearger    = { max = Unit_festival },    -- 四季 boss 和蛤蟆、蜂后的挂饰
+        winter_ornament_boss_beequeen   = { max = Unit_festival },
+        winter_ornament_boss_deerclops  = { max = Unit_festival },
+        winter_ornament_boss_dragonfly  = { max = Unit_festival },
+        winter_ornament_boss_moose      = { max = Unit_festival },
+        winter_ornament_boss_toadstool  = { max = Unit_festival },
 
-            armor_sanity   = { max = Unit_armor_sanity },    -- 影甲
-            shadowheart    = { max = Unit_shadowheart  },    -- 影心
-			
-			------------------------  added by yuuuuuxi  ------------------------
-			driftwood_log			= { max = Unit_driftwood_log },		--浮木桩
-			spoiled_fish			= { max = Unit_spoiled_fish  },		--变质的鱼
-			spoiled_fish_small		= { max = Unit_spoiled_fish  },		--坏掉的小鱼
-			rottenegg				= { max = Unit_rottenegg  },		--腐烂的蛋
-			feather_crow			= { max = Unit_feather  },			--黑色羽毛
-			feather_robin			= { max = Unit_feather  },			--红色羽毛
-			feather_robin_winter	= { max = Unit_feather  },			--白色羽毛
-			feather_canary			= { max = Unit_feather  },			--金色羽毛
-			slurper_pelt			= { max = Unit_feather  },			--啜食兽毛皮
-			pocket_scale			= { max = Unit_pocket_scale },		--弹簧秤
-			oceanfishingrod			= { max = Unit_oceanfishingrod },	--海钓竿
-			
-			
-			sketch					= { max = Unit_sketch },			--所有boss草图
-			tacklesketch			= { max = Unit_tacklesketch },		--所有广告
+        armor_sanity   = { max = Unit_armor_sanity },    -- 影甲
+        shadowheart    = { max = Unit_shadowheart  },    -- 影心
+		
+		------------------------  added by yuuuuuxi  ------------------------
+		driftwood_log			= { max = Unit_driftwood_log },		--浮木桩
+		spoiled_fish			= { max = Unit_spoiled_fish  },		--变质的鱼
+		spoiled_fish_small		= { max = Unit_spoiled_fish  },		--坏掉的小鱼
+		rottenegg				= { max = Unit_rottenegg  },		--腐烂的蛋
+		feather_crow			= { max = Unit_feather  },			--黑色羽毛
+		feather_robin			= { max = Unit_feather  },			--红色羽毛
+		feather_robin_winter	= { max = Unit_feather  },			--白色羽毛
+		feather_canary			= { max = Unit_feather  },			--金色羽毛
+		slurper_pelt			= { max = Unit_feather  },			--啜食兽毛皮
+		pocket_scale			= { max = Unit_pocket_scale },		--弹簧秤
+		oceanfishingrod			= { max = Unit_oceanfishingrod },	--海钓竿
+		
+		
+		sketch					= { max = Unit_sketch },			--所有boss草图
+		tacklesketch			= { max = Unit_tacklesketch },		--所有广告
 
-			
-			--万圣节糖果--
-			halloweencandy_1		= { max = Unit_festival },		--苹果糖
-			halloweencandy_2		= { max = Unit_festival },		--玉米糖
-			halloweencandy_3		= { max = Unit_festival },		--似糖非糖玉米
-			halloweencandy_4		= { max = Unit_festival },		--黏黏的蜘蛛
-			halloweencandy_5		= { max = Unit_festival },		--卡通糖果
-			halloweencandy_6		= { max = Unit_festival },		--葡萄干
-			halloweencandy_7		= { max = Unit_festival },		--葡萄干（有包装）
-			halloweencandy_8		= { max = Unit_festival },		--幽灵糖
-			halloweencandy_9		= { max = Unit_festival },		--果冻虫
-			halloweencandy_10		= { max = Unit_festival },		--触须棒糖
-			halloweencandy_11		= { max = Unit_festival },		--巧克力猪
-			halloweencandy_12		= { max = Unit_festival },		--糖果虱
-			halloweencandy_13		= { max = Unit_festival },		--末世硬糖
-			halloweencandy_14		= { max = Unit_festival },		--熔岩胡椒
-			
-			--万圣节玩具--
-			trinket_32				= { max = Unit_festival },		--方晶锆石球
-			trinket_33				= { max = Unit_festival },		--蜘蛛戒指
-			trinket_34				= { max = Unit_festival },		--猴爪
-			trinket_35				= { max = Unit_festival },		--空的万能药
-			trinket_36				= { max = Unit_festival },		--人造尖牙
-			trinket_37				= { max = Unit_festival },		--折断的棍子
-			trinket_38				= { max = Unit_festival },		--双筒望远镜
-			trinket_39				= { max = Unit_festival },		--单只手套
-			trinket_40				= { max = Unit_festival },		--蜗牛尺
-			trinket_41				= { max = Unit_festival },		--笨蛋罐
-			trinket_42				= { max = Unit_festival },		--玩具蛇
-			trinket_43				= { max = Unit_festival },		--玩具鳄鱼
-			trinket_44				= { max = Unit_festival },		--坏掉的玻璃容器
-			trinket_45				= { max = Unit_festival },		--老收音机
-			trinket_46				= { max = Unit_festival },		--坏掉的吹风机
-			
-			--冬季盛宴食物--
-			winter_food1			= { max = Unit_festival },		--姜饼人曲奇饼
-			winter_food2			= { max = Unit_festival },		--糖屑曲奇饼
-			winter_food3			= { max = Unit_festival },		--拐杖糖
-			winter_food4			= { max = Unit_festival },		--永恒水果蛋糕
-			winter_food5			= { max = Unit_festival },		--巧克力木头蛋糕
-			winter_food6			= { max = Unit_festival },		--李子布丁
-			winter_food7			= { max = Unit_festival },		--苹果酒
-			winter_food8			= { max = Unit_festival },		--热可可
-			winter_food9			= { max = Unit_festival },		--天堂蛋酒
-			
-			--冬季盛宴小饰品（8种不规则形状）--
-			winter_ornament_fancy1	= { max = Unit_festival },
-			winter_ornament_fancy2	= { max = Unit_festival },
-			winter_ornament_fancy3	= { max = Unit_festival },
-			winter_ornament_fancy4	= { max = Unit_festival },
-			winter_ornament_fancy5	= { max = Unit_festival },
-			winter_ornament_fancy6	= { max = Unit_festival },
-			winter_ornament_fancy7	= { max = Unit_festival },
-			winter_ornament_fancy8	= { max = Unit_festival },
-			
+		
+		--万圣节糖果--
+		halloweencandy_1		= { max = Unit_festival },		--苹果糖
+		halloweencandy_2		= { max = Unit_festival },		--玉米糖
+		halloweencandy_3		= { max = Unit_festival },		--似糖非糖玉米
+		halloweencandy_4		= { max = Unit_festival },		--黏黏的蜘蛛
+		halloweencandy_5		= { max = Unit_festival },		--卡通糖果
+		halloweencandy_6		= { max = Unit_festival },		--葡萄干
+		halloweencandy_7		= { max = Unit_festival },		--葡萄干（有包装）
+		halloweencandy_8		= { max = Unit_festival },		--幽灵糖
+		halloweencandy_9		= { max = Unit_festival },		--果冻虫
+		halloweencandy_10		= { max = Unit_festival },		--触须棒糖
+		halloweencandy_11		= { max = Unit_festival },		--巧克力猪
+		halloweencandy_12		= { max = Unit_festival },		--糖果虱
+		halloweencandy_13		= { max = Unit_festival },		--末世硬糖
+		halloweencandy_14		= { max = Unit_festival },		--熔岩胡椒
+		
+		--万圣节玩具--
+		trinket_32				= { max = Unit_festival },		--方晶锆石球
+		trinket_33				= { max = Unit_festival },		--蜘蛛戒指
+		trinket_34				= { max = Unit_festival },		--猴爪
+		trinket_35				= { max = Unit_festival },		--空的万能药
+		trinket_36				= { max = Unit_festival },		--人造尖牙
+		trinket_37				= { max = Unit_festival },		--折断的棍子
+		trinket_38				= { max = Unit_festival },		--双筒望远镜
+		trinket_39				= { max = Unit_festival },		--单只手套
+		trinket_40				= { max = Unit_festival },		--蜗牛尺
+		trinket_41				= { max = Unit_festival },		--笨蛋罐
+		trinket_42				= { max = Unit_festival },		--玩具蛇
+		trinket_43				= { max = Unit_festival },		--玩具鳄鱼
+		trinket_44				= { max = Unit_festival },		--坏掉的玻璃容器
+		trinket_45				= { max = Unit_festival },		--老收音机
+		trinket_46				= { max = Unit_festival },		--坏掉的吹风机
+		
+		--冬季盛宴食物--
+		winter_food1			= { max = Unit_festival },		--姜饼人曲奇饼
+		winter_food2			= { max = Unit_festival },		--糖屑曲奇饼
+		winter_food3			= { max = Unit_festival },		--拐杖糖
+		winter_food4			= { max = Unit_festival },		--永恒水果蛋糕
+		winter_food5			= { max = Unit_festival },		--巧克力木头蛋糕
+		winter_food6			= { max = Unit_festival },		--李子布丁
+		winter_food7			= { max = Unit_festival },		--苹果酒
+		winter_food8			= { max = Unit_festival },		--热可可
+		winter_food9			= { max = Unit_festival },		--天堂蛋酒
+		
+		--冬季盛宴小饰品（8种不规则形状）--
+		winter_ornament_fancy1	= { max = Unit_festival },
+		winter_ornament_fancy2	= { max = Unit_festival },
+		winter_ornament_fancy3	= { max = Unit_festival },
+		winter_ornament_fancy4	= { max = Unit_festival },
+		winter_ornament_fancy5	= { max = Unit_festival },
+		winter_ornament_fancy6	= { max = Unit_festival },
+		winter_ornament_fancy7	= { max = Unit_festival },
+		winter_ornament_fancy8	= { max = Unit_festival },
 
-			
-        }
+    }
+		
+	local command_data = {}
+	TheSim:GetPersistentString("clean_world", function(load_success, data)
+		if load_success and data ~= nil then
+			command_data = json.decode(data)
+			if next(command_data) then
+				-- 遍历表格
+				for key, value in pairs(command_data) do
+					levelPrefabs[key] = { max = value }	
+				end
+			end
+		end
+	end)
 
         -- return levelPrefabs
     -- end
@@ -341,24 +352,32 @@ if IsServer then
 		if GetModConfigData("ANNOUNCE_MODE") then
 			for k,v in pairs(this_max_prefabs) do
 				if countList[k] ~= nil and countList[k].count > v.max then
-						GLOBAL.TheNet:Announce(string.format(STRINGS.CLEANINGS[2], countList[k].name, k, countList[k].count - countList[k].currentcount))
+					GLOBAL.TheNet:Announce(string.format(STRINGS.CLEANINGS[2], countList[k].name, k, countList[k].count - countList[k].currentcount))
 				end
 			end
 		end
     end
 
+
+	local noticeTask = nil
+	local function NoticeTask()
+		GLOBAL.TheNet:Announce(STRINGS.CLEAN_NOTICE)
+    end
+	
     local function CleanDelay()
 		local world = STRINGS.CLEANINGS[5]
-		if GLOBAL.TheWorld:HasTag("forest") then
+		if GLOBAL.TheWorld:HasTag("forest") and noticeTask then
+			noticeTask:Cancel()
+			noticeTask = GLOBAL.TheWorld:DoPeriodicTask((clean_cycle - 0.5) * TUNING.TOTAL_DAY_TIME, NoticeTask)
 			world = STRINGS.CLEANINGS[3]
 		end
 		if GLOBAL.TheWorld:HasTag("cave") then
 			world = STRINGS.CLEANINGS[4]
 		end
-        --GLOBAL.TheNet:Announce(STRINGS.CLEAN_NOTICE)
 		GLOBAL.TheNet:Announce(world..STRINGS.CLEANINGS[1]..STRINGS.POETRY[math.random(1, table.getn(STRINGS.POETRY))].."』")
         GLOBAL.TheWorld:DoTaskInTime(5, Clean)
     end
+	
 	
 	-- 自动清理
 	if need_clean then
@@ -368,7 +387,10 @@ if IsServer then
 			cleancycle_ultimate = clean_cycle * TUNING.TOTAL_DAY_TIME
 		end	
 		AddPrefabPostInit("world", function(inst)
-			GLOBAL.TheWorld:DoPeriodicTask( cleancycle_ultimate , CleanDelay)
+			if GLOBAL.TheWorld:HasTag("forest") then
+				noticeTask = GLOBAL.TheWorld:DoPeriodicTask(cleancycle_ultimate - 0.5 * TUNING.TOTAL_DAY_TIME, NoticeTask)
+			end
+			GLOBAL.TheWorld:DoPeriodicTask(cleancycle_ultimate , CleanDelay)
 		end)
 	end
 	
@@ -402,18 +424,21 @@ if IsServer then
 			message = (string.gsub(message,"：",":"))
 			message = (string.gsub(message,"；",";"))
 			message = (string.gsub(message," ",""))
-			-- message = (string.gsub(message,"'",""))
-			-- message = (string.gsub(message,""",""))
 			local item_cnts = string.split(string.lower(message),";")
 			for k, v in ipairs(item_cnts) do
 				local item_cnt = string.split(string.lower(v),":")
 				local max_temp = 2
-				if not tonumber(item_cnt[2]) then
-					max_temp = tonumber(item_cnt[2])
+				if #item_cnt >= 2 then
+					if tonumber(item_cnt[2]) then
+						max_temp = tonumber(item_cnt[2])
+					end
+					levelPrefabs[item_cnt[1]] = { max = max_temp }
+					command_data[item_cnt[1]] = max_temp
+					-- player:DoTaskInTime(0.5, function() if player.components.talker then player.components.talker:Say(STRINGS.ADD_SUCCESS..item_cnt[1].."："..item_cnt[2]) end end)
 				end
-				levelPrefabs[item_cnt[1]] = { max = max_temp }
-				player:DoTaskInTime(0.5, function() if player.components.talker then player.components.talker:Say("加入清理："..item_cnt[1].."数量为："..item_cnt[2]) end end)
 			end
+			TheSim:SetPersistentString("clean_world", json.encode(command_data), false) 
+			player:DoTaskInTime(0.5, function() if player.components.talker then player.components.talker:Say(json.encode(command_data)) end end)
 			message = "#clean_world"
 		end
 		
@@ -421,14 +446,13 @@ if IsServer then
 			string.lower(message) == "#clean" or
 			string.lower(message) == "#清理"
 		) then
-			--GLOBAL.TheWorld:DoPeriodicTask( 5 , CleanDelay)
 			if not (TheNet:GetIsServerAdmin() and player.components and player.Network:IsServerAdmin()) then
-                player:DoTaskInTime(0.5, function() if player.components.talker then player.components.talker:Say(player:GetDisplayName() .. ", " .. "管理员才能清理世界") end end)
+                player:DoTaskInTime(0.5, function() if player.components.talker then player.components.talker:Say(player:GetDisplayName() .. ", " .. STRINGS.ONLY_ADMIN_CLEAN) end end)
                 return
             end
             if player then
                 local charactername = STRINGS.CHARACTER_NAMES[prefab] or prefab
-                player.components.talker:Say(player:GetDisplayName() .. " (" .. charactername .. ") " .. "清理手动清理世界！")
+                player.components.talker:Say(player:GetDisplayName() .. " (" .. charactername .. ") " .. STRINGS.COMMAND_CLEAN)
                 player:DoTaskInTime(0.5, CleanDelay)
             end
 		end

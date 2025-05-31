@@ -1,4 +1,5 @@
 return {
+	"armor_carrotlure",--胡萝卜外套
 	"roseglasseshat",--玫瑰色眼镜
 	"nightcaphat",--睡帽
 	
@@ -13,6 +14,11 @@ return {
 	"bodypillow_beefalowool",--皮弗娄牛枕头盔甲
 
 	"antlionhat",--刮地皮头盔
+
+	"mask_sagehat",--贤者面具
+	"mask_toadyhat",--马屁精面具
+	"mask_halfwithat",--蠢人面具
+
 
 	"mask_queenhat",--女王面具
 	"costume_queen_body",--女王服
@@ -40,6 +46,8 @@ return {
 	"carnival_vest_a",
 	"carnival_vest_b",
 	--花环
+	"ghostflowerhat",--幽魂花冠
+	"rabbithat",--洞穴花环
 	"kelphat",
 	"flowerhat",
 	--精神
@@ -72,10 +80,13 @@ return {
 	"dragonbodyhat",		
 	"dragontailhat",
 	--其他帽子
+	
+
 	"mermhat",
 	"bushhat",
 	"spiderhat",
 	--特殊
+
 	"batnosehat",
 	"plantregistryhat",
 	"nutrientsgoggleshat",

@@ -1,0 +1,48 @@
+<Atlas>
+<Texture filename="spritesheet_geology.tex" />
+    <Elements>
+        <Element name="ancientdreams_pyrite.tex" u1="0" u2="0.125" v2="1" v1="0.875" />
+        <Element name="ancientdreams_limestone.tex" u1="0.125" u2="0.25" v2="1" v1="0.875" />
+        <Element name="ancientdreams_bismuth.tex" u1="0.25" u2="0.375" v2="1" v1="0.875" />
+        <Element name="ancientdreams_granite.tex" u1="0.375" u2="0.5" v2="1" v1="0.875" />
+        <Element name="ancientdreams_chalk.tex" u1="0.5" u2="0.625" v2="1" v1="0.875" />
+        <Element name="ancientdreams_opalite.tex" u1="0.625" u2="0.75" v2="1" v1="0.875" />
+        <Element name="ancientdreams_marble.tex" u1="0.75" u2="0.875" v2="1" v1="0.875" />
+        <Element name="ancientdreams_flint.tex" u1="0.875" u2="1" v2="1" v1="0.875" />
+        <Element name="ancientdreams_mountain_crystal.tex" u1="0" u2="0.125" v2="0.875" v1="0.75" />
+        <Element name="ancientdreams_obsidian.tex" u1="0.125" u2="0.25" v2="0.875" v1="0.75" />
+        <Element name="ancientdreams_epidote.tex" u1="0.25" u2="0.375" v2="0.875" v1="0.75" />
+        <Element name="ancientdreams_halite.tex" u1="0.375" u2="0.5" v2="0.875" v1="0.75" />
+        <Element name="ancientdreams_variscite.tex" u1="0.5" u2="0.625" v2="0.875" v1="0.75" />
+
+        <Element name="ancientdreams_rose_quartz.tex" u1="0.625" u2="0.75" v2="0.875" v1="0.75" />
+        <Element name="ancientdreams_beudantide.tex" u1="0.75" u2="0.875" v2="0.875" v1="0.75" />
+        <Element name="ancientdreams_moldavite.tex" u1="0.875" u2="1" v2="0.875" v1="0.75" />
+        <Element name="ancientdreams_selenite.tex" u1="0" u2="0.125" v2="0.75" v1="0.625" />
+        <Element name="ancientdreams_uranite.tex" u1="0.125" u2="0.25" v2="0.75" v1="0.625" />
+        <Element name="ancientdreams_vanadinite.tex" u1="0.25" u2="0.375" v2="0.75" v1="0.625" />
+        <Element name="ancientdreams_aquamarine.tex" u1="0.375" u2="0.5" v2="0.75" v1="0.625" />
+        <Element name="ancientdreams_fluorite.tex" u1="0.5" u2="0.625" v2="0.75" v1="0.625" />
+        <Element name="ancientdreams_amethyst.tex" u1="0.625" u2="0.75" v2="0.75" v1="0.625" />
+        <Element name="ancientdreams_lapis_lazuli.tex" u1="0.75" u2="0.875" v2="0.75" v1="0.625" />
+        <Element name="ancientdreams_amber.tex" u1="0.875" u2="1" v2="0.75" v1="0.625" />
+        <Element name="ancientdreams_aventurine.tex" u1="0" u2="0.125" v2="0.625" v1="0.5" />
+        <Element name="ancientdreams_orpiment.tex" u1="0.125" u2="0.25" v2="0.625" v1="0.5" />
+
+        <Element name="ancientdreams_star_sapphire.tex" u1="0.25" u2="0.375" v2="0.625" v1="0.5" />
+        <Element name="ancientdreams_labradorite.tex" u1="0.375" u2="0.5" v2="0.625" v1="0.5" />
+        <Element name="ancientdreams_olivine.tex" u1="0.5" u2="0.625" v2="0.625" v1="0.5" />
+        <Element name="ancientdreams_jade.tex" u1="0.625" u2="0.75" v2="0.625" v1="0.5" />
+        <Element name="ancientdreams_turmaline.tex" u1="0.75" u2="0.875" v2="0.625" v1="0.5" />
+        <Element name="ancientdreams_emerald.tex" u1="0.875" u2="1" v2="0.625" v1="0.5" />
+        <Element name="ancientdreams_helvite.tex" u1="0" u2="0.125" v2="0.5" v1="0.375" />
+        <Element name="ancientdreams_ruby.tex" u1="0.125" u2="0.25" v2="0.5" v1="0.375" />
+        <Element name="ancientdreams_fire_opal.tex" u1="0.25" u2="0.375" v2="0.5" v1="0.375" />
+        <Element name="ancientdreams_moonstone.tex" u1="0.375" u2="0.5" v2="0.5" v1="0.375" />
+        <Element name="ancientdreams_citrine.tex" u1="0.5" u2="0.625" v2="0.5" v1="0.375" />
+        <Element name="ancientdreams_garnet.tex" u1="0.625" u2="0.75" v2="0.5" v1="0.375" />
+        <Element name="ancientdreams_tanzanite.tex" u1="0.75" u2="0.875" v2="0.5" v1="0.375" />
+        <Element name="ancientdreams_memory_gem.tex" u1="0.875" u2="1" v2="0.5" v1="0.375" />
+    </Elements>
+</Atlas>
+        

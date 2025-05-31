@@ -7,7 +7,7 @@ description = Ch and
 "使弹性空间能做用于更多容器" or
 "Apply infinite stacksize to more containers"  --mod描述  --mod描述
 author = "Lilith" --作者
-version = "0.0.8" -- mod版本 上传mod需要两次的版本不一样
+version = "0.0.10" -- mod版本 上传mod需要两次的版本不一样
 
 -- This is the URL name of the mod's thread on the forum; the part after the ? and before the first & in the url
 forumthread = ""
@@ -233,6 +233,24 @@ configuration_options =
 					},
 			default = true,
 	},
+	{
+		name = "upgradeammobag",
+		label = "升级弹药袋",
+		options =   {
+						{description = "可以", data = true},
+						{description = "不行", data = false},
+					},
+			default = true,
+	},
+	{
+		name = "upgradepicbox",
+		label = "升级野餐盒",
+		options =   {
+						{description = "可以", data = true},
+						{description = "不行", data = false},
+					},
+			default = true,
+	},
 {name = "Title", label = "", options = {{description = "", data = ""}}, default = ""},
 {name = "Title", label = "模组容器升级工具", options = {{description = "", data = ""}}, default = ""},
 	{
@@ -440,6 +458,24 @@ configuration_options =
 	{
 		name = "upgradegelblob",
 		label = "upgrade gelblobbox",
+		options =   {
+						{description = "yes", data = true},
+						{description = "no", data = false},
+					},
+			default = true,
+	},
+	{
+		name = "upgradeammobag",
+		label = "ammo bag",
+		options =   {
+						{description = "yes", data = true},
+						{description = "no", data = false},
+					},
+			default = true,
+	},
+	{
+		name = "upgradepicbox",
+		label = "picnic box",
 		options =   {
 						{description = "yes", data = true},
 						{description = "no", data = false},

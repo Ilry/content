@@ -1,3 +1,5 @@
+---@diagnostic disable
+
 local version = "20241006"
 -- get rid of any GLOBAL. prefix
 local GLOBAL = _G or GLOBAL

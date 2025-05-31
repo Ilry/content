@@ -226,7 +226,7 @@ local function makeemptyfn(inst)
 end
 
 local function onburnt(inst)
-    TheWorld:PushEvent("beginregrowth", inst)
+    -- TheWorld:PushEvent("beginregrowth", inst)
     DefaultBurntFn(inst)
 end
 

@@ -7,11 +7,23 @@ STRINGS.WENDY_SISTURN_GHOSTFLOWER_1_TITLE_DESC = "The sister's urn slows the dec
 STRINGS.WENDY_SISTURN_GHOSTFLOWER_2_TITLE = "Mourning Perpetuity II"
 STRINGS.WENDY_SISTURN_GHOSTFLOWER_2_TITLE_DESC = "The sister's urn slows the decay of petals by 40% and generates a Mourning Glory every 6 minutes."
 
+STRINGS.WENDY_SISTURN_PROTECTION_TITLE = "生者的救赎"
+STRINGS.WENDY_SISTURN_PROTECTION_TITLE_DESC = "在阿比盖尔收到致命伤害时，世界上所有的骨灰罐都会凋零，以保护阿比盖尔一次。"
+
 STRINGS.WENDY_SISTERS_STORIES_TITLE = "Sister's Storybook"
 STRINGS.WENDY_SISTERS_STORIES_TITLE_DESC = "The Sister's Storybook can be crafted.\nIt contains small stories within."
 
-STRINGS.WENDY_ABIGAIL_ANIMAL_FRIEND_TITLE = "Animal Friend"
-STRINGS.WENDY_ABIGAIL_ANIMAL_FRIEND_TITLE_DESC = "In a state of rage, Abigail will not actively attack some animals that you might not want to attack."
+STRINGS.WENDY_ABIGAIL_GET_OUT_TITLE = "幽影帷幕"
+STRINGS.WENDY_ABIGAIL_GET_OUT_TITLE_DESC = "温蒂可以阅读故事书让阿比盖尔从战斗中脱身\n不会消耗故事书的耐久度"
+
+STRINGS.WENDY_ABIGAIL_DASH_TITLE = "裂隙折冲"
+STRINGS.WENDY_ABIGAIL_DASH_TITLE_DESC = "温蒂可以阅读故事书让阿比盖尔冲锋到指定位置\n不会消耗故事书的耐久度"
+
+STRINGS.WENDY_ABIGAIL_HAUNT_TITLE = "姐妹哀歌"
+STRINGS.WENDY_ABIGAIL_HAUNT_TITLE_DESC = "温蒂可以阅读故事书让阿比盖尔进行作祟\n不会消耗故事书的耐久度"
+
+--STRINGS.WENDY_ABIGAIL_ANIMAL_FRIEND_TITLE = "Animal Friend"
+--STRINGS.WENDY_ABIGAIL_ANIMAL_FRIEND_TITLE_DESC = "In a state of rage, Abigail will not actively attack some animals that you might not want to attack."
 
 STRINGS.WENDY_ABIGAIL_LONGER_DAMAGE_DURATION_TITLE = "River of Sorrow"
 STRINGS.WENDY_ABIGAIL_LONGER_DAMAGE_DURATION_TITLE_DESC = "The vulnerability duration inflicted by Abigail is extended to 4 seconds."

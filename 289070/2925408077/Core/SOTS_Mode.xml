@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- DateCreated: 4/1/2021 10:05:26 PM -->
+<GameInfo>
+	<GameModeItems>
+		<Row GameModeType="GAMEMODE_SOTS" Name="LOC_GAMEMODE_SOTS_NAME" Description="LOC_GAMEMODE_SOTS_DESCRIPTION"
+			 Portrait="IMG_GAMEMODE_SOTS_NEUTRAL" Background="IMG_GAMEMODE_SOTS_BACKGROUND" Icon="ICON_GAMEMODE_SOTS"
+			 SortIndex="10" />
+	</GameModeItems>
+
+	<Parameters>
+		<Row ParameterId="GAMEMODE_SOTS" Name="LOC_GAMEMODE_SOTS_NAME" Description="LOC_GAMEMODE_SOTS_DESCRIPTION"
+			 Domain="bool" DefaultValue="0" ConfigurationGroup="Game" ConfigurationId="GAMEMODE_SOTS"
+			 NameArrayConfigurationId="GAMEMODES_ENABLED_NAMES" GroupId="GameModes" SortIndex="100"/>
+	</Parameters>
+</GameInfo>

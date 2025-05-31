@@ -1,4 +1,4 @@
-require "prefabutil"
+require("prefabutil")
 
 local assets =
 {
@@ -64,7 +64,7 @@ local function makeitem(name, build, frame)
 	inst.Transform:SetTwoFaced()
 
 	local minimap = inst.entity:AddMiniMapEntity()
-	minimap:SetIcon("kyno_topiary_".. frame ..".png")
+	minimap:SetIcon("kyno_topiary_".. frame ..".tex")
 	
 	inst.AnimState:SetBank("topiary")
 	inst.AnimState:SetBuild(build)

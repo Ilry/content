@@ -1,3 +1,4 @@
+---@diagnostic disable
 local function GroundOrientation(inst)
   inst.AnimState:SetOrientation(ANIM_ORIENTATION.OnGround)
   inst.AnimState:SetLayer(LAYER_BACKGROUND)

@@ -26,7 +26,7 @@ local function OnGetItemFromPlayer(inst, giver, item)
         giver.components.inventory:GiveItem(item)
     end
 
-	inst.SoundEmitter:PlaySound("dontstarve/HUD/repair_clothing")
+	-- inst.SoundEmitter:PlaySound("dontstarve/HUD/repair_clothing")
 end
 
 local function AcceptTest(inst, item, giver)

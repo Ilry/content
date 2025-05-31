@@ -2,7 +2,7 @@
 name = "保鲜/反鲜 Perish Time Modifier"
 description = "Change perish time for mushroom light/icebox/saltbox/endtable  修改容器的保鲜/反鲜时间"
 author = "MicheaBoab"
-version = "4.3"
+version = "4.5"
 
 -- This lets other players know if your mod is out of date, update it to match the current version in the game
 
@@ -34,18 +34,28 @@ configuration_options =
 			{description = "", data = 0},
 		},
 	},
-		{
+	{
 		name = "fridge_config",
 		label = "spoilage rate config	腐烂速率",
-		hover = "Ice Fridge spoilage rate config",
+		hover = "Ice Box spoilage rate config",
 		options =	{
 			{description = "默认腐烂速度", data = 0.5, hover = "Default spoil time"},
-			-- 这个数值改为小于等于0的时候会影响熊包保鲜但不制冷功能的正常工作. 暂时改为超长时间约等于完全保鲜
+			-- 这个数值改为小于等于0的时候会影响熊包保鲜但不影响制冷功能的正常工作. 暂时改为超长时间约等于完全保鲜
 			{description = "完全保鲜(超长时间)", data = 0.00005, hover = "Spoil slower"},
 			--{description = "完全保鲜", data = 0, hover = "Food fresh forever(keep current freshness)"},
 			{description = "神奇的反鲜", data = - 2, hover = "Regain freshness over time"},
 		},
 		default = 0.5,
+	},
+	{
+		name = "fridge_ice_config",
+		label = "ice reforze config	冰块在冰箱里回复",
+		hover = "ice reforze config",
+		options =	{
+			{description = "关", data = false, hover = "Default"},
+			{description = "开", data = true, hover = "fridge will refroze Ice"},
+		},
+		default = false,
 	},
 	
 	--盐盒
@@ -272,29 +282,48 @@ configuration_options =
 		},
 		default = false,
 	},
-	
-	--[[
-	--茶几
+		
+	-- 钓具类
 	{
 		name = "",
-		label = "󰀏 EndTable 茶几 󰀏",
-		hover = "EndTable",
+		label = " 󰀏 All Tackel Container 钓具保鲜效果 󰀏",
+		hover = "All Tackel Container",
 		default = 0,
 		options = {
 			{description = "", data = 0},
 		},
 	},
 	{
-		name = "endTable_config",
-		label = "spoilage rate config 茶几",
-		hover = "EndTable spoilage rate config",
+		name = "tackelContainer_config",
+		label = "spoilage rate config 钓具箱子",
+		hover = "Tackel Container spoilage rate config",
 		options =	{
 			{description = "关", data = false, hover = "Spoilage rate (OFF) Vanilla version"},
 			{description = "开", data = true, hover = "Spoilage rate (ON) Like fridge"},
 		},
 		default = false,
 	},
-	--]]
+	
+	-- 鱼人食堂
+	{
+		name = "",
+		label = " 󰀏 All Kelp Dish 鱼人食堂保鲜效果 󰀏",
+		hover = "All Kelp Dish",
+		default = 0,
+		options = {
+			{description = "", data = 0},
+		},
+	},
+	{
+		name = "offeringPot_config",
+		label = "spoilage rate config 食堂海带盘",
+		hover = "Kelp Dish spoilage rate config",
+		options =	{
+			{description = "关", data = false, hover = "Spoilage rate (OFF) Vanilla version"},
+			{description = "开", data = true, hover = "Spoilage rate (ON) Like fridge"},
+		},
+		default = false,
+	},
 	
 	--哈奇
 	{

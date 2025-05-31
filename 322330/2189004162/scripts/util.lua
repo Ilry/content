@@ -236,6 +236,19 @@ function UnescapeRichText(str)
 	return str:gsub("&lt;", "<"):gsub("&gt;", ">")
 end
 
+function SetTaskRemaining(task, time)
+	if task == nil then
+		mprint("that task doesn't exist")
+		return
+	end
+
+	if task:NextTime() == nil then
+		mprint("task doesnt have a next time")
+		return
+	end
+
+	task.nexttick = GetTickForTime(GetTime() + time)
+end
 
 function GetReduxListItemPrefix(row_width, row_height)
 	local prefix = "listitem_thick" -- 320 / 90 = 3.6
@@ -1080,6 +1093,15 @@ if IS_DST then
 		return false
 	end
 end
+
+--[[
+do
+	Task = module.recursive_getupvalue(StartStaticThread, "Task")
+	if not Task then
+		error("Cannot find Task")
+	end
+end
+--]]
 
 
 module.LoadComponent = assert(module.getupvalue(EntityScript.AddComponent, "LoadComponent"), "Failed to retrieve EntityScript -> LoadComponent")

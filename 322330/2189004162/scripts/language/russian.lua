@@ -107,6 +107,11 @@ return {
 
 	-------------------------------------------------------------------------------------------------------------------------
 	
+	-- acidbatwavemanager.lua
+	acidbatwavemanager = {
+		next_wave_spawn = "<prefab=bat> raid (%d) arrives in %s"
+	},
+	
 	-- alterguardianhat.lua [Prefab]
 	alterguardianhat = {
 		minimum_sanity = "Минимум <color=SANITY>рассудка</color> для света: <color=SANITY>%s</color> (<color=SANITY>%s%%</color>)",
@@ -236,7 +241,7 @@ return {
 	breeder_fish4 = "<color=#DED15E>Рыба-пьеро</color>",
 	breeder_fish5 = "<color=#9ADFDE>Налобная рыба</color>",
 	breeder_fishstring = "%s: %s / %s",
-	breeder_nextfishtime = "Следующий %s через <color=FISH>%s</color>",
+	breeder_nextfishtime = "Additional fish in: %s", --"Следующий %s через <color=FISH>%s</color>", -- This incorrectly has two string formatters for some reason.
 
 	-- brushable.lua
 	brushable = {
@@ -329,6 +334,12 @@ return {
 		},
 	},
 
+	-- compostingbin.lua
+	compostingbin = {
+		contents_amount = "Material: %s / %s",
+		detailed_contents_amount = "Material: <color=NATURE>%s<sub>Green</sub></color> + <color=INEDIBLE>%s<sub>Brown</sub></color> / %s",
+	},
+
 	-- container.lua
 	container = {
 		
@@ -403,6 +414,10 @@ return {
 			description = "Вы сопротивляетесь <color=MONSTER>сну</color> на {duration}(с).",
 		},
 		
+		["healingsalve_acidbuff"] = {
+			name = "<color=#ded15e>Acid Resistance</color>",
+			description = "Immune to <color=#ded15e>acid rain</color> for {duration}(s)."
+		},
 		["tillweedsalve_buff"] = {
 			name = "<color=HEALTH>Регенерация здоровья</color>",
 			description = "Восстанавливает <color=HEALTH>{amount} здоровья</color> за {duration}(с).",
@@ -685,6 +700,11 @@ return {
 		held_refuel = "Удерживаемый <color=SWEETENER><prefab=%s></color> заправит на <color=LIGHT>%s%%</color>.",
 	},
 
+	-- gelblobspawner.lua
+	gelblobspawner = {
+		
+	},
+
 	-- ghostlybond.lua
 	ghostlybond = {
 		abigail = "<color=%s>Сестринская связь</color>: %s / %s.",
@@ -761,8 +781,11 @@ return {
 
 	-- hounded.lua
 	hounded = {
-		time_until_hounds = "<prefab=hound> Атакует через %s.",
-		time_until_worms = "<prefab=worm> Атакует через %s.",
+		time_until_hounds = "<prefab=hound> Атакует через %s",
+		time_until_worms = "<prefab=worm> Атакует через %s",
+		time_until_worm_boss = "<prefab=worm_boss> Атакует через %s",
+		time_until_crocodog = "<prefab=crocodog> Атакует через %s",
+		worm_boss_chance = "<prefab=worm_boss> chance: %.1f%%",
 	},
 
 	-- hunger.lua
@@ -801,6 +824,11 @@ return {
 		hands_describe = "[Tool]: ",
 	},
 
+	-- itemmimic.lua
+	itemmimic = {
+		time_to_reveal = "<prefab=itemmimic_revealed> reveal in: %s",
+	},
+
 	-- kitcoonden.lua
 	kitcoonden = {
 		number_of_kitcoons = "Количество кошачьих-помощников: %s"
@@ -827,6 +855,11 @@ return {
 
 	-- lightninggoat.lua
 	lightninggoat_charge = "Разрядится через %s день(дней).",
+
+	-- linkeditem.lua
+	linkeditem = {
+		owner = "Owner: %s",
+	},
 
 	-- lunarrift_portal.lua [Prefab]
 	lunarrift_portal = {
@@ -1058,6 +1091,13 @@ return {
 		},
 	},
 
+	-- rabbitkingmanager.lua
+	rabbitkingmanager = {
+		carrots = "<color=VEGGIE>Carrots</color>: <color=VEGGIE>%d</color> / <color=VEGGIE>%d</color>",
+		naughtiness = "Naughtiness: %d / %d",
+		king_status = "%s is alive.", -- Gets a prefab tag inserted with king type.
+	},
+
 	-- rainometer.lua [Prefab]
 	global_wetness = "<color=FROZEN>Общая Влажность</color>: <color=FROZEN>%s</color>",
 	precipitation_rate = "<color=WET>Скорость осадков</color>: <color=WET>%s</color>",
@@ -1160,6 +1200,18 @@ return {
 		total_shadow_level = "<color=BLACK>Общий уровень Тени</color>: %s",
 	},
 
+	-- shadowparasitemanager.lua
+	shadowparasitemanager = {
+		num_waves = "Waves: %d",
+	}, 
+
+	-- shadow_battleaxe.lua [Prefab]
+	shadow_battleaxe = {
+		level = "Level: %s / %s",
+		boss_progress = "Defeated Bosses: %s / %s",
+		lifesteal = "<color=HEALTH>Life Steal</color>: <color=HEALTH>%.2f</color> (<color=SANITY>%.2f</color>)",
+	},
+
 	-- shadowrift_portal.lua [Prefab]
 	shadowrift_portal = {
 		close = "<prefab=SHADOWRIFT_PORTAL> закроется через %s",
@@ -1174,11 +1226,18 @@ return {
 		},
 	},
 
+	-- shadowthrall_mimics.lua
+	shadowthrall_mimics = {
+		mimic_count = "<string=UI.CUSTOMIZATIONSCREEN.ITEMMIMICS>: %s / %s",
+		next_spawn = "<prefab=itemmimic_revealed> will try to spawn in %s",
+	},
+
 	-- shadowthrallmanager.lua
 	shadowthrallmanager = {
 		fissure_cooldown = "Следующая трещина будет готова к захвату через %s",
 		waiting_for_players = "Ожидание приближения игрока",
 		thrall_count = "<color=MOB_SPAWN><prefab=SHADOWTHRALL_HANDS></color>: %d",
+		thralls_alive = "<color=MOB_SPAWN>Thralls alive (%d)</color>: %s",
 		dreadstone_regen = "<color=#942429><prefab=DREADSTONE></color> восстановится через %s",
 	},
 
@@ -1258,8 +1317,24 @@ return {
 	-- stickable.lua
 	stickable = "<color=FISH>Мидии</color>: %s",
 
+	-- support_pillar.lua [Prefab]
+	support_pillar = {
+		reinforcement = "Reinforcement: %s / %s",
+		durability = "Durability: %s / %s",
+	},
+
+	-- support_pillar_dreadstone.lua [Prefab]
+	support_pillar_dreadstone = {
+		time_until_reinforcement_regen = "Next regeneration: %s",
+	},
+
 	-- temperature.lua
 	temperature = "Температура: <temperature=%s>",
+
+	-- tentacle_pillar_hole.lua [Prefab]
+	tentacle_pillar_hole = {
+		immunity_time = "<prefab=tentacle> immunity time: %s",
+	},
 
 	-- terrarium.lua [Prefab]
 	terrarium = {

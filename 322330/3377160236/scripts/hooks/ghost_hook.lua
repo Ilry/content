@@ -1,9 +1,8 @@
 AddPrefabPostInit("ghost", function(inst)
     if not TheWorld.ismastersim then return end
     inst:AddComponent("follower")
-    inst:AddTag("pure_ghost")
-
     inst:AddComponent("lootdropper")
+    inst:AddTag("pure_ghost")
 
 
     local function Change()
@@ -24,6 +23,27 @@ AddPrefabPostInit("ghost", function(inst)
             end
         end
     end
+
+    local function AuraTest(inst, target)
+        if inst.components.follower ~= nil and inst.components.follower.leader ~= nil then
+            if inst.components.follower.leader == target then
+                return false
+            end
+            if target:HasTag("character") or target:HasTag("companion") or (target.components.follower ~= nil and target.components.follower.leader == inst.components.follower.leader) then
+                return false
+            end
+        end
+
+        if inst.components.combat:TargetIs(target) or (target.components.combat.target ~= nil and target.components.combat:TargetIs(inst)) then
+            return true
+        end
+
+
+
+        return not target:HasTag("ghostlyfriend") and not target:HasTag("abigail")
+    end
+
+    inst.components.aura.auratestfn = AuraTest
 
     inst:DoTaskInTime(0, function()
         Change()

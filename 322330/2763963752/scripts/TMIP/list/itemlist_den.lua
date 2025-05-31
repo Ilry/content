@@ -1,4 +1,5 @@
 return {
+	"boat_otterden",--水獭掠夺者草筏
 	"otterden",--水獭掠夺者窝点
 	"otterden_dead",--拆毁的水獭掠夺者窝点
 	

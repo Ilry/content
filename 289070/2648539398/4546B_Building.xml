@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 4546B_Building -->
+<!-- Author: 27136 -->
+<!-- DateCreated: 10/25/2021 12:01:33 AM -->
+<GameData>
+	<Types>
+		<Row Type="BUILDING_SCANNER" Kind="KIND_BUILDING"/>
+		<Row Type="BUILDING_LON_ELECTRICITY" Kind="KIND_BUILDING"/>
+		<Row Type="BUILDING_HOT_ELECTRICITY" Kind="KIND_BUILDING"/>
+		<Row Type="BUILDING_TRANSLATION_DEVICE" Kind="KIND_BUILDING"/>
+	</Types>
+
+	<Buildings>
+		<Row BuildingType="BUILDING_SCANNER" Name="LOC_BUILDING_SCANNER_NAME" Description="LOC_BUILDING_SCANNER_DESCRIPTION"
+			 PrereqTech="TECH_EDUCATION" PrereqDistrict="DISTRICT_CAMPUS"
+			 PurchaseYield="YIELD_GOLD" Cost="330"  AdvisorType="ADVISOR_TECHNOLOGY"
+		     Maintenance="2" Housing="1" CitizenSlots="1" TraitType="TRAIT_BUILDING_SCANNER"/>
+
+		<Row BuildingType="BUILDING_TRANSLATION_DEVICE" Name="LOC_BUILDING_TRANSLATION_DEVICE_NAME" Description="LOC_BUILDING_TRANSLATION_DEVICE_DESCRIPTION"
+			 PrereqDistrict="DISTRICT_GOVERNMENT"  Cost="240" AdvisorType="ADVISOR_GENERIC" Maintenance="2"  UnlocksGovernmentPolicy="True"  GovernmentTierRequirement="Tier2" 
+			 TraitType="TRAIT_BUILDING_TRANSLATION_DEVICE"/>
+
+		<Row BuildingType="BUILDING_LON_ELECTRICITY" Name="LOC_BUILDING_LON_ELECTRICITY_NAME" 
+			 Description="LOC_BUILDING_LON_ELECTRICITY_DESCRIPTION" PrereqTech="TECH_SYNTHETIC_MATERIALS" 
+			 PrereqDistrict="DISTRICT_INDUSTRIAL_ZONE" PurchaseYield="YIELD_GOLD" Cost="420" 
+			 AdvisorType="ADVISOR_GENERIC" Maintenance="2" CitizenSlots="1" RegionalRange="6"/>
+
+		<Row BuildingType="BUILDING_HOT_ELECTRICITY" Name="LOC_BUILDING_HOT_ELECTRICITY_NAME"
+			 Description="LOC_BUILDING_HOT_ELECTRICITY_DESCRIPTION" PrereqTech="TECH_ELECTRICITY"
+			 PrereqDistrict="DISTRICT_LIFETREE" PurchaseYield="YIELD_GOLD" Cost="480"
+			 AdvisorType="ADVISOR_GENERIC" Maintenance="3" CitizenSlots="3" />
+	</Buildings>
+	<BuildingPrereqs>
+	<Row Building="BUILDING_SCANNER" PrereqBuilding="BUILDING_LIBRARY"/>
+	<Row Building="BUILDING_LON_ELECTRICITY" PrereqBuilding="BUILDING_FACTORY"/>
+	<Row Building="BUILDING_TRANSLATION_DEVICE" PrereqBuilding="BUILDING_GOV_CITYSTATES"/>
+	<Row Building="BUILDING_TRANSLATION_DEVICE" PrereqBuilding="BUILDING_GOV_SPIES"/>
+	<Row Building="BUILDING_TRANSLATION_DEVICE" PrereqBuilding="BUILDING_GOV_FAITH"/>
+	</BuildingPrereqs>
+	<Building_YieldChanges>
+	<Row BuildingType="BUILDING_SCANNER" YieldType="YIELD_SCIENCE" YieldChange="5"/>
+	<Row BuildingType="BUILDING_LON_ELECTRICITY" YieldType="YIELD_PRODUCTION" YieldChange="5"/>
+	<Row BuildingType="BUILDING_LON_ELECTRICITY" YieldType="YIELD_SCIENCE" YieldChange="3"/>
+	<Row BuildingType="BUILDING_HOT_ELECTRICITY" YieldType="YIELD_FAITH" YieldChange="5"/>
+	</Building_YieldChanges>
+	<Building_GreatPersonPoints>
+	<Row BuildingType="BUILDING_SCANNER" GreatPersonClassType="GREAT_PERSON_CLASS_SCIENTIST" PointsPerTurn="2"/>
+	<Row BuildingType="BUILDING_LON_ELECTRICITY" GreatPersonClassType="GREAT_PERSON_CLASS_ENGINEER" PointsPerTurn="1"/>
+	<Row BuildingType="BUILDING_LON_ELECTRICITY" GreatPersonClassType="GREAT_PERSON_CLASS_SCIENTIST" PointsPerTurn="1"/>
+	<Row BuildingType="BUILDING_HOT_ELECTRICITY" GreatPersonClassType="GREAT_PERSON_CLASS_SCIENTIST" PointsPerTurn="2"/>
+	</Building_GreatPersonPoints>
+	<Buildings_XP2>
+		<Row BuildingType="BUILDING_LON_ELECTRICITY" ResourceTypeConvertedToPower="RESOURCE_LON"/>
+		<Row BuildingType="BUILDING_HOT_ELECTRICITY"/>
+	</Buildings_XP2>
+	<Building_CitizenYieldChanges>
+		<Row BuildingType="BUILDING_LON_ELECTRICITY" YieldType="YIELD_PRODUCTION" YieldChange="3"/>
+		<Row BuildingType="BUILDING_HOT_ELECTRICITY" YieldType="YIELD_CULTURE" YieldChange="4"/>
+	</Building_CitizenYieldChanges>
+	<MutuallyExclusiveBuildings>
+		<Row Building="BUILDING_LON_ELECTRICITY" MutuallyExclusiveBuilding="BUILDING_FOSSIL_FUEL_POWER_PLANT"/>
+		<Row Building="BUILDING_LON_ELECTRICITY" MutuallyExclusiveBuilding="BUILDING_POWER_PLANT"/>
+		<Row Building="BUILDING_LON_ELECTRICITY" MutuallyExclusiveBuilding="BUILDING_COAL_POWER_PLANT"/>
+		<Row Building="BUILDING_COAL_POWER_PLANT" MutuallyExclusiveBuilding="BUILDING_LON_ELECTRICITY"/>
+		<Row Building="BUILDING_FOSSIL_FUEL_POWER_PLANT" MutuallyExclusiveBuilding="BUILDING_LON_ELECTRICITY"/>
+		<Row Building="BUILDING_POWER_PLANT" MutuallyExclusiveBuilding="BUILDING_LON_ELECTRICITY"/>
+	</MutuallyExclusiveBuildings>
+
+	<BuildingModifiers>
+		<Row>
+			<BuildingType>BUILDING_SCANNER</BuildingType>
+			<ModifierId>MODIFIER_RESOURCE_GRAND_SCIENCE1</ModifierId>
+		</Row>
+	</BuildingModifiers>
+	<Modifiers>
+		<Row>
+			<ModifierId>MODIFIER_RESOURCE_GRAND_SCIENCE1</ModifierId>
+			<ModifierType>MODIFIER_CITY_PLOT_YIELDS_ADJUST_PLOT_YIELD</ModifierType>
+			<SubjectRequirementSetId>SCANNER_RESOURCE</SubjectRequirementSetId>
+		</Row>
+	</Modifiers>
+	<ModifierArguments>
+		<Row>
+			<ModifierId>MODIFIER_RESOURCE_GRAND_SCIENCE1</ModifierId>
+			<Name>Amount</Name>
+			<Value>2</Value>
+		</Row>
+		<Row>
+			<ModifierId>MODIFIER_RESOURCE_GRAND_SCIENCE1</ModifierId>
+			<Name>YieldType</Name>
+			<Value>YIELD_SCIENCE</Value>
+		</Row>
+	</ModifierArguments>
+	<!-- =============== RequirementSets =============== -->
+	<RequirementSets>
+		<Row>
+			<RequirementSetId>SCANNER_RESOURCE</RequirementSetId>
+			<RequirementSetType>REQUIREMENTSET_TEST_ANY</RequirementSetType>
+		</Row>
+	</RequirementSets>
+	<RequirementSetRequirements>
+		<Row>
+			<RequirementSetId>SCANNER_RESOURCE</RequirementSetId>
+			<RequirementId>SCANNER_BONUS</RequirementId>
+		</Row>
+		<Row>
+			<RequirementSetId>SCANNER_RESOURCE</RequirementSetId>
+			<RequirementId>SCANNER_LUXURY</RequirementId>
+		</Row>
+		<Row>
+			<RequirementSetId>SCANNER_RESOURCE</RequirementSetId>
+			<RequirementId>SCANNER_STRATEGIC</RequirementId>
+		</Row>
+	</RequirementSetRequirements>
+	<!-- +++++++++++++++ Requirements +++++++++++++++ -->
+	<Requirements>
+		<Row>
+			<RequirementId>SCANNER_BONUS</RequirementId>
+			<RequirementType>REQUIREMENT_PLOT_RESOURCE_CLASS_TYPE_MATCHES</RequirementType>
+		</Row>
+		<Row>
+			<RequirementId>SCANNER_LUXURY</RequirementId>
+			<RequirementType>REQUIREMENT_PLOT_RESOURCE_CLASS_TYPE_MATCHES</RequirementType>
+		</Row>
+		<Row>
+			<RequirementId>SCANNER_STRATEGIC</RequirementId>
+			<RequirementType>REQUIREMENT_PLOT_RESOURCE_CLASS_TYPE_MATCHES</RequirementType>
+		</Row>
+	</Requirements>
+	<RequirementArguments>
+		<Row>
+			<RequirementId>SCANNER_BONUS</RequirementId>
+			<Name>ResourceClassType</Name>
+			<Value>RESOURCECLASS_BONUS</Value>
+		</Row>
+		<Row>
+			<RequirementId>SCANNER_LUXURY</RequirementId>
+			<Name>ResourceClassType</Name>
+			<Value>RESOURCECLASS_LUXURY</Value>
+		</Row>
+		<Row>
+			<RequirementId>SCANNER_STRATEGIC</RequirementId>
+			<Name>ResourceClassType</Name>
+			<Value>RESOURCECLASS_STRATEGIC</Value>
+		</Row>
+	</RequirementArguments>
+
+	<BuildingModifiers>
+		<Row>
+			<BuildingType>BUILDING_HOT_ELECTRICITY</BuildingType>
+			<ModifierId>MODIFIER_HOT_ELECTRICITY</ModifierId>
+		</Row>
+	</BuildingModifiers>
+	<Modifiers>
+		<Row>
+			<ModifierId>MODIFIER_HOT_ELECTRICITY</ModifierId>
+			<ModifierType>MODIFIER_SINGLE_CITY_ADJUST_FREE_POWER</ModifierType>
+		</Row>
+	</Modifiers>
+	<ModifierArguments>
+		<Row>
+			<ModifierId>MODIFIER_HOT_ELECTRICITY</ModifierId>
+			<Name>Amount</Name>
+			<Value>5</Value>
+		</Row>
+		<Row>
+			<ModifierId>MODIFIER_HOT_ELECTRICITY</ModifierId>
+			<Name>SourceType</Name>
+			<Value>FREE_POWER_SOURCE_MISC</Value>
+		</Row>
+	</ModifierArguments>
+
+	<BuildingModifiers>
+		<Row>
+			<BuildingType>BUILDING_TRANSLATION_DEVICE</BuildingType>
+			<ModifierId>MODIFIER_TRANSLATOR_ADD_SIGHT</ModifierId>
+		</Row>
+	</BuildingModifiers>
+	<Modifiers>
+		<Row>
+			<ModifierId>MODIFIER_TRANSLATOR_ADD_SIGHT</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_ADD_DIPLO_VISIBILITY</ModifierType>
+		</Row>
+	</Modifiers>
+	<ModifierArguments>
+		<Row>
+			<ModifierId>MODIFIER_TRANSLATOR_ADD_SIGHT</ModifierId>
+			<Name>Amount</Name>
+			<Value>3</Value>
+		</Row>
+		<Row>
+			<ModifierId>MODIFIER_TRANSLATOR_ADD_SIGHT</ModifierId>
+			<Name>Source</Name>
+			<Value>SOURCE_TRANSLATION_DEVICE</Value>
+		</Row>
+		<Row>
+			<ModifierId>MODIFIER_TRANSLATOR_ADD_SIGHT</ModifierId>
+			<Name>SourceType</Name>
+			<Value>DIPLO_SOURCE_ALL_NAMES</Value>
+		</Row>
+	</ModifierArguments>
+
+	<BuildingModifiers>
+		<Row>
+			<BuildingType>BUILDING_TRANSLATION_DEVICE</BuildingType>
+			<ModifierId>MODIFIER_TRANSLATOR_ADD_ENVOY</ModifierId>
+		</Row>
+	</BuildingModifiers>
+	<Modifiers>
+		<Row>
+			<ModifierId>MODIFIER_TRANSLATOR_ADD_ENVOY</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_GRANT_INFLUENCE_TOKEN</ModifierType>
+		</Row>
+	</Modifiers>
+	<ModifierArguments>
+		<Row>
+			<ModifierId>MODIFIER_TRANSLATOR_ADD_ENVOY</ModifierId>
+			<Name>Amount</Name>
+			<Value>5</Value>
+		</Row>
+	</ModifierArguments>
+
+	<BuildingModifiers>
+		<Row>
+			<BuildingType>BUILDING_TRANSLATION_DEVICE</BuildingType>
+			<ModifierId>MODIFIER_TRANSLATOR_ADD_SCIENCE</ModifierId>
+		</Row>
+	</BuildingModifiers>
+	<Modifiers>
+		<Row>
+			<ModifierId>MODIFIER_TRANSLATOR_ADD_SCIENCE</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD</ModifierType>
+		</Row>
+	</Modifiers>
+	<ModifierArguments>
+		<Row>
+			<ModifierId>MODIFIER_TRANSLATOR_ADD_SCIENCE</ModifierId>
+			<Name>GreatWorkObjectType</Name>
+			<Value>GREATWORKOBJECT_WRITING</Value>
+		</Row>
+		<Row>
+			<ModifierId>MODIFIER_TRANSLATOR_ADD_SCIENCE</ModifierId>
+			<Name>YieldChange</Name>
+			<Value>3</Value>
+		</Row>
+		<Row>
+			<ModifierId>MODIFIER_TRANSLATOR_ADD_SCIENCE</ModifierId>
+			<Name>YieldType</Name>
+			<Value>YIELD_SCIENCE</Value>
+		</Row>
+	</ModifierArguments>
+	
+	 <BuildingModifiers>
+        <Row>
+            <BuildingType>BUILDING_TRANSLATION_DEVICE</BuildingType>
+            <ModifierId>MODIFIER_TRANSLATOR_ADD_CULTURE</ModifierId>
+        </Row>
+    </BuildingModifiers>
+    <Modifiers>
+        <Row>
+            <ModifierId>MODIFIER_TRANSLATOR_ADD_CULTURE</ModifierId>
+            <ModifierType>MODIFIER_PLAYER_CITIES_ADJUST_GREATWORK_YIELD</ModifierType>
+        </Row>
+    </Modifiers>
+    <ModifierArguments>
+        <Row>
+            <ModifierId>MODIFIER_TRANSLATOR_ADD_CULTURE</ModifierId>
+            <Name>GreatWorkObjectType</Name>
+            <Value>GREATWORKOBJECT_WRITING</Value>
+        </Row>
+        <Row>
+            <ModifierId>MODIFIER_TRANSLATOR_ADD_CULTURE</ModifierId>
+            <Name>YieldChange</Name>
+            <Value>3</Value>
+        </Row>
+        <Row>
+            <ModifierId>MODIFIER_TRANSLATOR_ADD_CULTURE</ModifierId>
+            <Name>YieldType</Name>
+            <Value>YIELD_CULTURE</Value>
+        </Row>
+    </ModifierArguments>
+</GameData>

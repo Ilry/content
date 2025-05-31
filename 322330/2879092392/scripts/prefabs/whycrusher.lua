@@ -297,7 +297,7 @@ local function refinedgemgiven(inst, giver, item)
     ---------------------------------------------------------------------------red
     ---------------------------------------------------------------------------blue
     if item.prefab == "why_refined_bluegem" then
-        inst.components.rechargeable:Discharge(31)
+        inst.components.rechargeable:Discharge(30)
         inst:DoTaskInTime(0.6, function()
             inst.SoundEmitter:PlaySound("dontstarve/common/gem_shatter")
             LaunchAt(SpawnPrefab("ancientdreams_gemshard"), inst, giver, .8, 1, 1)
@@ -319,14 +319,18 @@ local function refinedgemgiven(inst, giver, item)
     ---------------------------------------------------------------------------blue
     ---------------------------------------------------------------------------purple
     if item.prefab == "why_refined_purplegem" then
-        inst.components.rechargeable:Discharge(960)
+        inst.components.rechargeable:Discharge(60)
         inst:DoTaskInTime(0.6, function()
             inst.SoundEmitter:PlaySound("dontstarve/common/gem_shatter")
             LaunchAt(SpawnPrefab("ancientdreams_gemshard"), inst, giver, .8, 1, 1)
             TheWorld:PushEvent("ms_setclocksegs", { day = 0, dusk = 0, night = 16 })
-            inst:DoTaskInTime(8, function()
-                TheWorld:PushEvent("ms_setmoonphase", { moonphase = "new" , iswaxing = true })
-            end)
+            
+            if not TheWorld.state.isalterawake then
+                inst:DoTaskInTime(8, function()
+                    TheWorld:PushEvent("ms_setmoonphase", { moonphase = "new" , iswaxing = true })
+                end)
+            end
+
             if giver.components.sanity then
                 giver.components.sanity:DoDelta(-20)
             end
@@ -374,7 +378,7 @@ local function refinedgemgiven(inst, giver, item)
     ---------------------------------------------------------------------------orange
     ---------------------------------------------------------------------------yellow
     if item.prefab == "why_refined_yellowgem" then
-        inst.components.rechargeable:Discharge(1680)
+        inst.components.rechargeable:Discharge(60)
         inst:DoTaskInTime(0.6, function()
             inst.SoundEmitter:PlaySound("dontstarve/common/gem_shatter")
             LaunchAt(SpawnPrefab("ancientdreams_gemshard"), inst, giver, .8, 1, 1)
@@ -389,7 +393,7 @@ local function refinedgemgiven(inst, giver, item)
     ---------------------------------------------------------------------------yellow
     ---------------------------------------------------------------------------opal
     if item.prefab == "why_refined_opalgem" then
-        inst.components.rechargeable:Discharge(960)
+        inst.components.rechargeable:Discharge(60)
         inst:DoTaskInTime(0.6, function()
             inst.SoundEmitter:PlaySound("dontstarve/common/gem_shatter")
             LaunchAt(SpawnPrefab("ancientdreams_gemshard"), inst, giver, .8, 1, 1)

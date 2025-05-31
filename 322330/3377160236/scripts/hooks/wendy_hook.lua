@@ -28,15 +28,9 @@ AddPrefabPostInit("wendy", function(inst)
     inst:ListenForEvent("builditem", function(inst, data)
         local skilltreeupdater = inst.components.skilltreeupdater
 
-        if skilltreeupdater then
-            if skilltreeupdater:IsActivated("wendy_more_elixir_2") then
-                if math.random() < TUNING.WENDY_MORE_ELIXIR_RATE_2 then
-                    GiveExtraItem(inst, data)
-                end
-            elseif skilltreeupdater:IsActivated("wendy_more_elixir_1") then
-                if math.random() < TUNING.WENDY_MORE_ELIXIR_RATE_1 then
-                    GiveExtraItem(inst, data)
-                end
+        if skilltreeupdater and skilltreeupdater:IsActivated("wendy_more_elixir") then
+            if math.random() < TUNING.WENDY_MORE_ELIXIR_RATE then
+                GiveExtraItem(inst, data)
             end
         end
     end)
@@ -91,7 +85,8 @@ AddPrefabPostInit("wendy", function(inst)
                 skill == "wendy_sisturn_ghostflower_1" or
                 skill == "wendy_sisturn_ghostflower_2" or
                 skill == "wendy_moon_sisturn" or
-                skill == "wendy_shadow_sisturn"
+                skill == "wendy_shadow_sisturn" or
+                skill  == "wendy_sisturn_protection"
         then
             TheWorld:PushEvent("wendy_sisturnskillchanged", inst)
             return true
@@ -122,8 +117,7 @@ AddPrefabPostInit("wendy", function(inst)
         end
     end
     local function CheckWendyElixirSkillChanged(inst, skill)
-        if skill == "wendy_more_elixir_1" or
-                skill == "wendy_more_elixir_2"
+        if skill == "wendy_more_elixir"
         then
             return true
         end
@@ -241,13 +235,14 @@ AddPrefabPostInit("wendy", function(inst)
 
             local exclude_tags = { "INLIMBO", "companion", "wall", "abigail", "shadowminion" }
 
-            local ents = TheSim:FindEntities(x, y, z, 3, { "_combat" }, exclude_tags)
+            local ents = TheSim:FindEntities(x, y, z, TUNING.WENDY_SHADOW_PRESENT_AOE_RANGE, { "_combat" }, exclude_tags)
 
             for i, ent in ipairs(ents) do
                 if TheNet:GetIsServer() then
                     if ent ~= data.attacker and ent ~= inst and inst.components.combat:IsValidTarget(ent) and
                             (inst.components.leader ~= nil and not inst.components.leader:IsFollower(ent)) then
                         ent.components.combat:GetAttacked(nil, TUNING.GHOSTLYELIXIR_RETALIATION_DAMAGE, inst, nil)
+                        ent.components.combat:SuggestTarget(inst)
                     end
                 end
             end

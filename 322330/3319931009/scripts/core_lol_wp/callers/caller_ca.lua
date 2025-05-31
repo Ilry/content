@@ -2,6 +2,6 @@
 
 local modid = 'lol_wp'
 
-local data = _require('core_'..modid..'/data/componentactions')
+local data,change = _require('core_'..modid..'/data/componentactions')
 
-API.CA:main(data)
+API.CA:main(data,change)

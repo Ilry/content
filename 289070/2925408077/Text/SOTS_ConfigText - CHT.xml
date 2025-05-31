@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<LocalizedText>		
+		<!-- 海上建城 -->
+		<Replace Tag="LOC_UNITOPERATION_SOTS_SOTS" Language="zh_Hant_HK">
+			<Text>海上建城</Text>
+		</Replace>
+		<Replace Tag="LOC_UNITOPERATION_SOTS_SOTS_DESCRIPTION" Language="zh_Hant_HK">
+			<Text>[NEWLINE]於所處單元格建城，並且將相鄰海洋單元格轉變為海岸單元格</Text>
+		</Replace>
+		<Replace Tag="LOC_UNITOPERATION_SOTS_SOTS_DISABLED_CITY" Language="zh_Hant_HK">
+			<Text>[NEWLINE][COLOR:Red]距離其他城市太近了[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_UNITOPERATION_SOTS_SOTS_DISTRICT" Language="zh_Hant_HK">
+			<Text>[NEWLINE][COLOR:Red]無法在區域建城[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_UNITOPERATION_SOTS_SOTS_DISABLED_IMPROVEMENT" Language="zh_Hant_HK">
+			<Text>[NEWLINE][COLOR:Red]無法在改良設施建城[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_UNITOPERATION_SOTS_SOTS_DISABLED_LAKE" Language="zh_Hant_HK">
+			<Text>[NEWLINE][COLOR:Red]無法在湖泊建城[ENDCOLOR]</Text>
+		</Replace>
+		<Replace Tag="LOC_UNITOPERATION_SOTS_SOTS_DISABLED_WONDER" Language="zh_Hant_HK">
+			<Text>[NEWLINE][COLOR:Red]無法在自然奇觀建城[ENDCOLOR]</Text>
+		</Replace>
+
+		<Replace Tag="LOC_SOTS_DISTRICT_COAST_SCIENCE" Language="zh_Hant_HK">
+			<Text>+{1_num}[ICON_Science]科技值來自海中都市。</Text>
+		</Replace>
+		<Replace Tag="LOC_SOTS_DISTRICT_COAST_CULTURE" Language="zh_Hant_HK">
+			<Text>+{1_num}[ICON_Culture]文化值來自海中都市。</Text>
+		</Replace>
+		<Replace Tag="LOC_SOTS_DISTRICT_COAST_PRODUCTION" Language="zh_Hant_HK">
+			<Text>+{1_num}[ICON_Production]生產力來自海中都市。</Text>
+		</Replace>
+		<Replace Tag="LOC_SOTS_DISTRICT_COAST_FAITH" Language="zh_Hant_HK">
+			<Text>+{1_num}[ICON_Faith]信仰值來自海中都市。</Text>
+		</Replace>
+		<Replace Tag="LOC_SOTS_DISTRICT_COAST_FOOD" Language="zh_Hant_HK">
+			<Text>+{1_num}[ICON_Food]食物來自海中都市。</Text>
+		</Replace>
+		<Replace Tag="LOC_SOTS_DISTRICT_COAST_GOLD" Language="zh_Hant_HK">
+			<Text>+{1_num}[ICON_Gold]金幣來自海中都市。</Text>
+		</Replace>
+
+		<!-- 海濱 -->
+		<Replace Tag="LOC_SOTS_COAST_NAME" Language="zh_Hant_HK">
+			<Text>海濱</Text>
+		</Replace>
+		<Replace Tag="LOC_SOTS_COAST_DESCRIPTION" Language="zh_Hant_HK">
+			<Text>建立在海岸單元格上的區域，</Text>
+		</Replace>
+		<Replace Tag="LOC_SOTS_COAST_DESC2" Language="zh_Hant_HK">
+			<Text>無法建造在擁有「</Text>
+		</Replace>
+		<Replace Tag="LOC_SOTS_COAST_DESC3" Language="zh_Hant_HK">
+			<Text>」的城市內。無法建造在礁石單元格上。</Text>
+		</Replace>
+		<Replace Tag="LOC_SOTS_COAST_DESC4" Language="zh_Hant_HK">
+			<Text>中的</Text>
+		</Replace>
+
+		<Replace Tag="LOC_SOTS_DISTRICT_CITY_CENTER_SCIENCE" Language="zh_Hant_HK">
+			<Text>+{1_num}[ICON_Science]科技值來自相鄰城市中心。</Text>
+		</Replace>
+		<Replace Tag="LOC_SOTS_DISTRICT_CITY_CENTER_GOLD" Language="zh_Hant_HK">
+			<Text>+{1_num}[ICON_Gold]金幣來自相鄰城市中心。</Text>
+		</Replace>
+		<Replace Tag="LOC_SOTS_DISTRICT_CITY_CENTER_CULTURE" Language="zh_Hant_HK">
+			<Text>+{1_num}[ICON_Culture]文化值來自相鄰城市中心。</Text>
+		</Replace>
+		<Replace Tag="LOC_SOTS_DISTRICT_CITY_CENTER_PRODUCTION" Language="zh_Hant_HK">
+			<Text>+{1_num}[ICON_Production]生產力來自相鄰城市中心。</Text>
+		</Replace>
+		<Replace Tag="LOC_SOTS_DISTRICT_CITY_CENTER_FAITH" Language="zh_Hant_HK">
+			<Text>+{1_num}[ICON_Faith]信仰值來自相鄰城市中心。</Text>
+		</Replace>
+
+		<Replace Tag="LOC_GAMEMODE_SOTS_NAME" Language="zh_Hant_HK">
+			<Text>海上開拓模式</Text>
+		</Replace>
+		<Replace Tag="LOC_GAMEMODE_SOTS_DESCRIPTION" Language="zh_Hant_HK">
+			<Text>所有玩家遊戲開始時位於海中。</Text>
+		</Replace>
+
+		<!-- 百慕達 -->
+		<Replace Tag="LOC_ABILITY_SOTS_LOST_AT_SEA_NAME" Language="zh_Hant_HK">
+			<Text>深淵迷航</Text>
+		</Replace>
+		<Replace Tag="LOC_ABILITY_SOTS_LOST_AT_SEA_DESCRIPTION" Language="zh_Hant_HK">
+			<Text>可以進入海洋單元格。</Text>
+		</Replace>
+		<Replace Tag="LOC_FEATURE_BERMUDA_TRIANGLE_DESCRIPTION" Language="zh_Hant_HK">
+			<Text>佔據3個單元格的自然奇觀。為鄰近單元格提供+2[ICON_Science]科技值、+1[ICON_Food]食物以及+1[ICON_Gold]金幣。進入之單位可傳送至遠方的海洋，但執行此動作的海軍單位可獲得「神秘洋流」能力（+1[ICON_Movement]移動力）以及「深淵迷航」能力（可以進入海洋單元格）。</Text>
+		</Replace>
+		
+		<!-- 改變地形 -->
+		<Replace Tag="LOC_IMPROVEMENT_SOTS_REMOVE_MOUNTAIN_NAME" Language="zh_Hant_HK">
+			<Text>移山</Text>
+		</Replace>
+		<Replace Tag="LOC_IMPROVEMENT_SOTS_REMOVE_MOUNTAIN_DESCRIPTION" Language="zh_Hant_HK">
+			<Text>將所處的單元格轉變為丘陵單元格。[NEWLINE]只能轉變不是火山的山脈。</Text>
+		</Replace>
+		<Replace Tag="LOC_IMPROVEMENT_SOTS_CLEAN_COAST_NAME" Language="zh_Hant_HK">
+			<Text>填海</Text>
+		</Replace>
+		<Replace Tag="LOC_IMPROVEMENT_SOTS_CLEAN_COAST_DESCRIPTION" Language="zh_Hant_HK">
+			<Text>將所處的單元格轉變為平原單元格。[NEWLINE]只能轉變沒有資源的湖泊和海岸。</Text>
+		</Replace>
+		<Replace Tag="LOC_IMPROVEMENT_SOTS_MAKE_ISLAND_NAME" Language="zh_Hant_HK">
+			<Text>造陸</Text>
+		</Replace>
+		<Replace Tag="LOC_IMPROVEMENT_SOTS_MAKE_ISLAND_DESCRIPTION" Language="zh_Hant_HK">
+			<Text>將所的單元格與相鄰單元格轉變為平原單元格。[NEWLINE]只能轉變沒有資源的湖泊、海岸和海洋。</Text>
+		</Replace>
+		
+		<!-- 模組說明 -->
+		<Replace Tag="LOC_SOTS_NAME" Language="zh_Hant_HK">
+			<Text>海上建城</Text>
+		</Replace>
+		<Replace Tag="LOC_SOTS_DESCRIPTION" Language="zh_Hant_HK">
+			<Text>所有開拓者獲得海上建城能力。</Text>
+		</Replace>
+		<Replace Tag="LOC_SOTS_SPECIAL_THANK" Language="zh_Hant_HK">
+			<Text>Hemmelfort大佬的B站系列教學視頻、MOD輔助工具，獲益良多</Text>
+		</Replace>
+	</LocalizedText>
+</GameData>

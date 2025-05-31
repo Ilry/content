@@ -1,4 +1,4 @@
-require "prefabutil"
+require("prefabutil")
 
 local assets =
 {
@@ -16,7 +16,20 @@ local prefabs =
     "foliage",
 }
 
+local function onregenfn(inst)
+    inst.AnimState:PlayAnimation("grow")
+    inst.AnimState:PushAnimation("idle_plant", true)
+end
+
+local function makeemptyfn(inst)
+    inst.AnimState:PlayAnimation("picked", true)
+end
+
 local function onpicked(inst)
+	inst.SoundEmitter:PlaySound("turnoftides/common/together/water/harvest_plant")
+    inst.AnimState:PlayAnimation("picking")
+    inst.AnimState:PushAnimation("picked", true)
+
 	inst:Remove()
 end
 

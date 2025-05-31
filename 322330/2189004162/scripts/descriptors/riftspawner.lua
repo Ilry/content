@@ -100,6 +100,7 @@ local function DescribeRiftsOfAffinity(self, context, affinity)
 
 				if described then
 					described.name = "riftspawner_" .. rift.prefab .. "_" .. rift.GUID
+					described.priority = 3
 					described.source_descriptor = rift.prefab
 					described.worldly = true
 
@@ -139,7 +140,7 @@ local function Describe(self, context)
 	return unpack(combined)
 end
 
-local function StatusAnnoucementsDescribe(special_data, context)
+local function StatusAnnouncementsDescribe(special_data, context)
 	local description = nil
 
 	if special_data.next_rift_spawn then
@@ -156,5 +157,5 @@ end
 
 return {
 	Describe = Describe,
-	StatusAnnoucementsDescribe = StatusAnnoucementsDescribe,
+	StatusAnnouncementsDescribe = StatusAnnouncementsDescribe,
 }

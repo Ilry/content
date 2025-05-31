@@ -106,6 +106,11 @@ return {
 	},
 
 	-------------------------------------------------------------------------------------------------------------------------
+	
+	-- acidbatwavemanager.lua
+	acidbatwavemanager = {
+		next_wave_spawn = "<prefab=bat> raid (%d) arrives in %s"
+	},
 
 	-- alterguardianhat.lua [Prefab]
 	alterguardianhat = {
@@ -328,6 +333,12 @@ return {
 		},
 	},
 
+	-- compostingbin.lua
+	compostingbin = {
+		contents_amount = "Material: %s / %s",
+		detailed_contents_amount = "Material: <color=NATURE>%s<sub>Green</sub></color> + <color=INEDIBLE>%s<sub>Brown</sub></color> / %s",
+	},
+
 	-- container.lua
 	container = {
 
@@ -402,6 +413,10 @@ return {
 			description = "抵抗<color=MONSTER>睡眠</color>, 持续 {duration} 秒",
 		},
 
+		["healingsalve_acidbuff"] = {
+			name = "<color=#ded15e>Acid Resistance</color>",
+			description = "Immune to <color=#ded15e>acid rain</color> for {duration}(s)."
+		},
 		["tillweedsalve_buff"] = {
 			name = "<color=HEALTH>生命回复</color>",
 			description = "{duration} 秒内回复 <color=HEALTH>{amount} 生命</color>",
@@ -684,6 +699,11 @@ return {
 		held_refuel = "使用<color=SWEETENER><prefab=%s></color>将补充燃料 <color=LIGHT>%s%%</color>",
 	},
 
+	-- gelblobspawner.lua
+	gelblobspawner = {
+		
+	},
+
 	-- ghostlybond.lua
 	ghostlybond = {
 		abigail = "<color=%s>等级</color>: %s / %s",
@@ -762,6 +782,9 @@ return {
 	hounded = {
 		time_until_hounds = "<prefab=hound>会在%s后攻击",
 		time_until_worms = "<prefab=worm>会在%s后攻击",
+		time_until_worm_boss = "<prefab=worm_boss>会在%s后攻击",
+		time_until_crocodog = "<prefab=crocodog>会在%s后攻击",
+		worm_boss_chance = "<prefab=worm_boss> chance: %.1f%%",
 	},
 
 	-- hunger.lua
@@ -800,6 +823,11 @@ return {
 		hands_describe = "[Tool]: ",
 	},
 
+	-- itemmimic.lua
+	itemmimic = {
+		time_to_reveal = "<prefab=itemmimic_revealed> reveal in: %s",
+	},
+
 	-- kitcoonden.lua
 	kitcoonden = {
 		number_of_kitcoons = "小浣猫数量: %s"
@@ -826,6 +854,11 @@ return {
 
 	-- lightninggoat.lua
 	lightninggoat_charge = "充能将消失于%s后",
+
+	-- linkeditem.lua
+	linkeditem = {
+		owner = "Owner: %s",
+	},
 
 	-- lunarrift_portal.lua [Prefab]
 	lunarrift_portal = {
@@ -1056,6 +1089,13 @@ return {
 		},
 	},
 
+	-- rabbitkingmanager.lua
+	rabbitkingmanager = {
+		carrots = "<color=VEGGIE>Carrots</color>: <color=VEGGIE>%d</color> / <color=VEGGIE>%d</color>",
+		naughtiness = "Naughtiness: %d / %d",
+		king_status = "%s is alive.", -- Gets a prefab tag inserted with king type.
+	},
+
 	-- rainometer.lua [Prefab]
 	global_wetness = "<color=FROZEN>世界潮湿度</color>: <color=FROZEN>%s</color>",
 	precipitation_rate = "<color=WET>降水率</color>: <color=WET>%s</color>",
@@ -1158,6 +1198,18 @@ return {
 		total_shadow_level = "<color=BLACK>总暗影等级</color>: %s",
 	},
 
+	-- shadowparasitemanager.lua
+	shadowparasitemanager = {
+		num_waves = "Waves: %d",
+	}, 
+
+	-- shadow_battleaxe.lua [Prefab]
+	shadow_battleaxe = {
+		level = "Level: %s / %s",
+		boss_progress = "Defeated Bosses: %s / %s",
+		lifesteal = "<color=HEALTH>Life Steal</color>: <color=HEALTH>%.2f</color> (<color=SANITY>%.2f</color>)",
+	},
+
 	-- shadowrift_portal.lua [Prefab]
 	shadowrift_portal = {
 		close = "<prefab=SHADOWRIFT_PORTAL>将关闭于%s后",
@@ -1172,11 +1224,18 @@ return {
 		},
 	},
 
+	-- shadowthrall_mimics.lua
+	shadowthrall_mimics = {
+		mimic_count = "<string=UI.CUSTOMIZATIONSCREEN.ITEMMIMICS>: %s / %s",
+		next_spawn = "<prefab=itemmimic_revealed> will try to spawn in %s",
+	},
+
 	-- shadowthrallmanager.lua
 	shadowthrallmanager = {
 		fissure_cooldown = "下一裂隙可控制于%s后",
 		waiting_for_players = "等待一个玩家接近",
 		thrall_count = "<color=MOB_SPAWN><prefab=SHADOWTHRALL_HANDS></color>: %d",
+		thralls_alive = "<color=MOB_SPAWN>Thralls alive (%d)</color>: %s",
 		dreadstone_regen = "<color=#942429><prefab=DREADSTONE></color>会再生于%s后",
 	},
 
@@ -1256,8 +1315,24 @@ return {
 	-- stickable.lua
 	stickable = "<color=FISH>贻贝</color>: %s",
 
+	-- support_pillar.lua [Prefab]
+	support_pillar = {
+		reinforcement = "Reinforcement: %s / %s",
+		durability = "Durability: %s / %s",
+	},
+
+	-- support_pillar_dreadstone.lua [Prefab]
+	support_pillar_dreadstone = {
+		time_until_reinforcement_regen = "Next regeneration: %s",
+	},
+
 	-- temperature.lua
 	temperature = "温度: <temperature=%s>",
+
+	-- tentacle_pillar_hole.lua [Prefab]
+	tentacle_pillar_hole = {
+		immunity_time = "<prefab=tentacle> immunity time: %s",
+	},
 
 	-- terrarium.lua [Prefab]
 	terrarium = {

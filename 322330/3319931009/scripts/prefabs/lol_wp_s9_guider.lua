@@ -3,7 +3,7 @@ local assets_id = 'lol_wp_s9_guider'
 
 local assets =
 {
-    Asset("ANIM", "anim/backpack.zip"),
+    Asset("ANIM", "anim/"..assets_id..".zip"),
     Asset("ANIM", "anim/swap_"..assets_id..".zip"),
     Asset( "ATLAS", "images/inventoryimages/"..assets_id..".xml" ),
     -- Asset("ANIM", "anim/ui_backpack_2x4.zip"),
@@ -37,6 +37,14 @@ local function onequip(inst, owner)
                     if v.taskperiod_lol_wp_s9_guider_check == nil then
                         if v.components.locomotor then
                             v.components.locomotor:SetExternalSpeedMultiplier(inst,prefab_id..'_buff',TUNING.MOD_LOL_WP.GUIDER.SKILL_GUIDE.WALKSPEEDMULT)
+
+                            if v:HasTag('epic') then
+                                local _player = v.lol_wp_s19_fimbulwinter_armor_upgrade_attacker
+                                local _wp = v.lol_wp_s19_fimbulwinter_armor_upgrade_wp
+                                if _player and _wp and _wp.skill_enternal then
+                                    _wp.skill_enternal(_wp,_player,v)
+                                end
+                            end
                         end
                         v.taskperiod_lol_wp_s9_guider_check = v:DoPeriodicTask(1,function()
                             local tar_x,_,tar_z = v:GetPosition()
@@ -127,7 +135,7 @@ local function fn()
 
     MakeInventoryPhysics(inst)
 
-    inst.AnimState:SetBank("backpack1")
+    inst.AnimState:SetBank(assets_id)
     inst.AnimState:SetBuild("swap_"..assets_id)
     inst.AnimState:PlayAnimation("anim")
 
@@ -138,6 +146,8 @@ local function fn()
     inst.Light:Enable(false)
 
     inst:AddTag("backpack")
+    inst:AddTag("fridge")
+    inst:AddTag("nocool")
 
     -- inst.MiniMapEntity:SetIcon("backpack.png")
 
@@ -149,6 +159,8 @@ local function fn()
     inst.entity:SetPristine()
 
     inst:AddTag("hide_percentage")
+
+    -- inst:AddTag("fridge")
 
     inst:AddTag(prefab_id)
 
@@ -176,7 +188,7 @@ local function fn()
 
 
     inst:AddComponent("equippable")
-    inst.components.equippable.equipslot = EQUIPSLOTS.BODY
+    inst.components.equippable.equipslot = EQUIPSLOTS.BACK or EQUIPSLOTS.BODY
     inst.components.equippable:SetOnEquip(onequip)
     inst.components.equippable:SetOnUnequip(onunequip)
     inst.components.equippable:SetOnEquipToModel(onequiptomodel)
@@ -193,8 +205,9 @@ local function fn()
     inst:AddComponent('waterproofer')
     inst.components.waterproofer:SetEffectiveness(TUNING.MOD_LOL_WP.GUIDER.WATERPROOF)
 
-    inst:AddComponent("preserver")
-    inst.components.preserver:SetPerishRateMultiplier(TUNING.MOD_LOL_WP.GUIDER.PRESERVER)
+    -- inst:AddComponent("preserver")
+    -- local perishmult = type(TUNING.PERISH_FRIDGE_MULT) == 'number' and TUNING.PERISH_FRIDGE_MULT or TUNING.MOD_LOL_WP.GUIDER.PRESERVER
+    -- inst.components.preserver:SetPerishRateMultiplier(perishmult)
 
     inst:AddComponent("rechargeable")
     inst.components.rechargeable:SetChargeTime(TUNING.MOD_LOL_WP.GUIDER.SKILL_GUIDE.CD)

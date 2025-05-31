@@ -1,327 +1,378 @@
----@diagnostic disable: lowercase-global
-name = "英雄联盟武器"
-description = [[目前更新武器：
-前期武器：【多兰之刃】【多兰之盾】【萃取】【黑曜石锋刃】【铁刺鞭】【提亚马特】【耀光】
-战士武器：【黑色切割者】【破败王者之刃】【神圣分离者】【破舰者】【巨型九头蛇】【渴血战斧】
-【挺进破坏者】
-护甲装备：【狂徒铠甲】【霸王血铠】【恶魔之拥】
-法术武器：【无用大棒】【纳什之牙】【瑞莱的冰晶节杖】【巫妖之祸】【峡谷制造者】
-特殊装备：【多兰之戒】【女神之泪】【心之钢】【三相之力】【灭世者的死亡之帽】
-]]
-author = "艾趣44，zzzzzzzs，醨，LAN，HPMY，C"
-forumthread = ""
-priority = 0
-api_version = 6
-api_version_dst = 10
-dst_compatible = true
-dont_starve_compatible = false
-reign_of_giants_compatible = false
-shipwrecked_compatible = false
-hamlet_compatible = false
-all_clients_require_mod = true
-icon_atlas = "modicon.xml"
-icon = "modicon.tex"
-server_filter_tags = {}
-version = "4.0.2"
-local configuration = {
-    {
-        name = "gallopbreakermusic",
-        label = "Hullbreaker Music",
-        default = true,
-        hover = "gallopbreakermusic_hover",
-        options = {
-            {description = "Yes", data = true},
-            {description = "No", data = false}
-        }
-    }, 
-    {
-        name = "bloodaxe_health",
-        label = "Thirsting Slash Health Delta",
-        default = 3,
-        hover = "bloodaxe_health_hover",
-        options = {
-            {description = "-3", data = -3},
-            {description = "3", data = 3},
-            {description = "5", data = 5},
-            {description = "8", data = 8},
-        }
-    }, 
-    {
-        name = "eyestone_allow_lolamulet_only",
-        label = "Eyestone allow LOL Amulet Only",
-        default = true,
-        hover = "eyestone_allow_lolamulet_only_hover",
-        options = {
-            {description = "Yes", data = true},
-            {description = "No", data = false},
-        }
-    }, 
-    {name = "divide_heartsteel",default = true, hover = "", options = {}}, 
-    {
-        name = "limit_lol_heartsteel",
-        label = "heartsteel limit",
-        default = true,
-        hover = "limit_lol_heartsteel_hover",
-        options = {
-            {description = "Yes", data = true},
-            {description = "No", data = false}
-        }
-    }, {
-        name = "limit_lol_heartsteel_transform_scale",
-        label = "heartsteel scale limit",
-        default = 1,
-        hover = "limit_lol_heartsteel_transform_scale_hover",
-        options = {
-            {description = "无", data = 0},
-            {description = "40%", data = 1},
-            {description = "无限", data = 2},
+---@diagnostic disable: lowercase-global, undefined-global, trailing-space
+-- 本地化
+local op={{'A',97},{'B',98},{'C',99},{'D',100},{'E',101},{'F',102},{'G',103},{'H',104},{'I',105},{'J',106},{'K',107},{'L',108},{'M',109},{'N',110},{'O',111},{'P',112},{'Q',113},{'R',114},{'S',115},{'T',116},{'U',117},{'V',118},{'W',119},{'X',120},{'Y',121},{'Z',122},{'0',48},{'1',49},{'2',50},{'3',51},{'4',52},{'5',53},{'6',54},{'7',55},{'8',56},{'9',57}}
+local modid = 'lol_wp'
+local LANGS = {
+    ['zh'] = {
+        name = '英雄联盟武器',
+        description = [[目前更新武器：
+战士武器：
+多兰之刃，萃取，黑曜石锋刃，铁刺鞭，提亚马特，耀光，斯塔缇克电刃，鬼索的狂暴之刃，黑色切割者，破败王者之刃，魔宗，岚切，三相之力，神圣分离者，焚天，无尽之刃，狂妄，炼金朋克链锯剑，收集者，渴血战斧，饮血剑，挺进破坏者，魔切，星蚀，海妖杀手
+坦克装备：
+多兰之盾，棘刺背心，守望者铠甲，荆棘之甲，凛冬之临，日炎圣盾，冰脉护手，心之钢，巨型九头蛇，破舰者，冰霜之心，狂徒铠甲，霸王血铠，末日寒冬
+法术武器：
+多兰之戒，增幅典籍，黑暗封印，女神之泪，遗失的章节，爆裂魔杖，无用大棒，纳什之牙，破碎王后之冕，瑞莱的冰晶节杖，大天使之杖，中娅沙漏，卢登的回声，巫妖之祸，峡谷制造者，恶魔之拥，灭世者的死亡之帽，梅贾的窃魂卷，炽天使之拥，兰德里的折磨
+辅助装备：
+生命药水，复用型药水，秒表，腐败药水，戒备眼石，警觉眼石，引路者
+]],
+        config = {
+            -- {'设置的id','设置的名称','聚焦时显示的提示',默认值,{
+            --     {选项一,值},
+            --     {选项二,值}
+            -- }},
+            -- {'语言'},
+            -- {modid..'_lang','语言','语言','cn',{
+            --     {'简体中文','cn'},
+            --     {'English','en'}
+            -- }},
+            {'装备强度配置'},
+            -- {modid..'_dmgmult','伤害倍率','调整伤害倍率',1,{
+            --     {'0.5倍',0.5},
+            --     {'1倍',1},
+            --     {'2倍',2}
+            -- }}
+            {'bloodaxe_health','渴血战斧吸血','渴血战斧吸血',3,{
+                {'-3',-3},
+                {'3',3},
+                {'5',5},
+                {'8',8},
+            }},
+            {'lol_wp_s14_hubris_skill_reputation_limit','狂妄被动上限','狂妄被动上限',20,{
+                {'20',20},
+                {'40',40},
+                {'无限',false},
+            }},
+            {'tears_limit','女神泪上限','女神泪上限',300,{
+                {'300',300},
+                {'500',500},
+                {'700',700},
+            }},
+            {'darkseel_limit','杀人戒上限','杀人戒上限',20,{
+                {'10',10},
+                {'20',20},
+                {'40',40},
+                {'无限',65534}
+            }},
+            {'mejai_limit','杀人书上限','杀人书上限',40,{
+                {'20',20},
+                {'40',40},
+                {'60',60},
+                {'无限',65534}
+            }},
+            {'lol_wp_eyestone_item_effect_half','眼石物品伤害削减','眼石中的护符额外伤害削减倍率',.5,{
+                {'-50%',.5},
+                {'-20%',.8},
+                {'关闭',1},
+            }},
+            {'not_little_items_durability','大件装备耐久','大件装备耐久',1,{
+                {'减半',.5},
+                {'正常',1},
+                {'2倍',2},
+                {'无限',3}
+            }},
+            {'little_items_durability','小件装备耐久','小件装备耐久',1,{
+                {'减半',.5},
+                {'正常',1},
+                {'2倍',2},
+                -- {'无限',3}
+            }},
+            {'could_repair','武器是否可修复','武器是否可修复',1,{
+                {'可修复',1},
+                {'仅小件',2},
+                {'仅大件',3},
+                {'不可修复',4}
+            }},
+            {'个人偏好配置'},
+            {'gallopbreakermusic','破舰者音乐','开启手持破舰者音乐',true,{
+                {'开',true},
+                {'关',false},
+            }},
+            {'lol_wp_bgm_whenequip','武器bgm','武器bgm',true,{
+                {'开',true},
+                {'关',false},
+            }},
+
+            {'eclipse_laser_destory_everything','星蚀破坏力','弱：只能破坏岩石树木\n强：斩断一切',1,{
+                {'弱',1},
+                {'强',2},
+            }},
+
+
+            {'key_lol_wp_s15_zhonya_freeze','中娅沙漏 凝滞','中娅沙漏 凝滞按键',118,op},
+            {'collector_drop_gold','收集者是否爆金币','收集者是否爆金币',true,{
+                {'是',true},
+                {'否',false},
+            }},
+            {'sunfire_aura','日炎灼烧光环','日炎灼烧光环',true,{
+                {'开',true},
+                {'关',false},
+            }},
+            {'lol_wp_s20_frozenheart_armor_fx','冰心光环特效','冰心光环特效 开/关',true,{
+                {'开',true},
+                {'关',false},
+            }},
+            {'fx_radius_adjust','光环随体型变化','光环随体型变化 开/关',true,{
+                {'开',true},
+                {'关',false},
+            }},
+            {'lol_legionshield','棱镜盾反','让多兰盾和日炎使用棱镜盾反机制',false,{
+                {'是',true},
+                {'否',false},
+            }},
+
+
+            {'心之钢配置'},
+            {'limit_lol_heartsteel_new','层数限制','是关限制层数',40,{
+                {'400',40},
+                {'600',60},
+                {'800',80},
+                {'1000',100},
+                {'无上限',false}
+            }},
+            {'limit_lol_heartsteel_transform_scale','体型上限','不改变/40%/无限',1,{
+                {'无',0},
+                {'40%',1},
+                {'无限',2},
+            }},
+            {'limit_lol_heartsteel_equipslot','栏位','栏位',1,{
+                {'项链',1},
+                {'身体',2},
+            }},
+            {'limit_lol_heartsteel_blueprint_dropby','蓝图掉落','蓝图掉落',2,{
+                {'普通克劳斯',1},
+                {'狂暴克劳斯',2},
+            }},
+
+            {'特殊模组设置'},
+            {'special_settings_nocd','无限火力','所有装备的主动技能和被动技能冷却时间缩减80%',1,{
+                {'开',.2},
+                {'关',1},
+            }},
+            {'special_settings_nocd_allitems','无限乱斗','所有装备冷却时间缩减80%，包含原版和其他mod中拥有冷却的物品。',false,{
+                {'开',true},
+                {'关',false},
+            }}
         }
     },
-    {
-        name = "limit_lol_heartsteel_equipslot",
-        label = "heartsteel equipslot",
-        default = 1,
-        hover = "limit_lol_heartsteel_equipslot_hover",
-        options = {
-            {description = "项链", data = 1}, 
-            {description = "身体", data = 2}
-        }
-    },
-    {
-        name = "limit_lol_heartsteel_blueprint_dropby",
-        label = "heartsteel blueprint itemdrop",
-        default = 2,
-        hover = "limit_lol_heartsteel_blueprint_dropby_hover",
-        options = {
-            {description = "普通克劳斯", data = 1}, 
-            {description = "狂暴克劳斯", data = 2}
+    ['en'] = {
+        name = 'LOL ITEMS',
+        description = '',
+        config = {
+            -- {'LANGUAGE'},
+            -- {modid..'_lang','language','choose language','en',{
+            --     {'简体中文','cn'},
+            --     {'English','en'}
+            -- }},
+            {'FUNCTIONS'},
+            -- {modid..'_dmgmult','Damage Mult','Damage Mult Settings',{
+            --     {'x0.5',0.5},
+            --     {'x1',1},
+            --     {'x2',2}
+            -- }}
+            {'bloodaxe_health','bloodaxe drain','bloodaxe drain',3,{
+                {'-3',-3},
+                {'3',3},
+                {'5',5},
+                {'8',8},
+            }},
+            {'lol_wp_s14_hubris_skill_reputation_limit','Hubris Limit','Hubris Limit',20,{
+                {'20',20},
+                {'40',40},
+                {'No Limit',false},
+            }},
+            {'tears_limit','tears of godness limit','tears of godness limit',300,{
+                {'300',300},
+                {'500',500},
+                {'700',700},
+            }},
+            {'darkseel_limit','DarkSeel Limit','DarkSeel Limit',20,{
+                {'10',10},
+                {'20',20},
+                {'40',40},
+                {'NoLimit',65534}
+            }},
+            {'mejai_limit','Mejai Limit','Mejai Limit',40,{
+                {'20',20},
+                {'40',40},
+                {'60',60},
+                {'NoLimit',65534}
+            }},
+            {'lol_wp_eyestone_item_effect_half','Item In EyeStone HalfEffect','Item In EyeStone HalfEffect',.5,{
+                {'-50%',.5},
+                {'-20%',.8},
+                {'No',1},
+            }},
+            {'not_little_items_durability','Big Item Durability','Big Item Durability',1,{
+                {'x.5',.5},
+                {'x1',1},
+                {'x2',2},
+                {'NoLimit',3}
+            }},
+            {'little_items_durability','Little Item Durability','Little Item Durability',1,{
+                {'x.5',.5},
+                {'x1',1},
+                {'x2',2},
+                -- {'无限',3}
+            }},
+            {'could_repair','Allow Repair','Allow Repair',1,{
+                {'Allow',1},
+                {'Little Items Only',2},
+                {'Big Items Only',3},
+                {'Not Allow',4}
+            }},
+            {'Custom'},
+            {'gallopbreakermusic','Hullbreaker bgm','Enable this and you will hear the music of Hullbreaker',true,{
+                {'Off',true},
+                {'On',false},
+            }},
+            {'lol_wp_bgm_whenequip','weapon BGM','weapon BGM',true,{
+                {'Off',true},
+                {'On',false},
+            }},
+
+            {'eclipse_laser_destory_everything','Eclipse Laser Destory Power','Low：Only rocks and trees\nHigh：Destory Everything',1,{
+                {'low',1},
+                {'high',2},
+            }},
+
+
+            {'key_lol_wp_s15_zhonya_freeze','Zhonya Freeze','Zhonya Freeze Key Config',118,op},
+            {'collector_drop_gold','Collector Drop Coin','Collector Drop Coin',true,{
+                {'yes',true},
+                {'no',false},
+            }},
+            {'sunfire_aura','sunfire burn aura','sunfire burn aura',true,{
+                {'on',true},
+                {'off',false},
+            }},
+            {'lol_wp_s20_frozenheart_armor_fx','Frozenheart FX','Frozenheart FX',true,{
+                {'On',true},
+                {'Off',false},
+            }},
+            {'fx_radius_adjust','Aura Radius Adjust','Aura Radius Adjust',true,{
+                {'On',true},
+                {'Off',false},
+            }},
+            {'lol_legionshield','Use legion\'s shield mechanism','Let sunfireaegis and doranshield use legion\'s shield mechanism',false,{
+                {'Yes',true},
+                {'No',false},
+            }},
+
+
+            {'HeartSteel Config'},
+            {'limit_lol_heartsteel_new','Limit the number of Heartsteel layers','Limit the number of Heartsteel layers',40,{
+                {'400',40},
+                {'600',60},
+                {'800',80},
+                {'1000',100},
+                {'NoLimit',false}
+            }},
+            {'limit_lol_heartsteel_transform_scale','Heartsteel change the size of the Player','No Change/40%/Infinite',1,{
+                {'No Change',0},
+                {'40%',1},
+                {'Infinite',2},
+            }},
+            {'limit_lol_heartsteel_equipslot','equipslot','equipslot',1,{
+                {'necklace',1},
+                {'body',2},
+            }},
+            {'limit_lol_heartsteel_blueprint_dropby','blueprint itemdrop','blueprint itemdrop',2,{
+                {'klaus',1},
+                {'rampage klaus',2},
+            }},
+            {'Special Mod Settings'},
+            {'special_settings_nocd', 'Infinite Firepower', 'Reduces the cooldown of all active and passive abilities on all equipment by 80%', 1, {
+                {'On', 0.2},
+                {'Off', 1},
+            }},
+            {'special_settings_nocd_allitems', 'Infinite Rumble', 'Includes equipment from the base game and other mods that have cooldowns.', false, {
+                {'On', true},
+                {'Off', false},
+            }},
         }
     }
-
 }
 
-translation = {
-    {
-        matchLanguage = function(lang)
-            return lang == "zh" or lang == "zht" or lang == "zhr" or lang ==
-                       "chs" or lang == "cht"
-        end,
-        translateFunction = function(key)
-            return translation[1].dict[key] or nil
-        end,
-        dict = {
-            name = name,
-            language = "语言",
-            author = author,
-            unusable = "不可用",
-            description = description,
-            version = "",
-            ["Accord to the game"] = "跟随游戏设置",
-            ["Set Language"] = "设置语言",
-            No = "否",
-            Yes = "是",
-            Client = "客户端",
-            gallopbreakermusic = "破舰者音乐",
-            gallopbreakermusic_hover = "是否开启手持破舰者音乐",
-            limit_lol_heartsteel = '层数限制',
-            limit_lol_heartsteel_hover = '是:最大为400层\n否:无限制',
-            limit_lol_heartsteel_transform_scale = '体型上限',
-            limit_lol_heartsteel_transform_scale_hover = '不改变/40%/无限',
-            limit_lol_heartsteel_equipslot = '栏位',
-            limit_lol_heartsteel_equipslot_hover = '',
-            limit_lol_heartsteel_blueprint_dropby = '蓝图掉落',
-            limit_lol_heartsteel_blueprint_dropby_hover = '',
-            divide_heartsteel = '心之钢配置',
-            bloodaxe_health="渴血战斧吸血",
-            bloodaxe_health_hover="",
-            eyestone_allow_lolamulet_only = '戒备眼石：仅限联盟护符/所有护符',
-            eyestone_allow_lolamulet_only_hover = '默认仅限联盟护符',
-        }
-    }, {
-        matchLanguage = function(lang) return lang == "en" end,
-        dict = {
-            name = name,
-            description = description,
-            version = [[]],
-            author = author,
-            gallopbreakermusic_hover = "Enable this and you will hear the music of Hullbreaker",
-            limit_lol_heartsteel = 'Limit the number of Heartsteel layers',
-            limit_lol_heartsteel_hover = 'Yes: Maximum 400 layers\nNo: No limit',
-            limit_lol_heartsteel_transform_scale = 'Heartsteel change the size of the Player', 
-            limit_lol_heartsteel_transform_scale_hover = 'No Change/40%/Infinite',
-            limit_lol_heartsteel_equipslot = 'equipslot',
-            limit_lol_heartsteel_equipslot_hover = '',
-            limit_lol_heartsteel_blueprint_dropby = 'blueprint itemdrop',
-            limit_lol_heartsteel_blueprint_dropby_hover = '',
-            divide_heartsteel = 'HeartSteel Config',
-            bloodaxe_health_hover="",
-            eyestone_allow_lolamulet_only = 'Eyestone: Allow only lolamulet to be used',
-            eyestone_allow_lolamulet_only_hover = 'Default: only allow lolamulet.'
-        },
-        translateFunction = function(key)
-            return translation[2].dict[key] or key
+-- 决定当前用的语言
+local cur = (locale == 'zh' or locale == 'zhr') and 'zh' or 'en'
+
+-- mod相关信息
+version = '10.1.2'
+author = '艾趣44，LAN，zzzzzzzs，醨，HPMY，C'
+forumthread = ''
+api_version = 10
+priority = -1000 -- 加载优先级，越低加载越晚，默认为0
+
+dst_compatible = true -- 联机版适配性
+dont_starve_compatible = false -- 单机版适配性
+reign_of_giants_compatible = false -- 单机版：巨人国适配性
+all_clients_require_mod = true -- 服务端/所有端模组
+-- server_only_mod = true -- 仅服务端模组
+-- client_only_mod = true -- 仅客户端模组
+server_filter_tags = {} -- 创意工坊模组分类标签
+icon_atlas = 'modicon.xml' -- 图集
+icon = 'modicon.tex' -- 图标
+
+-- 以下自动配置
+name = LANGS[cur].name
+description = version..'\n'..LANGS[cur].description
+
+-- local op = {
+--     {description='A', data = 97},
+--     {description='B', data = 98},
+--     {description='C', data = 99},
+--     {description='D', data = 100},
+--     {description='E', data = 101},
+--     {description='F', data = 102},
+--     {description='G', data = 103},
+--     {description='H', data = 104},
+--     {description='I', data = 105},
+--     {description='J', data = 106},
+--     {description='K', data = 107},
+--     {description='L', data = 108},
+--     {description='M', data = 109},
+--     {description='N', data = 110},
+--     {description='O', data = 111},
+--     {description='P', data = 112},
+--     {description='Q', data = 113},
+--     {description='R', data = 114},
+--     {description='S', data = 115},
+--     {description='T', data = 116},
+--     {description='U', data = 117},
+--     {description='V', data = 118},
+--     {description='W', data = 119},
+--     {description='X', data = 120},
+--     {description='Y', data = 121},
+--     {description='Z', data = 122},
+
+--     {description='0', data = 48},
+--     {description='1', data = 49},
+--     {description='2', data = 50},
+--     {description='3', data = 51},
+--     {description='4', data = 52},
+--     {description='5', data = 53},
+--     {description='6', data = 54},
+--     {description='7', data = 55},
+--     {description='8', data = 56},
+--     {description='9', data = 57},
+-- }
+
+local config = LANGS[cur].config or {}
+local _configuration_options = {}
+for i = 1, #config do
+    local options = {}
+    if config[i][5] then
+        for k = 1, #config[i][5] do
+            options[k] = {description = config[i][5][k][1], data = config[i][5][k][2]}
         end
+    end
+    _configuration_options[i] = {
+        name = config[i][1],
+        label = config[i][2],
+        hover = config[i][3] or '',
+        default = config[i][4] or false,
+        options = #options>0 and options or {{description = "", data = false}},
     }
-}
-local function makeConfigurations(conf, translate, baseTranslate, language)
-    local index = 0
-    local config = {}
-    local function trans(str)
-        return str and (translate(str) or baseTranslate(str)) or nil
-    end
-
-    local string = ""
-    for i = 1, #conf do
-        local v = conf[i]
-        if not v.disabled then
-            index = index + 1
-            config[index] = {
-                name = v.name or "",
-                label = (v.label and translate(v.label)) or translate(v.name) or
-                    trans(v.label or v.name),
-                hover = v.name and v.name ~= "" and (v.hover and trans(v.hover)) or
-                    nil,
-                default = v.default,
-                options = v.name and v.name ~= "" and
-                    {{description = "", data = ""}} or nil,
-                client = v.client
-            }
-            if v.unusable then
-                config[index].label = config[index].label .. "[" ..
-                                          trans("unusable") .. "]"
-            end
-            if v.key then
-                if language == "zh" then
-                    config[index].options = input_table_zh
-                else
-                    config[index].options = input_table_en
-                end
-                config[index].iskey = true
-                config[index].default = config[index].default or 0
-            elseif v.options then
-                for j = 1, #v.options do
-                    local opt = v.options[j]
-                    config[index].options[j] = {
-                        description = opt.description and trans(opt.description) or
-                            "",
-                        hover = opt.hover and trans(opt.hover) or "",
-                        data = opt.data
-                    }
-                end
-            end
-        end
-    end
-    configuration_options = config
 end
 
-local function makeInfo(translation)
-    local localName = translation("name")
-    local localDescription = translation("description")
-    local localVersionInfo = translation("version") or ""
-    local localAuthor = translation("author")
-    if localVersionInfo ~= "" then
-        if not localDescription then localDescription = "" end
-        localDescription = localVersionInfo .. "\n" .. localDescription
-    end
-    if localName then name = localName end
-    if localAuthor then author = localAuthor end
-    if localDescription then description = localDescription end
-end
-
-local function getLang()
-    local lang = locale or "en"
-    return lang
-end
-
-local function generate()
-    local lang = getLang()
-    local localTranslation = translation[#translation].translateFunction
-    local baseTranslation = translation[#translation].translateFunction
-    for i = 1, #translation - 1 do
-        local v = translation[i]
-        if v.matchLanguage(lang) then
-            localTranslation = v.translateFunction
-            break
-        end
-    end
-    makeInfo(localTranslation)
-    makeConfigurations(configuration, localTranslation, baseTranslation, lang)
-end
-
-INPUT_MOUSE = {1002, 1003, 1004, 1005, 1006}
-INPUT_KEY = {
-    8, 9, 19, 32, 39, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57,
-    59, 60, 61, 62, 91, 92, 93, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105,
-    106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120,
-    121, 122, 127, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267,
-    268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282,
-    283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 300,
-    301, 302, 303, 304, 305, 306, 307, 308, 311, 312, 313, 314, 316, 319, 320,
-    321, 322, 400, 401, 402
-}
-INPUT_MOUSE_NAMES_EN = {
-    "Middle Mouse Button", "Mouse Scroll Up", "Mouse Scroll Down",
-    "Mouse Button 4", "Mouse Button 5"
-}
-INPUT_MOUSE_NAMES_ZH = {
-    "鼠标中键", "鼠标滚轮向上", "鼠标滚轮向下", "鼠标侧键4",
-    "鼠标侧键5"
-}
-INPUT_KEY_NAMES_EN = {
-    "Backspace", "Tab", "Pause", "Space", "'", ",", "-", ".", "/", "0", "1",
-    "2", "3", "4", "5", "6", "7", "8", "9", "Semicolon", "<", "Equals", ">",
-    "Left Bracket", "Backslash", "Right Bracket", "`", "A", "B", "C", "D", "E",
-    "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T",
-    "U", "V", "W", "X", "Y", "Z", "Delete", "Num 0", "Num 1", "Num 2", "Num 3",
-    "Num 4", "Num 5", "Num 6", "Num 7", "Num 8", "Num 9", "Num .", "Num /",
-    "Num *", "Num -", "Num +", "Num Enter", "KEY_KP_EQUALS", "Up", "Down",
-    "Right", "Left", "Insert", "Home", "End", "Page Up", "Page Down", "F1",
-    "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F11", "F12", "F13",
-    "F14", "F15", "Num Lock", "Caps Lock", "Scroll Lock", "Right Shift",
-    "Left Shift", "Right Control", "Left Control", "Right Alt", "Left Alt",
-    "Left Windows", "Right Windows", "Mode", "Compose", "Print Screen", "Menu",
-    "Power", "Euro", "Undo", "Alt", "Control", "Shift"
-}
-INPUT_KEY_NAMES_ZH = {
-    "退格键", "Tab", "Pause", "空格键", "'", ",", "-", ".", "/", "0", "1",
-    "2", "3", "4", "5", "6", "7", "8", "9", ",", "<", "=", ">", "[", "\\", "]",
-    "`", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N",
-    "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "Delete",
-    "小键盘0", "小键盘1", "小键盘2", "小键盘3", "小键盘4",
-    "小键盘5", "小键盘6", "小键盘7", "小键盘8", "小键盘9",
-    "小键盘.", "小键盘/", "小键盘*", "小键盘-", "小键盘+",
-    "小键盘Enter", "小键盘=", "上方向键", "下方向键",
-    "右方向键", "左方向键", "Insert", "Home", "End", "Page Up",
-    "Page Down", "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10",
-    "F11", "F12", "F13", "F14", "F15", "Num Lock", "Caps Lock", "Scroll Lock",
-    "右Shift键", "左Shift键", "右Ctrl键", "左Ctrl键", "右Alt键",
-    "左Alt键", "左窗口键", "右窗口键", "Mode", "Compose",
-    "Print Screen", "菜单键", "Power", "$", "Undo", "Alt", "Control", "Shift"
-}
-function GenerateModInfoTable()
-    input_table_en = {{description = "Disabled", data = 0}}
-    input_table_zh = {{description = "禁用", data = 0}}
-    for i = 1, #INPUT_MOUSE do
-        input_table_en[i + 1] = {
-            description = INPUT_MOUSE_NAMES_EN[i],
-            data = INPUT_MOUSE[i]
-        }
-        input_table_zh[i + 1] = {
-            description = INPUT_MOUSE_NAMES_ZH[i],
-            data = INPUT_MOUSE[i]
-        }
-    end
-    local s = #input_table_en
-    for i = 1, #INPUT_KEY do
-        input_table_en[i + s] = {
-            description = INPUT_KEY_NAMES_EN[i],
-            data = INPUT_KEY[i]
-        }
-        input_table_zh[i + s] = {
-            description = INPUT_KEY_NAMES_ZH[i],
-            data = INPUT_KEY[i]
-        }
-    end
-end
-GenerateModInfoTable()
-generate()
+configuration_options = _configuration_options

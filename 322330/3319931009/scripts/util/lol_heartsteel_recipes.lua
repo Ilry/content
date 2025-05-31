@@ -45,7 +45,7 @@ local recipe_all = {
 			Ingredient("redgem",10),
 		},
 		tech = TECH.LOST,
-        filters = {"MAGIC",'TAB_LOL_WP','MODS'}
+        filters = {'ARMOUR','TAB_LOL_WP'}
 	},
 ------------------------------------------------------------------
 --ARMOUR-----------------------------------------------------------

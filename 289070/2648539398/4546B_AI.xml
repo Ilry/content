@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 4546B_AI -->
+<!-- Author: 27136 -->
+<!-- DateCreated: 11/7/2021 1:07:09 AM -->
+<GameData>
+	<AiListTypes>
+		<Row ListType="HAIHUANGCivics"/>
+		<Row ListType="HAIHUANGTechs"/>
+		<Row ListType="HAIHUANGBuilding"/>
+		<Row ListType="HAIHUANGDistrict"/>
+		<Row ListType="HAIHUANGPowerfulProjects"/>
+		<Row ListType="HAIHUANG_Units"/>
+	</AiListTypes>
+	<AiLists>
+		<Row ListType="HAIHUANGCivics" LeaderType="TRAIT_LEADER_HAIHUANG" System="Civics"/>
+		<Row ListType="HAIHUANGTechs" LeaderType="TRAIT_LEADER_HAIHUANG" System="Technologies"/>
+		<Row ListType="HAIHUANGBuilding" LeaderType="TRAIT_LEADER_HAIHUANG" System="Buildings"/>
+		<Row ListType="HAIHUANGDistrict" LeaderType="TRAIT_LEADER_HAIHUANG" System="Districts"/>
+		<Row ListType="HAIHUANGPowerfulProjects" LeaderType="TRAIT_LEADER_HAIHUANG" System="Projects"/>
+		<Row ListType="HAIHUANG_Units" LeaderType="TRAIT_LEADER_HAIHUANG" System="Units"/>
+	</AiLists>
+
+	<AiFavoredItems>
+		<Row ListType="HAIHUANGCivics" Item="CIVIC_URBANIZATION" Favored="true"/>
+		<Row ListType="HAIHUANGTechs" Item="TECH_CELESTIAL_NAVIGATION" Favored="true"/>
+		<Row ListType="HAIHUANGTechs" Item="TECH_EDUCATION" Favored="true"/>
+		<Row ListType="HAIHUANGTechs" Item="TECH_CARTOGRAPHY" Favored="true"/>
+		<Row ListType="HAIHUANGTechs" Item="TECH_ELECTRICITY" Favored="true"/>
+		<Row ListType="HAIHUANGTechs" Item="TECH_SYNTHETIC_MATERIALS" Favored="true"/>
+		<Row ListType="HAIHUANGTechs" Item="TECH_ROBOTICS" Favored="true"/>
+		<Row ListType="HAIHUANGBuilding" Item="BUILDING_SCANNER" Favored="true"/>
+		<Row ListType="HAIHUANGBuilding" Item="BUILDING_HOT_ELECTRICITY" Favored="true"/>
+		<Row ListType="HAIHUANGBuilding" Item="BUILDING_LON_ELECTRICITY" Favored="true"/>
+		<Row ListType="HAIHUANGBuilding" Item="BUILDING_TRANSLATION_DEVICE" Favored="true"/>
+		<Row ListType="HAIHUANGDistrict" Item="DISTRICT_LIFETREE" Favored="true"/>
+		<Row ListType="HAIHUANGDistrict" Item="DISTRICT_CAMPUS" Favored="true"/>
+		<Row ListType="HAIHUANGPowerfulProjects" Item="PROJECT_KALA_CURE" Favored="true"/>
+		<Row ListType="HAIHUANGPowerfulProjects" Item="PROJECT_LAUNCH_NEPTUNE" Favored="true"/>
+		<Row ListType="HAIHUANGPowerfulProjects" Item="PROJECT_STUDY_NITER" Favored="true"/>
+		<Row ListType="HAIHUANGPowerfulProjects" Item="PROJECT_STUDY_AL" Favored="true"/>
+		<Row ListType="HAIHUANGPowerfulProjects" Item="PROJECT_STUDY_LON" Favored="true"/>
+		<Row ListType="HAIHUANGPowerfulProjects" Item="PROJECT_STUDY_UR" Favored="true"/>
+	</AiFavoredItems>
+</GameData>

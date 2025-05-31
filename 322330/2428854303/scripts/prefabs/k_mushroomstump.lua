@@ -1,4 +1,4 @@
-require "prefabutil"
+require("prefabutil")
 
 local assets =
 {
@@ -9,7 +9,6 @@ local assets =
 }
 
 local function dig_up(inst, chopper)
-	inst.components.lootdropper:SpawnLootPrefab("red_cap")
 	inst.components.lootdropper:SpawnLootPrefab("red_cap")
 	inst.components.lootdropper:SpawnLootPrefab("green_cap")
 	inst:Remove()
@@ -63,5 +62,10 @@ local function fn()
 	return inst
 end
 
+local function ornamentplacetestfn(inst)    
+    inst.AnimState:SetScale(.8, .8, .8)
+    return true
+end
+
 return Prefab("kyno_mushroomstump", fn, assets, prefabs),
-MakePlacer("kyno_mushroomstump_placer", "quagmire_mushroomstump", "quagmire_mushroomstump", "idle")
+MakePlacer("kyno_mushroomstump_placer", "quagmire_mushroomstump", "quagmire_mushroomstump", "idle", false, nil, nil, nil, nil, nil, ornamentplacetestfn)

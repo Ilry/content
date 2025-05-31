@@ -32,6 +32,49 @@ local rsDiscov_PoolChargeRate = 4;
 local rsDiscov_PoolChargeCounter = 0;
 local rsDiscov_PoolSize = 120;
 
+-- Hex Grid computation
+-- Convert odd-r offset coordinates to axis coordinates (q,r)
+local function odd_r_to_axial(col, row)
+    local q = col - (row - (row % 2)) / 2
+    local r = row
+    return q, r
+end
+
+-- Convert axis coordinates (q,r) back to odd-r offset coordinates
+local function axial_to_odd_r(q, r)
+    local col = q + (r - (r % 2)) / 2
+    local row = r
+    return col, row
+end
+
+-- Calculate the Manhattan distance in hex-axis coordinates
+local function hex_distance(q1, r1, q2, r2)
+    local dq = q2 - q1
+    local dr = r2 - r1
+    return (math.abs(dq) + math.abs(dq + dr) + math.abs(dr)) / 2
+end
+
+-- Get all offset coordinates (odd-r) from the centre (center_col, centre_row) less than or equal to k
+local function hex_range_odd_r(center_col, center_row, k)
+    local results = {}
+
+    -- Converting centre points to axis coordinates
+    local cq, cr = odd_r_to_axial(center_col, center_row)
+
+    -- Iterate through the search range 
+	-- (a little more than k is chosen here to be on the safe side, but a range of k is sufficient for practical use)
+    for col = center_col - k, center_col + k do
+        for row = center_row - k, center_row + k do
+            local q, r = odd_r_to_axial(col, row)
+            if hex_distance(cq, cr, q, r) <= k then
+                table.insert(results, {col = col, row = row})
+            end
+        end
+    end
+
+    return results
+end
+
 local function pickRandomFromArr(arr, num)
 	-- Randomly select elementes from given array of specified amount
 	local ret = -1;
@@ -129,16 +172,24 @@ function tryResourceDiscover(p_x, p_y, delw)
 				p_resource = rs_terrain;
 			end
 			-- Get resource cost according to the frequency
-			rsTblIdx = p_resource + 3;			
-			p_cost = resourceTable[rsTblIdx].Frequency + resourceTable[rsTblIdx].SeaFrequency;
-			p_cost = MaxResourceFreq / (MinResourceFreq + ResourceWgtIdx + p_cost);
+			rsTblIdx = p_resource + 3;
+			print("tryResourceDiscover: p_resource = ", resourceTable[rsTblIdx].Type, "rs_feature = ", rs_feature, "rs_terrain = ", rs_terrain);
+			if resourceTable[rsTblIdx].Frequency ~=nil and resourceTable[rsTblIdx].SeaFrequency	~=nil then		
+				p_cost = resourceTable[rsTblIdx].Frequency + resourceTable[rsTblIdx].SeaFrequency;
+				p_cost = MaxResourceFreq / (MinResourceFreq + ResourceWgtIdx + p_cost);
+			else
+				p_cost = nil;
+			end
 		else
 			updatePool = true;
 		end
 	end
 	
 	-- update prize pool and validate affordable resource 
-	if updateBonusPool(updatePool, p_cost, delw)==true then
+	if p_cost == nil then
+		return -1
+	end
+	if (updateBonusPool(updatePool, p_cost, delw)==true) then
 		p_resource = -1;
 	end
 	-- apply final resource result
@@ -370,28 +421,27 @@ function massiveTerrainUpdate(p_x, p_y, r, newTerrain, terrainFilters, featureFi
 	local plot = Map.GetPlot( p_x, p_y );
 	local p_terrain = plot:GetTerrainType();
 	local gridWidth, gridHeight = Map.GetGridSize();
+	
+	-- Enum Surrounding Plots
+	local neighbors = hex_range_odd_r(p_x, p_y, r);
+
 	-- Update Surrounding Plot
-	for dx = -r,r do
-		local nowx = p_x + dx;
-		local nowx = math.max(1, math.min(nowx, gridWidth));
-		for dy = -r,r do
-			local nowy = p_y + dy;
-			local nowy = math.max(1, math.min(nowy, gridHeight));
-			local nowplot = Map.GetPlot( nowx, nowy );
-			-- Check plot validity for massive terraining
-			print("massiveTerrainUpdate:", p_x, p_y, r, "now = ", nowx, nowy, isValidPlotTerraining(nowplot));
-			if (isValidPlotTerraining(nowplot)) then
-				local nowTerrain = nowplot:GetTerrainType();
-				local nowFeature = nowplot:GetFeatureType();
-				local doReforge = isMember(terrainFilters, nowTerrain) and isMember(featureFilters, nowFeature);
-				if doReforge then				
-					reforgePlotTerrain(nowx, nowy, newTerrain, 1);
-				end
+	for _, coord in ipairs(neighbors) do
+		local nowx = math.max(1, math.min(coord.col, gridWidth));
+		local nowy = math.max(1, math.min(coord.row, gridHeight));
+		local nowplot = Map.GetPlot( nowx, nowy );
+		
+		-- Check plot validity for massive terraining
+		print("massiveTerrainUpdate:", p_x, p_y, r, "now = ", nowx, nowy, isValidPlotTerraining(nowplot));
+		if (isValidPlotTerraining(nowplot)) then
+			local nowTerrain = nowplot:GetTerrainType();
+			local nowFeature = nowplot:GetFeatureType();
+			local doReforge = isMember(terrainFilters, nowTerrain) and isMember(featureFilters, nowFeature);
+			if doReforge then				
+				reforgePlotTerrain(nowx, nowy, newTerrain, 1);
 			end
 		end
 	end
-	-- Update Central plot
-	--reforgePlotTerrain(p_x, p_y, newTerrain);
 end
 
 function massiveTerrainTwist(p_x, p_y, r, terrainFilters, featureFilters, chance)
@@ -399,29 +449,28 @@ function massiveTerrainTwist(p_x, p_y, r, terrainFilters, featureFilters, chance
 	local plot = Map.GetPlot( p_x, p_y );
 	local p_terrain = plot:GetTerrainType();
 	local gridWidth, gridHeight = Map.GetGridSize();
+	-- Enum Surrounding Plots
+	local neighbors = hex_range_odd_r(p_x, p_y, r);
+
 	-- Update Surrounding Plot
-	for dx = -r,r do
-		local nowx = p_x + dx;
-		local nowx = math.max(1, math.min(nowx, gridWidth));
-		for dy = -r,r do
-			local nowy = p_y + dy;
-			local nowy = math.max(1, math.min(nowy, gridHeight));
-			local nowplot = Map.GetPlot( nowx, nowy );
-			-- Check plot validity for massive terraining
-			print("massiveTerrainTwist:", p_x, p_y, r, "now = ", nowx, nowy, isValidPlotTerraining(nowplot));
-			if (isValidPlotTerraining(nowplot) and math.random()<chance) then
-				local nowTerrain = nowplot:GetTerrainType();
-				local nowFeature = nowplot:GetFeatureType();
-				local doReforge = isMember(terrainFilters, nowTerrain) and isMember(featureFilters, nowFeature);
-				if doReforge then			
-					newTerrain = fluctuatePlotTerrain(p_x, p_y);
-					reforgePlotTerrain(nowx, nowy, {newTerrain}, 1);
-				end
+	for _, coord in ipairs(neighbors) do
+		local nowx = math.max(1, math.min(coord.col, gridWidth));
+		local nowy = math.max(1, math.min(coord.row, gridHeight));
+		local nowplot = Map.GetPlot( nowx, nowy );
+		
+		-- Check plot validity for massive terraining
+		print("massiveTerrainTwist:", p_x, p_y, r, "now = ", nowx, nowy, isValidPlotTerraining(nowplot));
+		if (isValidPlotTerraining(nowplot) and math.random()<chance) then
+			local nowTerrain = nowplot:GetTerrainType();
+			local nowFeature = nowplot:GetFeatureType();
+			local doReforge = isMember(terrainFilters, nowTerrain) and isMember(featureFilters, nowFeature);
+			if doReforge then		
+				newTerrain = fluctuatePlotTerrain(p_x, p_y);
+				reforgePlotTerrain(nowx, nowy, {newTerrain}, 1);
 			end
 		end
 	end
-	-- Update Central plot
-	--reforgePlotTerrain(p_x, p_y, newTerrain);
+	
 end
 
 function refreshPlotStat(p_x, p_y, new_terrain, new_feature, new_resource)
@@ -475,6 +524,7 @@ function yugongyishan(p_x, p_y, ImproveType)
 		else
 		  print("Terrain is NOT a Mountain. it is ", Locale.Lookup(GameInfo.Terrains[p_terrain].Name), p_terrain);
 		end
+		WorldBuilder.MapManager():SetImprovementType(plot, -1);
 	  elseif (imprv_type == "IMPROVEMENT_PEBBLESTACKS") then
 	    --print("Improvement is Pebble Stacks, Start filling");
 		if (p_terrain == 15) then
@@ -515,24 +565,30 @@ function yugongyishan(p_x, p_y, ImproveType)
 		print("Ice plots are refreshed with pathable water.");
 		-- Convert land plot into coast
 		new_terrain, new_feature, new_resource = reforgePlotTerrain(p_x, p_y, {15}, 1);
+		WorldBuilder.MapManager():SetImprovementType(plot, -1);
 		print("Land plot is transformed into coast.");
 	  elseif (imprv_type == "IMPROVEMENT_IMMORTAL_SOIL") then
 		-- Convert target plot into mountain of the same class
 		local p_tCls = math.floor((p_terrain+1)/3);
 		--f_terrain, n_terrain, dalt = fluctuatePlotTerrain(p_x, p_y);
 		new_terrain = p_tCls*3 + 2;
-		reforgePlotTerrain(p_x, p_y, {new_terrain}, 1);
+		
 		-- Enum and twist surrounding land tiles at RANDOM
 		local terrainFilters = {0,1,3,4,6,7,9,10,12,13};
 		-- Exclude land tiles with wonder
 		local featureFilters = regularFeatureFilter;
 		featureFilters[#featureFilters + 1] = -1;
 		massiveTerrainTwist(p_x, p_y, 1, terrainFilters, featureFilters, math.random());
+		-- Change terrain of target plot AFTER the surrounding plots are refreshed
+		reforgePlotTerrain(p_x, p_y, {new_terrain}, 1);
+		
+		WorldBuilder.MapManager():SetImprovementType(plot, -1);
 		print("Land plots are raised into hills.");
 	  elseif (imprv_type == "IMPROVEMENT_WAVING_RUINS") then
 		-- Remove Surrounding ICE Features and refresh resources
 		local featureFilters = {-1, 1};	
 		massiveTerrainUpdate(p_x, p_y, 2, nil, {15, 16}, featureFilters);
+		WorldBuilder.MapManager():SetImprovementType(plot, -1);
 		print("Water plots defreezed and refreshed.");
 	  else
 		doUpdate = false;
@@ -540,6 +596,7 @@ function yugongyishan(p_x, p_y, ImproveType)
 	  end
 	  -- Check the update result
 	  if doUpdate then
+		WorldBuilder.MapManager():SetImprovementType(plot, -1);
 		refreshPlotStat(p_x, p_y, new_terrain, new_feature, new_resource);
 		if new_terrain>-1 then
 			print("Plot ", p_x .. "," .. p_y, " of <" .. terrain_name .. "> is converted into: *", Locale.Lookup(GameInfo.Terrains[new_terrain].Name));
@@ -721,7 +778,7 @@ local function EnumGameTerrainsAndFeatures()
 	
 	-- Enum Features
 	local invalidFeatures = {"FEATURE_VOLCANO", "FEATURE_BURNING_FOREST", "FEATURE_BURNT_FOREST", "FEATURE_BURNING_JUNGLE", "FEATURE_BURNT_JUNGLE", 
-							"FEATURE_FLOODPLAINS_GRASSLAND", "FEATURE_FLOODPLAINS_PLAINS", "FEATURE_FLOODPLAINS", "FEATURE_VOLCANIC_SOIL"};
+							"FEATURE_FLOODPLAINS_GRASSLAND", "FEATURE_FLOODPLAINS_PLAINS", "FEATURE_FLOODPLAINS", "FEATURE_VOLCANIC_SOIL", "FEATURE_COMET_LAKE"};
 	for type in GameInfo.Features() do	
 		local tmpFeatureType = type.FeatureType;
 		local isNaturalWonder = type.NaturalWonder;

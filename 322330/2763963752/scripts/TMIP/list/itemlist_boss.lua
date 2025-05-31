@@ -1,4 +1,8 @@
 return {
+	"worm_boss",--巨大洞穴蠕虫
+
+	"rabbitking_passive",--和善兔王
+	"rabbitking_aggressive",--暴戾兔王
 	"daywalker2",--拾荒疯猪
 	"sharkboi",--芬尼表弟
 	

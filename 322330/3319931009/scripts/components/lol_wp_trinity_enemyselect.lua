@@ -39,7 +39,7 @@ local EnemySelect = Class(function (self,inst)
         -- end
         -- self.positions=positions
         self:Init()
-  
+
     end
 end)
 

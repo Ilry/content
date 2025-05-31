@@ -1,3 +1,5 @@
+---@diagnostic disable
+
 ---@param inst Instance
 ---@param owner Instance
 ---@param build string?

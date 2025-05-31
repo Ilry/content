@@ -4,6 +4,8 @@ local assets = {
     Asset("ANIM", "anim/wonderbox_red.zip"),
     Asset("ANIM", "anim/wonderbox_purple.zip"),
     Asset("ANIM", "anim/wonderbox_white.zip"),
+    Asset("ANIM", "anim/wonderbox_blue.zip"),
+    Asset("ANIM", "anim/wonderbox_yellow.zip"),
     Asset("ATLAS", "images/inventoryimages/why_wonderbox.xml"),
     Asset("IMAGE", "images/inventoryimages/why_wonderbox.tex"),
     Asset("ATLAS", "images/inventoryimages/wonderbox_green.xml"),
@@ -14,6 +16,10 @@ local assets = {
     Asset("IMAGE", "images/inventoryimages/wonderbox_purple.tex"),
     Asset("ATLAS", "images/inventoryimages/wonderbox_white.xml"),
     Asset("IMAGE", "images/inventoryimages/wonderbox_white.tex"),
+    Asset("ATLAS", "images/inventoryimages/wonderbox_blue.xml"),
+    Asset("IMAGE", "images/inventoryimages/wonderbox_blue.tex"),
+    Asset("ATLAS", "images/inventoryimages/wonderbox_yellow.xml"),
+    Asset("IMAGE", "images/inventoryimages/wonderbox_yellow.tex"),
 }
 
 --Ilaskus: Open/Close sounds are placeholders. If it is to be kept, please delete this comment.
@@ -157,4 +163,41 @@ WonderAPI.MakeItemSkin("why_wonderbox","wonderbox_white",{
     basebank =  "wonderbox",
 })
 
+local name7
+if TUNING.WHY_LANGUAGE == "spanish" then
+    name7 = "El Lobo Beta"
+elseif TUNING.WHY_LANGUAGE == "chinese" then
+    name7 = "贝塔狼"
+else
+    name7 = "The Beta Wolf"
+end
+WonderAPI.MakeItemSkin("why_wonderbox","wonderbox_blue",{
+    name = name7,
+    atlas = "images/inventoryimages/wonderbox_blue.xml",
+    image = "wonderbox_blue",
+    build = "wonderbox_blue",
+    rarity = "Classy",
+    bank =  "wonderbox_blue",
+    basebuild = "wonderbox",
+    basebank =  "wonderbox",
+})
+
+local name8
+if TUNING.WHY_LANGUAGE == "spanish" then
+    name8 = "Benjí Rápido"
+elseif TUNING.WHY_LANGUAGE == "chinese" then
+    name8 = "快本吉"
+else
+    name8 = "Quick Benjí"
+end
+WonderAPI.MakeItemSkin("why_wonderbox","wonderbox_yellow",{
+    name = name8,
+    atlas = "images/inventoryimages/wonderbox_yellow.xml",
+    image = "wonderbox_yellow",
+    build = "wonderbox_yellow",
+    rarity = "Event",
+    bank =  "wonderbox_yellow",
+    basebuild = "wonderbox",
+    basebank =  "wonderbox",
+})
 return Prefab("why_wonderbox", fn, assets)

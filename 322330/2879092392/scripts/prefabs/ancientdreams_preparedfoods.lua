@@ -337,7 +337,7 @@ local function getCubeSanity(inst, eater)
             eater:DoTaskInTime(0, function(eater)
                 eater.components.eater:SetAbsorptionModifiers(1, 1, 0)
             end)
-            return 15
+            return 7.5
         else
             return -5
         end

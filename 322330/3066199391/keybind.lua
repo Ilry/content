@@ -26,10 +26,18 @@ local Text = require('widgets/text')
 local TEMPLATES = require('widgets/redux/templates')
 local OptionsScreen = require('screens/redux/optionsscreen')
 
--- "KEY_*" to code number or nil
-local function Raw(key) return G.rawget(G, key) end
+local KEYBOARD = { KEY_QUOTE = 39, KEY_BACKQUOTE = 96 } -- for missing definitions in constants.lua
 
--- code number to "KEY_*"
+-- emoji of Middle Mouse Button, Mouse Button 4 and 5 => code number
+local MOUSE = { ['\238\132\130'] = 1002, ['\238\132\131'] = 1005, ['\238\132\132'] = 1006 }
+MOUSE['\238\132\128'] = 1000 -- Left Mouse Button
+MOUSE['\238\132\129'] = 1001 -- Right Mouse Button
+local MOUSE_KEY = { '\238\132\128', '\238\132\129', '\238\132\130', '\238\132\131', '\238\132\132' }
+
+-- "KEY_*" and mouse button emoji => code number or nil
+local function Raw(key) return KEYBOARD[key] or MOUSE[key] or G.rawget(G, key) end
+
+-- code number => "KEY_*" and mouse button emoji
 local str = {}
 for _, option in ipairs(modinfo.keys) do
   local key = option.data
@@ -38,7 +46,7 @@ for _, option in ipairs(modinfo.keys) do
 end
 local function Stringify(keycode) return str[keycode] end
 
--- "KEY_*" to name or "- No Bind -"
+-- "KEY_*" and mouse button emoji => name or "- No Bind -"
 local function Localize(key)
   local num = Raw(key)
   return num and S.INPUTS[1][num] or S.INPUTS[9][2]
@@ -55,11 +63,13 @@ for _, config in ipairs(modinfo.configuration_options) do
 end
 
 -- initialize binds
-AddGamePostInit(function()
-  for name, _ in pairs(is_keybind) do
-    KeyBind(name, Raw(GetModConfigData(name)))
+local function InitBindings()
+  for _, config in pairs(configs) do
+    KeyBind(config.name, Raw(GetModConfigData(config.name, true)))
   end
-end)
+end
+local AddInit = modinfo.client_only_mod and AddGamePostInit or AddPlayerPostInit
+AddInit(InitBindings)
 
 --------------------------------------------------------------------------------
 -- Button widget to show and change bind
@@ -108,16 +118,28 @@ function BindButton:Set(key)
 end
 
 function BindButton:PopupKeyBindDialog()
+  local function Setup(key)
+    self:Set(key)
+    TheFrontEnd:PopScreen()
+    TheFrontEnd:GetSound():PlaySound('dontstarve/HUD/click_move')
+  end
+  local buttons = {}
+  for _, key in ipairs(MOUSE_KEY) do
+    for _, option in ipairs(modinfo.keys) do
+      if key == option.data then -- only add if existing in real options
+        table.insert(buttons, { style = 'small', text = key, cb = function() Setup(key) end })
+        break
+      end
+    end
+  end
+  table.insert(buttons, { style = 'small', text = S.CANCEL, cb = function() TheFrontEnd:PopScreen() end })
   local text = S.CONTROL_SELECT .. '\n\n' .. string.format(S.DEFAULT_CONTROL_TEXT, Localize(self.default))
-  local buttons = { { text = S.CANCEL, cb = function() TheFrontEnd:PopScreen() end } }
-  local dialog = PopupDialogScreen(self.title, text, buttons)
+  local dialog = PopupDialogScreen(self.title, text, buttons, 150, 'medium')
 
   dialog.OnRawKey = function(_, keycode, down)
     local key = Stringify(keycode)
     if not key or down then return end -- wait for releasing valid key
-    self:Set(key)
-    TheFrontEnd:PopScreen()
-    TheFrontEnd:GetSound():PlaySound('dontstarve/HUD/click_move')
+    Setup(key)
     return true
   end
 
@@ -239,12 +261,12 @@ end)
 -- Add mod name header and keybind entries to the list in "Options > Controls"
 AddClassPostConstruct('screens/redux/optionsscreen', function(self)
   -- rtk0c: Reusing the same list is fine, per the current logic in ScrollableList:SetList();
-  -- Don't call ScrollableList:AddItem() one by one to avoid wasting time recalcuating the list size.
+  -- Don't call ScrollableList:AddItem() one by one to avoid wasting time recalculating the list size.
   local list = self.kb_controllist
   local items = list.items
   if #configs > 0 then table.insert(items, list:AddChild(Header(modinfo.name))) end
   for _, config in ipairs(configs) do
-    _key[config] = GetModConfigData(config.name)
+    _key[config] = GetModConfigData(config.name, true)
     table.insert(items, list:AddChild(BindEntry(self, config)))
   end
   list:SetList(items, true)
@@ -267,6 +289,6 @@ function OptionsScreen:Save(...)
     KeyBind(config.name, Raw(key)) -- let mod change bind
     G.KnownModIndex:SetConfigurationOption(modname, config.name, key)
   end
-  G.KnownModIndex:SaveHostConfiguration(modname) -- save to disk
+  G.KnownModIndex:SaveConfigurationOptions(function() end, modname, modinfo.configuration_options, true) -- save to disk
   return OldSave(self, ...)
 end

@@ -163,7 +163,7 @@ function dst_lan:SetDrag(params,tips_when_drag)
         ---@return class|boolean
         ---@nodiscard
         local function clientwidget(unique_tag)
-            if self.container and self.container.replica.container then
+            if self.container and self.container.replica and self.container.replica.container then
                 local widget = self.container.replica.container:GetWidget()
                 local unique = widget and widget.unique
                 if unique and unique == unique_tag then
@@ -175,9 +175,11 @@ function dst_lan:SetDrag(params,tips_when_drag)
 
         local oldOpen = self.Open
         function self:Open(...)
-            oldOpen(self, ...)
+            if oldOpen ~= nil then
+                oldOpen(self, ...)
+            end
 
-            if self.container and self.container.replica.container then
+            if self.container and self.container.replica and self.container.replica.container then
                 local widget = self.container.replica.container:GetWidget()
                 if widget then
                     --拖拽坐标标签，有则用标签，无则用容器名
@@ -214,7 +216,9 @@ end
 ---@param tips_when_drag string|nil 拖拽提示,不填则不设置拖拽
 function dst_lan:main(params,tips_when_drag)
     self:MakeContainerUI(params)
-    self:SetDrag(params,STRINGS.MOD_LOL_WP.DRAG_INFO)
+    if not LOL_WP_CHECKMODENABLED('能力勋章') then
+        self:SetDrag(params,STRINGS.MOD_LOL_WP.DRAG_INFO)
+    end
 end
 
 return dst_lan

@@ -1,3 +1,4 @@
+---@diagnostic disable
 ----------------------------------------------------------------
 table.insert(Assets, Asset("IMAGE", "images/gallop_inventoryimages_h_t.tex"))
 table.insert(Assets, Asset("ATLAS", "images/gallop_inventoryimages_h_t.xml"))
@@ -104,10 +105,10 @@ AddRecipe2(
 
 AddRecipe2(
         "gallop_blackcutter",
-        {Ingredient("hammer", 1), Ingredient("axe", 1), Ingredient("marble", 6), Ingredient("dreadstone", 12), Ingredient("horrorfuel", 8),},
+        {Ingredient("hammer", 1), Ingredient("axe", 1), Ingredient("marble", 6), Ingredient("dreadstone", 8), Ingredient("horrorfuel", 4),},
         TECH.LOST,
         {},
-        {"WEAPONS", "MODS",'TAB_LOL_WP'}
+        {"WEAPONS",'TAB_LOL_WP'}
     )
 
 AddRecipe2(
@@ -115,15 +116,15 @@ AddRecipe2(
         {Ingredient("glasscutter", 1), Ingredient("batbat", 2), Ingredient("moonglass", 20), Ingredient("moonrocknugget", 10), Ingredient("greengem", 2),},
         TECH.CELESTIAL_THREE,
         {nounlock=true, station_tag="moon_altar"},
-        {"WEAPONS", "MODS",'TAB_LOL_WP'}
+        {"WEAPONS",'TAB_LOL_WP'}
     )
 
 AddRecipe2(
         "gallop_ad_destroyer",
-        {Ingredient("gallop_whip", 1), Ingredient("security_pulse_cage_full", 1), Ingredient("purebrilliance", 8), Ingredient("moonrocknugget", 12), Ingredient("thulecite", 6),},
+        {Ingredient("gallop_whip", 1), Ingredient("bluegem", 10), Ingredient("purebrilliance", 8), Ingredient("moonrocknugget", 12), Ingredient("thulecite", 6),},
         TECH.LUNARFORGING_TWO,
         {nounlock=true, station_tag="lunar_forge"},
-        {"WEAPONS", "MODS",'TAB_LOL_WP'}
+        {"WEAPONS",'TAB_LOL_WP'}
     )
 
 for k,v in pairs({"moonrockseed", "moon_altar", "moon_altar_cosmic", "moon_altar_astral"}) do
@@ -163,6 +164,8 @@ AddStategraphState("wilson", State{
             --inst.AnimState:PushAnimation("spearjab", false)
             inst.AnimState:PlayAnimation("multithrust")
 
+            inst.lol_wp_s19_muramana_is_tri_atk = true
+
             cooldown = math.max(cooldown, 15 * FRAMES)
 
             inst.sg:SetTimeout(cooldown)
@@ -179,17 +182,24 @@ AddStategraphState("wilson", State{
 
         timeline =
         {
-        	TimeEvent(3 * FRAMES, function(inst)
+        	TimeEvent(8 * FRAMES, function(inst)
                 inst.components.combat:DoAttack()
             end),
-			TimeEvent(6 * FRAMES, function(inst)
+			TimeEvent(10 * FRAMES, function(inst)
                 inst.components.combat:DoAttack()
             end),	
-            TimeEvent(9 * FRAMES, function(inst)
+            TimeEvent(12 * FRAMES, function(inst)
+                inst.is_tri_atk = true
                 inst:PerformBufferedAction()
+                inst.is_tri_atk = false
             end),
             TimeEvent(13 * FRAMES, function(inst)
             	inst.sg:RemoveStateTag("abouttoattack")
+
+                inst.lol_wp_s19_muramana_is_tri_atk = nil
+                if inst._lol_wp_s19_muramana_wp then
+                    inst._lol_wp_s19_muramana_wp:RemoveTag('lol_wp_s12_malignance_tri_atk')
+                end
             end),
         },
 
@@ -210,6 +220,7 @@ AddStategraphState("wilson", State{
         },
 
         onexit = function(inst)
+
             inst.components.combat:SetTarget(nil)
             if inst.sg:HasStateTag("abouttoattack") then
                 inst.components.combat:CancelAttack()
@@ -276,7 +287,7 @@ AddStategraphState("wilson_client", State{
 
         timeline =
         {
-            TimeEvent(9 * FRAMES, function(inst)
+            TimeEvent(12 * FRAMES, function(inst)
                 inst:ClearBufferedAction()
             end),
             TimeEvent(13 * FRAMES, function(inst)
@@ -454,34 +465,34 @@ AddStategraphState("wilson_client", State{
 ----------------------------------------------------------------
 local function Gallop_Action(sg)
     local old_attack = sg.states["attack"]
-    if old_attack ~= nil then
-        local old_onenter = old_attack.onenter
-        old_attack.onenter = function(inst)
-            local equip, isriding = nil, nil
-            if TheWorld.ismastersim then
-                equip = inst.components.inventory:GetEquippedItem(EQUIPSLOTS.HANDS)
-                isriding = inst.components.rider:IsRiding()
-            else
-                equip = inst.replica.inventory:GetEquippedItem(EQUIPSLOTS.HANDS)
-                isriding = inst.replica.rider ~= nil and inst.replica.rider:IsRiding()
-            end
-            if equip ~= nil and equip:HasTag("gallop_triple_atk") then
-                if not isriding then 
-                    inst.sg:GoToState("gallop_triple_atk")
-                    return
-                end
-            end
-            if equip ~= nil and equip:HasTag("gallop_blackcutter") then
-                if not isriding then 
-                    inst.sg:GoToState("gallop_blackcutter_atk")
-                    return
-                end
-            end
-            if old_onenter then
-                return old_onenter(inst)
-            end
-        end
-    end
+    -- if old_attack ~= nil then
+    --     local old_onenter = old_attack.onenter
+    --     old_attack.onenter = function(inst)
+    --         local equip, isriding = nil, nil
+    --         if TheWorld.ismastersim then
+    --             equip = inst.components.inventory:GetEquippedItem(EQUIPSLOTS.HANDS)
+    --             isriding = inst.components.rider:IsRiding()
+    --         else
+    --             equip = inst.replica.inventory:GetEquippedItem(EQUIPSLOTS.HANDS)
+    --             isriding = inst.replica.rider ~= nil and inst.replica.rider:IsRiding()
+    --         end
+    --         if equip ~= nil and equip:HasTag("gallop_triple_atk") then
+    --             if not isriding then 
+    --                 inst.sg:GoToState("gallop_triple_atk")
+    --                 return
+    --             end
+    --         end
+    --         if equip ~= nil and equip:HasTag("gallop_blackcutter") then
+    --             if not isriding then 
+    --                 inst.sg:GoToState("gallop_blackcutter_atk")
+    --                 return
+    --             end
+    --         end
+    --         if old_onenter then
+    --             return old_onenter(inst)
+    --         end
+    --     end
+    -- end
 
     for k,v in pairs({"doswipeaction", "attack_pillow", "helmsplitter_pre"}) do
         local old_action = sg.states[v]
@@ -616,12 +627,39 @@ AddAction("GALLOP_BLACKCUTTER", GALLOP_SETSTRING("诺克萨斯断头台", "Noxus
         --doer.Transform:SetPosition(pt:Get())
 
         local skillcd = weapon.gallop_blackcutter_cd or 10
-        if target and target:IsValid() and target.components.health and not target.components.health:IsDead() then
+        -- if target and target:IsValid() and target.components.health and not target.components.health:IsDead() then
+        if target and target:IsValid() and target.components.health and not target.components.health:IsDead() and doer and doer.components.combat and not doer.components.combat:IsAlly(target) then
             local dmg = (target.gallop_blackcutter_stack or 1)*136
             local mult = doer.components.combat.externaldamagemultipliers:Get()*(doer.components.combat.damagemultiplier or 1)
-            target.components.health:DoDelta(-dmg*mult, false, weapon.prefab, false, nil, true)
+
+            local equips_attacker = {}
+            if doer then
+                if doer.components.inventory then
+                    for k,v in pairs(doer.components.inventory.equipslots or {}) do
+                        if v and v.prefab then
+                            equips_attacker[v.prefab] = v
+                        end
+                    end
+                end
+                for k,v in pairs(doer.eyestone_containers_stuff or {}) do
+                    equips_attacker[k]  = v
+                end
+            end
+
+            local new_dmg = dmg*mult
+
+            if equips_attacker['lol_wp_s14_hubris'] and equips_attacker['lol_wp_s14_thornmail'] then
+                new_dmg = new_dmg * 2
+            end
+
+            if equips_attacker['lol_wp_trinity'] then
+                new_dmg = new_dmg * TUNING.MOD_LOL_WP.TRINITY.DMGMULT
+            end
+            equips_attacker = nil
+
+            target.components.health:DoDelta(-new_dmg, false, weapon.prefab, false, nil, true)
             if target.sg ~= nil then
-                target:PushEvent("attacked", { attacker = doer, damage = dmg, weapon = weapon })
+                target:PushEvent("attacked", { attacker = doer, damage = new_dmg, weapon = weapon, damageresolved = new_dmg })
             end
             target:DoTaskInTime(FRAMES, function()
                 if target.components.health ~= nil and target.components.health:IsDead() then

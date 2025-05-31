@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="10" SoundbankVersion="113">
+	<RootPaths>
+		<ProjectRoot>C:\Users\27136\Documents\WwiseProjects\SUBNAUTICA\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\27136\Documents\WwiseProjects\SUBNAUTICA\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\27136\Documents\WwiseProjects\SUBNAUTICA\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>C:\Users\27136\Documents\WwiseProjects\SUBNAUTICA\GeneratedSoundBanks\Windows\</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles>
+		<File Id="3599106" Language="SFX">
+			<ShortName>PRECIPALE.wav</ShortName>
+			<Path>SFX\PRECIPALE_4B8CC0C5.wem</Path>
+		</File>
+		<File Id="20665755" Language="SFX">
+			<ShortName>WHAT ARE YOU.wav</ShortName>
+			<Path>SFX\WHAT ARE YOU_4B8CC0C5.wem</Path>
+		</File>
+		<File Id="89623112" Language="SFX">
+			<ShortName>LEADER 2.wav</ShortName>
+			<Path>SFX\LEADER 2_4B8CC0C5.wem</Path>
+		</File>
+		<File Id="120301756" Language="SFX">
+			<ShortName>FUTURE ERA2.wav</ShortName>
+			<Path>SFX\FUTURE ERA2_4B8CC0C5.wem</Path>
+		</File>
+		<File Id="318750836" Language="SFX">
+			<ShortName>LEADER.wav</ShortName>
+			<Path>SFX\LEADER_4B8CC0C5.wem</Path>
+		</File>
+		<File Id="412393744" Language="SFX">
+			<ShortName>ABANDON SHIP.wav</ShortName>
+			<Path>SFX\ABANDON SHIP_4B8CC0C5.wem</Path>
+		</File>
+		<File Id="425235898" Language="SFX">
+			<ShortName>INTO THE UNKNOWN.wav</ShortName>
+			<Path>SFX\INTO THE UNKNOWN_4B8CC0C5.wem</Path>
+		</File>
+		<File Id="435650522" Language="SFX">
+			<ShortName>SUN BEAM2.wav</ShortName>
+			<Path>SFX\SUN BEAM2_4B8CC0C5.wem</Path>
+		</File>
+		<File Id="653807196" Language="SFX">
+			<ShortName>GOD RAYS.wav</ShortName>
+			<Path>SFX\GOD RAYS_4B8CC0C5.wem</Path>
+		</File>
+		<File Id="654409977" Language="SFX">
+			<ShortName>SUNMOON.wav</ShortName>
+			<Path>SFX\SUNMOON_4B8CC0C5.wem</Path>
+		</File>
+		<File Id="675421606" Language="SFX">
+			<ShortName>SHALLOW.wav</ShortName>
+			<Path>SFX\SHALLOW_4B8CC0C5.wem</Path>
+		</File>
+		<File Id="686806005" Language="SFX">
+			<ShortName>LIFT OFF.wav</ShortName>
+			<Path>SFX\LIFT OFF_4B8CC0C5.wem</Path>
+		</File>
+		<File Id="698628762" Language="SFX">
+			<ShortName>TROPICAL EDEN.wav</ShortName>
+			<Path>SFX\TROPICAL EDEN_4B8CC0C5.wem</Path>
+		</File>
+	</StreamedFiles>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="3242768976" Language="SFX">
+			<ShortName>SB_4546B</ShortName>
+			<Path>SB_4546B.bnk</Path>
+			<IncludedEvents>
+				<Event Id="690752823" Name="Pause_Music_4546B"/>
+				<Event Id="4167474443" Name="Play_Leader_Music_4546B"/>
+				<Event Id="3970645121" Name="Play_Music_4546B"/>
+				<Event Id="3178543150" Name="Resume_Music_4546B"/>
+				<Event Id="4225549753" Name="Start_Music_4546B"/>
+				<Event Id="2101534549" Name="Stop_Leader_Music_4546B"/>
+				<Event Id="3696432335" Name="Stop_Music_4546B"/>
+			</IncludedEvents>
+			<ReferencedStreamedFiles>
+				<File Id="3599106"/>
+				<File Id="20665755"/>
+				<File Id="89623112"/>
+				<File Id="120301756"/>
+				<File Id="318750836"/>
+				<File Id="412393744"/>
+				<File Id="425235898"/>
+				<File Id="435650522"/>
+				<File Id="653807196"/>
+				<File Id="654409977"/>
+				<File Id="675421606"/>
+				<File Id="686806005"/>
+				<File Id="698628762"/>
+			</ReferencedStreamedFiles>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

@@ -8,26 +8,267 @@ local assets =
     Asset("ANIM", "anim/wx_upgrade.zip"),
     Asset("ANIM", "anim/player_mount_wx78_upgrade.zip"),
     Asset("ANIM", "anim/wx_fx.zip"),
+    Asset("ANIM", "anim/ui_chest_3x3.zip"),
+
+    Asset("ANIM", "anim/player_basic.zip"),
+    Asset("ANIM", "anim/player_idles_shiver.zip"),
+    Asset("ANIM", "anim/player_idles_lunacy.zip"),
+    Asset("ANIM", "anim/player_actions.zip"),
+    Asset("ANIM", "anim/player_actions_axe.zip"),
+    Asset("ANIM", "anim/player_actions_pickaxe.zip"),
+    Asset("ANIM", "anim/player_actions_pickaxe_recoil.zip"),
+    Asset("ANIM", "anim/player_actions_shovel.zip"),
+    Asset("ANIM", "anim/player_actions_blowdart.zip"),
+    Asset("ANIM", "anim/player_actions_slingshot.zip"),
+    Asset("ANIM", "anim/player_actions_eat.zip"),
+
+    Asset("ANIM", "anim/player_actions_item.zip"),
+    Asset("ANIM", "anim/player_cave_enter.zip"),
+    Asset("ANIM", "anim/player_actions_uniqueitem.zip"),
+    Asset("ANIM", "anim/player_actions_useitem.zip"),
+    Asset("ANIM", "anim/player_actions_bugnet.zip"),
+    Asset("ANIM", "anim/player_actions_unsaddle.zip"),
+    Asset("ANIM", "anim/player_actions_fishing.zip"),
+    Asset("ANIM", "anim/player_actions_fishing_ocean.zip"),
+    Asset("ANIM", "anim/player_actions_fishing_ocean_new.zip"),
+    Asset("ANIM", "anim/player_actions_pocket_scale.zip"),
+    Asset("ANIM", "anim/player_actions_boomerang.zip"),
+    Asset("ANIM", "anim/player_actions_whip.zip"),
+    Asset("ANIM", "anim/player_actions_till.zip"),
+    Asset("ANIM", "anim/player_actions_feast_eat.zip"),
+    Asset("ANIM", "anim/player_actions_farming.zip"),
+    Asset("ANIM", "anim/player_actions_cowbell.zip"),
+    Asset("ANIM", "anim/player_actions_reversedeath.zip"),
+    Asset("ANIM", "anim/player_actions_cannon.zip"),
+    Asset("ANIM", "anim/player_actions_scythe.zip"),
+    Asset("ANIM", "anim/player_actions_deploytoss.zip"),
+    Asset("ANIM", "anim/player_actions_spray.zip"),
+
+    Asset("ANIM", "anim/player_boat.zip"),
+    Asset("ANIM", "anim/player_boat_plank.zip"),
+    Asset("ANIM", "anim/player_oar.zip"),
+    --Asset("ANIM", "anim/player_boat_hook.zip"), --Unfinished, bad file. For unused "fishingnet". Overwrites other anim states due to poor naming.
+    Asset("ANIM", "anim/player_boat_net.zip"),
+    Asset("ANIM", "anim/player_boat_sink.zip"),
+    Asset("ANIM", "anim/player_boat_jump.zip"),
+
+    Asset("ANIM", "anim/player_boat_jumpheavy.zip"),
+    Asset("ANIM", "anim/player_boat_channel.zip"),
+    Asset("ANIM", "anim/player_bush_hat.zip"),
+    Asset("ANIM", "anim/player_attacks.zip"),
+    --Asset("ANIM", "anim/player_idles.zip"),--Moved to global.lua for use in Item Collection
+    Asset("ANIM", "anim/player_rebirth.zip"),
+    Asset("ANIM", "anim/player_jump.zip"),
+    Asset("ANIM", "anim/player_amulet_resurrect.zip"),
+    Asset("ANIM", "anim/player_teleport.zip"),
+    Asset("ANIM", "anim/player_abyss_fall.zip"),
+    Asset("ANIM", "anim/wilson_fx.zip"),
+    Asset("ANIM", "anim/player_one_man_band.zip"),
+    Asset("ANIM", "anim/player_sit.zip"),
+    Asset("ANIM", "anim/player_sit_nofaced.zip"),
+    Asset("ANIM", "anim/player_sit_transition.zip"),
+    --sitting emotes
+    Asset("ANIM", "anim/player_sit_angry.zip"),
+    Asset("ANIM", "anim/player_sit_facepalm.zip"),
+    Asset("ANIM", "anim/player_sit_fistshake.zip"),
+    Asset("ANIM", "anim/player_sit_flex.zip"),
+    Asset("ANIM", "anim/player_sit_happy.zip"),
+    Asset("ANIM", "anim/player_sit_kiss.zip"),
+    Asset("ANIM", "anim/player_sit_laugh.zip"),
+    Asset("ANIM", "anim/player_sit_no.zip"),
+    Asset("ANIM", "anim/player_sit_rude.zip"),
+    Asset("ANIM", "anim/player_sit_sad.zip"),
+    Asset("ANIM", "anim/player_sit_sleepy.zip"),
+    Asset("ANIM", "anim/player_sit_toast.zip"),
+    Asset("ANIM", "anim/player_sit_wave.zip"),
+    --
+
+    Asset("ANIM", "anim/player_slurtle_armor.zip"),
+    Asset("ANIM", "anim/player_staff.zip"),
+    Asset("ANIM", "anim/player_cointoss.zip"),
+    Asset("ANIM", "anim/player_spooked.zip"),
+    Asset("ANIM", "anim/player_hit_darkness.zip"),
+    Asset("ANIM", "anim/player_hit_spike.zip"),
+    Asset("ANIM", "anim/player_lunge.zip"),
+    Asset("ANIM", "anim/player_multithrust.zip"),
+    Asset("ANIM", "anim/player_superjump.zip"),
+    Asset("ANIM", "anim/player_attack_leap.zip"),
+    Asset("ANIM", "anim/player_book_attack.zip"),
+    Asset("ANIM", "anim/player_pocketwatch_portal.zip"),
+
+    Asset("ANIM", "anim/player_parryblock.zip"),
+    Asset("ANIM", "anim/player_attack_prop.zip"),
+    Asset("ANIM", "anim/player_actions_reading.zip"),
+    Asset("ANIM", "anim/player_strum.zip"),
+    Asset("ANIM", "anim/player_frozen.zip"),
+    Asset("ANIM", "anim/player_shock.zip"),
+    Asset("ANIM", "anim/player_tornado.zip"),
+    Asset("ANIM", "anim/goo.zip"),
+    Asset("ANIM", "anim/shadow_hands.zip"),
+    Asset("ANIM", "anim/player_wrap_bundle.zip"),
+    Asset("ANIM", "anim/player_hideseek.zip"),
+    Asset("ANIM", "anim/player_slip.zip"),
+    Asset("ANIM", "anim/player_suspended.zip"),
+
+    Asset("ANIM", "anim/player_wardrobe.zip"),
+    Asset("ANIM", "anim/player_skin_change.zip"),
+    Asset("ANIM", "anim/player_receive_gift.zip"),
+    Asset("ANIM", "anim/shadow_skinchangefx.zip"),
+    Asset("ANIM", "anim/player_townportal.zip"),
+    Asset("ANIM", "anim/player_channel.zip"), --channeling scene entity
+    Asset("ANIM", "anim/player_construct.zip"),
+    Asset("SOUND", "sound/sfx.fsb"),
+    --Asset("ANIM", "anim/player_ghost_withhat.zip"),--Moved to global.lua for use in Item Collection
+    Asset("ANIM", "anim/player_revive_ghosthat.zip"),
+
+    Asset("ANIM", "anim/player_revive_to_character.zip"),
+    Asset("ANIM", "anim/player_revive_from_corpse.zip"),
+    Asset("ANIM", "anim/player_knockedout.zip"),
+    Asset("ANIM", "anim/player_emotesxl.zip"),
+    Asset("ANIM", "anim/player_emotes_dance0.zip"),
+    Asset("ANIM", "anim/player_emotes_sit.zip"),
+    Asset("ANIM", "anim/player_emotes.zip"), -- item emotes
+    Asset("ANIM", "anim/player_emote_extra.zip"), -- item emotes
+    Asset("ANIM", "anim/player_emotes_dance2.zip"), -- item emotes
+    Asset("ANIM", "anim/player_mount_emotes_extra.zip"), -- item emotes
+
+    Asset("ANIM", "anim/player_mount_emotes_dance2.zip"), -- item emotes
+    Asset("ANIM", "anim/player_mount_pet.zip"),
+    Asset("ANIM", "anim/player_hatdance.zip"),
+    Asset("ANIM", "anim/player_bow.zip"),
+    Asset("ANIM", "anim/tears.zip"),
+    Asset("ANIM", "anim/puff_spawning.zip"),
+    Asset("ANIM", "anim/attune_fx.zip"),
+    Asset("ANIM", "anim/player_idles_groggy.zip"),
+    Asset("ANIM", "anim/player_groggy.zip"),
+    Asset("ANIM", "anim/player_encumbered.zip"),
+    Asset("ANIM", "anim/player_encumbered_fast.zip"),
+    Asset("ANIM", "anim/player_encumbered_jump.zip"),
+    Asset("ANIM", "anim/player_channelcast_basic.zip"), --channelcast using held item (can walk)
+    Asset("ANIM", "anim/player_channelcast_hit.zip"),
+    Asset("ANIM", "anim/player_channelcast_oh_basic.zip"), --channelcast using off-hand (can walk)
+    Asset("ANIM", "anim/player_channelcast_oh_hit.zip"),
+    Asset("ANIM", "anim/player_pushing.zip"),
+
+    Asset("ANIM", "anim/player_sandstorm.zip"),
+    Asset("ANIM", "anim/player_tiptoe.zip"),
+    Asset("IMAGE", "images/colour_cubes/ghost_cc.tex"),
+    Asset("IMAGE", "images/colour_cubes/mole_vision_on_cc.tex"),
+    Asset("IMAGE", "images/colour_cubes/mole_vision_off_cc.tex"),
+    Asset("ANIM", "anim/player_mount.zip"),
+    Asset("ANIM", "anim/player_mount_travel.zip"),
+    Asset("ANIM", "anim/player_mount_actions.zip"),
+    Asset("ANIM", "anim/player_mount_actions_item.zip"),
+    Asset("ANIM", "anim/player_mount_actions_boomerang.zip"),
+    Asset("ANIM", "anim/player_mount_actions_reading.zip"),
+    Asset("ANIM", "anim/player_mount_unique_actions.zip"),
+    Asset("ANIM", "anim/player_mount_actions_useitem.zip"),
+    Asset("ANIM", "anim/player_mount_one_man_band.zip"),
+    Asset("ANIM", "anim/player_mount_boat_jump.zip"),
+    Asset("ANIM", "anim/player_mount_boat_sink.zip"),
+    Asset("ANIM", "anim/player_mount_blowdart.zip"),
+    Asset("ANIM", "anim/player_mount_slingshot.zip"),
+    Asset("ANIM", "anim/player_mount_shock.zip"),
+    Asset("ANIM", "anim/player_mount_frozen.zip"),
+    Asset("ANIM", "anim/player_mount_groggy.zip"),
+    Asset("ANIM", "anim/player_mount_encumbered.zip"),
+
+    Asset("ANIM", "anim/player_mount_sandstorm.zip"),
+    Asset("ANIM", "anim/player_mount_hit_darkness.zip"),
+    Asset("ANIM", "anim/player_mount_emotes.zip"),
+    Asset("ANIM", "anim/player_mount_emotes_dance0.zip"),
+    Asset("ANIM", "anim/player_mount_emotesxl.zip"),
+    Asset("ANIM", "anim/player_mount_emotes_sit.zip"),
+    Asset("ANIM", "anim/player_mount_bow.zip"),
+    Asset("ANIM", "anim/player_mount_cointoss.zip"),
+    Asset("ANIM", "anim/player_mount_hornblow.zip"),
+    Asset("ANIM", "anim/player_mount_strum.zip"),
+    Asset("ANIM", "anim/player_mount_deploytoss.zip"),
+
+    Asset("ANIM", "anim/player_mighty_gym.zip"),
+    Asset("ANIM", "anim/mighty_gym.zip"),
+
+    Asset("ANIM", "anim/player_monkey_change.zip"),
+    Asset("ANIM", "anim/player_monkey_run.zip"),
+
+    Asset("ANIM", "anim/player_acting.zip"),
+    Asset("ANIM", "anim/player_closeinspect.zip"),
+
+    Asset("ANIM", "anim/player_attack_pillows.zip"),
+
+    Asset("ANIM", "anim/player_shadow_thrall_parasite.zip"),
 }
 
 local prefabs =
 {
-    "sparks",
-    "wx78_big_spark",
+    "brokentool",
+    "frostbreath",
+    "mining_fx",
+    "mining_ice_fx",
+    "mining_moonglass_fx",
+    "die_fx",
+    "ghost_transform_overlay_fx",
+    "attune_out_fx",
+    "attune_in_fx",
+    "attune_ghost_in_fx",
+    "staff_castinglight",
+    "staff_castinglight_small",
+    "staffcastfx",
+    "staffcastfx_mount",
+    "emote_fx",
+    "tears",
+    "shock_fx",
+    "splash",
+    "globalmapicon",
+    "lavaarena_player_revive_from_corpse_fx",
+    "superjump_fx",
+    "washashore_puddle_fx",
+    "spawnprotectionbuff",
+    "battreefx",
+    "impact",
+
     "cracklehitfx",
-    "wx78_heat_steam",
-    "wx78_musicbox_fx",
-    "collapse_small",
     "gears",
     "transistor",
     "trinket_6",
+    "ice",
+    "sparks",
+    "wx78_big_spark",
+    "wx78_heat_steam",
+    "wx78_musicbox_fx",
+    "collapse_small",
 }
+
+local WX78ModuleDefinitionFile = require("wx78_moduledefs")
+local GetWX78ModuleByNetID = WX78ModuleDefinitionFile.GetModuleDefinitionFromNetID
 
 local brain = require "brains/wxbrain"
 
 local CHARGEREGEN_TIMERNAME = "chargeregenupdate"
 local MOISTURETRACK_TIMERNAME = "moisturetrackingupdate"
 local HEATSTEAM_TIMERNAME = "heatsteam_tick"
+local CLEAR_COLLISION_TIMERNAME = "CLEARCOLLISION"
+local COLLISION_DEAMON_TIMERNAM = "COLLISIONDEAMON"
+local RESTORE_COLLISION_TIMERNAME = "RESTORECOLLISION"
+
+local FIND_BLOCKER_ONE_OF_TAGS = { "structure", "wall", "fence" }
+local function oncollide(inst, other)
+    if not (other ~= nil and other:IsValid() and inst:IsValid()) then
+        return
+    end
+
+    if other:HasOneOfTags(FIND_BLOCKER_ONE_OF_TAGS) and inst.components.locomotor:WantsToMoveForward() then
+        if not inst.components.timer:TimerExists(CLEAR_COLLISION_TIMERNAME) then
+            inst.components.timer:StartTimer(CLEAR_COLLISION_TIMERNAME, 1)
+        end
+
+        if inst.components.timer:TimerExists(COLLISION_DEAMON_TIMERNAM) then
+            inst.components.timer:SetTimeLeft(COLLISION_DEAMON_TIMERNAM, 0.5)
+        else
+            inst.components.timer:StartTimer(COLLISION_DEAMON_TIMERNAM, 0.5)
+        end
+    end
+end
 
 ----------------------
 -- Trade Management --
@@ -36,56 +277,69 @@ local function ShouldAcceptItem(inst, item)
     return item.components.equippable ~= nil
 end
 
-local function OnGetItemFromPlayer(inst, giver, item)
-    if item.components.equippable then
-        local inventory = inst.components.inventory
-        if inventory ~= nil then
-            for k, v in pairs(inventory.opencontainers) do
-                k.components.container:Close(inst)
-            end
-        end
-        inst.components.container:Close()
-
-        local newslot = item.components.equippable.equipslot
-        local current = inventory:GetEquippedItem(newslot)
-
-        if current == nil then
-            inst.components.talker:Say(GetString(inst, "ANNOUNCE_EQUIP", "ACCEPT"))
-        elseif current.prefab == item.prefab then
-            if item.components.stackable == nil then
-                inventory:DropItem(current, true, true)
-            end
-        elseif newslot == EQUIPSLOTS.HEAD then
-            inventory:DropItem(current, true, true)
+local function DropOutdatedItem(inst, new_item, old_item)
+    local inventory = inst.components.inventory
+    if old_item == nil or old_item.prefab ~= new_item.prefab then
+        inst.components.talker:Say(GetString(inst, "ANNOUNCE_EQUIP", "ACCEPT"))
+        if new_item.components.equippable.equipslot == EQUIPSLOTS.HEAD then
             local tool = inventory:GetEquippedItem(EQUIPSLOTS.HANDS)
             local coat = inventory:GetEquippedItem(EQUIPSLOTS.BODY)
-            if item.prefab ~= "deserthat" then
-                inventory:DropItem(tool, true, true)
-                inventory:DropItem(coat, true, true)
-                inventory:DropEverything(false, true)
-            else
+            if new_item.prefab == "deserthat" or new_item.prefab == "captainhat" then
                 if tool ~= nil and tool.prefab ~= "compass" then
                     inventory:DropItem(tool, true, true)
                 end
                 if coat ~= nil and coat.components.container == nil then
                     inventory:DropItem(coat, true, true)
                 end
+            else
+                inventory:DropItem(tool, true, true)
+                inventory:DropItem(coat, true, true)
+                inventory:DropEverything(false, true)
             end
+        end
+    end
+end
+
+local function OnEquipmentChanged(inst)
+    -- Cancel outdated buffered actions and behaviors
+    if inst.brain ~= nil and inst.brain.bt ~= nil then
+        inst.brain.bt:Reset()
+    end
+    inst.components.locomotor:Stop()
+
+    inst.components.wxnavigation.engaged = false
+    if inst.components.wxtype:IsConv() then
+        inst.components.entitytracker:ForgetEntity("sentryward")
+    elseif inst.components.wxtype:IsSeaConv() then
+        inst.components.entitytracker:ForgetEntity("shipyard")
+    end
+end
+
+local function OnGetItemFromPlayer(inst, giver, item)
+    if giver ~= nil and giver.components.inventory ~= nil and item ~= nil and item.components.equippable ~= nil then
+        local wx_inventory = inst.components.inventory
+        local giver_inventory = giver.components.inventory
+        for k, v in pairs(wx_inventory.opencontainers) do
+            k.components.container:Close(inst)
+        end
+        inst.components.container:Close()
+
+        local eslot = item.components.equippable.equipslot
+        local equipped_item = wx_inventory:GetEquippedItem(eslot)
+        DropOutdatedItem(inst, item, equipped_item)
+
+        if equipped_item ~= nil and equipped_item.prefab == item.prefab and equipped_item.skinname == item.skinname and
+            equipped_item.components.stackable ~= nil and wx_inventory:AcceptsStacks() then
+            wx_inventory:Equip(item, false, eslot)
         else
-            inventory:DropItem(current, true, true)
+            if equipped_item ~= nil then
+                equipped_item = wx_inventory:Unequip(eslot)
+                giver_inventory:GiveActiveItem(equipped_item)
+            end
+            wx_inventory:Equip(item, false, eslot)
         end
 
-        inventory:Equip(item)
-        if inst.brain ~= nil and inst.brain.bt ~= nil then
-            inst.brain.bt:Reset()
-        end
-        if inst.components.wxtype:IsConv() then
-            inst.components.entitytracker:ForgetEntity("sentryward")
-        elseif inst.components.wxtype:IsSeaConv() then
-            inst.components.entitytracker:ForgetEntity("shipyard")
-        end
-        inst.components.wxnavigation.engaged = false
-        inst.components.locomotor:Stop()
+        OnEquipmentChanged(inst)
     end
 end
 
@@ -127,11 +381,115 @@ function params.wx.widget.buttoninfo.fn(inst, doer)
     end
 end
 
+-- Original code is from "WX Automation Patch" by wiefean.
+-- https://steamcommunity.com/sharedfiles/filedetails/?id=3385430772
+
+local function OnWXEquipedFn(doer, target, data)
+    if doer.player_classified ~= nil and doer.player_classified.wxequipwidget ~= nil and doer.player_classified.wxequipwidget[data.eslot] and
+        data.item and data.item.components.equippable and not data.item.components.equippable:IsRestricted(target) then
+        if data.item.Network ~= nil then
+            data.item.Network:SetClassifiedTarget(doer)
+        end
+        doer.player_classified.wxequipwidget[data.eslot]:set(data.item)
+    end
+end
+
+local function OnWXUnequipedFn(doer, target, data)
+    if doer.player_classified.wxequipwidget ~= nil and doer.player_classified.wxequipwidget[data.eslot] ~= nil and
+        data.item ~= nil and data.item.components.equippable ~= nil then
+        if data.item.Network ~= nil then
+            data.item.Network:SetClassifiedTarget(nil)
+        end
+        doer.player_classified.wxequipwidget[data.eslot]:set(nil)
+    end
+end
+
+local function ShowEquipBar(doer, target)
+    if doer.player_classified ~= nil and doer.player_classified.wxequipwidget ~= nil then
+        doer.player_classified.wxequipwidget["isvisible"]:set(true)
+        doer.player_classified.wxequipwidget["target"]:set(target)
+
+        if target.components.inventory ~= nil then
+            for _, eslot in pairs(EQUIPSLOTS) do
+                if doer.player_classified.wxequipwidget[eslot] ~= nil then
+                    if target.replica.inventory ~= nil and target.replica.inventory.classified ~= nil then
+                        target.replica.inventory.classified.Network:SetClassifiedTarget(doer)
+                    end
+                    local item = target.components.inventory:GetEquippedItem(eslot)
+                    if item ~= nil and item.components.inventoryitem ~= nil then
+                        item.components.inventoryitem:SetOwner(doer)
+                    end
+                    doer.player_classified.wxequipwidget[eslot]:set(item)
+
+                    if item ~= nil then
+                        if item.components.armor ~= nil then
+                            item:PushEvent("percentusedchange", { percent = item.components.armor:GetPercent() })
+                        end
+                        if item.components.finiteuses ~= nil then
+                            item:PushEvent("percentusedchange", { percent = item.components.finiteuses:GetPercent() })
+                        end
+                        if item.components.fueled ~= nil then
+                            item:PushEvent("percentusedchange", { percent = item.components.fueled:GetPercent() })
+                        end
+                        if item.components.perishable ~= nil then
+                            item:PushEvent("perishchange", { percent = item.components.perishable:GetPercent() })
+                        end
+                        --if item.components.rechargeable ~= nil then
+                            --item:PushEvent("rechargechange", { percent = item.components.rechargeable:GetPercent() })
+                        --end
+                    end
+                end
+            end
+        end
+    end
+
+    if doer.OnWXEquiped == nil then
+        doer.OnWXEquiped = function(target, data) OnWXEquipedFn(doer, target, data) end
+    end
+    if doer.OnWXUnequiped == nil then
+        doer.OnWXUnequiped = function(target, data) OnWXUnequipedFn(doer, target, data) end
+    end
+
+    doer:ListenForEvent("equip", doer.OnWXEquiped, target)
+    doer:ListenForEvent("unequip", doer.OnWXUnequiped, target)
+end
+
+local function HideEquipBar(doer, target)
+    if doer.player_classified ~= nil and doer.player_classified.wxequipwidget ~= nil then
+        doer.player_classified.wxequipwidget["isvisible"]:set(false)
+        doer.player_classified.wxequipwidget["target"]:set(nil)
+
+        for _, eslot in pairs(EQUIPSLOTS) do
+            if doer.player_classified.wxequipwidget[eslot] ~= nil then
+                if target.replica.inventory ~= nil and target.replica.inventory.classified ~= nil then
+                    target.replica.inventory.classified.Network:SetClassifiedTarget(target.replica.inventory.classified)
+                end
+                local item = target.components.inventory:GetEquippedItem(eslot)
+                if item ~= nil and item.components.inventoryitem ~= nil then
+                    item.components.inventoryitem:SetOwner(target)
+                end
+                doer.player_classified.wxequipwidget[eslot]:set(nil)
+            end
+        end
+    end
+
+    if doer.OnWXEquiped ~= nil then
+        doer:RemoveEventCallback("equip", doer.OnWXEquiped, target)
+    end
+    if doer.OnWXUnequiped ~= nil then
+        doer:RemoveEventCallback("unequip", doer.OnWXUnequiped, target)
+    end
+end
+
 local function OnOpen(inst, data)
     inst.SoundEmitter:PlaySound("dontstarve/common/icebox_open")
-    if data == nil or data.doer == nil or not data.doer:HasTag("player") then
+    if data == nil or data.doer == nil or not (data.doer:HasTag("player") or data.doer:HasTag("wx")) then
         return
     end
+
+    inst.components.wxnavigation.noreceiver = false
+    inst.brain:Pause()
+    inst.components.locomotor:Stop()
 
     local backpack = inst.components.inventory:GetEquippedItem(EQUIPSLOTS.BODY)
     if backpack ~= nil and backpack.components.container ~= nil then
@@ -160,14 +518,20 @@ local function OnOpen(inst, data)
         end
     end
 
-    inst.components.wxnavigation.noreceiver = false
+    if data.doer and data.doer:HasTag("player") then
+        ShowEquipBar(data.doer, inst)
+    end
 end
 
 local function OnClose(inst, doer)
     inst.SoundEmitter:PlaySound("dontstarve/common/icebox_close")
-    if doer == nil or not doer:HasTag("player") then
+    if doer == nil or not (doer:HasTag("player") or doer:HasTag("wx")) then
         return
     end
+
+    inst.components.wxnavigation.noreceiver = false
+    inst.brain.bt:Reset()
+    inst.brain:Resume()
 
     local backpack = inst.components.inventory:GetEquippedItem(EQUIPSLOTS.BODY)
     if backpack ~= nil and backpack.components.container ~= nil then
@@ -188,7 +552,9 @@ local function OnClose(inst, doer)
         end
     end
 
-    inst.components.wxnavigation.noreceiver = false
+    if doer and doer:HasTag("player") then
+        HideEquipBar(doer, inst)
+    end
 end
 
 --------------------------
@@ -415,7 +781,7 @@ end
 local function OnUpgradeModuleChargeChanged(inst, data)
     -- The regen timer gets reset every time the energy level changes, whether it was by the regen timer or not.
     inst.components.timer:StopTimer(CHARGEREGEN_TIMERNAME)
-    
+
     if not inst.components.upgrademoduleowner:ChargeIsMaxed() then
         inst.components.timer:StartTimer(CHARGEREGEN_TIMERNAME, TUNING.WX78_CHARGE_REGENTIME)
 
@@ -432,7 +798,23 @@ local function OnUpgradeModuleChargeChanged(inst, data)
     end
 end
 
+local function on_charge_level_changed(self, new_charge, old_charge)
+    if self.inst.currentenergylevel ~= nil then
+        self.inst.currentenergylevel:set(new_charge)
+    end
+end
+
 ----------------------------------------------------------------
+local function CLIENT_GetEnergyLevel(inst)
+    if inst.components.upgrademoduleowner ~= nil then
+        return inst.components.upgrademoduleowner.charge_level
+    elseif inst.currentenergylevel ~= nil then
+        return inst.currentenergylevel:value()
+    else
+        return 0
+    end
+end
+
 local function get_plugged_module_indexes(inst)
     local upgrademodule_defindexes = {}
     for _, module in ipairs(inst.components.upgrademoduleowner.modules) do
@@ -447,6 +829,87 @@ local function get_plugged_module_indexes(inst)
     return upgrademodule_defindexes
 end
 
+--local DEFAULT_ZEROS_MODULEDATA = {0, 0, 0, 0, 0, 0}
+local DEFAULT_ZEROS_MODULEDATA = {}
+for netvar_index = 1, TUNING.WX78_MAXELECTRICCHARGE do
+    table.insert(DEFAULT_ZEROS_MODULEDATA, 0)
+end
+local function CLIENT_GetModulesData(inst)
+    local data = nil
+
+    if inst.components.upgrademoduleowner ~= nil then
+        data = get_plugged_module_indexes(inst)
+    elseif inst.upgrademodules ~= nil then
+        data = {}
+        for _, module_netvar in ipairs(inst.upgrademodules) do
+            table.insert(data, module_netvar:value())
+        end
+    else
+        data = DEFAULT_ZEROS_MODULEDATA
+    end
+
+    return data
+end
+
+local function CLIENT_GetDisplayNameWithEnergyLevelAndModulesData(inst)
+    local displayname = inst:GetWXDisplayName()
+    local energyleveldata = CLIENT_GetEnergyLevel(inst)
+    displayname = displayname .. " " .. tostring(energyleveldata) .. "/" .. tostring(TUNING.WX78_MAXELECTRICCHARGE)
+    local modulesdata = CLIENT_GetModulesData(inst)
+    local module_prefabs = {}
+    for _, module_netid in ipairs(modulesdata) do
+        if module_netid > 0 and GetWX78ModuleByNetID(module_netid) ~= nil then
+            if table.containskey(module_prefabs, GetWX78ModuleByNetID(module_netid).name) then
+                module_prefabs[GetWX78ModuleByNetID(module_netid).name] = module_prefabs[GetWX78ModuleByNetID(module_netid).name] + 1
+            else
+                module_prefabs[GetWX78ModuleByNetID(module_netid).name] = 1
+            end
+        end
+    end
+    for module_prefab, counts in pairs(module_prefabs) do
+        displayname = displayname.."\n"..STRINGS.NAMES[string.upper("wx78module_"..module_prefab)].." x"..tostring(counts)
+    end
+    return displayname
+end
+
+local function CLIENT_CanUpgradeWithModule(inst, module_prefab)
+    if module_prefab == nil then
+        return false
+    end
+
+    local slots_inuse = (module_prefab._slots or 0)
+
+    if inst.components.upgrademoduleowner ~= nil then
+        for _, module in ipairs(inst.components.upgrademoduleowner.modules) do
+            local modslots = (module.components.upgrademodule ~= nil and module.components.upgrademodule.slots)
+                or 0
+            slots_inuse = slots_inuse + modslots
+        end
+    elseif inst.upgrademodules ~= nil then
+        for _, module_netvar in ipairs(inst.upgrademodules) do
+            local module_definition = GetWX78ModuleByNetID(module_netvar:value())
+            if module_definition ~= nil then
+                slots_inuse = slots_inuse + module_definition.slots
+            end
+        end
+    else
+        return false
+    end
+
+    return (TUNING.WX78_MAXELECTRICCHARGE - slots_inuse) >= 0
+end
+
+local function CLIENT_CanRemoveModules(inst)
+    if inst.components.upgrademoduleowner ~= nil then
+        return inst.components.upgrademoduleowner:NumModules() > 0
+    elseif inst.upgrademodules ~= nil then
+        -- Assume that, if the first module slot netvar is 0, we have no modules.
+        return inst.upgrademodules[1]:value() ~= 0
+    else
+        return false
+    end
+end
+
 ----------------------------------------------------------------
 local function OnUpgradeModuleAdded(inst, moduleent)
     local slots_for_module = moduleent.components.upgrademodule.slots
@@ -455,9 +918,9 @@ local function OnUpgradeModuleAdded(inst, moduleent)
     local upgrademodule_defindexes = get_plugged_module_indexes(inst)
 
     inst:PushEvent("upgrademodulesdirty", upgrademodule_defindexes)
-    if inst.player_classified ~= nil then
+    if inst.upgrademodules ~= nil then
         local newmodule_index = inst.components.upgrademoduleowner:NumModules()
-        inst.player_classified.upgrademodules[newmodule_index]:set(moduleent._netid or 0)
+        inst.upgrademodules[newmodule_index]:set(moduleent._netid or 0)
     end
 end
 
@@ -474,11 +937,11 @@ end
 
 local function OnOneUpgradeModulePopped(inst, moduleent)
     inst:PushEvent("upgrademodulesdirty", get_plugged_module_indexes(inst))
-    if inst.player_classified ~= nil then
+    if inst.upgrademodules ~= nil then
         -- This is a callback of the remove, so our current NumModules should be
         -- 1 lower than the index of the module that was just removed.
         local top_module_index = inst.components.upgrademoduleowner:NumModules() + 1
-        inst.player_classified.upgrademodules[top_module_index]:set(0)
+        inst.upgrademodules[top_module_index]:set(0)
     end
 end
 
@@ -487,13 +950,18 @@ local function OnAllUpgradeModulesRemoved(inst)
 
     inst:PushEvent("upgrademoduleowner_popallmodules")
 
-    if inst.player_classified ~= nil then
-        inst.player_classified.upgrademodules[1]:set(0)
-        inst.player_classified.upgrademodules[2]:set(0)
-        inst.player_classified.upgrademodules[3]:set(0)
-        inst.player_classified.upgrademodules[4]:set(0)
-        inst.player_classified.upgrademodules[5]:set(0)
-        inst.player_classified.upgrademodules[6]:set(0)
+    --[[if inst.upgrademodules ~= nil then
+        inst.upgrademodules[1]:set(0)
+        inst.upgrademodules[2]:set(0)
+        inst.upgrademodules[3]:set(0)
+        inst.upgrademodules[4]:set(0)
+        inst.upgrademodules[5]:set(0)
+        inst.upgrademodules[6]:set(0)
+    end]]
+    if inst.upgrademodules ~= nil then
+        for _, module_netvar in ipairs(inst.upgrademodules) do
+            module_netvar:set(0)
+        end
     end
 end
 
@@ -574,6 +1042,19 @@ local function OnTimerFinished(inst, data)
         do_chargeregen_update(inst)
     elseif data.name == HEATSTEAM_TIMERNAME then
         do_steam_fx(inst)
+    elseif data.name == CLEAR_COLLISION_TIMERNAME then
+        inst.Physics:ClearCollidesWith(COLLISION.OBSTACLES)
+        inst.Physics:ClearCollidesWith(COLLISION.SMALLOBSTACLES)
+        if inst.components.timer:TimerExists(RESTORE_COLLISION_TIMERNAME) then
+            inst.components.timer:SetTimeLeft(RESTORE_COLLISION_TIMERNAME, 2)
+        else
+            inst.components.timer:StartTimer(RESTORE_COLLISION_TIMERNAME, 2)
+        end
+    elseif data.name == COLLISION_DEAMON_TIMERNAM then
+        inst.components.timer:StopTimer(CLEAR_COLLISION_TIMERNAME)
+    elseif data.name == RESTORE_COLLISION_TIMERNAME then
+        inst.Physics:CollidesWith(COLLISION.OBSTACLES)
+        inst.Physics:CollidesWith(COLLISION.SMALLOBSTACLES)
     end
 end
 
@@ -717,6 +1198,11 @@ local function onbuilt(inst)
         inst.SoundEmitter:PlaySound("dontstarve/common/icebox_craft")
         inst.components.talker:Say(GetString(inst, "ANNOUNCE_BUILT"))
     end)
+
+    if not inst.components.upgrademoduleowner:ChargeIsMaxed() then
+        inst.components.timer:StartTimer(CHARGEREGEN_TIMERNAME, TUNING.WX78_CHARGE_REGENTIME)
+    end
+
     inst:AddComponent("skinner")
     inst.components.skinner:SetSkinName("wx78_none", true)
 end
@@ -735,7 +1221,7 @@ end
 local function OnHammeredFinished(inst, worker)
     if inst.components.sailor ~= nil and inst.components.sailor:IsSailing() and
         inst.components.sailor:GetBoat() ~= nil then
-        inst.components.sailor:Disembark(nil, false)
+        inst.components.sailor:Disembark()
     end
 
     if inst.components.rider:IsRiding() then
@@ -934,324 +1420,352 @@ end
 -- Main Function --
 -------------------
 local function fn()
-        local inst = CreateEntity()
+    local inst = CreateEntity()
 
-        inst.entity:AddTransform()
-        inst.entity:AddAnimState()
-        inst.entity:AddSoundEmitter()
-        inst.entity:AddDynamicShadow()
-        inst.entity:AddMiniMapEntity()
-        inst.entity:AddLight()
-        inst.entity:AddNetwork()
+    inst.entity:AddTransform()
+    inst.entity:AddAnimState()
+    inst.entity:AddSoundEmitter()
+    inst.entity:AddDynamicShadow()
+    inst.entity:AddMiniMapEntity()
+    inst.entity:AddLight()
+    inst.entity:AddNetwork()
 
-        inst.Transform:SetFourFaced()
+    inst.Transform:SetFourFaced()
 
-        inst.AnimState:SetBank("wilson")
-        inst.AnimState:SetBuild("wx78")
-        inst.AnimState:PlayAnimation("idle")
+    inst.AnimState:SetBank("wilson")
+    inst.AnimState:SetBuild("wx78")
+    inst.AnimState:PlayAnimation("idle")
 
-        inst.AnimState:Hide("ARM_carry")
-        inst.AnimState:Hide("HAT")
-        inst.AnimState:Hide("HAIR_HAT")
-        inst.AnimState:Hide("HEAD_HAT")
-		inst.AnimState:Hide("HEAD_HAT_NOHELM")
-		inst.AnimState:Hide("HEAD_HAT_HELM")
-        inst.AnimState:Show("HAIR_NOHAT")
-        inst.AnimState:Show("HAIR")
-        inst.AnimState:Show("HEAD")
+    inst.AnimState:Hide("ARM_carry")
+    inst.AnimState:Hide("HAT")
+    inst.AnimState:Hide("HAIR_HAT")
+    inst.AnimState:Hide("HEAD_HAT")
+    inst.AnimState:Hide("HEAD_HAT_NOHELM")
+    inst.AnimState:Hide("HEAD_HAT_HELM")
+    inst.AnimState:Show("HAIR_NOHAT")
+    inst.AnimState:Show("HAIR")
+    inst.AnimState:Show("HEAD")
 
-        inst.AnimState:OverrideSymbol("fx_wipe", "wilson_fx", "fx_wipe")
-        inst.AnimState:OverrideSymbol("fx_liquid", "wilson_fx", "fx_liquid")
-        inst.AnimState:OverrideSymbol("shadow_hands", "shadow_hands", "shadow_hands")
-        inst.AnimState:OverrideSymbol("snap_fx", "player_actions_fishing_ocean_new", "snap_fx")
+    inst.AnimState:OverrideSymbol("fx_wipe", "wilson_fx", "fx_wipe")
+    inst.AnimState:OverrideSymbol("fx_liquid", "wilson_fx", "fx_liquid")
+    inst.AnimState:OverrideSymbol("shadow_hands", "shadow_hands", "shadow_hands")
+    inst.AnimState:OverrideSymbol("snap_fx", "player_actions_fishing_ocean_new", "snap_fx")
 
-        --Additional effects symbols for hit_darkness animation
-        inst.AnimState:AddOverrideBuild("player_hit_darkness")
-        inst.AnimState:AddOverrideBuild("player_receive_gift")
-        inst.AnimState:AddOverrideBuild("player_actions_uniqueitem")
-        inst.AnimState:AddOverrideBuild("player_wrap_bundle")
-        inst.AnimState:AddOverrideBuild("player_lunge")
-        inst.AnimState:AddOverrideBuild("player_attack_leap")
-        inst.AnimState:AddOverrideBuild("player_superjump")
-        inst.AnimState:AddOverrideBuild("player_multithrust")
-        inst.AnimState:AddOverrideBuild("player_parryblock")
-        inst.AnimState:AddOverrideBuild("player_emote_extra")
-        inst.AnimState:AddOverrideBuild("player_boat_plank")
-        inst.AnimState:AddOverrideBuild("player_boat_net")
-        inst.AnimState:AddOverrideBuild("player_boat_sink")
-        inst.AnimState:AddOverrideBuild("player_oar")
+    --Additional effects symbols for hit_darkness animation
+    inst.AnimState:AddOverrideBuild("player_hit_darkness")
+    inst.AnimState:AddOverrideBuild("player_receive_gift")
+    inst.AnimState:AddOverrideBuild("player_actions_uniqueitem")
+    inst.AnimState:AddOverrideBuild("player_wrap_bundle")
+    inst.AnimState:AddOverrideBuild("player_lunge")
+    inst.AnimState:AddOverrideBuild("player_attack_leap")
+    inst.AnimState:AddOverrideBuild("player_superjump")
+    inst.AnimState:AddOverrideBuild("player_multithrust")
+    inst.AnimState:AddOverrideBuild("player_parryblock")
+    inst.AnimState:AddOverrideBuild("player_emote_extra")
+    inst.AnimState:AddOverrideBuild("player_boat_plank")
+    inst.AnimState:AddOverrideBuild("player_boat_net")
+    inst.AnimState:AddOverrideBuild("player_boat_sink")
+    inst.AnimState:AddOverrideBuild("player_oar")
 
-        inst.AnimState:AddOverrideBuild("player_actions_fishing_ocean_new")
-        inst.AnimState:AddOverrideBuild("player_actions_farming")
-        inst.AnimState:AddOverrideBuild("player_actions_cowbell")
+    inst.AnimState:AddOverrideBuild("player_actions_fishing_ocean_new")
+    inst.AnimState:AddOverrideBuild("player_actions_farming")
+    inst.AnimState:AddOverrideBuild("player_actions_cowbell")
 
-        inst.DynamicShadow:SetSize(1.3, .6)
+    inst.DynamicShadow:SetSize(1.3, .6)
 
-        inst.MiniMapEntity:SetIcon("wx78.png")
-        inst.MiniMapEntity:SetPriority(10)
-        inst.MiniMapEntity:SetCanUseCache(false)
-        inst.MiniMapEntity:SetDrawOverFogOfWar(true)
+    inst.MiniMapEntity:SetIcon("wx78.png")
+    inst.MiniMapEntity:SetPriority(10)
+    inst.MiniMapEntity:SetCanUseCache(false)
+    inst.MiniMapEntity:SetDrawOverFogOfWar(true)
 
-        inst.Light:Enable(false)
-        inst.Light:SetRadius(2)
-        inst.Light:SetFalloff(0.75)
-        inst.Light:SetIntensity(.9)
-        inst.Light:SetColour(235 / 255, 121 / 255, 12 / 255)
+    inst.Light:Enable(false)
+    inst.Light:SetRadius(2)
+    inst.Light:SetFalloff(0.75)
+    inst.Light:SetIntensity(.9)
+    inst.Light:SetColour(235 / 255, 121 / 255, 12 / 255)
 
-        MakeCharacterPhysics(inst, 75, .5)
+    MakeCharacterPhysics(inst, 75, .5)
 
-        inst.isplayer = true
+    inst.isplayer = true
 
-        inst:AddTag("character")
-        inst:AddTag("wx")
-        inst:AddTag("companion")
-        inst:AddTag("chessfriend")
-        inst:AddTag("lightningtarget")
-        inst:AddTag("soulless")
-        inst:AddTag("notraptrigger")
-        inst:AddTag("scarytoprey")
-        inst:AddTag("devourable")
-        inst:AddTag("NOBLOCK")
-        inst:AddTag("multiplayer_portal")
+    inst:AddTag("character")
+    inst:AddTag("wx")
+    inst:AddTag("companion")
+    inst:AddTag("chessfriend")
+    inst:AddTag("lightningtarget")
+    inst:AddTag("soulless")
+    inst:AddTag("notraptrigger")
+    inst:AddTag("scarytoprey")
+    inst:AddTag("devourable")
+    inst:AddTag("NOBLOCK")
+    inst:AddTag("multiplayer_portal")
 
-        inst.entity:SetPristine()
+    inst.soundsname = "wx78"
+    inst:AddComponent("talker")
+    inst.components.talker.fontsize = 35
+    inst.components.talker.font = TALKINGFONT
+    inst.components.talker.offset = Vector3(0,-400,0)
+    inst.components.talker:StopIgnoringAll()
 
-        inst.soundsname = "wx78"
-        inst:AddComponent("talker")
-        inst.components.talker.fontsize = 35
-        inst.components.talker.font = TALKINGFONT
-        inst.components.talker.offset = Vector3(0,-400,0)
-        inst.components.talker:StopIgnoringAll()
+    inst.currentenergylevel = net_smallbyte(inst.GUID, "upgrademodules.currentenergylevel", "upgrademoduleenergyupdate")
+    --[[inst.upgrademodules = {
+        net_smallbyte(inst.GUID, "upgrademodules.mods1", "upgrademoduleslistdirty"),
+        net_smallbyte(inst.GUID, "upgrademodules.mods2", "upgrademoduleslistdirty"),
+        net_smallbyte(inst.GUID, "upgrademodules.mods3", "upgrademoduleslistdirty"),
+        net_smallbyte(inst.GUID, "upgrademodules.mods4", "upgrademoduleslistdirty"),
+        net_smallbyte(inst.GUID, "upgrademodules.mods5", "upgrademoduleslistdirty"),
+        net_smallbyte(inst.GUID, "upgrademodules.mods6", "upgrademoduleslistdirty"),
+    }]]
+    inst.upgrademodules = {}
+    for netvar_index = 1, TUNING.WX78_MAXELECTRICCHARGE do
+        table.insert(inst.upgrademodules, net_smallbyte(inst.GUID, "upgrademodules.mods"..tostring(netvar_index), "upgrademoduleslistdirty"))
+    end
 
-        ----------------------------------------------------------------
-        if not TheWorld.ismastersim then
-            return inst
-        end
+    inst.GetWXDisplayName = inst.GetDisplayName
+    inst.GetDisplayName = CLIENT_GetDisplayNameWithEnergyLevelAndModulesData
 
-        inst.entity:SetCanSleep(false)
+    inst.entity:SetPristine()
 
-        ----------------------------------------------------------------
-        inst._chip_inuse = 0
-        inst._moisture_steps = 0
-        inst._temperature_modulelean = 0
-        inst._num_frostybreath_modules = 0
-        
-        ----------------------------------------------------------------
-        inst.spark_task = nil
-        inst.spark_time = 0
-        inst.spark_time_offset = 3
-
-        ----------------------------------------------------------------
-        inst.ShakeCamera = function(inst, mode, duration, speed, scale, source_or_pt, maxDist) end
-        inst.AddCameraExtraDistance = function(inst, source, distance, key) end
-        inst.RemoveCameraExtraDistance = function(inst, source, key) end
-
-        ----------------------------------------------------------------
-        inst:AddComponent("inspectable")
-
-        inst:AddComponent("maprevealable")
-        inst.components.maprevealable:AddRevealSource(inst, "wxtracker")
-        inst.components.maprevealable:SetIconPriority(10)
-        inst.components.maprevealable:SetIconPrefab("globalmapiconunderfog")
-        inst:AddComponent("areaaware")
-        inst.components.areaaware:SetUpdateDist(.45)
-
-        inst:AddComponent("inventory")
-        inst.components.inventory.maxslots = 15
-
-        inst:AddComponent("container")
-        inst.components.container:WidgetSetup("wx")
-        inst.components.container.slots = inst.components.inventory.itemslots
-        inst.components.container.onopenfn = OnOpen
-        inst.components.container.onclosefn = OnClose
-        inst.components.container.skipclosesnd = true
-        inst.components.container.skipopensnd = true
-        inst.components.container.OnSave = function(self)
-            local data = {items = {}}
-            local references = {}
-            return data, references
-        end
-
-        inst:AddComponent("trader")
-        inst.components.trader.acceptnontradable = true
-        inst.components.trader:SetAcceptTest(ShouldAcceptItem)
-        inst.components.trader.onaccept = OnGetItemFromPlayer
-        inst.components.trader.onrefuse = OnRefuseItem
-        inst.components.trader.deleteitemonaccept = false
-
-        inst:AddComponent("lootdropper")
-
-        inst:AddComponent("workable")
-        inst.components.workable:SetWorkAction(ACTIONS.HAMMER)
-        inst.components.workable:SetWorkLeft(4)
-        inst.components.workable:SetOnFinishCallback(OnHammeredFinished)
-        inst.components.workable:SetOnWorkCallback(OnHammered)
-
-        inst:AddComponent("locomotor")
-        inst.components.locomotor.pathcaps = { ignorecreep = true }
-        inst.components.locomotor:SetSlowMultiplier(.6)
-        inst.components.locomotor.walkspeed = TUNING.WILSON_WALK_SPEED
-        inst.components.locomotor.runspeed = TUNING.WILSON_RUN_SPEED
-        inst.components.locomotor.fasteronroad = true
-        inst.components.locomotor:SetTriggersCreep(true)
-        inst.components.locomotor:SetAllowPlatformHopping(true)
-        inst:AddComponent("embarker")
-        inst:AddComponent("drownable")
-
-        inst:AddComponent("follower")
-        inst.components.follower.leader = nil
-        inst.components.follower:KeepLeaderOnAttacked()
-        inst.components.follower.keepdeadleader = true
-        inst.components.follower.keepleaderduringminigame = true
-
-        inst:AddComponent("entitytracker")
-
-        inst:AddComponent("health")
-        inst.components.health:SetMaxHealth(TUNING.WX78_HEALTH)
-        inst.components.health.canheal = false
-
-        inst:AddComponent("repairable")
-        inst.components.repairable.repairmaterial = MATERIALS.GEARS
-        inst.components.repairable.onrepaired = OnRepaired
-
-        inst:AddComponent("combat")
-        inst.components.combat.hiteffectsymbol = "torso"
-        inst.components.combat:SetDefaultDamage(TUNING.UNARMED_DAMAGE)
-        inst.components.combat:SetAttackPeriod(TUNING.WILSON_ATTACK_PERIOD)
-        inst.components.combat:SetRange(TUNING.DEFAULT_ATTACK_RANGE)
-        inst.components.combat:SetRetargetFunction(2, retargetfn)
-        inst.components.combat:SetKeepTargetFunction(keeptargetfn)
-        inst.components.combat:SetNoAggroTags(NO_AGGRO_TAGS)
-
-        inst:AddComponent("pinnable")
-
-        ----------------------------------------------------------------
-        inst:AddComponent("upgrademoduleowner")
-        inst.components.upgrademoduleowner.onmoduleadded = OnUpgradeModuleAdded
-        inst.components.upgrademoduleowner.onmoduleremoved = OnUpgradeModuleRemoved
-        inst.components.upgrademoduleowner.ononemodulepopped = OnOneUpgradeModulePopped
-        inst.components.upgrademoduleowner.onallmodulespopped = OnAllUpgradeModulesRemoved
-        inst.components.upgrademoduleowner.canupgradefn = CanUseUpgradeModule
-        inst.components.upgrademoduleowner:SetChargeLevel(3)
-
-        inst:ListenForEvent("energylevelupdate", OnUpgradeModuleChargeChanged)
-
-        -- Add the Sanity component only for the music module
-        -- It is not checked in wx78_moduledefs.lua at line 501
-        inst:AddComponent("sanity")
-        inst:StopUpdatingComponent(inst.components.sanity)
-        -- Empty LongUpdate function to prevent using LightWatcher
-        inst.components.sanity.LongUpdate = function() end
-
-        ----------------------------------------------------------------
-        MakeLargeFreezableCharacter(inst, "torso")
-        inst.components.freezable:SetResistance(4)
-        inst.components.freezable:SetDefaultWearOffTime(TUNING.PLAYER_FREEZE_WEAR_OFF_TIME)
-        inst.components.freezable.onfreezefn = OnFrozen
-
-        inst:AddComponent("rider")
-        inst:AddComponent("builder")
-
-        inst:AddComponent("temperature")
-        inst.components.temperature:SetFreezingHurtRate(0)
-        inst.components.temperature:SetOverheatHurtRate(0)
-        if GetGameModeProperty("no_temperature") then
-            inst.components.temperature:SetTemp(TUNING.STARTING_TEMP)
-        end
-
-        inst:AddComponent("moisture")
-        inst:AddComponent("sheltered")
-        inst:AddComponent("stormwatcher")
-        inst.GetStormLevel = function(inst) return inst.components.stormwatcher:GetStormLevel() end
-        inst:AddComponent("sandstormwatcher")
-        inst.components.sandstormwatcher.UpdateSandstormWalkSpeed_Internal = UpdateSandstormWalkSpeed_Internal
-        inst:AddComponent("moonstormwatcher")
-        inst.components.moonstormwatcher.UpdateMoonstormWalkSpeed_Internal = UpdateMoonstormWalkSpeed_Internal
-        inst:AddComponent("miasmawatcher")
-        inst.components.miasmawatcher.UpdateMiasmaWalkSpeed = UpdateMiasmaWalkSpeed
-        inst.IsInMiasma = function(inst) return inst.components.miasmawatcher:IsInMiasma() end
-        inst.IsInAnyStormOrCloud = function(inst)
-            return inst.components.stormwatcher:GetStormLevel() >= TUNING.SANDSTORM_FULL_LEVEL or
-                inst.components.miasmawatcher:IsInMiasma()
-        end
-        inst:AddComponent("acidlevel")
-        inst:AddComponent("carefulwalker")
-
-        inst:AddComponent("playerlightningtarget")
-        inst.components.playerlightningtarget:SetHitChance(TUNING.WX78_LIGHTNING_TARGET_CHANCE)
-        inst.components.playerlightningtarget:SetOnStrikeFn(OnLightningStrike)
-
-        inst:AddComponent("timer")
-
-        inst:AddComponent("preserver")
-        inst.components.preserver:SetPerishRateMultiplier(ModuleBasedPreserverRateFn)
-
-        inst:AddComponent("heater")
-        inst.components.heater:SetThermics(false, false)
-        inst.components.heater.heatfn = GetThermicTemperatureFn
-
-        inst:AddComponent("wardrobe")
-        inst.components.wardrobe.ActivateChanging = ActivateChanging
-        inst.components.wardrobe.BeginChanging = BeginChanging
-        inst.components.wardrobe.ondressupfn = ondressupfn
-        inst.components.wardrobe:SetCanBeDressed(true)
-
-        ----------------------------------------------------------------
-        inst:AddComponent("wxtype")
-
-        inst:AddComponent("wxmilitary")
-        inst:AddComponent("wxnavigation")
-        inst:AddComponent("astarpathfinding")
-        inst:AddComponent("wxagriculture")
-        inst:AddComponent("wxhorticulture")
-        inst:AddComponent("wxarboriculture")
-        inst:AddComponent("wxapiculture")
-        inst:AddComponent("wxaquaculture")
-        inst:AddComponent("wxmachineindustry")
-        inst:AddComponent("wxminingindustry")
-        inst:AddComponent("wxpastoralism")
-        inst:AddComponent("wxfoodindustry")
-        inst:AddComponent("wxmoonindustry")
-
-        inst:AddComponent("hauntable")
-        inst.components.hauntable:SetHauntValue(TUNING.HAUNT_INSTANT_REZ)
-        inst.components.hauntable:SetOnHauntFn(OnHaunt)
-
-        -- Shipwercked
-        if KnownModIndex:IsModEnabled("workshop-1467214795") then
-            inst:AddComponent("sailor")
-            inst:AddComponent("drydrownable")
-            inst:AddComponent("waveobstacle")
-            inst:AddComponent("wxmariculture")
-        end
-
-        ----------------------------------------------------------------
-        inst:SetBrain(brain)
-        inst:SetStateGraph("SGwx")
-
-        ----------------------------------------------------------------
-        inst:ListenForEvent("onbuilt", onbuilt)
-        inst:ListenForEvent("death", OnDeath)
-        inst:ListenForEvent("attacked", OnAttacked)
-        inst:ListenForEvent("weaponbroke", OnWeaponBroke)
-        inst:ListenForEvent("itemranout", OnWeaponBroke)
-        inst:ListenForEvent("armorbroke", OnArmorBroke)
-        inst:ListenForEvent("moisturedelta", OnWetnessChanged)
-        inst:ListenForEvent("dismount", OnDismount)
-        inst:ListenForEvent("bucked", OnBucked)
-        inst:ListenForEvent("timerdone", OnTimerFinished)
-
-        -- Shipwercked
-        inst:ListenForEvent("weaponfired", OnWeaponFired)
-
-        ----------------------------------------------------------------
-        inst.AddTemperatureModuleLeaning = AddTemperatureModuleLeaning
-
-        inst.OnSave = OnSave
-        inst.OnLoad = OnLoad
-        inst.OnRemoveEntity = OnRemoveEntity
-
+    ----------------------------------------------------------------
+    if not TheWorld.ismastersim then
         return inst
+    end
+
+    inst.entity:SetCanSleep(false)
+    inst.Physics:SetCollisionCallback(oncollide)
+
+    ----------------------------------------------------------------
+    inst._chip_inuse = 0
+    inst._moisture_steps = 0
+    inst._temperature_modulelean = 0
+    inst._num_frostybreath_modules = 0
+    
+    ----------------------------------------------------------------
+    inst.spark_task = nil
+    inst.spark_time = 0
+    inst.spark_time_offset = 3
+
+    ----------------------------------------------------------------
+    inst.ShakeCamera = function(inst, mode, duration, speed, scale, source_or_pt, maxDist) end
+    inst.AddCameraExtraDistance = function(inst, source, distance, key) end
+    inst.RemoveCameraExtraDistance = function(inst, source, key) end
+
+    ----------------------------------------------------------------
+    inst:AddComponent("inspectable")
+
+    inst:AddComponent("maprevealable")
+    inst.components.maprevealable:AddRevealSource(inst, "wxtracker")
+    inst.components.maprevealable:SetIconPriority(10)
+    inst.components.maprevealable:SetIconPrefab("globalmapiconunderfog")
+    inst:AddComponent("areaaware")
+    inst.components.areaaware:SetUpdateDist(.45)
+
+    inst:AddComponent("inventory")
+    inst.components.inventory.maxslots = 15
+
+    inst:AddComponent("container")
+    inst.components.container:WidgetSetup("wx")
+    inst.components.container.slots = inst.components.inventory.itemslots
+    inst.components.container.onopenfn = OnOpen
+    inst.components.container.onclosefn = OnClose
+    inst.components.container.skipclosesnd = true
+    inst.components.container.skipopensnd = true
+    inst.components.container.OnSave = function(self)
+        local data = {items = {}}
+        local references = {}
+        return data, references
+    end
+
+    inst:AddComponent("trader")
+    inst.components.trader.acceptnontradable = true
+    inst.components.trader:SetAcceptTest(ShouldAcceptItem)
+    inst.components.trader.onaccept = OnGetItemFromPlayer
+    inst.components.trader.onrefuse = OnRefuseItem
+    inst.components.trader.deleteitemonaccept = false
+
+    inst:AddComponent("lootdropper")
+
+    inst:AddComponent("workable")
+    inst.components.workable:SetWorkAction(ACTIONS.HAMMER)
+    inst.components.workable:SetWorkLeft(10)
+    inst.components.workable:SetOnFinishCallback(OnHammeredFinished)
+    inst.components.workable:SetOnWorkCallback(OnHammered)
+
+    inst:AddComponent("locomotor")
+    inst.components.locomotor.pathcaps = { ignorecreep = true }
+    inst.components.locomotor:SetSlowMultiplier(.6)
+    inst.components.locomotor.walkspeed = TUNING.WILSON_WALK_SPEED
+    inst.components.locomotor.runspeed = TUNING.WILSON_RUN_SPEED
+    inst.components.locomotor.fasteronroad = true
+    inst.components.locomotor:SetTriggersCreep(true)
+    inst.components.locomotor:SetAllowPlatformHopping(true)
+    inst:AddComponent("embarker")
+    inst:AddComponent("drownable")
+
+    inst:AddComponent("follower")
+    inst.components.follower.leader = nil
+    inst.components.follower:KeepLeaderOnAttacked()
+    inst.components.follower.keepdeadleader = true
+    inst.components.follower.keepleaderduringminigame = true
+
+    inst:AddComponent("entitytracker")
+
+    inst:AddComponent("health")
+    inst.components.health:SetMaxHealth(TUNING.WX78_HEALTH)
+    inst.components.health.canheal = false
+
+    inst:AddComponent("repairable")
+    inst.components.repairable.repairmaterial = MATERIALS.GEARS
+    inst.components.repairable.onrepaired = OnRepaired
+
+    inst:AddComponent("combat")
+    inst.components.combat.hiteffectsymbol = "torso"
+    inst.components.combat:SetDefaultDamage(TUNING.UNARMED_DAMAGE)
+    inst.components.combat:SetAttackPeriod(TUNING.WILSON_ATTACK_PERIOD)
+    inst.components.combat:SetRange(TUNING.DEFAULT_ATTACK_RANGE)
+    inst.components.combat:SetRetargetFunction(2, retargetfn)
+    inst.components.combat:SetKeepTargetFunction(keeptargetfn)
+    inst.components.combat:SetNoAggroTags(NO_AGGRO_TAGS)
+
+    inst:AddComponent("pinnable")
+
+    ----------------------------------------------------------------
+    inst:AddComponent("upgrademoduleowner")
+    inst.components.upgrademoduleowner.onmoduleadded = OnUpgradeModuleAdded
+    inst.components.upgrademoduleowner.onmoduleremoved = OnUpgradeModuleRemoved
+    inst.components.upgrademoduleowner.ononemodulepopped = OnOneUpgradeModulePopped
+    inst.components.upgrademoduleowner.onallmodulespopped = OnAllUpgradeModulesRemoved
+    inst.components.upgrademoduleowner.canupgradefn = CanUseUpgradeModule
+    inst.components.upgrademoduleowner._on_charge_level_changed = inst.components.upgrademoduleowner._["charge_level"][2]
+    inst.components.upgrademoduleowner._["charge_level"][2] = function(self, new_charge, old_charge)
+        self:_on_charge_level_changed(new_charge, old_charge)
+        on_charge_level_changed(self, new_charge, old_charge)
+    end
+    inst.components.upgrademoduleowner:SetChargeLevel(3)
+
+    inst:ListenForEvent("energylevelupdate", OnUpgradeModuleChargeChanged)
+
+    -- Add the Sanity component only for the music module
+    -- It is not checked in wx78_moduledefs.lua at line 501
+    inst:AddComponent("sanity")
+    inst:StopUpdatingComponent(inst.components.sanity)
+    -- Empty LongUpdate function to prevent using LightWatcher
+    inst.components.sanity.LongUpdate = function() end
+
+    ----------------------------------------------------------------
+    MakeLargeFreezableCharacter(inst, "torso")
+    inst.components.freezable:SetResistance(4)
+    inst.components.freezable:SetDefaultWearOffTime(TUNING.PLAYER_FREEZE_WEAR_OFF_TIME)
+    inst.components.freezable.onfreezefn = OnFrozen
+
+    inst:AddComponent("rider")
+    inst:AddComponent("builder")
+
+    inst:AddComponent("temperature")
+    inst.components.temperature:SetFreezingHurtRate(0)
+    inst.components.temperature:SetOverheatHurtRate(0)
+    if GetGameModeProperty("no_temperature") then
+        inst.components.temperature:SetTemp(TUNING.STARTING_TEMP)
+    end
+
+    inst:AddComponent("moisture")
+    inst:AddComponent("sheltered")
+    inst:AddComponent("stormwatcher")
+    inst.GetStormLevel = function(inst) return inst.components.stormwatcher:GetStormLevel() end
+    inst:AddComponent("sandstormwatcher")
+    inst.components.sandstormwatcher.UpdateSandstormWalkSpeed_Internal = UpdateSandstormWalkSpeed_Internal
+    inst:AddComponent("moonstormwatcher")
+    inst.components.moonstormwatcher.UpdateMoonstormWalkSpeed_Internal = UpdateMoonstormWalkSpeed_Internal
+    inst:AddComponent("miasmawatcher")
+    inst.components.miasmawatcher.UpdateMiasmaWalkSpeed = UpdateMiasmaWalkSpeed
+    inst.IsInMiasma = function(inst) return inst.components.miasmawatcher:IsInMiasma() end
+    inst.IsInAnyStormOrCloud = function(inst)
+        return inst.components.stormwatcher:GetStormLevel() >= TUNING.SANDSTORM_FULL_LEVEL or
+            inst.components.miasmawatcher:IsInMiasma()
+    end
+    inst:AddComponent("acidlevel")
+    inst:AddComponent("carefulwalker")
+
+    inst:AddComponent("playerlightningtarget")
+    inst.components.playerlightningtarget:SetHitChance(TUNING.WX78_LIGHTNING_TARGET_CHANCE)
+    inst.components.playerlightningtarget:SetOnStrikeFn(OnLightningStrike)
+
+    inst:AddComponent("timer")
+
+    inst:AddComponent("preserver")
+    inst.components.preserver:SetPerishRateMultiplier(ModuleBasedPreserverRateFn)
+
+    inst:AddComponent("heater")
+    inst.components.heater:SetThermics(false, false)
+    inst.components.heater.heatfn = GetThermicTemperatureFn
+
+    inst:AddComponent("wardrobe")
+    inst.components.wardrobe.ActivateChanging = ActivateChanging
+    inst.components.wardrobe.BeginChanging = BeginChanging
+    inst.components.wardrobe.ondressupfn = ondressupfn
+    inst.components.wardrobe:SetCanBeDressed(true)
+
+    ----------------------------------------------------------------
+    inst:AddComponent("wxtype")
+
+    inst:AddComponent("wxmilitary")
+    inst:AddComponent("wxnavigation")
+    inst:AddComponent("astarpathfinding")
+    inst:AddComponent("wxagriculture")
+    inst:AddComponent("wxhorticulture")
+    inst:AddComponent("wxarboriculture")
+    inst:AddComponent("wxapiculture")
+    inst:AddComponent("wxaquaculture")
+    inst:AddComponent("wxmachineindustry")
+    inst:AddComponent("wxminingindustry")
+    inst:AddComponent("wxpastoralism")
+    inst:AddComponent("wxfoodindustry")
+    inst:AddComponent("wxmoonindustry")
+
+    inst:AddComponent("hauntable")
+    inst.components.hauntable:SetHauntValue(TUNING.HAUNT_INSTANT_REZ)
+    inst.components.hauntable:SetOnHauntFn(OnHaunt)
+
+    -- Shipwercked
+    if KnownModIndex:IsModEnabled("workshop-3435352667") then
+        inst:AddComponent("sailor")
+        inst:AddComponent("boatjumper")
+        inst:AddComponent("drydrownable")
+        inst:AddComponent("waveobstacle")
+    end
+    if KnownModIndex:IsModEnabled("workshop-1467214795") then
+        inst:AddComponent("wxmariculture")
+    end
+
+    ----------------------------------------------------------------
+    inst:SetBrain(brain)
+    inst:SetStateGraph("SGwx")
+
+    ----------------------------------------------------------------
+    inst:ListenForEvent("onbuilt", onbuilt)
+    inst:ListenForEvent("death", OnDeath)
+    inst:ListenForEvent("attacked", OnAttacked)
+    inst:ListenForEvent("weaponbroke", OnWeaponBroke)
+    inst:ListenForEvent("itemranout", OnWeaponBroke)
+    inst:ListenForEvent("armorbroke", OnArmorBroke)
+    inst:ListenForEvent("moisturedelta", OnWetnessChanged)
+    inst:ListenForEvent("dismount", OnDismount)
+    inst:ListenForEvent("bucked", OnBucked)
+    inst:ListenForEvent("timerdone", OnTimerFinished)
+
+    -- Shipwercked
+    inst:ListenForEvent("weaponfired", OnWeaponFired)
+
+    ----------------------------------------------------------------
+    inst.AddTemperatureModuleLeaning = AddTemperatureModuleLeaning
+    inst.CanUpgradeWithModule = CLIENT_CanUpgradeWithModule
+    inst.CanRemoveModules = CLIENT_CanRemoveModules
+
+    inst.OnSave = OnSave
+    inst.OnLoad = OnLoad
+    inst.OnRemoveEntity = OnRemoveEntity
+
+    return inst
 end
 
 local function placer(inst)

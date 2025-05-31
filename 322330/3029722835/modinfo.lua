@@ -11,7 +11,7 @@ You can change the languages and shortcuts in the mod configuration page.
 - Press 'F7' to start projection. You should select the turf center too. Then, click 'open list', select the data you want to project.
 ]]
 author = "NoMu"
-version = "0.0.2"
+version = "0.0.4"
 
 folder_name = folder_name or "turf_recorder"
 if not folder_name:find("workshop-") then

@@ -32,34 +32,39 @@ local function onhit(inst, worker)
 end
 
 local function LightsOn(inst, isdusk, isnight)
-if isdusk then
-    inst.components.fader:StopAll()
-    inst.AnimState:PlayAnimation("on")
-    inst.AnimState:PushAnimation("idle", true)
-	inst.AnimState:Show("FIRE")
-	inst.AnimState:Show("GLOW")       
-    inst.Light:Enable(true)
-	if inst:IsAsleep() then
-		inst.Light:SetIntensity(INTENSITY)
-	else
-		inst.Light:SetIntensity(0)
-		inst.components.fader:Fade(0, INTENSITY, 3+math.random()*2, function(v) inst.Light:SetIntensity(v) end)
+	if isdusk then
+		inst.components.fader:StopAll()
+		
+		-- inst.AnimState:PlayAnimation("on")
+		-- inst.AnimState:PushAnimation("idle", true)
+		
+		inst.AnimState:Show("FIRE")
+		inst.AnimState:Show("GLOW")       
+		inst.Light:Enable(true)
+		
+		if inst:IsAsleep() then
+			inst.Light:SetIntensity(INTENSITY)
+		else
+			inst.Light:SetIntensity(0)
+			inst.components.fader:Fade(0, INTENSITY, 3 + math.random() * 2, function(v) inst.Light:SetIntensity(v) end)
 		end
 	end
 end
 
 local function LightsOff(inst, isday)
-if isday then
-	inst.components.fader:StopAll()
-    inst.AnimState:PlayAnimation("off")    
-    inst.AnimState:PushAnimation("idle", true)
-	inst.AnimState:Hide("FIRE")
-	inst.AnimState:Hide("GLOW")
-	inst.Light:Enable(false)
-	if inst:IsAsleep() then
-		inst.Light:SetIntensity(0)
-	else
-		inst.components.fader:Fade(INTENSITY, 0, .75+math.random()*1, function(v) inst.Light:SetIntensity(v) end)
+	if isday then
+		inst.components.fader:StopAll()
+		-- inst.AnimState:PlayAnimation("off")    
+		-- inst.AnimState:PushAnimation("idle", true)
+		
+		inst.AnimState:Hide("FIRE")
+		inst.AnimState:Hide("GLOW")
+		inst.Light:Enable(false)
+		
+		if inst:IsAsleep() then
+			inst.Light:SetIntensity(0)
+		else
+			inst.components.fader:Fade(INTENSITY, 0, .75 + math.random() * 1, function(v) inst.Light:SetIntensity(v) end)
 		end
 	end
 end
@@ -84,12 +89,12 @@ local function fn()
     inst.Light:Enable(false)
     inst.Light:SetColour(197/255, 197/255, 10/255)
 	
+	MakeObstaclePhysics(inst, 0.25)
+	
 	inst.AnimState:SetBank("lamp_post")
 	inst.AnimState:SetBuild("lamp_post2_city_build")
 	-- inst.AnimState:AddOverrideBuild("lamp_post2_yotp_build")
 	inst.AnimState:PlayAnimation("idle", true)
-	
-	MakeObstaclePhysics(inst, 0.25)
 	
 	inst:AddTag("structure")
 	inst:AddTag("lamp_post")
@@ -118,44 +123,53 @@ local function fn()
 	
 	inst:DoTaskInTime(1, function()
         if TheWorld.state.isday and not TheWorld:HasTag("cave") then
-            inst.AnimState:PlayAnimation("off")
+            -- inst.AnimState:PlayAnimation("off")
 			inst.AnimState:PushAnimation("idle", true)
+			
 			inst.AnimState:Hide("FIRE")
 			inst.AnimState:Hide("GLOW")
             inst.Light:Enable(false)
+			
 			inst.Light:SetIntensity(0)
-			inst.components.fader:Fade(INTENSITY, 0, .75+math.random()*1, function(v) inst.Light:SetIntensity(v) end)
+			inst.components.fader:Fade(INTENSITY, 0, .75 + math.random() * 1, function(v) inst.Light:SetIntensity(v) end)
         else
-			inst.AnimState:PlayAnimation("on")
+			-- inst.AnimState:PlayAnimation("on")
 			inst.AnimState:PushAnimation("idle", true)
+			
 			inst.AnimState:Show("FIRE")
 			inst.AnimState:Show("GLOW")
             inst.Light:Enable(true)
+			
 			inst.Light:SetIntensity(INTENSITY)
-			inst.components.fader:Fade(0, INTENSITY, 3+math.random()*2, function(v) inst.Light:SetIntensity(v) end)
+			inst.components.fader:Fade(INTENSITY, INTENSITY, 3 + math.random() * 2, function(v) inst.Light:SetIntensity(v) end)
         end
     end)
+	
     inst:ListenForEvent("phasechanged", function(src, data)
         if data ~= "night" and data ~= "dusk" and not TheWorld:HasTag("cave") then
             inst:DoTaskInTime(2, function()
-                inst.AnimState:PlayAnimation("off")
+                -- inst.AnimState:PlayAnimation("off")
 				inst.AnimState:PushAnimation("idle", true)
+				
                 inst.AnimState:Hide("FIRE")
 				inst.AnimState:Hide("GLOW")
+				
 				inst.Light:Enable(false)
 				inst.Light:SetIntensity(0)
             end)
         else
             inst:DoTaskInTime(2, function()
-				inst.AnimState:PlayAnimation("on")
+				-- inst.AnimState:PlayAnimation("on")
                 inst.AnimState:PushAnimation("idle", true)
+				
 				inst.AnimState:Show("FIRE")
 				inst.AnimState:Show("GLOW")
+				
 				inst.Light:Enable(true)
 				inst.Light:SetIntensity(INTENSITY)
             end)
         end
-    end,TheWorld)
+    end, TheWorld)
 	
 	inst.OnSave = function(inst, data)
         if inst.lighton then
@@ -167,8 +181,10 @@ local function fn()
         if data then
             if data.lighton then 
                 fadein(inst)
+				
                 inst.Light:Enable(true)
-                inst.Light:SetIntensity(INTENSITY)            
+                inst.Light:SetIntensity(INTENSITY)
+				
                 inst.AnimState:Show("FIRE")
                 inst.AnimState:Show("GLOW")        
                 inst.lighton = true

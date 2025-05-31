@@ -13,6 +13,7 @@ if stack_size ~= 20 then
 	TUNING.STACK_SIZE_MEDITEM = stack_size
 	TUNING.STACK_SIZE_SMALLITEM = stack_size
 	TUNING.STACK_SIZE_TINYITEM = stack_size
+	TUNING.STACK_SIZE_PELLET = stack_size > 120 and stack_size or 120  --弹弓子弹
 end
 
 if stack_size1 ~= 20 then
@@ -34,16 +35,81 @@ if stack_size ~= 20 or stack_size1 ~= 20 then
 	local mod_stackable_replica = require("components/stackable_replica")
 	mod_stackable_replica._ctor = function(self, inst)
 		self.inst = inst
-		self._stacksize = net_shortint(inst.GUID, "stackable._stacksize", "stacksizedirty")
-		self._stacksizeupper = net_shortint(inst.GUID, "stackable._stacksizeupper", "stacksizedirty")
+		self._stacksize = net_int(inst.GUID, "stackable._stacksize", "stacksizedirty")
+		self._stacksizeupper = net_int(inst.GUID, "stackable._stacksizeupper", "stacksizedirty")
 		self._ignoremaxsize = net_bool(inst.GUID, "stackable._ignoremaxsize")
-		self._maxsize = net_shortint(inst.GUID, "stackable._maxsize")
+		self._maxsize = net_int(inst.GUID, "stackable._maxsize")
 		if not TheWorld.ismastersim then
 			inst:ListenForEvent("stacksizedirty", OnStackSizeDirty)
 		end
 	end
 	
 end
+
+
+-- 定义堆叠大小单位常量（2的16次方）
+local MAX_STACK_SIZE_UNIT = 65536
+-- 引入 stackable_replica 组件
+local stackable_replica = require("components/stackable_replica")
+
+-- 获取堆叠物品当前大小
+stackable_replica.StackSize = function(self)
+    return self:GetPreviewStackSize() or (self._stacksizeupper:value() * MAX_STACK_SIZE_UNIT + 1 + self._stacksize:value())
+end
+
+-- 设置堆叠大小网络变量值
+local function setStackSizeValues(self, upper, lower)
+    self._stacksizeupper:set(upper)
+    self._stacksize:set_local(lower)
+    self._stacksize:set(lower)
+end
+
+-- 设置堆叠物品的大小
+stackable_replica.SetStackSize = function(self, stacksize)
+    stacksize = stacksize - 1
+    if stacksize < MAX_STACK_SIZE_UNIT then
+        setStackSizeValues(self, 0, stacksize)
+    else
+        local upper = math.floor(stacksize / MAX_STACK_SIZE_UNIT)
+        local lower = stacksize - upper * MAX_STACK_SIZE_UNIT
+        setStackSizeValues(self, upper, lower)
+    end
+end
+
+
+-- 获取全局 tostring 函数
+local tostring = GLOBAL.tostring
+-- 引入 widgets/text 模块
+local Text = GLOBAL.require("widgets/text")
+
+-- 根据物品数量获取合适字体大小
+local function getFontSize(quantity)
+    if quantity <= 999 then return 42 end
+    if quantity <= 9999 then return 36 end
+    if quantity <= 99999 then return 34 end
+    if quantity <= 999999 then return 32 end
+    return 30
+end
+
+-- 重写 ItemTile 类的 SetQuantity 方法
+AddClassPostConstruct("widgets/controls", function ()
+    local ItemTile = require("widgets/itemtile")
+    function ItemTile:SetQuantity(quantity)
+        if self.onquantitychangedfn and self:onquantitychangedfn(quantity) then
+            if self.quantity then
+                self.quantity = self.quantity:Kill()
+            end
+            return
+        elseif not self.quantity then
+            self.quantity = self:AddChild(Text(GLOBAL.NUMBERFONT, 42))
+        end
+        local size = getFontSize(quantity)
+        local quantityStr = tostring(quantity)
+        self.quantity:SetSize(size)
+        self.quantity:SetPosition(2, 16, 0)
+        self.quantity:SetString(quantityStr)
+    end
+end)
 
 
 --遍历需要叠加的动物
@@ -128,7 +194,7 @@ if Stack_other_objects then
 	end
 	if GetModConfigData("mole") then
 		--鼹鼠
-		AddAnimalStackables({"mole",})
+		AddAnimalStackables({"mole","carrat"})
 	end
 	if GetModConfigData("bird") then
 		--鸟类
@@ -145,8 +211,8 @@ if Stack_other_objects then
 		AddAnimalStackables(STACKABLE_OBJECTS_BASE)
 	end
 	if GetModConfigData("eyeturret") then
-		--眼球炮塔
-		AddItemStackables({"eyeturret_item"})
+		--眼球炮塔和冰眼结晶器套装
+		AddItemStackables({"eyeturret_item","deerclopseyeball_sentryward_kit"})
 	end
 	if GetModConfigData("tallbirdegg") then
 		--高脚鸟蛋相关
@@ -158,7 +224,7 @@ if Stack_other_objects then
 	end
 	if GetModConfigData("shadowheart") then
 		--暗影心房
-		AddItemStackables({"shadowheart"})
+		AddItemStackables({"shadowheart","shadowheart_infused"})
 	end
 	
 	if GetModConfigData("glommerwings") then
@@ -207,7 +273,7 @@ if Stack_other_objects then
 	
 	if GetModConfigData("winona") then
 		--女工得投石机和聚光灯
-		AddItemStackables({"winona_catapult_item","winona_spotlight_item"})
+	AddItemStackables({"winona_catapult_item","winona_spotlight_item"})
 	end
 	
 	if GetModConfigData("mooneye") then
@@ -221,15 +287,18 @@ if Stack_other_objects then
 	--船上用品
 	AddItemStackables({
 	--常规船上用品
-	"boat_grass_item", "boat_item", "anchor_item","steeringwheel_item","boat_rotator_kit","mast_item", "ocean_trawler_kit","boat_cannon_kit","mastupgrade_lightningrod_item","mast_malbatross_item",
+	"boat_grass_item", "boat_item", "anchor_item","steeringwheel_item","boat_rotator_kit","mast_item", "ocean_trawler_kit","boat_cannon_kit","mastupgrade_lightningrod_item","mast_malbatross_item","boat_ancient_item",
 	--龙年限定
-	"dragonboat_pack", "boatrace_seatack_throwable_deploykit","dragonboat_kit","yotd_anchor_item","mast_yotd_item","yotd_steeringwheel_item",
+	"dragonboat_pack", "boatrace_seatack_throwable_deploykit","dragonboat_kit","yotd_anchor_item","mast_yotd_item","yotd_steeringwheel_item","mastupgrade_lamp_item_yotd"
 		})
 	end
-
 	if GetModConfigData("ancienttree_stuff") then
 	--惊喜种子
 	AddItemStackables({"ancienttree_seed","ancienttree_nightvision_sapling_item","ancienttree_gem_sapling_item"})
+	end
+	if GetModConfigData("pumpkintools") then
+	--万圣节南瓜雕刻工具
+	AddItemStackables({"pumpkincarver1","pumpkincarver2","pumpkincarver3"})
 	end
 	
 	
@@ -369,7 +438,7 @@ if Stack_other_objects then
 	end
 	if GetModConfigData("blank_certificate") then
 		--空白勋章【能力勋章】
-		AddItemStackables({"blank_certificate","lavaeel"})
+		AddItemStackables({"blank_certificate","lavaeel","medal_withered_heart"})
 	end
 	if GetModConfigData("lg_choufish_inv") then
 		--小丑鱼【海洋传说】
@@ -388,19 +457,6 @@ if Stack_other_objects then
 	if GetModConfigData("miao_packbox") then
 		--【超级打包盒】
 		AddItemStackables({"miao_packbox"})
-	end
-	
-	if GetModConfigData("myth_lotusleaf") then
-		--荷叶,月饼【神话书说】
-		AddItemStackables({"myth_lotusleaf",
-		"myth_mooncake_ice",
-		"myth_mooncake_lotus",
-		"myth_mooncake_nuts",
-		"myth_rhino_blueheart",
-		"myth_rhino_yellowheart",
-		"myth_rhino_redheart",
-		"mk_huoyuan",
-		"myth_redlantern"})
 	end
 	
 	if GetModConfigData("heap_of_foods") then
@@ -440,8 +496,41 @@ if Stack_other_objects then
 	
 	
 	if GetModConfigData("reskin_tool") then
-		--清洁扫把和提灯和陷阱【娜娜自用】
-		AddItemStackables({"reskin_tool","lantern","trap_teeth"})
+		--【娜娜自用】
+		AddItemStackables({
+		--原版工具
+		"reskin_tool",
+		"lantern",
+		"trap_teeth",
+		"trap_bramble",
+		"boat_magnet_beacon",
+		"boat_magnet_kit",
+		"miniflare",
+		"megaflare",--小猫项圈
+		"redpouch",--红包
+		--原版装饰
+		"kitcoon_nametag",
+		"decor_portraitframe",
+		"decor_lamp",
+		"decor_flowervase",
+		"decor_centerpiece",
+		"record",
+		"phonograph",
+		--原版鸭年华
+		"carnivalgame_puckdrop_kit",
+		"carnivalgame_wheelspin_kit",
+		"carnivalgame_shooting_kit",
+		"carnivalgame_herding_kit",
+		"carnivalgame_feedchicks_kit",
+		"carnivalgame_memory_kit",
+		"carnival_prizebooth_kit",
+		"carnival_plaza_kit",
+		"carnivaldecor_figure_kit",
+		"carnivaldecor_figure_kit_season2",
+		--mod
+		"shanhai_goumang",--山河
+		"gentleness_cook_pot_item",--悠
+		})
 	end
 end
 

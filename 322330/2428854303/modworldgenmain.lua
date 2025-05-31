@@ -58,6 +58,7 @@ AddTile("SWIRLGRASS", "LAND",
 		name			= "swirlgrass",
 		anim			= "swirlgrass",
 		bank_build		= "kyno_turfs_other",
+		pickupsound     = "vegetation_grassy",
 	}
 )
 
@@ -83,6 +84,7 @@ AddTile("SWIRLGRASSMONO", "LAND",
 		name			= "swirlgrassmono",
 		anim			= "swirlgrassmono",
 		bank_build		= "kyno_turfs_other",
+		pickupsound     = "vegetation_grassy",
 	}
 )
 
@@ -108,6 +110,7 @@ AddTile("COPACABANA", "LAND",
 		name			= "copacabana",
 		anim			= "copacabana",
 		bank_build		= "kyno_turfs_other",
+		pickupsound     = "rock",
 	}
 )
 
@@ -133,6 +136,7 @@ AddTile("STICKY", "LAND",
 		name			= "sticky",
 		anim			= "sticky",
 		bank_build		= "kyno_turfs_other",
+		pickupsound     = "squidgy",
 	}
 )
 
@@ -158,6 +162,7 @@ AddTile("SNOWFALL", "LAND",
 		name			= "snowfall",
 		anim			= "snowfall",
 		bank_build		= "kyno_turfs_other",
+		pickupsound     = "grainy",
 	}
 )
 
@@ -184,6 +189,7 @@ AddTile("MODERN_COBBLESTONES", "LAND",
 		name			= "modern_cobblestones",
 		anim			= "modern_cobblestones",
 		bank_build		= "kyno_turfs_other",
+		pickupsound     = "rock",
 	}
 )
 
@@ -210,6 +216,7 @@ AddTile("PINKSTONE", "LAND",
 		name			= "pinkstone",
 		anim			= "pinkstone",
 		bank_build		= "kyno_turfs_events",
+		pickupsound     = "rock",
 	}
 )
 --[[
@@ -259,6 +266,7 @@ AddTile("BEACH", "LAND",
 		name			= "beach",
 		anim			= "beach",
 		bank_build		= "kyno_turfs_shipwrecked",
+		pickupsound     = "grainy",
 	}
 )
 
@@ -284,6 +292,7 @@ AddTile("VOLCANO_ROCK", "LAND",
 		name			= "volcano_rock",
 		anim			= "volcano_rock",
 		bank_build		= "kyno_turfs_shipwrecked",
+		pickupsound     = "rock",
 	}
 )
 
@@ -309,6 +318,7 @@ AddTile("TIDALMARSH", "LAND",
 		name			= "tidalmarsh",
 		anim			= "tidalmarsh",
 		bank_build		= "kyno_turfs_shipwrecked",
+		pickupsound     = "squidgy",
 	}
 )
 
@@ -334,6 +344,7 @@ AddTile("MEADOW", "LAND",
 		name			= "meadow",
 		anim			= "meadow",
 		bank_build		= "kyno_turfs_shipwrecked",
+		pickupsound     = "vegetation_grassy",
 	}
 )
 
@@ -359,6 +370,7 @@ AddTile("JUNGLE", "LAND",
 		name			= "jungle",
 		anim			= "jungle",
 		bank_build		= "kyno_turfs_shipwrecked",
+		pickupsound     = "vegetation_grassy",
 	}
 )
 
@@ -384,6 +396,7 @@ AddTile("VOLCANO", "LAND",
 		name			= "volcano",
 		anim			= "volcano",
 		bank_build		= "kyno_turfs_shipwrecked",
+		pickupsound     = "rock",
 	}
 )
 
@@ -409,6 +422,7 @@ AddTile("ASH", "LAND",
 		name			= "ash",
 		anim			= "ash",
 		bank_build		= "kyno_turfs_shipwrecked",
+		pickupsound     = "grainy",
 	}
 )
 
@@ -434,6 +448,7 @@ AddTile("MAGMAFIELD", "LAND",
 		name			= "magmafield",
 		anim			= "magmafield",
 		bank_build		= "kyno_turfs_shipwrecked",
+		pickupsound     = "rock",
 	}
 )
 
@@ -460,6 +475,7 @@ AddTile("SNAKESKINFLOOR", "LAND",
 		name			= "snakeskinfloor",
 		anim			= "snakeskinfloor",
 		bank_build		= "kyno_turfs_shipwrecked",
+		pickupsound     = "cloth",
 	}
 )
 
@@ -486,6 +502,7 @@ AddTile("COBBLEROAD", "LAND",
 		name			= "cobbleroad",
 		anim			= "cobbleroad",
 		bank_build		= "kyno_turfs_hamlet",
+		pickupsound     = "rock",
 	}
 )
 
@@ -511,6 +528,7 @@ AddTile("PIGRUINS", "LAND",
 		name			= "pigruins",
 		anim			= "pigruins",
 		bank_build		= "kyno_turfs_hamlet",
+		pickupsound     = "rock",
 	}
 )
 
@@ -536,6 +554,7 @@ AddTile("FIELDS", "LAND",
 		name			= "fields",
 		anim			= "fields",
 		bank_build		= "kyno_turfs_hamlet",
+		pickupsound     = "vegetation_grassy",
 	}
 )
 
@@ -561,6 +580,7 @@ AddTile("FOUNDATION", "LAND",
 		name			= "foundation",
 		anim			= "foundation",
 		bank_build		= "kyno_turfs_hamlet",
+		pickupsound     = "rock",
 	}
 )
 
@@ -586,6 +606,7 @@ AddTile("LAWN", "LAND",
 		name			= "lawn",
 		anim			= "lawn",
 		bank_build		= "kyno_turfs_hamlet",
+		pickupsound     = "vegetation_grassy",
 	}
 )
 
@@ -611,6 +632,7 @@ AddTile("RAINFOREST", "LAND",
 		name			= "rainforest",
 		anim			= "rainforest",
 		bank_build		= "kyno_turfs_hamlet",
+		pickupsound     = "vegetation_grassy",
 	}
 )
 
@@ -636,6 +658,7 @@ AddTile("PLAINS", "LAND",
 		name			= "plains",
 		anim			= "plains",
 		bank_build		= "kyno_turfs_hamlet",
+		pickupsound     = "vegetation_grassy",
 	}
 )
 	
@@ -661,6 +684,7 @@ AddTile("DEEPJUNGLE", "LAND",
 		name			= "deepjungle",
 		anim			= "deepjungle",
 		bank_build		= "kyno_turfs_hamlet",
+		pickupsound     = "vegetation_firm",
 	}
 )
 
@@ -686,6 +710,7 @@ AddTile("BOG", "LAND",
 		name			= "bog",
 		anim			= "bog",
 		bank_build		= "kyno_turfs_hamlet",
+		pickupsound     = "vegetation_firm",
 	}
 )
 
@@ -711,6 +736,7 @@ AddTile("MOSSY_BLOSSOM", "LAND",
 		name			= "mossy_blossom",
 		anim			= "mossy_blossom",
 		bank_build		= "kyno_turfs_hamlet",
+		pickupsound     = "vegetation_firm",
 	}
 )
 	
@@ -736,6 +762,7 @@ AddTile("GASJUNGLE", "LAND",
 		name			= "gasjungle",
 		anim			= "gasjungle",
 		bank_build		= "kyno_turfs_hamlet",
+		pickupsound     = "vegetation_firm",
 	}
 )
 
@@ -786,6 +813,7 @@ AddTile("GREYFOREST", "LAND",
 		name			= "greyforest",
 		anim			= "greyforest",
 		bank_build		= "kyno_turfs_events",
+		pickupsound     = "vegetation_grassy",
 	}
 )
 
@@ -811,6 +839,7 @@ AddTile("BROWNCARPET", "LAND",
 		name			= "browncarpet",
 		anim			= "browncarpet",
 		bank_build		= "kyno_turfs_events",
+		pickupsound     = "grainy",
 	}
 )
 
@@ -836,6 +865,7 @@ AddTile("FORGEROCK", "LAND",
 		name			= "forgerock",
 		anim			= "forgerock",
 		bank_build		= "kyno_turfs_events",
+		pickupsound     = "rock",
 	}
 )
 
@@ -862,6 +892,7 @@ AddTile("FORGEROAD", "LAND",
 		name			= "forgeroad",
 		anim			= "forgeroad",
 		bank_build		= "kyno_turfs_events",
+		pickupsound     = "rock",
 	}
 )
 
@@ -887,6 +918,7 @@ AddTile("ANTCAVE", "LAND",
 		name			= "antcave",
 		anim			= "antcave",
 		bank_build		= "kyno_turfs_hamlet",
+		pickupsound     = "rock",
 	}
 )
 
@@ -912,6 +944,7 @@ AddTile("BATCAVE", "LAND",
 		name			= "batcave",
 		anim			= "batcave",
 		bank_build		= "kyno_turfs_hamlet",
+		pickupsound     = "rock",
 	}
 )
 
@@ -937,6 +970,7 @@ AddTile("LEGACYRAINFOREST", "LAND",
 		name			= "legacyrainforest",
 		anim			= "legacyrainforest",
 		bank_build		= "kyno_turfs_other",
+		pickupsound     = "vegetation_grassy",
 	}
 )
 
@@ -962,6 +996,7 @@ AddTile("LEGACYDEEPJUNGLE", "LAND",
 		name			= "legacydeepjungle",
 		anim			= "legacydeepjungle",
 		bank_build		= "kyno_turfs_other",
+		pickupsound     = "vegetation_grassy",
 	}
 )
 
@@ -987,6 +1022,7 @@ AddTile("LEGACYBOG", "LAND",
 		name			= "legacybog",
 		anim			= "legacybog",
 		bank_build		= "kyno_turfs_other",
+		pickupsound     = "vegetation_firm",
 	}
 )
 
@@ -1012,6 +1048,7 @@ AddTile("GREENMARSH", "LAND",
 		name			= "greenmarsh",
 		anim			= "greenmarsh",
 		bank_build		= "kyno_turfs_other",
+		pickupsound     = "squidgy",
 	}
 )
 
@@ -1037,6 +1074,7 @@ AddTile("IVYGRASS", "LAND",
 		name			= "ivygrass",
 		anim			= "ivygrass",
 		bank_build		= "kyno_turfs_other",
+		pickupsound     = "vegetation_grassy",
 	}
 )
 
@@ -1064,6 +1102,7 @@ AddTile("LEAKPROOFCARPET", "LAND",
 		name			= "leakproofcarpet",
 		anim			= "leakproofcarpet",
 		bank_build		= "kyno_turfs_other",
+		pickupsound     = "cloth",
 	}
 )
 
@@ -1089,6 +1128,7 @@ AddTile("WOODPANEL", "LAND",
 		name			= "woodpanel",
 		anim			= "woodpanel",
 		bank_build		= "kyno_turfs_interior",
+		pickupsound     = "wood",
 	}
 )
 
@@ -1114,6 +1154,7 @@ AddTile("MARBLETILE", "LAND",
 		name			= "marbletile",
 		anim			= "marbletile",
 		bank_build		= "kyno_turfs_interior",
+		pickupsound     = "rock",
 	}
 )
 
@@ -1140,6 +1181,7 @@ AddTile("CHESS", "LAND",
 		name			= "chess",
 		anim			= "chess",
 		bank_build		= "kyno_turfs_interior",
+		pickupsound     = "rock",
 	}
 )
 
@@ -1165,6 +1207,7 @@ AddTile("SLATE", "LAND",
 		name			= "slate",
 		anim			= "slate",
 		bank_build		= "kyno_turfs_interior",
+		pickupsound     = "rock",
 	}
 )
 
@@ -1190,6 +1233,7 @@ AddTile("METALSHEET", "LAND",
 		name			= "metalsheet",
 		anim			= "metalsheet",
 		bank_build		= "kyno_turfs_interior",
+		pickupsound     = "metal",
 	}
 )
 
@@ -1215,6 +1259,7 @@ AddTile("GARDEN", "LAND",
 		name			= "garden",
 		anim			= "garden",
 		bank_build		= "kyno_turfs_interior",
+		pickupsound     = "vegetation_firm",
 	}
 )
 
@@ -1240,6 +1285,7 @@ AddTile("GEOMETRIC", "LAND",
 		name			= "geometric",
 		anim			= "geometric",
 		bank_build		= "kyno_turfs_interior",
+		pickupsound     = "rock",
 	}
 )
 
@@ -1266,6 +1312,7 @@ AddTile("SHAGCARPET", "LAND",
 		name			= "shagcarpet",
 		anim			= "shagcarpet",
 		bank_build		= "kyno_turfs_interior",
+		pickupsound     = "cloth",
 	}
 )
 
@@ -1291,6 +1338,7 @@ AddTile("TRANSITIONAL", "LAND",
 		name			= "transitional",
 		anim			= "transitional",
 		bank_build		= "kyno_turfs_interior",
+		pickupsound     = "wood",
 	}
 )
 
@@ -1317,6 +1365,7 @@ AddTile("HERRING", "LAND",
 		name			= "herring",
 		anim			= "herring",
 		bank_build		= "kyno_turfs_interior",
+		pickupsound     = "rock",
 	}
 )
 
@@ -1342,6 +1391,7 @@ AddTile("HEXAGON", "LAND",
 		name			= "hexagon",
 		anim			= "hexagon",
 		bank_build		= "kyno_turfs_interior",
+		pickupsound     = "rock",
 	}
 )
 
@@ -1367,6 +1417,7 @@ AddTile("HOOF", "LAND",
 		name			= "hoof",
 		anim			= "hoof",
 		bank_build		= "kyno_turfs_interior",
+		pickupsound     = "rock",
 	}
 )
 
@@ -1392,6 +1443,7 @@ AddTile("OCTAGON", "LAND",
 		name			= "octagon",
 		anim			= "octagon",
 		bank_build		= "kyno_turfs_interior",
+		pickupsound     = "rock",
 	}
 )
 
@@ -1418,6 +1470,7 @@ AddTile("REDCARPET", "LAND",
 		name			= "redcarpet",
 		anim			= "redcarpet",
 		bank_build		= "kyno_turfs_other",
+		pickupsound     = "cloth",
 	}
 )
 
@@ -1444,6 +1497,7 @@ AddTile("PINKCARPET", "LAND",
 		name			= "pinkcarpet",
 		anim			= "pinkcarpet",
 		bank_build		= "kyno_turfs_other",
+		pickupsound     = "cloth",
 	}
 )
 	
@@ -1469,6 +1523,7 @@ AddTile("CYANCARPET", "LAND",
 		name			= "cyancarpet",
 		anim			= "cyancarpet",
 		bank_build		= "kyno_turfs_other",
+		pickupsound     = "cloth",
 	}
 )
 
@@ -1494,6 +1549,7 @@ AddTile("WHITECARPET", "LAND",
 		name			= "whitecarpet",
 		anim			= "whitecarpet",
 		bank_build		= "kyno_turfs_other",
+		pickupsound     = "cloth",
 	}
 )
 
@@ -1519,6 +1575,7 @@ AddTile("YELLOWCARPET", "LAND",
 		name			= "yellowcarpet",
 		anim			= "yellowcarpet",
 		bank_build		= "kyno_turfs_other",
+		pickupsound     = "cloth",
 	}
 )
 
@@ -1544,6 +1601,7 @@ AddTile("GREENCARPET", "LAND",
 		name			= "greencarpet",
 		anim			= "greencarpet",
 		bank_build		= "kyno_turfs_other",
+		pickupsound     = "cloth",
 	}
 )
 
@@ -1569,6 +1627,7 @@ AddTile("ORANGECARPET", "LAND",
 		name			= "orangecarpet",
 		anim			= "orangecarpet",
 		bank_build		= "kyno_turfs_other",
+		pickupsound     = "cloth",
 	}
 )
 
@@ -1594,6 +1653,7 @@ AddTile("BLUEYELLOW", "LAND",
 		name			= "blueyellow",
 		anim			= "blueyellow",
 		bank_build		= "kyno_turfs_other",
+		pickupsound     = "cloth",
 	}
 )
 
@@ -1619,6 +1679,7 @@ AddTile("DRIFTWOODFLOOR", "LAND",
 		name            = "driftwoodfloor",
 		anim            = "driftwoodfloor",
 		bank_build      = "kyno_turfs_other",
+		pickupsound     = "wood",
 	}
 )
 
@@ -1643,6 +1704,7 @@ AddTile("LUNARRIFT", "LAND",
 		name            = "lunarrift",
 		anim            = "lunarrift",
 		bank_build      = "kyno_turfs_other",
+		pickupsound     = "rock",
 	}
 )
 
@@ -1758,5 +1820,20 @@ local GROUND_TURFS =
 	[WORLD_TILES.QUAGMIRE_CITYSTONE] = "turf_stonecity",
 }
 
-require("worldtiledefs").turf[WORLD_TILES.QUAGMIRE_PARKFIELD] = { name = "pinkpark",        bank_build = "kyno_turfs_events",   anim = "pinkpark"       }
-require("worldtiledefs").turf[WORLD_TILES.QUAGMIRE_CITYSTONE] = { name = "stonecity",       bank_build = "kyno_turfs_events",   anim = "stonecity",     }
+require("worldtiledefs").turf[WORLD_TILES.QUAGMIRE_PARKFIELD] = 
+{ 
+	name = "pinkpark",  
+	bank_build = "kyno_turfs_events", 
+	anim = "pinkpark",  
+	pickupsound = "vegetation_grassy", 
+}
+
+require("worldtiledefs").turf[WORLD_TILES.QUAGMIRE_CITYSTONE] = 
+{ 
+	name = "stonecity", 
+	bank_build = "kyno_turfs_events", 
+	anim = "stonecity", 
+	pickupsound = "rock",
+	hard = true,
+	roadways = true,
+}

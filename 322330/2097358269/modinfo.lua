@@ -156,6 +156,12 @@ local info = {
 				[en] = "is collect ash when item burnt?"
 			},
 		},
+		oceantrawler = {
+			label = {
+				[zh] = "是否收集海洋拖网捕鱼器溢出的鱼",
+				[en] = "is collect fish spilled from examine ocean trawler?"
+			},
+		},
 		all = {
 			label = {
 				[zh] = "收集几乎所有类型的掉落物",
@@ -311,7 +317,7 @@ name = "Smart Chest"
 -- info.information.description_text[variable]
 description = info.information.description_text[variable]
 author = "little_xuuu"
-version = "2.2.7"
+version = "2.3.1"
 forumthread = ""
 api_version = 10
 all_clients_require_mod = true
@@ -490,6 +496,15 @@ configuration_options =
 	AddConfig("is_collect_lootdropper", 
 		info.collectTime.loot.label[variable],
 		info.collectTime.loot.hover[variable],
+		{
+			{description = info.collectTime.yes[variable], data = 1},
+			{description = info.collectTime.no[variable], data = 0},
+		},
+		1
+	),
+	AddConfig("is_collect_oceantrawler", 
+		info.collectTime.oceantrawler.label[variable],
+		nil,
 		{
 			{description = info.collectTime.yes[variable], data = 1},
 			{description = info.collectTime.no[variable], data = 0},

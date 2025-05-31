@@ -15,7 +15,7 @@ GLOBAL.STRINGS.TURD = {
     BUTTON_TEXT_IMPORT = 'Import from file',
     BUTTON_TEXT_ADMIN_REPLACE = 'Replace (Admin Only)',
     TITLE_TEXT_IMPORT_PATH = 'Please input the filename',
-
+    JSON_NEEDED = 'Filename should be ended with ".json"',
     BUTTON_TEXT_SEARCH = 'Search',
 
     TITLE_TEXT_SURE_TO_DELETE = 'Sure to delete?',

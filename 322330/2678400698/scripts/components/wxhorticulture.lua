@@ -32,6 +32,12 @@ local secondaryfertilizerList =
     "fertilizer",
 }
 
+local containerList =
+{
+    "treasurechest",
+    "treasurechest_upgraded",
+}
+
 local MUSHROOM_FARM_TAG = { "mushroom_farm" }
 local TOWORK_CANT_TAGS = { "fire", "smolder", "INLIMBO", "NOCLICK", "event_trigger" }
 function WXHorticulture:Infect()
@@ -155,7 +161,10 @@ end
 local TOPICK_MUST_TAGS = { "pickable" }
 local TOPICK_ANCIENTTREE_NO_TAGS = { "fire", "smolder", "INLIMBO", "NOCLICK" }
 local ANCIENTTREE_TAG = { "ancienttree" }
-local TOPICK_CANT_TAGS = { "fire", "smolder", "INLIMBO", "NOCLICK", "event_trigger", "farm_plant", "flower", "junk_pile", "junk_pile_big" }
+local TOPICK_CANT_TAGS = {
+    "fire", "smolder", "INLIMBO", "NOCLICK", "event_trigger", "donotautopick",
+    "structure", "farm_plant", "flower", "junk_pile", "junk_pile_big"
+}
 local TOHARVEST_MUST_TAGS = { "harvestable" }
 local LUREPLANT_TAG = { "lureplant" }
 function WXHorticulture:HarvestFruits()
@@ -180,7 +189,7 @@ function WXHorticulture:HarvestFruits()
     end
     if plant == nil then
         plant = FindEntity(self.inst, REPEAT_WORK_DIST, function(ent)
-            if ent.prefab == "bullkelp_plant" then
+            if ent:HasTag("kelp") then
                 local x, y, z = ent.Transform:GetWorldPosition()
                 if not (TheWorld.Map:IsOceanAtPoint(x, y, z) and
                     (TheWorld.Map:IsAboveGroundAtPoint(x + 2.75, y, z + 2.75) or
@@ -190,7 +199,12 @@ function WXHorticulture:HarvestFruits()
                     return
                 end
             end
-            return ent.prefab ~= "mandrake_planted" and ent.components.compostingbin == nil and
+            if ent:HasTag("thorny") then
+                if self.inst.components.health:GetPercent() < .72 then
+                    return
+                end
+            end
+            return ent.components.compostingbin == nil and
                 ent.components.pickable ~= nil and ent.components.pickable:CanBePicked() and
                 ent.components.pickable.caninteractwith ~= false and ent:IsNear(leader, SEE_WORK_DIST) and
                 self.inst.components.wxtype:ShouldHarvest(ent)
@@ -198,7 +212,7 @@ function WXHorticulture:HarvestFruits()
     end
     if plant == nil then
         plant = FindEntity(leader, SEE_WORK_DIST, function(ent)
-            if ent.prefab == "bullkelp_plant" then
+            if ent:HasTag("kelp") then
                 local x, y, z = ent.Transform:GetWorldPosition()
                 if not (TheWorld.Map:IsOceanAtPoint(x, y, z) and
                     (TheWorld.Map:IsAboveGroundAtPoint(x + 2.75, y, z + 2.75) or
@@ -208,7 +222,12 @@ function WXHorticulture:HarvestFruits()
                     return
                 end
             end
-            return ent.prefab ~= "mandrake_planted" and ent.components.compostingbin == nil and
+            if ent:HasTag("thorny") then
+                if self.inst.components.health:GetPercent() < .72 then
+                    return
+                end
+            end
+            return ent.components.compostingbin == nil and
                 ent.components.pickable ~= nil and ent.components.pickable:CanBePicked() and
                 ent.components.pickable.caninteractwith ~= false and
                 self.inst.components.wxtype:ShouldHarvest(ent)
@@ -398,7 +417,7 @@ function WXHorticulture:StoreVeggies()
             -- Smart Signed Chest
             local smartchest = FindEntity(sentryward, SEE_WORK_DIST, function(ent)
                 local _, firstitem = next(ent.components.container.slots)
-                return ent.prefab == "treasurechest" and
+                return table.contains(containerList, ent.prefab) and
                     ent.components.smart_minisign ~= nil and ent.components.smart_minisign.sign ~= nil and
                     ent.components.container ~= nil and not ent.components.container:IsFull() and
                     firstitem ~= nil and firstitem.prefab == item.prefab
@@ -409,13 +428,13 @@ function WXHorticulture:StoreVeggies()
             -- Allocated Smart Signed Chest
             local allocatedsmartchest = FindEntity(sentryward, SEE_WORK_DIST, function(ent)
                 local _, firstitem = next(ent.components.container.slots)
-                return ent.prefab == "treasurechest" and
+                return table.contains(containerList, ent.prefab) and
                     ent.components.smart_minisign ~= nil and ent.components.smart_minisign.sign ~= nil and
                     firstitem ~= nil and firstitem.prefab == item.prefab
             end, FIND_CONTAINER_MUST_TAGS)
             -- Empty Smart Signed Chest
             local emptysmartchest = FindEntity(sentryward, SEE_WORK_DIST, function(ent)
-                return ent.prefab == "treasurechest" and
+                return table.contains(containerList, ent.prefab) and
                     ent.components.smart_minisign ~= nil and ent.components.smart_minisign.sign ~= nil and
                     ent.components.container ~= nil and next(ent.components.container.slots) == nil
             end, FIND_CONTAINER_MUST_TAGS)
@@ -424,7 +443,7 @@ function WXHorticulture:StoreVeggies()
             end
             -- Signed Chest
             local signedchest = FindEntity(sentryward, SEE_WORK_DIST, function(ent)
-                return ent.prefab == "treasurechest" and ent.components.container ~= nil and not ent.components.container:IsFull() and
+                return table.contains(containerList, ent.prefab) and ent.components.container ~= nil and not ent.components.container:IsFull() and
                     FindEntity(ent, .5, function(sign)
                         return sign.components.drawable ~= nil and (sign.components.drawable:GetImage() == item.prefab or
                         (sign.components.drawable:GetImage() == "rock_avocado_fruit_rockhard" and item.prefab == "rock_avocado_fruit"))
@@ -435,7 +454,7 @@ function WXHorticulture:StoreVeggies()
             end
             -- Unsigned Chest
             local unsignedchest = FindEntity(sentryward, SEE_WORK_DIST, function(ent)
-                return ent.prefab == "treasurechest" and ent.components.container ~= nil and
+                return table.contains(containerList, ent.prefab) and ent.components.container ~= nil and
                     ent.components.container:Has(item.prefab, 1) and
                     FindEntity(ent, .5, function(sign) return sign.components.drawable ~= nil end, FIND_SIGN_MUST_TAGS) == nil
             end, FIND_CONTAINER_MUST_TAGS)
@@ -444,7 +463,7 @@ function WXHorticulture:StoreVeggies()
             end
             -- Any Signed Chest
             local anysignedchest = FindEntity(sentryward, SEE_WORK_DIST, function(ent)
-                return ent.prefab == "treasurechest" and ent.components.container ~= nil and
+                return table.contains(containerList, ent.prefab) and ent.components.container ~= nil and
                     FindEntity(ent, .5, function(sign)
                         return sign.components.drawable ~= nil and (sign.components.drawable:GetImage() == item.prefab or
                             (sign.components.drawable:GetImage() == "rock_avocado_fruit_rockhard" and item.prefab == "rock_avocado_fruit"))
@@ -452,7 +471,7 @@ function WXHorticulture:StoreVeggies()
             end, FIND_CONTAINER_MUST_TAGS)
             -- Empty Chest
             local emptychest = FindEntity(sentryward, SEE_WORK_DIST, function(ent)
-                return ent.prefab == "treasurechest" and ent.components.container ~= nil and ent.components.container:IsEmpty() and
+                return table.contains(containerList, ent.prefab) and ent.components.container ~= nil and ent.components.container:IsEmpty() and
                     FindEntity(ent, .5, function(sign) return sign.components.drawable ~= nil end, FIND_SIGN_MUST_TAGS) == nil
             end, FIND_CONTAINER_MUST_TAGS)
             if unsignedchest == nil and anysignedchest == nil and emptychest ~= nil then

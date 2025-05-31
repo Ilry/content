@@ -37,7 +37,7 @@ WX78电路和芯片宣告
 食谱
 兼容信息提示：礼物包装、暖石温度、食物剩余保鲜时间
 ]]
-version = "0.8123.28"
+version = "0.8123.30"
 
 folder_name = folder_name or "quick_announce_nomu"
 if not folder_name:find("workshop-") then

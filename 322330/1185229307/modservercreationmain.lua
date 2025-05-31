@@ -174,6 +174,9 @@ local function PatchModsTab()
 			end
 		end, true)
 
+		if mods_tab.OnBecomeActive ~= nil then
+			mods_tab:OnBecomeActive()
+		end
 		return true
 	end
 end

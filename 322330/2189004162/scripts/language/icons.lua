@@ -107,6 +107,11 @@ return {
 
 	-------------------------------------------------------------------------------------------------------------------------
 
+	-- acidbatwavemanager.lua
+	acidbatwavemanager = {
+		--next_wave_spawn = "<prefab=bat> raid (%d) arrives in %s"
+	},
+
 	-- alterguardianhat.lua [Prefab]
 	alterguardianhat = {
 		--minimum_sanity = "Minimum <color=SANITY>sanity</color> for light: <color=SANITY>%s</color> (<color=SANITY>%s%%</color>)",
@@ -323,6 +328,11 @@ return {
 		},
 	},
 	
+	-- compostingbin.lua
+	compostingbin = {
+		contents_amount = "Material: %s / %s",
+		detailed_contents_amount = "Material: <color=NATURE>%s<sub>Green</sub></color> + <color=INEDIBLE>%s<sub>Brown</sub></color> / %s",
+	},
 
 	-- container.lua
 	container = {
@@ -399,6 +409,10 @@ return {
 			description = "You resist <color=MONSTER>sleep</color> for {duration}(s).",
 		},
 		
+		["healingsalve_acidbuff"] = {
+			name = "<color=#ded15e>Acid Resistance</color>",
+			description = "Immune to <color=#ded15e>acid rain</color> for {duration}(s)."
+		},
 		["tillweedsalve_buff"] = {
 			name = nil,
 			description = "Regenerates <color=HEALTH>{amount} health</color> over {duration}(s).",
@@ -702,6 +716,11 @@ return {
 		--held_refuel = "Held <color=SWEETENER><prefab=%s></color> will refuel <color=LIGHT>%s%%</color>.",
 	},
 
+	-- gelblobspawner.lua
+	gelblobspawner = {
+		
+	},
+
 	-- ghostlybond.lua
 	ghostlybond = {
 		abigail = "<icon=abigail_flower_level3> %s / %s.",
@@ -778,7 +797,11 @@ return {
 
 	-- hounded.lua
 	hounded = {
-		time_until_hounds = "Hounds will attack in %s.",
+		--time_until_hounds = "<prefab=hound> attack in %s",
+		--time_until_worms = "<prefab=worm> attack in %s",
+		--time_until_worm_boss = "<prefab=worm_boss> attack in %s",
+		--time_until_crocodog = "<prefab=crocodog> attack in %s",
+		--worm_boss_chance = "<prefab=worm_boss> chance: %.1f%%",
 	},
 
 	-- hunger.lua
@@ -817,6 +840,11 @@ return {
 		--hands_describe = "[Tool]: ",
 	},
 
+	-- itemmimic.lua
+	itemmimic = {
+		--time_to_reveal = "<prefab=itemmimic_revealed> reveal in: %s",
+	},
+
 	-- kitcoonden.lua
 	kitcoonden = {
 		--number_of_kitcoons = "Number of kitcoons: %s"
@@ -835,21 +863,26 @@ return {
 	--followers = "Followers: %s",
 
 	-- lightninggoat.lua
-	lightninggoat_charge = "Will discharge in %s day(s).",
+	--lightninggoat_charge = "Will discharge in %s day(s).",
+
+	-- linkeditem.lua
+	linkeditem = {
+		--owner = "Owner: %s",
+	},
 
 	-- lunarrift_portal.lua [Prefab]
 	lunarrift_portal = {
 		--crystals = "<color=#4093B2><prefab=lunarrift_crystal_big></color>: %d<sub>available</sub> / %d<sub>total</sub> / %d<sub>max</sub>", -- I can't think of a way to word 
 		--next_crystal = "Next <color=#4093B2><prefab=lunarrift_crystal_big></color> spawns in %s",
-		close = "<prefab=LUNARRIFT_PORTAL> will close in approximately %s",
+		--close = "<prefab=LUNARRIFT_PORTAL> will close in approximately %s",
 	},
 	
 	-- lunarthrall_plantspawner.lua
 	lunarthrall_plantspawner = {
-		infested_count = "%d",
-		spawn = "Gestalts spawn in %s",
-		next_wave = "Next wave in %s",
-		remain_waves = "%d waves remaining",
+		--infested_count = "%d",
+		--spawn = "Gestalts spawn in %s",
+		--next_wave = "Next wave in %s",
+		--remain_waves = "%d waves remaining",
 	},
 
 	-- lureplant.lua [Prefab]
@@ -1059,6 +1092,13 @@ return {
 		},
 	},
 
+	-- rabbitkingmanager.lua
+	rabbitkingmanager = {
+		--carrots = "<color=VEGGIE>Carrots</color>: <color=VEGGIE>%d</color> / <color=VEGGIE>%d</color>",
+		--naughtiness = "Naughtiness: %d / %d",
+		--king_status = "%s is alive.", -- Gets a prefab tag inserted with king type.
+	},
+
 	-- rainometer.lua [Prefab]
 	--global_wetness = "<color=WET>Global Wetness</color>: <color=WET>%s</color>",
 	--precipitation_rate = "<color=WET>Precipitation Rate</color>: <color=WET>%s</color>",
@@ -1161,6 +1201,18 @@ return {
 		--total_shadow_level = "<color=BLACK>Total Shadow level</color>: %s",
 	},
 
+	-- shadowparasitemanager.lua
+	shadowparasitemanager = {
+		--num_waves = "Waves: %d",
+	}, 
+
+	-- shadow_battleaxe.lua [Prefab]
+	shadow_battleaxe = {
+		--level = "Level: %s / %s",
+		--boss_progress = "Defeated Bosses: %s / %s",
+		--lifesteal = "<color=HEALTH>Life Steal</color>: <color=HEALTH>%.2f</color> (<color=SANITY>%.2f</color>)",
+	},
+
 	-- shadowrift_portal.lua [Prefab]
 	shadowrift_portal = {
 		close = "<prefab=SHADOWRIFT_PORTAL> will close in %s",
@@ -1175,12 +1227,19 @@ return {
 		},
 	},
 
+	-- shadowthrall_mimics.lua
+	shadowthrall_mimics = {
+		--mimic_count = "<string=UI.CUSTOMIZATIONSCREEN.ITEMMIMICS>: %s / %s",
+		--next_spawn = "<prefab=itemmimic_revealed> will try to spawn in %s",
+	},
+
 	-- shadowthrallmanager.lua
 	shadowthrallmanager = {
-		fissure_cooldown = "Next fissure will be ready for takeover in %s",
-		waiting_for_players = "Waiting for a player to come near",
-		thrall_count = "<color=MOB_SPAWN><prefab=SHADOWTHRALL_HANDS></color>: %d",
-		dreadstone_regen = "<color=#942429><prefab=DREADSTONE></color> will regenerate in %s",
+		--fissure_cooldown = "Next fissure will be ready for takeover in %s",
+		--waiting_for_players = "Waiting for a player to come near",
+		--thrall_count = "<color=MOB_SPAWN><prefab=SHADOWTHRALL_HANDS></color>: %d",
+		--thralls_alive = "<color=MOB_SPAWN>Thralls alive (%d)</color>: %s",
+		--dreadstone_regen = "<color=#942429><prefab=DREADSTONE></color> will regenerate in %s",
 	},
 
 	-- sharkboi.lua [Prefab]
@@ -1257,10 +1316,26 @@ return {
 	},
 
 	-- stickable.lua
-	stickable = "<icon=n> %s",
+	--stickable = "<icon=n> %s", -- Icon = n? What is this?
+
+	-- support_pillar.lua [Prefab]
+	support_pillar = {
+		reinforcement = "Reinforcement: %s / %s",
+		durability = "Durability: %s / %s",
+	},
+
+	-- support_pillar_dreadstone.lua [Prefab]
+	support_pillar_dreadstone = {
+		time_until_reinforcement_regen = "Next regeneration: %s",
+	},
 
 	-- temperature.lua
 	temperature = "<icon=winterometer> <temperature=%s>",
+
+	-- tentacle_pillar_hole.lua [Prefab]
+	tentacle_pillar_hole = {
+		--immunity_time = "<prefab=tentacle> immunity time: %s",
+	},
 
 	-- terrarium.lua [Prefab]
 	terrarium = {

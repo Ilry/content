@@ -4,6 +4,12 @@ local PREFIX_MODIFIER = 'dstlan_atkperiod_'
 
 local GLOBAL_DST_LAN_API_ATK_PERIOD = 'DST_LAN_API_ATK_PERIOD'
 
+---@class component_combat
+---@field SetAttackPeriod fun(self, val: number)
+---@field SetAtkPeriodModifier fun(self, source: any, mult: number, key: string)
+---@field RemoveAtkPeriodModifier fun(self, source: any, key: string)
+
+
 ---@class api_attackperiod
 local dst_lan = {}
 
@@ -23,8 +29,12 @@ function dst_lan:_hookCombat()
         local p = rawget(self, "_")["min_attack_period"]
         local old_on_map = p[2]
         p[2] = function(self, map)
-            old_on_map(self, map)
-            self.inst.replica.combat.dstlan_atkperiodmult:set(self.dstlan_atkperiodmodifiers:Get())
+            if old_on_map ~= nil then
+                old_on_map(self, map)
+            end
+            if self.inst.replica.combat and self.inst.replica.combat.dstlan_atkperiodmult then
+                self.inst.replica.combat.dstlan_atkperiodmult:set(self.dstlan_atkperiodmodifiers:Get())
+            end
         end
 
         function self:SetAttackPeriod(val)
@@ -79,9 +89,9 @@ function dst_lan:_hookSGClient()
         local old_onenter = sg.states["attack"].onenter
         sg.states["attack"].onenter = function (inst,...)
             local res = old_onenter ~= nil and {old_onenter(inst,...)} or {}
-            local timeout = (math.floor(13/inst.replica.combat.dstlan_atkperiodmult))*FRAMES
+            local timeout = (math.floor(13/inst.replica.combat.dstlan_atkperiodmult:value()))*FRAMES
             inst.sg:SetTimeout(timeout)
-            inst.AnimState:SetDeltaTimeMultiplier(inst.replica.combat.dstlan_atkperiodmult)
+            inst.AnimState:SetDeltaTimeMultiplier(inst.replica.combat.dstlan_atkperiodmult:value())
             return unpack(res)
         end
 
@@ -162,7 +172,6 @@ end
 
 ---一定要初始化的函数
 ---@param data_tbl data_attackperiod # 攻击速度数据表
----@private
 function dst_lan:main(data_tbl)
     if rawget(GLOBAL,GLOBAL_DST_LAN_API_ATK_PERIOD) == nil then
         rawset(GLOBAL,GLOBAL_DST_LAN_API_ATK_PERIOD,true)

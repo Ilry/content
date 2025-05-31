@@ -197,10 +197,204 @@ local function makesword(colour,RGB)
     return Prefab('lol_wp_terraprisma',fn,assets)
 end
 
+local function makesword_skin_moonphase(colour,RGB)
+
+    local _assets =
+    {
+        Asset("ANIM", "anim/lol_wp_terraprisma_skin_moonphase.zip"),
+    }
+
+    local function fn()
+        local inst = CreateEntity()
+    
+        inst.entity:AddTransform()
+        inst.entity:AddAnimState()
+        inst.entity:AddNetwork()
+        if LOL_WP_TERRAPRISMA_LIGHT then
+            inst.entity:AddLight()
+            inst.Light:SetFalloff(0.5)
+            inst.Light:SetIntensity(0.8)
+            inst.Light:SetRadius(TUNING.MOD_LOL_WP.TRINITY.LIGHT_RADIUS)
+            inst.Light:SetColour(unpack(RGB))
+            inst.Light:Enable(true)
+            inst.Light:EnableClientModulation(true)
+        end
+
+        --强加载，否则玩家传送会出问题
+        inst.entity:SetCanSleep(false)
+    
+        MakeInventoryPhysics(inst)
+    
+        inst.Physics:ClearCollidesWith(COLLISION.LIMITS)
+        inst.Physics:ClearCollisionMask()
+        inst.Physics:CollidesWith(COLLISION.GROUND)
+        
+        -- inst.AnimState:SetBank("terraprisma_"..colour)
+        -- inst.AnimState:SetBuild("terraprisma_"..colour)
+        inst.AnimState:SetBank('lol_wp_terraprisma_skin_moonphase')
+        inst.AnimState:SetBuild('lol_wp_terraprisma_skin_moonphase')
+        inst.AnimState:PlayAnimation("idle")
+        inst.AnimState:SetLightOverride(0.3)
+        --炫光
+        if LOL_WP_TERRAPRISMA_SHINING then
+            inst.AnimState:SetBloomEffectHandle("shaders/anim.ksh")
+        end
+        
+        --彩虹
+        -- if LOL_WP_TERRAPRISMA_DISPLAY==1 then
+        --     inst.AnimState:SetDefaultEffectHandle(resolvefilepath("shaders/rainbow.ksh"))
+        -- --透明
+        -- elseif LOL_WP_TERRAPRISMA_DISPLAY==2 then
+        --     inst.AnimState:SetDefaultEffectHandle(resolvefilepath("shaders/"..colour..".ksh"))
+        -- end
+    
+        inst:AddTag("NOCLICK")
+        inst:AddTag("NOBLOCK")
+    
+        MakeInventoryFloatable(inst, "med", 0.05, {1.1, 0.5, 1.1}, true, -9)
+
+        --尾迹,非专用服务器
+        -- if not TheNet:IsDedicated() then
+        --     local x,_,z = inst.Transform:GetWorldPosition()
+        --     inst.last_pos = {x=x,z=z}
+        --     inst.last_time = GetTime()
+        --     inst.CreateTailFx  = function(inst) return Projectile_CreateTailFx(colour) end
+        --     inst.UpdateTail    = Projectile_UpdateTail
+        --     inst:DoPeriodicTask(0, inst.UpdateTail)
+        -- end
+
+        inst.entity:SetPristine()
+    
+        if not TheWorld.ismastersim then
+            return inst
+        end
+        inst.persists = false
+    
+        --旧版组件summon_controller已弃用
+        inst:AddComponent("lol_wp_terraprisma_summon_controller")
+        inst.components.summon_controller = inst.components.lol_wp_terraprisma_summon_controller
+        inst:RegisterComponentActions("summon_controller")
+
+        inst.Shoot = function(inst, target)
+            inst.components.summon_controller:Shoot(target)
+        end
+
+        inst.PlzGoBackBeforeCheckTargetIsValid = function (inst)
+            inst.components.summon_controller:PlzGoBackBeforeCheckTargetIsValid()
+        end
+
+    
+        MakeHauntableLaunch(inst)
+    
+        return inst
+    end
+
+    return Prefab('lol_wp_terraprisma_skin_moonphase',fn,_assets)
+end
+
+
+local function makesword_skin_needle_cluster_burst(colour,RGB)
+
+    local _assets =
+    {
+        Asset("ANIM", "anim/lol_wp_terraprisma_skin_needle_cluster_burst.zip"),
+    }
+
+    local function fn()
+        local inst = CreateEntity()
+    
+        inst.entity:AddTransform()
+        inst.entity:AddAnimState()
+        inst.entity:AddNetwork()
+        if LOL_WP_TERRAPRISMA_LIGHT then
+            inst.entity:AddLight()
+            inst.Light:SetFalloff(0.5)
+            inst.Light:SetIntensity(0.8)
+            inst.Light:SetRadius(TUNING.MOD_LOL_WP.TRINITY.LIGHT_RADIUS)
+            inst.Light:SetColour(unpack(RGB))
+            inst.Light:Enable(true)
+            inst.Light:EnableClientModulation(true)
+        end
+
+        --强加载，否则玩家传送会出问题
+        inst.entity:SetCanSleep(false)
+    
+        MakeInventoryPhysics(inst)
+    
+        inst.Physics:ClearCollidesWith(COLLISION.LIMITS)
+        inst.Physics:ClearCollisionMask()
+        inst.Physics:CollidesWith(COLLISION.GROUND)
+        
+        -- inst.AnimState:SetBank("terraprisma_"..colour)
+        -- inst.AnimState:SetBuild("terraprisma_"..colour)
+        inst.AnimState:SetBank('lol_wp_terraprisma_skin_needle_cluster_burst')
+        inst.AnimState:SetBuild('lol_wp_terraprisma_skin_needle_cluster_burst')
+        inst.AnimState:PlayAnimation("idle")
+        inst.AnimState:SetLightOverride(0.3)
+        --炫光
+        if LOL_WP_TERRAPRISMA_SHINING then
+            inst.AnimState:SetBloomEffectHandle("shaders/anim.ksh")
+        end
+        
+        --彩虹
+        -- if LOL_WP_TERRAPRISMA_DISPLAY==1 then
+        --     inst.AnimState:SetDefaultEffectHandle(resolvefilepath("shaders/rainbow.ksh"))
+        -- --透明
+        -- elseif LOL_WP_TERRAPRISMA_DISPLAY==2 then
+        --     inst.AnimState:SetDefaultEffectHandle(resolvefilepath("shaders/"..colour..".ksh"))
+        -- end
+    
+        inst:AddTag("NOCLICK")
+        inst:AddTag("NOBLOCK")
+    
+        MakeInventoryFloatable(inst, "med", 0.05, {1.1, 0.5, 1.1}, true, -9)
+
+        --尾迹,非专用服务器
+        -- if not TheNet:IsDedicated() then
+        --     local x,_,z = inst.Transform:GetWorldPosition()
+        --     inst.last_pos = {x=x,z=z}
+        --     inst.last_time = GetTime()
+        --     inst.CreateTailFx  = function(inst) return Projectile_CreateTailFx(colour) end
+        --     inst.UpdateTail    = Projectile_UpdateTail
+        --     inst:DoPeriodicTask(0, inst.UpdateTail)
+        -- end
+
+        inst.entity:SetPristine()
+    
+        if not TheWorld.ismastersim then
+            return inst
+        end
+        inst.persists = false
+    
+        --旧版组件summon_controller已弃用
+        inst:AddComponent("lol_wp_terraprisma_summon_controller")
+        inst.components.summon_controller = inst.components.lol_wp_terraprisma_summon_controller
+        inst:RegisterComponentActions("summon_controller")
+
+        inst.Shoot = function(inst, target)
+            inst.components.summon_controller:Shoot(target)
+        end
+
+        inst.PlzGoBackBeforeCheckTargetIsValid = function (inst)
+            inst.components.summon_controller:PlzGoBackBeforeCheckTargetIsValid()
+        end
+
+    
+        MakeHauntableLaunch(inst)
+    
+        return inst
+    end
+
+    return Prefab('lol_wp_terraprisma_skin_needle_cluster_burst',fn,_assets)
+end
+
+------------------------------------------
 local prefabs = {}
 -- for k,v in pairs(colours) do
 --     table.insert(prefabs,makesword(k,v))
 -- end
 table.insert(prefabs,makesword('blue',{200/255, 200/255, 0/255}))
+table.insert(prefabs,makesword_skin_moonphase('blue',{1, 1, 1}))
+table.insert(prefabs,makesword_skin_needle_cluster_burst('blue',{1, 1, 1}))
 
 return  unpack(prefabs)

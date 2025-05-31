@@ -96,6 +96,8 @@ end
 
 local function RemoteDescribe(data, context)
 	local description = nil
+
+	--cprint('horse', data)
 	if not data then
 		return nil
 	end
@@ -104,8 +106,11 @@ local function RemoteDescribe(data, context)
 		description = ProcessInformation(context, data.time_to_attack, data.target, target_error_string)
 	end
 
+	local priority = Insight.descriptors.periodicthreat.CalculateThreatPriority(data.time_to_attack, { ignore_different_shard=true, shard_data=data.shard_data }) - 1
+	--cprint(priority, data.shard_data)
+
 	return {
-		priority = 10,
+		priority = priority,
 		description = description,
 		icon = {
 			atlas = "images/Bearger.xml",
@@ -118,7 +123,7 @@ local function RemoteDescribe(data, context)
 	}
 end
 
-local function StatusAnnoucementsDescribe(special_data, context)
+local function StatusAnnouncementsDescribe(special_data, context)
 	if not special_data.time_to_attack then
 		return
 	end
@@ -177,6 +182,6 @@ end
 return {
 	RemoteDescribe = RemoteDescribe,
 	GetBeargerData = GetBeargerData,
-	StatusAnnoucementsDescribe = StatusAnnoucementsDescribe,
+	StatusAnnouncementsDescribe = StatusAnnouncementsDescribe,
 	DangerAnnouncementDescribe = DangerAnnouncementDescribe,
 }

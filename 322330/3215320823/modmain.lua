@@ -23,6 +23,8 @@ TUNING.MICKRAMPUSPACK = GetModConfigData('upgradekrampuspack')
 TUNING.MICSHELLPACK = GetModConfigData('upgradeshellbox')
 TUNING.MICPOLEBIN = GetModConfigData('upgradebearbox')
 TUNING.MICGELBLOB = GetModConfigData('upgradegelblob')
+TUNING.MICAMMOBAG = GetModConfigData('upgradeammobag')
+TUNING.MICPICBOX = GetModConfigData('upgradepicbox')
 TUNING.MICHOWLITZER = GetModConfigData('upgradehoundpipe')
 TUNING.MICMODITEMON = GetModConfigData('useupgrademoditem')
 TUNING.MICMERMSTRCT = GetModConfigData('upgrademermstruct')
@@ -350,6 +352,12 @@ if TUNING.MICMERMSTRCT then
 end
 if TUNING.MICGELBLOB then
 	AddPrefabPostInit("gelblob_storage",addupgrade)
+end
+if TUNING.MICAMMOBAG then
+	AddPrefabPostInit("slingshotammo_container",addupgrade)
+end
+if TUNING.MICPICBOX then
+	AddPrefabPostInit("elixir_container",addupgrade)
 end
 AddRecipe2("chestupgrade_stacksize", {
 				TUNING.MICBRAINUM~=0 and Ingredient("wagpunk_bits",TUNING.MICIRONNUM) or nil,

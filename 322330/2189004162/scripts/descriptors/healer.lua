@@ -19,18 +19,11 @@ directory. If not, please refer to
 ]]
 
 -- healer.lua
-local debuffHelper = import("helpers/debuff")
-
 local function Describe(self, context)
 	local inst = self.inst
 	local description, alt_description
 
-	if inst.prefab == "tillweedsalve" then
-		local effects = debuffHelper.GetItemEffects(self.inst, context)
-		if effects and #effects > 0 then
-			description = CombineLines(description, table.concat(effects, "\n"))
-		end
-	elseif inst.prefab == "spider_healer_item" then
+	if inst.prefab == "spider_healer_item" then
 		local webber_heal = string.format(context.lstr.healer.webber_heal, TUNING.HEALING_MEDSMALL)
 		local spider_heal = string.format(context.lstr.healer.spider_heal, TUNING.SPIDER_HEALING_ITEM_AMOUNT)
 		description = CombineLines(webber_heal, spider_heal)
@@ -43,7 +36,7 @@ local function Describe(self, context)
 	end
 
 	return {
-		priority = 0,
+		priority = 1,
 		description = description,
 		alt_description = alt_description,
 	}

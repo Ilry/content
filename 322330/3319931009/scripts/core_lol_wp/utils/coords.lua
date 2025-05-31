@@ -1,23 +1,38 @@
 ---@diagnostic disable: undefined-global
 
 ---@class LAN_TOOL_COORDS
-local tools = {}
+local tools = {
+    ---@type table<integer, integer>
+    map_camera_angle_to_transform_angle = {
+        [360] = -275,
+        [315] = -225,
+        [270] = -180 ,
+        [225] = -135,
+        [180] = -90,
+        [135] = -45,
+        [90] = 0,
+        [45] = 45,
+        [0] = 90,
+    },
+    ---@type integer[]
+    camera_angle = {0, 45, 90, 135, 180, 225, 270, 315, 360},
+}
 
 
 ---获取人物面前的点P坐标
 ---@param inst ent # 人物
 ---@param dist number # 点P和人物距离
----@param angle number # (角度制)Transform:GetRotation
----@param player_pos_x number # 人物x坐标
----@param player_pos_z number # 人物y坐标
+---@param angle number|nil # (角度制)Transform:GetRotation
+---@param player_pos_x number|nil # 人物x坐标
+---@param player_pos_z number|nil # 人物y坐标
 ---@return number # 点p的x坐标
 ---@return number # 点p的y坐标
 ---@nodiscard
 function tools:calcCoordFront(inst,dist,angle,player_pos_x,player_pos_z)
     local angle = angle or inst.Transform:GetRotation()
     local _
-    if player_pos_x and player_pos_z then 
-    else 
+    if player_pos_x and player_pos_z then
+    else
         player_pos_x,_,player_pos_z = inst.Transform:GetWorldPosition()
     end
 
@@ -246,28 +261,41 @@ function tools:isEnemyInCone(checkX, checkZ, centerX, centerZ, pointOnAxis_X, po
 end
 
 
----找距离点P最近的一只生物
+---找距离点P最近的一只或topk只生物
 ---@param x number # 点P的x坐标
 ---@param y number # 点P的y坐标
 ---@param z number # 点P的z坐标
 ---@param radius number # 查询半径
----@return ent|nil # 最近的生物实体
+---@param topk integer # 距离最近的k个实体
+---@return ent[] # 最近的生物实体
 ---@nodiscard
-function tools:findClosestMobToPoint(x,y,z,radius)
-    local ents = TheSim:FindEntities(x, y, z, radius, {'_combat'},{'INLIMBO','player','companion','wall'})
-    local radius_fixed = radius^2
+function tools:findClosestMobToPoint(x, y, z, radius, topk)
+    local ents = TheSim:FindEntities(x, y, z, radius, {'_combat'}, {'INLIMBO', 'player', 'companion', 'wall'})
+    local radius_sq = radius * radius
     local closest = nil
-    for _,v in pairs(ents or {}) do
+    local closest_dist = radius_sq
+    local candidates = {}
+    for _, v in pairs(ents or {}) do
         if v and v:IsValid() and v.components and v.components.combat and v.components.health and not v.components.health:IsDead() then
-            local v_x,_,v_z = v:GetPosition():Get()
-            local dist =  self:calcDist(v_x,v_z,x,z)
-            if dist < radius_fixed then
-                closest = v
-                radius_fixed = dist
+            local v_x, _, v_z = v:GetPosition():Get()
+            local dist = self:calcDist(v_x, v_z, x, z)
+            if dist <= radius_sq then
+                if topk then
+                    table.insert(candidates, {entity = v, distance = dist})
+                elseif dist < closest_dist then
+                    closest = v
+                    closest_dist = dist
+                end
             end
         end
     end
-    return closest
+    if topk then
+        table.sort(candidates, function(a, b) return a.distance < b.distance end)
+        local result = {}
+        for i = 1, math.min(topk, #candidates) do table.insert(result, candidates[i].entity) end
+        return #result > 0 and result or {}
+    end
+    return {closest}
 end
 
 
@@ -277,7 +305,7 @@ end
 ---@nodiscard
 function tools:findPointInLineParallelCamera()
     -- 获取相机角度, x轴正方向为0, 逆时针转为正, 范围[0,360]
-    local camera_angle = TheCamera and TheCamera:GetHeading() or nil 
+    local camera_angle = TheCamera and TheCamera:GetHeading() or nil
     if camera_angle == nil then return end
     -- 计算坐标
     local radians = math.rad(camera_angle)
@@ -286,6 +314,62 @@ function tools:findPointInLineParallelCamera()
 
     return x,z
 end
+
+---二分找到距离表中最近的数
+---@param target number # 要找得数
+---@param numbers number[] # 数组
+---@return number
+---@nodiscard
+function tools:findClosestNumber(target, numbers)
+    local left = 1
+    local right = #numbers
+
+    while left < right do
+        local mid = math.floor((left + right) / 2)
+        if numbers[mid] < target then
+            left = mid + 1
+        else
+            right = mid
+        end
+    end
+
+    if left == 1 then
+        return numbers[left]
+    elseif left > #numbers then
+        return numbers[#numbers]
+    else
+        local prev = numbers[left - 1]
+        local curr = numbers[left]
+        if math.abs(target - prev) < math.abs(target - curr) then
+            return prev
+        else
+            return curr
+        end
+    end
+end
+
+---获取相机角度,注意只有客机下才有效,服务器默认为45
+---@return nil|number
+---@nodiscard
+function tools:cameraGetAngle()
+    local camera_angle = TheCamera and TheCamera:GetHeading() or nil
+    return camera_angle
+end
+
+---相机转角转为 Transform 组件的转角
+---@param camera_angle nil|number
+---@return number|nil
+---@nodiscard
+function tools:cameraAngleToTransformAngle(camera_angle)
+    if camera_angle == nil then
+        camera_angle = self:cameraGetAngle()
+    end
+    if camera_angle then
+        local angle = self:findClosestNumber(camera_angle,self.camera_angle)
+        return angle and self.map_camera_angle_to_transform_angle[angle] or nil
+    end
+end
+
 
 ---计算三维坐标 圆环上任意点的坐标 ,初始位于yz平面,绕y轴转角angle,逆时针为正,圆环上任意点的角度point_angle
 ---@param radius number # 圆环半径
@@ -363,6 +447,21 @@ function tools:GenPointInCircle(x,z,r)
         -- Calculate the random point in the circle
         local random_x = x + radius * r * math.cos(theta)
         local random_z = z + radius * r * math.sin(theta)
+        return random_x, random_z
+    end
+end
+
+--- 随机点生成器: 圆环上随机
+---@param x number # 圆心x坐标
+---@param z number # 圆心z坐标
+---@param r number # 半径
+---@return fun():number,number
+---@nodiscard
+function tools:GenPointOnRing(x, z, r)
+    return function()
+        local theta = math.random() * 2 * math.pi -- 随机角度 (0 到 2π)
+        local random_x = x + r * math.cos(theta)   -- 固定半径
+        local random_z = z + r * math.sin(theta)
         return random_x, random_z
     end
 end

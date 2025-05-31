@@ -2,6 +2,8 @@
 
 ---@type data_attackperiod
 local data = {
+    avatar = {},
+    equippment = {}
 }
 
 return data

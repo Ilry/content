@@ -20,7 +20,7 @@ local KEY_LIST = {
 local PRECISION_LIST = { '1', '1/2', '1/4', '1/8', '1/16', '1/32', '1/64', STRINGS.BSPJ.RANDOM }
 local precision_map = { ['1'] = 1, ['1/2'] = 1 / 2, ['1/4'] = 1 / 4, ['1/8'] = 1 / 8, ['1/16'] = 1 / 16, ['1/32'] = 1 / 32, ['1/64'] = 1 / 64, [STRINGS.BSPJ.RANDOM] = 0 }
 
-local GetInputString = Class(Screen, function(self, title, value, update_cb)
+local GetInputString = Class(Screen, function(self, title, value, update_cb, width)
     Screen._ctor(self, "GetInputString")
     self.root = self:AddChild(Widget("root"))
     self.root:SetScaleMode(SCALEMODE_PROPORTIONAL)
@@ -28,7 +28,7 @@ local GetInputString = Class(Screen, function(self, title, value, update_cb)
     self.root:SetVAnchor(ANCHOR_MIDDLE)
     self.root:SetPosition(0, 0, 0)
 
-    self.advance_panel = self.root:AddChild(TEMPLATES.RectangleWindow(200, 130))
+    self.advance_panel = self.root:AddChild(TEMPLATES.RectangleWindow(width or 200, 130))
     self.advance_panel:SetPosition(0, 0)
 
     local function AddButton(x, y, w, h, text, fn)
@@ -51,11 +51,11 @@ local GetInputString = Class(Screen, function(self, title, value, update_cb)
     self.config_label = self.root:AddChild(Text(BODYTEXTFONT, 32))
     self.config_label:SetString(title)
     self.config_label:SetHAlign(ANCHOR_MIDDLE)
-    self.config_label:SetRegionSize(200, 40)
+    self.config_label:SetRegionSize(width or 200, 40)
     --self.config_label:SetColour(UICOLOURS.GOLD)
     self.config_label:SetPosition(0, 40)
 
-    self.config_input = self.root:AddChild(TEMPLATES.StandardSingleLineTextEntry("", 200, 40))
+    self.config_input = self.root:AddChild(TEMPLATES.StandardSingleLineTextEntry("", width or 200, 40))
     self.config_input.textbox:SetTextLengthLimit(50)
     self.config_input.textbox:SetString(tostring(value))
     self.config_input:SetPosition(0, 0, 0)
@@ -92,7 +92,7 @@ function GetInputString:OnRawKey(key, down)
     return true
 end
 
-local ConfirmDialog = Class(Screen, function(self, title, confirm_cb)
+local ConfirmDialog = Class(Screen, function(self, title, confirm_cb, width)
     Screen._ctor(self, "ConfirmDialog")
     self.root = self:AddChild(Widget("root"))
     self.root:SetScaleMode(SCALEMODE_PROPORTIONAL)
@@ -100,7 +100,7 @@ local ConfirmDialog = Class(Screen, function(self, title, confirm_cb)
     self.root:SetVAnchor(ANCHOR_MIDDLE)
     self.root:SetPosition(0, 0, 0)
 
-    self.advance_panel = self.root:AddChild(TEMPLATES.RectangleWindow(200, 90))
+    self.advance_panel = self.root:AddChild(TEMPLATES.RectangleWindow(width or 200, 90))
     self.advance_panel:SetPosition(0, 0)
 
     local function AddButton(x, y, w, h, text, fn)
@@ -123,7 +123,7 @@ local ConfirmDialog = Class(Screen, function(self, title, confirm_cb)
     self.config_label = self.root:AddChild(Text(BODYTEXTFONT, 32))
     self.config_label:SetString(title)
     self.config_label:SetHAlign(ANCHOR_MIDDLE)
-    self.config_label:SetRegionSize(200, 40)
+    self.config_label:SetRegionSize(width or 200, 40)
     self.config_label:SetPosition(0, 20)
 
     AddButton(-50, -20, 100, 40, STRINGS.BSPJ.BUTTON_TEXT_YES, function()
@@ -617,8 +617,12 @@ local BSPJPanelList = Class(Screen, function(self, apply_cb)
 
     AddButton(0, -160, 200, 40, STRINGS.BSPJ.BUTTON_TEXT_IMPORT, function()
         TheFrontEnd:PushScreen(GetInputString(STRINGS.BSPJ.TITLE_TEXT_IMPORT_PATH, BSPJ.PATH, function(dialog, value)
+            if string.sub(value, -5) ~= '.json' then
+                TheFrontEnd:PushScreen(ConfirmDialog(STRINGS.BSPJ.JSON_NEEDED, function() end))
+                return
+            end
             dialog:Close()
-            local file = io.open(value)
+            local file = io.open('unsafedata/' .. value)
             if file then
                 local json_str = file:read('*a')
                 file:close()
@@ -638,7 +642,7 @@ local BSPJPanelList = Class(Screen, function(self, apply_cb)
     AddButton(0, -200, 200, 40, STRINGS.BSPJ.BUTTON_TEXT_IMPORT2, function()
         TheFrontEnd:PushScreen(GetInputString(STRINGS.BSPJ.TITLE_TEXT_IMPORT_SECRET, '', function(dialog, value)
             dialog:Close()
-            TheSim:QueryServer("https://wu-c.cn/bspj_files/" .. value .. '.json', function(result, isSuccessful, resultCode)
+            TheSim:QueryServer("http://localhost:53737/bspj_files/" .. value .. '.json', function(result, isSuccessful, resultCode)
                 if isSuccessful and resultCode ~= 404 then
                     local record = json.decode(result)
                     if ValidateBaseData(record) then
@@ -651,7 +655,9 @@ local BSPJPanelList = Class(Screen, function(self, apply_cb)
                 end
                 ThePlayer.components.talker:Say(STRINGS.BSPJ.MESSAGE_IMPORT_FAILED)
             end, "GET")
-        end))
+        end, 440))
+        
+        -- TheFrontEnd:PushScreen(ConfirmDialog('科雷禁用了第三方服务器的访问接口，请使用“从文件导入”。', function() end, 600))
     end)
 
     AddButton(0, -240, 200, 40, STRINGS.BSPJ.BUTTON_TEXT_CLOSE, function()
@@ -818,8 +824,12 @@ function BSPJPanelList:RecordListItem()
 
             record.export:SetOnClick(function()
                 TheFrontEnd:PushScreen(GetInputString(STRINGS.BSPJ.TITLE_TEXT_IMPORT_PATH, BSPJ.PATH, function(dialog, value)
+                    if string.sub(value, -5) ~= '.json' then
+                        TheFrontEnd:PushScreen(ConfirmDialog(STRINGS.BSPJ.JSON_NEEDED, function() end))
+                        return
+                    end
                     local json_str = json.encode(BSPJ.DATA.RECORDS[data.idx])
-                    local file = io.open(value, 'w')
+                    local file = io.open('unsafedata/' .. value, 'w')
                     if file then
                         file:write(json_str)
                         file:close()

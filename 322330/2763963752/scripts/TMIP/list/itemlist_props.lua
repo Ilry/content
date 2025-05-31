@@ -1,4 +1,26 @@
 return {
+	"gelblob_storage_kit",--恶液储存箱套件
+    "rope_bridge_kit",--洞穴探险者的桥梁套件
+	
+	"dug_gravestone",--墓碑
+	"gelblob_bottle",--恶液罐
+	"shadowthrall_parasite",--虚空面具
+	"woby_treat",--沃比零食
+	"wortox_souljar",--灵魂罐
+
+	"playbill_the_veil",--黑罩舞台剧
+	"graveurn",--灵魂容器
+
+
+	"shadowheart_infused",--附身暗影心房
+
+	"slingshot_band_mimic",--附身弹弓皮筋
+	"slingshot_band_pigskin",--猪皮弹弓皮筋
+	"slingshot_band_tentacle",--甩尾弹弓皮筋
+
+
+
+	"rabbitkinghorn",--挖洞兔号角
 	"beeswax_spray",--防腐喷雾
 	"mosquitomusk",--小痒痒
 	
@@ -48,6 +70,7 @@ return {
 	"shadow_forge_kit",--暗影术基座套装
 	"lunar_forge_kit",--辉煌铁匠铺套装
 
+	"redpouch_yotr",--红包
 	"security_pulse_cage",--火花柜
 	"security_pulse_cage_full",--火花柜
 
@@ -86,10 +109,16 @@ return {
 	"terrarium",
 	--
 	"moonstorm_static_item",
+	-- "moon_device_pillar",
+	
+	-- "moon_device_top",
+	
 	"moonglass_charged",
 	"alterguardianhatshard",
 	"moonstorm_spark",
+	-- "alterguardian_contained",
 
+	-- "moon_device_construction2",
 	--离奇工具
 	"wagstaff_tool_1",
 	"wagstaff_tool_2",
@@ -142,7 +171,9 @@ return {
 	"carnival_prizebooth_kit",
 	--
 	"treegrowthsolution",
-
+	--气球
+	"balloonparty",
+	"balloon",
 	----------------------------
     --战斗道具
     "gunpowder",
@@ -160,6 +191,9 @@ return {
     "reviver",
     "compostwrap",
     "tillweedsalve",
+	"bandage_butterflywings",--扑腾绷带
+	"wortox_reviver",--双尾心
+
     --药水
     "halloweenpotion_bravery_small",
     "halloweenpotion_bravery_large",
@@ -171,6 +205,11 @@ return {
     "halloweenpotion_sparks",
     "halloweenpotion_moon",
     --黑暗炼金药剂
+	"ghostlyelixir_shadow",--诅咒之苦
+	"ghostlyelixir_lunar",--光之怒
+
+	"ghostlyelixir_revive",--恐怖经历
+
     "ghostlyelixir_attack",
     "ghostlyelixir_speed",
     "ghostlyelixir_slowregen",
@@ -212,6 +251,8 @@ return {
     "onemanband",
     "pig_coin",
     "beef_bell",
+	"shadow_beef_bell",--阴郁皮弗娄牛铃
+
     --暴动检测
     "nightmare_timepiece",
     "atrium_key",
@@ -231,6 +272,10 @@ return {
 	"battlesong_lunaraligned",--启迪摇篮曲
 
     --雕像草图
+	"chesspiece_daywalker2_sketch",--拾荒疯猪雕塑草图
+	"chesspiece_wormboss_sketch",--巨大洞穴蠕虫雕塑草图
+	"chesspiece_yots_sketch",--镀金洞穴蠕虫雕塑草图
+
 	"chesspiece_yotd_sketch",--起点塔雕塑草图
 	"chesspiece_sharkboi_sketch",--大霜鲨雕塑草图
 	"chesspiece_warg_mutated_sketch",--附身座狼雕塑草图
@@ -310,6 +355,8 @@ return {
     "yotb_sewingmachine_item",
     "yotb_stage_item",
     "beefalo_groomer_item",
+
+	"yots_lantern_post_item",--喜庆灯笼柱套装
     -----
     ---------------------------------2024-2-24更新
 	--感觉蓝图没啥用，就去掉算了

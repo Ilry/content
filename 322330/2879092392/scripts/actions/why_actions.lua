@@ -120,3 +120,33 @@ AddComponentAction("INVENTORY","inventoryitem", function(inst, doer, actions, ri
         end
     end
 end)
+
+local function Chisel(act)
+    
+    local target = act.target
+    local item = act.invobject
+
+    if target.components.chiselablerock then
+        target.components.chiselablerock:DropMineral(act.doer)
+
+        if item.components.finiteuses then
+            item.components.finiteuses:Use(1)
+        end
+
+        return true
+    end
+
+    return false
+end
+
+local function ChiselValid(inst, doer, target, actions, right)
+    if inst:HasTag("mineral_chisel_tool") and target:HasTag("has_mineral_inside") then
+        table.insert(actions, ACTIONS.CHISEL_GEODE)
+    end
+end
+
+AddAction("CHISEL_GEODE", "Chisel", Chisel)
+AddComponentAction("USEITEM", "mineralchiseler", ChiselValid)
+
+AddStategraphActionHandler("wilson", ActionHandler(ACTIONS.CHISEL_GEODE, "dolongaction"))
+AddStategraphActionHandler("wilson_client", ActionHandler(ACTIONS.CHISEL_GEODE, "dolongaction"))

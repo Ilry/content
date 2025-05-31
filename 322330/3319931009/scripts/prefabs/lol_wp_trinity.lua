@@ -9,6 +9,14 @@ local assets =
     Asset( "ANIM", "anim/"..prefab_id..".zip"),
     Asset("ANIM","anim/swap_"..prefab_id..".zip"),
     Asset( "ATLAS", "images/inventoryimages/"..prefab_id..".xml" ),
+
+    Asset("ANIM","anim/"..prefab_id.."_skin_moonphase.zip"),
+    Asset("ANIM","anim/swap_"..prefab_id.."_skin_moonphase.zip"),
+    Asset("ATLAS","images/inventoryimages/"..prefab_id.."_skin_moonphase.xml"),
+
+    Asset("ANIM","anim/"..prefab_id.."_skin_needle_cluster_burst.zip"),
+    Asset("ANIM","anim/swap_"..prefab_id.."_skin_needle_cluster_burst.zip"),
+    Asset("ATLAS","images/inventoryimages/"..prefab_id.."_skin_needle_cluster_burst.xml"),
 }
 
 local prefabs =
@@ -156,14 +164,26 @@ local function whenunequip(inst,owner)
     end
 end
 
+---comment
+---@param inst ent
+---@param owner any
 local function onequip(inst, owner)
     if inst.lol_wp_trinity_type and inst.lol_wp_trinity_type == 'weapon' then
-        owner.AnimState:OverrideSymbol("swap_object", "swap_"..prefab_id, "swap_"..prefab_id)
+
+        local skin_build = inst:GetSkinBuild()
+        if skin_build ~= nil then
+            owner:PushEvent("equipskinneditem", inst:GetSkinName())
+            owner.AnimState:OverrideItemSkinSymbol("swap_object", "swap_"..skin_build, "swap_"..skin_build, inst.GUID, "swap_"..prefab_id)
+        else
+            owner.AnimState:OverrideSymbol("swap_object", "swap_"..prefab_id, "swap_"..prefab_id)
+        end
+
+        -- owner.AnimState:OverrideSymbol("swap_object", "swap_"..prefab_id, "swap_"..prefab_id)
         owner.AnimState:Show("ARM_carry")
         owner.AnimState:Hide("ARM_normal")
     end
 
-    
+    --[[ 
     if inst.lol_wp_trinity_type == 'weapon' then
         owner.isequip_lol_wp_trinity_weapon = true 
         owner.isequip_lol_wp_trinity_item_weapon = inst
@@ -203,7 +223,11 @@ local function onequip(inst, owner)
     inst:DoTaskInTime(0, function()
         whenequip(inst, owner)
     end)
-    
+     ]]
+
+    if inst.components.lol_wp_trinity_data then
+        inst.components.lol_wp_trinity_data:onequip(inst, owner)
+    end
     
 end
 
@@ -211,8 +235,12 @@ local function onunequip(inst, owner)
     if inst.lol_wp_trinity_type == 'weapon' then
         owner.AnimState:Hide("ARM_carry")
         owner.AnimState:Show("ARM_normal")
+        local skin_build = inst:GetSkinBuild()
+        if skin_build ~= nil then
+            owner:PushEvent("unequipskinneditem", inst:GetSkinName())
+        end
     end
-
+--[[ 
     if inst.lol_wp_trinity_type == 'weapon' then
         owner.isequip_lol_wp_trinity_weapon = false
     elseif inst.lol_wp_trinity_type == 'amulet' then
@@ -238,6 +266,10 @@ local function onunequip(inst, owner)
 
     -- inst.components.lol_wp_trinity_parts:removeParts()
     whenunequip(inst,owner)
+    ]]
+    if inst.components.lol_wp_trinity_data then
+        inst.components.lol_wp_trinity_data:onunequip(inst, owner)
+    end
 end
 
 
@@ -303,6 +335,8 @@ local function onfinished(inst)
         end
     end
 
+    inst:PushEvent('lol_wp_runout_durability')
+
     inst:AddTag('lol_wp_trinity_nofiniteuses')
 
 end
@@ -315,6 +349,12 @@ local function onpreload(inst,data)
     inst.lol_wp_trinity_type = data and data.lol_wp_trinity_type
     if inst.lol_wp_trinity_type then
         if inst.lol_wp_trinity_type == 'weapon' then
+
+            if inst:HasTag('lol_wp_trinity_type_'..'amulet') then
+                inst:RemoveTag('lol_wp_trinity_type_'..'amulet')
+            end
+            inst:AddTag('lol_wp_trinity_type_'..'weapon')
+
             if inst.components.equippable then
 
                 if inst.components.lol_wp_trinity_enemyselect then
@@ -327,6 +367,11 @@ local function onpreload(inst,data)
                 -- inst.components.equippable.dapperness = 0
             end
         elseif inst.lol_wp_trinity_type == 'amulet' then
+            if inst:HasTag('lol_wp_trinity_type_'..'weapon') then
+                inst:RemoveTag('lol_wp_trinity_type_'..'weapon')
+            end
+            inst:AddTag('lol_wp_trinity_type_'..'amulet')
+
             if inst.components.equippable then
 
                 if inst.components.lol_wp_trinity_enemyselect then
@@ -347,7 +392,7 @@ local function fn()
 
     inst.entity:AddTransform()
     inst.entity:AddAnimState()
-    -- inst.entity:AddLight()
+    inst.entity:AddLight()
     inst.entity:AddMiniMapEntity()
     inst.entity:AddNetwork()
     inst.entity:AddSoundEmitter()
@@ -359,17 +404,19 @@ local function fn()
 
     MakeInventoryFloatable(inst, "med", nil, 0.75)
 
-    -- inst.Light:SetFalloff(0.5)
-    -- inst.Light:SetIntensity(.8)
-    -- inst.Light:SetRadius(TUNING.MOD_LOL_WP.TRINITY.LIGHT_RADIUS)
-    -- inst.Light:SetColour(252/255, 212/255, 28/255)
-    -- inst.Light:Enable(false)
+    inst.Light:SetFalloff(0.5)
+    inst.Light:SetIntensity(.8)
+    inst.Light:SetRadius(TUNING.MOD_LOL_WP.TRINITY.LIGHT_RADIUS)
+    inst.Light:SetColour(252/255, 212/255, 28/255)
+    inst.Light:Enable(false)
 
     inst.entity:SetPristine()
 
     inst:AddTag("nosteal")
 
-    
+    inst:AddTag('rangedweapon')
+
+    inst:AddTag('lol_wp_trinity_type_'..'weapon')
 
     -- inst.MiniMapEntity:SetIcon(prefab_id..".tex")
     inst.Transform:SetScale(.7,.7,.7)
@@ -378,11 +425,19 @@ local function fn()
         return inst 
     end
 
+    ---@class ent
+    ---@field lol_wp_trinity_prisma_num number|nil # 三相之力
+    ---@field lol_wp_trinity_type 'weapon'|'amulet' # 三相之力
+    ---@field real_weapon ent # 三相之力
+
     inst.lol_wp_trinity_prisma_num = 3 
     inst.lol_wp_trinity_type = 'weapon' -- or 'amulet'
+    
 
     inst.real_weapon = SpawnPrefab("lol_wp_terraprisma_real_weapon")
     inst.real_weapon.entity:SetParent(inst.entity)
+
+    inst:AddComponent('lol_wp_trinity_data')
 
     --用于非手部栏位时的攻击目标选择
     inst:AddComponent("lol_wp_trinity_enemyselect")
@@ -393,8 +448,12 @@ local function fn()
     inst:AddComponent("inventoryitem")
     inst.components.inventoryitem.imagename = prefab_id
     inst.components.inventoryitem.atlasname = "images/inventoryimages/"..prefab_id..".xml"
-    -- inst.components.inventoryitem:SetOnDroppedFn(function()
-    -- end)
+    inst.components.inventoryitem:SetOnDroppedFn(function()
+        inst.Light:Enable(true)
+    end)
+    inst.components.inventoryitem:SetOnPutInInventoryFn(function()
+        inst.Light:Enable(false)
+    end)
 
     inst:AddComponent("equippable")
     inst.components.equippable.equipslot = EQUIPSLOTS.HANDS
@@ -412,6 +471,7 @@ local function fn()
     -- inst.components.weapon:SetOnProjectileLaunched(OnProjectileLaunched)
     -- inst.components.weapon:SetProjectile('blowdart_walrus')
     inst.components.weapon:SetOnAttack(onattack)
+
 
     -- inst:AddComponent("lol_wp_trinity_parts")
 

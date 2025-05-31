@@ -151,31 +151,57 @@ local stategraph = {
         delay_time = 0,
         exit_time = 0,
     },
+    -- follow = {
+    --     name = "follow",
+    --     onenter_fn = pass,
+    --     delay_update_fn = pass,
+    --     runtime_update_fn = function(state, self, dt)
+    --         local pos = self.inst:GetPosition()
+    --         local dest = self:GetFollowPosition()
+    --         local distsq = pos:DistSq(dest)
+    --         if LOL_WP_TERRAPRISMA_CIRCLE then
+    --             local speed = distsq*5
+    --             self.inst.Physics:SetMotorVel(speed,0,0)
+    --             self.inst:FacePoint(dest)
+    --         -- else
+    --         --     local speed = self.player.components.locomotor:GetRunSpeed()
+    --         --     self.inst.Physics:SetMotorVel(speed,0,0)
+    --         --     self.inst:FacePoint(dest)
+    --         --     if distsq <= 0.1 then
+    --         --         self:GoToState(self.SG.idle)
+    --         --     end
+    --         end
+    --     end,
+    --     onexit_fn = pass,
+    --     from_state = nil,
+    --     enter_time = 0,
+    --     delay_time = 0.1,--0.1秒延迟
+    --     exit_time = 0,
+    -- },
     follow = {
         name = "follow",
         onenter_fn = pass,
         delay_update_fn = pass,
         runtime_update_fn = function(state, self, dt)
-            local pos = self.inst:GetPosition()
             local dest = self:GetFollowPosition()
-            local distsq = pos:DistSq(dest)
+            local current_pos = self.inst:GetPosition()
+            
+            -- 使用插值平滑移动
+            local lerp_factor = 0.25 -- 调整这个值来控制平滑度（0.1 到 0.5 之间）
+            local new_x = current_pos.x + (dest.x - current_pos.x) * lerp_factor
+            local new_z = current_pos.z + (dest.z - current_pos.z) * lerp_factor
+            self.inst.Transform:SetPosition(new_x, 0, new_z)
+    
+            -- 保持旋转效果
             if LOL_WP_TERRAPRISMA_CIRCLE then
-                local speed = distsq*5
-                self.inst.Physics:SetMotorVel(speed,0,0)
-                self.inst:FacePoint(dest)
-            -- else
-            --     local speed = self.player.components.locomotor:GetRunSpeed()
-            --     self.inst.Physics:SetMotorVel(speed,0,0)
-            --     self.inst:FacePoint(dest)
-            --     if distsq <= 0.1 then
-            --         self:GoToState(self.SG.idle)
-            --     end
+                local angle = cal_angle(current_pos, dest)
+                self.inst.Transform:SetRotation(angle)
             end
         end,
         onexit_fn = pass,
         from_state = nil,
         enter_time = 0,
-        delay_time = 0.1,--0.1秒延迟
+        delay_time = 0, -- 0.1秒延迟
         exit_time = 0,
     },
     pre_shoot = {
@@ -504,7 +530,24 @@ function SummonController:CheckHit()
                 end
 
                 self.player.lol_wp_trinity_terraprisma_canhittarget = true
+                -- 加需求 加成
+                local mult = 1
+                if self.player and self.player.components.debuffable and self.player.components.debuffable:HasDebuff('buff_electricattack') then
+                    local istargwet = self.target.components.moisture ~= nil and self.target.components.moisture:GetMoisturePercent() or self.target:GetIsWet()
+                    mult = mult * (istargwet and 2.5 or 1.5)
+                end
+
+                if mult > 1 then
+                    self.player.components.combat.externaldamagemultipliers:SetModifier(self.player, mult, "when_lol_wp_trinity_terraprisma")
+                end
+                if self.inst.lol_wp_trinity_type == 'amulet' then
+                    self.player.damage_from_lol_wp_trinity_terraprisma_amulet = true
+                end
                 self.player.components.combat:DoAttack(v, real_weapon, nil, 'lol_wp_trinity_terraprisma')
+                self.player.damage_from_lol_wp_trinity_terraprisma_amulet = false
+
+                self.player.components.combat.externaldamagemultipliers:RemoveModifier(self.player, "when_lol_wp_trinity_terraprisma")
+
                 self.player.lol_wp_trinity_terraprisma_canhittarget = false
             else--假人没有combat组件，直接用GetAttacked
                 local spdamage = {['planar']=LOL_WP_TERRAPRISMA_PLANARDAMAGE}
@@ -528,11 +571,25 @@ function SummonController:CheckHit()
     end
 end
 
-function SummonController:PlzGoBack()
-    if not self.player.lol_wp_trinity_keepatking then
-        self.has_attacked_once = true
-        self.circle_to_back = true
-        self:GoToState(self.SG.back,true)
+function SummonController:PlzGoBack(force)
+    if self.player and self.player.isequip_lol_wp_trinity_weapon then
+        return
+    end
+    if force then
+        -- if not self.player.lol_wp_trinity_keepatking then
+            self.has_attacked_once = true
+            self.circle_to_back = true
+            self:GoToState(self.SG.back,true)
+        -- end
+    end
+    ------------------------
+    if self.inst and self.inst.lol_wp_trinity_type and self.inst.lol_wp_trinity_type == 'weapon' then
+    else
+        if not self.player.lol_wp_trinity_keepatking then
+            self.has_attacked_once = true
+            self.circle_to_back = true
+            self:GoToState(self.SG.back,true)
+        end
     end
 end
 
@@ -548,11 +605,11 @@ function SummonController:PlzGoBackBeforeCheckTargetIsValid()
     end
     if self.target then
         if not self.target:IsValid() then
-            self:PlzGoBack()
+            self:PlzGoBack(true)
             return
         end
         if self.target:IsValid() and self.target.components and self.target.components.health:IsDead() then
-            self:PlzGoBack()
+            self:PlzGoBack(true)
             return
         end
     end

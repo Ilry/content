@@ -63,11 +63,13 @@
 		<Row ImprovementType="IMPROVEMENT_PEBBLESTACKS" FeatureType="FEATURE_REEF"/>
 		<Row ImprovementType="IMPROVEMENT_ARTIFICIAL_ISLAND" FeatureType="FEATURE_REEF"/>
 	</Improvement_ValidFeatures>
-	<Improvement_ValidBuildUnits>
+	
+	<!--<Improvement_ValidBuildUnits>
 		<Row ImprovementType="IMPROVEMENT_STONEWORKS" UnitType="UNIT_YUGONG"/>
+		<Row ImprovementType="IMPROVEMENT_MOUNTAIN_TUNNEL" UnitType="UNIT_YUGONG"/>
 		<Row ImprovementType="IMPROVEMENT_PEBBLESTACKS" UnitType="UNIT_JINGWEI"/>
 		<Row ImprovementType="IMPROVEMENT_ARTIFICIAL_ISLAND" UnitType="UNIT_TIAN_KUN_HAO"/>
-	</Improvement_ValidBuildUnits>
+	</Improvement_ValidBuildUnits>-->
 
 	<BuildingModifiers>
 		<!--<Row>

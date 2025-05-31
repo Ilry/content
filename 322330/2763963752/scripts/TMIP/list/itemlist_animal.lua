@@ -1,4 +1,5 @@
 return {
+    "gelblob",--恶液
     "otter",--水獭掠夺者
     "merm_lunar",--戈尔普
     "mermguard_lunar",--格普
@@ -8,7 +9,7 @@ return {
     "crabking_mob_knight",--蟹骑士
     "crabking_mob",--蟹卫
 
-    -- "ruins_shadeling",--休憩恐惧
+    "ruins_shadeling",--休憩恐惧
     "fused_shadeling_bomb",--绝望螨
     "fused_shadeling",--熔合暗影
     "lunar_grazer",--牧者
@@ -36,7 +37,7 @@ return {
     "bishop_nightmare",
     "rook_nightmare",
     --远古生物
-    -- "bigshadowtentacle",
+    "bigshadowtentacle",
     "archive_centipede",
     --蜘蛛
     "spider",
@@ -56,6 +57,7 @@ return {
     "mutatedhound",
     "clayhound",
     --小动物
+    "rabbitking_lucky",--机缘兔子
     "rabbit",
     "lunarfrog",--明眼青蛙
     "frog",
@@ -117,6 +119,7 @@ return {
     "tentacle_pillar_arm",
     "tentacle",
     "tentacle_pillar",
+    "tentacle_pillar_atrium",--大触手
     --昆虫
     "bee",
     "killerbee",
@@ -126,7 +129,7 @@ return {
     "fireflies",
     "dustmoth",
     "lightflier",
-    -- "wormwood_lightflier",--球状光虫
+    "wormwood_lightflier",--球状光虫
     --异化生物
     "eyeofterror_mini",
     "mushgnome",
@@ -145,6 +148,11 @@ return {
     "spore_small",
     "spore_medium",
     --洞穴生物
+    "chest_mimic_revealed",--暴躁箱子
+    "chest_mimic",--华丽箱子
+    "itemmimic_revealed",--拟态蠕虫
+    
+
     "molebat",
     "monkey",
     "slurtle",
@@ -157,12 +165,15 @@ return {
     --鬼魂
     "ghost",
     "smallghost",
+    "graveguard_ghost",--大惊吓
     --海洋生物
     "trap_starfish",
     "waterplant",
     --影怪
     "crawlingnightmare",
     "nightmarebeak",
+    "ruinsnightmare",--潜伏梦魇
+    "shadowthrall_mouth",--墨荒
     --boss的召唤物和随从
     "eyeofterror_mini_grounded",
     "deer",

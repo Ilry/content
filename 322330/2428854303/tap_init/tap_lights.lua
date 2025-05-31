@@ -6,7 +6,7 @@ local conf_mushlight 	= GetModConfigData("TAP_MUSHLIGHT")
 
 local function setItemPause(item, pause)
     if item ~= nil then
-        -- c_announce("setItemPause: "..(item.prefab and item.prefab or 'noname').." "..tostring(pause))
+        -- c_announce("setItemPause: "..(item.prefab and item.prefab or "noname").." "..tostring(pause))
         if pause then
             if item.components.perishable then item.components.perishable:StopPerishing() end
             if item.components.fueled then item.components.fueled:StopConsuming() end
@@ -42,15 +42,15 @@ local function InfiniteLightFn(inst)
 end
 
 if conf_mushlight == 1 then
-    AddPrefabPostInit('mushroom_light', InfiniteLightFn)
+    AddPrefabPostInit("mushroom_light", InfiniteLightFn)
 end
 
 if conf_glowcap == 1 then
-    AddPrefabPostInit('mushroom_light2', InfiniteLightFn)
+    AddPrefabPostInit("mushroom_light2", InfiniteLightFn)
 end
 
 if conf_winter_tree == 1 then
-    AddPrefabPostInit('winter_tree', InfiniteLightFn)
-    AddPrefabPostInit('winter_deciduoustree', InfiniteLightFn)
-    AddPrefabPostInit('winter_twiggytree', InfiniteLightFn)
+    AddPrefabPostInit("winter_tree", InfiniteLightFn)
+    AddPrefabPostInit("winter_deciduoustree", InfiniteLightFn)
+    AddPrefabPostInit("winter_twiggytree", InfiniteLightFn)
 end

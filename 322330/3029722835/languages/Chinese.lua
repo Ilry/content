@@ -15,7 +15,7 @@ GLOBAL.STRINGS.TURD = {
     BUTTON_TEXT_IMPORT = '从文件导入',
     BUTTON_TEXT_ADMIN_REPLACE = '一键替换（仅管理员）',
     TITLE_TEXT_IMPORT_PATH = '请输入文件名',
-
+    JSON_NEEDED = '文件名需以".json"结尾',
     BUTTON_TEXT_SEARCH = '搜索',
 
     TITLE_TEXT_SURE_TO_DELETE = '确定删除该配置？',

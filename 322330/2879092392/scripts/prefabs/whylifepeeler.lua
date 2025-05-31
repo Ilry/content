@@ -51,7 +51,7 @@ local function createsoul(inst, target, pos)
                 caster.components.sanity:DoDelta(-10)
             end
         else
-            inst.components.rechargeable:Discharge(30)
+            inst.components.rechargeable:Discharge(15)
             local soul = SpawnPrefab("wortox_soul_spawn")
             soul.Transform:SetPosition(pos:Get())
             inst.components.fueled:DoDelta(-60)

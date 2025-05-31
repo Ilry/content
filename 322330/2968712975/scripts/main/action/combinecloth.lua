@@ -35,7 +35,9 @@ local fn = function(act) -- 动作触发的函数。传入的是一个BufferedAc
     return true
 end
 local COMBINECLOTH=AddAction(id,name,fn)
---COMBINECLOTH.priority = -1
+if TUNING.RANGCHIGHPRIOR then
+COMBINECLOTH.priority = 11
+end
 COMBINECLOTH.rmb = true
 --COMBINECLOTH.canforce=true
 --COMBINECLOTH.instant = true

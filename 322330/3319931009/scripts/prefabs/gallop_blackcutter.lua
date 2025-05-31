@@ -1,6 +1,12 @@
+---@diagnostic disable
+
+local modid = 'lol_wp'
+
+local blackcutter_newanim = 'blackcutter_newanim'
 local assets =
 {
     Asset("ANIM", "anim/gallop_blackcutter.zip"),
+    Asset("ANIM", "anim/"..blackcutter_newanim..".zip"),
 }
 
 local function Repaire(inst, percent)
@@ -9,6 +15,7 @@ local function Repaire(inst, percent)
         finiteuses:SetUses(math.max(0, math.min(finiteuses.total, finiteuses:GetUses()+finiteuses.total*percent)))
     end
 end
+
 
 local function DoRegen(inst, owner)
     if owner.components.sanity ~= nil and owner.components.sanity:IsInsanityMode() then
@@ -33,17 +40,19 @@ local function onequip(inst, owner)
     local skin_build = inst:GetSkinBuild()
     if skin_build ~= nil then
         owner:PushEvent("equipskinneditem", inst:GetSkinName())
-        owner.AnimState:OverrideItemSkinSymbol("swap_object", skin_build, "gallop_blackcutter", inst.GUID, "swap_gallop_blackcutter")
+        -- owner.AnimState:OverrideItemSkinSymbol("swap_object", skin_build, "gallop_blackcutter", inst.GUID, "swap_gallop_blackcutter")
+        owner.AnimState:OverrideItemSkinSymbol("swap_object", skin_build, blackcutter_newanim, inst.GUID, "swap_"..blackcutter_newanim)
     else
-        owner.AnimState:OverrideSymbol("swap_object", "gallop_blackcutter", "swap_gallop_blackcutter")
+        -- owner.AnimState:OverrideSymbol("swap_object", "gallop_blackcutter", "swap_gallop_blackcutter")
+        owner.AnimState:OverrideSymbol("swap_object", blackcutter_newanim, "swap_"..blackcutter_newanim)
     end
     owner.AnimState:Show("ARM_carry")
     owner.AnimState:Hide("ARM_normal")
 
-    if owner.components.combat then
-        inst.atk_speed_old = owner.components.combat.min_attack_period
-        owner.components.combat:SetAttackPeriod(inst.atk_speed_old*1.95)
-    end
+    -- if owner.components.combat then
+    --     inst.atk_speed_old = owner.components.combat.min_attack_period
+    --     owner.components.combat:SetAttackPeriod(inst.atk_speed_old*1.95)
+    -- end
 
     StartRegen(inst, owner)
 end
@@ -56,21 +65,46 @@ local function onunequip(inst, owner)
         owner:PushEvent("unequipskinneditem", inst:GetSkinName())
     end
 
-    if owner.components.combat and owner.components.combat.min_attack_period == inst.atk_speed_old*1.95 then
-        owner.components.combat:SetAttackPeriod(inst.atk_speed_old)
-    end
+    -- if owner.components.combat and owner.components.combat.min_attack_period == inst.atk_speed_old*1.95 then
+    --     owner.components.combat:SetAttackPeriod(inst.atk_speed_old)
+    -- end
 
     StopRegen(inst)
 end
 
 local function ShouldAcceptItem(inst, item, giver)
+    if TUNING[string.upper('CONFIG_'..modid..'could_repair')] == 4 or TUNING[string.upper('CONFIG_'..modid..'could_repair')] == 2 then
+        return false
+    end
     return item.prefab == "nightmarefuel" or item.prefab == "horrorfuel"
+end
+---comment
+---@param item ent
+---@param doer ent
+local function repairSound(item,doer)
+    if doer and doer.SoundEmitter then
+        local sound
+        local prefab = item and item.prefab
+        if prefab then
+            if prefab == 'nightmarefuel' or prefab == 'horrorfuel' then
+                sound = 'dontstarve/common/nightmareAddFuel'
+            else
+                sound = 'aqol/new_test/metal'
+            end
+        end
+        if sound then
+            doer.SoundEmitter:PlaySound(sound)
+        end
+    end
 end
 
 local function OnGetItemFromPlayer(inst, giver, item)
     if item.prefab == "nightmarefuel" then
+        repairSound(item,giver)
         Repaire(inst, .2)
+        
     elseif item.prefab == "horrorfuel" then
+        repairSound(item,giver)
         Repaire(inst, 1)
     end
 end
@@ -87,12 +121,22 @@ local function onattack(inst, attacker, target)
     target.gallop_blackcutter_stack = math.min((target.gallop_blackcutter_stack or 0)+1, 5)
 
     if target.gallop_blackcutter_task == nil then
+        if inst.components.equippable then
+            inst.components.equippable.walkspeedmult = 1.2
+        end
+        local basemultiplier = 1
+        local externaldamagemultipliers = 1
+        if attacker.components.combat then
+            basemultiplier = attacker.components.combat.damagemultiplier or 1
+            externaldamagemultipliers = attacker.components.combat.externaldamagemultipliers and attacker.components.combat.externaldamagemultipliers:Get() or 1
+        end
         target.gallop_blackcutter_task = target:DoPeriodicTask(1, function()
             if target:IsValid() and target.components.health and not target.components.health:IsDead() then
+                local basedmg = 5
                 local tar_maxhp = target.components.health.maxhealth
                 local tar_cur_percent = target.components.health:GetPercent()
                 local tar_cur_hp = tar_cur_percent * tar_maxhp
-                local tar_should_hp = tar_cur_hp - 5*target.gallop_blackcutter_stack
+                local tar_should_hp = tar_cur_hp - (basedmg*basemultiplier*externaldamagemultipliers)*target.gallop_blackcutter_stack
                 local tar_should_percent = math.clamp(tar_should_hp/tar_maxhp,0,1)
 
                 -- TheNet:Announce(tar_should_percent)
@@ -101,10 +145,15 @@ local function onattack(inst, attacker, target)
 
                 local fx = SpawnPrefab("ink_puddle_land")
                 fx.Transform:SetPosition(target:GetPosition():Get())
+
+                
             end
         end, .25)
 
         target.gallop_blackcutter_task.onfinish = function()
+            if inst.components.equippable then
+                inst.components.equippable.walkspeedmult = .9
+            end
             target.gallop_blackcutter_task = nil
             target.gallop_blackcutter_stack = nil
         end
@@ -180,16 +229,22 @@ local function fn()
     inst.entity:AddNetwork()
 
     MakeInventoryPhysics(inst)
+    
+    -- inst.AnimState:SetBank("gallop_blackcutter")
+    -- inst.AnimState:SetBuild("gallop_blackcutter")
+    -- inst.AnimState:PlayAnimation("idle")
 
-    inst.AnimState:SetBank("gallop_blackcutter")
-    inst.AnimState:SetBuild("gallop_blackcutter")
-    inst.AnimState:PlayAnimation("idle")
+    inst.AnimState:SetBank(blackcutter_newanim)
+    inst.AnimState:SetBuild(blackcutter_newanim)
+    inst.AnimState:PlayAnimation("idle",true)
 
     inst:AddTag("sharp")
     inst:AddTag("weapon")
     inst:AddTag("tool")
     inst:AddTag("nopunch")
     inst:AddTag("gallop_blackcutter")
+
+    inst:AddTag('shadow_item')
 
     MakeInventoryFloatable(inst, "small", nil, 1)
 

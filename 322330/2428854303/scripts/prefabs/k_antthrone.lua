@@ -78,7 +78,7 @@ local function fn()
 	inst.entity:AddNetwork()
 
 	local minimap = inst.entity:AddMiniMapEntity()
-	minimap:SetIcon("kyno_rock_pigruins.tex")
+	minimap:SetIcon("kyno_antqueen_entrance.tex")
 	
 	inst.Transform:SetScale(0.7, 0.7, 0.7)
 	
@@ -125,7 +125,7 @@ local function queenfn()
 	inst.entity:AddNetwork()
 	
 	local minimap = inst.entity:AddMiniMapEntity()
-	minimap:SetIcon("kyno_rock_pigruins.tex")
+	minimap:SetIcon("kyno_antqueen_entrance.tex")
 	
 	inst.Transform:SetScale(0.7, 0.7, 0.7)
 	

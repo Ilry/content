@@ -41,14 +41,22 @@ PrefabFiles = {
 	"whyflutoscope",
 	"whylantern",
     "whylunarwhip",
-	--"why_arsenal_red",
-	--"why_arsenal_blue",
-	--"why_arsenal_purple",
-	--"why_arsenal_orange",
-	--"why_arsenal_yellow",
-	--"why_arsenal_green",
-	--"why_arsenal_opal",
+	"why_arsenal_red",
+	"why_arsenal_blue",
+	"why_arsenal_purple",
+	"why_arsenal_orange",
+	"why_arsenal_yellow",
+	"why_arsenal_green",
+	"why_arsenal_opal",
 	--
+    "ancientdreams_armour_polish",
+    "ancientdreams_moss",
+    "ancientdreams_mineral_dust",
+    "ancientdreams_fairy_dust",
+    "why_goatshard",
+	"mineralmeteor",
+    --
+    
 	"ancientdreams_gemshard",
 	"ancientdreams_preparedfoods",
 	--
@@ -95,7 +103,10 @@ PrefabFiles = {
 	"refined_purple_gem_buff",
 	"refined_blue_eye_in_face_buff",
 	-- fxs
-	"aureola_boom"
+	"aureola_boom",
+	-- geology update
+	"ancientdreams_minerals",
+	"ancientdreams_chiseltool",
 	}
 
 Assets = {
@@ -105,6 +116,7 @@ Assets = {
 	Asset( "ANIM", "anim/status_endurance.zip"),
 	Asset( "ANIM", "anim/xs_endurance.zip"),
 	Asset( "ANIM", "anim/why_klaus_sack_piece.zip"),
+    Asset( "ANIM", "anim/why_goatshard.zip"),
 --------------------------------------------------vision
 	Asset( "IMAGE", "images/fx/whye_fx.tex"),
 	Asset( "ATLAS", "images/fx/whye_fx.xml"),
@@ -171,6 +183,8 @@ Assets = {
 	Asset( "IMAGE", "bigportraits/wonderwhy_abyss.tex" ),
     Asset( "IMAGE", "bigportraits/wonderwhy_abyss.tex" ),
 	Asset( "ATLAS", "bigportraits/wonderwhy_abyss.xml" ),
+    Asset( "IMAGE", "bigportraits/wonderwhy_fairy.tex" ),
+	Asset( "ATLAS", "bigportraits/wonderwhy_fairy.xml" ),
     Asset( "IMAGE", "images/map_icons/wonderwhy.tex" ),
     Asset( "ATLAS", "images/map_icons/wonderwhy.xml" ),
     Asset( "SOUNDPACKAGE", "sound/wonderwhy.fev"),
@@ -220,10 +234,20 @@ Assets = {
 	Asset("IMAGE", "images/inventoryimages/why_purple_seeds.tex"),
     Asset("ATLAS", "images/inventoryimages/why_purple_packet.xml"),
 	Asset("IMAGE", "images/inventoryimages/why_purple_packet.tex"),
+    Asset("ATLAS", "images/inventoryimages/dust_gemshard.xml"),
+	Asset("IMAGE", "images/inventoryimages/dust_gemshard.tex"),
+    Asset("ATLAS", "images/inventoryimages/dust_cutgrass.xml"),
+	Asset("IMAGE", "images/inventoryimages/dust_cutgrass.tex"),
+    Asset("ATLAS", "images/inventoryimages/dust_livinglog.xml"),
+	Asset("IMAGE", "images/inventoryimages/dust_livinglog.tex"),
+    Asset("ATLAS", "images/inventoryimages/dust_rocks.xml"),
+	Asset("IMAGE", "images/inventoryimages/dust_rocks.tex"),
     Asset("ATLAS", "images/inventoryimages/liquid_mirror_greencombo.xml"),
 	Asset("IMAGE", "images/inventoryimages/liquid_mirror_greencombo.tex"),
     Asset("ATLAS", "images/inventoryimages/singingshell_why.xml"),
     Asset("IMAGE", "images/inventoryimages/singingshell_why.tex"),
+    Asset("ATLAS", "images/inventoryimages/why_goatshard.xml"),
+    Asset("IMAGE", "images/inventoryimages/why_goatshard.tex"),
 -----------------------------------------------turfs
 	Asset("ATLAS", "images/inventoryimages/why_church_turf.xml"),
 	Asset("IMAGES", "images/inventoryimages/why_church_turf.tex"),
@@ -494,7 +518,7 @@ AddPrefabPostInit("sewing_mannequin", function(inst)
 AddPrefabPostInit("gnarcoon_eye", function(inst)
 	inst:AddTag("whyeball") end)]]
 
-local whybox_accept = {"cutgrass", "goldnugget", "rocks", "flint", "log", "twigs"}
+local whybox_accept = {"cutgrass", "goldnugget", "rocks", "flint", "log", "twigs", "moonrocknugget","nitre", "ancientdreams_gemshard","ancientdreams_mineral_dust","ancientdreams_moss", "livinglog", "nightmarefuel"}
 	for _, v in pairs(whybox_accept) do
 		AddPrefabPostInit(v, function(inst)
 		inst:AddTag("whybox_accept")
@@ -741,6 +765,58 @@ end
 
 AddClassPostConstruct("widgets/statusdisplays", StatusPostConstructForWonder)
 
+--UM food fix for the people who needs it
+local gemfoodlist = {
+	"ancientdreams_gegg",
+	"ancientdreams_candy",
+	"ancientdreams_cube",
+	"ancientdreams_geocake",
+	"ancientdreams_hyubsip",
+	"ancientdreams_kozisip",
+	"ancientdreams_tart",
+	"ancientdreams_evilbred",
+	"ancientdreams_gell",
+	"ancientdreams_quaso",
+	"ancientdreams_fhish",
+	"ancientdreams_lombter",
+	"ancientdreams_pizza",
+	"ancientdreams_ser",
+}
+
+local function UM_Food_Compat(inst, health_delta, hunger_delta, sanity_delta, food, feeder)
+	if not food:HasTag("ancientdreams_gemfood") then
+		if health_delta <= 0 then
+			health_delta = 0
+		end
+
+		if sanity_delta then
+			sanity_delta = 0
+		end
+	end
+
+	return health_delta, hunger_delta, sanity_delta
+end
+
+if IsModEnable("󰀕 Uncompromising Mode") then
+	for _, v in pairs(gemfoodlist) do
+		AddPrefabPostInit(v, function(inst)
+			inst:AddTag("ancientdreams_gemfood")
+		end)
+	end
+
+	AddPrefabPostInit("wonderwhy", function(inst)
+		if not TheWorld.ismastersim then
+			return
+		end
+
+		inst:AddTag("ignores_healthregen")
+
+		if inst.components.eater then
+			inst.components.eater.custom_stats_mod_fn = UM_Food_Compat
+		end
+	end)
+end
+
 local function BuilderEnduranceHook(inst)
 	local oldHasCharacterIngredient = inst.HasCharacterIngredient
 	inst.HasCharacterIngredient = function(self, ingredient)
@@ -916,6 +992,93 @@ AddPrefabPostInit("krampus", function(inst)
 	end
 end)
 
+AddPrefabPostInit("lightninggoat", function(inst)
+	if inst.components.lootdropper then
+		inst.components.lootdropper:AddChanceLoot("why_goatshard", 1)
+	end
+end)
+
+AddPrefabPostInit("rock1", function(inst)
+	if inst.components.lootdropper then
+		inst.components.lootdropper:AddChanceLoot("ancientdreams_mineral_dust", 1)
+	end
+end)
+
+AddPrefabPostInit("rock2", function(inst)
+	if inst.components.lootdropper then
+		inst.components.lootdropper:AddChanceLoot("ancientdreams_mineral_dust", 1)
+	end
+end)
+
+AddPrefabPostInit("rock_flintless", function(inst)
+	if inst.components.lootdropper then
+		inst.components.lootdropper:AddChanceLoot("ancientdreams_mineral_dust", 1)
+	end
+end)
+
+AddPrefabPostInit("rock7", function(inst)
+	if inst.components.lootdropper then
+		inst.components.lootdropper:AddChanceLoot("ancientdreams_mineral_dust", 1)
+	end
+end)
+
+AddPrefabPostInit("rock_avocado_fruit", function(inst)
+	if inst.components.lootdropper then
+		inst.components.lootdropper:AddChanceLoot("ancientdreams_mineral_dust", 0.1)
+	end
+end)
+
+function MossPostInit(inst)    
+	if GLOBAL.TheWorld.ismastersim then
+		local oldonfinish = inst.components.workable.onfinish
+		inst.components.workable.onfinish = function(inst, chopper)
+			if chopper and inst.components.growable then
+				if inst.noleif == true then
+					inst.components.lootdropper:AddChanceLoot("ancientdreams_mineral", 1)
+					inst.components.lootdropper:AddChanceLoot("ancientdreams_moss", .25)
+				elseif inst.components.growable.stage == 3 then
+					inst.components.lootdropper:AddChanceLoot("ancientdreams_moss", 1)
+				elseif inst.components.growable.stage == 2 then
+					inst.components.lootdropper:AddChanceLoot("ancientdreams_moss", .6)
+				else
+					inst.components.lootdropper:AddChanceLoot("ancientdreams_moss", .4)
+				end
+			elseif chopper then
+				inst.components.lootdropper:AddChanceLoot("ancientdreams_moss", 1)
+			end
+			if oldonfinish then
+				oldonfinish(inst, chopper)
+			end
+		end
+	end
+		return inst
+end 
+
+local trees = {"evergreen", 
+    "evergreen_normal", 
+    "evergreen_tall", 
+    "evergreen_short", 
+    "evergreen_sparse",
+    "evergreen_sparse_normal", 
+    "evergreen_sparse_tall", 
+    "evergreen_sparse_short",
+    "deciduoustree",
+    "deciduoustree_normal",
+    "deciduoustree_tall",
+    "deciduoustree_short",
+    "twiggytree",
+    "twiggy_tall",
+    "twiggy_normal",
+    "twiggy_short",
+    "mushtree_small",
+    "mushtree_medium",
+    "mushtree_tall",
+    "rock_petrified_tree",
+    "rock_petrified_tree_short",
+    "rock_petrified_tree_tall",
+    "rock_petrified_tree_old"} for k,v in pairs(trees) do AddPrefabPostInit(v, MossPostInit)
+end
+
 AddReplicableComponent("why_endurance")
 
 -- Thanks to Medal
@@ -966,6 +1129,12 @@ local minisign_show_list = {
 	"whylantern",
 	"whylunarwhip",
 	--
+    "ancientdreams_armour_polish",
+    "ancientdreams_moss",
+    "ancientdreams_mineral_dust",
+    "ancientdreams_fairy_dust",
+    "why_goatshard",
+    --
 	"ancientdreams_gemshard",
 	"ancientdreams_preparedfoods",
     "ancientdreams_hyubsip",
@@ -1195,4 +1364,65 @@ AddPrefabPostInit("reskin_tool", function(inst)
 			end
 		end
 	end
+end)
+
+AddComponentPostInit("meteorshower", function(self)
+
+	if not TheWorld.ismastersim then
+		return
+	end
+
+	local easing = require("easing")
+	local _SpawnMeteor = self.SpawnMeteor
+
+	function self:SpawnMeteor(mod)
+		if math.random() <= 0.15 then
+			--Randomize spawn point
+			local x, y, z = self.inst.Transform:GetWorldPosition()
+			local theta = math.random() * TWOPI
+			-- Do some easing fanciness to make it less clustered around the spawner prefab
+			local radius = easing.outSine(math.random(), math.random() * 7, TUNING.METEOR_SHOWER_SPAWN_RADIUS, 1)
+
+			local map = TheWorld.Map
+			local fan_offset = FindValidPositionByFan(theta, radius, 30,
+				function(offset)
+					return map:IsPassableAtPoint(x + offset.x, y + offset.y, z + offset.z)
+				end)
+
+			if fan_offset ~= nil then
+				local met = SpawnPrefab("mineralmeteor")
+				met.Transform:SetPosition(x + fan_offset.x, y + fan_offset.y, z + fan_offset.z)
+
+				local peripheral = radius > TUNING.METEOR_SHOWER_SPAWN_RADIUS - TUNING.METEOR_SHOWER_CLEANUP_BUFFER
+				if mod == nil then
+					mod = 1
+				end
+				
+				local cost = math.floor(1 / mod + .5)
+				if (self.medium_remaining == nil or self.medium_remaining >= cost) then
+					met:SetSize("medium", mod)
+					if self.medium_remaining ~= nil then
+						self.medium_remaining = self.medium_remaining - cost
+					end
+				end
+
+				met:SetPeripheral(peripheral)
+
+				return met
+			end
+		end
+
+		return _SpawnMeteor(self, mod)
+	end
+end)
+
+AddPrefabPostInit("cavein_boulder", function(inst)
+
+	if not TheWorld.ismastersim then
+		return
+	end
+
+	local chis = inst:AddComponent("chiselablerock")
+	chis:SetMineralLoot("why_geo_fruit")
+
 end)

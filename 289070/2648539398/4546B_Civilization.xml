@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 4546B_Civilization -->
+<!-- Author: 27136 -->
+<!-- DateCreated: 10/22/2021 3:30:05 PM -->
+	<GameInfo>
+		<Types>
+			<Row Type="CIVILIZATION_4546B" Kind="KIND_CIVILIZATION"/>
+			<Row Type="TRAIT_UNIT_SEAMOTH" Kind="KIND_TRAIT"/>
+			<Row Type="TRAIT_UNIT_ALIAN_CANON" Kind="KIND_TRAIT"/>
+			<Row Type="TRAIT_UNIT_CYCLOPS" Kind="KIND_TRAIT"/>
+			<Row Type="TRAIT_UNIT_PRAWN" Kind="KIND_TRAIT"/>
+			<Row Type="TRAIT_BUILDING_SCANNER" Kind="KIND_TRAIT" />
+			<Row Type="TRAIT_DISTRICT_LIFETREE" Kind="KIND_TRAIT" />
+			<Row Type="TRAIT_UNIT_LIWEITAN" Kind="KIND_TRAIT" />
+			<Row Type="TRAIT_CIVILIZATION_KALAL" Kind="KIND_TRAIT" />
+			<Row Type="TRAIT_CIVILIZATION_BEAUTYSEA" Kind="KIND_TRAIT" />
+			<Row Type="TRAIT_CIVILIZATION_AERTELA" Kind="KIND_TRAIT" />
+			<Row Type="TRAIT_CIVILIZATION_THELEGACY" Kind="KIND_TRAIT" />
+			<Row Type="TRAIT_IMPROVEMENT_SEASTEAD233" Kind="KIND_TRAIT" />
+			<Row Type="TRAIT_BUILDING_TRANSLATION_DEVICE" Kind="KIND_TRAIT" />
+			
+			
+		</Types>
+		<Civilizations>
+			<!-- Full Civs -->
+			<Row CivilizationType="CIVILIZATION_4546B" Name="LOC_CIVILIZATION_4546B_NAME" Description="LOC_CIVILIZATION_4546B_DESCRIPTION" Adjective="LOC_CIVILIZATION_4546B_ADJECTIVE" StartingCivilizationLevelType="CIVILIZATION_LEVEL_FULL_CIV" RandomCityNameDepth="10" Ethnicity="ETHNICITY_EURO"/>
+		</Civilizations>
+		<CivilizationLeaders>
+			<Row CivilizationType="CIVILIZATION_4546B" LeaderType="LEADER_HAIHUANG" CapitalName="LOC_CITY_NAME_1"/>
+		</CivilizationLeaders>
+		<Traits>
+			<Row TraitType="TRAIT_CIVILIZATION_KALAL" Name="LOC_TRAIT_CIVILIZATION_KALAL_NAME" Description="LOC_TRAIT_CIVILIZATION_KALAL_DESCRIPTION" />
+			<Row TraitType="TRAIT_CIVILIZATION_BEAUTYSEA" Name="LOC_TRAIT_CIVILIZATION_BEAUTYSEA_NAME" Description="LOC_TRAIT_CIVILIZATION_BEAUTYSEA_DESCRIPTION" />
+			<Row TraitType="TRAIT_CIVILIZATION_AERTELA" Name="LOC_TRAIT_CIVILIZATION_AERTELA_NAME" Description="LOC_TRAIT_CIVILIZATION_AERTELA_DESCRIPTION" />
+			<Row TraitType="TRAIT_CIVILIZATION_THELEGACY" Name="LOC_TRAIT_CIVILIZATION_THELEGACY_NAME" Description="LOC_TRAIT_CIVILIZATION_THELEGACY_DESCRIPTION" />
+			<Row TraitType="TRAIT_UNIT_SEAMOTH" Name="LOC_UNIT_SEAMOTH_NAME" Description="LOC_TRAIT_UNIT_SEAMOTH_DESCRIPTION"/>
+			<Row TraitType="TRAIT_UNIT_CYCLOPS" Name="LOC_UNIT_CYCLOPS_NAME" Description="LOC_TRAIT_UNIT_CYCLOPS_DESCRIPTION"/>
+			<Row TraitType="TRAIT_UNIT_PRAWN" Name="LOC_UNIT_PRAWN_NAME" Description="LOC_TRAIT_UNIT_PRAWN_DESCRIPTION"/>
+			<Row TraitType="TRAIT_BUILDING_SCANNER" Name="LOC_BUILDING_SCANNER_NAME" Description="LOC_TRAIT_BUILDING_SCANNER_DESCRIPTION" />
+			<Row TraitType="TRAIT_DISTRICT_LIFETREE" Name="LOC_DISTRICT_LIFETREE_NAME" Description="LOC_TRAIT_DISTRICT_LIFETREE_DESCRIPTION" />
+			<Row TraitType="TRAIT_UNIT_LIWEITAN" Name="LOC_UNIT_LIWEITAN_NAME" Description="LOC_TRAIT_UNIT_LIWEITAN_DESCRIPTION" />
+			<Row TraitType="TRAIT_UNIT_ALIAN_CANON" Name="LOC_UNIT_ALIAN_CANON_NAME" Description="LOC_TRAIT_UNIT_ALIAN_CANON_DESCRIPTION" />
+			<Row TraitType="TRAIT_IMPROVEMENT_SEASTEAD233" Name="LOC_TRAIT_IMPROVEMENT_SEASTEAD233_NAME" Description="LOC_TRAIT_IMPROVEMENT_SEASTEAD233_DESCRIPTION" />
+			<Row TraitType="TRAIT_BUILDING_TRANSLATION_DEVICE" Name="LOC_TRAIT_BUILDING_TRANSLATION_DEVICE_NAME" Description="LOC_TRAIT_BUILDING_TRANSLATION_DEVICE_DESCRIPTION" />
+	
+		</Traits>
+			<CivilizationTraits>
+				<Row CivilizationType="CIVILIZATION_4546B" TraitType="TRAIT_UNIT_SEAMOTH"/>
+				<Row CivilizationType="CIVILIZATION_4546B" TraitType="TRAIT_UNIT_CYCLOPS"/>
+				<Row CivilizationType="CIVILIZATION_4546B" TraitType="TRAIT_UNIT_PRAWN"/>
+				<Row CivilizationType="CIVILIZATION_4546B" TraitType="TRAIT_UNIT_ALIAN_CANON"/>
+				<Row CivilizationType="CIVILIZATION_4546B" TraitType="TRAIT_BUILDING_SCANNER" />
+				<Row CivilizationType="CIVILIZATION_4546B" TraitType="TRAIT_DISTRICT_LIFETREE"/>
+				<Row CivilizationType="CIVILIZATION_4546B" TraitType="TRAIT_UNIT_LIWEITAN"/>
+				<Row CivilizationType="CIVILIZATION_4546B" TraitType="TRAIT_CIVILIZATION_KALAL" />
+				<Row CivilizationType="CIVILIZATION_4546B" TraitType="TRAIT_CIVILIZATION_BEAUTYSEA" />
+				<Row CivilizationType="CIVILIZATION_4546B" TraitType="TRAIT_CIVILIZATION_AERTELA" />
+				<Row CivilizationType="CIVILIZATION_4546B" TraitType="TRAIT_CIVILIZATION_THELEGACY" />
+				<Row CivilizationType="CIVILIZATION_4546B" TraitType="TRAIT_IMPROVEMENT_SEASTEAD233" />
+				<Row CivilizationType="CIVILIZATION_4546B" TraitType="TRAIT_BUILDING_TRANSLATION_DEVICE" />
+			</CivilizationTraits>
+		<CivilizationCitizenNames>
+			<Row CivilizationType="CIVILIZATION_4546B" CitizenName="LOC_CITIZEN_1"/>
+			<Row CivilizationType="CIVILIZATION_4546B" CitizenName="LOC_CITIZEN_2"/>
+			<Row CivilizationType="CIVILIZATION_4546B" CitizenName="LOC_CITIZEN_3"/>
+			<Row CivilizationType="CIVILIZATION_4546B" CitizenName="LOC_CITIZEN_4"/>
+			<Row CivilizationType="CIVILIZATION_4546B" CitizenName="LOC_CITIZEN_5"/>
+			<Row CivilizationType="CIVILIZATION_4546B" CitizenName="LOC_CITIZEN_6"/>
+			<Row CivilizationType="CIVILIZATION_4546B" CitizenName="LOC_CITIZEN_7"/>
+			<Row CivilizationType="CIVILIZATION_4546B" CitizenName="LOC_CITIZEN_8"/>
+			<Row CivilizationType="CIVILIZATION_4546B" CitizenName="LOC_CITIZEN_11" Female="true"/>
+			<Row CivilizationType="CIVILIZATION_4546B" CitizenName="LOC_CITIZEN_12" Female="true"/>
+			<Row CivilizationType="CIVILIZATION_4546B" CitizenName="LOC_CITIZEN_13" Female="true"/>
+			<Row CivilizationType="CIVILIZATION_4546B" CitizenName="LOC_CITIZEN_14" Female="true"/>
+			<Row CivilizationType="CIVILIZATION_4546B" CitizenName="LOC_CITIZEN_15" Female="true"/>
+			<Row CivilizationType="CIVILIZATION_4546B" CitizenName="LOC_CITIZEN_16" Female="true"/>
+			<Row CivilizationType="CIVILIZATION_4546B" CitizenName="LOC_CITIZEN_17" Female="true"/>
+			<Row CivilizationType="CIVILIZATION_4546B" CitizenName="LOC_CITIZEN_18" Female="true"/>
+			
+			
+		</CivilizationCitizenNames>
+		<CityNames>
+			<!--Australia-->
+			<Row CivilizationType="CIVILIZATION_4546B" CityName="LOC_CITY_NAME_1"/>
+			<Row CivilizationType="CIVILIZATION_4546B" CityName="LOC_CITY_NAME_2"/>
+			<Row CivilizationType="CIVILIZATION_4546B" CityName="LOC_CITY_NAME_3"/>
+			<Row CivilizationType="CIVILIZATION_4546B" CityName="LOC_CITY_NAME_4"/>
+			<Row CivilizationType="CIVILIZATION_4546B" CityName="LOC_CITY_NAME_5"/>
+			<Row CivilizationType="CIVILIZATION_4546B" CityName="LOC_CITY_NAME_6"/>
+			<Row CivilizationType="CIVILIZATION_4546B" CityName="LOC_CITY_NAME_7"/>
+			<Row CivilizationType="CIVILIZATION_4546B" CityName="LOC_CITY_NAME_8"/>
+			<Row CivilizationType="CIVILIZATION_4546B" CityName="LOC_CITY_NAME_9"/>
+			<Row CivilizationType="CIVILIZATION_4546B" CityName="LOC_CITY_NAME_10"/>
+			<Row CivilizationType="CIVILIZATION_4546B" CityName="LOC_CITY_NAME_11"/>
+			<Row CivilizationType="CIVILIZATION_4546B" CityName="LOC_CITY_NAME_12"/>
+		</CityNames>
+		<LoadingInfo>
+			<Row>
+				<LeaderType>LEADER_HAIHUANG</LeaderType>
+				<ForegroundImage>IMG_LOADING_FOREGROUND_</ForegroundImage>
+				<BackgroundImage>IMG_LOADING_BACKGROUND_</BackgroundImage>
+			</Row>
+        
+		</LoadingInfo>
+		<DiplomacyInfo>
+			<Row>
+				<Type>LEADER_HAIHUANG</Type>
+				<BackgroundImage>IMG_DIPLOMACY_BACKGROUND_</BackgroundImage>
+			</Row>
+		</DiplomacyInfo>
+		<MomentIllustrations>
+		<Row MomentIllustrationType="MOMENT_ILLUSTRATION_UNIQUE_UNIT" MomentDataType="MOMENT_DATA_UNIT" GameDataType="UNIT_CYCLOPS" Texture="Moment_UniqueUnit_4546B_"/>
+		<Row MomentIllustrationType="MOMENT_ILLUSTRATION_UNIQUE_UNIT" MomentDataType="MOMENT_DATA_UNIT" GameDataType="UNIT_ALIAN_CANON" Texture="ALIAN_CANON_MOMENT1"/>
+		<Row MomentIllustrationType="MOMENT_ILLUSTRATION_UNIQUE_BUILDING" MomentDataType="MOMENT_DATA_BUILDING" GameDataType="BUILDING_SCANNER" Texture="SCANNER_MOMENT1_"/>
+		<Row MomentIllustrationType="MOMENT_ILLUSTRATION_UNIQUE_BUILDING" MomentDataType="MOMENT_DATA_BUILDING" GameDataType="BUILDING_TRANSLATION_DEVICE" Texture="MOMENT222"/>
+		<Row MomentIllustrationType="MOMENT_ILLUSTRATION_UNIQUE_UNIT" MomentDataType="MOMENT_DATA_UNIT" GameDataType="UNIT_SEAMOTH" Texture="SEAMOTH_MOMENT1_"/>
+		<Row MomentIllustrationType="MOMENT_ILLUSTRATION_UNIQUE_UNIT" MomentDataType="MOMENT_DATA_UNIT" GameDataType="UNIT_PRAWN" Texture="PRAWN_MOMENT1_"/>
+		<Row MomentIllustrationType="MOMENT_ILLUSTRATION_UNIQUE_UNIT" MomentDataType="MOMENT_DATA_UNIT" GameDataType="UNIT_LIWEITAN" Texture="LIWEITAN_MOMENT2_"/>
+		<Row MomentIllustrationType="MOMENT_ILLUSTRATION_UNIQUE_DISTRICT" MomentDataType="MOMENT_DATA_DISTRICT" GameDataType="DISTRICT_LIFETREE" Texture="LIFE_OF_TREE_MOMENT2_"/>
+		<Row MomentIllustrationType="MOMENT_ILLUSTRATION_UNIQUE_IMPROVEMENT" MomentDataType="MOMENT_DATA_IMPROVEMENT" GameDataType="IMPROVEMENT_SEASTEAD233" Texture="SEASTED1"/>
+		</MomentIllustrations>
+		</GameInfo>

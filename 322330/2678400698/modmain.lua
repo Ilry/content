@@ -1,3 +1,5 @@
+GLOBAL.setmetatable(env, {__index = function(t, k) return GLOBAL.rawget(GLOBAL, k) end})
+
 PrefabFiles = {
     "wx",
     "wxdiviningrod",
@@ -10,14 +12,9 @@ Assets =
     Asset("ATLAS", "images/inventoryimages.xml"),
 }
 
-local Ingredient = GLOBAL.Ingredient
-local TECH = GLOBAL.TECH
-local STRINGS = GLOBAL.STRINGS
-local TheWorld = GLOBAL.TheWorld
-
 -- Mod Configuration ---------------------
 
-GLOBAL.TUNING.WXAUTOMATION = {
+TUNING.WXAUTOMATION = {
     PERIOD = GetModConfigData("CLOCK_RATE"),
     DISTANT_PERIOD = GetModConfigData("CLOCK_RATE_DISTANT"),
     PATHFINDING_TIME_STEP = GetModConfigData("PATHFINDING_TIME_STEP"),
@@ -96,7 +93,7 @@ modimport("scripts/languages/wxlanguage.lua")
 
 -- Changed some code to make WXs be capable of traveling between shards.
 AddPlayerPostInit(function(inst)
-    if not GLOBAL.TheWorld.ismastersim then
+    if not TheWorld.ismastersim then
         return
     end
 
@@ -115,10 +112,10 @@ AddPlayerPostInit(function(inst)
                 k:AddTag("notarget")
                 k:AddTag("NOCLICK")
 
-                local fx = GLOBAL.SpawnPrefab("spawn_fx_medium")
+                local fx = SpawnPrefab("spawn_fx_medium")
                 fx.Transform:SetPosition(k.Transform:GetWorldPosition())
 
-                k:DoTaskInTime(13 * GLOBAL.FRAMES, k.Remove)
+                k:DoTaskInTime(13 * FRAMES, k.Remove)
             -- Player is despawned and deleted, reset WXs in following mode.
             elseif k:HasTag("wx") and migrationdata == nil then
                 k.components.follower:StopFollowing()
@@ -140,14 +137,14 @@ AddPlayerPostInit(function(inst)
     inst.OnLoad = function(inst, data, ...)
         if data and data.wxFollowers then
             for k, v in pairs(data.wxFollowers) do
-                local wx = GLOBAL.SpawnSaveRecord(v)
+                local wx = SpawnSaveRecord(v)
                 wx:Hide()
                 inst.components.leader:AddFollower(wx)
 
-                local fx = GLOBAL.SpawnPrefab("spawn_fx_medium")
+                local fx = SpawnPrefab("spawn_fx_medium")
                 fx.Transform:SetPosition(wx.Transform:GetWorldPosition())
 
-                wx:DoTaskInTime(13 * GLOBAL.FRAMES, function(wx)
+                wx:DoTaskInTime(13 * FRAMES, function(wx)
                     wx:Show()
                 end)
 
@@ -184,11 +181,11 @@ AddPrefabPostInit("sentryward", function(inst)
         local CARNIVAL_TREE_SCALE = 1.3
         local CARNIVAL_RADIUS = 8
         -- WX Param
-        local SEE_WORK_DIST = GLOBAL.TUNING.WXAUTOMATION.SEE_WORK_DIST
+        local SEE_WORK_DIST = TUNING.WXAUTOMATION.SEE_WORK_DIST
         local PLACER_SCALE = math.sqrt(SEE_WORK_DIST / (CARNIVAL_RADIUS / CARNIVAL_TREE_SCALE))
         if enabled then
             if inst.helper == nil then
-                inst.helper = GLOBAL.CreateEntity()
+                inst.helper = CreateEntity()
 
                 --[[Non-networked entity]]
                 inst.helper.entity:SetCanSleep(false)
@@ -207,8 +204,8 @@ AddPrefabPostInit("sentryward", function(inst)
                 inst.helper.AnimState:SetBuild("firefighter_placement")
                 inst.helper.AnimState:PlayAnimation("idle")
                 inst.helper.AnimState:SetLightOverride(1)
-                inst.helper.AnimState:SetOrientation(GLOBAL.ANIM_ORIENTATION.OnGround)
-                inst.helper.AnimState:SetLayer(GLOBAL.LAYER_BACKGROUND)
+                inst.helper.AnimState:SetOrientation(ANIM_ORIENTATION.OnGround)
+                inst.helper.AnimState:SetLayer(LAYER_BACKGROUND)
                 inst.helper.AnimState:SetSortOrder(1)
                 inst.helper.AnimState:SetAddColour(0.78125, 0.546875, 0.3125, 0) -- Color of WX-78
 
@@ -221,30 +218,30 @@ AddPrefabPostInit("sentryward", function(inst)
     end
 
     --Dedicated server does not need deployhelper
-    if not GLOBAL.TheNet:IsDedicated() and inst.components.deployhelper == nil then
+    if not TheNet:IsDedicated() and inst.components.deployhelper == nil then
         inst:AddComponent("deployhelper")
         inst.components.deployhelper.onenablehelper = OnEnableHelper
     end
 
-    if not GLOBAL.TheWorld.ismastersim then
+    if not TheWorld.ismastersim then
         return inst
     end
 
     -- Schedule System
-    if GLOBAL.TheWorld.sentryward == nil then
-        GLOBAL.TheWorld.sentryward = {}
+    if TheWorld.sentryward == nil then
+        TheWorld.sentryward = {}
     end
-    world_sentrywards = GLOBAL.TheWorld.sentryward
+    world_sentrywards = TheWorld.sentryward
     world_sentrywards[inst] = {}
     world_sentrywards[inst].server = nil
-    world_sentrywards[inst].lasttime = GLOBAL.TheWorld.components.worldstate.data.cycles
+    world_sentrywards[inst].lasttime = TheWorld.components.worldstate.data.cycles
     world_sentrywards[inst].load = 1
 
     -- Resources Respawn
     local function GrowPlants(inst)
         local x, y, z = inst.Transform:GetWorldPosition()
         local producerList = TheSim:FindEntities(x, y, z,
-            GLOBAL.TUNING.WXAUTOMATION.SEE_WORK_DIST,
+            TUNING.WXAUTOMATION.SEE_WORK_DIST,
             nil, { "FX", "NOCLICK", "DECOR", "INLIMBO" }, { "plant", "boulder" })
         for k, v in pairs(producerList) do
             if v.components.growable ~= nil then
@@ -272,18 +269,18 @@ AddPrefabPostInit("sentryward", function(inst)
     end
 end)
 
-AddPrefabPostInit("wxdiviningrodbase", function(inst)
+AddPrefabPostInit("sentryward_placer", function(inst)
     -- Deploy Helper
     local function OnEnableHelper(inst, enabled)
         -- Const
         local CARNIVAL_TREE_SCALE = 1.3
         local CARNIVAL_RADIUS = 8
         -- WX Param
-        local SEE_WORK_DIST = GLOBAL.TUNING.WXAUTOMATION.SEE_WORK_DIST
+        local SEE_WORK_DIST = TUNING.WXAUTOMATION.SEE_WORK_DIST
         local PLACER_SCALE = math.sqrt(SEE_WORK_DIST / (CARNIVAL_RADIUS / CARNIVAL_TREE_SCALE))
         if enabled then
             if inst.helper == nil then
-                inst.helper = GLOBAL.CreateEntity()
+                inst.helper = CreateEntity()
 
                 --[[Non-networked entity]]
                 inst.helper.entity:SetCanSleep(false)
@@ -302,8 +299,8 @@ AddPrefabPostInit("wxdiviningrodbase", function(inst)
                 inst.helper.AnimState:SetBuild("firefighter_placement")
                 inst.helper.AnimState:PlayAnimation("idle")
                 inst.helper.AnimState:SetLightOverride(1)
-                inst.helper.AnimState:SetOrientation(GLOBAL.ANIM_ORIENTATION.OnGround)
-                inst.helper.AnimState:SetLayer(GLOBAL.LAYER_BACKGROUND)
+                inst.helper.AnimState:SetOrientation(ANIM_ORIENTATION.OnGround)
+                inst.helper.AnimState:SetLayer(LAYER_BACKGROUND)
                 inst.helper.AnimState:SetSortOrder(1)
                 inst.helper.AnimState:SetAddColour(0.78125, 0.546875, 0.3125, 0) -- Color of WX-78
 
@@ -316,101 +313,254 @@ AddPrefabPostInit("wxdiviningrodbase", function(inst)
     end
 
     --Dedicated server does not need deployhelper
-    if not GLOBAL.TheNet:IsDedicated() then
+    if not TheNet:IsDedicated() and inst.components.placer ~= nil then
+        OnEnableHelper(inst, true)
+        if inst.helper ~= nil then
+            inst.components.placer:LinkEntity(inst.helper)
+        end
+    end
+end)
+
+AddPrefabPostInit("wxdiviningrodbase", function(inst)
+    -- Deploy Helper
+    local function OnEnableHelper(inst, enabled)
+        -- Const
+        local CARNIVAL_TREE_SCALE = 1.3
+        local CARNIVAL_RADIUS = 8
+        -- WX Param
+        local SEE_WORK_DIST = TUNING.WXAUTOMATION.SEE_WORK_DIST
+        local PLACER_SCALE = math.sqrt(SEE_WORK_DIST / (CARNIVAL_RADIUS / CARNIVAL_TREE_SCALE))
+        if enabled then
+            if inst.helper == nil then
+                inst.helper = CreateEntity()
+
+                --[[Non-networked entity]]
+                inst.helper.entity:SetCanSleep(false)
+                inst.helper.persists = false
+
+                inst.helper.entity:AddTransform()
+                inst.helper.entity:AddAnimState()
+
+                inst.helper:AddTag("CLASSIFIED")
+                inst.helper:AddTag("NOCLICK")
+                inst.helper:AddTag("placer")
+
+                inst.helper.Transform:SetScale(PLACER_SCALE, PLACER_SCALE, PLACER_SCALE)
+
+                inst.helper.AnimState:SetBank("firefighter_placement")
+                inst.helper.AnimState:SetBuild("firefighter_placement")
+                inst.helper.AnimState:PlayAnimation("idle")
+                inst.helper.AnimState:SetLightOverride(1)
+                inst.helper.AnimState:SetOrientation(ANIM_ORIENTATION.OnGround)
+                inst.helper.AnimState:SetLayer(LAYER_BACKGROUND)
+                inst.helper.AnimState:SetSortOrder(1)
+                inst.helper.AnimState:SetAddColour(0.78125, 0.546875, 0.3125, 0) -- Color of WX-78
+
+                inst.helper.entity:SetParent(inst.entity)
+            end
+        elseif inst.helper ~= nil then
+            inst.helper:Remove()
+            inst.helper = nil
+        end
+    end
+
+    --Dedicated server does not need deployhelper
+    if not TheNet:IsDedicated() then
         inst:AddComponent("deployhelper")
         inst.components.deployhelper.onenablehelper = OnEnableHelper
     end
 
-    if not GLOBAL.TheWorld.ismastersim then
+    if not TheWorld.ismastersim then
         return inst
     end
 
-    if GLOBAL.TheWorld.wxdiviningrodbase == nil then
-        GLOBAL.TheWorld.wxdiviningrodbase = {}
+    if TheWorld.wxdiviningrodbase == nil then
+        TheWorld.wxdiviningrodbase = {}
     end
-    world_wxdiviningrodbases = GLOBAL.TheWorld.wxdiviningrodbase
+    world_wxdiviningrodbases = TheWorld.wxdiviningrodbase
     table.insert(world_wxdiviningrodbases, inst)
 
     local onremove_old = inst.OnRemoveEntity
     inst.OnRemoveEntity = function(inst)
-        table.removearrayvalue(GLOBAL.TheWorld.wxdiviningrodbase, inst)
+        table.removearrayvalue(TheWorld.wxdiviningrodbase, inst)
         return onremove_old
     end
 end)
 
+AddPrefabPostInit("wxdiviningrodbase_placer", function(inst)
+    -- Deploy Helper
+    local function OnEnableHelper(inst, enabled)
+        -- Const
+        local CARNIVAL_TREE_SCALE = 1.3
+        local CARNIVAL_RADIUS = 8
+        -- WX Param
+        local SEE_WORK_DIST = TUNING.WXAUTOMATION.SEE_WORK_DIST
+        local PLACER_SCALE = math.sqrt(SEE_WORK_DIST / (CARNIVAL_RADIUS / CARNIVAL_TREE_SCALE))
+        if enabled then
+            if inst.helper == nil then
+                inst.helper = CreateEntity()
+
+                --[[Non-networked entity]]
+                inst.helper.entity:SetCanSleep(false)
+                inst.helper.persists = false
+
+                inst.helper.entity:AddTransform()
+                inst.helper.entity:AddAnimState()
+
+                inst.helper:AddTag("CLASSIFIED")
+                inst.helper:AddTag("NOCLICK")
+                inst.helper:AddTag("placer")
+
+                inst.helper.Transform:SetScale(PLACER_SCALE, PLACER_SCALE, PLACER_SCALE)
+
+                inst.helper.AnimState:SetBank("firefighter_placement")
+                inst.helper.AnimState:SetBuild("firefighter_placement")
+                inst.helper.AnimState:PlayAnimation("idle")
+                inst.helper.AnimState:SetLightOverride(1)
+                inst.helper.AnimState:SetOrientation(ANIM_ORIENTATION.OnGround)
+                inst.helper.AnimState:SetLayer(LAYER_BACKGROUND)
+                inst.helper.AnimState:SetSortOrder(1)
+                inst.helper.AnimState:SetAddColour(0.78125, 0.546875, 0.3125, 0) -- Color of WX-78
+
+                inst.helper.entity:SetParent(inst.entity)
+            end
+        elseif inst.helper ~= nil then
+            inst.helper:Remove()
+            inst.helper = nil
+        end
+    end
+
+    --Dedicated server does not need deployhelper
+    if not TheNet:IsDedicated() and inst.components.placer ~= nil then
+        OnEnableHelper(inst, true)
+        if inst.helper ~= nil then
+            inst.components.placer:LinkEntity(inst.helper)
+        end
+    end
+end)
+
 AddPrefabPostInit("gears", function(inst)
-    if not GLOBAL.TheWorld.ismastersim then
+    if not TheWorld.ismastersim then
         return inst
     end
 
     if inst.components.repairer == nil then
         inst:AddComponent("repairer")
     end
-    inst.components.repairer.healthrepairvalue = GLOBAL.TUNING.HEALING_HUGE
+    inst.components.repairer.healthrepairvalue = TUNING.HEALING_HUGE
 end)
 
 AddPrefabPostInit("transistor", function(inst)
-    if not GLOBAL.TheWorld.ismastersim then
+    if not TheWorld.ismastersim then
         return inst
     end
 
     if inst.components.repairer == nil then
         inst:AddComponent("repairer")
-        inst.components.repairer.repairmaterial = GLOBAL.MATERIALS.GEARS
+        inst.components.repairer.repairmaterial = MATERIALS.GEARS
     end
-    inst.components.repairer.healthrepairvalue = GLOBAL.TUNING.HEALING_MEDSMALL
+    inst.components.repairer.healthrepairvalue = TUNING.HEALING_MED
 end)
 
 AddPrefabPostInit("trinket_6", function(inst)
-    if not GLOBAL.TheWorld.ismastersim then
+    if not TheWorld.ismastersim then
         return inst
     end
 
     if inst.components.repairer == nil then
         inst:AddComponent("repairer")
-        inst.components.repairer.repairmaterial = GLOBAL.MATERIALS.GEARS
+        inst.components.repairer.repairmaterial = MATERIALS.GEARS
     end
-    inst.components.repairer.healthrepairvalue = GLOBAL.TUNING.HEALING_MEDSMALL
+    inst.components.repairer.healthrepairvalue = TUNING.HEALING_MED
 end)
 
 AddPrefabPostInit("sewing_tape", function(inst)
-    if not GLOBAL.TheWorld.ismastersim then
+    if not TheWorld.ismastersim then
         return inst
     end
 
     if inst.components.repairer == nil then
         inst:AddComponent("repairer")
-        inst.components.repairer.repairmaterial = GLOBAL.MATERIALS.GEARS
+        inst.components.repairer.repairmaterial = MATERIALS.GEARS
     end
-    inst.components.repairer.healthrepairvalue = GLOBAL.TUNING.HEALING_MEDSMALL
+    inst.components.repairer.healthrepairvalue = TUNING.HEALING_MED
 end)
 
 AddPrefabPostInit("wagpunk_bits", function(inst)
-    if not GLOBAL.TheWorld.ismastersim then
+    if not TheWorld.ismastersim then
         return inst
     end
 
     if inst.components.repairer == nil then
         inst:AddComponent("repairer")
-        inst.components.repairer.repairmaterial = GLOBAL.MATERIALS.GEARS
+        inst.components.repairer.repairmaterial = MATERIALS.GEARS
     end
-    inst.components.repairer.healthrepairvalue = GLOBAL.TUNING.HEALING_HUGE
+    inst.components.repairer.healthrepairvalue = TUNING.HEALING_HUGE
 end)
 
 AddPrefabPostInit("wagpunkbits_kit", function(inst)
-    if not GLOBAL.TheWorld.ismastersim then
+    if not TheWorld.ismastersim then
         return inst
     end
 
     if inst.components.repairer == nil then
         inst:AddComponent("repairer")
-        inst.components.repairer.repairmaterial = GLOBAL.MATERIALS.GEARS
+        inst.components.repairer.repairmaterial = MATERIALS.GEARS
     end
-    inst.components.repairer.healthrepairvalue = GLOBAL.TUNING.HEALING_SUPERHUGE
+    inst.components.repairer.healthrepairvalue = TUNING.HEALING_SUPERHUGE
+end)
+
+-- Original code is from "WX Automation Patch" by wiefean.
+-- https://steamcommunity.com/sharedfiles/filedetails/?id=3385430772
+
+AddPrefabPostInit("player_classified", function(inst)
+    inst.wxequipwidget = {}
+    inst.wxequipwidget["isvisible"] = net_bool(inst.GUID, "wxequipwidget.isvisible", "wxequipwidgetisvisibledirty")
+    inst.wxequipwidget["isvisible"]:set(false)
+    inst.wxequipwidget["target"] = net_entity(inst.GUID, "wxequipwidget.target", "wxequipwidgettargetdirty")
+    inst.wxequipwidget["target"]:set(nil)
+
+    for _, eslot in pairs(EQUIPSLOTS) do
+        inst.wxequipwidget[eslot] = net_entity(inst.GUID, "wxequipwidget."..tostring(eslot), "wxequipwidget"..tostring(eslot).."dirty")
+        inst.wxequipwidget[eslot]:set(nil)
+    end
+
+    inst:DoTaskInTime(0, function(inst)
+        if ThePlayer ~= nil and ThePlayer.player_classified == inst then
+            inst._parent = inst._parent or inst.entity:GetParent()
+
+            inst:ListenForEvent("wxequipwidgetisvisibledirty", function(inst)
+                if inst._parent and inst._parent.HUD then
+                    if inst.wxequipwidget["isvisible"] ~= nil and inst.wxequipwidget["isvisible"]:value() then
+                        inst._parent.HUD:ShowWXEquipBar()
+                    elseif inst.wxequipwidget["isvisible"] ~= nil and not inst.wxequipwidget["isvisible"]:value() then
+                        inst._parent.HUD:HideWXEquipBar()
+                    end
+                end
+            end)
+
+            for _, eslot in pairs(EQUIPSLOTS) do
+                inst:ListenForEvent("wxequipwidget"..tostring(eslot).."dirty", function(inst)
+                    if inst._parent ~= nil and inst._parent.HUD ~= nil then
+                        inst._parent.HUD:RefreshWXEquipBar()
+                    end    
+                end)
+            end
+
+            inst:ListenForEvent("stackitemdirty", function(world, item)
+                for _, eslot in pairs(EQUIPSLOTS) do
+                    if inst.wxequipwidget[eslot]:value() == item and inst._parent ~= nil and inst._parent.HUD ~= nil then
+                        item:PushEvent("stacksizechange", { stacksize = item.replica.stackable:StackSize() })
+                        break
+                    end
+                end
+            end, TheWorld)
+        end
+    end)
 end)
 
 AddPrefabPostInit("wateringcan", function(inst)
-    if not GLOBAL.TheWorld.ismastersim then
+    if not TheWorld.ismastersim then
         return inst
     end
 
@@ -420,7 +570,7 @@ AddPrefabPostInit("wateringcan", function(inst)
 end)
 
 AddPrefabPostInit("premiumwateringcan", function(inst)
-    if not GLOBAL.TheWorld.ismastersim then
+    if not TheWorld.ismastersim then
         return inst
     end
 
@@ -436,11 +586,11 @@ AddPrefabPostInit("sea_yard", function(inst)
         local CARNIVAL_TREE_SCALE = 1.3
         local CARNIVAL_RADIUS = 8
         -- WX Param
-        local SEE_WORK_DIST = GLOBAL.TUNING.WXAUTOMATION.SEE_WORK_DIST
+        local SEE_WORK_DIST = TUNING.WXAUTOMATION.SEE_WORK_DIST
         local PLACER_SCALE = math.sqrt(SEE_WORK_DIST / (CARNIVAL_RADIUS / CARNIVAL_TREE_SCALE))
         if enabled then
             if inst.helper == nil then
-                inst.helper = GLOBAL.CreateEntity()
+                inst.helper = CreateEntity()
 
                 --[[Non-networked entity]]
                 inst.helper.entity:SetCanSleep(false)
@@ -459,8 +609,8 @@ AddPrefabPostInit("sea_yard", function(inst)
                 inst.helper.AnimState:SetBuild("firefighter_placement")
                 inst.helper.AnimState:PlayAnimation("idle")
                 inst.helper.AnimState:SetLightOverride(1)
-                inst.helper.AnimState:SetOrientation(GLOBAL.ANIM_ORIENTATION.OnGround)
-                inst.helper.AnimState:SetLayer(GLOBAL.LAYER_BACKGROUND)
+                inst.helper.AnimState:SetOrientation(ANIM_ORIENTATION.OnGround)
+                inst.helper.AnimState:SetLayer(LAYER_BACKGROUND)
                 inst.helper.AnimState:SetSortOrder(1)
                 --inst.helper.AnimState:SetAddColour(0, .2, .5, 0)
                 inst.helper.AnimState:SetAddColour(0.78125, 0.546875, 0.3125, 0) -- Color of WX-78
@@ -474,30 +624,30 @@ AddPrefabPostInit("sea_yard", function(inst)
     end
 
     --Dedicated server does not need deployhelper
-    if not GLOBAL.TheNet:IsDedicated() then
+    if not TheNet:IsDedicated() then
         inst:AddComponent("deployhelper")
         inst.components.deployhelper.onenablehelper = OnEnableHelper
     end
 
-    if not GLOBAL.TheWorld.ismastersim then
+    if not TheWorld.ismastersim then
         return inst
     end
 
     -- Schedule System
-    if GLOBAL.TheWorld.shipyard == nil then
-        GLOBAL.TheWorld.shipyard = {}
+    if TheWorld.shipyard == nil then
+        TheWorld.shipyard = {}
     end
-    world_shipyards = GLOBAL.TheWorld.shipyard
+    world_shipyards = TheWorld.shipyard
     world_shipyards[inst] = {}
     world_shipyards[inst].server = nil
-    world_shipyards[inst].lasttime = GLOBAL.TheWorld.components.worldstate.data.cycles
+    world_shipyards[inst].lasttime = TheWorld.components.worldstate.data.cycles
     world_shipyards[inst].load = 1
 
     -- Resources Respawn
     local function GrowPlants(inst)
         local x, y, z = inst.Transform:GetWorldPosition()
         local producerList = TheSim:FindEntities(x, y, z, 
-            GLOBAL.TUNING.WXAUTOMATION.SEE_WORK_DIST,
+            TUNING.WXAUTOMATION.SEE_WORK_DIST,
             nil, { "FX", "NOCLICK", "DECOR", "INLIMBO" }, { "plant", "coral" })
         for k, v in pairs(producerList) do
             if v.components.growable ~= nil then
@@ -525,8 +675,60 @@ AddPrefabPostInit("sea_yard", function(inst)
     end
 end)
 
+AddPrefabPostInit("sea_yard_placer", function(inst)
+    -- Deploy Helper
+    local function OnEnableHelper(inst, enabled)
+        -- Const
+        local CARNIVAL_TREE_SCALE = 1.3
+        local CARNIVAL_RADIUS = 8
+        -- WX Param
+        local SEE_WORK_DIST = TUNING.WXAUTOMATION.SEE_WORK_DIST
+        local PLACER_SCALE = math.sqrt(SEE_WORK_DIST / (CARNIVAL_RADIUS / CARNIVAL_TREE_SCALE))
+        if enabled then
+            if inst.helper == nil then
+                inst.helper = CreateEntity()
+
+                --[[Non-networked entity]]
+                inst.helper.entity:SetCanSleep(false)
+                inst.helper.persists = false
+
+                inst.helper.entity:AddTransform()
+                inst.helper.entity:AddAnimState()
+
+                inst.helper:AddTag("CLASSIFIED")
+                inst.helper:AddTag("NOCLICK")
+                inst.helper:AddTag("placer")
+
+                inst.helper.Transform:SetScale(PLACER_SCALE, PLACER_SCALE, PLACER_SCALE)
+
+                inst.helper.AnimState:SetBank("firefighter_placement")
+                inst.helper.AnimState:SetBuild("firefighter_placement")
+                inst.helper.AnimState:PlayAnimation("idle")
+                inst.helper.AnimState:SetLightOverride(1)
+                inst.helper.AnimState:SetOrientation(ANIM_ORIENTATION.OnGround)
+                inst.helper.AnimState:SetLayer(LAYER_BACKGROUND)
+                inst.helper.AnimState:SetSortOrder(1)
+                inst.helper.AnimState:SetAddColour(0.78125, 0.546875, 0.3125, 0) -- Color of WX-78
+
+                inst.helper.entity:SetParent(inst.entity)
+            end
+        elseif inst.helper ~= nil then
+            inst.helper:Remove()
+            inst.helper = nil
+        end
+    end
+
+    --Dedicated server does not need deployhelper
+    if not TheNet:IsDedicated() and inst.components.placer ~= nil then
+        OnEnableHelper(inst, true)
+        if inst.helper ~= nil then
+            inst.components.placer:LinkEntity(inst.helper)
+        end
+    end
+end)
+
 AddPrefabPostInit("spear_launcher", function(inst)
-    if not GLOBAL.TheWorld.ismastersim then
+    if not TheWorld.ismastersim then
         return inst
     end
 
@@ -539,7 +741,7 @@ AddPrefabPostInit("spear_launcher", function(inst)
 end)
 
 AddPrefabPostInit("blunderbuss", function(inst)
-    if not GLOBAL.TheWorld.ismastersim then
+    if not TheWorld.ismastersim then
         return inst
     end
 
@@ -586,15 +788,19 @@ AddComponentPostInit("teleporter", function(self)
                 if follower:HasTag("wx") then
                     table.insert(wxfollowerList, follower)
                     doer.components.leader:RemoveFollower(follower)
+                    follower.brain:Pause()
+                    follower.components.locomotor:Stop()
                 end
             end
         end
     end
 
-    local function AddFollower(doer, wxfollowerList)
+    local function AddFollower(doer, wxfollowerList, delay)
         if doer.components.leader ~= nil then
-            for k, v in pairs(wxfollowerList) do
-                doer.components.leader:AddFollower(v)
+            for _, follower in pairs(wxfollowerList) do
+                doer.components.leader:AddFollower(follower)
+                follower.brain.bt:Reset()
+                follower:DoTaskInTime(delay, function(inst) inst.brain:Resume() end)
             end
         end
     end
@@ -604,7 +810,7 @@ AddComponentPostInit("teleporter", function(self)
         local wxfollowerList = {}
         RemoveFollower(doer, wxfollowerList)
         local activate_return = WXActivate(self, doer)
-        AddFollower(doer, wxfollowerList)
+        AddFollower(doer, wxfollowerList, self.travelarrivetime)
         return activate_return
     end
 end)
@@ -670,7 +876,7 @@ AddComponentPostInit("deployable", function(self)
     local function InverseSnap(deployer, deployable, pt)
         local pt_override = nil
         if deployer ~= nil and deployer:HasTag("wx") then
-            if deployable.mode == GLOBAL.DEPLOYMODE.PLANT then
+            if deployable.mode == DEPLOYMODE.PLANT then
                 if deployer.components.wxtype:IsArbori() then
                     pt_override = deployer.components.wxarboriculture.deploy_pt_override
                 elseif deployer.components.wxtype:IsHorti() then
@@ -678,7 +884,7 @@ AddComponentPostInit("deployable", function(self)
                 elseif deployer.components.wxtype:IsMiningInd() then
                     pt_override = deployer.components.wxminingindustry.deploy_pt_override
                 end
-            elseif deployable.mode == GLOBAL.DEPLOYMODE.WALL then
+            elseif deployable.mode == DEPLOYMODE.WALL then
                 pt_override = deployer.components.wxmachineindustry.deploy_pt_override
             end
         end
@@ -698,10 +904,10 @@ end)
 
 AddComponentPostInit("vacuum", function(self)
     local RedirectSetMotorVel = {}
-    local SetMotorVel_ia = GLOBAL.Physics.SetMotorVel
-    local SetMotorVelOverride_ia = GLOBAL.Physics.SetMotorVelOverride
+    local SetMotorVel_ia = Physics.SetMotorVel
+    local SetMotorVelOverride_ia = Physics.SetMotorVelOverride
 
-    GLOBAL.Physics.SetMotorVel = function(self, ...)
+    Physics.SetMotorVel = function(self, ...)
         if RedirectSetMotorVel[self] then
             return self:Real_SetMotorVelOverride(...)
         else
@@ -709,7 +915,7 @@ AddComponentPostInit("vacuum", function(self)
         end
     end
 
-    GLOBAL.Physics.SetMotorVelOverride = function(self, ...)
+    Physics.SetMotorVelOverride = function(self, ...)
         if RedirectSetMotorVel[self] then
             return self:Real_SetMotorVelOverride(...)
         else
@@ -719,7 +925,7 @@ AddComponentPostInit("vacuum", function(self)
 
     local OnUpdate_old = self.OnUpdate
     self.OnUpdate = function(self, dt)
-        if not self.ignoreplayer or GLOBAL.GetTableSize(self.caught) > 0 then
+        if not self.ignoreplayer or GetTableSize(self.caught) > 0 then
             local pt = self.inst:GetPosition()
             local wxList = TheSim:FindEntities(pt.x, 0, pt.z, self.playervacuumradius, { "wx" })
             for k, wx in pairs(wxList) do
@@ -735,7 +941,7 @@ AddComponentPostInit("vacuum", function(self)
                             local angle = math.atan2(-displacement.z, -displacement.x)
                             if not wx:HasTag("NOVACUUM") and
                                 (wx.components.rider == nil or not wx.components.rider:IsRiding()) and
-                                (wx.invacuum == self.inst or GLOBAL.CheckLOSFromPoint(pt, wxpos)) and
+                                (wx.invacuum == self.inst or CheckLOSFromPoint(pt, wxpos)) and
                                 (dist >= self.player_hold_distance or not self.caught[wx]) and
                                 not self.spitplayer and not wx.sg:HasStateTag("nointerupt") then
                                 --print("trying to vacuum in the wx")
@@ -791,9 +997,9 @@ local LOAD = AddAction("LOAD", "Aquire Cargo", function(act)
         act.target.components.container:Open(act.doer)
         local item = act.invobject.components.inventoryitem:RemoveFromOwner(act.target.components.container.acceptsstacks)
         if item ~= nil then
-            local backpack = GLOBAL.EQUIPSLOTS.BACK ~= nil and
-                act.doer.components.inventory:GetEquippedItem(GLOBAL.EQUIPSLOTS.BACK) or
-                act.doer.components.inventory:GetEquippedItem(GLOBAL.EQUIPSLOTS.BODY)
+            local backpack = EQUIPSLOTS.BACK ~= nil and
+                act.doer.components.inventory:GetEquippedItem(EQUIPSLOTS.BACK) or
+                act.doer.components.inventory:GetEquippedItem(EQUIPSLOTS.BODY)
             if backpack == nil then
                 for k, v in pairs(act.doer.components.inventory.equipslots) do
                     if v:HasTag("backpack") then
@@ -845,13 +1051,13 @@ end)
 
 local ADVANCEDREPAIR = AddAction("ADVANCEDREPAIR", "Advanced Repair", function(act)
     if act.target == nil and act.doer ~= nil and act.doer.components.health ~= nil then
-        act.doer.components.health:DoDelta(GLOBAL.TUNING.HEALING_MEDSMALL, nil, nil, nil, nil, true)
+        act.doer.components.health:DoDelta(TUNING.HEALING_MEDSMALL, nil, nil, nil, nil, true)
         if act.doer.components.repairable ~= nil and act.doer.components.repairable.onrepaired ~= nil then
             act.doer.components.repairable.onrepaired(act.doer, act.doer, nil)
         end
         return true
     elseif act.target ~= nil and act.target.components.health ~= nil and (act.target:HasTag("wx") or act.target:HasTag("chess")) then
-        act.target.components.health:DoDelta(GLOBAL.TUNING.HEALING_MEDSMALL, nil, nil, nil, nil, true)
+        act.target.components.health:DoDelta(TUNING.HEALING_MEDSMALL, nil, nil, nil, nil, true)
         if act.target.components.repairable ~= nil and act.target.components.repairable.onrepaired ~= nil then
             act.target.components.repairable.onrepaired(act.target, act.doer, nil)
         end
@@ -860,20 +1066,20 @@ local ADVANCEDREPAIR = AddAction("ADVANCEDREPAIR", "Advanced Repair", function(a
 end)
 
 -- Patch for bermuda triangle wormholes
-local _JUMPINfn = GLOBAL.ACTIONS.JUMPIN.fn
-GLOBAL.ACTIONS.JUMPIN.fn = function(act, ...)
-	if act.doer ~= nil
+local _JUMPINfn = ACTIONS.JUMPIN.fn
+ACTIONS.JUMPIN.fn = function(act, ...)
+    if act.doer ~= nil
     and act.doer:HasTag("wx")
-	and act.doer.sg ~= nil
-	and act.doer.sg.currentstate.name == "jumpin_pre"
-	and act.target ~= nil
-	and act.target.prefab == "bermudatriangle"
-	and act.target.components.teleporter ~= nil
-	and act.target.components.teleporter:IsActive() then
-		act.doer.sg:GoToState("jumpinbermuda", { teleporter = act.target })
-		return true
-	end
-	return _JUMPINfn(act, ...)
+    and act.doer.sg ~= nil
+    and act.doer.sg.currentstate.name == "jumpin_pre"
+    and act.target ~= nil
+    and act.target.prefab == "bermudatriangle"
+    and act.target.components.teleporter ~= nil
+    and act.target.components.teleporter:IsActive() then
+        act.doer.sg:GoToState("jumpinbermuda", { teleporter = act.target })
+        return true
+    end
+    return _JUMPINfn(act, ...)
 end
 
 -- Players Actions
@@ -882,15 +1088,17 @@ local TOGGLEAUGMENT = AddAction("TOGGLEAUGMENT", "", function(act)
         if act.target.components.wxtype.augmentlock then
             act.target.components.wxtype.augmentlock = false
             if act.target.components.talker ~= nil then
-                act.target.components.talker:Say(GLOBAL.GetString(act.target, "ANNOUNCE_BACKPACK", "TOGGLE_ON"))
+                act.target.components.talker:Say(GetString(act.target, "ANNOUNCE_BACKPACK", "TOGGLE_ON"))
             end
             return true
         else
             act.target.components.wxtype.augmentlock = true
             if act.target.components.inventory ~= nil then
-                local backpack = GLOBAL.EQUIPSLOTS.BACK ~= nil and
-                    act.target.components.inventory:GetEquippedItem(GLOBAL.EQUIPSLOTS.BACK) or
-                    act.target.components.inventory:GetEquippedItem(GLOBAL.EQUIPSLOTS.BODY)
+                local eslot = EQUIPSLOTS.BACK
+                if eslot == nil then
+                    eslot = EQUIPSLOTS.BODY
+                end
+                local backpack = act.target.components.inventory:GetEquippedItem(eslot)
                 if backpack == nil then
                     for k, v in pairs(act.target.components.inventory.equipslots) do
                         if v:HasTag("backpack") then
@@ -900,12 +1108,14 @@ local TOGGLEAUGMENT = AddAction("TOGGLEAUGMENT", "", function(act)
                 end
                 if backpack ~= nil and backpack.components.container ~= nil then
                     backpack.components.container:Close()
-                    backpack.Network:SetClassifiedTarget(nil)
-                    act.target.components.inventory:DropItem(backpack, true, true)
+                    backpack = act.target.components.inventory:Unequip(eslot)
+                    if backpack ~= nil then
+                        act.target.components.inventory:DropItem(backpack, true, true)
+                    end
                 end
             end
             if act.target.components.talker ~= nil then
-                act.target.components.talker:Say(GLOBAL.GetString(act.target, "ANNOUNCE_BACKPACK", "TOGGLE_OFF"))
+                act.target.components.talker:Say(GetString(act.target, "ANNOUNCE_BACKPACK", "TOGGLE_OFF"))
             end
             return true
         end
@@ -957,19 +1167,19 @@ end)
 
 AddComponentAction("USEITEM", "spellcaster", function(inst, doer, target, actions, right)
     if doer:HasTag("player") and target.prefab == "wxdiviningrodbase" and not target:HasTag("socketed") then
-        table.insert(actions, GLOBAL.ACTIONS.GIVE)
+        table.insert(actions, ACTIONS.GIVE)
     end
 end)
 
 AddComponentAction("SCENE", "shelf", function(inst, doer, actions, right)
     if doer:HasTag("player") and inst.prefab == "wxdiviningrodbase" and inst:HasTag("socketed") then
-        table.insert(actions, GLOBAL.ACTIONS.TAKEITEM)
+        table.insert(actions, ACTIONS.TAKEITEM)
     end
 end)
 
 AddComponentAction("USEITEM", "equippable", function(inst, doer, target, actions, right)
     if doer:HasTag("player") and target:HasTag("wx") then
-        local action = GLOBAL.ACTIONS.GIVE
+        local action = ACTIONS.GIVE
         action.priority = 3
         table.insert(actions, action)
     end
@@ -977,21 +1187,14 @@ end)
 
 AddComponentAction("USEITEM", "upgrademodule", function(inst, doer, target, actions, right)
     if doer:HasTag("player") and target:HasTag("wx") and right then
-        local slots_inuse = (inst._slots or 0)
+        local success = target.CanUpgradeWithModule == nil or target:CanUpgradeWithModule(inst)
 
-        if target.components.upgrademoduleowner ~= nil then
-            for _, module in ipairs(target.components.upgrademoduleowner.modules) do
-                local modslots = (module.components.upgrademodule ~= nil and module.components.upgrademodule.slots) or 0
-                slots_inuse = slots_inuse + modslots
-            end
-        end
-
-        if (GLOBAL.TUNING.WX78_MAXELECTRICCHARGE - slots_inuse) >= 0 then
+        if success then
             local action = WXAPPLYMODULE
             action.priority = 3
             table.insert(actions, action)
         else
-            local action = GLOBAL.ACTIONS.APPLYMODULE_FAIL
+            local action = ACTIONS.APPLYMODULE_FAIL
             action.priority = 3
             table.insert(actions, action)
         end
@@ -1000,12 +1203,14 @@ end)
 
 AddComponentAction("USEITEM", "upgrademoduleremover", function(inst, doer, target, actions, right)
     if doer:HasTag("player") and target:HasTag("wx") and right then
-        if target.components.upgrademoduleowner ~= nil and target.components.upgrademoduleowner:NumModules() > 0 then
+        local success = target.CanRemoveModules == nil or target:CanRemoveModules()
+
+        if success then
             local action = WXREMOVEMODULES
             action.priority = 3
             table.insert(actions, action)
         else
-            local action = GLOBAL.ACTIONS.REMOVEMODULES_FAIL
+            local action = ACTIONS.REMOVEMODULES_FAIL
             action.priority = 3
             table.insert(actions, action)
         end
@@ -1014,9 +1219,9 @@ end)
 
 AddComponentAction("USEITEM", "repairer", function(inst, doer, target, actions, right)
     if doer:HasTag("player") and target:HasTag("wx") and right and
-        inst:HasTag("health_"..GLOBAL.MATERIALS.GEARS) and
+        inst:HasTag("health_"..MATERIALS.GEARS) and
         target:HasTag("healthrepairable") then
-        local action = GLOBAL.ACTIONS.REPAIR
+        local action = ACTIONS.REPAIR
         action.priority = 3
         table.insert(actions, action)
     end
@@ -1024,17 +1229,17 @@ end)
 
 AddComponentAction("EQUIPPED", "weapon", function(inst, doer, target, actions, right)
     if doer:HasTag("player") and target:HasTag("wx") and not right then
-        table.remove(actions, actions[GLOBAL.ACTIONS.ATTACK])
+        table.remove(actions, actions[ACTIONS.ATTACK])
     end
 end)
 
 -- Stategraph ----------------------------
 
 --AddStategraphState("stategraph_name", state_var)
-AddStategraphActionHandler("wilson", GLOBAL.ActionHandler(WXAPPLYMODULE, "dolongaction"))
-AddStategraphActionHandler("wilson_client", GLOBAL.ActionHandler(WXAPPLYMODULE, "dolongaction"))
-AddStategraphActionHandler("wilson", GLOBAL.ActionHandler(WXREMOVEMODULES, "dolongaction"))
-AddStategraphActionHandler("wilson_client", GLOBAL.ActionHandler(WXREMOVEMODULES, "dolongaction"))
+AddStategraphActionHandler("wilson", ActionHandler(WXAPPLYMODULE, "dolongaction"))
+AddStategraphActionHandler("wilson_client", ActionHandler(WXAPPLYMODULE, "dolongaction"))
+AddStategraphActionHandler("wilson", ActionHandler(WXREMOVEMODULES, "dolongaction"))
+AddStategraphActionHandler("wilson_client", ActionHandler(WXREMOVEMODULES, "dolongaction"))
 
 AddStategraphPostInit("wilson", function(self)
     local onenter = self.states["portal_rez"].onenter
@@ -1054,17 +1259,17 @@ AddStategraphPostInit("wilson", function(self)
         onexit(inst)
         if inst.prefab == "wx78" then
             inst.SoundEmitter:PlaySound("dontstarve/common/rebirth_amulet_poof")
-            inst.components.talker:Say(GLOBAL.GetString(inst, "ANNOUNCE_RESURRECTION_FINISH"))
+            inst.components.talker:Say(GetString(inst, "ANNOUNCE_RESURRECTION_FINISH"))
         end
     end
 end)
 
 AddStategraphPostInit("shadowthrall_horns", function(self)
-    local TUNING = GLOBAL.TUNING
-    local DEGREES = GLOBAL.DEGREES
+    local TUNING = TUNING
+    local DEGREES = DEGREES
 
     local function DoFaceplantShake(inst)
-        GLOBAL.ShakeAllCameras(GLOBAL.CAMERASHAKE.VERTICAL, .7, .03, .15, inst, 30)
+        ShakeAllCameras(CAMERASHAKE.VERTICAL, .7, .03, .15, inst, 30)
     end
 
     local AOE_RANGE_PADDING = 3
@@ -1108,7 +1313,7 @@ AddStategraphPostInit("shadowthrall_horns", function(self)
             end
         end
         inst.components.combat.ignorehitrange = false
-        return GLOBAL.EntityScript.is_instance(devour) and devour or nil
+        return EntityScript.is_instance(devour) and devour or nil
     end
 
     local COLLAPSIBLE_WORK_ACTIONS =
@@ -1150,7 +1355,7 @@ AddStategraphPostInit("shadowthrall_horns", function(self)
     local TEAM_ATTACK_COOLDOWN = 1
     local function SetTeamAttackCooldown(inst, isstart)
         if isstart then
-            inst.sg.mem.lastattack = GLOBAL.GetTime()
+            inst.sg.mem.lastattack = GetTime()
             inst.components.combat:StartAttack()
         else
             inst.components.combat:RestartCooldown()
@@ -1177,10 +1382,10 @@ AddStategraphPostInit("shadowthrall_horns", function(self)
                 local f2 = inst.formation - 120
                 local hands_dir = target:GetAngleToPoint(hands.Transform:GetWorldPosition())
                 local wings_dir = target:GetAngleToPoint(wings.Transform:GetWorldPosition())
-                local hands_diff1 = GLOBAL.DiffAngle(hands_dir, f1)
-                local hands_diff2 = GLOBAL.DiffAngle(hands_dir, f2)
-                local wings_diff1 = GLOBAL.DiffAngle(wings_dir, f1)
-                local wings_diff2 = GLOBAL.DiffAngle(wings_dir, f2)
+                local hands_diff1 = DiffAngle(hands_dir, f1)
+                local hands_diff2 = DiffAngle(hands_dir, f2)
+                local wings_diff1 = DiffAngle(wings_dir, f1)
+                local wings_diff2 = DiffAngle(wings_dir, f2)
                 if hands_diff1 + wings_diff2 < hands_diff2 + wings_diff1 then
                     hands.formation = f1
                     wings.formation = f2
@@ -1209,7 +1414,7 @@ AddStategraphPostInit("shadowthrall_horns", function(self)
             frameevent["fn"] = function(inst)
                 inst.sg:RemoveStateTag("nointerrupt")
                 local x, y, z = inst.Transform:GetWorldPosition()
-                GLOBAL.ToggleOnAllObjectCollisionsAt(inst, x, z)
+                ToggleOnAllObjectCollisionsAt(inst, x, z)
                 inst.Physics:SetMotorVelOverride(.5 * inst.sg.statemem.speed, 0, 0)
                 DoFaceplantShake(inst)
                 DoAOEWork(inst, 0, TUNING.SHADOWTHRALL_HORNS_FACEPLANT_RADIUS, inst.sg.statemem.targets)
@@ -1223,7 +1428,108 @@ AddStategraphPostInit("shadowthrall_horns", function(self)
     end
 end)
 
+-- Widget --------------------------------
+
+-- Original code is from "WX Automation Patch" by wiefean.
+-- https://steamcommunity.com/sharedfiles/filedetails/?id=3385430772
+
+local WXEquipBar = require("widgets/wxequipbar")
+local PlayerHud = require("screens/playerhud")
+function PlayerHud:ShowWXEquipBar()
+    if self.controls.containerroot.wxequipbar == nil then
+        self.controls.containerroot.wxequipbar = self.controls.containerroot:AddChild(WXEquipBar(self.owner))
+        self.controls.containerroot.wxequipbar:MoveToBack()
+    end
+
+    if self.controls.containerroot.wxequipbar ~= nil then
+        self.controls.containerroot.wxequipbar:Open()
+    end
+end
+
+function PlayerHud:HideWXEquipBar()
+    if self.controls.containerroot.wxequipbar ~= nil then
+        self.controls.containerroot.wxequipbar:Close()
+    end
+end
+
+function PlayerHud:RefreshWXEquipBar()
+    if self.controls.containerroot.wxequipbar ~= nil then
+        self.controls.containerroot.wxequipbar:Refresh()
+    end
+end
+
 -- Mod RPC -------------------------------
+
+-- Original code is from "WX Automation Patch" by wiefean.
+-- https://steamcommunity.com/sharedfiles/filedetails/?id=3385430772
+
+AddModRPCHandler("WXAutomationRPC", "GiveWXEquipment", function(player, doer, target, eslot)
+    player = (doer ~= nil and doer ~= player and doer) or player
+
+    local active_item = (player and player.components.inventory and player.components.inventory:GetActiveItem()) or nil
+    if target and target.components.inventory and active_item and active_item.components.equippable and
+        not active_item.components.equippable:IsRestricted(target) then
+        local equipped_item = target.components.inventory:GetEquippedItem(eslot)
+        if equipped_item and equipped_item.prefab == active_item.prefab and equipped_item.skinname == active_item.skinname and
+            equipped_item.components.stackable and target.components.inventory:AcceptsStacks() then
+            local leftovers = equipped_item.components.stackable:Put(active_item)
+            player.components.inventory:SetActiveItem(leftovers)
+        else
+            equipped_item = target.components.inventory:Unequip(eslot)
+            if equipped_item then
+                player.components.inventory:GiveActiveItem(equipped_item)
+            end
+            target.components.inventory:Equip(active_item)
+        end
+
+        player.sg:GoToState("give")
+        player:ForceFacePoint(target.Transform:GetWorldPosition())
+    end
+end)
+
+AddModRPCHandler("WXAutomationRPC", "TakeWXEquipment", function(player, doer, target, eslot)
+    player = (doer ~= nil and doer ~= player and doer) or player
+
+    local item = (target and target.components.inventory and target.components.inventory:Unequip(eslot)) or nil
+    if item and player.components.inventory then
+        if item.components.container and item.components.container:IsOpen() then
+            item.components.container:Close()
+        end
+        if item.components.inventoryitem and item.components.inventoryitem.cangoincontainer then
+            player.components.inventory:GiveActiveItem(item)
+        elseif item.components.inventoryitem and not item.components.inventoryitem.cangoincontainer then
+            target.components.inventory:DropItem(item, true, true)
+        end
+
+        player.sg:GoToState("give")
+        player:ForceFacePoint(target.Transform:GetWorldPosition())
+    end
+end)
+
+AddModRPCHandler("WXAutomationRPC", "ToggleWXSecondaryContainer", function(player, doer, target, eslot)
+    player = (doer ~= nil and doer ~= player and doer) or player
+
+    local item = (target and target.components.inventory and target.components.inventory:GetEquippedItem(eslot)) or nil
+    if item then
+        if item.components.container then
+            if item.components.container:IsOpenedBy(player) then
+                item.components.container:Close(player)
+            else
+                item.components.container:Open(player)
+                player:PushEvent("opencontainer", { container = item })
+            end
+
+            player.sg:GoToState("doshortaction")
+            player:ForceFacePoint(target.Transform:GetWorldPosition())
+        elseif target.components.inventory and target.components.inventory:Unequip(eslot) then
+            if not target.components.inventory:IsFull() then
+                target.components.inventory:GiveItem(item)
+            else
+                target.components.inventory:DropItem(item, true, true)
+            end
+        end
+    end
+end)
 
 -- These API are from "New Modding RPCs API" by Zarklord.
 -- https://forums.kleientertainment.com/forums/topic/122473-new-modding-rpcs-api
@@ -1233,18 +1539,18 @@ local FIND_OBSTACLE_NO_TAGS = { "FX", "NOCLICK", "DECOR", "INLIMBO", "player" }
 local WX_TAG = { "wx" }
 AddModRPCHandler("WXAutomationRPC", "SendPlacerInfo", function(player, prefab, placer_x, placer_y, placer_z, rotation)
     if prefab == nil or placer_x == nil or placer_y == nil or placer_z == nil or
-        GLOBAL.next(GLOBAL.TheSim:FindEntities(placer_x, placer_y, placer_z, .5, nil, FIND_OBSTACLE_NO_TAGS)) ~= nil then
+        next(TheSim:FindEntities(placer_x, placer_y, placer_z, .5, nil, FIND_OBSTACLE_NO_TAGS)) ~= nil then
         return
     end
 
-    local placerinfo = { prefab = prefab, pos = GLOBAL.Vector3(placer_x, placer_y, placer_z), rotation = rotation }
+    local placerinfo = { prefab = prefab, pos = Vector3(placer_x, placer_y, placer_z), rotation = rotation }
 
     local constructionplanned = false
     local plantplanned = false
 
-    local sentryward = GLOBAL.FindEntity(player, SEE_WORK_DIST, function(ent) return ent.prefab == "sentryward" end)
+    local sentryward = FindEntity(player, SEE_WORK_DIST, function(ent) return ent.prefab == "sentryward" end)
     local x, y, z = player.Transform:GetWorldPosition()
-    local wxList = GLOBAL.TheSim:FindEntities(x, y, z, SEE_WORK_DIST, WX_TAG)
+    local wxList = TheSim:FindEntities(x, y, z, SEE_WORK_DIST, WX_TAG)
     for k, wx in pairs(wxList) do
         if wx.components.wxtype ~= nil then
             if wx.components.wxtype:IsMachineInd() and not constructionplanned then
@@ -1279,15 +1585,15 @@ end)
 local FIND_PLACER_MUST_TAGS = { "placer", "CLASSIFIED" }
 local FIND_OBSTACLE_ONE_OF_TAGS = { "structure", "plant", "wall" }
 local function SendPlacerRPC()
-    if GLOBAL.ThePlayer == nil or not GLOBAL.ThePlayer.components.playercontroller:IsEnabled() then
+    if ThePlayer == nil or not ThePlayer.components.playercontroller:IsEnabled() then
         return
     end
-    local x, y, z = GLOBAL.ThePlayer.Transform:GetWorldPosition()
-    local ents = GLOBAL.TheSim:FindEntities(x, y, z, SEE_WORK_DIST, FIND_PLACER_MUST_TAGS)
+    local x, y, z = ThePlayer.Transform:GetWorldPosition()
+    local ents = TheSim:FindEntities(x, y, z, SEE_WORK_DIST, FIND_PLACER_MUST_TAGS)
     local placerList = {}
     for i, v in ipairs(ents) do
         if v.prefab == "base_anchor" and v.entity:IsVisible() and v:IsValid() and
-            GLOBAL.FindEntity(v, .5, nil, nil, FIND_OBSTACLE_NO_TAGS, FIND_OBSTACLE_ONE_OF_TAGS) == nil then
+            FindEntity(v, .5, nil, nil, FIND_OBSTACLE_NO_TAGS, FIND_OBSTACLE_ONE_OF_TAGS) == nil then
             table.insert(placerList, v)
         end
     end
@@ -1300,15 +1606,15 @@ local function SendPlacerRPC()
 end
 
 local key_auto_build = GetModConfigData("KEY_AUTO_BUILD")
-GLOBAL.TheInput:AddKeyDownHandler(key_auto_build, SendPlacerRPC)
+TheInput:AddKeyDownHandler(key_auto_build, SendPlacerRPC)
 
 local function NoHoles(pt)
-    return not GLOBAL.TheWorld.Map:IsPointNearHole(pt)
+    return not TheWorld.Map:IsPointNearHole(pt)
 end
 
 AddShardModRPCHandler("WXAutomationRPC", "TransferWX", function(shardId_sender, portalId, savedata_string)
     local portal = nil
-    for i, v in ipairs(GLOBAL.ShardPortals) do
+    for i, v in ipairs(ShardPortals) do
         local worldmigrator = v.components.worldmigrator
         if worldmigrator ~= nil and worldmigrator.id == portalId then
             portal = v
@@ -1318,17 +1624,17 @@ AddShardModRPCHandler("WXAutomationRPC", "TransferWX", function(shardId_sender, 
 
     if portal ~= nil then
         local x, y, z = portal.Transform:GetWorldPosition()
-        local offset = GLOBAL.FindWalkableOffset(GLOBAL.Vector3(x, 0, z), math.random() * GLOBAL.PI * 2,
+        local offset = FindWalkableOffset(Vector3(x, 0, z), math.random() * PI * 2,
             portal:GetPhysicsRadius(0) + .5, 8, false, true, NoHoles)
         if offset ~= nil then
             x, y, z = x + offset.x, 0, z + offset.z
         end
 
-        local fx = GLOBAL.SpawnPrefab("spawn_fx_medium")
+        local fx = SpawnPrefab("spawn_fx_medium")
         fx.Transform:SetPosition(x, 0, z)
 
-        local savedata = GLOBAL.json.decode(savedata_string)
-        local wx = GLOBAL.SpawnSaveRecord(savedata)
+        local savedata = json.decode(savedata_string)
+        local wx = SpawnSaveRecord(savedata)
         wx:Hide()
         wx.Physics:SetActive(false)
         wx.DynamicShadow:Enable(false)
@@ -1337,7 +1643,7 @@ AddShardModRPCHandler("WXAutomationRPC", "TransferWX", function(shardId_sender, 
         local wxnavigation = wx.components.wxnavigation
         wxnavigation.isshardtraveler = not wxnavigation.isshardtraveler
 
-        wx:DoTaskInTime(6*GLOBAL.FRAMES, function(inst)
+        wx:DoTaskInTime(6*FRAMES, function(inst)
             wx:Show()
             wx.Physics:SetActive(true)
             wx.DynamicShadow:Enable(true)
@@ -1351,9 +1657,9 @@ end)
 local function TransferWXRPC(wx, portal)
     local shardId = portal.components.worldmigrator.linkedWorld
     local portalId = portal.components.worldmigrator.receivedPortal
-    if shardId ~= nil and GLOBAL.Shard_IsWorldAvailable(shardId) and portalId ~= nil then
+    if shardId ~= nil and Shard_IsWorldAvailable(shardId) and portalId ~= nil then
         wx.components.wxnavigation.noreceiver = true
-        for k, v in pairs(GLOBAL.TheWorld.wxdiviningrodbase) do
+        for k, v in pairs(TheWorld.wxdiviningrodbase) do
             if v:IsValid() and not v:IsInLimbo() and v.components.shelf.itemonshelf ~= nil then
                 wx.components.wxnavigation.noreceiver = false
                 break
@@ -1364,14 +1670,14 @@ local function TransferWXRPC(wx, portal)
         wx.brain:Stop()
 
         local savedata = wx:GetSaveRecord()
-        local savedata_string = GLOBAL.json.encode(savedata)
+        local savedata_string = json.encode(savedata)
         SendModRPCToShard(GetShardModRPC("WXAutomationRPC", "TransferWX"),
             shardId, portalId, savedata_string)
 
-        local fx = GLOBAL.SpawnPrefab("spawn_fx_medium")
+        local fx = SpawnPrefab("spawn_fx_medium")
         fx.Transform:SetPosition(wx.Transform:GetWorldPosition())
 
-        wx:DoTaskInTime(6*GLOBAL.FRAMES, function(inst)
+        wx:DoTaskInTime(6*FRAMES, function(inst)
             wx:Remove()
         end)
     end

@@ -67,6 +67,15 @@ local EnduranceBadge = Class(Badge, function(self, owner, art)
     self.effigy = false
     self.effigybreaksound = nil
 
+    self.bufficon = self.underNumber:AddChild(UIAnim())
+    self.bufficon:GetAnimState():SetBank("status_abigail")
+    self.bufficon:GetAnimState():SetBuild("status_abigail")
+    self.bufficon:GetAnimState():PlayAnimation("buff_none")
+    self.bufficon:GetAnimState():AnimateWhilePaused(false)
+    self.bufficon:SetClickable(false)
+    self.bufficon:SetScale(-1,1,1)
+    self.buffsymbol = 0
+
     self.corrosives = {}
     self._onremovecorrosive = function(debuff)
         self.corrosives[debuff] = nil
@@ -108,6 +117,26 @@ local EnduranceBadge = Class(Badge, function(self, owner, art)
 
     self:StartUpdating()
 end)
+
+function EnduranceBadge:ShowBuff(symbol)
+    if symbol == 0 then
+        if self.buffsymbol ~= 0 then
+            self.bufficon:GetAnimState():PlayAnimation("buff_deactivate")
+            self.bufficon:GetAnimState():PushAnimation("buff_none", false)
+        end
+    elseif symbol ~= self.buffsymbol then
+        self.bufficon:GetAnimState():OverrideSymbol("buff_icon", self.OVERRIDE_SYMBOL_BUILD[symbol] or self.default_symbol_build, symbol)
+
+        self.bufficon:GetAnimState():PlayAnimation("buff_activate")
+        self.bufficon:GetAnimState():PushAnimation("buff_idle", false)
+    end
+
+    self.buffsymbol = symbol
+end
+
+function EnduranceBadge:UpdateBuff(symbol)
+    self:ShowBuff(symbol)
+end
 
 function EnduranceBadge:ShowEffigy()
     if not self.effigy then

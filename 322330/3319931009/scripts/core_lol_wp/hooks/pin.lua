@@ -1,0 +1,19 @@
+-- AddComponentPostInit('pinnable',
+-- ---comment
+-- ---@param self component_pinnable
+-- function (self)
+--     local old_Stick = self.Stick
+--     function self:Stick(goo_build, splashfxlist, ...)
+--         if self.inst.components.inventory then
+--             local equips = LOLWP_S:getAllEquipments(self.inst)
+--             if equips['lol_wp_demonicembracehat'] and equips['lol_wp_overlordbloodarmor'] then
+--                 return
+--             elseif self.inst.lol_wp_s15_crown_of_the_shattered_queen_invincible then
+--                 return
+--             elseif self.inst.lol_wp_s15_zhonya_invincible then
+--                 return
+--             end
+--         end
+--         return old_Stick(self, goo_build, splashfxlist, ...)
+--     end
+-- end)

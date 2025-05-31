@@ -1,3 +1,7 @@
+local modid = 'lol_wp'
+---@type number # 0~1
+local cd_mult = TUNING[string.upper('CONFIG_'..modid..'special_settings_nocd')]
+
 ---@diagnostic disable: undefined-global, trailing-space
 AddComponentPostInit('combat',function (self)
     local old_GetAttacked = self.GetAttacked
@@ -52,7 +56,7 @@ AddComponentPostInit('combat',function (self)
 
                 weapon.lol_wp_divine_cd = false
                 if weapon.taskintime_lol_wp_divine_cd == nil then
-                    weapon.taskintime_lol_wp_divine_cd = weapon:DoTaskInTime(TUNING.MOD_LOL_WP.DIVINE.CD,function()
+                    weapon.taskintime_lol_wp_divine_cd = weapon:DoTaskInTime(TUNING.MOD_LOL_WP.SHEEN.CD*cd_mult,function()
                         weapon.lol_wp_divine_cd = true
                         if weapon.taskintime_lol_wp_divine_cd ~= nil then weapon.taskintime_lol_wp_divine_cd:Cancel() weapon.taskintime_lol_wp_divine_cd = nil end
                     end)

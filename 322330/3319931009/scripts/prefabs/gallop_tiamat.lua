@@ -1,7 +1,29 @@
+local modid = 'lol_wp'
+
 local assets =
 {
     Asset("ANIM", "anim/gallop_tiamat.zip"),
 }
+
+---comment
+---@param item ent
+---@param doer ent
+local function repairSound(item,doer)
+    if doer and doer.SoundEmitter then
+        local sound
+        local prefab = item and item.prefab
+        if prefab then
+            if prefab == 'nightmarefuel' or prefab == 'horrorfuel' then
+                sound = 'dontstarve/common/nightmareAddFuel'
+            else
+                sound = 'aqol/new_test/metal'
+            end
+        end
+        if sound then
+            doer.SoundEmitter:PlaySound(sound)
+        end
+    end
+end
 
 local function onequip(inst, owner)
     local skin_build = inst:GetSkinBuild()
@@ -25,6 +47,9 @@ local function onunequip(inst, owner)
 end
 
 local function ShouldAcceptItem(inst, item, giver)
+    if TUNING[string.upper('CONFIG_'..modid..'could_repair')] == 4 or TUNING[string.upper('CONFIG_'..modid..'could_repair')] == 3 then
+        return false
+    end
     if item.prefab == "goldnugget" then
         return true
     end
@@ -33,6 +58,7 @@ end
 
 local function OnGetItemFromPlayer(inst, giver, item)
     if item.prefab == "goldnugget" then
+        repairSound(item,giver)
         local finiteuses = inst.components.finiteuses
         finiteuses:SetUses(math.max(0, math.min(finiteuses.total, finiteuses:GetUses() + finiteuses.total*.2)))
     end

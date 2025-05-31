@@ -29,6 +29,8 @@ local function ItemTradeTest(inst, item)
         return true
     elseif item.prefab == "ancientdreams_gemshard" then
         return true
+    elseif item.prefab == "ancientdreams_armour_polish" then
+        return true
     end
 end
 local function OnTHFGGiven(inst, giver, item)
@@ -49,6 +51,13 @@ local function OnTHFGGiven(inst, giver, item)
                 owner.components.why_endurance:EquipmentEnduranceChangeByOtherWay(1, inst, "thulecite_pieces")
             end
             inst._thulecite_pieces_count = 0
+        end
+    elseif item.prefab == "ancientdreams_armour_polish" then
+        inst.components.armor:Repair(360)
+        inst.current_endurance_bonus = math.min(inst.current_endurance_bonus + 2, inst.endurance_bonus)
+        local owner = inst.components.inventoryitem:GetGrandOwner() or nil
+        if owner and owner.components.why_endurance then
+            owner.components.why_endurance:EquipmentEnduranceChangeByOtherWay(1, inst, "ancientdreams_armour_polish")
         end
     elseif item.prefab == "ancientdreams_gemshard" then
         if inst.current_endurance_bonus < inst.endurance_bonus or inst.components.armor:GetPercent() < 1 then

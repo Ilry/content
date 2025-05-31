@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 4546B_Color -->
+<!-- Author: 27136 -->
+<!-- DateCreated: 10/23/2021 11:51:49 AM -->
+<GameData>
+	<PlayerColors>
+		<Row>
+			<Type>LEADER_HAIHUANG</Type>
+			<Usage>Unique</Usage>
+			<PrimaryColor>COLOR_XP_BLUE</PrimaryColor>
+			<SecondaryColor>COLOR_UNIT_TEXT</SecondaryColor>
+			<Alt1PrimaryColor>COLOR_STANDARD_ORANGE_LT</Alt1PrimaryColor>
+			<Alt1SecondaryColor>COLOR_STANDARD_RED_DK</Alt1SecondaryColor>
+			<Alt2PrimaryColor>COLOR_STANDARD_RED_LT</Alt2PrimaryColor>
+			<Alt2SecondaryColor>COLOR_STANDARD_WHITE_DK</Alt2SecondaryColor>
+			<Alt3PrimaryColor>COLOR_STANDARD_WHITE_LT</Alt3PrimaryColor>
+			<Alt3SecondaryColor>COLOR_STANDARD_ORANGE_LT</Alt3SecondaryColor>
+		</Row>
+	</PlayerColors>
+</GameData>

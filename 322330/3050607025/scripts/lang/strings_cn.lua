@@ -7,7 +7,10 @@ STRINGS.CLEANINGS={
 [5] = "世界",
 }
 
-STRINGS.CLEAN_NOTICE="防卡：本房间将于 5 秒后清理！"
+STRINGS.CLEAN_NOTICE="防卡：本房间将于4分钟后清理！"
+STRINGS.ADD_SUCCESS="已加入清理任务: "
+STRINGS.COMMAND_CLEAN="通过命令清理了世界！"
+STRINGS.ONLY_ADMIN_CLEAN="管理员才能清理世界！"
 
 -- 来提高诗词修养了 ---
 STRINGS.POETRY={

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- District -->
+<!-- Author: 27136 -->
+<!-- DateCreated: 10/25/2021 3:24:03 PM -->
+<GameData>
+	<Types>
+	<Row Type="DISTRICT_LIFETREE" Kind="KIND_DISTRICT"/>
+	</Types>
+	<Districts>
+	<Row DistrictType="DISTRICT_LIFETREE" Name="LOC_DISTRICT_LIFETREE_NAME" Description="LOC_DISTRICT_LIFETREE_DESCRIPTION" PrereqCivic="CIVIC_URBANIZATION" PlunderType="PLUNDER_GOLD" PlunderAmount="450" AdvisorType="ADVISOR_GENERIC" Cost="54" CostProgressionModel="COST_PROGRESSION_GAME_PROGRESS" CostProgressionParam1="1000" RequiresPlacement="true" RequiresPopulation="false"  Coast="true" OnePerCity="true" Aqueduct="false" NoAdjacentCity="false" InternalOnly="false" ZOC="true" CaptureRemovesBuildings="false" CaptureRemovesCityDefenses="false" CaptureRemovesDistrict="true" MilitaryDomain="DOMAIN_SEA" Housing="4" CityStrengthModifier="4" TraitType="TRAIT_DISTRICT_LIFETREE" />
+	</Districts>
+	<District_Adjacencies>
+	<Row DistrictType="DISTRICT_LIFETREE" YieldChangeId="Ocean_Science"/>
+	<Row DistrictType="DISTRICT_LIFETREE" YieldChangeId="Ocean_Culture"/>
+	</District_Adjacencies>
+	<Adjacency_YieldChanges>
+	<Row ID="Ocean_Science" Description="LOC_DISTRICT_Ocean_Science" YieldType="YIELD_SCIENCE" YieldChange="2" TilesRequired="1" AdjacentTerrain="TERRAIN_COAST"/>
+	<Row ID="Ocean_Culture" Description="LOC_DISTRICT_Ocean_Culture" YieldType="YIELD_CULTURE" YieldChange="2" TilesRequired="1" AdjacentTerrain="TERRAIN_COAST"/>
+	</Adjacency_YieldChanges>
+	<AppealHousingChanges>
+		<Row DistrictType="DISTRICT_LIFETREE" MinimumValue="4" AppealChange="2" Description="LOC_TOOLTIP_APPEAL_BREATHTAKING"/>
+		<Row DistrictType="DISTRICT_LIFETREE" MinimumValue="2" AppealChange="1" Description="LOC_TOOLTIP_APPEAL_CHARMING"/>
+		<Row DistrictType="DISTRICT_LIFETREE" MinimumValue="-1" AppealChange="0" Description="LOC_TOOLTIP_APPEAL_AVERAGE"/>
+	</AppealHousingChanges>
+	<District_ValidTerrains>
+		<Row DistrictType="DISTRICT_LIFETREE" TerrainType="TERRAIN_COAST"/>
+	</District_ValidTerrains>
+	<DistrictModifiers>
+		<Row>
+			<DistrictType>DISTRICT_LIFETREE</DistrictType>
+			<ModifierId>CREATELIWEITAN</ModifierId>
+		</Row>
+	</DistrictModifiers>
+	<Modifiers>
+		<Row>
+			<ModifierId>CREATELIWEITAN</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_DISTRICT_CREATE_UNIT</ModifierType>
+		</Row>
+	</Modifiers>
+	<ModifierArguments>
+		<Row>
+			<ModifierId>CREATELIWEITAN</ModifierId>
+			<Name>DistrictType</Name>
+			<Value>DISTRICT_LIFETREE</Value>
+		</Row>
+		<Row>
+			<ModifierId>CREATELIWEITAN</ModifierId>
+			<Name>UnitType</Name>
+			<Value>UNIT_LIWEITAN</Value>
+		</Row>
+	</ModifierArguments>
+	</GameData>

@@ -50,7 +50,6 @@ local function ShouldWakeUp(inst)
 end
 
 local function ShouldSleep(inst)
-    --print(inst, "ShouldSleep", DefaultSleepTest(inst), not inst.sg:HasStateTag("open"), inst.components.follower:IsNearLeader(SLEEP_NEAR_LEADER_DISTANCE))
     return DefaultSleepTest(inst) and not inst.sg:HasStateTag("open") and inst.components.follower:IsNearLeader(SLEEP_NEAR_LEADER_DISTANCE) and not TheWorld.state.isfullmoon
 end
 
@@ -70,14 +69,11 @@ local function OnClose(inst)
 	end
 end
 
--- eye bone was killed/destroyed
 local function OnStopFollowing(inst)
-    --print("chester - OnStopFollowing")
     inst:RemoveTag("companion")
 end
 
 local function OnStartFollowing(inst)
-    --print("chester - OnStartFollowing")
     inst:AddTag("companion")
 end
 
@@ -85,34 +81,57 @@ local function tryeatcontents(inst)
     local dideat = false
     local dideatfire = false
     local container = inst.components.container
+	
+	if container:IsOpen() then 
+		return false 
+	end
 
-    if inst.PackimState == "FIRE" then
-        for i = 1, container:GetNumSlots() do
-            local item = container:GetItemInSlot(i)
-            if item and item:HasTag("cookable") and not item:HasTag("irreplaceable") then 
-                local replacement = nil 
-                if item.components.cookable then 
-                    replacement = item.components.cookable:Cook(inst, inst)
-                elseif item.components.burnable then 
-                    replacement = SpawnPrefab("ash")
-                end  
-                if replacement then 
-                    local stacksize = 1 
-                    if item.components.stackable then 
-                        stacksize = item.components.stackable:StackSize()
-                    end
-                    if replacement.components.stackable then 
-                        replacement.components.stackable:SetStackSize(stacksize)
-                    end 
-                    container:RemoveItemBySlot(i)
-                    item:Remove()
-                    container:GiveItem(replacement, i)
+	if inst.PackimState == "FIRE" then
+        for slot, item in pairs(inst.components.container.slots) do
+            if item and not item:HasTag("irreplaceable") then				
+				local replacement
+				
+				if item.components.cookable ~= nil then
+					replacement = FunctionOrValue(item.components.cookable.product, item, inst)
+					
+					if item.components.cookable.oncooked ~= nil then
+						item.components.cookable.oncooked(item, inst) 
+					end
+				elseif item.components.burnable ~= nil and not item.components.perishable then
+					replacement = item:HasTag("burnablecharcoal") and "charcoal" or "ash"
+				end
+				
+				replacement = replacement and SpawnPrefab(replacement)
+				
+                if replacement ~= nil then	
+					if replacement.components.perishable ~= nil and item.components.perishable ~= nil then
+						replacement.components.perishable:SetPercent(1)
+					end
+					
+					if replacement.components.stackable ~= nil and item.components.stackable ~= nil then
+						local stacksize = item.components.stackable:StackSize() * replacement.components.stackable:StackSize()
+						replacement.components.stackable:SetStackSize(stacksize)
+					end
+					
+					inst.components.container:RemoveItemBySlot(slot)
+                    inst.components.container:GiveItem(replacement, slot)
                 end 
-            end 
-        end 
-        return false 
-    end 
+				
+				local item = replacement or item
+					
+				if item.components.inventoryitem ~= nil then
+					item.components.inventoryitem:InheritMoisture(0, false)
+				end
+		
+				if item.components.temperature ~= nil then
+					item.components.temperature:SetTemperature(item.components.temperature:GetMax())
+				end
+            end
+		end
+	end
+	
 	local loot = {}
+	
 	if #loot > 0 then
 		inst.components.lootdropper:SetLoot(loot)
 
@@ -121,6 +140,7 @@ local function tryeatcontents(inst)
 			inst.components.lootdropper:SetLoot({})
 		end)
 	end
+	
 	return dideat
 end
 
@@ -152,6 +172,7 @@ local function CanMorph(inst, dideat)
     end
 
     local container = inst.components.container
+	
     if container:IsOpen() then
         return false, false
     end
@@ -179,6 +200,7 @@ end
 local function CheckForMorph(inst)
 	local dideat = tryeatcontents(inst)
     local canFire, canFat = CanMorph(inst, dideat)
+	
     if canFire or canFat then
         inst.sg:GoToState("transition")
 	elseif dideat then
@@ -200,6 +222,7 @@ local function MorphPackim(inst)
     end
 
     local container = inst.components.container
+	
     for i = 1, container:GetNumSlots() do
         container:RemoveItem(container:GetItemInSlot(i)):Remove()
     end
@@ -235,6 +258,7 @@ local function OnHaunt(inst)
         inst.components.hauntable.hauntvalue = TUNING.HAUNT_SMALL
         return true
     end
+	
     return false
 end
 
@@ -249,18 +273,18 @@ local function create_packim()
     inst.entity:AddNetwork()
     inst.entity:AddLightWatcher()
 
-	MakeFlyingGiantCharacterPhysics(inst, 75, .5)
+    inst.MiniMapEntity:SetIcon("kyno_packimbaggims.tex")
+    inst.MiniMapEntity:SetCanUseCache(false)
 	
-	--[[
-    MakeCharacterPhysics(inst, 75, .5)
-    inst.Physics:SetCollisionGroup(COLLISION.CHARACTERS)
-    inst.Physics:ClearCollisionMask()
-    inst.Physics:CollidesWith(COLLISION.WORLD)
-    inst.Physics:CollidesWith(COLLISION.OBSTACLES)
-    inst.Physics:CollidesWith(COLLISION.CHARACTERS)
-	]]--
+	inst.DynamicShadow:SetSize(2, 1.5)
+   	inst.Transform:SetSixFaced()
+	
+	MakeFlyingGiantCharacterPhysics(inst, 75, .5)
 
-    inst:AddTag("companion")
+    inst.AnimState:SetBank("packim")
+    inst.AnimState:SetBuild("packim_build")
+	
+	inst:AddTag("companion")
     inst:AddTag("character")
     inst:AddTag("scarytoprey")
     inst:AddTag("packim")
@@ -269,18 +293,8 @@ local function create_packim()
     inst:AddTag("noauradamage")
 	inst:AddTag("ignorewalkableplatformdrowning")
 
-    inst.MiniMapEntity:SetIcon("kyno_packimbaggims.tex")
-    inst.MiniMapEntity:SetCanUseCache(false)
-
-    inst.AnimState:SetBank("packim")
-    inst.AnimState:SetBuild("packim_build")
-
-    inst.DynamicShadow:SetSize(2, 1.5)
-
-   	inst.Transform:SetSixFaced()
-
     inst._isfatpackim = net_bool(inst.GUID, "_isfatpackim", "onisfatpackimdirty")
-	------------------------------------------
+	
     inst.entity:SetPristine()
 
     if not TheWorld.ismastersim then
@@ -289,7 +303,9 @@ local function create_packim()
 		inst.OnEntityReplicated = function(inst) inst.replica.container:WidgetSetup("chester") end
         return inst
     end
-    ------------------------------------------
+    
+	-- inst:AddComponent("cooker")
+	
     inst:AddComponent("maprevealable")
     inst.components.maprevealable:SetIconPrefab("globalmapiconunderfog")
 

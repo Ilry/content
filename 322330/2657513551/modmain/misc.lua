@@ -125,6 +125,70 @@ AddComponentPostInit("itemmimic", function(self)
     end
 end)
 
+-- fix hermitcrab lure spawner
+AddPrefabPostInit("hermitcrab", function(inst)
+	local ISLAND_RADIUS = 35
+	local FIND_LUREPLANT_TAGS = {"lureplant"}
+	local FIND_HERMITCRAB_LURE_MARKER_TAGS = {"hermitcrab_lure_marker"}
+
+	local function OnSpringChange(inst)
+	    -- if task not complete, spawn lure plant at location.
+	    if not inst.components.friendlevels.friendlytasks[9].complete then
+	        --look for lureplant?
+	        local source = inst.CHEVO_marker
+	        if source then
+	            local source_x, source_y, source_z = source.Transform:GetWorldPosition()
+	            local ents = TheSim:FindEntities(source_x, source_y, source_z, ISLAND_RADIUS, FIND_LUREPLANT_TAGS)
+	            if #ents <= 0 then
+	                -- spawnlureplant
+	                local markerents = TheSim:FindEntities(source_x, source_y, source_z, ISLAND_RADIUS, FIND_HERMITCRAB_LURE_MARKER_TAGS)
+	                if #markerents > 0 then
+	                    local marker_x, marker_y, marker_z = markerents[1].Transform:GetWorldPosition()
+	                    local plant = SpawnPrefab("lureplant")
+	                    plant.Transform:SetPosition(marker_x, marker_y, marker_z)
+	                    plant.sg:GoToState("spawn")
+	                end
+	            end
+	        end
+	    end
+	end
+
+	local dt = TheWorld.components.dsa_clocksync.elapsedtime
+	if dt ~= nil then
+		local function FixLurePlant(inst)
+			if TheWorld.state.isspring then
+				OnSpringChange(inst)
+			end
+		end
+		inst:DoTaskInTime(1, FixLurePlant)
+	end
+end)
+
+-- fix yots_lantern_light_chain updater
+--[[
+local function OnUpdateFn(inst, dt)
+	local dist = inst:GetDistanceSqToInst(ThePlayer)
+
+	if dist < near_prox and not inst.near then
+		onNear(inst)
+		inst.near = true
+	elseif dist > far_prox and inst.near == true then
+		onFar(inst)
+		inst.near = false
+	end
+end]]
+
+AddPrefabPostInit("yots_lantern_light_chain", function(inst)
+	if inst.components.updatelooper and #inst.components.updatelooper.onupdatefns > 0 then
+		local fn = inst.components.updatelooper.onupdatefns[1]
+		local OnUpdateFn = function(inst, dt)
+			if ThePlayer == nil then return end
+			return fn(inst, dt)
+		end
+		inst.components.updatelooper.onupdatefns[1] = OnUpdateFn
+	end
+end)
+
 -- change mod update hint text
 local old_Networking_ModOutOfDateAnnouncement = Networking_ModOutOfDateAnnouncement
 function GLOBAL.Networking_ModOutOfDateAnnouncement(mod)

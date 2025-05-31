@@ -1,5 +1,5 @@
 name = "The Architect Pack"
-version = "3.3-B"
+version = "4.1-B"
 local myupdate = "Stay n' Build"
 
 description = [[
@@ -10,7 +10,7 @@ description = [[
 󰀏 Includes contents from: Shipwrecked, Hamlet, The Forge, The Gorge and exclusive contents!
 
 󰀖 Credits on the mod page!
-󰀌 Mod Version: 3.3-B
+󰀌 Mod Version: 4.1-B
 󰀧 Update: Stay n' Build
 ]]
 

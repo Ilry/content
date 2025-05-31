@@ -1,10 +1,6 @@
 ---@diagnostic disable: trailing-space, undefined-global
 local LANCOORD = require('core_lol_wp/utils/coords')
 
-local wtf = {
-    ["shadow_rook"] = true,
-}
-
 local function timerestart(target)
     --时停恢复
     target.AnimState:Resume()
@@ -26,22 +22,13 @@ local function leap_move_to_pos(inst,cur_frame)
     
 
     self_x,_,self_z = inst:GetPosition():Get()
-    if inst.lol_wp_divine_leap_target_iswtf then
+    if inst.lol_wp_divine_leap_target then
+        tar_x,_,tar_z = inst.lol_wp_divine_leap_target:GetPosition():Get()
+        inst.lol_wp_divine_leap_target_last_x = tar_x
+        inst.lol_wp_divine_leap_target_last_z = tar_z
+    else
         tar_x = inst.lol_wp_divine_leap_target_last_x
         tar_z = inst.lol_wp_divine_leap_target_last_z
-    elseif inst.lol_wp_divine_leap_target then
-        tar_x,_,tar_z = inst.lol_wp_divine_leap_target:GetPosition():Get()
-    end
-    -- LOLWP_S:declare(tar_x, tar_z)
-
-    if tar_x == nil then
-        inst.components.bloomer:PushBloom("helmsplitter", "shaders/anim.ksh", -2)
-        inst.components.colouradder:PushColour("helmsplitter", 1, 1, 0, 0)
-        inst.sg:RemoveStateTag("nointerrupt")
-        ShakeAllCameras(CAMERASHAKE.VERTICAL, .5, .015, .5, inst, 20)
-
-        inst.SoundEmitter:PlaySound('soundfx_lol_wp_divine/divine/hammer_smash')
-        inst:PerformBufferedAction()
     end
 
     if self_x and self_z and tar_x and tar_z then
@@ -134,14 +121,8 @@ AddStategraphState("wilson",
                 inst.lol_wp_divine_leap_target = target
             end
 
-            inst.lol_wp_divine_leap_target_iswtf = wtf[target.prefab]
-            if inst.lol_wp_divine_leap_target_iswtf then
-                local x,_,z = target:GetPosition():Get()
-                inst.lol_wp_divine_leap_target_last_x = x
-                inst.lol_wp_divine_leap_target_last_z = z
-            end
             
-            
+
             inst.sg:SetTimeout(21 * FRAMES)
 
         end,

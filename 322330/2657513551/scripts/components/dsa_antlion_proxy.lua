@@ -15,7 +15,7 @@ local _iswet
 local _issummer
 
 local function InitProxy()
-	if inst.worldprefab == "cave" and inst.components.caveins ~= nil then
+	if inst.worldprefab == "cave" and inst.components.caveins ~= nil and TUNING.ANTLION_TRIBUTE ~= false then
 		_antlion_proxy = CreateEntity()
 		_antlion_proxy.persists = false
 		_antlion_proxy:AddTag("INLIMBO")
@@ -93,6 +93,10 @@ function self:OnSaveProxyData(worldprefab)
 		if _antlion_spawner ~= nil and _antlion_spawner.killed then
 			-- 蚁狮已被击杀, 在夏天结束前都不触发计时器
 			return { from = "forest", killed = true }
+		end
+		if TUNING.ANTLION_TRIBUTE == false then
+			-- Fix ANTLION_TRIBUTE settings
+			return { from = "forest", killed = true, disable_tribute = true}
 		end
 		if _antlion ~= nil and _antlion:IsValid() then
 			local time = _antlion.components.worldsettingstimer:GetTimeLeft("rage") or TUNING.ANTLION_RAGE_TIME_INITIAL

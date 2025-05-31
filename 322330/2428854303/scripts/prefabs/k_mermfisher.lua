@@ -15,7 +15,8 @@ local assets =
 
 local prefabs =
 {
-    "kyno_tropicalfish",
+    "pondfish",
+	"froglegs",
 }
 
 local sounds = 
@@ -26,17 +27,6 @@ local sounds =
     talk   = "dontstarve/creatures/merm/idle",
     buff   = "dontstarve/characters/wurt/merm/warrior/yell",
 }
-
-local MERM_FISHER_TARGET_DIST         = 8
-local MERM_FISHER_FOLLOW_DIST         = 25
-local MERM_FISHER_ATTACKED_ALERT_DIST = 20
-local MERM_FISHER_FISH_KINGBONUS      = 0.75
-local MERM_FISHER_FISH_TIMER          = 30 * 2
-
-local DECIDROOTTARGET_MUST_TAGS       = { "_combat", "_health", "merm" }
-local DECIDROOTTARGET_CANT_TAGS       = { "INLIMBO" }
-local NO_TAGS                         = {"FX", "NOCLICK", "DECOR", "INLIMBO"}
-local HOUSE_TAGS                      = {"tropical_mermhouse"}
 
 local function OnTalk(inst, script)
     inst.SoundEmitter:PlaySound(inst.sounds.talk)
@@ -50,18 +40,24 @@ local function FindInvaderFn(guy, inst)
         leader_guy = leader_guy.components.inventoryitem:GetGrandOwner()
     end
 
-    return not (TheWorld.components.mermkingmanager and TheWorld.components.mermkingmanager:HasKing()) and
+    return not (TheWorld.components.mermkingmanager and TheWorld.components.mermkingmanager:HasKingAnywhere()) and
 	not (leader and leader:HasTag("player")) and
 	not (leader_guy and leader_guy:HasTag("merm") and not guy:HasTag("pig"))
 end
 
+local RETARGET_CANT_TAGS = {"merm"}
+local RETARGET_ONEOF_TAGS = {"player", "monster", "character"}
+
 local function RetargetFn(inst)
-    return FindEntity(inst, SpringCombatMod(MERM_FISHER_TARGET_DIST), FindInvaderFn, nil, {"merm"}, {"player", "monster", "character"})
+    return FindEntity(inst, SpringCombatMod(8), FindInvaderFn, nil, RETARGET_CANT_TAGS, RETARGET_ONEOF_TAGS)
 end
 
 local function KeepTargetFn(inst, target)
-    return inst.components.combat:CanTarget(target) and target:GetPosition():DistSq(inst:GetPosition()) < MERM_FISHER_FOLLOW_DIST * MERM_FISHER_FOLLOW_DIST
+    return inst.components.combat:CanTarget(target) and target:GetPosition():DistSq(inst:GetPosition()) < 25 * 25
 end
+
+local DECIDROOTTARGET_MUST_TAGS = { "_combat", "_health", "merm" }
+local DECIDROOTTARGET_CANT_TAGS = { "INLIMBO" }
 
 local function OnAttackedByDecidRoot(inst, attacker)
     local share_target_dist = TUNING.MERM_SHARE_TARGET_DIST
@@ -82,18 +78,24 @@ local function OnAttackedByDecidRoot(inst, attacker)
     end
 end
 
+local NO_TAGS = {"FX", "NOCLICK", "DECOR", "INLIMBO"}
+local HOUSE_TAGS = {"mermhouse", "tropical_mermhouse"}
+
 local function OnAttacked(inst, data)
     local attacker = data and data.attacker
+	
     if attacker and attacker.prefab == "deciduous_root" and attacker.owner ~= nil then
         OnAttackedByDecidRoot(inst, attacker.owner)
+
     elseif attacker and inst.components.combat:CanTarget(attacker) and attacker.prefab ~= "deciduous_root" then
+
         local share_target_dist = TUNING.MERM_SHARE_TARGET_DIST
         local max_target_shares = TUNING.MERM_MAX_TARGET_SHARES
 
         inst.components.combat:SetTarget(attacker)
 
         local pt = inst:GetPosition()
-        local homes = TheSim:FindEntities(pt.x, pt.y, pt.z, MERM_FISHER_ATTACKED_ALERT_DIST, HOUSE_TAGS, NO_TAGS)
+        local homes = TheSim:FindEntities(pt.x, pt.y, pt.z, 20, HOUSE_TAGS, NO_TAGS)
 
         for k,v in pairs(homes) do
             if v and v.components.childspawner then
@@ -112,6 +114,8 @@ local function RoyalUpgrade(inst)
     if inst.components.health:IsDead() then
         return
     end
+	
+	inst.components.health:SetMaxHealth(600)
 
     inst.fishtimer_mult = 0.75
 
@@ -126,6 +130,8 @@ local function RoyalDowngrade(inst)
     if inst.components.health:IsDead() then
         return
     end
+	
+	inst.components.health:SetMaxHealth(300)
 
     inst.fishtimer_mult = 1
 
@@ -138,23 +144,24 @@ end
 
 local function ResolveMermChatter(inst, strid, strtbl)
     local stringtable = STRINGS[strtbl:value()]
+	
     if stringtable then
-        if stringtable[strid:value()] ~= nil then
-            if ThePlayer and ThePlayer:HasTag("mermfluent") then
-                return stringtable[strid:value()][1] -- First value is always the translated one.
-            else
-                return stringtable[strid:value()][2]
-            end
+        local table_at_id = stringtable[strid:value()]
+        if table_at_id ~= nil then
+            local fluency_id = (ThePlayer ~= nil and ThePlayer:HasTag("mermfluent") and 1)
+                or 2
+            return table_at_id[fluency_id]
         end
     end
 end
 
 local function ShouldSleep(inst)
     return NocturnalSleepTest(inst)
+        and not (TheWorld.components.mermkingmanager and TheWorld.components.mermkingmanager:IsCandidate(inst))
 end
 
 local function ShouldWake(inst)
-    return NocturnalWakeTest(inst)
+    return NocturnalWakeTest(inst) or (TheWorld.components.mermkingmanager and TheWorld.components.mermkingmanager:IsCandidate(inst))
 end
 
 local function OnTimerDone(inst, data)
@@ -170,7 +177,71 @@ local function OnCollect(inst)
         inst.components.timer:StopTimer("fish")
     end
 
-    inst.components.timer:StartTimer("fish", MERM_FISHER_FISH_TIMER * inst.fishtimer_mult)
+    inst.components.timer:StartTimer("fish", 120 * inst.fishtimer_mult)
+end
+
+local function IsAbleToAccept(inst, item, giver)
+    if inst.components.health ~= nil and inst.components.health:IsDead() then
+        return false, "DEAD"
+    elseif inst.sg ~= nil and inst.sg:HasStateTag("busy") then
+        if inst.sg:HasStateTag("sleeping") then
+            return true
+        else
+            return false, "BUSY"
+        end
+    else
+        return true
+    end
+end
+
+local function ShouldAcceptItem(inst, item, giver)
+    if inst.king ~= nil then
+        return false
+    end
+
+    if inst.components.sleeper and inst.components.sleeper:IsAsleep() then
+        inst.components.sleeper:WakeUp()
+    end
+
+    return (giver:HasTag("merm") and not (inst:HasTag("mermguard") and giver:HasTag("mermdisguise"))) and
+	(item.components.equippable ~= nil and item.components.equippable.equipslot == EQUIPSLOTS.HEAD) or
+	((item.components.edible and inst.components.eater and inst.components.eater:CanEat(item)) and
+	(TheWorld.components.mermkingmanager and TheWorld.components.mermkingmanager:IsCandidate(inst)))
+end
+
+local function OnGetItemFromPlayer(inst, giver, item)
+    local mermkingmanager = TheWorld.components.mermkingmanager
+
+    if item.components.equippable ~= nil and item.components.equippable.equipslot == EQUIPSLOTS.HEAD then
+        local current = inst.components.inventory:GetEquippedItem(EQUIPSLOTS.HEAD)
+		
+        if current ~= nil then
+            inst.components.inventory:DropItem(current)
+        end
+		
+        inst.components.inventory:Equip(item)
+        inst.AnimState:Show("hat")
+    end
+end
+
+local function OnRefuseItem(inst, item)
+    inst.sg:GoToState("refuse")
+
+    if inst.components.sleeper and inst.components.sleeper:IsAsleep() then
+        inst.components.sleeper:WakeUp()
+    end
+end
+
+local function OnEat(inst, data)
+    if data.food and data.food.components.edible then
+        if TheWorld.components.mermkingmanager and TheWorld.components.mermkingmanager:IsCandidate(inst) then
+            inst.components.mermcandidate:AddCalories(data.food)
+        end
+    end
+end
+
+local function TestForLunarMutation(inst,item)
+
 end
 
 local function fn()
@@ -186,6 +257,8 @@ local function fn()
     
 	inst.Transform:SetFourFaced()
     MakeCharacterPhysics(inst, 50, .5)
+	
+	inst.sounds = sounds
 
     inst.AnimState:SetBank("pigman")
     inst.AnimState:SetBuild("merm_fisherman_build")
@@ -217,11 +290,15 @@ local function fn()
 	inst:AddComponent("timer")
 
     inst:AddComponent("locomotor")
-    inst.components.locomotor.runspeed = 3
+    inst.components.locomotor.runspeed = 7
     inst.components.locomotor.walkspeed = 4
+	inst.components.locomotor:SetAllowPlatformHopping(true)
+	
+	inst:AddComponent("embarker")
+    inst:AddComponent("drownable")
 
-	inst:SetBrain(brain)
     inst:SetStateGraph("SGmermfisher")
+	inst:SetBrain(brain)
 
     inst:AddComponent("eater")
     inst.components.eater:SetDiet({ FOODGROUP.VEGETARIAN }, { FOODGROUP.VEGETARIAN })
@@ -230,6 +307,14 @@ local function fn()
 	inst.components.sleeper:SetNocturnal(true)
     inst.components.sleeper:SetWakeTest(ShouldWake)
     inst.components.sleeper:SetSleepTest(ShouldSleep)
+	
+	inst:AddComponent("foodaffinity")
+    inst.components.foodaffinity:AddFoodtypeAffinity(FOODTYPE.VEGGIE, 1)
+    inst.components.foodaffinity:AddPrefabAffinity  ("kelp",          1)
+    inst.components.foodaffinity:AddPrefabAffinity  ("kelp_cooked",   1)
+    inst.components.foodaffinity:AddPrefabAffinity  ("boatpatch_kelp",1)
+    inst.components.foodaffinity:AddPrefabAffinity  ("durian",        1)
+    inst.components.foodaffinity:AddPrefabAffinity  ("durian_cooked", 1)
 
     inst:AddComponent("combat")
     inst.components.combat.hiteffectsymbol = "pig_torso"
@@ -238,13 +323,24 @@ local function fn()
 
     inst:AddComponent("health")
     inst.components.health:SetMaxHealth(300)
+	inst.components.health:StartRegen(30, 10)
 
     inst:AddComponent("lootdropper")
     inst.components.lootdropper:SetLoot({"pondfish", "froglegs"})
 
     inst:AddComponent("fishingrod")
-    inst.components.fishingrod:SetWaitTimes(4, 20)
-    inst.components.fishingrod:SetStrainTimes(0, 5)
+	inst.components.fishingrod:SetWaitTimes(4, 10)
+    inst.components.fishingrod:SetStrainTimes(0, 3)
+    inst.components.fishingrod.basenibbletime = 2
+    inst.components.fishingrod.nibbletimevariance = 2
+    inst.components.fishingrod.nibblestealchance = 0
+	
+	inst:AddComponent("trader")
+    inst.components.trader:SetAcceptTest(ShouldAcceptItem)
+    inst.components.trader:SetAbleToAcceptTest(IsAbleToAccept)
+    inst.components.trader.onaccept = OnGetItemFromPlayer
+    inst.components.trader.onrefuse = OnRefuseItem
+    inst.components.trader.deleteitemonaccept = false
 
     inst:AddComponent("named")
     inst.components.named.possiblenames = STRINGS.MERMNAMES
@@ -257,6 +353,27 @@ local function fn()
     MakeMediumBurnableCharacter(inst, "pig_torso")
     MakeMediumFreezableCharacter(inst, "pig_torso")
 	
+	inst:ListenForEvent("onmermkingcreated_anywhere", function()
+        inst:DoTaskInTime(math.random() * 1, function()
+            RoyalUpgrade(inst)
+            inst:PushEvent("onmermkingcreated")
+        end)
+    end, TheWorld)
+	
+    inst:ListenForEvent("onmermkingdestroyed_anywhere", function()
+        inst:DoTaskInTime(math.random() * 1, function()
+            RoyalDowngrade(inst)
+            inst:PushEvent("onmermkingdestroyed")
+        end)
+    end, TheWorld)
+
+    inst.TestForLunarMutation = TestForLunarMutation
+
+    if TheWorld.components.mermkingmanager and TheWorld.components.mermkingmanager:HasKingAnywhere() then
+        RoyalUpgrade(inst)
+    end
+	
+	inst:ListenForEvent("oneat", OnEat)
 	inst:ListenForEvent("timerdone", OnTimerDone)
     inst:ListenForEvent("attacked", OnAttacked)
     inst:ListenForEvent("fishingcollect", OnCollect)

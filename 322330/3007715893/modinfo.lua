@@ -17,7 +17,7 @@ Tip: Close the stack of tall birds when you need to hatch their eggs
 
 author = "天涯共此时、小花朵"
 
-version = "2.2.7"
+version = "2.3.0"
 
 forumthread = ""
 
@@ -78,8 +78,9 @@ configuration_options =
 			{description = "200", data = 200},
 			{description = "500", data = 500},
 			{description = "999", data = 999},
-			{description = "5000", data = 5000},
-			{description = "10000", data = 10000},
+			{description = "9999", data = 9999},
+			{description = "99999", data = 99999},
+			{description = "999999", data = 999999},
 		},
 		default = 100,
 	},
@@ -95,8 +96,12 @@ configuration_options =
 			{description = "80", data = 80},
 			{description = "99", data = 99},
 			{description = "100", data = 100},
+			{description = "200", data = 200},
 			{description = "500", data = 500},
-	        {description = "999", data = 999},
+			{description = "999", data = 999},
+			{description = "9999", data = 9999},
+			{description = "99999", data = 99999},
+			{description = "999999", data = 999999},
 		},
 		default = 100,
 	},
@@ -125,19 +130,20 @@ configuration_options =
 	--原版物品
 	addConfig("blueprint", "常用蓝图","blueprint", false),
 	addConfig("sketch", "常用草图","sketch", false),
+	addConfig("pumpkintools", "万圣节南瓜工具","Oversized Pumpkin Carving Tools", true),
 	addConfig("wally", "厨师炊具", "Wally's stuff",true),
 	addConfig("winona", "女工投石机和聚光灯", "Winona's stuff",true),
 	addConfig("ancienttree_stuff", "神奇种子和树苗","Ancienttree Related stuff",  true),
 	addConfig("rabbit", "兔子","Rabbit",  true),
-	addConfig("mole", "鼹鼠", "Mole", true),
+	addConfig("mole", "鼹鼠和红萝卜鼠", "Mole and carrat", true),
 	addConfig("bird", "鸟类", "Bird", true),
 	addConfig("crow","月盲乌鸦","Moonblind Crow", true),
 	addConfig("fish", "鱼类和发光蟹", "Fish and LightCrab", true),
 	addConfig("spider", "各类蜘蛛", "Spider", true),
-	addConfig("eyeturret", "眼球炮塔", "Eyeturret", true),
+	addConfig("eyeturret", "眼球炮塔和冰眼结晶器套装", "Eyeturret，Ice Crystaleyezer kit", true),
 	addConfig("tallbirdegg", "高脚鸟蛋", "Tallbirdegg", true, "如果需要孵化高鸟蛋，需要关闭堆叠","If you need to hatch tall eggs, you need to close the stack"),
 	addConfig("lavae_egg", "岩浆虫卵", "Lavae egg", true, "如果需要孵化岩浆虫卵，需要关闭堆叠","If you need to hatch lavae eggs, you need to close the stack"),
-	addConfig("shadowheart", "暗影心房", "Shadow heart", true),
+	addConfig("shadowheart", "暗影心房和附身暗影心房", "Shadow heart and Possessed Shadow Atrium", true),
 	addConfig("glommerwings", "格罗姆翅膀", "Glommerwings", true),
 	addConfig("moonrockidol", "月岩雕像,告密的心", "Moonrockidol and Reviver", true),
 	addConfig("horn", "牛角和独角鲸角", "Horn", true, "注意：只能作为材料堆叠，如需作为工具，请关闭选项","Note: TURN OFF WHEN USE IT AS TOOL"),
@@ -147,6 +153,7 @@ configuration_options =
 	addConfig("shell", "贝壳钟", "Singing Shell",true),
 	addConfig("mooneye", "月眼", "Mooneye",true),
 	addConfig("boat_stuff","船上用品及龙蝇船相关物品（无耐久）","Boat related stuff", true, "只加入了没有耐久的物品堆叠"),
+	
 	
 	--模组物品
 	{
@@ -161,7 +168,7 @@ configuration_options =
 	
 	addConfig("dengxian", "登仙：暗影玫瑰，上品，极品灵石", "Dengxian： shadow rose and stones", false),
 	addConfig("myth_lotusleaf", "神话书说：荷叶和月饼", "Lotusleaf and Mooncake", false),
-	addConfig("blank_certificate", "能力勋章：空白勋章和熔岩鳗鱼", "Blank certificate and LavaEel", false),
+	addConfig("blank_certificate", "能力勋章：空白勋章,熔岩鳗鱼和凋零之心", "Blank certificate and LavaEel", false),
 	addConfig("lg_choufish_inv", "海洋传说：小丑鱼", "Uglyfish", false),
 	addConfig("aip_leaf_note", "额外物品包：树叶笔记,繁荣树种", "Aip leaf note", false),
 	addConfig("foliageath", "棱镜：青枝绿叶，雨蝇", "Foliageath", false),

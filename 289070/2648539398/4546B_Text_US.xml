@@ -1,0 +1,862 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 4546B_Text_US -->
+<!-- Author: 27136 -->
+<!-- DateCreated: 11/10/2021 5:34:01 PM -->
+<GameData>
+	<BaseGameText>
+		<Row Tag="LOC_CITY_NAME_1" >
+			<Text>Giant Cove Tree</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_2" >
+			<Text>Lava Lakes</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_3">
+			<Text>The Aurora</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_4" >
+			<Text>Blood Kelp Zone</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_5" >
+			<Text>Mushroom Forest</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_6" >
+			<Text>Lost River</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_7" >
+			<Text>Mountain Island</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_8" >
+			<Text>Underwater Island</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_9" >
+			<Text>Safe Shallows </Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_10" >
+			<Text>Dunes</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_11" >
+			<Text>Bulb Zone</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_12" >
+			<Text>Grand Reef</Text>
+		</Row>
+		<Row Tag="LOC_CIVILIZATION_4546B_DESCRIPTION" >
+			<Text>Planet 4546B</Text>
+		</Row>
+		<Row Tag="LOC_CIVILIZATION_4546B_ADJECTIVE" >
+			<Text>4546B people</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_1" >
+			<Text>Peeper</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_2" >
+			<Text>Bladderfish</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_3" >
+			<Text>Rabbit Ray</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_4" >
+			<Text>Hoopfish</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_5" >
+			<Text>Hoverfish</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_6" >
+			<Text>Oculus</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_7" >
+			<Text>Boomerang</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_8" >
+			<Text>Garryfish</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_11" >
+			<Text>Cuddlefish</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_12" >
+			<Text>Spadefish</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_13" >
+			<Text>Stalker</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_14" >
+			<Text>Ghostray</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_15" >
+			<Text>Jellyray</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_16" >
+			<Text>Mesmer</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_17" >
+			<Text>Floater</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_18" >
+			<Text>
+				Reefback Leviathan Juvenile
+			</Text>
+		</Row>
+		<Row Tag="LOC_CIVILIZATION_4546B_NAME" >
+			<Text>Planet 4546B</Text>
+		</Row>
+		<Row Tag="LOC_LEADER_HAIHUANG_NAME" >
+			<Text>Sea Emperor</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_CIVILIZATION_KALA_NAME" >
+			<Text>  Kharaa Bacterium:</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_CIVILIZATION_KALA_DESCRIPTION" >
+			<Text>
+				All combat units -5[ICON_Strength]strength; Decrease growth by 20% in all cities,-2[ICON_Amenities]Amenity in all cities; After studying the technology 'Chemistry' , Player can run the project 'Produce Enzyme 42 ' to remove the Debuff[NEWLINE][NEWLINE]Subnautica : Begin the game in an ocean tile, gain[ICON_SCIENCE]Science and[ICON_CULTURE]Culture per turn before you settle your first city; All the Reef tiles in the nation provide +1[ICON_Culture]Culture,+1[ICON_Faith]Faith,All the Coastal Cities +2[ICON_Amenities]Amenity[NEWLINE][NEWLINE]ALTERRA Technology : Builders are able to build Seastead after studying the technology 'CELESTIAL NAVIGATION' ; Every Scanner Room increases the rate of [ICON_TechBoosted]Eurekas by 2%; Unlock the special Space Race Project 'Launch Neptune Rocket'[NEWLINE][NEWLINE]The Legacy Of The Precursors Race : Ignore the technology requirement, can see[ICON_RESOURCE_LON]Ion Cube from the start; Grands unit 'Quarantine Enforcement Platform' in the [ICON_Capital]capital after studying 'ADVANCED BALLISTICS', which has enormous SightRange and can destory any air units within two tiles,but can't[ICON_Production]produce or[ICON_Movement]move[NEWLINE]
+			</Text>
+		</Row>
+		<Row Tag="LOC_LOADING_INFO_LEADER_HAIHUANG" >
+			<Text>Sea Emperor,One of the most intelligent leviathan in Planet 4546B.Faced with the savage Precursors Race,You carry the ecosystem of this ocean.Your Enzyme 42 will Dissolve any threat,making your people healthy forever.</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_LEADER_HAIHUANG2_CIVILIZATION_NAME" >
+			<Text>The Leader Of Leviathan</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_LEADER_HAIHUANG2_CIVILIZATION_DESCRIPTION" >
+			<Text>All[ICON_Strength]combat units gain[ICON_Damaged]+5 heal per turn;All[ICON_Strength]combat units gain heal at the end of every turn,even after moving or attacking;+1[ICON_Production]production from water area;Fishing boats provide [ICON_Culture] a culture bomb to adjacent tiles</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_HAIHUANG_QUOTE" >
+			<Text>
+				What is a wave without the ocean? A beginning without an end?[NEWLINE]They are different, but they go together.
+			</Text>
+		</Row>
+		<Row Tag="LOC_UNIT_SEAMOTH_NAME" >
+			<Text>Seamoth</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_UNIT_SEAMOTH_DESCRIPTION" >
+			<Text>An unit unique to Planet 4546B, replace Caravel [NEWLINE]Has better[ICON_Movement]Movement and[ICON_PROMISES_ESPIONAGE]Sight Range,Can not be affected by enemies' Zone Of Control[NEWLINE]</Text>
+		</Row>
+		<Row Tag="LOC_UNIT_SEAMOTH_DESCRIPTION" >
+			<Text>An unit unique to Planet 4546B, replace Caravel [NEWLINE]Has better[ICON_Movement]Movement and[ICON_PROMISES_ESPIONAGE]Sight Range,Can not be affected by enemies' Zone Of Control[NEWLINE][NEWLINE]Seamoth, another pinnacle of ALTERRA Technology, has advanced sonar and electric shock modules, can be operated flexibly in shallow water areas. It is very suitable for performing various investigation tasks</Text>
+		</Row>
+		<Row Tag="LOC_ABILITY_SEAMOTH_NAME" >
+			<Text>Great Speed</Text>
+		</Row>
+		<Row Tag="LOC_ABILITY_SEAMOTH_DESCRIPTION" >
+			<Text>Has better[ICON_Movement]Movement and[ICON_PROMISES_ESPIONAGE]Sight Range,Can not be affected by enemies' Zone Of Control</Text>
+		</Row>
+		<Row Tag="LOC_UNIT_CYCLOPS_NAME" >
+			<Text>Cyclops</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_UNIT_CYCLOPS_DESCRIPTION" >
+			<Text>An unit unique to Planet 4546B, replace Nuclear Submarine [NEWLINE]Has better[ICON_Strength]Strength and[ICON_Range]Range; Combat victories provide[ICON_Science]Science equal to 400% of the [ICON_Strength]Combat Strength of the defeated unit,but it needs[ICON_RESOURCE_URANIUM]uranium to maintain[NEWLINE]</Text>
+		</Row>
+		<Row Tag="LOC_UNIT_CYCLOPS_DESCRIPTION" >
+			<Text>An unit unique to Planet 4546B, replace Nuclear Submarine [NEWLINE]Has better[ICON_Strength]Strength and[ICON_Range]Range; Combat victories provide[ICON_Science]Science equal to 400% of the [ICON_Strength]Combat Strength of the defeated unit,but it needs[ICON_RESOURCE_URANIUM]uranium to maintain[NEWLINE][NEWLINE]As an essential mobile base for deep diving exploration, Cyclops is not only equipped with silent navigation mode, which makes it difficult for the enemy to find , but also can launch surprise attacks to the enemy through the fish launcher on the ship. The onboard scientific research equipment can conduct all-round analysis of the combat process, which is helpful to develop more powerful combat technology, but it needs uranium resources to maintain</Text>
+		</Row>
+		<Row Tag="LOC_ABILITY_CYCLOPS_NAME" >
+			<Text>armored</Text>
+		</Row>
+		<Row Tag="LOC_ABILITY_CYCLOPS_DESCRIPTION" >
+			<Text>Has better[ICON_Strength]Strength and[ICON_Range]Range; Combat victories provide[ICON_Science]Science equal to 400% of the [ICON_Strength]Combat Strength of the defeated unit,but it needs[ICON_RESOURCE_URANIUM]uranium to maintain</Text>
+		</Row>
+		<Row Tag="LOC_UNIT_PRAWN_NAME" >
+			<Text>Prawn Suit </Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_UNIT_PRAWN_DESCRIPTION" >
+			<Text>An unit unique to Planet 4546B, replace The Giant Death Robot[NEWLINE]+10[ICON_Strength]Strength when in the water area, can launch[ICON_ThermoNuclear]WMD, Needs[ICON_RESOURCE_LON]Ion Cube to provide power, but[ICON_AntiAir_Large]Anti air strength is weak[NEWLINE]</Text>
+		</Row>
+		<Row Tag="LOC_UNIT_PRAWN_DESCRIPTION" >
+			<Text>'It is normal when first piloting a Prawn suit to feel a sense of limitless power.'[NEWLINE]                    ― PDA, Dialogue[NEWLINE]The Drill Arm of The Prawn Suit can cause more damage in the water ;Besides,The Prawn Suit can carry[ICON_ThermoNuclear]WMD in its Storage . However, Designed for the battle in the ocean and on the land, The Prawn Suit has difficulty engaging with the air units .</Text>
+		</Row>
+		<Row Tag="LOC_ABILITY_PRAWN_NAME" >
+			<Text>Power suit</Text>
+		</Row>
+		<Row Tag="LOC_ABILITY_PRAWN_DESCRIPTION" >
+			<Text>+10[ICON_Strength]Strength when in the water area, can launch[ICON_ThermoNuclear]WMD, Needs[ICON_RESOURCE_LON]Ion Cube to provide power, but[ICON_AntiAir_Large]Anti air strength is weak</Text>
+		</Row>
+		<Row Tag="LOC_BUILDING_SCANNER_NAME" >
+			<Text>Scanner Room</Text>
+		</Row>
+		<Row Tag="LOC_BUILDING_SCANNER_DESCRIPTION" >
+			<Text>A building using ALTERRA detecting technique, Can provides more[ICON_Science]Science and[ICON_GreatScientist]Great Scientist Point;  Every Resource tile in the city (Including Bonus Resource,Strategic Resource and Luxury Resource) +2[ICON_Science]Science; Unlock some relevent scanning projects.</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_BUILDING_SCANNER_DESCRIPTION" >
+			<Text>A building unique to Planet 4546B,using ALTERRA detecting technique, Every Resource tile in the city (Including Bonus Resource,Strategic Resource and Luxury Resource) +2[ICON_Science]Science; Unlock some relevent scanning projects.</Text>
+		</Row>
+		<Row Tag="LOC_DISTRICT_LIFETREE_NAME" >
+			<Text>The Giant Cove Tree</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_DISTRICT_LIFETREE_DESCRIPTION" >
+			<Text>A district unique to Planet 4546B,can only be built on water area. +2[ICON_Science]Science and +2[ICON_Culture]Culture form each adjacent Coast and Lake tile,Grands a Ghost Leviathan when finishing this District [NEWLINE]</Text>
+		</Row>
+		<Row Tag="LOC_DISTRICT_LIFETREE_DESCRIPTION" >
+			<Text>A district unique to Planet 4546B,can only be built on water area. +2[ICON_Science]Science and +2[ICON_Culture]Culture form each adjacent Coast and Lake tile,Grands a Ghost Leviathan when finishing this District[NEWLINE][NEWLINE]The Giant Cove Tree, a rare and peaceful place in Planet 4546B, contains many beautiful creatures and strange landforms, which is of high research and appreciation value; It is also the birthplace of the Ghost Leviathan, which is of great significance to the people of Planet 4546B</Text>
+		</Row>
+		<Row Tag="LOC_DISTRICT_Ocean_Science" >
+			<Text>+2[ICON_Science]Science form each adjacent Coast and Lake tile</Text>
+		</Row>
+		<Row Tag="LOC_DISTRICT_Ocean_Culture" >
+			<Text>+2[ICON_Culture]Culture form each adjacent Coast and Lake tile </Text>
+		</Row>
+		<Row Tag="LOC_UNIT_LIWEITAN_NAME" >
+			<Text>Ghost Leviathan</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_UNIT_LIWEITAN_DESCRIPTION" >
+			<Text>An unit unique to Planet 4546B, Can be only acquired from Finishing The Giant Cove Tree[NEWLINE]Have two building charges; +5[ICON_Strength]Combat Strength to naval units within 2 tiles; +75[ICON_Strength]strength when defending;Can not debark[NEWLINE]</Text>
+		</Row>
+		<Row Tag="LOC_UNIT_LIWEITAN_DESCRIPTION" >
+			<Text>Have two building charges; +5[ICON_Strength]Combat Strength to naval units within 2 tiles; Can be only acquired from Finishing The Giant Cove Tree, +75[ICON_Strength]strength when defending; Can not debark</Text>
+		</Row>
+		<Row Tag="LOC_ABILITY_LIWEITAN_NAME" >
+			<Text>The guard of the sea</Text>
+		</Row>
+		<Row Tag="LOC_ABILITY_LIWEITAN_DESCRIPTION" >
+			<Text>Have two building charges; +75[ICON_Strength]strength when defending;Can not debark</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_CIVILIZATION_KALAL_NAME" >
+			<Text>Kharaa Bacterium</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_CIVILIZATION_KALAL_DESCRIPTION" >
+			<Text>All combat units -5[ICON_Strength]strength; Decrease growth by 20% in all cities,-2[ICON_Amenities]Amenity in all cities; After studying the technology 'Chemistry' , Player can run the project 'Produce Enzyme 42 ' to remove the Debuff</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_CIVILIZATION_BEAUTYSEA_NAME" >
+			<Text>Subnautica</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_CIVILIZATION_BEAUTYSEA_DESCRIPTION" >
+			<Text>Begin the game in an ocean tile, gain[ICON_SCIENCE]Science and[ICON_CULTURE]Culture per turn before you settle your first city; All the Reef tiles in the nation provide +1[ICON_Culture]Culture,+1[ICON_Faith]Faith,All the Coastal Cities +2[ICON_Amenities]Amenity</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_CIVILIZATION_AERTELA_NAME" >
+			<Text>ALTERRA Technology</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_CIVILIZATION_AERTELA_DESCRIPTION" >
+			<Text>Builders are able to build Seastead after studying the technology 'CELESTIAL NAVIGATION' ; Every Scanner Room increases the rate of [ICON_TechBoosted]Eurekas by 2%; Unlock the special Space Race Project 'Launch Neptune Rocket'</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_CIVILIZATION_THELEGACY_NAME" >
+			<Text>The Legacy Of The Precursors Race</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_CIVILIZATION_THELEGACY_DESCRIPTION" >
+			<Text>Ignore the technology requirement, can see[ICON_RESOURCE_LON]Ion Cube from the start; Grands unit 'Quarantine Enforcement Platform' in the [ICON_Capital]capital after studying 'ADVANCED BALLISTICS', which has enormous SightRange and can destory any air units within two tiles,but can't[ICON_Production]produce or[ICON_Movement]move</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_LEADER_HAIHUANG_NAME" >
+			<Text>The Leader Of Leviathan</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_LEADER_HAIHUANG_DESCRIPTION" >
+			<Text>All[ICON_Strength]combat units gain[ICON_Damaged]+5 heal per turn;All[ICON_Strength]combat units gain heal at the end of every turn,even after moving or attacking;+1[ICON_Production]production from water area;Fishing boats provide [ICON_Culture] a culture bomb to adjacent tiles</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_IMPROVEMENT_SEASTEAD233_NAME" >
+			<Text>Seastead (Made by Habitat Builder)</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_IMPROVEMENT_SEASTEAD233_DESCRIPTION" >
+			<Text>The existence of ALTERRA Habitat Builder makes it possible to build Seastead in advanced.It has the same ability as Seastead, Can be availdable after studying the technology 'CELESTIAL NAVIGATION'[NEWLINE]</Text>
+		</Row>
+		<Row Tag="LOC_IMPROVEMENT_SEASTEAD233_DESCRIPTION" >
+			<Text>The existence of ALTERRA Habitat Builder makes it possible to build Seastead in advanced. It has the same ability as Seastead, Can be availdable after studying the technology 'CELESTIAL NAVIGATION'</Text>
+		</Row>
+		<Row Tag="LOC_IMPROVEMENT_SEASTEAD233_NAME" >
+			<Text>Seastead (Made by Habitat Builder)</Text>
+		</Row>
+		<Row Tag="LOC_ABILITY_LIWEITAN_STRENGTH_NAME" >
+			<Text>The bless of Leviathan</Text>
+		</Row>
+		<Row Tag="LOC_ABILITY_LIWEITAN_STRENGTH_DESCRIPTION" >
+			<Text>+5[ICON_Strength]Strength when apporaching to a Ghost Leviathan</Text>
+		</Row>
+		<Row Tag="LOC_LIWEITAN_ADD_STRENGTH" >
+			<Text>+5[ICON_Strength]Strength from the Ghost Leviathan nearby</Text>
+		</Row>
+		<Row Tag="LOC_PROJECT_STUDY_HORSE_NAME" >
+			<Text>Scan and Reserch 'Horses'</Text>
+		</Row>
+		<Row Tag="LOC_PROJECT_STUDY_IRON_NAME" >
+			<Text>Scan and Reserch 'Iron'</Text>
+		</Row>
+		<Row Tag="LOC_PROJECT_STUDY_NITER_NAME" >
+			<Text>Scan and Reserch 'Niter'</Text>
+		</Row>
+		<Row Tag="LOC_PROJECT_STUDY_OIL_NAME" >
+			<Text>Scan and Reserch 'Oil'</Text>
+		</Row>
+		<Row Tag="LOC_PROJECT_STUDY_AL_NAME" >
+			<Text>Scan and Reserch 'Aluminum'</Text>
+		</Row>
+		<Row Tag="LOC_PROJECT_STUDY_LON_NAME" >
+			<Text>Scan and Reserch 'Ion Cube'</Text>
+		</Row>
+		<Row Tag="LOC_PROJECT_STUDY_UR_NAME" >
+			<Text>Scan and Reserch 'Uranium'</Text>
+		</Row>
+		<Row Tag="LOC_MODIFIER_ABILITY_LIWEITAN1" >
+			<Text>+75[ICON_Strength]Strength When Ghost Leviathan is defending</Text>
+		</Row>
+		<Row Tag="LOC_PROJECT_STUDY_HORSE_SHORT_NAME" >
+			<Text>Scan and Reserch 'Horses'</Text>
+		</Row>
+		<Row Tag="LOC_PROJECT_STUDY_IRON_SHORT_NAME" >
+			<Text>Scan and Reserch 'Iron'</Text>
+		</Row>
+		<Row Tag="LOC_PROJECT_STUDY_NITER_SHORT_NAME" >
+			<Text>Scan and Reserch 'Niter'</Text>
+		</Row>
+		<Row Tag="LOC_PROJECT_STUDY_OIL_SHORT_NAME" >
+			<Text>Scan and Reserch 'Oil'</Text>
+		</Row>
+		<Row Tag="LOC_PROJECT_STUDY_AL_SHORT_NAME" >
+			<Text>Scan and Reserch 'Aluminum'</Text>
+		</Row>
+		<Row Tag="LOC_PROJECT_STUDY_LON_SHORT_NAME" >
+			<Text>Scan and Reserch 'Ion Cube'</Text>
+		</Row>
+		<Row Tag="LOC_PROJECT_STUDY_UR_SHORT_NAME" >
+			<Text>Scan and Reserch 'Uranium'</Text>
+		</Row>
+		<Row Tag="LOC_PROJECT_STUDY_HORSE_DESCRIPTION" >
+			<Text>Awards: 80[ICON_Science]Science[NEWLINE]Special project of The Scanner Room, Consuming 'Horses' . Player can obtain[ICON_Science]Science after completing this project.</Text>
+		</Row>
+		<Row Tag="LOC_PROJECT_STUDY_IRON_DESCRIPTION" >
+			<Text>Awards: 200[ICON_Science]Science[NEWLINE]Special project of The Scanner Room, Consuming 'Iron' . Player can obtain[ICON_Science]Science after completing this project.</Text>
+		</Row>
+		<Row Tag="LOC_PROJECT_STUDY_NITER_DESCRIPTION" >
+			<Text>Awards: 320[ICON_Science]Science[NEWLINE]Special project of The Scanner Room, Consuming 'Niter' . Player can obtain[ICON_Science]Science after completing this project.</Text>
+		</Row>
+		<Row Tag="LOC_PROJECT_STUDY_OIL_DESCRIPTION" >
+			<Text>Awards: 450[ICON_Science]Science[NEWLINE]Special project of The Scanner Room, Consuming 'Oil' . Player can obtain[ICON_Science]Science after completing this project.</Text>
+		</Row>
+		<Row Tag="LOC_PROJECT_STUDY_AL_DESCRIPTION" >
+			<Text>Awards: 560[ICON_Science]Science[NEWLINE]Special project of The Scanner Room, Consuming 'Aluminum' . Player can obtain[ICON_Science]Science after completing this project.</Text>
+		</Row>
+		<Row Tag="LOC_PROJECT_STUDY_LON_DESCRIPTION" >
+			<Text>Awards: 680[ICON_Science]Science[NEWLINE]Special project of The Scanner Room, Consuming 'Ion Cube' . Player can obtain[ICON_Science]Science after completing this project.</Text>
+		</Row>
+		<Row Tag="LOC_PROJECT_STUDY_UR_DESCRIPTION" >
+			<Text>Awards: 750[ICON_Science]Science[NEWLINE]Special project of The Scanner Room, Consuming 'Uranium' . Player can obtain[ICON_Science]Science after completing this project.</Text>
+		</Row>
+
+		<Row Tag="LOC_HAIHUANG_HEAL_ARMY_MODIFIER" >
+			<Text>All[ICON_Strength]Combat Unit gain +5 heal per turn, All[ICON_Strength]combat units gain heal at the end of every turn,even after moving or attacking </Text>
+		</Row>
+
+		<Row Tag="LOC_PROJECT_KALA_CURE_NAME" >
+			<Text>Produce Enzyme 42</Text>
+		</Row>
+		<Row Tag="LOC_PROJECT_KALA_CURE_SHORT_NAME" >
+			<Text>Produce Enzyme 42</Text>
+		</Row>
+		<Row Tag="LOC_PROJECT_KALA_CURE_DESCRIPTION" >
+			<Text>Special Project. Player can remove the effect of the trait 'Kharaa Bacterium' after completing this project.</Text>
+		</Row>
+		<Row Tag="LOC_KALA_REDUCE_STRENGTH" >
+			<Text>-5[ICON_Strength]Kharaa Bacterium</Text>
+		</Row>
+		<Row Tag="LOC_ABILITY_KALA_DEBUFF_DESCRIPTION" >
+			<Text>Kharaa Bacterium -5[ICON_Strength]Strength</Text>
+		</Row>
+		<Row Tag="LOC_ABILITY_KALA_DEBUFF_NAME" >
+			<Text>Kharaa Bacterium</Text>
+		</Row>
+		<Row Tag="LOC_ABILITY_PRAWN_WATER_NAME" >
+			<Text>Prawn Suit Bonus in the water</Text>
+		</Row>
+		<Row Tag="LOC_ABILITY_PRAWN_WATER_DESCRIPTION" >
+			<Text>Prawn Suit gains +10[ICON_Strength]Strength in the water area</Text>
+		</Row>
+		<Row Tag="LOC_PRAWN_ADD_STRENGTH" >
+			<Text>+10[ICON_Strength]in the water area</Text>
+		</Row>
+		<Row Tag="LOC_PROJECT_LAUNCH_NEPTUNE_NAME" >
+			<Text>Launch Neptune Rocket</Text>
+		</Row>
+		<Row Tag="LOC_PROJECT_LAUNCH_NEPTUNE_SHORT_NAME" >
+			<Text>Launch Neptune Rocket</Text>
+		</Row>
+		<Row Tag="LOC_PROJECT_LAUNCH_NEPTUNE_DESCRIPTION" >
+			<Text>A Space Race Project unique to Planet 4546B, replace LASER Projects ; Consuming[ICON_RESOURCE_LON]Ion Cube, Add 20 Science Victory Points when completing it.[NEWLINE]ALTERRA's Neptune rocket, with a built-in super power engine, can jump in hyperspace. With the rocket ejecting a time capsule, the people of Planet 4546B officially embarked on the journey of space exploration!</Text>
+		</Row>
+		<Row Tag="LOC_PROJECT_LAUNCH_NEPTUNE_POPUP" >
+			<Text>A Space Race Project unique to Planet 4546B, replace LASER Projects ; Consuming[ICON_RESOURCE_LON]Ion Cube, Add 20 Science Victory Points when completing it.[NEWLINE]ALTERRA's Neptune rocket, with a built-in super power engine, can jump in hyperspace. With the rocket ejecting a time capsule, the people of Planet 4546B officially embarked on the journey of space exploration!</Text>
+		</Row>
+		<Row Tag="LOC_UNIT_ALIAN_CANON_NAME" >
+			<Text>
+				Quarantine Enforcement Platform
+			</Text>
+		</Row>
+
+		<Row Tag="LOC_TRAIT_UNIT_ALIAN_CANON_DESCRIPTION" >
+			<Text>We remould The Quarantine Enforcement Platform after turning it down, making it more 'Obedient'</Text>
+		</Row>
+
+		<Row Tag="LOC_ABILITY_ALIAN_CANON_NAME" >
+			<Text>Fire work maker</Text>
+		</Row>
+
+		<Row Tag="LOC_ABILITY_ALIAN_CANON_DESCRIPTION" >
+			<Text>Possesses an enormous Sight Range, can destory any air units within two tiles, but can't[ICON_Production]produce or[ICON_Movement]move</Text>
+		</Row>
+		<Row Tag="LOC_UNIT_ALIAN_CANON_DESCRIPTION" >
+			<Text>The destroyer of The Aurora and The Sunbeam, possesses an enormous Sight Range, can destory any air units within two tiles.[NEWLINE]We remould The Quarantine Enforcement Platform after turning it down, making it more 'Obedient'</Text>
+		</Row>
+		<Row Tag="LOC_RESOURCE_LON_NAME" >
+			<Text>Ion Cube</Text>
+		</Row>
+		<Row Tag="LOC_AGENDA_THE_GUARD_OF_THE_OCEAN_NAME" >
+			<Text>The Guard Of The Planet 4546B</Text>
+		</Row>
+		<Row Tag="LOC_AGENDA_THE_GUARD_OF_THE_OCEAN_DESCRIPTION" >
+			<Text>Tries to keep peace. Likes civilizations that declear friends ; Dislikes civilizations that declear wars .</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_KUDO_LEADER_HAIHUANG_REASON_ANY" >
+			<Text>(You declear friends with others)</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MODIFIER_THE_GUARD_OF_THE_OCEAN_FRIEND" >
+			<Text>Sea Emperor is happy to see you declearing friends with others</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_LEADER_HAIHUANG_REASON_ANY" >
+			<Text>(You declear a war)</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MODIFIER_THE_GUARD_OF_THE_OCEAN_ENEMY" >
+			<Text>Sea Emperor is unhappy to see you declearing wars to others</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_KUDO_EXIT_LEADER_HAIHUANG_ANY"  >
+			<Text>Since ancient times, we have suffered from the cruelty of Precursor, which makes us cherish peace more. The people of 4546B will always remember your efforts for keeping peace. The	Sea Emperor greets you.</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_EXIT_LEADER_HAIHUANG_ANY"  >
+			<Text>Whether your purpose is good or bad, start a war will only make the people of both sides suffer. The Precursor Race had invaded our planet. Their current situation must give you some warnings[NEWLINE]</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_HUMAN_LEADER_HAIHUANG_ANY"  >
+			<Text>The people of Planet 4546B love peace. They will welcome their new friend with the highest ceremony</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_HUMAN_LEADER_HAIHUANG_ANY"  >
+			<Text>I think you should think twice before making friends with marine life</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DECLARE_FRIEND_FROM_AI_LEADER_HAIHUANG_ANY"  >
+			<Text>On behalf of all marine life in Planet 4546B, I would like to send you an application for making friends</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_DECLARE_FRIEND_FROM_AI_LEADER_HAIHUANG_ANY"  >
+			<Text>That's great. It's both peace and friendship, isn't it?</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_DECLARE_FRIEND_FROM_AI_LEADER_HAIHUANG_ANY"  >
+			<Text>Maybe we have to wait until we evolve into land creatures before we have a chance to communicate with you deeply</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DECLARE_WAR_FROM_HUMAN_LEADER_HAIHUANG_ANY"  >
+			<Text>We have expeled the Precursor whose strength is much higher than ourselves by our perseverance. Are we still afraid of your chaotic and lazy army?</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DECLARE_WAR_FROM_AI_LEADER_HAIHUANG_ANY"  >
+			<Text>Sorry, but for the peaceful development of Planet 4546B, as the Lord of Leviathan, I have to fight</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_HUMAN_LEADER_HAIHUANG_ANY"  >
+			<Text>Very good. We'll show them the magnificent landscape of The Giant Cove Tree</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_HUMAN_LEADER_HAIHUANG_ANY"  >
+			<Text>I think, you should learn how to dive before you send a delegation to us</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DELEGATION_FROM_AI_LEADER_HAIHUANG_ANY"  >
+			<Text>Our Peeper has brought you the fresh local specialty of Planet 4546B - Bulb Bush. Don't worry, there is no Kharaa Bacterium in it</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DENOUNCE_FROM_HUMAN_LEADER_HAIHUANG_ANY"  >
+			<Text>Don't you land creatures have a think in your brain before talking?</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DENOUNCE_FROM_AI_LEADER_HAIHUANG_ANY"  >
+			<Text>The atrocities of the Precursor Race against us are good deeds compared with what you have done![NEWLINE](Condemning you)</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_FIRST_MEET_LEADER_HAIHUANG_ANY"  >
+			<Text>Sea Emperor,the leviethan who at the head of the Planet 4546B, pays high tribute to you. As long as you don't interfere with the normal life of my people, we are friends</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_HAIHUANG_ANY"  >
+			<Text>Do you consider visiting such a beautiful water world? Don't worry, I'll let those "scary" Leviathan stay away from you</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_FIRST_MEET_NEAR_INITIATOR_POSITIVE_LEADER_HAIHUANG_ANY"  >
+			<Text>Thank you, you let me know that the world on land is also so wonderful</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_FIRST_MEET_NO_MANS_INFO_EXCHANGE_LEADER_HAIHUANG_ANY"  >
+			<Text> Shall we exchange the location of the capital ? After all, I would like to know if your capital also has a beautiful environment like The Giant Cove Tree</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_GREETING_LEADER_HAIHUANG_ANY"  >
+			<Text>Nice to meet you</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_ALLIANCE_FROM_AI_LEADER_HAIHUANG_ANY"  >
+			<Text>To be honest,making friends with you is the best thing I have ever experienced in the past thousands of years. If you like, I think we can go further</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_PEACE_AI_ACCEPT_DEAL_LEADER_HAIHUANG_ANY"  >
+			<Text>It's really time to stop. The war has brought great damage to the world. I'm very sad</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_PEACE_FROM_AI_LEADER_HAIHUANG_ANY"  >
+			<Text>Stop it! You don't want those lovely Cuddle fish to die in the gunfire of your empire!</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_MAKE_PEACE_FROM_AI_LEADER_HAIHUANG_ANY"  >
+			<Text>The negotiation broke down, so I have to remind you here: Do not force us to use the weapons of Precursor </Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_MAKE_PEACE_FROM_AI_LEADER_HAIHUANG_ANY"  >
+			<Text>That's right. I hope this war can become a painful lesson in history books and make our future generations cherish peace more</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_OPEN_BORDERS_FROM_HUMAN_LEADER_HAIHUANG_ANY"  >
+			<Text>The pioneer cannon restrictions have been lifted and you can land safely</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_OPEN_BORDERS_FROM_HUMAN_LEADER_HAIHUANG_ANY"  >
+			<Text>Kharaa Bacterium is still spreading. We don't want you to get infected</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_OPEN_BORDERS_FROM_AI_LEADER_HAIHUANG_ANY"  >
+			<Text>The people of 4546b want to go to the land, so can you open the border for us ?</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_LEADER_HAIHUANG_ANY"  >
+			<Text>A piece of advice: a virus ridden ocean planet is not a good place for troops</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_HUMAN_RESPONSE_POSITIVE_LEADER_HAIHUANG_ANY"  >
+			<Text>Good, our Quarantine Enforcement Platform will keep an eye on the whereabouts of your army</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_WARNING_TOO_MANY_TROOPS_NEAR_ME_HUMAN_RESPONSE_NEGATIVE_LEADER_HAIHUANG_ANY"  >
+			<Text>Then I'm afraid we have no choice. Pioneer cannon, ready to aim!</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_DEFEAT_FROM_AI_LEADER_HAIHUANG_ANY"  >
+			<Text>You may think you defeated us, just like the Precursor Race before, but you will never get the antidote to Kharaa Bacterium. All that awaits you is death</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_DELEGATION_FROM_AI_LEADER_HAIHUANG_ANY"  >
+			<Text>Great, you will like the local products of our planet</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_DELEGATION_FROM_AI_LEADER_HAIHUANG_ANY"  >
+			<Text>It's a pity .Those Bulb Bush are carefully cultivated by our Ghostray ...</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_EMBASSY_FROM_AI_LEADER_HAIHUANG_ANY"  >
+			<Text>Our ambassador will arrive soon, so please be sure to help install the water purification device and disinfection device in advance</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_EMBASSY_FROM_AI_LEADER_HAIHUANG_ANY"  >
+			<Text>Maybe you're right. We're not suitable for long-term survival on land</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_EMBASSY_FROM_HUMAN_LEADER_HAIHUANG_ANY"  >
+			<Text>I'm very sorry, but we haven't prepared an oxygen tank for land creatures at present, so we can't accept your request at present</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_EMBASSY_FROM_HUMAN_LEADER_HAIHUANG_ANY"  >
+			<Text>We welcome you very much, but please be sure to do a good job of epidemic prevention in advance. After all, Kharaa Bacterium is not easy to deal with</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_MAKE_ALLIANCE_FROM_HUMAN_LEADER_HAIHUANG_ANY"  >
+			<Text>See, we will prove to the world that marine life can coexist harmoniously with mankind!</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_MAKE_ALLIANCE_FROM_HUMAN_LEADER_HAIHUANG_ANY"  >
+			<Text>We are already very good, but we still can't stand in the same camp. Can the barrier between marine life and mankind never be broken?</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_ALLIANCE_FROM_HUMAN_LEADER_HAIHUANG_ANY"  >
+			<Text>As 4546B's most loyal friends, as long as you can offer favorable conditions for our planet, we will become your most reliable allies!</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_MAKE_ALLIANCE_FROM_HUMAN_LEADER_LEADER_HAIHUANG_ANY"  >
+			<Text>I have talked to the Goast Leviathan and they warmly welcomed the alliance. Therefore, 4546b will become your most reliable ally!</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_REJECT_MAKE_ALLIANCE_FROM_HUMAN_LEADER_LEADER_HAIHUANG_ANY"  >
+			<Text>No, I don't want to, but the leviathans seem not to agree with your proposal. You don't want to be haunted by these "terrible" creatures, do you?</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_DEAL_AI_ADJUST_DEAL_LEADER_HAIHUANG_HAPPY"  >
+			<Text>Our members agree that this proposal is as perfect as a dancing circle fish</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_DEAL_AI_ADJUST_DEAL_LEADER_HAIHUANG_UNHAPPY"  >
+			<Text>Our members agree that this proposal is as perfect as a dancing circle fish</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_DEAL_AI_ADJUST_DEAL_LEADER_HAIHUANG_NEUTRAL"  >
+			<Text>Our members agree that this proposal is as perfect as a dancing circle fish</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_DEAL_AI_ACCEPT_DEAL_LEADER_HAIHUANG_ANY"  >
+			<Text>The Quarantine Enforcement Platform has been shut down and your cargo ship can enter and leave</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_MAKE_DEAL_AI_REFUSE_DEAL_LEADER_HAIHUANG_ANY"  >
+			<Text>This sincerity is not worth my men risking their lives to shut down the Quarantine Enforcement Platform for your cargo ship</Text>
+		</Row>
+		<Row Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_HAIHUANG_NEUTRAL"
+			Text="Good. Our Peepers will be responsible for the transfer of materials throughout the process. Please believe in their business ability"
+/>
+		<Row Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_HAIHUANG_HAPPY"
+			Text="Good. Our Peepers will be responsible for the transfer of materials throughout the process. Please believe in their business ability"
+/>
+		<Row Tag="LOC_DIPLO_ACCEPT_MAKE_DEAL_FROM_AI_LEADER_HAIHUANG_UNHAPPY"
+			Text="It seems that you bipedal land creatures are not irrational"
+/>
+		<Row Tag="LOC_DIPLO_REJECT_MAKE_DEAL_FROM_AI_LEADER_HAIHUANG_NEUTRAL"
+			Text="Originally, I wanted to give you some Ion Cube ,which are our specialty... It seems that there is no chance"
+/>
+		<Row Tag="LOC_DIPLO_REJECT_MAKE_DEAL_FROM_AI_LEADER_HAIHUANG_HAPPY"
+			Text="Unfortunately, I was going to send the most beautiful Cuddle fish in the country to serve you"
+/>
+		<Row Tag="LOC_DIPLO_REJECT_MAKE_DEAL_FROM_AI_LEADER_HAIHUANG_UNHAPPY"
+			Text="Your humble sincerity is no different from those arrogant Precursor. I will lead the people of 4546B to fight till the end!"
+/>
+		<Row Tag="LOC_CIVINFO_4546B_LOCATION">
+			<Text>in the outer reaches of the Ariadne Arm</Text>
+		</Row>
+		<Row Tag="LOC_CIVINFO_4546B_SIZE">
+			<Text>a dormant volcanic crater, approximately 2km in diameter</Text>
+		</Row>
+		<Row Tag="LOC_CIVINFO_4546B_POPULATION">
+			<Text>Few sevivors from The Aurora and countless marine organism</Text>
+		</Row>
+		<Row Tag="LOC_CIVINFO_4546B_CAPITAL">
+			<Text>The Giant Cove Tree</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_4546B_CHAPTER_HISTORY_PARA_1">
+			<Text>Planet 4546B is a category-3 ocean planet on which the story of Subnautica and Subnautica: Below Zero takes place.</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_4546B_CHAPTER_HISTORY_PARA_2">
+			<Text>The Planet was set up as a research outpost by the Architects meant to study a bacterium called the Kharaa Bacterium. The Kharaa Bacterium is a highly infectious alien bacterium discovered by the Race during the exploration of another world and set up research outposts on planets to find a cure. 4546B is one of these outposts.</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_4546B_CHAPTER_HISTORY_PARA_3">
+			<Text>Planet 4546B is located in the outer reaches of the Ariadne Arm, orbiting around the star 4546. The “B” means that 4546B was the first planet discovered around the star 4546 (or 4546A). There are at least ten other celestial bodies in the system, each of which is larger than Earth's Moon. Planet 4546B itself is a water planet smaller than Earth with a breathable oxygen-nitrogen atmosphere. It also harbors two moons, one being very close to the planet, causing frequent solar eclipses.</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_4546B_CHAPTER_HISTORY_PARA_4">
+			<Text>The Crater features a full ecosystem of flora and fauna. However, this is only a very small area of the planet, located in a dormant volcanic crater, approximately 2km in diameter. The Arctic supports a nearly completely different ecosystem, harboring more creatures and plants adapted to the colder temperatures. The rest of the ocean is known as the Crater Edge, it is extremely deep and nearly devoid of life, supporting only microscopic life forms, and Leviathan Class Organisms. It is unknown whether any similar areas of life exist elsewhere other than the Crater and Sector Zero.</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_4546B_CHAPTER_HISTORY_PARA_5">
+			<Text>
+				Architect and PDA data make note of high thermal activity from the planet's core. This is evidenced by the Inactive Lava Zone and Lava Lakes, respectively. The Architects took advantage of this feature, installing the Alien Thermal Plant within the Lava Castle, which allowed the generator to harness the planet's natural thermal energy.
+			</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_4546B_CHAPTER_HISTORY_PARA_6">
+			<Text></Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_UNITS_PAGE_UNIT_CYCLOPS_CHAPTER_HISTORY_PARA_1">
+			<Text>Be advised: the Cyclops is designed to be operated by a three-person crew. Only experienced helms-people should attempt to pilot this vehicle solo.[NEWLINE]                ― PDA, Dialogue</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_UNITS_PAGE_UNIT_CYCLOPS_CHAPTER_HISTORY_PARA_2">
+			<Text>At 54 meters long, 12 meters wide and 14 meters tall, the Cyclops is the largest vehicle available and capable of diving to depths of 500 meters, or 1700 meters fully upgraded. It can be utilized as a mobile base, capable of being outfitted with furniture and other amenities using the Habitat Builder.</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_UNITS_PAGE_UNIT_CYCLOPS_CHAPTER_HISTORY_PARA_3">
+			<Text>
+				Access is obtained either via the dive chamber located at the bow of the keel or via the docking bay when piloting a Seamoth or Prawn Suit. It is equipped with an onboard AI that will warn the player of danger and a beacon allowing the player to locate it at a distance. Should the player choose to build multiple Cyclops, each will have its own beacon.
+			</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_UNITS_PAGE_UNIT_CYCLOPS_CHAPTER_HISTORY_PARA_4">
+			<Text>
+				The Cyclops functions as a cross between a Seabase and a vehicle: the player can freely walk around inside it, only controlling it when they approach the helm control and "use" it. While controlling the helm, the player is still able to move their viewpoint in a limited arc to look around. The Cyclops takes over the movement controls, with forward and back moving the submarine in that direction, swim up and swim down being used to ascend and descend, and left and right used to turn. It cannot "strafe" sideways, nor can it pitch forward or back as the Seamoth can.
+			</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_UNITS_PAGE_UNIT_CYCLOPS_CHAPTER_HISTORY_PARA_5">
+			<Text>
+				The submarine is equipped with three external cameras which are operated via the HUD. These cameras are located on the keel, sail and screw, which in layman's terms are below, above and at the rear of the submarine, respectively.The Cyclops has three speed settings: "slow," "standard" and "flank." As well as speed, each setting affects the amount of noise generated and, in turn, the attention drawn from hostile fauna. More information on noise can be found in the Noise subsection.
+			</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_UNITS_PAGE_UNIT_CYCLOPS_CHAPTER_HISTORY_PARA_6">
+			<Text>
+				Piloting a Cyclops at flank speed for more than 20 seconds will lead to the AI issuing a warning that the engine is overheating, after which there is a chance for a fire to start every 2 seconds. Fires from overusing flank speed will always occur in the engine room.If the Cyclops reaches its current crush depth, the player will be alerted by the onboard AI stating, "WARNING: Maximum depth reached! Hull damage imminent!" As soon as this warning occurs, the submarine's health will begin to drop rather quickly. If a Cyclops' health is totally depleted it will explode. The Cyclops' AI will warn the player before this explosion, providing time to exit the submarine.
+			</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_HAIHUANG_CHAPTER_HISTORY_PARA_1">
+			<Text>
+				The Sea Emperor Leviathan is colossal, having a stocky, entirely armored body and is predominantly pale brown in color, with shades of green. Its tentacles are adorned with bright cyan bioluminescent "bulbs."
+			</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_HAIHUANG_CHAPTER_HISTORY_PARA_2">
+			<Text>
+				The captive Sea Emperor Leviathan is the last remaining adult of its species and a parent to at least seven eggs. The five eggs which still remain must be hatched at some point in the story. The creature is approximately two-thousand six-hundred years old, having massively surpassed its species' natural lifespan. It is possible that the Aquarium has some form of life support system in place that allowed the captive Sea Emperor Leviathan to live to such an advanced age, as it was noted that one-thousand six-hundred was already old.
+			</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_HAIHUANG_CHAPTER_HISTORY_PARA_3">
+			<Text>
+				Almost all of the Sea Emperor Leviathans died when the Kharaa Bacterium was released as it killed off their food source, leaving only the one captive adult and the eggs it was discovered with. As the only source of Enzyme 42 on Planet 4546B, the Sea Emperor Leviathan and its children are the keys to cure the Kharaa Bacterium.
+			</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_HAIHUANG_CHAPTER_HISTORY_PARA_4">
+			<Text>
+				The Race studied the last surviving Sea Emperor Leviathan in hopes of finding a cure using its natural production of Enzyme 42. However, due to its weakness, possibly old age or illness, studies conducted showed that it was not a viable source of Enzyme 42 as the enzymes it produced was too unstable and only reverted symptoms temporarily. After the Precursors Race could not find a way to hatch its eggs naturally, they took three into the dissection room of the Primary Containment Facility and experimented on them, cutting all of them open and removing the fetus from one of the eggs. One other egg was taken to the egg lab, where it was also tested on. Still, they could find no way to cause the hatching process to trigger naturally, and juveniles born outside of the natural conditions could not produce suitable enzymes. They resorted to attaching the eggs to an Incubator Device to keep the eggs alive while they worked on more ways to hatch them. Shortly after this, the Disease Research Facility was destroyed, releasing the Kharaa Bacterium, causing all Arches to the facility to be closed and initiating the planetary quarantine.
+			</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_HAIHUANG_CHAPTER_HISTORY_PARA_5">
+			<Text>
+				At an unspecified time, the Sea Emperor Leviathan managed to train Peepers to use the Alien Vents to distribute Enzyme 42 to the surface. Under the Sea Emperor Leviathan's control, Peepers traveled through the Alien Vent, bringing flora seeds to the aquarium, and leaving with small amounts of Enzyme 42 which they distribute at the surface. This system allowed a small amount of life to survive on the planet.
+			</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_HAIHUANG_CHAPTER_HISTORY_PARA_6">
+			<Text>
+				After its eggs are hatched, the captive Sea Emperor Leviathan will play with its children and then direct them to the Arch leading just outside the Quarantine Enforcement Platform which they will leave through. The captive will begin dying shortly afterward, as it has used the last of its strength to play with its babies.
+			</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_UNITS_PAGE_UNIT_SEAMOTH_CHAPTER_HISTORY_PARA_1">
+			<Text>The seamoth is a one-person vehicle with an independent, replaceable power cell fitted in the rear and a fully customizable design. Most long-range vessels carry at least two vehicles of this class to facilitate the exploration and exploitation of small astronomical bodies, however they can also be fabricated at a standard mobile vehicle bay.</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_UNITS_PAGE_UNIT_SEAMOTH_CHAPTER_HISTORY_PARA_2">
+			<Text>It boasts an omnidirectional propulsion system that allows for lateral and vertical movement that gradually increases to a maximum of 11.25 m/s in any single direction. The speed in any direction is independent of other directions and can be added together using vector addition. Thus, if going forward and upward the maximum speed is 15.91 m/s (11.25 * √2) and if going forward, upward, and sideways the maximum speed is 19.49 m/s (11.25 * √3).</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_UNITS_PAGE_UNIT_SEAMOTH_CHAPTER_HISTORY_PARA_3">
+			<Text>The Seamoth has a hull integrity readout, which will decrease if the craft is attacked by hostile creatures, crashes into objects (including some plants), is exposed to temperatures greater than 70°C or exceeds its maximum crush depth. Reaper Leviathans are able to grab the Seamoth, dealing constant damage until it explodes. The player can not exit the Seamoth when this is happening. The player can repair this damage with the Repair Tool. A Hull Reinforcement Upgrade can reduce damage from terrain collisions by 50%. The Hull Reinforcement upgrade can stack up to 3 times, further reducing damage by 75% and 87.5%, respectively. Once the Seamoth's health reaches 0%, it will explode. The acidic brine in the Lost River deals periodic damage. If you get out of the in front of the Seamoth it can run you over doing 1/4 to 2/3 of your health in one hit. This can be avoided by coming to a full stop before exiting.</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_UNITS_PAGE_UNIT_SEAMOTH_CHAPTER_HISTORY_PARA_4">
+			<Text>
+				- Top Speed: 13m/s[NEWLINE]- Acceleration: 5m/s/s[NEWLINE]- Distance per power cell: 10km[NEWLINE]- Crush depth: 200m below sea level[NEWLINE]- Upgrade module slots: 4[NEWLINE]- Dimensions: 3m x 1.5m x 1m[NEWLINE]- Persons: 1
+			</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_DISTRICTS_PAGE_DISTRICT_LIFETREE_CHAPTER_HISTORY_PARA_1">
+			<Text> The Giant Cove Tree consists of a trunk that is made from multiple, intertwined branches, brown in color that splits off into many smaller, bioluminescent fuchsia tipped branches. Most of these branches surround a Ghost Leviathan egg,[1] along with two similar, yet smaller eggs found lower down on the Giant Cove Tree.</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_DISTRICTS_PAGE_DISTRICT_LIFETREE_CHAPTER_HISTORY_PARA_2">
+			<Text>The lower portion of the Giant Cove Tree consists of many massive roots, dropping down into the surrounding brine pool.</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_DISTRICTS_PAGE_DISTRICT_LIFETREE_CHAPTER_HISTORY_PARA_3">
+			<Text>The Ghost Leviathan eggs consists of a transparent, blue tinged membrane and a glowing blue embryo within. The transparent membrane supports a fluid within, that has all the nutrients needed for the eggs to be kept alive, and to support a healthy newborn. It is possible that the tree itself has evolved to deliver nutrients to the eggs. Also, the multiple orbs inside of the large membrane support the theory of one egg supporting multiple newborns.</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_UNITS_PAGE_UNIT_PRAWN_CHAPTER_HISTORY_PARA_1">
+			<Text>The Pressure Reactive Armored Waterproof Nano Suit Mk.III (abbv. PRAWN Suit Mk.III) is a bipedal mechanical walker, designed for use in extreme-pressure and zero-gravity environments. A plasteel-reinforced canopy of enameled glass protects the single occupant, and dexterity is provided by hydraulic limbs that are capable of striking with enough force to crush bone and pulverize rock. When not in use outside of water, the vehicle assumes a seated position.</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_UNITS_PAGE_UNIT_PRAWN_CHAPTER_HISTORY_PARA_2">
+			<Text>The PRAWN Suit requires energy from Power Cells to operate, which can be interacted with or switched out from the two sockets on either of the shoulder plates. It can be docked in a Cyclops vehicle bay or a Moonpool to recharge the onboard power cells. The PRAWN Suit can be used to explore places that are too deep for the Seamoth and too small for the Cyclops. It has a base crush depth of 900 meters and can be upgraded to withstand a maximum depth of 1,700 meters, making it the most useful deep-sea exploration vehicle. However, due to its limited mobility in the vertical dimension, it may be wise to use a Cyclops as a transport, as certain biomes such as the Blood Kelp Zone or Underwater Islands may be difficult for it to get out of on its own.</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_UNITS_PAGE_UNIT_PRAWN_CHAPTER_HISTORY_PARA_5">
+			<Text>The PRAWN Suit has a health meter, and reaching zero will cause the vehicle to malfunction catastrophically and explode. Unlike the Seamoth, however, it's heavily armored and can endure most things that would otherwise severely damage or destroy a Seamoth, such as a Reaper Leviathan's grip. </Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_UNITS_PAGE_UNIT_PRAWN_CHAPTER_HISTORY_PARA_3">
+			<Text>The Drill Arm of The Prawn Suit allows for the drilling of Large Resource Deposits, breaking them down into manageable fragments. Also an effective weapon against larger creatures. </Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_UNITS_PAGE_UNIT_PRAWN_CHAPTER_HISTORY_PARA_4">
+			<Text>The Prawn Suit has a Torpedo Arm. It functions identically to the Seamoth torpedo launcher. Can hold up to six and fire two torpedoes simultaneously. Can be applied to both arms, providing a maximum of twelve torpedoes and a four-shot salvo.</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_RESOURCES_PAGE_RESOURCE_LON_CHAPTER_HISTORY_PARA_1">
+			<Text>Although the Precursor left planet 4546b, they also left many useful technologies and resources, among which Ion Cube are one. This green square crystal contains huge energy, which can not only restart the Precursor portal, but also meet the energy needs of The Prawn Suit and Neptune Rocket. The precise structure and production process of Ion Cube itself has high research value. The good news is that the Precursor left behind the machine for manufacturing this Ion Cube, which means , as long as the machine is not broken, we can always obtain the resource sustainably</Text>
+		</Row>
+		<Row Tag="LOC_BUILDING_LON_ELECTRICITY_NAME">
+			<Text>Ion Cube Power Plant</Text>
+		</Row>
+		<Row Tag="LOC_BUILDING_LON_ELECTRICITY_DESCRIPTION">
+			<Text>Automatically converts any amount of [ICON_RESOURCE_LON] Ion Cube into [ICON_Power] Power for cities within 6 tiles that need it each turn, at the rate of:[NEWLINE][ICON_Bullet]1 [ICON_RESOURCE_LON] Ion Cube [ICON_PowerRight] 8 [ICON_Power] Power[NEWLINE][ICON_Bullet]Will not generate CO2 [NEWLINE]Its [ICON_Production] Production bonus is extended to all City Centers within 6 tiles that do not already have a bonus from a Power Plant building.[NEWLINE][NEWLINE]After studying the Precursor's technology, we have developed a new power plant building, which can supply power to the city by consuming Ion Cube without emitting CO2 into the atmosphere. In addition to ordinary workers, the power plant also has a permanent scientific team that studies the energy structure of Ion Cube day and night</Text>
+		</Row>
+		<Row Tag="LOC_PROJECT_SWITCH_TO_LON_NAME">
+			<Text>Switch to the Ion Cube Power Plant</Text>
+		</Row>
+		<Row Tag="LOC_PROJECT_SWITCH_TO_LON_SHORT_NAME">
+			<Text>Switch to the Ion Cube Power Plant</Text>
+		</Row>
+		<Row Tag="LOC_PROJECT_SWITCH_TO_LON_DESCRIPTION">
+			<Text>Replace the power plant in the city with the Ion Cube Power Plant[NEWLINE]Ion Cube Power Plant:[NEWLINE]{LOC_BUILDING_LON_ELECTRICITY_DESCRIPTION}</Text>
+		</Row>
+		<Row Tag="LOC_BUILDING_HOT_ELECTRICITY_NAME">
+			<Text>Thermal Plant</Text>
+		</Row>
+		<Row Tag="LOC_BUILDING_HOT_ELECTRICITY_DESCRIPTION">
+			<Text>A building unique to The Giant Cove Tree, Provides 5[ICON_Power] Power and [ICON_Faith]Faith to the city. Citizens in it can provide [ICON_Culture]Culture</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_UNITS_PAGE_UNIT_LIWEITAN_CHAPTER_HISTORY_PARA_1">
+			<Text>The Ghost Leviathan is a leviathan class fauna species and adult form of the Ghost Leviathan Juveniles. It is the second largest aggressive creature of Subnautica (the largest being the Sea Dragon Leviathan and the third being the Reaper Leviathan).</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_UNITS_PAGE_UNIT_LIWEITAN_CHAPTER_HISTORY_PARA_2">
+			<Text>The Giant Cove Tree is the nesting ground of this leviathan species (although they are not present around the tree), with its massive glowing bulbs being their eggs which are blue and purple. According to PDA scan entries of the Cove Tree, the eggs were laid there when the tree was small, and the branches have grown around the eggs to protect them until conditions are right to hatch.</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_UNITS_PAGE_UNIT_LIWEITAN_CHAPTER_HISTORY_PARA_3">
+			<Text>The Ghost Leviathans' life cycle begins in the Lost River as juveniles, they consume the Ghostrays and River Prowlers and potentially other juveniles. As the leviathans mature and become too large for their home, they migrate to the open, surface world biomes such as the Grand Reef and Blood Kelp Zone, consuming Ampeels and Crabsquids in the Northern Blood Kelp, and shoals of fish and possibly even Sea Treader Leviathans in the Grand Reef, until eventually migrating to the Crater Edge, roaming freely in the open water and constantly growing larger until they die.[1][2] Despite being much smaller than the Sea Emperor Leviathan, the Ghost Leviathan's eggs can be far larger, capable of growing to sizes far too large for the creature to lay, suggesting that the eggs can grow drastically after being laid. Since the Ghost Leviathans in the Crater Edge are able to survive there.</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_UNITS_PAGE_UNIT_LIWEITAN_CHAPTER_HISTORY_PARA_4">
+			<Text>Adults are able to push the Cyclops and either drag it, or overturn it. If the player is walking around the Cyclops when the Adult begins to push (for example, if they are trying to put out fires caused by an attack), and the Leviathan rolls the submarine over, the player can be killed instantly upon colliding with the walls or ceiling. When killed the Ghost Leviathans that are within the Crater do not respawn, however the adults that reside within the Crater Edge will continue to respawn.</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_UNITS_PAGE_UNIT_LIWEITAN_CHAPTER_HISTORY_PARA_5">
+			<Text>While fully capable of tearing through the flesh of any creature in range, all evidence indicates that mature ghost leviathans feed on microscopic lifeforms in the waters around the edges of the inhabited zone. Their vicious attacks on interlopers to their domain are not predatory in nature, but territorial. A creature so vast requires a huge expanse of water to satisfy its daily calorie requirements.</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_UNITS_PAGE_UNIT_ALIAN_CANON_CHAPTER_HISTORY_PARA_1">
+			<Text>The Quarantine Enforcement Platform is a massive Alien weapon system that is located on the Mountain Island. It is the source of the energy beam responsible for causing both the Degasi and Aurora to crash on Planet 4546B, as well as destroying the Sunbeam during its rescue attempt.</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_UNITS_PAGE_UNIT_ALIAN_CANON_CHAPTER_HISTORY_PARA_2">
+			<Text>The Quarantine Enforcement Platform was built by the Precursor Race around one thousand years ago, in order to contain the Kharaa Bacterium. Near one of the entrances, an Alien Arch connecting to the Primary Containment Facility can be found. There is only one Quarantine Enforcement Platform on the entirety of Planet 4546B as its beam can bend around the planet to strike ships on the other side.</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_UNITS_PAGE_UNIT_ALIAN_CANON_CHAPTER_HISTORY_PARA_3">
+			<Text>The player must cure himself of the Kharaa Bacterium before being able to disable the Quarantine Enforcement Platform and leave the planet. If the player attempts to disable the facility before they cure themselves of the Kharaa Bacterium, they will be denied.</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_IMPROVEMENTS_PAGE_IMPROVEMENT_SEASTEAD233_CHAPTER_HISTORY_PARA_1">
+			<Text>
+				'The builder tool is designed to construct habitats capable of withstanding extreme environmental conditions.'[NEWLINE]                 -PDA, Dialogue
+			</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_IMPROVEMENTS_PAGE_IMPROVEMENT_SEASTEAD233_CHAPTER_HISTORY_PARA_2">
+			<Text>
+				The Alterra handheld Habitat Builder has been an essential tool of xenoscientists, colonists and emergency relief crews across 11 different trans-govs for more than 50 years.[NEWLINE][NEWLINE]- Habitat modules are hermetically sealed from the outside environment[NEWLINE]- Build on land, underwater, or in a vacuum[NEWLINE]- Habitats can be enhanced to become long-term homes, remote research stations, defensive outposts and more
+			</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_IMPROVEMENTS_PAGE_IMPROVEMENT_SEASTEAD233_CHAPTER_HISTORY_PARA_3">
+			<Text>
+	           In the game, Player can use Habitat Builder to build their own base under the water , What a wonderful Seastead it is !
+			</Text>
+		</Row>
+		<Row Tag="LOC_SUBNAUTICA_MOD_NAME">
+			<Text>
+				[COLOR:ResGoldLabelCS]Subnautica[ENDCOLOR] - Planet 4546B led by Sea Emperor
+			</Text>
+		</Row>
+		<Row Tag="LOC_SUBNAUTICA_MOD_Author">
+			<Text>
+				A fan of Subnautica
+			</Text>
+		</Row>
+		<Row Tag="LOC_SUBNAUTICA_MOD_Helper">
+			<Text>
+				Hemmelfort
+			</Text>
+		</Row>
+		<Row Tag="LOC_SUBNAUTICA_MOD_Description">
+			<Text>
+				This mod includes a new Strategic Resource, a new Civilization, 5 new Units, 3 new Buildings, one new District and many new Projects based on the famous  game  ' Subnautica' .[NEWLINE][NEWLINE] This mod needs DLC ' Gathering Storm ' to run .
+           </Text>
+		</Row>
+		<Row Tag="LOC_BUILDING_TRANSLATION_DEVICE_NAME">
+			<Text>
+				Translation Device
+			</Text>
+		</Row>
+		<Row Tag="LOC_BUILDING_TRANSLATION_DEVICE_DESCRIPTION">
+			<Text>
+				Pay tribute to the greatest Subnautica Fan and Voluntary Translator - "CHBCLive" ! (See More details in CIVILOPEDIA)[NEWLINE][NEWLINE]A Government building unique to Planet 4546B, +3 [ICON_VisLimited] level of diplomatic visibility with all other civilizations; Every [ICON_GreatWork_Writing]Writing +3[ICON_Science]Science, +3[ICON_CULTURE]Culture; Awards 5 [ICON_ENVOY]Envoies when completing this building .[NEWLINE][NEWLINE]The Translation Device left by the Precursors Race contains more than 1000 languages, which has made a major breakthrough in our diplomacy and translation of literary works.
+			</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_BUILDING_TRANSLATION_DEVICE_DESCRIPTION">
+			<Text>
+				Pay tribute to the greatest Subnautica Fan and Voluntary Translator - "CHBCLive" ! (See More details in CIVILOPEDIA)[NEWLINE]A Government building unique to Planet 4546B, +3 [ICON_VisLimited] level of diplomatic visibility with all other civilizations; Every [ICON_GreatWork_Writing]Writing +3[ICON_Science]Science, +3[ICON_CULTURE]Culture; Awards 5 [ICON_ENVOY]Envoies when completing this building .
+			</Text>
+		</Row>
+		<Row Tag="LOC_VIZSOURCE_ACTION_TRANSLATION_DEVICE">
+			<Text>
+				Build The Translation Device (Unique to Planet 4546B)
+			</Text>
+		</Row>
+		<Row Tag="LOC_GOSSIP_SOURCE_TRANSLATION_DEVICE">
+			<Text>
+				We get the information from the translation of The Translation Device 
+			</Text>
+		</Row>
+		<Row Tag="LOC_VIZSOURCE_TRANSLATION_DEVICE">
+			<Text>
+				The function of The Translation Device
+			</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_BUILDINGS_PAGE_BUILDING_TRANSLATION_DEVICE_CHAPTER_HISTORY_PARA_1">
+			<Text>
+				The Translation Device is a relic held in the Primary Containment Facility that contains over 1,000 alien languages and is capable of translating these into the language of the relic's designers. Several ancient Earth languages are contained within its data. Whether or not this relic was created by the Precursor Race is unclear.
+			</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_BUILDINGS_PAGE_BUILDING_TRANSLATION_DEVICE_CHAPTER_HISTORY_PARA_2">
+			<Text>
+				Analysis of the onboard data reveals a number of ancient Earth languages, and the term 'CHBCLive' appears many times in the device's data. Its import is unclear.        -PDA data
+			</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_BUILDINGS_PAGE_BUILDING_TRANSLATION_DEVICE_CHAPTER_HISTORY_PARA_3">
+			<Text>
+				In fact, The Translation Device is specially designed by the game maker to commemorate a Chinese Bilibili Up named "CHBCLive".
+			</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_BUILDINGS_PAGE_BUILDING_TRANSLATION_DEVICE_CHAPTER_HISTORY_PARA_4">
+			<Text>
+				When " Subnautica " was first launched, there was no official Chinese. Many Chinese people were very curious about the game, but they couldn't experience the fun of the game due to language barriers. These are all seen by "CHBCLive".
+			</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_BUILDINGS_PAGE_BUILDING_TRANSLATION_DEVICE_CHAPTER_HISTORY_PARA_5">
+			<Text>
+				As the first batch of players to contact the game, "CHBCLive" was attracted by the alien planet's landscape and the plot of the game. He participated in the production of Sinicized patches at that time. It is his concise and correct Sinicization that makes more and more Chinese players enter the beautiful water world.
+			</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_BUILDINGS_PAGE_BUILDING_TRANSLATION_DEVICE_CHAPTER_HISTORY_PARA_6">
+			<Text>
+				Sinicizer, a high-pressure profession. Sinicizers may have to bear the slander of game companies and a group of Hypocrites .In a short time, many Sinicization groups can also do it, but how many of them can do the same as what CHBCLive has done for three years , releasing Sinicized patches at once ? Nobody. CHBCLive's translation is even more detailed than the official . Using tools, he translated those obscure professional terms one by one. Three years, nearly a thousand days and nights of sweat, he didn't ask for anything in return. If he did, it might be the call "Master" from his supporters.
+			</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_BUILDINGS_PAGE_BUILDING_TRANSLATION_DEVICE_CHAPTER_HISTORY_PARA_7">
+			<Text>
+				While he was still fighting for Chinese players, death came quietly: gastric cancer. But he is still hiding . In the production of each video, though suffering from great pain, he just suffered and never told anyone else. Who knows that the thing around his neck is not used to treat stiff neck ? who knows that his "business trip" is to endure chemotherapy ? And who finds that his hoarse voice trembles slightly in his video ?
+			</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_BUILDINGS_PAGE_BUILDING_TRANSLATION_DEVICE_CHAPTER_HISTORY_PARA_8">
+			<Text>
+				In March 2017, he left us forever because of gastric cancer. But he still insisted on updating the Sinicized patch until February 5, 2017. Even during the hospitalization, he kept answering the players' questions and showed the most optimistic side to them.
+			</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_BUILDINGS_PAGE_BUILDING_TRANSLATION_DEVICE_CHAPTER_HISTORY_PARA_9">
+			<Text>
+				In order to commemorate this Chinese author who made contributions to "Subnautica", game producer Michael Schouten made commemorative props (Translation Device) in the game.[NEWLINE](PS: I add the building 'Translation Device' to this mod, which is also a kind of commemoration, I support.     Rest In Peace ! May there be no stomach cancer in heaven ,CHBCLive!)
+			</Text>
+		</Row>
+		<Row Tag="LOC_PEDIA_BUILDINGS_PAGE_BUILDING_TRANSLATION_DEVICE_CHAPTER_HISTORY_PARA_10">
+			<Text>
+				When you dive into the deep and cold sea again, when you touch The fluorescent Giant Cove Tree again, can you feel a trace of warmth? Because in the deepest part of the sea, a beautiful soul is beating.[NEWLINE][NEWLINE] The space of 'CHBCLive' in Bilibili : https://space.bilibili.com/17464395/video?tid=0&page=26&keyword=&order=pubdate
+			</Text>
+		</Row>
+	</BaseGameText>
+</GameData>

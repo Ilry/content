@@ -33,7 +33,7 @@ end
 
 function lol_heartsteel_num:DoDelta(delta)
     if TUNING.CONFIG_LIMIT_LOL_HEARTSTEEL then 
-        if self.num >= max_num then
+        if self.num >= TUNING.CONFIG_LIMIT_LOL_HEARTSTEEL then
             return
         end
     end
@@ -69,7 +69,7 @@ function lol_heartsteel_num:FindMob()
     local x,y,z = self.inst:GetPosition():Get()
     if x and y and z then 
         -- print('---------------------------')
-        local ents = TheSim:FindEntities(x,y,z,5,{'_combat'}, {'INLIMBO','player','fx'})
+        local ents = TheSim:FindEntities(x,y,z,7,{'_combat'}, {'INLIMBO','player','fx'})
         for _,v in pairs(ents) do 
             -- print(v)
             if v:IsValid() and v.components and v.components.health and not v.components.health:IsDead() and v:HasTag('epic') then 
@@ -108,7 +108,7 @@ end
 function lol_heartsteel_num:AddHP(player)
 
     if TUNING.CONFIG_LIMIT_LOL_HEARTSTEEL then 
-        if self.num > max_num then return end
+        if self.num > TUNING.CONFIG_LIMIT_LOL_HEARTSTEEL then return end
     end
 
     if player and player:IsValid() and player.components.health and not player.components.health:IsDead() then 

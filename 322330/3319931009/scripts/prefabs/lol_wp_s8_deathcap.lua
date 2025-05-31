@@ -5,11 +5,21 @@ local assets =
 {
     Asset("ANIM", "anim/"..prefab_id..".zip"),
     Asset("ATLAS", "images/inventoryimages/"..prefab_id..".xml"),
+
+    Asset("ANIM", "anim/"..prefab_id.."_skin_sortinghat.zip"),
+    Asset("ATLAS", "images/inventoryimages/"..prefab_id.."_skin_sortinghat.xml"),
 }
 
 
 local function onequip(inst, owner)
+    local skin_build = inst:GetSkinBuild()
+
     owner.AnimState:OverrideSymbol("swap_hat", prefab_id, "swap_hat")
+
+    if skin_build ~= nil then
+        owner:PushEvent("equipskinneditem", inst:GetSkinName())
+        owner.AnimState:OverrideItemSkinSymbol("swap_hat", skin_build, 'swap_hat', inst.GUID, prefab_id)
+    end
 
     owner.AnimState:Show("HAT")
     owner.AnimState:Show("HAIR_HAT")
@@ -25,14 +35,14 @@ local function onequip(inst, owner)
 
     inst.Light:Enable(true)
 
-    if inst.deathcap_fx and inst.deathcap_fx:IsValid() then
-        inst.deathcap_fx:Remove()
-    end
+    -- if inst.deathcap_fx and inst.deathcap_fx:IsValid() then
+    --     inst.deathcap_fx:Remove()
+    -- end
 
-    inst.deathcap_fx = SpawnPrefab('cane_victorian_fx')
-    inst.deathcap_fx.entity:SetParent(inst.entity)
-    inst.deathcap_fx.entity:AddFollower()
-    inst.deathcap_fx.Follower:FollowSymbol(inst.GUID, nil, 0, -320, 0)
+    -- inst.deathcap_fx = SpawnPrefab('cane_victorian_fx')
+    -- inst.deathcap_fx.entity:SetParent(inst.entity)
+    -- inst.deathcap_fx.entity:AddFollower()
+    -- inst.deathcap_fx.Follower:FollowSymbol(inst.GUID, nil, 0, -320, 0)
 
 end
 
@@ -52,12 +62,17 @@ local function onunequip(inst, owner)
         owner.AnimState:Hide("HEAD_HAT_HELM")
     end
 
+    local skin_build = inst:GetSkinBuild()
+    if skin_build ~= nil then
+        owner:PushEvent("unequipskinneditem", inst:GetSkinName())
+    end
+
     inst.Light:Enable(false)
 
-    if inst.deathcap_fx and inst.deathcap_fx:IsValid() then
-        inst.deathcap_fx:Remove()
-        inst.deathcap_fx = nil
-    end
+    -- if inst.deathcap_fx and inst.deathcap_fx:IsValid() then
+    --     inst.deathcap_fx:Remove()
+    --     inst.deathcap_fx = nil
+    -- end
 
 end
 
@@ -127,6 +142,8 @@ local function fn()
     inst:AddComponent("inventoryitem")
     inst.components.inventoryitem.imagename = prefab_id
     inst.components.inventoryitem.atlasname = "images/inventoryimages/"..prefab_id..".xml"
+
+    -- inst.components.container_proxy:SetMaster(TheWorld:GetPocketDimensionContainer("shadow"))
 
     -- inst:AddComponent("fuel")
     -- inst.components.fuel.fuelvalue = TUNING.LARGE_FUEL

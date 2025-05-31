@@ -1,3 +1,6 @@
+---@diagnostic disable
+local modid = 'lol_wp'
+
 local HYPNOSIS_TIMERNAME = "HYPNOSIS_TIMERNAME"
 
 local assets =
@@ -55,12 +58,39 @@ local function Repaire(inst, percent)
 end
 
 local function ShouldAcceptItem(inst, item, giver)
-    return item.prefab == "purebrilliance"
+    if TUNING[string.upper('CONFIG_'..modid..'could_repair')] == 4 or TUNING[string.upper('CONFIG_'..modid..'could_repair')] == 2 then
+        return false
+    end
+    return item.prefab == "purebrilliance" or item.prefab == "lunarplant_kit"
+end
+
+---comment
+---@param item ent
+---@param doer ent
+local function repairSound(item,doer)
+    if doer and doer.SoundEmitter then
+        local sound
+        local prefab = item and item.prefab
+        if prefab then
+            if prefab == 'nightmarefuel' or prefab == 'horrorfuel' then
+                sound = 'dontstarve/common/nightmareAddFuel'
+            else
+                sound = 'aqol/new_test/metal'
+            end
+        end
+        if sound then
+            doer.SoundEmitter:PlaySound(sound)
+        end
+    end
 end
 
 local function OnGetItemFromPlayer(inst, giver, item)
     if item.prefab == "purebrilliance" then
-        Repaire(inst, .2)
+        repairSound(item,giver)
+        Repaire(inst, .5)
+    elseif item.prefab == "lunarplant_kit" then
+        repairSound(item,giver)
+        Repaire(inst, 1)
     end
 end
 
@@ -116,7 +146,7 @@ end
 local function AddWeapon(inst)
     if inst.components.weapon == nil then
         inst:AddComponent("weapon")
-        inst.components.weapon:SetDamage(45)
+        inst.components.weapon:SetDamage(85)
         inst.components.weapon:SetRange(2)
         inst.components.weapon:SetOnAttack(onattack)
     end
@@ -128,7 +158,7 @@ local function AddEquippable(inst)
         inst.components.equippable:SetOnEquip(onequip)
         inst.components.equippable:SetOnUnequip(onunequip)
         inst.components.equippable:SetOnEquipToModel(onequiptomodel)
-        inst.components.equippable.walkspeedmult = 1.2
+        inst.components.equippable.walkspeedmult = 1.25
     end
 end
 
@@ -232,6 +262,15 @@ local function onCastSpell(inst, caster, pt)
                     v.gallop_ad_d_speeddown:Cancel()
                 end
                 v.components.locomotor:SetExternalSpeedMultiplier(v, inst.prefab, .5)
+
+                if v:HasTag('epic') then
+                    local _player = v.lol_wp_s19_fimbulwinter_armor_upgrade_attacker
+                    local _wp = v.lol_wp_s19_fimbulwinter_armor_upgrade_wp
+                    if _player and _wp and _wp.skill_enternal then
+                        _wp.skill_enternal(_wp,_player,v)
+                    end
+                end
+
                 v.gallop_ad_d_speeddown = v:DoTaskInTime(5, function() 
                     v.components.locomotor:RemoveExternalSpeedMultiplier(v, inst.prefab)
                     v.gallop_ad_d_speeddown = nil
@@ -245,8 +284,8 @@ local function onCastSpell(inst, caster, pt)
         if caster.gallop_ad_d_speedup ~= nil then
             caster.gallop_ad_d_speedup:Cancel()
         end
-        caster.components.locomotor:SetExternalSpeedMultiplier(caster, inst.prefab, 1+math.min(num, 7)*.05)
-        caster.gallop_ad_d_speedup = caster:DoTaskInTime(5, function() 
+        caster.components.locomotor:SetExternalSpeedMultiplier(caster, inst.prefab, 1+math.min(num, 5)*.2)
+        caster.gallop_ad_d_speedup = caster:DoTaskInTime(3, function() 
             caster.components.locomotor:RemoveExternalSpeedMultiplier(caster, inst.prefab)
             caster.gallop_ad_d_speedup = nil
         end)
@@ -283,6 +322,8 @@ local function fn()
 
     inst.entity:SetPristine()
 
+    inst:AddTag('lunar_aligned')
+
     inst:AddComponent("aoetargeting")
     inst.components.aoetargeting:SetAlwaysValid(true)
     inst.components.aoetargeting:SetAllowRiding(false)
@@ -307,6 +348,21 @@ local function fn()
     inst.hit_fx = hitfx
 
     inst:AddComponent("inventoryitem")
+    inst.components.inventoryitem:SetOnDroppedFn(function()
+        if inst._gallop_ad_d_light ~= nil and inst._gallop_ad_d_light:IsValid() then
+            inst._gallop_ad_d_light:Remove()
+        end
+        inst._gallop_ad_d_light = nil
+        inst._gallop_ad_d_light = SpawnPrefab("gallop_ad_d_light")
+        inst._gallop_ad_d_light.entity:SetParent(inst.entity)
+    end)
+    inst.components.inventoryitem:SetOnPutInInventoryFn(function()
+        if inst._gallop_ad_d_light ~= nil and inst._gallop_ad_d_light:IsValid() then
+            inst._gallop_ad_d_light:Remove()
+        end
+        inst._gallop_ad_d_light = nil
+    end)
+
     inst:AddComponent("lootdropper")
 	
     inst:AddComponent("inspectable")
@@ -314,7 +370,7 @@ local function fn()
     AddWeapon(inst)
 
     inst:AddComponent("planardamage")
-    inst.components.planardamage:SetBaseDamage(30)
+    inst.components.planardamage:SetBaseDamage(0)
 
     inst:AddComponent("aoespell")
     inst.components.aoespell:SetSpellFn(onCastSpell)
@@ -332,6 +388,9 @@ local function fn()
     inst.components.trader.onaccept = OnGetItemFromPlayer
 
     inst:AddComponent("timer")
+
+    inst:AddComponent("damagetypebonus")
+    inst.components.damagetypebonus:AddBonus("shadow_aligned", inst, 1.1)
     
     AddEquippable(inst)
 

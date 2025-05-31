@@ -21,6 +21,7 @@ local is_collect_open = GetModConfigData("is_collect_open")
 local is_collect_take = GetModConfigData("is_collect_take")
 local is_collect_periodicspawner = GetModConfigData("is_collect_periodicspawner")
 local is_collect_lootdropper = GetModConfigData("is_collect_lootdropper")
+local is_collect_oceantrawler = GetModConfigData("is_collect_oceantrawler")
 local is_collect_all = GetModConfigData("is_collect_all")
 local collect_all_prefab = GetModConfigData("collectAll")
 local collect_chest_slot_prefab = GetModConfigData("collectChestSlot")
@@ -699,8 +700,58 @@ if IsServer then
 		AddPrefabPostInit("bearger",onbeargerCollect)
 	end
 
+	-- 海洋拖网捕鱼器溢出的鱼，收集
+	-- print("[SmartChest] before onOceanTrawlerOverflow")
+	if is_collect_oceantrawler == 1 then
+		-- print("[SmartChest] in onOceanTrawlerOverflow")
+		local function onOceanTrawlerOverflow(inst)
+			-- print("[SmartChest] onOceanTrawlerOverflow inst.prefab=" .. tostring(inst.prefab))
+			local old_ReleaseOverflowFish = inst.ReleaseOverflowFish
+			function inst:ReleaseOverflowFish(...)
+				-- print("[SmartChest] ReleaseOverflowFish new enter")
+				local need_collect = false
+				if #self.overflowfish > 0 then
+					-- print("[SmartChest] ReleaseOverflowFish new need_collect")
+					need_collect = true
+				end
+
+				if old_ReleaseOverflowFish ~= nil then
+					old_ReleaseOverflowFish(self, ...)
+				end
+
+				if need_collect then
+					-- print("[SmartChest] onOceanTrawlerOverflow need_collect self.prefab1=" .. tostring(self.inst.prefab))
+					if self.inst ~= nil then
+						-- print("[SmartChest] onOceanTrawlerOverflow need_collect 2")
+						if self.inst and self.inst:IsValid() then
+							if self.inst.lx_collect_task ~= nil then
+								self.inst.lx_collect_task:Cancel()
+								self.inst.lx_collect_task = nil
+							end
+							self.inst.lx_collect_task = self.inst:DoTaskInTime(0.5, function(inst2)
+								-- print("[SmartChest] ReleaseOverflowFish new collect")
+								local x, y, z = inst2.Transform:GetWorldPosition()
+								local ents = _G.TheSim:FindEntities(x, y, z, collectdist, {"lxautocollectitems"}, {"burnt", "INLIMBO"})
+								for k, v in pairs(ents) do
+									if v and v.components and v.components.lxautocollectitems then
+										-- print("[SmartChest] ReleaseOverflowFish new collect chest")
+										collectChest2Item(v)
+									end
+								end
+							end)
+						end
+					end
+				end
+				-- print("[SmartChest] ReleaseOverflowFish new exit")
+				
+			end
+
+		end
+		AddComponentPostInit("oceantrawler",onOceanTrawlerOverflow)
+	end
+
 	-- 几乎所有类型掉落物，收集。
-	if is_collect_all then
+	if is_collect_all == 1 then
 		local function LX_collect_all(inst)
 			-- print("[SmartChest] LX_collect_all inst.prefab=" .. tostring(inst.prefab))
 			if inst.prefab == "inventoryitem_classified" or inst:IsInLimbo() or inst:HasTag('smallcreature') or inst:HasTag("INLIMBO") or inst:HasTag('NOCLICK') or inst:HasTag('heavy') or inst:HasTag('trap') or inst:HasTag('NET_workable') then
@@ -824,7 +875,7 @@ if IsClient then
 			-- print("\t#inst.LX_collect_item=" .. tostring(#inst.LX_collect_item:value()))
 			if #inst.LX_collect_item:value() > 0 then
 				for k,v in pairs(prefab2Name) do
-					print("k=" .. tostring(k))
+					-- print("k=" .. tostring(k))
 					if inst.LX_collect_item:value() == k then
 						name = name .. "\n" .. v[variable]
 						break

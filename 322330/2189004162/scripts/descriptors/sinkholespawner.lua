@@ -41,8 +41,10 @@ local function RemoteDescribe(data, context)
 		time_to_rage = nil
 	end
 
+	local priority = Insight.descriptors.periodicthreat.CalculateThreatPriority(data.time_to_rage)
+
 	return {
-		priority = 0,
+		priority = priority,
 		description = description,
 		icon = {
 			atlas = "images/Antlion.xml",
@@ -53,7 +55,7 @@ local function RemoteDescribe(data, context)
 	}
 end
 
-local function StatusAnnoucementsDescribe(special_data, context)
+local function StatusAnnouncementsDescribe(special_data, context)
 	if not special_data.time_to_rage then
 		return
 	end
@@ -72,5 +74,5 @@ end
 return {
 	RemoteDescribe = RemoteDescribe,
 	GetAntlionData = GetAntlionData,
-	StatusAnnoucementsDescribe = StatusAnnoucementsDescribe
+	StatusAnnouncementsDescribe = StatusAnnouncementsDescribe
 }

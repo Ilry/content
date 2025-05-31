@@ -24,12 +24,8 @@ local function createstar(inst, target, pos)
                 turnoff(inst)
                 local star = SpawnPrefab("stafflight")
                 star.Transform:SetPosition(pos:Get())
-                local buff = caster.components.debuffable:AddDebuff("perfection_gem_buff", "perfection_gem_buff")
-                local BUFF_DURATION = TUNING.TOTAL_DAY_TIME * 1
-                local function OnKillBuff(buff)
-                buff.components.debuff:Stop()
-                end
-                buff.bufftask = buff:DoTaskInTime(BUFF_DURATION, OnKillBuff)
+                local buff = caster.components.debuffable:AddDebuff("whytorch_perfection_buff", "whytorch_perfection_buff")
+
                 inst.components.rechargeable:Discharge(200)
                 if caster.components.staffsanity then
                     caster.components.staffsanity:DoCastingDelta(-20)
@@ -40,12 +36,8 @@ local function createstar(inst, target, pos)
                 turnoff(inst)
                 local coldstar = SpawnPrefab("staffcoldlight")
                 coldstar.Transform:SetPosition(pos:Get())
-                local buff = caster.components.debuffable:AddDebuff("perfection_gem_buff", "perfection_gem_buff")
-                local BUFF_DURATION = TUNING.TOTAL_DAY_TIME * 1
-                local function OnKillBuff(buff)
-                buff.components.debuff:Stop()
-                end
-                buff.bufftask = buff:DoTaskInTime(BUFF_DURATION, OnKillBuff)
+                local buff = caster.components.debuffable:AddDebuff("whytorch_perfection_buff", "whytorch_perfection_buff")
+
                 inst.components.rechargeable:Discharge(200)
                 if caster.components.staffsanity then
                     caster.components.staffsanity:DoCastingDelta(-20)
@@ -188,7 +180,7 @@ local function fn()
     inst.components.spellcaster.canuseonpoint = true
     inst.components.spellcaster.canuseonpoint_water = true
     inst:AddComponent("weapon")
-    inst.components.weapon:SetDamage(34)
+    inst.components.weapon:SetDamage(59.5)
     --inst.components.weapon:SetOnAttack(RandomColor)
     inst:AddComponent("rechargeable")
     inst:AddComponent("inspectable")

@@ -63,3 +63,19 @@ AddComponentPostInit('combat', function(self)
         return old_GetAttacked(self,attacker,damage,weapon,stimuli,spdamage,...)
     end
 end)
+
+-- 击败附身座狼75%掉落一个巫妖之祸
+AddPrefabPostInit("mutatedwarg", function(inst)
+    if not TheWorld.ismastersim then
+        return inst
+    end
+    if not inst.components.lootdropper then
+        inst:AddComponent('lootdropper')
+    end
+    local old_lootsetupfn = inst.components.lootdropper.lootsetupfn
+    inst.components.lootdropper:SetLootSetupFn(function (...)
+        local res = old_lootsetupfn ~= nil and {old_lootsetupfn(...)} or {}
+        inst.components.lootdropper:AddChanceLoot(prefab_id,TUNING.MOD_LOL_WP.LICHBANE.DROP_CHANCE.mutatedwarg)
+        return unpack(res)
+    end)
+end)

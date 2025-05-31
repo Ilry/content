@@ -1,3 +1,6 @@
+---@diagnostic disable
+local modid = 'lol_wp'
+
 local function spawn_riftmaker(doer,invobject, prefab)
     local item = SpawnPrefab(prefab)
     if item then
@@ -68,19 +71,57 @@ local function removeItem(item,num)
 	end
 end
 
+---comment
+---@param item ent
+---@param doer ent
+local function repairSound(item,doer)
+    if doer and doer.SoundEmitter then
+        local sound
+        local prefab = item and item.prefab
+        if prefab then
+            if prefab == 'nightmarefuel' or prefab == 'horrorfuel' then
+                sound = 'dontstarve/common/nightmareAddFuel'
+            else
+                sound = 'aqol/new_test/metal'
+            end
+        end
+        if sound then
+            doer.SoundEmitter:PlaySound(sound)
+        end
+    end
+end
+
 local LOL_MEND = Action({priority = 5, mount_valid = false})
 LOL_MEND.id = 'LOL_MEND'
 LOL_MEND.str = "添加燃料"
 LOL_MEND.fn = function(act)
     if act.invobject.prefab == "horrorfuel" then 
+        repairSound(act.invobject, act.doer)
         removeItem(act.invobject, 1)
         act.target.components.finiteuses:Repair(200)
+
+        if act.target:HasTag('riftmaker_amulet'..'_nofiniteuses') then
+            act.target:RemoveTag('riftmaker_amulet'..'_nofiniteuses')
+        end
+        if act.target:HasTag('riftmaker_weapon'..'_nofiniteuses') then
+            act.target:RemoveTag('riftmaker_weapon'..'_nofiniteuses')
+        end
+        
         act.target.components.equippable.restrictedtag = nil
         return true
     end
     if act.invobject.prefab == "nightmarefuel" then 
+        repairSound(act.invobject, act.doer)
         removeItem(act.invobject, 1)
         act.target.components.finiteuses:Repair(40)
+
+        if act.target:HasTag('riftmaker_amulet'..'_nofiniteuses') then
+            act.target:RemoveTag('riftmaker_amulet'..'_nofiniteuses')
+        end
+        if act.target:HasTag('riftmaker_weapon'..'_nofiniteuses') then
+            act.target:RemoveTag('riftmaker_weapon'..'_nofiniteuses')
+        end
+        
         act.target.components.equippable.restrictedtag = nil
         return true
     end
@@ -88,13 +129,20 @@ LOL_MEND.fn = function(act)
 end
 AddAction(LOL_MEND)
 
+local could_repair = TUNING[string.upper('CONFIG_'..modid..'could_repair')]
 AddComponentAction(
     'USEITEM',
     'lol_useitem',
     function(inst, doer, target, actions, right)
-        if doer:HasTag("player") and (target.prefab == 'riftmaker_weapon' or target.prefab == 'riftmaker_amulet')  then
-            table.insert(actions, GLOBAL.ACTIONS.LOL_MEND)
+        -- if could_repair == 4 or could_repair == 2 then
+        --     return false
+        -- end
+        if could_repair == 3 or could_repair == 1 then
+            if doer:HasTag("player") and (target.prefab == 'riftmaker_weapon' or target.prefab == 'riftmaker_amulet')  then
+                table.insert(actions, GLOBAL.ACTIONS.LOL_MEND)
+            end
         end
+
     end
 )
 

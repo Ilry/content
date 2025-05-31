@@ -8,6 +8,9 @@ local assets =
 {
     Asset("ANIM", "anim/"..prefab_id..".zip"),
     Asset("ATLAS", "images/inventoryimages/"..prefab_id..".xml"),
+
+    Asset("ANIM", "anim/"..prefab_id.."_skin_hufflepuff.zip"),
+    Asset("ATLAS", "images/inventoryimages/"..prefab_id.."_skin_hufflepuff.xml"),
 }
 
 local function enableHungerRate(enable,inst,player)
@@ -22,6 +25,9 @@ local function enableHungerRate(enable,inst,player)
 end
 
 local function skillHeart(enable,owner,inst)
+    if owner and owner.prefab and owner.prefab == "wanda" then
+        return
+    end
     if enable then
         owner.taskintime_lol_wp_warmogarmor_notakedmg = owner:DoTaskInTime(TUNING.MOD_LOL_WP.WARMOGARMOR.SKILL_HEART.NO_TAKE_DMG_IN,function()
             if owner and owner:IsValid() and owner.components.health then
@@ -87,8 +93,18 @@ local function playerHealthChangeWhenWearWarmogArmor(player,data)
 end
 
 local function onequip(inst, owner)
-    owner.AnimState:OverrideSymbol("swap_body", prefab_id, "swap_body")
-    -- inst:ListenForEvent("blocked", OnBlocked, owner)
+
+    local skin_build = inst:GetSkinBuild()
+    if skin_build ~= nil then
+        owner:PushEvent("equipskinneditem", inst:GetSkinName())
+        owner.AnimState:OverrideItemSkinSymbol("swap_body", skin_build, "swap_body", inst.GUID, prefab_id)
+    else
+		owner.AnimState:OverrideSymbol("swap_body", prefab_id, "swap_body")
+    end
+
+    if owner and owner.prefab == 'wanda' then
+        return
+    end
 
     enableHungerRate(true,inst,owner)
 
@@ -103,7 +119,15 @@ end
 
 local function onunequip(inst, owner)
     owner.AnimState:ClearOverrideSymbol("swap_body")
-    -- inst:RemoveEventCallback("blocked", OnBlocked, owner)
+
+    local skin_build = inst:GetSkinBuild()
+    if skin_build ~= nil then
+        owner:PushEvent("unequipskinneditem", inst:GetSkinName())
+    end
+
+    if owner and owner.prefab == 'wanda' then
+        return
+    end
 
     enableHungerRate(false,inst,owner)
 

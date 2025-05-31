@@ -1,6 +1,12 @@
 --	冰箱
 	TUNING.PERISH_FRIDGE_MULT = GetModConfigData("fridge_config");
 	
+--	冰块
+	local ice_refroze = GetModConfigData("fridge_ice_config");
+	if ice_refroze and TUNING.PERISH_FRIDGE_MULT < 0 then
+		TUNING.PERISH_COLD_FROZEN_MULT = -1;
+	end
+	
 --	盐罐
 	TUNING.PERISH_SALTBOX_MULT = GetModConfigData("saltbox_config");
 	
@@ -121,12 +127,10 @@ local beard_sack = GetModConfigData("beard_sack_config");
 
 --骨灰盒
 	local sisturn = GetModConfigData("sisturn_config");
-
-	AddPrefabPostInit("sisturn", function(inst)
-		if sisturn then
-			inst:AddTag("fridge")
-		end
-	end)
+	
+	if sisturn then
+		TUNING.WENDY_SISTURN_PETAL_PRESRVE = 0
+	end
 
 --烹饪锅
 	local cookpot = GetModConfigData("cookingPot_config")
@@ -137,17 +141,35 @@ local beard_sack = GetModConfigData("beard_sack_config");
 		end
 	end)
 
---[[
---茶几
-	local endTable = GetModConfigData("endTable_config")
-
-	AddPrefabPostInit("endtable", function(inst)
-		if endTable then
+-- 普通钓具
+	local tackelContainer = GetModConfigData("tackelContainer_config")
+	
+	AddPrefabPostInit("tacklecontainer", function(inst)
+		if tackelContainer then
 			inst:AddTag("fridge")
-		end
+			end
 	end)
-	--]]
-
+	
+	AddPrefabPostInit("supertacklecontainer", function(inst)
+		if tackelContainer then
+			inst:AddTag("fridge")
+			end
+	end)
+	
+-- 鱼人食堂
+	local offeringPot = GetModConfigData("offeringPot_config")
+	
+	AddPrefabPostInit("offering_pot", function(inst)
+		if offeringPot then
+			inst:AddTag("fridge")
+			end
+	end)
+	
+	AddPrefabPostInit("offering_pot_upgraded", function(inst)
+		if offeringPot then
+			inst:AddTag("fridge")
+			end
+	end)
 --哈奇
 	local cookpot = GetModConfigData("hutch_config")
 

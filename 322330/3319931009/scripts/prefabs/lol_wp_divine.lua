@@ -5,8 +5,12 @@ local prefab_id = "lol_wp_divine"
 local assets =
 {
     Asset( "ANIM", "anim/"..prefab_id..".zip"),
-    Asset("ANIM","anim/swap_"..prefab_id..".zip"),
+    -- Asset("ANIM","anim/swap_"..prefab_id..".zip"),
     Asset( "ATLAS", "images/inventoryimages/"..prefab_id..".xml" ),
+
+    Asset("ANIM","anim/"..prefab_id.."_skin_kamaeru.zip"),
+    -- Asset("ANIM","anim/swap_"..prefab_id.."_skin_kamaeru.zip"),
+    Asset("ATLAS","images/inventoryimages/"..prefab_id.."_skin_kamaeru.xml"),
 }
 
 local prefabs = 
@@ -14,8 +18,21 @@ local prefabs =
     prefab_id,
 }
 
+---comment
+---@param inst ent
+---@param owner ent
 local function onequip(inst, owner)
-    owner.AnimState:OverrideSymbol("swap_object", "swap_"..prefab_id, "swap_"..prefab_id)
+    local skin_build = inst:GetSkinBuild()
+	if skin_build ~= nil then
+		owner:PushEvent("equipskinneditem", inst:GetSkinName())
+		owner.AnimState:OverrideItemSkinSymbol("swap_object", skin_build, "swap_"..skin_build, inst.GUID, prefab_id)
+	else
+		-- owner.AnimState:OverrideSymbol("swap_object", "swap_"..tmp_assets_id, "swap_"..tmp_assets_id)
+        owner.AnimState:OverrideSymbol("swap_object", prefab_id, "swap_"..prefab_id)
+	end
+
+
+    -- owner.AnimState:OverrideSymbol("swap_object", prefab_id, "swap_"..prefab_id)
     owner.AnimState:Show("ARM_carry")
     owner.AnimState:Hide("ARM_normal")
 
@@ -27,6 +44,10 @@ end
 local function onunequip(inst, owner)
     owner.AnimState:Hide("ARM_carry")
     owner.AnimState:Show("ARM_normal")
+    local skin_build = inst:GetSkinBuild()
+	if skin_build ~= nil then
+		owner:PushEvent("unequipskinneditem", inst:GetSkinName())
+	end
 
     inst.Light:Enable(false)
 

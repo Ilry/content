@@ -46,7 +46,7 @@ end
 
 name = "Insight"
 -- Major.Minor.Patch
-version = "4.7.2" -- dst is 4.6.2, ds is 4.5.0
+version = "4.8.4" -- dst is 4.6.2, ds is 4.5.0
 author = "penguin0616"
 forumthread = ""
 icon_atlas = "modicon.xml"
@@ -145,7 +145,7 @@ local function T(tbl, key)
 	if locale and ChooseTranslationTable then
 		return ChooseTranslationTable(tbl, key)
 	else
-		return tbl[1]
+		return tbl["en"] or tbl[1]
 	end
 	--return GetTranslation
 end
@@ -249,6 +249,9 @@ end
 --==========================================================================================
 --[[ Config Primers ]]
 --==========================================================================================
+
+local HOVERER_TRUNCATION_AMOUNTS = { "None", 1, 2, 3, 4, 5 }
+
 --[[ Font Sizes ]]
 local FONT_SIZE = {
 	INSIGHT = {
@@ -262,28 +265,32 @@ local FONT_SIZE = {
 local FONTS = {"UIFONT", "TITLEFONT", "DIALOGFONT", "NUMBERFONT", "BODYTEXTFONT", "TALKINGFONT"}
 
 --- Generates options from a list.
----@param typ boolean False for text, True for options.
-local function GenerateOptionsFromList(typ, list, hoverfn)
+---@param for_config boolean If false, will generate results suitable for the translation table. true generates the option for the configuration option.
+---@param list table The list of stuff to be generating from.
+---@param hoverfn function|nil The hover table.
+local function GenerateOptionsFromList(for_config, list, hoverfn)
 	local t = {}
 	for i = 1, #list do
 		local opt = list[i]
 
-		if typ == false then
+		if for_config == false then
 			local hover = hoverfn and hoverfn(i, opt)
 			t[opt] = { 
 				description = {
-					opt -- English
+					tostring(opt) -- English
 				}, 
 				hover = hover
 			}
-		elseif typ == true then
+		elseif for_config == true then
 			t[#t+1] = { 
 				data = opt
 			}
 		else
-			yahoo()
+			-- Just to get us to trigger an error.
+			unknown_arg_detected()
 		end
 	end
+
 	return t
 end
 
@@ -384,7 +391,10 @@ do
 end
 
 -- Unique Prefabs
-local UNIQUE_INFO_PREFABS = {"alterguardianhat", "batbat", "eyeplant", "ancient_statue", "armordreadstone", "voidcloth_scythe", "lunarthrall_plant"}
+local UNIQUE_INFO_PREFABS = {
+	"alterguardianhat", "batbat", "eyeplant", "ancient_statue", "armordreadstone", "voidcloth_scythe", "lunarthrall_plant",
+	"shadow_battleaxe",
+}
 
 --====================================================================================================================================================
 --====================================================================================================================================================
@@ -1009,7 +1019,7 @@ STRINGS = {
 			["ru"] = "Какой шрифт используется Insight для своего текста",
 			["ko"] = "Insight가 텍스트에 사용할 글꼴을 선택합니다.",
 		},
-		options = GenerateOptionsFromList(false, FONTS, function(i,v) return {("Insight will use the game font '%s'"):format(v)} end),
+		options = GenerateOptionsFromList(false, FONTS, function(i,v) return {["en"]=("Insight will use the game font '%s'"):format(v)} end),
 	},
 	hoverer_insight_font_size = {
 		label = {
@@ -1067,6 +1077,31 @@ STRINGS = {
 			["ko"] = "컨트롤러를 사용할 때 Insight의 Follow 텍스트 글꼴 크기를 설정합니다.",
 		},
 		options = GenerateFontSizeTexts(FONT_SIZE.INSIGHT.FOLLOWTEXT),
+	},
+	hoverer_line_truncation = {
+		label = {
+			"Hover Text Truncation",
+			["zh"] = nil,
+			["br"] = nil,
+			["es"] = nil,
+			["ru"] = nil,
+			["ko"] = nil,
+		},
+		hover = {
+			"Whether to truncate the information shown by Insight on hover. Hold Inspect to disable truncation.",
+			["zh"] = nil,
+			["br"] = nil,
+			["es"] = nil,
+			["ru"] = nil,
+			["ko"] = nil,
+		},
+		options = GenerateOptionsFromList(false, HOVERER_TRUNCATION_AMOUNTS, function(i,v) 
+			if v == HOVERER_TRUNCATION_AMOUNTS[1] then
+				return {["en"]=("Text will not be truncated.")}
+			else
+				return {["en"]=("Text will be truncated at '%s' line(s)"):format(v)} 
+			end
+		end),
 	},
 	alt_only_information = {
 		label = {
@@ -1498,6 +1533,48 @@ STRINGS = {
 					["es"] = nil,
 					["ru"] = "Будет использоваться экспериментальное выделение.",
 					["ko"] = "실험적 강조 표시 기능이 사용됩니다.",
+				},
+			},
+		},
+	},
+	highlighting_darkness = {
+		label = {
+			"Highlighting in Darkness", 
+			["zh"] = "高亮黑暗中的物品",
+			["br"] = nil,
+			["es"] = nil,
+			["ru"] = nil,
+			["ko"] = nil,
+		},
+		hover = {
+			"When disabled, items in darkness will not receive a highlighting glow.", 
+			["zh"] = "如果关闭，黑暗中的物品不会被高亮标出",
+			["br"] = nil,
+			["es"] = nil,
+			["ru"] = nil,
+			["ko"] = nil,
+		},
+		options = {
+			[false] = {
+				description = COMMON_STRINGS.NO.DESCRIPTION,
+				hover = {
+					"Items in darkness do not get highlighting.",
+					["zh"] = "黑暗中不使用高亮显示。",
+					["br"] = nil,
+					["es"] = nil,
+					["ru"] = nil,
+					["ko"] = nil
+				},
+			},
+			[true] = {
+				description = COMMON_STRINGS.YES.DESCRIPTION,
+				hover = {
+					"Items in darkness do get highlighting.",
+					["zh"] = "黑暗中使用高亮显示。",
+					["br"] = nil,
+					["es"] = nil,
+					["ru"] = nil,
+					["ko"] = nil,
 				},
 			},
 		},
@@ -4410,6 +4487,238 @@ STRINGS = {
 			},
 		},
 	},
+	display_shadowthrall_information = {
+		label = {
+			"Shadow Thrall Information", 
+			["zh"] = nil, 
+			["br"] = nil, 
+			["es"] = nil,
+			["ru"] = nil,
+			["ko"] = nil,
+		},
+		hover = {
+			"Whether to display shadow thrall information.", 
+			["zh"] = nil, 
+			["br"] = nil, 
+			["es"] = nil,
+			["ru"] = nil,
+			["ko"] = nil,
+		},
+		options = {
+			[0] = {
+				description = {
+					"None",
+					["zh"] = nil,
+					["br"] = nil,
+					["es"] = nil,
+					["ru"] = nil,
+					["ko"] = nil,
+				},
+				hover = {
+					"Do not show any shadow thrall information.",
+					["zh"] = nil,
+					["br"] = nil,
+					["es"] = nil,
+					["ru"] = nil,
+					["ko"] = nil,
+				},
+			},
+			[1] = {
+				description = {
+					"Worldly",
+					["zh"] = nil,
+					["br"] = nil,
+					["es"] = nil,
+					["ru"] = nil,
+					["ko"] = nil,
+				},
+				hover = {
+					"Show only general shadow thrall information.",
+					["zh"] = nil,
+					["br"] = nil,
+					["es"] = nil,
+					["ru"] = nil,
+					["ko"] = nil,
+				},
+			},
+			[2] = {
+				description = {
+					"All",
+					["zh"] = nil,
+					["br"] = nil,
+					["es"] = nil,
+					["ru"] = nil,
+					["ko"] = nil,
+				},
+				hover = {
+					"Show all shadow thrall information.",
+					["zh"] = nil,
+					["br"] = nil,
+					["es"] = nil,
+					["ru"] = nil,
+					["ko"] = nil,
+				},
+			},
+		},
+	},
+	display_batwave_information = {
+		label = {
+			"Bat Wave information", 
+			["zh"] = nil, 
+			["br"] = nil, 
+			["es"] = nil,
+			["ru"] = nil,
+			["ko"] = nil,
+		},
+		hover = {
+			"Whether to show bat wave information.", 
+			["zh"] = nil, 
+			["br"] = nil, 
+			["es"] = nil,
+			["ru"] = nil,
+			["ko"] = nil,
+		},
+		options = {
+			[false] = {
+				description = COMMON_STRINGS.NO.DESCRIPTION,
+				hover = {
+					"Do not show bat wave information.",
+					["zh"] = nil,
+					["br"] = nil,
+					["es"] = nil,
+					["ru"] = nil,
+					["ko"] = nil,
+				},
+			},
+			[true] = {
+				description = COMMON_STRINGS.YES.DESCRIPTION,
+				hover = {
+					"Show bat wave information.",
+					["zh"] = nil,
+					["br"] = nil,
+					["es"] = nil,
+					["ru"] = nil,
+					["ko"] = nil,
+				},
+			},
+		},
+	},
+	display_itemmimic_information = {
+		label = {
+			"Item Mimic Information", 
+			["zh"] = nil, 
+			["br"] = nil, 
+			["es"] = nil,
+			["ru"] = nil,
+			["ko"] = nil,
+		},
+		hover = {
+			"Whether to display item mimic information.", 
+			["zh"] = nil, 
+			["br"] = nil, 
+			["es"] = nil,
+			["ru"] = nil,
+			["ko"] = nil,
+		},
+		options = {
+			[0] = {
+				description = {
+					"None",
+					["zh"] = nil,
+					["br"] = nil,
+					["es"] = nil,
+					["ru"] = nil,
+					["ko"] = nil,
+				},
+				hover = {
+					"Do not show any item mimic information.",
+					["zh"] = nil,
+					["br"] = nil,
+					["es"] = nil,
+					["ru"] = nil,
+					["ko"] = nil,
+				},
+			},
+			[1] = {
+				description = {
+					"Worldly",
+					["zh"] = nil,
+					["br"] = nil,
+					["es"] = nil,
+					["ru"] = nil,
+					["ko"] = nil,
+				},
+				hover = {
+					"Show only general item mimic information (such as how many are in the world)",
+					["zh"] = nil,
+					["br"] = nil,
+					["es"] = nil,
+					["ru"] = nil,
+					["ko"] = nil,
+				},
+			},
+			[2] = {
+				description = {
+					"All",
+					["zh"] = nil,
+					["br"] = nil,
+					["es"] = nil,
+					["ru"] = nil,
+					["ko"] = nil,
+				},
+				hover = {
+					"Show all item mimic information (includes what items are mimics).",
+					["zh"] = nil,
+					["br"] = nil,
+					["es"] = nil,
+					["ru"] = nil,
+					["ko"] = nil,
+				},
+			},
+		},
+	},
+	display_rabbitking_information = {
+		label = {
+			"Rabbit King information", 
+			["zh"] = nil, 
+			["br"] = nil, 
+			["es"] = nil,
+			["ru"] = nil,
+			["ko"] = nil,
+		},
+		hover = {
+			"Whether to show rabbit king information.", 
+			["zh"] = nil, 
+			["br"] = nil, 
+			["es"] = nil,
+			["ru"] = nil,
+			["ko"] = nil,
+		},
+		options = {
+			[false] = {
+				description = COMMON_STRINGS.NO.DESCRIPTION,
+				hover = {
+					"Do not show rabbit king information.",
+					["zh"] = nil,
+					["br"] = nil,
+					["es"] = nil,
+					["ru"] = nil,
+					["ko"] = nil,
+				},
+			},
+			[true] = {
+				description = COMMON_STRINGS.YES.DESCRIPTION,
+				hover = {
+					"Show rabbit king information.",
+					["zh"] = nil,
+					["br"] = nil,
+					["es"] = nil,
+					["ru"] = nil,
+					["ko"] = nil,
+				},
+			},
+		},
+	},
 	display_weather = {
 		label = {
 			"Weather information", 
@@ -5203,6 +5512,48 @@ STRINGS = {
 			},
 		},
 	},
+	display_rechargeable = {
+		label = {
+			"Rechargeable", 
+			["zh"] = nil,
+			["br"] = nil,
+			["es"] = nil,
+			["ru"] = nil,
+			["ko"] = nil,
+		},
+		hover = {
+			"Whether rechargeable information is displayed.", 
+			["zh"] = nil,
+			["br"] = nil,
+			["es"] = nil,
+			["ru"] = nil,
+			["ko"] = nil,
+		},
+		options = {
+			[false] = {
+				description = COMMON_STRINGS.NO.DESCRIPTION,
+				hover = {
+					"Rechargeable information will not be displayed.",
+					["zh"] = nil,
+					["br"] = nil,
+					["es"] = nil,
+					["ru"] = nil,
+					["ko"] = nil,
+				},
+			},
+			[true] = {
+				description = COMMON_STRINGS.YES.DESCRIPTION,
+				hover = {
+					"Rechargeable information will be displayed.",
+					["zh"] = nil,
+					["br"] = nil,
+					["es"] = nil,
+					["ru"] = nil,
+					["ko"] = nil,
+				},
+			},
+		},
+	},
 	display_upgradeable = {
 		label = {
 			"Upgradeables", 
@@ -5874,6 +6225,7 @@ STRINGS = {
 			},
 		},
 	},
+	--[[
 	extended_info_indicator = {
 		label = {
 			"More Information Hint", 
@@ -5916,6 +6268,7 @@ STRINGS = {
 			},
 		},
 	},
+	--]]
 	info_preload = {
 		label = {
 			"Information preloading", 
@@ -6426,6 +6779,13 @@ configuration_options = {
 		tags = {},
 	},
 	{
+		name = "hoverer_line_truncation",
+		options = GenerateOptionsFromList(true, HOVERER_TRUNCATION_AMOUNTS), 
+		default = HOVERER_TRUNCATION_AMOUNTS[1],
+		client = true,
+		tags = {},
+	},
+	{
 		name = "alt_only_information",
 		options = {
 			{data = false},
@@ -6501,6 +6861,16 @@ configuration_options = {
 			{data = false},
 			{data = true},
 		}, 
+		default = true,
+		client = true,
+		tags = {},
+	},
+	{
+		name = "highlighting_darkness",
+		options = {
+			{data = false},
+			{data = true},
+		},
 		default = true,
 		client = true,
 		tags = {},
@@ -7043,6 +7413,44 @@ configuration_options = {
 		tags = {"dst_only", "undefined"},
 	},
 	{
+		name = "display_shadowthrall_information",
+		options = {
+			{data = 0},
+			{data = 1},
+			{data = 2},
+		},
+		default = 1,
+		tags = {"undefined"},
+	},
+	{
+		name = "display_batwave_information",
+		options = {
+			{data = false},
+			{data = true},
+		}, 
+		default = true,
+		tags = {"undefined"},
+	},
+	{
+		name = "display_itemmimic_information",
+		options = {
+			{data = 0},
+			{data = 1},
+			{data = 2},
+		},
+		default = 0,
+		tags = {"undefined"},
+	},
+	{
+		name = "display_rabbitking_information",
+		options = {
+			{data = false},
+			{data = true},
+		}, 
+		default = false,
+		tags = {"dst_only", "undefined"},
+	},
+	{
 		name = "display_weather",
 		options = {
 			{data = 0},
@@ -7183,6 +7591,15 @@ configuration_options = {
 		tags = {"undefined"},
 	},
 	{
+		name = "display_rechargeable",
+		options = {
+			{data = false},
+			{data = true},
+		}, 
+		default = true,
+		tags = {"undefined"},
+	},
+	{
 		name = "display_upgradeable",
 		options = {
 			{data = false},
@@ -7306,6 +7723,7 @@ configuration_options = {
 		client = true,
 		tags = {},
 	},
+	--[[
 	{
 		name = "extended_info_indicator",
 		options = {
@@ -7316,6 +7734,7 @@ configuration_options = {
 		client = true,
 		tags = {},
 	},
+	--]]
 	--[[
 	{
 		name = "unrandomizer",

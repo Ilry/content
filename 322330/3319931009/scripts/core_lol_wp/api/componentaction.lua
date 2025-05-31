@@ -4,7 +4,7 @@
 local dst_lan = {}
 
 ---comment
----@param data_tbl table
+---@param data_tbl data_componentaction[]
 ---@return table # actions
 ---@return table # componentactions table
 ---@private
@@ -42,6 +42,7 @@ function dst_lan:_fix_tbl(data_tbl)
     return fixed_actions,fixed_component_actions
 end
 
+---@param data_tbl data_componentaction[]
 ---@private
 function dst_lan:registActions(data_tbl)
     local fixed_actions,fixed_component_actions = self:_fix_tbl(data_tbl)
@@ -54,8 +55,8 @@ function dst_lan:registActions(data_tbl)
             end
         end
 
-        AddStategraphActionHandler('wilson',GLOBAL.ActionHandler(addaction, act.state))
-        AddStategraphActionHandler('wilson_client',GLOBAL.ActionHandler(addaction,act.state))
+        AddStategraphActionHandler('wilson',ActionHandler(addaction, act.state))
+        AddStategraphActionHandler('wilson_client',ActionHandler(addaction,act.state))
     end
 
     for _,v in pairs(fixed_component_actions) do
@@ -72,8 +73,29 @@ function dst_lan:registActions(data_tbl)
     end
 end
 
-function dst_lan:main(data_tbl)
+---修改官方组件动作的testfn
+---@param change_tbl data_componentaction_change[]
+---@private
+function dst_lan:changeComponentActionTestfn(change_tbl)
+    for _,tbl in ipairs(change_tbl) do
+        local data = LOLWP_S:upvalueFind(EntityScript.CollectActions,'COMPONENT_ACTIONS')
+        if data then
+            local old_fn = data[tbl.type][tbl.component]
+            data[tbl.type][tbl.component] = function(...)
+                return tbl.testfn(old_fn,...)
+            end
+        end
+    end
+end
+
+---主函数
+---@param data_tbl data_componentaction[] # 组件动作表
+---@param change_tbl data_componentaction_change[]|nil # 修改官方组件动作的testfn
+function dst_lan:main(data_tbl,change_tbl)
     self:registActions(data_tbl)
+    if change_tbl then
+        self:changeComponentActionTestfn(change_tbl)
+    end
 end
 
 return dst_lan

@@ -15,7 +15,7 @@ local MODINFO_AUTHOR = {
 author = ChooseTranslationTable(MODINFO_AUTHOR)
 
 -- Mod Version
-version = "3.12.2"
+version = "3.13.8"
 
 description_string_en = 
 "󰀔Description:\n"..

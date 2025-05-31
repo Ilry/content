@@ -1,9 +1,32 @@
+---@diagnostic disable
+
 local SpDamageUtil = require("components/spdamageutil")
 
 local assets =
 {
     Asset("ANIM", "anim/gallop_brokenking.zip"),
 }
+
+---comment
+---@param player ent
+local function checkifowner_alsoequipped_lol_wp_s15_crown_of_the_shattered_queen(player)
+    local equips, found = LOLWP_S:findEquipments(player,'lol_wp_s15_crown_of_the_shattered_queen')
+    local _, found2 = LOLWP_S:findEquipments(player,'gallop_brokenking')
+    if found and found2 then
+
+        if not player.when_equip_brokenking_and_crown_of_the_shattered_queen_announced then
+            player.when_equip_brokenking_and_crown_of_the_shattered_queen_announced = true
+            if player.components.talker then
+                player.components.talker:Say(STRINGS.MOD_LOL_WP.WHEN_EQUIP_BROKENKING_AND_CROWN_OF_THE_SHATTERED_QUEEN)
+            end
+        end
+
+        player.when_equip_brokenking_and_crown_of_the_shattered_queen = true
+    else
+        player.when_equip_brokenking_and_crown_of_the_shattered_queen = nil
+        player.when_equip_brokenking_and_crown_of_the_shattered_queen_announced = nil
+    end
+end
 
 local TRAIL_FLAGS = { "shadowtrail" }
 local function do_trail(inst)
@@ -47,8 +70,13 @@ local function RemoveBonus(inst, weapon)
     if weapon and weapon.prefab == "gallop_brokenking" then
         weapon.link_active = nil
     end
+    if weapon and weapon.components.gallop_brokenking_frogblade_cd then
+        weapon.components.gallop_brokenking_frogblade_cd:ChangeDefaultCD(20,true)
+    end
 end
-
+---comment
+---@param inst ent
+---@param weapon ent
 local function AddBonus(inst, weapon)
     if inst.components.combat then
         inst.components.combat.externaldamagemultipliers:SetModifier(inst, 2, "gallop_brokenking")
@@ -63,6 +91,10 @@ local function AddBonus(inst, weapon)
     fx.entity:SetParent(inst.entity)
 
     weapon.link_active = true
+
+    if weapon and weapon.components.gallop_brokenking_frogblade_cd then
+        weapon.components.gallop_brokenking_frogblade_cd:ChangeDefaultCD(5,true)
+    end
 end
 
 local function OnRefreshEquip(inst, data)
@@ -82,13 +114,17 @@ local function OnRefreshEquip(inst, data)
                 else
                     RemoveBonus(inst, weapon)
                 end
+            else
+                RemoveBonus(inst, weapon)
             end
         else
             RemoveBonus(inst, weapon)
         end
     end)
 end
-
+---comment
+---@param inst ent
+---@param owner ent
 local function onequip(inst, owner)
     local skin_build = inst:GetSkinBuild()
     if skin_build ~= nil then
@@ -109,8 +145,14 @@ local function onequip(inst, owner)
     if owner.gallop_brokenking_fx == nil then
         owner.gallop_brokenking_fx = owner:DoPeriodicTask(6 * FRAMES, do_trail, 2 * FRAMES)
     end
-end
 
+    checkifowner_alsoequipped_lol_wp_s15_crown_of_the_shattered_queen(owner)
+    owner:ListenForEvent('equip',checkifowner_alsoequipped_lol_wp_s15_crown_of_the_shattered_queen)
+    owner:ListenForEvent('unequip',checkifowner_alsoequipped_lol_wp_s15_crown_of_the_shattered_queen)
+end
+---comment
+---@param inst ent
+---@param owner ent
 local function onunequip(inst, owner)
     owner.AnimState:Hide("ARM_carry")
     owner.AnimState:Show("ARM_normal")
@@ -130,6 +172,10 @@ local function onunequip(inst, owner)
         owner.gallop_brokenking_fx:Cancel()
         owner.gallop_brokenking_fx = nil
     end
+
+    checkifowner_alsoequipped_lol_wp_s15_crown_of_the_shattered_queen(owner)
+    owner:RemoveEventCallback('equip',checkifowner_alsoequipped_lol_wp_s15_crown_of_the_shattered_queen)
+    owner:RemoveEventCallback('unequip',checkifowner_alsoequipped_lol_wp_s15_crown_of_the_shattered_queen)
 end
 
 local function hitfx(pos)
@@ -140,7 +186,10 @@ end
 local function IsLifeDrainable(target)
     return not target:HasAnyTag(NON_LIFEFORM_TARGET_TAGS) or target:HasTag("lifedrainable")
 end
-
+---comment
+---@param inst ent
+---@param attacker any
+---@param target any
 local function onattack(inst, attacker, target)
     if attacker.gallop_brokenking_jumping then
         return
@@ -149,10 +198,14 @@ local function onattack(inst, attacker, target)
         attacker.components.health:DoDelta(5, false, inst.prefab)
     end
 
-    if inst.components.finiteuses:GetPercent() >= 1 then
-        inst.components.finiteuses:SetUses(0)
+    -- if inst.components.finiteuses:GetPercent() >= 1 then
+    --     inst.components.finiteuses:SetUses(0)
+    if inst.components.gallop_brokenking_frogblade_cd and not inst.components.gallop_brokenking_frogblade_cd:IsCD() then
+        inst.components.gallop_brokenking_frogblade_cd:StartCD(20)
         if target.components.health and not target.components.health:IsDead() then
-            target.components.combat:GetAttacked(attacker, target.components.health.maxhealth*.02)
+            if target.components.combat then
+                target.components.combat:GetAttacked(attacker, target.components.health.maxhealth*.02)
+            end
         end
         if attacker.components.health and attacker.components.health:IsHurt() then
             attacker.components.health:DoDelta(10, false, inst.prefab)
@@ -205,6 +258,8 @@ local function fn()
     inst.components.aoetargeting.reticule.mouseenabled = true
     inst.components.aoetargeting:SetRange(25) 
 
+    inst:AddTag('lunar_aligned')
+
     if not TheWorld.ismastersim then
         return inst
     end
@@ -215,6 +270,8 @@ local function fn()
     inst.components.weapon:SetDamage(51)
     inst.components.weapon:SetRange(1.5)
     inst.components.weapon:SetOnAttack(onattack)
+
+    inst:AddComponent('gallop_brokenking_frogblade_cd')
 
     inst:AddComponent("aoespell")
     inst.components.aoespell:SetSpellFn(function(inst, caster, pt) 
@@ -231,7 +288,9 @@ local function fn()
     end)
 
     inst:AddComponent("aoeweapon_leap")
-    inst.components.aoeweapon_leap:SetDamage(0)
+    if inst.components.aoeweapon_leap.SetDamage then
+        inst.components.aoeweapon_leap:SetDamage(0)
+    end
     inst.components.aoeweapon_leap.aoeradius = 5
     inst.components.aoeweapon_leap.physicspadding = 0
     inst.components.aoeweapon_leap:SetOnHitFn(function(inst, doer, target) 
@@ -243,9 +302,16 @@ local function fn()
     inst.components.aoeweapon_leap:SetOnPreLeapFn(function(inst, doer, startingpos, targetpos) 
         doer.gallop_brokenking_jumping = true
     end)
-    inst.components.aoeweapon_leap:SetOnLeaptFn(function(inst, doer, startingpos, targetpos) 
+    inst.components.aoeweapon_leap:SetOnLeaptFn(
+    ---comment
+    ---@param inst ent
+    ---@param doer any
+    ---@param startingpos any
+    ---@param targetpos any
+    function(inst, doer, startingpos, targetpos) 
         doer.gallop_brokenking_jumping = nil
-        inst.components.finiteuses:SetPercent(1)
+        -- inst.components.finiteuses:SetPercent(1)
+        inst.components.gallop_brokenking_frogblade_cd:ResetCD()
         inst.components.rechargeable:Discharge(inst.link_active and 5 or 20)
         
         if doer.components.sanity then
@@ -291,17 +357,17 @@ local function fn()
     inst.components.rechargeable:SetOnChargedFn(function() inst.components.aoetargeting:SetEnabled(true) end)
     inst.components.rechargeable:SetOnDischargedFn(function() inst.components.aoetargeting:SetEnabled(false) end)
     -------
-    inst:AddComponent("finiteuses")
-    local finiteuses = inst.components.finiteuses
-    finiteuses:SetMaxUses(20)
-    finiteuses:SetUses(20)
-    finiteuses:SetIgnoreCombatDurabilityLoss(true)
+    -- inst:AddComponent("finiteuses")
+    -- local finiteuses = inst.components.finiteuses
+    -- finiteuses:SetMaxUses(20)
+    -- finiteuses:SetUses(20)
+    -- finiteuses:SetIgnoreCombatDurabilityLoss(true)
 
-    inst:DoPeriodicTask(1, function() 
-        if finiteuses:GetPercent() < 1 then
-            finiteuses:SetUses(math.max(0, math.min(finiteuses.total, finiteuses:GetUses()+(inst.link_active and 4 or 1))))
-        end
-    end)
+    -- inst:DoPeriodicTask(1, function() 
+    --     if finiteuses:GetPercent() < 1 then
+    --         finiteuses:SetUses(math.max(0, math.min(finiteuses.total, finiteuses:GetUses()+(inst.link_active and 4 or 1))))
+    --     end
+    -- end)
 
     inst:AddComponent("inspectable")
     inst:AddComponent("inventoryitem")

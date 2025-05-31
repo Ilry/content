@@ -101,6 +101,8 @@ local map_layout_loaded_before_generate = false
 -- --local BAD_CONNECT = 219000 --
 -- --SEED = 1568654163 -- Force roads test level 3
 -- SEED = SetWorldGenSeed(SEED)
+-- SEED = 301004363
+-- SEED = SetWorldGenSeed(SEED)
 
 -- --print ("worldgen_main.lua MAIN = 1")
 
@@ -488,6 +490,7 @@ _G.min_distance_so_far = math.huge
 _G.best_xz_for_best_seed = nil
 _G.total_retry_by_klei = 0
 _G.total_seed_by_klei = 0
+_G.total_crash_seeds = 0
 
 local function table_to_json_string(tbl)
 	local result = "{"
@@ -523,11 +526,11 @@ local function table_to_json_file(tbl, filename)
 end
 
 -- Function to insert a new seed into the top_seeds table
-local function insert_seed(seed, score, xz)
+local function insert_seed(seed, score, xz, num_kept)
     table.insert(_G.top_seeds, {seed = seed, score = score, xz = xz})
     table.sort(_G.top_seeds, function(a, b) return a.score < b.score end)
-    if #_G.top_seeds > 10 then
-        table.remove(_G.top_seeds, 11)
+    if #_G.top_seeds > num_kept then
+        table.remove(_G.top_seeds, num_kept+1)
     end
 end
 
@@ -1070,6 +1073,7 @@ end
             nodes_type[i][j] = 0
         end
     end
+    local static_layout_ids = {}
     for i, id in ipairs(ids) do
         local node = nodes[i]
         -- print("[Search your map]", id)
@@ -1079,8 +1083,16 @@ end
             -- tiles_type = get_points_in_polygon(polygon_vertices, tiles_type, region_type)
             nodes_type = get_points_in_polygon(polygon_vertices, nodes_type, region_type, width, height)
         end
+        if region_type == "StaticLayoutIsland" then
+            table.insert(static_layout_ids, i)
+        end
     end
-    -- table_to_json_file(nodes_type, world_id.."_nodes_type.json")
+    for _, node_idx in ipairs(static_layout_ids) do
+        local node = nodes[node_idx]
+        local polygon_vertices = node.poly
+        nodes_type = get_points_in_polygon(polygon_vertices, nodes_type, "staticlayout", width, height)
+    end
+    -- table_to_json_file(nodes_type, "unsafedata/"..world_id.."_nodes_type.json")
     -- print("showing lands")
 
     local grid = {}
@@ -1116,7 +1128,16 @@ end
             -- if table.contains(moon_tiles, tiles_ij) then
                 -- moon_island_tiles[i] = moon_island_tiles[i] or {}
                 -- moon_island_tiles[i][j] = true
-                table.insert(moon_island_tiles, {i, j})
+                -- I dont know why, sometimes I found that sometimes a tile is in moonisland nodes, but it is not in moon_tiles, and is connected to the mainland
+                -- Just use this to fix this
+                if table.contains(moon_tiles, tiles_ij) then
+                    table.insert(moon_island_tiles, {i, j})
+                end
+            elseif TileGroupManager:IsLandTile(tiles_ij) and string.find(nodes_type[i][j] , "REGION_LINK") then
+                if table.contains(moon_tiles, tiles_ij) then
+                    -- These tiles will not trigger the effect of moonisland like santity
+                    table.insert(moon_island_tiles, {i, j})
+                end
             elseif TileGroupManager:IsLandTile(tiles_ij) then
                 -- table.insert(non_moon_land, {i, j})
                 non_moon_land[i][j] = true
@@ -1128,12 +1149,12 @@ end
 
     -- dumptable(non_moon_land)
 
-    -- table_to_json_file(tiles_type, world_id.."_tiles_type.json")
+    -- table_to_json_file(tiles_type, "unsafedata/"..world_id.."_tiles_type.json")
     if moon_island_BFS(grid, moon_island_tiles, non_moon_land) then
         -- print("[Search your map] moon island is connected to the land")
-        -- table_to_json_file(tiles_type, world_id.."_tiles_type.json")
-        -- table_to_json_file(moon_island_tiles, world_id.."_moon_island_tiles.json")
-        -- table_to_json_file(non_moon_land, world_id.."_non_moon_land.json")
+        -- table_to_json_file(tiles_type, "unsafedata/"..world_id.."_tiles_type.json")
+        -- table_to_json_file(moon_island_tiles, "unsafedata/"..world_id.."_moon_island_tiles.json")
+        -- table_to_json_file(non_moon_land, "unsafedata/"..world_id.."_non_moon_land.json")
         if _G[world_id].check_statistic["moon_island_connect"]["success_times"] == 0 then
             BEST_SEED_SO_FAR = SEED
         end
@@ -1143,13 +1164,283 @@ end
         -- print("[Search your map] moon island is not connected to the land")
         -- print("[Search your map] moon island is connected to the land")
         -- table_to_json_file(tiles_type, world_id.."_tiles_type.json")
-        -- table_to_json_file(moon_island_tiles, world_id.."_moon_island_tiles.json")
-        -- table_to_json_file(non_moon_land, world_id.."_non_moon_land.json")
+        -- table_to_json_file(moon_island_tiles, "unsafedata/"..world_id.."_moon_island_tiles.json")
+        -- table_to_json_file(non_moon_land, "unsafedata/"..world_id.."_non_moon_land.json")
         return false
         -- return true
     end
 end
 
+local function check_broken_moon_island(savedata, world_id, my_log_file)
+    if _G[world_id].moon_island_broken == "not set" then
+        print("[Search your map] moon island broken is not set")
+        return true
+    else
+        print("[Search your map] moon island broken is set")
+        _G[world_id].check_statistic["moon_island_broken"]["check_times"] = _G[world_id].check_statistic["moon_island_broken"]["check_times"] + 1
+    end
+    
+    -- Thanks to https://www.bilibili.com/opus/785129037051723779
+    local MoonIsland_IslandShards_poly = {}
+    local MoonIsland_Beach_poly = {}
+    local MoonIsland_Baths_poly = {}
+    local MoonIsland_Forest_poly = {}
+    local MoonIsland_Mine_poly = {}
+
+
+    -- Get the type of each tile in the map
+    local height = savedata.map.height
+    local width = savedata.map.width
+
+    local ids = savedata.map.topology.ids
+    local nodes = savedata.map.topology.nodes
+
+    -- loop through the ids
+    local nodes_type = {}
+    for i = 1, height do
+        nodes_type[i] = {}
+        for j = 1, width do
+            nodes_type[i][j] = 0
+        end
+    end
+    for i, id in ipairs(ids) do
+        local node = nodes[i]
+        -- print("[Search your map]", id)
+        local region_type = id:split(":")[1]
+        local polygon_vertices = node.poly
+        if region_type == "MoonIsland_IslandShards" then
+            for _, vertex in ipairs(polygon_vertices) do
+                table.insert(MoonIsland_IslandShards_poly, vertex)
+            end
+        elseif region_type == "MoonIsland_Beach" then
+            for _, vertex in ipairs(polygon_vertices) do
+                table.insert(MoonIsland_Beach_poly, vertex)
+            end
+        elseif region_type == "MoonIsland_Baths" then
+            for _, vertex in ipairs(polygon_vertices) do
+                table.insert(MoonIsland_Baths_poly, vertex)
+            end
+        elseif region_type == "MoonIsland_Forest" then
+            for _, vertex in ipairs(polygon_vertices) do
+                table.insert(MoonIsland_Forest_poly, vertex)
+            end
+        elseif region_type == "MoonIsland_Mine" then
+            for _, vertex in ipairs(polygon_vertices) do
+                table.insert(MoonIsland_Mine_poly, vertex)
+            end
+        end
+    end
+    
+    -- check the connection.
+    -- Usually, MoonIsland_IslandShards is connected to MoonIsland_Beach, MoonIsland_Beach is connected to MoonIsland:Baths, MoonIsland:Baths is connected to MoonIsland:Forest and MoonIsland:Mine
+    -- The coonnected regions should have more than one vertex in common, check if the usual connection is satisfied
+
+    local broken_num = 0
+    local function check_connection_between_region(vertices_list1, vertices_list2)
+        local num_common_vertices = 0
+        for _, vertex1 in ipairs(vertices_list1) do
+            for _, vertex2 in ipairs(vertices_list2) do
+                if vertex1[1] == vertex2[1] and vertex1[2] == vertex2[2] then
+                    num_common_vertices = num_common_vertices + 1
+                    break
+                end
+            end
+        end
+        if num_common_vertices < 2 then
+            return false
+        else
+            return true
+        end
+    end
+
+
+    if not check_connection_between_region(MoonIsland_IslandShards_poly, MoonIsland_Beach_poly) then
+        print("[Search your map] MoonIsland_IslandShards is not connected to MoonIsland_Beach")
+        broken_num = broken_num + 1
+    end
+    if not check_connection_between_region(MoonIsland_Beach_poly, MoonIsland_Baths_poly) then
+        print("[Search your map] MoonIsland_Beach is not connected to MoonIsland_Baths")
+        broken_num = broken_num + 1
+    end
+    if not check_connection_between_region(MoonIsland_Baths_poly, MoonIsland_Forest_poly) then
+        print("[Search your map] MoonIsland_Baths is not connected to MoonIsland_Forest")
+        broken_num = broken_num + 1
+    end
+    if not check_connection_between_region(MoonIsland_Baths_poly, MoonIsland_Mine_poly) then
+        print("[Search your map] MoonIsland_Baths is not connected to MoonIsland_Mine")
+        broken_num = broken_num + 1
+    end
+
+    if broken_num > 0 then
+        if _G[world_id].check_statistic["moon_island_broken"]["success_times"] == 0 then
+            BEST_SEED_SO_FAR = SEED
+        end
+        _G[world_id].check_statistic["moon_island_broken"]["success_times"] = _G[world_id].check_statistic["moon_island_broken"]["success_times"] + 1
+
+        table_to_json_file(MoonIsland_IslandShards_poly, "unsafedata/"..world_id.."_MoonIsland_IslandShards_poly.json")
+        table_to_json_file(MoonIsland_Beach_poly, "unsafedata/"..world_id.."_MoonIsland_Beach_poly.json")
+        table_to_json_file(MoonIsland_Baths_poly, "unsafedata/"..world_id.."_MoonIsland_Baths_poly.json")
+        table_to_json_file(MoonIsland_Forest_poly, "unsafedata/"..world_id.."_MoonIsland_Forest_poly.json")
+
+        return true
+    else
+        return false
+        -- return true
+    end
+end
+
+-- Calculate the cross product of two points relative to a reference point, used to determine direction
+local function crossProduct(p1, p2, p0)
+    return (p1[1] - p0[1]) * (p2[2] - p0[2]) - (p2[1] - p0[1]) * (p1[2] - p0[2])
+end
+
+-- Function 1: Compute the convex hull
+-- Input: points (format: {{x1, y1}, {x2, y2}, ...})
+-- Output: Convex hull points (same format)
+function computeConvexHull(points)
+    local n = #points
+    if n < 3 then return points end -- Return directly if fewer than 3 points
+
+    -- Sort points by x-coordinate, then by y-coordinate if x is equal
+    local sortedPoints = {}
+    for i, p in ipairs(points) do
+        sortedPoints[i] = {p[1], p[2]} -- Copy points to avoid modifying the original data
+    end
+    table.sort(sortedPoints, function(a, b)
+        return a[1] < b[1] or (a[1] == b[1] and a[2] < b[2])
+    end)
+
+    -- Build the lower hull
+    local lower = {}
+    for i = 1, n do
+        while #lower >= 2 and crossProduct(lower[#lower-1], lower[#lower], sortedPoints[i]) <= 0 do
+            table.remove(lower)
+        end
+        table.insert(lower, sortedPoints[i])
+    end
+
+    -- Build the upper hull
+    local upper = {}
+    for i = n, 1, -1 do
+        while #upper >= 2 and crossProduct(upper[#upper-1], upper[#upper], sortedPoints[i]) <= 0 do
+            table.remove(upper)
+        end
+        table.insert(upper, sortedPoints[i])
+    end
+
+    -- Merge the lower and upper hulls (remove duplicate start and end points)
+    table.remove(upper, 1)
+    table.remove(upper, #upper)
+    for _, p in ipairs(upper) do
+        table.insert(lower, p)
+    end
+
+    return lower
+end
+
+-- Function 2: Check if a point is inside the convex hull (using ray casting)
+-- Input: px, py (x, y coordinates of the point), hull (convex hull points)
+-- Output: true (inside the hull) or false (outside the hull)
+function isPointInConvexHull(px, py, hull)
+    local n = #hull
+    if n < 3 then return false end -- Not a polygon if fewer than 3 points
+    
+    local inside = false
+    for i = 1, n do
+        local j = (i % n) + 1
+        local xi, yi = hull[i][1], hull[i][2]
+        local xj, yj = hull[j][1], hull[j][2]
+        
+        if ((yi > py) ~= (yj > py)) then
+            local intersectX = xi + (py - yi) * (xj - xi) / (yj - yi)
+            if (px < intersectX) then
+                inside = not inside
+            end
+        end
+    end
+    
+    return inside
+end
+
+local function check_inside_ring(savedata, world_id, my_log_file)
+    local inside_the_ring = _G[world_id].inside_the_ring
+    if #inside_the_ring == 0 then
+        -- print("[Search your map] inside the ring is not set")
+        return true
+    else
+        -- print("[Search your map] inside the ring is set")
+    end
+    -- Get the world 
+    local num_of_voronoi_nodes = #savedata.map.topology.nodes
+    local mainland_island_samples = {}
+    local hermit_xy = {}
+    local monkey_xy = {}
+    local moon_island_xy = {}
+    for j = 1, num_of_voronoi_nodes do
+        local area_type = savedata.map.topology.ids[j]
+        if string.find(savedata.map.topology.ids[j], "COVE") then
+            -- print("[Search your map] COVE found")
+        elseif string.find(savedata.map.topology.ids[j], "REGION_LINK") then
+            -- print("[Search your map] REGION_LINK found")
+        elseif string.find(savedata.map.topology.ids[j], "HermitcrabIsland") then
+            -- print("[Search your map] HermitcrabIsland found")
+            table.insert(hermit_xy, {savedata.map.topology.nodes[j].x, savedata.map.topology.nodes[j].y})
+        elseif string.find(savedata.map.topology.ids[j], "MonkeyIsland") then
+            -- print("[Search your map] MonkeyIsland found")
+            table.insert(monkey_xy, {savedata.map.topology.nodes[j].x, savedata.map.topology.nodes[j].y})
+        elseif string.find(savedata.map.topology.ids[j], "MoonIsland") then
+            -- print("[Search your map] MoonIsland found")
+            table.insert(moon_island_xy, {savedata.map.topology.nodes[j].x, savedata.map.topology.nodes[j].y})
+        else
+            table.insert(mainland_island_samples, {savedata.map.topology.nodes[j].x, savedata.map.topology.nodes[j].y})
+        end
+    end
+
+    for _, value in ipairs(inside_the_ring) do
+        _G[world_id].check_statistic["inside_the_ring"][value]["check_times"] = _G[world_id].check_statistic["inside_the_ring"][value]["check_times"] + 1
+        if value == "hermit_island" then
+            for _, xy in ipairs(hermit_xy) do
+                local inside = isPointInConvexHull(xy[1], xy[2], computeConvexHull(mainland_island_samples))
+                if not inside then
+                    print("[Search your map] HermitcrabIsland is not inside the mainland")
+                    return false
+                else
+                    print("[Search your map] HermitcrabIsland is inside the mainland")
+                    _G[world_id].check_statistic["inside_the_ring"][value]["success_times"] = _G[world_id].check_statistic["inside_the_ring"][value]["success_times"] + 1
+                end
+            end
+        elseif value == "monkey_island" then
+            for _, xy in ipairs(monkey_xy) do
+                local inside = isPointInConvexHull(xy[1], xy[2], computeConvexHull(mainland_island_samples))
+                if not inside then
+                    print("[Search your map] MonkeyIsland is not inside the mainland")
+                    return false
+                else
+                    print("[Search your map] MonkeyIsland is inside the mainland")
+                    _G[world_id].check_statistic["inside_the_ring"][value]["success_times"] = _G[world_id].check_statistic["inside_the_ring"][value]["success_times"] + 1
+                end
+            end
+        elseif value == "moon_island" then
+            local moon_island_inside = false
+            for _, xy in ipairs(moon_island_xy) do
+                local inside = isPointInConvexHull(xy[1], xy[2], computeConvexHull(mainland_island_samples))
+                if inside then
+                    moon_island_inside = true
+                    break
+                end
+            end
+            if not moon_island_inside then
+                print("[Search your map] MoonIsland is not inside the mainland")
+                return false
+            else
+                print("[Search your map] MoonIsland is inside the mainland")
+                _G[world_id].check_statistic["inside_the_ring"][value]["success_times"] = _G[world_id].check_statistic["inside_the_ring"][value]["success_times"] + 1
+            end
+        end
+    end
+    return true
+
+end
 
 -- Function to check if the given cell is valid and passable
 -- Utility function to check if a cell is within the grid and passable
@@ -1282,13 +1573,25 @@ end
 local function get_wormwhole_pairs(savedata, world_id, my_log_file)
     -- Find the which tiles the wormholes belong to
     local wormholes
-    if world_id == "SURVIVAL_TOGETHER" then
+    local world_type
+    if savedata.map.prefab == "forest" then
+        world_type = "forest"
         wormholes = savedata.ents["wormhole"]
-    elseif world_id == "DST_CAVE" then
+    elseif savedata.map.prefab == "cave" then
+        world_type = "cave"
         wormholes = savedata.ents["tentacle_pillar"]
     else
+        world_type = "unknown"
+        print("[Search your map] WARNING! Please leave a message on Steam if you see this. world type is unknown")
         wormholes = savedata.ents["wormhole"]
     end
+    -- if world_id == "SURVIVAL_TOGETHER" then
+    --     wormholes = savedata.ents["wormhole"]
+    -- elseif world_id == "DST_CAVE" then
+    --     wormholes = savedata.ents["tentacle_pillar"]
+    -- else
+    --     wormholes = savedata.ents["wormhole"]
+    -- end
 
     if wormholes == nil then
         print("[Search your map] wormholes is nil")
@@ -1322,16 +1625,9 @@ local function get_wormwhole_pairs(savedata, world_id, my_log_file)
     return wormhole_pairs
 end
 
--- [called before worldgen] Clearlove add this function to check the predefined tasks and setpiece
-local function check_for_tasks_wanted(choose_tasks, world_id)
-    -- choose_tasks is a table, each element is also a table, cooresponds to a task. 
-    -- For each element (task), get its "id", and "set_pieces". 
-    -- The task["id"] is a string. Collect all these strings
-    -- The task["set_pieces"] is also a table, each value is in the form {"name": WormholeGrass}. Collect the value of all these name of set_pieces
-    local tasks_selected = {}
+local function check_for_setpieces_wanted(choose_tasks, world_id)
     local setpieces_selected = {}
     for i, task in ipairs(choose_tasks) do
-        table.insert(tasks_selected, task["id"])
         if task["set_pieces"] ~= nil then
             for j, setpiece in ipairs(task["set_pieces"]) do
                 table.insert(setpieces_selected, setpiece["name"])
@@ -1345,9 +1641,6 @@ local function check_for_tasks_wanted(choose_tasks, world_id)
         end
     end
 
-    -- If Do not set, place set to {}
-    local tasks_required = _G[world_id].tasks_required
-    local tasks_disliked = _G[world_id].tasks_disliked
     local setpieces_required = _G[world_id].setpieces_required
     local traps_required = _G[world_id].traps_required
     for _, value in ipairs(traps_required) do
@@ -1355,13 +1648,6 @@ local function check_for_tasks_wanted(choose_tasks, world_id)
     end
     local setpieces_disliked = _G[world_id].setpieces_disliked  -- only one set piece will be choosen, kept if mod is used
 
-    -- Check if all the tasks and the setpieces required are in the tasks_selected and setpieces_selected, if not, return false
-    for i, task in ipairs(tasks_required) do
-        if not table.contains(tasks_selected, task) then
-            print("[Search your map] task", task, "is not in tasks_selected but is required")
-            return false
-        end
-    end
     for i, setpiece in ipairs(setpieces_required) do
         if not table.contains(setpieces_selected, setpiece) then
             print("[Search your map] setpiece", setpiece, "is not in setpieces_selected but is required")
@@ -1370,16 +1656,44 @@ local function check_for_tasks_wanted(choose_tasks, world_id)
             -- print("setpiece", setpiece, "is in setpieces_selected and is required")
         end
     end
-    -- Check if all the tasks and the setpieces disliked are not in the tasks_selected and setpieces_selected, if not, return false
-    for i, task in ipairs(tasks_disliked) do
-        if table.contains(tasks_selected, task) then
-            print("[Search your map] task", task, "is in tasks_selected but is disliked")
-            return false
-        end
-    end
+
     for i, setpiece in ipairs(setpieces_disliked) do
         if table.contains(setpieces_selected, setpiece) then
             print("[Search your map] setpiece", setpiece, "is in setpieces_selected but is disliked")
+            return false
+        end
+    end
+
+    return true
+end
+
+-- [called before worldgen] Clearlove add this function to check the predefined tasks and setpiece
+local function check_for_tasks_wanted(choose_tasks, world_id)
+    -- choose_tasks is a table, each element is also a table, cooresponds to a task. 
+    -- For each element (task), get its "id", and "set_pieces". 
+    -- The task["id"] is a string. Collect all these strings
+    -- The task["set_pieces"] is also a table, each value is in the form {"name": WormholeGrass}. Collect the value of all these name of set_pieces
+    local tasks_selected = {}
+
+    -- If Do not set, place set to {}
+    local tasks_required = _G[world_id].tasks_required
+    local tasks_disliked = _G[world_id].tasks_disliked
+
+    for i, task in ipairs(choose_tasks) do
+        table.insert(tasks_selected, task["id"])
+    end
+
+    -- Check if all the tasks and the setpieces required are in the tasks_selected and setpieces_selected, if not, return false
+    for i, task in ipairs(tasks_required) do
+        if not table.contains(tasks_selected, task) then
+            -- print("[Search your map] task", task, "is not in tasks_selected but is required")
+            return false
+        end
+    end
+    -- Check if all the tasks and the setpieces disliked are not in the tasks_selected and setpieces_selected, if not, return false
+    for i, task in ipairs(tasks_disliked) do
+        if table.contains(tasks_selected, task) then
+            -- print("[Search your map] task", task, "is in tasks_selected but is disliked")
             return false
         end
     end
@@ -1440,7 +1754,7 @@ local function check_entity_num_criterion(savedata, world_id, my_log_file)
         local entity_name = entity["name"]
         local entity_number = entity["number"]
         _G[world_id].check_statistic["required_entities"][entity_name]["check_times"] = _G[world_id].check_statistic["required_entities"][entity_name]["check_times"] + 1
-        if entity_name ~= "total_clockwork_creatures" and entity_name ~= "total_sculptures" and entity_name ~= "lightninggoat_herd" and entity_name~="ruins_statue_all" and entity_name~="ruins_statue_gem" then
+        if entity_name ~= "total_clockwork_creatures" and entity_name ~= "total_sculptures" and entity_name ~= "lightninggoat_herd" and entity_name ~= "three_sculptures" and entity_name~="ruins_statue_all" and entity_name~="ruins_statue_gem" then
             if savedata.ents[entity_name] == nil then
                 local log_str = "entity ".. entity_name .. " is not in savedata.ents"
                 -- my_log_file:write(os.date("%H:%M:%S", os.time()) .. log_str .."\n")
@@ -1528,6 +1842,46 @@ local function check_entity_num_criterion(savedata, world_id, my_log_file)
                 -- print("entity", entity_name, "is not enough, required", entity_number, "but only", total_sculptures)
                 local log_str = "entity ".. entity_name .. " is not enough, required".. entity_number .. "but only".. total_sculptures
                 -- my_log_file:write(os.date("%H:%M:%S", os.time()) .. log_str .."\n")
+                print("[Search your map] "..log_str)
+                return false
+            end
+            if _G[world_id].check_statistic["required_entities"][entity_name]["success_times"] == 0 then
+                BEST_SEED_SO_FAR = SEED
+            end
+            _G[world_id].check_statistic["required_entities"][entity_name]["success_times"] = _G[world_id].check_statistic["required_entities"][entity_name]["success_times"] + 1
+        elseif entity_name == "three_sculptures" then
+            local sculpture_rook = savedata.ents["sculpture_rook"]
+            local sculpture_knight = savedata.ents["sculpture_knight"]
+            local sculpture_bishop = savedata.ents["sculpture_bishop"]
+            local three_sculptures_num = 0
+            -- for all scupture rook, check if if there is at least one sculpture knight and one sculpture bishop in 180 distance
+            for j, sculpture_rook_instance in ipairs(sculpture_rook) do
+                local rook_x = sculpture_rook_instance["x"]
+                local rook_z = sculpture_rook_instance["z"]
+                local found_knight = false
+                local found_bishop = false
+                for k, sculpture_knight_instance in ipairs(sculpture_knight) do
+                    local knight_x = sculpture_knight_instance["x"]
+                    local knight_z = sculpture_knight_instance["z"]
+                    if (rook_x - knight_x)^2 + (rook_z - knight_z)^2 <= 32400 then
+                        found_knight = true
+                        break
+                    end
+                end
+                for l, sculpture_bishop_instance in ipairs(sculpture_bishop) do
+                    local bishop_x = sculpture_bishop_instance["x"]
+                    local bishop_z = sculpture_bishop_instance["z"]
+                    if (rook_x - bishop_x)^2 + (rook_z - bishop_z)^2 <= 32400 then
+                        found_bishop = true
+                        break
+                    end
+                end
+                if found_knight and found_bishop then
+                    three_sculptures_num = three_sculptures_num + 1
+                end
+            end
+            if three_sculptures_num < entity_number then
+                local log_str = "entity ".. entity_name .. " is not enough, required".. entity_number .. "but only".. three_sculptures_num
                 print("[Search your map] "..log_str)
                 return false
             end
@@ -1822,13 +2176,16 @@ local function tiles_near_regions(savedata, world_id, my_log_file, grid, extra_e
 
         for j = 1, num_of_voronoi_nodes do
             local area_type = savedata.map.topology.ids[j]:split(":")[1]
-            local ismoon_land = node_name == "Moon Island" and string.find(area_type, "MoonIsland") ~= nil
-            if area_type == node_name or ismoon_land then
-                local x = savedata.map.topology.nodes[j].x
-                local z = savedata.map.topology.nodes[j].y
-                local tile_x = math.floor((x/TILE_SCALE + savedata.map.width/2.0)/merge_tiles)
-                local tile_z = math.floor((z/TILE_SCALE + savedata.map.height/2.0)/merge_tiles)
-                table.insert(node_tiles, {tile_x, tile_z})
+            if string.find(savedata.map.topology.ids[j], "COVE") then
+            else
+                local ismoon_land = node_name == "Moon Island" and string.find(area_type, "MoonIsland") ~= nil
+                if area_type == node_name or ismoon_land then
+                    local x = savedata.map.topology.nodes[j].x
+                    local z = savedata.map.topology.nodes[j].y
+                    local tile_x = math.floor((x/TILE_SCALE + savedata.map.width/2.0)/merge_tiles)
+                    local tile_z = math.floor((z/TILE_SCALE + savedata.map.height/2.0)/merge_tiles)
+                    table.insert(node_tiles, {tile_x, tile_z})
+                end
             end
         end
         table.insert(near_regions_tiles, {node_name, node_tiles, node_distance})
@@ -2445,8 +2802,10 @@ local function get_save_data_score(savedata, world_id, my_log_file, grid, extra_
             table.insert(extra_edges_new, {{tile_x1, tile_z1}, {tile_x2, tile_z2}})
         end
         local current_good_tiles_new = {}
-        for i = 1, height do
-            for j = 1, width do
+        local height_before_downsample = math.floor(savedata.map.height / _G.merge_tiles) + 1
+        local width_before_downsample = math.floor(savedata.map.width / _G.merge_tiles) + 1
+        for i = 1, height_before_downsample do
+            for j = 1, width_before_downsample do
                 if current_good_tiles[i] and current_good_tiles[i][j] then
                     local new_i = math.floor((i+1)/2)
                     local new_j = math.floor((j+1)/2)
@@ -2536,6 +2895,11 @@ local function get_save_data_score(savedata, world_id, my_log_file, grid, extra_
         end
     end
 
+    -- table_to_json_file(source_infos, "unsafedata/"..world_id.."_source_infos.json")
+    -- table_to_json_file(extra_edges, "unsafedata/"..world_id.."_extra_edges.json")
+    -- table_to_json_file(current_good_tiles, "unsafedata/"..world_id.."_current_good_tiles.json")
+    -- table_to_json_file(total_distance_record, "unsafedata/"..world_id.."_total_distance_record.json")
+
     -- return the minimum distance in the total_distance_record
     local final_distance = math.huge
     local best_ij = nil
@@ -2593,12 +2957,23 @@ local function check_save_data(savedata, world_id, my_log_file)
     -- my_log_file:write(os.date("%H:%M:%S", os.time()) .. "checking near entities" .."\n")
     local current_good_tiles = {}
     -- Add all to current_good_tiles
-    for i = 1, height do
-        current_good_tiles[i] = {}
-        for j = 1, width do
-            current_good_tiles[i][j] = true
+    if not _G[world_id].must_onlnad then
+        for i = 1, height do
+            current_good_tiles[i] = {}
+            for j = 1, width do
+                current_good_tiles[i][j] = true
+            end
+        end
+    else
+        for i = 1, height do
+            current_good_tiles[i] = {}
+            for j = 1, width do
+                local tiles_ij = WorldSim:GetTile(i, j)              
+                current_good_tiles[i][j] = TileGroupManager:IsLandTile(tiles_ij)
+            end
         end
     end
+
     local current_good_tiles_num = height * width
     current_good_tiles, current_good_tiles_num = tiles_near_entities(savedata, world_id, my_log_file, grid, extra_edges, current_good_tiles, current_good_tiles_num)
     -- my_log_file:write(os.date("%H:%M:%S", os.time()) .. "checking near regions" .."\n")
@@ -2700,6 +3075,15 @@ local function check_save_data(savedata, world_id, my_log_file)
         print("[Search your map] time for check_connected_moon_island(ms):", time_for_BFS*1000)
     end
 
+    if not check_broken_moon_island(savedata, world_id, my_log_file) then
+        return false
+    else
+    end
+
+    if not check_inside_ring(savedata, world_id, my_log_file) then
+        return false
+    end
+
     start_time = os.clock()
     if not check_connected_ancient(savedata, world_id, my_log_file) then
         end_time = os.clock()
@@ -2717,7 +3101,7 @@ local function check_save_data(savedata, world_id, my_log_file)
     -- TODO：检查tiles是不是陆地
 
     -- save the data to file
-    -- table_to_json_file(savedata, world_id.."_worldsavedata.json")
+    -- table_to_json_file(savedata, "unsafedata/"..world_id.."_worldsavedata.json")
     -- table_to_json_file(good_tiles, world_id.."_good_tiles.json")
     -- write the seed to file
     -- my_log_file:write(os.date("%H:%M:%S", os.time()) .. "SEED:" .. SEED .."\n")
@@ -2739,7 +3123,7 @@ local function check_save_data(savedata, world_id, my_log_file)
         print("[Search your map] get a possible seed")
         print("[Search your map]", _G.min_distance_so_far)
         print("[Search your map]", map_score)
-        insert_seed(SEED, map_score, best_xz)
+        insert_seed(SEED, map_score, best_xz, _G[world_id].keep_times)
         if _G.min_distance_so_far > map_score then
             _G.min_distance_so_far = map_score
             BEST_SEED_SO_FAR = SEED
@@ -2749,6 +3133,29 @@ local function check_save_data(savedata, world_id, my_log_file)
     else
         return false
     end
+end
+
+function GenerateNew_safe(debug, world_gen_data)
+    local data
+    if _G[world_gen_data.level_data.id].ignore_crash then
+        print("[Search your map] now using pcall")
+        local status, result = pcall(GenerateNew, debug, world_gen_data)
+        if status then
+            data = result
+        else
+            print("[Search your map] Find a seed cause game to crash, skip it.")
+            collectgarbage("collect")
+            WorldSim:ResetAll()
+            -- The following two maybe inaccurate
+            -- _G.total_retry_by_klei = _G.total_retry_by_klei + 1
+            -- _G.total_seed_by_klei = _G.total_seed_by_klei + 1
+            _G.total_crash_seeds = _G.total_crash_seeds + 1
+            return nil
+        end
+    else
+        data = GenerateNew(debug, world_gen_data)
+    end
+    return data
 end
 
 
@@ -2765,7 +3172,7 @@ function GenerateNew(debug, world_gen_data)
 	local level
 	local choose_tasks
     local world_id = world_gen_data.level_data.id
-    local my_log_file = io.open("worldgen_log_"..world_id..".txt", "a")
+    local my_log_file = io.open("unsafedata/worldgen_log_"..world_id..".txt", "a")
 	while true do
 		assert(world_gen_data.level_data ~= nil, "Must provide complete level data to worldgen.")
 		level = Level(world_gen_data.level_data) -- we always generate the first level defined in the data
@@ -2789,12 +3196,15 @@ function GenerateNew(debug, world_gen_data)
             -- log to my custom file, with the time added as the prefix
             -- my_log_file:write(os.date("%H:%M:%S", os.time()) .. "good prefabs" .."\n")
 			level:ChooseTasks()
+            choose_tasks = level:GetTasksForLevel()
+            need_retry = not check_for_tasks_wanted(choose_tasks, world_id)
+		end
+
+        if not need_retry then
 			AddSetPeices(level)
 			level:ChooseSetPieces()
-			
 			choose_tasks = level:GetTasksForLevel()
-
-            need_retry = not check_for_tasks_wanted(choose_tasks, world_id)
+            need_retry = not check_for_setpieces_wanted(choose_tasks, world_id)
 		end
 		
 		if not need_retry then
@@ -2811,6 +3221,7 @@ function GenerateNew(debug, world_gen_data)
             -- You can refer to the bug report https://forums.kleientertainment.com/klei-bug-tracker/dont-starve-together/worldsimresetall-does-not-reset-all-internal-state-as-before-r45374/
             -- If Klei fix it, the following code can be removed.
             -- (Perhaps map/layouts will not never be loaded here, but I still keep it here for safety.)
+            -- I do not know why, but currently(V665003) this is needed. I suppose this is because the update of Balatro(V664019?)
             if package.loaded["map/layouts"] and map_layout_loaded_before_generate==false then
                 -- print("[Search your map]map/layouts is loaded, remove it.")
                 package.loaded["map/layouts"] = nil
@@ -2854,6 +3265,7 @@ function GenerateNew(debug, world_gen_data)
             -- This because Klei introduce a bug in V617969
             -- You can refer to the bug report https://forums.kleientertainment.com/klei-bug-tracker/dont-starve-together/worldsimresetall-does-not-reset-all-internal-state-as-before-r45374/
             -- If Klei fix it, the following code can be removed.
+            -- I do not know why, but currently(V665003) this is needed. I suppose this is because the update of Balatro(V664019?)
             if package.loaded["map/layouts"] and map_layout_loaded_before_generate==false then
                 -- print("[Search your map]map/layouts is loaded, remove it.")
                 package.loaded["map/layouts"] = nil
@@ -3008,6 +3420,19 @@ local function set_up_statistic(world_id)
     if _G[world_id].moon_island_connect~="not set" then
         _G[world_id].check_statistic["moon_island_connect"] = {check_times = 0, success_times = 0}
     end
+    if _G[world_id].moon_island_broken~="not set" then
+        _G[world_id].check_statistic["moon_island_broken"] = {check_times = 0, success_times = 0}
+    end
+    -- master_inside_the_ring
+    _G[world_id].check_statistic["inside_the_ring"] = {}
+    if #_G[world_id].inside_the_ring > 0 then
+        -- for _, value in ipairs(_G[world_id].inside_the_ring) do
+        --     _G[world_id].check_statistic["inside_the_ring"][value]["check_times"] = _G[world_id].check_statistic["inside_the_ring"][value]["check_times"] + 1
+        -- end
+        for _, value in ipairs(_G[world_id].inside_the_ring) do
+            _G[world_id].check_statistic["inside_the_ring"][value] = {check_times = 0, success_times = 0}
+        end
+    end
     -- ancient_connect
     if _G[world_id].ancient_connect~="not set" then
         _G[world_id].check_statistic["ancient_connect"] = {check_times = 0, success_times = 0}
@@ -3024,10 +3449,13 @@ local function print_statistic(my_log_file, world_id)
     local check_times = _G[world_id].check_statistic["insert_setpieces"]["check_times"]
     local success_times = _G[world_id].check_statistic["insert_setpieces"]["success_times"]
     local success_rate = success_times / check_times
+    local log_str = ""
     if success_rate < 1 then
         if not CH then
+            log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "Insert setpieces into map: " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n"
             my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "Insert setpieces into map: " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
         else
+            log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "将选定彩蛋布景插入地图的成功率: " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n"
             my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "将选定彩蛋布景插入地图的成功率: " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
         end
         -- my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "Insert setpieces: " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")   
@@ -3039,8 +3467,10 @@ local function print_statistic(my_log_file, world_id)
         local success_times = _G[world_id].check_statistic["required_entities"][entity_name]["success_times"]
         local success_rate = success_times / check_times
         if not CH then
+            log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "required_entities: " .. entity_name .. " success_rate " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n"
             my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "required_entities: " .. entity_name .. " success_rate " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
         else
+            log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "实体个数: " .. entity_name .. " 成功率 " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n"
             my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "实体个数: " .. entity_name .. " 成功率 " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
         end
         -- my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "required_entities: " .. entity_name .. " " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
@@ -3052,8 +3482,10 @@ local function print_statistic(my_log_file, world_id)
         local success_times = _G[world_id].check_statistic["entities_less_than"][entity_name]["success_times"]
         local success_rate = success_times / check_times
         if not CH then
+            log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "entities_less_than: " .. entity_name .. " success_rate " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n"
             my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "entities_less_than: " .. entity_name .. " success_rate " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
         else
+            log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "实体个数: " .. entity_name .. " 成功率 " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n"
             my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "实体个数: " .. entity_name .. " 成功率 " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
         end
         -- my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "entities_less_than: " .. entity_name .. " " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
@@ -3065,8 +3497,10 @@ local function print_statistic(my_log_file, world_id)
             local success_times = _G[world_id].check_statistic["room_number_setting"][task_need_custom_room.."_"..room_name]["success_times"]
             local success_rate = success_times / check_times
             if not CH then
+                log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "room_number_setting: " .. task_need_custom_room.."_"..room_name .. " success_rate " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n"
                 my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "room_number_setting: " .. task_need_custom_room.."_"..room_name .. " success_rate " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
             else
+                log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "远古房间个数: " .. task_need_custom_room.."_"..room_name .. " 成功率 " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n"
                 my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "远古房间个数: " .. task_need_custom_room.."_"..room_name .. " 成功率 " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
             end
             -- my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "room_number_setting: " .. task_need_custom_room.."_"..room_name .. " " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
@@ -3079,8 +3513,10 @@ local function print_statistic(my_log_file, world_id)
         local success_times = _G[world_id].check_statistic["near_entities"][entity_name]["success_times"]
         local success_rate = success_times / check_times
         if not CH then
+            log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "near_entities: " .. entity_name .. " success_rate " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n"
             my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "near_entities: " .. entity_name .. " success_rate " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
         else
+            log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "靠近实体: " .. entity_name .. " 成功率 " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n"
             my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "靠近实体: " .. entity_name .. " 成功率 " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
         end
         -- my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "near_entities: " .. entity_name .. " " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
@@ -3092,8 +3528,10 @@ local function print_statistic(my_log_file, world_id)
         local success_times = _G[world_id].check_statistic["far_entities"][entity_name]["success_times"]
         local success_rate = success_times / check_times
         if not CH then
+            log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "far_entities: " .. entity_name .. " success_rate " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n"
             my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "far_entities: " .. entity_name .. " success_rate " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
         else
+            log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "远离实体: " .. entity_name .. " 成功率 " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n"
             my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "远离实体: " .. entity_name .. " 成功率 " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
         end
         -- my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "far_entities: " .. entity_name .. " " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
@@ -3105,8 +3543,10 @@ local function print_statistic(my_log_file, world_id)
         local success_times = _G[world_id].check_statistic["near_regions"][node_name]["success_times"]
         local success_rate = success_times / check_times
         if not CH then
+            log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "near_regions: " .. node_name .. " success_rate " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n"
             my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "near_regions: " .. node_name .. " success_rate " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
         else
+            log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "靠近区域: " .. node_name .. " 成功率 " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n"
             my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "靠近区域: " .. node_name .. " 成功率 " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
         end
         -- my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "near_regions: " .. node_name .. " " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
@@ -3117,8 +3557,10 @@ local function print_statistic(my_log_file, world_id)
         local success_times = _G[world_id].check_statistic["under_huge_trees"]["success_times"]
         local success_rate = success_times / check_times
         if not CH then
+            log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "under_huge_trees: " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n"
             my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "under_huge_trees success_rate: " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
         else
+            log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "在巨树下成功率: " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n"
             my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "在巨树下成功率: " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
         end
         -- my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "under_huge_trees: " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
@@ -3129,36 +3571,88 @@ local function print_statistic(my_log_file, world_id)
         local success_times = _G[world_id].check_statistic["moon_island_connect"]["success_times"]
         local success_rate = success_times / check_times
         if not CH then
+            log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "moon_island_connect: " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n"
             my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "moon_island_connect success_rate: " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
         else
+            log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "月岛连大陆成功率: " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n"
             my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "月岛连大陆成功率: " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
         end
         -- my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "moon_island_connect: " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
+    end
+    -- master_moon_island_broken
+    if _G[world_id].moon_island_broken~="not set" then
+        local check_times = _G[world_id].check_statistic["moon_island_broken"]["check_times"]
+        local success_times = _G[world_id].check_statistic["moon_island_broken"]["success_times"]
+        local success_rate = success_times / check_times
+        if not CH then
+            log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "moon_island_broken: " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n"
+            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "moon_island_broken success_rate: " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
+        else
+            log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "月岛破碎成功率: " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n"
+            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "月岛断裂成功率: " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
+        end
+        -- my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "moon_island_broken: " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
+    end
+    -- master_inside_the_ring
+    if #_G[world_id].inside_the_ring > 0 then
+        for _, value in ipairs(_G[world_id].inside_the_ring) do
+            local check_times = _G[world_id].check_statistic["inside_the_ring"][value]["check_times"]
+            local success_times = _G[world_id].check_statistic["inside_the_ring"][value]["success_times"]
+            local success_rate = success_times / check_times
+            local value_name
+            if not CH then
+                value_name = value
+            else
+                if value == "moon_island" then
+                    value_name = "月岛"
+                elseif value == "hermit_island" then
+                    value_name = "隐士岛"
+                elseif value == "monkey_island" then
+                    value_name = "猴岛"
+                end
+            end
+            if not CH then
+                log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. value_name .."inside_the_ring: " ..  " success_rate " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n"
+                my_log_file:write(os.date("%H:%M:%S ", os.time()) .. value_name .. "inside_the_ring: " ..  " success_rate " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
+            else
+                log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. value_name .."在环内: " ..  " 成功率 " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n"
+                my_log_file:write(os.date("%H:%M:%S ", os.time()) .. value_name .. "在环内: " .. " 成功率 " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
+            end
+            -- my_log_file:write(os.date("%H:%M:%S ", os.time()) .. value_name .."inside_the_ring: " .. " " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
+        end
     end
     if _G[world_id].ancient_connect~="not set" then
         local check_times = _G[world_id].check_statistic["ancient_connect"]["check_times"]
         local success_times = _G[world_id].check_statistic["ancient_connect"]["success_times"]
         local success_rate = success_times / check_times
         if not CH then
+            log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "ancient_connect: " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n"
             my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "ancient_connect success_rate: " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
         else
-            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "远古连大陆成功率: " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
+            log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "远古连楼梯成功率: " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n"
+            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "远古连楼梯成功率: " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
         end
         -- my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "ancient_connect: " .. success_rate .. " [" .. success_times .. "/" .. check_times .. "]\n")
     end
     if BEST_SEED_SO_FAR ~= nil then
         if not CH then
+            log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "BEST_SEED_SO_FAR: " .. BEST_SEED_SO_FAR .."\n"
             my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "BEST_SEED_SO_FAR: " .. BEST_SEED_SO_FAR .."\n")
         else
+            log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "当前最佳种子: " .. BEST_SEED_SO_FAR .."\n"
             my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "当前最佳种子: " .. BEST_SEED_SO_FAR .."\n")
         end
         -- my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "BEST_SEED_SO_FAR: " .. BEST_SEED_SO_FAR .."\n")
     end
     if _G.best_xz_for_best_seed ~= nil then
         if not CH then
+            log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "best location for your home: " .. _G.best_xz_for_best_seed[1] .. " " .. _G.best_xz_for_best_seed[2] .."\n"
+            log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "you can use: c_teleport( ".. _G.best_xz_for_best_seed[1] .. ", 0, " .. _G.best_xz_for_best_seed[2] ..") to go to the best place for your base\n"
             my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "best location for your home: " .. _G.best_xz_for_best_seed[1] .. " " .. _G.best_xz_for_best_seed[2] .."\n")
             my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "you can use: c_teleport( ".. _G.best_xz_for_best_seed[1] .. ", 0, " .. _G.best_xz_for_best_seed[2] ..") to go to the best place for your base\n")
         else
+            log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "最佳建家位置: " .. _G.best_xz_for_best_seed[1] .. " " .. _G.best_xz_for_best_seed[2] .."\n"
+            log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "你可以在控制台使用: c_teleport( ".. _G.best_xz_for_best_seed[1] .. ", 0, " .. _G.best_xz_for_best_seed[2] ..") 命令去到最佳建家位置\n"
             my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "最佳建家位置: " .. _G.best_xz_for_best_seed[1] .. " " .. _G.best_xz_for_best_seed[2] .."\n")
             my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "你可以在控制台使用: c_teleport( ".. _G.best_xz_for_best_seed[1] .. ", 0, " .. _G.best_xz_for_best_seed[2] ..") 命令去到最佳建家位置\n")
         end
@@ -3174,23 +3668,35 @@ local function print_statistic(my_log_file, world_id)
     local time_left = time_cost_per_seed * (_G[world_id]["repeat_times"] - _G.num_of_good_seeds_found)
     if not CH then
         my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "total time cost: " .. convertSecondsToHMS(total_time_cost) .. "s\n")
+        log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "total time cost: " .. convertSecondsToHMS(total_time_cost) .. "s\n"
         if _G.num_of_good_seeds_found > 0 then
+            log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "time cost per seed: " .. convertSecondsToHMS(time_cost_per_seed) .. "s\n"
+            log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "time left: " .. convertSecondsToHMS(time_left) .. "s\n"
             my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "time cost per seed: " .. convertSecondsToHMS(time_cost_per_seed) .. "s\n")
             my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "time left: " .. convertSecondsToHMS(time_left) .. "s\n")
         else
+            log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "time cost per seed: can not estimate now, need at least 1 seed to estimate\n"
+            log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "time left: can not estimate now, need at least 1 seed to estimate\n"
             my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "time cost per seed: can not estimate now, need at least 1 seed to estimate\n")
             my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "time left: can not estimate now, need at least 1 seed to estimate\n")
         end
+        log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "num_of_good_seeds_found: " .. _G.num_of_good_seeds_found .."\n"
         my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "num_of_good_seeds_found: " .. _G.num_of_good_seeds_found .."\n")
     else
+        log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "总耗时: " .. convertSecondsToHMS(total_time_cost) .. "s\n"
         my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "总耗时: " .. convertSecondsToHMS(total_time_cost) .. "s\n")
         if _G.num_of_good_seeds_found > 0 then
+            log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "每个种子耗时: " .. convertSecondsToHMS(time_cost_per_seed) .. "s\n"
+            log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "剩余时间: " .. convertSecondsToHMS(time_left) .. "s\n"
             my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "每个种子耗时: " .. convertSecondsToHMS(time_cost_per_seed) .. "s\n")
             my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "剩余时间: " .. convertSecondsToHMS(time_left) .. "s\n")
         else
+            log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "每个种子耗时: 暂时无法估计，需至少找到1个满足约束的种子才可以进行估计\n"
+            log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "剩余时间: 暂时无法估计，需至少找到1个满足约束的种子才可以进行估计\n"
             my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "每个种子耗时: 暂时无法估计，需至少找到1个满足约束的种子才可以进行估计\n")
             my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "剩余时间: 暂时无法估计，需至少找到1个满足约束的种子才可以进行估计\n")
         end
+        log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "已找到的满足约束的种子数量: " .. _G.num_of_good_seeds_found .."\n"
         my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "已找到的满足约束的种子数量: " .. _G.num_of_good_seeds_found .."\n")
     end
     -- my_log_file:write(os.date("%H:%M:%S", os.time()) .. "total time cost: " .. convertSecondsToHMS(total_time_cost) .. "s\n")
@@ -3199,33 +3705,49 @@ local function print_statistic(my_log_file, world_id)
     -- my_log_file:write(os.date("%H:%M:%S", os.time()) .. "num_of_good_seeds_found: " .. _G.num_of_good_seeds_found .."\n")
 
     local top_seeds = _G.top_seeds or {}
+    local keep_times = _G[world_id].keep_times
     if #top_seeds > 1 then
         if not CH then
-            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "top 10 seeds (if your weight parameters are not good enough, it may cause the map not as expected, consider reset the parameters, or you can try the following):\n")
+            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "top "..tostring(keep_times).."seeds (if your weight parameters are not good enough, it may cause the map not as expected, consider reset the parameters, or you can try the following):\n")
+            log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "top "..tostring(keep_times).."seeds (if your weight parameters are not good enough, it may cause the map not as expected, consider reset the parameters, or you can try the following):\n"
         else
-            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "前10个种子（如果你的权重参数设置不够好，可能会导致地图不及预期，考虑重新设置参数，或者你也可以试试下面的怎么样）:\n")
+            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "前"..tostring(keep_times).."个种子（如果你的权重参数设置不够好，可能会导致地图不及预期，考虑重新设置参数，或者你也可以试试下面的怎么样）:\n")
+            log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "前"..tostring(keep_times).."个种子（如果你的权重参数设置不够好，可能会导致地图不及预期，考虑重新设置参数，或者你也可以试试下面的怎么样）:\n"
         end
     end
     for i, seed in ipairs(top_seeds) do
         if not CH then
+            log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "seed: " ..seed.seed.. " score: " .. seed.score .. " location: c_teleport(" .. seed.xz[1] .. ", 0, " .. seed.xz[2] ..")\n"
             my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "seed: " ..seed.seed.. " score: " .. seed.score .. " location: c_teleport(" .. seed.xz[1] .. ", 0, " .. seed.xz[2] ..")\n")
         else
+            log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "种子: " ..seed.seed.. " 得分: " .. seed.score .. " 位置: c_teleport(" .. seed.xz[1] .. ", 0, " .. seed.xz[2] ..")\n"
             my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "种子: " ..seed.seed.. " 得分: " .. seed.score .. " 位置: c_teleport(" .. seed.xz[1] .. ", 0, " .. seed.xz[2] ..")\n")
         end
     end
 
     -- total_retry_by_klei // total_seed_by_klei
     -- my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "average retry: " .. _G.total_retry_by_klei / _G.total_seed_by_klei .."\n")
-end
-
-
-local function insert_seed(seed, score, xz)
-    table.insert(_G.top_seeds, {seed = seed, score = score, xz = xz})
-    table.sort(_G.top_seeds, function(a, b) return a.score < b.score end)
-    if #_G.top_seeds > 10 then
-        table.remove(_G.top_seeds, 11)
+    if _G[world_id].ignore_crash then
+        if not CH then
+            log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "crash times/total seeds: " .. tostring(_G.total_crash_seeds).."/"..tostring(_G.total_seed_by_klei).."\n"
+            log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "If the above ratio is too high, it may significantly increase the generation time, consider turning off the 'ignore crash' option, and then troubleshoot the mod that caused the crash\n"
+            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "crash times/total seeds: " .. tostring(_G.total_crash_seeds).."/"..tostring(_G.total_seed_by_klei).."\n")
+            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "If the above ratio is too high, it may significantly increase the generation time, consider turning off the 'ignore crash' option, and then troubleshoot the mod that caused the crash\n")
+        else
+            log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "崩溃次数/总生成次数: " .. tostring(_G.total_crash_seeds).."/"..tostring(_G.total_seed_by_klei).."\n"
+            log_str = log_str .. os.date("%H:%M:%S ", os.time()) .. "如果上述比例过高，可能导致生成时间显著延长，考虑关闭“忽略崩溃”选项，然后排查引发崩溃的mod\n"
+            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "崩溃次数/总生成次数: " .. tostring(_G.total_crash_seeds).."/"..tostring(_G.total_seed_by_klei).."\n")
+            my_log_file:write(os.date("%H:%M:%S ", os.time()) .. "如果上述比例过高，可能导致生成时间显著延长，考虑关闭“忽略崩溃”选项，然后排查引发崩溃的mod\n")
+        end
     end
+    if not CH then
+        log_str = "Searching log:\n" .. log_str
+    else
+        log_str = "搜索日志:\n" .. log_str
+    end
+    print("[Search your map] "..log_str)
 end
+
 
 -- Clearlove modify this function (add a while loop)
 local function LoadParametersAndGenerate(debug)
@@ -3236,17 +3758,29 @@ local function LoadParametersAndGenerate(debug)
 
     SetDLCEnabled(world_gen_data.DLCEnabled)
 
+    if _G[world_gen_data.level_data.id] == nil then
+        local world_type = world_gen_data.level_data.location
+        if world_type == "forest" then
+            print("[Search your map] Forest world type detected, using forest generation.")
+            _G[world_gen_data.level_data.id] = _G["SURVIVAL_TOGETHER"]
+        elseif world_type == "cave" then
+            print("[Search your map] Cave world type detected, using cave generation.")
+            _G[world_gen_data.level_data.id] = _G["DST_CAVE"]
+        end
+    end
+
+
     -- clear log file worldgen_log_"..world_id..".txt"
     local world_id = world_gen_data.level_data.id
-    local my_log_file = io.open("worldgen_log_"..world_id..".txt", "w")
-    my_log_file:close()
+    -- local my_log_file = io.open("worldgen_log_"..world_id..".txt", "w")
+    -- my_log_file:close()
     set_up_statistic(world_id)
 
     local total_trial_time = 0
     _G.generation_start_time = os.time()
 
     local generated_data = nil
-    generated_data = GenerateNew(debug, world_gen_data)
+    generated_data = GenerateNew_safe(debug, world_gen_data)
     while generated_data == nil or _G.num_of_good_seeds_found < _G[world_id]["repeat_times"] do
         if generated_data == nil then
             print("[Search your map] Worldgen failed, retrying.")
@@ -3256,7 +3790,7 @@ local function LoadParametersAndGenerate(debug)
         total_trial_time = total_trial_time + 1
         -- save to log every 15 times
         if total_trial_time % 15 == 0 then
-            my_log_file = io.open("worldgen_log_"..world_id..".txt", "w")
+            my_log_file = io.open("unsafedata/worldgen_log_"..world_id..".txt", "w")
             print_statistic(my_log_file, world_id)
             my_log_file:close()
         end
@@ -3268,16 +3802,17 @@ local function LoadParametersAndGenerate(debug)
         -- This because Klei introduce a bug in V617969
         -- You can refer to the bug report https://forums.kleientertainment.com/klei-bug-tracker/dont-starve-together/worldsimresetall-does-not-reset-all-internal-state-as-before-r45374/
         -- If Klei fix it, the following code can be removed.
+            -- I do not know why, but currently(V665003) this is needed. I suppose this is because the update of Balatro(V664019?)
         if package.loaded["map/layouts"] and map_layout_loaded_before_generate==false then
             -- print("[Search your map]map/layouts is loaded, remove it.")
             package.loaded["map/layouts"] = nil
         end
         SEED = SetWorldGenSeed(SEED+1)
         -- print("[Search your map] **************SEED***********************: "..SEED)
-        generated_data = GenerateNew(debug, world_gen_data)
+        generated_data = GenerateNew_safe(debug, world_gen_data)
     end
 
-    my_log_file = io.open("worldgen_log_"..world_id..".txt", "w")
+    my_log_file = io.open("unsafedata/worldgen_log_"..world_id..".txt", "w")
     print_statistic(my_log_file, world_id)
     my_log_file:close()
 
@@ -3290,6 +3825,7 @@ local function LoadParametersAndGenerate(debug)
     -- This because Klei introduce a bug in V617969
     -- You can refer to the bug report https://forums.kleientertainment.com/klei-bug-tracker/dont-starve-together/worldsimresetall-does-not-reset-all-internal-state-as-before-r45374/
     -- If Klei fix it, the following code can be removed.
+    -- I do not know why, but currently(V665003) this is needed. I suppose this is because the update of Balatro(V664019?)
     if package.loaded["map/layouts"] and map_layout_loaded_before_generate==false then
         -- print("[Search your map]map/layouts is loaded, remove it.")
         package.loaded["map/layouts"] = nil

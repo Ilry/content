@@ -1,3 +1,5 @@
+---@diagnostic disable
+
 local AddRecipe2 = AddRecipe2
 local tag = "gallop" -- builder_tag
 local function AddRec(name, def)
@@ -86,14 +88,14 @@ local defs = {
   --   gallop_bloodaxe = {
   --     ingredients = {
   --       {"gallop_whip", 1},
-  --       {"shadow_battleaxe", 1},
+  --       {"redgem", 10},
   --       {"dreadstone", 8},
   --       {"horrorfuel", 4},
   --       {"voidcloth", 2}
   --     },
   --     tech = "SHADOWFORGING_TWO",
   --     settings = {nounlock = true, station_tag = "shadow_forge"},
-  --     filters = {"WEAPONS", "MODS",'TAB_LOL_WP'}
+  --     filters = {"WEAPONS",'TAB_LOL_WP'}
   --   }
   -- },
   -- {
@@ -107,7 +109,7 @@ local defs = {
   --     },
   --     tech = "ANCIENT_THREE",
   --     settings = {station_tag = "altar", nounlock = true},
-  --     filters = {"CRAFTING_STATION", "WEAPONS", "MODS",'TAB_LOL_WP'}
+  --     filters = {"CRAFTING_STATION", "WEAPONS",'TAB_LOL_WP'}
   --   }
   -- },
 }

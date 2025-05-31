@@ -1,4 +1,18 @@
 return {
+	"wendy_resurrectiongrave",--多年生植物祭坛
+
+	"gelblob_storage",--恶液储存箱
+
+	"stone_table_round",--圆石桌
+	"stone_table_square",--方石桌
+
+	"stone_chair",--石椅
+	"stone_stool",--石凳
+
+	
+
+
+	"lunar_forge",--辉煌铁匠铺
 	"collapsed_treasurechest",--损坏的箱子
 	"collapsed_dragonflychest",--损坏的箱子
 
@@ -198,6 +212,8 @@ return {
 	"pigshrine",
 	"yotc_carratshrine",
 	"yotb_beefaloshrine",
+	"yots_snakeshrine",--洞穴蠕虫神龛
+	"yotr_rabbitshrine",--兔人神龛
 	--猫
 	"yot_catcoonshrine",
 	"kitcoondecor2",

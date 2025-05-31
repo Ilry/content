@@ -106,6 +106,11 @@ return {
 	},
 	-------------------------------------------------------------------------------------------------------------------------
 	
+	-- acidbatwavemanager.lua
+	acidbatwavemanager = {
+		next_wave_spawn = "<prefab=bat> raid (%d) arrives in %s"
+	},
+	
 	-- alterguardianhat.lua [Prefab]
 	alterguardianhat = {
 		minimum_sanity = "Mínimo de <color=SANITY>sanidade</color> para a luz: <color=SANITY>%s</color> (<color=SANITY>%s%%</color>)",
@@ -332,6 +337,12 @@ return {
 		},
 	},
 
+	-- compostingbin.lua
+	compostingbin = {
+		contents_amount = "Material: %s / %s",
+		detailed_contents_amount = "Material: <color=NATURE>%s<sub>Green</sub></color> + <color=INEDIBLE>%s<sub>Brown</sub></color> / %s",
+	},
+
 	-- container.lua
 	container = {
 		
@@ -406,6 +417,10 @@ return {
 			description = "Você está resistente à <color=MONSTER>sonolência</color> por {duration}(s).",
 		},
 		
+		["healingsalve_acidbuff"] = {
+			name = "<color=#ded15e>Acid Resistance</color>",
+			description = "Immune to <color=#ded15e>acid rain</color> for {duration}(s)."
+		},
 		["tillweedsalve_buff"] = {
 			name = nil,
 			description = "Regenera <color=HEALTH>{amount} vida</color> durante {duration}(s).",
@@ -688,6 +703,11 @@ return {
 		held_refuel = "Guardado <color=SWEETENER><prefab=%s></color> irá reabastecer <color=LIGHT>%s%%</color>.",
 	},
 
+	-- gelblobspawner.lua
+	gelblobspawner = {
+		
+	},
+
 	-- ghostlybond.lua
 	ghostlybond = {
 		abigail = "<color=%s>Vínculo de irmã</color>: %s / %s.",
@@ -765,6 +785,10 @@ return {
 	-- hounded.lua
 	hounded = {
 		time_until_hounds = "Cães de caça irão atacar em %s.",
+		time_until_worms = "<prefab=worm> attack in %s",
+		time_until_worm_boss = "<prefab=worm_boss> attack in %s",
+		time_until_crocodog = "<prefab=crocodog> attack in %s",
+		worm_boss_chance = "<prefab=worm_boss> chance: %.1f%%",
 	},
 
 	-- hunger.lua
@@ -803,6 +827,11 @@ return {
 		hands_describe = "[Tool]: ",
 	},
 
+	-- itemmimic.lua
+	itemmimic = {
+		time_to_reveal = "<prefab=itemmimic_revealed> reveal in: %s",
+	},
+
 	-- kitcoonden.lua
 	kitcoonden = {
 		number_of_kitcoons = "Número de gatinhos: %s"
@@ -827,6 +856,11 @@ return {
 
 	-- lightninggoat.lua
 	lightninggoat_charge = "Irá descarregar em %s dia(s).",
+
+	-- linkeditem.lua
+	linkeditem = {
+		owner = "Owner: %s",
+	},
 
 	-- lunarrift_portal.lua [Prefab]
 	lunarrift_portal = {
@@ -1059,6 +1093,13 @@ return {
 		},
 	},
 
+	-- rabbitkingmanager.lua
+	rabbitkingmanager = {
+		carrots = "<color=VEGGIE>Carrots</color>: <color=VEGGIE>%d</color> / <color=VEGGIE>%d</color>",
+		naughtiness = "Naughtiness: %d / %d",
+		king_status = "%s is alive.", -- Gets a prefab tag inserted with king type.
+	},
+
 	-- rainometer.lua [Prefab]
 	global_wetness = "<color=FROZEN>Umidade Global</color>: <color=FROZEN>%s</color>",
 	precipitation_rate = "<color=WET>Taxa de Precipitação</color>: <color=WET>%s</color>",
@@ -1161,6 +1202,18 @@ return {
 		total_shadow_level = "<color=BLACK>Nível total de sombra</color>: %s",
 	},
 
+	-- shadowparasitemanager.lua
+	shadowparasitemanager = {
+		num_waves = "Waves: %d",
+	}, 
+
+	-- shadow_battleaxe.lua [Prefab]
+	shadow_battleaxe = {
+		level = "Level: %s / %s",
+		boss_progress = "Defeated Bosses: %s / %s",
+		lifesteal = "<color=HEALTH>Life Steal</color>: <color=HEALTH>%.2f</color> (<color=SANITY>%.2f</color>)",
+	},
+
 	-- shadowrift_portal.lua [Prefab]
 	shadowrift_portal = {
 		close = "<prefab=SHADOWRIFT_PORTAL> vai fechar em %s",
@@ -1175,11 +1228,18 @@ return {
 		},
 	},
 
+	-- shadowthrall_mimics.lua
+	shadowthrall_mimics = {
+		mimic_count = "<string=UI.CUSTOMIZATIONSCREEN.ITEMMIMICS>: %s / %s",
+		next_spawn = "<prefab=itemmimic_revealed> will try to spawn in %s",
+	},
+
 	-- shadowthrallmanager.lua
 	shadowthrallmanager = {
 		fissure_cooldown = "A próxima fissura estará pronta para ser tomada em %s",
 		waiting_for_players = "Esperando que um jogador se aproxime",
 		thrall_count = "<color=MOB_SPAWN><prefab=SHADOWTHRALL_HANDS></color>: %d",
+		thralls_alive = "<color=MOB_SPAWN>Thralls alive (%d)</color>: %s",
 		dreadstone_regen = "<color=#942429><prefab=DREADSTONE></color> irá se regenerar em %s",
 	},
 
@@ -1202,8 +1262,8 @@ return {
 			battlesong_sanitygain = "Atingir inimigos restaura  <color=SANITY>%s de sanidade</color>.",
 			battlesong_sanityaura = "As <color=SANITY>auras de sanidade</color> negativas são <color=SANITY>%s%%</color> menos eficazes.",
 			battlesong_fireresistance = "Recebe <color=HEALTH>%s%% menos dano</color> de <color=LIGHT>fogo</color>.",
-			battlesong_lunaraligned = "Receba <color=HEALTH>%s%% menos dano</color> de <color=LUNAR_ALIGNED>inimigos lunares</color>.\nCause <color=HEALTH>%s%% mais dano</color> a <color= SHADOW_ALIGNED>inimigos das sombras</color>.",
-			battlesong_shadowaligned = "Receba <color=HEALTH>%s%% menos dano</color> de <color=SHADOW_ALIGNED>inimigos das sombras</color>.\nCause <color=HEALTH>%s%% mais dano</color> a <color= LUNAR_ALIGNED>inimigos lunares</color>.",
+			battlesong_lunaraligned = "Receba <color=HEALTH>%s%% menos dano</color> de <color=LUNAR_ALIGNED>inimigos lunares</color>.\nCause <color=HEALTH>%s%% mais dano</color> a <color=SHADOW_ALIGNED>inimigos das sombras</color>.",
+			battlesong_shadowaligned = "Receba <color=HEALTH>%s%% menos dano</color> de <color=SHADOW_ALIGNED>inimigos das sombras</color>.\nCause <color=HEALTH>%s%% mais dano</color> a <color=LUNAR_ALIGNED>inimigos lunares</color>.",
 
 			battlesong_instant_taunt = "Provoca todos os inimigos próximos dentro do raio da música.",
 			battlesong_instant_panic = "Apavora inimigos assombráveis próximos durante %s segundo(s).",
@@ -1259,8 +1319,24 @@ return {
 	-- stickable.lua
 	stickable = "<color=FISH>Mexilhões</color>: %s",
 
+	-- support_pillar.lua [Prefab]
+	support_pillar = {
+		reinforcement = "Reinforcement: %s / %s",
+		durability = "Durability: %s / %s",
+	},
+
+	-- support_pillar_dreadstone.lua [Prefab]
+	support_pillar_dreadstone = {
+		time_until_reinforcement_regen = "Next regeneration: %s",
+	},
+
 	-- temperature.lua
 	temperature = "Temperatura: <temperature=%s>",
+
+	-- tentacle_pillar_hole.lua [Prefab]
+	tentacle_pillar_hole = {
+		immunity_time = "<prefab=tentacle> immunity time: %s",
+	},
 
 	-- terrarium.lua [Prefab]
 	terrarium = {

@@ -1,6 +1,10 @@
 GLOBAL.setmetatable(env, {__index = function(t, k) return GLOBAL.rawget(GLOBAL, k) end})
 
+local seg_time = 30
+local total_day_time = seg_time*16
+
 Assets = {
+    Asset("ANIM", "anim/sisters_stories_spell_icon.zip")
 }
 
 -- 本地化
@@ -32,13 +36,12 @@ PrefabFiles = {
     "medical_box",
     "herbs",
     "buffs",
-    --"abigail",
-    --"ghostly_elixirs",
     "moon_eye"
 }
 
--- 骨灰罐调整
-
+TUNING.ABIGAIL_DAMAGE_ABSORPTION = GetModConfigData("ABIGAIL_DEFENSE_SETTING")
+TUNING.SISTURN_GHOSTFLOWER_PRODUCE_TIME_1 = TUNING.SISTURN_GHOSTFLOWER_PRODUCE_TIME_1 * GetModConfigData("SISTURN_GHOSTFLOWER_SETTING")
+TUNING.SISTURN_GHOSTFLOWER_PRODUCE_TIME_2 = TUNING.SISTURN_GHOSTFLOWER_PRODUCE_TIME_2 * GetModConfigData("SISTURN_GHOSTFLOWER_SETTING")
 
 local containers = require "containers"
 local params = {}
@@ -101,12 +104,12 @@ function containers.widgetsetup(container, prefab, data)
 end
 
 -- 登记技能树
-local BuildSkillsData = require("prefabs/skilltree_wendy") -- 角色的技能树文件
+local BuildSkillsData = require("prefabs/skilltree_wendy_mine") -- 角色的技能树文件
 local defs = require("prefabs/skilltree_defs")
 
 local data = BuildSkillsData(defs.FN)
 for k, v in pairs(data.SKILLS) do
-    if v.icon then
+    if v.icon and v.dont_need_icon == nil then
         table.insert(Assets, Asset("ATLAS", "images/skilltree/" .. v.icon .. ".xml"))
         RegisterSkilltreeIconsAtlas("images/skilltree/" .. v.icon .. ".xml", v.icon .. ".tex")
     end
@@ -130,8 +133,13 @@ AddModRPCHandler("wendy", "read_sisters_stories", function(inst, spell, book)
         local sisters_stories = inst.components.inventory:GetItemsWithTag("sisters_stories")
 
         local ghost
+        local spellbookcooldowns = inst.components.spellbookcooldowns
 
         if inst.components.ghostlybond ~= nil then -- 保证组件存在
+            if spellbookcooldowns ~= nil and spellbookcooldowns:IsInCooldown(spell) then
+                return false
+            end
+
             if spell == "moon_essence" then -- 如果是月之精华，则跳过阿比盖尔的检查
                 if inst.components.leader:CountFollowers("pure_ghost") >= 5 then
                     inst.components.talker:Say(STRINGS.WENDY_READ_MOON_ESSENCE_WITH_TOOMANY_GHOST)
@@ -152,6 +160,13 @@ AddModRPCHandler("wendy", "read_sisters_stories", function(inst, spell, book)
 
         if sisters_stories ~= nil then
             if spell == "sweet_memory" and ghost ~= nil then
+
+                local spellbookcooldowns = inst.components.spellbookcooldowns
+
+                if spellbookcooldowns ~= nil and spellbookcooldowns:IsInCooldown("sweet_memory") then
+                    return false
+                end
+
                 inst:DoTaskInTime(1, function()
                     -- 召回阿比盖尔
                     inst.components.ghostlybond:Recall()
@@ -229,6 +244,7 @@ AddModRPCHandler("wendy", "read_sisters_stories", function(inst, spell, book)
                     end
                 end)
             elseif spell == "shadow_present" and ghost ~= nil then
+
                 inst:DoTaskInTime(1, function()
                     -- 召回阿比盖尔
                     inst.components.ghostlybond:Recall()
@@ -239,6 +255,8 @@ AddModRPCHandler("wendy", "read_sisters_stories", function(inst, spell, book)
 
                     book.components.fueled:DoDelta(SpellCost(TUNING.SISTERS_STORIES_SPELL_COST.SHADOW_PRESENT), inst)
                     inst.components.sanity:DoDelta(TUNING.SISTERS_STORIES_SANITY_COST.SHADOW_PRESENT)
+
+                    inst.components.spellbookcooldowns:RestartSpellCooldown("shadow_present", TUNING.SISTERS_STORIES_SPELL_COST.SHADOW_PRESENT_CD)
                 end)
             end
         end

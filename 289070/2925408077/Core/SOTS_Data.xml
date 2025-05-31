@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Kurumi_Gossip -->
+<!-- Author: Ithildin -->
+<!-- DateCreated: 8/22/2021 7:29:39 PM -->
+<GameData>
+	<!-- 海濱 -->
+	<Types>
+		<Row Type="DISTRICT_SOTS_COAST_CAMPUS"						Kind="KIND_DISTRICT"/>
+		<Row Type="BUILDING_SOTS_COAST_LIBRARY"						Kind="KIND_BUILDING"/>
+		<Row Type="BUILDING_SOTS_COAST_UNIVERSITY"					Kind="KIND_BUILDING"/>
+		<Row Type="BUILDING_SOTS_COAST_RESEARCH_LAB"				Kind="KIND_BUILDING"/>
+		
+		<Row Type="DISTRICT_SOTS_COAST_THEATER"						Kind="KIND_DISTRICT"/>
+		<Row Type="BUILDING_SOTS_COAST_AMPHITHEATER"				Kind="KIND_BUILDING"/>
+		<Row Type="BUILDING_SOTS_COAST_MUSEUM_ART"					Kind="KIND_BUILDING"/>
+		<Row Type="BUILDING_SOTS_COAST_MUSEUM_ARTIFACT"				Kind="KIND_BUILDING"/>
+		<Row Type="BUILDING_SOTS_COAST_BROADCAST_CENTER"			Kind="KIND_BUILDING"/>
+		
+		<Row Type="DISTRICT_SOTS_COAST_INDUSTRIAL_ZONE"				Kind="KIND_DISTRICT"/>
+		<Row Type="BUILDING_SOTS_COAST_WORKSHOP"					Kind="KIND_BUILDING"/>
+		<Row Type="BUILDING_SOTS_COAST_FACTORY"						Kind="KIND_BUILDING"/>
+		<Row Type="BUILDING_SOTS_COAST_COAL_PLANT"					Kind="KIND_BUILDING"/>
+		<Row Type="BUILDING_SOTS_COAST_FOSSIL_FUEL_PLANT"			Kind="KIND_BUILDING"/>
+		<Row Type="BUILDING_SOTS_COAST_NUCLEAR_PLANT"				Kind="KIND_BUILDING"/>
+	
+		<Row Type="DISTRICT_SOTS_COAST_HOLY_SITE"					Kind="KIND_DISTRICT"/>
+		<Row Type="BUILDING_SOTS_COAST_SHRINE"						Kind="KIND_BUILDING"/>
+		<Row Type="BUILDING_SOTS_COAST_TEMPLE"						Kind="KIND_BUILDING"/>
+		<Row Type="BUILDING_SOTS_COAST_CATHEDRAL"					Kind="KIND_BUILDING"/>
+		<Row Type="BUILDING_SOTS_COAST_GURDWARA"					Kind="KIND_BUILDING"/>
+		<Row Type="BUILDING_SOTS_COAST_MEETING_HOUSE"				Kind="KIND_BUILDING"/>
+		<Row Type="BUILDING_SOTS_COAST_MOSQUE"						Kind="KIND_BUILDING"/>
+		<Row Type="BUILDING_SOTS_COAST_PAGODA"						Kind="KIND_BUILDING"/>
+		<Row Type="BUILDING_SOTS_COAST_SYNAGOGUE"					Kind="KIND_BUILDING"/>
+		<Row Type="BUILDING_SOTS_COAST_WAT"							Kind="KIND_BUILDING"/>
+		<Row Type="BUILDING_SOTS_COAST_STUPA"						Kind="KIND_BUILDING"/>
+		<Row Type="BUILDING_SOTS_COAST_DAR_E_MEHR"					Kind="KIND_BUILDING"/>
+			
+		<Row Type="DISTRICT_SOTS_COAST_COMMERCIAL_HUB"				Kind="KIND_DISTRICT"/>
+		<Row Type="BUILDING_SOTS_COAST_MARKET"						Kind="KIND_BUILDING"/>
+		<Row Type="BUILDING_SOTS_COAST_BANK"						Kind="KIND_BUILDING"/>
+		<Row Type="BUILDING_SOTS_COAST_STOCK_EXCHANGE"				Kind="KIND_BUILDING"/>
+	
+		<Row Type="DISTRICT_SOTS_COAST_NEIGHBORHOOD"				Kind="KIND_DISTRICT"/>
+		<Row Type="BUILDING_SOTS_COAST_FOOD_MARKET"					Kind="KIND_BUILDING"/>
+		<Row Type="BUILDING_SOTS_COAST_SHOPPINGMALL"				Kind="KIND_BUILDING"/>
+		
+		<Row Type="PROJECT_SOTS_ENHANCE_DISTRICT_INDUSTRIAL_ZONE"	Kind="KIND_PROJECT"/>
+		<Row Type="PROJECT_SOTS_ENHANCE_DISTRICT_COMMERCIAL_HUB"	Kind="KIND_PROJECT"/>
+		<Row Type="PROJECT_SOTS_ENHANCE_DISTRICT_CAMPUS"			Kind="KIND_PROJECT"/>
+		<Row Type="PROJECT_SOTS_ENHANCE_DISTRICT_THEATER"			Kind="KIND_PROJECT"/>
+		<Row Type="PROJECT_SOTS_ENHANCE_DISTRICT_HOLY_SITE"			Kind="KIND_PROJECT"/>
+		
+		<Row Type="PROJECT_SOTS_CONVERT_REACTOR_TO_COAL"			Kind="KIND_PROJECT"/>
+		<Row Type="PROJECT_SOTS_CONVERT_REACTOR_TO_OIL"				Kind="KIND_PROJECT"/>
+		<Row Type="PROJECT_SOTS_CONVERT_REACTOR_TO_URANIUM"			Kind="KIND_PROJECT"/>
+		<Row Type="PROJECT_SOTS_RECOMMISSION_REACTOR"				Kind="KIND_PROJECT"/>
+
+		<Row Type="TRAIT_SOTS_TERRAIN_CHANGER"						Kind="KIND_TRAIT"/>
+	</Types>
+	<Traits>
+		<Row TraitType="TRAIT_SOTS_TERRAIN_CHANGER"/>
+	</Traits>
+	<Districts>
+		<Row DistrictType="DISTRICT_SOTS_COAST_CAMPUS"				Name="LOC_DISTRICT_SOTS_COAST_CAMPUS_NAME"			Description="LOC_DISTRICT_SOTS_COAST_CAMPUS_DESCRIPTION"			PrereqTech="TECH_SCIENTIFIC_THEORY"	PlunderType="PLUNDER_SCIENCE"	PlunderAmount="25" AdvisorType="ADVISOR_TECHNOLOGY"	Cost="54" CostProgressionModel="COST_PROGRESSION_NUM_UNDER_AVG_PLUS_TECH"	CostProgressionParam1="40"		TraitType="TRAIT_SOTS_TERRAIN_CHANGER" Maintenance="1"	RequiresPlacement="true" RequiresPopulation="true"	Aqueduct="false" NoAdjacentCity="false" InternalOnly="false" ZOC="false"	CaptureRemovesBuildings="false" CaptureRemovesCityDefenses="false" MilitaryDomain="NO_DOMAIN" CityStrengthModifier="2" Coast="true" AdjacentToLand="true"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_THEATER"				Name="LOC_DISTRICT_SOTS_COAST_THEATER_NAME"			Description="LOC_DISTRICT_SOTS_COAST_THEATER_DESCRIPTION"			PrereqCivic="CIVIC_OPERA_BALLET"	PlunderType="PLUNDER_CULTURE"	PlunderAmount="25" AdvisorType="ADVISOR_CULTURE"	Cost="54" CostProgressionModel="COST_PROGRESSION_NUM_UNDER_AVG_PLUS_TECH"	CostProgressionParam1="40"		TraitType="TRAIT_SOTS_TERRAIN_CHANGER" Maintenance="1"	RequiresPlacement="true" RequiresPopulation="true"	Aqueduct="false" NoAdjacentCity="false" InternalOnly="false" ZOC="false"	CaptureRemovesBuildings="false" CaptureRemovesCityDefenses="false" MilitaryDomain="NO_DOMAIN" CityStrengthModifier="2" Coast="true" AdjacentToLand="true" Appeal="1"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_INDUSTRIAL_ZONE"		Name="LOC_DISTRICT_SOTS_COAST_INDUSTRIAL_ZONE_NAME"	Description="LOC_DISTRICT_SOTS_COAST_INDUSTRIAL_ZONE_DESCRIPTION"	PrereqTech="TECH_INDUSTRIALIZATION"	PlunderType="PLUNDER_SCIENCE"	PlunderAmount="25" AdvisorType="ADVISOR_GENERIC"	Cost="54" CostProgressionModel="COST_PROGRESSION_NUM_UNDER_AVG_PLUS_TECH"	CostProgressionParam1="40"		TraitType="TRAIT_SOTS_TERRAIN_CHANGER" Maintenance="1"	RequiresPlacement="true" RequiresPopulation="true"	Aqueduct="false" NoAdjacentCity="false" InternalOnly="false" ZOC="false"	CaptureRemovesBuildings="false" CaptureRemovesCityDefenses="false" MilitaryDomain="NO_DOMAIN" CityStrengthModifier="2" Coast="true" AdjacentToLand="true" Appeal="-1"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_HOLY_SITE"			Name="LOC_DISTRICT_SOTS_COAST_HOLY_SITE_NAME"		Description="LOC_DISTRICT_SOTS_COAST_HOLY_SITE_DESCRIPTION"			PrereqTech="TECH_ASTROLOGY"			PlunderType="PLUNDER_FAITH"		PlunderAmount="25" AdvisorType="ADVISOR_RELIGIOUS"	Cost="54" CostProgressionModel="COST_PROGRESSION_NUM_UNDER_AVG_PLUS_TECH"	CostProgressionParam1="40"		TraitType="TRAIT_SOTS_TERRAIN_CHANGER" Maintenance="1"	RequiresPlacement="true" RequiresPopulation="true"	Aqueduct="false" NoAdjacentCity="false" InternalOnly="false" ZOC="false"	CaptureRemovesBuildings="false" CaptureRemovesCityDefenses="false" MilitaryDomain="NO_DOMAIN" CityStrengthModifier="2" Coast="true" AdjacentToLand="true" Appeal="1" AllowsHolyCity="true"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_COMMERCIAL_HUB"		Name="LOC_DISTRICT_SOTS_COAST_COMMERCIAL_HUB_NAME"	Description="LOC_DISTRICT_SOTS_COAST_COMMERCIAL_HUB_DESCRIPTION"	PrereqTech="TECH_ECONOMICS"			PlunderType="PLUNDER_GOLD"		PlunderAmount="50" AdvisorType="ADVISOR_GENERIC"	Cost="54" CostProgressionModel="COST_PROGRESSION_NUM_UNDER_AVG_PLUS_TECH"	CostProgressionParam1="40"		TraitType="TRAIT_SOTS_TERRAIN_CHANGER"					RequiresPlacement="true" RequiresPopulation="true"	Aqueduct="false" NoAdjacentCity="false" InternalOnly="false" ZOC="false"	CaptureRemovesBuildings="false" CaptureRemovesCityDefenses="false" MilitaryDomain="NO_DOMAIN" CityStrengthModifier="2" Coast="true" AdjacentToLand="true" TravelTime="3"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_NEIGHBORHOOD"		Name="LOC_DISTRICT_SOTS_COAST_NEIGHBORHOOD_NAME"	Description="LOC_DISTRICT_SOTS_COAST_NEIGHBORHOOD_DESCRIPTION"		PrereqCivic="CIVIC_URBANIZATION"	PlunderType="PLUNDER_GOLD"		PlunderAmount="50" AdvisorType="ADVISOR_GENERIC"	Cost="54" CostProgressionModel="COST_PROGRESSION_GAME_PROGRESS"				CostProgressionParam1="1000"	TraitType="TRAIT_SOTS_TERRAIN_CHANGER"					RequiresPlacement="true" RequiresPopulation="false"	Aqueduct="false" NoAdjacentCity="false" InternalOnly="false" ZOC="true"		CaptureRemovesBuildings="false" CaptureRemovesCityDefenses="false" MilitaryDomain="NO_DOMAIN" CityStrengthModifier="2" Coast="true" AdjacentToLand="true" Housing="6" OnePerCity="false"/>
+	</Districts>
+	<District_Adjacencies>
+		<Row DistrictType="DISTRICT_SOTS_COAST_CAMPUS"				YieldChangeId="District_Science"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_CAMPUS"				YieldChangeId="SOTS_District_CityCenter_Science"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_CAMPUS"				YieldChangeId="SOTS_Coast_Science"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_CAMPUS"				YieldChangeId="Government_Science"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_CAMPUS"				YieldChangeId="Geothermal_Science"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_CAMPUS"				YieldChangeId="Reef_Science"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_CAMPUS"				YieldChangeId="GBR_Science"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_CAMPUS"				YieldChangeId="Pamukkale_Science"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_THEATER"				YieldChangeId="District_Culture"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_THEATER"				YieldChangeId="SOTS_District_CityCenter_Culture"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_THEATER"				YieldChangeId="SOTS_Coast_Culture"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_THEATER"				YieldChangeId="Wonder_Culture"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_THEATER"				YieldChangeId="Government_Culture"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_THEATER"				YieldChangeId="Pamukkale_Culture"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_INDUSTRIAL_ZONE"		YieldChangeId="District_Production"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_INDUSTRIAL_ZONE"		YieldChangeId="SOTS_District_CityCenter_Production"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_INDUSTRIAL_ZONE"		YieldChangeId="SOTS_Coast_Production"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_INDUSTRIAL_ZONE"		YieldChangeId="Government_Production"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_HOLY_SITE"			YieldChangeId="NaturalWonder_Faith"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_HOLY_SITE"			YieldChangeId="Mountain_Faith1"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_HOLY_SITE"			YieldChangeId="Mountain_Faith2"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_HOLY_SITE"			YieldChangeId="Mountain_Faith3"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_HOLY_SITE"			YieldChangeId="Mountain_Faith4"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_HOLY_SITE"			YieldChangeId="Mountain_Faith5"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_HOLY_SITE"			YieldChangeId="Forest_Faith"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_HOLY_SITE"			YieldChangeId="District_Faith"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_HOLY_SITE"			YieldChangeId="SOTS_Coast_Faith"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_HOLY_SITE"			YieldChangeId="SOTS_District_CityCenter_Faith"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_HOLY_SITE"			YieldChangeId="Pamukkale_Faith"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_COMMERCIAL_HUB"		YieldChangeId="District_Gold"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_COMMERCIAL_HUB"		YieldChangeId="SOTS_District_CityCenter_Gold"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_COMMERCIAL_HUB"		YieldChangeId="SOTS_Coast_Gold"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_COMMERCIAL_HUB"		YieldChangeId="Government_Gold"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_COMMERCIAL_HUB"		YieldChangeId="Pamukkale_Gold"/>
+	</District_Adjacencies>
+	<Adjacency_YieldChanges>
+		<Row ID="SOTS_Coast_Science" 								Description="LOC_SOTS_DISTRICT_COAST_SCIENCE"			YieldType="YIELD_SCIENCE"		YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_COAST"/>
+		<Row ID="SOTS_Coast_Gold" 									Description="LOC_SOTS_DISTRICT_COAST_GOLD"				YieldType="YIELD_GOLD"			YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_COAST"/>
+		<Row ID="SOTS_Coast_Culture"								Description="LOC_SOTS_DISTRICT_COAST_CULTURE"			YieldType="YIELD_CULTURE"		YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_COAST"/>
+		<Row ID="SOTS_Coast_Production"								Description="LOC_SOTS_DISTRICT_COAST_PRODUCTION"		YieldType="YIELD_PRODUCTION"	YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_COAST"/>
+		<Row ID="SOTS_Coast_Faith"									Description="LOC_SOTS_DISTRICT_COAST_FAITH"				YieldType="YIELD_FAITH"			YieldChange="1" TilesRequired="1" AdjacentTerrain="TERRAIN_COAST"/>
+		<Row ID="SOTS_District_CityCenter_Science"					Description="LOC_SOTS_DISTRICT_CITY_CENTER_SCIENCE"		YieldType="YIELD_SCIENCE"		YieldChange="2" TilesRequired="1" AdjacentDistrict="DISTRICT_CITY_CENTER"/>
+		<Row ID="SOTS_District_CityCenter_Gold"						Description="LOC_SOTS_DISTRICT_CITY_CENTER_GOLD"		YieldType="YIELD_GOLD"			YieldChange="2" TilesRequired="1" AdjacentDistrict="DISTRICT_CITY_CENTER"/>
+		<Row ID="SOTS_District_CityCenter_Culture"					Description="LOC_SOTS_DISTRICT_CITY_CENTER_CULTURE"		YieldType="YIELD_CULTURE"		YieldChange="2" TilesRequired="1" AdjacentDistrict="DISTRICT_CITY_CENTER"/>
+		<Row ID="SOTS_District_CityCenter_Production"				Description="LOC_SOTS_DISTRICT_CITY_CENTER_PRODUCTION"	YieldType="YIELD_PRODUCTION"	YieldChange="2" TilesRequired="1" AdjacentDistrict="DISTRICT_CITY_CENTER"/>
+		<Row ID="SOTS_District_CityCenter_Faith"					Description="LOC_SOTS_DISTRICT_CITY_CENTER_FAITH"		YieldType="YIELD_FAITH"			YieldChange="2" TilesRequired="1" AdjacentDistrict="DISTRICT_CITY_CENTER"/>
+	</Adjacency_YieldChanges>
+	<District_GreatPersonPoints>
+		<Row DistrictType="DISTRICT_SOTS_COAST_CAMPUS"				GreatPersonClassType="GREAT_PERSON_CLASS_SCIENTIST"	PointsPerTurn="1"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_THEATER"				GreatPersonClassType="GREAT_PERSON_CLASS_WRITER"	PointsPerTurn="1"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_THEATER"				GreatPersonClassType="GREAT_PERSON_CLASS_ARTIST"	PointsPerTurn="1"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_THEATER"				GreatPersonClassType="GREAT_PERSON_CLASS_MUSICIAN"	PointsPerTurn="1"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_INDUSTRIAL_ZONE"		GreatPersonClassType="GREAT_PERSON_CLASS_ENGINEER"	PointsPerTurn="1"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_HOLY_SITE"			GreatPersonClassType="GREAT_PERSON_CLASS_PROPHET"	PointsPerTurn="1"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_COMMERCIAL_HUB"		GreatPersonClassType="GREAT_PERSON_CLASS_MERCHANT"	PointsPerTurn="1"/>
+	</District_GreatPersonPoints>
+	<District_TradeRouteYields>
+		<Row DistrictType="DISTRICT_SOTS_COAST_CAMPUS"				YieldType="YIELD_FOOD"			YieldChangeAsOrigin="0" YieldChangeAsDomesticDestination="1" YieldChangeAsInternationalDestination="0"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_CAMPUS"				YieldType="YIELD_SCIENCE"		YieldChangeAsOrigin="0" YieldChangeAsDomesticDestination="0" YieldChangeAsInternationalDestination="1"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_THEATER"				YieldType="YIELD_FOOD"			YieldChangeAsOrigin="0" YieldChangeAsDomesticDestination="1" YieldChangeAsInternationalDestination="0"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_THEATER"				YieldType="YIELD_CULTURE"		YieldChangeAsOrigin="0" YieldChangeAsDomesticDestination="0" YieldChangeAsInternationalDestination="1"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_INDUSTRIAL_ZONE"		YieldType="YIELD_PRODUCTION"	YieldChangeAsOrigin="0" YieldChangeAsDomesticDestination="1" YieldChangeAsInternationalDestination="1"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_HOLY_SITE"			YieldType="YIELD_FOOD"			YieldChangeAsOrigin="0" YieldChangeAsDomesticDestination="1" YieldChangeAsInternationalDestination="0"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_HOLY_SITE"			YieldType="YIELD_FAITH"			YieldChangeAsOrigin="0" YieldChangeAsDomesticDestination="0" YieldChangeAsInternationalDestination="1"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_COMMERCIAL_HUB"		YieldType="YIELD_PRODUCTION"	YieldChangeAsOrigin="0" YieldChangeAsDomesticDestination="1" YieldChangeAsInternationalDestination="0"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_COMMERCIAL_HUB"		YieldType="YIELD_GOLD"			YieldChangeAsOrigin="0" YieldChangeAsDomesticDestination="0" YieldChangeAsInternationalDestination="3"/>
+	</District_TradeRouteYields>
+	<District_CitizenYieldChanges>
+		<Row DistrictType="DISTRICT_SOTS_COAST_CAMPUS"				YieldType="YIELD_SCIENCE"		YieldChange="3"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_THEATER"				YieldType="YIELD_CULTURE"		YieldChange="3"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_INDUSTRIAL_ZONE"		YieldType="YIELD_PRODUCTION"	YieldChange="3"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_HOLY_SITE"			YieldType="YIELD_FAITH"			YieldChange="2"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_COMMERCIAL_HUB"		YieldType="YIELD_GOLD"			YieldChange="6"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_NEIGHBORHOOD"		YieldType="YIELD_FOOD"			YieldChange="2"/>
+		<Row DistrictType="DISTRICT_SOTS_COAST_NEIGHBORHOOD"		YieldType="YIELD_GOLD"			YieldChange="2"/>
+	</District_CitizenYieldChanges>
+	<MutuallyExclusiveDistricts>
+		<Row District="DISTRICT_SOTS_COAST_CAMPUS"					MutuallyExclusiveDistrict="DISTRICT_CAMPUS"/>
+		<Row District="DISTRICT_SOTS_COAST_THEATER"					MutuallyExclusiveDistrict="DISTRICT_THEATER"/>
+		<Row District="DISTRICT_SOTS_COAST_INDUSTRIAL_ZONE"			MutuallyExclusiveDistrict="DISTRICT_INDUSTRIAL_ZONE"/>
+		<Row District="DISTRICT_SOTS_COAST_HOLY_SITE"				MutuallyExclusiveDistrict="DISTRICT_HOLY_SITE"/>
+		<Row District="DISTRICT_SOTS_COAST_COMMERCIAL_HUB"			MutuallyExclusiveDistrict="DISTRICT_COMMERCIAL_HUB"/>
+		<Row District="DISTRICT_SOTS_COAST_NEIGHBORHOOD"			MutuallyExclusiveDistrict="DISTRICT_NEIGHBORHOOD"/>
+		
+		<Row District="DISTRICT_CAMPUS"								MutuallyExclusiveDistrict="DISTRICT_SOTS_COAST_CAMPUS"/>
+		<Row District="DISTRICT_THEATER"							MutuallyExclusiveDistrict="DISTRICT_SOTS_COAST_THEATER"/>
+		<Row District="DISTRICT_INDUSTRIAL_ZONE"					MutuallyExclusiveDistrict="DISTRICT_SOTS_COAST_INDUSTRIAL_ZONE"/>
+		<Row District="DISTRICT_HOLY_SITE"							MutuallyExclusiveDistrict="DISTRICT_SOTS_COAST_HOLY_SITE"/>
+		<Row District="DISTRICT_COMMERCIAL_HUB"						MutuallyExclusiveDistrict="DISTRICT_SOTS_COAST_COMMERCIAL_HUB"/>
+		<Row District="DISTRICT_NEIGHBORHOOD"						MutuallyExclusiveDistrict="DISTRICT_SOTS_COAST_NEIGHBORHOOD"/>
+	</MutuallyExclusiveDistricts>
+	<Buildings>
+		<Row BuildingType="BUILDING_SOTS_COAST_LIBRARY"				Name="LOC_BUILDING_SOTS_COAST_LIBRARY_NAME"				Description="LOC_BUILDING_SOTS_COAST_LIBRARY_DESCRIPTION"					PrereqDistrict="DISTRICT_SOTS_COAST_CAMPUS"				PurchaseYield="YIELD_GOLD"	Cost="250"	CitizenSlots="1" TraitType="TRAIT_SOTS_TERRAIN_CHANGER" AdvisorType="ADVISOR_TECHNOLOGY" Maintenance="2"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_UNIVERSITY"			Name="LOC_BUILDING_SOTS_COAST_UNIVERSITY_NAME"			Description="LOC_BUILDING_SOTS_COAST_UNIVERSITY_DESCRIPTION"				PrereqDistrict="DISTRICT_SOTS_COAST_CAMPUS"				PurchaseYield="YIELD_GOLD"	Cost="330"	CitizenSlots="1" TraitType="TRAIT_SOTS_TERRAIN_CHANGER" AdvisorType="ADVISOR_TECHNOLOGY" Maintenance="2" Housing="1"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_RESEARCH_LAB"		Name="LOC_BUILDING_SOTS_COAST_RESEARCH_LAB_NAME"		Description="LOC_BUILDING_SOTS_COAST_RESEARCH_LAB_DESCRIPTION"				PrereqDistrict="DISTRICT_SOTS_COAST_CAMPUS"				PurchaseYield="YIELD_GOLD"	Cost="440"	CitizenSlots="1" TraitType="TRAIT_SOTS_TERRAIN_CHANGER" AdvisorType="ADVISOR_TECHNOLOGY" Maintenance="3" PrereqTech="TECH_CHEMISTRY"/>
+
+		<Row BuildingType="BUILDING_SOTS_COAST_AMPHITHEATER"		Name="LOC_BUILDING_SOTS_COAST_AMPHITHEATER_NAME"		Description="LOC_BUILDING_SOTS_COAST_AMPHITHEATER_DESCRIPTION"				PrereqDistrict="DISTRICT_SOTS_COAST_THEATER"			PurchaseYield="YIELD_GOLD"	Cost="250"	CitizenSlots="1" TraitType="TRAIT_SOTS_TERRAIN_CHANGER" AdvisorType="ADVISOR_CULTURE" Maintenance="2"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_MUSEUM_ART"			Name="LOC_BUILDING_SOTS_COAST_MUSEUM_ART_NAME"			Description="LOC_BUILDING_MUSEUM_ART_DESCRIPTION"						PrereqDistrict="DISTRICT_SOTS_COAST_THEATER"			PurchaseYield="YIELD_GOLD"	Cost="330"	CitizenSlots="1" TraitType="TRAIT_SOTS_TERRAIN_CHANGER" AdvisorType="ADVISOR_CULTURE" Maintenance="2"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_MUSEUM_ARTIFACT"		Name="LOC_BUILDING_SOTS_COAST_MUSEUM_ARTIFACT_NAME"		Description="LOC_BUILDING_MUSEUM_ARTIFACT_DESCRIPTION"					PrereqDistrict="DISTRICT_SOTS_COAST_THEATER"			PurchaseYield="YIELD_GOLD"	Cost="290"	CitizenSlots="1" TraitType="TRAIT_SOTS_TERRAIN_CHANGER" AdvisorType="ADVISOR_CULTURE" Maintenance="2" PrereqCivic="CIVIC_HUMANISM"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_BROADCAST_CENTER"	Name="LOC_BUILDING_SOTS_COAST_BROADCAST_CENTER_NAME"	Description="LOC_BUILDING_SOTS_COAST_BROADCAST_CENTER_DESCRIPTION"			PrereqDistrict="DISTRICT_SOTS_COAST_THEATER"			PurchaseYield="YIELD_GOLD"	Cost="440"	CitizenSlots="1" TraitType="TRAIT_SOTS_TERRAIN_CHANGER" AdvisorType="ADVISOR_CULTURE" Maintenance="3" PrereqTech="TECH_RADIO"/>
+
+		<Row BuildingType="BUILDING_SOTS_COAST_WORKSHOP"			Name="LOC_BUILDING_SOTS_COAST_WORKSHOP_NAME"			Description="LOC_BUILDING_SOTS_COAST_WORKSHOP_DESCRIPTION"					PrereqDistrict="DISTRICT_SOTS_COAST_INDUSTRIAL_ZONE"	PurchaseYield="YIELD_GOLD"	Cost="250"	CitizenSlots="1" TraitType="TRAIT_SOTS_TERRAIN_CHANGER" AdvisorType="ADVISOR_GENERIC" Maintenance="2"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_FACTORY"				Name="LOC_BUILDING_SOTS_COAST_FACTORY_NAME"				Description="LOC_BUILDING_SOTS_COAST_FACTORY_DESCRIPTION"					PrereqDistrict="DISTRICT_SOTS_COAST_INDUSTRIAL_ZONE"	PurchaseYield="YIELD_GOLD"	Cost="330"	CitizenSlots="1" TraitType="TRAIT_SOTS_TERRAIN_CHANGER" AdvisorType="ADVISOR_GENERIC" Maintenance="2" RegionalRange="6"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_COAL_PLANT"			Name="LOC_BUILDING_SOTS_COAST_COAL_PLANT_NAME"			Description="LOC_BUILDING_SOTS_COAST_COAL_PLANT_DESCRIPTION"			PrereqDistrict="DISTRICT_SOTS_COAST_INDUSTRIAL_ZONE"	PurchaseYield="YIELD_GOLD"	Cost="300"	CitizenSlots="1" TraitType="TRAIT_SOTS_TERRAIN_CHANGER" AdvisorType="ADVISOR_GENERIC" Maintenance="3" RegionalRange="6"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_FOSSIL_FUEL_PLANT"	Name="LOC_BUILDING_SOTS_COAST_FOSSIL_FUEL_PLANT_NAME"	Description="LOC_BUILDING_SOTS_COAST_FOSSIL_FUEL_PLANT_DESCRIPTION"	PrereqDistrict="DISTRICT_SOTS_COAST_INDUSTRIAL_ZONE"	PurchaseYield="YIELD_GOLD"	Cost="360"	CitizenSlots="1" TraitType="TRAIT_SOTS_TERRAIN_CHANGER" AdvisorType="ADVISOR_GENERIC" Maintenance="3" RegionalRange="6" PrereqTech="TECH_ELECTRICITY"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_NUCLEAR_PLANT"		Name="LOC_BUILDING_SOTS_COAST_NUCLEAR_PLANT_NAME"		Description="LOC_BUILDING_SOTS_COAST_NUCLEAR_PLANT_DESCRIPTION"		PrereqDistrict="DISTRICT_SOTS_COAST_INDUSTRIAL_ZONE"	PurchaseYield="YIELD_GOLD"	Cost="480"	CitizenSlots="1" TraitType="TRAIT_SOTS_TERRAIN_CHANGER" AdvisorType="ADVISOR_GENERIC" Maintenance="3" RegionalRange="6" PrereqTech="TECH_COMPUTERS"/>
+
+		<Row BuildingType="BUILDING_SOTS_COAST_SHRINE"				Name="LOC_BUILDING_SOTS_COAST_SHRINE_NAME"				Description="LOC_BUILDING_SOTS_COAST_SHRINE_DESCRIPTION"					PrereqDistrict="DISTRICT_SOTS_COAST_HOLY_SITE"			PurchaseYield="YIELD_GOLD"	Cost="70"	CitizenSlots="1" TraitType="TRAIT_SOTS_TERRAIN_CHANGER" AdvisorType="ADVISOR_RELIGIOUS" Maintenance="1" PrereqTech="TECH_ASTROLOGY"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_TEMPLE"				Name="LOC_BUILDING_SOTS_COAST_TEMPLE_NAME"				Description="LOC_BUILDING_SOTS_COAST_TEMPLE_DESCRIPTION"					PrereqDistrict="DISTRICT_SOTS_COAST_HOLY_SITE"			PurchaseYield="YIELD_GOLD"	Cost="120"	CitizenSlots="1" TraitType="TRAIT_SOTS_TERRAIN_CHANGER" AdvisorType="ADVISOR_RELIGIOUS" Maintenance="2" PrereqCivic="CIVIC_THEOLOGY"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_CATHEDRAL"			Name="LOC_BUILDING_SOTS_COAST_CATHEDRAL_NAME"			Description="LOC_BUILDING_SOTS_COAST_CATHEDRAL_DESCRIPTION"					PrereqDistrict="DISTRICT_SOTS_COAST_HOLY_SITE"			PurchaseYield="YIELD_FAITH"	Cost="190"	CitizenSlots="1" TraitType="TRAIT_SOTS_TERRAIN_CHANGER" EnabledByReligion="true"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_GURDWARA"			Name="LOC_BUILDING_SOTS_COAST_GURDWARA_NAME"			Description="LOC_BUILDING_SOTS_COAST_GURDWARA_DESCRIPTION"					PrereqDistrict="DISTRICT_SOTS_COAST_HOLY_SITE"			PurchaseYield="YIELD_FAITH"	Cost="190"	CitizenSlots="1" TraitType="TRAIT_SOTS_TERRAIN_CHANGER" EnabledByReligion="true"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_MEETING_HOUSE"		Name="LOC_BUILDING_SOTS_COAST_MEETING_HOUSE_NAME"		Description="LOC_BUILDING_SOTS_COAST_MEETING_HOUSE_DESCRIPTION"				PrereqDistrict="DISTRICT_SOTS_COAST_HOLY_SITE"			PurchaseYield="YIELD_FAITH"	Cost="190"	CitizenSlots="1" TraitType="TRAIT_SOTS_TERRAIN_CHANGER" EnabledByReligion="true"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_MOSQUE"				Name="LOC_BUILDING_SOTS_COAST_MOSQUE_NAME"				Description="LOC_BUILDING_SOTS_COAST_MOSQUE_DESCRIPTION"					PrereqDistrict="DISTRICT_SOTS_COAST_HOLY_SITE"			PurchaseYield="YIELD_FAITH"	Cost="190"	CitizenSlots="1" TraitType="TRAIT_SOTS_TERRAIN_CHANGER" EnabledByReligion="true"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_PAGODA"				Name="LOC_BUILDING_SOTS_COAST_PAGODA_NAME"				Description="LOC_BUILDING_SOTS_COAST_PAGODA_DESCRIPTION"					PrereqDistrict="DISTRICT_SOTS_COAST_HOLY_SITE"			PurchaseYield="YIELD_FAITH"	Cost="190"	CitizenSlots="1" TraitType="TRAIT_SOTS_TERRAIN_CHANGER" EnabledByReligion="true" Housing="1"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_SYNAGOGUE"			Name="LOC_BUILDING_SOTS_COAST_SYNAGOGUE_NAME"			Description="LOC_BUILDING_SOTS_COAST_SYNAGOGUE_DESCRIPTION"					PrereqDistrict="DISTRICT_SOTS_COAST_HOLY_SITE"			PurchaseYield="YIELD_FAITH"	Cost="190"	CitizenSlots="1" TraitType="TRAIT_SOTS_TERRAIN_CHANGER" EnabledByReligion="true"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_WAT"					Name="LOC_BUILDING_SOTS_COAST_WAT_NAME"					Description="LOC_BUILDING_SOTS_COAST_WAT_DESCRIPTION"						PrereqDistrict="DISTRICT_SOTS_COAST_HOLY_SITE"			PurchaseYield="YIELD_FAITH"	Cost="190"	CitizenSlots="1" TraitType="TRAIT_SOTS_TERRAIN_CHANGER" EnabledByReligion="true"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_STUPA"				Name="LOC_BUILDING_SOTS_COAST_STUPA_NAME"				Description="LOC_BUILDING_SOTS_COAST_STUPA_DESCRIPTION"						PrereqDistrict="DISTRICT_SOTS_COAST_HOLY_SITE"			PurchaseYield="YIELD_FAITH"	Cost="190"	CitizenSlots="1" TraitType="TRAIT_SOTS_TERRAIN_CHANGER" EnabledByReligion="true" Entertainment="1"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_DAR_E_MEHR"			Name="LOC_BUILDING_SOTS_COAST_DAR_E_MEHR_NAME"			Description="LOC_BUILDING_SOTS_COAST_DAR_E_MEHR_DESCRIPTION"				PrereqDistrict="DISTRICT_SOTS_COAST_HOLY_SITE"			PurchaseYield="YIELD_FAITH"	Cost="190"	CitizenSlots="1" TraitType="TRAIT_SOTS_TERRAIN_CHANGER" EnabledByReligion="true"/>
+
+		<Row BuildingType="BUILDING_SOTS_COAST_MARKET"				Name="LOC_BUILDING_SOTS_COAST_MARKET_NAME"				Description="LOC_BUILDING_SOTS_COAST_MARKET_DESCRIPTION"					PrereqDistrict="DISTRICT_SOTS_COAST_COMMERCIAL_HUB"		PurchaseYield="YIELD_GOLD"	Cost="250"	CitizenSlots="1" TraitType="TRAIT_SOTS_TERRAIN_CHANGER" AdvisorType="ADVISOR_GENERIC"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_BANK"				Name="LOC_BUILDING_SOTS_COAST_BANK_NAME"				Description="LOC_BUILDING_SOTS_COAST_BANK_DESCRIPTION"						PrereqDistrict="DISTRICT_SOTS_COAST_COMMERCIAL_HUB"		PurchaseYield="YIELD_GOLD"	Cost="300"	CitizenSlots="1" TraitType="TRAIT_SOTS_TERRAIN_CHANGER" AdvisorType="ADVISOR_GENERIC"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_STOCK_EXCHANGE"		Name="LOC_BUILDING_SOTS_COAST_STOCK_EXCHANGE_NAME"		Description="LOC_BUILDING_SOTS_COAST_STOCK_EXCHANGE_DESCRIPTION"			PrereqDistrict="DISTRICT_SOTS_COAST_COMMERCIAL_HUB"		PurchaseYield="YIELD_GOLD"	Cost="330"	CitizenSlots="1" TraitType="TRAIT_SOTS_TERRAIN_CHANGER" AdvisorType="ADVISOR_GENERIC"/>
+
+		<Row BuildingType="BUILDING_SOTS_COAST_FOOD_MARKET"			Name="LOC_BUILDING_SOTS_COAST_FOOD_MARKET_NAME"			Description="LOC_BUILDING_SOTS_COAST_FOOD_MARKET_DESCRIPTION"				PrereqDistrict="DISTRICT_SOTS_COAST_NEIGHBORHOOD"		PurchaseYield="YIELD_GOLD"	Cost="380"	CitizenSlots="1" TraitType="TRAIT_SOTS_TERRAIN_CHANGER" AdvisorType="ADVISOR_GENERIC" Maintenance="1" PrereqTech="TECH_REPLACEABLE_PARTS"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_SHOPPINGMALL"		Name="LOC_BUILDING_SOTS_COAST_SHOPPINGMALL_NAME"		Description="LOC_BUILDING_SOTS_COAST_SHOPPINGMALL_DESCRIPTION"				PrereqDistrict="DISTRICT_SOTS_COAST_NEIGHBORHOOD"		PurchaseYield="YIELD_GOLD"	Cost="440"	CitizenSlots="1" TraitType="TRAIT_SOTS_TERRAIN_CHANGER" AdvisorType="ADVISOR_CULTURE" Maintenance="1" PrereqCivic="CIVIC_CAPITALISM" Entertainment="1"/>
+	</Buildings>
+	<BuildingPrereqs>
+		<Row Building="BUILDING_SOTS_COAST_UNIVERSITY"				PrereqBuilding="BUILDING_SOTS_COAST_LIBRARY"/>
+		<Row Building="BUILDING_SOTS_COAST_RESEARCH_LAB"			PrereqBuilding="BUILDING_SOTS_COAST_UNIVERSITY"/>
+
+		<Row Building="BUILDING_SOTS_COAST_MUSEUM_ART"				PrereqBuilding="BUILDING_SOTS_COAST_AMPHITHEATER"/>
+		<Row Building="BUILDING_SOTS_COAST_MUSEUM_ARTIFACT"			PrereqBuilding="BUILDING_SOTS_COAST_AMPHITHEATER"/>
+		<Row Building="BUILDING_SOTS_COAST_BROADCAST_CENTER"		PrereqBuilding="BUILDING_SOTS_COAST_MUSEUM_ART"/>
+		<Row Building="BUILDING_SOTS_COAST_BROADCAST_CENTER"		PrereqBuilding="BUILDING_SOTS_COAST_MUSEUM_ARTIFACT"/>
+
+		<Row Building="BUILDING_SOTS_COAST_FACTORY"					PrereqBuilding="BUILDING_SOTS_COAST_WORKSHOP"/>
+		<Row Building="BUILDING_SOTS_COAST_COAL_PLANT"				PrereqBuilding="BUILDING_SOTS_COAST_FACTORY"/>
+		<Row Building="BUILDING_SOTS_COAST_FOSSIL_FUEL_PLANT"		PrereqBuilding="BUILDING_SOTS_COAST_FACTORY"/>
+		<Row Building="BUILDING_SOTS_COAST_NUCLEAR_PLANT"			PrereqBuilding="BUILDING_SOTS_COAST_FACTORY"/>
+
+		<Row Building="BUILDING_SOTS_COAST_TEMPLE"					PrereqBuilding="BUILDING_SOTS_COAST_SHRINE"/>
+		<Row Building="BUILDING_SOTS_COAST_CATHEDRAL"				PrereqBuilding="BUILDING_SOTS_COAST_TEMPLE"/>
+		<Row Building="BUILDING_SOTS_COAST_GURDWARA"				PrereqBuilding="BUILDING_SOTS_COAST_TEMPLE"/>
+		<Row Building="BUILDING_SOTS_COAST_MEETING_HOUSE"			PrereqBuilding="BUILDING_SOTS_COAST_TEMPLE"/>
+		<Row Building="BUILDING_SOTS_COAST_MOSQUE"					PrereqBuilding="BUILDING_SOTS_COAST_TEMPLE"/>
+		<Row Building="BUILDING_SOTS_COAST_PAGODA"					PrereqBuilding="BUILDING_SOTS_COAST_TEMPLE"/>
+		<Row Building="BUILDING_SOTS_COAST_SYNAGOGUE"				PrereqBuilding="BUILDING_SOTS_COAST_TEMPLE"/>
+		<Row Building="BUILDING_SOTS_COAST_WAT"						PrereqBuilding="BUILDING_SOTS_COAST_TEMPLE"/>
+		<Row Building="BUILDING_SOTS_COAST_STUPA"					PrereqBuilding="BUILDING_SOTS_COAST_TEMPLE"/>
+		<Row Building="BUILDING_SOTS_COAST_DAR_E_MEHR"				PrereqBuilding="BUILDING_SOTS_COAST_TEMPLE"/>
+
+		<Row Building="BUILDING_SOTS_COAST_BANK"					PrereqBuilding="BUILDING_SOTS_COAST_MARKET"/>
+		<Row Building="BUILDING_SOTS_COAST_STOCK_EXCHANGE"			PrereqBuilding="BUILDING_SOTS_COAST_BANK"/>
+	</BuildingPrereqs>
+	<Building_YieldChanges>
+		<Row BuildingType="BUILDING_SOTS_COAST_LIBRARY"				YieldType="YIELD_SCIENCE"		YieldChange="4"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_UNIVERSITY"			YieldType="YIELD_SCIENCE"		YieldChange="6"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_RESEARCH_LAB"		YieldType="YIELD_SCIENCE"		YieldChange="3"/>
+
+		<Row BuildingType="BUILDING_SOTS_COAST_AMPHITHEATER"		YieldType="YIELD_CULTURE"		YieldChange="4"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_MUSEUM_ART"			YieldType="YIELD_CULTURE"		YieldChange="4"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_MUSEUM_ARTIFACT"		YieldType="YIELD_CULTURE"		YieldChange="2"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_BROADCAST_CENTER"	YieldType="YIELD_CULTURE"		YieldChange="2"/>
+
+		<Row BuildingType="BUILDING_SOTS_COAST_WORKSHOP"			YieldType="YIELD_PRODUCTION"	YieldChange="4"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_FACTORY"				YieldType="YIELD_PRODUCTION"	YieldChange="3"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_COAL_PLANT"			YieldType="YIELD_PRODUCTION"	YieldChange="3"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_FOSSIL_FUEL_PLANT"	YieldType="YIELD_PRODUCTION"	YieldChange="3"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_NUCLEAR_PLANT"		YieldType="YIELD_PRODUCTION"	YieldChange="4"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_NUCLEAR_PLANT"		YieldType="YIELD_SCIENCE"		YieldChange="3"/>
+
+		<Row BuildingType="BUILDING_SOTS_COAST_SHRINE"				YieldType="YIELD_FAITH"			YieldChange="2"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_TEMPLE"				YieldType="YIELD_FAITH"			YieldChange="4"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_CATHEDRAL"			YieldType="YIELD_FAITH"			YieldChange="3"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_GURDWARA"			YieldType="YIELD_FAITH"			YieldChange="3"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_GURDWARA"			YieldType="YIELD_FOOD"			YieldChange="2"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_MEETING_HOUSE"		YieldType="YIELD_FAITH"			YieldChange="3"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_MEETING_HOUSE"		YieldType="YIELD_PRODUCTION"	YieldChange="2"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_MOSQUE"				YieldType="YIELD_FAITH"			YieldChange="3"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_PAGODA"				YieldType="YIELD_FAITH"			YieldChange="3"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_STUPA"				YieldType="YIELD_FAITH"			YieldChange="3"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_SYNAGOGUE"			YieldType="YIELD_FAITH"			YieldChange="5"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_WAT"					YieldType="YIELD_FAITH"			YieldChange="3"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_WAT"					YieldType="YIELD_SCIENCE"		YieldChange="2"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_DAR_E_MEHR"			YieldType="YIELD_FAITH"			YieldChange="3"/>
+
+		<Row BuildingType="BUILDING_SOTS_COAST_MARKET"				YieldType="YIELD_GOLD"			YieldChange="5"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_BANK"				YieldType="YIELD_GOLD"			YieldChange="7"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_STOCK_EXCHANGE"		YieldType="YIELD_GOLD"			YieldChange="4"/>
+
+		<Row BuildingType="BUILDING_SOTS_COAST_FOOD_MARKET"			YieldType="YIELD_FOOD"			YieldChange="4"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_SHOPPINGMALL"		YieldType="YIELD_GOLD"			YieldChange="2"/>
+	</Building_YieldChanges>
+	<Building_CitizenYieldChanges>
+		<Row BuildingType="BUILDING_SOTS_COAST_UNIVERSITY"			YieldType="YIELD_SCIENCE"		YieldChange="1"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_RESEARCH_LAB"		YieldType="YIELD_SCIENCE"		YieldChange="1"/>
+
+		<Row BuildingType="BUILDING_SOTS_COAST_MUSEUM_ART"			YieldType="YIELD_CULTURE"		YieldChange="1"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_BROADCAST_CENTER"	YieldType="YIELD_CULTURE"		YieldChange="1"/>
+
+		<Row BuildingType="BUILDING_SOTS_COAST_FACTORY"				YieldType="YIELD_PRODUCTION"	YieldChange="1"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_COAL_PLANT"			YieldType="YIELD_PRODUCTION"	YieldChange="1"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_FOSSIL_FUEL_PLANT"	YieldType="YIELD_PRODUCTION"	YieldChange="1"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_NUCLEAR_PLANT"		YieldType="YIELD_PRODUCTION"	YieldChange="1"/>
+
+		<Row BuildingType="BUILDING_SOTS_COAST_CATHEDRAL"			YieldType="YIELD_FAITH"			YieldChange="1"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_GURDWARA"			YieldType="YIELD_FAITH"			YieldChange="1"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_MEETING_HOUSE"		YieldType="YIELD_FAITH"			YieldChange="1"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_MOSQUE"				YieldType="YIELD_FAITH"			YieldChange="1"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_PAGODA"				YieldType="YIELD_FAITH"			YieldChange="1"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_STUPA"				YieldType="YIELD_FAITH"			YieldChange="1"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_SYNAGOGUE"			YieldType="YIELD_FAITH"			YieldChange="1"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_WAT"					YieldType="YIELD_FAITH"			YieldChange="1"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_DAR_E_MEHR"			YieldType="YIELD_FAITH"			YieldChange="1"/>
+
+		<Row BuildingType="BUILDING_SOTS_COAST_BANK"				YieldType="YIELD_GOLD"			YieldChange="2"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_STOCK_EXCHANGE"		YieldType="YIELD_GOLD"			YieldChange="2"/>
+
+		<Row BuildingType="BUILDING_SOTS_COAST_FOOD_MARKET"			YieldType="YIELD_FOOD"			YieldChange="2"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_SHOPPINGMALL"		YieldType="YIELD_FOOD"			YieldChange="1"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_SHOPPINGMALL"		YieldType="YIELD_GOLD"			YieldChange="2"/>
+	</Building_CitizenYieldChanges>
+	<Building_YieldChangesBonusWithPower>
+		<Row BuildingType="BUILDING_SOTS_COAST_RESEARCH_LAB"		YieldType="YIELD_SCIENCE"		YieldChange="5"/>
+
+		<Row BuildingType="BUILDING_SOTS_COAST_BROADCAST_CENTER"	YieldType="YIELD_CULTURE"		YieldChange="4"/>
+
+		<Row BuildingType="BUILDING_SOTS_COAST_FACTORY"				YieldType="YIELD_PRODUCTION"	YieldChange="3"/>
+
+		<Row BuildingType="BUILDING_SOTS_COAST_STOCK_EXCHANGE"		YieldType="YIELD_GOLD"			YieldChange="7"/>
+
+		<Row BuildingType="BUILDING_SOTS_COAST_FOOD_MARKET"			YieldType="YIELD_FOOD"			YieldChange="2"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_SHOPPINGMALL"		YieldType="YIELD_GOLD"			YieldChange="2"/>
+	</Building_YieldChangesBonusWithPower>
+	<Building_YieldsPerEra>
+		<Row BuildingType="BUILDING_SOTS_COAST_DAR_E_MEHR"			YieldType="YIELD_FAITH"			YieldChange="1"/>
+	</Building_YieldsPerEra>
+	<Building_GreatPersonPoints>
+		<Row BuildingType="BUILDING_SOTS_COAST_LIBRARY"				GreatPersonClassType="GREAT_PERSON_CLASS_SCIENTIST"	PointsPerTurn="1"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_UNIVERSITY"			GreatPersonClassType="GREAT_PERSON_CLASS_SCIENTIST"	PointsPerTurn="1"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_RESEARCH_LAB"		GreatPersonClassType="GREAT_PERSON_CLASS_SCIENTIST"	PointsPerTurn="1"/>
+
+		<Row BuildingType="BUILDING_SOTS_COAST_AMPHITHEATER"		GreatPersonClassType="GREAT_PERSON_CLASS_WRITER"	PointsPerTurn="1"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_MUSEUM_ART"			GreatPersonClassType="GREAT_PERSON_CLASS_WRITER"	PointsPerTurn="1"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_MUSEUM_ART"			GreatPersonClassType="GREAT_PERSON_CLASS_ARTIST"	PointsPerTurn="2"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_MUSEUM_ARTIFACT"		GreatPersonClassType="GREAT_PERSON_CLASS_WRITER"	PointsPerTurn="1"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_MUSEUM_ARTIFACT"		GreatPersonClassType="GREAT_PERSON_CLASS_ARTIST"	PointsPerTurn="2"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_BROADCAST_CENTER"	GreatPersonClassType="GREAT_PERSON_CLASS_ARTIST"	PointsPerTurn="1"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_BROADCAST_CENTER"	GreatPersonClassType="GREAT_PERSON_CLASS_MUSICIAN"	PointsPerTurn="2"/>
+
+		<Row BuildingType="BUILDING_SOTS_COAST_WORKSHOP"			GreatPersonClassType="GREAT_PERSON_CLASS_ENGINEER"	PointsPerTurn="1"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_FACTORY"				GreatPersonClassType="GREAT_PERSON_CLASS_ENGINEER"	PointsPerTurn="1"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_COAL_PLANT"			GreatPersonClassType="GREAT_PERSON_CLASS_ENGINEER"	PointsPerTurn="1"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_FOSSIL_FUEL_PLANT"	GreatPersonClassType="GREAT_PERSON_CLASS_ENGINEER"	PointsPerTurn="1"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_NUCLEAR_PLANT"		GreatPersonClassType="GREAT_PERSON_CLASS_ENGINEER"	PointsPerTurn="1"/>
+
+		<Row BuildingType="BUILDING_SOTS_COAST_SHRINE"				GreatPersonClassType="GREAT_PERSON_CLASS_PROPHET"	PointsPerTurn="1"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_TEMPLE"				GreatPersonClassType="GREAT_PERSON_CLASS_PROPHET"	PointsPerTurn="1"/>
+
+		<Row BuildingType="BUILDING_SOTS_COAST_MARKET"				GreatPersonClassType="GREAT_PERSON_CLASS_MERCHANT"	PointsPerTurn="1"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_BANK"				GreatPersonClassType="GREAT_PERSON_CLASS_MERCHANT"	PointsPerTurn="1"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_STOCK_EXCHANGE"		GreatPersonClassType="GREAT_PERSON_CLASS_MERCHANT"	PointsPerTurn="1"/>
+	</Building_GreatPersonPoints>
+	<Buildings_XP2>
+		<Row BuildingType="BUILDING_SOTS_COAST_RESEARCH_LAB"		RequiredPower="3"/>
+
+		<Row BuildingType="BUILDING_SOTS_COAST_BROADCAST_CENTER"	RequiredPower="3"/>
+
+		<Row BuildingType="BUILDING_SOTS_COAST_FACTORY"				RequiredPower="2"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_COAL_PLANT"			ResourceTypeConvertedToPower="RESOURCE_COAL"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_FOSSIL_FUEL_PLANT"	ResourceTypeConvertedToPower="RESOURCE_OIL"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_NUCLEAR_PLANT"		ResourceTypeConvertedToPower="RESOURCE_URANIUM" NuclearReactor="true"/>
+
+		<Row BuildingType="BUILDING_SOTS_COAST_DAR_E_MEHR"			Pillage="false"/>
+
+		<Row BuildingType="BUILDING_SOTS_COAST_STOCK_EXCHANGE"		RequiredPower="3"/>
+
+		<Row BuildingType="BUILDING_SOTS_COAST_FOOD_MARKET"			RequiredPower="1"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_SHOPPINGMALL"		RequiredPower="1" EntertainmentBonusWithPower="1"/>
+	</Buildings_XP2>
+	<Building_TourismBombs_XP2>
+		<Row BuildingType="BUILDING_SOTS_COAST_UNIVERSITY"			TourismBombValue="500"/>
+
+		<Row BuildingType="BUILDING_SOTS_COAST_AMPHITHEATER"		TourismBombValue="250"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_BROADCAST_CENTER"	TourismBombValue="750"/>
+	</Building_TourismBombs_XP2>
+	<MutuallyExclusiveBuildings>
+		<Row Building="BUILDING_SOTS_COAST_MUSEUM_ARTIFACT"			MutuallyExclusiveBuilding="BUILDING_SOTS_COAST_MUSEUM_ART"/>
+		<Row Building="BUILDING_SOTS_COAST_MUSEUM_ART"				MutuallyExclusiveBuilding="BUILDING_SOTS_COAST_MUSEUM_ARTIFACT"/>
+
+		<Row Building="BUILDING_SOTS_COAST_COAL_PLANT"				MutuallyExclusiveBuilding="BUILDING_SOTS_COAST_FOSSIL_FUEL_PLANT"/>
+		<Row Building="BUILDING_SOTS_COAST_COAL_PLANT"				MutuallyExclusiveBuilding="BUILDING_SOTS_COAST_NUCLEAR_PLANT"/>
+		<Row Building="BUILDING_SOTS_COAST_FOSSIL_FUEL_PLANT"		MutuallyExclusiveBuilding="BUILDING_SOTS_COAST_COAL_PLANT"/>
+		<Row Building="BUILDING_SOTS_COAST_FOSSIL_FUEL_PLANT"		MutuallyExclusiveBuilding="BUILDING_SOTS_COAST_NUCLEAR_PLANT"/>
+		<Row Building="BUILDING_SOTS_COAST_NUCLEAR_PLANT"			MutuallyExclusiveBuilding="BUILDING_SOTS_COAST_COAL_PLANT"/>
+		<Row Building="BUILDING_SOTS_COAST_NUCLEAR_PLANT"			MutuallyExclusiveBuilding="BUILDING_SOTS_COAST_FOSSIL_FUEL_PLANT"/>
+
+		<Row Building="BUILDING_SOTS_COAST_FOOD_MARKET"				MutuallyExclusiveBuilding="BUILDING_SOTS_COAST_SHOPPINGMALL"/>
+		<Row Building="BUILDING_SOTS_COAST_SHOPPINGMALL"			MutuallyExclusiveBuilding="BUILDING_SOTS_COAST_FOOD_MARKET"/>
+	</MutuallyExclusiveBuildings>
+	<Building_GreatWorks>
+		<Row BuildingType="BUILDING_SOTS_COAST_AMPHITHEATER"		GreatWorkSlotType="GREATWORKSLOT_WRITING"	NumSlots="2"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_MUSEUM_ART"			GreatWorkSlotType="GREATWORKSLOT_PALACE"	NumSlots="3" ThemingUniquePerson="true"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_MUSEUM_ARTIFACT"		GreatWorkSlotType="GREATWORKSLOT_ARTIFACT"	NumSlots="3" ThemingSameEras="true" ThemingUniqueCivs="true" ThemingYieldMultiplier="100" ThemingTourismMultiplier="100" NonUniquePersonYield="1" NonUniquePersonTourism="1" ThemingBonusDescription="LOC_BUILDING_THEMINGBONUS_ARCHAEOLOGY"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_BROADCAST_CENTER"	GreatWorkSlotType="GREATWORKSLOT_MUSIC"		NumSlots="1"/>
+	</Building_GreatWorks>
+	<BuildingModifiers>
+		<Row BuildingType="BUILDING_SOTS_COAST_MOSQUE"				ModifierId="MOSQUE_ADJUST_SPREAD_CHARGES"/>
+		<Row BuildingType="BUILDING_SOTS_COAST_SHOPPINGMALL"		ModifierId="SHOPPING_MALL_TOURISM"/>
+	</BuildingModifiers>
+	<Unit_BuildingPrereqs>
+		<Row Unit="UNIT_ARCHAEOLOGIST"								PrereqBuilding="BUILDING_SOTS_COAST_MUSEUM_ARTIFACT" NumSupported="1"/>
+	</Unit_BuildingPrereqs>
+	<StartingBuildings>
+		<Row Era="ERA_RENAISSANCE"									Building="BUILDING_SOTS_COAST_LIBRARY"			District="DISTRICT_SOTS_COAST_CAMPUS"/>
+		<Row Era="ERA_RENAISSANCE"									Building="BUILDING_SOTS_COAST_SHRINE"			District="DISTRICT_SOTS_COAST_HOLY_SITE"/>
+		<Row Era="ERA_INDUSTRIAL"									Building="BUILDING_SOTS_COAST_MARKET"			District="DISTRICT_SOTS_COAST_COMMERCIAL_HUB"/>
+		<Row Era="ERA_INDUSTRIAL"									Building="BUILDING_SOTS_COAST_TEMPLE"			District="DISTRICT_SOTS_COAST_HOLY_SITE"/>
+		<Row Era="ERA_INDUSTRIAL"									Building="BUILDING_SOTS_COAST_AMPHITHEATER"		District="DISTRICT_SOTS_COAST_THEATER"/>
+		<Row Era="ERA_MODERN"										Building="BUILDING_SOTS_COAST_UNIVERSITY"		District="DISTRICT_SOTS_COAST_CAMPUS"/>
+		<Row Era="ERA_MODERN"										Building="BUILDING_SOTS_COAST_WORKSHOP"			District="DISTRICT_SOTS_COAST_INDUSTRIAL_ZONE"/>
+		<Row Era="ERA_ATOMIC"										Building="BUILDING_SOTS_COAST_BANK"				District="DISTRICT_SOTS_COAST_COMMERCIAL_HUB"/>
+		<Row Era="ERA_INFORMATION"									Building="BUILDING_SOTS_COAST_FACTORY"			District="DISTRICT_SOTS_COAST_INDUSTRIAL_ZONE"/>
+		<Row Era="ERA_INFORMATION"									Building="BUILDING_SOTS_COAST_STOCK_EXCHANGE"	District="DISTRICT_SOTS_COAST_COMMERCIAL_HUB"/>
+	</StartingBuildings>
+	<Unit_BuildingPrereqs>
+		<Row Unit="UNIT_MISSIONARY"									PrereqBuilding="BUILDING_SOTS_COAST_SHRINE"/>
+		<Row Unit="UNIT_APOSTLE"									PrereqBuilding="BUILDING_SOTS_COAST_TEMPLE"/>
+		<Row Unit="UNIT_INQUISITOR"									PrereqBuilding="BUILDING_SOTS_COAST_TEMPLE"/>
+		<Row Unit="UNIT_WARRIOR_MONK"								PrereqBuilding="BUILDING_SOTS_COAST_TEMPLE"/>
+		<Row Unit="UNIT_GURU"										PrereqBuilding="BUILDING_SOTS_COAST_TEMPLE"/>
+	</Unit_BuildingPrereqs>
+		<Projects>
+		<Row ProjectType="PROJECT_SOTS_ENHANCE_DISTRICT_INDUSTRIAL_ZONE"	Name="LOC_PROJECT_SOTS_ENHANCE_DISTRICT_INDUSTRIAL_ZONE_NAME"	ShortName="LOC_PROJECT_SOTS_ENHANCE_DISTRICT_INDUSTRIAL_ZONE_NAME"	Description="LOC_PROJECT_ENHANCE_DISTRICT_INDUSTRIAL_ZONE_EXPANSION2_DESCRIPTION"	PrereqDistrict="DISTRICT_SOTS_COAST_INDUSTRIAL_ZONE"	Cost="25"	AdvisorType="ADVISOR_GENERIC"		CostProgressionModel="COST_PROGRESSION_GAME_PROGRESS" CostProgressionParam1="1500"/>
+		<Row ProjectType="PROJECT_SOTS_ENHANCE_DISTRICT_COMMERCIAL_HUB"		Name="LOC_PROJECT_SOTS_ENHANCE_DISTRICT_COMMERCIAL_HUB_NAME"	ShortName="LOC_PROJECT_SOTS_ENHANCE_DISTRICT_COMMERCIAL_HUB_NAME"		Description="LOC_PROJECT_ENHANCE_DISTRICT_COMMERCIAL_HUB_DESCRIPTION"				PrereqDistrict="DISTRICT_SOTS_COAST_COMMERCIAL_HUB"		Cost="25"	AdvisorType="ADVISOR_GENERIC"		CostProgressionModel="COST_PROGRESSION_GAME_PROGRESS" CostProgressionParam1="1500"/>
+		<Row ProjectType="PROJECT_SOTS_ENHANCE_DISTRICT_CAMPUS"				Name="LOC_PROJECT_SOTS_ENHANCE_DISTRICT_CAMPUS_NAME"			ShortName="LOC_PROJECT_SOTS_ENHANCE_DISTRICT_CAMPUS_NAME"				Description="LOC_PROJECT_ENHANCE_DISTRICT_CAMPUS_DESCRIPTION"						PrereqDistrict="DISTRICT_SOTS_COAST_CAMPUS"				Cost="25"	AdvisorType="ADVISOR_TECHNOLOGY"	CostProgressionModel="COST_PROGRESSION_GAME_PROGRESS" CostProgressionParam1="1500"/>
+		<Row ProjectType="PROJECT_SOTS_ENHANCE_DISTRICT_THEATER"			Name="LOC_PROJECT_SOTS_ENHANCE_DISTRICT_THEATER_NAME"			ShortName="LOC_PROJECT_SOTS_ENHANCE_DISTRICT_THEATER_NAME"			Description="LOC_PROJECT_ENHANCE_DISTRICT_THEATER_DESCRIPTION"						PrereqDistrict="DISTRICT_SOTS_COAST_THEATER"			Cost="25"	AdvisorType="ADVISOR_CULTURE"		CostProgressionModel="COST_PROGRESSION_GAME_PROGRESS" CostProgressionParam1="1500"/>
+		<Row ProjectType="PROJECT_SOTS_ENHANCE_DISTRICT_HOLY_SITE"			Name="LOC_PROJECT_SOTS_ENHANCE_DISTRICT_HOLY_SITE_NAME"		ShortName="LOC_PROJECT_SOTS_ENHANCE_DISTRICT_HOLY_SITE_NAME"			Description="LOC_PROJECT_ENHANCE_DISTRICT_HOLY_SITE_DESCRIPTION"					PrereqDistrict="DISTRICT_SOTS_COAST_HOLY_SITE"			Cost="25"	AdvisorType="ADVISOR_RELIGIOUS"		CostProgressionModel="COST_PROGRESSION_GAME_PROGRESS" CostProgressionParam1="1500"/>
+
+		<Row ProjectType="PROJECT_SOTS_CONVERT_REACTOR_TO_COAL"				Name="LOC_PROJECT_CONVERT_REACTOR_TO_COAL_NAME"					ShortName="LOC_PROJECT_CONVERT_REACTOR_TO_COAL_NAME"					Description="LOC_PROJECT_CONVERT_REACTOR_TO_COAL_DESCRIPTION"						PrereqDistrict="DISTRICT_SOTS_COAST_INDUSTRIAL_ZONE"	Cost="200"	AdvisorType="ADVISOR_GENERIC"/>
+		<Row ProjectType="PROJECT_SOTS_CONVERT_REACTOR_TO_OIL"				Name="LOC_PROJECT_CONVERT_REACTOR_TO_OIL_NAME"					ShortName="LOC_PROJECT_CONVERT_REACTOR_TO_OIL_NAME"						Description="LOC_PROJECT_CONVERT_REACTOR_TO_OIL_DESCRIPTION"						PrereqDistrict="DISTRICT_SOTS_COAST_INDUSTRIAL_ZONE"	Cost="300"	AdvisorType="ADVISOR_GENERIC"		PrereqTech="TECH_ELECTRICITY"/>
+		<Row ProjectType="PROJECT_SOTS_CONVERT_REACTOR_TO_URANIUM"			Name="LOC_PROJECT_CONVERT_REACTOR_TO_URANIUM_NAME"				ShortName="LOC_PROJECT_CONVERT_REACTOR_TO_URANIUM_NAME"					Description="LOC_PROJECT_CONVERT_REACTOR_TO_URANIUM_DESCRIPTION"					PrereqDistrict="DISTRICT_SOTS_COAST_INDUSTRIAL_ZONE"	Cost="400"	AdvisorType="ADVISOR_GENERIC"		PrereqTech="TECH_COMPUTERS"/>
+		<Row ProjectType="PROJECT_SOTS_RECOMMISSION_REACTOR"				Name="LOC_PROJECT_RECOMMISSION_REACTOR_NAME"					ShortName="LOC_PROJECT_RECOMMISSION_REACTOR_NAME"						Description="LOC_PROJECT_RECOMMISSION_REACTOR_DESCRIPTION"							PrereqDistrict="DISTRICT_SOTS_COAST_INDUSTRIAL_ZONE"	Cost="400"										PrereqTech="TECH_COMPUTERS"/>
+	</Projects>
+	<Projects_XP2>
+		<Row ProjectType="PROJECT_SOTS_ENHANCE_DISTRICT_INDUSTRIAL_ZONE"	FullyPoweredWhileActive="true"/>
+		<Row ProjectType="PROJECT_SOTS_ENHANCE_DISTRICT_HOLY_SITE"			ReligiousPressureModifier="100"/>
+
+		<Row ProjectType="PROJECT_SOTS_CONVERT_REACTOR_TO_COAL"				CreateBuilding="BUILDING_SOTS_COAST_COAL_PLANT"/>
+		<Row ProjectType="PROJECT_SOTS_CONVERT_REACTOR_TO_OIL"				CreateBuilding="BUILDING_SOTS_COAST_FOSSIL_FUEL_PLANT"/>
+		<Row ProjectType="PROJECT_SOTS_CONVERT_REACTOR_TO_URANIUM"			CreateBuilding="BUILDING_SOTS_COAST_NUCLEAR_PLANT"/>
+		<Row ProjectType="PROJECT_SOTS_RECOMMISSION_REACTOR"				RequiredBuilding="BUILDING_SOTS_COAST_NUCLEAR_PLANT"/>
+	</Projects_XP2>
+	<Project_GreatPersonPoints>
+		<Row ProjectType="PROJECT_SOTS_ENHANCE_DISTRICT_INDUSTRIAL_ZONE"	GreatPersonClassType="GREAT_PERSON_CLASS_ENGINEER"	Points="10"	PointProgressionModel="COST_PROGRESSION_GAME_PROGRESS" PointProgressionParam1="800"/>
+		<Row ProjectType="PROJECT_SOTS_ENHANCE_DISTRICT_COMMERCIAL_HUB"		GreatPersonClassType="GREAT_PERSON_CLASS_MERCHANT"	Points="10"	PointProgressionModel="COST_PROGRESSION_GAME_PROGRESS" PointProgressionParam1="800"/>
+		<Row ProjectType="PROJECT_SOTS_ENHANCE_DISTRICT_CAMPUS"				GreatPersonClassType="GREAT_PERSON_CLASS_SCIENTIST"	Points="10"	PointProgressionModel="COST_PROGRESSION_GAME_PROGRESS" PointProgressionParam1="800"/>
+		<Row ProjectType="PROJECT_SOTS_ENHANCE_DISTRICT_THEATER"			GreatPersonClassType="GREAT_PERSON_CLASS_WRITER"	Points="5"	PointProgressionModel="COST_PROGRESSION_GAME_PROGRESS" PointProgressionParam1="800"/>
+		<Row ProjectType="PROJECT_SOTS_ENHANCE_DISTRICT_THEATER"			GreatPersonClassType="GREAT_PERSON_CLASS_ARTIST"	Points="5"	PointProgressionModel="COST_PROGRESSION_GAME_PROGRESS" PointProgressionParam1="800"/>
+		<Row ProjectType="PROJECT_SOTS_ENHANCE_DISTRICT_THEATER"			GreatPersonClassType="GREAT_PERSON_CLASS_MUSICIAN"	Points="5"	PointProgressionModel="COST_PROGRESSION_GAME_PROGRESS" PointProgressionParam1="800"/>
+		<Row ProjectType="PROJECT_SOTS_ENHANCE_DISTRICT_HOLY_SITE"			GreatPersonClassType="GREAT_PERSON_CLASS_PROPHET" Points="10" PointProgressionModel="COST_PROGRESSION_GAME_PROGRESS" PointProgressionParam1="800"/>
+	</Project_GreatPersonPoints>
+	<Project_YieldConversions>
+		<Row ProjectType="PROJECT_SOTS_ENHANCE_DISTRICT_COMMERCIAL_HUB"		YieldType="YIELD_GOLD"		PercentOfProductionRate="30"/>
+		<Row ProjectType="PROJECT_SOTS_ENHANCE_DISTRICT_CAMPUS"				YieldType="YIELD_SCIENCE"	PercentOfProductionRate="15"/>
+		<Row ProjectType="PROJECT_SOTS_ENHANCE_DISTRICT_THEATER"			YieldType="YIELD_CULTURE"	PercentOfProductionRate="15"/>
+		<Row ProjectType="PROJECT_SOTS_ENHANCE_DISTRICT_HOLY_SITE"			YieldType="YIELD_FAITH"		PercentOfProductionRate="15"/>
+	</Project_YieldConversions>
+	<Project_BuildingCosts>
+		<Row ProjectType="PROJECT_SOTS_CONVERT_REACTOR_TO_COAL"				ConsumedBuildingType="BUILDING_SOTS_COAST_FOSSIL_FUEL_PLANT"/>
+		<Row ProjectType="PROJECT_SOTS_CONVERT_REACTOR_TO_COAL"				ConsumedBuildingType="BUILDING_SOTS_COAST_NUCLEAR_PLANT"/>
+		<Row ProjectType="PROJECT_SOTS_CONVERT_REACTOR_TO_OIL"				ConsumedBuildingType="BUILDING_SOTS_COAST_COAL_PLANT"/>
+		<Row ProjectType="PROJECT_SOTS_CONVERT_REACTOR_TO_OIL"				ConsumedBuildingType="BUILDING_SOTS_COAST_NUCLEAR_PLANT"/>
+		<Row ProjectType="PROJECT_SOTS_CONVERT_REACTOR_TO_URANIUM"			ConsumedBuildingType="BUILDING_SOTS_COAST_COAL_PLANT"/>
+		<Row ProjectType="PROJECT_SOTS_CONVERT_REACTOR_TO_URANIUM"			ConsumedBuildingType="BUILDING_SOTS_COAST_FOSSIL_FUEL_PLANT"/>
+	</Project_BuildingCosts>
+	<ProjectCompletionModifiers>
+		<Row ProjectType="PROJECT_SOTS_RECOMMISSION_REACTOR"				ModifierId="PROJECT_COMPLETION_RECOMMISSION_REACTOR"/>
+	</ProjectCompletionModifiers>
+		<EmergencyBuffs>
+		<Row ModifierID="CLIMATE_ACCORDS_GRANT_DECOMMISSION_SOTS_COAL_POWER_PLANT_PROJECT"		EmergencyType="EMERGENCY_CLIMATE_ACCORDS"/>
+		<Row ModifierID="CLIMATE_ACCORDS_GRANT_DECOMMISSION_SOTS_OIL_POWER_PLANT_PROJECT"		EmergencyType="EMERGENCY_CLIMATE_ACCORDS"/>
+		<Row ModifierID="CLIMATE_ACCORDS_GRANT_DECOMMISSION_SOTS_NUCLEAR_POWER_PLANT_PROJECT"	EmergencyType="EMERGENCY_CLIMATE_ACCORDS"/>
+	</EmergencyBuffs>
+	<Modifiers>
+		<Row ModifierId="CLIMATE_ACCORDS_GRANT_DECOMMISSION_SOTS_COAL_POWER_PLANT_PROJECT"		ModifierType="MODIFIER_EMERGENCY_PLAYERS_MAKE_PROJECT_AVAILABLE" SubjectRequirementSetId="EMERGENCY_MEMBER_REQUIREMENTS"/>
+		<Row ModifierId="CLIMATE_ACCORDS_GRANT_DECOMMISSION_SOTS_OIL_POWER_PLANT_PROJECT"		ModifierType="MODIFIER_EMERGENCY_PLAYERS_MAKE_PROJECT_AVAILABLE" SubjectRequirementSetId="EMERGENCY_MEMBER_REQUIREMENTS"/>
+		<Row ModifierId="CLIMATE_ACCORDS_GRANT_DECOMMISSION_SOTS_NUCLEAR_POWER_PLANT_PROJECT"	ModifierType="MODIFIER_EMERGENCY_PLAYERS_MAKE_PROJECT_AVAILABLE" SubjectRequirementSetId="EMERGENCY_MEMBER_REQUIREMENTS"/>
+	</Modifiers>
+	<ModifierArguments>
+		<Row ModifierId="CLIMATE_ACCORDS_GRANT_DECOMMISSION_SOTS_COAL_POWER_PLANT_PROJECT"		Name="ProjectType" Value="PROJECT_DECOMMISSION_SOTS_COAL_POWER_PLANT"/>
+		<Row ModifierId="CLIMATE_ACCORDS_GRANT_DECOMMISSION_SOTS_OIL_POWER_PLANT_PROJECT"		Name="ProjectType" Value="PROJECT_DECOMMISSION_SOTS_OIL_POWER_PLANT"/>
+		<Row ModifierId="CLIMATE_ACCORDS_GRANT_DECOMMISSION_SOTS_NUCLEAR_POWER_PLANT_PROJECT"	Name="ProjectType" Value="PROJECT_DECOMMISSION_SOTS_NUCLEAR_POWER_PLANT"/>
+	</ModifierArguments>
+	<Types>
+		<Row Type="PROJECT_DECOMMISSION_SOTS_COAL_POWER_PLANT"				Kind="KIND_PROJECT"/>
+		<Row Type="PROJECT_DECOMMISSION_SOTS_OIL_POWER_PLANT"				Kind="KIND_PROJECT"/>
+		<Row Type="PROJECT_DECOMMISSION_SOTS_NUCLEAR_POWER_PLANT"			Kind="KIND_PROJECT"/>
+	</Types>
+	<Projects>
+		<Row ProjectType="PROJECT_DECOMMISSION_SOTS_COAL_POWER_PLANT"		Name="LOC_PROJECT_DECOMMISSION_COAL_POWER_PLANT_NAME"		ShortName="LOC_PROJECT_DECOMMISSION_COAL_POWER_PLANT_NAME"		Description="LOC_PROJECT_DECOMMISSION_COAL_POWER_PLANT_DESCRIPTION"					PrereqDistrict="DISTRICT_SOTS_COAST_INDUSTRIAL_ZONE"	Cost="400"	AdvisorType="ADVISOR_GENERIC"/>
+		<Row ProjectType="PROJECT_DECOMMISSION_SOTS_OIL_POWER_PLANT"		Name="LOC_PROJECT_DECOMMISSION_OIL_POWER_PLANT_NAME"		ShortName="LOC_PROJECT_DECOMMISSION_OIL_POWER_PLANT_NAME"		Description="LOC_PROJECT_DECOMMISSION_OIL_POWER_PLANT_DESCRIPTION"					PrereqDistrict="DISTRICT_SOTS_COAST_INDUSTRIAL_ZONE"	Cost="400"	AdvisorType="ADVISOR_GENERIC"/>
+		<Row ProjectType="PROJECT_DECOMMISSION_SOTS_NUCLEAR_POWER_PLANT"	Name="LOC_PROJECT_DECOMMISSION_NUCLEAR_POWER_PLANT_NAME"	ShortName="LOC_PROJECT_DECOMMISSION_NUCLEAR_POWER_PLANT_NAME"	Description="LOC_PROJECT_DECOMMISSION_NUCLEAR_POWER_PLANT_DESCRIPTION"				PrereqDistrict="DISTRICT_SOTS_COAST_INDUSTRIAL_ZONE"	Cost="400"	AdvisorType="ADVISOR_GENERIC"/>
+	</Projects>
+	<Projects_XP2>
+		<Row ProjectType="PROJECT_DECOMMISSION_SOTS_COAL_POWER_PLANT"		UnlocksFromEffect="true"/>
+		<Row ProjectType="PROJECT_DECOMMISSION_SOTS_OIL_POWER_PLANT"		UnlocksFromEffect="true"/>
+		<Row ProjectType="PROJECT_DECOMMISSION_SOTS_NUCLEAR_POWER_PLANT"	UnlocksFromEffect="true"/>
+	</Projects_XP2>
+	<Project_BuildingCosts>
+		<Row ProjectType="PROJECT_DECOMMISSION_SOTS_COAL_POWER_PLANT"		ConsumedBuildingType="BUILDING_SOTS_COAST_COAL_PLANT"/>
+		<Row ProjectType="PROJECT_DECOMMISSION_SOTS_OIL_POWER_PLANT"		ConsumedBuildingType="BUILDING_SOTS_COAST_FOSSIL_FUEL_PLANT"/>
+		<Row ProjectType="PROJECT_DECOMMISSION_SOTS_NUCLEAR_POWER_PLANT"	ConsumedBuildingType="BUILDING_SOTS_COAST_NUCLEAR_PLANT"/>
+	</Project_BuildingCosts>
+
+
+	<!-- 單位能力 -->
+	<Types>
+		<Row Type="ABILITY_SOTS_LOST_AT_SEA"					Kind="KIND_ABILITY"/>
+	</Types>
+	<TypeTags>
+		<Row Type="ABILITY_SOTS_LOST_AT_SEA" 					Tag="CLASS_ALL_UNITS"/>
+	</TypeTags>
+	<UnitAbilities>
+		<Row UnitAbilityType="ABILITY_SOTS_LOST_AT_SEA"			Name="LOC_ABILITY_SOTS_LOST_AT_SEA_NAME"	Description="LOC_ABILITY_SOTS_LOST_AT_SEA_DESCRIPTION"						Inactive="true" ShowFloatTextWhenEarned="true"/>
+	</UnitAbilities>	
+	
+	<!-- 移山填海 -->
+	<Types>
+		<Row Type="IMPROVEMENT_SOTS_REMOVE_MOUNTAIN"			Kind="KIND_IMPROVEMENT"/>
+		<Row Type="IMPROVEMENT_SOTS_CLEAN_COAST"				Kind="KIND_IMPROVEMENT"/>
+		<Row Type="IMPROVEMENT_SOTS_MAKE_ISLAND"				Kind="KIND_IMPROVEMENT"/>
+	</Types>
+	<Improvements>
+		<Row ImprovementType="IMPROVEMENT_SOTS_REMOVE_MOUNTAIN"	Name="LOC_IMPROVEMENT_SOTS_REMOVE_MOUNTAIN_NAME"	Description="LOC_IMPROVEMENT_SOTS_REMOVE_MOUNTAIN_DESCRIPTION"	Icon="ICON_IMPROVEMENT_SOTS_REMOVE_MOUNTAIN"	PlunderType="NO_PLUNDER"						Buildable="true" PrereqTech="TECH_MASONRY"					TraitType="TRAIT_SOTS_TERRAIN_CHANGER" CanBuildOutsideTerritory="true"/>
+		<Row ImprovementType="IMPROVEMENT_SOTS_CLEAN_COAST"		Name="LOC_IMPROVEMENT_SOTS_CLEAN_COAST_NAME"		Description="LOC_IMPROVEMENT_SOTS_CLEAN_COAST_DESCRIPTION"		Icon="ICON_IMPROVEMENT_SOTS_CLEAN_COAST"		PlunderType="NO_PLUNDER"						Buildable="true" PrereqTech="TECH_CELESTIAL_NAVIGATION"		TraitType="TRAIT_SOTS_TERRAIN_CHANGER" CanBuildOutsideTerritory="true" Domain="DOMAIN_SEA"/>
+		<Row ImprovementType="IMPROVEMENT_SOTS_MAKE_ISLAND"		Name="LOC_IMPROVEMENT_SOTS_MAKE_ISLAND_NAME"		Description="LOC_IMPROVEMENT_SOTS_MAKE_ISLAND_DESCRIPTION"		Icon="ICON_IMPROVEMENT_SOTS_MAKE_ISLAND"		PlunderType="NO_PLUNDER"						Buildable="true" PrereqTech="TECH_CARTOGRAPHY"				TraitType="TRAIT_SOTS_TERRAIN_CHANGER" CanBuildOutsideTerritory="true" Domain="DOMAIN_SEA"/>
+	</Improvements>
+	<Improvements_XP2>
+		<Row ImprovementType="IMPROVEMENT_SOTS_REMOVE_MOUNTAIN"	BuildOnAdjacentPlot="true"/>
+	</Improvements_XP2>
+	<Improvement_ValidTerrains>
+		<Row ImprovementType="IMPROVEMENT_SOTS_REMOVE_MOUNTAIN"	TerrainType="TERRAIN_GRASS_MOUNTAIN"/>
+		<Row ImprovementType="IMPROVEMENT_SOTS_REMOVE_MOUNTAIN"	TerrainType="TERRAIN_PLAINS_MOUNTAIN"/>
+		<Row ImprovementType="IMPROVEMENT_SOTS_REMOVE_MOUNTAIN"	TerrainType="TERRAIN_DESERT_MOUNTAIN"/>
+		<Row ImprovementType="IMPROVEMENT_SOTS_REMOVE_MOUNTAIN"	TerrainType="TERRAIN_TUNDRA_MOUNTAIN"/>
+		<Row ImprovementType="IMPROVEMENT_SOTS_REMOVE_MOUNTAIN"	TerrainType="TERRAIN_SNOW_MOUNTAIN"/>
+		<Row ImprovementType="IMPROVEMENT_SOTS_CLEAN_COAST"		TerrainType="TERRAIN_COAST"/>
+		<Row ImprovementType="IMPROVEMENT_SOTS_MAKE_ISLAND"		TerrainType="TERRAIN_OCEAN"/>
+	</Improvement_ValidTerrains>
+	<Improvement_ValidFeatures>
+		<Row ImprovementType="IMPROVEMENT_SOTS_CLEAN_COAST"		FeatureType="FEATURE_REEF"/>
+		<Row ImprovementType="IMPROVEMENT_SOTS_MAKE_ISLAND"		FeatureType="FEATURE_REEF"/>
+	</Improvement_ValidFeatures>
+	<!--<Improvement_ValidBuildUnits>
+		<Row ImprovementType="IMPROVEMENT_SOTS_REMOVE_MOUNTAIN"	UnitType="UNIT_MILITARY_ENGINEER" ConsumesCharge="false" ValidRepairOnly="true"/>
+		<Row ImprovementType="IMPROVEMENT_SOTS_CLEAN_COAST"		UnitType="UNIT_MILITARY_ENGINEER" ConsumesCharge="false" ValidRepairOnly="true"/>
+		<Row ImprovementType="IMPROVEMENT_SOTS_CLEAN_COAST"		UnitType="UNIT_MILITARY_ENGINEER" ConsumesCharge="false" ValidRepairOnly="true"/>
+	</Improvement_ValidBuildUnits>-->
+</GameData>

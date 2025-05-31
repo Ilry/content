@@ -37,7 +37,9 @@ local fn = function(act) -- 动作触发的函数。传入的是一个BufferedAc
     return true
 end
 local COMBINEWEAPON=AddAction(id,name,fn)
---COMBINEWEAPON.priority = -1
+if TUNING.RANGCHIGHPRIOR then
+	COMBINEWEAPON.priority = 11
+end
 COMBINEWEAPON.rmb = true
 --COMBINEWEAPON.canforce=true
 --COMBINEWEAPON.instant = true

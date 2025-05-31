@@ -64,7 +64,7 @@ end
 if GetModConfigData("moose_breeding_task")=="must have" then
     table.insert(master_setting["tasks_required"], "MooseBreedingTask")
 elseif GetModConfigData("moose_breeding_task")=="must not have" then
-    table.insert(master_setting["tasks_disliked"], "Moose Breeding")
+    table.insert(master_setting["tasks_disliked"], "MooseBreedingTask")
 end
 if GetModConfigData("the_hunters")=="must have" then
     table.insert(master_setting["tasks_required"], "The hunters")
@@ -110,6 +110,10 @@ end
 -- master_trap_starfish
 if GetModConfigData("master_trap_starfish")~="not set" then
     table.insert(master_setting["required_entities"], {name= "trap_starfish", number= GetModConfigData("master_trap_starfish")})
+end
+-- master_three_sculptures
+if GetModConfigData("master_three_sculptures")~="not set" then
+    table.insert(master_setting["required_entities"], {name= "three_sculptures", number= GetModConfigData("master_three_sculptures")})
 end
 -- custom input
 if GetModConfigData("master_custom_entity_num")~="" then
@@ -229,6 +233,8 @@ end
 -- master_setting["ocean_request"] = {distance= GetModConfigData("master_ocean")}
 -- TODO: 地中海的有关设置
 master_setting["repeat_times"] = safeStringToInt(GetModConfigData("master_repeat_times"))
+master_setting["ignore_crash"] = GetModConfigData("ignore_error_master")
+master_setting["keep_times"] = safeStringToInt(GetModConfigData("master_keep_times"))
 
 master_setting["near_entities_soft"] = {}
 if GetModConfigData("master_pigking_soft")~="not set" then
@@ -299,9 +305,21 @@ master_setting["under_huge_trees"]["cover_rate"] = GetModConfigData("master_unde
 master_setting["under_huge_trees"]["base_radius"] = GetModConfigData("master_base_radius")
 master_setting["room_number_setting"] = {}
 master_setting["moon_island_connect"] = GetModConfigData("master_moon_island_connect")
+master_setting["moon_island_broken"] = GetModConfigData("master_moon_island_broken")
+master_setting["inside_the_ring"]={}
+if GetModConfigData("moon_island_surrouned")~="not set" then
+    table.insert(master_setting["inside_the_ring"], "moon_island")
+end
+if GetModConfigData("hermit_island_surrouned")~="not set" then
+    table.insert(master_setting["inside_the_ring"], "hermit_island")
+end
+if GetModConfigData("monkey_island_surrouned")~="not set" then
+    table.insert(master_setting["inside_the_ring"], "monkey_island")
+end
 master_setting["ancient_connect"] = "not set"
 master_setting["ancient_representation"] = {}
 master_setting["allow_wormwhole"] = GetModConfigData("master_allow_wormwhole")
+master_setting["must_onlnad"] = GetModConfigData("master_must_onland")
 
 local cave_setting = {}
 cave_setting["grass_required"] = "not set"
@@ -471,7 +489,10 @@ cave_setting["far_regions"] = {}
 cave_setting["under_huge_trees"] = {}
 cave_setting["under_huge_trees"]["cover_rate"] = "not set"
 cave_setting["under_huge_trees"]["base_radius"] = "not set"
-cave_setting["repeat_times"] = 1
+-- cave_setting["repeat_times"] = 1
+cave_setting["repeat_times"] = safeStringToInt(GetModConfigData("cave_repeat_times"))
+cave_setting["ignore_crash"] = GetModConfigData("ignore_error_cave")
+cave_setting["keep_times"] = safeStringToInt(GetModConfigData("cave_repeat_times"))
 cave_setting["near_entities_soft"] = {}
 cave_setting["near_regions_soft"] = {}
 
@@ -519,6 +540,8 @@ if GetModConfigData("cave_monkeybarrel_spawner")~="not set" then
     table.insert(cave_setting["entities_less_than"], {name= "monkeybarrel_spawner", number= GetModConfigData("cave_monkeybarrel_spawner")})
 end
 cave_setting["moon_island_connect"] = "not set"
+cave_setting["moon_island_broken"] = "not set"
+cave_setting["inside_the_ring"]={}
 cave_setting["ancient_connect"] = GetModConfigData("cave_connected_ancient")
 cave_setting["ancient_representation"] = {}
 if GetModConfigData("cave_close_to_statues") then
@@ -537,6 +560,7 @@ if GetModConfigData("cave_close_to_minotaur_spawner") then
     table.insert(cave_setting["ancient_representation"], "minotaur_spawner")
 end
 cave_setting["allow_wormwhole"] = true
+cave_setting["must_onlnad"] = false
 
 GLOBAL.SURVIVAL_TOGETHER = master_setting
 GLOBAL.RELAXED = master_setting

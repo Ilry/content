@@ -147,6 +147,9 @@ local Insight = {
 		PLANAR = "#b079e8", -- -- darker #b079e8, lighter #c99cf7
 		LUNAR_ALIGNED = "#5ADFAD", -- Got from the bright edge of the lunar rift icon
 		SHADOW_ALIGNED = "#DD2C31", -- This was originally "#9C2C31", but I made it more intense because it looked too similar to HEALTH on wigfrid's lunar/shadow songs.
+	
+		PERCENT_GOOD = "#66cc00",
+		PERCENT_BAD = "#dd5555",
 	},
 
 	ENTITY_INFORMATION_FLAGS = {
@@ -180,6 +183,7 @@ DEBUG_ENABLED = (
 
 DEBUG_OPTIONS = {
 	INSIGHT_MENU_DATA_ORIGIN = false,
+	SHOW_INFO_ORIGIN = false,
 }
 
 ALLOW_SERVER_DEBUGGING = DEBUG_ENABLED -- todo make a more accessible for standard users with mod compatibility issues?
@@ -208,7 +212,6 @@ attackRangeHelper = import("helpers/attack_range")
 entity_tracker = import("helpers/entitytracker")
 
 TRACK_INFORMATION_REQUESTS = DEBUG_ENABLED and false
-SHOW_INFO_ORIGIN = false
 DEBUG_SHOW_NOTIMPLEMENTED_MODDED = false
 
 -- maybe one day i'll do something 64-bit specific or something
@@ -244,7 +247,7 @@ local descriptors_ignore = {
 	"named", "activatable", "transformer", "deployable", "upgrader", "playerprox", "rowboatwakespawner", "plantable", "waveobstacle", -- don't care
 	"fader", "lighttweener", "sleepingbag", "machine", "floodable", "firedetector", "heater", "tiletracker", "payable", "useableitem", "drawable", "shaver", -- don't care
 	"gridnudger", "entitytracker", "appeasable", "currency", "mateable", "sizetweener", "saltlicker", "sinkable", "sticker", "projectile", "hiddendanger", "deciduoustreeupdater", -- don't care
-	"geyserfx", "blinkstaff", -- don't care,
+	"geyserfx", "blinkstaff", "scaler", -- don't care,
 
 	-- Worldly DS stuff
 	"ambientsoundmixer", "globalcolourmodifier", "moisturemanager", "inventorymoisture", -- world
@@ -256,8 +259,8 @@ local descriptors_ignore = {
 	
 	
 	-- now for DST stuff
-	"wardrobe", "plantregrowth", "bloomer", "drownable", "embarker", "inventoryitemmoisture", "constructionsite", "playeravatardata", "petleash", "giftreceiver", -- may be interesting looking into
-	"grogginess", "workmultiplier", "aura", "writeable", "shaveable", "spidermutator", -- may be interesting looking into
+	"wardrobe", "plantregrowth", "bloomer", "drownable", "embarker", "inventoryitemmoisture", "playeravatardata", "petleash", "giftreceiver", -- may be interesting looking into
+	"grogginess", "workmultiplier", "aura", "writeable", "shaveable", "spidermutator", "raindome", "acidinfusible", "decoratedgrave_ghostmanager", -- may be interesting looking into
 	"resistance", -- for the armor blocking of bone armor
 
 	"playerinspectable", "playeractionpicker", "playervision", "pinnable", "playercontroller", "playervoter", "singingshelltrigger", "tackler", "sleepingbaguser", "skinner", "playermetrics",-- from mousing over player
@@ -271,7 +274,9 @@ local descriptors_ignore = {
 	"markable_proxy", "saved_scale", "gingerbreadhunter", "bedazzlement", "bedazzler", "anchor", "distancefade", "pocketwatch_dismantler", "carnivalevent", "heavyobstacleusetarget", -- don't care
 	"cattoy", "updatelooper", "upgrademoduleremover", "hudindicatablemanager", "moonstormlightningmanager", "playerhearing", "walkableplatformplayer", "hudindicatorwatcher", "seamlessplayerswapper", -- don't care
 	"boatcannonuser", "stageactor", "boatdrifter", "boatphysics", "boatring", "boatringdata", "healthsyncer", "hull", "hullhealth", "walkableplatform", "teleportedoverride", -- don't care
-	"npc_talker", "simplemagicgrower", "moonaltarlink", "farmtiller", "aoespell", "aoetargeting", "closeinspector", "waxable", 
+	"npc_talker", "simplemagicgrower", "moonaltarlink", "farmtiller", "aoespell", "aoetargeting", "closeinspector", "waxable", "rainimmunity", "snowmandecor", -- don't care
+	"forgerepairable", "boatpatch", "submersible", "erasablepaper", "lunarplant_tentacle_weapon", "nightlightmanager", "clientpickupsoundsuppressor", -- don't care
+	"linkeditemmanager", "nightlightmanager", -- don't care
 
 	-- NEW:
 	"farmplanttendable", "plantresearchable", "fertilizerresearchable", "yotb_stagemanager",
@@ -935,7 +940,16 @@ local function GetComponentDescriptor(name)
 			-- Failed to load itself since it couldn't find itself
 		else
 			mprint("Failed to load descriptor", name, "|", res)
-			return { Describe = function() return {priority = -0.5, description = "<color=#ff0000>ERROR LOADING COMPONENT DESCRIPTOR \"" .. name .. "\"</color>:\n" .. res, _error=true} end }
+			return { 
+				Describe = function() 
+					return {
+						name = name .. "_component_insighterror",
+						priority = -0.5, 
+						description = "<color=#ff0000>ERROR LOADING COMPONENT DESCRIPTOR \"" .. name .. "\"</color>:\n" .. res, 
+						_error = true,
+					} 
+				end 
+			}
 		end
 
 		
@@ -943,6 +957,30 @@ local function GetComponentDescriptor(name)
 		return false
 	end
 end
+
+--- Unloads a loaded prefab descriptor and clears the import cache for the file.
+---@param name string
+function UnloadPrefabDescriptor(name)
+	local path = "prefab_descriptors/" .. name
+	if import.HasLoaded(path) then
+		import.Clear(path)
+		mprintf("PREFAB DESCRIPTOR '%s' IMPORT CLEARED", name)
+	else
+		mprintf("PREFAB DESCRIPTOR '%s' WAS NOT IN IMPORT CACHE", name)
+	end
+	
+	if rawget(Insight.prefab_descriptors, name) ~= nil then
+		if Insight.prefab_descriptors[name] and Insight.prefab_descriptors[name].OnUnload then
+			Insight.prefab_descriptors[name].OnUnload()
+		end
+		Insight.prefab_descriptors[name] = nil
+		mprintf("PREFAB DESCRIPTOR '%s' CACHE CLEARED", name)
+	else
+		mprintf("PREFAB DESCRIPTOR '%s' WAS NOT IN DESCRIPTOR CACHE", name)
+	end
+end
+
+_G.UnloadPrefabDescriptor = UnloadPrefabDescriptor
 
 --- Loads and returns a prefab descriptor. 
 ---@param name string Prefab name.
@@ -996,7 +1034,16 @@ local function GetPrefabDescriptor(name)
 			-- Failed to load itself since it couldn't find itself
 		else
 			mprint("Failed to load prefab descriptor", name, "|", res)
-			return { Describe = function() return {priority = -0.5, description = "<color=#ff0000>ERROR LOADING PREFAB DESCRIPTOR \"" .. name .. "\"</color>:\n" .. res, _error=true } end }
+			return { 
+				Describe = function() 
+					return {
+						name = name .. "_prefab_insighterror",
+						priority = -0.5, 
+						description = "<color=#ff0000>ERROR LOADING PREFAB DESCRIPTOR \"" .. name .. "\"</color>:\n" .. res, 
+						_error = true,
+					}
+				end 
+			}
 		end
 
 		return false
@@ -1034,6 +1081,7 @@ local function ValidateDescribeResponse(chunks, name, datas, params)
 			if d.name ~= nil and type(d.name) ~= "string" then
 				error(string.format("Invalid name '%s' (%s) for component descriptor '%s'.", d.name, type(d.name), name))
 			elseif d.name == nil and #datas > 1 then
+				dumptable(datas)
 				error(string.format("Missing name for multiple-return descriptor '%s'.", name)) -- when returning multiple tables, need to manually specify the names
 			end
 
@@ -1198,7 +1246,7 @@ local function GetEntityInformation(entity, player, params)
 
 		-- Collect the description if one was provided.
 		if v.description then -- type(v.description) == "string"
-			assembled.information = assembled.information .. (SHOW_INFO_ORIGIN and string.format("[%s]: ", v.name) or "") .. v.description --(eq and eq(aa) or v.description)
+			assembled.information = assembled.information .. (DEBUG_OPTIONS.SHOW_INFO_ORIGIN and string.format("[%s]: ", v.name) or "") .. v.description --(eq and eq(aa) or v.description)
 
 			if i < num_chunks then
 				-- Turns out, this isn't accurate because further chunks might not have any information.
@@ -1213,7 +1261,7 @@ local function GetEntityInformation(entity, player, params)
 
 		-- Collect the alternate description if one was provided.
 		if v.alt_description then -- type(v.alt_description) == "string"
-			assembled.alt_information = assembled.alt_information .. (SHOW_INFO_ORIGIN and string.format("[%s]: ", v.name) or "") .. v.alt_description --(eq and eq(bb) or v.alt_description)
+			assembled.alt_information = assembled.alt_information .. (DEBUG_OPTIONS.SHOW_INFO_ORIGIN and string.format("[%s]: ", v.name) or "") .. v.alt_description --(eq and eq(bb) or v.alt_description)
 			if i < num_chunks then
 				-- Turns out, this isn't accurate because further chunks might not have any information.
 				assembled.alt_information = assembled.alt_information .. "\n"
@@ -1221,7 +1269,7 @@ local function GetEntityInformation(entity, player, params)
 			--if bb then bb=bb+1 end
 		elseif v.alt_description == nil and v.description ~= nil then
 			-- We don't want to remove a normal description if an alt wasn't provided.
-			assembled.alt_information = assembled.alt_information .. (SHOW_INFO_ORIGIN and string.format("[%s]: ", v.name) or "") .. v.description --(eq and eq(bb) or v.description)
+			assembled.alt_information = assembled.alt_information .. (DEBUG_OPTIONS.SHOW_INFO_ORIGIN and string.format("[%s]: ", v.name) or "") .. v.description --(eq and eq(bb) or v.description)
 			if i < num_chunks then
 				-- Turns out, this isn't accurate because further chunks might not have any information.
 				assembled.alt_information = assembled.alt_information .. "\n"
@@ -2718,6 +2766,20 @@ if IS_DST then
 		marker.owner = inst
 	end)
 
+	--[[
+	AddPrefabPostInit("gelblobspawningground", function(inst)
+		if not TheWorld.ismastersim then
+			return
+		end
+		
+		local marker = SpawnPrefab("lightning_rod")
+		marker.Transform:SetPosition(inst.Transform:GetWorldPosition())
+		marker:DoPeriodicTask(1, function() marker.Transform:SetPosition(inst.Transform:GetWorldPosition()) end)
+		--local marker = SpawnPrefab("insight_ghost_klaus_sack")
+		--marker.owner = inst
+	end)
+	--]]
+
 	AddPrefabPostInit("klaus_sack", function(inst)
 		--inst.MiniMapEntity:SetPriority(105)
 	end)
@@ -3034,10 +3096,10 @@ if IS_DST then
 				
 				if player.userid ~= "" then
 					shard_players[player.userid] = {
-						health = player.components.health and Insight.descriptors.health.GetData(player.components.health) or nil,
-						sanity = player.components.sanity and Insight.descriptors.sanity.GetData(player.components.sanity) or nil,
-						hunger = player.components.hunger and Insight.descriptors.hunger.GetData(player.components.hunger) or nil,
-						wereness = player.components.wereness and Insight.descriptors.wereness.GetData(player.components.wereness) or nil,
+						health = player.components.health and Insight.descriptors.health and Insight.descriptors.health.GetData(player.components.health) or nil,
+						sanity = player.components.sanity and Insight.descriptors.sanity and Insight.descriptors.sanity.GetData(player.components.sanity) or nil,
+						hunger = player.components.hunger and Insight.descriptors.hunger and Insight.descriptors.hunger.GetData(player.components.hunger) or nil,
+						wereness = player.components.wereness and Insight.descriptors.wereness and Insight.descriptors.wereness.GetData(player.components.wereness) or nil,
 					}
 				end 
 			end
@@ -3366,6 +3428,7 @@ if IS_DST then -- not in UI overrides because server needs access too
 	end
 
 	local function SendReport(widget, from, log)
+		mprint("SendReport called")
 		local report = {}
 		-- basic stuff
 		report.user = {
@@ -3408,12 +3471,15 @@ if IS_DST then -- not in UI overrides because server needs access too
 			report.log = "LOG TRIMMED: ORIGINAL SIZE = " .. #report.log .. "\n" .. report.log:sub(#report.log - LOG_LIMIT + 1, #report.log)
 		end
 
+
+		mprint("Compressing log")
 		-- game seems to have a problem encoding some characters with the messed up json implementation they have
 		-- but it'll handle b64 alright, so i'll just compress it and handle stuff properly on my end
 		--print("#log before:", #report.log) -- 137261
 		--local old = report.log
 		report.log = TheSim:ZipAndEncodeString(report.log) -- DS: TheSim:SetPersistentString(path, data, ENCODE_SAVES) (ENCODE_SAVES=true)
-		
+		mprint("Compressed log")
+
 		--[[
 		print'\tasd1'
 		local f1 = io.open("before.txt", "w")
@@ -3436,7 +3502,13 @@ if IS_DST then -- not in UI overrides because server needs access too
 		--]]
 
 		--print("#log after:", #report.log) -- 23408
+		--report.log = TheSim:ZipAndEncodeString("welcome to the citadel")
 		report = json.encode_compliant(report)
+		
+		--file = io.open("report.json", "w") 
+		--file:write(report)
+		--file:close()
+
 		--print"wagh"
 		
 		--[[
@@ -3446,19 +3518,19 @@ if IS_DST then -- not in UI overrides because server needs access too
 		end
 		--]]
 		TheSim:QueryServer(
-			"https://dst.penguin0616.com/crashreporter/reportcrash",
+			"https://dst.penguin0616.dev/crashreporter/reportcrash",
 			function(res, isSuccessful, statusCode)
-				mprint("Report:", res, isSuccessful, statusCode)
+				mprintf("Report: Success = %s, Status = %s, \n%s", isSuccessful, statusCode, res)
 
 				if no_logs and #log_buffer == 0 then
 					isSuccessful = false
+					mprint("Can't find logs for crash report")
 				end
 
 				local state = 0
 				local status = "???"
 				
 				if not isSuccessful then
-					print("Can't find logs.")
 					status = "Failed to report crash."
 					state = 1
 				elseif isSuccessful then
@@ -3515,18 +3587,18 @@ if IS_DST then -- not in UI overrides because server needs access too
 			if IsClient() then
 				if is_server_owner then
 					if not report_client and not report_server then
-						ShowStatus(self, { state=0, status="Crash reporter disabled [Multishard Client Owner]." })
+						ShowStatus(self, { state=0, status="Crash reporter not enabled [Multishard Client Owner]." })
 						return
 					end
 				else
 					if not report_client then
-						ShowStatus(self, { state=0, status="Crash reporter disabled [Client]." })
+						ShowStatus(self, { state=0, status="Crash reporter not enabled [Client]." })
 						return
 					end
 				end
 			elseif IsClientHost() then
 				if not report_client and not report_server then
-					ShowStatus(self, { state=0, status="Crash reporter disabled [ClientHost (Owner)]." })
+					ShowStatus(self, { state=0, status="Crash reporter not enabled [ClientHost (Owner)]." })
 					return
 				end
 			end
@@ -3548,7 +3620,7 @@ if IS_DST then -- not in UI overrides because server needs access too
 			dprint("report_client:", report_client)
 
 			if not report_server and not SERVER_OWNER_HAS_OPTED_IN then
-				ShowStatus(self, { state=0, status="Crash reporter disabled [Server]." })
+				ShowStatus(self, { state=0, status="Crash reporter not enabled [Server]." })
 				return
 			end
 

@@ -294,12 +294,11 @@ local function activefn()
     end
 
 	inst:AddComponent("inspectable")
-
 	inst:AddComponent("lootdropper")
 
 	inst:AddComponent("health")
 	inst.components.health:SetMaxHealth(650)
-	inst.components.health:StartRegen(50, 8)
+	inst.components.health:StartRegen(100, 8)
 
 	inst:AddComponent("combat")
     inst.components.combat:SetDefaultDamage(30)

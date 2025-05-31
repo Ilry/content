@@ -115,7 +115,7 @@ end
 local function sroomcmp(e, f)
     if e and f then
         --尝试按照 prefab 名字排序
-        local prefab_e = tostring(e.prefab)
+        local prefab_e = tostring(e.prefab)	--e.prefab == ""
         local prefab_f = tostring(f.prefab)
         return sroomStr(prefab_e, prefab_f)
     end
@@ -135,19 +135,24 @@ end
 --容器排序
 local function sroomslotsPX(inst)
     if inst and inst.components.container then
-        --取出容器中的所有物品
+        -- 取出容器中的所有物品
         local items = {}
         for k, v in pairs(inst.components.container.slots) do
-            local item = inst.components.container:RemoveItemBySlot(k)
-            if (item) then
-                table.insert(items, item)
+            local item = inst.components.container:RemoveItemBySlot(k, true)  -- 按格子移除物品
+            if item and item:IsValid() then  -- 确保物品实例有效
+                table.insert(items, item)  -- 在items表插入被移除出来的item
             end
         end
 
+        -- 对物品进行排序
         sroom_sort(items, sroomcmp)
 
+        -- 重新插入物品，处理堆叠逻辑
         for i = 1, #items do
-            inst.components.container:GiveItem(items[i])
+            local item = items[i]
+			if item and item:IsValid() then
+				inst.components.container:GiveItem(item)
+			end
         end
     end
 end
@@ -161,7 +166,7 @@ local function sroomslotsPXFn(inst, doer)
 end
 --整理按钮亮起规则
 local function sroomslotsPXValidFn(inst)
-    return inst.replica.container ~= nil and not inst.replica.container:IsEmpty() and not inst:HasTag("storeroom_upgraded")
+    return inst.replica.container ~= nil and not inst.replica.container:IsEmpty()	-- and not inst:HasTag("storeroom_upgraded")
 end
 if STOREROOM.LANG == "Ch" then
 	STRINGS.srbtn = {zhengli = "整理"}
@@ -559,6 +564,21 @@ else
 	STRINGS.NAMES.STOREROOM = "Storeroom"
 	STRINGS.RECIPE_DESC.STOREROOM = "Need more space!"
 	STRINGS.CHARACTERS.GENERIC.DESCRIBE.STOREROOM = "I really like this is a great storeroom!"
+end
+
+--使用以下代码，实现与ShowMe联动容器高亮。
+--优先级高于 ShowMe
+TUNING.MONITOR_CHESTS = TUNING.MONITOR_CHESTS or {}
+TUNING.MONITOR_CHESTS.storeroom = true
+
+--优先级低于 ShowMe		--来自 风铃草 —— 穹妹
+for k, m in pairs(ModManager.mods) do
+	if m and _G.rawget(m, "SHOWME_STRINGS") then
+		if m.postinitfns and m.postinitfns.PrefabPostInit and m.postinitfns.PrefabPostInit.treasurechest then
+			m.postinitfns.PrefabPostInit.storeroom = m.postinitfns.PrefabPostInit.treasurechest
+		end
+		break
+	end
 end
 
 ---------------------------------------------------

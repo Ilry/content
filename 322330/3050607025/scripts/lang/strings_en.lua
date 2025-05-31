@@ -7,7 +7,10 @@ STRINGS.CLEANINGS={
 [5] = "World",
 }
 
-STRINGS.CLEAN_NOTICE="LagRemover：5s until server clean."
+STRINGS.CLEAN_NOTICE="LagRemover：4 min until server clean."
+STRINGS.ADD_SUCCESS="Join cleanup task successfully:"
+STRINGS.COMMAND_CLEAN="cleaned up the world with command！"
+STRINGS.ONLY_ADMIN_CLEAN="Only administrators can clean up the world！"
 
 STRINGS.POETRY={
 --以下为泰戈尔的《飞鸟集》摘录

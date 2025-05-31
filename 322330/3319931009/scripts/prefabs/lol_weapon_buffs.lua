@@ -5,6 +5,13 @@
 local function slow_attach(inst, target)
     if target.components.locomotor ~= nil then
         target.components.locomotor:SetExternalSpeedMultiplier(inst, inst.prefab, .7)
+        if target:HasTag('epic') then
+            local player = target.lol_wp_s19_fimbulwinter_armor_upgrade_attacker
+            local wp = target.lol_wp_s19_fimbulwinter_armor_upgrade_wp
+            if player and wp and wp.skill_enternal then
+                wp.skill_enternal(wp,player,target)
+            end
+        end
     end
 end
 

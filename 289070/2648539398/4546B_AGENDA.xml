@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 4546B_AGENDA -->
+<!-- Author: 27136 -->
+<!-- DateCreated: 11/4/2021 3:58:50 PM -->
+<GameData>
+	<Types>
+		<Row Type="TRAIT_AGENDA_THE_GUARD_OF_THE_OCEAN" Kind="KIND_TRAIT"/>
+	</Types>
+	<Traits>
+	<Row TraitType="TRAIT_AGENDA_THE_GUARD_OF_THE_OCEAN"/>
+	</Traits>
+	<Agendas>
+		<Row AgendaType="AGENDA_THE_GUARD_OF_THE_OCEAN" Name="LOC_AGENDA_THE_GUARD_OF_THE_OCEAN_NAME" Description="LOC_AGENDA_THE_GUARD_OF_THE_OCEAN_DESCRIPTION"/>
+	</Agendas>
+	<HistoricalAgendas>
+		<Row LeaderType="LEADER_HAIHUANG" AgendaType="AGENDA_THE_GUARD_OF_THE_OCEAN"/>
+	</HistoricalAgendas>
+	<AgendaPreferredLeaders>
+		<Row AgendaType="AGENDA_TECHNOPHILE" LeaderType="LEADER_HAIHUANG" PercentageChance="90"/>
+	</AgendaPreferredLeaders>
+	<AgendaTraits>
+		<Row AgendaType="AGENDA_THE_GUARD_OF_THE_OCEAN" TraitType="TRAIT_AGENDA_THE_GUARD_OF_THE_OCEAN"/>
+	</AgendaTraits>
+	<TraitModifiers>
+		<Row TraitType="TRAIT_AGENDA_THE_GUARD_OF_THE_OCEAN" ModifierId="AGENDA_HAIHUANG_GOOD_ALTITUDE"/>
+		<Row TraitType="TRAIT_AGENDA_THE_GUARD_OF_THE_OCEAN" ModifierId="AGENDA_HAIHUANG_BAD_ALTITUDE"/>
+	</TraitModifiers>
+	<Modifiers>
+		<Row>
+			<ModifierId>AGENDA_HAIHUANG_GOOD_ALTITUDE</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_DIPLOMACY_SIMPLE_MODIFIER</ModifierType>
+			<SubjectRequirementSetId>PLAYER_DECLARED_FRIEND</SubjectRequirementSetId>
+		</Row>
+		<Row>
+			<ModifierId>AGENDA_HAIHUANG_BAD_ALTITUDE</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_DIPLOMACY_SIMPLE_MODIFIER</ModifierType>
+			<SubjectRequirementSetId>PLAYER_HAVE_4546BARMY</SubjectRequirementSetId>
+		</Row>
+	</Modifiers>
+	<!-- =============== RequirementSets =============== -->
+	<RequirementSets>
+		<Row>
+			<RequirementSetId>PLAYER_HAVE_4546BARMY</RequirementSetId>
+			<RequirementSetType>REQUIREMENTSET_TEST_ALL</RequirementSetType>
+		</Row>
+	</RequirementSets>
+	<RequirementSetRequirements>
+		<Row>
+			<RequirementSetId>PLAYER_HAVE_4546BARMY</RequirementSetId>
+			<RequirementId>REQ_HAIHUANG_NO_WAR</RequirementId>
+		</Row>
+		<Row>
+			<RequirementSetId>PLAYER_HAVE_4546BARMY</RequirementSetId>
+			<RequirementId>REQUIRES_PLAYERS_HAVE_MET</RequirementId>
+		</Row>
+	</RequirementSetRequirements>
+	<!-- +++++++++++++++ Requirements +++++++++++++++ -->
+	<Requirements>
+		<Row>
+			<RequirementId>REQ_HAIHUANG_NO_WAR</RequirementId>
+			<RequirementType>REQUIREMENT_PLAYER_DECLARED_WAR</RequirementType>
+		</Row>
+	</Requirements>
+	<RequirementArguments>
+		<Row>
+			<RequirementId>REQ_HAIHUANG_NO_WAR</RequirementId>
+			<Name>ExcludeEmergencies</Name>
+			<Value>true</Value>
+		</Row>
+		<Row>
+			<RequirementId>REQ_HAIHUANG_NO_WAR</RequirementId>
+			<Name>WarType</Name>
+			<Value>ALL</Value>
+		</Row>
+		<Row>
+			<RequirementId>REQ_HAIHUANG_NO_WAR</RequirementId>
+			<Name>WhileMet</Name>
+			<Value>true</Value>
+		</Row>
+	</RequirementArguments>
+
+
+	<ModifierArguments>
+		<Row>
+			<ModifierId>AGENDA_HAIHUANG_GOOD_ALTITUDE</ModifierId>
+			<Name>InitialValue</Name>
+			<Value>0</Value>
+		</Row>
+		<Row>
+			<ModifierId>AGENDA_HAIHUANG_GOOD_ALTITUDE</ModifierId>
+			<Name>MaxValue</Name>
+			<Value>15</Value>
+		</Row>
+		<Row>
+			<ModifierId>AGENDA_HAIHUANG_GOOD_ALTITUDE</ModifierId>
+			<Name>IncrementValue</Name>
+			<Value>3</Value>
+		</Row>
+		<Row>
+			<ModifierId>AGENDA_HAIHUANG_GOOD_ALTITUDE</ModifierId>
+			<Name>IncrementTurns</Name>
+			<Value>5</Value>
+		</Row>
+		<Row>
+			<ModifierId>AGENDA_HAIHUANG_GOOD_ALTITUDE</ModifierId>
+			<Name>StatementKey</Name>
+			<Value>LOC_DIPLO_KUDO_LEADER_HAIHUANG_REASON_ANY</Value>
+		</Row>
+		<Row>
+			<ModifierId>AGENDA_HAIHUANG_GOOD_ALTITUDE</ModifierId>
+			<Name>SimpleModifierDescription</Name>
+			<Value>LOC_DIPLO_MODIFIER_THE_GUARD_OF_THE_OCEAN_FRIEND</Value>
+		</Row>
+		<Row>
+			<ModifierId>AGENDA_HAIHUANG_BAD_ALTITUDE</ModifierId>
+			<Name>InitialValue</Name>
+			<Value>-15</Value>
+		</Row>
+		<Row>
+			<ModifierId>AGENDA_HAIHUANG_BAD_ALTITUDE</ModifierId>
+			<Name>ReductionTurns</Name>
+			<Value>15</Value>
+		</Row>
+		<Row>
+			<ModifierId>AGENDA_HAIHUANG_BAD_ALTITUDE</ModifierId>
+			<Name>ReductionValue</Name>
+			<Value>-1</Value>
+		</Row>
+		<Row>
+			<ModifierId>AGENDA_HAIHUANG_BAD_ALTITUDE</ModifierId>
+			<Name>StatementKey</Name>
+			<Value>LOC_DIPLO_WARNING_LEADER_HAIHUANG_REASON_ANY</Value>
+		</Row>
+		<Row>
+			<ModifierId>AGENDA_HAIHUANG_BAD_ALTITUDE</ModifierId>
+			<Name>SimpleModifierDescription</Name>
+			<Value>LOC_DIPLO_MODIFIER_THE_GUARD_OF_THE_OCEAN_ENEMY</Value>
+		</Row>
+	</ModifierArguments>
+	<ModifierStrings>
+		<Row ModifierId="AGENDA_HAIHUANG_GOOD_ALTITUDE" Context="Sample" Text="LOC_TOOLTIP_SAMPLE_DIPLOMACY_ALL"/>
+		<Row ModifierId="AGENDA_HAIHUANG_BAD_ALTITUDE" Context="Sample" Text="LOC_TOOLTIP_SAMPLE_DIPLOMACY_ALL"/>
+	</ModifierStrings>
+	
+	
+
+</GameData>

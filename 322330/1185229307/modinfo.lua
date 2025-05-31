@@ -1,7 +1,7 @@
 all_clients_require_mod = true
 dst_compatible = true
 
-version = "94"
+version = "96"
 version_compatible = "57"
 priority = 2 ^ 1023
 api_version = 10
@@ -10,18 +10,26 @@ name = "Epic Healthbar"
 author = "Tykvesh"
 icon_atlas = "images/modicon.xml"
 icon = "modicon.tex"
-server_filter_tags = { name, author }
-version_description = --•◦
+server_filter_tags = { name .. " " .. version, author }
+version_description = --•
 [[
-• Added support for the Great Depths Worm.
-• Fixed capture replay error when combat camera is enabled.
-• Fixed missing translations for capture settings.
+• Stabilized combat camera and increased range.
+• Fixed capture player getting out of sync.
+]]
+
+--[[
+Spice up your combat experience with this stylized health bar!
+Epic Healthbar is a new widget which provides information about the current boss:
+* Displays combat phases, elemental damage and damage resistance
+* Each boss has their own color theme
+* Optional combat camera and more!
 ]]
 
 local LOCALE =
 {
 	EN =
 	{
+		--TRANSLATOR = "Translated by You",
 		NAME = name,
 		DESCRIPTION_FMT = "Update %s:\n\n%s",
 		HEADER_SERVER = "Server",
@@ -88,12 +96,10 @@ local LOCALE =
 
 		LOADING_TIPS =
 		{
-			SURVIVAL = [["Hi {username}! I hope your boss rush goes well." -T]],
-			LORE = "Epic Healthbar has built-in stuff for some mods, but any mod is able to define custom themes, phases or even textures.",
-			CONTROL1 = "Type /epic in the chat to configure the health bar.\nYou can also hover over it to access its menu.",
-			CONTROL2 = "If health bars draw too much of your attention, set Display Health For to None in the configuration to get rid of them.",
-			CONTROL3 = "Bring damage numbers straight to the battlefield with Global Damage Numbers! You can find it in Epic Healthbar's configuration.",
-			OTHER = "You can help translate Epic Healthbar to your language! It already features German, Brazilian Portuguese, Russian, and Simplified Chinese translations submitted by fellow players.",
+			SURVIVAL = [["We hope your boss rush goes well." -T]],
+			CONTROL1 = "If health bars draw too much of your attention, type /epic and set Display Health For to None to get rid of them.",
+			CONTROL2 = "Bring damage numbers straight to the battlefield with Global Damage Numbers! You can find it in Epic Healthbar's settings.",
+			CONTROL3 = "Hover over the health bar to toggle Combat Camera. You can also /sit to spectate the fight.",
 		},
 	},
 
@@ -163,6 +169,74 @@ local LOCALE =
 		CAMERA_BUTTON_ALT = "Aktiviere Zuschaueransicht",
 		CAMERA_BUTTON_FAR = "Zu weit weg!",
 		CAMERA_BUTTON_BUSY = "Nicht verfügbar!",
+	},
+
+	ES =
+	{
+		TRANSLATOR = "Traducido por RavenCorwen",
+		NAME = "Barra de Salud Épica",
+		DESCRIPTION_FMT = "Actualizar %s:\n\n%s",
+		HEADER_SERVER = "Servidor",
+		HEADER_CLIENT = "Cliente",
+		DISABLED = "Desactivado",
+		ENABLED = "Activado",
+
+		GLOBAL = "Salud de entidades",
+		GLOBAL_HOVER = "Permite ver la salud de todas las entidades en el cliente.\nDebes seleccionar una opcion mas abajo.",
+		GLOBAL_DISABLED = "Solo mostrar de gigantes",
+		GLOBAL_ENABLED = "Mostrar de todas las entidades",
+
+		GLOBAL_NUMBERS = "Números de daño global",
+		GLOBAL_NUMBERS_HOVER = "Muestra los numeros de daño en el mundo,en lugar de la barra.\nAplicable a cualquier combate, no solo gigantes.",
+		GLOBAL_NUMBERS_DISABLED = "Muestra el daño en la barra",
+		GLOBAL_NUMBERS_ENABLED = "Muestra el daño en el mundo",
+
+		CAPTURE = "Modo de captura discreta",
+		CAPTURE_HOVER = "Enseguida que se muestre la barra epica, graba todo dentro de un archivo.\nLas grabaciones se pueden ver en la pantalla de anfitrión de partida.",
+
+		TAG = "Mostrar salud para",
+		TAG_HOVER = "Activa las barras de salud solo para los objetivos seleccionados.",
+		TAG_NONE = "Ninguno",
+		TAG_NONE_HOVER = "¡Teclea /epic en el chat si cambias de opinión!",
+		TAG_EPIC = "Gigantes",
+		TAG_EPIC_HOVER = "La experiencia estándar",
+		TAG_HEALTH = "Todos",
+		TAG_HEALTH_HOVER = "Si lo admite el servidor",
+
+		FRAME_PHASES = "Fases de combate",
+		FRAME_PHASES_HOVER = "Separa las barras de salud en las distintas fases de la criatura.",
+		FRAME_PHASES_DISABLED = "Ocultar fases",
+		FRAME_PHASES_ENABLED = "Mostrar fases",
+
+		DAMAGE_NUMBERS = "Números de daño",
+		DAMAGE_NUMBERS_HOVER = "Muestra el daño o curación en números emergentes.",
+		DAMAGE_NUMBERS_DISABLED = "Ocultar números",
+		DAMAGE_NUMBERS_ENABLED = "Mostrar números",
+
+		DAMAGE_RESISTANCE = "Resistencia al daño",
+		DAMAGE_RESISTANCE_HOVER = "Muestra un efecto especial cuando el objetivo\nrecibe menos daño por su resistencia.",
+		DAMAGE_RESISTANCE_DISABLED = "Ocultar resistencia",
+		DAMAGE_RESISTANCE_ENABLED = "Mostrar resistencia",
+
+		WETNESS_METER = "Húmedad",
+		WETNESS_METER_HOVER = "Muestra un efecto especial cuando el objetivo esta empapado.",
+		WETNESS_METER_DISABLED = "Ocultar húmedad",
+		WETNESS_METER_ENABLED = "Mostrar húmedad",
+
+		HORIZONTAL_OFFSET = "Desplazamiento horizontal",
+		HORIZONTAL_OFFSET_HOVER = "Aleja la barra del centro.",
+		HORIZONTAL_OFFSET_LEFT = "%s unidades a la izquierda",
+		HORIZONTAL_OFFSET_NONE = "No desplazar",
+		HORIZONTAL_OFFSET_RIGHT = "%s unidades a la izquierda",
+
+		CAMERA = "Cámara de combate",
+		CAMERA_HOVER = "Permite que la cámara se enfoque en los gigantes durante el combate.\nSentarse o esconderse brinda visión de espectador.",
+		CAMERA_OPTION = "Alternar",
+		CAMERA_OPTION_HOVER = "Pasa por encima de la barra de salud el ratón para activar",
+		CAMERA_BUTTON = "Alternar cámara de combate",
+		CAMERA_BUTTON_ALT = "Alternar cámara de espectador",
+		CAMERA_BUTTON_FAR = "¡Muy lejos!",
+		CAMERA_BUTTON_BUSY = "¡No disponible!",
 	},
 
 	PT =
@@ -372,6 +446,7 @@ local LOCALE =
 
 LOCALE.BR = LOCALE.PT
 LOCALE.CH = LOCALE.ZH
+--LOCALE.EN = LOCALE.ES
 
 local function MakeHeader(name, client)
 	return { name = name, label = STRINGS[name], options = { { description = "", data = false } }, default = false, client = client }
@@ -471,11 +546,11 @@ function SetLocaleMod(env)
 		end
 	end
 	if STRINGS.LOADING_TIPS then
-		local tab = { username = env.TheNet:GetLocalUserName() }
+		--local tab = { username = env.TheNet:GetLocalUserName() }
 		for id, tip in env.pairs(STRINGS.LOADING_TIPS) do
 			local category = "LOADING_SCREEN_" .. id:match("%a+") .. "_TIPS"
 			local key = "EPICHEALTHBAR" .. (id:match("%d+") or "")
-			env.AddLoadingTip(env.STRINGS.UI[category], key, env.subfmt(tip, tab))
+			env.AddLoadingTip(env.STRINGS.UI[category], key, tip) --env.subfmt(tip, tab)
 		end
 	end
 end

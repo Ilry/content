@@ -143,7 +143,7 @@ DEPLOY_DICT.bspj_cmd = [[
         end
     end
     print(n, #d);
-    local file = io.open('deployable_prefabs.json', 'w');
+    local file = io.open('unsafedata/' .. 'deployable_prefabs.json', 'w');
     file:write(json.encode(d));
     file:close();
 ]]

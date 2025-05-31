@@ -91,7 +91,9 @@ local fn = function(act) -- 动作触发的函数。传入的是一个BufferedAc
     return true
 end
 local REPAIREQUIPMENT=AddAction(id,name,fn)
---REPAIREQUIPMENT.priority = 0
+if TUNING.RANGCHIGHPRIOR then
+REPAIREQUIPMENT.priority = 11
+end
 REPAIREQUIPMENT.rmb = true
 REPAIREQUIPMENT.canqueuer = "allclick"
 --动作兼容行为排队论

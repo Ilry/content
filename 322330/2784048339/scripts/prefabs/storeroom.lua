@@ -231,6 +231,11 @@ local function OnUpgrade_storeroom(inst, performer, upgraded_from_item)
             inst.components.container:Close()
             inst.components.container:EnableInfiniteStackSize(true)
             inst.components.inspectable.getstatus = regular_getstatus
+			--对原物品进行转移整理一次
+			-- local allitems = inst.components.container:RemoveAllItems()
+            -- for _, v in ipairs(allitems) do
+                -- inst.components.container:GiveItem(v)
+            -- end
         end
 		
         if upgraded_from_item then
@@ -259,10 +264,36 @@ local function OnUpgrade_storeroom(inst, performer, upgraded_from_item)
 	--inst:ListenForEvent("restoredfromcollapsed", OnRestoredFromCollapsed)
 end
 
+local function OnSave_storeroom(inst, data)
+    if inst.components.container then
+        local items = {}
+        for k, v in pairs(inst.components.container.slots) do
+            if v and v:IsValid() then
+                table.insert(items, {
+                    prefab = v.prefab,
+                    stacksize = v.components.stackable and v.components.stackable:StackSize() or 1
+                })
+            end
+        end
+        data.items = items
+    end
+end
+
 local function OnLoad_storeroom(inst, data, newents)
     if inst.components.upgradeable ~= nil and inst.components.upgradeable.numupgrades > 0 then
         OnUpgrade_storeroom(inst)
     end
+	-- if data and data.items and inst.components.container then
+        -- for _, itemdata in ipairs(data.items) do
+            -- local item = SpawnPrefab(itemdata.prefab)
+            -- if item and item:IsValid() then
+                -- if item.components.stackable and itemdata.stacksize then
+                    -- item.components.stackable:SetStackSize(itemdata.stacksize)
+                -- end
+                -- inst.components.container:GiveItem(item)
+            -- end
+        -- end
+    -- end
 end
 
 local function regular_SCStoreroom(inst)	--解构后丢出所有物品
@@ -305,7 +336,12 @@ local function regular_master_postinit(inst)	--fn 的 master_postinit 函数
 	upgradeable:SetOnUpgradeFn(OnUpgrade_storeroom)
 	inst:ListenForEvent("ondeconstructstructure", regular_storeroom)	--监听解构
 	
+	if inst.components.container then
+        inst.components.container.ignoreoverstacked = true	--添加这个可以禁用堆叠检查，这样就可以整理了
+    end
+	
 	inst.OnLoad = OnLoad_storeroom
+	--inst.OnSave = OnSave_storeroom
 end
 
 return MakeChest("storeroom", "storeroom", "storeroom", false, regular_master_postinit, prefabs_regular, assets_regular),

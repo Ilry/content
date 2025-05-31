@@ -87,7 +87,13 @@ function dst_lan:alwaysShowRecipes(tbl)
 	end)
 end
 
-function dst_lan:main(tbl_recipe_all)
+function dst_lan:makeDestructionRecipes(destruction_recipes)
+	for _,data in pairs(destruction_recipes) do
+		AddDeconstructRecipe(data.name,data.ingredients)
+	end
+end
+
+function dst_lan:main(tbl_recipe_all,destruction_recipes)
 	local alwaysshow = {}
 
     for _,r in ipairs(tbl_recipe_all) do 
@@ -125,6 +131,8 @@ function dst_lan:main(tbl_recipe_all)
     end
 
 	self:alwaysShowRecipes(alwaysshow)
+
+	self:makeDestructionRecipes(destruction_recipes)
 end
 
 return dst_lan

@@ -17,7 +17,7 @@ description = [[
 - There are many interesting commands in the mod, you can press "Add Presets" to add them (Sorry! they are written in Chinese).
 ]]
 author = "NoMu"
-version = "1.0.3"
+version = "1.0.7"
 
 folder_name = folder_name or "command_manager"
 if not folder_name:find("workshop-") then

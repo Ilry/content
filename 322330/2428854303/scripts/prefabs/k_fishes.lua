@@ -1,11 +1,14 @@
 local assets =
 {
+	Asset("ANIM", "anim/hermit_bundle.zip"),
+	
     Asset("ANIM", "anim/koi.zip"),
 	Asset("ANIM", "anim/koi02.zip"),
 	Asset("ANIM", "anim/koi_cooked.zip"),
 	
 	Asset("ANIM", "anim/tropicalfish.zip"),
 	Asset("ANIM", "anim/tropicalfish02.zip"),
+	Asset("ANIM", "anim/tropicalfish_cooked.zip"),
 	
 	Asset("ANIM", "anim/neonfish.zip"),
 	Asset("ANIM", "anim/neonfish02.zip"),
@@ -28,12 +31,23 @@ local assets =
 	Asset("ATLAS_BUILD", "images/inventoryimages/tap_inventoryimages.xml", 256),
 }
 
+local prefabs = 
+{
+	"kyno_koi",
+	"kyno_grouper",
+	"kyno_pierrotfish",
+	"kyno_neonfish",
+	"kyno_tropicalfish",
+}
+
 local fish_prefabs =
 {
 	"fishmeat_small",
     "fishmeat_small_cooked",
+	
 	"fishmeat",
 	"fishmeat_cooked",
+	
 	"spoiled_fish_small",
     "spoiled_fish",
 }
@@ -95,7 +109,6 @@ local function commonfn(bank, build, char_anim_build, data)
 	inst:AddTag("smallcreature")
 
 	if data.weight_min ~= nil and data.weight_max ~= nil then
-		-- weighable_fish (from weighable component) added to pristine state for optimization
 		inst:AddTag("weighable_fish")
 	end
 
@@ -118,6 +131,9 @@ local function commonfn(bank, build, char_anim_build, data)
 
     inst:AddComponent("cookable")
     inst.components.cookable.product = data.cookable_product
+	
+	inst:AddComponent("lootdropper")
+	inst.components.lootdropper:SetLoot(data.loot)
 
     inst:AddComponent("inventoryitem")
 	inst.components.inventoryitem.atlasname = "images/inventoryimages/tap_inventoryimages.xml"
@@ -125,19 +141,12 @@ local function commonfn(bank, build, char_anim_build, data)
     inst.components.inventoryitem:SetOnPutInInventoryFn(onpickup)
 	inst.components.inventoryitem:SetSinks(true)
 
-	inst:AddComponent("lootdropper")
-	inst.components.lootdropper:SetLoot(data.loot)
-
     inst:AddComponent("edible")
     inst.components.edible.ismeat = true
-	inst.components.edible.healthvalue = data.healthvalue
-	inst.components.edible.hungervalue = data.hungervalue
-	inst.components.edible.sanityvalue = 0
+	inst.components.edible.healthvalue = data.healthvalue or 0
+	inst.components.edible.hungervalue = data.hungervalue or 0
+	inst.components.edible.sanityvalue = data.sanityvalue or 0
     inst.components.edible.foodtype = FOODTYPE.MEAT
-
-    inst:AddComponent("tradable")
-    inst.components.tradable.goldvalue = data.goldvalue or TUNING.GOLD_VALUES.MEAT
-    inst.data = {}
 
 	if data.weight_min ~= nil and data.weight_max ~= nil then
 		inst:AddComponent("weighable")
@@ -145,6 +154,11 @@ local function commonfn(bank, build, char_anim_build, data)
 		inst.components.weighable:Initialize(data.weight_min, data.weight_max)
 		inst.components.weighable:SetWeight(Lerp(data.weight_min, data.weight_max, CalcNewSize()))
 	end
+	
+	inst:AddComponent("tradable")
+    inst.components.tradable.goldvalue = TUNING.GOLD_VALUES.MEAT
+	
+	inst.data = {}
 
 	inst:ListenForEvent("on_loot_dropped", ondroppedasloot)
 	inst.flop_task = inst:DoTaskInTime(math.random() * 2 + 1, flop)
@@ -154,7 +168,7 @@ local function commonfn(bank, build, char_anim_build, data)
     return inst
 end
 
-local function cookedfn(bank, build, data)
+local function cookedfn(bank, build, anim, data)
 	local inst = CreateEntity()
 
 	data = data or {}
@@ -167,7 +181,7 @@ local function cookedfn(bank, build, data)
 
     inst.AnimState:SetBank(bank)
     inst.AnimState:SetBuild(build)
-    inst.AnimState:PlayAnimation("cooked", false)
+    inst.AnimState:PlayAnimation(anim, false)
 
 	inst:AddTag("fish")
     inst:AddTag("meat")
@@ -183,12 +197,12 @@ local function cookedfn(bank, build, data)
 	inst:AddComponent("inspectable")
 	
 	inst:AddComponent("stackable")
-	inst.components.stackable.maxsize = TUNING.STACK_SIZE_SMALLITEM
+	inst.components.stackable.maxsize = data.stacksize
 
     inst:AddComponent("perishable")
-    inst.components.perishable:SetPerishTime(TUNING.PERISH_SUPERFAST)
+    inst.components.perishable:SetPerishTime(data.perish_time)
     inst.components.perishable:StartPerishing()
-    inst.components.perishable.onperishreplacement = "spoiled_food"
+    inst.components.perishable.onperishreplacement = data.perish_product
 
     inst:AddComponent("inventoryitem")
 	inst.components.inventoryitem.atlasname = "images/inventoryimages/tap_inventoryimages.xml"
@@ -196,13 +210,14 @@ local function cookedfn(bank, build, data)
 
     inst:AddComponent("edible")
     inst.components.edible.ismeat = true
-	inst.components.edible.healthvalue = 8
-	inst.components.edible.hungervalue = 25
-	inst.components.edible.sanityvalue = 5
+	inst.components.edible.healthvalue = data.healthvalue or 0
+	inst.components.edible.hungervalue = data.hungervalue or 0
+	inst.components.edible.sanityvalue = data.sanityvalue or 0
     inst.components.edible.foodtype = FOODTYPE.MEAT
 
     inst:AddComponent("tradable")
     inst.components.tradable.goldvalue = TUNING.GOLD_VALUES.MEAT
+	
     inst.data = {}
 	
 	MakeHauntableLaunchAndPerish(inst)
@@ -211,83 +226,97 @@ local function cookedfn(bank, build, data)
 end
 
 -- Large Fishes.
-local koi_data =
+local koi_data         =
 {
-    weight_min = 154.32,
-    weight_max = 420.69,
-    perish_product = "spoiled_fish",
-    loot = { "fishmeat" },
-    cookable_product = "kyno_koi_cooked",
-    healthvalue = 8,
-    hungervalue = 25,
-    perish_time = TUNING.PERISH_SUPERFAST,
-	goldvalue = TUNING.GOLD_VALUES.MEAT,
+    weight_min         = 154.32,
+    weight_max         = 420.69,
+    perish_product     = "spoiled_fish",
+    loot               = {"fishmeat"},
+    cookable_product   = "kyno_koi_cooked",
+    healthvalue        = TUNING.KYNO_FISH_LARGE_HEALTH,
+    hungervalue        = TUNING.KYNO_FISH_LARGE_HUNGER,
+    perish_time        = TUNING.PERISH_SUPERFAST,
 }
 
-local neon_data =
+local neon_data         =
 {
-    weight_min = 121.02,
-    weight_max = 243.74,
-    perish_product = "spoiled_fish",
-    loot = { "fishmeat" },
-    cookable_product = "kyno_neonfish_cooked",
-    healthvalue = 8,
-    hungervalue = 25,
-    perish_time = TUNING.PERISH_SUPERFAST,
-	goldvalue = TUNING.GOLD_VALUES.MEAT,
+    weight_min          = 121.02,
+    weight_max          = 243.74,
+    perish_product      = "spoiled_fish",
+    loot                = {"fishmeat"},
+    cookable_product    = "kyno_neonfish_cooked",
+    healthvalue         = TUNING.KYNO_FISH_LARGE_HEALTH,
+    hungervalue         = TUNING.KYNO_FISH_LARGE_HUNGER,
+    perish_time         = TUNING.PERISH_SUPERFAST,
 }
 
-local purple_data =
+local purple_data       =
 {
-    weight_min = 205.15,
-    weight_max = 362.87,
-    perish_product = "spoiled_fish",
-    loot = { "fishmeat" },
-    cookable_product = "kyno_grouper_cooked",
-    healthvalue = 8,
-    hungervalue = 25,
-    perish_time = TUNING.PERISH_SUPERFAST,
-	goldvalue = TUNING.GOLD_VALUES.MEAT,
+    weight_min          = 205.15,
+    weight_max          = 362.87,
+    perish_product      = "spoiled_fish",
+    loot                = {"fishmeat"},
+    cookable_product    = "kyno_grouper_cooked",
+    healthvalue         = TUNING.KYNO_FISH_LARGE_HEALTH,
+    hungervalue         = TUNING.KYNO_FISH_LARGE_HUNGER,
+    perish_time         = TUNING.PERISH_SUPERFAST,
+}
+
+local large_cooked_data =
+{
+	perish_product      = "spoiled_fish",
+	healthvalue         = TUNING.KYNO_FISH_LARGE_COOKED_HEALTH,
+	hungervalue         = TUNING.KYNO_FISH_LARGE_COOKED_HUNGER,
+	sanityvalue         = TUNING.KYNO_FISH_LARGE_COOKED_SANITY,
+	stacksize           = TUNING.STACK_SIZE_MEDITEM,
+	perish_time         = TUNING.PERISH_SUPERFAST,
 }
 
 -- Small Fishes.
-local tropical_data =
+local tropical_data     =
 {
-    weight_min = 20.89,
-    weight_max = 47.32,
-    perish_product = "spoiled_fish_small",
-    loot = { "fishmeat_small" },
-    cookable_product = "fishmeat_small_cooked",
-    healthvalue = 1,
-    hungervalue = 12.5,
-    perish_time = TUNING.PERISH_SUPERFAST,
-	goldvalue = TUNING.GOLD_VALUES.MEAT,
+    weight_min          = 20.89,
+    weight_max          = 47.32,
+    perish_product      = "spoiled_fish_small",
+    loot                = {"fishmeat_small"},
+    cookable_product    = "kyno_tropicalfish_cooked",
+    healthvalue         = TUNING.KYNO_FISH_SMALL_HEALTH,
+    hungervalue         = TUNING.KYNO_FISH_SMALL_HUNGER,
+    perish_time         = TUNING.PERISH_SUPERFAST,
 }
 
-local pierrot_data =
+local pierrot_data      =
 {
-    weight_min = 60.23,
-    weight_max = 97.55,
-    perish_product = "spoiled_fish_small",
-    loot = { "fishmeat_small" },
-    cookable_product = "kyno_pierrotfish_cooked",
-    healthvalue = 1,
-    hungervalue = 12.5,
-    perish_time = TUNING.PERISH_SUPERFAST,
-	goldvalue = TUNING.GOLD_VALUES.MEAT,
+    weight_min          = 60.23,
+    weight_max          = 97.55,
+    perish_product      = "spoiled_fish_small",
+    loot                = {"fishmeat_small"},
+    cookable_product    = "kyno_pierrotfish_cooked",
+    healthvalue         = TUNING.KYNO_FISH_SMALL_HEALTH,
+    hungervalue         = TUNING.KYNO_FISH_SMALL_HUNGER,
+    perish_time         = TUNING.PERISH_SUPERFAST,
 }
 
-local salmon_data =
+local salmon_data       =
 {
-    weight_min = 52.43,
-    weight_max = 110.85,
-    perish_product = "spoiled_fish_small",
-    loot = { "fishmeat_small" },
-    cookable_product = "kyno_salmonfish_cooked",
-    healthvalue = 1,
-    hungervalue = 12.5,
-    perish_time = TUNING.PERISH_SUPERFAST,
-	goldvalue = TUNING.GOLD_VALUES.MEAT,
+    weight_min          = 52.43,
+    weight_max          = 110.85,
+    perish_product      = "spoiled_fish_small",
+    loot                = {"fishmeat_small"},
+    cookable_product    = "kyno_salmonfish_cooked",
+    healthvalue         = TUNING.KYNO_FISH_SMALL_HEALTH,
+    hungervalue         = TUNING.KYNO_FISH_SMALL_HUNGER,
+    perish_time         = TUNING.PERISH_SUPERFAST,
+}
+
+local small_cooked_data =
+{
+	perish_product      = "spoiled_fish_small",
+	healthvalue         = TUNING.KYNO_FISH_SMALL_COOKED_HEALTH,
+	hungervalue         = TUNING.KYNO_FISH_SMALL_COOKED_HUNGER,
+	sanityvalue         = TUNING.KYNO_FISH_SMALL_COOKED_SANITY,
+	stacksize           = TUNING.STACK_SIZE_SMALLITEM,
+	perish_time         = TUNING.PERISH_SUPERFAST,
 }
 
 local function koifn()
@@ -295,11 +324,7 @@ local function koifn()
 end
 
 local function cooked_koifn()
-	return cookedfn("koi_cooked", "koi_cooked", "cooked", koi_data)
-end
-
-local function tropicalfn()
-	return commonfn("tropicalfish", "tropicalfish", "tropicalfish02", tropical_data)
+	return cookedfn("koi_cooked", "koi_cooked", "cooked", large_cooked_data)
 end
 
 local function neonfn()
@@ -307,7 +332,7 @@ local function neonfn()
 end
 
 local function cooked_neonfn()
-	return commonfn("neonfish_cooked", "neonfish_cooked", "cooked", neon_data)
+	return cookedfn("neonfish_cooked", "neonfish_cooked", "cooked", large_cooked_data)
 end
 
 local function grouperfn()
@@ -315,7 +340,15 @@ local function grouperfn()
 end
 
 local function cooked_grouperfn()
-	return commonfn("grouper_cooked", "grouper_cooked", "cooked", purple_data)
+	return cookedfn("grouper_cooked", "grouper_cooked", "cooked", large_cooked_data)
+end
+
+local function tropicalfn()
+	return commonfn("tropicalfish", "tropicalfish", "tropicalfish02", tropical_data)
+end
+
+local function cooked_tropicalfn()
+	return cookedfn("tropicalfish_cooked", "tropicalfish_cooked", "cooked", large_cooked_data)
 end
 
 local function pierrotfn()
@@ -323,7 +356,7 @@ local function pierrotfn()
 end
 
 local function cooked_pierrotfn()
-	return commonfn("pierrotfish_cooked", "pierrotfish_cooked", "cooked", pierrot_data)
+	return cookedfn("pierrotfish_cooked", "pierrotfish_cooked", "cooked", small_cooked_data)
 end
 
 local function salmonfn()
@@ -331,19 +364,20 @@ local function salmonfn()
 end
 
 local function cooked_salmonfn()
-	return commonfn("salmonfish_cooked", "salmonfish_cooked", "cooked", salmon_data)
+	return cookedfn("salmonfish_cooked", "salmonfish_cooked", "cooked", small_cooked_data)
 end
 
 return Prefab("kyno_koi", koifn, assets, fish_prefabs),
 Prefab("kyno_koi_cooked", cooked_koifn, assets, fish_prefabs),
-
-Prefab("kyno_tropicalfish", tropicalfn, assets, fish_prefabs),
 
 Prefab("kyno_neonfish", neonfn, assets, fish_prefabs),
 Prefab("kyno_neonfish_cooked", cooked_neonfn, assets, fish_prefabs),
 
 Prefab("kyno_grouper", grouperfn, assets, fish_prefabs),
 Prefab("kyno_grouper_cooked", cooked_grouperfn, assets, fish_prefabs),
+
+Prefab("kyno_tropicalfish", tropicalfn, assets, fish_prefabs),
+Prefab("kyno_tropicalfish_cooked", cooked_tropicalfn, assets, fish_prefabs),
 
 Prefab("kyno_pierrotfish", pierrotfn, assets, fish_prefabs),
 Prefab("kyno_pierrotfish_cooked", cooked_pierrotfn, assets, fish_prefabs),

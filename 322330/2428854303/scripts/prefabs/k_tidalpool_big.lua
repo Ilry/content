@@ -104,10 +104,13 @@ local function fn()
 	
 	MakeObstaclePhysics(inst, 3.5)
 	
-	inst:AddTag("fishable")
-	inst:AddTag("structure")
 	inst:AddTag("watersource")
-	inst:AddTag("tidalpool")
+    inst:AddTag("antlion_sinkhole_blocker")
+    inst:AddTag("birdblocker")
+    inst:AddTag("fishable")
+    inst:AddTag("tidalpool")
+
+    inst.no_wet_prefix = true
 	
 	inst.entity:SetPristine()
 
@@ -116,9 +119,7 @@ local function fn()
     end
 	
 	inst:AddComponent("watersource")
-	
 	inst:AddComponent("inspectable")
-	inst.no_wet_prefix = true
 	
 	inst:AddComponent("hauntable")
     inst.components.hauntable:SetHauntValue(TUNING.HAUNT_TINY)

@@ -91,6 +91,11 @@ function dst_lan:addToPot(tbl)
             -- 如果有食谱卡定义则生成对应的食谱卡，大厨料理食谱卡无法被解读
             AddRecipeCard("cookpot", v)
         end
+        RegisterInventoryItemAtlas(v.atlasname,v.imagename..'.tex')
+        if v.cookbook_atlas then
+            table.insert(Assets,Asset('ALTAS',v.cookbook_atlas))
+            RegisterInventoryItemAtlas(v.cookbook_atlas,v.cookbook_tex)
+        end
     end
 end
 
@@ -102,7 +107,7 @@ function dst_lan:spiced(tbl)
    -- 生成的调味料理定义在官方的表中，但是由于模组加载晚于游戏因此需要自行添加到调味站配方
     local spicedfoods = require("spicedfoods")
     for _, v in pairs(spicedfoods) do
-        if v.mod == true and v.lan.nospiced then
+        if v.mod == true and not v.lan.nospiced then
             -- 设定模组料理为非官方料理
             v.official = false
             -- 将调味料理配方添加到便携式调味站

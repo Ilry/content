@@ -9,6 +9,13 @@
 		"workbench.editor.showTabs": "none",
 		"explorer.openEditors.sortOrder": "alphabetical",
 		"workbench.colorTheme": "Monokai",
-		"Lua.runtime.version": "Lua 5.1"
+		"Lua.runtime.version": "Lua 5.1",
+		"Lua.diagnostics.disable": [
+			"redundant-parameter"
+		]
+	},
+	"mod_manager": {
+		"name": "英雄联盟武器MOD",
+		"desc": ""
 	}
 }

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 4546B_Resource -->
+<!-- Author: 27136 -->
+<!-- DateCreated: 11/2/2021 11:27:49 PM -->
+<GameData>
+	<Types>
+	<Row Type="RESOURCE_LON" Kind="KIND_RESOURCE"/>
+	</Types>
+	<TypeTags>
+	<Row Type="RESOURCE_LON" Tag="CLASS_PRODUCTION"/>
+	<Row Type="RESOURCE_LON" Tag="CLASS_SCIENCE"/>
+	</TypeTags>
+	<Resources>
+		<Row ResourceType="RESOURCE_LON" Name="LOC_RESOURCE_LON_NAME" ResourceClassType="RESOURCECLASS_STRATEGIC" Frequency="10" PrereqTech="TECH_SYNTHETIC_MATERIALS" RevealedEra="7"/>
+	</Resources>
+	<Resource_ValidTerrains>
+	<Row ResourceType="RESOURCE_LON" TerrainType="TERRAIN_DESERT"/>
+	<Row ResourceType="RESOURCE_LON" TerrainType="TERRAIN_DESERT_HILLS"/>
+	<Row ResourceType="RESOURCE_LON" TerrainType="TERRAIN_GRASS"/>
+	<Row ResourceType="RESOURCE_LON" TerrainType="TERRAIN_GRASS_HILLS"/>
+	<Row ResourceType="RESOURCE_LON" TerrainType="TERRAIN_PLAINS"/>
+	<Row ResourceType="RESOURCE_LON" TerrainType="TERRAIN_PLAINS_HILLS"/>
+	<Row ResourceType="RESOURCE_LON" TerrainType="TERRAIN_SNOW"/>
+	<Row ResourceType="RESOURCE_LON" TerrainType="TERRAIN_SNOW_HILLS"/>
+	<Row ResourceType="RESOURCE_LON" TerrainType="TERRAIN_TUNDRA"/>
+	<Row ResourceType="RESOURCE_LON" TerrainType="TERRAIN_TUNDRA_HILLS"/>
+	</Resource_ValidTerrains>
+	<Resource_ValidFeatures>
+	    <Row ResourceType="RESOURCE_LON" FeatureType="FEATURE_JUNGLE"/>
+		<Row ResourceType="RESOURCE_LON" FeatureType="FEATURE_FOREST"/>
+	</Resource_ValidFeatures>
+	<Resource_YieldChanges>
+	<Row ResourceType="RESOURCE_LON" YieldType="YIELD_SCIENCE" YieldChange="2"/>
+	<Row ResourceType="RESOURCE_LON" YieldType="YIELD_PRODUCTION" YieldChange="2"/>
+	</Resource_YieldChanges>
+	<Resource_Consumption>
+		<Row ResourceType="RESOURCE_LON" Accumulate="true" PowerProvided="8" CO2perkWh="0" BaseExtractionRate="0" ImprovedExtractionRate="3" StockpileCap="200"/>
+	</Resource_Consumption>
+
+	<Improvement_ValidResources>
+	<Row ImprovementType="IMPROVEMENT_MINE" ResourceType="RESOURCE_LON"  MustRemoveFeature="false"/>
+	</Improvement_ValidResources>
+	
+
+
+</GameData>

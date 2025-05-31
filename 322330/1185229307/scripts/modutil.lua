@@ -68,15 +68,3 @@ for pre, pst in pairs({ ModRPC = "Server", ClientModRPC = "Client", ShardModRPC 
 		_G[sendfn](rpc, ...)
 	end
 end
-
-function SendModRPCFromEntity(name, inst, ...)
-	local clients = {}
-	for i, v in ipairs(AllPlayers) do
-		if v:IsNear(inst, 80) then
-			table.insert(clients, v.userid)
-		end
-	end
-	if #clients > 0 and not inst:IsAsleep() then
-		SendModRPCToClient(name, clients, inst, ...)
-	end
-end

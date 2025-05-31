@@ -1,4 +1,4 @@
-local brain = require "brains/chickenbrain"
+local brain = require("brains/chickenbrain")
 
 local assets =
 {
@@ -25,12 +25,21 @@ local chickensounds =
 	hurt = "dontstarve_DLC001/creatures/buzzard/hurt",
 }
 
-SetSharedLootTable('kyno_chicken',
+SetSharedLootTable("kyno_chicken",
 {
-    {'drumstick',             1.00},
-	{'goose_feather',         1.00},
-	{'goose_feather',         0.50},
+    {"drumstick",             1.00},
+	{"goose_feather",         1.00},
+	{"goose_feather",         0.50},
 })
+
+local function SetHome(inst)
+	inst.components.knownlocations:RememberLocation("home", inst:GetPosition())
+end
+
+local function SetNewHome(inst)
+	inst.components.knownlocations:ForgetLocation("home")
+	inst:DoTaskInTime(1, SetHome) -- Set home again.
+end
 
 local function OnStartDay(inst)
     if inst.components.combat:HasTarget() ~= nil then
@@ -40,6 +49,10 @@ end
 
 local function CanShareTarget(dude)
     return not dude:IsInLimbo() and not dude.components.health:IsDead()
+end
+
+local function CanSleep(inst)
+	return DefaultSleepTest(inst)
 end
 
 local function onbuilt(inst)
@@ -60,7 +73,7 @@ local function builderfn()
 	shadow:SetSize(1, 0.75)
 	
 	inst.Transform:SetFourFaced()
-	MakeCharacterPhysics(inst, 1, 0.12)
+	MakeCharacterPhysics(inst, 100, .5)
 
 	inst.AnimState:SetBank("chicken")
 	inst.AnimState:SetBuild("chicken")
@@ -83,10 +96,14 @@ local function builderfn()
 	inst:AddComponent("knownlocations")
 	inst:AddComponent("lootdropper")
 	inst:AddComponent("inspectable")
+	inst:AddComponent("embarker")
+	
 	inst:AddComponent("sleeper")
+	inst.components.sleeper:SetSleepTest(CanSleep)
 
 	inst:AddComponent("locomotor")
 	inst.components.locomotor.runspeed = TUNING.RABBIT_RUN_SPEED
+	inst.components.locomotor:SetAllowPlatformHopping(true)
 
 	inst:SetBrain(brain)
 	inst:SetStateGraph("SGchicken")
@@ -100,7 +117,7 @@ local function builderfn()
 
 	inst:AddComponent("health")
 	inst.components.health:SetMaxHealth(130)
-	inst.components.health:StartRegen(1, 8)
+	inst.components.health:StartRegen(5, 8)
 	
 	inst:AddComponent("named")
     inst.components.named.possiblenames = 
@@ -113,17 +130,14 @@ local function builderfn()
 		"Mel", "Sol", "Lua", "Outono", "Milharina",
 		"Clementina", "Rejane", "Morena", "Flor", "Girasol",
 	}
-    inst.components.named:PickNewName()
-
-    inst.components.locomotor:SetAllowPlatformHopping(true)
-    inst:AddComponent("embarker")	
+    inst.components.named:PickNewName()	
 
 	inst.sounds = chickensounds
 	MakeSmallBurnableCharacter(inst, "body")
 	MakeTinyFreezableCharacter(inst, "chest")
 	
 	inst:ListenForEvent("onbuilt", onbuilt)
-	inst:WatchWorldState("startcaveday", OnStartDay)  
+	inst:WatchWorldState("startcaveday", OnStartDay)
 
 	return inst
 end
@@ -137,10 +151,9 @@ local function fn()
 		return inst
 	end
 	
-	inst:AddComponent("herdmember")
-    inst.components.herdmember:SetHerdPrefab("kyno_chicken_herd")
+	inst:DoTaskInTime(0, SetHome)
 	
-	inst.components.lootdropper:SetChanceLootTable('kyno_chicken')
+	inst.components.lootdropper:SetChanceLootTable("kyno_chicken")
 	
 	return inst
 end

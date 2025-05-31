@@ -262,132 +262,8 @@ AddPrefabPostInit("parrot_pirate", function(inst)
 	inst.components.named:PickNewName()
 end)
 
-AddPrefabPostInit("mandrake_planted", function(inst)
-	inst:AddTag("_named")
-	
-	if not _G.TheWorld.ismastersim then
-		return inst
-	end
-	
-	inst:RemoveTag("_named")
-	
-	inst:AddComponent("named")
-	inst.components.named.possiblenames = 
-	{ 
-		"Green Carrot", "Talking Carrot", "Mandrake" 
-	}
-	inst.components.named:PickNewName()
-	inst:DoPeriodicTask(5, rename_it)
-end)
-
-AddPrefabPostInit("kyno_altar_seed", function(inst)
-	inst:AddTag("_named")
-	
-	if not _G.TheWorld.ismastersim then
-		return inst
-	end
-		
-	inst:RemoveTag("_named")
-	
-	inst:AddComponent("named")
-	inst.components.named.possiblenames = 
-	{ 
-		"Celestial Altar Orb", 
-		"They will save you" 
-	}
-	inst.components.named:PickNewName()
-	inst:DoPeriodicTask(5, rename_it)
-end)
-
-AddPrefabPostInit("kyno_altar_idol", function(inst)
-	inst:AddTag("_named")
-	
-	if not _G.TheWorld.ismastersim then
-		return inst
-	end
-		
-	inst:RemoveTag("_named")
-	
-	inst:AddComponent("named")
-	inst.components.named.possiblenames = 
-	{ 
-		"Celestial Altar Idol", 
-		"Impending doom approaches" 
-	}
-	inst.components.named:PickNewName()
-	inst:DoPeriodicTask(5, rename_it)
-end)
-
-AddPrefabPostInit("kyno_altar_glass", function(inst)
-	inst:AddTag("_named")
-	
-	if not _G.TheWorld.ismastersim then
-		return inst
-	end
-	
-	inst:RemoveTag("_named")
-	
-	inst:AddComponent("named")
-	inst.components.named.possiblenames = 
-	{ 
-		"Celestial Altar Base", 
-		"You don't know them" 
-	}
-	inst.components.named:PickNewName()
-	inst:DoPeriodicTask(5, rename_it)
-end)
-
-AddPrefabPostInit("kyno_altar_crown", function(inst)
-	inst:AddTag("_named")
-	if _G.TheWorld.ismastersim then
-		inst:RemoveTag("_named")
-		inst:AddComponent("named")
-		inst.components.named.possiblenames = 
-		{ 
-			"Celestial Tribute", 
-			"They are coming" 
-		}
-		inst.components.named:PickNewName()
-		inst:DoPeriodicTask(5, rename_it)
-	end
-end)
-
-AddPrefabPostInit("critterlab", function(inst)
-	inst:AddTag("_named")
-	
-	if not _G.TheWorld.ismastersim then
-		return inst
-	end
-		
-	inst:RemoveTag("_named")
-	inst:AddComponent("named")
-	inst.components.named.possiblenames = 
-	{ 
-		"Devil's Den", "Demons Crew", "Rock Den", "Waste Your Food Here" 
-	}
-	inst.components.named:PickNewName()
-	inst:DoPeriodicTask(5, rename_it)
-end)
-
-AddPrefabPostInit("cavein_boulder", function(inst)
-	inst:AddTag("_named")
-	
-	if not _G.TheWorld.ismastersim then
-		return inst
-	end
-		
-	inst:RemoveTag("_named")
-	
-	inst:AddComponent("named")
-	inst.components.named.possiblenames = 
-	{ 
-		"Boulder", "Antlion's Boulder", "Forever Alone Boulder" 
-	}
-	inst.components.named:PickNewName()
-	inst:DoPeriodicTask(5, rename_it)
-end)
-
 -- Cool new loot for some bosses and mobs.
+--[[
 AddPrefabPostInit("moose", function(inst)
 	if not _G.TheWorld.ismastersim then
 		return inst
@@ -395,6 +271,7 @@ AddPrefabPostInit("moose", function(inst)
 	
 	inst.components.lootdropper:AddChanceLoot("kyno_goosenestegg_blueprint", 0.10)
 end)
+]]--
 
 AddPrefabPostInit("beequeen", function(inst)
 	if not _G.TheWorld.ismastersim then
@@ -406,6 +283,7 @@ AddPrefabPostInit("beequeen", function(inst)
 	end
 end)
 
+--[[
 AddPrefabPostInit("leif", function(inst)
 	if not _G.TheWorld.ismastersim then
 		return inst
@@ -477,6 +355,7 @@ AddPrefabPostInit("alterguardian_phase3dead", function(inst)
 	
 	inst.components.lootdropper:AddChanceLoot("kyno_defeated_cc4_blueprint", 0.33)
 end)
+]]--
 
 AddPrefabPostInit("kyno_sharkitten", function(inst)
 	if not _G.TheWorld.ismastersim then
@@ -574,6 +453,7 @@ end
 
 AddPrefabPostInit("armor_bramble", BrambleHuskPostinit)
 
+--[[
 local function ondeathnew(inst)
 	if math.random() < 0.1 then
 		_G.SpawnPrefab("kyno_wigfridge_blueprint").Transform:SetPosition(inst.Transform:GetWorldPosition())
@@ -588,6 +468,7 @@ AddPrefabPostInit("wathgrithr", function(inst)
 	
 	inst:ListenForEvent("death", ondeathnew)
 end)
+]]--
 
 local tap_rotatablestructures = 
 {
@@ -1354,19 +1235,20 @@ if STATUES_PLACER == 1 then
 	end)
 end
 
+--[[
 AddPrefabPostInit("kingfisher", function(inst)
-	if inst.components.periodicspawner ~= nil then
-		inst.components.periodicspawner:SetPrefab("kyno_koi")
-		inst.components.periodicspawner:SetDensityInRange(20, 2)
-		inst.components.periodicspawner:SetMinimumSpacing(15)
+	if not _G.KnownModIndex:IsModEnabled("workshop-2334209327") then 
+		if inst.components.periodicspawner ~= nil then
+			inst.components.periodicspawner:SetPrefab("kyno_koi")
+			inst.components.periodicspawner:SetDensityInRange(20, 2)
+			inst.components.periodicspawner:SetMinimumSpacing(15)
+		end
 	end
 end)
+]]--
 
 -- For the Pyre Nest.
 AddPrefabPostInit("tallbirdegg", function(inst)
-	if not _G.TheWorld.ismastersim then
-		return inst
-	end
 	inst:AddTag("pyre_egg")
 end)
 
@@ -1435,6 +1317,7 @@ AddPrefabPostInit("marbleshrub", function(inst)
 end)
 
 -- For the Lobster Home.
+--[[
 local function RockyPostinit(inst)
 	local function OnGetItemFromPlayerRocky(inst, giver, item)
 		if item.components.edible ~= nil and item.components.edible.foodtype == FOODTYPE.ELEMENTAL then
@@ -1467,8 +1350,10 @@ local function RockyPostinit(inst)
 end
 
 AddPrefabPostInit("rocky", RockyPostinit)
+]]--
 
 -- Ancient Fuelweaver drops the Gateway blueprint.
+--[[
 local function StalkerPostinit(inst)
 	local function AtriumLootFnTAP2(lootdropper)
 		lootdropper:SetLoot(nil)
@@ -1503,6 +1388,7 @@ local function StalkerPostinit(inst)
 end
 
 AddPrefabPostInit("stalker_atrium", StalkerPostinit)
+]]--
 
 local function OrangeAmuletPostinit(inst)
 	local ORANGE_PICKUP_CANT_TAGS = { "INLIMBO", "NOCLICK", "knockbackdelayinteraction", 
@@ -1800,9 +1686,9 @@ AddClassPostConstruct("components/birdspawner", function(self)
 	local BIRD_TYPES = UpvalueHacker.GetUpvalue(self.SpawnBird, "PickBird", "BIRD_TYPES")
 	
 	-- Hamlet Birds --
-	BIRD_TYPES[WORLD_TILES.RAINFOREST]            = { "kingfisher", "parrot_blue", "toucan_hamlet" }
-	BIRD_TYPES[WORLD_TILES.FIELDS]                = { "kingfisher", "parrot_blue", "toucan_hamlet" }
-	BIRD_TYPES[WORLD_TILES.MOSSY_BLOSSOM]         = { "kingfisher", "parrot_blue", "toucan_hamlet" }
+	BIRD_TYPES[WORLD_TILES.RAINFOREST]            = { "kingfisher2", "parrot_blue", "toucan_hamlet" }
+	BIRD_TYPES[WORLD_TILES.FIELDS]                = { "kingfisher2", "parrot_blue", "toucan_hamlet" }
+	BIRD_TYPES[WORLD_TILES.MOSSY_BLOSSOM]         = { "kingfisher2", "parrot_blue", "toucan_hamlet" }
 	BIRD_TYPES[WORLD_TILES.PLAINS]                = { "toucan_hamlet", "parrot_blue" }
 	BIRD_TYPES[WORLD_TILES.BOG]                   = { "toucan_hamlet" }
 	BIRD_TYPES[WORLD_TILES.PIGRUINS]              = { "parrot_blue" }
@@ -1861,7 +1747,67 @@ end)
 
 -- Lord of the Fruit Flies drops Garden Sprinkler blueprint.
 AddPrefabPostInit("lordfruitfly", function(inst)
-	if _G.LootTables and _G.LootTables.lordfruitfly then
-		table.insert(_G.LootTables.lordfruitfly, {"kyno_garden_sprinkler_blueprint", 1.00})
+	if not _G.KnownModIndex:IsModEnabled("workshop-2334209327") then 
+		if _G.LootTables and _G.LootTables.lordfruitfly then
+			table.insert(_G.LootTables.lordfruitfly, {"kyno_garden_sprinkler_blueprint", 1.00})
+		end
 	end
 end)
+
+-- From Island Adventures https://steamcommunity.com/sharedfiles/filedetails/?id=1467214795
+-- Hope they don't smack and bonk my head...
+local _FISHfn = ACTIONS.FISH.fn
+function ACTIONS.FISH.fn(act, ...)
+    if act.doer and act.doer.components.fishingrod then
+        act.doer.components.fishingrod:StartFishing(act.target, act.doer)
+        return true
+    end
+    return _FISHfn(act, ...)
+end
+
+local COMPONENT_ACTIONS = UpvalueHacker.GetUpvalue(EntityScript.CollectActions, "COMPONENT_ACTIONS")
+local USEITEM = COMPONENT_ACTIONS.USEITEM
+local EQUIPPED = COMPONENT_ACTIONS.EQUIPPED
+
+local _USEITEMfishingrod = USEITEM.fishingrod
+function USEITEM.fishingrod(inst, doer, target, actions, ...)
+    if inst.replica.fishingrod:HasCaughtFish() then
+        if doer.sg == nil or doer.sg:HasStateTag("fishing") then
+            table.insert(actions, ACTIONS.REEL)
+        end
+    else
+        return _USEITEMfishingrod(inst, doer, target, actions, ...)
+    end
+end
+
+local _EQUIPPEDfishingrod = EQUIPPED.fishingrod
+function EQUIPPED.fishingrod(inst, doer, target, actions, ...)
+    if inst.replica.fishingrod:HasCaughtFish() then
+        if doer.sg == nil or doer.sg:HasStateTag("fishing") then
+            table.insert(actions, ACTIONS.REEL)
+        end
+    else
+        return _EQUIPPEDfishingrod(inst, doer, target, actions, ...)
+    end
+end
+
+local FishingRod = require("components/fishingrod")
+function FishingRod:OnUpdate()
+	if self:IsFishing() then
+		if not self.fisherman:IsValid()
+		or (not self.fisherman.sg:HasStateTag("fishing") and not self.fisherman.sg:HasStateTag("catchfish"))
+		or (self.inst.components.equippable and not self.inst.components.equippable.isequipped) then
+            self:StopFishing()
+		end
+	end
+end
+
+local CHARCOAL_SOURCES = {"log", "livinglog", "driftwood_log"}
+
+local function MakeCharcoalSource(inst)
+	inst:AddTag("burnablecharcoal")
+end
+
+for index, prefab in ipairs(CHARCOAL_SOURCES) do
+	AddPrefabPostInit(prefab, MakeCharcoalSource)
+end

@@ -671,7 +671,11 @@ local CommandConfigPanel = Class(NoMuScreen, function(self, nomu_parent, data, c
 
     self.AddButton(150, sy - row * 40, 100, 40, STRINGS.CMD_MGR.BUTTON_TEXT_EXPORT, function()
         TheFrontEnd:PushScreen(GetInputString(nil, STRINGS.CMD_MGR.TITLE_TEXT_FILENAME, '', function(filename)
-            local file = io.open(filename, 'w')
+            if string.sub(filename, -4) ~= '.txt' then
+                TheFrontEnd:PushScreen(ConfirmDialog(nil, STRINGS.CMD_MGR.JSON_NEEDED, function() end))
+                return
+            end
+            local file = io.open('unsafedata/' .. filename, 'w')
             if file then
                 file:write(self.script:GetString())
                 file:close()
@@ -684,7 +688,11 @@ local CommandConfigPanel = Class(NoMuScreen, function(self, nomu_parent, data, c
 
     self.AddButton(250, sy - row * 40, 100, 40, STRINGS.CMD_MGR.BUTTON_TEXT_IMPORT, function()
         TheFrontEnd:PushScreen(GetInputString(nil, STRINGS.CMD_MGR.TITLE_TEXT_FILENAME, '', function(filename)
-            local file = io.open(filename)
+            if string.sub(filename, -4) ~= '.txt' then
+                TheFrontEnd:PushScreen(ConfirmDialog(nil, STRINGS.CMD_MGR.JSON_NEEDED, function() end))
+                return
+            end
+            local file = io.open('unsafedata/' .. filename)
             if file then
                 local script = file:read('*a')
                 file:close()

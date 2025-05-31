@@ -1767,7 +1767,11 @@ local QACustomizePanel = Class(NoMuScreen, function(self, nomu_parent)
 
     self.AddButton(sx + 100, -sy, 200, 40, STRINGS.NOMU_QA.BUTTON_TEXT_IMPORT_SCHEME, function()
         TheFrontEnd:PushScreen(GetInputString(nil, STRINGS.NOMU_QA.TITLE_TEXT_SCHEME_FILENAME, '', function(filename)
-            local file = io.open(filename)
+            if string.sub(filename, -5) ~= '.json' then
+                TheFrontEnd:PushScreen(ConfirmDialog(nil, STRINGS.NOMU_QA.JSON_NEEDED, function() end))
+                return
+            end
+            local file = io.open('unsafedata/' .. filename)
             if file then
                 local json_str = file:read('*a')
                 file:close()
@@ -1837,8 +1841,12 @@ local QACustomizePanel = Class(NoMuScreen, function(self, nomu_parent)
 
     self.AddButton(sx + 100, -sy, 200, 40, STRINGS.NOMU_QA.BUTTON_TEXT_EXPORT_SCHEME, function()
         TheFrontEnd:PushScreen(GetInputString(nil, STRINGS.NOMU_QA.TITLE_TEXT_SCHEME_FILENAME, '', function(filename)
+            if string.sub(filename, -5) ~= '.json' then
+                TheFrontEnd:PushScreen(ConfirmDialog(nil, STRINGS.NOMU_QA.JSON_NEEDED, function() end))
+                return
+            end
             local json_str = json.encode(GLOBAL.NOMU_QA.DATA.SCHEMES[self.scheme_idx])
-            local file = io.open(filename, 'w')
+            local file = io.open('unsafedata/' .. filename, 'w')
             if file then
                 file:write(json_str)
                 file:close()

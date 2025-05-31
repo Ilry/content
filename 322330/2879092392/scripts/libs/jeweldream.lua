@@ -104,8 +104,8 @@ local AllRecipes = _G.AllRecipes
 local builder = _G.require "components/builder"
 local old_KnowsRecipe = builder.KnowsRecipe
 
-function builder:KnowsRecipe(recname)
-    local result = old_KnowsRecipe(self, recname)
+function builder:KnowsRecipe(recname, ignore_temp_bonus, cached_tech_trees, ...)
+    local result = old_KnowsRecipe(self, recname, ignore_temp_bonus, cached_tech_trees, ...)
     if result then
         if self.freebuildmode or table.contains(self.recipes, recname) then
             return true
@@ -120,9 +120,9 @@ function builder:KnowsRecipe(recname)
     return result
 end
 local old_KnowsRecipe_replica = replica.KnowsRecipe
-function replica:KnowsRecipe(recname)
+function replica:KnowsRecipe(recname, ignore_temp_bonus, cached_tech_trees, ...)
     if self.inst.components.builder ~= nil then
-        return self.inst.components.builder:KnowsRecipe(recname)
+        return self.inst.components.builder:KnowsRecipe(recname, ignore_temp_bonus, cached_tech_trees, ...)
     end
     local result = old_KnowsRecipe_replica(self, recname)
     if result then

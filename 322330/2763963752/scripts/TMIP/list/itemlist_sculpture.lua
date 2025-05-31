@@ -32,6 +32,28 @@ return {
 	--卵石
 	"cavein_boulder",
 	--雕塑
+	
+	-- "chesspiece_daywalker2",--拾荒疯猪雕塑
+	"chesspiece_daywalker2_marble",--拾荒疯猪雕塑
+	"chesspiece_daywalker2_stone",--拾荒疯猪雕塑
+	"chesspiece_daywalker2_moonglass",--拾荒疯猪雕塑
+
+	-- "chesspiece_wormboss",--巨大洞穴蠕虫雕塑
+	"chesspiece_wormboss_marble",--巨大洞穴蠕虫雕塑
+	"chesspiece_wormboss_stone",--巨大洞穴蠕虫雕塑
+	"chesspiece_wormboss_moonglass",--巨大洞穴蠕虫雕塑
+
+
+	-- "chesspiece_yots",--镀金洞穴蠕虫雕塑
+	"chesspiece_yots_marble",--镀金洞穴蠕虫雕塑
+	"chesspiece_yots_stone",--镀金洞穴蠕虫雕塑
+	"chesspiece_yots_moonglass",--镀金洞穴蠕虫雕塑
+
+	"chesspiece_manrabbit",--兔人雕塑
+	"chesspiece_manrabbit_moonglass",--兔人雕塑
+	"chesspiece_manrabbit_stone",--兔人雕塑
+	"chesspiece_manrabbit_marble",--兔人雕塑
+
 	"chesspiece_sharkboi",--大霜鲨雕塑
 	"chesspiece_sharkboi_marble",--大霜鲨雕塑
 	"chesspiece_sharkboi_stone",--大霜鲨雕塑

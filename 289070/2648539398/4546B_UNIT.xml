@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 4546B_UNIT -->
+<!-- Author: 27136 -->
+<!-- DateCreated: 10/23/2021 12:58:24 PM -->
+<GameData>
+	<Tags>
+		<Row Tag="CLASS_SEAMOTH" Vocabulary="ABILITY_CLASS"/>
+	</Tags>
+    <Types>
+		<Row Type="UNIT_SEAMOTH" Kind="KIND_UNIT" />
+		<Row Type="ABILITY_SEAMOTH" Kind="KIND_ABILITY"/>
+	</Types>
+
+	<UnitAiInfos>
+		<Row UnitType="UNIT_SEAMOTH" AiType="UNITAI_COMBAT"/>
+		<Row UnitType="UNIT_SEAMOTH" AiType="UNITAI_EXPLORE"/>
+		<Row UnitType="UNIT_SEAMOTH" AiType="UNITTYPE_MELEE"/>
+		<Row UnitType="UNIT_SEAMOTH" AiType="UNITTYPE_NAVAL"/>
+	</UnitAiInfos>
+
+	<UnitReplaces>
+		<Row CivUniqueUnitType="UNIT_SEAMOTH" ReplacesUnitType="UNIT_CARAVEL"/>
+	</UnitReplaces>
+
+	<TypeTags>
+		<Row Type="UNIT_SEAMOTH" Tag="CLASS_NAVAL_MELEE"/>
+		<Row Type="UNIT_SEAMOTH" Tag="CLASS_SEAMOTH"/>
+		<Row Type="ABILITY_SEAMOTH" Tag="CLASS_SEAMOTH"/>
+	</TypeTags>
+
+	<Units>
+		<Row UnitType="UNIT_SEAMOTH" Cost="240" Maintenance="4"
+			 BaseMoves="6" BaseSightRange="4" ZoneOfControl="true"
+			 Domain="DOMAIN_SEA" Combat="60" FormationClass="FORMATION_CLASS_NAVAL"
+			 PromotionClass="PROMOTION_CLASS_NAVAL_MELEE" AdvisorType="ADVISOR_CONQUEST"
+			 Name="LOC_UNIT_SEAMOTH_NAME" Description="LOC_UNIT_SEAMOTH_DESCRIPTION"
+			 PurchaseYield="YIELD_GOLD" PrereqTech="TECH_CARTOGRAPHY" TraitType="TRAIT_UNIT_SEAMOTH"/>
+	</Units>
+
+	<UnitUpgrades>
+		<Row Unit="UNIT_SEAMOTH" UpgradeUnit="UNIT_IRONCLAD"/>
+	</UnitUpgrades>
+
+	<UnitAbilities>
+		<Row UnitAbilityType="ABILITY_SEAMOTH" Name="LOC_ABILITY_SEAMOTH_NAME" Description="LOC_ABILITY_SEAMOTH_DESCRIPTION"/>
+	</UnitAbilities>
+		<UnitAbilityModifiers>
+			<Row>
+				<UnitAbilityType>ABILITY_SEAMOTH</UnitAbilityType>
+				<ModifierId>SEAMOTH</ModifierId>
+			</Row>
+		</UnitAbilityModifiers>
+		<Modifiers>
+			<Row>
+				<ModifierId>SEAMOTH</ModifierId>
+				<ModifierType>MODIFIER_PLAYER_UNIT_ADJUST_IGNORE_ZOC</ModifierType>
+				<Permanent>True</Permanent>
+			</Row>
+		</Modifiers>
+		<ModifierArguments>
+			<Row>
+				<ModifierId>SEAMOTH</ModifierId>
+				<Name>Ignore</Name>
+				<Value>1</Value>
+			</Row>
+		</ModifierArguments>
+</GameData>

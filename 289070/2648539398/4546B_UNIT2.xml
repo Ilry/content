@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 4546B_UNIT2 -->
+<!-- Author: 27136 -->
+<!-- DateCreated: 10/24/2021 10:41:22 AM -->
+<GameData>
+	<Tags>
+		<Row Tag="CLASS_CYCLOPS" Vocabulary="ABILITY_CLASS"/>
+	</Tags>
+	<Types>
+		<Row Type="UNIT_CYCLOPS" Kind="KIND_UNIT" />
+		<Row Type="ABILITY_CYCLOPS" Kind="KIND_ABILITY"/>
+	</Types>
+
+	<UnitAiInfos>
+		<Row UnitType="UNIT_CYCLOPS" AiType="UNITAI_COMBAT"/>
+		<Row UnitType="UNIT_CYCLOPS" AiType="UNITTYPE_RANGED"/>
+		<Row UnitType="UNIT_CYCLOPS" AiType="UNITTYPE_NAVAL"/>
+		<Row UnitType="UNIT_CYCLOPS" AiType="UNITTYPE_NUCLEAR"/>
+	</UnitAiInfos>
+
+	<UnitReplaces>
+		<Row CivUniqueUnitType="UNIT_CYCLOPS" ReplacesUnitType="UNIT_NUCLEAR_SUBMARINE"/>
+	</UnitReplaces>
+
+	<TypeTags>
+		<Row Type="UNIT_CYCLOPS" Tag="CLASS_REVEAL_STEALTH"/>
+		<Row Type="UNIT_CYCLOPS" Tag="CLASS_STEALTH"/>
+		<Row Type="UNIT_CYCLOPS" Tag="CLASS_NAVAL_RANGED"/>
+		<Row Type="UNIT_CYCLOPS" Tag="CLASS_NAVAL_RAIDER"/>
+		<Row Type="UNIT_CYCLOPS" Tag="CLASS_CYCLOPS"/>
+		<Row Type="ABILITY_CYCLOPS" Tag="CLASS_CYCLOPS"/>
+	</TypeTags>
+
+	<Units>
+		<Row UnitType="UNIT_CYCLOPS" Cost="580" Maintenance="8"
+			 BaseMoves="4" BaseSightRange="3" ZoneOfControl="false"
+			 Domain="DOMAIN_SEA"  Combat="90" RangedCombat="95" Range="3" StrategicResource="RESOURCE_URANIUM"
+			 FormationClass="FORMATION_CLASS_NAVAL"
+			 PromotionClass="PROMOTION_CLASS_NAVAL_RAIDER" AdvisorType="ADVISOR_CONQUEST"
+			 Name="LOC_UNIT_CYCLOPS_NAME" Description="LOC_UNIT_CYCLOPS_DESCRIPTION"
+			 PurchaseYield="YIELD_GOLD" PrereqTech="TECH_TELECOMMUNICATIONS" WMDCapable="true"
+			 TraitType="TRAIT_UNIT_CYCLOPS"/>
+	</Units>
+	<Units_XP2>
+		<Row UnitType="UNIT_CYCLOPS" ResourceCost="5" ResourceMaintenanceType="RESOURCE_URANIUM" ResourceMaintenanceAmount="1" CanEarnExperience="true" CanFormMilitaryFormation="true" MajorCivOnly="true"/>
+	</Units_XP2>
+
+	<UnitAbilities>
+		<Row UnitAbilityType="ABILITY_CYCLOPS" Name="LOC_ABILITY_CYCLOPS_NAME" Description="LOC_ABILITY_CYCLOPS_DESCRIPTION"/>
+	</UnitAbilities>
+
+	<TraitModifiers>
+		<Row TraitType="TRAIT_CIVILIZATION_BEAUTYSEA" ModifierId="CYCLOPS_GAIN_SCIENCE"/>
+	</TraitModifiers>
+	<Modifiers>
+	<Row>
+			<ModifierId>CYCLOPS_GAIN_SCIENCE</ModifierId>
+			<ModifierType>MODIFIER_PLAYER_UNITS_ADJUST_POST_COMBAT_YIELD</ModifierType>
+		    <SubjectRequirementSetId>REQ_MUST_BE_CYCLOPS</SubjectRequirementSetId>
+	</Row>
+	</Modifiers>
+	
+	<ModifierArguments>
+	<Row>
+		<ModifierId>CYCLOPS_GAIN_SCIENCE</ModifierId>
+		<Name>YieldType</Name>
+		<Value>YIELD_SCIENCE</Value>
+	</Row>
+	<Row>
+		<ModifierId>CYCLOPS_GAIN_SCIENCE</ModifierId>
+		<Name>PercentDefeatedStrength</Name>
+		<Value>400</Value>
+	</Row>
+	</ModifierArguments>
+	<RequirementSets>
+		<Row>
+			<RequirementSetId>REQ_MUST_BE_CYCLOPS</RequirementSetId>
+			<RequirementSetType>REQUIREMENTSET_TEST_ALL</RequirementSetType>
+		</Row>
+	</RequirementSets>
+	<RequirementSetRequirements>
+		<Row>
+			<RequirementSetId>REQ_MUST_BE_CYCLOPS</RequirementSetId>
+			<RequirementId>REQ_UNIT_MUST_BE_CYCLOPS</RequirementId>
+		</Row>
+	</RequirementSetRequirements>
+	<!-- +++++++++++++++ Requirements +++++++++++++++ -->
+	<Requirements>
+		<Row>
+			<RequirementId>REQ_UNIT_MUST_BE_CYCLOPS</RequirementId>
+			<RequirementType>REQUIREMENT_UNIT_TYPE_MATCHES</RequirementType>
+		</Row>
+	</Requirements>
+	<RequirementArguments>
+		<Row>
+			<RequirementId>REQ_UNIT_MUST_BE_CYCLOPS</RequirementId>
+			<Name>UnitType</Name>
+			<Value>UNIT_CYCLOPS</Value>
+		</Row>
+	</RequirementArguments>
+</GameData>

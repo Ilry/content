@@ -16,7 +16,15 @@ if TUNING.CONFIG_LIMIT_LOL_HEARTSTEEL_EQUIPSLOT == 1 then
     HEARTSTEEL_EQIPSLOT = EQUIPSLOTS.NECK or EQUIPSLOTS.BODY
 end
 
+---comment
+---@param inst ent
+---@param data any
 local function owner_onhitother(inst, data)
+    if inst and inst.prefab == 'wurt' then
+        return
+    end
+
+
     local itm = inst.components.inventory:GetEquippedItem(HEARTSTEEL_EQIPSLOT)
     if itm and itm.components and itm.components.lol_heartsteel_num then
         -- if itm.task_period_lol_heartsteel_findmob then 
@@ -65,7 +73,7 @@ local function owner_onhitother(inst, data)
 
                     -- 如果超过最大层数,则不继续叠加,但是可以继续触发充能攻击
                     if TUNING.CONFIG_LIMIT_LOL_HEARTSTEEL then
-                        if itm.components.lol_heartsteel_num:GetNum() >= max_num then return end
+                        if itm.components.lol_heartsteel_num:GetNum() >= TUNING.CONFIG_LIMIT_LOL_HEARTSTEEL then return end
                     end
                     itm.components.lol_heartsteel_num:DoDelta(1)
                     itm.components.lol_heartsteel_num:AddHP(inst)
@@ -80,6 +88,7 @@ local function onequip(inst, owner)
     owner:ListenForEvent('onhitother',owner_onhitother)
     -- print('----\n装备了心钢\n----')
     -- print(inst.prefab)
+    --[[ 
     if owner.equipped_lol_heartsteel == nil or not owner.equipped_lol_heartsteel then 
         owner.equipped_lol_heartsteel = true
         inst.components.lol_heartsteel_num:UpdateHP(owner)
@@ -104,13 +113,17 @@ local function onequip(inst, owner)
             end
         end)
     end
+ ]]
+    if inst.components.lol_heartsteel_data then
+        inst.components.lol_heartsteel_data:onequip(inst,owner)
+    end
 end
 
 local function onunequip(inst, owner)
     owner.AnimState:ClearOverrideSymbol("swap_body")
     owner:RemoveEventCallback('onhitother',owner_onhitother)
     -- print('----\n卸载了心钢\n----')
-
+--[[ 
     if owner.equipped_lol_heartsteel then 
         owner.equipped_lol_heartsteel = false
         inst.components.lol_heartsteel_num:UpdateHP(owner,true)
@@ -124,6 +137,9 @@ local function onunequip(inst, owner)
     if owner.taskperiod_lol_heartsteel_regen then 
         owner.taskperiod_lol_heartsteel_regen:Cancel()
         owner.taskperiod_lol_heartsteel_regen = nil
+    end ]]
+    if inst.components.lol_heartsteel_data then
+        inst.components.lol_heartsteel_data:onunequip(inst,owner)
     end
 end
 
@@ -172,6 +188,16 @@ local function fn()
 
     MakeInventoryFloatable(inst, "med", nil, 0.75)
 
+    inst:AddComponent("inspectable")
+    -- inst.components.inspectable.getstatus = function (inst,viewer)
+
+    --     if inst.replica.lol_heartsteel_num then
+    --         local num = inst.replica.lol_heartsteel_num:GetNum()
+    --         TheNet:Say(STRINGS.MOD_LOL_WP.ANNOUCE_HEART_STEEL..num*10)
+    --     end
+       
+    -- end
+
     if not TheWorld.ismastersim then
         return inst
     end
@@ -181,7 +207,7 @@ local function fn()
 
     -- inst.heartsteel_num = 0
 
-    inst:AddComponent("inspectable")
+    inst:AddComponent('lol_heartsteel_data')
 
     inst:AddComponent("equippable")
     inst.components.equippable.equipslot = HEARTSTEEL_EQIPSLOT -- 适配五格
@@ -224,8 +250,8 @@ local function fn()
     -- inst:AddComponent("oxygensupplier")
     -- inst.components.oxygensupplier:SetSupplyRate(TUNING.lol_heartsteel_RATE)
 
-    inst.OnSave = onsave
-    inst.OnPreLoad = onpreload
+    -- inst.OnSave = onsave
+    -- inst.OnPreLoad = onpreload
 
     return inst
 end

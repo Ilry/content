@@ -19,7 +19,7 @@ description = [[
 - 加入部分预设
 ]]
 author = "NoMu"
-version = "2.0.1"
+version = "2.0.2"
 
 folder_name = folder_name or "base_projection"
 if not folder_name:find("workshop-") then

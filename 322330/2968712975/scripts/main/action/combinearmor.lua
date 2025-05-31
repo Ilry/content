@@ -35,7 +35,9 @@ local fn = function(act) -- 动作触发的函数。传入的是一个BufferedAc
     return true
 end
 local COMBINEARMOR=AddAction(id,name,fn)
---COMBINEARMOR.priority = -1
+if TUNING.RANGCHIGHPRIOR then
+COMBINEARMOR.priority = 11
+end
 COMBINEARMOR.rmb = true
 --COMBINEARMOR.canforce=true
 --COMBINEARMOR.instant = true

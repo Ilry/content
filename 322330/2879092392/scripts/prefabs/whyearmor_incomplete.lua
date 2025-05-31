@@ -12,6 +12,8 @@ local function ItemTradeTest(inst, item)
         return true
     elseif item.prefab == "ancientdreams_gemshard" then
         return true
+    elseif item.prefab == "ancientdreams_armour_polish" then
+        return true
     end
 end
 
@@ -22,6 +24,13 @@ local function OnTHFGGiven(inst, giver, item)
         local owner = inst.components.inventoryitem:GetGrandOwner() or nil
         if owner and owner.components.why_endurance then
             owner.components.why_endurance:EquipmentEnduranceChangeByOtherWay(1, inst, "thulecite")
+        end
+    elseif item.prefab == "ancientdreams_armour_polish" then
+        inst.components.armor:Repair(180)
+        inst.current_endurance_bonus = math.min(inst.current_endurance_bonus + 2, inst.endurance_bonus)
+        local owner = inst.components.inventoryitem:GetGrandOwner() or nil
+        if owner and owner.components.why_endurance then
+            owner.components.why_endurance:EquipmentEnduranceChangeByOtherWay(1, inst, "ancientdreams_armour_polish")
         end
     elseif item.prefab == "thulecite_pieces" then
         inst.components.armor:Repair(30)

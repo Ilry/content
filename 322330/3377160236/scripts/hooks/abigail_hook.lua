@@ -8,7 +8,6 @@ AddPrefabPostInit("abigail", function(inst)
     local OLD_COMBAT_MUSTONEOF_TAGS_AGGRESSIVE = { "monster", "prey", "insect", "hostile", "character", "animal" }
     local NEW_COMBAT_MUSTONEOF_TAGS_AGGRESSIVE = { "monster", "prey", "hostile", "character" }
 
-    inst._animal_friend = net_bool(inst.GUID, "abigail_hook._animal_friend", "abigail_skillsdirty")
     inst._more_mod = net_bool(inst.GUID, "abigail_hook._more_mod", "abigail_skillsdirty")
     inst._longer_duration = net_bool(inst.GUID, "abigail_hook._longer_duration", "abigail_skillsdirty")
     inst._health_enhance1 = net_bool(inst.GUID, "abigail_hook._health_enhance1", "abigail_skillsdirty")
@@ -117,16 +116,6 @@ AddPrefabPostInit("abigail", function(inst)
         inst._playerlink:AddTag("has_aggressive_follower")
 
         -- 检测是否有加成
-        if inst._animal_friend then
-            if TheNet:GetIsServer() then
-                inst.components.combat:SetRetargetFunction(0.5, NewAggressiveRetarget)
-            end
-        else
-            if TheNet:GetIsServer() then
-                inst.components.combat:SetRetargetFunction(0.5, OldAggressiveRetarget)
-            end
-        end
-
         if inst.same_heart_task ~= nil then
             inst.same_heart_task:Cancel()
             inst.same_heart_task = nil
@@ -284,21 +273,6 @@ AddPrefabPostInit("abigail", function(inst)
     end
 
     local function ApplySkillBonuses(inst)
-        if inst._animal_friend:value() then
-            -- 在激怒中可以改变
-            if not inst.is_defensive then
-                if TheNet:GetIsServer() then
-                    inst.components.combat:SetRetargetFunction(0.5, NewAggressiveRetarget)
-                end
-            end
-        else
-            if not inst.is_defensive then
-                if TheNet:GetIsServer() then
-                    inst.components.combat:SetRetargetFunction(0.5, OldAggressiveRetarget)
-                end
-            end
-        end
-
         if inst._longer_duration:value() then
             TUNING.ABIGAIL_VEX_DURATION = 4
         else
@@ -360,9 +334,9 @@ AddPrefabPostInit("abigail", function(inst)
             if inst._shadow_abigail:value() then
                 inst.components.damagetyperesist:AddResist("shadow_aligned", inst, TUNING.WENDY_ALLEGIANCE_LUNAR_RESIST, "abigail_allegiance_shadow")
                 inst.components.damagetypebonus:AddBonus("lunar_aligned", inst, TUNING.WENDY_ALLEGIANCE_VS_SHADOW_BONUS, "abigail_allegiance_shadow")
-                if GetModConfigData("ABIGAIL_SETTING", "Wendy SkillTree") == "default" then
+                if GetModConfigData("ABIGAIL_IMAGE_SETTING", "Wendy SkillTree") == "default" then
 
-                elseif GetModConfigData("ABIGAIL_SETTING", "Wendy SkillTree") == "special" then
+                elseif GetModConfigData("ABIGAIL_IMAGE_SETTING", "Wendy SkillTree") == "special" then
                     inst.AnimState:SetMultColour(142 / 255, 87 / 255 , 87 / 255, 1)
                 end
             end
@@ -388,7 +362,6 @@ AddPrefabPostInit("abigail", function(inst)
     local function ConfigureSkillTreeUpgrades(inst, player)
         local skilltreeupdater = player and player.components.skilltreeupdater or nil
 
-        local animal_friend = skilltreeupdater ~= nil and skilltreeupdater:IsActivated("wendy_abigail_animal_friend")
         local more_mod = skilltreeupdater ~= nil and skilltreeupdater:IsActivated("wendy_abigail_more_damage_mod")
         local longer_duration = skilltreeupdater ~= nil and skilltreeupdater:IsActivated("wendy_abigail_longer_damage_duration")
         local health_enhance1 = skilltreeupdater ~= nil and skilltreeupdater:IsActivated("wendy_abigail_health_enhance_1")
@@ -398,8 +371,7 @@ AddPrefabPostInit("abigail", function(inst)
         local shadow_abigail = skilltreeupdater ~= nil and skilltreeupdater:IsActivated("wendy_shadow_abigail")
 
 
-        local dirty = inst._animal_friend:value() ~= animal_friend or
-                inst._longer_duration:value() ~= longer_duration or
+        local dirty = inst._longer_duration:value() ~= longer_duration or
                 inst._more_mod:value() ~= more_mod or
                 inst._health_enhance1:value() ~= health_enhance1 or
                 inst._health_enhance2:value() ~= health_enhance2 or
@@ -407,7 +379,6 @@ AddPrefabPostInit("abigail", function(inst)
                 inst._moon_abigail:value() ~= moon_abigail or
                 inst._shadow_abigail:value() ~= shadow_abigail
 
-        inst._animal_friend:set(animal_friend)
         inst._longer_duration:set(longer_duration)
         inst._more_mod:set(more_mod)
         inst._health_enhance1:set(health_enhance1)
@@ -444,13 +415,24 @@ AddPrefabPostInit("abigail", function(inst)
 
     inst:ListenForEvent("abigail_can_get_sisturn_buff", function(world, data)
         if data.engineerid == inst._playerlink.userid then
+            print("增益检测")
+            print("月亮：" .. tostring(data.moon))
+            print("暗影：" .. tostring(data.shadow))
+            local check_moon_bonus = false
+            local check_shadow_bonus = false
             if data.moon then
-                inst.moon_planar_bonus = true
+                if data.moon == true then
+                    inst.moon_planar_bonus = true
+                end
+                check_moon_bonus = data.moon
             end
             if data.shadow then
-                inst.shadow_planar_bonus = true
+                if data.shadow == true then
+                    inst.shadow_planar_bonus = true
+                end
+                check_shadow_bonus = data.shadow
             end
-            inst.all_sisturn_feedback = inst.all_sisturn_feedback or inst.moon_planar_bonus or inst.shadow_planar_bonus
+            inst.all_sisturn_feedback = inst.all_sisturn_feedback or check_moon_bonus or check_shadow_bonus
             UpdatePlanarBuff(inst)
         end
     end, TheWorld)

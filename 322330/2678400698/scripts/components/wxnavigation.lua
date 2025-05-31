@@ -15,6 +15,7 @@ local WXNavigation = Class(function(self, inst)
     self.navtarget = nil
     self.previousAP = nil
     self.pointqueue = {}
+    self.teleporting = false
     self.isshardtraveler = false
     self.noreceiver = false
 
@@ -30,11 +31,25 @@ end)
 local SEE_WORK_DIST = TUNING.WXAUTOMATION.SEE_WORK_DIST
 local KEEP_WORKING_DIST = SEE_WORK_DIST + 6
 
+local WX_TAG = { "wx" }
 local TOFILL_MUST_TAGS = { "watersource" }
 local FIND_CONTAINER_MUST_TAGS = { "_container" }
 local FIND_SIGN_MUST_TAGS = { "sign" }
 local SALTBOX_TAG = { "_container", "saltbox" }
 local ICEBOX_TAG = { "_container", "fridge" }
+
+local APChestList =
+{
+    "treasurechest",
+    "treasurechest_upgraded",
+    "statuerobobee",
+}
+
+local WChestList =
+{
+    "treasurechest",
+    "treasurechest_upgraded",
+}
 
 --------------------------------------------------------------------------
 --[[ Private member functions ]]
@@ -56,10 +71,15 @@ local function IsTool(item)
     return item.components.tool ~= nil or
         item.components.farmtiller ~= nil or
         item.components.fishingrod ~= nil or
+        item.components.finiteuses ~= nil or
         (item:HasTag("wateringcan") and
         item.components.finiteuses ~= nil and
         item.components.finiteuses:GetPercent() > 0) or
         item.prefab == "nightmare_timepiece"
+end
+
+local function IsFertilizer(item)
+    return item.components.fertilizer ~= nil
 end
 
 local function IsAPChest(inst)
@@ -75,8 +95,8 @@ local function IsAPChest(inst)
             end
         end
     end
-    return inst.prefab == "treasurechest" and inst.components.container ~= nil and
-        inst.components.container:FindItem(function(item) return not IsTool(item) end) ~= nil
+    return table.contains(APChestList, inst.prefab) and inst.components.container ~= nil and
+        inst.components.container:FindItem(function(item) return not IsTool(item) and not IsFertilizer(item) end) ~= nil
 end
 
 local function IsAPPreserverContainer(inst)
@@ -93,7 +113,41 @@ local function IsAPPreserverContainer(inst)
         end
     end
     return (inst.prefab == "icebox" or inst.prefab == "saltbox" or inst.prefab == "fish_box") and
-        inst.components.container ~= nil and not inst.components.container:IsEmpty()
+        inst.components.container ~= nil and inst.components.container:FindItem(function(item) return not IsFertilizer(item) end) ~= nil
+end
+
+local function IsAPFertilizerChest(inst)
+    for _, v in pairs(TheWorld.wxdiviningrodbase) do
+        if v:IsValid() and not v:IsInLimbo() and inst:IsNear(v, SEE_WORK_DIST) and
+            v.components.shelf.itemonshelf ~= nil then
+            return
+        end
+        for k, _ in pairs(TheWorld.sentryward) do
+            if k:IsValid() and not k:IsInLimbo() and inst:IsNear(k, SEE_WORK_DIST) and
+                v:IsValid() and not v:IsInLimbo() and k:IsNear(v, SEE_WORK_DIST) then
+                return
+            end
+        end
+    end
+    return inst.prefab == "treasurechest" and inst.components.container ~= nil and
+        inst.components.container:FindItem(function(item) return not IsTool(item) and IsFertilizer(item) end) ~= nil
+end
+
+local function IsAPFertilizerPreserverContainer(inst)
+    for k, v in pairs(TheWorld.wxdiviningrodbase) do
+        if v:IsValid() and not v:IsInLimbo() and inst:IsNear(v, SEE_WORK_DIST) and
+            v.components.shelf.itemonshelf ~= nil then
+            return
+        end
+        for k, _ in pairs(TheWorld.sentryward) do
+            if k:IsValid() and not k:IsInLimbo() and inst:IsNear(k, SEE_WORK_DIST) and
+                v:IsValid() and not v:IsInLimbo() and k:IsNear(v, SEE_WORK_DIST) then
+                return
+            end
+        end
+    end
+    return (inst.prefab == "icebox" or inst.prefab == "saltbox" or inst.prefab == "fish_box") and
+        inst.components.container ~= nil and inst.components.container:FindItem(function(item) return IsFertilizer(item) end) ~= nil
 end
 
 local function IsWWaterChest(inst)
@@ -350,7 +404,7 @@ function WXNavigation:UnloadCargo()
                 -- Smart Signed Chest
                 local smartchest = FindEntity(wxdiviningrodbase, SEE_WORK_DIST, function(ent)
                     local _, firstitem = next(ent.components.container.slots)
-                    return (ent.prefab == "treasurechest" or ent.prefab == "treasurechest_upgraded") and
+                    return table.contains(WChestList, ent.prefab) and
                         ent.components.smart_minisign ~= nil and ent.components.smart_minisign.sign ~= nil and
                         ent.components.container ~= nil and not ent.components.container:IsFull() and
                         firstitem ~= nil and firstitem.prefab == item.prefab
@@ -362,13 +416,13 @@ function WXNavigation:UnloadCargo()
                 -- Allocated Smart Signed Chest
                 local allocatedsmartchest = FindEntity(wxdiviningrodbase, SEE_WORK_DIST, function(ent)
                     local _, firstitem = next(ent.components.container.slots)
-                    return (ent.prefab == "treasurechest" or ent.prefab == "treasurechest_upgraded") and
+                    return table.contains(WChestList, ent.prefab) and
                         ent.components.smart_minisign ~= nil and ent.components.smart_minisign.sign ~= nil and
                         firstitem ~= nil and firstitem.prefab == item.prefab
                 end, FIND_CONTAINER_MUST_TAGS)
                 -- Empty Smart Signed Chest
                 local emptysmartchest = FindEntity(wxdiviningrodbase, SEE_WORK_DIST, function(ent)
-                    return (ent.prefab == "treasurechest" or ent.prefab == "treasurechest_upgraded") and
+                    return table.contains(WChestList, ent.prefab) and
                         ent.components.smart_minisign ~= nil and ent.components.smart_minisign.sign ~= nil and
                         ent.components.container ~= nil and next(ent.components.container.slots) == nil
                 end, FIND_CONTAINER_MUST_TAGS)
@@ -378,7 +432,7 @@ function WXNavigation:UnloadCargo()
                 end
                 -- Signed Chest
                 local signedchest = FindEntity(wxdiviningrodbase, SEE_WORK_DIST, function(ent)
-                    return (ent.prefab == "treasurechest" or ent.prefab == "treasurechest_upgraded") and
+                    return table.contains(WChestList, ent.prefab) and
                         ent.components.container ~= nil and not ent.components.container:IsFull() and
                         FindEntity(ent, .5, function(sign)
                             return sign.components.drawable ~= nil and (sign.components.drawable:GetImage() == item.prefab or
@@ -391,7 +445,7 @@ function WXNavigation:UnloadCargo()
                 end
                 -- Unsigned Chest
                 local unsignedchest = FindEntity(wxdiviningrodbase, SEE_WORK_DIST, function(ent)
-                    return (ent.prefab == "treasurechest" or ent.prefab == "treasurechest_upgraded") and
+                    return table.contains(WChestList, ent.prefab) and
                         ent.components.container ~= nil and ent.components.container:Has(item.prefab, 1) and
                         FindEntity(ent, .5, function(sign) return sign.components.drawable ~= nil end, FIND_SIGN_MUST_TAGS) == nil
                 end, FIND_CONTAINER_MUST_TAGS)
@@ -401,7 +455,7 @@ function WXNavigation:UnloadCargo()
                 end
                 -- Any Signed Chest
                 local anysignedchest = FindEntity(wxdiviningrodbase, SEE_WORK_DIST, function(ent)
-                    return (ent.prefab == "treasurechest" or ent.prefab == "treasurechest_upgraded") and
+                    return table.contains(WChestList, ent.prefab) and
                         ent.components.container ~= nil and
                         FindEntity(ent, .5, function(sign)
                             return sign.components.drawable ~= nil and (sign.components.drawable:GetImage() == item.prefab or
@@ -410,7 +464,7 @@ function WXNavigation:UnloadCargo()
                 end, FIND_CONTAINER_MUST_TAGS)
                 -- Empty Chest
                 local emptychest = FindEntity(wxdiviningrodbase, SEE_WORK_DIST, function(ent)
-                    return (ent.prefab == "treasurechest" or ent.prefab == "treasurechest_upgraded") and
+                    return table.contains(WChestList, ent.prefab) and
                         ent.components.container ~= nil and ent.components.container:IsEmpty() and
                         FindEntity(ent, .5, function(sign) return sign.components.drawable ~= nil end, FIND_SIGN_MUST_TAGS) == nil
                 end, FIND_CONTAINER_MUST_TAGS)
@@ -573,7 +627,7 @@ function WXNavigation:UnloadCargo()
                 -- Smart Signed Chest
                 local smartchest = FindEntity(wxdiviningrodbase, SEE_WORK_DIST, function(ent)
                     local _, firstitem = next(ent.components.container.slots)
-                    return (ent.prefab == "treasurechest" or ent.prefab == "treasurechest_upgraded") and
+                    return table.contains(WChestList, ent.prefab) and
                         ent.components.smart_minisign ~= nil and ent.components.smart_minisign.sign ~= nil and
                         ent.components.container ~= nil and not ent.components.container:IsFull() and
                         firstitem ~= nil and firstitem.prefab == item.prefab
@@ -585,13 +639,13 @@ function WXNavigation:UnloadCargo()
                 -- Allocated Smart Signed Chest
                 local allocatedsmartchest = FindEntity(wxdiviningrodbase, SEE_WORK_DIST, function(ent)
                     local _, firstitem = next(ent.components.container.slots)
-                    return (ent.prefab == "treasurechest" or ent.prefab == "treasurechest_upgraded") and
+                    return table.contains(WChestList, ent.prefab) and
                         ent.components.smart_minisign ~= nil and ent.components.smart_minisign.sign ~= nil and
                         firstitem ~= nil and firstitem.prefab == item.prefab
                 end, FIND_CONTAINER_MUST_TAGS)
                 -- Empty Smart Signed Chest
                 local emptysmartchest = FindEntity(wxdiviningrodbase, SEE_WORK_DIST, function(ent)
-                    return (ent.prefab == "treasurechest" or ent.prefab == "treasurechest_upgraded") and
+                    return table.contains(WChestList, ent.prefab) and
                         ent.components.smart_minisign ~= nil and ent.components.smart_minisign.sign ~= nil and
                         ent.components.container ~= nil and next(ent.components.container.slots) == nil
                 end, FIND_CONTAINER_MUST_TAGS)
@@ -601,7 +655,7 @@ function WXNavigation:UnloadCargo()
                 end
                 -- Signed Chest
                 local signedchest = FindEntity(wxdiviningrodbase, SEE_WORK_DIST, function(ent)
-                    return (ent.prefab == "treasurechest" or ent.prefab == "treasurechest_upgraded") and
+                    return table.contains(WChestList, ent.prefab) and
                         ent.components.container ~= nil and not ent.components.container:IsFull() and
                         FindEntity(ent, .5, function(sign)
                             return sign.components.drawable ~= nil and (sign.components.drawable:GetImage() == item.prefab or
@@ -614,7 +668,7 @@ function WXNavigation:UnloadCargo()
                 end
                 -- Unsigned Chest
                 local unsignedchest = FindEntity(wxdiviningrodbase, SEE_WORK_DIST, function(ent)
-                    return (ent.prefab == "treasurechest" or ent.prefab == "treasurechest_upgraded") and
+                    return table.contains(WChestList, ent.prefab) and
                         ent.components.container ~= nil and
                         ent.components.container:Has(item.prefab, 1) and
                         FindEntity(ent, .5, function(sign) return sign.components.drawable ~= nil end, FIND_SIGN_MUST_TAGS) == nil
@@ -625,7 +679,7 @@ function WXNavigation:UnloadCargo()
                 end
                 -- Any Signed Chest
                 local anysignedchest = FindEntity(wxdiviningrodbase, SEE_WORK_DIST, function(ent)
-                    return (ent.prefab == "treasurechest" or ent.prefab == "treasurechest_upgraded") and
+                    return table.contains(WChestList, ent.prefab) and
                         ent.components.container ~= nil and
                         FindEntity(ent, .5, function(sign)
                             return sign.components.drawable ~= nil and (sign.components.drawable:GetImage() == item.prefab or
@@ -634,7 +688,7 @@ function WXNavigation:UnloadCargo()
                 end, FIND_CONTAINER_MUST_TAGS)
                 -- Empty Chest
                 local emptychest = FindEntity(wxdiviningrodbase, SEE_WORK_DIST, function(ent)
-                    return (ent.prefab == "treasurechest" or ent.prefab == "treasurechest_upgraded") and
+                    return table.contains(WChestList, ent.prefab) and
                         ent.components.container ~= nil and ent.components.container:IsEmpty() and
                         FindEntity(ent, .5, function(sign) return sign.components.drawable ~= nil end, FIND_SIGN_MUST_TAGS) == nil
                 end, FIND_CONTAINER_MUST_TAGS)
@@ -746,15 +800,31 @@ function WXNavigation:LoadCargo()
         return
     end
 
+    -- Do not take tools or fertilizer.
     local container = FindEntity(sentryward, SEE_WORK_DIST, IsAPPreserverContainer, FIND_CONTAINER_MUST_TAGS)
     if container == nil then
         container = FindEntity(sentryward, SEE_WORK_DIST, IsAPChest, FIND_CONTAINER_MUST_TAGS)
+    end
+    -- Can take fertilizer if is not near anyone that requires fertilizer.
+    local isnearagriAP = FindEntity(sentryward, SEE_WORK_DIST, function(ent)
+        return ent.components.wxtype ~= nil and ent.components.wxtype:IsAgri() or ent.components.wxtype:IsHorti()
+    end, WX_TAG) ~= nil
+    if not isnearagriAP then
+        if container == nil then
+            container = FindEntity(sentryward, SEE_WORK_DIST, IsAPFertilizerPreserverContainer, FIND_CONTAINER_MUST_TAGS)
+        end
+        if container == nil then
+            container = FindEntity(sentryward, SEE_WORK_DIST, IsAPFertilizerChest, FIND_CONTAINER_MUST_TAGS)
+        end
     end
     if container == nil or container:GetCurrentPlatform() ~= self.inst:GetCurrentPlatform() then
         return
     end
 
-    local item = container.components.container:FindItem(function(item) return not IsTool(item) end)
+    local item = container.components.container:FindItem(function(item) return not IsTool(item) and not IsFertilizer(item) end)
+    if item == nil and not isnearagriAP then
+        item = container.components.container:FindItem(function(item) return not IsTool(item) and IsFertilizer(item) end)
+    end
     if item ~= nil then
         local backpack = GetEquippedBackpack(self.inst)
         if TheWorld.sentryward[sentryward] ~= nil then
@@ -917,7 +987,7 @@ function WXNavigation:NavigateTo(prefab)
             self.inst.components.locomotor:GoToPoint(pt, nil, true)
             return
         -- Still calculating, stand by.
-        elseif self.inst.components.astarpathfinding.iscalculating then
+        elseif self.inst.components.astarpathfinding.iscalculating or self.teleporting then
             return
         -- No way point found or no remaining way points, release now.
         else
@@ -949,6 +1019,7 @@ function WXNavigation:NavigateTo(prefab)
         -- Hyper space jump
         local tool = self.inst.components.inventory:GetEquippedItem(EQUIPSLOTS.HANDS)
         if tool ~= nil and tool.prefab == "compass" then
+            self.teleporting = true
             -- Depart
             self.inst.components.talker:Say(GetString(self.inst, "ANNOUNCE_TRANSPORTATION_JUMP_START"))
             self.inst:DoTaskInTime(3, function(inst)
@@ -959,6 +1030,7 @@ function WXNavigation:NavigateTo(prefab)
                     inst.Physics:SetActive(false)
                     inst.DynamicShadow:Enable(false)
                     inst.components.talker:IgnoreAll()
+                    inst.components.talker:ShutUp()
                     -- Hyper space jump kills all living beings, especially fish
                     local backpack = GetEquippedBackpack(self.inst)
                     if backpack ~= nil and backpack.components.container ~= nil and not backpack.components.container:IsEmpty() then
@@ -985,8 +1057,11 @@ function WXNavigation:NavigateTo(prefab)
                     inst.Physics:SetActive(true)
                     inst.DynamicShadow:Enable(true)
                     inst.components.talker:StopIgnoringAll()
-                    inst.components.talker:Say(GetString(self.inst, "ANNOUNCE_TRANSPORTATION_JUMP_FINISH"))
+                    inst:DoTaskInTime(0, function(inst)
+                        inst.components.talker:Say(GetString(self.inst, "ANNOUNCE_TRANSPORTATION_JUMP_FINISH"))
+                    end)
                     inst.components.wxnavigation.engaged = false
+                    inst.components.wxnavigation.teleporting = false
                 end)
             end)
         -- Hike
@@ -1104,8 +1179,7 @@ local function FindItemToTakeAction(inst)
     local container_list = TheSim:FindEntities(x, y, z, SEE_WORK_DIST, FIND_CONTAINER_MUST_TAGS)
     for _, container in pairs(container_list) do
         item = ((container.prefab == "wx" and container.components.wxtype ~= nil and
-            container.components.wxtype:IsMachineInd()) or
-            container.prefab == "treasurechest" or container.prefab == "treasurechest_upgraded") and
+            container.components.wxtype:IsMachineInd()) or container.prefab == "treasurechest") and
             container.components.container ~= nil and
             container.components.container:FindItem(function(item)
             -- Gardenhoe

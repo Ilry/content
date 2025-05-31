@@ -17,8 +17,18 @@ local prefabs =
     prefab_id,
 }
 
+---comment
+---@param inst any
+---@param owner ent
 local function onequip(inst, owner)
-    owner.AnimState:OverrideSymbol("swap_object", "swap_"..tmp_assets_id, "swap_"..tmp_assets_id)
+    local skin_build = inst:GetSkinBuild()
+	if skin_build ~= nil then
+		owner:PushEvent("equipskinneditem", inst:GetSkinName())
+		owner.AnimState:OverrideItemSkinSymbol("swap_object", "swap_"..skin_build, "swap_"..skin_build, inst.GUID, "swap_"..tmp_assets_id)
+	else
+		owner.AnimState:OverrideSymbol("swap_object", "swap_"..tmp_assets_id, "swap_"..tmp_assets_id)
+	end
+
     owner.AnimState:Show("ARM_carry")
     owner.AnimState:Hide("ARM_normal")
 end
@@ -26,6 +36,10 @@ end
 local function onunequip(inst, owner)
     owner.AnimState:Hide("ARM_carry")
     owner.AnimState:Show("ARM_normal")
+    local skin_build = inst:GetSkinBuild()
+	if skin_build ~= nil then
+		owner:PushEvent("unequipskinneditem", inst:GetSkinName())
+	end
 end
 
 -- local function onfinished(inst)
@@ -162,8 +176,8 @@ local function fn()
     inst:AddComponent("inspectable")
 
     inst:AddComponent("inventoryitem")
-    inst.components.inventoryitem.imagename = tmp_assets_id
     inst.components.inventoryitem.atlasname = "images/inventoryimages/"..tmp_assets_id..".xml"
+    inst.components.inventoryitem.imagename = tmp_assets_id
     -- inst.components.inventoryitem:SetOnDroppedFn(function()
     -- end)
 

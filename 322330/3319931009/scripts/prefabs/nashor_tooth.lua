@@ -1,3 +1,4 @@
+local modid = 'lol_wp'
 local assets =
 {
     Asset("ANIM", "anim/nashor_tooth.zip"),
@@ -259,32 +260,34 @@ local function fn()
             inst:AddTag("broken")
         end
     end)
+    if TUNING[string.upper('CONFIG_'..modid..'could_repair')] == 1 or TUNING[string.upper('CONFIG_'..modid..'could_repair')] == 3 then
+        inst:AddComponent("repairable")
+        inst.components.repairable.repairmaterial = MATERIALS.NIGHTMARE
+        inst.components.repairable.noannounce = true
+        inst.components.repairable.checkmaterialfn = function(inst, repair_item)
+            if repair_item.prefab == "nightmarefuel" or repair_item.prefab == "horrorfuel" then
+                return true
+            end
+            return false
+        end
+        inst.components.repairable.onrepaired = function(inst, doer, repair_item)
+            local repairnum = 0
+            if repair_item.prefab == "nightmarefuel" then 
+                repairnum = 40
+            elseif repair_item.prefab == "horrorfuel" then 
+                repairnum = 200
+            end
+            inst.components.finiteuses:Repair(repairnum)
+            if inst.components.equippable == nil then
+                inst:AddComponent("equippable")
+                inst.components.equippable:SetOnEquip(onequip)
+                inst.components.equippable:SetOnUnequip(onunequip)
+                inst:RemoveTag("broken")
+            end
+            SERVER_PlayFuelSound(inst)
+        end
+    end
 
-    inst:AddComponent("repairable")
-    inst.components.repairable.repairmaterial = MATERIALS.NIGHTMARE
-    inst.components.repairable.noannounce = true
-    inst.components.repairable.checkmaterialfn = function(inst, repair_item)
-        if repair_item.prefab == "nightmarefuel" or repair_item.prefab == "horrorfuel" then
-            return true
-        end
-        return false
-    end
-	inst.components.repairable.onrepaired = function(inst, doer, repair_item)
-        local repairnum = 0
-        if repair_item.prefab == "nightmarefuel" then 
-            repairnum = 40
-        elseif repair_item.prefab == "horrorfuel" then 
-            repairnum = 200
-        end
-        inst.components.finiteuses:Repair(repairnum)
-        if inst.components.equippable == nil then
-            inst:AddComponent("equippable")
-            inst.components.equippable:SetOnEquip(onequip)
-            inst.components.equippable:SetOnUnequip(onunequip)
-            inst:RemoveTag("broken")
-        end
-        SERVER_PlayFuelSound(inst)
-    end
 
     inst:AddComponent("inspectable")
 

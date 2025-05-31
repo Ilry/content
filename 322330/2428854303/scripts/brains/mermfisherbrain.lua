@@ -1,84 +1,160 @@
-require "behaviours/wander"
-require "behaviours/runaway"
-require "behaviours/doaction"
-require "behaviours/panic"
-require "behaviours/chattynode"
+require("behaviours/wander")
+require("behaviours/runaway")
+require("behaviours/doaction")
+require("behaviours/panic")
+require("behaviours/chattynode")
 
-local SEE_FOOD_DIST = 10
+local BrainCommon = require("brains/braincommon")
+
+local SEE_HOME_DIST = 18
 local MAX_WANDER_DIST = 10
-local MAX_CHASE_TIME = 10
-local MAX_CHASE_DIST = 20
-local RUN_AWAY_DIST = 2
-local STOP_RUN_AWAY_DIST = 4
-local SEE_HOME_DIST = 40
+local RUN_AWAY_DIST = 5
+local STOP_RUN_AWAY_DIST = 8
+local TRADE_DIST = 20
+local SEE_PLAYER_DIST = 5
+local SEE_FOOD_DIST = 10
+local RUN_TIME_OUT = 7
 
-local MermfisherBrain = Class(Brain, function(self, inst)
+local MermFisherBrain = Class(Brain, function(self, inst)
     Brain._ctor(self, inst)
 end)
 
 local function GoHomeAction(inst)
-	if not inst.components.combat.target
-		and inst.components.homeseeker 
-		and inst.components.homeseeker.home 
-		and inst.components.homeseeker.home:IsValid()
-		and not (inst.components.homeseeker.home.components.burnable ~= nil
-			and inst.components.homeseeker.home.components.burnable:IsBurning())
-		and not inst.components.homeseeker.home:HasTag("burnt") then
-		return BufferedAction(inst, inst.components.homeseeker.home, ACTIONS.GOHOME)
-	end
+    local home = inst.components.homeseeker ~= nil and inst.components.homeseeker.home or nil
+    return not inst.components.combat.target
+	and home
+	and home:IsValid()
+	and not (home.components.burnable ~= nil
+	and home.components.burnable:IsBurning())
+	and not home:HasTag("burnt")
+	and BufferedAction(inst, home, ACTIONS.GOHOME)
 end
 
---[[
 local function ShouldGoHome(inst)
-	--one merm should stay outside
 	local home = inst.components.homeseeker ~= nil and inst.components.homeseeker.home or nil
 	return TheWorld.state.isday
-		and home ~= nil
-		and (home.components.childspawner == nil)
+	and home ~= nil
+	and (home.components.childspawner == nil
+	or home.components.childspawner:CountChildrenOutside() > 1)
 end
-]]--
+
+local FISHABLE_TAGS = {"fishable"}
+local FISHABLE_NO_TAGS = {"fishinhole"}
 
 local function Fish(inst)
-    local pond = FindEntity(inst, 20, nil, {"fishable"})
-
-    if pond and not inst.sg:HasStateTag("fishing") and inst.CanFish then
-        return BufferedAction(inst, pond, ACTIONS.FISH)
-    end
+    local pond = FindEntity(inst, 20, function(inst) return inst.components.fishable.fishleft > 0 end, FISHABLE_TAGS, FISHABLE_NO_TAGS)
+    return pond
+	and not inst.sg:HasStateTag("fishing")
+	and inst.CanFish
+	and BufferedAction(inst, pond, ACTIONS.FISH)
 end
 
 local function IsHomeOnFire(inst)
-    return inst.components.homeseeker
-        and inst.components.homeseeker.home
-        and inst.components.homeseeker.home.components.burnable
-        and inst.components.homeseeker.home.components.burnable:IsBurning()
-        and inst.components.homeseeker.home:IsNear(inst, SEE_HOME_DIST)
+    local home = inst.components.homeseeker ~= nil and inst.components.homeseeker.home or nil
+    return home
+	and home.components.burnable
+	and home.components.burnable:IsBurning()
+	and home:IsNear(inst, SEE_HOME_DIST)
 end
 
-function MermfisherBrain:OnStart()
+local function GetTraderFn(inst)
+    local x, y, z = inst.Transform:GetWorldPosition()
+    local players = FindPlayersInRange(x, y, z, TRADE_DIST, true)
+    for _, v in ipairs(players) do
+        if inst.components.trader:IsTryingToTradeWithMe(v) and not inst.sg:HasStateTag("fishing") then
+            return v
+        end  
+    end     
+end
+
+local function KeepTraderFn(inst, target)
+    return inst.components.trader:IsTryingToTradeWithMe(target)
+end
+
+local function GetFaceTargetFn(inst)
+    if inst.components.timer:TimerExists("dontfacetime") then
+        return nil
+    end
+	
+    local shouldface = inst.components.follower.leader or FindClosestPlayerToInst(inst, SEE_PLAYER_DIST, true)
+    if shouldface and not inst.components.timer:TimerExists("facetime") then
+        inst.components.timer:StartTimer("facetime", FACETIME_BASE + math.random()*FACETIME_RAND)
+    end
+	
+    return shouldface
+end
+
+local function KeepFaceTargetFn(inst, target)
+    if inst.components.timer:TimerExists("dontfacetime") then
+        return nil
+    end
+	
+    local keepface = (inst.components.follower.leader and inst.components.follower.leader == target) or (target:IsValid() and inst:IsNear(target, SEE_PLAYER_DIST))
+    if not keepface then
+        inst.components.timer:StopTimer("facetime")
+    end
+	
+    return keepface
+end
+
+local EATFOOD_MUST_TAGS = {"edible_VEGGIE", "edible_SEEDS"}
+local EATFOOD_CANT_TAGS = {"INLIMBO", "outofreach"}
+local SCARY_TAGS = {"pig", "scarytoprey"}
+
+local function EatFoodAction(inst)
+    if inst.sg:HasStateTag("waking") or inst.sg:HasStateTag("fishing") then
+        return
+    end
+
+    local target = nil
+
+    if inst.components.inventory ~= nil and inst.components.eater ~= nil then
+        target = inst.components.inventory:FindItem(function(item) return inst.components.eater:CanEat(item) end)
+    end
+
+    if target == nil then
+        target = FindEntity(inst, SEE_FOOD_DIST, function(item)
+            return inst.components.eater ~= nil and inst.components.eater:CanEat(item)
+        end, EATFOOD_MUST_TAGS, EATFOOD_CANT_TAGS)
+   
+        if target ~= nil and (GetClosestInstWithTag(SCARY_TAGS, target, SEE_PLAYER_DIST) ~= nil or not target:IsOnValidGround()) then
+            target = nil
+        end
+    end
+	
+    if target ~= nil then
+        local act = BufferedAction(inst, target, ACTIONS.EAT)
+        act.validfn = function() return target.components.inventoryitem == nil or target.components.inventoryitem.owner == nil or target.components.inventoryitem.owner == inst end
+        return act
+    end
+end
+
+function MermFisherBrain:OnStart()
     local root = PriorityNode(
     {
-        WhileNode(function() return self.inst.components.hauntable ~= nil and self.inst.components.hauntable.panic end, "PanicHaunted", 
-            ChattyNode(self.inst, STRINGS.FISHERMERM_TALK_PANIC,
-                Panic(self.inst))),
+        -- WhileNode(function() return self.inst.components.combat.target ~= nil and not self.inst.sg:HasStateTag("fishing") end, "Is Threatened",
+			-- ChattyNode(self.inst, "MERM_TALK_FIND_FOOD",
+				-- Wander(self.inst, function() return self.inst.components.knownlocations:GetLocation("home") end, MAX_WANDER_DIST))),
 
-        WhileNode(function() return self.inst.components.health.takingfiredamage end, "OnFire", 
-            ChattyNode(self.inst, STRINGS.FISHERMERM_TALK_PANIC,
-                Panic(self.inst))),
+        ChattyNode(self.inst, "MERM_TALK_FIND_FOOD",
+            DoAction(self.inst, EatFoodAction, "Eat Food")),
 
-        WhileNode(function() return self.inst.components.combat.target ~= nil and not self.inst.sg:HasStateTag("fishing") end, "Is Threatened",
-			ChattyNode(self.inst, STRINGS.FISHERMERM_TALK_RUNAWAY,
-				RunAway(self.inst, function() return self.inst.components.combat.target end, RUN_AWAY_DIST, STOP_RUN_AWAY_DIST))),
-        
-        WhileNode( function() return IsHomeOnFire(self.inst) end, "HomeOnFire", 
-            ChattyNode(self.inst, STRINGS.FISHERMERM_TALK_PANIC,
-                Panic(self.inst))),
+        ChattyNode(self.inst, "MERM_TALK_FIND_FOOD",
+        FaceEntity(self.inst, GetTraderFn, KeepTraderFn)),
 
-        ChattyNode(self.inst, STRINGS.FISHERMERM_TALK_GO_HOME,
-            WhileNode(function() return TheWorld.state.isday end, "IsDay",
-            DoAction(self.inst, GoHomeAction, "go home", true ))),
+        WhileNode(function() return IsHomeOnFire(self.inst) end, "HomeOnFire", 
+            ChattyNode(self.inst, "MERM_TALK_PANICBOSS",
+			Panic(self.inst))),
 
-        ChattyNode(self.inst, STRINGS.FISHERMERM_TALK_FISH,
+        ChattyNode(self.inst, "MERM_TALK_FIND_FOOD",
+            WhileNode(function() return ShouldGoHome(self.inst) end, "ShouldGoHome", 
+				DoAction(self.inst, GoHomeAction, "Go Home", true))),
+
+        ChattyNode(self.inst, "MERM_TALK_FIND_FOOD",
             DoAction(self.inst, Fish, "Fish Action")),
+			
+		WhileNode(function() return GetTime() - self.inst.components.combat:GetLastAttackedTime() <= RUN_TIME_OUT end, "Attacked",
+			RunAway(self.inst, "scarytoprey", SEE_PLAYER_DIST, STOP_RUN_AWAY_DIST)),
 
         WhileNode(function() return not self.inst.sg:HasStateTag("fishing") end, "Is Idle",
 			Wander(self.inst, function() return self.inst.components.knownlocations:GetLocation("home") end, MAX_WANDER_DIST)),
@@ -87,4 +163,4 @@ function MermfisherBrain:OnStart()
     self.bt = BT(self.inst, root)
 end
 
-return MermfisherBrain
+return MermFisherBrain

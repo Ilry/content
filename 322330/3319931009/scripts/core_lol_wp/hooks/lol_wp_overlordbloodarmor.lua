@@ -21,22 +21,46 @@ for k,v in pairs(TUNING.MOD_LOL_WP.OVERLORDBLOOD.BLUEPRINTDROP_CHANCE) do
 end
 
 -- 被动
-AddComponentPostInit('combat',function (self)
+AddComponentPostInit('combat',
+---comment
+---@param self component_combat
+function (self)
     local old_GetAttacked = self.GetAttacked
     function self:GetAttacked(attacker,damage,weapon,stimuli,spdamage,...)
         if attacker and attacker:HasTag("player") and attacker.components.health and attacker.components.inventory:EquipHasTag('lol_wp_overlordbloodarmor') then
-            local maxhealth = attacker.components.health.maxhealth
-            if maxhealth then
-                -- 被动：【专横】将玩家5%最大生命值转化为额外攻击力。
-                local extra_atk = TUNING.MOD_LOL_WP.OVERLORDBLOOD.SKILL_MAXHP_TO_ATK * maxhealth
-                if damage then
-                    damage = damage + extra_atk
+            local allow_calc = true
+            if weapon and weapon.components.lol_wp_type and weapon.prefab then
+                local weapon_type = weapon.components.lol_wp_type:GetType()
+                if weapon_type == 'mage' then
+                    allow_calc = false
                 end
-                -- 被动：【报复】获得损失生命值10%的攻击力提升
-                local lost_hp = (1-attacker.components.health:GetPercent()) * maxhealth
-                local extra_atk2 = lost_hp * TUNING.MOD_LOL_WP.OVERLORDBLOOD.SKILL_LOSTHP_TO_ATK
-                if damage then
-                    damage = damage + extra_atk2
+            end
+            if allow_calc then
+                local maxhealth = attacker.components.health.maxhealth
+                if maxhealth then
+                    if stimuli and stimuli == 'lol_wp_trinity_terraprisma' then
+                        -- local player_dmgmult = attacker.components.combat.damagemultiplier or 1
+                        -- local player_extramult = attacker.components.combat.externaldamagemultipliers:Get()
+
+                        local extra_atk = TUNING.MOD_LOL_WP.OVERLORDBLOOD.SKILL_MAXHP_TO_ATK * maxhealth
+                        local lost_hp = (1-attacker.components.health:GetPercent()) * maxhealth
+                        local extra_atk2 = lost_hp * TUNING.MOD_LOL_WP.OVERLORDBLOOD.SKILL_LOSTHP_TO_ATK
+
+                        damage = (damage or 0) + extra_atk + extra_atk2
+                        -- damage = damage * player_dmgmult * player_extramult
+                    else
+                        -- 被动：【专横】将玩家5%最大生命值转化为额外攻击力。
+                        local extra_atk = TUNING.MOD_LOL_WP.OVERLORDBLOOD.SKILL_MAXHP_TO_ATK * maxhealth
+                        if damage then
+                            damage = damage + extra_atk
+                        end
+                        -- 被动：【报复】获得损失生命值10%的攻击力提升
+                        local lost_hp = (1-attacker.components.health:GetPercent()) * maxhealth
+                        local extra_atk2 = lost_hp * TUNING.MOD_LOL_WP.OVERLORDBLOOD.SKILL_LOSTHP_TO_ATK
+                        if damage then
+                            damage = damage + extra_atk2
+                        end
+                    end
                 end
             end
         end

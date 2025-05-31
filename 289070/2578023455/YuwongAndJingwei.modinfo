@@ -3,7 +3,7 @@
   <Properties>
     <Name>{LOC_MOD_YUGONG_AND_JINGWEI_NAME}</Name>
     <Description>{LOC_MOD_YUGONG_AND_JINGWEI_DESCRIPTION}</Description>
-    <Created>1702137211</Created>
+    <Created>1722066183</Created>
     <Teaser>{LOC_MOD_YUGONG_AND_JINGWEI_TEASER}</Teaser>
     <Authors>Luminous</Authors>
     <CompatibleVersions>1.2,2.0</CompatibleVersions>
@@ -94,6 +94,7 @@
     </UpdateText>
     <AddGameplayScripts id="NewAction">
       <File>TerrainingUnitInGame.lua</File>
+      <File>Scripts/BanAITerraining.lua</File>
     </AddGameplayScripts>
     <UpdateIcons id="NewAction">
       <File>Xmls/Data_Icons.xml</File>
@@ -136,6 +137,7 @@
     <File>Config/YAJ_GameConf.sql</File>
     <File>Platforms/MacOS/BLPs/UI/Icons.blp</File>
     <File>Platforms/Windows/BLPs/UI/Icons.blp</File>
+    <File>Scripts/BanAITerraining.lua</File>
     <File>Scripts/TerrainingModification_Fair.lua</File>
     <File>Scripts/TerrainingModification_High.lua</File>
     <File>Scripts/TerrainingModification_Low.lua</File>
@@ -146,6 +148,7 @@
     <File>SQLs/Lang/YAJ_Texts_GovUpdates.sql</File>
     <File>SQLs/Lang/YAJ_Texts_zhCN.sql</File>
     <File>SQLs/MountainMove.sql</File>
+    <File>SQLs/YAJ_BanAITerraining.sql</File>
     <File>SQLs/YAJ_Commemoration.sql</File>
     <File>SQLs/YAJ_GovernorUpdates.sql</File>
     <File>SQLs/YAJ_Improvements.sql</File>

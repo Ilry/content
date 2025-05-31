@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 4546B_Config -->
+<!-- Author: 27136 -->
+<!-- DateCreated: 10/22/2021 3:31:29 PM -->
+<GameData>
+		<!-- Base Game -->
+		<Players>
+			<!-- Expansion 2 Support -->
+			<Row Domain="Players:Expansion2_Players" CivilizationType="CIVILIZATION_4546B" LeaderType="LEADER_HAIHUANG" CivilizationName="LOC_CIVILIZATION_4546B_NAME" CivilizationIcon="ICON_CIVILIZATION_4546B" LeaderName="LOC_LEADER_HAIHUANG_NAME" LeaderIcon="ICON_LEADER_HAIHUANG" CivilizationAbilityName="LOC_TRAIT_CIVILIZATION_KALA_NAME" CivilizationAbilityDescription="LOC_TRAIT_CIVILIZATION_KALA_DESCRIPTION" CivilizationAbilityIcon="ICON_DDDD" LeaderAbilityName="LOC_TRAIT_LEADER_HAIHUANG2_CIVILIZATION_NAME" LeaderAbilityDescription="LOC_TRAIT_LEADER_HAIHUANG2_CIVILIZATION_DESCRIPTION" LeaderAbilityIcon="ICON_CIVILIZATION_4546B" Portrait="IMG_SELECTION_FOREGROUND" PortraitBackground="IMG_SELECTION_BACKGROUND_HAIHUANG"/>
+		</Players>
+		<PlayerItems>
+			<!-- Expansion 2 Support -->
+			<Row>
+				<Domain>Players:Expansion2_Players</Domain>
+				<CivilizationType>CIVILIZATION_4546B</CivilizationType>
+				<LeaderType>LEADER_HAIHUANG</LeaderType>
+				<Type>UNIT_SEAMOTH</Type>
+				<Name>LOC_UNIT_SEAMOTH_NAME</Name>
+				<Description>LOC_TRAIT_UNIT_SEAMOTH_DESCRIPTION</Description>
+				<Icon>ICON_UNIT_SEAMOTH</Icon>
+				<SortIndex>10</SortIndex>
+			</Row>
+			<Row>
+				<Domain>Players:Expansion2_Players</Domain>
+				<CivilizationType>CIVILIZATION_4546B</CivilizationType>
+				<LeaderType>LEADER_HAIHUANG</LeaderType>
+				<Type>UNIT_CYCLOPS</Type>
+				<Name>LOC_UNIT_CYCLOPS_NAME</Name>
+				<Description>LOC_TRAIT_UNIT_CYCLOPS_DESCRIPTION</Description>
+				<Icon>ICON_UNIT_CYCLOPS</Icon>
+				<SortIndex>20</SortIndex>
+			</Row>
+			<Row>
+				<Domain>Players:Expansion2_Players</Domain>
+				<CivilizationType>CIVILIZATION_4546B</CivilizationType>
+				<LeaderType>LEADER_HAIHUANG</LeaderType>
+				<Type>UNIT_LIWEITAN</Type>
+				<Name>LOC_UNIT_LIWEITAN_NAME</Name>
+				<Description>LOC_TRAIT_UNIT_LIWEITAN_DESCRIPTION</Description>
+				<Icon>ICON_UNIT_LIWEITAN</Icon>
+				<SortIndex>40</SortIndex>
+			</Row>
+			<Row>
+				<Domain>Players:Expansion2_Players</Domain>
+				<CivilizationType>CIVILIZATION_4546B</CivilizationType>
+				<LeaderType>LEADER_HAIHUANG</LeaderType>
+				<Type>UNIT_PRAWN</Type>
+				<Name>LOC_UNIT_PRAWN_NAME</Name>
+				<Description>LOC_TRAIT_UNIT_PRAWN_DESCRIPTION</Description>
+				<Icon>ICON_UNIT_PRAWN</Icon>
+				<SortIndex>30</SortIndex>
+			</Row>
+
+			<Row>
+				<Domain>Players:Expansion2_Players</Domain>
+				<CivilizationType>CIVILIZATION_4546B</CivilizationType>
+				<LeaderType>LEADER_HAIHUANG</LeaderType>
+				<Type>UNIT_ALIAN_CANON</Type>
+				<Name>LOC_UNIT_ALIAN_CANON_NAME</Name>
+				<Description>LOC_TRAIT_UNIT_ALIAN_CANON_DESCRIPTION</Description>
+				<Icon>ICON_UNIT_ALIAN_CANON</Icon>
+				<SortIndex>50</SortIndex>
+			</Row>
+			
+			<Row Domain="Players:Expansion2_Players"  CivilizationType="CIVILIZATION_4546B"
+			 LeaderType="LEADER_HAIHUANG" Type="BUILDING_SCANNER" Icon="ICON_BUILDING_SCANNER"
+			 Name="LOC_BUILDING_SCANNER_NAME" Description="LOC_TRAIT_BUILDING_SCANNER_DESCRIPTION" SortIndex="60"/>
+			
+			<Row Domain="Players:Expansion2_Players"  CivilizationType="CIVILIZATION_4546B"
+			 LeaderType="LEADER_HAIHUANG" Type="BUILDING_TRANSLATION_DEVICE" Icon="ICON_BUILDING_TRANSLATION_DEVICE"
+			 Name="LOC_BUILDING_TRANSLATION_DEVICE_NAME" Description="LOC_TRAIT_BUILDING_TRANSLATION_DEVICE_DESCRIPTION" SortIndex="70"/>
+			
+			<Row Domain="Players:Expansion2_Players" CivilizationType="CIVILIZATION_4546B"
+			 LeaderType="LEADER_HAIHUANG" Type="DISTRICT_LIFETREE" Icon="ICON_DISTRICT_LIFETREE"
+			 Name="LOC_DISTRICT_LIFETREE_NAME" Description="LOC_TRAIT_DISTRICT_LIFETREE_DESCRIPTION" SortIndex="80"/>
+
+			<Row Domain="Players:Expansion2_Players" CivilizationType="CIVILIZATION_4546B"
+			 LeaderType="LEADER_HAIHUANG" Type="IMPROVEMENT_SEASTEAD233" Icon="ICON_IMPROVEMENT_SEASTEAD233"
+			 Name="LOC_IMPROVEMENT_SEASTEAD233_NAME" Description="LOC_IMPROVEMENT_SEASTEAD233_DESCRIPTION" SortIndex="90"/>
+
+
+
+		</PlayerItems>
+</GameData>

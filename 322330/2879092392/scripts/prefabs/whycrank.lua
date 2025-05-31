@@ -11,8 +11,8 @@ local function ItemTradeTest(inst, item)
         return true
     elseif item.prefab == "thulecite_pieces" then
         return true
-    --elseif string.sub(item.prefab, -3) == "gem" and string.sub(item.prefab, 5, 11) == "refined" then
-    --    return true
+    elseif string.sub(item.prefab, -3) == "gem" and string.sub(item.prefab, 5, 11) == "refined" then
+       return true
     end
 end
 local function OnTHFGGiven(inst, giver, item)
@@ -20,24 +20,24 @@ local function OnTHFGGiven(inst, giver, item)
         inst.components.finiteuses:Repair(20)
     elseif item.prefab == "thulecite_pieces" then
         inst.components.finiteuses:Repair(8)
-    --elseif string.sub(item.prefab, -3) == "gem" then
-    --    local gemcrank = SpawnPrefab("why_arsenal_"..string.sub(item.prefab, 13, -4))
-    --    print("why_arsenal_"..string.sub(item.prefab, 13, -4))
-    --    local currentPercent = inst.components.finiteuses:GetPercent()
-    --    print("currentpercent = "..currentPercent)
-    --    gemcrank.components.finiteuses:SetPercent(currentPercent)
-    --    if gemcrank then
-    --        local container = inst.components.inventoryitem:GetContainer()
-    --        if container ~= nil then
-    --            local slot = inst.components.inventoryitem:GetSlotNum()
-    --            inst:Remove()
-    --            container:GiveItem(gemcrank, slot)
-    --        else
-    --            local x, y, z = inst.Transform:GetWorldPosition()
-    --            inst:Remove()
-    --            gemcrank.Transform:SetPosition(x, y, z)
-    --        end
-    --    end
+    elseif string.sub(item.prefab, -3) == "gem" then
+       local gemcrank = SpawnPrefab("why_arsenal_"..string.sub(item.prefab, 13, -4))
+       print("why_arsenal_"..string.sub(item.prefab, 13, -4))
+       local currentPercent = inst.components.finiteuses:GetPercent()
+       print("currentpercent = "..currentPercent)
+       gemcrank.components.finiteuses:SetPercent(currentPercent)
+       if gemcrank then
+           local container = inst.components.inventoryitem:GetContainer()
+           if container ~= nil then
+               local slot = inst.components.inventoryitem:GetSlotNum()
+               inst:Remove()
+               container:GiveItem(gemcrank, slot)
+           else
+               local x, y, z = inst.Transform:GetWorldPosition()
+               inst:Remove()
+               gemcrank.Transform:SetPosition(x, y, z)
+           end
+       end
     end
 end
 local function onequip(inst, owner)

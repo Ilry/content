@@ -26,6 +26,12 @@ SELECT BuildingType, TerrainType
 FROM Building_ValidTerrains 
 Where TerrainType LIKE 'TERRAIN_%_HILLS' AND (SELECT IsWonder FROM Buildings WHERE Buildings.BuildingType = Building_ValidTerrains.BuildingType) = 1;
 
+-- Also for wonders must be adjacent to mountain
+INSERT OR IGNORE INTO YAJMountainWonders(BuildingType, TerrainType)
+SELECT BuildingType, TerrainType
+FROM Building_ValidTerrains 
+Where TerrainType LIKE 'TERRAIN_%' AND (SELECT IsWonder FROM Buildings WHERE Buildings.BuildingType = Building_ValidTerrains.BuildingType) = 1	AND (SELECT AdjacentToMountain FROM Buildings WHERE Buildings.BuildingType = Building_ValidTerrains.BuildingType) = 1;
+
 -------------------------------------
 -- Expand Valid Terrain to correspondent mountain tiles
 -- UNFORTUNATELY, 'SUBSTRING_INDEX' is not supported in Civ6
@@ -49,7 +55,7 @@ WHERE A.TerrainType = 'TERRAIN_' || B.TerrainClassName || '_HILLS';
 -- Register Trigger
 CREATE TRIGGER YAJNewWonderTrig
 AFTER INSERT ON Building_ValidTerrains
-WHEN (NEW.BuildingType NOT NULL) AND (NEW.TerrainType LIKE 'TERRAIN_%_HILLS') AND (SELECT IsWonder FROM Buildings WHERE Buildings.BuildingType = NEW.BuildingType) = 1
+WHEN (NEW.BuildingType NOT NULL) AND (SELECT IsWonder FROM Buildings WHERE Buildings.BuildingType = NEW.BuildingType) = 1 AND ((NEW.TerrainType LIKE 'TERRAIN_%_HILLS') OR (NEW.TerrainType LIKE 'TERRAIN_%' AND (SELECT AdjacentToMountain FROM Buildings WHERE Buildings.BuildingType = NEW.BuildingType) = 1))
 BEGIN
 	--INSERT OR REPLACE INTO Building_ValidTerrains(BuildingType, TerrainType)
 	--VALUES	(NEW.BuildingType,	SUBSTRING_INDEX(NEW.TerrainType, '_', 2) || '_MOUNTAIN');

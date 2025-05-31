@@ -1,5 +1,13 @@
 AddComponentPostInit("combat", function(self)
     local old_GetAttacked = self.GetAttacked
+    ---comment
+    ---@param attacker ent
+    ---@param damage any
+    ---@param weapon any
+    ---@param stimuli any
+    ---@param spdamage any
+    ---@param ... unknown
+    ---@return unknown
     function self:GetAttacked(attacker,damage,weapon,stimuli,spdamage,...)
         if attacker and attacker:HasTag("player")  then
             local equips,found = LOLWP_S:findEquipments(attacker,'lol_wp_s7_tearsofgoddess')
@@ -9,6 +17,14 @@ AddComponentPostInit("combat", function(self)
                         v.components.lol_wp_s7_tearsofgoddess:DoDelta(TUNING.MOD_LOL_WP.TEARSOFGODDESS.SKILL_SPELLFLOW.NUM_PER_HIT,attacker)
                         v.components.rechargeable:Discharge(TUNING.MOD_LOL_WP.TEARSOFGODDESS.SKILL_SPELLFLOW.CD)
                     end
+                end
+            end
+
+            local eyestone_itm = LOLWP_U:getEquipInEyeStone(attacker,'lol_wp_s7_tearsofgoddess')
+            if eyestone_itm then
+                if eyestone_itm.components.rechargeable and eyestone_itm.components.rechargeable:IsCharged() and eyestone_itm.components.lol_wp_s7_tearsofgoddess then
+                    eyestone_itm.components.lol_wp_s7_tearsofgoddess:DoDelta(TUNING.MOD_LOL_WP.TEARSOFGODDESS.SKILL_SPELLFLOW.NUM_PER_HIT,attacker)
+                    eyestone_itm.components.rechargeable:Discharge(TUNING.MOD_LOL_WP.TEARSOFGODDESS.SKILL_SPELLFLOW.CD)
                 end
             end
         end

@@ -94,33 +94,40 @@ local function DoGrow(inst)
     inst.AnimState:PushAnimation(inst.statedata.idleanim, false)
 end
 local GROWTH_STAGES = {
-    { time = function(inst)
-        return GetRandomWithVariance(1200, 960)
-    end, 
-      fn = function(inst)
+    {   name = "seed",
+        time = function(inst)
+            return GetRandomWithVariance(1200, 960)
+        end,
+        fn = function(inst)
           SetGrowth(inst)
-      end,
-      growfn = function(inst)
-          DoGrow(inst)
-      end, },
-    { time = function(inst)
-        return GetRandomWithVariance(2400, 960)
-    end, 
-      fn = function(inst)
-          SetGrowth(inst)
-      end,
-      growfn = function(inst)
-          DoGrow(inst)
-      end, },
-    { time = function(inst)
-        return GetRandomWithVariance(999999, 4646)
-    end, --yes*day_time, no*day_time
-      fn = function(inst)
-          SetGrowth(inst)
-      end,
-      growfn = function(inst)
-          DoGrow(inst)
-      end, }, }
+        end,
+        growfn = function(inst)
+            DoGrow(inst)
+        end,
+    },
+    {   name = "med",
+        time = function(inst)
+            return GetRandomWithVariance(2400, 960)
+        end, 
+        fn = function(inst)
+            SetGrowth(inst)
+        end,
+        growfn = function(inst)
+            DoGrow(inst)
+        end,
+    },
+    {   name = "full",
+        time = function(inst)
+            return GetRandomWithVariance(999999, 4646)
+        end, --yes*day_time, no*day_time
+        fn = function(inst)
+            SetGrowth(inst)
+        end,
+        growfn = function(inst)
+            DoGrow(inst)
+        end,
+    },
+}
 local function GrowFromSeed(inst)
     local color = .5 + math.random() * .5
     inst.AnimState:SetMultColour(color, color, color, 1)

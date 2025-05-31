@@ -10,28 +10,47 @@ local assets =
 
     Asset("ATLAS", "images/inventoryimages/"..assest_id..".xml"),
 }
-
+---comment
+---@param inst ent
+---@param owner ent
 local function onequip(inst, owner)
     if not inst.lol_wp_s7_tearsofgoddess_isequip then
         if inst.components.equippable.equipslot == EQUIPSLOTS.NECK or inst.components.equippable.equipslot == EQUIPSLOTS.BODY then
             owner.AnimState:OverrideSymbol("swap_body", "torso_"..assest_id, assest_id)
         end
 
-        inst.components.lol_wp_s7_tearsofgoddess:WhenEquip(owner)
+        -- inst.components.lol_wp_s7_tearsofgoddess:WhenEquip(owner)
+        if owner:HasTag('player') and owner.components.sanity and inst.components.lol_wp_s7_tearsofgoddess then
+            local san = inst.components.lol_wp_s7_tearsofgoddess.val*TUNING.MOD_LOL_WP.TEARSOFGODDESS.SKILL_SPELLFLOW.SAN_LIMIT_PER_NUM
+            local maxsan = owner.components.sanity.max
+            owner.components.sanity.max = maxsan + san
+            owner.components.sanity:DoDelta(0)
+        end
         inst.lol_wp_s7_tearsofgoddess_isequip = true
+
+        inst.Light:Enable(true)
     end
 
 end
-
+---comment
+---@param inst ent
+---@param owner ent
 local function onunequip(inst, owner)
     if inst.lol_wp_s7_tearsofgoddess_isequip then
         if inst.components.equippable.equipslot == EQUIPSLOTS.NECK or inst.components.equippable.equipslot == EQUIPSLOTS.BODY then
             owner.AnimState:ClearOverrideSymbol("swap_body")
         end
-        inst.components.lol_wp_s7_tearsofgoddess:WhenUnEquip(owner)
+        -- inst.components.lol_wp_s7_tearsofgoddess:WhenUnEquip(owner)
+        if owner:HasTag('player') and owner.components.sanity and inst.components.lol_wp_s7_tearsofgoddess then
+            local san = inst.components.lol_wp_s7_tearsofgoddess.val*TUNING.MOD_LOL_WP.TEARSOFGODDESS.SKILL_SPELLFLOW.SAN_LIMIT_PER_NUM
+            local maxsan = owner.components.sanity.max
+            owner.components.sanity.max = math.max(0,maxsan - san)
+            owner.components.sanity:DoDelta(0)
+        end
         inst.lol_wp_s7_tearsofgoddess_isequip = false
-    end
 
+        inst.Light:Enable(false)
+    end
 end
 
 -- local function onsave(inst, data)
@@ -43,7 +62,7 @@ local function fn()
     local inst = CreateEntity()
     inst.entity:AddNetwork()
     inst.entity:AddTransform()
-    -- inst.entity:AddLight()
+    inst.entity:AddLight()
     inst.entity:AddAnimState()
     inst.entity:AddSoundEmitter()
     MakeInventoryPhysics(inst)
@@ -58,19 +77,29 @@ local function fn()
 
     MakeInventoryFloatable(inst, "med", nil, 0.75)
 
-    -- inst.Light:SetFalloff(0.5)
-    -- inst.Light:SetIntensity(.8)
-    -- inst.Light:SetRadius(1.3)
-    -- inst.Light:SetColour(128/255, 20/255, 128/255)
-    -- inst.Light:Enable(true)
+    inst.Light:SetFalloff(0.7)
+    inst.Light:SetIntensity(.8)
+    inst.Light:SetRadius(1)
+    inst.Light:SetColour(.7,.7,1)
+    inst.Light:Enable(true)
 
     inst:AddTag('lol_wp_s7_tearsofgoddess')
+
+    inst:AddTag('lunar_aligned')
+
+    inst:AddComponent("inspectable")
+    -- inst.components.inspectable.getstatus = function (inst,viewer)
+
+    --     if inst.replica.lol_wp_s7_tearsofgoddess then
+    --         local num = inst.replica.lol_wp_s7_tearsofgoddess:GetVal()
+    --         TheNet:Say(STRINGS.MOD_LOL_WP.ANNOUCE_TEARS..num)
+    --     end
+       
+    -- end
 
     if not TheWorld.ismastersim then
         return inst
     end
-
-    inst:AddComponent("inspectable")
 
     inst:AddComponent("equippable")
     inst.components.equippable.equipslot = EQUIPSLOTS.NECK or EQUIPSLOTS.BODY -- 适配五格
@@ -87,6 +116,9 @@ local function fn()
     inst.components.inventoryitem.foleysound = "dontstarve/movement/foley/jewlery"
     inst.components.inventoryitem.imagename = assest_id
     inst.components.inventoryitem.atlasname = "images/inventoryimages/"..assest_id..".xml"
+    inst.components.inventoryitem:SetOnDroppedFn(function ()
+        inst.Light:Enable(true)
+    end)
 
     inst:AddTag("amulet") -- 适配六格
 

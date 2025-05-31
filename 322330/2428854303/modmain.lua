@@ -15,13 +15,14 @@ local tapmodimports =
 	-- "tap_builder_postinits",
 	"tap_combat_postinits",
 	"tap_combat_replica_postinits",
-	"tap_inventoryitem_postinits",
+	-- "tap_inventoryitem_postinits",
 	"tap_actions",
 	"tap_containers",
 	"tap_endtable",
 	"tap_lights",
 	"tap_icons",
 	"tap_recipes",
+	"tap_tuning",
 }
 
 for _, v in pairs(tapmodimports) do

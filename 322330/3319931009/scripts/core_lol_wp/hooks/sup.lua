@@ -1,3 +1,6 @@
+---@class ent
+---@field last_atk_weapon ent|nil # 上次攻击使用的武器
+
 AddComponentPostInit("combat", function(self)
     local old_GetAttacked = self.GetAttacked
     function self:GetAttacked(attacker,damage,weapon,stimuli,spdamage,...)

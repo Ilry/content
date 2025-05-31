@@ -5,6 +5,12 @@ local assets =
 {
     Asset("ANIM", "anim/"..prefab_id..".zip"),
     Asset("ATLAS", "images/inventoryimages/"..prefab_id..".xml"),
+
+    Asset("ANIM", "anim/"..prefab_id.."_skin_black_nerd.zip"),
+    Asset("ATLAS", "images/inventoryimages/"..prefab_id.."_skin_black_nerd.xml"),
+
+    Asset("ANIM", "anim/"..prefab_id.."_skin_silent.zip"),
+    Asset("ATLAS", "images/inventoryimages/"..prefab_id.."_skin_silent.xml"),
 }
 
 local RESISTANCES =
@@ -32,13 +38,31 @@ local function OnBlocked(owner)
     owner.SoundEmitter:PlaySound("dontstarve/wilson/hit_armour")
 end
 
+---comment
+---@param inst ent
+---@param owner ent
 local function onequip(inst, owner)
-    owner.AnimState:OverrideSymbol("swap_body", prefab_id, "swap_body")
+    -- owner.AnimState:OverrideSymbol("swap_body", prefab_id, "swap_body")
+
+    local skin_build = inst:GetSkinBuild()
+    if skin_build ~= nil then
+        owner:PushEvent("equipskinneditem", inst:GetSkinName())
+        owner.AnimState:OverrideItemSkinSymbol("swap_body", skin_build, "swap_body", inst.GUID, prefab_id)
+    else
+		owner.AnimState:OverrideSymbol("swap_body", prefab_id, "swap_body")
+    end
+
     inst:ListenForEvent("blocked", OnBlocked, owner)
 end
 
 local function onunequip(inst, owner)
     owner.AnimState:ClearOverrideSymbol("swap_body")
+
+    local skin_build = inst:GetSkinBuild()
+    if skin_build ~= nil then
+        owner:PushEvent("unequipskinneditem", inst:GetSkinName())
+    end
+
     inst:RemoveEventCallback("blocked", OnBlocked, owner)
 end
 
@@ -84,6 +108,8 @@ local function onpercentusedchange(inst,data)
     -- when armor durability < .8, start auto repair task
     if cur_percent and cur_percent <= TUNING.MOD_LOL_WP.OVERLORDBLOOD.AUTO_REPAIR.START then
         local owner = inst.components.equippable and inst.components.equippable:IsEquipped() and inst.components.inventoryitem and inst.components.inventoryitem.owner
+        -- if owner then
+        
         if owner then
             if inst.taskperiod_lol_wp_overlordbloodarmor_autorepair == nil then
                 local time_passed = 0

@@ -1010,9 +1010,7 @@ local EpicHealthbar = Class(Widget, function(self, owner, modinfo, modname)
 		self:MakeCaptureMode()
 	elseif TUNING.EPICHEALTHBAR.GLOBAL_NUMBERS then
 		self.popuproot:Hide()
-		self.inst:ListenForEvent("epicpopupnumber", function(owner, data)
-			OnGlobalPopupNumber(self, data)
-		end, owner)
+		self.inst:ListenForEvent("epicpopupnumber", function(owner, data) OnGlobalPopupNumber(self, data) end, owner)
 	end
 	if self:HasTargets() then
 		self:StartUpdating()
@@ -1116,7 +1114,18 @@ function EpicHealthbar:MakeCaptureMode()
 		end
 	end)
 
-	self.inst:ListenForEvent("onremove", function() self:StopTimer("timeleft") end)
+	self.inst:ListenForEvent("onremove", function() self:StopCapture() end)
+
+	if EpicHealthbar._simreset ~= true then
+		EpicHealthbar._simreset = true
+
+		Tykvesh.Parallel(_G, "SimReset", function(params)
+			local widget = Tykvesh.Browse(ThePlayer, "HUD", "controls", "epichealthbar")
+			if widget ~= nil then
+				widget:StopCapture()
+			end
+		end)
+	end
 
 	local function addevent(key, value)
 		if capture ~= nil then
@@ -1159,6 +1168,13 @@ function EpicHealthbar:MakeCaptureMode()
 				addevent(key, value)
 			end
 		end)
+	end
+end
+
+function EpicHealthbar:StopCapture()
+	if self.active then
+		self.active = false
+		self:StopTimer("timeleft")
 	end
 end
 
@@ -1213,7 +1229,7 @@ function EpicHealthbar:RebuildPhases()
 		if phases ~= nil then
 			for i, v in ipairs(phases) do
 				local phase = self.frame_phases:AddChild(Image(self.frame.atlas, "phase.tex"))
-				phase:SetPosition(METER_WIDTH / -2 + METER_WIDTH * v, 0)
+				phase:SetPosition(METER_WIDTH * (v - 0.5), 0)
 				phase:SetTint(unpack(self.frame.tint))
 			end
 		end
@@ -1642,8 +1658,7 @@ function EpicHealthbar:UpdateFocus(dt, params)
 					percent = params.maxrange / dist
 				end
 			elseif dist < params.minrange then
-				percent = 1 - dist / params.minrange
-				percent = ((1 - percent) * percent)
+				percent = Tykvesh.ClampRemap(dist, params.minrange / 2, params.minrange, 0.5, 0)
 			end
 
 			offset.x = offset.x * percent

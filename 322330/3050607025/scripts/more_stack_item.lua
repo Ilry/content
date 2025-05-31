@@ -90,7 +90,7 @@ end
 	--小兔子
 	AddAnimalStackables({"rabbit",})
 	--鼹鼠
-	AddAnimalStackables({"mole",})
+	AddAnimalStackables({"mole","carrat"})
 	--鸟类
 	AddAnimalStackables({"robin","robin_winter","crow","puffin","canary","canary_poisoned","bird_mutant","bird_mutant_spitter",})
 	--鱼类
@@ -108,7 +108,7 @@ end
 	end
 	
 	--暗影心房
-	AddItemStackables({"shadowheart"})
+	AddItemStackables({"shadowheart","shadowheart_infused"})
 	--犀牛角
 	AddItemStackables({"minotaurhorn"})
 	--格罗姆翅膀
@@ -116,10 +116,8 @@ end
 	--月岩雕像
 	AddItemStackables({"moonrockidol"})
 	--蜘蛛类
-	AddAnimalStackables({"spider","spider_healer","spider_hider","spider_moon","spider_spitter","spider_warrior",})
-	--树叶笔记【额外物品包】
-	AddItemStackables({"aip_leaf_note"})
+	AddAnimalStackables({"spider","spider_healer","spider_hider","spider_moon","spider_spitter","spider_warrior","spider_dropper","spider_water",})
 	--超级打包盒
 	AddItemStackables({"miao_packbox"})
 	--荷叶（神话）
-	AddItemStackables({"myth_lotusleaf"})
+	AddItemStackables({"myth_lotusleaf","myth_mooncake_ice","myth_mooncake_lotus","myth_mooncake_nuts",})

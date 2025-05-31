@@ -1,3 +1,4 @@
+---@diagnostic disable
 local weapon_assets =
 {
     Asset("ANIM", "anim/weapon_riftmaker.zip"),
@@ -22,19 +23,22 @@ local fx_assets =
 }
 
 local function finish(inst)
-    local owner = inst.components.inventoryitem ~= nil and inst.components.inventoryitem.owner or nil
+    local owner = LOLWP_S:GetOwnerReal(inst)
     local form = inst.components.riftmaker.form
     inst:Remove()
 
     local sp = nil
     if form == "weapon" then
         sp = SpawnPrefab("riftmaker_weapon")
+        sp:AddTag('riftmaker_weapon'..'_nofiniteuses')
     else 
         sp = SpawnPrefab("riftmaker_amulet")
+        sp:AddTag('riftmaker_amulet'..'_nofiniteuses')
     end
     sp.components.finiteuses.current = 0
     sp.components.equippable.restrictedtag = "别看了我就是不让你装备的"
-    if owner and sp and owner.components.inventory then 
+    
+    if owner and sp and owner.components.inventory then
         owner.components.inventory:GiveItem(sp)
     end
 end
@@ -231,6 +235,7 @@ end
 local TELEPORT_MUST_TAGS = { "locomotor" }
 local TELEPORT_CANT_TAGS = { "playerghost", "INLIMBO", "noteleport" }
 local function teleport_func(inst, target, pos, caster)
+
 	target = target or caster
 
     local x, y, z = target.Transform:GetWorldPosition()
@@ -311,24 +316,54 @@ local function common_fn(tags)
     return inst
 end
 
+local function dapperness_switch(inst,to_normal)
+    if to_normal then
+        if inst.components.equippable then
+            inst.components.equippable.dapperness = -5/54
+        end
+    else
+        if inst.components.equippable then
+            inst.components.equippable.dapperness = -20/54
+        end
+    end
+end
+
+local function StopRegen(inst)
+    dapperness_switch(inst,true)
+	if inst.regentask ~= nil then
+		inst.regentask:Cancel()
+		inst.regentask = nil
+	end
+end
+
+---comment
+---@param inst any
+---@param owner ent
 local function DoRegen(inst, owner)
-	if owner.components.sanity ~= nil and owner.components.sanity:IsInsanityMode() then
-		local setbonus = inst.components.setbonus ~= nil and inst.components.setbonus:IsEnabled(EQUIPMENTSETNAMES.DREADSTONE) and TUNING.ARMOR_DREADSTONE_REGEN_SETBONUS or 1
-		local rate = 1 / Lerp(1 / TUNING.ARMOR_DREADSTONE_REGEN_MAXRATE, 1 / TUNING.ARMOR_DREADSTONE_REGEN_MINRATE, owner.components.sanity:GetPercent())
-		inst.components.finiteuses:Repair(inst.components.finiteuses.total * rate * setbonus)
+	-- if owner.components.sanity ~= nil and owner.components.sanity:IsInsanityMode() then
+	-- 	local setbonus = inst.components.setbonus ~= nil and inst.components.setbonus:IsEnabled(EQUIPMENTSETNAMES.DREADSTONE) and TUNING.ARMOR_DREADSTONE_REGEN_SETBONUS or 1
+	-- 	local rate = 1 / Lerp(1 / TUNING.ARMOR_DREADSTONE_REGEN_MAXRATE, 1 / TUNING.ARMOR_DREADSTONE_REGEN_MINRATE, owner.components.sanity:GetPercent())
+
+    if owner.components.sanity ~= nil then
+		inst.components.finiteuses:Repair(0.2)
+        if inst:HasTag('riftmaker_amulet'..'_nofiniteuses') then
+            inst:RemoveTag('riftmaker_amulet'..'_nofiniteuses')
+        end
+        if inst:HasTag('riftmaker_weapon'..'_nofiniteuses') then
+            inst:RemoveTag('riftmaker_weapon'..'_nofiniteuses')
+        end
+        if inst.components.finiteuses:GetPercent() >= 1 then
+            dapperness_switch(inst,true)
+        else
+            dapperness_switch(inst,false)
+        end
 	end
 end
 
 local function StartRegen(inst, owner)
+    dapperness_switch(inst,false)
 	if inst.regentask == nil then
 		inst.regentask = inst:DoPeriodicTask(TUNING.ARMOR_DREADSTONE_REGEN_PERIOD, DoRegen, nil, owner)
-	end
-end
-
-local function StopRegen(inst)
-	if inst.regentask ~= nil then
-		inst.regentask:Cancel()
-		inst.regentask = nil
 	end
 end
 
@@ -364,7 +399,14 @@ end
 local function weapon_onhitother(owner, data)
     if data and data.target then
         if data.target.components.health and data.damageresolved then
-            data.target.components.health:DoDelta(-data.damageresolved * .25, nil, owner, nil, owner, true)
+            local dmg = data.damageresolved * .25
+            -- ---@type ent
+            -- local victim = data.target
+            -- if victim:HasTag('lunar_aligned') then
+            --     dmg = dmg * 1.1
+            -- end
+            data.target.components.health:DoDelta(-dmg, nil, owner, nil, owner, true)
+            -- data.target.components.health:DoDelta(-data.damageresolved * .25, nil, owner, nil, owner, true)
         end
         if data.target.AnimState then
             SpawnPrefab("electricchargedfx"):SetTarget(data.target)
@@ -381,7 +423,7 @@ end
 ]]
 local function weapon_fn()
     local inst = common_fn({"weapon", "rangedweapon"})
-
+    
     inst.spelltype = "RIFTMAKER"
 
     inst.AnimState:SetBank("weapon_riftmaker")
@@ -425,13 +467,12 @@ local function weapon_fn()
         end
 
         if target.sg ~= nil and not target.sg:HasStateTag("frozen") then
-            target:PushEvent("attacked", { attacker = attacker, weapon = inst })
+            target:PushEvent("attacked", { attacker = attacker, weapon = inst ,damage = 0})
         end
 
         if attacker.components.health and attacker.components.health:IsHurt() and IsLifeDrainable(target) then
             attacker.components.health:DoDelta(7,false)
         end
-
     end)
     inst.components.weapon:SetProjectile("riftmaker_charge")
 
@@ -470,23 +511,27 @@ local function weapon_fn()
     return inst
 end
 
-local function amulet_onhitother(owner, data)
-    if data and data.target and data.target.components.health and owner.components.health then
-        --data.target.components.health:DoDelta(-7, nil, owner, nil, owner, true)
-        if owner.components.health and owner.components.health:IsHurt() and IsLifeDrainable(data.target) then
-            owner.components.health:DoDelta(7,false)
-        end
-        if owner.components.sanity then 
-            owner.components.sanity:DoDelta(-2)
-        end
-        for k in pairs(owner.components.inventory.equipslots) do 
-            if owner.components.inventory.equipslots[k].prefab == "riftmaker_amulet" then 
-                owner.components.inventory.equipslots[k].components.finiteuses:Use(1)
-            end
-        end
+-- ---comment
+-- ---@param owner ent
+-- ---@param data any
+-- local function amulet_onhitother(owner, data)
+--     if data and data.target and data.target.components.health and owner.components.health then
+--         --data.target.components.health:DoDelta(-7, nil, owner, nil, owner, true)
+        
+--         if owner.components.health and owner.components.health:IsHurt() and IsLifeDrainable(data.target) then
+--             owner.components.health:DoDelta(7,false)
+--         end
+--         if owner.components.sanity then 
+--             owner.components.sanity:DoDelta(-2)
+--         end
 
-    end
-end
+--         for k in pairs(owner.components.inventory.equipslots) do 
+--             if owner.components.inventory.equipslots[k].prefab == "riftmaker_amulet" then 
+--                 owner.components.inventory.equipslots[k].components.finiteuses:Use(1)
+--             end
+--         end
+--     end
+-- end
 
 local function amulet_fn()
     local inst = common_fn({"amulet"})
@@ -495,14 +540,17 @@ local function amulet_fn()
     inst.AnimState:SetBuild("amulet_riftmaker")
     inst.AnimState:PlayAnimation("idle")
 
+    inst:AddTag('riftmaker_amulet')
+
     if not TheWorld.ismastersim then
         return inst
     end
+    inst:AddComponent('riftmaker_data')
 
     inst.components.equippable.equipslot = EQUIPSLOTS.NECK or EQUIPSLOTS.BODY
     inst.components.equippable:SetOnEquip(function(inst, owner)
         owner.AnimState:OverrideSymbol("swap_body", "swap_amulet_riftmaker", "purpleamulet")
-
+--[[ 
         if owner.components.sanity ~= nil then
             StartRegen(inst, owner)
         else
@@ -512,15 +560,24 @@ local function amulet_fn()
         turnon(inst)
 
         owner:ListenForEvent("onhitother", amulet_onhitother)
+         ]]
+        if inst.components.riftmaker_data then
+            inst.components.riftmaker_data:onequip(inst, owner)
+        end
     end)
     inst.components.equippable:SetOnUnequip(function(inst, owner)
         owner.AnimState:ClearOverrideSymbol("swap_body")
-
+--[[ 
         StopRegen(inst)
 
         turnoff(inst)
 
         owner:RemoveEventCallback("onhitother", amulet_onhitother)
+         ]]
+
+         if inst.components.riftmaker_data then
+            inst.components.riftmaker_data:onunequip(inst, owner)
+        end
     end)
 
     inst:ListenForEvent("onpickup", OnPickup)
@@ -648,6 +705,7 @@ local function riftmaker_lightfn()
 
     return inst
 end
+
 
 return Prefab("riftmaker_weapon", weapon_fn, weapon_assets, weapon_prefabs),
     Prefab("riftmaker_amulet", amulet_fn, amulet_assets),

@@ -8,19 +8,6 @@ end
 
 -- 姐妹骨灰罐改动
 AddPrefabPostInit("sisturn", function(inst)
-    local function SpawnGhostFlower()
-        if TheNet:GetIsServer() then
-            local x, y, z = inst.Transform:GetWorldPosition()
-
-            local dist = math.random() + 1
-            local angle = math.random() * TWOPI
-
-            local flower = SpawnPrefab("ghostflower")
-
-            flower.Transform:SetPosition(x + dist * math.cos(angle), 0, z + dist * math.sin(angle))
-        end
-    end
-
     local function LocalIsFullOfFlowers(inst)
         return inst.components.container ~= nil and inst.components.container:IsFull()
     end
@@ -51,13 +38,29 @@ AddPrefabPostInit("sisturn", function(inst)
         return true
     end
 
+    local function SpawnGhostFlower()
+        if TheNet:GetIsServer() then
+            if LocalIsFullOfFlowers(inst) then
+                local x, y, z = inst.Transform:GetWorldPosition()
+
+                local dist = math.random() + 1
+                local angle = math.random() * TWOPI
+
+                local flower = SpawnPrefab("ghostflower")
+
+                flower.Transform:SetPosition(x + dist * math.cos(angle), 0, z + dist * math.sin(angle))
+            end
+        end
+    end
+
     --skilltree
     inst._engineerid = nil
-    inst._lighted = net_bool(inst.GUID, "sisturn_hook._lighted", "sistturn_skillsdirty")
-    inst._preserver1 = net_bool(inst.GUID, "sisturn_hook._preserver1", "sistturn_skillsdirty")
-    inst._preserver2 = net_bool(inst.GUID, "sisturn_hook._preserver2", "sistturn_skillsdirty")
-    inst._moon = net_bool(inst.GUID, "sisturn_hook._moon", "sistturn_skillsdirty")
-    inst._shadow = net_bool(inst.GUID, "sisturn_hook._shadow", "sistturn_skillsdirty")
+    inst._lighted = net_bool(inst.GUID, "sisturn._lighted", "sisturn_skillsdirty")
+    inst._preserver1 = net_bool(inst.GUID, "sisturn._preserver1", "sisturn_skillsdirty")
+    inst._preserver2 = net_bool(inst.GUID, "sisturn._preserver2", "sisturn_skillsdirty")
+    inst._moon = net_bool(inst.GUID, "sisturn._moon", "sisturn_skillsdirty")
+    inst._shadow = net_bool(inst.GUID, "sisturn._shadow", "sisturn_skillsdirty")
+    inst._protect_abigail = net_bool(inst.GUID, "sisturn._protect_abigail", "sisturn_skillsdirty")
     inst.can_drop = false
     inst.entity:AddLight()
 
@@ -67,8 +70,26 @@ AddPrefabPostInit("sisturn", function(inst)
     inst.Light:SetFalloff(1)
     inst.Light:SetColour(200/255, 200/255, 200/255)
 
+    if not TheWorld.ismastersim then
+        return inst
+    end
+
     inst:AddComponent("preserver")
     inst.components.preserver:SetPerishRateMultiplier(1)
+
+    inst.protect_abigail_fn = function()
+        if TheNet:GetIsServer() then
+            if inst.components.container ~= nil then
+                local container =  inst.components.container
+                for i = 1, container.numslots do
+                    local item = container.slots[i]
+                    if item ~= nil then
+                        container:DropItemBySlot(i)
+                    end
+                end
+            end
+        end
+    end
 
     --应用加成
     local function ApplySkillBonuses(inst)
@@ -90,7 +111,7 @@ AddPrefabPostInit("sisturn", function(inst)
                     SpawnGhostFlower
             )
 
-            -- 一级保鲜
+        -- 一级保鲜
         elseif inst._preserver1:value() then
             CancelTask(inst.ghostflower_task_2)
             inst.components.preserver:SetPerishRateMultiplier(TUNING.SISTURN_PRESERVER_MULT_1)
@@ -98,11 +119,16 @@ AddPrefabPostInit("sisturn", function(inst)
                     TUNING.SISTURN_GHOSTFLOWER_PRODUCE_TIME_1,
                     SpawnGhostFlower
             )
-
         else
             inst.components.preserver:SetPerishRateMultiplier(1)
             CancelTask(inst.ghostflower_task_1)
             CancelTask(inst.ghostflower_task_2)
+        end
+
+        if inst._protect_abigail:value() then
+            inst:ListenForEvent("abigail_will_die", inst.protect_abigail_fn, TheWorld)
+        else
+            inst:RemoveEventCallback("abigail_will_die", inst.protect_abigail_fn, TheWorld)
         end
 
         if inst._moon:value() then
@@ -127,18 +153,21 @@ AddPrefabPostInit("sisturn", function(inst)
         local lighted = skilltreeupdater ~= nil and skilltreeupdater:IsActivated("wendy_sisturn_light")
         local preserver1 = skilltreeupdater ~= nil and skilltreeupdater:IsActivated("wendy_sisturn_ghostflower_1")
         local preserver2 = skilltreeupdater ~= nil and skilltreeupdater:IsActivated("wendy_sisturn_ghostflower_2")
+        local protect_abigail = skilltreeupdater ~= nil and skilltreeupdater:IsActivated("wendy_sisturn_protection")
         local moon = skilltreeupdater ~= nil and skilltreeupdater:IsActivated("wendy_moon_sisturn")
         local shadow = skilltreeupdater ~= nil and skilltreeupdater:IsActivated("wendy_shadow_sisturn")
 
         local dirty = inst._lighted:value() ~= lighted or
                 inst._preserver1:value() ~= preserver1 or
                 inst._preserver2:value() ~= preserver2 or
+                inst._protect_abigail:value() ~= protect_abigail or
                 inst._moon:value() ~= moon or
                 inst._shadow:value() ~= shadow
 
         inst._lighted:set(lighted)
         inst._preserver1:set(preserver1)
         inst._preserver2:set(preserver2)
+        inst._protect_abigail:set(protect_abigail)
         inst._moon:set(moon)
         inst._shadow:set(shadow)
         inst._engineerid = builder and builder:HasTag("elixirbrewer") and builder.userid or nil
@@ -289,7 +318,7 @@ AddPrefabPostInit("sisturn", function(inst)
     end, TheWorld)
 
     if not TheWorld.ismastersim then
-        inst:ListenForEvent("sistturn_skillsdirty", ApplySkillBonuses)
+        inst:ListenForEvent("sisturn_skillsdirty", ApplySkillBonuses)
         return inst
     end
 end)

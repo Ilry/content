@@ -357,8 +357,12 @@ local TURDPanelList = Class(Screen, function(self, apply_cb)
 
     AddButton(0, -180, 200, 40, STRINGS.TURD.BUTTON_TEXT_IMPORT, function()
         TheFrontEnd:PushScreen(GetInputString(STRINGS.TURD.TITLE_TEXT_IMPORT_PATH, TURD.PATH, function(dialog, value)
+            if string.sub(value, -5) ~= '.json' then
+                TheFrontEnd:PushScreen(ConfirmDialog(STRINGS.TURD.JSON_NEEDED, function() end))
+                return
+            end
             dialog:Close()
-            local file = io.open(value)
+            local file = io.open('unsafedata/' .. value)
             if file then
                 local json_str = file:read('*a')
                 file:close()
@@ -529,8 +533,12 @@ function TURDPanelList:RecordListItem()
 
         record.export:SetOnClick(function()
             TheFrontEnd:PushScreen(GetInputString(STRINGS.TURD.TITLE_TEXT_IMPORT_PATH, TURD.PATH, function(dialog, value)
+                if string.sub(value, -5) ~= '.json' then
+                    TheFrontEnd:PushScreen(ConfirmDialog(STRINGS.TURD.JSON_NEEDED, function() end))
+                    return
+                end
                 local json_str = json.encode(TURD.DATA.RECORDS[data.idx])
-                local file = io.open(value, 'w')
+                local file = io.open('unsafedata/' .. value, 'w')
                 if file then
                     file:write(json_str)
                     file:close()

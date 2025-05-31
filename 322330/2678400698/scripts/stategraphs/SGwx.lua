@@ -150,18 +150,21 @@ local function IsMinigameItem(inst)
 end
 
 local function OnExitRow(inst)
-    local boat = inst.components.sailor:GetBoat()
+    local boat = inst.sg.statemem.boat
     if boat and boat.components.rowboatwakespawner then
         boat.components.rowboatwakespawner:StopSpawning()
     end
+
     if inst.sg.nextstate ~= "row_ia" and inst.sg.nextstate ~= "sail_ia" then
-        inst.components.locomotor:Stop(nil, true)
+        if inst.sg.nextstate ~= "hop_pre" then
+            inst.components.locomotor:Stop(nil, true)
+        end
         if inst.sg.nextstate ~= "row_stop_ia" and inst.sg.nextstate ~= "sail_stop_ia" then --Make sure equipped items are pulled back out (only really for items with flames right now)
-            local equipped = inst.components.inventory:GetEquippedItem(EQUIPSLOTS.HANDS)
+            local equipped = inst.replica.inventory:GetEquippedItem(EQUIPSLOTS.HANDS)
             if equipped then
                 equipped:PushEvent("stoprowing", {owner = inst})
             end
-            if boat then
+            if boat and boat.replica.sailable then
                 boat.replica.sailable:PlayIdleAnims()
             end
         end
@@ -169,18 +172,21 @@ local function OnExitRow(inst)
 end
 
 local function OnExitSail(inst)
-    local boat = inst.components.sailor:GetBoat()
+    local boat = inst.sg.statemem.boat
     if boat and boat.components.rowboatwakespawner then
         boat.components.rowboatwakespawner:StopSpawning()
     end
 
     if inst.sg.nextstate ~= "sail_ia" then
         inst.SoundEmitter:KillSound("sail_loop")
-        if inst.sg.nextstate ~= "row_ia" then
+        if inst.sg.nextstate ~= "row_ia" and inst.sg.nextstate ~= "hop_pre" then
             inst.components.locomotor:Stop(nil, true)
         end
         if inst.sg.nextstate ~= "row_stop_ia" and inst.sg.nextstate ~= "sail_stop_ia" then
-            if boat then
+            print("OnExitSail1")
+            if boat and boat.replica.sailable then
+                print("OnExitSail2")
+                --inst.components.sailor.boat:PushEvent("boatstopmoving")
                 boat.replica.sailable:PlayIdleAnims()
             end
         end
@@ -547,8 +553,8 @@ local ia_actionhandlers =
                     or "hack_start"
             end
         end),
-    ActionHandler(ACTIONS.EMBARK, "embark"),
-    ActionHandler(ACTIONS.DISEMBARK, "disembark"),
+    ActionHandler(ACTIONS.EMBARK),
+    ActionHandler(ACTIONS.DISEMBARK),
     ActionHandler(ACTIONS.TOGGLEON, "give"),
     ActionHandler(ACTIONS.TOGGLEOFF, "give"),
     ActionHandler(ACTIONS.REPAIRBOAT, "dolongaction"),
@@ -1613,7 +1619,7 @@ local states =
         timeline =
         {
             TimeEvent(12 * FRAMES, function(inst)
-				inst.sg:RemoveStateTag("busy")
+                inst.sg:RemoveStateTag("busy")
                 inst:PerformBufferedAction()
             end),
         },
@@ -6084,11 +6090,12 @@ local states =
     -- Shipwrecked States --
     ------------------------
     State{
-        name = "rowl_start_ia",
+        name = "row_start_ia",
         tags = { "moving", "running", "rowing", "boating", "canrotate", "autopredict" },
 
         onenter = function(inst)
             local boat = inst.components.sailor:GetBoat()
+            inst.sg.statemem.boat = boat
 
             inst.components.locomotor:RunForward()
 
@@ -6134,6 +6141,7 @@ local states =
 
         onenter = function(inst)
             local boat = inst.components.sailor:GetBoat()
+            inst.sg.statemem.boat = boat
 
             if boat and boat.components.sailable.creaksound then
                 inst.SoundEmitter:PlaySound(boat.components.sailable.creaksound, nil, nil, true)
@@ -6167,7 +6175,7 @@ local states =
 
         timeline = {
             TimeEvent(8*FRAMES, function(inst)
-                local boat = inst.components.sailor:GetBoat()
+                local boat = inst.sg.statemem.boat
                 if boat and boat.components.container then
                     local trawlnet = boat.components.container:GetItemInBoatSlot(BOATEQUIPSLOTS.BOAT_SAIL)
                     if trawlnet and trawlnet.rowsound then
@@ -6196,6 +6204,7 @@ local states =
         onenter = function(inst)
             inst.components.locomotor:Stop()
             local boat = inst.components.sailor:GetBoat()
+            inst.sg.statemem.boat = boat
             inst.AnimState:PlayAnimation("row_pst")
             if boat then
                 boat.replica.sailable:PlayPostRowAnims()
@@ -6227,6 +6236,7 @@ local states =
 
         onenter = function(inst)
             local boat = inst.components.sailor:GetBoat()
+            inst.sg.statemem.boat = boat
 
             inst.components.locomotor:RunForward()
 
@@ -6266,6 +6276,7 @@ local states =
 
         onenter = function(inst)
             local boat = inst.components.sailor:GetBoat()
+            inst.sg.statemem.boat = boat
 
             local loopsound = nil
             local flapsound = nil
@@ -6337,6 +6348,7 @@ local states =
 
         onenter = function(inst)
             local boat = inst.components.sailor:GetBoat()
+            inst.sg.statemem.boat = boat
 
             inst.components.locomotor:Stop()
             if inst.has_sailface then
@@ -6363,225 +6375,88 @@ local states =
     },
 
     State{
-        name = "embark",
-        tags = {"canrotate", "boating", "busy", "nomorph", "nopredict"},
-        onenter = function(inst)
-            local BA = inst:GetBufferedAction()
-            if BA.target and BA.target.components.sailable and not BA.target.components.sailable:IsOccupied() then
-                BA.target.components.sailable.isembarking = true
-                if inst.components.sailor and inst.components.sailor:IsSailing() then
-                    inst.components.sailor:Disembark(nil, true)
-                else
-                    inst.sg:GoToState("jumponboatstart")
-                end
-            else
-                --go to idle first so wilson can go to the talk state if desired -M
-                --and in my defence, Klei does that too, in opengift state
-                inst.sg:GoToState("idle")
-                inst:PushEvent("actionfailed", { action = inst.bufferedaction, reason = "INUSE" })
-                inst:ClearBufferedAction()
-            end
-        end,
-
-        onexit = function(inst)
-        end,
-    },
-
-    State{
-        name = "disembark",
-        tags = {"canrotate", "boating", "busy", "nomorph", "nopredict"},
-        onenter = function(inst)
-            inst:PerformBufferedAction()
-        end,
-
-        onexit = function(inst)
-        end,
-    },
-
-    State{
-        name = "jumponboatstart",
-        tags = { "doing", "nointerupt", "busy", "canrotate", "nomorph", "nopredict"},
+        name = "jumpboat",
+        tags = { "doing", "nointerupt", "busy", "boathopping", "jumping", "nopredict", "nomorph", "nosleep", "canrotate", "temp_invincible"},
 
         onenter = function(inst)
-            if inst.Physics.ClearCollidesWith then
-            inst.Physics:ClearCollidesWith(COLLISION.LIMITS) -- R08_ROT_TURNOFTIDES
-            end
-            inst.components.locomotor:StopMoving()
-            -- inst.components.locomotor:EnableGroundSpeedMultiplier(false)
             inst.AnimState:PlayAnimation("jumpboat")
             inst.SoundEmitter:PlaySound("ia/common/boatjump_whoosh")
 
-            local BA = inst:GetBufferedAction()
-            inst.sg.statemem.startpos = inst:GetPosition()
-            inst.sg.statemem.targetpos = BA.target and BA.target:GetPosition()
-
             inst:PushEvent("ms_closepopups")
-
-            inst.sg:AddStateTag("temp_invincible")
-
             if inst.components.playercontroller ~= nil then
                 inst.components.playercontroller:Enable(false)
                 inst.components.playercontroller:RemotePausePrediction()
             end
-        end,
-
-        onexit = function(inst)
-        -- This shouldn"t actually be reached
-            if inst.Physics.ClearCollidesWith then
-            inst.Physics:CollidesWith(COLLISION.LIMITS) -- R08_ROT_TURNOFTIDES
-            end
             inst.components.locomotor:Stop()
-            -- inst.components.locomotor:EnableGroundSpeedMultiplier(true)
-            inst.sg:RemoveStateTag("temp_invincible")
+            inst.sg.statemem.collisionmask = inst.Physics:GetCollisionMask()
+            inst.Physics:SetCollisionMask(COLLISION.GROUND)
+            inst:AddTag("ignorewalkableplatforms")
 
-            if inst.components.playercontroller ~= nil then
-                inst.components.playercontroller:Enable(true)
-            end
+            inst.sg:SetTimeout(2) -- just in case
         end,
 
+        ontimeout = function(inst)  -- failsafe
+            inst:GoToState("idle")
+        end,
+        
         timeline = {
-            -- Make the action cancel-able until this?
             TimeEvent(7 * FRAMES, function(inst)
-                inst:ForceFacePoint(inst.sg.statemem.targetpos:Get())
-                local dist = inst:GetPosition():Dist(inst.sg.statemem.targetpos)
-                local speed = dist / (18/30)
-                inst.Physics:SetMotorVelOverride(1 * speed, 0, 0)
+                -- TODO: Maybe somehow make the maxdist changable?
+                inst.components.boatjumper:StartMoving(inst.AnimState:GetCurrentAnimationLength() - inst.AnimState:GetCurrentAnimationTime(), 10)
             end),
         },
 
         events = {
             EventHandler("animover", function(inst)
-                if inst.components.playercontroller ~= nil then
-                    inst.components.playercontroller:Enable(true)
-                end
-
-                inst.sg:RemoveStateTag("temp_invincible")
-                inst.Transform:SetPosition(inst.sg.statemem.targetpos:Get())
-                inst.Physics:Stop()
-
-                inst.components.locomotor:Stop()
-                -- inst.components.locomotor:EnableGroundSpeedMultiplier(true)
-                inst:PerformBufferedAction()
+                inst.sg.statemem.not_interrupted = true
+                inst.components.boatjumper:Embark()
+                inst.sg:GoToState("jumpboatland")
             end),
         },
+
+        onexit = function(inst)
+            if inst.sg.statemem.collisionmask ~= nil then
+                inst.Physics:SetCollisionMask(inst.sg.statemem.collisionmask)
+            end
+            inst:RemoveTag("ignorewalkableplatforms")
+            if not inst.sg.statemem.not_interrupted then
+                inst.components.boatjumper:Cancel()
+            end
+
+            if inst.components.playercontroller ~= nil then
+                inst.components.playercontroller:Enable(true)
+            end
+        end,
     },
 
     State{
         name = "jumpboatland",
-        tags = { "doing", "nointerupt", "busy", "canrotate", "invisible", "nomorph", "nopredict", "amphibious"},
+        tags = { "doing", "nointerupt", "busy", "canrotate", "invisible", "nomorph", "nopredict", "temp_invincible"},
 
-        onenter = function(inst, pos)
-            if inst.Physics.ClearCollidesWith then
-            inst.Physics:CollidesWith(COLLISION.LIMITS) --R08_ROT_TURNOFTIDES
+        onenter = function(inst)
+            if inst.components.drownable ~= nil and inst.components.drownable:ShouldDrown() then
+                inst.sg:GoToState("sink_fast")
+                return
+            elseif inst.components.drydrownable ~= nil and inst.components.drydrownable:ShouldDrown() then
+                inst.sg:GoToState("hitcoastline")
+                return
             end
-            inst.sg:AddStateTag("temp_invincible")
-            inst.Physics:Stop()
-            inst.AnimState:PlayAnimation("landboat")
-            local boat = inst.components.sailor.boat
-            if boat and boat.landsound then
+
+            local boat = inst.components.sailor ~= nil and inst.components.sailor.boat
+            if boat ~= nil then
+                inst.AnimState:PlayAnimation("landboat")
                 inst.SoundEmitter:PlaySound(boat.landsound)
+            else
+                inst.AnimState:PlayAnimation("land", false)
+                inst.SoundEmitter:PlaySound("ia/common/boatjump_to_land")
+                PlayFootstep(inst)
             end
-        end,
-
-        onexit = function(inst)
-            inst.sg:RemoveStateTag("temp_invincible")
-            if inst.components.drydrownable ~= nil and inst.components.drydrownable:ShouldDrown() then
-                inst:PushEvent("onhitcoastline")
-            end
-        end,
-
-        events = {
-            EventHandler("animqueueover", function(inst)
-                if inst.AnimState:AnimDone() then
-                    inst.sg:GoToState("idle")
-                end
-            end),
-        },
-    },
-
-    State{
-        name = "jumpoffboatstart",
-        tags = { "doing", "nointerupt", "busy", "canrotate", "nomorph", "nopredict", "amphibious"},
-
-        onenter = function(inst, pos)
-            if inst.Physics.ClearCollidesWith then
-            inst.Physics:ClearCollidesWith(COLLISION.LIMITS) --R08_ROT_TURNOFTIDES
-            end
-            inst.components.locomotor:StopMoving()
-            --inst.components.locomotor:EnableGroundSpeedMultiplier(false)
-            inst.AnimState:PlayAnimation("jumpboat")
-            inst.SoundEmitter:PlaySound("ia/common/boatjump_whoosh")
-
-            inst.sg.statemem.startpos = inst:GetPosition()
-            inst.sg.statemem.targetpos = pos
-
-            inst:PushEvent("ms_closepopups")
-
-            inst.sg:AddStateTag("temp_invincible")
-
-            if inst.components.playercontroller ~= nil then
-                inst.components.playercontroller:Enable(false)
-                inst.components.playercontroller:RemotePausePrediction()
-            end
-        end,
-
-        onexit = function(inst)
-        --This shouldn"t actually be reached
-            if inst.Physics.ClearCollidesWith then
-            inst.Physics:CollidesWith(COLLISION.LIMITS) --R08_ROT_TURNOFTIDES
-            end
-            inst.components.locomotor:Stop()
-            --inst.components.locomotor:EnableGroundSpeedMultiplier(true)
-            inst.sg:RemoveStateTag("temp_invincible")
-
-            if inst.components.playercontroller ~= nil then
-                inst.components.playercontroller:Enable(true)
-            end
-        end,
-
-        timeline = {
-            --Make the action cancel-able until this?
-            TimeEvent(7 * FRAMES, function(inst)
-                inst:ForceFacePoint(inst.sg.statemem.targetpos:Get())
-                local dist = inst:GetPosition():Dist(inst.sg.statemem.targetpos)
-                local speed = dist / (18/30)
-                inst.Physics:SetMotorVelOverride(1 * speed, 0, 0)
-            end),
-        },
-
-        events = {
-            EventHandler("animover", function(inst)
-                if inst.AnimState:AnimDone() then
-                    inst.Transform:SetPosition(inst.sg.statemem.targetpos:Get())
-                    inst.sg:RemoveStateTag("temp_invincible")
-                    inst.sg:GoToState("jumpoffboatland")
-                end
-            end),
-        },
-    },
-
-    State{
-        name = "jumpoffboatland",
-        tags = { "doing", "nointerupt", "busy", "canrotate", "nomorph", "nopredict", "amphibious"},
-
-        onenter = function(inst, pos)
-            if inst.Physics.ClearCollidesWith then
-            inst.Physics:CollidesWith(COLLISION.LIMITS) --R08_ROT_TURNOFTIDES
-            end
-            inst.sg:AddStateTag("temp_invincible")
+            
             inst.Physics:Stop()
-            inst.AnimState:PlayAnimation("land", false)
-            inst.SoundEmitter:PlaySound("ia/common/boatjump_to_land")
-            PlayFootstep(inst)
-        end,
-
-        onexit = function(inst)
-            inst.sg:RemoveStateTag("temp_invincible")
         end,
 
         events = {
             EventHandler("animqueueover", function(inst)
-                inst:PerformBufferedAction()
                 if inst.AnimState:AnimDone() then
                     inst.sg:GoToState("idle")
                 end
@@ -7209,54 +7084,39 @@ local states =
 
     State{
         name = "hitcoastline",
-        tags = { "busy", "nopredict", "nomorph", "drowning", "nointerrupt" },
+        tags = {"busy", "nopredict", "nomorph", "drowning", "nointerrupt" },
 
         onenter = function(inst, shore_pt)
+            ForceStopHeavyLifting(inst)
             inst:ClearBufferedAction()
 
             inst.components.locomotor:Stop()
             inst.components.locomotor:Clear()
 
-            inst.AnimState:PlayAnimation("dozy")
-            inst.SoundEmitter:PlaySound((inst.talker_path_override or "dontstarve/characters/")..(inst.soundsname or inst.prefab).."/sinking")
+            inst.sg:SetTimeout(1)
 
-            if shore_pt ~= nil then
-                inst.components.drydrownable:OnHitCoastline(shore_pt:Get())
+            local boat = inst.components.sailor and inst.components.sailor:GetBoat()
+            if boat ~= nil then
+                local pt = inst:GetPosition()
+                local x, y, z = inst.Transform:GetWorldPosition()
+                if shore_pt then x, z = shore_pt.x, shore_pt.z end
+                inst.components.boatjumper:DoDisembarkJump(x, z) -- This will send us to the new state
+                inst.components.sailor:Disembark()
+            
+                if boat.components.workable then
+                    boat.components.workable:Destroy(inst)
+                elseif boat.components.boathealth then
+                    boat.components.boathealth:MakeEmpty()
+                else
+                    boat:Remove()
+                end
             else
-                inst.components.drydrownable:OnHitCoastline()
+                inst.sg:GoToState("idle")
             end
-            inst.DynamicShadow:Enable(false)
-
-            local sand = SpawnPrefab("townportalsandcoffin_fx")
-            sand.Transform:SetPosition(inst.Transform:GetWorldPosition())
         end,
 
-        events =
-        {
-            EventHandler("animover", function(inst)
-                if inst.AnimState:AnimDone() then
-                    local puddle = SpawnPrefab("washashore_puddle_fx")
-                    puddle.Transform:SetPosition(inst.Transform:GetWorldPosition())
-                    StartTeleporting(inst)
-                    inst.components.drydrownable:WashAway()
-                end
-            end),
-
-            EventHandler("on_washed_away", function(inst)
-                inst.sg:GoToState("washed_away")
-            end),
-        },
-
-        onexit = function(inst)
-            if inst.sg.statemem.isphysicstoggle then
-                ToggleOnPhysics(inst)
-            end
-
-            if inst.sg.statemem.isteleporting then
-                DoneTeleporting(inst)
-            end
-
-            inst.DynamicShadow:Enable(true)
+        ontimeout = function(inst)
+            inst.sg:GoToState("idle")
         end,
     },
 

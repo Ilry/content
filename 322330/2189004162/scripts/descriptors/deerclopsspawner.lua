@@ -105,8 +105,10 @@ local function RemoteDescribe(data, context)
 		description = ProcessInformation(context, data.time_to_attack, data.target, data.target_error_string)
 	end
 
+	local priority = Insight.descriptors.periodicthreat.CalculateThreatPriority(data.time_to_attack, { ignore_different_shard=true, shard_data=data.shard_data }) - 1
+
 	return {
-		priority = 10,
+		priority = priority,
 		description = description,
 		icon = {
 			atlas = "images/Deerclops.xml",
@@ -119,7 +121,7 @@ local function RemoteDescribe(data, context)
 	}
 end
 
-local function StatusAnnoucementsDescribe(special_data, context)
+local function StatusAnnouncementsDescribe(special_data, context)
 	if not special_data.time_to_attack then
 		return
 	end
@@ -175,6 +177,6 @@ end
 return {
 	RemoteDescribe = RemoteDescribe,
 	GetDeerclopsData = GetDeerclopsData,
-	StatusAnnoucementsDescribe = StatusAnnoucementsDescribe,
+	StatusAnnouncementsDescribe = StatusAnnouncementsDescribe,
 	DangerAnnouncementDescribe = DangerAnnouncementDescribe,
 }

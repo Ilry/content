@@ -113,8 +113,8 @@ function ItemDetail:OnControl(control, down)
 			local special_data = localPlayer.replica.insight.world_data.special_data[self.componentName]
 
 			local describer = special_data and (
-				(special_data.prefably and Insight.prefab_descriptors[cmp] and Insight.prefab_descriptors[cmp].StatusAnnoucementsDescribe) or
-				(Insight.descriptors[cmp] and Insight.descriptors[cmp].StatusAnnoucementsDescribe)
+				(special_data.prefably and Insight.prefab_descriptors[cmp] and Insight.prefab_descriptors[cmp].StatusAnnouncementsDescribe) or
+				(Insight.descriptors[cmp] and Insight.descriptors[cmp].StatusAnnouncementsDescribe)
 			)
 
 			if describer then
@@ -150,7 +150,7 @@ function ItemDetail:SetText(str)
 	self.text:SetString(str)
 end
 
-function ItemDetail:SetIcon(atlas, tex)
+function ItemDetail:SetIcon(atlas, tex, scrapbook)
 	-- atlas gets resolved so it doesnt match
 	--local resolved = atlas ~= nil and resolvefilepath(atlas) or nil
 
@@ -171,7 +171,11 @@ function ItemDetail:SetIcon(atlas, tex)
 		if self.icon_holder2 then
 			self.icon_holder2:Show()
 		end
-		self.icon:SetSize(56, 56)
+		if scrapbook then
+			self.icon:SetSize(64, 64) -- 56, 56
+		else
+			self.icon:SetSize(56, 56)
+		end
 	else
 		error("expected atlas and tex in ItemDetail:SetIcon")
 	end

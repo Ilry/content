@@ -90,11 +90,19 @@ local function CastlingFn(inst, doer, pos)
 
                 inst.components.fueled:DoDelta(SpellCost(TUNING.SISTERS_STORIES_SPELL_COST.CASTLING), doer)
                 doer.components.sanity:DoDelta(TUNING.SISTERS_STORIES_SANITY_COST.CASTLING)
-            else
+
+                doer.components.spellbookcooldowns:RestartSpellCooldown("castling", TUNING.SISTERS_STORIES_SPELL_COST.CASTLING_CD)
+
+                return true
+            elseif doer.components.ghostlybond.ghost == nil then
                 doer.components.talker:Say(STRINGS.WENDY_READ_SISTERS_STORIES_WITHOUT_ABIGAIL)
+                return false, "NO_ABIGAIL"
+            elseif doer.components.spellbookcooldowns and doer.components.spellbookcooldowns:IsInCooldown("castling") then
+                return false, "SPELL_IN_COOLDOWN"
             end
         end
     end
+    return false
 end
 
 local function SameHeartFn(inst, doer, pos)
@@ -120,6 +128,9 @@ local function SameHeartFn(inst, doer, pos)
                     ghost.components.locomotor.runspeed = doer.components.locomotor.runspeed
                     -- 紧随温蒂
                     ghost.same_heart_task = ghost:DoPeriodicTask(0.2,function()
+                        -- 提升速度
+                        ghost.components.locomotor.walkspeed = doer.components.locomotor.walkspeed
+                        ghost.components.locomotor.runspeed = doer.components.locomotor.runspeed
                         local inrange = ghost:GetDistanceSqToInst(ghost._playerlink) <= 4
                         if not inrange then
                             local x,y,z = ghost._playerlink.Transform:GetWorldPosition()
@@ -207,22 +218,43 @@ local function ReticuleFireBallTargetFn()
     return Vector3(ThePlayer.entity:LocalToWorldSpace(5, 0.001, 0)) -- Raised this off the ground a touch so it wont have any z-fighting with the ground biome transition tiles.
 end
 
+local function CheckNotRiding(player)
+    --client safe
+    local rider = player and player.replica.rider
+    return not (rider and rider:IsRiding())
+end
+
+local function CheckCooldown(spell_name)
+    return function(player)
+        --client safe
+        return player
+                and player.components.spellbookcooldowns
+                and player.components.spellbookcooldowns:GetSpellCooldownPercent(spell_name)
+                or nil
+    end
+end
+
 -- 最终的法术表
 local BASESPELLS = {
     {
         label = STRINGS.WENDY_SPELL.SWEET_MEMORY,
-        atlas = "images/spell_icons/sweet_memory.xml",
-        normal = "sweet_memory.tex",
         execute = function(inst)
             SendModRPCToServer(MOD_RPC["wendy"]["read_sisters_stories"], "sweet_memory", inst)
         end,
-        widget_scale = ICON_SCALE,
-        hit_radius = ICON_RADIUS
+        bank = "sisters_stories_spell_icon",
+        build = "sisters_stories_spell_icon",
+        anims =
+        {
+            idle = { anim = "sweet_memory" },
+            focus = { anim = "sweet_memory_focus" },
+            down = { anim = "sweet_memory_pressed" },
+            disabled = { anim = "sweet_memory_disabled" },
+            cooldown = { anim = "sweet_memory_cooldown" },
+        },
+        widget_scale = ICON_SCALE
     },
     {
         label = STRINGS.WENDY_SPELL.CASTLING,
-        atlas = "images/spell_icons/castling.xml",
-        normal = "castling.tex",
         onselect = function(inst)
 
             inst.components.spellbook:SetSpellName(STRINGS.WENDY_SPELL.CASTLING)
@@ -242,13 +274,23 @@ local BASESPELLS = {
             end
         end,
         execute = StartAOETargeting,
+        bank = "sisters_stories_spell_icon",
+        build = "sisters_stories_spell_icon",
+        anims =
+        {
+            idle = { anim = "castling" },
+            focus = { anim = "castling_focus" },
+            down = { anim = "castling_pressed" },
+            disabled = { anim = "castling_disabled" },
+            cooldown = { anim = "castling_cooldown" },
+        },
         widget_scale = ICON_SCALE,
-        hit_radius = ICON_RADIUS
+        checkenabled = CheckNotRiding,
+        checkcooldown = CheckCooldown("castling"),
+        cooldowncolor = { 0.65,0.65,0.65, 0.75 },
     },
     {
         label = STRINGS.WENDY_SPELL.SAME_HEART,
-        atlas = "images/spell_icons/same_heart.xml",
-        normal = "same_heart.tex",
         onselect = function(inst)
             inst.components.spellbook:SetSpellName(STRINGS.WENDY_SPELL.SAME_HEART)
             inst.components.aoetargeting:SetDeployRadius(0)
@@ -267,41 +309,213 @@ local BASESPELLS = {
             end
         end,
         execute = StartAOETargeting,
+        bank = "sisters_stories_spell_icon",
+        build = "sisters_stories_spell_icon",
+        anims =
+        {
+            idle = { anim = "same_heart" },
+            focus = { anim = "same_heart_focus" },
+            down = { anim = "same_heart_pressed" },
+            disabled = { anim = "same_heart_disabled" },
+            cooldown = { anim = "same_heart_cooldown" },
+        },
         widget_scale = ICON_SCALE,
-        hit_radius = ICON_RADIUS
-    },
-    {
-        label = STRINGS.WENDY_SPELL.SMALL_CONTRADICTION,
-        atlas = "images/spell_icons/small_contradiction.xml",
-        normal = "small_contradiction.tex",
-        execute = function(inst)
-            SendModRPCToServer(MOD_RPC["wendy"]["read_sisters_stories"], "small_contradiction", inst)
-        end,
-        widget_scale = ICON_SCALE,
-        hit_radius = ICON_RADIUS,
     }
+}
+
+local function DoGhostSpell(doer, event, state, ...)
+    local spellbookcooldowns = doer.components.spellbookcooldowns
+    local ghostlybond = doer.components.ghostlybond
+
+    if spellbookcooldowns ~= nil and spellbookcooldowns:IsInCooldown("ghostcommand") then
+        return false
+    end
+
+    if ghostlybond == nil or ghostlybond.ghost == nil then
+        return false
+    end
+
+    if ghostlybond.ghost.components.health:IsDead() then
+        return false
+    end
+
+    if event ~= nil then
+        ghostlybond.ghost:PushEvent(event, ...)
+
+    elseif state ~= nil then
+        ghostlybond.ghost.sg:GoToState(state, ...)
+    end
+
+    if spellbookcooldowns ~= nil then
+        spellbookcooldowns:RestartSpellCooldown("ghostcommand", TUNING.WENDYSKILL_COMMAND_COOLDOWN)
+    end
+
+    return true
+end
+
+local function GhostEscapeSpell(inst, doer)
+    return DoGhostSpell(doer, "do_ghost_escape")
+end
+
+local function GhostAttackAtSpell(inst, doer, pos)
+    return DoGhostSpell(doer, "do_ghost_attackat", nil, pos)
+end
+
+local function GhostHauntSpell(inst, doer, pos)
+    return DoGhostSpell(doer, "do_ghost_hauntat", nil, pos)
+end
+
+local function ReticuleGhostTargetFn(inst)
+    return Vector3(ThePlayer.entity:LocalToWorldSpace(7, 0.001, 0))
+end
+
+local Get_Out_Spell = {
+    label = STRINGS.WENDY_SPELL.GET_OUT,
+    onselect = function(inst)
+        local spellbook = inst.components.spellbook
+        spellbook:SetSpellName(STRINGS.WENDY_SPELL.GET_OUT)
+        spellbook:SetSpellAction(nil)
+
+        if TheWorld.ismastersim then
+            inst.components.aoespell:SetSpellFn(nil)
+            spellbook:SetSpellFn(GhostEscapeSpell)
+        end
+    end,
+    execute = function(inst)
+        if ThePlayer.replica.inventory then
+            ThePlayer.replica.inventory:CastSpellBookFromInv(inst)
+        end
+    end,
+    bank = "sisters_stories_spell_icon",
+    build = "sisters_stories_spell_icon",
+    anims =
+    {
+        idle = { anim = "get_out" },
+        focus = { anim = "get_out_focus", loop = true },
+        down = { anim = "get_out_pressed" },
+        disabled = { anim = "get_out_disabled" },
+        cooldown = { anim = "get_out_cooldown" },
+    },
+    widget_scale = ICON_SCALE,
+    checkcooldown = CheckCooldown("ghostcommand"),
+    cooldowncolor = { 0.65, 0.65, 0.65, 0.75 },
+}
+
+local Dash_Spell = {
+    label = STRINGS.WENDY_SPELL.DASH,
+    onselect = function(inst)
+        local spellbook = inst.components.spellbook
+        local aoetargeting = inst.components.aoetargeting
+
+        spellbook:SetSpellName(STRINGS.WENDY_SPELL.DASH)
+        spellbook:SetSpellAction(nil)
+        aoetargeting:SetDeployRadius(0)
+        aoetargeting:SetRange(20)
+        aoetargeting.reticule.reticuleprefab = "reticuleaoeghosttarget"
+        aoetargeting.reticule.pingprefab = "reticuleaoeghosttarget_ping"
+
+        aoetargeting.reticule.mousetargetfn = nil
+        aoetargeting.reticule.targetfn = ReticuleGhostTargetFn
+        aoetargeting.reticule.updatepositionfn = nil
+        aoetargeting.reticule.twinstickrange = 15
+
+        if TheWorld.ismastersim then
+            aoetargeting:SetTargetFX("reticuleaoeghosttarget")
+            inst.components.aoespell:SetSpellFn(GhostAttackAtSpell)
+            spellbook:SetSpellFn(nil)
+        end
+    end,
+    execute = StartAOETargeting,
+    bank = "sisters_stories_spell_icon",
+    build = "sisters_stories_spell_icon",
+    anims =
+    {
+        idle = { anim = "dash" },
+        focus = { anim = "dash_focus", loop = true },
+        down = { anim = "dash_pressed" },
+        disabled = { anim = "dash_disabled" },
+        cooldown = { anim = "dash_cooldown" },
+    },
+    widget_scale = ICON_SCALE,
+    checkcooldown = CheckCooldown("ghostcommand"),
+    cooldowncolor = { 0.65, 0.65, 0.65, 0.75 },
+}
+
+local Haunt_Spell = {
+    label = STRINGS.WENDY_SPELL.HAUNT,
+    onselect = function(inst)
+        local spellbook = inst.components.spellbook
+        local aoetargeting = inst.components.aoetargeting
+
+        spellbook:SetSpellName(STRINGS.WENDY_SPELL.HAUNT)
+        spellbook:SetSpellAction(nil)
+        aoetargeting:SetDeployRadius(0)
+        aoetargeting:SetRange(20)
+        aoetargeting.reticule.reticuleprefab = "reticuleaoeghosttarget"
+        aoetargeting.reticule.pingprefab = "reticuleaoeghosttarget_ping"
+
+        aoetargeting.reticule.mousetargetfn = nil
+        aoetargeting.reticule.targetfn = ReticuleGhostTargetFn
+        aoetargeting.reticule.updatepositionfn = nil
+        aoetargeting.reticule.twinstickrange = 15
+
+        if TheWorld.ismastersim then
+            aoetargeting:SetTargetFX("reticuleaoeghosttarget")
+            inst.components.aoespell:SetSpellFn(GhostHauntSpell)
+            spellbook:SetSpellFn(nil)
+        end
+    end,
+    execute = StartAOETargeting,
+    bank = "sisters_stories_spell_icon",
+    build = "sisters_stories_spell_icon",
+    anims =
+    {
+        idle = { anim = "haunt" },
+        focus = { anim = "haunt_focus", loop = true },
+        down = { anim = "haunt_pressed" },
+        disabled = { anim = "haunt_disabled" },
+        cooldown = { anim = "haunt_cooldown" },
+    },
+    widget_scale = ICON_SCALE,
+    checkcooldown = CheckCooldown("ghostcommand"),
+    cooldowncolor = { 0.65, 0.65, 0.65, 0.75 },
 }
 
 local Moon_Spell = {
     label = STRINGS.WENDY_SPELL.MOON_ESSENCE,
-    atlas = "images/spell_icons/moon_essence.xml",
-    normal = "moon_essence.tex",
     execute = function(inst)
         SendModRPCToServer(MOD_RPC["wendy"]["read_sisters_stories"], "moon_essence", inst)
     end,
+    bank = "sisters_stories_spell_icon",
+    build = "sisters_stories_spell_icon",
+    anims =
+    {
+        idle = { anim = "moon_essence" },
+        focus = { anim = "moon_essence_focus" },
+        down = { anim = "moon_essence_pressed" },
+        disabled = { anim = "moon_essence_disabled" },
+        cooldown = { anim = "moon_essence_cooldown" },
+    },
     widget_scale = ICON_SCALE,
-    hit_radius = ICON_RADIUS
 }
 
 local Shadow_Spell = {
     label = STRINGS.WENDY_SPELL.SHADOW_PRESENT,
-    atlas = "images/spell_icons/shadow_present.xml",
-    normal = "shadow_present.tex",
     execute = function(inst)
         SendModRPCToServer(MOD_RPC["wendy"]["read_sisters_stories"], "shadow_present", inst)
     end,
+    bank = "sisters_stories_spell_icon",
+    build = "sisters_stories_spell_icon",
+    anims =
+    {
+        idle = { anim = "shadow_present" },
+        focus = { anim = "shadow_present_focus" },
+        down = { anim = "shadow_present_pressed" },
+        disabled = { anim = "shadow_present_disabled" },
+        cooldown = { anim = "shadow_present_cooldown" },
+    },
     widget_scale = ICON_SCALE,
-    hit_radius = ICON_RADIUS
+    checkcooldown = CheckCooldown("shadow_present")
 }
 
 
@@ -321,14 +535,33 @@ local function updatespells(inst, owner)
     local spells = shallowcopy(BASESPELLS)
 
     local skilltreeupdater = owner and owner.components.skilltreeupdater or nil
+
+    local get_out = skilltreeupdater ~= nil and skilltreeupdater:IsActivated("wendy_abigail_get_out")
+    local dash = skilltreeupdater ~= nil and skilltreeupdater:IsActivated("wendy_abigail_dash")
+    local haunt = skilltreeupdater ~= nil and skilltreeupdater:IsActivated("wendy_abigail_haunt")
+
     local moon = skilltreeupdater ~= nil and skilltreeupdater:IsActivated("wendy_moon_abigail")
     local shadow = skilltreeupdater ~= nil and skilltreeupdater:IsActivated("wendy_shadow_abigail")
+
+
+    if get_out then
+        table.insert(spells, Get_Out_Spell)
+    end
+
+    if dash then
+        table.insert(spells, Dash_Spell)
+    end
+
+    if haunt then
+        table.insert(spells, Haunt_Spell)
+    end
 
     if moon then
         table.insert(spells, Moon_Spell)
     elseif shadow then
         table.insert(spells, Shadow_Spell)
     end
+
     inst.components.spellbook:SetItems(spells)
 end
 
@@ -403,7 +636,7 @@ local function fn()
 
     inst:AddComponent("aoetargeting")
     inst.components.aoetargeting:SetAllowWater(true)
-    inst.components.aoetargeting.reticule.targetfn = ReticuleTargetAllowWaterFn
+
     inst.components.aoetargeting.reticule.validcolour = { 1, .75, 0, 1 }
     inst.components.aoetargeting.reticule.invalidcolour = { .5, 0, 0, 1 }
     inst.components.aoetargeting.reticule.ease = true

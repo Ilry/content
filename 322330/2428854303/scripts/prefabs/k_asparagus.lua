@@ -1,8 +1,8 @@
-require "prefabutil"
+require("prefabutil")
 
 local assets =
 {
-    Asset("ANIM", "anim/asparagus2.zip"),
+    Asset("ANIM", "anim/kyno_aspargos.zip"),
 	
 	Asset("IMAGE", "images/inventoryimages/tap_buildingimages2.tex"),
 	Asset("ATLAS", "images/inventoryimages/tap_buildingimages2.xml"),
@@ -28,8 +28,8 @@ local function fn()
 	
 	inst.AnimState:SetScale(1.2,1.2,1.2)
 
-    inst.AnimState:SetBank("asparagus")
-    inst.AnimState:SetBuild("asparagus2")
+    inst.AnimState:SetBank("kyno_aspargos")
+    inst.AnimState:SetBuild("kyno_aspargos")
     inst.AnimState:PlayAnimation("planted")
     inst.AnimState:SetRayTestOnBB(true)
 
@@ -63,4 +63,4 @@ local function asparagusplacetestfn(inst)
 end
 
 return Prefab("kyno_asparagus_planted", fn, assets),
-MakePlacer("kyno_asparagus_planted_placer", "asparagus", "asparagus2", "planted", false, nil, nil, nil, nil, nil, asparagusplacetestfn)
+MakePlacer("kyno_asparagus_planted_placer", "kyno_aspargos", "kyno_aspargos", "planted", false, nil, nil, nil, nil, nil, asparagusplacetestfn)

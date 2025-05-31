@@ -122,8 +122,8 @@ end
 
 local function ShouldJumpInWormhole(inst)
     local leader = inst.components.follower.leader
-    if leader ~= nil and not inst:IsNear(leader, KEEP_WORKING_DIST) then
-        inst.wormholetarget = FindEntity(inst, SEE_WORK_DIST, function(ent)
+    if leader ~= nil and not inst:IsNear(leader, KEEP_WORKING_DIST * 4) then
+        inst.wormholetarget = FindEntity(inst, SEE_WORK_DIST * 4, function(ent)
             return ent.prefab == "wormhole" or ent.prefab == "tentacle_pillar_hole" or
                 ent.prefab == "pocketwatch_portal_entrance" or ent.prefab == "bermudatriangle"
         end)
@@ -318,8 +318,7 @@ function WXBrain:OnStart()
                 -- Is Convey
                 IfNode(
                     function()
-                        return (self.inst.components.sailor == nil or not self.inst.components.sailor:IsSailing()) and
-                            self.inst.components.wxtype:IsConv() and not self.inst.components.container:IsOpen()
+                        return (self.inst.components.sailor == nil or not self.inst.components.sailor:IsSailing()) and self.inst.components.wxtype:IsConv()
                     end, "Search Orders",
                     SelectorNode({
                         -- Picks up a backpack and tools
@@ -969,9 +968,7 @@ function WXBrain:OnStart()
                 ),
                 -- Is FoodInd
                 IfNode(
-                    function()
-                        return self.inst.components.wxtype:IsFoodInd() and not self.inst.components.container:IsOpen()
-                    end, "Process Food",
+                    function() return self.inst.components.wxtype:IsFoodInd() end, "Process Food",
                     SelectorNode({
                         -- Picks up materials
                         IfNode(
@@ -1003,8 +1000,7 @@ function WXBrain:OnStart()
                 -- Is SeaConvey
                 IfNode(
                     function()
-                        return self.inst.components.sailor ~= nil and self.inst.components.sailor:IsSailing() and
-                            self.inst.components.wxtype:IsSeaConv() and not self.inst.components.container:IsOpen()
+                        return self.inst.components.sailor ~= nil and self.inst.components.sailor:IsSailing() and self.inst.components.wxtype:IsSeaConv()
                     end, "Search Orders",
                     SelectorNode({
                         -- Picks up backpack
