@@ -1,2 +1,0 @@
-REPLACE INTO LocalizedText(Language,Tag,Text) VALUES ('en_US','LOC_AUTO_CITY','Take over production queue');
-REPLACE INTO LocalizedText(Language,Tag,Text) VALUES ('zh_Hans_CN','LOC_AUTO_CITY','智能托管生产队列');
